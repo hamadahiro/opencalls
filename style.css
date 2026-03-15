@@ -136,7 +136,7 @@ main {
 .search-bar {
   display: block;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(255, 255, 255);
   border: none;
   padding: 16px 20px;
   font-size: 18px;
@@ -144,6 +144,7 @@ main {
   color: rgb(0, 0, 0);
   outline: none;
   margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .search-bar::placeholder {
