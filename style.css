@@ -187,18 +187,18 @@ main {
 }
 
 .call-deadline.urgent {
-  background: #FF3B30;
+  background: #AF52DE;
   color: white;
 }
 
 .call-deadline.soon {
-  background: #FFCC00;
-  color: rgb(0, 0, 0);
+  background: #FF3B30;
+  color: white;
 }
 
 .call-deadline.normal {
-  background: #8E8E93;
-  color: white;
+  background: #FFCC00;
+  color: rgb(0, 0, 0);
 }
 
 .call-deadline.rolling {
