@@ -10,12 +10,21 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: rgb(0, 0, 0);
-  background-image: url('bg.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 0% 100%;
   background-color: #f5f2ed;
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: 0% 100%;
+  z-index: -1;
 }
 
 a {
@@ -446,11 +455,6 @@ main {
     text-align: center;
     padding: 14px 28px;
     font-size: 15px;
-  }
-
-  /* Fix iOS background-attachment: fixed bug */
-  body {
-    background-attachment: scroll;
   }
 
   /* Footer */
