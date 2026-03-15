@@ -176,12 +176,14 @@ main {
 }
 
 .call-deadline {
+  display: inline-block;
   font-size: 12px;
   font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 2px;
+  padding: 3px 10px;
+  border-radius: 3px;
   white-space: nowrap;
   vertical-align: middle;
+  line-height: 1;
 }
 
 .call-deadline.urgent {
