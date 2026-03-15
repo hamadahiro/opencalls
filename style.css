@@ -349,6 +349,24 @@ main {
     padding: 0 16px;
   }
 
+  /* Fix iOS: use pseudo-element for fixed background */
+  html {
+    background-image: none;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: 0% 100%;
+    z-index: -1;
+  }
+
   /* Header */
   .header-inner {
     padding: 0 16px;
