@@ -115,9 +115,9 @@ main {
 }
 
 .filter-btn {
-  background: none;
+  background: rgba(255, 255, 255, 0.7);
   border: none;
-  padding: 4px 0;
+  padding: 8px 18px;
   font-size: 18px;
   font-family: helvetica, sans-serif;
   font-weight: 400;
@@ -127,11 +127,12 @@ main {
 }
 
 .filter-btn:hover {
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .filter-btn.active {
   font-weight: 700;
+  background: rgb(255, 255, 255);
 }
 
 /* === Call Cards === */
