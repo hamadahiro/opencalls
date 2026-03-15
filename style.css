@@ -187,23 +187,23 @@ main {
 }
 
 .call-deadline.urgent {
-  background: #d44;
+  background: #FF3B30;
   color: white;
 }
 
 .call-deadline.soon {
-  background: #c90;
-  color: white;
+  background: #FFCC00;
+  color: rgb(0, 0, 0);
 }
 
 .call-deadline.normal {
-  background: #eee;
-  color: #555;
+  background: #8E8E93;
+  color: white;
 }
 
 .call-deadline.rolling {
-  background: #e8e8e8;
-  color: #777;
+  background: #8E8E93;
+  color: white;
 }
 
 .call-meta {
