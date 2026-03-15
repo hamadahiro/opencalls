@@ -109,31 +109,29 @@ main {
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
   padding: 24px 0;
   margin-bottom: 16px;
 }
 
 .filter-btn {
   background: none;
-  border: 1px solid #ccc;
-  padding: 8px 18px;
-  font-size: 14px;
+  border: none;
+  padding: 4px 0;
+  font-size: 18px;
   font-family: helvetica, sans-serif;
+  font-weight: 400;
   cursor: pointer;
-  color: #666;
+  color: rgb(0, 0, 0);
   transition: all 0.15s ease;
 }
 
 .filter-btn:hover {
-  border-color: #111;
-  color: #111;
+  font-weight: 700;
 }
 
 .filter-btn.active {
-  background: #111;
-  color: #f5f2ed;
-  border-color: #111;
+  font-weight: 700;
 }
 
 /* === Call Cards === */
@@ -417,8 +415,7 @@ main {
 
   .filter-btn {
     flex-shrink: 0;
-    padding: 8px 14px;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   /* Cards */
