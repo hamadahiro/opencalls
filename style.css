@@ -402,13 +402,15 @@ main {
     padding: 36px 0 24px;
   }
 
-  /* Filters - horizontal scroll on mobile */
+  /* Filters - horizontal scroll on mobile, edge to edge */
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     gap: 6px;
-    padding: 16px 0;
+    padding: 16px 16px;
+    margin-left: -16px;
+    margin-right: -16px;
     margin-bottom: 16px;
     scrollbar-width: none;
   }
