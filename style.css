@@ -245,7 +245,7 @@ main {
   font-size: 12px;
   padding: 3px 10px;
   border-radius: 3px;
-  background: #f0f0f0;
+  background: #e5e5e5;
   color: #666;
   white-space: nowrap;
   line-height: 1;
@@ -253,8 +253,8 @@ main {
 
 .meta-tag.call-prize {
   font-weight: 700;
-  color: rgb(0, 0, 0);
-  background: #e5e5e5;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 .call-description {
