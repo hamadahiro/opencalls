@@ -133,6 +133,26 @@ main {
   white-space: nowrap;
 }
 
+.search-input {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-family: helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  outline: none;
+  flex-shrink: 0;
+  width: 140px;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input:focus {
+  background: rgb(255, 255, 255);
+}
+
 .filter-btn:hover {
   background: rgba(255, 255, 255, 0.9);
 }

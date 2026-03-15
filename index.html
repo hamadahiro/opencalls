@@ -60,6 +60,8 @@
       <button class="filter-btn" data-filter="zine">Zines & Books</button>
       <button class="filter-btn" data-filter="residency">Residencies</button>
       <button class="filter-btn" data-filter="education">Education</button>
+      <button class="filter-btn" data-filter="prize">Has Prize</button>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search...">
     </section>
 
     <section class="calls-list" id="callsList">
@@ -140,6 +142,7 @@
         const card = document.createElement('div');
         card.className = 'call-card';
         card.dataset.category = call.category;
+        card.dataset.prize = call.prize || '';
 
         const tags = [];
         if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
@@ -189,20 +192,56 @@
       });
     }
 
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function applyFilters() {
+      const cards = [...document.querySelectorAll('.call-card')];
+      const container = document.getElementById('callsList');
+
+      // If "Has Prize" filter, sort by prize amount descending
+      if (currentFilter === 'prize') {
+        cards.sort((a, b) => {
+          const prizeA = parseFloat((a.dataset.prize || '0').replace(/[^0-9.]/g, '')) || 0;
+          const prizeB = parseFloat((b.dataset.prize || '0').replace(/[^0-9.]/g, '')) || 0;
+          return prizeB - prizeA;
+        });
+        cards.forEach(card => container.appendChild(card));
+      }
+
+      cards.forEach(card => {
+        let show = true;
+
+        // Category / prize filter
+        if (currentFilter === 'prize') {
+          show = card.dataset.prize && card.dataset.prize !== '';
+        } else if (currentFilter !== 'all') {
+          show = card.dataset.category === currentFilter;
+        }
+
+        // Search filter
+        if (show && currentSearch) {
+          const text = card.textContent.toLowerCase();
+          show = text.includes(currentSearch);
+        }
+
+        card.style.display = show ? '' : 'none';
+      });
+    }
+
     function setupFilters() {
       document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          const filter = btn.dataset.filter;
-          document.querySelectorAll('.call-card').forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
+          currentFilter = btn.dataset.filter;
+          applyFilters();
         });
+      });
+
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        applyFilters();
       });
     }
 
