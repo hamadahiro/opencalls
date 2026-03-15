@@ -121,6 +121,9 @@
         } else if (daysLeft !== null && daysLeft < 0) {
           urgencyText = 'Closed';
           urgencyClass = 'closed';
+        } else if (daysLeft !== null && daysLeft === 0) {
+          urgencyText = 'Ends today';
+          urgencyClass = 'urgent';
         } else if (daysLeft !== null && daysLeft <= 14) {
           urgencyText = daysLeft + ' days left';
           urgencyClass = 'urgent';
