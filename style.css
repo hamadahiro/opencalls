@@ -404,6 +404,19 @@ main {
     z-index: -1;
   }
 
+  /* Search bar */
+  .search-bar {
+    font-size: 18px;
+    padding: 14px 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+  }
+
+  .search-bar::placeholder {
+    font-size: 14px;
+  }
+
   /* Header */
   .header-inner {
     padding: 0 16px;
