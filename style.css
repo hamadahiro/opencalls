@@ -406,11 +406,8 @@ main {
 
   /* Search bar */
   .search-bar {
-    font-size: 18px;
+    font-size: 16px;
     padding: 14px 16px;
-    margin-left: -16px;
-    margin-right: -16px;
-    width: calc(100% + 32px);
   }
 
   .search-bar::placeholder {
