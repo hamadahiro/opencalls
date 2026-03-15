@@ -133,23 +133,25 @@ main {
   white-space: nowrap;
 }
 
-.search-input {
+.search-bar {
+  display: block;
+  width: 100%;
   background: rgba(255, 255, 255, 0.7);
   border: none;
-  padding: 8px 14px;
-  font-size: 16px;
+  padding: 16px 20px;
+  font-size: 18px;
   font-family: helvetica, sans-serif;
   color: rgb(0, 0, 0);
   outline: none;
-  flex-shrink: 0;
-  width: 140px;
+  margin-bottom: 16px;
 }
 
-.search-input::placeholder {
-  color: #999;
+.search-bar::placeholder {
+  color: #aaa;
+  font-size: 16px;
 }
 
-.search-input:focus {
+.search-bar:focus {
   background: rgb(255, 255, 255);
 }
 
