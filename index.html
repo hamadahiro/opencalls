@@ -141,19 +141,17 @@
         card.className = 'call-card';
         card.dataset.category = call.category;
 
-        const topParts = [];
-        if (call.prize) topParts.push(`<span class="call-prize">${call.prize}</span>`);
-        topParts.push(categoryLabel[call.category] || call.category);
-
-        const bottomParts = [call.org];
-        if (call.location) bottomParts.push(call.location);
-        if (call.fee && call.fee !== 'Check website') bottomParts.push(call.fee);
-        bottomParts.push(`<span class="call-deadline ${urgencyClass}">${urgencyText}</span>`);
+        const metaParts = [];
+        if (call.prize) metaParts.push(`<span class="call-prize">${call.prize}</span>`);
+        metaParts.push(categoryLabel[call.category] || call.category);
+        metaParts.push(call.org);
+        if (call.location) metaParts.push(call.location);
+        if (call.fee && call.fee !== 'Check website') metaParts.push(call.fee);
+        metaParts.push(`<span class="call-deadline ${urgencyClass}">${urgencyText}</span>`);
 
         card.innerHTML = `
           <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
-          <p class="call-meta-top">${topParts.join(' · ')}</p>
-          <p class="call-meta">${bottomParts.join(' · ')}</p>
+          <p class="call-meta">${metaParts.join(' · ')}</p>
           <p class="call-description">${call.description}</p>
         `;
 
