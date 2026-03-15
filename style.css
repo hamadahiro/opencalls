@@ -329,22 +329,16 @@ main {
   opacity: 0.8;
 }
 
-/* === About Section === */
+/* === Footer === */
 .about-section {
-  padding: 48px 0;
+  padding: 60px 0;
   text-align: center;
 }
 
 .about-section p {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 8px;
-}
-
-.about-section a {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
 }
 
 .follow {
