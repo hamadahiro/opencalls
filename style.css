@@ -146,7 +146,7 @@ main {
 }
 
 .call-card + .call-card {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: none;
 }
 
 .call-card {
@@ -324,7 +324,6 @@ main {
 /* === About Section === */
 .about-section {
   padding: 48px 0;
-  border-top: 1px solid #ddd;
   text-align: center;
 }
 
