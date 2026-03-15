@@ -448,6 +448,11 @@ main {
     font-size: 15px;
   }
 
+  /* Fix iOS background-attachment: fixed bug */
+  body {
+    background-attachment: scroll;
+  }
+
   /* Footer */
   .about-section {
     padding: 32px 0;
