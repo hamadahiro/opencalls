@@ -214,6 +214,14 @@ main {
   color: white;
 }
 
+.call-prize {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin-bottom: 6px;
+}
+
 .call-meta {
   font-size: 14px;
   color: #888;
