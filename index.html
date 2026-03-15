@@ -143,17 +143,17 @@
         card.className = 'call-card';
         card.dataset.category = call.category;
 
-        const feeText = call.fee && call.fee !== 'Check website' ? ` · ${call.fee}` : '';
-        const locationText = call.location ? ` · ${call.location}` : '';
-        const prizeText = call.prize ? `<span class="call-prize">${call.prize}</span>` : '';
+        const metaParts = [];
+        if (call.prize) metaParts.push(`<span class="call-prize">${call.prize}</span>`);
+        if (call.location) metaParts.push(call.location);
+        metaParts.push(categoryLabel[call.category] || call.category);
+        if (call.fee && call.fee !== 'Check website') metaParts.push(call.fee);
+        metaParts.push(`<span class="call-deadline ${urgencyClass}">${urgencyText}</span>`);
 
         card.innerHTML = `
-          <div class="call-top">
-            <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
-            <span class="call-deadline ${urgencyClass}">${urgencyText}</span>
-          </div>
-          <p class="call-meta">${call.org} · ${categoryLabel[call.category] || call.category}${feeText}${locationText}</p>
-          ${prizeText}
+          <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
+          <p class="call-org">${call.org}</p>
+          <p class="call-meta">${metaParts.join(' · ')}</p>
           <p class="call-description">${call.description}</p>
         `;
 
