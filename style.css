@@ -393,7 +393,7 @@ main {
 
   .subtitle,
   .submit-intro {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .submit-hero {
@@ -443,11 +443,11 @@ main {
   }
 
   .call-meta {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .call-description {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* Submit form */
@@ -475,7 +475,7 @@ main {
   }
 
   .about-section p {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
