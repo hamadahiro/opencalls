@@ -162,18 +162,17 @@ main {
   padding: 24px 0;
 }
 
-.call-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 4px;
-}
-
 .call-title {
   font-size: 22px;
   font-weight: 600;
   line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.call-org {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 6px;
 }
 
 .call-title a {
@@ -186,40 +185,30 @@ main {
 }
 
 .call-deadline {
-  font-size: 12px;
-  padding: 3px 10px;
-  border-radius: 2px;
+  font-size: inherit;
   font-weight: 500;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .call-deadline.urgent {
-  background: #A550A7;
-  color: white;
+  color: #A550A7;
 }
 
 .call-deadline.soon {
-  background: #FF5257;
-  color: white;
+  color: #FF5257;
 }
 
 .call-deadline.normal {
-  background: #FFC600;
-  color: rgb(0, 0, 0);
+  color: #8C8C8C;
 }
 
 .call-deadline.rolling {
-  background: #8C8C8C;
-  color: white;
+  color: #8C8C8C;
 }
 
 .call-prize {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: rgb(0, 0, 0);
-  margin-bottom: 6px;
 }
 
 .call-meta {
@@ -437,20 +426,9 @@ main {
     padding: 24px 0;
   }
 
-  .call-top {
-    flex-direction: column;
-    gap: 4px;
-  }
-
   .call-title {
     font-size: 18px;
     line-height: 1.3;
-  }
-
-  .call-deadline {
-    font-size: 11px;
-    padding: 2px 8px;
-    align-self: flex-start;
   }
 
   .call-description {
