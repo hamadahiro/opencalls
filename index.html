@@ -50,7 +50,6 @@
     <section class="hero">
       <h1>Open Calls for Artists</h1>
       <p class="subtitle">A curated list of exhibitions, grants, residencies, and publication opportunities for photographers and visual artists working with analog, experimental, and alternative processes.</p>
-      <p class="updated" id="lastUpdated"></p>
     </section>
 
     <section class="filters">
@@ -81,7 +80,6 @@
       const data = await res.json();
       allCalls = data.calls;
 
-      document.getElementById('lastUpdated').textContent = 'Last updated: ' + data.lastUpdated;
 
       renderCalls('new');
       setupNav();
@@ -152,8 +150,7 @@
 
         card.innerHTML = `
           <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
-          <p class="call-org">${call.org}</p>
-          <p class="call-meta">${metaParts.join(' · ')}</p>
+          <p class="call-meta">${call.org} · ${metaParts.join(' · ')}</p>
           <p class="call-description">${call.description}</p>
         `;
 
