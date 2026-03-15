@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Open Calls for Artists — Monographica</title>
+  <meta name="description" content="Curated open calls for photographers, artists, and printmakers. Exhibitions, grants, residencies, zines, and photobook opportunities. Updated regularly.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="#" class="nav-link active" data-view="new">New</a>
+        <a href="#" class="nav-link" data-view="past">Past</a>
+        <a href="#submit" class="nav-link" data-view="submit">Submit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Open Calls for Artists</h1>
+      <p class="subtitle">A curated list of exhibitions, grants, residencies, and publication opportunities for photographers and visual artists working with analog, experimental, and alternative processes.</p>
+      <p class="updated" id="lastUpdated"></p>
+    </section>
+
+    <section class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="photography">Photography</button>
+      <button class="filter-btn" data-filter="exhibition">Exhibitions</button>
+      <button class="filter-btn" data-filter="grant">Grants</button>
+      <button class="filter-btn" data-filter="zine">Zines & Books</button>
+      <button class="filter-btn" data-filter="residency">Residencies</button>
+      <button class="filter-btn" data-filter="education">Education</button>
+    </section>
+
+    <section class="calls-list" id="callsList">
+      <!-- populated by JS -->
+    </section>
+
+    <section class="submit-section" id="submit" style="display:none;">
+      <div class="submit-hero">
+        <h1>Submit an Open Call</h1>
+        <p class="submit-intro">Run a magazine, gallery, or collective? Submit your open call to be listed here for free.</p>
+      </div>
+      <form class="submit-form" id="submitForm" action="https://formspree.io/f/placeholder" method="POST">
+        <input type="text" name="org" placeholder="Organization / Magazine name" required>
+        <input type="text" name="title" placeholder="Open call title" required>
+        <input type="text" name="deadline" placeholder="Deadline (e.g. April 30, 2026)" required>
+        <input type="text" name="fee" placeholder="Entry fee (or 'Free')">
+        <select name="category" required>
+          <option value="" disabled selected>Category</option>
+          <option value="photography">Photography</option>
+          <option value="exhibition">Exhibition</option>
+          <option value="grant">Grant / Award</option>
+          <option value="zine">Zine / Photobook</option>
+          <option value="residency">Residency</option>
+          <option value="education">Education</option>
+        </select>
+        <textarea name="description" placeholder="Brief description (1-2 sentences)" rows="3" required></textarea>
+        <input type="url" name="url" placeholder="Link to apply" required>
+        <input type="text" name="instagram" placeholder="Instagram handle (optional)">
+        <input type="email" name="email" placeholder="Your email (for follow-up, not published)">
+        <button type="submit" class="submit-btn">Submit for review &rarr;</button>
+      </form>
+    </section>
+
+    <footer class="about-section" id="footer">
+      <p><a href="https://monographica.com">monographica.com</a></p>
+    </footer>
+  </main>
+
+  <script>
+    let allCalls = [];
+    let currentView = 'new';
+
+    async function loadCalls() {
+      const res = await fetch('data.json');
+      const data = await res.json();
+      allCalls = data.calls;
+
+      document.getElementById('lastUpdated').textContent = 'Last updated: ' + data.lastUpdated;
+
+      renderCalls('new');
+      setupNav();
+      setupFilters();
+    }
+
+    function renderCalls(view) {
+      const container = document.getElementById('callsList');
+      container.innerHTML = '';
+      const now = new Date();
+
+      const sorted = [...allCalls].sort((a, b) => {
+        if (a.deadline === 'Rolling' && b.deadline === 'Rolling') return 0;
+        if (a.deadline === 'Rolling') return 1;
+        if (b.deadline === 'Rolling') return -1;
+        return new Date(a.deadline) - new Date(b.deadline);
+      });
+
+      const categoryLabel = {
+        'photography': 'Photography',
+        'exhibition': 'Exhibition',
+        'grant': 'Grant',
+        'zine': 'Zines & Books',
+        'residency': 'Residency',
+        'education': 'Education'
+      };
+
+      sorted.forEach(call => {
+        const deadlineDate = call.deadline === 'Rolling' ? null : new Date(call.deadline);
+        const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
+
+        let urgencyClass = '';
+        let urgencyText = '';
+        if (call.deadline === 'Rolling') {
+          urgencyText = 'Rolling';
+          urgencyClass = 'rolling';
+        } else if (daysLeft !== null && daysLeft < 0) {
+          urgencyText = 'Closed';
+          urgencyClass = 'closed';
+        } else if (daysLeft !== null && daysLeft <= 14) {
+          urgencyText = daysLeft + ' days left';
+          urgencyClass = 'urgent';
+        } else if (daysLeft !== null && daysLeft <= 30) {
+          urgencyText = daysLeft + ' days left';
+          urgencyClass = 'soon';
+        } else if (deadlineDate) {
+          urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          urgencyClass = 'normal';
+        }
+
+        // Filter based on view
+        if (view === 'new' && urgencyClass === 'closed') return;
+        if (view === 'past' && urgencyClass !== 'closed') return;
+
+        const card = document.createElement('div');
+        card.className = 'call-card';
+        card.dataset.category = call.category;
+
+        const feeText = call.fee && call.fee !== 'Check website' ? ` · ${call.fee}` : '';
+
+        card.innerHTML = `
+          <div class="call-top">
+            <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
+            <span class="call-deadline ${urgencyClass}">${urgencyText}</span>
+          </div>
+          <p class="call-meta">${call.org} · ${categoryLabel[call.category] || call.category}${feeText}</p>
+          <p class="call-description">${call.description}</p>
+        `;
+
+        container.appendChild(card);
+      });
+
+      if (container.children.length === 0) {
+        container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+      }
+    }
+
+    function setupNav() {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const view = link.dataset.view;
+
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          if (view === 'submit') {
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('.filters').style.display = 'none';
+            document.getElementById('callsList').style.display = 'none';
+            document.getElementById('submit').style.display = 'block';
+            document.getElementById('footer').style.display = 'none';
+          } else {
+            document.querySelector('.hero').style.display = '';
+            document.querySelector('.filters').style.display = '';
+            document.getElementById('callsList').style.display = '';
+            document.getElementById('submit').style.display = 'none';
+            document.getElementById('footer').style.display = '';
+            currentView = view;
+            renderCalls(view);
+            // Reset filter to All
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+
+            // Update hero text
+            const h1 = document.querySelector('.hero h1');
+            if (view === 'past') {
+              h1.textContent = 'Past Open Calls';
+            } else {
+              h1.textContent = 'Open Calls for Artists';
+            }
+          }
+        });
+      });
+    }
+
+    function setupFilters() {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          document.querySelectorAll('.call-card').forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    loadCalls();
+  </script>
+
+</body>
+</html>
