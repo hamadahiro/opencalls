@@ -180,25 +180,32 @@ main {
 }
 
 .call-deadline {
-  font-size: inherit;
+  font-size: 12px;
   font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 2px;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .call-deadline.urgent {
-  color: #A550A7;
+  background: #A550A7;
+  color: white;
 }
 
 .call-deadline.soon {
-  color: #FF5257;
+  background: #FF5257;
+  color: white;
 }
 
 .call-deadline.normal {
-  color: #8C8C8C;
+  background: #FFC600;
+  color: rgb(0, 0, 0);
 }
 
 .call-deadline.rolling {
-  color: #8C8C8C;
+  background: #8C8C8C;
+  color: white;
 }
 
 .call-prize {
