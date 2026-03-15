@@ -25,7 +25,6 @@
       <nav>
         <a href="#" class="nav-link active" data-view="new">New</a>
         <a href="#" class="nav-link" data-view="past">Past</a>
-        <a href="#submit" class="nav-link" data-view="submit">Submit</a>
       </nav>
     </div>
   </header>
@@ -51,35 +50,8 @@
       <!-- populated by JS -->
     </section>
 
-    <section class="submit-section" id="submit" style="display:none;">
-      <div class="submit-hero">
-        <h1>Submit an Open Call</h1>
-        <p class="submit-intro">Run a magazine, gallery, or collective? Submit your open call to be listed here for free.</p>
-      </div>
-      <form class="submit-form" id="submitForm" action="https://formspree.io/f/placeholder" method="POST">
-        <input type="text" name="org" placeholder="Organization / Magazine name" required>
-        <input type="text" name="title" placeholder="Open call title" required>
-        <input type="text" name="deadline" placeholder="Deadline (e.g. April 30, 2026)" required>
-        <input type="text" name="fee" placeholder="Entry fee (or 'Free')">
-        <select name="category" required>
-          <option value="" disabled selected>Category</option>
-          <option value="photography">Photography</option>
-          <option value="exhibition">Exhibition</option>
-          <option value="grant">Grant / Award</option>
-          <option value="zine">Zine / Photobook</option>
-          <option value="residency">Residency</option>
-          <option value="education">Education</option>
-        </select>
-        <textarea name="description" placeholder="Brief description (1-2 sentences)" rows="3" required></textarea>
-        <input type="url" name="url" placeholder="Link to apply" required>
-        <input type="text" name="instagram" placeholder="Instagram handle (optional)">
-        <input type="email" name="email" placeholder="Your email (for follow-up, not published)">
-        <button type="submit" class="submit-btn">Submit for review &rarr;</button>
-      </form>
-    </section>
-
     <footer class="about-section" id="footer">
-      <p><a href="https://monographica.com">monographica.com</a></p>
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> HH &mdash; still making sense of things.</p>
     </footer>
   </main>
 
@@ -179,31 +151,18 @@
           document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
           link.classList.add('active');
 
-          if (view === 'submit') {
-            document.querySelector('.hero').style.display = 'none';
-            document.querySelector('.filters').style.display = 'none';
-            document.getElementById('callsList').style.display = 'none';
-            document.getElementById('submit').style.display = 'block';
-            document.getElementById('footer').style.display = 'none';
-          } else {
-            document.querySelector('.hero').style.display = '';
-            document.querySelector('.filters').style.display = '';
-            document.getElementById('callsList').style.display = '';
-            document.getElementById('submit').style.display = 'none';
-            document.getElementById('footer').style.display = '';
-            currentView = view;
-            renderCalls(view);
-            // Reset filter to All
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+          currentView = view;
+          renderCalls(view);
+          // Reset filter to All
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
 
-            // Update hero text
-            const h1 = document.querySelector('.hero h1');
-            if (view === 'past') {
-              h1.textContent = 'Past Open Calls';
-            } else {
-              h1.textContent = 'Open Calls for Artists';
-            }
+          // Update hero text
+          const h1 = document.querySelector('.hero h1');
+          if (view === 'past') {
+            h1.textContent = 'Past Open Calls';
+          } else {
+            h1.textContent = 'Open Calls for Artists';
           }
         });
       });
