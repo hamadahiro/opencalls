@@ -210,15 +210,28 @@ main {
   color: white;
 }
 
-.call-prize {
-  font-weight: 700;
-  color: rgb(0, 0, 0);
+.call-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
-.call-meta {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 8px;
+.meta-tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  color: #666;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.meta-tag.call-prize {
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .call-description {

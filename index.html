@@ -141,17 +141,17 @@
         card.className = 'call-card';
         card.dataset.category = call.category;
 
-        const metaParts = [];
-        if (call.prize) metaParts.push(`<span class="call-prize">${call.prize}</span>`);
-        metaParts.push(categoryLabel[call.category] || call.category);
-        metaParts.push(call.org);
-        if (call.location) metaParts.push(call.location);
-        if (call.fee && call.fee !== 'Check website') metaParts.push(call.fee);
-        metaParts.push(`<span class="call-deadline ${urgencyClass}">${urgencyText}</span>`);
+        const tags = [];
+        if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
+        tags.push(`<span class="meta-tag">${categoryLabel[call.category] || call.category}</span>`);
+        tags.push(`<span class="meta-tag">${call.org}</span>`);
+        if (call.location) tags.push(`<span class="meta-tag">${call.location}</span>`);
+        if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
+        tags.push(`<span class="call-deadline ${urgencyClass}">${urgencyText}</span>`);
 
         card.innerHTML = `
           <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
-          <p class="call-meta">${metaParts.join(' · ')}</p>
+          <div class="call-meta">${tags.join(' ')}</div>
           <p class="call-description">${call.description}</p>
         `;
 
