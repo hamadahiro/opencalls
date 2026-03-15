@@ -38,7 +38,9 @@ header {
 }
 
 .header-inner {
-  padding: 0 40px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -73,7 +75,9 @@ nav a:hover {
 
 /* === Main === */
 main {
-  padding: 0 40px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* === Hero === */
