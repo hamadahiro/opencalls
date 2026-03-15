@@ -83,7 +83,6 @@ main {
 /* === Hero === */
 .hero {
   padding: 80px 0 48px;
-  max-width: 640px;
 }
 
 .hero h1 {
@@ -169,11 +168,7 @@ main {
   margin-bottom: 2px;
 }
 
-.call-org {
-  font-size: 14px;
-  color: #888;
-  margin-bottom: 6px;
-}
+
 
 .call-title a {
   color: rgb(0, 0, 0);
@@ -221,7 +216,6 @@ main {
   font-size: 18px;
   color: rgb(0, 0, 0);
   line-height: 1.5;
-  max-width: 640px;
 }
 
 /* === Empty State === */
