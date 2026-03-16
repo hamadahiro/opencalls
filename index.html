@@ -32,7 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=20260316d">
+  <link rel="stylesheet" href="style.css?v=20260316e">
 </head>
 <body>
 
@@ -211,8 +211,9 @@
     let currentSearch = '';
 
     function applyFilters() {
-      const cards = [...document.querySelectorAll('.call-card')];
       const container = document.getElementById('callsList');
+      const cards = [...container.querySelectorAll('.call-card')];
+      const headers = [...container.querySelectorAll('.section-header')];
 
       // If "Has Prize" filter, sort by prize amount descending
       if (currentFilter === 'prize') {
@@ -224,23 +225,36 @@
         cards.forEach(card => container.appendChild(card));
       }
 
+      // Show/hide cards
       cards.forEach(card => {
         let show = true;
 
-        // Category / prize filter
         if (currentFilter === 'prize') {
           show = card.dataset.prize && card.dataset.prize !== '';
         } else if (currentFilter !== 'all') {
           show = card.dataset.category === currentFilter;
         }
 
-        // Search filter
         if (show && currentSearch) {
           const text = card.textContent.toLowerCase();
           show = text.includes(currentSearch);
         }
 
         card.style.display = show ? '' : 'none';
+      });
+
+      // Hide section headers that have no visible cards after them
+      headers.forEach(header => {
+        let hasVisibleCard = false;
+        let sibling = header.nextElementSibling;
+        while (sibling && !sibling.classList.contains('section-header')) {
+          if (sibling.classList.contains('call-card') && sibling.style.display !== 'none') {
+            hasVisibleCard = true;
+            break;
+          }
+          sibling = sibling.nextElementSibling;
+        }
+        header.style.display = hasVisibleCard ? '' : 'none';
       });
     }
 
