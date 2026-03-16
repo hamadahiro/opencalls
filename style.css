@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
@@ -258,14 +258,14 @@ main {
 .call-deadline {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   padding: 5px 10px;
   border-radius: 3px;
   white-space: nowrap;
   vertical-align: middle;
   line-height: 1;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .call-deadline.ending {
@@ -305,13 +305,14 @@ main {
   align-items: center;
   gap: 3px;
   font-size: 13px;
+  font-weight: 400;
   padding: 5px 10px;
   border-radius: 3px;
   background: #e8e8e8;
   color: #222;
   white-space: nowrap;
   line-height: 1;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .pin-icon {
@@ -447,7 +448,7 @@ main {
 
 .about-section p {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(0, 0, 0);
 }
 
