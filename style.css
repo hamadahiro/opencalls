@@ -375,6 +375,12 @@ main {
   color: rgb(0, 0, 0);
 }
 
+.about-section .disclaimer {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
 .follow {
   margin-top: 8px;
 }
