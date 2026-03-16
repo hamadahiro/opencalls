@@ -15,8 +15,9 @@ html {
 }
 
 body {
-  font-family: helvetica, sans-serif;
-  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 1.5;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
@@ -47,11 +48,11 @@ header {
 }
 
 .logo {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 28px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
   text-decoration: none;
-  font-family: 'EB Garamond', serif;
+  font-family: 'Source Serif 4', serif;
 }
 
 .logo:hover {
@@ -64,8 +65,9 @@ nav {
 }
 
 nav a {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
@@ -88,19 +90,20 @@ main {
 
 /* === Hero === */
 .hero {
-  padding: 80px 0 80px;
+  padding: 60px 0 48px;
 }
 
 .hero h1 {
-  font-size: 80px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-family: 'EB Garamond', serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  font-family: 'Source Serif 4', serif;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 300;
   color: rgb(0, 0, 0);
   line-height: 1.5;
 }
@@ -117,8 +120,8 @@ main {
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 8px;
-  padding: 24px 0;
-  margin-bottom: 16px;
+  padding: 16px 0;
+  margin-bottom: 8px;
   scrollbar-width: none;
 }
 
@@ -130,9 +133,10 @@ main {
   background: rgb(255, 255, 255);
   border: none;
   padding: 8px 14px;
-  font-size: 16px;
-  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
   font-weight: 400;
+  letter-spacing: 0.3px;
   cursor: pointer;
   color: rgb(0, 0, 0);
   transition: all 0.15s ease;
@@ -142,7 +146,7 @@ main {
 
 .search-wrap {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .search-bar {
@@ -150,10 +154,11 @@ main {
   width: 100%;
   background: rgb(255, 255, 255);
   border: none;
-  padding: 16px 20px;
+  padding: 14px 20px;
   padding-right: 44px;
-  font-size: 16px;
-  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
   color: rgb(0, 0, 0);
   outline: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -215,28 +220,28 @@ main {
 }
 
 .section-header {
-  font-size: 45px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 400;
   color: rgb(0, 0, 0);
-  padding: 60px 0 16px;
-  font-family: 'EB Garamond', serif;
+  padding: 48px 0 12px;
+  font-family: 'Source Serif 4', serif;
 }
 
 .section-header:first-child {
-  padding-top: 60px;
+  padding-top: 48px;
 }
 
 .call-card {
   background: transparent;
-  padding: 24px 0;
+  padding: 20px 0;
 }
 
 .call-title {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
   margin-bottom: 8px;
-  font-family: 'EB Garamond', serif;
+  font-family: 'Source Serif 4', serif;
 }
 
 .call-title a {
@@ -250,13 +255,14 @@ main {
 
 .call-deadline {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 400;
   padding: 3px 10px;
   border-radius: 3px;
   white-space: nowrap;
   vertical-align: middle;
   line-height: 1;
+  letter-spacing: 0.3px;
 }
 
 .call-deadline.ending {
@@ -295,13 +301,14 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 12px;
+  font-size: 11px;
   padding: 3px 10px;
   border-radius: 3px;
   background: #e5e5e5;
   color: #444;
   white-space: nowrap;
   line-height: 1;
+  letter-spacing: 0.3px;
 }
 
 .pin-icon {
@@ -317,9 +324,10 @@ main {
 }
 
 .call-description {
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 300;
   color: rgb(0, 0, 0);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* === Empty State === */
@@ -342,26 +350,28 @@ main {
 }
 
 .submit-hero {
-  padding: 80px 0 32px;
+  padding: 60px 0 32px;
   max-width: 640px;
 }
 
 .submit-hero h1 {
-  font-size: 60px;
-  font-weight: 600;
-  line-height: 80px;
-  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  font-family: 'Source Serif 4', serif;
 }
 
 .submit-section h2 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
   margin-bottom: 8px;
-  letter-spacing: -0.02em;
+  font-family: 'Source Serif 4', serif;
 }
 
 .submit-intro {
   font-size: 14px;
+  font-weight: 300;
   color: #666;
   margin-bottom: 32px;
 }
@@ -376,8 +386,9 @@ main {
 .submit-form input,
 .submit-form select,
 .submit-form textarea {
-  font-family: helvetica, sans-serif;
-  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
   padding: 10px 12px;
   border: 1px solid #ccc;
   background: #fff;
@@ -408,8 +419,8 @@ main {
 }
 
 .submit-btn {
-  font-family: helvetica, sans-serif;
-  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
   font-weight: 400;
   padding: 12px 28px;
   background: #111;
@@ -431,13 +442,13 @@ main {
 }
 
 .about-section p {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 300;
   color: rgb(0, 0, 0);
 }
 
 .about-section .disclaimer {
-  font-size: 13px;
+  font-size: 12px;
   color: #999;
   margin-bottom: 16px;
 }
@@ -472,10 +483,9 @@ main {
 
   /* Search bar */
   .search-bar {
-    font-size: 16px;
-    padding: 14px 16px;
+    font-size: 14px;
+    padding: 12px 16px;
   }
-
 
   /* Header */
   .header-inner {
@@ -487,7 +497,7 @@ main {
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   /* Hero */
@@ -497,14 +507,14 @@ main {
 
   .hero h1,
   .submit-hero h1 {
-    font-size: 48px;
-    line-height: 1.1;
-    margin-bottom: 16px;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 12px;
   }
 
   .subtitle,
   .submit-intro {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .submit-hero {
@@ -520,7 +530,7 @@ main {
     padding: 12px 16px;
     margin-left: -16px;
     margin-right: -16px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     scrollbar-width: none;
   }
 
@@ -530,26 +540,26 @@ main {
 
   .filter-btn {
     flex: 0 0 auto;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   /* Cards */
   .call-card {
-    padding: 24px 0;
+    padding: 18px 0;
   }
 
   .section-header {
-    font-size: 32px;
+    font-size: 26px;
     padding-top: 20px;
   }
 
   .call-title {
-    font-size: 22px;
-    line-height: 1.2;
+    font-size: 20px;
+    line-height: 1.3;
   }
 
   .call-description {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   /* Submit form */
@@ -560,7 +570,7 @@ main {
   .submit-form input,
   .submit-form select,
   .submit-form textarea {
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px;
   }
 
@@ -568,7 +578,7 @@ main {
     width: 100%;
     text-align: center;
     padding: 14px 28px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   /* Footer */
@@ -577,7 +587,7 @@ main {
   }
 
   .about-section p {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -585,15 +595,15 @@ main {
 @media (max-width: 380px) {
   .hero h1,
   .submit-hero h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .call-title {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   nav a {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 /* cache bust */
