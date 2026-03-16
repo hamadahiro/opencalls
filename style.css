@@ -537,6 +537,10 @@ main {
     padding: 24px 0;
   }
 
+  .section-header {
+    font-size: 32px;
+  }
+
   .call-title {
     font-size: 22px;
     line-height: 1.2;
