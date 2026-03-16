@@ -289,8 +289,8 @@ main {
 
 /* === Closed badge === */
 .call-deadline.closed {
-  background: #ddd;
-  color: #999;
+  background: #666;
+  color: white;
 }
 
 /* === Submit Section === */
