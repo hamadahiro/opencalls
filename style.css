@@ -9,7 +9,7 @@ html {
   background-image: url('bg.jpg');
   background-attachment: fixed;
   background-size: cover;
-  background-position: 0% 100%;
+  background-position: top right;
   background-repeat: repeat;
   background-color: #f5f2ed;
 }
@@ -491,7 +491,7 @@ main {
     height: 100%;
     background-image: url('bg.jpg');
     background-size: cover;
-    background-position: 0% 100%;
+    background-position: top right;
     z-index: -1;
   }
 
