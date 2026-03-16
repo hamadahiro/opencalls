@@ -32,7 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=20260316q">
+  <link rel="stylesheet" href="style.css?v=20260316r">
 </head>
 <body>
 
@@ -121,10 +121,10 @@
           urgencyClass = 'closed';
         } else if (daysLeft !== null && daysLeft === 0) {
           urgencyText = 'Ends today';
-          urgencyClass = 'urgent';
+          urgencyClass = 'ending';
         } else if (daysLeft !== null && daysLeft === 1) {
           urgencyText = 'Ends tomorrow';
-          urgencyClass = 'urgent';
+          urgencyClass = 'ending';
         } else if (daysLeft !== null && daysLeft <= 14) {
           urgencyText = daysLeft + ' days left';
           urgencyClass = 'urgent';

@@ -221,6 +221,11 @@ main {
   line-height: 1;
 }
 
+.call-deadline.ending {
+  background: #A650A7;
+  color: white;
+}
+
 .call-deadline.urgent {
   background: #FF5257;
   color: white;
