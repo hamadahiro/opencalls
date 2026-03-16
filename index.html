@@ -32,7 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=20260316c">
+  <link rel="stylesheet" href="style.css?v=20260316d">
 </head>
 <body>
 
@@ -111,6 +111,9 @@
         'education': 'Education'
       };
 
+      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      let currentSection = '';
+
       sorted.forEach(call => {
         const deadlineDate = call.deadline === 'Rolling' ? null : new Date(call.deadline);
         const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
@@ -140,6 +143,16 @@
         // Filter based on view
         if (view === 'new' && urgencyClass === 'closed') return;
         if (view === 'past' && urgencyClass !== 'closed') return;
+
+        // Section header by month
+        let section = call.deadline === 'Rolling' ? 'Rolling' : monthNames[deadlineDate.getMonth()] + ' ' + deadlineDate.getFullYear();
+        if (section !== currentSection) {
+          currentSection = section;
+          const header = document.createElement('h2');
+          header.className = 'section-header';
+          header.textContent = section;
+          container.appendChild(header);
+        }
 
         const card = document.createElement('div');
         card.className = 'call-card';
