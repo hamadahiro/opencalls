@@ -264,6 +264,9 @@
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           currentFilter = btn.dataset.filter;
+          if (currentFilter === 'all') {
+            renderCalls(currentView);
+          }
           applyFilters();
         });
       });
