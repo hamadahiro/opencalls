@@ -179,6 +179,17 @@ main {
   border-top: none;
 }
 
+.section-header {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  padding: 40px 0 16px;
+}
+
+.section-header:first-child {
+  padding-top: 16px;
+}
+
 .call-card {
   background: transparent;
   padding: 24px 0;
