@@ -122,8 +122,11 @@
         } else if (daysLeft !== null && daysLeft === 0) {
           urgencyText = 'Ends today';
           urgencyClass = 'urgent';
+        } else if (daysLeft !== null && daysLeft === 1) {
+          urgencyText = 'Ends tomorrow';
+          urgencyClass = 'urgent';
         } else if (daysLeft !== null && daysLeft <= 14) {
-          urgencyText = daysLeft + (daysLeft === 1 ? ' day left' : ' days left');
+          urgencyText = daysLeft + ' days left';
           urgencyClass = 'urgent';
         } else if (daysLeft !== null && daysLeft <= 30) {
           urgencyText = daysLeft + (daysLeft === 1 ? ' day left' : ' days left');
