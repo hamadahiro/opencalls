@@ -306,7 +306,30 @@
       });
     }
 
+    // Sticky search with JS (works on iOS)
+    function setupStickySearch() {
+      const wrap = document.querySelector('.search-wrap');
+      const placeholder = document.createElement('div');
+      placeholder.style.display = 'none';
+      wrap.parentNode.insertBefore(placeholder, wrap.nextSibling);
+      const offsetTop = wrap.offsetTop;
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY >= offsetTop - 16) {
+          if (!wrap.classList.contains('stuck')) {
+            placeholder.style.display = 'block';
+            placeholder.style.height = wrap.offsetHeight + 'px';
+            wrap.classList.add('stuck');
+          }
+        } else {
+          wrap.classList.remove('stuck');
+          placeholder.style.display = 'none';
+        }
+      }, { passive: true });
+    }
+
     loadCalls();
+    setupStickySearch();
   </script>
 
 </body>
