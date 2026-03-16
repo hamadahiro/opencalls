@@ -32,7 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=20260316e">
+  <link rel="stylesheet" href="style.css?v=20260316f">
 </head>
 <body>
 
@@ -264,9 +264,7 @@
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           currentFilter = btn.dataset.filter;
-          if (currentFilter === 'all') {
-            renderCalls(currentView);
-          }
+          renderCalls(currentView);
           applyFilters();
         });
       });
