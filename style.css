@@ -492,13 +492,14 @@ main {
 
   /* Hero */
   .hero {
-    padding: 36px 0 48px;
+    padding: 36px 0 24px;
   }
 
   .hero h1,
   .submit-hero h1 {
     font-size: 48px;
     line-height: 1.1;
+    margin-bottom: 16px;
   }
 
   .subtitle,
@@ -516,10 +517,10 @@ main {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     gap: 6px;
-    padding: 16px 16px;
+    padding: 12px 16px;
     margin-left: -16px;
     margin-right: -16px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     scrollbar-width: none;
   }
 
@@ -539,6 +540,7 @@ main {
 
   .section-header {
     font-size: 32px;
+    padding-top: 24px;
   }
 
   .call-title {
