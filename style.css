@@ -50,6 +50,11 @@ header {
   font-size: 26px;
   font-weight: 700;
   line-height: 28px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-decoration: none;
 }
 
 nav {
