@@ -479,8 +479,8 @@ main {
 
 /* === Responsive === */
 @media (max-width: 640px) {
-  html, body {
-    overflow-x: hidden;
+  body {
+    overflow-x: clip;
   }
 
   main {
