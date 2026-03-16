@@ -303,11 +303,11 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 12px;
+  font-size: 13px;
   padding: 5px 10px;
   border-radius: 3px;
-  background: #e5e5e5;
-  color: #444;
+  background: #ddd;
+  color: #222;
   white-space: nowrap;
   line-height: 1;
   letter-spacing: 0.3px;
