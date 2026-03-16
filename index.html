@@ -32,7 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=20260316f">
+  <link rel="stylesheet" href="style.css?v=20260316g">
 </head>
 <body>
 
@@ -95,13 +95,6 @@
       container.innerHTML = '';
       const now = new Date();
 
-      const sorted = [...allCalls].sort((a, b) => {
-        if (a.deadline === 'Rolling' && b.deadline === 'Rolling') return 0;
-        if (a.deadline === 'Rolling') return 1;
-        if (b.deadline === 'Rolling') return -1;
-        return new Date(a.deadline) - new Date(b.deadline);
-      });
-
       const categoryLabel = {
         'photography': 'Photography',
         'exhibition': 'Exhibition',
@@ -112,9 +105,9 @@
       };
 
       const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      let currentSection = '';
 
-      sorted.forEach(call => {
+      // Process all calls with their computed fields
+      let processed = allCalls.map(call => {
         const deadlineDate = call.deadline === 'Rolling' ? null : new Date(call.deadline);
         const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
 
@@ -140,17 +133,55 @@
           urgencyClass = 'normal';
         }
 
-        // Filter based on view
-        if (view === 'new' && urgencyClass === 'closed') return;
-        if (view === 'past' && urgencyClass !== 'closed') return;
+        const section = call.deadline === 'Rolling' ? 'Rolling' : monthNames[deadlineDate.getMonth()] + ' ' + deadlineDate.getFullYear();
 
-        // Section header by month
-        let section = call.deadline === 'Rolling' ? 'Rolling' : monthNames[deadlineDate.getMonth()] + ' ' + deadlineDate.getFullYear();
-        if (section !== currentSection) {
-          currentSection = section;
+        return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText, section };
+      });
+
+      // Filter by view
+      if (view === 'new') processed = processed.filter(c => c.urgencyClass !== 'closed');
+      if (view === 'past') processed = processed.filter(c => c.urgencyClass === 'closed');
+
+      // Filter by category
+      if (currentFilter === 'prize') {
+        processed = processed.filter(c => c.prize && c.prize !== '');
+      } else if (currentFilter !== 'all') {
+        processed = processed.filter(c => c.category === currentFilter);
+      }
+
+      // Filter by search
+      if (currentSearch) {
+        processed = processed.filter(c => {
+          const text = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category].join(' ').toLowerCase();
+          return text.includes(currentSearch);
+        });
+      }
+
+      // Sort
+      if (currentFilter === 'prize') {
+        processed.sort((a, b) => {
+          const prizeA = parseFloat((a.prize || '0').replace(/[^0-9.]/g, '')) || 0;
+          const prizeB = parseFloat((b.prize || '0').replace(/[^0-9.]/g, '')) || 0;
+          return prizeB - prizeA;
+        });
+      } else {
+        processed.sort((a, b) => {
+          if (a.deadline === 'Rolling' && b.deadline === 'Rolling') return 0;
+          if (a.deadline === 'Rolling') return 1;
+          if (b.deadline === 'Rolling') return -1;
+          return a.deadlineDate - b.deadlineDate;
+        });
+      }
+
+      // Render with section headers (skip headers for prize sort)
+      let currentSectionName = '';
+
+      processed.forEach(call => {
+        if (currentFilter !== 'prize' && call.section !== currentSectionName) {
+          currentSectionName = call.section;
           const header = document.createElement('h2');
           header.className = 'section-header';
-          header.textContent = section;
+          header.textContent = call.section;
           container.appendChild(header);
         }
 
@@ -165,7 +196,7 @@
         tags.push(`<span class="meta-tag">${call.org}</span>`);
         if (call.location) tags.push(`<span class="meta-tag">${call.location}</span>`);
         if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
-        tags.push(`<span class="call-deadline ${urgencyClass}">${urgencyText}</span>`);
+        tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
 
         card.innerHTML = `
           <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
@@ -211,51 +242,7 @@
     let currentSearch = '';
 
     function applyFilters() {
-      const container = document.getElementById('callsList');
-      const cards = [...container.querySelectorAll('.call-card')];
-      const headers = [...container.querySelectorAll('.section-header')];
-
-      // If "Has Prize" filter, sort by prize amount descending
-      if (currentFilter === 'prize') {
-        cards.sort((a, b) => {
-          const prizeA = parseFloat((a.dataset.prize || '0').replace(/[^0-9.]/g, '')) || 0;
-          const prizeB = parseFloat((b.dataset.prize || '0').replace(/[^0-9.]/g, '')) || 0;
-          return prizeB - prizeA;
-        });
-        cards.forEach(card => container.appendChild(card));
-      }
-
-      // Show/hide cards
-      cards.forEach(card => {
-        let show = true;
-
-        if (currentFilter === 'prize') {
-          show = card.dataset.prize && card.dataset.prize !== '';
-        } else if (currentFilter !== 'all') {
-          show = card.dataset.category === currentFilter;
-        }
-
-        if (show && currentSearch) {
-          const text = card.textContent.toLowerCase();
-          show = text.includes(currentSearch);
-        }
-
-        card.style.display = show ? '' : 'none';
-      });
-
-      // Hide section headers that have no visible cards after them
-      headers.forEach(header => {
-        let hasVisibleCard = false;
-        let sibling = header.nextElementSibling;
-        while (sibling && !sibling.classList.contains('section-header')) {
-          if (sibling.classList.contains('call-card') && sibling.style.display !== 'none') {
-            hasVisibleCard = true;
-            break;
-          }
-          sibling = sibling.nextElementSibling;
-        }
-        header.style.display = hasVisibleCard ? '' : 'none';
-      });
+      renderCalls(currentView);
     }
 
     function setupFilters() {
