@@ -60,7 +60,7 @@
   <main>
     <section class="hero">
       <h1>Open Calls for Artists</h1>
-      <p class="subtitle">Currently listing <span id="openCount"></span> open calls and submission opportunities for photographers and visual artists — exhibitions, grants, residencies, and publications worldwide.</p>
+      <p class="subtitle">A continuously updated list of over <span id="openCount"></span> open calls and submission opportunities for photographers and visual artists — exhibitions, grants, residencies, and publications worldwide.</p>
     </section>
 
     <div class="search-wrap">
@@ -101,7 +101,8 @@
 
       const now = new Date();
       const openCount = allCalls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now).length;
-      document.getElementById('openCount').textContent = openCount;
+      const roundedCount = Math.floor(openCount / 10) * 10;
+      document.getElementById('openCount').textContent = roundedCount;
 
       renderCalls('new');
       setupNav();
