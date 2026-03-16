@@ -172,7 +172,7 @@ main {
   flex-direction: column;
   gap: 0;
   background: transparent;
-  margin-bottom: 64px;
+  margin-bottom: 24px;
 }
 
 .call-card + .call-card {
