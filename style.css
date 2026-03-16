@@ -102,10 +102,11 @@ main {
 }
 
 .subtitle {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 400;
   color: rgb(0, 0, 0);
-  line-height: 1.5;
+  line-height: 32px;
+  font-family: 'Source Serif 4', serif;
 }
 
 .updated {
@@ -325,10 +326,11 @@ main {
 }
 
 .call-description {
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 400;
   color: rgb(0, 0, 0);
-  line-height: 1.6;
+  line-height: 32px;
+  font-family: 'Source Serif 4', serif;
 }
 
 /* === Empty State === */
