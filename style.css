@@ -462,6 +462,10 @@ main {
 
 /* === Responsive === */
 @media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
   main {
     padding: 0 16px;
   }
