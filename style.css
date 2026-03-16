@@ -139,7 +139,7 @@ main {
   background: rgb(255, 255, 255);
   border: none;
   padding: 16px 20px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: helvetica, sans-serif;
   color: rgb(0, 0, 0);
   outline: none;
@@ -149,7 +149,6 @@ main {
 
 .search-bar::placeholder {
   color: #aaa;
-  font-size: 18px;
 }
 
 .search-bar:focus {
@@ -434,9 +433,6 @@ main {
     padding: 14px 16px;
   }
 
-  .search-bar::placeholder {
-    font-size: 16px;
-  }
 
   /* Header */
   .header-inner {
