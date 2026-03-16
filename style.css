@@ -102,7 +102,7 @@ main {
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   color: rgb(0, 0, 0);
   line-height: 1.5;
@@ -324,7 +324,7 @@ main {
 }
 
 .call-description {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: rgb(0, 0, 0);
   line-height: 1.6;
