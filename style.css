@@ -280,17 +280,17 @@ main {
 
 .call-deadline.soon {
   background: #D3B36F;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 .call-deadline.normal {
   background: #D3B36F;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 .call-deadline.rolling {
   background: #9BB3BE;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 .call-meta {
