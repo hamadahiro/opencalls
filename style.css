@@ -133,18 +133,47 @@ main {
   white-space: nowrap;
 }
 
+.search-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
 .search-bar {
   display: block;
   width: 100%;
   background: rgb(255, 255, 255);
   border: none;
   padding: 16px 20px;
+  padding-right: 44px;
   font-size: 16px;
   font-family: helvetica, sans-serif;
   color: rgb(0, 0, 0);
   outline: none;
-  margin-bottom: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.search-clear {
+  display: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.search-clear.visible {
+  display: block;
+}
+
+.search-clear:hover {
+  color: #333;
 }
 
 .search-bar::placeholder {
