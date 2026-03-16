@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: helvetica, sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
@@ -134,7 +134,7 @@ main {
   border: none;
   padding: 8px 14px;
   font-size: 14px;
-  font-family: 'Outfit', sans-serif;
+  font-family: helvetica, sans-serif;
   font-weight: 400;
   letter-spacing: 0.3px;
   cursor: pointer;
@@ -157,7 +157,7 @@ main {
   padding: 14px 20px;
   padding-right: 44px;
   font-size: 14px;
-  font-family: 'Outfit', sans-serif;
+  font-family: helvetica, sans-serif;
   font-weight: 300;
   color: rgb(0, 0, 0);
   outline: none;
@@ -387,7 +387,7 @@ main {
 .submit-form input,
 .submit-form select,
 .submit-form textarea {
-  font-family: 'Outfit', sans-serif;
+  font-family: helvetica, sans-serif;
   font-size: 14px;
   font-weight: 300;
   padding: 10px 12px;
@@ -420,7 +420,7 @@ main {
 }
 
 .submit-btn {
-  font-family: 'Outfit', sans-serif;
+  font-family: helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
   padding: 12px 28px;
