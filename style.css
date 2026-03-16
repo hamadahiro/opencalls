@@ -269,28 +269,28 @@ main {
 }
 
 .call-deadline.ending {
-  background: #A650A7;
+  background: #B6332F;
   color: white;
 }
 
 .call-deadline.urgent {
-  background: #FF5257;
+  background: #B6332F;
   color: white;
 }
 
 .call-deadline.soon {
-  background: #FF5257;
-  color: white;
+  background: #D3B36F;
+  color: rgb(0, 0, 0);
 }
 
 .call-deadline.normal {
-  background: #FFC600;
+  background: #D3B36F;
   color: rgb(0, 0, 0);
 }
 
 .call-deadline.rolling {
-  background: #007AFF;
-  color: white;
+  background: #9BB3BE;
+  color: rgb(0, 0, 0);
 }
 
 .call-meta {
