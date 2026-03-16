@@ -517,7 +517,8 @@ main {
 
   .subtitle,
   .submit-intro {
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 28px;
   }
 
   .submit-hero {
@@ -562,7 +563,8 @@ main {
   }
 
   .call-description {
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 28px;
   }
 
   /* Submit form */
