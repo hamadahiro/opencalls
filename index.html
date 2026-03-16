@@ -32,7 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=20260316r">
+  <link rel="stylesheet" href="style.css?v=20260316s">
 </head>
 <body>
 
@@ -52,7 +52,10 @@
       <p class="subtitle">A curated list of exhibitions, grants, residencies, and publication opportunities for photographers and visual artists working with analog, experimental, and alternative processes.</p>
     </section>
 
-    <input type="text" class="search-bar" id="searchInput" placeholder="Search calls, places, keywords…">
+    <div class="search-wrap">
+      <input type="text" class="search-bar" id="searchInput" placeholder="Search calls, places, keywords…">
+      <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">&times;</button>
+    </div>
 
     <section class="filters">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -251,8 +254,17 @@
         });
       });
 
-      document.getElementById('searchInput').addEventListener('input', (e) => {
+      const searchInput = document.getElementById('searchInput');
+      const searchClear = document.getElementById('searchClear');
+      searchInput.addEventListener('input', (e) => {
         currentSearch = e.target.value.toLowerCase().trim();
+        searchClear.classList.toggle('visible', e.target.value.length > 0);
+        applyFilters();
+      });
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        currentSearch = '';
+        searchClear.classList.remove('visible');
         applyFilters();
       });
     }
