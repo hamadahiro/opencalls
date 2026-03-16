@@ -108,13 +108,13 @@
 
       // Process all calls with their computed fields
       let processed = allCalls.map(call => {
-        const deadlineDate = call.deadline === 'Ongoing' ? null : new Date(call.deadline);
+        const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline);
         const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
 
         let urgencyClass = '';
         let urgencyText = '';
-        if (call.deadline === 'Ongoing') {
-          urgencyText = 'Ongoing';
+        if (call.deadline === 'Continuous') {
+          urgencyText = 'Continuous';
           urgencyClass = 'rolling';
         } else if (daysLeft !== null && daysLeft < 0) {
           urgencyText = 'Closed';
@@ -136,7 +136,7 @@
           urgencyClass = 'normal';
         }
 
-        const section = call.deadline === 'Ongoing' ? 'Ongoing' : monthNames[deadlineDate.getMonth()] + ' ' + deadlineDate.getFullYear();
+        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[deadlineDate.getMonth()] + ' ' + deadlineDate.getFullYear();
 
         return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText, section };
       });
@@ -162,9 +162,9 @@
 
       // Sort by date always
       processed.sort((a, b) => {
-        if (a.deadline === 'Ongoing' && b.deadline === 'Ongoing') return 0;
-        if (a.deadline === 'Ongoing') return 1;
-        if (b.deadline === 'Ongoing') return -1;
+        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+        if (a.deadline === 'Continuous') return 1;
+        if (b.deadline === 'Continuous') return -1;
         return a.deadlineDate - b.deadlineDate;
       });
 
