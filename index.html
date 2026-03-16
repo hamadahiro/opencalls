@@ -157,27 +157,19 @@
         });
       }
 
-      // Sort
-      if (currentFilter === 'prize') {
-        processed.sort((a, b) => {
-          const prizeA = parseFloat((a.prize || '0').replace(/[^0-9.]/g, '')) || 0;
-          const prizeB = parseFloat((b.prize || '0').replace(/[^0-9.]/g, '')) || 0;
-          return prizeB - prizeA;
-        });
-      } else {
-        processed.sort((a, b) => {
-          if (a.deadline === 'Rolling' && b.deadline === 'Rolling') return 0;
-          if (a.deadline === 'Rolling') return 1;
-          if (b.deadline === 'Rolling') return -1;
-          return a.deadlineDate - b.deadlineDate;
-        });
-      }
+      // Sort by date always
+      processed.sort((a, b) => {
+        if (a.deadline === 'Rolling' && b.deadline === 'Rolling') return 0;
+        if (a.deadline === 'Rolling') return 1;
+        if (b.deadline === 'Rolling') return -1;
+        return a.deadlineDate - b.deadlineDate;
+      });
 
-      // Render with section headers (skip headers for prize sort)
+      // Render with section headers
       let currentSectionName = '';
 
       processed.forEach(call => {
-        if (currentFilter !== 'prize' && call.section !== currentSectionName) {
+        if (call.section !== currentSectionName) {
           currentSectionName = call.section;
           const header = document.createElement('h2');
           header.className = 'section-header';
