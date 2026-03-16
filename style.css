@@ -51,7 +51,7 @@ header {
   font-weight: 700;
   line-height: 28px;
   text-decoration: none;
-  font-family: Times, serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .logo:hover {
@@ -96,7 +96,7 @@ main {
   font-weight: 600;
   line-height: 80px;
   margin-bottom: 20px;
-  font-family: Times, serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .subtitle {
@@ -219,7 +219,7 @@ main {
   font-weight: 600;
   color: rgb(0, 0, 0);
   padding: 60px 0 16px;
-  font-family: Times, serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .section-header:first-child {
@@ -236,7 +236,7 @@ main {
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 8px;
-  font-family: Times, serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .call-title a {
