@@ -254,10 +254,11 @@ main {
 }
 
 .call-deadline {
-  display: inline-block;
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
   font-weight: 400;
-  padding: 3px 10px;
+  padding: 4px 10px;
   border-radius: 3px;
   white-space: nowrap;
   vertical-align: middle;
@@ -301,8 +302,8 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 12px;
+  padding: 4px 10px;
   border-radius: 3px;
   background: #e5e5e5;
   color: #444;
