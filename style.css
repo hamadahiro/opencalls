@@ -147,7 +147,7 @@ main {
 
 .search-wrap {
   position: sticky;
-  top: 0;
+  top: 16px;
   z-index: 100;
   margin-bottom: 8px;
 }
