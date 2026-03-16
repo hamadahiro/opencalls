@@ -171,11 +171,12 @@
         processed = processed.filter(c => c.category === currentFilter);
       }
 
-      // Filter by search
+      // Filter by search (supports multiple terms with AND logic)
       if (currentSearch) {
+        const terms = currentSearch.split(/\s+/).filter(t => t.length > 0);
         processed = processed.filter(c => {
           const text = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category].join(' ').toLowerCase();
-          return text.includes(currentSearch);
+          return terms.every(term => text.includes(term));
         });
       }
 
@@ -205,11 +206,11 @@
         card.dataset.prize = call.prize || '';
 
         const tags = [];
-        if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
-        tags.push(`<span class="meta-tag">${categoryLabel[call.category] || call.category}</span>`);
-        tags.push(`<span class="meta-tag">${call.org}</span>`);
-        if (call.location) tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
-        if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
+        if (call.prize) tags.push(`<span class="meta-tag call-prize clickable-tag" data-search="${call.prize}">${call.prize}</span>`);
+        tags.push(`<span class="meta-tag clickable-tag" data-search="${categoryLabel[call.category] || call.category}">${categoryLabel[call.category] || call.category}</span>`);
+        tags.push(`<span class="meta-tag clickable-tag" data-search="${call.org}">${call.org}</span>`);
+        if (call.location) tags.push(`<span class="meta-tag clickable-tag" data-search="${call.location}"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
+        if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag clickable-tag" data-search="${call.fee}">${call.fee}</span>`);
         tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
 
         card.innerHTML = `
@@ -224,6 +225,26 @@
       if (container.children.length === 0) {
         container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
       }
+
+      // Make tags clickable to toggle search terms
+      container.querySelectorAll('.clickable-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+          const term = tag.dataset.search.toLowerCase();
+          const searchInput = document.getElementById('searchInput');
+          const searchClear = document.getElementById('searchClear');
+          const terms = currentSearch ? currentSearch.split(/\s+/).filter(t => t.length > 0) : [];
+          const idx = terms.indexOf(term);
+          if (idx >= 0) {
+            terms.splice(idx, 1);
+          } else {
+            terms.push(term);
+          }
+          currentSearch = terms.join(' ');
+          searchInput.value = terms.join(' ');
+          searchClear.classList.toggle('visible', terms.length > 0);
+          applyFilters();
+        });
+      });
     }
 
     function setupNav() {
