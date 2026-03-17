@@ -45,10 +45,12 @@ async function loadRelated() {
   const open = otherCalls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now);
 
   const byOrg = open.filter(c => c.org === CURRENT_ORG);
-  const byCountry = open.filter(c => getCountry(c.location) === CURRENT_COUNTRY && c.org !== CURRENT_ORG);
-
   renderRelatedList(byOrg, `More from ${CURRENT_ORG}`, 'relatedOrg');
-  renderRelatedList(byCountry, `More calls in ${CURRENT_COUNTRY}`, 'relatedCountry');
+
+  if (CURRENT_COUNTRY && CURRENT_COUNTRY !== 'Online') {
+    const byCountry = open.filter(c => getCountry(c.location) === CURRENT_COUNTRY && c.org !== CURRENT_ORG);
+    renderRelatedList(byCountry, `More calls in ${CURRENT_COUNTRY}`, 'relatedCountry');
+  }
 }
 
 loadRelated();
