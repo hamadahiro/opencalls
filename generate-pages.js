@@ -63,7 +63,7 @@ function buildInfoRows(call) {
   if (call.prize) rows.push(`<div><dt>Prize</dt><dd>${escapeHtml(call.prize)}</dd></div>`);
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
-    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${handle}" target="_blank">${escapeHtml(call.instagram)}</a></dd></div>`);
+    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${handle}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a></dd></div>`);
   }
   return rows.join('\n        ');
 }
@@ -154,7 +154,7 @@ function generatePage(call, cssVersion) {
       </dl>
 
       <div class="call-detail-actions">
-        <a href="${escapeHtml(call.url)}" target="_blank" class="call-detail-apply">Visit Official Website</a>
+        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Visit Official Website</a>
         <a href="/" class="call-detail-back">&larr; Back to all calls</a>
       </div>
     </section>
