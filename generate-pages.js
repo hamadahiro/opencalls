@@ -3,7 +3,7 @@ const path = require('path');
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations'];
 
 function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -310,6 +310,7 @@ Object.entries(categories).forEach(([cat, info]) => {
 
   <main>
     <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories">Categories</a> / <span>${categoryLabel(cat)}</span></nav>
       <h1>${info.title}</h1>
       <h2 class="subtitle">${escapeHtml(info.desc)}</h2>
     </section>
@@ -431,6 +432,7 @@ Object.entries(countryCounts)
 
   <main>
     <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <span>${escapeHtml(fullName)}</span></nav>
       <h1>${escapeHtml(title)}</h1>
       <h2 class="subtitle">${escapeHtml(desc)}</h2>
     </section>
@@ -557,6 +559,7 @@ Object.entries(orgCounts)
 
   <main>
     <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations">Organizations</a> / <span>${escapeHtml(org)}</span></nav>
       <h1>${escapeHtml(org)}</h1>
       <h2 class="subtitle">${escapeHtml(desc)}</h2>
     </section>
@@ -615,6 +618,7 @@ Object.entries(orgCounts)
   });
 
 // Add index pages to sitemap
+sitemapEntries.push(`${SITE}/categories`);
 sitemapEntries.push(`${SITE}/countries`);
 sitemapEntries.push(`${SITE}/organizations`);
 
