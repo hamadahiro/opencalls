@@ -48,7 +48,7 @@ function metaDescription(call) {
   const deadline = call.deadline === 'Continuous' ? 'Rolling deadline.' : `Deadline: ${formatDeadline(call.deadline)}.`;
   const maxLen = 157 - deadline.length - 1;
   const first = desc.split('. ').slice(0, 2).join('. ');
-  const trimmed = first.length > maxLen ? first.substring(0, maxLen - 3) + '...' : first + '.';
+  const trimmed = first.length > maxLen ? first.substring(0, maxLen - 3) + '...' : (first.endsWith('.') ? first : first + '.');
   return escapeHtml(trimmed + ' ' + deadline);
 }
 
@@ -199,6 +199,8 @@ const cssVersion = cssVersionMatch ? cssVersionMatch[1] : '20260317b';
 // Track slugs to detect collisions
 const slugMap = {};
 const sitemapEntries = [];
+const createdCountrySlugs = [];
+const createdOrgSlugs = [];
 let generated = 0;
 let skipped = 0;
 
@@ -479,6 +481,7 @@ Object.entries(countryCounts)
 </html>`;
 
     slugMap[slug] = `country: ${fullName}`;
+    createdCountrySlugs.push(slug);
     fs.writeFileSync(`${slug}.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls)`);
@@ -601,6 +604,7 @@ Object.entries(orgCounts)
 </html>`;
 
     slugMap[slug] = `org: ${org}`;
+    createdOrgSlugs.push(slug);
     fs.writeFileSync(`${slug}.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls)`);
@@ -611,12 +615,10 @@ sitemapEntries.push(`${SITE}/categories`);
 sitemapEntries.push(`${SITE}/countries`);
 sitemapEntries.push(`${SITE}/organizations`);
 
-// Update page lists in cards.js (between markers)
-const countryPageSlugs = Object.keys(countryCounts).map(c => slugify(c));
-const orgPageSlugs = Object.keys(orgCounts).map(o => slugify(o));
+// Update page lists in cards.js (between markers) — only include actually created pages
 const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
-const countryPages = ${JSON.stringify(countryPageSlugs)};
-const orgPages = ${JSON.stringify(orgPageSlugs)};
+const countryPages = ${JSON.stringify(createdCountrySlugs)};
+const orgPages = ${JSON.stringify(createdOrgSlugs)};
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
