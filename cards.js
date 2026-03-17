@@ -19,6 +19,9 @@ const categorySlug = {
 // Countries with landing pages (2+ calls)
 const countryPages = ["uk","france","greece","usa","italy","japan","germany","spain","canada"];
 
+// Orgs with landing pages (2+ calls)
+const orgPages = ["kyotographie","penumbra-foundation","life-framer","all-about-photo","innovate-artist-grants","praxis-photo-arts-center","dusk-photo-gallery","decode-gallery","alternativephotography-com","light-work","black-box-gallery","a-smith-gallery","new-york-center-for-photographic-arts","phmuseum","refocus-awards","art-fluent"];
+
 function getCountryFromLocation(location) {
   if (!location) return '';
   const parts = location.split(',');
@@ -68,7 +71,12 @@ function renderCard(call, titleTag) {
   if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
   const catSlug = categorySlug[call.category];
   tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || call.category}</a>`);
-  tags.push(`<span class="meta-tag">${call.org}</span>`);
+  const orgSlug = slugify(call.org);
+  if (orgPages.includes(orgSlug)) {
+    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link">${call.org}</a>`);
+  } else {
+    tags.push(`<span class="meta-tag">${call.org}</span>`);
+  }
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const countrySlug = slugify(country);
