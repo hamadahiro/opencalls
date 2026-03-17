@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Open Calls for Artists in Germany 2026 - Monographica</title>
+  <meta name="description" content="Open calls, exhibitions, grants, and residencies for photographers and visual artists in Germany. Updated regularly.">
+  <meta name="keywords" content="open calls Germany, art exhibitions Germany, photography grants Germany, artist residency Germany, art submissions Germany">
+  <link rel="canonical" href="https://opencalls.monographica.com/germany">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <meta property="og:title" content="Open Calls for Artists in Germany 2026 - Monographica">
+  <meta property="og:description" content="Open calls, exhibitions, grants, and residencies for photographers and visual artists in Germany. Updated regularly.">
+  <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
+  <meta property="og:url" content="https://opencalls.monographica.com/germany">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Open Calls for Artists in Germany 2026",
+    "description": "Open calls, exhibitions, grants, and residencies for photographers and visual artists in Germany. Updated regularly.",
+    "url": "https://opencalls.monographica.com/germany",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260317b">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Open Calls for Artists in Germany</h1>
+      <h2 class="subtitle">Open calls, exhibitions, grants, and residencies for photographers and visual artists in Germany. Updated regularly.</h2>
+    </section>
+
+    <section class="calls-list" id="callsList"></section>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; 2026 HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script src="cards.js"></script>
+  <script>
+    const FILTER_COUNTRY = 'Germany';
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    function getCountry(loc) {
+      if (!loc) return '';
+      const parts = loc.split(',');
+      return parts[parts.length - 1].trim();
+    }
+
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const container = document.getElementById('callsList');
+
+      let calls = data.calls
+        .filter(c => getCountry(c.location) === FILTER_COUNTRY)
+        .map(processCall)
+        .filter(c => c.urgencyClass !== 'closed');
+
+      calls.sort((a, b) => {
+        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+        if (a.deadline === 'Continuous') return 1;
+        if (b.deadline === 'Continuous') return -1;
+        return a.deadlineDate - b.deadlineDate;
+      });
+
+      let currentSection = '';
+      calls.forEach(call => {
+        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
+        if (section !== currentSection) {
+          currentSection = section;
+          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
+        }
+        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      });
+
+      if (!calls.length) container.innerHTML = '<p class="empty-state">No open calls in this country right now.</p>';
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>

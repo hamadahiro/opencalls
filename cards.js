@@ -7,6 +7,24 @@ const categoryLabel = {
   'education': 'Education'
 };
 
+const categorySlug = {
+  'photography': 'photography',
+  'exhibition': 'exhibitions',
+  'grant': 'grants',
+  'zine': 'zines',
+  'residency': 'residencies',
+  'education': 'education'
+};
+
+// Countries with landing pages (2+ calls)
+const countryPages = ["uk","france","greece","usa","italy","japan","germany","spain","canada"];
+
+function getCountryFromLocation(location) {
+  if (!location) return '';
+  const parts = location.split(',');
+  return parts[parts.length - 1].trim();
+}
+
 function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
@@ -48,9 +66,18 @@ function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   const tags = [];
   if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
-  tags.push(`<span class="meta-tag">${categoryLabel[call.category] || call.category}</span>`);
+  const catSlug = categorySlug[call.category];
+  tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || call.category}</a>`);
   tags.push(`<span class="meta-tag">${call.org}</span>`);
-  if (call.location) tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
+  if (call.location) {
+    const country = getCountryFromLocation(call.location);
+    const countrySlug = slugify(country);
+    if (country !== 'Online' && countryPages.includes(countrySlug)) {
+      tags.push(`<a href="/${countrySlug}" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</a>`);
+    } else {
+      tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
+    }
+  }
   if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
 
