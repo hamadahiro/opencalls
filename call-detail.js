@@ -18,7 +18,7 @@ function renderRelatedList(calls, heading, containerId) {
   const processed = calls.map(processCall).filter(c => c.urgencyClass !== 'closed');
   if (!processed.length) { container.innerHTML = ''; return; }
 
-  let html = `<h2 class="related-heading">${heading}</h2>`;
+  let html = `<h2 class="section-header">${heading}</h2>`;
   processed.forEach(call => { html += renderCard(call); });
   container.innerHTML = html;
 }
