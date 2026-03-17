@@ -19,7 +19,7 @@ function renderRelatedList(calls, heading, containerId) {
   if (!processed.length) { container.innerHTML = ''; return; }
 
   let html = `<h2 class="section-header">${heading}</h2>`;
-  processed.forEach(call => { html += renderCard(call); });
+  processed.forEach(call => { html += renderCard(call, 'h3'); });
   container.innerHTML = html;
 }
 
