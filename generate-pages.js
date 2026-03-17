@@ -69,10 +69,6 @@ function buildInfoRows(call) {
   return rows.join('\n        ');
 }
 
-const catSlugs = {
-  'photography': 'photography', 'exhibition': 'exhibitions', 'grant': 'grants',
-  'zine': 'zines', 'residency': 'residencies', 'education': 'education'
-};
 // Compute countries for landing pages (including Online)
 const countryCounts = {};
 data.calls.forEach(call => {
@@ -87,29 +83,6 @@ const countryPages = Object.keys(countryCounts).map(c => slugify(c));
 const orgCounts = {};
 data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 1; });
 const orgPages = Object.keys(orgCounts).map(o => slugify(o));
-
-function buildMetaTags(call) {
-  const tags = [];
-  if (call.prize) tags.push(`<span class="meta-tag call-prize">${escapeHtml(call.prize)}</span>`);
-  tags.push(`<a href="/${catSlugs[call.category]}" class="meta-tag meta-tag-link">${categoryLabel(call.category)}</a>`);
-  const orgSlug = slugify(call.org);
-  if (orgPages.includes(orgSlug)) {
-    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link">${escapeHtml(call.org)}</a>`);
-  } else {
-    tags.push(`<span class="meta-tag">${escapeHtml(call.org)}</span>`);
-  }
-  if (call.location) {
-    const country = getCountry(call.location);
-    const countrySlug = slugify(country);
-    if (countryPages.includes(countrySlug)) {
-      tags.push(`<a href="/${countrySlug}" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${escapeHtml(call.location)}</a>`);
-    } else {
-      tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${escapeHtml(call.location)}</span>`);
-    }
-  }
-  if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${escapeHtml(call.fee)}</span>`);
-  return tags.join('\n        ');
-}
 
 function buildJsonLd(call, slug) {
   const ld = {
@@ -176,9 +149,7 @@ function generatePage(call, cssVersion) {
 
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
-      <div class="call-detail-meta">
-        ${buildMetaTags(call)}
-      </div>
+      <div class="call-detail-meta" id="detailMeta"></div>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 
@@ -208,6 +179,7 @@ function generatePage(call, cssVersion) {
     const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
     const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
     const CURRENT_DEADLINE = '${call.deadline}';
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline })};
   </script>
   <script src="cards.js"></script>
   <script src="call-detail.js"></script>

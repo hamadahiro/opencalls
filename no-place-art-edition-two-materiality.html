@@ -59,13 +59,7 @@
 
       <h1 class="call-detail-title">No Place Art — Edition Two: MATERIALITY</h1>
 
-      <div class="call-detail-meta">
-        <span class="meta-tag call-prize">£1,000</span>
-        <a href="/exhibitions" class="meta-tag meta-tag-link">Exhibition</a>
-        <a href="/no-place-art" class="meta-tag meta-tag-link">No Place Art</a>
-        <a href="/uk" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>London, UK</a>
-        <span class="meta-tag">Free</span>
-      </div>
+      <div class="call-detail-meta" id="detailMeta"></div>
 
       <p class="call-detail-description">International open call for artists working in printmaking, painting and mixed media. 80 artists selected for 10-day exhibition at The Handbag Factory in London. 30+ awards from 19 awarding bodies including purchase awards up to £1,000, artist residencies, solo and group exhibitions, mentoring, editorial features, materials vouchers, and workshops.</p>
 
@@ -101,6 +95,7 @@
     const CURRENT_ORG = 'No Place Art';
     const CURRENT_COUNTRY = 'UK';
     const CURRENT_DEADLINE = '2026-05-31';
+    const CURRENT_CALL = {"prize":"£1,000","category":"exhibition","org":"No Place Art","location":"London, UK","fee":"Free","deadline":"2026-05-31"};
   </script>
   <script src="cards.js"></script>
   <script src="call-detail.js"></script>

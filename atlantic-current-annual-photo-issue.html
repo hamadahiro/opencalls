@@ -58,11 +58,7 @@
 
       <h1 class="call-detail-title">Atlantic Current — Annual Photo Issue</h1>
 
-      <div class="call-detail-meta">
-        <a href="/photography" class="meta-tag meta-tag-link">Photography</a>
-        <a href="/atlantic-current" class="meta-tag meta-tag-link">Atlantic Current</a>
-        <a href="/online" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Online</a>
-      </div>
+      <div class="call-detail-meta" id="detailMeta"></div>
 
       <p class="call-detail-description">Annual photo issue across six categories: Film, Aerial, Portrait, Architecture, Landscape, and Submerged. Open to all photographers.</p>
 
@@ -97,6 +93,7 @@
     const CURRENT_ORG = 'Atlantic Current';
     const CURRENT_COUNTRY = 'Online';
     const CURRENT_DEADLINE = '2026-03-31';
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"Atlantic Current","location":"Online","fee":"Check website","deadline":"2026-03-31"};
   </script>
   <script src="cards.js"></script>
   <script src="call-detail.js"></script>
