@@ -760,11 +760,18 @@ a.meta-tag-link:hover {
 
 .index-item-dots {
   flex: 1;
-  border-bottom: 1px dotted #ccc;
+  overflow: hidden;
   margin: 0 8px;
   min-width: 20px;
-  position: relative;
-  top: -4px;
+  font-size: 20px;
+  font-family: 'Source Serif 4', serif;
+  color: #111;
+  letter-spacing: 2px;
+}
+
+.index-item-dots::before {
+  content: ' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+  white-space: nowrap;
 }
 
 .index-item-count {
