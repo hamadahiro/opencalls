@@ -36,6 +36,7 @@
 
   <main>
     <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <span>Categories</span></nav>
       <h1>Categories</h1>
       <h2 class="subtitle">Browse open calls by category.</h2>
     </section>
@@ -70,25 +71,22 @@
     async function load() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const now = new Date();
       const container = document.getElementById('indexList');
 
       const counts = {};
       data.calls.forEach(c => {
-        const isOpen = c.deadline === 'Continuous' || new Date(c.deadline) >= now;
-        if (!counts[c.category]) counts[c.category] = { open: 0, total: 0 };
-        counts[c.category].total++;
-        if (isOpen) counts[c.category].open++;
+        counts[c.category] = (counts[c.category] || 0) + 1;
       });
 
-      const order = ['photography', 'exhibition', 'grant', 'residency', 'zine', 'education'];
+      const order = ['education', 'exhibition', 'grant', 'photography', 'residency', 'zine'];
 
       let html = '';
       order.forEach(cat => {
-        const c = counts[cat] || { open: 0, total: 0 };
+        const count = counts[cat] || 0;
         html += `<a href="/${categorySlug[cat]}" class="index-item">
           <span class="index-item-name">${categoryLabel[cat]}</span>
-          <span class="index-item-count">${c.open} open</span>
+          <span class="index-item-dots"></span>
+          <span class="index-item-count">${count}</span>
         </a>`;
       });
 

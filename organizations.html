@@ -36,6 +36,7 @@
 
   <main>
     <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <span>Organizations</span></nav>
       <h1>Organizations</h1>
       <h2 class="subtitle">All organizations offering open calls for photographers and visual artists.</h2>
     </section>
@@ -56,36 +57,25 @@
     async function load() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const now = new Date();
       const container = document.getElementById('indexList');
 
       const counts = {};
       data.calls.forEach(c => {
-        const isOpen = c.deadline === 'Continuous' || new Date(c.deadline) >= now;
-        if (!counts[c.org]) counts[c.org] = { open: 0, total: 0 };
-        counts[c.org].total++;
-        if (isOpen) counts[c.org].open++;
+        counts[c.org] = (counts[c.org] || 0) + 1;
       });
 
-      const sorted = Object.entries(counts).sort((a, b) => {
-        if (b[1].open !== a[1].open) return b[1].open - a[1].open;
-        return a[0].localeCompare(b[0]);
-      });
+      const sorted = Object.entries(counts).sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
 
       let html = '';
-      sorted.forEach(([org, { open, total }]) => {
+      sorted.forEach(([org, count]) => {
         const slug = slugify(org);
-        if (total >= 2) {
-          html += `<a href="/${slug}" class="index-item">
-            <span class="index-item-name">${org}</span>
-            <span class="index-item-count">${open} open</span>
-          </a>`;
-        } else {
-          html += `<span class="index-item">
-            <span class="index-item-name">${org}</span>
-            <span class="index-item-count">${open} open</span>
-          </span>`;
-        }
+        const tag = count >= 2 ? 'a' : 'span';
+        const href = count >= 2 ? ` href="/${slug}"` : '';
+        html += `<${tag}${href} class="index-item">
+          <span class="index-item-name">${org}</span>
+          <span class="index-item-dots"></span>
+          <span class="index-item-count">${count}</span>
+        </${tag}>`;
       });
 
       container.innerHTML = html;
