@@ -162,6 +162,7 @@ function generatePage(call, cssVersion) {
     const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
     const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
   </script>
+  <script src="cards.js"></script>
   <script src="call-detail.js"></script>
 
 </body>

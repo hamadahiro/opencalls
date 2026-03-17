@@ -89,19 +89,15 @@
     </footer>
   </main>
 
+  <script src="cards.js"></script>
   <script>
     let allCalls = [];
     let currentView = 'new';
-
-    function slugify(title) {
-      return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-    }
 
     async function loadCalls() {
       const res = await fetch('data.json');
       const data = await res.json();
       allCalls = data.calls;
-
 
       const now = new Date();
       const openCount = allCalls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now).length;
@@ -124,66 +120,24 @@
     function renderCalls(view) {
       const container = document.getElementById('callsList');
       container.innerHTML = '';
-      const now = new Date();
-
-      const categoryLabel = {
-        'photography': 'Photography',
-        'exhibition': 'Exhibition',
-        'grant': 'Grant',
-        'zine': 'Zines & Books',
-        'residency': 'Residency',
-        'education': 'Education'
-      };
 
       const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-      // Process all calls with their computed fields
       let processed = allCalls.map(call => {
-        const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline);
-        const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
-
-        let urgencyClass = '';
-        let urgencyText = '';
-        if (call.deadline === 'Continuous') {
-          urgencyText = 'Continuous';
-          urgencyClass = 'rolling';
-        } else if (daysLeft !== null && daysLeft < 0) {
-          urgencyText = 'Closed';
-          urgencyClass = 'closed';
-        } else if (daysLeft !== null && daysLeft === 0) {
-          urgencyText = 'Ends today';
-          urgencyClass = 'ending';
-        } else if (daysLeft !== null && daysLeft === 1) {
-          urgencyText = 'Ends tomorrow';
-          urgencyClass = 'ending';
-        } else if (daysLeft !== null && daysLeft <= 14) {
-          urgencyText = daysLeft + ' days left';
-          urgencyClass = 'urgent';
-        } else if (daysLeft !== null && daysLeft <= 30) {
-          urgencyText = daysLeft + (daysLeft === 1 ? ' day left' : ' days left');
-          urgencyClass = 'soon';
-        } else if (deadlineDate) {
-          urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-          urgencyClass = 'normal';
-        }
-
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[deadlineDate.getMonth()] + ' ' + deadlineDate.getFullYear();
-
-        return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText, section };
+        const p = processCall(call);
+        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[p.deadlineDate.getMonth()] + ' ' + p.deadlineDate.getFullYear();
+        return { ...p, section };
       });
 
-      // Filter by view
       if (view === 'new') processed = processed.filter(c => c.urgencyClass !== 'closed');
       if (view === 'past') processed = processed.filter(c => c.urgencyClass === 'closed');
 
-      // Filter by category
       if (currentFilter === 'prize') {
         processed = processed.filter(c => c.prize && c.prize !== '');
       } else if (currentFilter !== 'all') {
         processed = processed.filter(c => c.category === currentFilter);
       }
 
-      // Filter by search
       if (currentSearch) {
         processed = processed.filter(c => {
           const text = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category].join(' ').toLowerCase();
@@ -191,7 +145,6 @@
         });
       }
 
-      // Sort by date always
       processed.sort((a, b) => {
         if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
         if (a.deadline === 'Continuous') return 1;
@@ -199,9 +152,7 @@
         return a.deadlineDate - b.deadlineDate;
       });
 
-      // Render with section headers
       let currentSectionName = '';
-
       processed.forEach(call => {
         if (call.section !== currentSectionName) {
           currentSectionName = call.section;
@@ -210,27 +161,7 @@
           header.textContent = call.section;
           container.appendChild(header);
         }
-
-        const card = document.createElement('div');
-        card.className = 'call-card';
-        card.dataset.category = call.category;
-        card.dataset.prize = call.prize || '';
-
-        const tags = [];
-        if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
-        tags.push(`<span class="meta-tag">${categoryLabel[call.category] || call.category}</span>`);
-        tags.push(`<span class="meta-tag">${call.org}</span>`);
-        if (call.location) tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
-        if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
-        tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
-
-        card.innerHTML = `
-          <h3 class="call-title"><a href="/${slugify(call.title)}">${call.title}</a></h3>
-          <div class="call-meta">${tags.join(' ')}</div>
-          <p class="call-description">${call.description}</p>
-        `;
-
-        container.appendChild(card);
+        container.insertAdjacentHTML('beforeend', renderCard(call));
       });
 
       if (container.children.length === 0) {

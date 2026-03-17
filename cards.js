@@ -1,0 +1,62 @@
+const categoryLabel = {
+  'photography': 'Photography',
+  'exhibition': 'Exhibition',
+  'grant': 'Grant',
+  'zine': 'Zines & Books',
+  'residency': 'Residency',
+  'education': 'Education'
+};
+
+function slugify(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function processCall(call) {
+  const now = new Date();
+  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline);
+  const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
+
+  let urgencyClass = '';
+  let urgencyText = '';
+  if (call.deadline === 'Continuous') {
+    urgencyText = 'Continuous';
+    urgencyClass = 'rolling';
+  } else if (daysLeft !== null && daysLeft < 0) {
+    urgencyText = 'Closed';
+    urgencyClass = 'closed';
+  } else if (daysLeft !== null && daysLeft === 0) {
+    urgencyText = 'Ends today';
+    urgencyClass = 'ending';
+  } else if (daysLeft !== null && daysLeft === 1) {
+    urgencyText = 'Ends tomorrow';
+    urgencyClass = 'ending';
+  } else if (daysLeft !== null && daysLeft <= 14) {
+    urgencyText = daysLeft + ' days left';
+    urgencyClass = 'urgent';
+  } else if (daysLeft !== null && daysLeft <= 30) {
+    urgencyText = daysLeft + (daysLeft === 1 ? ' day left' : ' days left');
+    urgencyClass = 'soon';
+  } else if (deadlineDate) {
+    urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    urgencyClass = 'normal';
+  }
+
+  return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText };
+}
+
+function renderCard(call) {
+  const tags = [];
+  if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
+  tags.push(`<span class="meta-tag">${categoryLabel[call.category] || call.category}</span>`);
+  tags.push(`<span class="meta-tag">${call.org}</span>`);
+  if (call.location) tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
+  if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
+  tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
+
+  return `
+    <div class="call-card">
+      <h3 class="call-title"><a href="/${slugify(call.title)}">${call.title}</a></h3>
+      <div class="call-meta">${tags.join(' ')}</div>
+      <p class="call-description">${call.description}</p>
+    </div>`;
+}
