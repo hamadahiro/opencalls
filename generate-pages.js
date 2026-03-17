@@ -73,11 +73,11 @@ const catSlugs = {
   'photography': 'photography', 'exhibition': 'exhibitions', 'grant': 'grants',
   'zine': 'zines', 'residency': 'residencies', 'education': 'education'
 };
-// Compute countries for landing pages
+// Compute countries for landing pages (including Online)
 const countryCounts = {};
 data.calls.forEach(call => {
   const country = getCountry(call.location);
-  if (country && country !== 'Online') {
+  if (country) {
     countryCounts[country] = (countryCounts[country] || 0) + 1;
   }
 });
@@ -380,9 +380,14 @@ Object.entries(countryCounts)
   .forEach(([country, count]) => {
     const fullName = countryNames[country] || country;
     const slug = slugify(country);
-    const title = `Open Calls for Artists in ${fullName}`;
-    const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullName}. Browse and apply today.`;
-    const keywords = `open calls ${fullName}, call for entries ${fullName}, photography opportunities ${fullName}, art exhibitions ${fullName}, photography grants ${fullName}, artist residency ${fullName}`;
+    const isOnline = country === 'Online';
+    const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
+    const desc = isOnline
+      ? 'Online open calls, competitions, and submissions for photographers and visual artists. No travel required — apply from anywhere.'
+      : `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullName}. Browse and apply today.`;
+    const keywords = isOnline
+      ? 'online open calls, online photography competitions, remote art submissions, virtual exhibitions, online call for entries, photography contests online'
+      : `open calls ${fullName}, call for entries ${fullName}, photography opportunities ${fullName}, art exhibitions ${fullName}, photography grants ${fullName}, artist residency ${fullName}`;
 
     const html = `<!DOCTYPE html>
 <html lang="en">

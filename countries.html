@@ -71,7 +71,7 @@
       const counts = {};
       data.calls.forEach(c => {
         const country = getCountry(c.location);
-        if (!country || country === 'Online') return;
+        if (!country) return;
         counts[country] = (counts[country] || 0) + 1;
       });
 
