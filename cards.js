@@ -80,7 +80,7 @@ function renderCard(call, titleTag) {
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const countrySlug = slugify(country);
-    if (country !== 'Online' && countryPages.includes(countrySlug)) {
+    if (countryPages.includes(countrySlug)) {
       tags.push(`<a href="/${countrySlug}" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</a>`);
     } else {
       tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
