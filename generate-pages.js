@@ -33,6 +33,18 @@ function metaDescription(call) {
   return escapeHtml(trimmed + ' ' + deadline);
 }
 
+function buildKeywords(call) {
+  const words = [call.title, call.org, categoryLabel(call.category), 'open call'];
+  if (call.location && call.location !== 'Online') words.push(call.location);
+  if (call.category === 'photography') words.push('photography competition', 'photo contest');
+  if (call.category === 'grant') words.push('artist grant', 'photography grant');
+  if (call.category === 'residency') words.push('artist residency');
+  if (call.category === 'exhibition') words.push('art exhibition');
+  if (call.category === 'zine') words.push('photobook', 'zine submission');
+  words.push('open calls for artists', 'photography submissions');
+  return words.join(', ');
+}
+
 function categoryLabel(cat) {
   const labels = {
     'photography': 'Photography', 'exhibition': 'Exhibition', 'grant': 'Grant',
@@ -94,6 +106,7 @@ function generatePage(call, cssVersion) {
   <meta name="theme-color" content="#f5f2ed">
   <title>${escapeHtml(call.title)} - Open Calls for Artists - Monographica</title>
   <meta name="description" content="${desc}">
+  <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
