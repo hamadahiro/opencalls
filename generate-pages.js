@@ -212,27 +212,22 @@ data.calls.forEach(call => {
   slugMap[slug] = call.title;
   const html = generatePage(call, cssVersion);
   fs.writeFileSync(`${slug}.html`, html);
-  sitemapEntries.push({ url: `${SITE}/${slug}`, priority: '0.7', changefreq: 'monthly' });
+  sitemapEntries.push(`${SITE}/${slug}`);
   generated++;
 });
 
 // Generate sitemap.xml
 const today = new Date().toISOString().split('T')[0];
-const allEntries = [
-  { url: `${SITE}/`, priority: '1.0', changefreq: 'daily' },
-  ...sitemapEntries
-];
+const allUrls = [`${SITE}/`, ...sitemapEntries];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allEntries.map(e => `  <url>
-    <loc>${e.url}</loc>
+${allUrls.map(url => `  <url>
+    <loc>${url}</loc>
     <lastmod>${today}</lastmod>
-    <changefreq>${e.changefreq}</changefreq>
-    <priority>${e.priority}</priority>
   </url>`).join('\n')}
 </urlset>`;
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
 
-console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allEntries.length} URLs`);
+console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);
