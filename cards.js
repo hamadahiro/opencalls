@@ -99,25 +99,25 @@ function renderInfoGrid(call) {
   rows.push(`<div><dt>Deadline</dt><dd>${deadlineText}</dd></div>`);
   // Fee
   if (call.fee) rows.push(`<div><dt>Entry Fee</dt><dd>${call.fee}</dd></div>`);
-  // Category — linked
+  // Category — both label and value linked
   const catSlugInfo = categorySlug[call.category];
-  rows.push(`<div><dt>Category</dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || call.category}</a></dd></div>`);
-  // Location — linked if page exists
+  rows.push(`<div><dt><a href="/categories">Category</a></dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || call.category}</a></dd></div>`);
+  // Location — both label and value linked
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const cSlug = slugify(country);
     if (countryPages.includes(cSlug)) {
-      rows.push(`<div><dt>Location</dt><dd><a href="/${cSlug}">${call.location}</a></dd></div>`);
+      rows.push(`<div><dt><a href="/countries">Location</a></dt><dd><a href="/${cSlug}">${call.location}</a></dd></div>`);
     } else {
-      rows.push(`<div><dt>Location</dt><dd>${call.location}</dd></div>`);
+      rows.push(`<div><dt><a href="/countries">Location</a></dt><dd>${call.location}</dd></div>`);
     }
   }
-  // Organizer — linked if page exists
+  // Organizer — both label and value linked
   const oSlug = slugify(call.org);
   if (orgPages.includes(oSlug)) {
-    rows.push(`<div><dt>Organizer</dt><dd><a href="/${oSlug}">${call.org}</a></dd></div>`);
+    rows.push(`<div><dt><a href="/organizations">Organizer</a></dt><dd><a href="/${oSlug}">${call.org}</a></dd></div>`);
   } else {
-    rows.push(`<div><dt>Organizer</dt><dd>${call.org}</dd></div>`);
+    rows.push(`<div><dt><a href="/organizations">Organizer</a></dt><dd>${call.org}</dd></div>`);
   }
   // Prize
   if (call.prize) rows.push(`<div><dt>Prize</dt><dd>${call.prize}</dd></div>`);
