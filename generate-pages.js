@@ -356,6 +356,11 @@ Object.entries(countryCounts)
   .forEach(([country, count]) => {
     const fullName = countryNames[country] || country;
     const slug = slugify(country);
+
+    if (slugMap[slug]) {
+      console.warn(`  SKIPPED country page: ${slug} collides with "${slugMap[slug]}"`);
+      return;
+    }
     const isOnline = country === 'Online';
     const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
     const desc = isOnline
@@ -473,6 +478,7 @@ Object.entries(countryCounts)
 </body>
 </html>`;
 
+    slugMap[slug] = `country: ${fullName}`;
     fs.writeFileSync(`${slug}.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls)`);
@@ -486,9 +492,9 @@ Object.entries(orgCounts)
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
 
-    // Check for slug collision with call pages
+    // Check for slug collision with call/country pages
     if (slugMap[slug]) {
-      console.warn(`  SKIPPED org page: ${slug} collides with call "${slugMap[slug]}"`);
+      console.warn(`  SKIPPED org page: ${slug} collides with "${slugMap[slug]}"`);
       return;
     }
 
@@ -594,6 +600,7 @@ Object.entries(orgCounts)
 </body>
 </html>`;
 
+    slugMap[slug] = `org: ${org}`;
     fs.writeFileSync(`${slug}.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls)`);
@@ -604,17 +611,17 @@ sitemapEntries.push(`${SITE}/categories`);
 sitemapEntries.push(`${SITE}/countries`);
 sitemapEntries.push(`${SITE}/organizations`);
 
-// Update countryPages and orgPages lists in cards.js
+// Update page lists in cards.js (between markers)
 const countryPageSlugs = Object.keys(countryCounts).map(c => slugify(c));
 const orgPageSlugs = Object.keys(orgCounts).map(o => slugify(o));
+const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
+const countryPages = ${JSON.stringify(countryPageSlugs)};
+const orgPages = ${JSON.stringify(orgPageSlugs)};
+// ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
-  /const countryPages = \[.*?\];/,
-  `const countryPages = ${JSON.stringify(countryPageSlugs)};`
-);
-cardsJs = cardsJs.replace(
-  /const orgPages = \[.*?\];/,
-  `const orgPages = ${JSON.stringify(orgPageSlugs)};`
+  /\/\/ ==AUTO-GENERATED-START==[\s\S]*?\/\/ ==AUTO-GENERATED-END==/,
+  pageListsBlock
 );
 fs.writeFileSync('cards.js', cardsJs);
 
