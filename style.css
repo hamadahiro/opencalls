@@ -109,11 +109,7 @@ main {
   font-family: 'Source Serif 4', serif;
 }
 
-.updated {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #999;
-}
+
 
 /* === Filters === */
 .filters {
@@ -359,97 +355,6 @@ a.meta-tag-link:hover {
   color: white;
 }
 
-/* === Submit Section === */
-.submit-section {
-  padding: 0 0 48px;
-}
-
-.submit-hero {
-  padding: 60px 0 32px;
-  max-width: 640px;
-}
-
-.submit-hero h1 {
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 16px;
-  font-family: 'Source Serif 4', serif;
-}
-
-.submit-section h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  font-family: 'Source Serif 4', serif;
-}
-
-.submit-intro {
-  font-size: 14px;
-  font-weight: 300;
-  color: #666;
-  margin-bottom: 32px;
-}
-
-.submit-form {
-  max-width: 480px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.submit-form input,
-.submit-form select,
-.submit-form textarea {
-  font-family: helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  background: #fff;
-  color: #111;
-  outline: none;
-  transition: border-color 0.15s ease;
-}
-
-.submit-form input:focus,
-.submit-form select:focus,
-.submit-form textarea:focus {
-  border-color: #111;
-}
-
-.submit-form input::placeholder,
-.submit-form textarea::placeholder {
-  color: #aaa;
-}
-
-.submit-form select {
-  appearance: none;
-  cursor: pointer;
-}
-
-.submit-form textarea {
-  resize: vertical;
-  min-height: 60px;
-}
-
-.submit-btn {
-  font-family: helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 12px 28px;
-  background: #111;
-  color: #f5f2ed;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.15s ease;
-  align-self: flex-start;
-}
-
-.submit-btn:hover {
-  opacity: 0.8;
-}
-
 /* === Footer === */
 .about-section {
   padding: 60px 0;
@@ -473,9 +378,6 @@ a.meta-tag-link:hover {
   margin-bottom: 16px;
 }
 
-.follow {
-  margin-top: 8px;
-}
 
 /* === Responsive === */
 @media (max-width: 640px) {
@@ -530,21 +432,15 @@ a.meta-tag-link:hover {
     padding: 36px 0 24px;
   }
 
-  .hero h1,
-  .submit-hero h1 {
+  .hero h1 {
     font-size: 36px;
     line-height: 1.2;
     margin-bottom: 12px;
   }
 
-  .subtitle,
-  .submit-intro {
+  .subtitle {
     font-size: 18px;
     line-height: 28px;
-  }
-
-  .submit-hero {
-    padding: 36px 0 24px;
   }
 
   /* Filters - horizontal scroll on mobile, edge to edge */
@@ -589,25 +485,6 @@ a.meta-tag-link:hover {
     line-height: 28px;
   }
 
-  /* Submit form */
-  .submit-form {
-    max-width: 100%;
-  }
-
-  .submit-form input,
-  .submit-form select,
-  .submit-form textarea {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    text-align: center;
-    padding: 14px 28px;
-    font-size: 14px;
-  }
-
   /* Footer */
   .about-section {
     padding: 32px 0;
@@ -620,8 +497,7 @@ a.meta-tag-link:hover {
 
 /* Extra small screens */
 @media (max-width: 380px) {
-  .hero h1,
-  .submit-hero h1 {
+  .hero h1 {
     font-size: 28px;
   }
 
@@ -820,10 +696,6 @@ a.meta-tag-link:hover {
   padding: 16px 0 48px;
 }
 
-
-.related-card {
-  padding: 20px 0;
-}
 
 /* === Call Detail Responsive === */
 @media (max-width: 640px) {

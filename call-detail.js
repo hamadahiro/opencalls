@@ -10,12 +10,6 @@
   if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
 })();
 
-function getCountry(location) {
-  if (!location) return '';
-  const parts = location.split(',');
-  return parts[parts.length - 1].trim();
-}
-
 function renderRelatedList(calls, heading, containerId) {
   const container = document.getElementById(containerId);
   const processed = calls.map(processCall).filter(c => c.urgencyClass !== 'closed');
@@ -36,7 +30,7 @@ async function loadRelated() {
   renderRelatedList(byOrg, `More from ${CURRENT_ORG}`, 'relatedOrg');
 
   if (CURRENT_COUNTRY && CURRENT_COUNTRY !== 'Online') {
-    const byCountry = otherCalls.filter(c => getCountry(c.location) === CURRENT_COUNTRY && c.org !== CURRENT_ORG);
+    const byCountry = otherCalls.filter(c => getCountryFromLocation(c.location) === CURRENT_COUNTRY && c.org !== CURRENT_ORG);
     renderRelatedList(byCountry, `More calls in ${CURRENT_COUNTRY}`, 'relatedCountry');
   }
 }
