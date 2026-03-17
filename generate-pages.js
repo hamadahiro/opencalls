@@ -82,11 +82,21 @@ data.calls.forEach(call => {
 });
 const countryPages = Object.keys(countryCounts).filter(c => countryCounts[c] >= 2).map(c => slugify(c));
 
+// Compute orgs with 2+ calls for landing pages
+const orgCounts = {};
+data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 1; });
+const orgPages = Object.keys(orgCounts).filter(o => orgCounts[o] >= 2).map(o => slugify(o));
+
 function buildMetaTags(call) {
   const tags = [];
   if (call.prize) tags.push(`<span class="meta-tag call-prize">${escapeHtml(call.prize)}</span>`);
   tags.push(`<a href="/${catSlugs[call.category]}" class="meta-tag meta-tag-link">${categoryLabel(call.category)}</a>`);
-  tags.push(`<span class="meta-tag">${escapeHtml(call.org)}</span>`);
+  const orgSlug = slugify(call.org);
+  if (orgPages.includes(orgSlug)) {
+    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link">${escapeHtml(call.org)}</a>`);
+  } else {
+    tags.push(`<span class="meta-tag">${escapeHtml(call.org)}</span>`);
+  }
   if (call.location) {
     const country = getCountry(call.location);
     const countrySlug = slugify(country);
@@ -484,12 +494,137 @@ Object.entries(countryCounts)
     console.log(`  Country page: ${slug} (${count} calls)`);
   });
 
-// Update countryPages list in cards.js
+// === Org landing pages ===
+Object.entries(orgCounts)
+  .filter(([org, count]) => count >= 2)
+  .forEach(([org, count]) => {
+    const slug = slugify(org);
+    const title = `${org} - Open Calls`;
+    const desc = `All open calls and submission opportunities from ${org}. Exhibitions, grants, residencies, and more for photographers and visual artists.`;
+    const keywords = `${org} open call, ${org} submissions, ${org} photography, ${org} artists`;
+
+    // Check for slug collision with call pages
+    if (slugMap[slug]) {
+      console.warn(`  SKIPPED org page: ${slug} collides with call "${slugMap[slug]}"`);
+      return;
+    }
+
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>${escapeHtml(title)} - Monographica</title>
+  <meta name="description" content="${escapeHtml(desc)}">
+  <meta name="keywords" content="${escapeHtml(keywords)}">
+  <link rel="canonical" href="${SITE}/${slug}">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <meta property="og:title" content="${escapeHtml(title)} - Monographica">
+  <meta property="og:description" content="${escapeHtml(desc)}">
+  <meta property="og:image" content="${SITE}/og-image.jpg">
+  <meta property="og:url" content="${SITE}/${slug}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "${escapeHtml(org)} - Open Calls",
+    "description": "${escapeHtml(desc)}",
+    "url": "${SITE}/${slug}",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>${escapeHtml(org)}</h1>
+      <h2 class="subtitle">${escapeHtml(desc)}</h2>
+    </section>
+
+    <section class="calls-list" id="callsList"></section>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; ${new Date().getFullYear()} HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script src="cards.js"></script>
+  <script>
+    const FILTER_ORG = '${org.replace(/'/g, "\\'")}';
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const container = document.getElementById('callsList');
+
+      let calls = data.calls
+        .filter(c => c.org === FILTER_ORG)
+        .map(processCall);
+
+      // Show all calls (open + closed) for org pages
+      calls.sort((a, b) => {
+        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+        if (a.deadline === 'Continuous') return 1;
+        if (b.deadline === 'Continuous') return -1;
+        return a.deadlineDate - b.deadlineDate;
+      });
+
+      let currentSection = '';
+      calls.forEach(call => {
+        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
+        if (section !== currentSection) {
+          currentSection = section;
+          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
+        }
+        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      });
+
+      if (!calls.length) container.innerHTML = '<p class="empty-state">No calls from this organization.</p>';
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+    fs.writeFileSync(`${slug}.html`, html);
+    sitemapEntries.push(`${SITE}/${slug}`);
+    console.log(`  Org page: ${slug} (${count} calls)`);
+  });
+
+// Update countryPages and orgPages lists in cards.js
 const countryPageSlugs = Object.keys(countryCounts).filter(c => countryCounts[c] >= 2).map(c => slugify(c));
+const orgPageSlugs = Object.keys(orgCounts).filter(o => orgCounts[o] >= 2).map(o => slugify(o));
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
   /const countryPages = \[.*?\];/,
   `const countryPages = ${JSON.stringify(countryPageSlugs)};`
+);
+cardsJs = cardsJs.replace(
+  /const orgPages = \[.*?\];/,
+  `const orgPages = ${JSON.stringify(orgPageSlugs)};`
 );
 fs.writeFileSync('cards.js', cardsJs);
 
