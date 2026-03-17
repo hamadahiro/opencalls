@@ -59,7 +59,7 @@ function processCall(call) {
     urgencyText = daysLeft + ' days left';
     urgencyClass = 'urgent';
   } else if (daysLeft !== null && daysLeft <= 30) {
-    urgencyText = daysLeft + (daysLeft === 1 ? ' day left' : ' days left');
+    urgencyText = daysLeft + ' days left';
     urgencyClass = 'soon';
   } else if (deadlineDate) {
     urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
