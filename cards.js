@@ -44,7 +44,8 @@ function processCall(call) {
   return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText };
 }
 
-function renderCard(call) {
+function renderCard(call, titleTag) {
+  titleTag = titleTag || 'h4';
   const tags = [];
   if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
   tags.push(`<span class="meta-tag">${categoryLabel[call.category] || call.category}</span>`);
@@ -55,7 +56,7 @@ function renderCard(call) {
 
   return `
     <div class="call-card">
-      <h3 class="call-title"><a href="/${slugify(call.title)}">${call.title}</a></h3>
+      <${titleTag} class="call-title"><a href="/${slugify(call.title)}">${call.title}</a></${titleTag}>
       <div class="call-meta">${tags.join(' ')}</div>
       <p class="call-description">${call.description}</p>
     </div>`;

@@ -156,12 +156,12 @@
       processed.forEach(call => {
         if (call.section !== currentSectionName) {
           currentSectionName = call.section;
-          const header = document.createElement('h2');
+          const header = document.createElement('h3');
           header.className = 'section-header';
           header.textContent = call.section;
           container.appendChild(header);
         }
-        container.insertAdjacentHTML('beforeend', renderCard(call));
+        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
       });
 
       if (container.children.length === 0) {
