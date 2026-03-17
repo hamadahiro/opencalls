@@ -161,6 +161,7 @@ function generatePage(call, cssVersion) {
     const CURRENT_SLUG = '${slug}';
     const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
     const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
+    const CURRENT_DEADLINE = '${call.deadline}';
   </script>
   <script src="cards.js"></script>
   <script src="call-detail.js"></script>
