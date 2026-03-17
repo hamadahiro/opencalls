@@ -91,6 +91,44 @@ function renderTags(call) {
   return tags.join(' ');
 }
 
+function renderInfoGrid(call) {
+  const rows = [];
+  // Deadline
+  const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
+    new Date(call.deadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  rows.push(`<div><dt>Deadline</dt><dd>${deadlineText}</dd></div>`);
+  // Fee
+  if (call.fee) rows.push(`<div><dt>Entry Fee</dt><dd>${call.fee}</dd></div>`);
+  // Category — linked
+  const catSlugInfo = categorySlug[call.category];
+  rows.push(`<div><dt>Category</dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || call.category}</a></dd></div>`);
+  // Location — linked if page exists
+  if (call.location) {
+    const country = getCountryFromLocation(call.location);
+    const cSlug = slugify(country);
+    if (countryPages.includes(cSlug)) {
+      rows.push(`<div><dt>Location</dt><dd><a href="/${cSlug}">${call.location}</a></dd></div>`);
+    } else {
+      rows.push(`<div><dt>Location</dt><dd>${call.location}</dd></div>`);
+    }
+  }
+  // Organizer — linked if page exists
+  const oSlug = slugify(call.org);
+  if (orgPages.includes(oSlug)) {
+    rows.push(`<div><dt>Organizer</dt><dd><a href="/${oSlug}">${call.org}</a></dd></div>`);
+  } else {
+    rows.push(`<div><dt>Organizer</dt><dd>${call.org}</dd></div>`);
+  }
+  // Prize
+  if (call.prize) rows.push(`<div><dt>Prize</dt><dd>${call.prize}</dd></div>`);
+  // Instagram
+  if (call.instagram) {
+    const handle = call.instagram.replace('@', '');
+    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${handle}" target="_blank" rel="nofollow noopener">${call.instagram}</a></dd></div>`);
+  }
+  return rows.join('');
+}
+
 function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   return `

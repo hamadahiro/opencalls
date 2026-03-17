@@ -1,10 +1,13 @@
-// Render detail page meta tags from CURRENT_CALL using shared renderTags
+// Render detail page meta tags and info grid from CURRENT_CALL
 (function() {
+  if (typeof CURRENT_CALL === 'undefined') return;
+  const processed = processCall(CURRENT_CALL);
+
   const meta = document.getElementById('detailMeta');
-  if (meta && typeof CURRENT_CALL !== 'undefined') {
-    const processed = processCall(CURRENT_CALL);
-    meta.innerHTML = renderTags(processed);
-  }
+  if (meta) meta.innerHTML = renderTags(processed);
+
+  const info = document.getElementById('detailInfo');
+  if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
 })();
 
 function getCountry(location) {
