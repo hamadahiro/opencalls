@@ -92,12 +92,12 @@ function generatePage(call, cssVersion) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(call.title)} | Open Calls for Artists</title>
+  <title>${escapeHtml(call.title)} - Open Calls for Artists - Monographica</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(call.title)} | Open Calls for Artists">
+  <meta property="og:title" content="${escapeHtml(call.title)} - Open Calls for Artists - Monographica">
   <meta property="og:description" content="${desc}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
