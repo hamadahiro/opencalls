@@ -54,20 +54,6 @@ function categoryLabel(cat) {
   return labels[cat] || cat;
 }
 
-function buildInfoRows(call) {
-  const rows = [];
-  rows.push(`<div><dt>Deadline</dt><dd>${formatDeadline(call.deadline)}</dd></div>`);
-  if (call.fee) rows.push(`<div><dt>Entry Fee</dt><dd>${escapeHtml(call.fee)}</dd></div>`);
-  rows.push(`<div><dt>Category</dt><dd>${categoryLabel(call.category)}</dd></div>`);
-  if (call.location) rows.push(`<div><dt>Location</dt><dd>${escapeHtml(call.location)}</dd></div>`);
-  rows.push(`<div><dt>Organizer</dt><dd>${escapeHtml(call.org)}</dd></div>`);
-  if (call.prize) rows.push(`<div><dt>Prize</dt><dd>${escapeHtml(call.prize)}</dd></div>`);
-  if (call.instagram) {
-    const handle = call.instagram.replace('@', '');
-    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${handle}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a></dd></div>`);
-  }
-  return rows.join('\n        ');
-}
 
 // Compute countries for landing pages (including Online)
 const countryCounts = {};
@@ -153,9 +139,7 @@ function generatePage(call, cssVersion) {
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 
-      <dl class="call-detail-info">
-        ${buildInfoRows(call)}
-      </dl>
+      <dl class="call-detail-info" id="detailInfo"></dl>
 
       <div class="call-detail-actions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Visit Official Website</a>
@@ -179,7 +163,7 @@ function generatePage(call, cssVersion) {
     const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
     const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
     const CURRENT_DEADLINE = '${call.deadline}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline })};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '' })};
   </script>
   <script src="cards.js"></script>
   <script src="call-detail.js"></script>
