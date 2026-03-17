@@ -1,3 +1,12 @@
+// Add deadline badge to detail page meta tags
+(function() {
+  const meta = document.querySelector('.call-detail-meta');
+  if (meta && typeof CURRENT_DEADLINE !== 'undefined') {
+    const p = processCall({ deadline: CURRENT_DEADLINE });
+    meta.insertAdjacentHTML('beforeend', `<span class="call-deadline ${p.urgencyClass}">${p.urgencyText}</span>`);
+  }
+})();
+
 function getCountry(location) {
   if (!location) return '';
   const parts = location.split(',');
