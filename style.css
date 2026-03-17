@@ -11,7 +11,7 @@ html {
   background-size: cover;
   background-position: top right;
   background-repeat: repeat;
-  background-color: #f5f2ed;
+  background-color: #e6e6e6;
 }
 
 body {
@@ -492,6 +492,7 @@ main {
     background-image: url('bg.jpg');
     background-size: cover;
     background-position: top right;
+    background-color: #e6e6e6;
     z-index: -1;
   }
 
