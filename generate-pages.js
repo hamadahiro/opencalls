@@ -8,15 +8,8 @@ const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations'];
 const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html'];
 
-// GA snippet
-const GA_SNIPPET = `<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGN8M3LZMZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PGN8M3LZMZ');
-  </script>`;
+// GA — single external file
+const GA_SNIPPET = `<script src="analytics.js"></script>`;
 
 // Clean up old generated HTML files (keep manual files and non-HTML)
 const existingHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && !MANUAL_FILES.includes(f));
@@ -133,7 +126,7 @@ function generatePage(call, cssVersion) {
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=${cssVersion}">
 </head>
 <body>
@@ -272,7 +265,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=${cssVersion}">
 </head>
 <body>
@@ -404,7 +397,7 @@ Object.entries(countryCounts)
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=${cssVersion}">
 </head>
 <body>
@@ -533,7 +526,7 @@ Object.entries(orgCounts)
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=${cssVersion}">
 </head>
 <body>
