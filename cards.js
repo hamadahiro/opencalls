@@ -65,8 +65,8 @@ function processCall(call) {
   return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText };
 }
 
-function renderCard(call, titleTag) {
-  titleTag = titleTag || 'h4';
+function renderTags(call) {
+  const pinSvg = '<svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
   const tags = [];
   if (call.prize) tags.push(`<span class="meta-tag call-prize">${call.prize}</span>`);
   const catSlug = categorySlug[call.category];
@@ -81,18 +81,22 @@ function renderCard(call, titleTag) {
     const country = getCountryFromLocation(call.location);
     const countrySlug = slugify(country);
     if (countryPages.includes(countrySlug)) {
-      tags.push(`<a href="/${countrySlug}" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</a>`);
+      tags.push(`<a href="/${countrySlug}" class="meta-tag meta-tag-link">${pinSvg}${call.location}</a>`);
     } else {
-      tags.push(`<span class="meta-tag"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>${call.location}</span>`);
+      tags.push(`<span class="meta-tag">${pinSvg}${call.location}</span>`);
     }
   }
   if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${call.fee}</span>`);
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
+  return tags.join(' ');
+}
 
+function renderCard(call, titleTag) {
+  titleTag = titleTag || 'h4';
   return `
     <div class="call-card">
       <${titleTag} class="call-title"><a href="/${slugify(call.title)}">${call.title}</a></${titleTag}>
-      <div class="call-meta">${tags.join(' ')}</div>
+      <div class="call-meta">${renderTags(call)}</div>
       <p class="call-description">${call.description}</p>
     </div>`;
 }

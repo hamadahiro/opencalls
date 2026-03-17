@@ -1,9 +1,9 @@
-// Add deadline badge to detail page meta tags
+// Render detail page meta tags from CURRENT_CALL using shared renderTags
 (function() {
-  const meta = document.querySelector('.call-detail-meta');
-  if (meta && typeof CURRENT_DEADLINE !== 'undefined') {
-    const p = processCall({ deadline: CURRENT_DEADLINE });
-    meta.insertAdjacentHTML('beforeend', `<span class="call-deadline ${p.urgencyClass}">${p.urgencyText}</span>`);
+  const meta = document.getElementById('detailMeta');
+  if (meta && typeof CURRENT_CALL !== 'undefined') {
+    const processed = processCall(CURRENT_CALL);
+    meta.innerHTML = renderTags(processed);
   }
 })();
 

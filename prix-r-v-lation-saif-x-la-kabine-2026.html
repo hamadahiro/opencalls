@@ -58,13 +58,7 @@
 
       <h1 class="call-detail-title">Prix Révélation SAIF x La Kabine 2026</h1>
 
-      <div class="call-detail-meta">
-        <span class="meta-tag call-prize">€2,000</span>
-        <a href="/photography" class="meta-tag meta-tag-link">Photography</a>
-        <a href="/la-kabine-saif" class="meta-tag meta-tag-link">La Kabine / SAIF</a>
-        <a href="/france" class="meta-tag meta-tag-link"><svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Arles, France</a>
-        <span class="meta-tag">€5 minimum (membership)</span>
-      </div>
+      <div class="call-detail-meta" id="detailMeta"></div>
 
       <p class="call-detail-description">Award supporting emerging contemporary photography. €2,000 prize plus exhibition during Festival OFF Arles. 30 finalists projected at La Nuit de l'Émergence with €100 each. Open to professional photographers of all nationalities, 18+.</p>
 
@@ -100,6 +94,7 @@
     const CURRENT_ORG = 'La Kabine / SAIF';
     const CURRENT_COUNTRY = 'France';
     const CURRENT_DEADLINE = '2026-03-29';
+    const CURRENT_CALL = {"prize":"€2,000","category":"photography","org":"La Kabine / SAIF","location":"Arles, France","fee":"€5 minimum (membership)","deadline":"2026-03-29"};
   </script>
   <script src="cards.js"></script>
   <script src="call-detail.js"></script>
