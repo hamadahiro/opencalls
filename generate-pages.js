@@ -27,14 +27,15 @@ function formatDeadline(deadline) {
 
 function metaDescription(call) {
   const desc = call.description;
-  const first = desc.split('. ').slice(0, 2).join('. ');
-  const trimmed = first.length > 155 ? first.substring(0, 152) + '...' : first + '.';
   const deadline = call.deadline === 'Continuous' ? 'Rolling deadline.' : `Deadline: ${formatDeadline(call.deadline)}.`;
+  const maxLen = 157 - deadline.length - 1;
+  const first = desc.split('. ').slice(0, 2).join('. ');
+  const trimmed = first.length > maxLen ? first.substring(0, maxLen - 3) + '...' : first + '.';
   return escapeHtml(trimmed + ' ' + deadline);
 }
 
 function buildKeywords(call) {
-  const words = [call.title, call.org, categoryLabel(call.category), 'open call'];
+  const words = [call.title, call.org, categoryLabel(call.category), 'open call', 'call for entries'];
   if (call.location && call.location !== 'Online') words.push(call.location);
   if (call.category === 'photography') words.push('photography competition', 'photo contest');
   if (call.category === 'grant') words.push('artist grant', 'photography grant');
@@ -136,13 +137,13 @@ function generatePage(call, cssVersion) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(call.title)} - Open Calls for Artists - Monographica</title>
+  <title>${escapeHtml(call.title)} - Monographica Open Calls</title>
   <meta name="description" content="${desc}">
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(call.title)} - Open Calls for Artists - Monographica">
+  <meta property="og:title" content="${escapeHtml(call.title)} - Monographica Open Calls">
   <meta property="og:description" content="${desc}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -250,12 +251,12 @@ data.calls.forEach(call => {
 
 // === Category landing pages ===
 const categories = {
-  'photography': { title: 'Photography Open Calls', desc: 'Open calls, competitions, and submission opportunities for photographers. Awards, exhibitions, grants, and more.', keywords: 'photography open calls, photo competitions 2026, photography submissions, photography awards, photography grants, photography contests' },
-  'exhibition': { title: 'Exhibition Open Calls', desc: 'Open calls for art exhibitions worldwide. Group shows, solo exhibitions, and curated exhibitions for visual artists and photographers.', keywords: 'exhibition open calls, art exhibition submissions, group exhibition call for artists, gallery open call, art show submissions' },
-  'grant': { title: 'Photography Grants', desc: 'Grants and funding opportunities for photographers and visual artists. Project grants, production funds, and artist support programs.', keywords: 'photography grants 2026, artist grants, art funding, project grants for photographers, artist funding opportunities' },
-  'residency': { title: 'Artist Residencies', desc: 'Artist residency programs for photographers and visual artists. Studio residencies, international programs, and creative retreats.', keywords: 'artist residency 2026, photography residency, art residency programs, international artist residency, creative residency' },
-  'zine': { title: 'Zine & Photobook Open Calls', desc: 'Open calls for zines, photobooks, and publications. Dummy awards, publishing opportunities, and editorial submissions.', keywords: 'photobook open call, zine submissions, photography publications, dummy award, photo book prize, zine call for artists' },
-  'education': { title: 'Photography Education', desc: 'Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists.', keywords: 'photography workshops, photography masterclass, photography mentoring, photography education, artist development programs' }
+  'photography': { title: 'Photography Open Calls', desc: 'Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews.', keywords: 'photography open calls, call for entries photography, photo competitions 2026, photography submissions, photography awards, photography grants, photography contests' },
+  'exhibition': { title: 'Exhibition Open Calls', desc: 'Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists.', keywords: 'exhibition open calls, call for entries exhibition, art exhibition submissions, gallery open call, group exhibition, art show submissions' },
+  'grant': { title: 'Grants for Photographers & Visual Artists', desc: 'Funding opportunities for photographers and visual artists. Project grants, production funds, and artist support programs — apply now.', keywords: 'photography grants 2026, artist grants, call for entries grants, art funding, project grants for photographers, artist funding opportunities' },
+  'residency': { title: 'Artist Residencies for Photographers', desc: 'Residency programs for photographers and visual artists worldwide. Studio residencies, international programs, and creative retreats.', keywords: 'artist residency 2026, photography residency, call for entries residency, art residency programs, international artist residency' },
+  'zine': { title: 'Zine & Photobook Open Calls', desc: 'Submit to photobook prizes, zine publications, and dummy awards. Publishing opportunities for photographers and visual artists.', keywords: 'photobook open call, call for entries photobook, zine submissions, photography publications, dummy award, photo book prize' },
+  'education': { title: 'Photography Workshops & Education', desc: 'Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.', keywords: 'photography workshops, photography masterclass, call for entries education, photography mentoring, photography education, artist development' }
 };
 
 Object.entries(categories).forEach(([cat, info]) => {
@@ -268,13 +269,13 @@ Object.entries(categories).forEach(([cat, info]) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${info.title} 2026 - Open Calls for Artists - Monographica</title>
+  <title>${info.title} 2026 - Monographica Open Calls</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
   <meta name="keywords" content="${escapeHtml(info.keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${info.title} 2026 - Open Calls for Artists - Monographica">
+  <meta property="og:title" content="${info.title} 2026 - Monographica Open Calls">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -380,8 +381,8 @@ Object.entries(countryCounts)
     const fullName = countryNames[country] || country;
     const slug = slugify(country);
     const title = `Open Calls for Artists in ${fullName}`;
-    const desc = `Open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullName}. Updated regularly.`;
-    const keywords = `open calls ${fullName}, art exhibitions ${fullName}, photography grants ${fullName}, artist residency ${fullName}, art submissions ${fullName}`;
+    const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullName}. Browse and apply today.`;
+    const keywords = `open calls ${fullName}, call for entries ${fullName}, photography opportunities ${fullName}, art exhibitions ${fullName}, photography grants ${fullName}, artist residency ${fullName}`;
 
     const html = `<!DOCTYPE html>
 <html lang="en">
@@ -389,13 +390,13 @@ Object.entries(countryCounts)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(title)} 2026 - Monographica</title>
+  <title>${escapeHtml(title)} 2026 - Monographica Open Calls</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(title)} 2026 - Monographica">
+  <meta property="og:title" content="${escapeHtml(title)} 2026 - Monographica Open Calls">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -500,8 +501,8 @@ Object.entries(orgCounts)
   .forEach(([org, count]) => {
     const slug = slugify(org);
     const title = `${org} - Open Calls`;
-    const desc = `All open calls and submission opportunities from ${org}. Exhibitions, grants, residencies, and more for photographers and visual artists.`;
-    const keywords = `${org} open call, ${org} submissions, ${org} photography, ${org} artists`;
+    const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
+    const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
 
     // Check for slug collision with call pages
     if (slugMap[slug]) {
@@ -515,13 +516,13 @@ Object.entries(orgCounts)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(title)} - Monographica</title>
+  <title>${escapeHtml(title)} - Monographica Open Calls</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(title)} - Monographica">
+  <meta property="og:title" content="${escapeHtml(title)} - Monographica Open Calls">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
