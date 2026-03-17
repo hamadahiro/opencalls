@@ -85,13 +85,11 @@
       sorted.forEach(([country, count]) => {
         const fullName = countryNames[country] || country;
         const slug = slugify(country);
-        const tag = count >= 2 ? 'a' : 'span';
-        const href = count >= 2 ? ` href="/${slug}"` : '';
-        html += `<${tag}${href} class="index-item">
+        html += `<a href="/${slug}" class="index-item">
           <span class="index-item-name">${fullName}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
-        </${tag}>`;
+        </a>`;
       });
 
       container.innerHTML = html;

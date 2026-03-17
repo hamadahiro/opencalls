@@ -72,7 +72,7 @@ const catSlugs = {
   'photography': 'photography', 'exhibition': 'exhibitions', 'grant': 'grants',
   'zine': 'zines', 'residency': 'residencies', 'education': 'education'
 };
-// Compute countries with 2+ calls for landing pages
+// Compute countries for landing pages
 const countryCounts = {};
 data.calls.forEach(call => {
   const country = getCountry(call.location);
@@ -80,12 +80,12 @@ data.calls.forEach(call => {
     countryCounts[country] = (countryCounts[country] || 0) + 1;
   }
 });
-const countryPages = Object.keys(countryCounts).filter(c => countryCounts[c] >= 2).map(c => slugify(c));
+const countryPages = Object.keys(countryCounts).map(c => slugify(c));
 
-// Compute orgs with 2+ calls for landing pages
+// Compute orgs for landing pages
 const orgCounts = {};
 data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 1; });
-const orgPages = Object.keys(orgCounts).filter(o => orgCounts[o] >= 2).map(o => slugify(o));
+const orgPages = Object.keys(orgCounts).map(o => slugify(o));
 
 function buildMetaTags(call) {
   const tags = [];
@@ -376,7 +376,6 @@ const countryNames = {
 };
 
 Object.entries(countryCounts)
-  .filter(([country, count]) => count >= 2)
   .forEach(([country, count]) => {
     const fullName = countryNames[country] || country;
     const slug = slugify(country);
@@ -498,7 +497,6 @@ Object.entries(countryCounts)
 
 // === Org landing pages ===
 Object.entries(orgCounts)
-  .filter(([org, count]) => count >= 2)
   .forEach(([org, count]) => {
     const slug = slugify(org);
     const title = `${org} - Open Calls`;
@@ -623,8 +621,8 @@ sitemapEntries.push(`${SITE}/countries`);
 sitemapEntries.push(`${SITE}/organizations`);
 
 // Update countryPages and orgPages lists in cards.js
-const countryPageSlugs = Object.keys(countryCounts).filter(c => countryCounts[c] >= 2).map(c => slugify(c));
-const orgPageSlugs = Object.keys(orgCounts).filter(o => orgCounts[o] >= 2).map(o => slugify(o));
+const countryPageSlugs = Object.keys(countryCounts).map(c => slugify(c));
+const orgPageSlugs = Object.keys(orgCounts).map(o => slugify(o));
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
   /const countryPages = \[.*?\];/,
