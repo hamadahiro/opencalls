@@ -93,6 +93,10 @@
     let allCalls = [];
     let currentView = 'new';
 
+    function slugify(title) {
+      return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
     async function loadCalls() {
       const res = await fetch('data.json');
       const data = await res.json();
@@ -104,7 +108,15 @@
       const roundedCount = Math.floor(openCount / 10) * 10;
       document.getElementById('openCount').textContent = roundedCount;
 
-      renderCalls('new');
+      const params = new URLSearchParams(window.location.search);
+      const initView = params.get('view') === 'past' ? 'past' : 'new';
+      currentView = initView;
+      if (initView === 'past') {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        document.querySelector('.nav-link[data-view="past"]').classList.add('active');
+        document.querySelector('.hero h1').textContent = 'Past Calls';
+      }
+      renderCalls(initView);
       setupNav();
       setupFilters();
     }
@@ -213,7 +225,7 @@
         tags.push(`<span class="call-deadline ${call.urgencyClass}">${call.urgencyText}</span>`);
 
         card.innerHTML = `
-          <h3 class="call-title"><a href="${call.url}" target="_blank">${call.title}</a></h3>
+          <h3 class="call-title"><a href="/${slugify(call.title)}">${call.title}</a></h3>
           <div class="call-meta">${tags.join(' ')}</div>
           <p class="call-description">${call.description}</p>
         `;
