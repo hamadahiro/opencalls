@@ -623,4 +623,136 @@ main {
     font-size: 13px;
   }
 }
+/* === Call Detail Page === */
+.call-detail {
+  padding: 60px 0 48px;
+}
+
+.call-detail-title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  margin-top: 24px;
+  font-family: 'Source Serif 4', serif;
+}
+
+.call-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.call-detail-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  line-height: 32px;
+  font-family: 'Source Serif 4', serif;
+  margin-bottom: 32px;
+}
+
+.call-detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.call-detail-apply {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 12px 28px;
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.call-detail-apply:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.call-detail-back {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
+
+.call-detail-back:hover {
+  color: #111;
+  text-decoration: underline;
+}
+
+.call-detail-info {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+  max-width: 480px;
+}
+
+.call-detail-info dt {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.call-detail-info dd {
+  font-size: 16px;
+  font-weight: 400;
+  color: #111;
+  font-family: 'Source Serif 4', serif;
+}
+
+.call-detail-info dd a {
+  color: #111;
+}
+
+/* === Related Calls === */
+.related-calls {
+  padding: 16px 0 48px;
+}
+
+.related-heading {
+  font-size: 32px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  padding: 48px 0 12px;
+  font-family: 'Source Serif 4', serif;
+}
+
+.related-card {
+  padding: 20px 0;
+}
+
+/* === Call Detail Responsive === */
+@media (max-width: 640px) {
+  .call-detail {
+    padding: 36px 0 24px;
+  }
+
+  .call-detail-title {
+    font-size: 32px;
+  }
+
+  .call-detail-description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .call-detail-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+}
+
 /* cache bust */
