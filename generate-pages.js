@@ -614,6 +614,10 @@ Object.entries(orgCounts)
     console.log(`  Org page: ${slug} (${count} calls)`);
   });
 
+// Add index pages to sitemap
+sitemapEntries.push(`${SITE}/countries`);
+sitemapEntries.push(`${SITE}/organizations`);
+
 // Update countryPages and orgPages lists in cards.js
 const countryPageSlugs = Object.keys(countryCounts).filter(c => countryCounts[c] >= 2).map(c => slugify(c));
 const orgPageSlugs = Object.keys(orgCounts).filter(o => orgCounts[o] >= 2).map(o => slugify(o));

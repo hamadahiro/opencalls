@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Open Calls by Country - Open Calls for Artists - Monographica</title>
+  <meta name="description" content="Browse open calls for photographers and visual artists by country. Find exhibitions, grants, residencies, and submissions worldwide.">
+  <meta name="keywords" content="open calls by country, international art exhibitions, photography grants worldwide, artist residencies by location, art submissions by country">
+  <link rel="canonical" href="https://opencalls.monographica.com/countries">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <meta property="og:title" content="Open Calls by Country - Open Calls for Artists - Monographica">
+  <meta property="og:description" content="Browse open calls for photographers and visual artists by country. Find exhibitions, grants, residencies, and submissions worldwide.">
+  <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
+  <meta property="og:url" content="https://opencalls.monographica.com/countries">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260317b">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Open Calls by Country</h1>
+      <h2 class="subtitle">Browse open calls for photographers and visual artists by country.</h2>
+    </section>
+
+    <section class="index-list" id="indexList"></section>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script>
+    const countryNames = { 'USA': 'United States', 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates' };
+
+    function slugify(title) {
+      return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
+    function getCountry(loc) {
+      if (!loc) return '';
+      const parts = loc.split(',');
+      return parts[parts.length - 1].trim();
+    }
+
+    async function load() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const now = new Date();
+      const container = document.getElementById('indexList');
+
+      const counts = {};
+      data.calls.forEach(c => {
+        const country = getCountry(c.location);
+        if (!country || country === 'Online') return;
+        const isOpen = c.deadline === 'Continuous' || new Date(c.deadline) >= now;
+        if (!counts[country]) counts[country] = { open: 0, total: 0 };
+        counts[country].total++;
+        if (isOpen) counts[country].open++;
+      });
+
+      const sorted = Object.entries(counts).sort((a, b) => b[1].open - a[1].open);
+
+      let html = '';
+      sorted.forEach(([country, { open, total }]) => {
+        const fullName = countryNames[country] || country;
+        const slug = slugify(country);
+        if (total >= 2) {
+          html += `<a href="/${slug}" class="index-item">
+            <span class="index-item-name">${fullName}</span>
+            <span class="index-item-count">${open} open</span>
+          </a>`;
+        } else {
+          html += `<span class="index-item">
+            <span class="index-item-name">${fullName}</span>
+            <span class="index-item-count">${open} open</span>
+          </span>`;
+        }
+      });
+
+      container.innerHTML = html;
+    }
+    load();
+  </script>
+
+</body>
+</html>
