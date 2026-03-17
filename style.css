@@ -716,6 +716,16 @@ a.meta-tag-link:hover {
   margin-bottom: 2px;
 }
 
+.call-detail-info dt a {
+  color: #999;
+  text-decoration: none;
+}
+
+.call-detail-info dt a:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
 .call-detail-info dd {
   font-size: 16px;
   font-weight: 400;
