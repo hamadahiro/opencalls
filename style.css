@@ -727,6 +727,43 @@ a.meta-tag-link:hover {
   color: #111;
 }
 
+/* === Index Pages (Countries, Orgs) === */
+.index-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 24px 0 48px;
+}
+
+.index-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgb(255, 255, 255);
+  text-decoration: none;
+  color: #111;
+  transition: background 0.15s ease;
+}
+
+.index-item:hover {
+  background: #EAE7E2;
+  text-decoration: none;
+}
+
+.index-item-name {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Source Serif 4', serif;
+}
+
+.index-item-count {
+  font-size: 13px;
+  font-weight: 400;
+  color: #999;
+  white-space: nowrap;
+}
+
 /* === Related Calls === */
 .related-calls {
   padding: 16px 0 48px;
