@@ -3,7 +3,24 @@ const path = require('path');
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
+const YEAR = new Date().getFullYear();
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations'];
+const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html'];
+
+// GA snippet
+const GA_SNIPPET = `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGN8M3LZMZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PGN8M3LZMZ');
+  </script>`;
+
+// Clean up old generated HTML files (keep manual files and non-HTML)
+const existingHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && !MANUAL_FILES.includes(f));
+existingHtml.forEach(f => fs.unlinkSync(f));
+console.log(`Cleaned up ${existingHtml.length} old HTML files`);
 
 function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -93,6 +110,7 @@ function generatePage(call, cssVersion) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
+  ${GA_SNIPPET}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
@@ -207,10 +225,10 @@ data.calls.forEach(call => {
 
 // === Category landing pages ===
 const categories = {
-  'photography': { title: 'Photography Open Calls', desc: 'Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews.', keywords: 'photography open calls, call for entries photography, photo competitions 2026, photography submissions, photography awards, photography grants, photography contests' },
+  'photography': { title: 'Photography Open Calls', desc: 'Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews.', keywords: 'photography open calls, call for entries photography, photo competitions, photography submissions, photography awards, photography grants, photography contests' },
   'exhibition': { title: 'Exhibition Open Calls', desc: 'Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists.', keywords: 'exhibition open calls, call for entries exhibition, art exhibition submissions, gallery open call, group exhibition, art show submissions' },
-  'grant': { title: 'Grants for Photographers & Visual Artists', desc: 'Funding opportunities for photographers and visual artists. Project grants, production funds, and artist support programs — apply now.', keywords: 'photography grants 2026, artist grants, call for entries grants, art funding, project grants for photographers, artist funding opportunities' },
-  'residency': { title: 'Artist Residencies for Photographers', desc: 'Residency programs for photographers and visual artists worldwide. Studio residencies, international programs, and creative retreats.', keywords: 'artist residency 2026, photography residency, call for entries residency, art residency programs, international artist residency' },
+  'grant': { title: 'Grants for Photographers & Visual Artists', desc: 'Funding opportunities for photographers and visual artists. Project grants, production funds, and artist support programs — apply now.', keywords: 'photography grants, artist grants, call for entries grants, art funding, project grants for photographers, artist funding opportunities' },
+  'residency': { title: 'Artist Residencies for Photographers', desc: 'Residency programs for photographers and visual artists worldwide. Studio residencies, international programs, and creative retreats.', keywords: 'artist residency, photography residency, call for entries residency, art residency programs, international artist residency' },
   'zine': { title: 'Zine & Photobook Open Calls', desc: 'Submit to photobook prizes, zine publications, and dummy awards. Publishing opportunities for photographers and visual artists.', keywords: 'photobook open call, call for entries photobook, zine submissions, photography publications, dummy award, photo book prize' },
   'education': { title: 'Photography Workshops & Education', desc: 'Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.', keywords: 'photography workshops, photography masterclass, call for entries education, photography mentoring, photography education, artist development' }
 };
@@ -222,16 +240,17 @@ Object.entries(categories).forEach(([cat, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
+  ${GA_SNIPPET}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${info.title} 2026 - Monographica Open Calls</title>
+  <title>${info.title} ${YEAR} - Monographica Open Calls</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
-  <meta name="keywords" content="${escapeHtml(info.keywords)}">
+  <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${info.title} 2026 - Monographica Open Calls">
+  <meta property="og:title" content="${info.title} ${YEAR} - Monographica Open Calls">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -242,7 +261,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "${info.title} 2026",
+    "name": "${info.title} ${YEAR}",
     "description": "${info.desc}",
     "url": "${SITE}/${slug}",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
@@ -348,16 +367,17 @@ Object.entries(countryCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
+  ${GA_SNIPPET}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(title)} 2026 - Monographica Open Calls</title>
+  <title>${escapeHtml(title)} ${YEAR} - Monographica Open Calls</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(title)} 2026 - Monographica Open Calls">
+  <meta property="og:title" content="${escapeHtml(title)} ${YEAR} - Monographica Open Calls">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -368,7 +388,7 @@ Object.entries(countryCounts)
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "${title} 2026",
+    "name": "${title} ${YEAR}",
     "description": "${desc}",
     "url": "${SITE}/${slug}",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
@@ -474,6 +494,7 @@ Object.entries(orgCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
+  ${GA_SNIPPET}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
@@ -609,5 +630,18 @@ ${allUrls.map(url => `  <url>
 </urlset>`;
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
+
+// Update CSS version in manual index pages to match index.html
+['categories.html', 'countries.html', 'organizations.html'].forEach(file => {
+  let html = fs.readFileSync(file, 'utf8');
+  html = html.replace(/style\.css\?v=[^"]+/, `style.css?v=${cssVersion}`);
+  fs.writeFileSync(file, html);
+});
+
+// Update year in index.html meta tags
+let indexContent = fs.readFileSync('index.html', 'utf8');
+indexContent = indexContent.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
+indexContent = indexContent.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
+fs.writeFileSync('index.html', indexContent);
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);
