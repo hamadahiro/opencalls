@@ -69,13 +69,11 @@
       let html = '';
       sorted.forEach(([org, count]) => {
         const slug = slugify(org);
-        const tag = count >= 2 ? 'a' : 'span';
-        const href = count >= 2 ? ` href="/${slug}"` : '';
-        html += `<${tag}${href} class="index-item">
+        html += `<a href="/${slug}" class="index-item">
           <span class="index-item-name">${org}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
-        </${tag}>`;
+        </a>`;
       });
 
       container.innerHTML = html;
