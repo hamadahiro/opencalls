@@ -4,6 +4,7 @@ const path = require('path');
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
+const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations'];
 const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html'];
 
@@ -114,13 +115,13 @@ function generatePage(call, cssVersion) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(call.title)} - Monographica Open Calls</title>
+  <title>${escapeHtml(call.title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${desc}">
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(call.title)} - Monographica Open Calls">
+  <meta property="og:title" content="${escapeHtml(call.title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${desc}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -244,13 +245,13 @@ Object.entries(categories).forEach(([cat, info]) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${info.title} ${YEAR} - Monographica Open Calls</title>
+  <title>${info.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
   <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${info.title} ${YEAR} - Monographica Open Calls">
+  <meta property="og:title" content="${info.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -371,13 +372,13 @@ Object.entries(countryCounts)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(title)} ${YEAR} - Monographica Open Calls</title>
+  <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(title)} ${YEAR} - Monographica Open Calls">
+  <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -498,13 +499,13 @@ Object.entries(orgCounts)
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>${escapeHtml(title)} - Monographica Open Calls</title>
+  <title>${escapeHtml(title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="${escapeHtml(title)} - Monographica Open Calls">
+  <meta property="og:title" content="${escapeHtml(title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
@@ -631,17 +632,25 @@ ${allUrls.map(url => `  <url>
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
 
-// Update CSS version in manual index pages to match index.html
-['categories.html', 'countries.html', 'organizations.html'].forEach(file => {
+// Update manual HTML files: CSS version, year, and title suffix
+const manualFiles = ['index.html', 'categories.html', 'countries.html', 'organizations.html'];
+manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
+  // Sync CSS version
   html = html.replace(/style\.css\?v=[^"]+/, `style.css?v=${cssVersion}`);
+  // Update year
+  html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
+  html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
+  // Ensure title suffix — remove any existing then re-add
+  html = html.replace(/(<title>[^<]+?)(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
+    const clean = content.replace(/\s*-\s*Monographica$/, '');
+    return `${clean}${TITLE_SUFFIX}</title>`;
+  });
+  html = html.replace(/(og:title"\s+content="[^"]+?)(\s*-\s*Monographica)?"/g, (m, content) => {
+    const clean = content.replace(/\s*-\s*Monographica$/, '');
+    return `${clean}${TITLE_SUFFIX}"`;
+  });
   fs.writeFileSync(file, html);
 });
-
-// Update year in index.html meta tags
-let indexContent = fs.readFileSync('index.html', 'utf8');
-indexContent = indexContent.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
-indexContent = indexContent.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
-fs.writeFileSync('index.html', indexContent);
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);
