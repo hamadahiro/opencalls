@@ -315,6 +315,16 @@ main {
   letter-spacing: 0.2px;
 }
 
+a.meta-tag-link {
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+a.meta-tag-link:hover {
+  background: #ddd9d3;
+  text-decoration: none;
+}
+
 .pin-icon {
   width: 14px;
   height: 14px;
