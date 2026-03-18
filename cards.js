@@ -91,7 +91,14 @@ function renderTags(call) {
     }
   }
   if (call.fee && call.fee !== 'Check website') {
-    const feeLabel = /^[£$€]/.test(call.fee) ? esc(call.fee) + ' fee' : esc(call.fee);
+    let feeLabel;
+    if (call.fee.toLowerCase().startsWith('free')) {
+      feeLabel = 'Free';
+    } else if (/^[£$€¥]/.test(call.fee)) {
+      feeLabel = esc(call.fee) + ' fee';
+    } else {
+      feeLabel = esc(call.fee);
+    }
     tags.push(`<span class="meta-tag">${feeLabel}</span>`);
   }
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
