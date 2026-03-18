@@ -312,7 +312,7 @@ Object.entries(categories).forEach(([cat, info]) => {
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.category === '${cat}').map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => c.category === '${cat}').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
@@ -400,7 +400,7 @@ filterPages.forEach(fp => {
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => ${fp.filterJs}).map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => ${fp.filterJs}).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
@@ -520,7 +520,7 @@ ${country === 'USA' ? `
       });
       container.innerHTML = html;
 ` : `
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
 `}
     }
@@ -608,7 +608,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && c.location.includes(', ${state},') || c.location && c.location.includes(', ${state}, USA')).map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => c.location && c.location.includes(', ${state},') || c.location && c.location.includes(', ${state}, USA')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
