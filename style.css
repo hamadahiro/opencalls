@@ -319,19 +319,6 @@ a.meta-tag-link.call-prize:hover {
   padding-bottom: 48px;
 }
 
-.form-section-title {
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #999;
-  margin-top: 12px;
-  font-family: helvetica, sans-serif;
-}
-
-.form-section-title:first-child {
-  margin-top: 0;
-}
-
 .submit-form input,
 .submit-form select,
 .submit-form textarea {
