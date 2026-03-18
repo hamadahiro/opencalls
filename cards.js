@@ -8,22 +8,22 @@ const categoryLabel = {
 };
 
 const eligibilityLabel = {
-  'women-only': 'Women only',
-  'us-only': 'US only',
-  'europe-only': 'Europe only',
-  'italy-only': 'Italy only',
-  'emerging-only': 'Emerging artists',
+  'women': 'Women',
+  'us': 'US only',
+  'europe': 'Europe only',
+  'italy': 'Italy only',
+  'emerging': 'Emerging artists',
   'under-30': 'Under 30',
   'under-40': 'Under 40',
   'lgbtq': 'LGBTQ+',
-  'analog-only': 'Analog only',
+  'analog': 'Analog only',
   'alternative-process': 'Alternative process',
-  'professional-only': 'Professional only',
+  'professional': 'Professional only',
   'membership-required': 'Membership required',
-  'focus-puerto-rico': 'Puerto Rico focus',
-  'focus-asian-american': 'Asian American focus',
-  'focus-south-asian': 'South Asian focus',
-  'focus-african-diaspora': 'African diaspora focus'
+  'puerto-rico': 'Puerto Rico focus',
+  'asian-american': 'Asian American focus',
+  'south-asian': 'South Asian focus',
+  'african-diaspora': 'African diaspora focus'
 };
 
 const categorySlug = {
@@ -136,7 +136,7 @@ function renderTags(call) {
   if (call.eligibility && call.eligibility.length) {
     call.eligibility.forEach(e => {
       const label = eligibilityLabel[e] || e;
-      tags.push(`<a href="/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
+      tags.push(`<a href="/eligibility/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
     });
   }
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
@@ -180,7 +180,7 @@ function renderInfoGrid(call) {
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
       const label = eligibilityLabel[e] || e;
-      return `<a href="/${e}">${esc(label)}</a>`;
+      return `<a href="/eligibility/${e}">${esc(label)}</a>`;
     }).join(', ');
     rows.push(`<div><dt><a href="/eligibility">Eligibility</a></dt><dd>${eligHtml}</dd></div>`);
   }

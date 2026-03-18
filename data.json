@@ -13,7 +13,7 @@
       "location": "Online",
       "prize": "$20,000",
       "eligibility": [
-        "women-only"
+        "women"
       ]
     },
     {
@@ -93,7 +93,7 @@
       "location": "Casablanca, Morocco",
       "prize": "",
       "eligibility": [
-        "focus-african-diaspora"
+        "african-diaspora"
       ]
     },
     {
@@ -147,7 +147,7 @@
       "location": "Athens, Greece",
       "prize": "€1,000",
       "eligibility": [
-        "analog-only"
+        "analog"
       ]
     },
     {
@@ -253,7 +253,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -333,7 +333,7 @@
       "location": "Arles, France",
       "prize": "€2,000",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -426,7 +426,7 @@
       "location": "New York, NY, USA",
       "prize": "$7,000",
       "eligibility": [
-        "us-only"
+        "us"
       ]
     },
     {
@@ -454,7 +454,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [
-        "focus-south-asian"
+        "south-asian"
       ]
     },
     {
@@ -508,7 +508,7 @@
       "location": "Tarragona, Spain",
       "prize": "€500",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -562,7 +562,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -917,7 +917,7 @@
       "location": "Milan, Italy",
       "prize": "€3,000",
       "eligibility": [
-        "italy-only",
+        "italy",
         "under-40"
       ]
     },
@@ -972,7 +972,7 @@
       "location": "Los Angeles, CA, USA",
       "prize": "",
       "eligibility": [
-        "analog-only"
+        "analog"
       ]
     },
     {
@@ -1204,7 +1204,7 @@
       "location": "Orange County, CA, USA",
       "prize": "",
       "eligibility": [
-        "focus-asian-american"
+        "asian-american"
       ]
     },
     {
@@ -1245,7 +1245,7 @@
       "location": "Gothenburg, Sweden",
       "prize": "SEK 100,000",
       "eligibility": [
-        "professional-only"
+        "professional"
       ]
     },
     {
@@ -1260,7 +1260,7 @@
       "location": "New York, NY, USA",
       "prize": "$3,000",
       "eligibility": [
-        "us-only"
+        "us"
       ]
     },
     {
@@ -1340,7 +1340,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -1394,7 +1394,7 @@
       "location": "Mill Valley, CA, USA",
       "prize": "",
       "eligibility": [
-        "us-only",
+        "us",
         "lgbtq"
       ]
     },
@@ -1410,8 +1410,8 @@
       "location": "Online",
       "prize": "$2,000",
       "eligibility": [
-        "us-only",
-        "emerging-only"
+        "us",
+        "emerging"
       ]
     },
     {
@@ -1543,7 +1543,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [
-        "us-only"
+        "us"
       ]
     },
     {
@@ -1584,7 +1584,7 @@
       "location": "Vancouver, Canada",
       "prize": "",
       "eligibility": [
-        "analog-only"
+        "analog"
       ]
     },
     {
@@ -1625,7 +1625,7 @@
       "location": "Mill Valley, CA, USA",
       "prize": "",
       "eligibility": [
-        "us-only"
+        "us"
       ]
     },
     {
@@ -1746,7 +1746,7 @@
       "location": "Chicago, IL, USA",
       "prize": "$3,000",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -1787,7 +1787,7 @@
       "location": "Helsinki, Finland",
       "prize": "",
       "eligibility": [
-        "analog-only"
+        "analog"
       ]
     },
     {
@@ -1906,7 +1906,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
@@ -2012,7 +2012,7 @@
       "location": "Radolfzell, Germany",
       "prize": "€1,500",
       "eligibility": [
-        "europe-only"
+        "europe"
       ]
     },
     {
@@ -2066,7 +2066,7 @@
       "location": "Paris, France",
       "prize": "Exhibition",
       "eligibility": [
-        "women-only"
+        "women"
       ]
     },
     {
@@ -2081,7 +2081,7 @@
       "location": "Online",
       "prize": "$10,000",
       "eligibility": [
-        "focus-puerto-rico"
+        "puerto-rico"
       ]
     },
     {
@@ -2265,8 +2265,8 @@
       "location": "Paris, France",
       "prize": "€10,000",
       "eligibility": [
-        "women-only",
-        "professional-only"
+        "women",
+        "professional"
       ]
     },
     {
@@ -2385,7 +2385,7 @@
       "location": "Paris, France",
       "prize": "€8,000",
       "eligibility": [
-        "analog-only"
+        "analog"
       ]
     },
     {
@@ -2543,7 +2543,7 @@
       "location": "New York, NY, USA",
       "prize": "Exhibition at UN Headquarters",
       "eligibility": [
-        "emerging-only"
+        "emerging"
       ]
     },
     {
