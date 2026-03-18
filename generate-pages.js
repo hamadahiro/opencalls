@@ -150,13 +150,14 @@ function generatePage(call, cssVersion) {
   <meta name="description" content="${desc}">
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(call.title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${desc}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
@@ -272,13 +273,14 @@ Object.entries(categories).forEach(([cat, info]) => {
   <meta name="description" content="${escapeHtml(info.desc)}">
   <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${info.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
@@ -360,13 +362,14 @@ filterPages.forEach(fp => {
   <meta name="description" content="${escapeHtml(fp.desc)}">
   <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
   <link rel="canonical" href="${SITE}/${fp.slug}">
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${fp.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(fp.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${fp.slug}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
@@ -450,13 +453,14 @@ Object.entries(countryCounts)
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
@@ -564,13 +568,14 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
@@ -647,13 +652,14 @@ Object.entries(orgCounts)
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/${slug}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
@@ -756,6 +762,10 @@ indexPages.forEach(({ src, fallback }) => {
     let html = fs.readFileSync(readFrom, 'utf8');
     // Sync CSS version
     html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
+    html = html.replace(/<link rel="icon" href="\/favicon\.\w+" type="image\/\w+">/g, '<link rel="icon" href="/favicon.png" type="image/png">');
+    if (!html.includes('og:site_name')) {
+      html = html.replace(/<meta name="twitter:card"/, '<meta property="og:site_name" content="Monographica">\n  <meta name="twitter:card"');
+    }
     html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
     html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
     html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
