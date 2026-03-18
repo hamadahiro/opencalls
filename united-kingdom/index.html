@@ -6,14 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>Open Calls for Artists in United Kingdom 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Kingdom. Browse and apply today.">
-  <meta name="keywords" content="open calls United Kingdom, call for entries United Kingdom, photography opportunities United Kingdom, art exhibitions United Kingdom, photography grants United Kingdom, artist residency United Kingdom">
+  <title>Open Calls for Artists in the United Kingdom 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Kingdom. Browse and apply today.">
+  <meta name="keywords" content="open calls the United Kingdom, call for entries the United Kingdom, photography opportunities the United Kingdom, art exhibitions the United Kingdom, photography grants the United Kingdom, artist residency the United Kingdom">
   <link rel="canonical" href="https://opencalls.monographica.com/united-kingdom">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
-  <meta property="og:title" content="Open Calls for Artists in United Kingdom 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Kingdom. Browse and apply today.">
+  <meta property="og:title" content="Open Calls for Artists in the United Kingdom 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Kingdom. Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
   <meta property="og:url" content="https://opencalls.monographica.com/united-kingdom">
   <meta property="og:type" content="website">
@@ -24,8 +24,8 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Open Calls for Artists in United Kingdom 2026",
-    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Kingdom. Browse and apply today.",
+    "name": "Open Calls for Artists in the United Kingdom 2026",
+    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Kingdom. Browse and apply today.",
     "url": "https://opencalls.monographica.com/united-kingdom",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
@@ -50,8 +50,8 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations">Locations</a></nav>
-      <h1>Open Calls for Artists in United Kingdom</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Kingdom. Browse and apply today.</h2>
+      <h1>Open Calls for Artists in the United Kingdom</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Kingdom. Browse and apply today.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -68,7 +68,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'United Kingdom').map(processCall);
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'UK').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
 
     }
