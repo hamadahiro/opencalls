@@ -105,9 +105,7 @@
       const data = await res.json();
       allCalls = data.calls;
 
-      const now = new Date();
-      const openCount = allCalls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now).length;
-      const roundedCount = Math.floor(openCount / 10) * 10;
+      const roundedCount = Math.floor(allCalls.length / 10) * 10;
       const sub = document.getElementById('subtitle');
       sub.textContent = sub.textContent.replace(/over \d+/, 'over ' + roundedCount);
 
