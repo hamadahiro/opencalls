@@ -148,25 +148,25 @@
         return view === 'past' ? b.deadlineDate - a.deadlineDate : a.deadlineDate - b.deadlineDate;
       });
 
-      // Ending soon section (Open view only, 3-day window, min 2 items)
-      const endingSoonSlugs = new Set();
+      // Today section (Open view only, ends today, min 1 item)
+      const todaySlugs = new Set();
       if (view === 'new') {
-        const endingSoon = processed.filter(c => c.daysLeft !== null && c.daysLeft >= 0 && c.daysLeft <= 3);
-        if (endingSoon.length >= 2) {
+        const today = processed.filter(c => c.daysLeft !== null && c.daysLeft === 0);
+        if (today.length >= 1) {
           const header = document.createElement('h3');
           header.className = 'section-header';
-          header.textContent = 'Ending soon';
+          header.textContent = 'Today';
           container.appendChild(header);
-          endingSoon.forEach(call => {
+          today.forEach(call => {
             container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-            endingSoonSlugs.add(slugify(call.title));
+            todaySlugs.add(slugify(call.title));
           });
         }
       }
 
       // Month sections (skip items already in Ending soon)
       let currentSectionName = '';
-      processed.filter(c => !endingSoonSlugs.has(slugify(c.title))).forEach(call => {
+      processed.filter(c => !todaySlugs.has(slugify(c.title))).forEach(call => {
         if (call.section !== currentSectionName) {
           currentSectionName = call.section;
           const header = document.createElement('h3');
