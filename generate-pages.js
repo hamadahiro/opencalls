@@ -521,6 +521,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 });
 
 // Eligibility index page
+eligibilityPageSlugs.sort((a, b) => eligibilityGroups[a].short.localeCompare(eligibilityGroups[b].short));
 if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
