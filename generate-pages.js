@@ -9,7 +9,7 @@ const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-i
 const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html', '404.html'];
 
 // GA — single external file
-const GA_SNIPPET = `<script src="analytics.js"></script>`;
+const GA_SNIPPET = `<script src="/analytics.js"></script>`;
 const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>`;
 
 // Shared header and footer
@@ -40,10 +40,14 @@ function buildHero(breadcrumbs, title, subtitle) {
     </section>`;
 }
 
-// Clean up old generated HTML files (keep manual files and non-HTML)
-const existingHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && !MANUAL_FILES.includes(f));
-existingHtml.forEach(f => fs.unlinkSync(f));
-console.log(`Cleaned up ${existingHtml.length} old HTML files`);
+// Track generated files for cleanup at the end
+const generatedFiles = new Set();
+function writeGenerated(filepath, content) {
+  const dir = path.dirname(filepath);
+  if (dir !== '.' && !fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(filepath, content);
+  generatedFiles.add(filepath);
+}
 
 function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -146,8 +150,8 @@ function generatePage(call, cssVersion) {
   <meta name="description" content="${desc}">
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(call.title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${desc}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -161,7 +165,7 @@ function generatePage(call, cssVersion) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 
@@ -199,8 +203,8 @@ function generatePage(call, cssVersion) {
     const CURRENT_DEADLINE = '${call.deadline}';
     const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '' })};
   </script>
-  <script src="cards.js"></script>
-  <script src="call-detail.js"></script>
+  <script src="/cards.js"></script>
+  <script src="/call-detail.js"></script>
 
 </body>
 </html>`;
@@ -236,7 +240,7 @@ data.calls.forEach(call => {
 
   slugMap[slug] = call.title;
   const html = generatePage(call, cssVersion);
-  fs.writeFileSync(`${slug}.html`, html);
+  writeGenerated(`${slug}.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   generated++;
 });
@@ -267,8 +271,8 @@ Object.entries(categories).forEach(([cat, info]) => {
   <meta name="description" content="${escapeHtml(info.desc)}">
   <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${info.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -289,7 +293,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 
@@ -303,7 +307,7 @@ Object.entries(categories).forEach(([cat, info]) => {
     ${FOOTER}
   </main>
 
-  <script src="cards.js"></script>
+  <script src="/cards.js"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -317,7 +321,7 @@ Object.entries(categories).forEach(([cat, info]) => {
 </body>
 </html>`;
 
-  fs.writeFileSync(`${slug}.html`, html);
+  writeGenerated(`${slug}.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  Category page: ${slug} (${count} calls)`);
 });
@@ -355,8 +359,8 @@ filterPages.forEach(fp => {
   <meta name="description" content="${escapeHtml(fp.desc)}">
   <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
   <link rel="canonical" href="${SITE}/${fp.slug}">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${fp.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(fp.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -377,7 +381,7 @@ filterPages.forEach(fp => {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 
@@ -391,7 +395,7 @@ filterPages.forEach(fp => {
     ${FOOTER}
   </main>
 
-  <script src="cards.js"></script>
+  <script src="/cards.js"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -405,7 +409,7 @@ filterPages.forEach(fp => {
 </body>
 </html>`;
 
-  fs.writeFileSync(`${fp.slug}.html`, html);
+  writeGenerated(`${fp.slug}.html`, html);
   sitemapEntries.push(`${SITE}/${fp.slug}`);
   console.log(`  Filter page: ${fp.slug} (${count} calls)`);
 });
@@ -415,11 +419,14 @@ filterPages.forEach(fp => {
 const countryNames = {
   'USA': 'the United States', 'UK': 'the United Kingdom', 'UAE': 'the United Arab Emirates', 'Netherlands': 'the Netherlands'
 };
+const countrySlugs = {
+  'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates'
+};
 
 Object.entries(countryCounts)
   .forEach(([country, count]) => {
     const fullName = countryNames[country] || country;
-    const slug = slugify(country);
+    const slug = countrySlugs[country] || slugify(country);
 
     if (slugMap[slug]) {
       console.warn(`  SKIPPED country page: ${slug} collides with "${slugMap[slug]}"`);
@@ -446,8 +453,8 @@ Object.entries(countryCounts)
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -468,7 +475,7 @@ Object.entries(countryCounts)
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 
@@ -482,7 +489,7 @@ Object.entries(countryCounts)
     ${FOOTER}
   </main>
 
-  <script src="cards.js"></script>
+  <script src="/cards.js"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -506,7 +513,7 @@ ${country === 'USA' ? `
       let html = '';
       sorted.forEach(([state, count]) => {
         const fullName = stateNames[state] || state;
-        html += '<a href="/' + slugify(state) + '" class="index-item">' +
+        html += '<a href="/united-states/' + slugify(fullName) + '" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
           '<span class="index-item-dots"></span>' +
           '<span class="index-item-count">' + count + '</span></a>';
@@ -525,7 +532,7 @@ ${country === 'USA' ? `
 
     slugMap[slug] = `country: ${fullName}`;
     createdCountrySlugs.push(slug);
-    fs.writeFileSync(`${slug}.html`, html);
+    writeGenerated(`${slug}.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls)`);
   });
@@ -542,15 +549,11 @@ data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
 
 Object.entries(stateCounts).forEach(([state, count]) => {
   const fullStateName = usStateNames[state] || state;
-  const slug = slugify(state);
+  const stateSlug = slugify(fullStateName);
+  const slug = `united-states/${stateSlug}`;
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
   const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
-
-  if (slugMap[slug]) {
-    console.warn(`  SKIPPED state page: ${slug} collides with "${slugMap[slug]}"`);
-    return;
-  }
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -564,8 +567,8 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -586,7 +589,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 
@@ -600,7 +603,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="cards.js"></script>
+  <script src="/cards.js"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -615,7 +618,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
 </html>`;
 
   slugMap[slug] = `state: ${fullStateName}`;
-  fs.writeFileSync(`${slug}.html`, html);
+  writeGenerated(`${slug}.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  State page: ${slug} (${count} calls)`);
 });
@@ -646,8 +649,8 @@ Object.entries(orgCounts)
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="${escapeHtml(title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -668,7 +671,7 @@ Object.entries(orgCounts)
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
 </head>
 <body>
 
@@ -682,7 +685,7 @@ Object.entries(orgCounts)
     ${FOOTER}
   </main>
 
-  <script src="cards.js"></script>
+  <script src="/cards.js"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -698,7 +701,7 @@ Object.entries(orgCounts)
 
     slugMap[slug] = `org: ${org}`;
     createdOrgSlugs.push(slug);
-    fs.writeFileSync(`${slug}.html`, html);
+    writeGenerated(`${slug}.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls)`);
   });
@@ -739,7 +742,7 @@ const manualFiles = ['index.html', 'categories.html', 'countries.html', 'organiz
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS version
-  html = html.replace(/style\.css\?v=[^"]+/, `style.css?v=${cssVersion}`);
+  html = html.replace(/style\.css\?v=[^"]+/, `/style.css?v=${cssVersion}`);
   // Update year everywhere (titles, keywords, footer)
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
   html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
@@ -769,11 +772,25 @@ manualFiles.forEach(file => {
   fs.writeFileSync(file, html);
 });
 
-// Final cleanup: remove any stray duplicate files (macOS Finder creates "name 2.html" copies)
-const strayFiles = fs.readdirSync('.').filter(f => f.endsWith('.html') && /\s\d+\.html$/.test(f));
-if (strayFiles.length) {
-  strayFiles.forEach(f => fs.unlinkSync(f));
-  console.log(`Removed ${strayFiles.length} stray duplicate files`);
+// Final cleanup: remove HTML files that weren't generated this run (stale pages, duplicates)
+const allHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && !MANUAL_FILES.includes(f));
+let cleaned = 0;
+allHtml.forEach(f => {
+  if (!generatedFiles.has(f)) {
+    fs.unlinkSync(f);
+    cleaned++;
+  }
+});
+// Also clean united-states subfolder
+if (fs.existsSync('united-states')) {
+  fs.readdirSync('united-states').filter(f => f.endsWith('.html')).forEach(f => {
+    const fp = `united-states/${f}`;
+    if (!generatedFiles.has(fp)) {
+      fs.unlinkSync(fp);
+      cleaned++;
+    }
+  });
 }
+if (cleaned) console.log(`Cleaned up ${cleaned} stale/duplicate files`);
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);
