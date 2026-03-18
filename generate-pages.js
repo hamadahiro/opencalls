@@ -27,8 +27,8 @@ const FOOTER = `<footer class="about-section" id="footer">
       <p>&copy; ${YEAR} HH &mdash; still making sense of things.</p>
     </footer>`;
 
-function buildBreadcrumbs(section, sectionUrl, pageName) {
-  return `<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="${sectionUrl}">${section}</a> / <span>${pageName}</span></nav>`;
+function buildBreadcrumbs(section, sectionUrl) {
+  return `<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="${sectionUrl}">${section}</a></nav>`;
 }
 
 function buildHero(breadcrumbs, title, subtitle) {
@@ -167,7 +167,7 @@ function generatePage(call, cssVersion) {
 
   <main>
     <section class="call-detail">
-      <a href="/" class="call-detail-back">&larr; All open calls</a>
+      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
 
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
@@ -179,7 +179,6 @@ function generatePage(call, cssVersion) {
 
       <div class="call-detail-actions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Visit Official Website</a>
-        <a href="/" class="call-detail-back">&larr; Back to all calls</a>
       </div>
     </section>
 
@@ -294,7 +293,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   ${HEADER}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Categories', '/categories', categoryLabel(cat)), info.title, escapeHtml(info.desc))}
+    ${buildHero(buildBreadcrumbs('Categories', '/categories'), info.title, escapeHtml(info.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -411,7 +410,7 @@ Object.entries(countryCounts)
   ${HEADER}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Countries', '/countries', escapeHtml(fullName)), escapeHtml(title), escapeHtml(desc))}
+    ${buildHero(buildBreadcrumbs('Countries', '/countries'), escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -525,7 +524,7 @@ Object.entries(orgCounts)
   ${HEADER}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Organizations', '/organizations', escapeHtml(org)), escapeHtml(org), escapeHtml(desc))}
+    ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
