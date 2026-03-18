@@ -142,7 +142,7 @@
         if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
         if (a.deadline === 'Continuous') return 1;
         if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
+        return view === 'past' ? b.deadlineDate - a.deadlineDate : a.deadlineDate - b.deadlineDate;
       });
 
       let currentSectionName = '';
