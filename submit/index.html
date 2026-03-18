@@ -36,7 +36,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
       <h1>Submit a call</h1>
-      <h2 class="subtitle">Know a call for photographers or visual artists? Just share the link. We'll review it and fill in the details.</h2>
+      <h2 class="subtitle">Know a call for photographers or visual artists? Submit it here. We'll review it before listing.</h2>
     </section>
 
     <form class="submit-form" id="submitForm">
@@ -51,7 +51,16 @@
         <option value="zine">Zines & Books</option>
         <option value="education">Education</option>
       </select>
+
+      <h3 class="form-section-title">Details</h3>
       <input type="text" name="deadline" placeholder="Deadline (YYYY-MM-DD or continuous)">
+      <input type="text" name="location" placeholder="Location (City, country or online)">
+      <input type="text" name="fee" placeholder="Entry fee (Free, $35, €25)">
+      <input type="text" name="prize" placeholder="Prize ($1,000 or leave empty)">
+
+      <h3 class="form-section-title">Organization</h3>
+      <input type="text" name="org" placeholder="Organization">
+      <input type="text" name="instagram" placeholder="Instagram (@handle, optional)">
 
       <h3 class="form-section-title">Your info</h3>
       <input type="text" name="submitter" placeholder="Your name or email (optional)">
@@ -82,6 +91,11 @@
         `**URL:** ${data.url}`,
         `**Category:** ${data.category || 'Not specified'}`,
         `**Deadline:** ${data.deadline || 'Not specified'}`,
+        `**Location:** ${data.location || 'Not specified'}`,
+        `**Fee:** ${data.fee || 'Not specified'}`,
+        `**Prize:** ${data.prize || 'None'}`,
+        `**Organization:** ${data.org || 'Not specified'}`,
+        `**Instagram:** ${data.instagram || 'None'}`,
         '',
         `---`,
         `Submitted by: ${data.submitter || 'Anonymous'}`,
