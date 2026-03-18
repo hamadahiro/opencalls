@@ -55,6 +55,11 @@
       return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     }
 
+    function esc(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     async function load() {
       const res = await fetch('/data.json');
       const data = await res.json();
@@ -71,7 +76,7 @@
       sorted.forEach(([org, count]) => {
         const slug = slugify(org);
         html += `<a href="/${slug}" class="index-item">
-          <span class="index-item-name">${org}</span>
+          <span class="index-item-name">${esc(org)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
         </a>`;

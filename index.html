@@ -173,8 +173,11 @@
           link.classList.add('active');
 
           currentView = view;
+          currentFilter = 'all';
+          currentSearch = '';
+          document.getElementById('searchInput').value = '';
+          document.getElementById('searchClear').classList.remove('visible');
           renderCalls(view);
-          // Reset filter to All
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
 

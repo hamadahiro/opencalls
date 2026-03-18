@@ -57,6 +57,11 @@
       return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     }
 
+    function esc(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     function getCountry(loc) {
       if (!loc) return '';
       const parts = loc.split(',');
@@ -87,7 +92,7 @@
         const fullName = countryNames[country] || country;
         const slug = slugify(country);
         html += `<a href="/${slug}" class="index-item">
-          <span class="index-item-name">${fullName}</span>
+          <span class="index-item-name">${esc(fullName)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
         </a>`;
