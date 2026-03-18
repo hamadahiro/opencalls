@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility', 'women-only', 'us-only', 'europe-only', 'italy-only', 'emerging-only', 'under-30', 'under-40', 'lgbtq', 'analog-only', 'alternative-process', 'professional-only', 'membership-required', 'focus-puerto-rico', 'focus-asian-american', 'focus-south-asian', 'focus-african-diaspora'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
@@ -450,7 +450,7 @@ const eligibilityPageSlugs = [];
 Object.entries(eligibilityTags).forEach(([tag, count]) => {
   const info = eligibilityGroups[tag];
   if (!info) return;
-  const slug = `eligibility/${tag}`;
+  const slug = tag;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -559,7 +559,7 @@ if (eligibilityPageSlugs.length) {
       ${eligibilityPageSlugs.map(tag => {
         const info = eligibilityGroups[tag];
         const count = eligibilityTags[tag];
-        return `<a href="/eligibility/${tag}" class="index-item">
+        return `<a href="/${tag}" class="index-item">
           <span class="index-item-name">${escapeHtml(info.short)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
