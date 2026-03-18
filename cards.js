@@ -136,7 +136,7 @@ function renderTags(call) {
   if (call.eligibility && call.eligibility.length) {
     call.eligibility.forEach(e => {
       const label = eligibilityLabel[e] || e;
-      tags.push(`<a href="/eligibility/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
+      tags.push(`<a href="/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
     });
   }
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
@@ -180,7 +180,7 @@ function renderInfoGrid(call) {
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
       const label = eligibilityLabel[e] || e;
-      return `<a href="/eligibility/${e}" class="eligibility-tag">${esc(label)}</a>`;
+      return `<a href="/${e}" class="eligibility-tag">${esc(label)}</a>`;
     }).join(' ');
     rows.push(`<div><dt><a href="/eligibility">Eligibility</a></dt><dd>${eligHtml}</dd></div>`);
   }
