@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/analytics.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Submit an Open Call - Monographica</title>
+  <meta name="description" content="Submit an open call for photographers and visual artists. Exhibitions, grants, residencies, and more.">
+  <link rel="canonical" href="https://opencalls.monographica.com/submit">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <meta property="og:title" content="Submit an Open Call - Monographica">
+  <meta property="og:description" content="Submit an open call for photographers and visual artists.">
+  <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
+  <meta property="og:url" content="https://opencalls.monographica.com/submit">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260318">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
+      <h1>Submit an Open Call</h1>
+      <h2 class="subtitle">Know about an open call for photographers or visual artists? Submit it here and we'll review it for inclusion.</h2>
+    </section>
+
+    <form class="submit-form" id="submitForm">
+      <input type="text" name="title" placeholder="Title of the open call" required>
+      <input type="text" name="org" placeholder="Organization name" required>
+      <input type="url" name="url" placeholder="Official website URL" required>
+      <input type="text" name="deadline" placeholder="Deadline (e.g. 2026-06-30 or Continuous)">
+      <select name="category">
+        <option value="" disabled selected>Category</option>
+        <option value="photography">Photography</option>
+        <option value="exhibition">Exhibition</option>
+        <option value="grant">Grant</option>
+        <option value="residency">Residency</option>
+        <option value="zine">Zines & Books</option>
+        <option value="education">Education</option>
+      </select>
+      <input type="text" name="location" placeholder="Location (e.g. Paris, France or Online)">
+      <input type="text" name="fee" placeholder="Entry fee (e.g. Free, $35, €25)">
+      <input type="text" name="prize" placeholder="Prize (e.g. $1,000 or leave empty)">
+      <input type="text" name="instagram" placeholder="Instagram handle (e.g. @example)">
+      <textarea name="description" placeholder="Brief description of the open call" rows="3"></textarea>
+      <input type="text" name="submitter" placeholder="Your name or email (optional)">
+      <button type="submit" class="submit-btn" id="submitBtn">Submit open call</button>
+      <p id="submitStatus" style="font-family: 'Source Serif 4', serif; font-size: 16px; margin-top: 8px;"></p>
+    </form>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Submissions are reviewed manually. Not all submissions will be published. We verify details before adding calls to the site.</p>
+      <p>&copy; 2026 HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('submitForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const status = document.getElementById('submitStatus');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      status.textContent = '';
+
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form));
+
+      // Build issue body
+      const body = [
+        `**Title:** ${data.title}`,
+        `**Organization:** ${data.org}`,
+        `**URL:** ${data.url}`,
+        `**Deadline:** ${data.deadline || 'Not specified'}`,
+        `**Category:** ${data.category || 'Not specified'}`,
+        `**Location:** ${data.location || 'Not specified'}`,
+        `**Fee:** ${data.fee || 'Not specified'}`,
+        `**Prize:** ${data.prize || 'None'}`,
+        `**Instagram:** ${data.instagram || 'None'}`,
+        `**Description:** ${data.description || 'None'}`,
+        '',
+        `---`,
+        `Submitted by: ${data.submitter || 'Anonymous'}`,
+      ].join('\n');
+
+      try {
+        const res = await fetch('https://opencalls-submit.monographica.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: `[Submission] ${data.title} — ${data.org}`,
+            body: body
+          })
+        });
+
+        if (res.ok) {
+          status.textContent = 'Thank you! Your submission has been received and will be reviewed.';
+          form.reset();
+        } else {
+          throw new Error('Failed');
+        }
+      } catch (err) {
+        status.textContent = 'Something went wrong. Please try again or email us directly.';
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Submit open call';
+    });
+  </script>
+
+</body>
+</html>
