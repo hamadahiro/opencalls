@@ -5,8 +5,8 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations', 'free', 'prize', '404'];
-const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html', '404.html'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404'];
+const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
 const GA_SNIPPET = `<script src="/analytics.js"></script>`;
@@ -240,7 +240,7 @@ data.calls.forEach(call => {
 
   slugMap[slug] = call.title;
   const html = generatePage(call, cssVersion);
-  writeGenerated(`${slug}.html`, html);
+  writeGenerated(`${slug}/index.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   generated++;
 });
@@ -256,7 +256,8 @@ const categories = {
 };
 
 Object.entries(categories).forEach(([cat, info]) => {
-  const slug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
+  const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
+  const slug = `categories/${catSlug}`;
   const count = data.calls.filter(c => c.category === cat).length;
 
   const html = `<!DOCTYPE html>
@@ -321,7 +322,7 @@ Object.entries(categories).forEach(([cat, info]) => {
 </body>
 </html>`;
 
-  writeGenerated(`${slug}.html`, html);
+  writeGenerated(`${slug}/index.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  Category page: ${slug} (${count} calls)`);
 });
@@ -409,7 +410,7 @@ filterPages.forEach(fp => {
 </body>
 </html>`;
 
-  writeGenerated(`${fp.slug}.html`, html);
+  writeGenerated(`${fp.slug}/index.html`, html);
   sitemapEntries.push(`${SITE}/${fp.slug}`);
   console.log(`  Filter page: ${fp.slug} (${count} calls)`);
 });
@@ -426,12 +427,8 @@ const countrySlugs = {
 Object.entries(countryCounts)
   .forEach(([country, count]) => {
     const fullName = countryNames[country] || country;
-    const slug = countrySlugs[country] || slugify(country);
-
-    if (slugMap[slug]) {
-      console.warn(`  SKIPPED country page: ${slug} collides with "${slugMap[slug]}"`);
-      return;
-    }
+    const countrySlug = countrySlugs[country] || slugify(country);
+    const slug = `countries/${countrySlug}`;
     const isOnline = country === 'Online';
     const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
     const desc = isOnline
@@ -513,7 +510,7 @@ ${country === 'USA' ? `
       let html = '';
       sorted.forEach(([state, count]) => {
         const fullName = stateNames[state] || state;
-        html += '<a href="/united-states/' + slugify(fullName) + '" class="index-item">' +
+        html += '<a href="/countries/united-states/' + slugify(fullName) + '" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
           '<span class="index-item-dots"></span>' +
           '<span class="index-item-count">' + count + '</span></a>';
@@ -532,7 +529,7 @@ ${country === 'USA' ? `
 
     slugMap[slug] = `country: ${fullName}`;
     createdCountrySlugs.push(slug);
-    writeGenerated(`${slug}.html`, html);
+    writeGenerated(`${slug}/index.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls)`);
   });
@@ -550,7 +547,7 @@ data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
 Object.entries(stateCounts).forEach(([state, count]) => {
   const fullStateName = usStateNames[state] || state;
   const stateSlug = slugify(fullStateName);
-  const slug = `united-states/${stateSlug}`;
+  const slug = `countries/united-states/${stateSlug}`;
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
   const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
@@ -596,7 +593,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${HEADER}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/usa">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/countries/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -618,7 +615,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
 </html>`;
 
   slugMap[slug] = `state: ${fullStateName}`;
-  writeGenerated(`${slug}.html`, html);
+  writeGenerated(`${slug}/index.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  State page: ${slug} (${count} calls)`);
 });
@@ -626,7 +623,8 @@ Object.entries(stateCounts).forEach(([state, count]) => {
 // === Org landing pages ===
 Object.entries(orgCounts)
   .forEach(([org, count]) => {
-    const slug = slugify(org);
+    const orgSlug = slugify(org);
+    const slug = `organizations/${orgSlug}`;
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
@@ -701,7 +699,7 @@ Object.entries(orgCounts)
 
     slugMap[slug] = `org: ${org}`;
     createdOrgSlugs.push(slug);
-    writeGenerated(`${slug}.html`, html);
+    writeGenerated(`${slug}/index.html`, html);
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls)`);
   });
@@ -715,7 +713,7 @@ sitemapEntries.push(`${SITE}/organizations`);
 const statePageMap = {};
 Object.keys(stateCounts).forEach(state => {
   const fullName = usStateNames[state] || state;
-  statePageMap[state] = 'united-states/' + slugify(fullName);
+  statePageMap[state] = 'countries/united-states/' + slugify(fullName);
 });
 
 // Update page lists in cards.js (between markers) — only include actually created pages
@@ -745,8 +743,41 @@ ${allUrls.map(url => `  <url>
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
 
+// Generate index pages for categories, countries, organizations
+const indexPages = [
+  { src: 'categories/index.html', fallback: 'categories.html' },
+  { src: 'countries/index.html', fallback: 'countries.html' },
+  { src: 'organizations/index.html', fallback: 'organizations.html' }
+];
+indexPages.forEach(({ src, fallback }) => {
+  // Read from new location if exists, else from old location
+  const readFrom = fs.existsSync(src) ? src : (fs.existsSync(fallback) ? fallback : null);
+  if (readFrom) {
+    let html = fs.readFileSync(readFrom, 'utf8');
+    // Sync CSS version
+    html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
+    html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
+    html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
+    html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
+    html = html.replace(/(<title>[^<]+?)(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
+      const clean = content.replace(/\s*-\s*Monographica$/, '');
+      return `${clean}${TITLE_SUFFIX}</title>`;
+    });
+    html = html.replace(/(og:title"\s+content="[^"]+?)(\s*-\s*Monographica)?"/g, (m, content) => {
+      const clean = content.replace(/\s*-\s*Monographica$/, '');
+      return `${clean}${TITLE_SUFFIX}"`;
+    });
+    html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
+    html = html.replace(/<header>[\s\S]*?<\/header>/, HEADER);
+    const dir = path.dirname(src);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(src, html);
+    generatedFiles.add(src);
+  }
+});
+
 // Update manual HTML files: CSS version, year, and title suffix
-const manualFiles = ['index.html', 'categories.html', 'countries.html', 'organizations.html'];
+const manualFiles = ['index.html'];
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS version
@@ -766,10 +797,6 @@ manualFiles.forEach(file => {
   });
   // Update footer
   html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
-  // Update header (skip index.html which has its own nav with data-view attributes)
-  if (file !== 'index.html') {
-    html = html.replace(/<header>[\s\S]*?<\/header>/, HEADER);
-  }
   // Update open count in index.html hero
   if (file === 'index.html') {
     const now = new Date();
@@ -780,25 +807,24 @@ manualFiles.forEach(file => {
   fs.writeFileSync(file, html);
 });
 
-// Final cleanup: remove HTML files that weren't generated this run (stale pages, duplicates)
-const allHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && !MANUAL_FILES.includes(f));
+// Final cleanup: recursively remove stale HTML files and empty directories
 let cleaned = 0;
-allHtml.forEach(f => {
-  if (!generatedFiles.has(f)) {
-    fs.unlinkSync(f);
-    cleaned++;
-  }
-});
-// Also clean united-states subfolder
-if (fs.existsSync('united-states')) {
-  fs.readdirSync('united-states').filter(f => f.endsWith('.html')).forEach(f => {
-    const fp = `united-states/${f}`;
-    if (!generatedFiles.has(fp)) {
+function cleanDir(dir) {
+  if (!fs.existsSync(dir)) return;
+  fs.readdirSync(dir).forEach(item => {
+    if (item.startsWith('.')) return; // skip hidden dirs (.git, .claude, etc.)
+    const fp = path.join(dir, item);
+    if (fs.statSync(fp).isDirectory()) {
+      cleanDir(fp);
+      // Remove empty directories
+      if (fs.readdirSync(fp).length === 0) fs.rmdirSync(fp);
+    } else if (fp.endsWith('.html') && !generatedFiles.has(fp) && !MANUAL_FILES.includes(fp)) {
       fs.unlinkSync(fp);
       cleaned++;
     }
   });
 }
+cleanDir('.');
 if (cleaned) console.log(`Cleaned up ${cleaned} stale/duplicate files`);
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);

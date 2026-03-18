@@ -35,7 +35,7 @@ async function loadRelated() {
       const parts = CURRENT_CALL.location.split(',');
       const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
       const stateName = state && typeof statePages !== 'undefined' && statePages[state]
-        ? statePages[state].split('/')[1].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+        ? statePages[state].split('/')[2].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
         : '';
       if (state) {
         const byState = otherCalls.filter(c => c.location && c.location.includes(', ' + state + ',') && c.org !== CURRENT_ORG);
