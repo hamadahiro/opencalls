@@ -1804,7 +1804,7 @@
     {
       "title": "Vision(ary) 2026: Raising Our Voices",
       "org": "Griffin Museum of Photography",
-      "deadline": "2026-03-30",
+      "deadline": "2026-04-05",
       "fee": "$45",
       "category": "exhibition",
       "description": "Annual outdoor public art exhibition transforming downtown Winchester, MA into an open-air gallery (June–September 2026). Theme: advocacy and social justice. Submit 5–10 images of a complete project via CaFE. Juror: Elizabeth Krist (National Geographic).",
@@ -2268,6 +2268,66 @@
       "instagram": "@daylightbooks",
       "location": "Online",
       "prize": "$2,500"
+    },
+    {
+      "title": "Fotografiska HOME — Global Open Call",
+      "org": "Fotografiska",
+      "deadline": "2026-07-12",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Global open call exploring home — safety, belonging, dignity, identity, and place. Selected works exhibited at United Nations Headquarters in New York on Human Rights Day, December 10, 2026. Guest curator: James Nachtwey. Submit up to 3 images. Lens-based photography only, no AI.",
+      "url": "https://emerging.fotografiska.com/missions/home",
+      "instagram": "@fotografiska.emerging",
+      "location": "New York, NY, USA",
+      "prize": "Exhibition at UN Headquarters"
+    },
+    {
+      "title": "The Idle Class — Photography Issue",
+      "org": "The Idle Class Magazine",
+      "deadline": "2026-03-27",
+      "fee": "Free",
+      "category": "zine",
+      "description": "Open call for photographers of all genres to submit work for the upcoming Photography Issue of The Idle Class Magazine. Submit via email with name, description, and files to editorial@idleclassmag.com.",
+      "url": "https://idleclassmag.com/",
+      "instagram": "@theidleclass",
+      "location": "Online",
+      "prize": "Publication"
+    },
+    {
+      "title": "Berlin Photo Awards 2026",
+      "org": "Berlin Photo Awards",
+      "deadline": "2026-06-27",
+      "fee": "Paid",
+      "category": "photography",
+      "description": "International photography competition with 24 categories including Portrait, Landscape, Street, Fine Art, Wildlife, Drone, Smartphone, and more. Winners exhibited at ERSTERERSTER Gallery in Berlin and published in the official Winners Photobook.",
+      "url": "https://www.berlinphotoawards.com/",
+      "instagram": "@berlinphotoawards",
+      "location": "Berlin, Germany",
+      "prize": "€4,000"
+    },
+    {
+      "title": "Galleri Format — Window Exhibition 2026",
+      "org": "Galleri Format",
+      "deadline": "2026-04-12",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Open call for artists working in the broad field of photography for the 6th edition of the Window Exhibition at Galleri Format, Stockholm. Exhibition runs June 12 – August 9, 2026.",
+      "url": "https://www.galleriformat.se/",
+      "instagram": "@galleriformat",
+      "location": "Stockholm, Sweden",
+      "prize": "Exhibition"
+    },
+    {
+      "title": "Griffin Museum — Handmade Photobook Exhibition 2026",
+      "org": "Griffin Museum of Photography",
+      "deadline": "2026-03-30",
+      "fee": "$45",
+      "category": "exhibition",
+      "description": "2nd annual exhibition for handcrafted photobooks where the artist's hand shapes the object itself. Submit handmade photobooks via CaFE. Juror: Caleb Cain Marcus of Luminosity Lab.",
+      "url": "https://www.griffinmuseum.org/calls-for-entry",
+      "instagram": "@griffinmuseum",
+      "location": "Winchester, MA, USA",
+      "prize": "Exhibition"
     }
   ]
 }
