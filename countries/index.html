@@ -92,7 +92,7 @@
       let html = '';
       sorted.forEach(([country, count]) => {
         const fullName = countryNames[country] || country;
-        const slug = 'countries/' + (countrySlugs[country] || slugify(country));
+        const slug = countrySlugs[country] || slugify(country);
         html += `<a href="/${slug}" class="index-item">
           <span class="index-item-name">${esc(fullName)}</span>
           <span class="index-item-dots"></span>

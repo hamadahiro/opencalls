@@ -76,7 +76,7 @@
       let html = '';
       sorted.forEach(([org, count]) => {
         const slug = slugify(org);
-        html += `<a href="/organizations/${slug}" class="index-item">
+        html += `<a href="/${slug}" class="index-item">
           <span class="index-item-name">${esc(org)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
