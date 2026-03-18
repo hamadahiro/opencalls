@@ -418,6 +418,7 @@ a.meta-tag-link.call-prize:hover {
   .form-field select,
   .form-field textarea {
     margin-left: 0;
+    width: 100%;
     font-size: 18px;
   }
 
