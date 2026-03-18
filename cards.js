@@ -19,11 +19,25 @@ const categorySlug = {
 // ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ["morocco","united-kingdom","france","online","greece","united-states","italy","north-macedonia","japan","germany","iceland","spain","brazil","hungary","austria","croatia","estonia","netherlands","romania","malaysia","sweden","bosnia-and-herzegovina","canada","finland"];
 const orgPages = ["fondation-tgcc","no-place-art","59-rivoli","lensculture","analog-sparks","athens-photo-festival","griffin-museum-of-photography","royal-birmingham-society-of-artists","witty-books-exposed","zrno-festival","photography-network","kyotographie","fotografiska","portraits-hellerau","edition-502","petard-magazine","atlantic-current","la-kabine-saif","fotobus-society","fondazione-deloitte","rfotofolio","lucie-foundation","insight-foto-festival","bibin-magazine","penumbra-foundation","experimenter-generator","curatory-magazine","art-everywhere-behind-va-shadows","nes-artist-residency","scan-international-photography-festival","lobster-club","s-o-paulo-photography-festival","monart-curates","suboart-magazine","aurea-photogallery","the-eden-arts-foundation","mecklenburg-artists-house","golden-duck-gallery","life-framer","bba-gallery","arty-rat","louvre-unbound","mus-e-du-quai-branly-jacques-chirac","photographers-without-borders","darmstadt-days-of-photography","the-lucie-foundation","container-media","saint-petersburg-month-of-photography","all-about-photo","new-abstract-gallery-berlin","viewpoint-photographic-art-center","organ-vida-festival","innovate-artist-grants","tampa-international-airport","dek-unu-magazine","midwest-nice-art","tcg-gallery","praxis-photo-arts-center","malerba-fund","foto-tallinn","a-photographer-s-place","10x10-photobooks","los-angeles-center-for-photography","art-space-114","dusk-photo-gallery","pep-photography","atlanta-photography-group","decode-gallery","l-a-photo-curator","fano-centrale-festival","artdoc-photography-magazine","alternative-processes","photo-trouvee-magazine","alternativephotography-com","fotoslovo","ephemere-photo-fest","independent-photo","kuala-lumpur-photo-awards","asian-american-museum-of-orange-county","decagon-gallery","sro-photo-gallery-texas-tech-university","hasselblad-foundation","light-work","photoplace-gallery","center-for-photographic-art","southeast-center-for-photography","soho-photo-gallery","der-greif","sarajevo-photography-festival","black-box-gallery","rhode-island-center-for-photographic-arts","the-image-flow","pasadena-photography-arts","a-smith-gallery","penn-institute-for-urban-research","dodho-magazine","viewpoint-gallery","bartur-photo-award-cortona-on-the-move","montgomery-photo-festival","new-york-center-for-photographic-arts","florida-museum-of-photographic-arts","phmuseum","fotofilmic","exposure-one","the-hopper-prize","the-image-flow-praxis-gallery","cape-cod-art-center","1839-awards","refocus-awards","the-hand-magazine","art-fluent","museum-of-contemporary-photography-columbia-college-chicago","helsinki-analog-festival","international-mini-print-cantabria","photometria-international-photography-festival","analog-forever-magazine","open-doors-gallery","booooooom"];
+const statePages = {"MA":"united-states/massachusetts","NY":"united-states/new-york","FL":"united-states/florida","CA":"united-states/california","MN":"united-states/minnesota","NM":"united-states/new-mexico","GA":"united-states/georgia","AZ":"united-states/arizona","TX":"united-states/texas","VT":"united-states/vermont","SC":"united-states/south-carolina","OR":"united-states/oregon","RI":"united-states/rhode-island","PA":"united-states/pennsylvania","AL":"united-states/alabama","IL":"united-states/illinois"};
 // ==AUTO-GENERATED-END==
 
 function esc(str) {
   if (!str) return '';
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function getLocationLink(location, country) {
+  // For USA locations, link to state page if available
+  if (country === 'USA' && typeof statePages !== 'undefined') {
+    const parts = location.split(',');
+    const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+    if (state && statePages[state]) return '/' + statePages[state];
+  }
+  // Otherwise link to country page
+  const countrySlug = slugify(country);
+  if (countryPages.includes(countrySlug)) return '/' + countrySlug;
+  return null;
 }
 
 function getCountryFromLocation(location) {
@@ -83,9 +97,9 @@ function renderTags(call) {
   }
   if (call.location) {
     const country = getCountryFromLocation(call.location);
-    const countrySlug = slugify(country);
-    if (countryPages.includes(countrySlug)) {
-      tags.push(`<a href="/${countrySlug}" class="meta-tag meta-tag-link">${pinSvg}${esc(call.location)}</a>`);
+    const locLink = getLocationLink(call.location, country);
+    if (locLink) {
+      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(call.location)}</a>`);
     } else {
       tags.push(`<span class="meta-tag">${pinSvg}${esc(call.location)}</span>`);
     }
@@ -118,9 +132,9 @@ function renderInfoGrid(call) {
   // Location — both label and value linked
   if (call.location) {
     const country = getCountryFromLocation(call.location);
-    const cSlug = slugify(country);
-    if (countryPages.includes(cSlug)) {
-      rows.push(`<div><dt><a href="/countries">Location</a></dt><dd><a href="/${cSlug}">${esc(call.location)}</a></dd></div>`);
+    const locLink = getLocationLink(call.location, country);
+    if (locLink) {
+      rows.push(`<div><dt><a href="/countries">Location</a></dt><dd><a href="${locLink}">${esc(call.location)}</a></dd></div>`);
     } else {
       rows.push(`<div><dt><a href="/countries">Location</a></dt><dd>${esc(call.location)}</dd></div>`);
     }
