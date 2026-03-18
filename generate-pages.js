@@ -521,7 +521,33 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 });
 
 // Eligibility index page
-eligibilityPageSlugs.sort((a, b) => eligibilityGroups[a].short.localeCompare(eligibilityGroups[b].short));
+const eligibilityOrder = [
+  { heading: 'Who Can Apply', tags: ['women-only', 'lgbtq', 'emerging-only', 'professional-only', 'under-30', 'under-40'] },
+  { heading: 'Where', tags: ['us-only', 'europe-only', 'italy-only'] },
+  { heading: 'Medium', tags: ['analog-only', 'alternative-process'] },
+  { heading: 'Focus', tags: ['focus-african-diaspora', 'focus-asian-american', 'focus-puerto-rico', 'focus-south-asian'] },
+  { heading: 'Other', tags: ['membership-required'] }
+];
+
+function buildEligibilityIndexItems() {
+  let html = '';
+  eligibilityOrder.forEach(group => {
+    const activeTags = group.tags.filter(t => eligibilityTags[t]);
+    if (!activeTags.length) return;
+    html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
+    activeTags.forEach(tag => {
+      const info = eligibilityGroups[tag];
+      const count = eligibilityTags[tag];
+      html += `      <a href="/${tag}" class="index-item">
+          <span class="index-item-name">${escapeHtml(info.short)}</span>
+          <span class="index-item-dots"></span>
+          <span class="index-item-count">${count}</span>
+        </a>\n`;
+    });
+  });
+  return html;
+}
+
 if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -557,15 +583,7 @@ if (eligibilityPageSlugs.length) {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Eligibility', 'Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, US-only, analog photography, and more.')}
 
     <section class="index-list" id="indexList">
-      ${eligibilityPageSlugs.map(tag => {
-        const info = eligibilityGroups[tag];
-        const count = eligibilityTags[tag];
-        return `<a href="/${tag}" class="index-item">
-          <span class="index-item-name">${escapeHtml(info.short)}</span>
-          <span class="index-item-dots"></span>
-          <span class="index-item-count">${count}</span>
-        </a>`;
-      }).join('\n      ')}
+      ${buildEligibilityIndexItems()}
     </section>
 
     ${FOOTER}
