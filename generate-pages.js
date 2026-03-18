@@ -10,6 +10,7 @@ const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organi
 
 // GA — single external file
 const GA_SNIPPET = `<script src="analytics.js"></script>`;
+const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>`;
 
 // Shared header and footer
 const HEADER = `<header>
@@ -137,6 +138,7 @@ function generatePage(call, cssVersion) {
 <html lang="en">
 <head>
   ${GA_SNIPPET}
+  ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
@@ -257,6 +259,7 @@ Object.entries(categories).forEach(([cat, info]) => {
 <html lang="en">
 <head>
   ${GA_SNIPPET}
+  ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
@@ -374,6 +377,7 @@ Object.entries(countryCounts)
 <html lang="en">
 <head>
   ${GA_SNIPPET}
+  ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
@@ -488,6 +492,7 @@ Object.entries(orgCounts)
 <html lang="en">
 <head>
   ${GA_SNIPPET}
+  ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
