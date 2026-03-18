@@ -10,7 +10,8 @@ const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
 const GA_SNIPPET = `<script src="/analytics.js"></script>`;
-const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>`;
+const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
+  <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
 
 // Shared header and footer
 const HEADER = `<header>
@@ -926,6 +927,47 @@ ${allUrls.map(url => `  <url>
 </urlset>`;
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
+
+// Generate RSS feed
+const now = new Date();
+const openCalls = data.calls
+  .filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now)
+  .sort((a, b) => {
+    if (a.deadline === 'Continuous') return 1;
+    if (b.deadline === 'Continuous') return -1;
+    return new Date(a.deadline) - new Date(b.deadline);
+  })
+  .slice(0, 50);
+
+const rssItems = openCalls.map(call => {
+  const slug = slugify(call.title);
+  const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
+    new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const desc = `${escapeHtml(call.description)} — Deadline: ${deadlineText}. Fee: ${escapeHtml(call.fee || 'See website')}. Prize: ${escapeHtml(call.prize || 'None listed')}.`;
+  return `  <item>
+    <title>${escapeHtml(call.title)}</title>
+    <link>${SITE}/${slug}</link>
+    <guid>${SITE}/${slug}</guid>
+    <description>${desc}</description>
+    <category>${escapeHtml(call.category)}</category>
+    <pubDate>${new Date().toUTCString()}</pubDate>
+  </item>`;
+}).join('\n');
+
+const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Open Calls for Artists — Monographica</title>
+  <link>${SITE}</link>
+  <description>Curated list of open calls for photographers and visual artists. Exhibitions, grants, residencies, and publications worldwide.</description>
+  <language>en</language>
+  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+  <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
+${rssItems}
+</channel>
+</rss>`;
+
+fs.writeFileSync('feed.xml', rssXml);
 
 // Generate index pages for categories, countries, organizations
 const indexPages = [
