@@ -644,9 +644,10 @@ manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS version
   html = html.replace(/style\.css\?v=[^"]+/, `style.css?v=${cssVersion}`);
-  // Update year
+  // Update year everywhere (titles, keywords, footer)
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
   html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
+  html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
   // Ensure title suffix — remove any existing then re-add
   html = html.replace(/(<title>[^<]+?)(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
     const clean = content.replace(/\s*-\s*Monographica$/, '');
@@ -656,6 +657,13 @@ manualFiles.forEach(file => {
     const clean = content.replace(/\s*-\s*Monographica$/, '');
     return `${clean}${TITLE_SUFFIX}"`;
   });
+  // Update open count in index.html hero
+  if (file === 'index.html') {
+    const now = new Date();
+    const openCount = data.calls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now).length;
+    const roundedCount = Math.floor(openCount / 10) * 10;
+    html = html.replace(/<span id="openCount">\d*<\/span>/, `<span id="openCount">${roundedCount}</span>`);
+  }
   fs.writeFileSync(file, html);
 });
 
