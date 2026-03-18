@@ -29,8 +29,19 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
       <h1>Page not found</h1>
-      <h2 class="subtitle">This page doesn't exist or may have been removed.</h2>
+      <h2 class="subtitle" id="subtitle"></h2>
     </section>
+
+    <script>
+      var lines = [
+        "This page didn\u2019t quite make it.",
+        "Nothing here, it seems.",
+        "You\u2019ve reached a page that isn\u2019t.",
+        "Not everything takes shape.",
+        "It might have been here once."
+      ];
+      document.getElementById('subtitle').textContent = lines[Math.floor(Math.random() * lines.length)];
+    </script>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
