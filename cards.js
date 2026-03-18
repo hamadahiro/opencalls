@@ -105,7 +105,10 @@ function renderInfoGrid(call) {
     new Date(call.deadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   rows.push(`<div><dt>Deadline</dt><dd>${esc(deadlineText)}</dd></div>`);
   // Fee
-  if (call.fee) rows.push(`<div><dt>Entry Fee</dt><dd>${esc(call.fee)}</dd></div>`);
+  if (call.fee) {
+    const feeText = call.fee === 'Check website' ? 'See official website' : esc(call.fee);
+    rows.push(`<div><dt>Entry Fee</dt><dd>${feeText}</dd></div>`);
+  }
   // Category — both label and value linked
   const catSlugInfo = categorySlug[call.category];
   rows.push(`<div><dt><a href="/categories">Category</a></dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a></dd></div>`);
@@ -131,7 +134,7 @@ function renderInfoGrid(call) {
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
-    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${esc(call.instagram)}</a></dd></div>`);
+    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${esc(call.instagram)} &rarr;</a></dd></div>`);
   }
   return rows.join('');
 }
