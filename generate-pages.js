@@ -762,4 +762,11 @@ manualFiles.forEach(file => {
   fs.writeFileSync(file, html);
 });
 
+// Final cleanup: remove any stray duplicate files (macOS Finder creates "name 2.html" copies)
+const strayFiles = fs.readdirSync('.').filter(f => f.endsWith('.html') && /\s\d+\.html$/.test(f));
+if (strayFiles.length) {
+  strayFiles.forEach(f => fs.unlinkSync(f));
+  console.log(`Removed ${strayFiles.length} stray duplicate files`);
+}
+
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);
