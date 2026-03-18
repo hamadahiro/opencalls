@@ -148,6 +148,21 @@
         return view === 'past' ? b.deadlineDate - a.deadlineDate : a.deadlineDate - b.deadlineDate;
       });
 
+      // Ending soon section (Open view only, 3-day window, min 2 items)
+      if (view === 'new') {
+        const endingSoon = processed.filter(c => c.daysLeft !== null && c.daysLeft >= 0 && c.daysLeft <= 3);
+        if (endingSoon.length >= 2) {
+          const header = document.createElement('h3');
+          header.className = 'section-header';
+          header.textContent = 'Ending soon';
+          container.appendChild(header);
+          endingSoon.forEach(call => {
+            container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+          });
+        }
+      }
+
+      // Month sections
       let currentSectionName = '';
       processed.forEach(call => {
         if (call.section !== currentSectionName) {
