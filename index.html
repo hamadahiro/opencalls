@@ -86,6 +86,7 @@
   <script>
     let allCalls = [];
     let currentView = 'new';
+    const originalSubtitle = document.getElementById('subtitle').textContent;
 
     async function loadCalls() {
       const res = await fetch('data.json');
@@ -181,12 +182,19 @@
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
 
+          // Update URL
+          const url = view === 'past' ? '/?view=past' : '/';
+          history.replaceState(null, '', url);
+
           // Update hero text
           const h1 = document.querySelector('.hero h1');
+          const sub = document.getElementById('subtitle');
           if (view === 'past') {
             h1.textContent = 'Past Calls';
+            sub.textContent = 'Archive of past open calls and closed submissions.';
           } else {
             h1.textContent = 'Open Calls for Artists';
+            sub.textContent = originalSubtitle;
           }
         });
       });
