@@ -66,8 +66,10 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
+
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Sweden').map(processCall).filter(c => c.urgencyClass !== 'closed');
       renderCallList(calls, document.getElementById('callsList'));
+
     }
     loadFiltered();
   </script>

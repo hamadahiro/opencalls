@@ -487,8 +487,35 @@ Object.entries(countryCounts)
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
+${country === 'USA' ? `
+      // State index for USA
+      const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+      const counts = {};
+      data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+        const parts = c.location.split(',');
+        const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+        if (state) counts[state] = (counts[state] || 0) + 1;
+      });
+      const sorted = Object.entries(counts).sort((a, b) => {
+        const nameA = (stateNames[a[0]] || a[0]).toLowerCase();
+        const nameB = (stateNames[b[0]] || b[0]).toLowerCase();
+        return nameA.localeCompare(nameB);
+      });
+      const container = document.getElementById('callsList');
+      container.className = 'index-list';
+      let html = '';
+      sorted.forEach(([state, count]) => {
+        const fullName = stateNames[state] || state;
+        html += '<a href="/' + slugify(state) + '" class="index-item">' +
+          '<span class="index-item-name">' + esc(fullName) + '</span>' +
+          '<span class="index-item-dots"></span>' +
+          '<span class="index-item-count">' + count + '</span></a>';
+      });
+      container.innerHTML = html;
+` : `
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall).filter(c => c.urgencyClass !== 'closed');
       renderCallList(calls, document.getElementById('callsList'));
+`}
     }
     loadFiltered();
   </script>
@@ -502,6 +529,96 @@ Object.entries(countryCounts)
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls)`);
   });
+
+// === US State landing pages ===
+const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+
+const stateCounts = {};
+data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+  const parts = c.location.split(',');
+  const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+  if (state) stateCounts[state] = (stateCounts[state] || 0) + 1;
+});
+
+Object.entries(stateCounts).forEach(([state, count]) => {
+  const fullStateName = usStateNames[state] || state;
+  const slug = slugify(state);
+  const title = `Open Calls for Artists in ${fullStateName}`;
+  const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
+  const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
+
+  if (slugMap[slug]) {
+    console.warn(`  SKIPPED state page: ${slug} collides with "${slugMap[slug]}"`);
+    return;
+  }
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${GA_SNIPPET}
+  ${PRELOAD}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
+  <meta name="description" content="${escapeHtml(desc)}">
+  <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
+  <link rel="canonical" href="${SITE}/${slug}">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
+  <meta property="og:description" content="${escapeHtml(desc)}">
+  <meta property="og:image" content="${SITE}/og-image.jpg">
+  <meta property="og:url" content="${SITE}/${slug}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "${jsonStr(title)} ${YEAR}",
+    "description": "${jsonStr(desc)}",
+    "url": "${SITE}/${slug}",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+</head>
+<body>
+
+  ${HEADER}
+
+  <main>
+    ${buildHero(buildBreadcrumbs('the United States', '/usa'), escapeHtml(title), escapeHtml(desc))}
+
+    <section class="calls-list" id="callsList"></section>
+
+    ${FOOTER}
+  </main>
+
+  <script src="cards.js"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.location && c.location.includes(', ${state},') || c.location && c.location.includes(', ${state}, USA')).map(processCall).filter(c => c.urgencyClass !== 'closed');
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  slugMap[slug] = `state: ${fullStateName}`;
+  fs.writeFileSync(`${slug}.html`, html);
+  sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  State page: ${slug} (${count} calls)`);
+});
 
 // === Org landing pages ===
 Object.entries(orgCounts)
