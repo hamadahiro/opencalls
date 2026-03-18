@@ -63,37 +63,11 @@
 
   <script src="cards.js"></script>
   <script>
-    const FILTER_ORG = 'Art/Space 114';
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const container = document.getElementById('callsList');
-
-      let calls = data.calls
-        .filter(c => c.org === FILTER_ORG)
-        .map(processCall);
-
-      // Show all calls (open + closed) for org pages
-      calls.sort((a, b) => {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
-      });
-
-      let currentSection = '';
-      calls.forEach(call => {
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
-        if (section !== currentSection) {
-          currentSection = section;
-          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
-        }
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      });
-
-      if (!calls.length) container.innerHTML = '<p class="empty-state">No calls from this organization.</p>';
+      const calls = data.calls.filter(c => c.org === 'Art/Space 114').map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>

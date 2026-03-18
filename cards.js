@@ -154,3 +154,41 @@ function renderCard(call, titleTag) {
       <p class="call-description">${esc(call.description)}</p>
     </div>`;
 }
+
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function renderCallList(calls, container) {
+  // Sort ascending by deadline
+  calls.sort((a, b) => {
+    if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+    if (a.deadline === 'Continuous') return 1;
+    if (b.deadline === 'Continuous') return -1;
+    return a.deadlineDate - b.deadlineDate;
+  });
+
+  // Today section
+  const todaySlugs = new Set();
+  const today = calls.filter(c => c.daysLeft !== null && c.daysLeft === 0);
+  if (today.length >= 1) {
+    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Today</h3>');
+    today.forEach(call => {
+      container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      todaySlugs.add(slugify(call.title));
+    });
+  }
+
+  // Month sections (skip Today items)
+  let currentSection = '';
+  calls.filter(c => !todaySlugs.has(slugify(c.title))).forEach(call => {
+    const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
+    if (section !== currentSection) {
+      currentSection = section;
+      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
+    }
+    container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+  });
+
+  if (container.children.length === 0) {
+    container.innerHTML = '<p class="empty-state">No open calls in this section right now.</p>';
+  }
+}
