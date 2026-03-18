@@ -6,16 +6,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>Open Calls for Artists in Finland 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Finland. Browse and apply today.">
-  <meta name="keywords" content="open calls Finland, call for entries Finland, photography opportunities Finland, art exhibitions Finland, photography grants Finland, artist residency Finland">
-  <link rel="canonical" href="https://opencalls.monographica.com/finland">
+  <title>Open Calls for Artists in South Carolina 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in South Carolina. Browse and apply today.">
+  <meta name="keywords" content="open calls South Carolina, call for entries South Carolina, photography opportunities South Carolina, art exhibitions South Carolina, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/sc">
   <link rel="icon" href="favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="Open Calls for Artists in Finland 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Finland. Browse and apply today.">
+  <meta property="og:title" content="Open Calls for Artists in South Carolina 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in South Carolina. Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
-  <meta property="og:url" content="https://opencalls.monographica.com/finland">
+  <meta property="og:url" content="https://opencalls.monographica.com/sc">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
@@ -23,9 +23,9 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Open Calls for Artists in Finland 2026",
-    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Finland. Browse and apply today.",
-    "url": "https://opencalls.monographica.com/finland",
+    "name": "Open Calls for Artists in South Carolina 2026",
+    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in South Carolina. Browse and apply today.",
+    "url": "https://opencalls.monographica.com/sc",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
   </script>
@@ -48,9 +48,9 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a></nav>
-      <h1>Open Calls for Artists in Finland</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Finland. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/usa">the United States</a></nav>
+      <h1>Open Calls for Artists in South Carolina</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in South Carolina. Browse and apply today.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -66,10 +66,8 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Finland').map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => c.location && c.location.includes(', SC,') || c.location && c.location.includes(', SC, USA')).map(processCall).filter(c => c.urgencyClass !== 'closed');
       renderCallList(calls, document.getElementById('callsList'));
-
     }
     loadFiltered();
   </script>

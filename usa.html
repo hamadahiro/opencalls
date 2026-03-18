@@ -66,8 +66,32 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'USA').map(processCall).filter(c => c.urgencyClass !== 'closed');
-      renderCallList(calls, document.getElementById('callsList'));
+
+      // State index for USA
+      const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+      const counts = {};
+      data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+        const parts = c.location.split(',');
+        const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+        if (state) counts[state] = (counts[state] || 0) + 1;
+      });
+      const sorted = Object.entries(counts).sort((a, b) => {
+        const nameA = (stateNames[a[0]] || a[0]).toLowerCase();
+        const nameB = (stateNames[b[0]] || b[0]).toLowerCase();
+        return nameA.localeCompare(nameB);
+      });
+      const container = document.getElementById('callsList');
+      container.className = 'index-list';
+      let html = '';
+      sorted.forEach(([state, count]) => {
+        const fullName = stateNames[state] || state;
+        html += '<a href="/' + slugify(state) + '" class="index-item">' +
+          '<span class="index-item-name">' + esc(fullName) + '</span>' +
+          '<span class="index-item-dots"></span>' +
+          '<span class="index-item-count">' + count + '</span></a>';
+      });
+      container.innerHTML = html;
+
     }
     loadFiltered();
   </script>
