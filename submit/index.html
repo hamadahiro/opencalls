@@ -90,6 +90,9 @@
         <label>Name or email</label>
         <input type="text" name="submitter" placeholder="optional">
       </div>
+      <div style="position:absolute;left:-9999px;" aria-hidden="true">
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <button type="submit" class="submit-btn" id="submitBtn">Submit call</button>
       <p id="submitStatus" style="font-family: 'Source Serif 4', serif; font-size: 16px; margin-top: 8px;"></p>
     </form>
@@ -101,6 +104,8 @@
   </main>
 
   <script>
+    const _t = Date.now();
+
     document.getElementById('submitForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
@@ -111,6 +116,15 @@
 
       const form = e.target;
       const data = Object.fromEntries(new FormData(form));
+
+      // Bot detection: honeypot + time check
+      if (data.website || (Date.now() - _t) < 3000) {
+        status.textContent = 'Thank you! Your submission has been received and will be reviewed.';
+        btn.disabled = false;
+        btn.textContent = 'Submit call';
+        form.reset();
+        return;
+      }
 
       // Build issue body
       const body = [
