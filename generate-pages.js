@@ -558,12 +558,12 @@ if (eligibilityPageSlugs.length) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
   <title>Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, US-only, analog photography, and more.">
+  <meta name="description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
   <link rel="canonical" href="${SITE}/eligibility">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
   <meta property="og:title" content="Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, and more.">
+  <meta property="og:description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
   <meta property="og:image" content="${SITE}/og-image.jpg">
   <meta property="og:url" content="${SITE}/eligibility">
   <meta property="og:type" content="website">
@@ -580,7 +580,7 @@ if (eligibilityPageSlugs.length) {
   ${HEADER}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Eligibility', 'Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, US-only, analog photography, and more.')}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Eligibility', 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.')}
 
     <section class="index-list" id="indexList">
       ${buildEligibilityIndexItems()}
