@@ -149,6 +149,7 @@
       });
 
       // Ending soon section (Open view only, 3-day window, min 2 items)
+      const endingSoonSlugs = new Set();
       if (view === 'new') {
         const endingSoon = processed.filter(c => c.daysLeft !== null && c.daysLeft >= 0 && c.daysLeft <= 3);
         if (endingSoon.length >= 2) {
@@ -158,13 +159,14 @@
           container.appendChild(header);
           endingSoon.forEach(call => {
             container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+            endingSoonSlugs.add(slugify(call.title));
           });
         }
       }
 
-      // Month sections
+      // Month sections (skip items already in Ending soon)
       let currentSectionName = '';
-      processed.forEach(call => {
+      processed.filter(c => !endingSoonSlugs.has(slugify(c.title))).forEach(call => {
         if (call.section !== currentSectionName) {
           currentSectionName = call.section;
           const header = document.createElement('h3');
