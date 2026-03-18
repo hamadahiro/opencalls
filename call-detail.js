@@ -94,9 +94,20 @@ async function loadSimilar() {
 
   scored.sort((a, b) => b.score - a.score);
 
-  // Minimum score threshold and minimum 2 results
-  const minScore = 3;
-  const top = scored.filter(s => s.score >= minScore).slice(0, 6);
+  const curElig = CURRENT_CALL.eligibility || [];
+  const hasEligibility = curElig.length > 0;
+
+  // Filter: min score 5, and if current has eligibility tags, require conceptual match
+  const top = scored.filter(s => {
+    if (s.score < 5) return false;
+    if (hasEligibility) {
+      const othElig = s.call.eligibility || [];
+      const sharedElig = curElig.some(t => othElig.includes(t));
+      const sameCategory = s.call.category === CURRENT_CALL.category;
+      if (!sharedElig && !sameCategory) return false;
+    }
+    return true;
+  }).slice(0, 6);
 
   const container = document.getElementById('similarCalls');
   if (top.length < 2) {
