@@ -53,7 +53,7 @@
   <main>
     <section class="hero">
       <h1>Open Calls for Artists</h1>
-      <h2 class="subtitle">A continuously updated list of over <span id="openCount">120</span> open calls and submission opportunities for photographers and visual artists.</h2>
+      <h2 class="subtitle" id="subtitle">A continuously updated list of over 120 open calls and submission opportunities for photographers and visual artists.</h2>
     </section>
 
     <div class="search-wrap">
@@ -95,7 +95,8 @@
       const now = new Date();
       const openCount = allCalls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now).length;
       const roundedCount = Math.floor(openCount / 10) * 10;
-      document.getElementById('openCount').textContent = roundedCount;
+      const sub = document.getElementById('subtitle');
+      sub.textContent = sub.textContent.replace(/over \d+/, 'over ' + roundedCount);
 
       const params = new URLSearchParams(window.location.search);
       const initView = params.get('view') === 'past' ? 'past' : 'new';
