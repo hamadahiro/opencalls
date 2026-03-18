@@ -750,7 +750,7 @@ const manualFiles = ['index.html', 'categories.html', 'countries.html', 'organiz
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS version
-  html = html.replace(/style\.css\?v=[^"]+/, `/style.css?v=${cssVersion}`);
+  html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
   // Update year everywhere (titles, keywords, footer)
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
   html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
