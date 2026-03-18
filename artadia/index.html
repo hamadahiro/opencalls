@@ -7,16 +7,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>Open Calls for Artists in New York 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New York. Browse and apply today.">
-  <meta name="keywords" content="open calls New York, call for entries New York, photography opportunities New York, art exhibitions New York, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/united-states/new-york">
+  <title>Artadia - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Artadia. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Artadia open call, Artadia call for entries, Artadia submissions, Artadia photography, Artadia exhibition, Artadia artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/artadia">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
-  <meta property="og:title" content="Open Calls for Artists in New York 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New York. Browse and apply today.">
+  <meta property="og:title" content="Artadia - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Artadia. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
-  <meta property="og:url" content="https://opencalls.monographica.com/united-states/new-york">
+  <meta property="og:url" content="https://opencalls.monographica.com/artadia">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Open Calls for Artists in New York 2026",
-    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New York. Browse and apply today.",
-    "url": "https://opencalls.monographica.com/united-states/new-york",
+    "name": "Artadia - Open Calls",
+    "description": "Open calls and submission opportunities from Artadia. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+    "url": "https://opencalls.monographica.com/artadia",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
   </script>
@@ -50,9 +50,9 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations">Locations</a> / <a href="/united-states">United States</a></nav>
-      <h1>Open Calls for Artists in New York</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New York. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations">Organizations</a></nav>
+      <h1>Artadia</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Artadia. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -68,7 +68,7 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && c.location.includes(', New York,') || c.location && c.location.includes(', New York, USA')).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Artadia').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
