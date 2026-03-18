@@ -180,8 +180,8 @@ function renderInfoGrid(call) {
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
       const label = eligibilityLabel[e] || e;
-      return `<a href="/${e}" class="eligibility-tag">${esc(label)}</a>`;
-    }).join(' ');
+      return `<a href="/${e}">${esc(label)}</a>`;
+    }).join(', ');
     rows.push(`<div><dt><a href="/eligibility">Eligibility</a></dt><dd>${eligHtml}</dd></div>`);
   }
   // Instagram
