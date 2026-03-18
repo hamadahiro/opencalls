@@ -41,29 +41,56 @@
 
     <form class="submit-form" id="submitForm">
       <h3 class="section-header">Call</h3>
-      <select name="category">
-        <option value="" disabled selected>Category</option>
-        <option value="photography">Photography</option>
-        <option value="exhibition">Exhibition</option>
-        <option value="grant">Grant</option>
-        <option value="residency">Residency</option>
-        <option value="zine">Zines & Books</option>
-        <option value="education">Education</option>
-      </select>
-      <input type="url" name="url" placeholder="Link to the open call" required>
+      <div class="form-field">
+        <label>Category</label>
+        <select name="category" required>
+          <option value="" disabled selected></option>
+          <option value="photography">Photography</option>
+          <option value="exhibition">Exhibition</option>
+          <option value="grant">Grant</option>
+          <option value="residency">Residency</option>
+          <option value="zine">Zines & Books</option>
+          <option value="education">Education</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Link</label>
+        <input type="url" name="url" placeholder="https://" required>
+      </div>
 
       <h3 class="section-header">Details</h3>
-      <input type="text" name="deadline" placeholder="Deadline (YYYY-MM-DD or continuous)">
-      <input type="text" name="location" placeholder="Location (City, country or online)">
-      <input type="text" name="fee" placeholder="Entry fee (Free, $35, €25)">
-      <input type="text" name="prize" placeholder="Prize ($1,000 or leave empty)">
+      <div class="form-field">
+        <label>Deadline</label>
+        <input type="text" name="deadline" placeholder="YYYY-MM-DD or continuous">
+      </div>
+      <div class="form-field">
+        <label>Location</label>
+        <input type="text" name="location" placeholder="City, country or online">
+      </div>
+      <div class="form-field">
+        <label>Entry fee</label>
+        <input type="text" name="fee" placeholder="Free, $35, €25">
+      </div>
+      <div class="form-field">
+        <label>Prize</label>
+        <input type="text" name="prize" placeholder="$1,000 or leave empty">
+      </div>
 
       <h3 class="section-header">Organization</h3>
-      <input type="text" name="org" placeholder="Organization">
-      <input type="text" name="instagram" placeholder="Instagram (@handle, optional)">
+      <div class="form-field">
+        <label>Name</label>
+        <input type="text" name="org">
+      </div>
+      <div class="form-field">
+        <label>Instagram</label>
+        <input type="text" name="instagram" placeholder="@handle">
+      </div>
 
       <h3 class="section-header">Your info</h3>
-      <input type="text" name="submitter" placeholder="Your name or email (optional)">
+      <div class="form-field">
+        <label>Name or email</label>
+        <input type="text" name="submitter" placeholder="optional">
+      </div>
       <button type="submit" class="submit-btn" id="submitBtn">Submit call</button>
       <p id="submitStatus" style="font-family: 'Source Serif 4', serif; font-size: 16px; margin-top: 8px;"></p>
     </form>
