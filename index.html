@@ -70,6 +70,7 @@
       <button class="filter-btn" data-filter="residency">Residencies</button>
       <button class="filter-btn" data-filter="zine">Zines & Books</button>
       <button class="filter-btn" data-filter="education">Education</button>
+      <button class="filter-btn" data-filter="free">Free</button>
       <button class="filter-btn" data-filter="prize">Has Prize</button>
     </section>
 
@@ -130,6 +131,8 @@
 
       if (currentFilter === 'prize') {
         processed = processed.filter(c => c.prize && c.prize !== '');
+      } else if (currentFilter === 'free') {
+        processed = processed.filter(c => c.fee && c.fee.toLowerCase().startsWith('free'));
       } else if (currentFilter !== 'all') {
         processed = processed.filter(c => c.category === currentFilter);
       }
