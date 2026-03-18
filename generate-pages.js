@@ -593,7 +593,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${HEADER}
 
   <main>
-    ${buildHero(buildBreadcrumbs('the United States', '/usa'), escapeHtml(title), escapeHtml(desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/usa">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
