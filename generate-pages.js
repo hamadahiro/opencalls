@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations', 'free', 'prize', '404'];
 const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html', '404.html'];
 
 // GA — single external file
@@ -347,6 +347,119 @@ Object.entries(categories).forEach(([cat, info]) => {
   fs.writeFileSync(`${slug}.html`, html);
   sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  Category page: ${slug} (${count} calls)`);
+});
+
+// === Special filter pages (Free, Prize) ===
+const filterPages = [
+  {
+    slug: 'free',
+    title: 'Free Open Calls for Artists',
+    desc: 'Open calls with no entry fee. Free exhibitions, grants, residencies, and submissions for photographers and visual artists.',
+    keywords: 'free open calls, free photography competitions, no fee art submissions, free call for entries, free exhibitions',
+    filterJs: `c.fee && c.fee.toLowerCase().startsWith('free')`
+  },
+  {
+    slug: 'prize',
+    title: 'Open Calls with Prizes',
+    desc: 'Open calls offering cash prizes, awards, and grants for photographers and visual artists. Find competitions worth entering.',
+    keywords: 'photography prizes, art competition prizes, photography awards money, open call prizes, cash prizes for photographers',
+    filterJs: `c.prize && c.prize !== ''`
+  }
+];
+
+filterPages.forEach(fp => {
+  const count = data.calls.filter(c => fp.slug === 'free' ? c.fee && c.fee.toLowerCase().startsWith('free') : c.prize && c.prize !== '').length;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${GA_SNIPPET}
+  ${PRELOAD}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>${fp.title} ${YEAR}${TITLE_SUFFIX}</title>
+  <meta name="description" content="${escapeHtml(fp.desc)}">
+  <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
+  <link rel="canonical" href="${SITE}/${fp.slug}">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <meta property="og:title" content="${fp.title} ${YEAR}${TITLE_SUFFIX}">
+  <meta property="og:description" content="${escapeHtml(fp.desc)}">
+  <meta property="og:image" content="${SITE}/og-image.jpg">
+  <meta property="og:url" content="${SITE}/${fp.slug}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "${jsonStr(fp.title)} ${YEAR}",
+    "description": "${jsonStr(fp.desc)}",
+    "url": "${SITE}/${fp.slug}",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=${cssVersion}">
+</head>
+<body>
+
+  ${HEADER}
+
+  <main>
+    ${buildHero(buildBreadcrumbs('All open calls', '/'), fp.title, escapeHtml(fp.desc))}
+
+    <section class="calls-list" id="callsList"></section>
+
+    ${FOOTER}
+  </main>
+
+  <script src="cards.js"></script>
+  <script>
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const container = document.getElementById('callsList');
+
+      let calls = data.calls
+        .filter(c => ${fp.filterJs})
+        .map(processCall)
+        .filter(c => c.urgencyClass !== 'closed');
+
+      calls.sort((a, b) => {
+        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+        if (a.deadline === 'Continuous') return 1;
+        if (b.deadline === 'Continuous') return -1;
+        return a.deadlineDate - b.deadlineDate;
+      });
+
+      let currentSection = '';
+      calls.forEach(call => {
+        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
+        if (section !== currentSection) {
+          currentSection = section;
+          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
+        }
+        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      });
+
+      if (!calls.length) container.innerHTML = '<p class="empty-state">No open calls in this section right now.</p>';
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  fs.writeFileSync(`${fp.slug}.html`, html);
+  sitemapEntries.push(`${SITE}/${fp.slug}`);
+  console.log(`  Filter page: ${fp.slug} (${count} calls)`);
 });
 
 // === Country landing pages ===

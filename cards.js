@@ -72,7 +72,7 @@ function processCall(call) {
 function renderTags(call) {
   const pinSvg = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
   const tags = [];
-  if (call.prize) tags.push(`<span class="meta-tag call-prize">${esc(call.prize)} prize</span>`);
+  if (call.prize) tags.push(`<a href="/prize" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
   const catSlug = categorySlug[call.category];
   tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
   const orgSlug = slugify(call.org);
@@ -93,13 +93,12 @@ function renderTags(call) {
   if (call.fee && call.fee !== 'Check website') {
     let feeLabel;
     if (call.fee.toLowerCase().startsWith('free')) {
-      feeLabel = 'Free';
+      tags.push(`<a href="/free" class="meta-tag meta-tag-link">Free</a>`);
     } else if (/^[£$€¥]/.test(call.fee)) {
-      feeLabel = esc(call.fee) + ' fee';
+      tags.push(`<span class="meta-tag">${esc(call.fee)} fee</span>`);
     } else {
-      feeLabel = esc(call.fee);
+      tags.push(`<span class="meta-tag">${esc(call.fee)}</span>`);
     }
-    tags.push(`<span class="meta-tag">${feeLabel}</span>`);
   }
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   return tags.join(' ');
