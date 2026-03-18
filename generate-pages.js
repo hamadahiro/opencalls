@@ -30,6 +30,10 @@ function getCountry(location) {
   return parts[parts.length - 1].trim();
 }
 
+function jsonStr(str) {
+  return JSON.stringify(str).slice(1, -1);
+}
+
 function formatDeadline(deadline) {
   if (deadline === 'Continuous') return 'Continuous';
   const d = new Date(deadline);
@@ -257,8 +261,8 @@ Object.entries(categories).forEach(([cat, info]) => {
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "${info.title} ${YEAR}",
-    "description": "${info.desc}",
+    "name": "${jsonStr(info.title)} ${YEAR}",
+    "description": "${jsonStr(info.desc)}",
     "url": "${SITE}/${slug}",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
@@ -389,8 +393,8 @@ Object.entries(countryCounts)
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "${title} ${YEAR}",
-    "description": "${desc}",
+    "name": "${jsonStr(title)} ${YEAR}",
+    "description": "${jsonStr(desc)}",
     "url": "${SITE}/${slug}",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
@@ -518,8 +522,8 @@ Object.entries(orgCounts)
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "${escapeHtml(org)} - Open Calls",
-    "description": "${escapeHtml(desc)}",
+    "name": "${jsonStr(org)} - Open Calls",
+    "description": "${jsonStr(desc)}",
     "url": "${SITE}/${slug}",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
