@@ -6,7 +6,7 @@ const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations'];
-const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html'];
+const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organizations.html', '404.html'];
 
 // GA — single external file
 const GA_SNIPPET = `<script src="analytics.js"></script>`;
