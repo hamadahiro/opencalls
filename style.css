@@ -310,6 +310,81 @@ a.meta-tag-link.call-prize:hover {
   background: #333;
 }
 
+/* === Submit Form === */
+.submit-form {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 48px;
+}
+
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #111;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  border-color: #111;
+}
+
+.submit-form input::placeholder,
+.submit-form textarea::placeholder {
+  color: #aaa;
+}
+
+.submit-form select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.submit-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.submit-btn {
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  padding: 12px 28px;
+  background: #111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .submit-form {
+    max-width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* === Empty State === */
 .empty-state {
   padding: 48px 0;
