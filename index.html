@@ -118,8 +118,6 @@
       const container = document.getElementById('callsList');
       container.innerHTML = '';
 
-      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
       let processed = allCalls.map(call => {
         const p = processCall(call);
         const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[p.deadlineDate.getMonth()] + ' ' + p.deadlineDate.getFullYear();
@@ -144,44 +142,25 @@
         });
       }
 
-      processed.sort((a, b) => {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return view === 'past' ? b.deadlineDate - a.deadlineDate : a.deadlineDate - b.deadlineDate;
-      });
-
-      // Today section (Open view only, ends today, min 1 item)
-      const todaySlugs = new Set();
-      if (view === 'new') {
-        const today = processed.filter(c => c.daysLeft !== null && c.daysLeft === 0);
-        if (today.length >= 1) {
-          const header = document.createElement('h3');
-          header.className = 'section-header';
-          header.textContent = 'Today';
-          container.appendChild(header);
-          today.forEach(call => {
-            container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-            todaySlugs.add(slugify(call.title));
-          });
-        }
-      }
-
-      // Month sections (skip items already in Ending soon)
-      let currentSectionName = '';
-      processed.filter(c => !todaySlugs.has(slugify(c.title))).forEach(call => {
-        if (call.section !== currentSectionName) {
-          currentSectionName = call.section;
-          const header = document.createElement('h3');
-          header.className = 'section-header';
-          header.textContent = call.section;
-          container.appendChild(header);
-        }
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      });
-
-      if (container.children.length === 0) {
-        container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+      if (view === 'past') {
+        // Past view: sort newest first, no Today section
+        processed.sort((a, b) => {
+          if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+          if (a.deadline === 'Continuous') return 1;
+          if (b.deadline === 'Continuous') return -1;
+          return b.deadlineDate - a.deadlineDate;
+        });
+        let currentSectionName = '';
+        processed.forEach(call => {
+          if (call.section !== currentSectionName) {
+            currentSectionName = call.section;
+            container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + call.section + '</h3>');
+          }
+          container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+        });
+        if (!container.children.length) container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+      } else {
+        renderCallList(processed, container);
       }
     }
 

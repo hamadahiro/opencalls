@@ -305,38 +305,11 @@ Object.entries(categories).forEach(([cat, info]) => {
 
   <script src="cards.js"></script>
   <script>
-    const FILTER_CATEGORY = '${cat}';
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const now = new Date();
-      const container = document.getElementById('callsList');
-
-      let calls = data.calls
-        .filter(c => c.category === FILTER_CATEGORY)
-        .map(processCall)
-        .filter(c => c.urgencyClass !== 'closed');
-
-      calls.sort((a, b) => {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
-      });
-
-      let currentSection = '';
-      calls.forEach(call => {
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
-        if (section !== currentSection) {
-          currentSection = section;
-          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
-        }
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      });
-
-      if (!calls.length) container.innerHTML = '<p class="empty-state">No open calls in this category right now.</p>';
+      const calls = data.calls.filter(c => c.category === '${cat}').map(processCall).filter(c => c.urgencyClass !== 'closed');
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>
@@ -420,36 +393,11 @@ filterPages.forEach(fp => {
 
   <script src="cards.js"></script>
   <script>
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const container = document.getElementById('callsList');
-
-      let calls = data.calls
-        .filter(c => ${fp.filterJs})
-        .map(processCall)
-        .filter(c => c.urgencyClass !== 'closed');
-
-      calls.sort((a, b) => {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
-      });
-
-      let currentSection = '';
-      calls.forEach(call => {
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
-        if (section !== currentSection) {
-          currentSection = section;
-          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
-        }
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      });
-
-      if (!calls.length) container.innerHTML = '<p class="empty-state">No open calls in this section right now.</p>';
+      const calls = data.calls.filter(c => ${fp.filterJs}).map(processCall).filter(c => c.urgencyClass !== 'closed');
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>
@@ -536,43 +484,11 @@ Object.entries(countryCounts)
 
   <script src="cards.js"></script>
   <script>
-    const FILTER_COUNTRY = '${country.replace(/'/g, "\\'")}';
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-    function getCountry(loc) {
-      if (!loc) return '';
-      const parts = loc.split(',');
-      return parts[parts.length - 1].trim();
-    }
-
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const container = document.getElementById('callsList');
-
-      let calls = data.calls
-        .filter(c => getCountry(c.location) === FILTER_COUNTRY)
-        .map(processCall)
-        .filter(c => c.urgencyClass !== 'closed');
-
-      calls.sort((a, b) => {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
-      });
-
-      let currentSection = '';
-      calls.forEach(call => {
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
-        if (section !== currentSection) {
-          currentSection = section;
-          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
-        }
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      });
-
-      if (!calls.length) container.innerHTML = '<p class="empty-state">No open calls in this country right now.</p>';
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall).filter(c => c.urgencyClass !== 'closed');
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>
@@ -651,37 +567,11 @@ Object.entries(orgCounts)
 
   <script src="cards.js"></script>
   <script>
-    const FILTER_ORG = '${org.replace(/'/g, "\\'")}';
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const container = document.getElementById('callsList');
-
-      let calls = data.calls
-        .filter(c => c.org === FILTER_ORG)
-        .map(processCall);
-
-      // Show all calls (open + closed) for org pages
-      calls.sort((a, b) => {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
-      });
-
-      let currentSection = '';
-      calls.forEach(call => {
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
-        if (section !== currentSection) {
-          currentSection = section;
-          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
-        }
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      });
-
-      if (!calls.length) container.innerHTML = '<p class="empty-state">No calls from this organization.</p>';
+      const calls = data.calls.filter(c => c.org === '${org.replace(/'/g, "\\'")}').map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>
