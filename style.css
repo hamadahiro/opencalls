@@ -713,8 +713,8 @@ a.meta-tag-link:hover {
   }
 
   .call-detail-info {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 24px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
