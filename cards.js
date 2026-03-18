@@ -134,9 +134,9 @@ function renderInfoGrid(call) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
     if (locLink) {
-      rows.push(`<div><dt><a href="/countries">Location</a></dt><dd><a href="${locLink}">${esc(call.location)}</a></dd></div>`);
+      rows.push(`<div><dt><a href="/locations">Location</a></dt><dd><a href="${locLink}">${esc(call.location)}</a></dd></div>`);
     } else {
-      rows.push(`<div><dt><a href="/countries">Location</a></dt><dd>${esc(call.location)}</dd></div>`);
+      rows.push(`<div><dt><a href="/locations">Location</a></dt><dd>${esc(call.location)}</dd></div>`);
     }
   }
   // Category — both label and value linked

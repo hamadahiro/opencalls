@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations', 'free', 'prize', 'united-states'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
@@ -479,7 +479,7 @@ Object.entries(countryCounts)
   ${HEADER}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Countries', '/countries'), escapeHtml(title), escapeHtml(desc))}
+    ${buildHero(buildBreadcrumbs('Locations', '/locations'), escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -593,7 +593,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${HEADER}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations">Locations</a> / <a href="/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -706,7 +706,7 @@ Object.entries(orgCounts)
 
 // Add index pages to sitemap
 sitemapEntries.push(`${SITE}/categories`);
-sitemapEntries.push(`${SITE}/countries`);
+sitemapEntries.push(`${SITE}/locations`);
 sitemapEntries.push(`${SITE}/organizations`);
 
 // Build state pages map for cards.js
@@ -746,7 +746,7 @@ fs.writeFileSync('sitemap.xml', sitemapXml);
 // Generate index pages for categories, countries, organizations
 const indexPages = [
   { src: 'categories/index.html', fallback: 'categories.html' },
-  { src: 'countries/index.html', fallback: 'countries.html' },
+  { src: 'locations/index.html', fallback: 'locations.html' },
   { src: 'organizations/index.html', fallback: 'organizations.html' }
 ];
 indexPages.forEach(({ src, fallback }) => {
