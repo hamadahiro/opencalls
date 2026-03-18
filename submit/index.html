@@ -90,9 +90,6 @@
         <label>Name or email</label>
         <input type="text" name="submitter" placeholder="optional">
       </div>
-      <div style="position:absolute;left:-9999px;" aria-hidden="true">
-        <input type="text" name="website" tabindex="-1" autocomplete="off">
-      </div>
       <button type="submit" class="submit-btn" id="submitBtn">Submit call</button>
       <p id="submitStatus" style="font-family: 'Source Serif 4', serif; font-size: 16px; margin-top: 8px;"></p>
     </form>
@@ -104,73 +101,33 @@
   </main>
 
   <script>
-    const _t = Date.now();
-
-    document.getElementById('submitForm').addEventListener('submit', async function(e) {
+    document.getElementById('submitForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      const status = document.getElementById('submitStatus');
-      btn.disabled = true;
-      btn.textContent = 'Submitting...';
-      status.textContent = '';
+      const data = Object.fromEntries(new FormData(e.target));
 
-      const form = e.target;
-      const data = Object.fromEntries(new FormData(form));
-
-      // URL validation: must contain a dot + extension
+      // URL validation
       if (!/\.\w{2,}/.test(data.url)) {
-        status.textContent = 'Please enter a valid link.';
-        btn.disabled = false;
-        btn.textContent = 'Submit call';
+        document.getElementById('submitStatus').textContent = 'Please enter a valid link.';
         return;
       }
 
-      // Bot detection: honeypot + time check
-      if (data.website || (Date.now() - _t) < 3000) {
-        status.textContent = 'Thank you! Your submission has been received and will be reviewed.';
-        btn.disabled = false;
-        btn.textContent = 'Submit call';
-        form.reset();
-        return;
-      }
-
-      // Build issue body
-      const body = [
-        `**URL:** ${data.url}`,
-        `**Category:** ${data.category || 'Not specified'}`,
-        `**Deadline:** ${data.deadline || 'Not specified'}`,
-        `**Location:** ${data.location || 'Not specified'}`,
-        `**Fee:** ${data.fee || 'Not specified'}`,
-        `**Prize:** ${data.prize || 'None'}`,
-        `**Organization:** ${data.org || 'Not specified'}`,
-        `**Instagram:** ${data.instagram || 'None'}`,
+      const lines = [
+        data.url,
         '',
-        `---`,
-        `Submitted by: ${data.submitter || 'Anonymous'}`,
+        'Category: ' + (data.category || ''),
+        'Deadline: ' + (data.deadline || ''),
+        'Location: ' + (data.location || ''),
+        'Fee: ' + (data.fee || ''),
+        'Prize: ' + (data.prize || ''),
+        'Organization: ' + (data.org || ''),
+        'Instagram: ' + (data.instagram || ''),
+        '',
+        'Submitted by: ' + (data.submitter || ''),
       ].join('\n');
 
-      try {
-        const res = await fetch('https://opencalls-submit.5d7yvbhxtj.workers.dev', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            title: `[Submission] ${data.url}`,
-            body: body
-          })
-        });
-
-        if (res.ok) {
-          status.textContent = 'Thank you! Your submission has been received and will be reviewed.';
-          form.reset();
-        } else {
-          throw new Error('Failed');
-        }
-      } catch (err) {
-        status.textContent = 'Something went wrong. Please try again or email us directly.';
-      }
-
-      btn.disabled = false;
-      btn.textContent = 'Submit open call';
+      const subject = encodeURIComponent('Open call submission: ' + data.url);
+      const body = encodeURIComponent(lines);
+      window.location.href = 'mailto:opencalls@monographica.com?subject=' + subject + '&body=' + body;
     });
   </script>
 
