@@ -6,15 +6,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>US-Only Open Calls 2026 - Monographica</title>
-  <meta name="description" content="Open calls restricted to photographers and artists based in the United States.">
-  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/us">
+  <title>Analog &amp; Film Photography Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls exclusively for analog, film, and non-digital photography.">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/analog-photography">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
-  <meta property="og:title" content="US-Only Open Calls 2026 - Monographica">
-  <meta property="og:description" content="Open calls restricted to photographers and artists based in the United States.">
+  <meta property="og:title" content="Analog &amp; Film Photography Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls exclusively for analog, film, and non-digital photography.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
-  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/us">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/analog-photography">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -23,9 +23,9 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "US-Only Open Calls 2026",
-    "description": "Open calls restricted to photographers and artists based in the United States.",
-    "url": "https://opencalls.monographica.com/eligibility/us",
+    "name": "Analog & Film Photography Open Calls 2026",
+    "description": "Open calls exclusively for analog, film, and non-digital photography.",
+    "url": "https://opencalls.monographica.com/eligibility/analog-photography",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
   </script>
@@ -49,8 +49,8 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility">Eligibility</a></nav>
-      <h1>US-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists based in the United States.</h2>
+      <h1>Analog &amp; Film Photography Open Calls</h1>
+      <h2 class="subtitle">Open calls exclusively for analog, film, and non-digital photography.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -66,7 +66,7 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('us')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('analog-photography')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();

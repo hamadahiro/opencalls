@@ -9,14 +9,14 @@ const categoryLabel = {
 
 const eligibilityLabel = {
   'women': 'Women',
-  'us': 'US only',
+  'united-states': 'US only',
   'europe': 'Europe only',
   'italy': 'Italy only',
   'emerging': 'Emerging artists',
   'under-30': 'Under 30',
   'under-40': 'Under 40',
   'lgbtq': 'LGBTQ+',
-  'analog': 'Analog only',
+  'analog-photography': 'Analog only',
   'alternative-process': 'Alternative process',
   'professional': 'Professional only',
   'membership-required': 'Membership required',
