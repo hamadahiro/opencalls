@@ -711,10 +711,18 @@ sitemapEntries.push(`${SITE}/categories`);
 sitemapEntries.push(`${SITE}/countries`);
 sitemapEntries.push(`${SITE}/organizations`);
 
+// Build state pages map for cards.js
+const statePageMap = {};
+Object.keys(stateCounts).forEach(state => {
+  const fullName = usStateNames[state] || state;
+  statePageMap[state] = 'united-states/' + slugify(fullName);
+});
+
 // Update page lists in cards.js (between markers) — only include actually created pages
 const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ${JSON.stringify(createdCountrySlugs)};
 const orgPages = ${JSON.stringify(createdOrgSlugs)};
+const statePages = ${JSON.stringify(statePageMap)};
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
