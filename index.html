@@ -145,9 +145,22 @@
       }
 
       if (currentSearch) {
+        const stateMap = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+        const countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
+
+        const tokens = currentSearch.split(/\s+/).filter(Boolean);
         processed = processed.filter(c => {
-          const text = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category].join(' ').toLowerCase();
-          return text.includes(currentSearch);
+          // Build expanded text: original fields + full state names + full country names
+          let parts = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category];
+          if (c.location) {
+            const locParts = c.location.split(',').map(s => s.trim());
+            for (const lp of locParts) {
+              if (stateMap[lp]) parts.push(stateMap[lp]);
+              if (countryExpand[lp]) parts.push(countryExpand[lp]);
+            }
+          }
+          const text = parts.join(' ').toLowerCase();
+          return tokens.every(token => text.includes(token));
         });
       }
 
