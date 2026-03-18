@@ -30,8 +30,29 @@ async function loadRelated() {
   renderRelatedList(byOrg, `More from ${CURRENT_ORG}`, 'relatedOrg');
 
   if (CURRENT_COUNTRY && CURRENT_COUNTRY !== 'Online') {
-    const byCountry = otherCalls.filter(c => getCountryFromLocation(c.location) === CURRENT_COUNTRY && c.org !== CURRENT_ORG);
-    renderRelatedList(byCountry, `More calls in ${CURRENT_COUNTRY}`, 'relatedCountry');
+    if (CURRENT_COUNTRY === 'USA' && CURRENT_CALL.location) {
+      // For USA: try state first, fall back to all USA
+      const parts = CURRENT_CALL.location.split(',');
+      const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+      const stateName = state && typeof statePages !== 'undefined' && statePages[state]
+        ? statePages[state].split('/')[1].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+        : '';
+      if (state) {
+        const byState = otherCalls.filter(c => c.location && c.location.includes(', ' + state + ',') && c.org !== CURRENT_ORG);
+        if (byState.length > 0) {
+          renderRelatedList(byState, `More calls in ${stateName}`, 'relatedCountry');
+        } else {
+          const byUSA = otherCalls.filter(c => getCountryFromLocation(c.location) === 'USA' && c.org !== CURRENT_ORG);
+          renderRelatedList(byUSA, 'More calls in the United States', 'relatedCountry');
+        }
+      } else {
+        const byUSA = otherCalls.filter(c => getCountryFromLocation(c.location) === 'USA' && c.org !== CURRENT_ORG);
+        renderRelatedList(byUSA, 'More calls in the United States', 'relatedCountry');
+      }
+    } else {
+      const byCountry = otherCalls.filter(c => getCountryFromLocation(c.location) === CURRENT_COUNTRY && c.org !== CURRENT_ORG);
+      renderRelatedList(byCountry, `More calls in ${CURRENT_COUNTRY}`, 'relatedCountry');
+    }
   }
 }
 
