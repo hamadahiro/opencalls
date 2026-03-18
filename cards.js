@@ -90,7 +90,10 @@ function renderTags(call) {
       tags.push(`<span class="meta-tag">${pinSvg}${esc(call.location)}</span>`);
     }
   }
-  if (call.fee && call.fee !== 'Check website') tags.push(`<span class="meta-tag">${esc(call.fee)} fee</span>`);
+  if (call.fee && call.fee !== 'Check website') {
+    const feeLabel = /^[£$€]/.test(call.fee) ? esc(call.fee) + ' fee' : esc(call.fee);
+    tags.push(`<span class="meta-tag">${feeLabel}</span>`);
+  }
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   return tags.join(' ');
 }
