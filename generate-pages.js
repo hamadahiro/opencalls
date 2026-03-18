@@ -777,7 +777,7 @@ indexPages.forEach(({ src, fallback }) => {
 });
 
 // Update manual HTML files: CSS version, year, and title suffix
-const manualFiles = ['index.html', '404.html'];
+const manualFiles = ['index.html', '404.html', 'submit/index.html'];
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS version
@@ -795,6 +795,10 @@ manualFiles.forEach(file => {
     const clean = content.replace(/\s*-\s*Monographica$/, '');
     return `${clean}${TITLE_SUFFIX}"`;
   });
+  // Update header (skip index.html which has its own nav with data-view attributes)
+  if (file !== 'index.html') {
+    html = html.replace(/<header>[\s\S]*?<\/header>/, HEADER);
+  }
   // Update footer
   html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
   // Update open count in index.html hero
