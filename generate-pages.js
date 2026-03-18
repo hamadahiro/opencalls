@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'countries', 'organizations', 'free', 'prize', 'united-states'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
@@ -257,7 +257,7 @@ const categories = {
 
 Object.entries(categories).forEach(([cat, info]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
-  const slug = `categories/${catSlug}`;
+  const slug = catSlug;
   const count = data.calls.filter(c => c.category === cat).length;
 
   const html = `<!DOCTYPE html>
@@ -428,7 +428,7 @@ Object.entries(countryCounts)
   .forEach(([country, count]) => {
     const fullName = countryNames[country] || country;
     const countrySlug = countrySlugs[country] || slugify(country);
-    const slug = `countries/${countrySlug}`;
+    const slug = countrySlug;
     const isOnline = country === 'Online';
     const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
     const desc = isOnline
@@ -510,7 +510,7 @@ ${country === 'USA' ? `
       let html = '';
       sorted.forEach(([state, count]) => {
         const fullName = stateNames[state] || state;
-        html += '<a href="/countries/united-states/' + slugify(fullName) + '" class="index-item">' +
+        html += '<a href="/united-states/' + slugify(fullName) + '" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
           '<span class="index-item-dots"></span>' +
           '<span class="index-item-count">' + count + '</span></a>';
@@ -547,7 +547,7 @@ data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
 Object.entries(stateCounts).forEach(([state, count]) => {
   const fullStateName = usStateNames[state] || state;
   const stateSlug = slugify(fullStateName);
-  const slug = `countries/united-states/${stateSlug}`;
+  const slug = `united-states/${stateSlug}`;
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
   const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
@@ -593,7 +593,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${HEADER}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/countries/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -624,7 +624,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
 Object.entries(orgCounts)
   .forEach(([org, count]) => {
     const orgSlug = slugify(org);
-    const slug = `organizations/${orgSlug}`;
+    const slug = orgSlug;
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
@@ -713,7 +713,7 @@ sitemapEntries.push(`${SITE}/organizations`);
 const statePageMap = {};
 Object.keys(stateCounts).forEach(state => {
   const fullName = usStateNames[state] || state;
-  statePageMap[state] = 'countries/united-states/' + slugify(fullName);
+  statePageMap[state] = 'united-states/' + slugify(fullName);
 });
 
 // Update page lists in cards.js (between markers) — only include actually created pages
