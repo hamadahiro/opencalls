@@ -420,22 +420,22 @@ filterPages.forEach(fp => {
 
 // === Eligibility pages ===
 const eligibilityGroups = {
-  'women-only': { title: 'Open Calls for Women Photographers', desc: 'Open calls, grants, and awards exclusively for women, nonbinary, and gender-diverse photographers and visual artists.' },
-  'us-only': { title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States.' },
-  'europe-only': { title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe.' },
-  'italy-only': { title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
-  'emerging-only': { title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
-  'under-30': { title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30.' },
-  'under-40': { title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40.' },
-  'lgbtq': { title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
-  'analog-only': { title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
-  'alternative-process': { title: 'Alternative Process Open Calls', desc: 'Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.' },
-  'professional-only': { title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers.' },
-  'membership-required': { title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body.' },
-  'focus-puerto-rico': { title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora.' },
-  'focus-asian-american': { title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
-  'focus-south-asian': { title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
-  'focus-african-diaspora': { title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' }
+  'women-only': { short: 'Women Only', title: 'Open Calls for Women Photographers', desc: 'Open calls, grants, and awards exclusively for women, nonbinary, and gender-diverse photographers and visual artists.' },
+  'us-only': { short: 'US Only', title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States.' },
+  'europe-only': { short: 'Europe Only', title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe.' },
+  'italy-only': { short: 'Italy Only', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
+  'emerging-only': { short: 'Emerging Artists', title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
+  'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30.' },
+  'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40.' },
+  'lgbtq': { short: 'LGBTQ+', title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
+  'analog-only': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
+  'alternative-process': { short: 'Alternative Process', title: 'Alternative Process Open Calls', desc: 'Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.' },
+  'professional-only': { short: 'Professional Only', title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers.' },
+  'membership-required': { short: 'Membership Required', title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body.' },
+  'focus-puerto-rico': { short: 'Puerto Rico Focus', title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora.' },
+  'focus-asian-american': { short: 'Asian American Focus', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
+  'focus-south-asian': { short: 'South Asian Focus', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
+  'focus-african-diaspora': { short: 'African Diaspora Focus', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -560,7 +560,7 @@ if (eligibilityPageSlugs.length) {
         const info = eligibilityGroups[tag];
         const count = eligibilityTags[tag];
         return `<a href="/eligibility/${tag}" class="index-item">
-          <span class="index-item-name">${escapeHtml(info.title)}</span>
+          <span class="index-item-name">${escapeHtml(info.short)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
         </a>`;
