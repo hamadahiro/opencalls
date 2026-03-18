@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="analytics.js"></script>
+  <script src="/analytics.js"></script>
   <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>Open Calls for Artists in New Mexico 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.">
-  <meta name="keywords" content="open calls New Mexico, call for entries New Mexico, photography opportunities New Mexico, art exhibitions New Mexico, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/nm">
-  <link rel="icon" href="favicon.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-  <meta property="og:title" content="Open Calls for Artists in New Mexico 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.">
+  <title>Open Calls for Artists in California 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in California. Browse and apply today.">
+  <meta name="keywords" content="open calls California, call for entries California, photography opportunities California, art exhibitions California, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/united-states/california">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <meta property="og:title" content="Open Calls for Artists in California 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in California. Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
-  <meta property="og:url" content="https://opencalls.monographica.com/nm">
+  <meta property="og:url" content="https://opencalls.monographica.com/united-states/california">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
@@ -23,16 +23,16 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Open Calls for Artists in New Mexico 2026",
-    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.",
-    "url": "https://opencalls.monographica.com/nm",
+    "name": "Open Calls for Artists in California 2026",
+    "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in California. Browse and apply today.",
+    "url": "https://opencalls.monographica.com/united-states/california",
     "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260317b">
+  <link rel="stylesheet" href="/style.css?v=20260317b">
 </head>
 <body>
 
@@ -49,8 +49,8 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <a href="/usa">United States</a></nav>
-      <h1>Open Calls for Artists in New Mexico</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.</h2>
+      <h1>Open Calls for Artists in California</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in California. Browse and apply today.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -61,12 +61,12 @@
     </footer>
   </main>
 
-  <script src="cards.js"></script>
+  <script src="/cards.js"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && c.location.includes(', NM,') || c.location && c.location.includes(', NM, USA')).map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => c.location && c.location.includes(', CA,') || c.location && c.location.includes(', CA, USA')).map(processCall).filter(c => c.urgencyClass !== 'closed');
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
