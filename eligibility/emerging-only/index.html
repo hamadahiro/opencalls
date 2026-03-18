@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/analytics.js"></script>
+  <link rel="preload" href="/data.json" as="fetch" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Open Calls for Emerging Artists 2026 - Monographica</title>
+  <meta name="description" content="Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/emerging-only">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <meta property="og:title" content="Open Calls for Emerging Artists 2026 - Monographica">
+  <meta property="og:description" content="Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.">
+  <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/emerging-only">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Open Calls for Emerging Artists 2026",
+    "description": "Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.",
+    "url": "https://opencalls.monographica.com/eligibility/emerging-only",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260318">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility">Eligibility</a></nav>
+      <h1>Open Calls for Emerging Artists</h1>
+      <h2 class="subtitle">Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.</h2>
+    </section>
+
+    <section class="calls-list" id="callsList"></section>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; 2026 HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script src="/cards.js"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('emerging-only')).map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>
