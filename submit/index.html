@@ -40,10 +40,9 @@
     </section>
 
     <form class="submit-form" id="submitForm">
+      <h3 class="form-section-title">Call</h3>
       <input type="text" name="title" placeholder="Title" required maxlength="120">
-      <input type="text" name="org" placeholder="Organization" required>
-      <input type="url" name="url" placeholder="Official website" required>
-      <input type="text" name="deadline" placeholder="Deadline (YYYY-MM-DD or continuous)">
+      <textarea name="description" placeholder="Short description" rows="3" maxlength="500"></textarea>
       <select name="category">
         <option value="" disabled selected>Category</option>
         <option value="photography">Photography</option>
@@ -53,11 +52,17 @@
         <option value="zine">Zines & Books</option>
         <option value="education">Education</option>
       </select>
+
+      <h3 class="form-section-title">Details</h3>
+      <input type="text" name="deadline" placeholder="Deadline (YYYY-MM-DD or continuous)">
       <input type="text" name="location" placeholder="Location (City, country or online)">
       <input type="text" name="fee" placeholder="Entry fee (Free, $35, €25)">
       <input type="text" name="prize" placeholder="Prize ($1,000 or leave empty)">
+
+      <h3 class="form-section-title">Organization</h3>
+      <input type="text" name="org" placeholder="Organization" required>
+      <input type="url" name="url" placeholder="Official website" required>
       <input type="text" name="instagram" placeholder="Instagram (@handle, optional)">
-      <textarea name="description" placeholder="Short description" rows="3" maxlength="500"></textarea>
       <input type="text" name="submitter" placeholder="Your name or email">
       <button type="submit" class="submit-btn" id="submitBtn">Submit call</button>
       <p id="submitStatus" style="font-family: 'Source Serif 4', serif; font-size: 16px; margin-top: 8px;"></p>
