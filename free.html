@@ -66,7 +66,7 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).map(processCall).filter(c => c.urgencyClass !== 'closed');
+      const calls = data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();

@@ -172,8 +172,11 @@ function renderCard(call, titleTag) {
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function renderCallList(calls, container) {
-  // Sort ascending by deadline
-  calls.sort((a, b) => {
+  const open = calls.filter(c => c.urgencyClass !== 'closed');
+  const closed = calls.filter(c => c.urgencyClass === 'closed');
+
+  // Sort open ascending
+  open.sort((a, b) => {
     if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
     if (a.deadline === 'Continuous') return 1;
     if (b.deadline === 'Continuous') return -1;
@@ -182,7 +185,7 @@ function renderCallList(calls, container) {
 
   // Today section
   const todaySlugs = new Set();
-  const today = calls.filter(c => c.daysLeft !== null && c.daysLeft === 0);
+  const today = open.filter(c => c.daysLeft !== null && c.daysLeft === 0);
   if (today.length >= 1) {
     container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Today</h3>');
     today.forEach(call => {
@@ -191,9 +194,9 @@ function renderCallList(calls, container) {
     });
   }
 
-  // Month sections (skip Today items)
+  // Open month sections (skip Today items)
   let currentSection = '';
-  calls.filter(c => !todaySlugs.has(slugify(c.title))).forEach(call => {
+  open.filter(c => !todaySlugs.has(slugify(c.title))).forEach(call => {
     const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
     if (section !== currentSection) {
       currentSection = section;
@@ -202,7 +205,16 @@ function renderCallList(calls, container) {
     container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
   });
 
+  // Past section (newest first)
+  if (closed.length) {
+    closed.sort((a, b) => b.deadlineDate - a.deadlineDate);
+    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Past</h3>');
+    closed.forEach(call => {
+      container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+    });
+  }
+
   if (container.children.length === 0) {
-    container.innerHTML = '<p class="empty-state">No open calls in this section right now.</p>';
+    container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
   }
 }
