@@ -777,7 +777,7 @@ indexPages.forEach(({ src, fallback }) => {
 });
 
 // Update manual HTML files: CSS version, year, and title suffix
-const manualFiles = ['index.html'];
+const manualFiles = ['index.html', '404.html'];
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS version
