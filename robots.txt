@@ -3,5 +3,6 @@ Allow: /
 Disallow: /generate-pages.js
 Disallow: /cards.js
 Disallow: /call-detail.js
+Disallow: /analytics.js
 
 Sitemap: https://opencalls.monographica.com/sitemap.xml
