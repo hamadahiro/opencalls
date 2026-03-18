@@ -351,7 +351,7 @@ a.meta-tag-link.call-prize:hover {
   color: #111;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #111;
   padding: 4px 0;
   margin-left: 12px;
   outline: none;
@@ -361,7 +361,7 @@ a.meta-tag-link.call-prize:hover {
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  border-bottom-color: #111;
+  border-bottom-color: #000;
 }
 
 .form-field input::placeholder,
