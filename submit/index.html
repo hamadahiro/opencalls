@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
-  <title>Submit an Open Call - Monographica</title>
-  <meta name="description" content="Submit an open call for photographers and visual artists. Exhibitions, grants, residencies, and more.">
+  <title>Submit a Call - Monographica</title>
+  <meta name="description" content="Submit a call for photographers and visual artists. Exhibitions, grants, residencies, and more.">
   <link rel="canonical" href="https://opencalls.monographica.com/submit">
   <link rel="icon" href="/favicon.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
-  <meta property="og:title" content="Submit an Open Call - Monographica">
-  <meta property="og:description" content="Submit an open call for photographers and visual artists.">
+  <meta property="og:title" content="Submit a Call - Monographica">
+  <meta property="og:description" content="Submit a call for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
   <meta property="og:url" content="https://opencalls.monographica.com/submit">
   <meta name="robots" content="index, follow">
@@ -35,15 +35,15 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
-      <h1>Submit an Open Call</h1>
-      <h2 class="subtitle">Know about an open call for photographers or visual artists? Submit it here and we'll review it for inclusion.</h2>
+      <h1>Submit a call</h1>
+      <h2 class="subtitle">Know a call for photographers or visual artists? Submit it here. We'll review it before listing.</h2>
     </section>
 
     <form class="submit-form" id="submitForm">
-      <input type="text" name="title" placeholder="Title of the open call" required>
-      <input type="text" name="org" placeholder="Organization name" required>
-      <input type="url" name="url" placeholder="Official website URL" required>
-      <input type="text" name="deadline" placeholder="Deadline (e.g. 2026-06-30 or Continuous)">
+      <input type="text" name="title" placeholder="Title" required maxlength="120">
+      <input type="text" name="org" placeholder="Organization" required>
+      <input type="url" name="url" placeholder="Official website" required>
+      <input type="text" name="deadline" placeholder="Deadline (YYYY-MM-DD or continuous)">
       <select name="category">
         <option value="" disabled selected>Category</option>
         <option value="photography">Photography</option>
@@ -53,13 +53,13 @@
         <option value="zine">Zines & Books</option>
         <option value="education">Education</option>
       </select>
-      <input type="text" name="location" placeholder="Location (e.g. Paris, France or Online)">
-      <input type="text" name="fee" placeholder="Entry fee (e.g. Free, $35, €25)">
-      <input type="text" name="prize" placeholder="Prize (e.g. $1,000 or leave empty)">
-      <input type="text" name="instagram" placeholder="Instagram handle (e.g. @example)">
-      <textarea name="description" placeholder="Brief description of the open call" rows="3"></textarea>
-      <input type="text" name="submitter" placeholder="Your name or email (optional)">
-      <button type="submit" class="submit-btn" id="submitBtn">Submit open call</button>
+      <input type="text" name="location" placeholder="Location (City, country or online)">
+      <input type="text" name="fee" placeholder="Entry fee (Free, $35, €25)">
+      <input type="text" name="prize" placeholder="Prize ($1,000 or leave empty)">
+      <input type="text" name="instagram" placeholder="Instagram (@handle, optional)">
+      <textarea name="description" placeholder="Short description" rows="3" maxlength="500"></textarea>
+      <input type="text" name="submitter" placeholder="Your name or email">
+      <button type="submit" class="submit-btn" id="submitBtn">Submit call</button>
       <p id="submitStatus" style="font-family: 'Source Serif 4', serif; font-size: 16px; margin-top: 8px;"></p>
     </form>
 
