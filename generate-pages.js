@@ -662,7 +662,7 @@ manualFiles.forEach(file => {
     const now = new Date();
     const openCount = data.calls.filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now).length;
     const roundedCount = Math.floor(openCount / 10) * 10;
-    html = html.replace(/<span id="openCount">\d*<\/span>/, `<span id="openCount">${roundedCount}</span>`);
+    html = html.replace(/over \d+ open calls/, `over ${roundedCount} open calls`);
   }
   fs.writeFileSync(file, html);
 });
