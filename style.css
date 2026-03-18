@@ -10,14 +10,12 @@ html {
   background-attachment: fixed;
   background-size: cover;
   background-position: top right;
-  background-repeat: repeat;
   background-color: #e6e6e6;
 }
 
 body {
   font-family: helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 400;
   line-height: 1.5;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
@@ -35,7 +33,6 @@ a:hover {
 /* === Header === */
 header {
   padding: 30px 0;
-  background: transparent;
 }
 
 .header-inner {
@@ -49,7 +46,6 @@ header {
 
 .logo {
   font-size: 20px;
-  font-weight: 400;
   line-height: 1.2;
   text-decoration: none;
   font-family: 'Source Serif 4', serif;
@@ -66,7 +62,6 @@ nav {
 
 nav a {
   font-size: 14px;
-  font-weight: 400;
   letter-spacing: 0.3px;
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -95,21 +90,24 @@ main {
 
 .hero h1 {
   font-size: 48px;
-  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
   font-family: 'Source Serif 4', serif;
 }
 
-.subtitle {
+/* === Shared serif text style === */
+.subtitle,
+.call-description,
+.call-detail-description {
   font-size: 20px;
-  font-weight: 400;
   color: rgb(0, 0, 0);
   line-height: 32px;
   font-family: 'Source Serif 4', serif;
 }
 
-
+.call-detail-description {
+  margin-bottom: 32px;
+}
 
 /* === Filters === */
 .filters {
@@ -132,7 +130,6 @@ main {
   padding: 8px 14px;
   font-size: 14px;
   font-family: helvetica, sans-serif;
-  font-weight: 400;
   letter-spacing: 0.3px;
   cursor: pointer;
   color: rgb(0, 0, 0);
@@ -155,12 +152,10 @@ main {
   padding-right: 44px;
   font-size: 14px;
   font-family: helvetica, sans-serif;
-  font-weight: 400;
   letter-spacing: 0.3px;
   color: rgb(0, 0, 0);
   outline: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  box-sizing: border-box;
 }
 
 .search-clear {
@@ -190,10 +185,6 @@ main {
   color: #999;
 }
 
-.search-bar:focus {
-  background: rgb(255, 255, 255);
-}
-
 .filter-btn:hover {
   background: rgba(255, 255, 255, 0.9);
 }
@@ -208,29 +199,17 @@ main {
 .calls-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  background: transparent;
   margin-bottom: 24px;
-}
-
-.call-card + .call-card {
-  border-top: none;
 }
 
 .section-header {
   font-size: 32px;
-  font-weight: 400;
   color: rgb(0, 0, 0);
   padding: 48px 0 12px;
   font-family: 'Source Serif 4', serif;
 }
 
-.section-header:first-child {
-  padding-top: 48px;
-}
-
 .call-card {
-  background: transparent;
   padding: 25px 0;
 }
 
@@ -255,7 +234,6 @@ main {
   display: inline-flex;
   align-items: center;
   font-size: 13px;
-  font-weight: 400;
   padding: 5px 10px;
   border-radius: 3px;
   white-space: nowrap;
@@ -274,11 +252,7 @@ main {
   color: white;
 }
 
-.call-deadline.soon {
-  background: #D3B36F;
-  color: white;
-}
-
+.call-deadline.soon,
 .call-deadline.normal {
   background: #D3B36F;
   color: white;
@@ -301,7 +275,6 @@ main {
   align-items: center;
   gap: 3px;
   font-size: 13px;
-  font-weight: 400;
   padding: 5px 10px;
   border-radius: 3px;
   background: #EAE7E2;
@@ -337,14 +310,6 @@ a.meta-tag-link.call-prize:hover {
   background: #333;
 }
 
-.call-description {
-  font-size: 20px;
-  font-weight: 400;
-  color: rgb(0, 0, 0);
-  line-height: 32px;
-  font-family: 'Source Serif 4', serif;
-}
-
 /* === Empty State === */
 .empty-state {
   padding: 48px 0;
@@ -367,21 +332,14 @@ a.meta-tag-link.call-prize:hover {
 
 .about-section p {
   font-size: 16px;
-  font-weight: 400;
   line-height: 20px;
   color: rgb(0, 0, 0);
   font-family: 'Source Serif 4', serif;
 }
 
 .about-section .disclaimer {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: rgb(0, 0, 0);
-  font-family: 'Source Serif 4', serif;
   margin-bottom: 16px;
 }
-
 
 /* === Responsive === */
 @media (max-width: 640px) {
@@ -412,13 +370,11 @@ a.meta-tag-link.call-prize:hover {
     z-index: -1;
   }
 
-  /* Search bar */
   .search-bar {
     font-size: 14px;
     padding: 12px 16px;
   }
 
-  /* Header */
   .header-inner {
     padding: 0 16px;
   }
@@ -431,7 +387,6 @@ a.meta-tag-link.call-prize:hover {
     font-size: 18px;
   }
 
-  /* Hero */
   .hero {
     padding: 36px 0 24px;
   }
@@ -442,12 +397,13 @@ a.meta-tag-link.call-prize:hover {
     margin-bottom: 12px;
   }
 
-  .subtitle {
+  .subtitle,
+  .call-description,
+  .call-detail-description {
     font-size: 18px;
     line-height: 28px;
   }
 
-  /* Filters - horizontal scroll on mobile, edge to edge */
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -460,16 +416,11 @@ a.meta-tag-link.call-prize:hover {
     scrollbar-width: none;
   }
 
-  .filters::-webkit-scrollbar {
-    display: none;
-  }
-
   .filter-btn {
     flex: 0 0 auto;
     font-size: 14px;
   }
 
-  /* Cards */
   .call-card {
     padding: 24px 0;
   }
@@ -484,12 +435,6 @@ a.meta-tag-link.call-prize:hover {
     line-height: 1.3;
   }
 
-  .call-description {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  /* Footer */
   .about-section {
     padding: 32px 0;
   }
@@ -513,6 +458,7 @@ a.meta-tag-link.call-prize:hover {
     font-size: 13px;
   }
 }
+
 /* === Call Detail Page === */
 .call-detail {
   padding: 60px 0 48px;
@@ -520,7 +466,6 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-title {
   font-size: 48px;
-  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
   margin-top: 24px;
@@ -532,15 +477,6 @@ a.meta-tag-link.call-prize:hover {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 24px;
-}
-
-.call-detail-description {
-  font-size: 20px;
-  font-weight: 400;
-  color: rgb(0, 0, 0);
-  line-height: 32px;
-  font-family: 'Source Serif 4', serif;
-  margin-bottom: 32px;
 }
 
 .call-detail-actions {
@@ -558,7 +494,6 @@ a.meta-tag-link.call-prize:hover {
   padding: 12px 28px;
   font-family: helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 400;
   text-decoration: none;
   transition: opacity 0.15s ease;
 }
@@ -566,17 +501,6 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-apply:hover {
   opacity: 0.8;
   text-decoration: none;
-}
-
-.call-detail-back {
-  font-size: 14px;
-  color: #666;
-  text-decoration: none;
-}
-
-.call-detail-back:hover {
-  color: #111;
-  text-decoration: underline;
 }
 
 .call-detail-info {
@@ -589,7 +513,6 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-info dt {
   font-size: 12px;
-  font-weight: 400;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #999;
@@ -608,7 +531,6 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-info dd {
   font-size: 16px;
-  font-weight: 400;
   color: #111;
   font-family: 'Source Serif 4', serif;
 }
@@ -621,7 +543,6 @@ a.meta-tag-link.call-prize:hover {
 .index-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
   padding: 24px 0 48px;
 }
 
@@ -643,7 +564,6 @@ a.meta-tag-link.call-prize:hover {
 
 .index-item-name {
   font-size: 20px;
-  font-weight: 400;
   font-family: 'Source Serif 4', serif;
   white-space: nowrap;
 }
@@ -666,7 +586,6 @@ a.meta-tag-link.call-prize:hover {
 
 .index-item-count {
   font-size: 20px;
-  font-weight: 400;
   font-family: 'Source Serif 4', serif;
   color: #111;
   white-space: nowrap;
@@ -676,7 +595,6 @@ a.meta-tag-link.call-prize:hover {
 .breadcrumbs {
   font-size: 14px;
   font-family: helvetica, sans-serif;
-  font-weight: 400;
   color: #999;
   margin-bottom: 16px;
 }
@@ -700,7 +618,6 @@ a.meta-tag-link.call-prize:hover {
   padding: 16px 0 48px;
 }
 
-
 /* === Call Detail Responsive === */
 @media (max-width: 640px) {
   .call-detail {
@@ -711,15 +628,8 @@ a.meta-tag-link.call-prize:hover {
     font-size: 32px;
   }
 
-  .call-detail-description {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
   .call-detail-info {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 }
-
-/* cache bust */
