@@ -115,7 +115,7 @@ async function loadSimilar() {
     return;
   }
 
-  let html = '<h2 class="section-header">Similar Calls</h2>';
+  let html = '<h2 class="section-header">More like this</h2>';
   top.forEach(s => {
     html += renderCard(processCall(s.call), 'h3');
   });
