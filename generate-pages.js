@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility', 'women-only', 'us-only', 'europe-only', 'italy-only', 'emerging-only', 'under-30', 'under-40', 'lgbtq', 'analog-only', 'alternative-process', 'professional-only', 'membership-required', 'focus-puerto-rico', 'focus-asian-american', 'focus-south-asian', 'focus-african-diaspora'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
@@ -420,22 +420,22 @@ filterPages.forEach(fp => {
 
 // === Eligibility pages ===
 const eligibilityGroups = {
-  'women-only': { short: 'Women Only', title: 'Open Calls for Women Photographers', desc: 'Open calls, grants, and awards exclusively for women, nonbinary, and gender-diverse photographers and visual artists.' },
-  'us-only': { short: 'US Only', title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States.' },
-  'europe-only': { short: 'Europe Only', title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe.' },
-  'italy-only': { short: 'Italy Only', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
-  'emerging-only': { short: 'Emerging Artists', title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
+  'women': { short: 'Women', title: 'Open Calls for Women Photographers', desc: 'Open calls, grants, and awards exclusively for women, nonbinary, and gender-diverse photographers and visual artists.' },
+  'us': { short: 'United States', title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States.' },
+  'europe': { short: 'Europe', title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe.' },
+  'italy': { short: 'Italy', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
+  'emerging': { short: 'Emerging Artists', title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
   'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30.' },
   'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40.' },
   'lgbtq': { short: 'LGBTQ+', title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
-  'analog-only': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
+  'analog': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
   'alternative-process': { short: 'Alternative Process', title: 'Alternative Process Open Calls', desc: 'Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.' },
-  'professional-only': { short: 'Professional Only', title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers.' },
+  'professional': { short: 'Professional', title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers.' },
   'membership-required': { short: 'Membership Required', title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body.' },
-  'focus-puerto-rico': { short: 'Puerto Rico Focus', title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora.' },
-  'focus-asian-american': { short: 'Asian American Focus', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
-  'focus-south-asian': { short: 'South Asian Focus', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
-  'focus-african-diaspora': { short: 'African Diaspora Focus', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' }
+  'puerto-rico': { short: 'Puerto Rico', title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora.' },
+  'asian-american': { short: 'Asian American', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
+  'south-asian': { short: 'South Asian', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
+  'african-diaspora': { short: 'African Diaspora', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -450,7 +450,7 @@ const eligibilityPageSlugs = [];
 Object.entries(eligibilityTags).forEach(([tag, count]) => {
   const info = eligibilityGroups[tag];
   if (!info) return;
-  const slug = tag;
+  const slug = `eligibility/${tag}`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -522,10 +522,10 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women-only', 'lgbtq', 'emerging-only', 'professional-only', 'under-30', 'under-40'] },
-  { heading: 'Where', tags: ['us-only', 'europe-only', 'italy-only'] },
-  { heading: 'Medium', tags: ['analog-only', 'alternative-process'] },
-  { heading: 'Focus', tags: ['focus-african-diaspora', 'focus-asian-american', 'focus-puerto-rico', 'focus-south-asian'] },
+  { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'emerging', 'professional', 'under-30', 'under-40'] },
+  { heading: 'Where', tags: ['us', 'europe', 'italy'] },
+  { heading: 'Medium', tags: ['analog', 'alternative-process'] },
+  { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
 ];
 
@@ -538,7 +538,7 @@ function buildEligibilityIndexItems() {
     activeTags.forEach(tag => {
       const info = eligibilityGroups[tag];
       const count = eligibilityTags[tag];
-      html += `      <a href="/${tag}" class="index-item">
+      html += `      <a href="/eligibility/${tag}" class="index-item">
           <span class="index-item-name">${escapeHtml(info.short)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
