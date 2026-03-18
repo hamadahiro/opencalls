@@ -349,7 +349,7 @@ Object.entries(categories).forEach(([cat, info]) => {
 // === Country landing pages ===
 // Only create pages for countries with 2+ calls
 const countryNames = {
-  'USA': 'United States', 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates'
+  'USA': 'the United States', 'UK': 'the United Kingdom', 'UAE': 'the United Arab Emirates', 'Netherlands': 'the Netherlands'
 };
 
 Object.entries(countryCounts)

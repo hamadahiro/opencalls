@@ -38,7 +38,7 @@ function slugify(title) {
 
 function processCall(call) {
   const now = new Date();
-  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline);
+  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
   const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
 
   let urgencyClass = '';
@@ -70,7 +70,7 @@ function processCall(call) {
 }
 
 function renderTags(call) {
-  const pinSvg = '<svg class="pin-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
+  const pinSvg = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
   const tags = [];
   if (call.prize) tags.push(`<span class="meta-tag call-prize">${esc(call.prize)} prize</span>`);
   const catSlug = categorySlug[call.category];
@@ -102,7 +102,7 @@ function renderInfoGrid(call) {
   const rows = [];
   // Deadline
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
-    new Date(call.deadline).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   rows.push(`<div><dt>Deadline</dt><dd>${esc(deadlineText)}</dd></div>`);
   // Fee
   if (call.fee) {
