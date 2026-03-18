@@ -7,6 +7,25 @@ const categoryLabel = {
   'education': 'Education'
 };
 
+const eligibilityLabel = {
+  'women-only': 'Women only',
+  'us-only': 'US only',
+  'europe-only': 'Europe only',
+  'italy-only': 'Italy only',
+  'emerging-only': 'Emerging artists',
+  'under-30': 'Under 30',
+  'under-40': 'Under 40',
+  'lgbtq': 'LGBTQ+',
+  'analog-only': 'Analog only',
+  'alternative-process': 'Alternative process',
+  'professional-only': 'Professional only',
+  'membership-required': 'Membership required',
+  'focus-puerto-rico': 'Puerto Rico focus',
+  'focus-asian-american': 'Asian American focus',
+  'focus-south-asian': 'South Asian focus',
+  'focus-african-diaspora': 'African diaspora focus'
+};
+
 const categorySlug = {
   'photography': 'photography',
   'exhibition': 'exhibitions',
@@ -114,6 +133,12 @@ function renderTags(call) {
       tags.push(`<span class="meta-tag">${esc(call.fee)}</span>`);
     }
   }
+  if (call.eligibility && call.eligibility.length) {
+    call.eligibility.forEach(e => {
+      const label = eligibilityLabel[e] || e;
+      tags.push(`<a href="/eligibility/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
+    });
+  }
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   return tags.join(' ');
 }
@@ -151,6 +176,14 @@ function renderInfoGrid(call) {
   }
   // Prize
   if (call.prize) rows.push(`<div><dt>Prize</dt><dd>${esc(call.prize)}</dd></div>`);
+  // Eligibility
+  if (call.eligibility && call.eligibility.length) {
+    const eligHtml = call.eligibility.map(e => {
+      const label = eligibilityLabel[e] || e;
+      return `<a href="/eligibility/${e}" class="eligibility-tag">${esc(label)}</a>`;
+    }).join(' ');
+    rows.push(`<div><dt><a href="/eligibility">Eligibility</a></dt><dd>${eligHtml}</dd></div>`);
+  }
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');

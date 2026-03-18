@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
@@ -202,7 +202,7 @@ function generatePage(call, cssVersion) {
     const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
     const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
     const CURRENT_DEADLINE = '${call.deadline}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '' })};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [] })};
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>
@@ -418,8 +418,167 @@ filterPages.forEach(fp => {
   console.log(`  Filter page: ${fp.slug} (${count} calls)`);
 });
 
+// === Eligibility pages ===
+const eligibilityGroups = {
+  'women-only': { title: 'Open Calls for Women Photographers', desc: 'Open calls, grants, and awards exclusively for women, nonbinary, and gender-diverse photographers and visual artists.' },
+  'us-only': { title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States.' },
+  'europe-only': { title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe.' },
+  'italy-only': { title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
+  'emerging-only': { title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
+  'under-30': { title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30.' },
+  'under-40': { title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40.' },
+  'lgbtq': { title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
+  'analog-only': { title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
+  'alternative-process': { title: 'Alternative Process Open Calls', desc: 'Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.' },
+  'professional-only': { title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers.' },
+  'membership-required': { title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body.' },
+  'focus-puerto-rico': { title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora.' },
+  'focus-asian-american': { title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
+  'focus-south-asian': { title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
+  'focus-african-diaspora': { title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' }
+};
+
+// Collect which eligibility tags actually exist in data
+const eligibilityTags = {};
+data.calls.forEach(c => {
+  (c.eligibility || []).forEach(tag => {
+    eligibilityTags[tag] = (eligibilityTags[tag] || 0) + 1;
+  });
+});
+
+const eligibilityPageSlugs = [];
+Object.entries(eligibilityTags).forEach(([tag, count]) => {
+  const info = eligibilityGroups[tag];
+  if (!info) return;
+  const slug = `eligibility/${tag}`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${GA_SNIPPET}
+  ${PRELOAD}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}</title>
+  <meta name="description" content="${escapeHtml(info.desc)}">
+  <link rel="canonical" href="${SITE}/${slug}">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <meta property="og:title" content="${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}">
+  <meta property="og:description" content="${escapeHtml(info.desc)}">
+  <meta property="og:image" content="${SITE}/og-image.jpg">
+  <meta property="og:url" content="${SITE}/${slug}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "${jsonStr(info.title)} ${YEAR}",
+    "description": "${jsonStr(info.desc)}",
+    "url": "${SITE}/${slug}",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+</head>
+<body>
+
+  ${HEADER}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+
+    <section class="calls-list" id="callsList"></section>
+
+    ${FOOTER}
+  </main>
+
+  <script src="/cards.js"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('${tag}')).map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  eligibilityPageSlugs.push(tag);
+  writeGenerated(`${slug}/index.html`, html);
+  sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  Eligibility page: ${tag} (${count} calls)`);
+});
+
+// Eligibility index page
+if (eligibilityPageSlugs.length) {
+  const eligIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${GA_SNIPPET}
+  ${PRELOAD}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}</title>
+  <meta name="description" content="Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, US-only, analog photography, and more.">
+  <link rel="canonical" href="${SITE}/eligibility">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <meta property="og:title" content="Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}">
+  <meta property="og:description" content="Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, and more.">
+  <meta property="og:image" content="${SITE}/og-image.jpg">
+  <meta property="og:url" content="${SITE}/eligibility">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+</head>
+<body>
+
+  ${HEADER}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Eligibility', 'Browse open calls by eligibility — find calls for women, emerging artists, LGBTQ+ photographers, US-only, analog photography, and more.')}
+
+    <section class="index-list" id="indexList">
+      ${eligibilityPageSlugs.map(tag => {
+        const info = eligibilityGroups[tag];
+        const count = eligibilityTags[tag];
+        return `<a href="/eligibility/${tag}" class="index-item">
+          <span class="index-item-name">${escapeHtml(info.title)}</span>
+          <span class="index-item-dots"></span>
+          <span class="index-item-count">${count}</span>
+        </a>`;
+      }).join('\n      ')}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+  writeGenerated('eligibility/index.html', eligIndexHtml);
+  sitemapEntries.push(`${SITE}/eligibility`);
+  console.log(`  Eligibility index page (${eligibilityPageSlugs.length} groups)`);
+}
+
 // === Country landing pages ===
-// Only create pages for countries with 2+ calls
 const countryNames = {
   'USA': 'the United States', 'UK': 'the United Kingdom', 'UAE': 'the United Arab Emirates', 'Netherlands': 'the Netherlands'
 };
