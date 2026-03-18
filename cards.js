@@ -109,9 +109,6 @@ function renderInfoGrid(call) {
     const feeText = call.fee === 'Check website' ? 'See official website' : esc(call.fee);
     rows.push(`<div><dt>Entry Fee</dt><dd>${feeText}</dd></div>`);
   }
-  // Category — both label and value linked
-  const catSlugInfo = categorySlug[call.category];
-  rows.push(`<div><dt><a href="/categories">Category</a></dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a></dd></div>`);
   // Location — both label and value linked
   if (call.location) {
     const country = getCountryFromLocation(call.location);
@@ -122,6 +119,9 @@ function renderInfoGrid(call) {
       rows.push(`<div><dt><a href="/countries">Location</a></dt><dd>${esc(call.location)}</dd></div>`);
     }
   }
+  // Category — both label and value linked
+  const catSlugInfo = categorySlug[call.category];
+  rows.push(`<div><dt><a href="/categories">Category</a></dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a></dd></div>`);
   // Organizer — both label and value linked
   const oSlug = slugify(call.org);
   if (orgPages.includes(oSlug)) {
