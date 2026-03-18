@@ -191,8 +191,7 @@ function generatePage(call, cssVersion) {
     </section>
 
     <section class="related-calls">
-      <div id="relatedOrg"></div>
-      <div id="relatedCountry"></div>
+      <div id="similarCalls"></div>
     </section>
 
     ${FOOTER}
