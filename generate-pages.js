@@ -11,6 +11,34 @@ const MANUAL_FILES = ['index.html', 'categories.html', 'countries.html', 'organi
 // GA — single external file
 const GA_SNIPPET = `<script src="analytics.js"></script>`;
 
+// Shared header and footer
+const HEADER = `<header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>`;
+
+const FOOTER = `<footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; ${YEAR} HH &mdash; still making sense of things.</p>
+    </footer>`;
+
+function buildBreadcrumbs(section, sectionUrl, pageName) {
+  return `<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="${sectionUrl}">${section}</a> / <span>${pageName}</span></nav>`;
+}
+
+function buildHero(breadcrumbs, title, subtitle) {
+  return `<section class="hero">
+      ${breadcrumbs}
+      <h1>${title}</h1>
+      <h2 class="subtitle">${subtitle}</h2>
+    </section>`;
+}
+
 // Clean up old generated HTML files (keep manual files and non-HTML)
 const existingHtml = fs.readdirSync('.').filter(f => f.endsWith('.html') && !MANUAL_FILES.includes(f));
 existingHtml.forEach(f => fs.unlinkSync(f));
@@ -135,15 +163,7 @@ function generatePage(call, cssVersion) {
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="https://monographica.com" class="logo">Monographica</a>
-      <nav>
-        <a href="/" class="nav-link">Open</a>
-        <a href="/?view=past" class="nav-link">Closed</a>
-      </nav>
-    </div>
-  </header>
+  ${HEADER}
 
   <main>
     <section class="call-detail">
@@ -168,10 +188,7 @@ function generatePage(call, cssVersion) {
       <div id="relatedCountry"></div>
     </section>
 
-    <footer class="about-section" id="footer">
-      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p>&copy; ${new Date().getFullYear()} HH &mdash; still making sense of things.</p>
-    </footer>
+    ${FOOTER}
   </main>
 
   <script>
@@ -274,29 +291,14 @@ Object.entries(categories).forEach(([cat, info]) => {
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="https://monographica.com" class="logo">Monographica</a>
-      <nav>
-        <a href="/" class="nav-link">Open</a>
-        <a href="/?view=past" class="nav-link">Closed</a>
-      </nav>
-    </div>
-  </header>
+  ${HEADER}
 
   <main>
-    <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories">Categories</a> / <span>${categoryLabel(cat)}</span></nav>
-      <h1>${info.title}</h1>
-      <h2 class="subtitle">${escapeHtml(info.desc)}</h2>
-    </section>
+    ${buildHero(buildBreadcrumbs('Categories', '/categories', categoryLabel(cat)), info.title, escapeHtml(info.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
-    <footer class="about-section" id="footer">
-      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p>&copy; ${new Date().getFullYear()} HH &mdash; still making sense of things.</p>
-    </footer>
+    ${FOOTER}
   </main>
 
   <script src="cards.js"></script>
@@ -406,29 +408,14 @@ Object.entries(countryCounts)
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="https://monographica.com" class="logo">Monographica</a>
-      <nav>
-        <a href="/" class="nav-link">Open</a>
-        <a href="/?view=past" class="nav-link">Closed</a>
-      </nav>
-    </div>
-  </header>
+  ${HEADER}
 
   <main>
-    <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/countries">Countries</a> / <span>${escapeHtml(fullName)}</span></nav>
-      <h1>${escapeHtml(title)}</h1>
-      <h2 class="subtitle">${escapeHtml(desc)}</h2>
-    </section>
+    ${buildHero(buildBreadcrumbs('Countries', '/countries', escapeHtml(fullName)), escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
-    <footer class="about-section" id="footer">
-      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p>&copy; ${new Date().getFullYear()} HH &mdash; still making sense of things.</p>
-    </footer>
+    ${FOOTER}
   </main>
 
   <script src="cards.js"></script>
@@ -535,29 +522,14 @@ Object.entries(orgCounts)
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="https://monographica.com" class="logo">Monographica</a>
-      <nav>
-        <a href="/" class="nav-link">Open</a>
-        <a href="/?view=past" class="nav-link">Closed</a>
-      </nav>
-    </div>
-  </header>
+  ${HEADER}
 
   <main>
-    <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations">Organizations</a> / <span>${escapeHtml(org)}</span></nav>
-      <h1>${escapeHtml(org)}</h1>
-      <h2 class="subtitle">${escapeHtml(desc)}</h2>
-    </section>
+    ${buildHero(buildBreadcrumbs('Organizations', '/organizations', escapeHtml(org)), escapeHtml(org), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
-    <footer class="about-section" id="footer">
-      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p>&copy; ${new Date().getFullYear()} HH &mdash; still making sense of things.</p>
-    </footer>
+    ${FOOTER}
   </main>
 
   <script src="cards.js"></script>
@@ -657,6 +629,12 @@ manualFiles.forEach(file => {
     const clean = content.replace(/\s*-\s*Monographica$/, '');
     return `${clean}${TITLE_SUFFIX}"`;
   });
+  // Update footer
+  html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
+  // Update header (skip index.html which has its own nav with data-view attributes)
+  if (file !== 'index.html') {
+    html = html.replace(/<header>[\s\S]*?<\/header>/, HEADER);
+  }
   // Update open count in index.html hero
   if (file === 'index.html') {
     const now = new Date();
