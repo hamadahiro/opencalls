@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="analytics.js"></script>
+  <link rel="preload" href="/data.json" as="fetch" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Organizations Offering Open Calls for Artists - Monographica</title>
+  <meta name="description" content="All organizations offering open calls for photographers and visual artists. Galleries, foundations, magazines, and institutions worldwide.">
+  <meta name="keywords" content="art organizations, photography galleries, call for entries, art foundations, photography magazines, art institutions, open call organizers">
+  <link rel="canonical" href="https://opencalls.monographica.com/organizations">
+  <link rel="icon" href="favicon.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <meta property="og:title" content="Organizations Offering Open Calls for Artists - Monographica">
+  <meta property="og:description" content="All organizations offering open calls for photographers and visual artists. Galleries, foundations, magazines, and institutions worldwide.">
+  <meta property="og:image" content="https://opencalls.monographica.com/og-image.jpg">
+  <meta property="og:url" content="https://opencalls.monographica.com/organizations">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260317b">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
+      <h1>Organizations</h1>
+      <h2 class="subtitle">All organizations offering open calls for photographers and visual artists.</h2>
+    </section>
+
+    <section class="index-list" id="indexList"></section>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; 2026 HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script>
+    function slugify(title) {
+      return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
+    function esc(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    async function load() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const container = document.getElementById('indexList');
+
+      const counts = {};
+      data.calls.forEach(c => {
+        counts[c.org] = (counts[c.org] || 0) + 1;
+      });
+
+      const sorted = Object.entries(counts).sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()));
+
+      let html = '';
+      sorted.forEach(([org, count]) => {
+        const slug = slugify(org);
+        html += `<a href="/organizations/${slug}" class="index-item">
+          <span class="index-item-name">${esc(org)}</span>
+          <span class="index-item-dots"></span>
+          <span class="index-item-count">${count}</span>
+        </a>`;
+      });
+
+      container.innerHTML = html;
+    }
+    load();
+  </script>
+
+</body>
+</html>
