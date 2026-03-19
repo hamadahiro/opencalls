@@ -242,7 +242,7 @@
       const searchInput = document.getElementById('searchInput');
       const searchClear = document.getElementById('searchClear');
       searchInput.addEventListener('focus', () => {
-        setTimeout(() => searchInput.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+        requestAnimationFrame(() => searchInput.scrollIntoView({ block: 'start' }));
       });
       searchInput.addEventListener('input', (e) => {
         currentSearch = e.target.value.toLowerCase().trim();
