@@ -918,7 +918,7 @@ const browseCategoryLabels = {
 const browseCategories = Object.entries(categories).map(([cat]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
   return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: data.calls.filter(c => c.category === cat).length };
-});
+}).sort((a, b) => a.label.localeCompare(b.label));
 
 const browseFilters = [
   { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length },
@@ -926,11 +926,12 @@ const browseFilters = [
 ];
 
 const browseCountries = Object.entries(countryCounts)
-  .sort((a, b) => b[1] - a[1])
   .map(([country, count]) => {
     const countrySlug = countrySlugs[country] || slugify(country);
-    return { label: countryNames[country] ? countryNames[country].replace(/^the /, '') : country, href: `/${countrySlug}`, count };
-  });
+    const label = countryNames[country] ? countryNames[country].replace(/^the /, '') : country;
+    return { label, href: `/${countrySlug}`, count };
+  })
+  .sort((a, b) => a.label.localeCompare(b.label));
 
 const browseStates = Object.entries(stateCounts)
   .sort((a, b) => {
