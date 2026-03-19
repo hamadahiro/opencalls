@@ -6,10 +6,6 @@
 }
 
 html {
-  background-image: url('bg.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: top right;
   background-color: #e6e6e6;
 }
 
@@ -19,9 +15,11 @@ body {
   line-height: 1.5;
   color: rgb(0, 0, 0);
   -webkit-font-smoothing: antialiased;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  padding-bottom: env(safe-area-inset-bottom);
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #e6e6e6;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 a {
@@ -357,24 +355,6 @@ a.meta-tag-link.call-prize:hover {
     padding: 0 16px;
   }
 
-  /* Fix iOS fixed background — oversized to cover safe area */
-  html {
-    background-image: none;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    top: -60px;
-    left: -60px;
-    right: -60px;
-    bottom: -60px;
-    background-image: url('bg.jpg');
-    background-size: cover;
-    background-position: top right;
-    background-color: #e6e6e6;
-    z-index: -1;
-  }
 
   .search-bar {
     font-size: 16px;
