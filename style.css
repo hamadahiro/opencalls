@@ -386,6 +386,10 @@ a.meta-tag-link.call-prize:hover {
     gap: 16px;
   }
 
+  .nav-desktop {
+    display: none;
+  }
+
   .logo {
     font-size: 18px;
   }
@@ -595,6 +599,25 @@ a.meta-tag-link.call-prize:hover {
   font-family: 'Source Serif 4', serif;
   color: #111;
   white-space: nowrap;
+}
+
+/* === Browse More Link === */
+.browse-more {
+  max-width: 960px;
+  margin: 32px auto 0;
+  padding: 0 24px;
+  font-size: 15px;
+  font-family: helvetica, sans-serif;
+}
+
+.browse-more a {
+  color: #666;
+  text-decoration: none;
+}
+
+.browse-more a:hover {
+  color: #111;
+  text-decoration: underline;
 }
 
 /* === Breadcrumbs === */
