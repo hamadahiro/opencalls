@@ -120,6 +120,8 @@ function renderTags(call) {
   const tags = [];
   // Deadline badge
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
+  // Prize
+  if (call.prize) tags.push(`<a href="/prize" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
   // Fee
   if (call.fee && call.fee !== 'Check website') {
     if (call.fee.toLowerCase().startsWith('free')) {
@@ -130,8 +132,6 @@ function renderTags(call) {
       tags.push(`<span class="meta-tag">${esc(call.fee)}</span>`);
     }
   }
-  // Prize
-  if (call.prize) tags.push(`<a href="/prize" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
   // Location
   if (call.location) {
     const country = getCountryFromLocation(call.location);
@@ -175,6 +175,8 @@ function renderInfoGrid(call) {
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   rows.push(infoRow('Deadline', esc(deadlineText)));
+  // Prize
+  if (call.prize) rows.push(infoRow('Prize', esc(call.prize)));
   // Fee
   if (call.fee) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
@@ -182,8 +184,6 @@ function renderInfoGrid(call) {
       : (call.fee === 'Check website' ? 'See official website' : esc(call.fee));
     rows.push(infoRow('Entry fee', feeHtml));
   }
-  // Prize
-  if (call.prize) rows.push(infoRow('Prize', esc(call.prize)));
   // Location
   if (call.location) {
     const country = getCountryFromLocation(call.location);
