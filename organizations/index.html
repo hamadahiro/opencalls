@@ -88,8 +88,8 @@
       let html = '';
       sorted.forEach(([org, count]) => {
         const slug = slugify(org);
-        html += `<a href="/${slug}" class="index-item" title="${esc(org)}">
-          <span class="index-item-name">${esc(midTruncate(org, 38))}</span>
+        html += `<a href="/${slug}" class="index-item">
+          <span class="index-item-name">${esc(org)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
         </a>`;
