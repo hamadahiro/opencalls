@@ -5,7 +5,7 @@
   <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>Open Calls for Artists in Ohio 2026 - Monographica</title>
   <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today.">
@@ -68,7 +68,7 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && c.location.includes(', Ohio,') || c.location && c.location.includes(', Ohio, USA')).map(processCall);
+      const calls = data.calls.filter(c => c.location && c.location.includes(', OH,') || c.location && c.location.includes(', OH, USA')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
