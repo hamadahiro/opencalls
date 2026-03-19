@@ -549,13 +549,17 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .info-dots {
-  flex: 1;
+  flex: 1 1 0;
   overflow: hidden;
   margin: 0 8px;
-  min-width: 0;
+  min-width: 20px;
   font-size: 20px;
   color: #111;
   line-height: 1;
+}
+
+.info-label {
+  flex-shrink: 0;
 }
 
 .info-dots::before {
