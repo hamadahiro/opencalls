@@ -287,6 +287,23 @@ main {
   letter-spacing: 0.2px;
 }
 
+.meta-tag-truncate {
+  max-width: 100%;
+}
+
+.tag-front {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.tag-back {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 a.meta-tag-link {
   text-decoration: none;
   transition: background 0.15s ease;
