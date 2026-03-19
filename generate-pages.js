@@ -952,11 +952,8 @@ eligibilityOrder.forEach(group => {
 });
 
 const browseOrgs = Object.entries(orgCounts)
-  .filter(([org, count]) => {
-    const s = slugify(org);
-    return count >= 2 && createdOrgSlugs.includes(s);
-  })
-  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .filter(([org]) => createdOrgSlugs.includes(slugify(org)))
+  .sort((a, b) => a[0].localeCompare(b[0]))
   .map(([org, count]) => ({ label: org, href: `/${slugify(org)}`, count }));
 
 const browseHtml = `<!DOCTYPE html>
