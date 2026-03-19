@@ -241,6 +241,9 @@
 
       const searchInput = document.getElementById('searchInput');
       const searchClear = document.getElementById('searchClear');
+      searchInput.addEventListener('focus', () => {
+        setTimeout(() => searchInput.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+      });
       searchInput.addEventListener('input', (e) => {
         currentSearch = e.target.value.toLowerCase().trim();
         searchClear.classList.toggle('visible', e.target.value.length > 0);
