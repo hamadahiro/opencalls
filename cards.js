@@ -46,6 +46,18 @@ function esc(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function midTruncate(str, max) {
+  if (!str || str.length <= max) return str;
+  const keep = max - 3;
+  const front = Math.ceil(keep * 0.6);
+  const back = keep - front;
+  return str.slice(0, front).trimEnd() + '...' + str.slice(-back).trimStart();
+}
+
+function tag(str, max) {
+  return esc(midTruncate(str, max || 35));
+}
+
 function getLocationLink(location, country) {
   // For USA locations, link to state page if available
   if (country === 'USA' && typeof statePages !== 'undefined') {
@@ -110,17 +122,17 @@ function renderTags(call) {
   tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
   const orgSlug = slugify(call.org);
   if (orgPages.includes(orgSlug)) {
-    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link">${esc(call.org)}</a>`);
+    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link" title="${esc(call.org)}">${tag(call.org)}</a>`);
   } else {
-    tags.push(`<span class="meta-tag">${esc(call.org)}</span>`);
+    tags.push(`<span class="meta-tag" title="${esc(call.org)}">${tag(call.org)}</span>`);
   }
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
     if (locLink) {
-      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(call.location)}</a>`);
+      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${tag(call.location)}</a>`);
     } else {
-      tags.push(`<span class="meta-tag">${pinSvg}${esc(call.location)}</span>`);
+      tags.push(`<span class="meta-tag">${pinSvg}${tag(call.location)}</span>`);
     }
   }
   if (call.fee && call.fee !== 'Check website') {
