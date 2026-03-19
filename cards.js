@@ -196,8 +196,8 @@ function renderInfoGrid(call) {
   rows.push(infoRow('<a href="/categories">Category</a>', `<a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a>`));
   // Organizer
   const oSlug = slugify(call.org);
-  const orgHtml = orgPages.includes(oSlug) ? `<a href="/${oSlug}">${esc(call.org)}</a>` : esc(call.org);
-  rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
+  const orgInner = orgPages.includes(oSlug) ? `<a href="/${oSlug}" title="${esc(call.org)}">${tagHtml(call.org, 20)}</a>` : tagHtml(call.org, 20);
+  rows.push(infoRow('<a href="/organizations">Organizer</a>', orgInner));
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
