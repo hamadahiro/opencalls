@@ -118,24 +118,9 @@ function processCall(call) {
 function renderTags(call) {
   const pinSvg = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
   const tags = [];
-  if (call.prize) tags.push(`<a href="/prize" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
-  const catSlug = categorySlug[call.category];
-  tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
-  const orgSlug = slugify(call.org);
-  if (orgPages.includes(orgSlug)) {
-    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link meta-tag-truncate" title="${esc(call.org)}">${tagHtml(call.org)}</a>`);
-  } else {
-    tags.push(`<span class="meta-tag meta-tag-truncate" title="${esc(call.org)}">${tagHtml(call.org)}</span>`);
-  }
-  if (call.location) {
-    const country = getCountryFromLocation(call.location);
-    const locLink = getLocationLink(call.location, country);
-    if (locLink) {
-      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(call.location)}</a>`);
-    } else {
-      tags.push(`<span class="meta-tag">${pinSvg}${esc(call.location)}</span>`);
-    }
-  }
+  // Deadline badge
+  tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
+  // Fee
   if (call.fee && call.fee !== 'Check website') {
     if (call.fee.toLowerCase().startsWith('free')) {
       tags.push(`<a href="/free" class="meta-tag meta-tag-link">Free</a>`);
@@ -145,13 +130,35 @@ function renderTags(call) {
       tags.push(`<span class="meta-tag">${esc(call.fee)}</span>`);
     }
   }
+  // Prize
+  if (call.prize) tags.push(`<a href="/prize" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
+  // Location
+  if (call.location) {
+    const country = getCountryFromLocation(call.location);
+    const locLink = getLocationLink(call.location, country);
+    if (locLink) {
+      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(call.location)}</a>`);
+    } else {
+      tags.push(`<span class="meta-tag">${pinSvg}${esc(call.location)}</span>`);
+    }
+  }
+  // Category
+  const catSlug = categorySlug[call.category];
+  tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
+  // Organizer
+  const orgSlug = slugify(call.org);
+  if (orgPages.includes(orgSlug)) {
+    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link meta-tag-truncate" title="${esc(call.org)}">${tagHtml(call.org)}</a>`);
+  } else {
+    tags.push(`<span class="meta-tag meta-tag-truncate" title="${esc(call.org)}">${tagHtml(call.org)}</span>`);
+  }
+  // Eligibility
   if (call.eligibility && call.eligibility.length) {
     call.eligibility.forEach(e => {
       const label = eligibilityLabel[e] || e;
       tags.push(`<a href="/eligibility/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
     });
   }
-  tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   return tags.join(' ');
 }
 
