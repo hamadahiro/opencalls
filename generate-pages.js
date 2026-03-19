@@ -922,7 +922,7 @@ const browseCategories = Object.entries(categories).map(([cat]) => {
 
 const browseFilters = [
   { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length },
-  { label: 'With Prizes', href: '/prize', count: data.calls.filter(c => c.prize && c.prize !== '').length }
+  { label: 'Has Prize', href: '/prize', count: data.calls.filter(c => c.prize && c.prize !== '').length }
 ];
 
 const browseCountries = Object.entries(countryCounts)
@@ -1002,7 +1002,7 @@ const browseHtml = `<!DOCTYPE html>
 
     <section class="index-list">
 ${buildBrowseSection('Categories', browseCategories)}
-${buildBrowseSection('Filters', browseFilters)}
+${buildBrowseSection('Fee & Prizes', browseFilters)}
 ${buildBrowseSection('Locations', browseCountries)}
 ${buildBrowseSection('US States', browseStates)}
 ${buildBrowseSection('Eligibility', browseEligibility)}
