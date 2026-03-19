@@ -921,7 +921,7 @@ const browseCategoryLabels = {
 const browseCategories = Object.entries(categories).map(([cat]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
   return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: data.calls.filter(c => c.category === cat).length };
-}).sort((a, b) => a.label.localeCompare(b.label));
+}).sort((a, b) => b.count - a.count);
 
 const browseFilters = [
   { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length },
