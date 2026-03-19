@@ -609,12 +609,11 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .browse-more a {
-  color: #666;
+  color: #111;
   text-decoration: none;
 }
 
 .browse-more a:hover {
-  color: #111;
   text-decoration: underline;
 }
 
