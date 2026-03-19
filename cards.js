@@ -65,8 +65,9 @@ function getLocationLink(location, country) {
     const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
     if (state && statePages[state]) return '/' + statePages[state];
   }
-  // Otherwise link to country page
-  const countrySlug = slugify(country);
+  // Map abbreviated country names to their URL slugs
+  const countrySlugs = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
+  const countrySlug = countrySlugs[country] || slugify(country);
   if (countryPages.includes(countrySlug)) return '/' + countrySlug;
   return null;
 }
