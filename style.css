@@ -428,10 +428,14 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
+  .call-detail-info .index-item {
+    padding: 6px 0;
+  }
+
   .call-detail-info .index-item-name,
   .call-detail-info .index-item-count,
   .call-detail-info .index-item-dots {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .filters {
@@ -557,13 +561,11 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-info .index-item-count a {
   color: #111;
-  text-decoration: underline;
-  text-decoration-color: #ccc;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 .call-detail-info .index-item-count a:hover {
-  text-decoration-color: #111;
+  text-decoration: underline;
 }
 
 /* === Index Pages (Countries, Orgs) === */
