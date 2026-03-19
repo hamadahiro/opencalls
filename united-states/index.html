@@ -5,7 +5,7 @@
   <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>Open Calls for Artists in the United States 2026 - Monographica</title>
   <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United States. Browse and apply today.">
@@ -71,10 +71,13 @@
 
       // State index for USA
       const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+      const nameToAbbr = {};
+      Object.entries(stateNames).forEach(([abbr, name]) => { nameToAbbr[name] = abbr; });
       const counts = {};
       data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
         const parts = c.location.split(',');
-        const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+        let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+        if (state && nameToAbbr[state]) state = nameToAbbr[state];
         if (state) counts[state] = (counts[state] || 0) + 1;
       });
       const sorted = Object.entries(counts).sort((a, b) => {

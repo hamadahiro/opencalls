@@ -145,7 +145,7 @@ function generatePage(call, cssVersion) {
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${escapeHtml(call.title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${desc}">
@@ -267,7 +267,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${info.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
@@ -356,7 +356,7 @@ filterPages.forEach(fp => {
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${fp.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(fp.desc)}">
@@ -458,7 +458,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
@@ -555,7 +555,7 @@ if (eligibilityPageSlugs.length) {
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
@@ -625,7 +625,7 @@ Object.entries(countryCounts)
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
@@ -676,10 +676,13 @@ Object.entries(countryCounts)
 ${country === 'USA' ? `
       // State index for USA
       const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+      const nameToAbbr = {};
+      Object.entries(stateNames).forEach(([abbr, name]) => { nameToAbbr[name] = abbr; });
       const counts = {};
       data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
         const parts = c.location.split(',');
-        const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+        let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+        if (state && nameToAbbr[state]) state = nameToAbbr[state];
         if (state) counts[state] = (counts[state] || 0) + 1;
       });
       const sorted = Object.entries(counts).sort((a, b) => {
@@ -719,10 +722,16 @@ ${country === 'USA' ? `
 // === US State landing pages ===
 const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
 
+// Build reverse lookup: full state name → abbreviation
+const stateNameToAbbr = {};
+Object.entries(usStateNames).forEach(([abbr, name]) => { stateNameToAbbr[name] = abbr; });
+
 const stateCounts = {};
 data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
   const parts = c.location.split(',');
-  const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+  let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+  // Normalize full state names to abbreviations to prevent duplicate pages
+  if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
   if (state) stateCounts[state] = (stateCounts[state] || 0) + 1;
 });
 
@@ -740,7 +749,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
@@ -824,7 +833,7 @@ Object.entries(orgCounts)
   ${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2ed">
   <title>${escapeHtml(title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
