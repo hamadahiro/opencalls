@@ -552,7 +552,7 @@ a.meta-tag-link.call-prize:hover {
   flex: 1;
   overflow: hidden;
   margin: 0 8px;
-  min-width: 20px;
+  min-width: 8px;
   font-size: 20px;
   color: #111;
   line-height: 1;
