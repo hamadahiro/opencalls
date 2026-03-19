@@ -1926,7 +1926,7 @@
       "title": "PhMuseum Days 2026 Open Call",
       "org": "PhMuseum",
       "deadline": "Continuous",
-      "fee": "TBA - opens March 31",
+      "fee": "€18 early bird / €25",
       "category": "exhibition",
       "description": "International photo festival competition offering 4 solo exhibitions plus additional opportunities. All approaches welcome, including experimental.",
       "url": "https://phmuseum.com/grants/2026-phmuseum-days-photography-open-call",
@@ -2813,6 +2813,127 @@
         "18+",
         "professional"
       ]
+    },
+    {
+      "title": "International Photography and Football Open Call 2026",
+      "org": "Fundación Televisa",
+      "deadline": "2026-05-01",
+      "fee": "Free",
+      "category": "photography",
+      "description": "International open call for photographers to capture football/soccer in any form — packed stadiums, dirt fields, color or black and white, cameras or phones. Winners exhibited alongside the Annie Leibovitz Futbol 2026 exhibition at the National Museum of Anthropology in Mexico City. Submit 1–3 images. Judged on originality, impact, and narrative quality.",
+      "url": "https://site.picter.com/convocatoria-internacional-fotografia-y-futbol-2026",
+      "instagram": "@fundaciontelevisa",
+      "location": "Mexico City, Mexico",
+      "prize": "$18,000 total",
+      "eligibility": []
+    },
+    {
+      "title": "Women Photograph + Leica Documentary Grant 2026",
+      "org": "Women Photograph",
+      "deadline": "2026-05-15",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Grant supporting women, nonbinary, and transgender documentary photographers. The $10,000 Leica grant supports ongoing documentary projects — submit 20 images showing substantial completed work. Seven additional $5,000 grants available for new or in-progress visual journalism projects. Applications open April 1.",
+      "url": "https://www.womenphotograph.com/grants",
+      "instagram": "@womenphotograph",
+      "location": "Online",
+      "prize": "$10,000 + $5,000 x7",
+      "eligibility": [
+        "women"
+      ]
+    },
+    {
+      "title": "Lenscratch Student Prize 2026",
+      "org": "Lenscratch",
+      "deadline": "2026-06-01",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Annual prize supporting emerging student photographers. First Prize $2,000 cash plus year-long mentorship with Aline Smithson, portfolio reviews with curators, $500 Freestyle Photo gift certificate, and exhibition. Second Prize $1,000, Third $750, four Honorable Mentions $500 each.",
+      "url": "https://lenscratch.com/2026/03/the-2026-lenscratch-student-prize-is-open/",
+      "instagram": "@laboratoryforartists",
+      "location": "Online",
+      "prize": "$2,000 / $1,000 / $750",
+      "eligibility": [
+        "emerging"
+      ]
+    },
+    {
+      "title": "Lenscratch Motherhood Exhibition",
+      "org": "Lenscratch",
+      "deadline": "2026-05-01",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Online exhibition exploring all dimensions of motherhood — traditional mother-child relationships, chosen families, caregiving, absence, loss, resilience, and inheritance. Submit one image via Google Form (72dpi, 1000px long side).",
+      "url": "https://lenscratch.com/exhibitions/submit/",
+      "instagram": "@laboratoryforartists",
+      "location": "Online",
+      "prize": "",
+      "eligibility": []
+    },
+    {
+      "title": "Lenscratch Fatherhood Exhibition",
+      "org": "Lenscratch",
+      "deadline": "2026-06-13",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Online exhibition exploring fatherhood as an evolving role shaped by culture, responsibility, tenderness, and family expectations. Submit one image via Google Form (72dpi, 1000px long side).",
+      "url": "https://lenscratch.com/exhibitions/submit/",
+      "instagram": "@laboratoryforartists",
+      "location": "Online",
+      "prize": "",
+      "eligibility": []
+    },
+    {
+      "title": "Lenscratch Fault Lines: America Exhibition",
+      "org": "Lenscratch",
+      "deadline": "2026-06-19",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Online exhibition examining tensions, fractures, and transformations across America — resistance, social change, protest, activism, justice, identity, power, and freedom. Submit one image via Google Form (72dpi, 1000px long side). Timed for July 4th.",
+      "url": "https://lenscratch.com/exhibitions/submit/",
+      "instagram": "@laboratoryforartists",
+      "location": "Online",
+      "prize": "",
+      "eligibility": []
+    },
+    {
+      "title": "SE Center for Photography — Magic of Light",
+      "org": "Southeast Center for Photography",
+      "deadline": "2026-05-15",
+      "fee": "$35",
+      "category": "exhibition",
+      "description": "Virtual juried exhibition exploring light and shadow as the foundation of photography. Submit up to 15 images. Juror: Wendi Schneider. 35–40 images selected for virtual gallery. 0% commission on sales. All photographers regardless of location, age, or skill level. Analog and digital welcome.",
+      "url": "https://www.sec4p.com/light-26-prospectus",
+      "instagram": "@sec4p",
+      "location": "Greenville, SC, USA",
+      "prize": "",
+      "eligibility": []
+    },
+    {
+      "title": "photoED Magazine — Home VS Away (Issue #76)",
+      "org": "photoED Magazine",
+      "deadline": "2026-06-15",
+      "fee": "$20 CAD",
+      "category": "zine",
+      "description": "Fine art photography projects investigating the idea of home, the experience of being away, or the tension between the two. 10 selected projects published in print edition, 25 more in digital companion. Contributors receive printed copies with worldwide shipping. Free for subscribers and economically challenged artists.",
+      "url": "https://www.photoed.ca/callforphotography",
+      "instagram": "@photoaboretum",
+      "location": "Online",
+      "prize": "Publication in print edition",
+      "eligibility": []
+    },
+    {
+      "title": "photoED Magazine — Real VS Imagined",
+      "org": "photoED Magazine",
+      "deadline": "2026-09-09",
+      "fee": "$20 CAD",
+      "category": "zine",
+      "description": "Fine art photography projects engaging with what is real versus what is imagined. 10 selected projects published in print edition, 25 more in digital companion. Contributors receive printed copies with worldwide shipping. Free for subscribers.",
+      "url": "https://www.photoed.ca/callforphotography",
+      "instagram": "@photoaboretum",
+      "location": "Online",
+      "prize": "Publication in print edition",
+      "eligibility": []
     }
   ]
 }
