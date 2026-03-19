@@ -899,13 +899,24 @@ Object.entries(orgCounts)
   });
 
 // === Browse directory page (auto-generated hub linking all sections) ===
+function midTruncateHtml(str, minLen) {
+  minLen = minLen || 25;
+  if (!str || str.length <= minLen) return escapeHtml(str);
+  const words = str.split(' ');
+  if (words.length <= 2) return escapeHtml(str);
+  const splitAt = Math.ceil(words.length * 0.6);
+  const front = words.slice(0, splitAt).join(' ');
+  const back = words.slice(splitAt).join(' ');
+  return `<span class="tag-front">${escapeHtml(front)}</span><span class="tag-back">${escapeHtml(back)}</span>`;
+}
+
 function buildBrowseSection(heading, items, headingLink) {
   if (!items.length) return '';
   const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
   let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
   items.forEach(({ label, href, count }) => {
     html += `      <a href="${href}" class="index-item">
-        <span class="index-item-name">${escapeHtml(label)}</span>
+        <span class="index-item-name">${midTruncateHtml(label)}</span>
         <span class="index-item-dots"></span>
         <span class="index-item-count">${count}</span>
       </a>\n`;

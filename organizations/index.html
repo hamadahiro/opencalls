@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260319t">
+  <link rel="stylesheet" href="/style.css?v=20260319u">
 </head>
 <body>
 
@@ -65,12 +65,15 @@
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
-    function midTruncate(str, max) {
-      if (str.length <= max) return str;
-      const keep = max - 3;
-      const front = Math.ceil(keep * 0.55);
-      const back = keep - front;
-      return str.slice(0, front).trimEnd() + '...' + str.slice(-back).trimStart();
+    function tagHtml(str, minLen) {
+      minLen = minLen || 25;
+      if (!str || str.length <= minLen) return esc(str);
+      const words = str.split(' ');
+      if (words.length <= 2) return esc(str);
+      const splitAt = Math.ceil(words.length * 0.6);
+      const front = words.slice(0, splitAt).join(' ');
+      const back = words.slice(splitAt).join(' ');
+      return '<span class="tag-front">' + esc(front) + '</span><span class="tag-back">' + esc(back) + '</span>';
     }
 
     async function load() {
@@ -88,8 +91,8 @@
       let html = '';
       sorted.forEach(([org, count]) => {
         const slug = slugify(org);
-        html += `<a href="/${slug}" class="index-item">
-          <span class="index-item-name">${esc(org)}</span>
+        html += `<a href="/${slug}" class="index-item" title="${esc(org)}">
+          <span class="index-item-name">${tagHtml(org)}</span>
           <span class="index-item-dots"></span>
           <span class="index-item-count">${count}</span>
         </a>`;
