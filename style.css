@@ -549,17 +549,11 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .info-dots {
-  flex: 1 1 0;
+  flex: 1;
   overflow: hidden;
   margin: 0 8px;
-  min-width: 20px;
   font-size: 20px;
   color: #111;
-  line-height: 1;
-}
-
-.info-label {
-  flex-shrink: 0;
 }
 
 .info-dots::before {
@@ -571,12 +565,12 @@ a.meta-tag-link.call-prize:hover {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
   color: #111;
+  text-align: right;
 }
 
 .call-detail-info a {
   color: #111;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .call-detail-info a:hover {
