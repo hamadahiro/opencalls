@@ -175,6 +175,8 @@ function renderInfoGrid(call) {
       : (call.fee === 'Check website' ? 'See official website' : esc(call.fee));
     rows.push(infoRow('Entry fee', feeHtml));
   }
+  // Prize
+  if (call.prize) rows.push(infoRow('Prize', esc(call.prize)));
   // Location
   if (call.location) {
     const country = getCountryFromLocation(call.location);
@@ -189,8 +191,6 @@ function renderInfoGrid(call) {
   const oSlug = slugify(call.org);
   const orgHtml = orgPages.includes(oSlug) ? `<a href="/${oSlug}">${esc(call.org)}</a>` : esc(call.org);
   rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
-  // Prize
-  if (call.prize) rows.push(infoRow('Prize', esc(call.prize)));
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
