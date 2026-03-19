@@ -684,17 +684,32 @@ a.meta-tag-link.call-prize:hover {
     font-size: 32px;
   }
 
+  .info-row {
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+
   .info-label,
   .info-value,
   .info-dots {
     font-size: 18px;
   }
 
-  .info-value {
-    max-width: 70%;
+  .info-dots {
+    display: none;
   }
 
-  .info-row {
-    padding: 6px 0;
+  .info-label {
+    color: #999;
+    font-size: 13px;
+    font-family: helvetica, sans-serif;
+    letter-spacing: 0.3px;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .info-value {
+    font-size: 18px;
+    width: 100%;
   }
 }
