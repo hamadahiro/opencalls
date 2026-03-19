@@ -428,6 +428,12 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
+  .call-detail-info .index-item-name,
+  .call-detail-info .index-item-count,
+  .call-detail-info .index-item-dots {
+    font-size: 18px;
+  }
+
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -537,7 +543,7 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-info .index-item-name,
 .call-detail-info .index-item-count,
 .call-detail-info .index-item-dots {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .call-detail-info .index-item-name a {
