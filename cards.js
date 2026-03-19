@@ -155,45 +155,46 @@ function renderTags(call) {
 }
 
 function renderInfoGrid(call) {
+  function infoRow(label, value) {
+    return `<div class="info-row">
+      <span class="info-label">${label}</span>
+      <span class="info-dots"></span>
+      <span class="info-value">${value}</span>
+    </div>`;
+  }
   const rows = [];
   // Deadline
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  rows.push(`<div><dt>Deadline</dt><dd>${esc(deadlineText)}</dd></div>`);
+  rows.push(infoRow('Deadline', esc(deadlineText)));
   // Fee
   if (call.fee) {
     const feeText = call.fee === 'Check website' ? 'See official website' : esc(call.fee);
-    rows.push(`<div><dt>Entry Fee</dt><dd>${feeText}</dd></div>`);
+    rows.push(infoRow('Entry fee', feeText));
   }
-  // Location — both label and value linked
+  // Location
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
-    if (locLink) {
-      rows.push(`<div><dt><a href="/locations">Location</a></dt><dd><a href="${locLink}">${esc(call.location)}</a></dd></div>`);
-    } else {
-      rows.push(`<div><dt><a href="/locations">Location</a></dt><dd>${esc(call.location)}</dd></div>`);
-    }
+    const locHtml = locLink ? `<a href="${locLink}">${esc(call.location)}</a>` : esc(call.location);
+    rows.push(infoRow('<a href="/locations">Location</a>', locHtml));
   }
-  // Category — both label and value linked
+  // Category
   const catSlugInfo = categorySlug[call.category];
-  rows.push(`<div><dt><a href="/categories">Category</a></dt><dd><a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a></dd></div>`);
-  // Organizer — both label and value linked
+  rows.push(infoRow('<a href="/categories">Category</a>', `<a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a>`));
+  // Organizer
   const oSlug = slugify(call.org);
-  if (orgPages.includes(oSlug)) {
-    rows.push(`<div><dt><a href="/organizations">Organizer</a></dt><dd><a href="/${oSlug}">${esc(call.org)}</a></dd></div>`);
-  } else {
-    rows.push(`<div><dt><a href="/organizations">Organizer</a></dt><dd>${esc(call.org)}</dd></div>`);
-  }
+  const orgHtml = orgPages.includes(oSlug) ? `<a href="/${oSlug}">${esc(call.org)}</a>` : esc(call.org);
+  rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
   // Prize
-  if (call.prize) rows.push(`<div><dt>Prize</dt><dd>${esc(call.prize)}</dd></div>`);
+  if (call.prize) rows.push(infoRow('Prize', esc(call.prize)));
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
       const label = eligibilityLabel[e] || e;
       return `<a href="/eligibility/${e}">${esc(label)}</a>`;
     }).join(', ');
-    rows.push(`<div><dt><a href="/eligibility">Eligibility</a></dt><dd>${eligHtml}</dd></div>`);
+    rows.push(infoRow('<a href="/eligibility">Eligibility</a>', eligHtml));
   }
   // Instagram
   if (call.instagram) {

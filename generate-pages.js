@@ -184,7 +184,7 @@ function generatePage(call, cssVersion) {
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 
-      <dl class="call-detail-info" id="detailInfo"></dl>
+      <div class="call-detail-info" id="detailInfo"></div>
 
       <div class="call-detail-actions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>

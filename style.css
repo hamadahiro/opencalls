@@ -530,38 +530,55 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-info {
   margin-top: 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px 32px;
-  max-width: 480px;
+  display: flex;
+  flex-direction: column;
 }
 
-.call-detail-info dt {
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #999;
-  margin-bottom: 2px;
+.info-row {
+  display: flex;
+  align-items: baseline;
+  padding: 8px 0;
+  font-size: 18px;
+  font-family: 'Source Serif 4', serif;
+  color: #111;
 }
 
-.call-detail-info dt a {
-  color: #999;
+.info-label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.info-label a {
+  color: #111;
   text-decoration: none;
 }
 
-.call-detail-info dt a:hover {
-  color: #666;
+.info-label a:hover {
   text-decoration: underline;
 }
 
-.call-detail-info dd {
-  font-size: 16px;
-  color: #111;
-  font-family: 'Source Serif 4', serif;
+.info-dots {
+  flex: 1;
+  border-bottom: 2px dotted #ccc;
+  margin: 0 8px;
+  min-width: 16px;
+  position: relative;
+  top: -4px;
 }
 
-.call-detail-info dd a {
+.info-value {
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.info-value a {
   color: #111;
+  text-decoration: none;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
 }
 
 /* === Index Pages (Countries, Orgs) === */
@@ -671,8 +688,13 @@ a.meta-tag-link.call-prize:hover {
     font-size: 32px;
   }
 
-  .call-detail-info {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .info-row {
+    font-size: 16px;
+  }
+
+  .info-value {
+    white-space: normal;
+    text-align: right;
+    max-width: 55%;
   }
 }
