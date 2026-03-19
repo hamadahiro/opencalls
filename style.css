@@ -695,4 +695,11 @@ a.meta-tag-link.call-prize:hover {
   .info-dots {
     font-size: 18px;
   }
+
+  .index-item-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+  }
 }
