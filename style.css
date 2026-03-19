@@ -699,7 +699,7 @@ a.meta-tag-link.call-prize:hover {
   .index-item-name {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 70%;
+    max-width: 80%;
+    display: inline-flex;
   }
 }
