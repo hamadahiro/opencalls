@@ -534,13 +534,24 @@ a.meta-tag-link.call-prize:hover {
   flex-direction: column;
 }
 
-.call-detail-info a {
+.call-detail-info .index-item-name a {
   color: #111;
   text-decoration: none;
 }
 
-.call-detail-info a:hover {
+.call-detail-info .index-item-name a:hover {
   text-decoration: underline;
+}
+
+.call-detail-info .index-item-count a {
+  color: #111;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-underline-offset: 3px;
+}
+
+.call-detail-info .index-item-count a:hover {
+  text-decoration-color: #111;
 }
 
 /* === Index Pages (Countries, Orgs) === */
