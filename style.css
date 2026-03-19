@@ -94,6 +94,7 @@ main {
   line-height: 1.2;
   margin-bottom: 16px;
   font-family: 'Source Serif 4', serif;
+  overflow-wrap: break-word;
 }
 
 /* === Shared serif text style === */
