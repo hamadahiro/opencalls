@@ -690,6 +690,10 @@ a.meta-tag-link.call-prize:hover {
     font-size: 18px;
   }
 
+  .info-value {
+    max-width: 55%;
+  }
+
   .info-row {
     padding: 6px 0;
   }
