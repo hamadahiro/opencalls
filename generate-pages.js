@@ -5,7 +5,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility', 'browse'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // GA — single external file
@@ -896,6 +896,131 @@ Object.entries(orgCounts)
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls)`);
   });
+
+// === Browse directory page (auto-generated hub linking all sections) ===
+function buildBrowseSection(heading, items) {
+  if (!items.length) return '';
+  let html = `<h3 class="section-header">${escapeHtml(heading)}</h3>\n`;
+  items.forEach(({ label, href, count }) => {
+    html += `      <a href="${href}" class="index-item">
+        <span class="index-item-name">${escapeHtml(label)}</span>
+        <span class="index-item-dots"></span>
+        <span class="index-item-count">${count}</span>
+      </a>\n`;
+  });
+  return html;
+}
+
+const browseCategoryLabels = {
+  'photography': 'Photography', 'exhibition': 'Exhibitions', 'grant': 'Grants',
+  'residency': 'Residencies', 'zine': 'Zines & Books', 'education': 'Education'
+};
+const browseCategories = Object.entries(categories).map(([cat]) => {
+  const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
+  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: data.calls.filter(c => c.category === cat).length };
+});
+
+const browseFilters = [
+  { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length },
+  { label: 'With Prizes', href: '/prize', count: data.calls.filter(c => c.prize && c.prize !== '').length }
+];
+
+const browseCountries = Object.entries(countryCounts)
+  .sort((a, b) => b[1] - a[1])
+  .map(([country, count]) => {
+    const countrySlug = countrySlugs[country] || slugify(country);
+    return { label: countryNames[country] ? countryNames[country].replace(/^the /, '') : country, href: `/${countrySlug}`, count };
+  });
+
+const browseStates = Object.entries(stateCounts)
+  .sort((a, b) => {
+    const nameA = (usStateNames[a[0]] || a[0]).toLowerCase();
+    const nameB = (usStateNames[b[0]] || b[0]).toLowerCase();
+    return nameA.localeCompare(nameB);
+  })
+  .map(([state, count]) => {
+    const fullName = usStateNames[state] || state;
+    return { label: fullName, href: `/united-states/${slugify(fullName)}`, count };
+  });
+
+const browseEligibility = [];
+eligibilityOrder.forEach(group => {
+  group.tags.filter(t => eligibilityTags[t]).forEach(tag => {
+    const info = eligibilityGroups[tag];
+    browseEligibility.push({ label: info.short, href: `/eligibility/${tag}`, count: eligibilityTags[tag] });
+  });
+});
+
+const browseOrgs = Object.entries(orgCounts)
+  .filter(([org, count]) => {
+    const s = slugify(org);
+    return count >= 2 && createdOrgSlugs.includes(s);
+  })
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .map(([org, count]) => ({ label: org, href: `/${slugify(org)}`, count }));
+
+const browseHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${GA_SNIPPET}
+  ${PRELOAD}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed">
+  <title>Browse All Open Calls ${YEAR}${TITLE_SUFFIX}</title>
+  <meta name="description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.">
+  <meta name="keywords" content="open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}">
+  <link rel="canonical" href="${SITE}/browse">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <meta property="og:title" content="Browse All Open Calls ${YEAR}${TITLE_SUFFIX}">
+  <meta property="og:description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization.">
+  <meta property="og:image" content="${SITE}/og-image.jpg">
+  <meta property="og:url" content="${SITE}/browse">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Monographica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Browse All Open Calls ${YEAR}",
+    "description": "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.",
+    "url": "${SITE}/browse",
+    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+</head>
+<body>
+
+  ${HEADER}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
+
+    <section class="index-list">
+${buildBrowseSection('Categories', browseCategories)}
+${buildBrowseSection('Filters', browseFilters)}
+${buildBrowseSection('Locations', browseCountries)}
+${buildBrowseSection('US States', browseStates)}
+${buildBrowseSection('Eligibility', browseEligibility)}
+${buildBrowseSection('Organizations', browseOrgs)}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+writeGenerated('browse/index.html', browseHtml);
+sitemapEntries.push(`${SITE}/browse`);
+console.log(`  Browse directory page`);
 
 // Add index pages to sitemap
 sitemapEntries.push(`${SITE}/categories`);
