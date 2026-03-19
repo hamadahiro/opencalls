@@ -901,9 +901,10 @@ Object.entries(orgCounts)
   });
 
 // === Browse directory page (auto-generated hub linking all sections) ===
-function buildBrowseSection(heading, items) {
+function buildBrowseSection(heading, items, headingLink) {
   if (!items.length) return '';
-  let html = `<h3 class="section-header">${escapeHtml(heading)}</h3>\n`;
+  const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
+  let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
   items.forEach(({ label, href, count }) => {
     html += `      <a href="${href}" class="index-item">
         <span class="index-item-name">${escapeHtml(label)}</span>
@@ -1005,12 +1006,12 @@ const browseHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
 
     <section class="index-list">
-${buildBrowseSection('Categories', browseCategories)}
+${buildBrowseSection('Categories', browseCategories, '/categories')}
 ${buildBrowseSection('Fee & Prizes', browseFilters)}
-${buildBrowseSection('Locations', browseCountries)}
-${buildBrowseSection('US States', browseStates)}
-${buildBrowseSection('Eligibility', browseEligibility)}
-${buildBrowseSection('Organizations', browseOrgs)}
+${buildBrowseSection('Locations', browseCountries, '/locations')}
+${buildBrowseSection('US States', browseStates, '/united-states')}
+${buildBrowseSection('Eligibility', browseEligibility, '/eligibility')}
+${buildBrowseSection('Organizations', browseOrgs, '/organizations')}
     </section>
 
     ${FOOTER}
