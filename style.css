@@ -428,14 +428,14 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
-  .call-detail-info .index-item {
-    padding: 6px 0;
+  .info-label,
+  .info-value,
+  .info-dots {
+    font-size: 18px;
   }
 
-  .call-detail-info .index-item-name,
-  .call-detail-info .index-item-count,
-  .call-detail-info .index-item-dots {
-    font-size: 18px;
+  .info-row {
+    padding: 6px 0;
   }
 
   .filters {
@@ -544,27 +544,50 @@ a.meta-tag-link.call-prize:hover {
   flex-direction: column;
 }
 
-.call-detail-info .index-item-name,
-.call-detail-info .index-item-count,
-.call-detail-info .index-item-dots {
+.info-row {
+  display: flex;
+  align-items: baseline;
+  padding: 8px 0;
+}
+
+.info-label {
   font-size: 20px;
+  font-family: 'Source Serif 4', serif;
+  color: #111;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.call-detail-info .index-item-name a {
+.info-dots {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 8px;
+  min-width: 20px;
+  font-size: 20px;
+  color: #111;
+  line-height: 1;
+}
+
+.info-dots::before {
+  content: ' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+  white-space: nowrap;
+}
+
+.info-value {
+  font-size: 20px;
+  font-family: 'Source Serif 4', serif;
+  color: #111;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.call-detail-info a {
   color: #111;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.call-detail-info .index-item-name a:hover {
-  text-decoration: underline;
-}
-
-.call-detail-info .index-item-count a {
-  color: #111;
-  text-decoration: none;
-}
-
-.call-detail-info .index-item-count a:hover {
+.call-detail-info a:hover {
   text-decoration: underline;
 }
 

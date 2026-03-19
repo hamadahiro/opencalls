@@ -156,10 +156,10 @@ function renderTags(call) {
 
 function renderInfoGrid(call) {
   function infoRow(label, value) {
-    return `<div class="index-item">
-      <span class="index-item-name">${label}</span>
-      <span class="index-item-dots"></span>
-      <span class="index-item-count">${value}</span>
+    return `<div class="info-row">
+      <span class="info-label">${label}</span>
+      <span class="info-dots"></span>
+      <span class="info-value">${value}</span>
     </div>`;
   }
   const rows = [];
