@@ -20,6 +20,7 @@ const HEADER = `<header>
       <nav>
         <a href="/" class="nav-link">Open</a>
         <a href="/?view=past" class="nav-link">Closed</a>
+        <a href="/browse" class="nav-link nav-desktop">Browse</a>
       </nav>
     </div>
   </header>`;
@@ -585,6 +586,8 @@ if (eligibilityPageSlugs.length) {
     <section class="index-list" id="indexList">
       ${buildEligibilityIndexItems()}
     </section>
+
+    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
 
     ${FOOTER}
   </main>
