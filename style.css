@@ -534,50 +534,12 @@ a.meta-tag-link.call-prize:hover {
   flex-direction: column;
 }
 
-.info-row {
-  display: flex;
-  align-items: baseline;
-  padding: 8px 0;
-  font-size: 18px;
-  font-family: 'Source Serif 4', serif;
-  color: #111;
-}
-
-.info-label {
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.info-label a {
+.call-detail-info a {
   color: #111;
   text-decoration: none;
 }
 
-.info-label a:hover {
-  text-decoration: underline;
-}
-
-.info-dots {
-  flex: 1;
-  border-bottom: 2px dotted #ccc;
-  margin: 0 8px;
-  min-width: 16px;
-  position: relative;
-  top: -4px;
-}
-
-.info-value {
-  white-space: nowrap;
-  flex-shrink: 0;
-  text-align: right;
-}
-
-.info-value a {
-  color: #111;
-  text-decoration: none;
-}
-
-.info-value a:hover {
+.call-detail-info a:hover {
   text-decoration: underline;
 }
 
@@ -688,13 +650,4 @@ a.meta-tag-link.call-prize:hover {
     font-size: 32px;
   }
 
-  .info-row {
-    font-size: 16px;
-  }
-
-  .info-value {
-    white-space: normal;
-    text-align: right;
-    max-width: 55%;
-  }
 }

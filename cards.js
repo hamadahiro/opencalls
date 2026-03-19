@@ -156,10 +156,10 @@ function renderTags(call) {
 
 function renderInfoGrid(call) {
   function infoRow(label, value) {
-    return `<div class="info-row">
-      <span class="info-label">${label}</span>
-      <span class="info-dots"></span>
-      <span class="info-value">${value}</span>
+    return `<div class="index-item">
+      <span class="index-item-name">${label}</span>
+      <span class="index-item-dots"></span>
+      <span class="index-item-count">${value}</span>
     </div>`;
   }
   const rows = [];
@@ -199,7 +199,7 @@ function renderInfoGrid(call) {
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
-    rows.push(`<div><dt>Instagram</dt><dd><a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${esc(call.instagram)} &rarr;</a></dd></div>`);
+    rows.push(infoRow('Instagram', `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${esc(call.instagram)}</a>`));
   }
   return rows.join('');
 }
