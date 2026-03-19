@@ -567,8 +567,7 @@ a.meta-tag-link.call-prize:hover {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
   color: #111;
-  white-space: nowrap;
-  flex-shrink: 0;
+  text-align: right;
 }
 
 .call-detail-info a {
