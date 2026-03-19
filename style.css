@@ -534,6 +534,12 @@ a.meta-tag-link.call-prize:hover {
   flex-direction: column;
 }
 
+.call-detail-info .index-item-name,
+.call-detail-info .index-item-count,
+.call-detail-info .index-item-dots {
+  font-size: 16px;
+}
+
 .call-detail-info .index-item-name a {
   color: #111;
   text-decoration: none;
