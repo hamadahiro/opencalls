@@ -428,16 +428,6 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
-  .info-label,
-  .info-value,
-  .info-dots {
-    font-size: 18px;
-  }
-
-  .info-row {
-    padding: 6px 0;
-  }
-
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -698,4 +688,13 @@ a.meta-tag-link.call-prize:hover {
     font-size: 32px;
   }
 
+  .info-label,
+  .info-value,
+  .info-dots {
+    font-size: 18px;
+  }
+
+  .info-row {
+    padding: 6px 0;
+  }
 }
