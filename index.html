@@ -242,7 +242,13 @@
       const searchInput = document.getElementById('searchInput');
       const searchClear = document.getElementById('searchClear');
       searchInput.addEventListener('focus', () => {
-        setTimeout(() => searchInput.scrollIntoView({ block: 'start' }), 100);
+        if (window.visualViewport) {
+          const onResize = () => {
+            window.visualViewport.removeEventListener('resize', onResize);
+            searchInput.scrollIntoView({ block: 'start' });
+          };
+          window.visualViewport.addEventListener('resize', onResize);
+        }
       });
       searchInput.addEventListener('input', (e) => {
         currentSearch = e.target.value.toLowerCase().trim();
