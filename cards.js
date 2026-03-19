@@ -242,19 +242,29 @@ function renderCallList(calls, container) {
   });
 
   // Today section
-  const todaySlugs = new Set();
+  const specialSlugs = new Set();
   const today = open.filter(c => c.daysLeft !== null && c.daysLeft === 0);
   if (today.length >= 1) {
     container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Today</h3>');
     today.forEach(call => {
       container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      todaySlugs.add(slugify(call.title));
+      specialSlugs.add(slugify(call.title));
     });
   }
 
-  // Open month sections (skip Today items)
+  // Tomorrow section
+  const tomorrow = open.filter(c => c.daysLeft !== null && c.daysLeft === 1);
+  if (tomorrow.length >= 1) {
+    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Tomorrow</h3>');
+    tomorrow.forEach(call => {
+      container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      specialSlugs.add(slugify(call.title));
+    });
+  }
+
+  // Open month sections (skip Today/Tomorrow items)
   let currentSection = '';
-  open.filter(c => !todaySlugs.has(slugify(c.title))).forEach(call => {
+  open.filter(c => !specialSlugs.has(slugify(c.title))).forEach(call => {
     const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
     if (section !== currentSection) {
       currentSection = section;
