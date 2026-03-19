@@ -169,8 +169,10 @@ function renderInfoGrid(call) {
   rows.push(infoRow('Deadline', esc(deadlineText)));
   // Fee
   if (call.fee) {
-    const feeText = call.fee === 'Check website' ? 'See official website' : esc(call.fee);
-    rows.push(infoRow('Entry fee', feeText));
+    const feeHtml = call.fee.toLowerCase().startsWith('free')
+      ? `<a href="/free">${esc(call.fee)}</a>`
+      : (call.fee === 'Check website' ? 'See official website' : esc(call.fee));
+    rows.push(infoRow('Entry fee', feeHtml));
   }
   // Location
   if (call.location) {
