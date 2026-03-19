@@ -566,6 +566,15 @@ a.meta-tag-link.call-prize:hover {
   font-family: 'Source Serif 4', serif;
   color: #111;
   text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+  display: inline-flex;
+}
+
+.info-value .tag-front,
+.info-value .tag-back {
+  font-size: inherit;
 }
 
 .call-detail-info a {
