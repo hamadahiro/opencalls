@@ -180,8 +180,6 @@ function generatePage(call, cssVersion) {
 
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
-      <div class="call-detail-meta" id="detailMeta"></div>
-
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 
       <div class="call-detail-info" id="detailInfo"></div>
