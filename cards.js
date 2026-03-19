@@ -170,46 +170,49 @@ function renderInfoGrid(call) {
       <span class="info-value">${value}</span>
     </div>`;
   }
+  function infoVal(str) { return tagHtml(str, 20); }
+  function infoLink(href, str) { return `<a href="${href}" title="${esc(str)}">${infoVal(str)}</a>`; }
+
   const rows = [];
   // Deadline
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  rows.push(infoRow('Deadline', esc(deadlineText)));
+  rows.push(infoRow('Deadline', infoVal(deadlineText)));
   // Prize
-  if (call.prize) rows.push(infoRow('Prize', esc(call.prize)));
+  if (call.prize) rows.push(infoRow('Prize', infoVal(call.prize)));
   // Fee
   if (call.fee) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
-      ? `<a href="/free">${esc(call.fee)}</a>`
-      : (call.fee === 'Check website' ? 'See official website' : esc(call.fee));
+      ? infoLink('/free', call.fee)
+      : (call.fee === 'Check website' ? 'See official website' : infoVal(call.fee));
     rows.push(infoRow('Entry fee', feeHtml));
   }
   // Location
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
-    const locHtml = locLink ? `<a href="${locLink}">${esc(call.location)}</a>` : esc(call.location);
+    const locHtml = locLink ? infoLink(locLink, call.location) : infoVal(call.location);
     rows.push(infoRow('<a href="/locations">Location</a>', locHtml));
   }
   // Category
   const catSlugInfo = categorySlug[call.category];
-  rows.push(infoRow('<a href="/categories">Category</a>', `<a href="/${catSlugInfo}">${categoryLabel[call.category] || esc(call.category)}</a>`));
+  rows.push(infoRow('<a href="/categories">Category</a>', infoLink('/' + catSlugInfo, categoryLabel[call.category] || call.category)));
   // Organizer
   const oSlug = slugify(call.org);
-  const orgInner = orgPages.includes(oSlug) ? `<a href="/${oSlug}" title="${esc(call.org)}">${tagHtml(call.org, 20)}</a>` : tagHtml(call.org, 20);
-  rows.push(infoRow('<a href="/organizations">Organizer</a>', orgInner));
+  const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
+  rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
       const label = eligibilityLabel[e] || e;
-      return `<a href="/eligibility/${e}">${esc(label)}</a>`;
+      return infoLink('/eligibility/' + e, label);
     }).join(', ');
     rows.push(infoRow('<a href="/eligibility">Eligibility</a>', eligHtml));
   }
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
-    rows.push(infoRow('Instagram', `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${esc(call.instagram)}</a>`));
+    rows.push(infoRow('Instagram', `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${infoVal(call.instagram)}</a>`));
   }
   return rows.join('');
 }
