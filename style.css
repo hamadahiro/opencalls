@@ -538,6 +538,7 @@ a.meta-tag-link.call-prize:hover {
   font-size: 14px;
   text-decoration: none;
   transition: opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .call-detail-apply:hover {
@@ -554,6 +555,7 @@ a.meta-tag-link.call-prize:hover {
   font-size: 14px;
   text-decoration: none;
   border: 1px solid #111;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (hover: hover) {
