@@ -1155,15 +1155,15 @@
     },
     {
       "title": "2026 Street Photo Award",
-      "org": "Independent Photo",
+      "org": "The Independent Photographer",
       "deadline": "2026-03-31",
       "fee": "$15–$40",
       "category": "photography",
-      "description": "Seeking street scenes from packed corners to stark geometry. Open to all experience levels.",
+      "description": "Monthly street photography competition. Submit candid moments from packed corners to stark geometry. Winner receives $1,000, exhibition at PBC Gallery London, and feature. Total prize pool $2,700. Judge: Gulnara Samoilova.",
       "url": "https://independent-photo.com/submit/",
-      "instagram": "",
+      "instagram": "@the.independent.photographer",
       "location": "Online",
-      "prize": "",
+      "prize": "$2,700",
       "eligibility": []
     },
     {
@@ -2931,6 +2931,47 @@
       "description": "Fine art photography projects engaging with what is real versus what is imagined. 10 selected projects published in print edition, 25 more in digital companion. Contributors receive printed copies with worldwide shipping. Free for subscribers.",
       "url": "https://www.photoed.ca/callforphotography",
       "instagram": "@photoaboretum",
+      "location": "Online",
+      "prize": "Publication in print edition",
+      "eligibility": []
+    },
+    {
+      "title": "LUMA Rencontres Dummy Book Award 2026",
+      "org": "Les Rencontres d'Arles",
+      "deadline": "2026-05-13",
+      "fee": "Free",
+      "category": "zine",
+      "description": "Annual award supporting publication of an unpublished photobook dummy. Special attention to experimental and innovative editorial forms. Winner's dummy and shortlisted entries exhibited at Les Rencontres d'Arles 2026. €25,000 production budget for the winning book.",
+      "url": "https://www.rencontres-arles.com/en/luma-rencontresdummy-book-award/",
+      "instagram": "@renabordeaux",
+      "location": "Arles, France",
+      "prize": "€25,000",
+      "eligibility": [
+        "professional"
+      ]
+    },
+    {
+      "title": "8th Chelsea International Photography Competition",
+      "org": "Agora Gallery",
+      "deadline": "2026-11-03",
+      "fee": "$45–$55",
+      "category": "exhibition",
+      "description": "International photography competition with exhibition at Agora Gallery in Chelsea, New York. 30 photographers selected for collective exhibition. Open to all genres and camera types. Five winners receive $500 cash each plus exhibition and online promotion.",
+      "url": "https://nyartcompetitions.com/photography/",
+      "instagram": "",
+      "location": "New York, NY, USA",
+      "prize": "$500 x5",
+      "eligibility": []
+    },
+    {
+      "title": "Creatura Magazine Issue 02 — What We Call Home",
+      "org": "Creatura Magazine",
+      "deadline": "2026-03-22",
+      "fee": "€15",
+      "category": "zine",
+      "description": "Open call for Issue 02 of this indie print magazine exploring the idea of home — not only as a physical space but as an emotional territory. Selected photographs featured in a collective section of the print edition.",
+      "url": "https://www.creaturamagazine.com/",
+      "instagram": "@creaturamagazine",
       "location": "Online",
       "prize": "Publication in print edition",
       "eligibility": []
