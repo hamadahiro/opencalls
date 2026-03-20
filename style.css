@@ -159,7 +159,7 @@ main {
 }
 
 .subtitle {
-  color: var(--text-muted);
+  color: var(--text);
 }
 
 .call-detail-description {
