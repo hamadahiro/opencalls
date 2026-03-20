@@ -14,7 +14,9 @@
       "prize": "$20,000",
       "eligibility": [
         "women"
-      ]
+      ],
+      "submitVia": "Picter",
+      "images": "12"
     },
     {
       "title": "Artphilein Open Call 2026",
@@ -27,7 +29,9 @@
       "instagram": "@artphilein__foundation",
       "location": "Lugano, Switzerland",
       "prize": "CHF 1,000",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "images": "10–20"
     },
     {
       "title": "L'Image Satellite 2026",
@@ -40,7 +44,9 @@
       "instagram": "@limage_satellite",
       "location": "Nice, France",
       "prize": "€500",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Email",
+      "images": "Up to 20"
     },
     {
       "title": "2026 Fotograf Magazine Open Call",
@@ -53,7 +59,15 @@
       "instagram": "@fotograf.zone",
       "location": "Prague, Czech Republic",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Felix Hoffmann, Curator & Artistic Director, FOTO ARSENAL WIEN",
+        "Markéta Kinterová, Director, Fotograf.zone",
+        "Michaela Nagyidaiová, Visual artist",
+        "Marta Szymańska, Photography curator",
+        "Peter Watkins, Visual artist & lecturer, FAMU"
+      ],
+      "submitVia": "Email"
     },
     {
       "title": "Fabula Works — Duo/Solo Show in Rome",
@@ -66,7 +80,9 @@
       "instagram": "@fabula_works",
       "location": "Rome, Italy",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "10–25"
     },
     {
       "title": "Rarefied Light 2026",
@@ -79,7 +95,12 @@
       "instagram": "@akphotocenter",
       "location": "Anchorage, AK, USA",
       "prize": "$300",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Nevada Wier, Photographer"
+      ],
+      "submitVia": "CaFE",
+      "images": "Up to 20"
     },
     {
       "title": "Prix Mustaqbal 2026 — Momentum",
@@ -94,7 +115,9 @@
       "prize": "",
       "eligibility": [
         "african-diaspora"
-      ]
+      ],
+      "submitVia": "Website form",
+      "images": "4–8"
     },
     {
       "title": "No Place Art — Edition Two: MATERIALITY",
@@ -107,7 +130,18 @@
       "instagram": "@noplaceart",
       "location": "London, UK",
       "prize": "£1,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Aga Kubish, Printmaker",
+        "Conor Rush, Artist & Founder, Starving Artists",
+        "Geoffrey Howe, Mixed Media Artist",
+        "Giles Duley, Photographer & CEO, Legacy of War Foundation",
+        "Matthew Burrows, Painter & Founder, Artist Support Pledge",
+        "Pia Austin-Little, Co-Founder, Austin & Checker Art Advisory",
+        "Roland-Philippe Kretzschmar, Founder, The Art Bystander"
+      ],
+      "submitVia": "DappleHQ",
+      "images": "Up to 5"
     },
     {
       "title": "59 Rivoli — Artist Residency 2026",
@@ -120,7 +154,8 @@
       "instagram": "@59rivoli",
       "location": "Paris, France",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form"
     },
     {
       "title": "LensCulture Critics' Choice 2026",
@@ -133,7 +168,31 @@
       "instagram": "@laboratorio_lensculture",
       "location": "Online",
       "prize": "$1,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Alex Kahl, Online Editor, WePresent",
+        "Alex Pollack, Director of Photography, National Geographic",
+        "Anna Planas, Artistic Director, Paris Photo",
+        "Bindi Vora, Curator, Autograph",
+        "Cassidy Paul, Managing Editor Digital, Aperture",
+        "Claartje van Dijk, Senior Curator, Foam Photography Museum",
+        "Crista Dix, Executive Director, Griffin Museum",
+        "Darius Himes, International Head of Photographs, Christie's",
+        "Enrico Stefanelli, Artistic Director, Photolux Festival",
+        "Fiona Shields, Head of Photography, The Guardian",
+        "Giulia Zorzi, Founder, Micamera",
+        "Hannah Watson, Director, Trolley Books",
+        "Jane Yeomans, Senior Photo Editor, Bloomberg",
+        "Jessie Wender, Photo Editor, The New York Times",
+        "Jim Casper, Editor-in-Chief, LensCulture",
+        "Rhea Combs, Director of Curatorial Affairs, National Portrait Gallery",
+        "Rose Shoshana, Owner & Director, Rose Gallery",
+        "Taous R. Dahmani, Curator, The Photographers' Gallery",
+        "Xavier Canonne, Director, Musée de la Photographie",
+        "Yuri Yamada, Curator, Tokyo Photographic Art Museum"
+      ],
+      "submitVia": "LensCulture",
+      "images": "1–10"
     },
     {
       "title": "Analog Sparks — International Film Photography Awards 2026",
@@ -148,7 +207,21 @@
       "prize": "€1,000",
       "eligibility": [
         "analog-photography"
-      ]
+      ],
+      "jury": [
+        "Barna Erdesz, Art Director & Gallerist",
+        "Danial Shah, Documentary Photographer",
+        "Eva Szombat, Visual Artist",
+        "Hossein Farmani, Founder",
+        "Ibrahim Mursal, Visual Artist & Writer",
+        "Kenro Izu, Photographer",
+        "Kira Krasz, Visual Artist",
+        "Mikkel Horlyck, Photojournalist",
+        "Mo Laudi, Curator",
+        "Wanda Martin, Canon Ambassador"
+      ],
+      "submitVia": "Website form",
+      "images": "1–11"
     },
     {
       "title": "Athens Photo Festival 2026",
@@ -174,7 +247,8 @@
       "instagram": "@griffinmuseum",
       "location": "Winchester, MA, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form"
     },
     {
       "title": "RBSA Summer Show 2026",
@@ -187,7 +261,9 @@
       "instagram": "@rbsagallery",
       "location": "Birmingham, UK",
       "prize": "£600",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Typeform",
+      "images": "Up to 3"
     },
     {
       "title": "EXPOSED feat Witty Books Dummy Award 2026",
@@ -200,7 +276,13 @@
       "instagram": "@witty_books",
       "location": "Turin, Italy",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Tommaso Parrillo, Witty Books",
+        "Giulia Ninotta, EXPOSED",
+        "Karla Hiraldo Voleau, Photographer"
+      ],
+      "submitVia": "Email"
     },
     {
       "title": "ZRNO Festival 2026 — Open Call",
@@ -213,7 +295,19 @@
       "instagram": "@zrnofestival",
       "location": "Skopje, North Macedonia",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Anne-Mette S. Sommer-Kelter, Polaroid Photographer",
+        "Drago Vejnovic, Professor, Academy of Arts Banja Luka",
+        "Eva Schlogl, Visual Artist & Architect",
+        "Pep Minguez, Director, Revela'T Festival",
+        "Ivana Brezovac, Professor, Academy of Arts Novi Sad",
+        "Natasa Takac, Visual & Media Artist",
+        "Florian Kopr, Photographer & Printmaker",
+        "Sasho Alushevski, Alternative Photographer"
+      ],
+      "submitVia": "Email",
+      "images": "Up to 4"
     },
     {
       "title": "PN Awards 2026 — Book Prize & Project Grant",
@@ -226,7 +320,13 @@
       "instagram": "@pnphotographynetwork",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Lucy Gallun, Curator of Photography, MoMA",
+        "Ileana L. Selejan, Lecturer, University of Edinburgh",
+        "Giulia Paoletti, Associate Professor, University of Virginia"
+      ],
+      "submitVia": "Email"
     },
     {
       "title": "KYOTOGRAPHIE Photo Zine Showcase",
@@ -239,7 +339,9 @@
       "instagram": "@kyotographie",
       "location": "Kyoto, Japan",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "images": "1 zine"
     },
     {
       "title": "Fotografiska Emerging Artist Platform",
@@ -254,7 +356,12 @@
       "prize": "",
       "eligibility": [
         "emerging"
-      ]
+      ],
+      "jury": [
+        "James Nachtwey, Photojournalist",
+        "Pauline Benthede, VP Artistic Direction, Fotografiska"
+      ],
+      "submitVia": "Website form"
     },
     {
       "title": "PORTRAITS — Hellerau Photography Award 2026",
@@ -267,7 +374,16 @@
       "instagram": "@portraitshellerau_award",
       "location": "Dresden, Germany",
       "prize": "€5,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Carena Schlewitt, Artistic Director, HELLERAU",
+        "Sim Chi Yin, Artist & Researcher",
+        "Daniel Blochwitz, Photographer & Curator",
+        "Angela Matyssek, Professor, Dresden University of Fine Arts",
+        "Sandra Buschow, Photographer & Curator"
+      ],
+      "submitVia": "Picter",
+      "images": "Up to 20"
     },
     {
       "title": "Edition 502 — Photo Edition Open Call",
@@ -319,7 +435,18 @@
       "instagram": "@kyotographie",
       "location": "Kyoto, Japan",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Thiago Nogueira, Contemporary Art Director, Moreira Salles Institute",
+        "Yumi Goto, Independent Curator",
+        "Mutsuko Ota, Editorial Director, IMA Magazine",
+        "Michael Famighetti, Editor-in-Chief, Aperture",
+        "Andrea Holzherr, Culture Director, Magnum Photos Paris",
+        "Takahiro Ito, Curator, Tokyo Photographic Art Museum",
+        "Marina Paulenka, Independent Curator",
+        "Federico Estol, Artistic Director, SAN JOSE FOTO"
+      ],
+      "submitVia": "JotForm"
     },
     {
       "title": "Prix Révélation SAIF x La Kabine 2026",
@@ -360,7 +487,17 @@
       "instagram": "@deloitte_photogrant",
       "location": "Milan, Italy",
       "prize": "€25,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Denis Curti, Artistic Director (Jury President)",
+        "Alec Soth, Photographer, Magnum Photos",
+        "Bruce Gilden, Photographer, Magnum Photos",
+        "Barbara Ceferin, Owner, Galerija Fotografija",
+        "Suzanne Cotter, Director, Museum of Contemporary Art Australia",
+        "Sunyoung Kim, Senior Curator, Museum Hanmi"
+      ],
+      "submitVia": "Website form",
+      "images": "10"
     },
     {
       "title": "Denis Roussel Award 2026",
@@ -373,7 +510,9 @@
       "instagram": "@rfotofolio",
       "location": "Online",
       "prize": "$2,000",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Email",
+      "images": "7"
     },
     {
       "title": "Lucie Foundation Photo Book Prize 2026",
@@ -386,7 +525,16 @@
       "instagram": "@luciefoundation",
       "location": "Online",
       "prize": "$3,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Martin Schoeller, Photographer",
+        "Elizabeth Krist, Visual Editor",
+        "Jamel Shabazz, Photographer & Author",
+        "Yumi Goto, Independent Curator",
+        "Lele Saveri, Photographer & 8-Ball Community Co-Founder"
+      ],
+      "submitVia": "Website form",
+      "images": "PDF of complete book"
     },
     {
       "title": "Insight Foto Festival — Insight Out 2026",
@@ -399,7 +547,8 @@
       "instagram": "@insight_foto_festival",
       "location": "Varese, Italy",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form"
     },
     {
       "title": "Bibin Photography Magazine #5 — Body, Form & Condition",
@@ -427,7 +576,8 @@
       "prize": "$7,000",
       "eligibility": [
         "united-states"
-      ]
+      ],
+      "submitVia": "Picter"
     },
     {
       "title": "Penumbra Foundation Risograph Publication Residency",
@@ -440,7 +590,8 @@
       "instagram": "@penumbrafoundation",
       "location": "New York, NY, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Picter"
     },
     {
       "title": "Generator Cooperative Art Production Fund — Round 10",
@@ -455,7 +606,9 @@
       "prize": "",
       "eligibility": [
         "south-asian"
-      ]
+      ],
+      "submitVia": "Google Form",
+      "images": "10–15"
     },
     {
       "title": "Curatory Magazine Vol. 15 — Open Call",
@@ -468,7 +621,9 @@
       "instagram": "@curatory.magazine",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "Up to 6"
     },
     {
       "title": "Somewhere I Have Never Travelled — Group Exhibition",
@@ -481,7 +636,12 @@
       "instagram": "@artpluseverywhere",
       "location": "Cambridge, MA, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Brenda Melgoza Ciardiello, Curator",
+        "Stéphanie Williams, Curator"
+      ],
+      "submitVia": "Website form"
     },
     {
       "title": "Nes Artist Residency — Fall 2026",
@@ -494,7 +654,8 @@
       "instagram": "@nesartistresidency",
       "location": "Skagaströnd, Iceland",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form"
     },
     {
       "title": "SCAN Tarragona — Talent Latent 2026",
@@ -509,7 +670,9 @@
       "prize": "€500",
       "eligibility": [
         "emerging"
-      ]
+      ],
+      "submitVia": "JotForm",
+      "images": "Up to 20"
     },
     {
       "title": "Lobster Club Artist Residency 2026",
@@ -522,7 +685,8 @@
       "instagram": "@lobster___club",
       "location": "Delhi, NY, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Typeform"
     },
     {
       "title": "São Paulo Photography Festival — FFSP26",
@@ -535,7 +699,8 @@
       "instagram": "@festfotosaopaulo",
       "location": "São Paulo, Brazil",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "images": "1–3"
     },
     {
       "title": "REBIRTH — Monart Curates",
@@ -548,7 +713,11 @@
       "instagram": "@monartcurates",
       "location": "London, UK",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Monica Mardare, Independent Curator"
+      ],
+      "submitVia": "CuratorSpace"
     },
     {
       "title": "Suboart Magazine — May & June 2026 Issues",
@@ -563,7 +732,9 @@
       "prize": "",
       "eligibility": [
         "emerging"
-      ]
+      ],
+      "submitVia": "Email",
+      "images": "Up to 6"
     },
     {
       "title": "Field Notes — Aurea Photogallery",
@@ -576,7 +747,9 @@
       "instagram": "@aurea.photogallery",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "Up to 3"
     },
     {
       "title": "The Eden Artists Now Award 2026",
@@ -589,7 +762,13 @@
       "instagram": "@the_eden_arts_foundation",
       "location": "New York, NY, USA",
       "prize": "$3,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Carmen Hermo, Curator of Contemporary Art, Museum of Fine Arts Boston",
+        "Elena Ketelsen González, Associate Curator, MoMA PS1"
+      ],
+      "submitVia": "Google Form",
+      "images": "5–8"
     },
     {
       "title": "Schloss Plüschow Artist-in-Residence 2026",
@@ -602,7 +781,8 @@
       "instagram": "@schlossplueschow",
       "location": "Plüschow, Germany",
       "prize": "€3,000",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form"
     },
     {
       "title": "Inspired by Classics — Golden Duck Gallery",
@@ -615,7 +795,9 @@
       "instagram": "@goldenduckgallery",
       "location": "Budapest, Hungary",
       "prize": "€1,000",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "images": "Up to 5"
     },
     {
       "title": "Life Framer — Black & White",
@@ -628,7 +810,12 @@
       "instagram": "@life_framer",
       "location": "Online",
       "prize": "$24,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Léa Thouin, Photography historian, Fondation Henri Cartier-Bresson"
+      ],
+      "submitVia": "Website",
+      "images": "Up to 10"
     },
     {
       "title": "Life Framer — Colors",
@@ -641,7 +828,12 @@
       "instagram": "@life_framer",
       "location": "Online",
       "prize": "$24,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Jimmy Marble, Photographer & Creative Director"
+      ],
+      "submitVia": "Website",
+      "images": "Up to 10"
     },
     {
       "title": "Life Framer — Portraits",
@@ -654,7 +846,12 @@
       "instagram": "@life_framer",
       "location": "Online",
       "prize": "$24,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Robin Hammond, National Geographic Explorer & Documentary Photographer"
+      ],
+      "submitVia": "Website",
+      "images": "Up to 10"
     },
     {
       "title": "BBA Photography Prize 2026",
@@ -667,7 +864,17 @@
       "instagram": "@bba.prizes",
       "location": "Berlin, Germany",
       "prize": "€1,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Vishal Shah, Managing & Creative Director, BBA Gallery",
+        "Renata Kudlacek, Director & Curator, BBA Gallery",
+        "Cia Durante, Art Consultant, MA Photography, Royal College of Art",
+        "Klaus J.A. Mellenthin, Photographer & Filmmaker",
+        "Alexander Jöchl, Director, Samurai Museum Berlin",
+        "Hannah Weber-Heidenfels, Fair Manager, Affordable Art Fair Germany"
+      ],
+      "submitVia": "Website",
+      "images": "5"
     },
     {
       "title": "Arty Rat Magazine Open Call",
@@ -680,7 +887,9 @@
       "instagram": "@artyratjournal",
       "location": "Vienna, Austria",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "Up to 6"
     },
     {
       "title": "Louvre Unbound Magazine — Volume 6 Open Call",
@@ -1041,7 +1250,9 @@
       "location": "Atlanta, GA, USA",
       "prize": "$4,000",
       "eligibility": [],
-      "jury": ["Natasha Egan, Executive Director, Museum of Contemporary Photography"],
+      "jury": [
+        "Natasha Egan, Executive Director, Museum of Contemporary Photography"
+      ],
       "submitVia": "Dropbox",
       "images": "10 or 20"
     },
@@ -1157,7 +1368,14 @@
       "location": "Bucharest, Romania",
       "prize": "€2,000",
       "eligibility": [],
-      "jury": ["Whitney Cole, Director, Candela Gallery", "Ali Besikci, Photographer & Founder of ZONE", "Madara Ulme, Artistic Director, SNAP Collective", "Souhayl A, Winner FotoSlovo Awards 2024", "Arnis Balcus, Editor-in-Chief, FK Magazine", "Laza Anna, Founder of FotoSlovo"],
+      "jury": [
+        "Whitney Cole, Director, Candela Gallery",
+        "Ali Besikci, Photographer & Founder of ZONE",
+        "Madara Ulme, Artistic Director, SNAP Collective",
+        "Souhayl A, Winner FotoSlovo Awards 2024",
+        "Arnis Balcus, Editor-in-Chief, FK Magazine",
+        "Laza Anna, Founder of FotoSlovo"
+      ],
       "submitVia": "Website form",
       "images": "1–15 per category"
     },
