@@ -178,14 +178,22 @@ function renderInfoGrid(call) {
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   rows.push(infoRow('Deadline', infoVal(deadlineText)));
-  // Prize
-  if (call.prize) rows.push(infoRow('Prize', infoVal(call.prize)));
   // Fee
   if (call.fee) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
       ? infoLink('/free', call.fee)
       : (call.fee === 'Check website' ? 'See official website' : infoVal(call.fee));
     rows.push(infoRow('Entry fee', feeHtml));
+  }
+  // Prize
+  if (call.prize) rows.push(infoRow('Prize', infoVal(call.prize)));
+  // Eligibility
+  if (call.eligibility && call.eligibility.length) {
+    const eligHtml = call.eligibility.map(e => {
+      const label = eligibilityLabel[e] || e;
+      return infoLink('/eligibility/' + e, label);
+    }).join(', ');
+    rows.push(infoRow('<a href="/eligibility">Eligibility</a>', eligHtml));
   }
   // Location
   if (call.location) {
@@ -201,18 +209,10 @@ function renderInfoGrid(call) {
   const oSlug = slugify(call.org);
   const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
   rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
-  // Eligibility
-  if (call.eligibility && call.eligibility.length) {
-    const eligHtml = call.eligibility.map(e => {
-      const label = eligibilityLabel[e] || e;
-      return infoLink('/eligibility/' + e, label);
-    }).join(', ');
-    rows.push(infoRow('<a href="/eligibility">Eligibility</a>', eligHtml));
-  }
+  // Requirements
+  if (call.images) rows.push(infoRow('Requirements', infoVal(call.images)));
   // Submit via
   if (call.submitVia) rows.push(infoRow('Submit via', infoVal(call.submitVia)));
-  // Images
-  if (call.images) rows.push(infoRow('Images', infoVal(call.images)));
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
