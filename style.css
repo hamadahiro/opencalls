@@ -592,7 +592,7 @@ a.meta-tag-link.call-prize:hover {
 @media (hover: hover) {
   .call-detail-btn:hover {
     text-decoration: none;
-    opacity: 0.7;
+    opacity: 0.85;
   }
 
   .call-detail-calendar:hover {
