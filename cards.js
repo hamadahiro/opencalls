@@ -209,11 +209,10 @@ function renderInfoGrid(call) {
     }).join(', ');
     rows.push(infoRow('<a href="/eligibility">Eligibility</a>', eligHtml));
   }
-  // Jury
-  if (call.jury && call.jury.length) {
-    const juryHtml = call.jury.map(j => `<span class="jury-member">${esc(j)}</span>`).join('');
-    rows.push(infoRow('Jury', `<span class="jury-list">${juryHtml}</span>`));
-  }
+  // Submit via
+  if (call.submitVia) rows.push(infoRow('Submit via', infoVal(call.submitVia)));
+  // Images
+  if (call.images) rows.push(infoRow('Images', infoVal(call.images)));
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');

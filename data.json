@@ -1041,7 +1041,9 @@
       "location": "Atlanta, GA, USA",
       "prize": "$4,000",
       "eligibility": [],
-      "jury": ["Natasha Egan, Executive Director, Museum of Contemporary Photography"]
+      "jury": ["Natasha Egan, Executive Director, Museum of Contemporary Photography"],
+      "submitVia": "Dropbox",
+      "images": "10 or 20"
     },
     {
       "title": "COLOR Photography Exhibit",
@@ -1155,7 +1157,9 @@
       "location": "Bucharest, Romania",
       "prize": "€2,000",
       "eligibility": [],
-      "jury": ["Whitney Cole, Director, Candela Gallery", "Ali Besikci, Photographer & Founder of ZONE", "Madara Ulme, Artistic Director, SNAP Collective", "Souhayl A, Winner FotoSlovo Awards 2024", "Arnis Balcus, Editor-in-Chief, FK Magazine", "Laza Anna, Founder of FotoSlovo"]
+      "jury": ["Whitney Cole, Director, Candela Gallery", "Ali Besikci, Photographer & Founder of ZONE", "Madara Ulme, Artistic Director, SNAP Collective", "Souhayl A, Winner FotoSlovo Awards 2024", "Arnis Balcus, Editor-in-Chief, FK Magazine", "Laza Anna, Founder of FotoSlovo"],
+      "submitVia": "Website form",
+      "images": "1–15 per category"
     },
     {
       "title": "Ephemere Photobook Grant 2026",
