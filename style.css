@@ -1,3 +1,56 @@
+/* === Colors === */
+:root {
+  --text: #111;
+  --text-muted: #999;
+  --bg: #e6e6e6;
+  --card-bg: #EAE7E2;
+  --card-bg-hover: #ddd9d3;
+  --surface: #fff;
+  --surface-hover: rgba(255, 255, 255, 0.9);
+  --border: #ddd;
+  --btn-bg: #111;
+  --btn-text: #fff;
+  --dots: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #d4d4d4;
+    --text-muted: #777;
+    --bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --card-bg-hover: #3a3a3a;
+    --surface: #2a2a2a;
+    --surface-hover: #333;
+    --border: #333;
+    --btn-bg: #d4d4d4;
+    --btn-text: #1a1a1a;
+    --dots: #555;
+  }
+
+  html {
+    background-image: none;
+  }
+
+  body::before {
+    background-image: none !important;
+    background-color: var(--bg);
+  }
+
+  .search-bar {
+    box-shadow: none;
+  }
+
+  .meta-tag.call-prize {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+  }
+
+  a.meta-tag-link.call-prize:hover {
+    background: #bbb;
+  }
+}
+
 /* === Reset & Base === */
 *, *::before, *::after {
   margin: 0;
@@ -10,19 +63,19 @@ html {
   background-attachment: fixed;
   background-size: cover;
   background-position: top right;
-  background-color: #e6e6e6;
+  background-color: var(--bg);
 }
 
 body {
   font-family: helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #111;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -49,6 +102,7 @@ header {
   line-height: 1.2;
   text-decoration: none;
   font-family: 'Source Serif 4', serif;
+  color: var(--text);
 }
 
 .logo:hover {
@@ -63,13 +117,12 @@ nav {
 nav a {
   font-size: 14px;
   letter-spacing: 0.3px;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   text-decoration: none;
 }
 
 nav a.active {
   font-weight: 700;
-  text-decoration: none;
 }
 
 nav a:hover {
@@ -97,15 +150,19 @@ main {
   overflow-wrap: break-word;
 }
 
-/* === Shared serif text style === */
+/* === Shared serif text === */
 .subtitle,
 .call-description,
 .call-detail-description {
   font-size: 20px;
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   line-height: 32px;
   font-family: 'Source Serif 4', serif;
+}
+
+.subtitle {
+  color: var(--text-muted);
 }
 
 .call-detail-description {
@@ -128,19 +185,30 @@ main {
 }
 
 .filter-btn {
-  background: rgb(255, 255, 255);
+  background: var(--surface);
   border: none;
   padding: 8px 14px;
   font-size: 14px;
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   transition: all 0.15s ease;
   flex: 1;
   white-space: nowrap;
 }
 
+.filter-btn:hover {
+  background: var(--surface-hover);
+}
+
+.filter-btn.active {
+  font-weight: 700;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* === Search === */
 .search-wrap {
   position: relative;
   margin-bottom: 8px;
@@ -149,16 +217,20 @@ main {
 .search-bar {
   display: block;
   width: 100%;
-  background: rgb(255, 255, 255);
+  background: var(--surface);
   border: none;
   padding: 14px 20px;
   padding-right: 44px;
   font-size: 14px;
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   outline: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.search-bar::placeholder {
+  color: var(--text-muted);
 }
 
 .search-clear {
@@ -170,7 +242,7 @@ main {
   background: none;
   border: none;
   font-size: 22px;
-  color: #999;
+  color: var(--text-muted);
   cursor: pointer;
   padding: 4px 8px;
   line-height: 1;
@@ -181,21 +253,7 @@ main {
 }
 
 .search-clear:hover {
-  color: #333;
-}
-
-.search-bar::placeholder {
-  color: #999;
-}
-
-.filter-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.filter-btn.active {
-  font-weight: 700;
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  color: var(--text);
 }
 
 /* === Call Cards === */
@@ -208,7 +266,7 @@ main {
 .section-header {
   font-size: 32px;
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   padding: 48px 0 12px;
   font-family: 'Source Serif 4', serif;
 }
@@ -226,7 +284,7 @@ main {
 }
 
 .call-title a {
-  color: rgb(0, 0, 0);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -234,6 +292,7 @@ main {
   text-decoration: underline;
 }
 
+/* === Deadline Badges === */
 .call-deadline {
   display: inline-flex;
   align-items: center;
@@ -246,27 +305,14 @@ main {
   letter-spacing: 0.2px;
 }
 
-.call-deadline.ending {
-  background: #4C447A;
-  color: white;
-}
-
-.call-deadline.urgent {
-  background: #B6332F;
-  color: white;
-}
-
+.call-deadline.ending { background: #4C447A; color: white; }
+.call-deadline.urgent { background: #B6332F; color: white; }
 .call-deadline.soon,
-.call-deadline.normal {
-  background: #D3B36F;
-  color: white;
-}
+.call-deadline.normal { background: #D3B36F; color: white; }
+.call-deadline.rolling { background: #9BB3BE; color: white; }
+.call-deadline.closed { background: #8C8B8C; color: white; }
 
-.call-deadline.rolling {
-  background: #9BB3BE;
-  color: white;
-}
-
+/* === Meta Tags === */
 .call-meta {
   display: flex;
   flex-wrap: wrap;
@@ -281,8 +327,8 @@ main {
   font-size: 14px;
   padding: 5px 10px;
   border-radius: 3px;
-  background: #EAE7E2;
-  color: #222;
+  background: var(--card-bg);
+  color: var(--text);
   white-space: nowrap;
   line-height: 1;
   letter-spacing: 0.2px;
@@ -311,7 +357,7 @@ a.meta-tag-link {
 }
 
 a.meta-tag-link:hover {
-  background: #ddd9d3;
+  background: var(--card-bg-hover);
   text-decoration: none;
 }
 
@@ -323,8 +369,8 @@ a.meta-tag-link:hover {
 
 .meta-tag.call-prize {
   font-weight: 700;
-  color: rgb(255, 255, 255);
-  background: rgb(0, 0, 0);
+  color: white;
+  background: #111;
 }
 
 a.meta-tag-link.call-prize:hover {
@@ -335,14 +381,8 @@ a.meta-tag-link.call-prize:hover {
 .empty-state {
   padding: 48px 0;
   text-align: center;
-  color: #999;
+  color: var(--text-muted);
   font-size: 14px;
-}
-
-/* === Closed badge === */
-.call-deadline.closed {
-  background: #8C8B8C;
-  color: white;
 }
 
 /* === Footer === */
@@ -354,7 +394,7 @@ a.meta-tag-link.call-prize:hover {
 .about-section p {
   font-size: 16px;
   line-height: 20px;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   font-family: 'Source Serif 4', serif;
 }
 
@@ -372,7 +412,6 @@ a.meta-tag-link.call-prize:hover {
     padding: 0 16px;
   }
 
-  /* Fix iOS fixed background */
   html {
     background-image: none;
   }
@@ -387,7 +426,7 @@ a.meta-tag-link.call-prize:hover {
     background-image: url('bg.jpg');
     background-size: cover;
     background-position: top right;
-    background-color: #e6e6e6;
+    background-color: var(--bg);
     z-index: -1;
   }
 
@@ -438,7 +477,6 @@ a.meta-tag-link.call-prize:hover {
     font-size: 16px;
   }
 
-
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -479,7 +517,6 @@ a.meta-tag-link.call-prize:hover {
   }
 }
 
-/* Extra small screens */
 @media (max-width: 380px) {
   .hero h1 {
     font-size: 28px;
@@ -536,18 +573,33 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .call-detail-apply {
-  background: #111;
-  color: #fff;
+  background: var(--btn-bg);
+  color: var(--btn-text);
   font-weight: 700;
 }
 
 .call-detail-calendar {
   background: none;
-  color: #111;
-  border: 1px solid #111;
+  color: var(--text);
+  border: 1px solid var(--text);
   padding: 11px 27px;
+  text-decoration: none;
 }
 
+.call-detail-calendar:hover,
+.call-detail-calendar:active,
+.call-detail-calendar:visited {
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .call-detail-calendar:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+  }
+}
+
+/* === Info Grid === */
 .call-detail-info {
   margin-top: 32px;
   display: flex;
@@ -563,7 +615,7 @@ a.meta-tag-link.call-prize:hover {
 .info-label {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
-  color: #111;
+  color: var(--text);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -574,7 +626,7 @@ a.meta-tag-link.call-prize:hover {
   margin: 0 8px;
   min-width: 20px;
   font-size: 20px;
-  color: #111;
+  color: var(--dots);
 }
 
 .info-dots::before {
@@ -585,7 +637,7 @@ a.meta-tag-link.call-prize:hover {
 .info-value {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
-  color: #111;
+  color: var(--text);
   text-align: right;
   overflow-wrap: break-word;
   max-width: 60%;
@@ -593,7 +645,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .call-detail-info a {
-  color: #111;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -601,7 +653,7 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: underline;
 }
 
-/* === Index Pages (Countries, Orgs) === */
+/* === Index Pages === */
 .index-list {
   display: flex;
   flex-direction: column;
@@ -613,7 +665,7 @@ a.meta-tag-link.call-prize:hover {
   align-items: baseline;
   padding: 10px 0;
   text-decoration: none;
-  color: #111;
+  color: var(--text);
 }
 
 .index-item:hover {
@@ -627,6 +679,7 @@ a.meta-tag-link.call-prize:hover {
 .index-item-name {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
+  color: var(--text);
 }
 
 .index-item-dots {
@@ -636,7 +689,7 @@ a.meta-tag-link.call-prize:hover {
   min-width: 20px;
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
-  color: #111;
+  color: var(--dots);
   letter-spacing: 2px;
 }
 
@@ -648,11 +701,11 @@ a.meta-tag-link.call-prize:hover {
 .index-item-count {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
-  color: #111;
+  color: var(--text);
   white-space: nowrap;
 }
 
-/* === Browse More Link === */
+/* === Browse More === */
 .browse-more {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
@@ -660,7 +713,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .browse-more a {
-  color: #111;
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -672,12 +725,12 @@ a.meta-tag-link.call-prize:hover {
 .breadcrumbs {
   font-size: 14px;
   letter-spacing: 0.3px;
-  color: rgb(0, 0, 0);
+  color: var(--text);
   margin-bottom: 16px;
 }
 
 .breadcrumbs a {
-  color: rgb(0, 0, 0);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -711,150 +764,5 @@ a.meta-tag-link.call-prize:hover {
     overflow: hidden;
     max-width: 80%;
     display: inline-flex;
-  }
-}
-
-/* === Dark Mode === */
-@media (prefers-color-scheme: dark) {
-  html {
-    background-image: none;
-    background-color: #1a1a1a;
-  }
-
-  body {
-    color: #d4d4d4;
-  }
-
-  body::before {
-    background-image: none !important;
-    background-color: #1a1a1a;
-  }
-
-  a {
-    color: #d4d4d4;
-  }
-
-  .logo {
-    color: #d4d4d4;
-  }
-
-  .search-bar {
-    background: #2a2a2a;
-    color: #d4d4d4;
-    box-shadow: none;
-  }
-
-  .search-bar::placeholder {
-    color: #777;
-  }
-
-  .filter-btn {
-    background: #2a2a2a;
-    color: #d4d4d4;
-  }
-
-  .filter-btn.active {
-    background: #d4d4d4;
-    color: #1a1a1a;
-  }
-
-  .filter-btn:hover {
-    background: #333;
-  }
-
-  .call-card {
-    border-bottom-color: #333;
-  }
-
-  .meta-tag {
-    background: #2a2a2a;
-    color: #d4d4d4;
-  }
-
-  a.meta-tag-link:hover {
-    background: #3a3a3a;
-  }
-
-  .meta-tag.call-prize {
-    background: #d4d4d4;
-    color: #1a1a1a;
-  }
-
-  a.meta-tag-link.call-prize:hover {
-    background: #bbb;
-  }
-
-  .meta-tag.ending {
-    background: #B6332F;
-    color: white;
-  }
-
-  .meta-tag.closed {
-    background: #444;
-    color: #999;
-  }
-
-  .info-label,
-  .info-value {
-    color: #d4d4d4;
-  }
-
-  .info-dots::before {
-    color: #555;
-  }
-
-  .call-detail-info a {
-    color: #d4d4d4;
-  }
-
-  .call-detail-btn.call-detail-apply {
-    background: #d4d4d4;
-    color: #1a1a1a;
-  }
-
-  .call-detail-btn.call-detail-calendar {
-    color: #d4d4d4;
-    border-color: #d4d4d4;
-  }
-
-  .section-header {
-    color: #d4d4d4;
-  }
-
-  .subtitle {
-    color: #999;
-  }
-
-  .empty-state {
-    color: #777;
-  }
-
-  .breadcrumbs,
-  .breadcrumbs a {
-    color: #d4d4d4;
-  }
-
-  .call-detail-description {
-    color: #d4d4d4;
-  }
-
-  .index-item {
-    border-bottom-color: #333;
-  }
-
-  .index-item-name {
-    color: #d4d4d4;
-  }
-
-  .index-item-count {
-    color: #999;
-  }
-
-  footer {
-    color: #777;
-  }
-
-  footer a {
-    color: #999;
   }
 }
