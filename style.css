@@ -429,6 +429,15 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
+  .jury-heading {
+    font-size: 18px;
+  }
+
+  .jury-names li {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -506,33 +515,29 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .call-detail-jury {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .jury-heading {
   font-family: 'Source Serif 4', serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
 }
 
 .jury-names {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 20px;
 }
 
 .jury-names li {
   font-family: 'Source Serif 4', serif;
-  font-size: 18px;
-  color: #333;
-  line-height: 1.6;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  line-height: 32px;
 }
 
 .call-detail-actions {
