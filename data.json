@@ -902,7 +902,9 @@
       "instagram": "@louvreunbound",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "images": "Up to 6"
     },
     {
       "title": "Musée du quai Branly Photography Award 2026",
@@ -1073,7 +1075,9 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Email",
+      "images": "11"
     },
     {
       "title": "this place is strange",
@@ -1086,7 +1090,12 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Morgan Laurens, Arts writer & Founder, Goblin Market"
+      ],
+      "submitVia": "Google Form",
+      "images": "Up to 3"
     },
     {
       "title": "The Narrative",
@@ -1099,7 +1108,9 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "Up to 3"
     },
     {
       "title": "Bourse Laurent Troude 2026",
@@ -1114,7 +1125,8 @@
       "prize": "€8,000",
       "eligibility": [
         "under-30"
-      ]
+      ],
+      "submitVia": "Email + WeTransfer"
     },
     {
       "title": "Multi-Exposed",
@@ -1127,7 +1139,9 @@
       "instagram": "",
       "location": "Minneapolis, MN, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Smarter Entry",
+      "images": "Up to 10"
     },
     {
       "title": "Premio Mila 2026",
@@ -1143,7 +1157,17 @@
       "eligibility": [
         "italy",
         "under-40"
-      ]
+      ],
+      "jury": [
+        "Andrea Elia Zanini, Curator, Fondo Malerba",
+        "Caterina Angelucci, Curator & Journalist",
+        "Matteo Balduzzi, Curator, MUFOCO",
+        "Marta Cereda, Artistic Director, Careof",
+        "Bernardo Follini, Curator, Fondazione Sandretto Re Rebaudengo",
+        "Francesca Lazzarini, Independent Curator"
+      ],
+      "submitVia": "Email + WeTransfer",
+      "images": "Up to 15"
     },
     {
       "title": "Foto Tallinn 2026 Art Fair",
@@ -1156,7 +1180,9 @@
       "instagram": "@fototallinnfair",
       "location": "Tallinn, Estonia",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "At least 5"
     },
     {
       "title": "Whimsical",
@@ -1169,7 +1195,12 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Smarter Entry",
+      "images": "Up to 5",
+      "jury": [
+        "Stephen Fletcher, Juror"
+      ]
     },
     {
       "title": "10x10 Photobooks Research Grants Cycle 5",
@@ -1182,7 +1213,14 @@
       "instagram": "@10x10photobooks",
       "location": "Online",
       "prize": "$2,500",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Amy Sall, Founding Editor, SUNU Journal",
+        "Diane Frankel, Chair, George Rickey Foundation",
+        "Mariama Attah, Curator, National Museums Liverpool",
+        "Marjorie Ornston, Grants Director, 10x10 Photobooks"
+      ],
+      "submitVia": "Google Form"
     },
     {
       "title": "Fast Forward: Analog Photography as a Third Space",
@@ -1197,7 +1235,13 @@
       "prize": "",
       "eligibility": [
         "analog-photography"
-      ]
+      ],
+      "jury": [
+        "Aline Smithson, Founder & Editor, Lenscratch",
+        "Rotem Rozental, Executive Director & Chief Curator, LACP"
+      ],
+      "submitVia": "Submittable",
+      "images": "Up to 35"
     },
     {
       "title": "The Magic of Light - Photography Open Call",
@@ -1210,7 +1254,12 @@
       "instagram": "",
       "location": "Los Angeles, CA, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Ann M. Jastrab, Executive Director, Center for Photographic Art"
+      ],
+      "submitVia": "EntryThingy",
+      "images": "Up to 15"
     },
     {
       "title": "BOTANICAL Photography Exhibit",
@@ -1223,7 +1272,12 @@
       "instagram": "",
       "location": "Santa Fe, NM, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
+      ],
+      "submitVia": "Website form",
+      "images": "5 or 10"
     },
     {
       "title": "Photographic Exploration Project: ENTANGLEMENT",
@@ -1236,7 +1290,13 @@
       "instagram": "@photographicexplorationproject",
       "location": "Berlin, Germany",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Rüdiger Lange, Artistic Director, Loop – Raum für aktuelle Kunst",
+        "Bénédicte Blondeau, Founder & Curator, PEP"
+      ],
+      "submitVia": "JotForm",
+      "images": "1–10"
     },
     {
       "title": "Portfolio 2026",
@@ -1267,7 +1327,12 @@
       "instagram": "",
       "location": "Tucson, AZ, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Holly Hart, Founder, Decode Gallery"
+      ],
+      "submitVia": "Website form",
+      "images": "5 or 10"
     },
     {
       "title": "Contemporary Trends in Beauty - Alternative Processes",
@@ -1282,7 +1347,13 @@
       "prize": "",
       "eligibility": [
         "alternative-process"
-      ]
+      ],
+      "jury": [
+        "Diana H. Bloomfield, Visual Storyteller",
+        "Christina Z. Anderson, Alternative Processes Artist"
+      ],
+      "submitVia": "Email",
+      "images": "3 or 6"
     },
     {
       "title": "Centrale Festival Open Call 2026",
@@ -1297,7 +1368,13 @@
       "prize": "",
       "eligibility": [
         "under-30"
-      ]
+      ],
+      "jury": [
+        "Claudia Bigongiari, Managing Editor, Pellicola Magazine",
+        "Lori Lako, Visual Artist",
+        "Sara Poli, Director, Forno Project"
+      ],
+      "submitVia": "Email"
     },
     {
       "title": "Abstract Visions",
@@ -1312,7 +1389,8 @@
       "prize": "",
       "eligibility": [
         "membership-required"
-      ]
+      ],
+      "submitVia": "Website form"
     },
     {
       "title": "The Process Room - Open Call for Workshops & Artworks",
@@ -1325,7 +1403,8 @@
       "instagram": "@alternativeprocesses",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Google Form"
     },
     {
       "title": "Mini Artist Grant for Emerging & Mid-Career Artists",
@@ -1338,7 +1417,9 @@
       "instagram": "@phototrouveemagazine",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "JotForm",
+      "images": "Up to 5"
     },
     {
       "title": "Colour Calendar Event",
@@ -1354,7 +1435,9 @@
       "eligibility": [
         "alternative-process",
         "membership-required"
-      ]
+      ],
+      "submitVia": "Google Form",
+      "images": "Single image"
     },
     {
       "title": "FotoSlovo Award 2026",
@@ -1390,7 +1473,12 @@
       "instagram": "",
       "location": "Tokyo, Japan",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Anne Murayama, Curator & Director, Ephemere",
+        "Jordan Reyes, Creative Partner, Ephemere"
+      ],
+      "submitVia": "Google Form"
     },
     {
       "title": "2026 Street Photo Award",
@@ -1403,7 +1491,12 @@
       "instagram": "@the.independent.photographer",
       "location": "Online",
       "prize": "$2,700",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Gulnara Samoilova, Photographer"
+      ],
+      "submitVia": "Website form",
+      "images": "1, 3, or 6"
     },
     {
       "title": "A Stranger's Face: Travel Portraits (KLPA)",
@@ -1416,7 +1509,16 @@
       "instagram": "",
       "location": "Kuala Lumpur, Malaysia",
       "prize": "€2,000/€1,000/€500",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Aisha Nazar, Picture Editor, National Geographic Traveller UK",
+        "Michelle Sank, Documentary Photographer",
+        "Ivan Gabriel, Curator & Arts Practitioner",
+        "Ng Hui Hsien, Artist & Curator",
+        "She Escobar, Photographer"
+      ],
+      "submitVia": "Picter",
+      "images": "Up to 10"
     },
     {
       "title": "AAP Magazine #56 Shadows",
@@ -1429,7 +1531,12 @@
       "instagram": "",
       "location": "Online",
       "prize": "$1,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Sandrine Hermand-Grisel, Founder & Editor, All About Photo"
+      ],
+      "submitVia": "Website form",
+      "images": "Up to 40"
     },
     {
       "title": "Color, Culture, Continuum – An Asian American Mosaic",
@@ -1444,7 +1551,14 @@
       "prize": "",
       "eligibility": [
         "asian-american"
-      ]
+      ],
+      "jury": [
+        "Kim Chapin, Executive Director of Photography, LA Times",
+        "Gong Cheng, Sports Photojournalist",
+        "Hiroshi Watanabe, Photographer"
+      ],
+      "submitVia": "SmarterEntry",
+      "images": "Up to 3"
     },
     {
       "title": "Night Works",
@@ -1457,7 +1571,9 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "1–8"
     },
     {
       "title": "Fall 2026 - Spring 2027 Solo Exhibitions",
@@ -1470,7 +1586,9 @@
       "instagram": "",
       "location": "Lubbock, TX, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "Email",
+      "images": "20"
     },
     {
       "title": "Hasselblad Foundation Photo Book Grant 2026",
@@ -1485,7 +1603,14 @@
       "prize": "SEK 100,000",
       "eligibility": [
         "professional"
-      ]
+      ],
+      "jury": [
+        "Jacob Birch, Spine Studio",
+        "Maryam Fanni, HDK-Valand",
+        "Andréas Hagström, Hasselblad Foundation",
+        "Dragana Vujanovic Östlind, Hasselblad Foundation"
+      ],
+      "submitVia": "Picter"
     },
     {
       "title": "Grants in Photography 2026",
@@ -1500,7 +1625,8 @@
       "prize": "$3,000",
       "eligibility": [
         "united-states"
-      ]
+      ],
+      "submitVia": "SlideRoom"
     },
     {
       "title": "Portals: New Perspectives",
@@ -1513,7 +1639,12 @@
       "instagram": "",
       "location": "Middlebury, VT, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Ann Jastrab, Executive Director, Center for Photographic Art"
+      ],
+      "submitVia": "Website form",
+      "images": "5+"
     },
     {
       "title": "CPA Artist Grants 2026",
@@ -1526,7 +1657,14 @@
       "instagram": "",
       "location": "Monterey, CA, USA",
       "prize": "$5,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Diane Chung, Founder, CHUNG 24 GALLERY",
+        "Gregory Harris, Curator of Photography, High Museum of Art",
+        "Frank Yamrus, Fine Art Photographer"
+      ],
+      "submitVia": "Website form",
+      "images": "10–20"
     },
     {
       "title": "Thoughts of Summer",
@@ -1539,7 +1677,13 @@
       "instagram": "",
       "location": "Greenville, SC, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Lisa Woodward, Co-Curator, Pictura",
+        "Mia Dalglish, Co-Curator, Pictura"
+      ],
+      "submitVia": "Smarter Entry",
+      "images": "Up to 25"
     },
     {
       "title": "2026 International Portfolio Competition",
@@ -1552,7 +1696,9 @@
       "instagram": "",
       "location": "New York, NY, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "submitVia": "CaFE",
+      "images": "10–15"
     },
     {
       "title": "THE PORTRAIT",
@@ -1565,7 +1711,12 @@
       "instagram": "",
       "location": "Minneapolis, MN, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Elizabeth Flinsch, Editor, SHOTS Magazine"
+      ],
+      "submitVia": "Website form",
+      "images": "Up to 10"
     },
     {
       "title": "Earthly Fabulations",
@@ -1580,7 +1731,8 @@
       "prize": "",
       "eligibility": [
         "emerging"
-      ]
+      ],
+      "submitVia": "Picter"
     },
     {
       "title": "Sarajevo Photography Festival 2026",
@@ -1593,7 +1745,17 @@
       "instagram": "@sarajevophotographyfestival",
       "location": "Sarajevo, Bosnia and Herzegovina",
       "prize": "€2,000",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Simone Azzoni, Professor, Contemporary Art History",
+        "Marko Drobnjaković, Documentary Photographer",
+        "Teresa Freitas, Director, Lisbon Street Photo Fest",
+        "Šejla Kamerić, Visual Artist",
+        "Coline Plançon, Curator & Coordinator, PhotoSaintGermain",
+        "Fernanda Prado Verčič, Director, Kranj Foto Fest",
+        "Ionuț Trandafirescu, Director, Bucharest Photofest"
+      ],
+      "submitVia": "Website form"
     },
     {
       "title": "Framed: Black and White",
@@ -1606,7 +1768,12 @@
       "instagram": "",
       "location": "Portland, OR, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Todd Johnson, Founder & Director, Black Box Gallery"
+      ],
+      "submitVia": "Email",
+      "images": "Up to 5"
     },
     {
       "title": "Hiding in Plain Sight",
@@ -1619,7 +1786,12 @@
       "instagram": "",
       "location": "Providence, RI, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "jury": [
+        "Lou Jones, Photographer"
+      ],
+      "submitVia": "CaFE",
+      "images": "3–15"
     },
     {
       "title": "Queer Conscience 2026 Photography Exhibition",
@@ -1635,7 +1807,13 @@
       "eligibility": [
         "united-states",
         "lgbtq"
-      ]
+      ],
+      "jury": [
+        "Conor Moynihan, Associate Curator, RISD Museum",
+        "Nathan Lomas, Gallery Coordinator, The Image Flow"
+      ],
+      "submitVia": "ArtCall",
+      "images": "Up to 5"
     },
     {
       "title": "PPA Photo Award 2026",
@@ -1651,7 +1829,12 @@
       "eligibility": [
         "united-states",
         "emerging"
-      ]
+      ],
+      "jury": [
+        "Craig Krull, Founder, Craig Krull Gallery"
+      ],
+      "submitVia": "CaFE",
+      "images": "10–20"
     },
     {
       "title": "light",
