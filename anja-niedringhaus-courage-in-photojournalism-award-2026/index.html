@@ -89,7 +89,7 @@
       var t = 'Anja Niedringhaus Courage in Photojournalism Award 2026';
       var u = 'https://site.picter.com/2026-iwmf-anja-niedringhaus-award';
       var o = 'International Women\'s Media Foundation';
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
