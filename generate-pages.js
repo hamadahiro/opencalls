@@ -14,16 +14,19 @@ const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
 
 // Shared header and footer
-const HEADER = `<header>
+function buildHeader(active) {
+  return `<header>
     <div class="header-inner">
       <a href="https://monographica.com" class="logo">Monographica</a>
       <nav>
-        <a href="/" class="nav-link">Open</a>
-        <a href="/?view=past" class="nav-link">Closed</a>
-        <a href="/browse" class="nav-link nav-desktop">Browse</a>
+        <a href="/" class="nav-link${active === 'open' ? ' active' : ''}">Open</a>
+        <a href="/?view=past" class="nav-link${active === 'closed' ? ' active' : ''}">Closed</a>
+        <a href="/browse" class="nav-link nav-desktop${active === 'browse' ? ' active' : ''}">Browse</a>
       </nav>
     </div>
   </header>`;
+}
+const HEADER = buildHeader();
 
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -302,7 +305,7 @@ Object.entries(categories).forEach(([cat, info]) => {
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero(buildBreadcrumbs('Categories', '/categories'), info.title, escapeHtml(info.desc))}
@@ -392,7 +395,7 @@ filterPages.forEach(fp => {
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', fp.title, escapeHtml(fp.desc))}
@@ -494,7 +497,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
@@ -582,7 +585,7 @@ if (eligibilityPageSlugs.length) {
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Eligibility', 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.')}
@@ -666,7 +669,7 @@ Object.entries(countryCounts)
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero(buildBreadcrumbs('Locations', '/locations'), escapeHtml(title), escapeHtml(desc))}
@@ -791,7 +794,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations">Locations</a> / <a href="/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
@@ -876,7 +879,7 @@ Object.entries(orgCounts)
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
@@ -1019,7 +1022,7 @@ const browseHtml = `<!DOCTYPE html>
 </head>
 <body>
 
-  ${HEADER}
+  ${buildHeader('browse')}
 
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
@@ -1152,7 +1155,7 @@ indexPages.forEach(({ src, fallback }) => {
       return `${clean}${TITLE_SUFFIX}"`;
     });
     html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
-    html = html.replace(/<header>[\s\S]*?<\/header>/, HEADER);
+    html = html.replace(/<header>[\s\S]*?<\/header>/, buildHeader('browse'));
     const dir = path.dirname(src);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(src, html);
