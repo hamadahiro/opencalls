@@ -556,10 +556,12 @@ a.meta-tag-link.call-prize:hover {
   border: 1px solid #111;
 }
 
-.call-detail-calendar:hover {
-  background: #111;
-  color: #fff;
-  text-decoration: none;
+@media (hover: hover) {
+  .call-detail-calendar:hover {
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .call-detail-info {
