@@ -55,7 +55,7 @@ function tagHtml(str, minLen) {
   const splitAt = Math.ceil(words.length * 0.6);
   const front = words.slice(0, splitAt).join(' ');
   const back = words.slice(splitAt).join(' ');
-  return `<span class="tag-front">${esc(front)}</span><span class="tag-back">${esc(back)}</span>`;
+  return `<span class="tag-front">${esc(front)}</span> <span class="tag-back">${esc(back)}</span>`;
 }
 
 function getLocationLink(location, country) {
