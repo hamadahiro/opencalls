@@ -166,7 +166,7 @@ function renderInfoGrid(call) {
   function infoRow(label, value) {
     return `<div class="info-row">
       <span class="info-label">${label}</span>
-      <span class="info-dots"></span>
+      <span class="dots"></span>
       <span class="info-value">${value}</span>
     </div>`;
   }
