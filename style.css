@@ -614,7 +614,7 @@ a.meta-tag-link.call-prize:hover {
 .info-label {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
-  color: var(--text-body);
+  color: var(--text);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -636,7 +636,7 @@ a.meta-tag-link.call-prize:hover {
 .info-value {
   font-size: 20px;
   font-family: 'Source Serif 4', serif;
-  color: var(--text-body);
+  color: var(--text);
   text-align: right;
   overflow-wrap: break-word;
   max-width: 60%;
@@ -644,7 +644,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .call-detail-info a {
-  color: var(--text-body);
+  color: var(--text);
   text-decoration: none;
 }
 
