@@ -186,7 +186,12 @@ function generatePage(call, cssVersion) {
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 
       <div class="call-detail-info" id="detailInfo"></div>
-
+${call.jury && call.jury.length ? `
+      <div class="call-detail-jury">
+        <h2 class="jury-heading">Jury</h2>
+        <ul class="jury-names">${call.jury.map(j => `<li>${escapeHtml(j)}</li>`).join('')}</ul>
+      </div>
+` : ''}
       <div class="call-detail-actions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
       </div>
@@ -204,7 +209,7 @@ function generatePage(call, cssVersion) {
     const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
     const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
     const CURRENT_DEADLINE = '${call.deadline}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [] })};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', images: call.images || '' })};
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>
