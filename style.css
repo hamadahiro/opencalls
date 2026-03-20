@@ -429,10 +429,15 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
+  .call-detail-actions {
+    flex-direction: column;
+  }
+
   .call-detail-apply,
   .call-detail-calendar {
-    flex: 1;
+    width: 100%;
     text-align: center;
+    box-sizing: border-box;
   }
 
 
