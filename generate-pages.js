@@ -188,7 +188,7 @@ function generatePage(call, cssVersion) {
       <div class="call-detail-info" id="detailInfo"></div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
-        <p class="call-detail-description"><strong>Jury:</strong> ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
+        <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
       </div>
 ` : ''}
       <div class="call-detail-actions">
