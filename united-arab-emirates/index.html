@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in the United Arab Emirates 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Arab Emirates. Browse and apply today.">
-  <meta name="keywords" content="open calls the United Arab Emirates, call for entries the United Arab Emirates, photography opportunities the United Arab Emirates, art exhibitions the United Arab Emirates, photography grants the United Arab Emirates, artist residency the United Arab Emirates">
+  <title>Open Calls for Artists in United Arab Emirates 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Arab Emirates. Browse and apply today.">
+  <meta name="keywords" content="open calls United Arab Emirates, call for entries United Arab Emirates, photography opportunities United Arab Emirates, art exhibitions United Arab Emirates, photography grants United Arab Emirates, artist residency United Arab Emirates">
   <link rel="canonical" href="https://opencalls.monographica.com/united-arab-emirates">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in the United Arab Emirates 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Arab Emirates. Browse and apply today.">
+  <meta property="og:title" content="Open Calls for Artists in United Arab Emirates 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Arab Emirates. Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/united-arab-emirates">
   <meta property="og:type" content="website">
@@ -27,8 +27,8 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in the United Arab Emirates 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Arab Emirates. Browse and apply today.",
+  "name": "Open Calls for Artists in United Arab Emirates 2026",
+  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Arab Emirates. Browse and apply today.",
   "url": "https://opencalls.monographica.com/united-arab-emirates",
   "publisher": {
     "@type": "Organization",
@@ -58,8 +58,8 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations">Locations</a></nav>
-      <h1>Open Calls for Artists in the United Arab Emirates</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the United Arab Emirates. Browse and apply today.</h2>
+      <h1>Open Calls for Artists in United Arab Emirates</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Arab Emirates. Browse and apply today.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -76,7 +76,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'UAE').map(processCall);
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'United Arab Emirates').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
 
     }

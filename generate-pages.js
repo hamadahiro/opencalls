@@ -2,6 +2,25 @@ const fs = require('fs');
 const path = require('path');
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+
+// Validate data before generating
+const COUNTRY_ALIASES = { 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'US': 'United States' };
+let hasErrors = false;
+data.calls.forEach((c, i) => {
+  const loc = c.location || '';
+  const country = loc.split(',').pop().trim();
+  if (COUNTRY_ALIASES[country]) {
+    console.error(`ERROR: Call "${c.title}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
+    hasErrors = true;
+  }
+  (c.eligibility || []).forEach(e => {
+    if (e.length > 30 || /[^a-z0-9-]/.test(e)) {
+      console.error(`ERROR: Call "${c.title}" has invalid eligibility tag: "${e}"`);
+      hasErrors = true;
+    }
+  });
+});
+if (hasErrors) { console.error('Fix errors above before generating.'); process.exit(1); }
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
