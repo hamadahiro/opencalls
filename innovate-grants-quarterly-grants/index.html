@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://innovateartistgrants.org/apply" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'innovate-grants-quarterly-grants';
-    const CURRENT_CALL = {"prize":"$1,800","category":"grant","org":"Innovate Artist Grants","location":"Online","fee":"$35","deadline":"Continuous","instagram":"@innovategrant","eligibility":[],"jury":[],"submitVia":"Paperform","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"$1,800","category":"grant","org":"Innovate Artist Grants","location":"Online","fee":"$35","deadline":"Continuous","instagram":"@innovategrant","eligibility":[],"jury":[],"submitVia":"Paperform","images":"3–10 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = 'Continuous'.replace(/-/g, '');
+      var t = 'Innovate Grants - Quarterly Grants';
+      var u = 'https://innovateartistgrants.org/apply';
+      var o = 'Innovate Artist Grants';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

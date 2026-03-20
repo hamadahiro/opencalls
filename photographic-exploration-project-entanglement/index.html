@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.pep.photography/calls" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'photographic-exploration-project-entanglement';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"PEP Photography","location":"Berlin, Germany","fee":"Check website","deadline":"2026-03-27","instagram":"@photographicexplorationproject","eligibility":[],"jury":["Rüdiger Lange, Artistic Director, Loop – Raum für aktuelle Kunst","Bénédicte Blondeau, Founder & Curator, PEP"],"submitVia":"JotForm","requirements":"1–10 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"PEP Photography","location":"Berlin, Germany","fee":"Check website","deadline":"2026-03-27","instagram":"@photographicexplorationproject","eligibility":[],"jury":["Rüdiger Lange, Artistic Director, Loop – Raum für aktuelle Kunst","Bénédicte Blondeau, Founder & Curator, PEP"],"submitVia":"JotForm","images":"1–10 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-27'.replace(/-/g, '');
+      var t = 'Photographic Exploration Project: ENTANGLEMENT';
+      var u = 'https://www.pep.photography/calls';
+      var o = 'PEP Photography';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

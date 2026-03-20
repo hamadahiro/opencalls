@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://artyrat.com/opencall/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'arty-rat-magazine-open-call';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Arty Rat","location":"Vienna, Austria","fee":"Free to submit","deadline":"2026-04-01","instagram":"@artyratjournal","eligibility":[],"jury":[],"submitVia":"Website form","requirements":"Up to 6 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Arty Rat","location":"Vienna, Austria","fee":"Free to submit","deadline":"2026-04-01","instagram":"@artyratjournal","eligibility":[],"jury":[],"submitVia":"Website form","images":"Up to 6 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-01'.replace(/-/g, '');
+      var t = 'Arty Rat Magazine Open Call';
+      var u = 'https://artyrat.com/opencall/';
+      var o = 'Arty Rat';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

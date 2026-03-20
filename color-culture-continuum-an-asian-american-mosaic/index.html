@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://asianamericanmuseumoc.org/event/mosaic/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'color-culture-continuum-an-asian-american-mosaic';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"Asian American Museum of Orange County","location":"Orange County, CA, USA","fee":"$30","deadline":"2026-03-31","instagram":"","eligibility":["asian-american"],"jury":["Kim Chapin, Executive Director of Photography, LA Times","Gong Cheng, Sports Photojournalist","Hiroshi Watanabe, Photographer"],"submitVia":"SmarterEntry","requirements":"Up to 3 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"Asian American Museum of Orange County","location":"Orange County, CA, USA","fee":"$30","deadline":"2026-03-31","instagram":"","eligibility":["asian-american"],"jury":["Kim Chapin, Executive Director of Photography, LA Times","Gong Cheng, Sports Photojournalist","Hiroshi Watanabe, Photographer"],"submitVia":"SmarterEntry","images":"Up to 3 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-31'.replace(/-/g, '');
+      var t = 'Color, Culture, Continuum – An Asian American Mosaic';
+      var u = 'https://asianamericanmuseumoc.org/event/mosaic/';
+      var o = 'Asian American Museum of Orange County';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

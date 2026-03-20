@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://asmithgallery.com/photographic-performance-call-for-entry/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'photographic-performance-2026';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"A Smith Gallery","location":"Johnson City, TX, USA","fee":"$75","deadline":"2026-05-18","instagram":"","eligibility":[],"jury":["Amanda Smith, Founder & Co-Director","Kevin Tully, Co-Director"],"submitVia":"Website form","requirements":"12–20 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"A Smith Gallery","location":"Johnson City, TX, USA","fee":"$75","deadline":"2026-05-18","instagram":"","eligibility":[],"jury":["Amanda Smith, Founder & Co-Director","Kevin Tully, Co-Director"],"submitVia":"Website form","images":"12–20 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-05-18'.replace(/-/g, '');
+      var t = 'Photographic Performance 2026';
+      var u = 'https://asmithgallery.com/photographic-performance-call-for-entry/';
+      var o = 'A Smith Gallery';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://grain.mk/opencall/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'zrno-festival-2026-open-call';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"ZRNO Festival","location":"Skopje, North Macedonia","fee":"Free","deadline":"2026-03-31","instagram":"@zrnofestival","eligibility":[],"jury":["Anne-Mette S. Sommer-Kelter, Polaroid Photographer","Drago Vejnovic, Professor, Academy of Arts Banja Luka","Eva Schlogl, Visual Artist & Architect","Pep Minguez, Director, Revela'T Festival","Ivana Brezovac, Professor, Academy of Arts Novi Sad","Natasa Takac, Visual & Media Artist","Florian Kopr, Photographer & Printmaker","Sasho Alushevski, Alternative Photographer"],"submitVia":"Email","requirements":"Up to 4 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"ZRNO Festival","location":"Skopje, North Macedonia","fee":"Free","deadline":"2026-03-31","instagram":"@zrnofestival","eligibility":[],"jury":["Anne-Mette S. Sommer-Kelter, Polaroid Photographer","Drago Vejnovic, Professor, Academy of Arts Banja Luka","Eva Schlogl, Visual Artist & Architect","Pep Minguez, Director, Revela'T Festival","Ivana Brezovac, Professor, Academy of Arts Novi Sad","Natasa Takac, Visual & Media Artist","Florian Kopr, Photographer & Printmaker","Sasho Alushevski, Alternative Photographer"],"submitVia":"Email","images":"Up to 4 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-31'.replace(/-/g, '');
+      var t = 'ZRNO Festival 2026 — Open Call';
+      var u = 'https://grain.mk/opencall/';
+      var o = 'ZRNO Festival';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

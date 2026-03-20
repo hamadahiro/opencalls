@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.midwestnice.art/opencalls/thisplaceisstrange" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'this-place-is-strange';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"midwest nice art","location":"Online","fee":"$5","deadline":"2026-03-20","instagram":"@midwestniceart","eligibility":[],"jury":["Morgan Laurens, Arts writer & Founder, Goblin Market"],"submitVia":"Google Form","requirements":"Up to 3 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"midwest nice art","location":"Online","fee":"$5","deadline":"2026-03-20","instagram":"@midwestniceart","eligibility":[],"jury":["Morgan Laurens, Arts writer & Founder, Goblin Market"],"submitVia":"Google Form","images":"Up to 3 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-20'.replace(/-/g, '');
+      var t = 'this place is strange';
+      var u = 'https://www.midwestnice.art/opencalls/thisplaceisstrange';
+      var o = 'midwest nice art';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

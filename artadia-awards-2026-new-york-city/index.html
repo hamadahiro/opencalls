@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://artadia.org/awards/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'artadia-awards-2026-new-york-city';
-    const CURRENT_CALL = {"prize":"$15,000","category":"grant","org":"Artadia","location":"New York, NY, USA","fee":"Free","deadline":"2026-04-01","instagram":"@artadia","eligibility":["united-states"],"jury":[],"submitVia":"","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"$15,000","category":"grant","org":"Artadia","location":"New York, NY, USA","fee":"Free","deadline":"2026-04-01","instagram":"@artadia","eligibility":["united-states"],"jury":[],"submitVia":"","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-01'.replace(/-/g, '');
+      var t = 'Artadia Awards 2026 — New York City';
+      var u = 'https://artadia.org/awards/';
+      var o = 'Artadia';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

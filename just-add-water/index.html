@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://art-fluent.com/calls-for-art/just-add-water-prospectus/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'just-add-water';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Art Fluent","location":"Boston, MA, USA","fee":"$25","deadline":"2026-06-05","instagram":"","eligibility":[],"jury":["Amy Matteson Neill, Creative Director"],"submitVia":"CaFE","requirements":"20 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Art Fluent","location":"Boston, MA, USA","fee":"$25","deadline":"2026-06-05","instagram":"","eligibility":[],"jury":["Amy Matteson Neill, Creative Director"],"submitVia":"CaFE","images":"20 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-06-05'.replace(/-/g, '');
+      var t = 'JUST ADD WATER';
+      var u = 'https://art-fluent.com/calls-for-art/just-add-water-prospectus/';
+      var o = 'Art Fluent';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

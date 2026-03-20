@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://meitar.photoisrael.org/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'meitar-award-for-excellence-in-photography-2026';
-    const CURRENT_CALL = {"prize":"$14,000","category":"photography","org":"PHOTO IS:RAEL","location":"Tel Aviv, Israel","fee":"$35–$45","deadline":"2026-04-12","instagram":"@i_photography_festival","eligibility":[],"jury":["Roger Ballen, Photographer & Artist","Laura Letinsky, Professor, University of Chicago","Anne Leighton Massoni, Director, Houston Center for Photography","Michael Benson, Co-Founder, PHOTO LONDON","Dr. Gilad Reich, Curator of Photography, The Israel Museum"],"submitVia":"Website form","requirements":"6–12 images","ai":""};
+    const CURRENT_CALL = {"prize":"$14,000","category":"photography","org":"PHOTO IS:RAEL","location":"Tel Aviv, Israel","fee":"$35–$45","deadline":"2026-04-12","instagram":"@i_photography_festival","eligibility":[],"jury":["Roger Ballen, Photographer & Artist","Laura Letinsky, Professor, University of Chicago","Anne Leighton Massoni, Director, Houston Center for Photography","Michael Benson, Co-Founder, PHOTO LONDON","Dr. Gilad Reich, Curator of Photography, The Israel Museum"],"submitVia":"Website form","images":"6–12 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-12'.replace(/-/g, '');
+      var t = 'Meitar Award for Excellence in Photography 2026';
+      var u = 'https://meitar.photoisrael.org/';
+      var o = 'PHOTO IS:RAEL';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

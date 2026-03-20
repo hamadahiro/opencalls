@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://form.jotform.com/260464559982168" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'diane-dammeyer-fellowship-in-photographic-arts-and-social-awareness-2026-27';
-    const CURRENT_CALL = {"prize":"Fellowship + exhibition","category":"grant","org":"Museum of Contemporary Photography at Columbia","location":"Chicago, IL, USA","fee":"Free","deadline":"2026-06-12","instagram":"@mocpchi","eligibility":["professional"],"jury":[],"submitVia":"","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"Fellowship + exhibition","category":"grant","org":"Museum of Contemporary Photography at Columbia","location":"Chicago, IL, USA","fee":"Free","deadline":"2026-06-12","instagram":"@mocpchi","eligibility":["professional"],"jury":[],"submitVia":"","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-06-12'.replace(/-/g, '');
+      var t = 'Diane Dammeyer Fellowship in Photographic Arts and Social Awareness 2026/27';
+      var u = 'https://form.jotform.com/260464559982168';
+      var o = 'Museum of Contemporary Photography at Columbia';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

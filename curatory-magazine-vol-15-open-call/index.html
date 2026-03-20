@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.curatorymagazine.com/artist-submission" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'curatory-magazine-vol-15-open-call';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Curatory Magazine","location":"Online","fee":"Check website","deadline":"2026-03-20","instagram":"@curatory.magazine","eligibility":[],"jury":[],"submitVia":"Website form","requirements":"Up to 6 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Curatory Magazine","location":"Online","fee":"Check website","deadline":"2026-03-20","instagram":"@curatory.magazine","eligibility":[],"jury":[],"submitVia":"Website form","images":"6 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-20'.replace(/-/g, '');
+      var t = 'Curatory Magazine Vol. 15 — Open Call';
+      var u = 'https://www.curatorymagazine.com/artist-submission';
+      var o = 'Curatory Magazine';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

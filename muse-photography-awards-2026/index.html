@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://musephotographyawards.com/photography-awards.php" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'muse-photography-awards-2026';
-    const CURRENT_CALL = {"prize":"$3,000","category":"photography","org":"International Awards Associate","location":"Online","fee":"$18–$50","deadline":"2026-03-26","instagram":"@musephotographyawards","eligibility":[],"jury":[],"submitVia":"Website form","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"$3,000","category":"photography","org":"International Awards Associate","location":"Online","fee":"$18–$50","deadline":"2026-03-26","instagram":"@musephotographyawards","eligibility":[],"jury":[],"submitVia":"Website form","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-26'.replace(/-/g, '');
+      var t = 'MUSE Photography Awards 2026';
+      var u = 'https://musephotographyawards.com/photography-awards.php';
+      var o = 'International Awards Associate';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

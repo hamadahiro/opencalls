@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.thespiderawards.com/how-to-enter.php" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'black-white-spider-awards-2026';
-    const CURRENT_CALL = {"prize":"$5,000","category":"photography","org":"Black & White Spider Awards","location":"Online","fee":"$30–$35","deadline":"2026-04-24","instagram":"@spiderawards","eligibility":[],"jury":["Kelly Sidley, Head of Photographs, Bonhams","Jessica Baxter, Assistant Curator, Tate Modern","Sarah Kennel, Curator of Photography, VMFA","Sara Rizzo, Curator of Photography, MUDEC Milan"],"submitVia":"Website form","requirements":"Unlimited images","ai":"Not accepted"};
+    const CURRENT_CALL = {"prize":"$5,000","category":"photography","org":"Black & White Spider Awards","location":"Online","fee":"$30–$35","deadline":"2026-04-24","instagram":"@spiderawards","eligibility":[],"jury":["Kelly Sidley, Head of Photographs, Bonhams","Jessica Baxter, Assistant Curator, Tate Modern","Sarah Kennel, Curator of Photography, VMFA","Sara Rizzo, Curator of Photography, MUDEC Milan"],"submitVia":"Website form","images":"Unlimited images","ai":"Not accepted"};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-24'.replace(/-/g, '');
+      var t = 'Black &amp; White Spider Awards 2026';
+      var u = 'https://www.thespiderawards.com/how-to-enter.php';
+      var o = 'Black & White Spider Awards';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

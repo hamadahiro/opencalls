@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://site.picter.com/klphotoawards-2026" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'a-stranger-s-face-travel-portraits-klpa';
-    const CURRENT_CALL = {"prize":"€2,000/€1,000/€500","category":"photography","org":"Kuala Lumpur Photo Awards","location":"Kuala Lumpur, Malaysia","fee":"€15-65","deadline":"2026-03-31","instagram":"@klphotoawards","eligibility":[],"jury":["Aisha Nazar, Picture Editor, National Geographic Traveller UK","Michelle Sank, Documentary Photographer","Ivan Gabriel, Curator & Arts Practitioner","Ng Hui Hsien, Artist & Curator","She Escobar, Photographer"],"submitVia":"Picter","requirements":"Up to 10 images","ai":"Not accepted"};
+    const CURRENT_CALL = {"prize":"€2,000/€1,000/€500","category":"photography","org":"Kuala Lumpur Photo Awards","location":"Kuala Lumpur, Malaysia","fee":"€15-65","deadline":"2026-03-31","instagram":"@klphotoawards","eligibility":[],"jury":["Aisha Nazar, Picture Editor, National Geographic Traveller UK","Michelle Sank, Documentary Photographer","Ivan Gabriel, Curator & Arts Practitioner","Ng Hui Hsien, Artist & Curator","She Escobar, Photographer"],"submitVia":"Picter","images":"10 images","ai":"Not accepted"};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-31'.replace(/-/g, '');
+      var t = 'A Stranger's Face: Travel Portraits (KLPA)';
+      var u = 'https://site.picter.com/klphotoawards-2026';
+      var o = 'Kuala Lumpur Photo Awards';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

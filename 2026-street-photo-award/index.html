@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://independent-photo.com/submit/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = '2026-street-photo-award';
-    const CURRENT_CALL = {"prize":"$2,700","category":"photography","org":"The Independent Photographer","location":"Online","fee":"$15–$40","deadline":"2026-03-31","instagram":"@the.independent.photographer","eligibility":[],"jury":["Gulnara Samoilova, Photographer"],"submitVia":"Website form","requirements":"1, 3, or 6 images","ai":""};
+    const CURRENT_CALL = {"prize":"$2,700","category":"photography","org":"The Independent Photographer","location":"Online","fee":"$15–$40","deadline":"2026-03-31","instagram":"@the.independent.photographer","eligibility":[],"jury":["Gulnara Samoilova, Photographer"],"submitVia":"Website form","images":"1, 3, or 6 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-31'.replace(/-/g, '');
+      var t = '2026 Street Photo Award';
+      var u = 'https://independent-photo.com/submit/';
+      var o = 'The Independent Photographer';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

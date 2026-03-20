@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://exposureoneawards.com/contests/one-shot-photo-contest" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'exposure-one-awards-one-shot-photo-contest';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"Exposure One","location":"Online","fee":"$25–$50","deadline":"2026-05-03","instagram":"","eligibility":[],"jury":["Beatrice Tamagnini, Vogue","Lindsey Sharman, Art Gallery of Alberta","Shana Lopes, SFMOMA","Susan Ciccotti, Aperture","Paris Chong, Leica Gallery LA"],"submitVia":"Exposure One Awards","requirements":"1–5 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"Exposure One","location":"Online","fee":"$25–$50","deadline":"2026-05-03","instagram":"","eligibility":[],"jury":["Beatrice Tamagnini, Vogue","Lindsey Sharman, Art Gallery of Alberta","Shana Lopes, SFMOMA","Susan Ciccotti, Aperture","Paris Chong, Leica Gallery LA"],"submitVia":"Exposure One Awards","images":"1–5 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-05-03'.replace(/-/g, '');
+      var t = 'Exposure One Awards - One Shot Photo Contest';
+      var u = 'https://exposureoneawards.com/contests/one-shot-photo-contest';
+      var o = 'Exposure One';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

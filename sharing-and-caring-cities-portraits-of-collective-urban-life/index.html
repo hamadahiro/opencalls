@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://penniur.upenn.edu/media/photography-contest/2026-photography-contest-sharing-and-caring-cities" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'sharing-and-caring-cities-portraits-of-collective-urban-life';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"Penn Institute for Urban Research","location":"Philadelphia, PA, USA","fee":"Free","deadline":"2026-04-15","instagram":"","eligibility":[],"jury":["Nikhil Anand, Professor of Anthropology, Penn","Amy Hillier, Associate Professor, Penn","Matthew Neff, Director, Undergraduate Fine Arts, Weitzman School","Jennifer Whittaker, Research Scientist, CHOP Policy Lab"],"submitVia":"Website form","requirements":"3 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"Penn Institute for Urban Research","location":"Philadelphia, PA, USA","fee":"Free","deadline":"2026-04-15","instagram":"","eligibility":[],"jury":["Nikhil Anand, Professor of Anthropology, Penn","Amy Hillier, Associate Professor, Penn","Matthew Neff, Director, Undergraduate Fine Arts, Weitzman School","Jennifer Whittaker, Research Scientist, CHOP Policy Lab"],"submitVia":"Website form","images":"3 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-15'.replace(/-/g, '');
+      var t = 'Sharing and Caring Cities: Portraits of Collective Urban Life';
+      var u = 'https://penniur.upenn.edu/media/photography-contest/2026-photography-contest-sharing-and-caring-cities';
+      var o = 'Penn Institute for Urban Research';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>
