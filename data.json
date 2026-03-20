@@ -1694,12 +1694,12 @@
       "eligibility": []
     },
     {
-      "title": "The Hand Magazine - Quarterly Submissions",
+      "title": "The Hand Magazine - Issue #53 Summer 2026",
       "org": "The Hand Magazine",
-      "deadline": "2026-08-31",
-      "fee": "$15–$30 (subscription)",
+      "deadline": "2026-05-30",
+      "fee": "$15–$30 (subscription required)",
       "category": "zine",
-      "description": "International publication focused on photographic printmaking and hand-printed work. Ideal for alternative process artists.",
+      "description": "Submit up to 5 images for Issue #53 of this international publication focused on photographic printmaking and hand-printed work. No theme — variety wanted. Must be a subscriber to submit. Ideal for alternative process artists.",
       "url": "https://www.thehandmagazine.space/subscribe",
       "instagram": "@thehandmagazine",
       "location": "Online",
@@ -2974,6 +2974,32 @@
       "instagram": "@creaturamagazine",
       "location": "Online",
       "prize": "Publication in print edition",
+      "eligibility": []
+    },
+    {
+      "title": "F-Stop Magazine Issue #137 — Open Theme",
+      "org": "F-Stop Magazine",
+      "deadline": "2026-05-15",
+      "fee": "Free",
+      "category": "photography",
+      "description": "No theme — all fine art and documentary photography welcome. Submit up to 12 photographs. One submission per person per issue. Featured artist selected from submissions. Published since 2004.",
+      "url": "https://www.fstopmagazine.com/submissions.html",
+      "instagram": "@fstopmagazine",
+      "location": "Online",
+      "prize": "",
+      "eligibility": []
+    },
+    {
+      "title": "Photo Trouvée Virtual Artist Residency — Spring 2026",
+      "org": "Photo Trouvée Magazine",
+      "deadline": "2026-04-08",
+      "fee": "$650",
+      "category": "residency",
+      "description": "10-week virtual residency (April 24 – June 26, 2026) for artists who work with or are inspired by found/family photographs. Weekly Zoom calls, bio/statement workshops, artist talks, group feedback, accountability groups. Only 9 artists selected. Partial scholarships available.",
+      "url": "https://www.phototrouveemagazine.com/photo-trouve-virtual-residency-info",
+      "instagram": "@phototrouveemagazine",
+      "location": "Online",
+      "prize": "",
       "eligibility": []
     }
   ]
