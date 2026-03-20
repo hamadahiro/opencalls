@@ -11,7 +11,7 @@
   --border: #ddd;
   --btn-bg: #111;
   --btn-text: #fff;
-  --dots: #111;
+  --dots: var(--text);
   --bg-image: url('bg.jpg');
 }
 
@@ -28,7 +28,7 @@
     --border: #333;
     --btn-bg: #d4d4d4;
     --btn-text: #1a1a1a;
-    --dots: #777;
+    --dots: var(--text);
     --bg-image: none;
   }
 
