@@ -122,36 +122,18 @@ const orgPages = Object.keys(orgCounts).map(o => slugify(o));
 
 function buildJsonLd(call, slug) {
   const pageUrl = `${SITE}/${slugify(call.title)}/`;
-  const deadline = call.deadline !== 'Continuous' ? call.deadline : null;
   const ld = {
     "@context": "https://schema.org",
-    "@type": "Event",
+    "@type": "WebPage",
     "name": call.title,
     "description": call.description,
     "url": pageUrl,
-    "image": `${SITE}/og-image.png`,
-    "startDate": deadline || `${YEAR}-01-01`,
-    "endDate": deadline || `${YEAR}-12-31`,
-    "eventStatus": "https://schema.org/EventScheduledOnline",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": call.url
-    },
-    "organizer": {
+    "publisher": {
       "@type": "Organization",
-      "name": call.org,
-      "url": call.url
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": call.fee === 'Free' ? "0" : "",
-      "priceCurrency": "USD",
-      "url": call.url,
-      "availability": "https://schema.org/InStock"
+      "name": "Monographica",
+      "url": "https://monographica.com"
     }
   };
-  if (call.fee === 'Free') ld.isAccessibleForFree = true;
   return JSON.stringify(ld, null, 2);
 }
 
