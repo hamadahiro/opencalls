@@ -1,11 +1,6 @@
 // Render detail page meta tags and info grid from CURRENT_CALL
 (function() {
   if (typeof CURRENT_CALL === 'undefined') return;
-  const processed = processCall(CURRENT_CALL);
-
-  const meta = document.getElementById('detailMeta');
-  if (meta) meta.innerHTML = renderTags(processed);
-
   const info = document.getElementById('detailInfo');
   if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
 })();
@@ -66,8 +61,8 @@ function scoreSimilarity(current, other) {
 
   // Deadline proximity (within 30 days): +1
   if (current.deadline !== 'Continuous' && other.deadline !== 'Continuous') {
-    const curDate = new Date(current.deadline);
-    const othDate = new Date(other.deadline);
+    const curDate = new Date(current.deadline + 'T00:00:00');
+    const othDate = new Date(other.deadline + 'T00:00:00');
     const diff = Math.abs(curDate - othDate) / (1000 * 60 * 60 * 24);
     if (diff <= 30) score += 1;
   }
@@ -85,7 +80,7 @@ async function loadSimilar() {
   const now = new Date();
   const candidates = data.calls
     .filter(c => slugify(c.title) !== CURRENT_SLUG)
-    .filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now);
+    .filter(c => c.deadline === 'Continuous' || new Date(c.deadline + 'T23:59:59') >= now);
 
   const scored = candidates.map(c => ({
     call: c,

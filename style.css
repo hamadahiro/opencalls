@@ -393,7 +393,7 @@ a.meta-tag-link.call-prize:hover {
 
   .search-bar {
     font-size: 16px;
-    padding: 12px 16px;
+    padding: 12px 44px 12px 16px;
   }
 
   .header-inner {
@@ -508,12 +508,6 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-jury {
   margin-top: 32px;
-}
-
-.jury-names {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .call-detail-actions {

@@ -113,15 +113,13 @@ data.calls.forEach(call => {
     countryCounts[country] = (countryCounts[country] || 0) + 1;
   }
 });
-const countryPages = Object.keys(countryCounts).map(c => slugify(c));
 
 // Compute orgs for landing pages
 const orgCounts = {};
 data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 1; });
-const orgPages = Object.keys(orgCounts).map(o => slugify(o));
 
-function buildJsonLd(call, slug) {
-  const pageUrl = `${SITE}/${slugify(call.title)}/`;
+function buildJsonLd(call) {
+  const pageUrl = `${SITE}/${slugify(call.title)}`;
   const ld = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -166,7 +164,7 @@ function generatePage(call, cssVersion) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
-  ${buildJsonLd(call, slug)}
+  ${buildJsonLd(call)}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,9 +203,6 @@ ${call.jury && call.jury.length ? `
 
   <script>
     const CURRENT_SLUG = '${slug}';
-    const CURRENT_ORG = '${call.org.replace(/'/g, "\\'")}';
-    const CURRENT_COUNTRY = '${country.replace(/'/g, "\\'")}';
-    const CURRENT_DEADLINE = '${call.deadline}';
     const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', requirements: call.requirements || '', ai: call.ai || '' })};
   </script>
   <script src="/cards.js"></script>
