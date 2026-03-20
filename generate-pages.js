@@ -153,7 +153,7 @@ function generatePage(call, cssVersion) {
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${escapeHtml(call.title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${desc}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -273,7 +273,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${info.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -362,7 +362,7 @@ filterPages.forEach(fp => {
   <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
   <link rel="canonical" href="${SITE}/${fp.slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${fp.title} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(fp.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -463,7 +463,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   <meta name="description" content="${escapeHtml(info.desc)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(info.desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -560,7 +560,7 @@ if (eligibilityPageSlugs.length) {
   <meta name="description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
   <link rel="canonical" href="${SITE}/eligibility">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -633,7 +633,7 @@ Object.entries(countryCounts)
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -757,7 +757,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -841,7 +841,7 @@ Object.entries(orgCounts)
   <meta name="keywords" content="${escapeHtml(keywords)}">
   <link rel="canonical" href="${SITE}/${slug}">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="${escapeHtml(title)}${TITLE_SUFFIX}">
   <meta property="og:description" content="${escapeHtml(desc)}">
   <meta property="og:image" content="${SITE}/og-image.jpg">
@@ -983,7 +983,7 @@ const browseHtml = `<!DOCTYPE html>
   <meta name="keywords" content="open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}">
   <link rel="canonical" href="${SITE}/browse">
   <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Browse All Open Calls ${YEAR}${TITLE_SUFFIX}">
   <meta property="og:description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization.">
   <meta property="og:image" content="${SITE}/og-image.jpg">
