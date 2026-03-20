@@ -713,3 +713,148 @@ a.meta-tag-link.call-prize:hover {
     display: inline-flex;
   }
 }
+
+/* === Dark Mode === */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-image: none;
+    background-color: #1a1a1a;
+  }
+
+  body {
+    color: #d4d4d4;
+  }
+
+  body::before {
+    background-image: none !important;
+    background-color: #1a1a1a;
+  }
+
+  a {
+    color: #d4d4d4;
+  }
+
+  .logo {
+    color: #d4d4d4;
+  }
+
+  .search-bar {
+    background: #2a2a2a;
+    color: #d4d4d4;
+    box-shadow: none;
+  }
+
+  .search-bar::placeholder {
+    color: #777;
+  }
+
+  .filter-btn {
+    background: #2a2a2a;
+    color: #d4d4d4;
+  }
+
+  .filter-btn.active {
+    background: #d4d4d4;
+    color: #1a1a1a;
+  }
+
+  .filter-btn:hover {
+    background: #333;
+  }
+
+  .call-card {
+    border-bottom-color: #333;
+  }
+
+  .meta-tag {
+    background: #2a2a2a;
+    color: #d4d4d4;
+  }
+
+  a.meta-tag-link:hover {
+    background: #3a3a3a;
+  }
+
+  .meta-tag.call-prize {
+    background: #d4d4d4;
+    color: #1a1a1a;
+  }
+
+  a.meta-tag-link.call-prize:hover {
+    background: #bbb;
+  }
+
+  .meta-tag.ending {
+    background: #B6332F;
+    color: white;
+  }
+
+  .meta-tag.closed {
+    background: #444;
+    color: #999;
+  }
+
+  .info-label,
+  .info-value {
+    color: #d4d4d4;
+  }
+
+  .info-dots::before {
+    color: #555;
+  }
+
+  .call-detail-info a {
+    color: #d4d4d4;
+  }
+
+  .call-detail-btn.call-detail-apply {
+    background: #d4d4d4;
+    color: #1a1a1a;
+  }
+
+  .call-detail-btn.call-detail-calendar {
+    color: #d4d4d4;
+    border-color: #d4d4d4;
+  }
+
+  .section-header {
+    color: #d4d4d4;
+  }
+
+  .subtitle {
+    color: #999;
+  }
+
+  .empty-state {
+    color: #777;
+  }
+
+  .breadcrumbs,
+  .breadcrumbs a {
+    color: #d4d4d4;
+  }
+
+  .call-detail-description {
+    color: #d4d4d4;
+  }
+
+  .index-item {
+    border-bottom-color: #333;
+  }
+
+  .index-item-name {
+    color: #d4d4d4;
+  }
+
+  .index-item-count {
+    color: #999;
+  }
+
+  footer {
+    color: #777;
+  }
+
+  footer a {
+    color: #999;
+  }
+}

@@ -150,7 +150,8 @@ function generatePage(call, cssVersion) {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${escapeHtml(call.title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${desc}">
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
@@ -288,7 +289,8 @@ Object.entries(categories).forEach(([cat, info]) => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${info.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
   <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
@@ -378,7 +380,8 @@ filterPages.forEach(fp => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${fp.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(fp.desc)}">
   <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
@@ -481,7 +484,8 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
   <link rel="canonical" href="${SITE}/${slug}">
@@ -579,7 +583,8 @@ if (eligibilityPageSlugs.length) {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
   <link rel="canonical" href="${SITE}/eligibility">
@@ -652,7 +657,8 @@ Object.entries(countryCounts)
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
@@ -777,7 +783,8 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
@@ -862,7 +869,8 @@ Object.entries(orgCounts)
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>${escapeHtml(title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
@@ -1005,7 +1013,8 @@ const browseHtml = `<!DOCTYPE html>
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <title>Browse All Open Calls ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.">
   <meta name="keywords" content="open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}">
