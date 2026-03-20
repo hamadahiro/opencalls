@@ -624,7 +624,7 @@ a.meta-tag-link.call-prize:hover {
   overflow: hidden;
   margin: 0 8px;
   min-width: 20px;
-  font-size: 20px;
+  font-size: 14px;
   color: var(--dots);
 }
 
@@ -755,7 +755,7 @@ a.meta-tag-link.call-prize:hover {
   .info-label,
   .info-value,
   .info-dots {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .index-item-name {
