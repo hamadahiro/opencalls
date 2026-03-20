@@ -210,7 +210,7 @@ function renderInfoGrid(call) {
   const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
   rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
   // Requirements
-  if (call.images) rows.push(infoRow('Requirements', infoVal(call.images)));
+  if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
   // AI policy
   if (call.ai) rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
