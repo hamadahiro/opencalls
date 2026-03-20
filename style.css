@@ -546,7 +546,10 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: none;
 }
 
-.call-detail-calendar {
+.call-detail-calendar,
+.call-detail-calendar:hover,
+.call-detail-calendar:active,
+.call-detail-calendar:visited {
   display: inline-block;
   background: none;
   color: #111;
