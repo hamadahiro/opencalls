@@ -211,6 +211,8 @@ function renderInfoGrid(call) {
   rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
   // Requirements
   if (call.images) rows.push(infoRow('Requirements', infoVal(call.images)));
+  // AI policy
+  if (call.ai) rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
   if (call.submitVia) rows.push(infoRow('Submit via', infoVal(call.submitVia)));
   // Instagram
