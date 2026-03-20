@@ -293,7 +293,8 @@
         "Giulia Ninotta, EXPOSED",
         "Karla Hiraldo Voleau, Photographer"
       ],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "images": "1 PDF"
     },
     {
       "title": "ZRNO Festival 2026 — Open Call",
@@ -493,7 +494,9 @@
       "location": "Arles, France",
       "prize": "",
       "eligibility": [],
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "images": "1 book",
+      "submitVia": "Post"
     },
     {
       "title": "Deloitte Photo Grant 2026",
@@ -533,7 +536,8 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "7 images",
-      "images": "7 images"
+      "images": "7 images",
+      "ai": "Not accepted"
     },
     {
       "title": "Lucie Foundation Photo Book Prize 2026",
@@ -1144,13 +1148,14 @@
       "category": "exhibition",
       "description": "International open call welcoming all forms of two-dimensional images, traditional and non-conventional media, and alternative photographic processes. Exhibition April 1 - May 1, 2026.",
       "url": "https://chateaugallery.com/call-for-entries/",
-      "instagram": "",
+      "instagram": "@chateau_gallery",
       "location": "Online",
       "prize": "",
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "Up to 3 images",
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "ai": "Not accepted"
     },
     {
       "title": "Bourse Laurent Troude 2026",
@@ -1176,7 +1181,7 @@
       "category": "exhibition",
       "description": "Explores time overlaps and memory through photography. Exhibition: April 18 - May 16, 2026 in Minneapolis, MN.",
       "url": "https://www.praxisphotocenter.org/x2-sub-4-10",
-      "instagram": "",
+      "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
       "prize": "",
       "eligibility": [],
@@ -1192,7 +1197,7 @@
       "category": "grant",
       "description": "Supporting Italian or Italy-based artists under 40. Five finalists exhibited in Milan; winner receives €3,000 acquisition prize with work entering permanent collection.",
       "url": "https://www.fondomalerba.org/premio",
-      "instagram": "",
+      "instagram": "@fmf_malerba",
       "location": "Milan, Italy",
       "prize": "€3,000",
       "eligibility": [
