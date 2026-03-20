@@ -95,7 +95,7 @@
         const fullName = stateNames[state] || state;
         html += '<a href="/united-states/' + slugify(fullName) + '" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
-          '<span class="index-item-dots"></span>' +
+          '<span class="dots"></span>' +
           '<span class="index-item-count">' + count + '</span></a>';
       });
       container.innerHTML = html;

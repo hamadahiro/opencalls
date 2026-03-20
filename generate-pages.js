@@ -567,7 +567,7 @@ function buildEligibilityIndexItems() {
       const count = eligibilityTags[tag];
       html += `      <a href="/eligibility/${tag}" class="index-item">
           <span class="index-item-name">${escapeHtml(info.short)}</span>
-          <span class="index-item-dots"></span>
+          <span class="dots"></span>
           <span class="index-item-count">${count}</span>
         </a>\n`;
     });
@@ -730,7 +730,7 @@ ${country === 'USA' ? `
         const fullName = stateNames[state] || state;
         html += '<a href="/united-states/' + slugify(fullName) + '" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
-          '<span class="index-item-dots"></span>' +
+          '<span class="dots"></span>' +
           '<span class="index-item-count">' + count + '</span></a>';
       });
       container.innerHTML = html;
@@ -953,7 +953,7 @@ function buildBrowseSection(heading, items, headingLink) {
   items.forEach(({ label, href, count }) => {
     html += `      <a href="${href}" class="index-item">
         <span class="index-item-name">${midTruncateHtml(label)}</span>
-        <span class="index-item-dots"></span>
+        <span class="dots"></span>
         <span class="index-item-count">${count}</span>
       </a>\n`;
   });

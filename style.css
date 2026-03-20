@@ -619,7 +619,7 @@ a.meta-tag-link.call-prize:hover {
   flex-shrink: 0;
 }
 
-.info-dots {
+.dots {
   flex: 1;
   overflow: hidden;
   margin: 0 8px;
@@ -628,7 +628,7 @@ a.meta-tag-link.call-prize:hover {
   color: var(--dots);
 }
 
-.info-dots::before {
+.dots::before {
   content: ' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
   white-space: nowrap;
 }
@@ -681,21 +681,6 @@ a.meta-tag-link.call-prize:hover {
   color: var(--text);
 }
 
-.index-item-dots {
-  flex: 1;
-  overflow: hidden;
-  margin: 0 8px;
-  min-width: 20px;
-  font-size: 20px;
-  font-family: 'Source Serif 4', serif;
-  color: var(--dots);
-  letter-spacing: 2px;
-}
-
-.index-item-dots::before {
-  content: ' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
-  white-space: nowrap;
-}
 
 .index-item-count {
   font-size: 20px;
@@ -753,8 +738,11 @@ a.meta-tag-link.call-prize:hover {
   }
 
   .info-label,
-  .info-value,
-  .info-dots {
+  .info-value {
+    font-size: 18px;
+  }
+
+  .dots {
     font-size: 12px;
   }
 
