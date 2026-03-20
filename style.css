@@ -537,6 +537,7 @@ a.meta-tag-link.call-prize:hover {
   padding: 12px 28px;
   font-family: helvetica, sans-serif;
   font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.3px;
   text-decoration: none;
   transition: opacity 0.15s ease;
