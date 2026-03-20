@@ -433,11 +433,9 @@ a.meta-tag-link.call-prize:hover {
     flex-direction: column;
   }
 
-  .call-detail-apply,
-  .call-detail-calendar {
+  .call-detail-btn {
     width: 100%;
-    text-align: center;
-    box-sizing: border-box;
+    font-size: 16px;
   }
 
 
@@ -524,52 +522,30 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-actions {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
   margin-top: 32px;
 }
 
+.call-detail-btn {
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  padding: 12px 28px;
+  text-decoration: none;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .call-detail-apply {
-  display: inline-block;
   background: #111;
   color: #fff;
-  padding: 12px 28px;
-  font-family: helvetica, sans-serif;
-  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-  transition: opacity 0.15s ease;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.call-detail-apply:hover {
-  opacity: 0.8;
-  text-decoration: none;
-}
-
-.call-detail-calendar,
-.call-detail-calendar:hover,
-.call-detail-calendar:active,
-.call-detail-calendar:visited {
-  display: inline-block;
+.call-detail-calendar {
   background: none;
   color: #111;
-  padding: 11px 27px;
-  font-family: helvetica, sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.3px;
-  text-decoration: none;
   border: 1px solid #111;
-  -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-  .call-detail-calendar:hover {
-    background: #111;
-    color: #fff;
-    text-decoration: none;
-  }
+  padding: 11px 27px;
 }
 
 .call-detail-info {

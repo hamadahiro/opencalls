@@ -193,8 +193,8 @@ ${call.jury && call.jury.length ? `
       </div>
 ` : ''}
       <div class="call-detail-actions">
-        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
-${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>` : ''}
+        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply">Go to submission &rarr;</a>
+${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>` : ''}
       </div>
     </section>
 
