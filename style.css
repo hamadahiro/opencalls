@@ -11,6 +11,7 @@
   --btn-bg: #111;
   --btn-text: #fff;
   --dots: #111;
+  --bg-image: url('bg.jpg');
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,15 +27,7 @@
     --btn-bg: #d4d4d4;
     --btn-text: #1a1a1a;
     --dots: #555;
-  }
-
-  html {
-    background-image: none;
-  }
-
-  body::before {
-    background-image: none !important;
-    background-color: var(--bg);
+    --bg-image: none;
   }
 
   .search-bar {
@@ -59,7 +52,7 @@
 }
 
 html {
-  background-image: url('bg.jpg');
+  background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
   background-position: top right;
@@ -423,7 +416,7 @@ a.meta-tag-link.call-prize:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('bg.jpg');
+    background-image: var(--bg-image);
     background-size: cover;
     background-position: top right;
     background-color: var(--bg);
