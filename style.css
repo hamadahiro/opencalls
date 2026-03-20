@@ -82,6 +82,10 @@ a:hover {
   text-decoration: underline;
 }
 
+a.call-detail-btn:hover {
+  text-decoration: none;
+}
+
 /* === Header === */
 header {
   padding: 30px 0;
