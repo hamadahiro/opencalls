@@ -8,10 +8,14 @@ const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility', 'browse'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
-// GA — single external file
+// Shared head snippets
+const THEME_LIGHT = '#f5f2ed';
+const THEME_DARK = '#151515';
 const GA_SNIPPET = `<script src="/analytics.js"></script>`;
 const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
+const THEME_META = `<meta name="theme-color" content="${THEME_LIGHT}" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="${THEME_DARK}" media="(prefers-color-scheme: dark)">`;
 
 // Shared header and footer
 function buildHeader(active) {
@@ -150,8 +154,7 @@ function generatePage(call, cssVersion) {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${escapeHtml(call.title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${desc}">
   <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
@@ -289,8 +292,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${info.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
   <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
@@ -380,8 +382,7 @@ filterPages.forEach(fp => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${fp.title} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(fp.desc)}">
   <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
@@ -484,8 +485,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(info.desc)}">
   <link rel="canonical" href="${SITE}/${slug}">
@@ -583,8 +583,7 @@ if (eligibilityPageSlugs.length) {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
   <link rel="canonical" href="${SITE}/eligibility">
@@ -657,8 +656,7 @@ Object.entries(countryCounts)
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
@@ -783,8 +781,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
@@ -869,8 +866,7 @@ Object.entries(orgCounts)
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>${escapeHtml(title)}${TITLE_SUFFIX}</title>
   <meta name="description" content="${escapeHtml(desc)}">
   <meta name="keywords" content="${escapeHtml(keywords)}">
@@ -1013,8 +1009,7 @@ const browseHtml = `<!DOCTYPE html>
   ${PRELOAD}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  ${THEME_META}
   <title>Browse All Open Calls ${YEAR}${TITLE_SUFFIX}</title>
   <meta name="description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.">
   <meta name="keywords" content="open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}">
