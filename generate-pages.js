@@ -8,14 +8,43 @@ const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility', 'browse'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
-// Shared head snippets
+// Shared head snippets — change once, applies everywhere
 const THEME_LIGHT = '#f5f2ed';
 const THEME_DARK = '#151515';
 const GA_SNIPPET = `<script src="/analytics.js"></script>`;
 const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
-const THEME_META = `<meta name="theme-color" content="${THEME_LIGHT}" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="${THEME_DARK}" media="(prefers-color-scheme: dark)">`;
+const ICONS = `<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
+const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">`;
+function HEAD(opts) {
+  const cssVersion = opts.cssVersion;
+  return `${GA_SNIPPET}
+  ${PRELOAD}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="${THEME_LIGHT}" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="${THEME_DARK}" media="(prefers-color-scheme: dark)">
+  <title>${opts.title}${TITLE_SUFFIX}</title>
+  <meta name="description" content="${opts.description}">
+  ${opts.keywords ? `<meta name="keywords" content="${opts.keywords}">` : ''}
+  <link rel="canonical" href="${opts.canonical}">
+  ${ICONS}
+  <meta property="og:title" content="${opts.title}${TITLE_SUFFIX}">
+  <meta property="og:description" content="${opts.description}">
+  <meta property="og:image" content="${SITE}/og-image.png">
+  <meta property="og:url" content="${opts.canonical}">
+  <meta property="og:type" content="${opts.ogType || 'website'}">
+  <meta property="og:site_name" content="Monographica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  ${opts.jsonLd ? `<script type="application/ld+json">\n  ${opts.jsonLd}\n  </script>` : ''}
+  ${FONTS}
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">`;
+}
 
 // Shared header and footer
 function buildHeader(active) {
@@ -150,33 +179,7 @@ function generatePage(call, cssVersion) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${escapeHtml(call.title)}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${desc}">
-  <meta name="keywords" content="${escapeHtml(buildKeywords(call))}">
-  <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${escapeHtml(call.title)}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${desc}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${slug}">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  ${buildJsonLd(call)}
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: escapeHtml(call.title), description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), cssVersion })}
 </head>
 <body>
 
@@ -288,40 +291,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${info.title} ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${escapeHtml(info.desc)}">
-  <meta name="keywords" content="${escapeHtml(info.keywords + ', ' + YEAR)}">
-  <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${info.title} ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${escapeHtml(info.desc)}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${slug}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "${jsonStr(info.title)} ${YEAR}",
-    "description": "${jsonStr(info.desc)}",
-    "url": "${SITE}/${slug}",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), keywords: escapeHtml(info.keywords + ', ' + YEAR), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -378,40 +348,7 @@ filterPages.forEach(fp => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${fp.title} ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${escapeHtml(fp.desc)}">
-  <meta name="keywords" content="${escapeHtml(fp.keywords)}, ${YEAR}">
-  <link rel="canonical" href="${SITE}/${fp.slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${fp.title} ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${escapeHtml(fp.desc)}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${fp.slug}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "${jsonStr(fp.title)} ${YEAR}",
-    "description": "${jsonStr(fp.desc)}",
-    "url": "${SITE}/${fp.slug}",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), keywords: `${escapeHtml(fp.keywords)}, ${YEAR}`, canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -481,39 +418,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${escapeHtml(info.desc)}">
-  <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${escapeHtml(info.title)} ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${escapeHtml(info.desc)}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${slug}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "${jsonStr(info.title)} ${YEAR}",
-    "description": "${jsonStr(info.desc)}",
-    "url": "${SITE}/${slug}",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -579,29 +484,7 @@ if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
-  <link rel="canonical" href="${SITE}/eligibility">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Eligibility ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/eligibility">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', canonical: `${SITE}/eligibility`, cssVersion })}
 </head>
 <body>
 
@@ -652,40 +535,7 @@ Object.entries(countryCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${escapeHtml(desc)}">
-  <meta name="keywords" content="${escapeHtml(keywords)}">
-  <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${escapeHtml(desc)}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${slug}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "${jsonStr(title)} ${YEAR}",
-    "description": "${jsonStr(desc)}",
-    "url": "${SITE}/${slug}",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -777,40 +627,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${escapeHtml(desc)}">
-  <meta name="keywords" content="${escapeHtml(keywords)}, ${YEAR}">
-  <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${escapeHtml(title)} ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${escapeHtml(desc)}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${slug}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "${jsonStr(title)} ${YEAR}",
-    "description": "${jsonStr(desc)}",
-    "url": "${SITE}/${slug}",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: `${escapeHtml(keywords)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -862,40 +679,7 @@ Object.entries(orgCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>${escapeHtml(title)}${TITLE_SUFFIX}</title>
-  <meta name="description" content="${escapeHtml(desc)}">
-  <meta name="keywords" content="${escapeHtml(keywords)}">
-  <link rel="canonical" href="${SITE}/${slug}">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="${escapeHtml(title)}${TITLE_SUFFIX}">
-  <meta property="og:description" content="${escapeHtml(desc)}">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/${slug}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "${jsonStr(org)} - Open Calls",
-    "description": "${jsonStr(desc)}",
-    "url": "${SITE}/${slug}",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -1005,40 +789,7 @@ const browseOrgs = Object.entries(orgCounts)
 const browseHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  ${THEME_META}
-  <title>Browse All Open Calls ${YEAR}${TITLE_SUFFIX}</title>
-  <meta name="description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.">
-  <meta name="keywords" content="open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}">
-  <link rel="canonical" href="${SITE}/browse">
-  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
-  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Browse All Open Calls ${YEAR}${TITLE_SUFFIX}">
-  <meta property="og:description" content="Browse open calls for photographers and visual artists by category, location, eligibility, and organization.">
-  <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${SITE}/browse">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monographica">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Browse All Open Calls ${YEAR}",
-    "description": "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.",
-    "url": "${SITE}/browse",
-    "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" }
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${HEAD({ title: `Browse All Open Calls ${YEAR}`, description: 'Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.', keywords: `open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}`, canonical: `${SITE}/browse`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Browse All Open Calls ${YEAR}`, "description": "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.", "url": `${SITE}/browse`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
