@@ -657,23 +657,18 @@ a.meta-tag-link.call-prize:hover {
 /* === Breadcrumbs === */
 .breadcrumbs {
   font-size: 14px;
-  font-family: helvetica, sans-serif;
-  color: #999;
+  letter-spacing: 0.3px;
+  color: rgb(0, 0, 0);
   margin-bottom: 16px;
 }
 
 .breadcrumbs a {
-  color: #666;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
 .breadcrumbs a:hover {
-  color: #111;
-  text-decoration: underline;
-}
-
-.breadcrumbs span {
-  color: #111;
+  text-decoration: none;
 }
 
 /* === Related Calls === */
