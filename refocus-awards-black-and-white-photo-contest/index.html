@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://refocus-awards.com/about-us" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'refocus-awards-black-and-white-photo-contest';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"reFocus Awards","location":"Online","fee":"$25–$50","deadline":"2026-05-25","instagram":"","eligibility":[],"jury":["Gabriel H. Sanchez, Photo Editor, The New York Times","Anna Alexander, Director of Photography, WIRED","Dave Shelley, Co-Founder, Photoville","Paris Chong, Gallery Director, Leica Gallery LA","Maia Murphy, Senior Editor, Phaidon Press"],"submitVia":"reFocus Awards","requirements":"1–5 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"reFocus Awards","location":"Online","fee":"$25–$50","deadline":"2026-05-25","instagram":"","eligibility":[],"jury":["Gabriel H. Sanchez, Photo Editor, The New York Times","Anna Alexander, Director of Photography, WIRED","Dave Shelley, Co-Founder, Photoville","Paris Chong, Gallery Director, Leica Gallery LA","Maia Murphy, Senior Editor, Phaidon Press"],"submitVia":"reFocus Awards","images":"1–5 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-05-25'.replace(/-/g, '');
+      var t = 'reFocus Awards - Black and White Photo Contest';
+      var u = 'https://refocus-awards.com/about-us';
+      var o = 'reFocus Awards';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

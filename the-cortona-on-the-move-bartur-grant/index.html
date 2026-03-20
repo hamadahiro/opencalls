@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://site.picter.com/cotm-bartur-grant-2026" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'the-cortona-on-the-move-bartur-grant';
-    const CURRENT_CALL = {"prize":"","category":"grant","org":"BarTur Photo Award / Cortona On The Move","location":"Cortona, Italy","fee":"Free","deadline":"2026-04-16","instagram":"@barturphoto_award","eligibility":[],"jury":[],"submitVia":"Picter","requirements":"","ai":"Not accepted"};
+    const CURRENT_CALL = {"prize":"","category":"grant","org":"BarTur Photo Award / Cortona On The Move","location":"Cortona, Italy","fee":"Free","deadline":"2026-04-16","instagram":"@barturphoto_award","eligibility":[],"jury":[],"submitVia":"Picter","images":"","ai":"Not accepted"};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-16'.replace(/-/g, '');
+      var t = 'The Cortona on The Move / BarTur Grant';
+      var u = 'https://site.picter.com/cotm-bartur-grant-2026';
+      var o = 'BarTur Photo Award / Cortona On The Move';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

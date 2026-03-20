@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.photographerswithoutborders.org/revolutionaries" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'photographers-without-borders-revolutionary-storyteller-grant';
-    const CURRENT_CALL = {"prize":"$5,000","category":"grant","org":"Photographers Without Borders","location":"Online","fee":"PWB membership required","deadline":"2026-03-15","instagram":"","eligibility":["membership-required"],"jury":[],"submitVia":"","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"$5,000","category":"grant","org":"Photographers Without Borders","location":"Online","fee":"PWB membership required","deadline":"2026-03-15","instagram":"","eligibility":["membership-required"],"jury":[],"submitVia":"","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-15'.replace(/-/g, '');
+      var t = 'Photographers Without Borders Revolutionary Storyteller Grant';
+      var u = 'https://www.photographerswithoutborders.org/revolutionaries';
+      var o = 'Photographers Without Borders';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

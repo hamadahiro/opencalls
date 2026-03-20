@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.suboartmagazine.com/call-for-artists-may-june-2026-print-issues/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'suboart-magazine-may-june-2026-issues';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Suboart Magazine","location":"Online","fee":"Free to submit, €30 if selected","deadline":"2026-04-06","instagram":"@suboartmagazine","eligibility":["emerging"],"jury":[],"submitVia":"Email","requirements":"Up to 6 images","ai":"Not accepted"};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Suboart Magazine","location":"Online","fee":"Free to submit, €30 if selected","deadline":"2026-04-06","instagram":"@suboartmagazine","eligibility":["emerging"],"jury":[],"submitVia":"Email","images":"6 images","ai":"Not accepted"};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-06'.replace(/-/g, '');
+      var t = 'Suboart Magazine — May &amp; June 2026 Issues';
+      var u = 'https://www.suboartmagazine.com/call-for-artists-may-june-2026-print-issues/';
+      var o = 'Suboart Magazine';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

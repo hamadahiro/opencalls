@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.riphotocenter.org/hiding-in-plain-sight-call-for-entry/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'hiding-in-plain-sight';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Rhode Island Center for Photographic Arts","location":"Providence, RI, USA","fee":"$35","deadline":"2026-04-11","instagram":"","eligibility":[],"jury":["Lou Jones, Photographer"],"submitVia":"CaFE","requirements":"3–15 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Rhode Island Center for Photographic Arts","location":"Providence, RI, USA","fee":"$35","deadline":"2026-04-11","instagram":"","eligibility":[],"jury":["Lou Jones, Photographer"],"submitVia":"CaFE","images":"3–15 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-11'.replace(/-/g, '');
+      var t = 'Hiding in Plain Sight';
+      var u = 'https://www.riphotocenter.org/hiding-in-plain-sight-call-for-entry/';
+      var o = 'Rhode Island Center for Photographic Arts';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

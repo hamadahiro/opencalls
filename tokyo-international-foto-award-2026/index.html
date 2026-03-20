@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.tokyofotoawards.jp/submit/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'tokyo-international-foto-award-2026';
-    const CURRENT_CALL = {"prize":"€3,000","category":"photography","org":"Tokyo International Foto Awards","location":"Tokyo, Japan","fee":"€15–€40","deadline":"2026-08-01","instagram":"@tokyofotoawards","eligibility":[],"jury":["Alfie Goodrich, Japanorama","Casey Kelbaugh, Photography Consultant","Susan Spiritus, Susan Spiritus Gallery"],"submitVia":"Website form","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"€3,000","category":"photography","org":"Tokyo International Foto Awards","location":"Tokyo, Japan","fee":"€15–€40","deadline":"2026-08-01","instagram":"@tokyofotoawards","eligibility":[],"jury":["Alfie Goodrich, Japanorama","Casey Kelbaugh, Photography Consultant","Susan Spiritus, Susan Spiritus Gallery"],"submitVia":"Website form","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-08-01'.replace(/-/g, '');
+      var t = 'Tokyo International Foto Award 2026';
+      var u = 'https://www.tokyofotoawards.jp/submit/';
+      var o = 'Tokyo International Foto Awards';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

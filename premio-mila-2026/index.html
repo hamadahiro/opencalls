@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.fondomalerba.org/premio" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'premio-mila-2026';
-    const CURRENT_CALL = {"prize":"€3,000","category":"grant","org":"Malerba Fund","location":"Milan, Italy","fee":"Free","deadline":"2026-03-22","instagram":"@fmf_malerba","eligibility":["italy","under-40"],"jury":["Andrea Elia Zanini, Curator, Fondo Malerba","Caterina Angelucci, Curator & Journalist","Matteo Balduzzi, Curator, MUFOCO","Marta Cereda, Artistic Director, Careof","Bernardo Follini, Curator, Fondazione Sandretto Re Rebaudengo","Francesca Lazzarini, Independent Curator"],"submitVia":"Email + WeTransfer","requirements":"Up to 15 images","ai":""};
+    const CURRENT_CALL = {"prize":"€3,000","category":"grant","org":"Malerba Fund","location":"Milan, Italy","fee":"Free","deadline":"2026-03-22","instagram":"@fmf_malerba","eligibility":["italy","under-40"],"jury":["Andrea Elia Zanini, Curator, Fondo Malerba","Caterina Angelucci, Curator & Journalist","Matteo Balduzzi, Curator, MUFOCO","Marta Cereda, Artistic Director, Careof","Bernardo Follini, Curator, Fondazione Sandretto Re Rebaudengo","Francesca Lazzarini, Independent Curator"],"submitVia":"Email + WeTransfer","images":"Up to 15 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-22'.replace(/-/g, '');
+      var t = 'Premio Mila 2026';
+      var u = 'https://www.fondomalerba.org/premio';
+      var o = 'Malerba Fund';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

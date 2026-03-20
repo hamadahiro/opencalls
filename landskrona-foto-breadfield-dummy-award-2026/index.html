@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://site.picter.com/landskrona-foto-and-breadfield-dummy-award-2026" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'landskrona-foto-breadfield-dummy-award-2026';
-    const CURRENT_CALL = {"prize":"Full photobook publication","category":"zine","org":"Landskrona Foto","location":"Landskrona, Sweden","fee":"€30","deadline":"2026-04-30","instagram":"@landskronafoto","eligibility":[],"jury":[],"submitVia":"Picter","requirements":"1 PDF","ai":""};
+    const CURRENT_CALL = {"prize":"Full photobook publication","category":"zine","org":"Landskrona Foto","location":"Landskrona, Sweden","fee":"€30","deadline":"2026-04-30","instagram":"@landskronafoto","eligibility":[],"jury":[],"submitVia":"Picter","images":"1 PDF","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-30'.replace(/-/g, '');
+      var t = 'Landskrona Foto &amp; Breadfield Dummy Award 2026';
+      var u = 'https://site.picter.com/landskrona-foto-and-breadfield-dummy-award-2026';
+      var o = 'Landskrona Foto';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

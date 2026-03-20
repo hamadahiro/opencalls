@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://losangelescenterofphotography.submittable.com/submit/351386/fast-forward-analog-photography-as-a-third-space" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'fast-forward-analog-photography-as-a-third-space';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Los Angeles Center for Photography","location":"Los Angeles, CA, USA","fee":"$25–$200","deadline":"2026-03-24","instagram":"","eligibility":["analog-photography"],"jury":["Aline Smithson, Founder & Editor, Lenscratch","Rotem Rozental, Executive Director & Chief Curator, LACP"],"submitVia":"Submittable","requirements":"Up to 35 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Los Angeles Center for Photography","location":"Los Angeles, CA, USA","fee":"$25–$200","deadline":"2026-03-24","instagram":"","eligibility":["analog-photography"],"jury":["Aline Smithson, Founder & Editor, Lenscratch","Rotem Rozental, Executive Director & Chief Curator, LACP"],"submitVia":"Submittable","images":"Up to 35 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-24'.replace(/-/g, '');
+      var t = 'Fast Forward: Analog Photography as a Third Space';
+      var u = 'https://losangelescenterofphotography.submittable.com/submit/351386/fast-forward-analog-photography-as-a-third-space';
+      var o = 'Los Angeles Center for Photography';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://hospitalsanjuandedios.es/actualidad/noticias/un-viaje-visual-a-la-esencia-de-los-cuidados/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'xvi-concurso-internacional-de-fotograf-a-sobre-humanizaci-n-asistencial';
-    const CURRENT_CALL = {"prize":"€600","category":"photography","org":"Hospital San Juan de Dios de León","location":"León, Spain","fee":"Free","deadline":"2026-04-13","instagram":"","eligibility":[],"jury":[],"submitVia":"Email","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"€600","category":"photography","org":"Hospital San Juan de Dios de León","location":"León, Spain","fee":"Free","deadline":"2026-04-13","instagram":"","eligibility":[],"jury":[],"submitVia":"Email","images":"Up to 3 images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-13'.replace(/-/g, '');
+      var t = 'XVI Concurso Internacional de Fotografía sobre Humanización Asistencial';
+      var u = 'https://hospitalsanjuandedios.es/actualidad/noticias/un-viaje-visual-a-la-esencia-de-los-cuidados/';
+      var o = 'Hospital San Juan de Dios de León';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

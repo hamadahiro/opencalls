@@ -534,6 +534,23 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: none;
 }
 
+.call-detail-calendar {
+  display: inline-block;
+  background: none;
+  color: #111;
+  padding: 12px 28px;
+  font-family: helvetica, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid #111;
+}
+
+.call-detail-calendar:hover {
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+}
+
 .call-detail-info {
   margin-top: 32px;
   display: flex;

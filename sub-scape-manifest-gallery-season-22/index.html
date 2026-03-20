@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.manifestgallery.org/season22/subscape/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'sub-scape-manifest-gallery-season-22';
-    const CURRENT_CALL = {"prize":"$1,000","category":"exhibition","org":"Manifest Gallery","location":"Cincinnati, OH, USA","fee":"$45","deadline":"2026-03-29","instagram":"@manifestgallery","eligibility":[],"jury":[],"submitVia":"","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"$1,000","category":"exhibition","org":"Manifest Gallery","location":"Cincinnati, OH, USA","fee":"$45","deadline":"2026-03-29","instagram":"@manifestgallery","eligibility":[],"jury":[],"submitVia":"","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-03-29'.replace(/-/g, '');
+      var t = 'SUB(SCAPE) — Manifest Gallery Season 22';
+      var u = 'https://www.manifestgallery.org/season22/subscape/';
+      var o = 'Manifest Gallery';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

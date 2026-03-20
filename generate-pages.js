@@ -194,6 +194,7 @@ ${call.jury && call.jury.length ? `
 ` : ''}
       <div class="call-detail-actions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>` : ''}
       </div>
     </section>
 
@@ -206,7 +207,20 @@ ${call.jury && call.jury.length ? `
 
   <script>
     const CURRENT_SLUG = '${slug}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', requirements: call.requirements || '', ai: call.ai || '' })};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', images: call.images || '', ai: call.ai || '' })};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '${call.deadline}'.replace(/-/g, '');
+      var t = '${escapeHtml(call.title)}';
+      var u = '${escapeHtml(call.url)}';
+      var o = '${call.org.replace(/'/g, "\\'")}';
+      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + d + '\\r\\nSUMMARY:Deadline: ' + t + '\\r\\nDESCRIPTION:Open call by ' + o + '\\\\nSubmit: ' + u + '\\r\\nURL:' + u + '\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\\r\\n/g, '\\r\\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

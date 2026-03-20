@@ -66,6 +66,7 @@
 
       <div class="call-detail-actions">
         <a href="https://opendoors.gallery" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+
       </div>
     </section>
 
@@ -81,7 +82,20 @@
 
   <script>
     const CURRENT_SLUG = 'open-doors-takeovers';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"Open Doors Gallery","location":"Online","fee":"Free","deadline":"Continuous","instagram":"@odtakeovers","eligibility":["emerging"],"jury":[],"submitVia":"","requirements":"","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"photography","org":"Open Doors Gallery","location":"Online","fee":"Free","deadline":"Continuous","instagram":"@odtakeovers","eligibility":["emerging"],"jury":[],"submitVia":"","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = 'Continuous'.replace(/-/g, '');
+      var t = 'Open Doors Takeovers';
+      var u = 'https://opendoors.gallery';
+      var o = 'Open Doors Gallery';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>

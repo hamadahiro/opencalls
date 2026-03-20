@@ -70,6 +70,7 @@
 
       <div class="call-detail-actions">
         <a href="https://www.photoawards.com/" target="_blank" rel="nofollow noopener" class="call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
       </div>
     </section>
 
@@ -85,7 +86,20 @@
 
   <script>
     const CURRENT_SLUG = 'international-photography-awards-2026';
-    const CURRENT_CALL = {"prize":"$10,000","category":"photography","org":"International Photography Awards","location":"Online","fee":"$20–$40","deadline":"2026-04-30","instagram":"@iphotoawards","eligibility":[],"jury":["Hossein Farmani, Founder","Alex Pollack, National Geographic","Paris Chong, Leica Gallery LA","Phillip Prodger, Photography Historian"],"submitVia":"Website form","requirements":"Unlimited images","ai":""};
+    const CURRENT_CALL = {"prize":"$10,000","category":"photography","org":"International Photography Awards","location":"Online","fee":"$20–$40","deadline":"2026-04-30","instagram":"@iphotoawards","eligibility":[],"jury":["Hossein Farmani, Founder","Alex Pollack, National Geographic","Paris Chong, Leica Gallery LA","Phillip Prodger, Photography Historian"],"submitVia":"Website form","images":"Unlimited images","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-30'.replace(/-/g, '');
+      var t = 'International Photography Awards 2026';
+      var u = 'https://www.photoawards.com/';
+      var o = 'International Photography Awards';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:Deadline: ' + t + '\r\nDESCRIPTION:Open call by ' + o + '\\nSubmit: ' + u + '\r\nURL:' + u + '\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
   </script>
   <script src="/cards.js"></script>
   <script src="/call-detail.js"></script>
