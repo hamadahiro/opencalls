@@ -26,8 +26,12 @@
     --border: #333;
     --btn-bg: #d4d4d4;
     --btn-text: #1a1a1a;
-    --dots: #555;
+    --dots: #777;
     --bg-image: none;
+  }
+
+  body {
+    -webkit-font-smoothing: auto;
   }
 
   .search-bar {
