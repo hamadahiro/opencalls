@@ -7,34 +7,66 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 const COUNTRY_ALIASES = { 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'US': 'United States' };
 const VALID_CATEGORIES = ['photography', 'exhibition', 'grant', 'zine', 'residency', 'education'];
 let hasErrors = false;
+
+function err(msg) { console.error(`ERROR: ${msg}`); hasErrors = true; }
+
 data.calls.forEach((c, i) => {
-  // Validate country names
-  const loc = c.location || '';
-  const country = loc.split(',').pop().trim();
-  if (COUNTRY_ALIASES[country]) {
-    console.error(`ERROR: Call "${c.title}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
-    hasErrors = true;
+  const label = c.title || `index ${i}`;
+
+  // Required fields
+  if (!c.title) err(`Call at index ${i} is missing title`);
+  if (!c.org) err(`"${label}" is missing org`);
+  if (!c.deadline) err(`"${label}" is missing deadline`);
+  if (!c.url) err(`"${label}" is missing url`);
+  if (!c.description) err(`"${label}" is missing description`);
+  if (!c.location && c.location !== '') err(`"${label}" is missing location`);
+  if (c.fee === undefined || c.fee === null) err(`"${label}" is missing fee`);
+  if (!c.eligibility) err(`"${label}" is missing eligibility (use [] if open to all)`);
+
+  // Deadline format: YYYY-MM-DD or "Continuous"
+  if (c.deadline && c.deadline !== 'Continuous' && !/^\d{4}-\d{2}-\d{2}$/.test(c.deadline)) {
+    err(`"${label}" has invalid deadline format: "${c.deadline}" — must be YYYY-MM-DD or "Continuous"`);
   }
-  // Validate eligibility tag format
+
+  // Category must be in list
+  if (c.category && !VALID_CATEGORIES.includes(c.category)) {
+    err(`"${label}" has unknown category: "${c.category}". Valid: ${VALID_CATEGORIES.join(', ')}`);
+  }
+
+  // Location format: "City, Country" or "City, State, USA" or "Online" or ""
+  const loc = c.location || '';
+  if (loc && loc !== 'Online') {
+    const parts = loc.split(',').map(s => s.trim());
+    if (parts.length < 2) {
+      err(`"${label}" has invalid location format: "${loc}" — must be "City, Country" or "City, State, USA" or "Online"`);
+    }
+    const country = parts[parts.length - 1];
+    if (COUNTRY_ALIASES[country]) {
+      err(`"${label}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
+    }
+  }
+
+  // Instagram format: must start with @ or be empty
+  if (c.instagram && !c.instagram.startsWith('@')) {
+    err(`"${label}" has invalid instagram: "${c.instagram}" — must start with @`);
+  }
+
+  // Eligibility tag format
   (c.eligibility || []).forEach(e => {
     if (e.length > 30 || /[^a-z0-9-]/.test(e)) {
-      console.error(`ERROR: Call "${c.title}" has invalid eligibility tag: "${e}"`);
-      hasErrors = true;
+      err(`"${label}" has invalid eligibility tag: "${e}" — lowercase alphanumeric and hyphens only`);
     }
   });
-  // Validate category
-  if (!VALID_CATEGORIES.includes(c.category)) {
-    console.error(`ERROR: Call "${c.title}" has unknown category: "${c.category}". Valid: ${VALID_CATEGORIES.join(', ')}`);
-    hasErrors = true;
+
+  // Prize: warn if has value but derives no category (might be missing a pattern)
+  if (c.prize && c.prize !== '') {
+    const pCats = derivePrizeCategories(c.prize);
+    if (pCats.length === 0) {
+      err(`"${label}" has prize "${c.prize}" that matches no prize category. Update derivePrizeCategories().`);
+    }
   }
-  // Validate required fields
-  if (!c.title) { console.error(`ERROR: Call at index ${i} is missing title`); hasErrors = true; }
-  if (!c.org) { console.error(`ERROR: Call "${c.title}" is missing org`); hasErrors = true; }
-  if (!c.deadline) { console.error(`ERROR: Call "${c.title}" is missing deadline`); hasErrors = true; }
-  if (!c.url) { console.error(`ERROR: Call "${c.title}" is missing url`); hasErrors = true; }
-  if (!c.description) { console.error(`ERROR: Call "${c.title}" is missing description`); hasErrors = true; }
 });
-if (hasErrors) { console.error('Fix errors above before generating.'); process.exit(1); }
+if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
