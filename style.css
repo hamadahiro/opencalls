@@ -492,8 +492,9 @@ a.meta-tag-link.call-prize:hover {
 
 .submit-form label {
   display: block;
-  font-size: var(--fs-tag);
-  color: var(--text);
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+  color: var(--text-body);
   margin-bottom: 6px;
   margin-top: 20px;
 }
@@ -529,8 +530,9 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .submit-details summary {
-  font-size: var(--fs-tag);
-  color: var(--text-muted);
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+  color: var(--text-body);
   cursor: pointer;
   list-style: none;
 }
