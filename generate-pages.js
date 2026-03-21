@@ -978,9 +978,11 @@ manualFiles.forEach(file => {
   }
   // Update footer
   html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
-  // Update open count in index.html hero (uses total calls to avoid timezone issues)
+  // Update open count in index.html hero (only count calls with future deadlines or Continuous)
   if (file === 'index.html') {
-    const roundedCount = Math.floor(data.calls.length / 10) * 10;
+    const today = new Date().toISOString().slice(0, 10);
+    const openCount = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= today).length;
+    const roundedCount = Math.floor(openCount / 10) * 10;
     html = html.replace(/over \d+ open calls/, `over ${roundedCount} open calls`);
   }
   fs.writeFileSync(file, html);

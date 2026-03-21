@@ -4030,6 +4030,131 @@
       "prize": "",
       "eligibility": [],
       "submitVia": "JotForm"
+    },
+    {
+      "title": "HNDL Magazine — PRIDE Issue",
+      "org": "HNDL Magazine",
+      "deadline": "2026-03-30",
+      "fee": "Free",
+      "category": "zine",
+      "description": "Submissions for the PRIDE issue of HNDL Magazine, an indie publication by and for neurodivergent, disabled, and chronically ill creatives. Accepting art, poetry, creative nonfiction, prose, photography, and zines. Especially seeking candid photography and creative nonfiction. Written pieces max 4 pages, no PDFs. Unpaid — contributors receive a printed copy.",
+      "url": "https://forms.gle/8pvP3rJzHPC7aG4r6",
+      "instagram": "@hndl_mag",
+      "location": "Online",
+      "prize": "Contributor's copy",
+      "eligibility": [
+        "neurodivergent-disabled"
+      ],
+      "submitVia": "Google Form"
+    },
+    {
+      "title": "Off The Clock 2026",
+      "org": "APA Los Angeles",
+      "deadline": "2026-03-31",
+      "fee": "$40",
+      "category": "photography",
+      "description": "15th annual curated photo competition showcasing personal work. Juried by Chris Pichler, Founder and Publisher of Nazraeli Press, who selects 100 winning images. Winners receive a printed and PDF catalog, online gallery feature, social media exposure, and framed exhibition at an industry gala in Southern California. No categories, no series restrictions, no creation date restrictions — just your finest personal photography. APA members pay $20/image. No AI-generated content.",
+      "url": "https://apanational.org/contests/information/apa-la-2026-off-the-clock-call-for-entries",
+      "instagram": "@apa_la",
+      "location": "Los Angeles, California, USA",
+      "prize": "Exhibition + catalog",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "Unlimited single images"
+    },
+    {
+      "title": "The Female Show 2026",
+      "org": "Munich Art Gallery",
+      "deadline": "2026-04-08",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Group exhibition of national and international female artists at Munich Art Gallery in the Kunstareal, running October 15 – November 14, 2026, including Lange Nacht der Münchner Museen. Curated by Josephine Kaiser & Team. Seeks contemporary art by women beyond gender stereotypes and thematic clichés. Smaller formats preferred (up to 50×50 cm). Submit a PDF (max 5 pages, 5 MB) with short CV, artist statement, ~5 example images, Instagram and website to art@thefemaleshow.de. No participation or exhibition fees — only international shipping at artist's expense. Applications accepted in English or German.",
+      "url": "https://www.instagram.com/p/DVnXYKml8t1/",
+      "instagram": "@munichartgallery",
+      "location": "Munich, Germany",
+      "prize": "Exhibition",
+      "eligibility": [
+        "women"
+      ],
+      "submitVia": "Email"
+    },
+    {
+      "title": "Open Call — Il Reportage in Italia",
+      "org": "Festival del Reportage",
+      "deadline": "2026-05-08",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Open call for the 6th edition of Festival del Reportage in Ascoli Piceno (June 26–28, 2026). Seeking reportage photography projects made in Italy — completed or in progress, 15–25 images. At least some photos must be taken after January 1, 2025. Submit via Google Form with a file-sharing link (WeTransfer, Google Drive, etc.). Winner receives €500 cash prize, projection of work at the festival, and full hospitality including travel within Italy, accommodation, and meals. No restrictions on nationality, age, or experience.",
+      "url": "https://www.instagram.com/p/DV9MkL2FYJi/",
+      "instagram": "@festivaldelreportage",
+      "location": "Ascoli Piceno, Italy",
+      "prize": "€500",
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "images": "15–25 images"
+    },
+    {
+      "title": "100 Emerging Artworks of 2026",
+      "org": "Arts to Hearts Project",
+      "deadline": "2026-05-04",
+      "fee": "$35",
+      "category": "photography",
+      "description": "Annual international open call selecting 100 emerging and mid-career artists for a hardcover collector's book distributed globally via Amazon, Barnes & Noble, and art bookstores. All mediums accepted including photography. Submit up to 20 artworks. Top winner receives $1,000 cash prize, 4-page feature spread, and glass trophy. 2nd and 3rd place get 4-page spreads and trophies. All 100 selected artists receive book publication, certificate, and international distribution. Early bird deadline April 4 with reduced fees. 4th edition, previous collaborators include The Jealous Curator and Singulart.",
+      "url": "https://apply.artstoheartsproject.com/open-call/100-emerging-artworks-of-2026",
+      "instagram": "@artstoheartsproject",
+      "location": "Online",
+      "prize": "$1,000",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "Up to 20 artworks"
+    },
+    {
+      "title": "Michael P. Smith Fund for Documentary Photography 2026",
+      "org": "New Orleans Photo Alliance",
+      "deadline": "2026-05-04",
+      "fee": "$25",
+      "category": "grant",
+      "description": "Annual grant honoring legendary New Orleans documentary photographer Michael P. Smith. Awards cash prizes and exhibition opportunities to Gulf Coast photographers whose work combines artistic excellence and a sustained commitment to a cultural documentary project. Submit 10–20 images plus project statement (530 words) and bio via CaFE (Call for Entry). Subject matter not limited to Gulf Coast region. Winners donate two prints to NOPA's permanent collection and submit a final report by August 2026.",
+      "url": "https://neworleansphotoalliance.org/michael-p-smith-fund-for-documentary-photography/",
+      "instagram": "@photoalliance",
+      "location": "New Orleans, Louisiana, USA",
+      "prize": "$5,000",
+      "eligibility": [
+        "united-states"
+      ],
+      "submitVia": "CaFE",
+      "images": "10–20 images"
+    },
+    {
+      "title": "Luz e Sombra — National Photography Competition",
+      "org": "Égide — Associação Portuguesa das Artes",
+      "deadline": "2026-04-30",
+      "fee": "Free",
+      "category": "photography",
+      "description": "National photography competition exploring the relationship between light and shadow across themes of heritage, nature, architecture, and daily life. Submit a series of 6 photographs with a conceptual synopsis (1,500 chars) and bio (1,000 chars). Six finalists selected — works published in an artist-edition book, shown in a traveling exhibition at three venues, and featured in the Égide digital gallery. Open to professional and amateur photographers who are Portuguese citizens or residents of Portugal.",
+      "url": "https://www.egideartes.pt/luzsombra",
+      "instagram": "@ensaio.pt",
+      "location": "Online",
+      "prize": "€3,000",
+      "eligibility": [
+        "portugal"
+      ],
+      "submitVia": "Website form",
+      "images": "6 images"
+    },
+    {
+      "title": "CPG Mentorship Programme 2026",
+      "org": "Centre de la Photographie Genève",
+      "deadline": "2026-03-22",
+      "fee": "Free",
+      "category": "education",
+      "description": "1:1 mentoring programme pairing artists with established photographers, curators, and mediators for four meetings over six months (May–October 2026), in person or online. Mentees receive CHF 500 project support and free access to two online masterclasses. 2026 mentors include Hannah Darabi, Yann Mingard, Abdo Shanan, Holly Roussell, Jermaine Francis, and others. Open to professional artists and photographers (including self-taught) not enrolled in another programme or academic course. Fluency required in one of: French, English, Italian, Arabic, German, Farsi, or Mandarin.",
+      "url": "https://www.centrephotogeneve.ch/en/mentorat/",
+      "instagram": "@centre_photographie_geneve",
+      "location": "Geneva, Switzerland",
+      "prize": "CHF 500",
+      "eligibility": [],
+      "submitVia": "Website form"
     }
   ]
 }
