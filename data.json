@@ -17,7 +17,9 @@
       ],
       "submitVia": "Picter",
       "requirements": "12 images",
-      "images": "12 images"
+      "images": "12 images",
+      "slug": "anja-niedringhaus-courage-in-photojournalism-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "LT5 Alternative Photography Show",
@@ -33,7 +35,9 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "Up to 2 images",
-      "images": "Up to 2 images"
+      "images": "Up to 2 images",
+      "slug": "lt5-alternative-photography-show",
+      "orgInTitle": false
     },
     {
       "title": "Artphilein Open Call 2026",
@@ -49,7 +53,9 @@
       "eligibility": [],
       "submitVia": "Google Form",
       "requirements": "10–20 images",
-      "images": "10–20 images"
+      "images": "10–20 images",
+      "slug": "artphilein-open-call-2026",
+      "orgInTitle": true
     },
     {
       "title": "L'Image Satellite 2026",
@@ -65,7 +71,9 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "Up to 20 images",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "l-image-satellite-2026",
+      "orgInTitle": false
     },
     {
       "title": "2026 Fotograf Magazine Open Call",
@@ -86,7 +94,9 @@
         "Marta Szymańska, Photography curator",
         "Peter Watkins, Visual artist & lecturer, FAMU"
       ],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "2026-fotograf-magazine-open-call",
+      "orgInTitle": true
     },
     {
       "title": "Fabula Works — Duo/Solo Show in Rome",
@@ -102,7 +112,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "10–25 images",
-      "images": "10–25 images"
+      "images": "10–25 images",
+      "slug": "fabula-works-duo-solo-show-in-rome",
+      "orgInTitle": true
     },
     {
       "title": "Rarefied Light 2026",
@@ -123,7 +135,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "Up to 20 images",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "rarefied-light-2026",
+      "orgInTitle": false
     },
     {
       "title": "Prix Mustaqbal 2026 — Momentum",
@@ -141,7 +155,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "4–8 images",
-      "images": "4–8 images"
+      "images": "4–8 images",
+      "slug": "prix-mustaqbal-2026-momentum",
+      "orgInTitle": false
     },
     {
       "title": "No Place Art — Edition Two: MATERIALITY",
@@ -166,7 +182,9 @@
       ],
       "submitVia": "DappleHQ",
       "requirements": "Up to 5 images",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "no-place-art-edition-two-materiality",
+      "orgInTitle": true
     },
     {
       "title": "59 Rivoli — Artist Residency 2026",
@@ -180,7 +198,9 @@
       "location": "Paris, France",
       "prize": "",
       "eligibility": [],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "59-rivoli-artist-residency-2026",
+      "orgInTitle": true
     },
     {
       "title": "LensCulture Critics' Choice 2026",
@@ -218,7 +238,9 @@
       ],
       "submitVia": "LensCulture",
       "requirements": "1–10 images",
-      "images": "1–10 images"
+      "images": "1–10 images",
+      "slug": "lensculture-critics-choice-2026",
+      "orgInTitle": true
     },
     {
       "title": "Analog Sparks — International Film Photography Awards 2026",
@@ -249,7 +271,9 @@
       "submitVia": "Website form",
       "requirements": "1–11 images",
       "ai": "Not accepted",
-      "images": "1–11 images"
+      "images": "1–11 images",
+      "slug": "analog-sparks-international-film-photography-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Athens Photo Festival 2026",
@@ -262,7 +286,9 @@
       "instagram": "@athensphoto",
       "location": "Athens, Greece",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "athens-photo-festival-2026",
+      "orgInTitle": true
     },
     {
       "title": "Griffin Museum — Material Work: Toil & Grace",
@@ -276,7 +302,9 @@
       "location": "Winchester, MA, USA",
       "prize": "",
       "eligibility": [],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "griffin-museum-material-work-toil-grace",
+      "orgInTitle": true
     },
     {
       "title": "RBSA Summer Show 2026",
@@ -292,7 +320,9 @@
       "eligibility": [],
       "submitVia": "Typeform",
       "requirements": "Up to 3 images",
-      "images": "3 images"
+      "images": "3 images",
+      "slug": "rbsa-summer-show-2026",
+      "orgInTitle": false
     },
     {
       "title": "EXPOSED feat Witty Books Dummy Award 2026",
@@ -312,7 +342,9 @@
         "Karla Hiraldo Voleau, Photographer"
       ],
       "submitVia": "Email",
-      "images": "1 PDF"
+      "images": "1 PDF",
+      "slug": "exposed-feat-witty-books-dummy-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "ZRNO Festival 2026 — Open Call",
@@ -340,7 +372,9 @@
       ],
       "submitVia": "Email",
       "requirements": "Up to 4 images",
-      "images": "Up to 4 images"
+      "images": "Up to 4 images",
+      "slug": "zrno-festival-2026-open-call",
+      "orgInTitle": true
     },
     {
       "title": "PN Awards 2026 — Book Prize & Project Grant",
@@ -361,7 +395,9 @@
         "Ileana L. Selejan, Lecturer, University of Edinburgh",
         "Giulia Paoletti, Associate Professor, University of Virginia"
       ],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "pn-awards-2026-book-prize-project-grant",
+      "orgInTitle": false
     },
     {
       "title": "KYOTOGRAPHIE Photo Zine Showcase",
@@ -379,7 +415,9 @@
       ],
       "submitVia": "Google Form",
       "requirements": "1 zine",
-      "images": "1 zine"
+      "images": "1 zine",
+      "slug": "kyotographie-photo-zine-showcase",
+      "orgInTitle": true
     },
     {
       "title": "Fotografiska Emerging Artist Platform",
@@ -401,7 +439,9 @@
       ],
       "submitVia": "Website form",
       "images": "3 images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "fotografiska-emerging-artist-platform",
+      "orgInTitle": true
     },
     {
       "title": "PORTRAITS — Hellerau Photography Award 2026",
@@ -424,7 +464,9 @@
       ],
       "submitVia": "Picter",
       "requirements": "Up to 20 images",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "portraits-hellerau-photography-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "PETARD Magazine Issue #2 — Authentic",
@@ -437,7 +479,9 @@
       "instagram": "@petard.magazine",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "petard-magazine-issue-2-authentic",
+      "orgInTitle": true
     },
     {
       "title": "KYOTOGRAPHIE International Portfolio Review 2026",
@@ -461,7 +505,9 @@
         "Marina Paulenka, Independent Curator",
         "Federico Estol, Artistic Director, SAN JOSE FOTO"
       ],
-      "submitVia": "JotForm"
+      "submitVia": "JotForm",
+      "slug": "kyotographie-international-portfolio-review-2026",
+      "orgInTitle": true
     },
     {
       "title": "Prix Révélation SAIF x La Kabine 2026",
@@ -478,7 +524,9 @@
         "emerging"
       ],
       "submitVia": "JotForm",
-      "images": "10–15 images"
+      "images": "10–15 images",
+      "slug": "prix-r-v-lation-saif-x-la-kabine-2026",
+      "orgInTitle": true
     },
     {
       "title": "Fotobus Library Award 2026",
@@ -494,7 +542,9 @@
       "eligibility": [],
       "ai": "Not accepted",
       "images": "1 book",
-      "submitVia": "Post"
+      "submitVia": "Post",
+      "slug": "fotobus-library-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Deloitte Photo Grant 2026",
@@ -520,7 +570,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "10 images",
-      "images": "10 images"
+      "images": "10 images",
+      "slug": "deloitte-photo-grant-2026",
+      "orgInTitle": true
     },
     {
       "title": "Denis Roussel Award 2026",
@@ -537,7 +589,9 @@
       "submitVia": "Email",
       "requirements": "7 images",
       "images": "7 images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "denis-roussel-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "Lucie Foundation Photo Book Prize 2026",
@@ -560,7 +614,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "PDF of complete book",
-      "images": "PDF of complete book"
+      "images": "PDF of complete book",
+      "slug": "lucie-foundation-photo-book-prize-2026",
+      "orgInTitle": true
     },
     {
       "title": "Insight Foto Festival — Insight Out 2026",
@@ -574,7 +630,9 @@
       "location": "Varese, Italy",
       "prize": "",
       "eligibility": [],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "insight-foto-festival-insight-out-2026",
+      "orgInTitle": true
     },
     {
       "title": "Bibin Photography Magazine #5 — Body, Form & Condition",
@@ -587,7 +645,9 @@
       "instagram": "@bibinmagazine",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "bibin-photography-magazine-5-body-form-condition",
+      "orgInTitle": true
     },
     {
       "title": "Penumbra Foundation Workspace Residency 2026",
@@ -603,7 +663,9 @@
       "eligibility": [
         "united-states"
       ],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "penumbra-foundation-workspace-residency-2026",
+      "orgInTitle": true
     },
     {
       "title": "Penumbra Foundation Risograph Publication Residency",
@@ -618,7 +680,9 @@
       "prize": "",
       "eligibility": [],
       "submitVia": "Picter",
-      "images": "1 PDF"
+      "images": "1 PDF",
+      "slug": "penumbra-foundation-risograph-publication-residency",
+      "orgInTitle": true
     },
     {
       "title": "Generator Cooperative Art Production Fund — Round 10",
@@ -636,7 +700,9 @@
       ],
       "submitVia": "Google Form",
       "requirements": "10–15 images",
-      "images": "10–15 images"
+      "images": "10–15 images",
+      "slug": "generator-cooperative-art-production-fund-round-10",
+      "orgInTitle": true
     },
     {
       "title": "Curatory Magazine Vol. 15 — Open Call",
@@ -652,7 +718,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "Up to 6 images",
-      "images": "6 images"
+      "images": "6 images",
+      "slug": "curatory-magazine-vol-15-open-call",
+      "orgInTitle": true
     },
     {
       "title": "Somewhere I Have Never Travelled — Group Exhibition",
@@ -670,7 +738,9 @@
         "Brenda Melgoza Ciardiello, Curator",
         "Stéphanie Williams, Curator"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "somewhere-i-have-never-travelled-group-exhibition",
+      "orgInTitle": false
     },
     {
       "title": "Nes Artist Residency — Fall 2026",
@@ -684,7 +754,9 @@
       "location": "Skagaströnd, Iceland",
       "prize": "",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "nes-artist-residency-fall-2026",
+      "orgInTitle": true
     },
     {
       "title": "SCAN Tarragona — Talent Latent 2026",
@@ -702,7 +774,9 @@
       ],
       "submitVia": "JotForm",
       "requirements": "Up to 20 images",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "scan-tarragona-talent-latent-2026",
+      "orgInTitle": true
     },
     {
       "title": "Lobster Club Artist Residency 2026",
@@ -716,7 +790,9 @@
       "location": "Delhi, NY, USA",
       "prize": "",
       "eligibility": [],
-      "submitVia": "Typeform"
+      "submitVia": "Typeform",
+      "slug": "lobster-club-artist-residency-2026",
+      "orgInTitle": true
     },
     {
       "title": "REBIRTH — Monart Curates",
@@ -733,7 +809,9 @@
       "jury": [
         "Monica Mardare, Independent Curator"
       ],
-      "submitVia": "CuratorSpace"
+      "submitVia": "CuratorSpace",
+      "slug": "rebirth-monart-curates",
+      "orgInTitle": true
     },
     {
       "title": "Suboart Magazine — May & June 2026 Issues",
@@ -752,7 +830,9 @@
       "submitVia": "Email",
       "requirements": "Up to 6 images",
       "images": "6 images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "suboart-magazine-may-june-2026-issues",
+      "orgInTitle": true
     },
     {
       "title": "Field Notes — Aurea Photogallery",
@@ -768,7 +848,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "Up to 3 images",
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "field-notes-aurea-photogallery",
+      "orgInTitle": true
     },
     {
       "title": "The Eden Artists Now Award 2026",
@@ -788,7 +870,9 @@
       ],
       "submitVia": "Google Form",
       "requirements": "5–8 images",
-      "images": "8 images"
+      "images": "8 images",
+      "slug": "the-eden-artists-now-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Schloss Plüschow Artist-in-Residence 2026",
@@ -803,7 +887,9 @@
       "prize": "€3,000",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "1 PDF"
+      "images": "1 PDF",
+      "slug": "schloss-pl-schow-artist-in-residence-2026",
+      "orgInTitle": false
     },
     {
       "title": "Inspired by Classics — Golden Duck Gallery",
@@ -819,7 +905,9 @@
       "eligibility": [],
       "submitVia": "Google Form",
       "requirements": "Up to 5 images",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "inspired-by-classics-golden-duck-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Life Framer — Black & White",
@@ -838,7 +926,9 @@
       ],
       "submitVia": "Website",
       "requirements": "Up to 10 images",
-      "images": "Up to 10 images"
+      "images": "Up to 10 images",
+      "slug": "life-framer-black-white",
+      "orgInTitle": true
     },
     {
       "title": "Life Framer — Colors",
@@ -857,7 +947,9 @@
       ],
       "submitVia": "Website",
       "requirements": "Up to 10 images",
-      "images": "Up to 10 images"
+      "images": "Up to 10 images",
+      "slug": "life-framer-colors",
+      "orgInTitle": true
     },
     {
       "title": "Life Framer — Portraits",
@@ -876,7 +968,9 @@
       ],
       "submitVia": "Website",
       "requirements": "Up to 10 images",
-      "images": "Up to 10 images"
+      "images": "Up to 10 images",
+      "slug": "life-framer-portraits",
+      "orgInTitle": true
     },
     {
       "title": "BBA Photography Prize 2026",
@@ -900,7 +994,9 @@
       ],
       "submitVia": "Website",
       "requirements": "5 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "bba-photography-prize-2026",
+      "orgInTitle": true
     },
     {
       "title": "Arty Rat Magazine Open Call",
@@ -916,7 +1012,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "Up to 6 images",
-      "images": "Up to 6 images"
+      "images": "Up to 6 images",
+      "slug": "arty-rat-magazine-open-call",
+      "orgInTitle": true
     },
     {
       "title": "MSU Zagreb Artist Residency 2026",
@@ -929,7 +1027,9 @@
       "instagram": "@msuzagreb",
       "location": "Zagreb, Croatia",
       "prize": "€1,500 + accommodation",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "msu-zagreb-artist-residency-2026",
+      "orgInTitle": false
     },
     {
       "title": "Louvre Unbound Magazine — Volume 6 Open Call",
@@ -945,7 +1045,9 @@
       "eligibility": [],
       "submitVia": "Google Form",
       "requirements": "Up to 6 images",
-      "images": "Up to 6 images"
+      "images": "Up to 6 images",
+      "slug": "louvre-unbound-magazine-volume-6-open-call",
+      "orgInTitle": true
     },
     {
       "title": "Musée du quai Branly Photography Award 2026",
@@ -958,7 +1060,9 @@
       "instagram": "",
       "location": "Paris, France",
       "prize": "€30,000",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "mus-e-du-quai-branly-photography-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Photographers Without Borders Revolutionary Storyteller Grant",
@@ -973,7 +1077,9 @@
       "prize": "$5,000",
       "eligibility": [
         "membership-required"
-      ]
+      ],
+      "slug": "photographers-without-borders-revolutionary-storyteller-grant",
+      "orgInTitle": true
     },
     {
       "title": "10. Merck-Preis der Darmstädter Tage der Fotografie",
@@ -986,7 +1092,9 @@
       "instagram": "",
       "location": "Darmstadt, Germany",
       "prize": "€500",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "10-merck-preis-der-darmst-dter-tage-der-fotografie",
+      "orgInTitle": false
     },
     {
       "title": "On the Block - Street & Urban Photography",
@@ -999,7 +1107,9 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "on-the-block-street-urban-photography",
+      "orgInTitle": false
     },
     {
       "title": "Temporary Storage",
@@ -1012,7 +1122,9 @@
       "instagram": "",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "temporary-storage",
+      "orgInTitle": false
     },
     {
       "title": "Photo Laureate 2026",
@@ -1025,7 +1137,9 @@
       "instagram": "",
       "location": "Tampa Bay, FL, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "photo-laureate-2026",
+      "orgInTitle": false
     },
     {
       "title": "Solo Exhibition April 2026",
@@ -1038,7 +1152,9 @@
       "instagram": "@allaboutphoto",
       "location": "La Jolla, CA, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "solo-exhibition-april-2026",
+      "orgInTitle": false
     },
     {
       "title": "Discovery Art Fair Cologne - Art Fair Spot",
@@ -1051,7 +1167,9 @@
       "instagram": "@new_and_abstract",
       "location": "Cologne, Germany",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "discovery-art-fair-cologne-art-fair-spot",
+      "orgInTitle": false
     },
     {
       "title": "Seeing America",
@@ -1064,7 +1182,9 @@
       "instagram": "",
       "location": "Sacramento, CA, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "seeing-america",
+      "orgInTitle": false
     },
     {
       "title": "Organ Vida 14 - Happy Spiraling",
@@ -1077,7 +1197,9 @@
       "instagram": "",
       "location": "Zagreb, Croatia",
       "prize": "€300",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "organ-vida-14-happy-spiraling",
+      "orgInTitle": true
     },
     {
       "title": "Innovate Grants - Winter $1,800 Grants",
@@ -1090,7 +1212,9 @@
       "instagram": "",
       "location": "Online",
       "prize": "$1,800",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "innovate-grants-winter-1-800-grants",
+      "orgInTitle": true
     },
     {
       "title": "Call for Artists 2026",
@@ -1103,7 +1227,9 @@
       "instagram": "",
       "location": "Tampa, FL, USA",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "call-for-artists-2026",
+      "orgInTitle": false
     },
     {
       "title": "Dek Unu Magazine - Monthly Artist Feature",
@@ -1119,7 +1245,9 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "11 images",
-      "images": "11 images"
+      "images": "11 images",
+      "slug": "dek-unu-magazine-monthly-artist-feature",
+      "orgInTitle": true
     },
     {
       "title": "this place is strange",
@@ -1138,7 +1266,9 @@
       ],
       "submitVia": "Google Form",
       "requirements": "Up to 3 images",
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "this-place-is-strange",
+      "orgInTitle": false
     },
     {
       "title": "The Narrative",
@@ -1155,7 +1285,9 @@
       "submitVia": "Website form",
       "requirements": "Up to 3 images",
       "images": "Up to 3 images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "the-narrative",
+      "orgInTitle": false
     },
     {
       "title": "Bourse Laurent Troude 2026",
@@ -1171,7 +1303,9 @@
       "eligibility": [
         "under-30"
       ],
-      "submitVia": "Email + WeTransfer"
+      "submitVia": "Email + WeTransfer",
+      "slug": "bourse-laurent-troude-2026",
+      "orgInTitle": true
     },
     {
       "title": "Multi-Exposed",
@@ -1187,7 +1321,9 @@
       "eligibility": [],
       "submitVia": "Smarter Entry",
       "requirements": "Up to 10 images",
-      "images": "Up to 10 images"
+      "images": "Up to 10 images",
+      "slug": "multi-exposed",
+      "orgInTitle": false
     },
     {
       "title": "Linkshouse Residency — Pier Arts Centre Orkney",
@@ -1204,7 +1340,9 @@
         "membership-required"
       ],
       "submitVia": "Email",
-      "images": "1 PDF"
+      "images": "1 PDF",
+      "slug": "linkshouse-residency-pier-arts-centre-orkney",
+      "orgInTitle": false
     },
     {
       "title": "Premio Mila 2026",
@@ -1231,7 +1369,9 @@
       ],
       "submitVia": "Email + WeTransfer",
       "requirements": "Up to 15 images",
-      "images": "Up to 15 images"
+      "images": "Up to 15 images",
+      "slug": "premio-mila-2026",
+      "orgInTitle": false
     },
     {
       "title": "Foto Tallinn 2026 Art Fair",
@@ -1247,7 +1387,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "At least 5 images",
-      "images": "At least 5 images"
+      "images": "At least 5 images",
+      "slug": "foto-tallinn-2026-art-fair",
+      "orgInTitle": true
     },
     {
       "title": "Whimsical",
@@ -1266,7 +1408,9 @@
       "jury": [
         "Stephen Fletcher, Juror"
       ],
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "whimsical",
+      "orgInTitle": false
     },
     {
       "title": "10x10 Photobooks Research Grants Cycle 5",
@@ -1286,7 +1430,9 @@
         "Mariama Attah, Curator, National Museums Liverpool",
         "Marjorie Ornston, Grants Director, 10x10 Photobooks"
       ],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "10x10-photobooks-research-grants-cycle-5",
+      "orgInTitle": true
     },
     {
       "title": "Fast Forward: Analog Photography as a Third Space",
@@ -1308,7 +1454,9 @@
       ],
       "submitVia": "Submittable",
       "requirements": "Up to 35 images",
-      "images": "Up to 35 images"
+      "images": "Up to 35 images",
+      "slug": "fast-forward-analog-photography-as-a-third-space",
+      "orgInTitle": false
     },
     {
       "title": "The Magic of Light - Photography Open Call",
@@ -1328,7 +1476,9 @@
       "submitVia": "EntryThingy",
       "requirements": "Up to 15 images",
       "ai": "Not accepted",
-      "images": "Up to 15 images"
+      "images": "Up to 15 images",
+      "slug": "the-magic-of-light-photography-open-call",
+      "orgInTitle": false
     },
     {
       "title": "The Human Portrait",
@@ -1345,7 +1495,9 @@
       "submitVia": "Website form",
       "requirements": "Up to 20 images",
       "ai": "Not accepted",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "the-human-portrait",
+      "orgInTitle": false
     },
     {
       "title": "BOTANICAL Photography Exhibit",
@@ -1364,7 +1516,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "5 or 10 images",
-      "images": "5 or 10 images"
+      "images": "5 or 10 images",
+      "slug": "botanical-photography-exhibit",
+      "orgInTitle": false
     },
     {
       "title": "Photographic Exploration Project: ENTANGLEMENT",
@@ -1384,7 +1538,9 @@
       ],
       "submitVia": "JotForm",
       "requirements": "1–10 images",
-      "images": "1–10 images"
+      "images": "1–10 images",
+      "slug": "photographic-exploration-project-entanglement",
+      "orgInTitle": false
     },
     {
       "title": "Portfolio 2026",
@@ -1405,7 +1561,9 @@
       ],
       "submitVia": "Dropbox",
       "requirements": "10 or 20 images",
-      "images": "10 or 20 images"
+      "images": "10 or 20 images",
+      "slug": "portfolio-2026",
+      "orgInTitle": false
     },
     {
       "title": "COLOR Photography Exhibit",
@@ -1424,7 +1582,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "5 or 10 images",
-      "images": "5 or 10 images"
+      "images": "5 or 10 images",
+      "slug": "color-photography-exhibit",
+      "orgInTitle": false
     },
     {
       "title": "Contemporary Trends in Beauty - Alternative Processes",
@@ -1446,7 +1606,9 @@
       ],
       "submitVia": "Email",
       "requirements": "3 or 6 images",
-      "images": "3 or 6 images"
+      "images": "3 or 6 images",
+      "slug": "contemporary-trends-in-beauty-alternative-processes",
+      "orgInTitle": false
     },
     {
       "title": "Centrale Festival Open Call 2026",
@@ -1467,7 +1629,9 @@
         "Lori Lako, Visual Artist",
         "Sara Poli, Director, Forno Project"
       ],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "centrale-festival-open-call-2026",
+      "orgInTitle": true
     },
     {
       "title": "Abstract Visions",
@@ -1483,7 +1647,9 @@
       "eligibility": [
         "membership-required"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "abstract-visions",
+      "orgInTitle": false
     },
     {
       "title": "The Process Room - Open Call for Workshops & Artworks",
@@ -1497,7 +1663,9 @@
       "location": "Online",
       "prize": "Exhibition + workshop",
       "eligibility": [],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "the-process-room-open-call-for-workshops-artworks",
+      "orgInTitle": false
     },
     {
       "title": "Mini Artist Grant for Emerging & Mid-Career Artists",
@@ -1513,7 +1681,9 @@
       "eligibility": [],
       "submitVia": "JotForm",
       "requirements": "Up to 5 images",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "mini-artist-grant-for-emerging-mid-career-artists",
+      "orgInTitle": false
     },
     {
       "title": "Colour Calendar Event",
@@ -1532,7 +1702,9 @@
       ],
       "submitVia": "Google Form",
       "requirements": "Single image",
-      "images": "Single image"
+      "images": "Single image",
+      "slug": "colour-calendar-event",
+      "orgInTitle": false
     },
     {
       "title": "FotoSlovo Award 2026",
@@ -1557,7 +1729,9 @@
       "submitVia": "Website form",
       "requirements": "1–15 images",
       "ai": "Dedicated category",
-      "images": "1–15 images per category"
+      "images": "1–15 images per category",
+      "slug": "fotoslovo-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Ephemere Photobook Grant 2026",
@@ -1575,7 +1749,9 @@
         "Anne Murayama, Curator & Director, Ephemere",
         "Jordan Reyes, Creative Partner, Ephemere"
       ],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "ephemere-photobook-grant-2026",
+      "orgInTitle": true
     },
     {
       "title": "2026 Street Photo Award",
@@ -1594,7 +1770,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "1, 3, or 6 images",
-      "images": "1, 3, or 6 images"
+      "images": "1, 3, or 6 images",
+      "slug": "2026-street-photo-award",
+      "orgInTitle": false
     },
     {
       "title": "A Stranger's Face: Travel Portraits (KLPA)",
@@ -1618,7 +1796,9 @@
       "submitVia": "Picter",
       "requirements": "Up to 10 images",
       "images": "10 images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "a-stranger-s-face-travel-portraits-klpa",
+      "orgInTitle": false
     },
     {
       "title": "AAP Magazine #56 Shadows",
@@ -1637,7 +1817,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Up to 40 images",
-      "images": "Up to 40 images"
+      "images": "Up to 40 images",
+      "slug": "aap-magazine-56-shadows",
+      "orgInTitle": false
     },
     {
       "title": "Color, Culture, Continuum – An Asian American Mosaic",
@@ -1660,7 +1842,9 @@
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Up to 3 images",
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "color-culture-continuum-an-asian-american-mosaic",
+      "orgInTitle": false
     },
     {
       "title": "Night Works",
@@ -1676,7 +1860,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "1–8 images",
-      "images": "1–8 images"
+      "images": "1–8 images",
+      "slug": "night-works",
+      "orgInTitle": false
     },
     {
       "title": "Fall 2026 - Spring 2027 Solo Exhibitions",
@@ -1692,7 +1878,9 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "20 images",
-      "images": "20 images"
+      "images": "20 images",
+      "slug": "fall-2026-spring-2027-solo-exhibitions",
+      "orgInTitle": false
     },
     {
       "title": "Hasselblad Foundation Photo Book Grant 2026",
@@ -1714,7 +1902,9 @@
         "Andréas Hagström, Hasselblad Foundation",
         "Dragana Vujanovic Östlind, Hasselblad Foundation"
       ],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "hasselblad-foundation-photo-book-grant-2026",
+      "orgInTitle": true
     },
     {
       "title": "Grants in Photography 2026",
@@ -1730,7 +1920,9 @@
       "eligibility": [
         "united-states"
       ],
-      "submitVia": "SlideRoom"
+      "submitVia": "SlideRoom",
+      "slug": "grants-in-photography-2026",
+      "orgInTitle": false
     },
     {
       "title": "Portals: New Perspectives",
@@ -1749,7 +1941,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "5+ images",
-      "images": "5+ images"
+      "images": "5+ images",
+      "slug": "portals-new-perspectives",
+      "orgInTitle": false
     },
     {
       "title": "CPA Artist Grants 2026",
@@ -1770,7 +1964,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "10–20 images",
-      "images": "10–20 images"
+      "images": "10–20 images",
+      "slug": "cpa-artist-grants-2026",
+      "orgInTitle": false
     },
     {
       "title": "Thoughts of Summer",
@@ -1790,7 +1986,9 @@
       ],
       "submitVia": "Smarter Entry",
       "requirements": "Up to 25 images",
-      "images": "Up to 25 images"
+      "images": "Up to 25 images",
+      "slug": "thoughts-of-summer",
+      "orgInTitle": false
     },
     {
       "title": "2026 International Portfolio Competition",
@@ -1806,7 +2004,9 @@
       "eligibility": [],
       "submitVia": "CaFE",
       "requirements": "10–15 images",
-      "images": "10–15 images"
+      "images": "10–15 images",
+      "slug": "2026-international-portfolio-competition",
+      "orgInTitle": false
     },
     {
       "title": "THE PORTRAIT",
@@ -1825,7 +2025,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Up to 10 images",
-      "images": "Up to 10 images"
+      "images": "Up to 10 images",
+      "slug": "the-portrait",
+      "orgInTitle": false
     },
     {
       "title": "Earthly Fabulations",
@@ -1841,7 +2043,9 @@
       "eligibility": [
         "emerging"
       ],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "earthly-fabulations",
+      "orgInTitle": false
     },
     {
       "title": "Sarajevo Photography Festival 2026",
@@ -1864,7 +2068,9 @@
         "Fernanda Prado Verčič, Director, Kranj Foto Fest",
         "Ionuț Trandafirescu, Director, Bucharest Photofest"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "sarajevo-photography-festival-2026",
+      "orgInTitle": true
     },
     {
       "title": "Framed: Black and White",
@@ -1883,7 +2089,9 @@
       ],
       "submitVia": "Email",
       "requirements": "Up to 5 images",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "framed-black-and-white",
+      "orgInTitle": false
     },
     {
       "title": "Hiding in Plain Sight",
@@ -1902,7 +2110,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "3–15 images",
-      "images": "3–15 images"
+      "images": "3–15 images",
+      "slug": "hiding-in-plain-sight",
+      "orgInTitle": false
     },
     {
       "title": "Queer Conscience 2026 Photography Exhibition",
@@ -1925,7 +2135,9 @@
       ],
       "submitVia": "ArtCall",
       "requirements": "Up to 5 images",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "queer-conscience-2026-photography-exhibition",
+      "orgInTitle": false
     },
     {
       "title": "PPA Photo Award 2026",
@@ -1947,7 +2159,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "10–20 images",
-      "images": "10–20 images"
+      "images": "10–20 images",
+      "slug": "ppa-photo-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "XVI Concurso Internacional de Fotografía sobre Humanización Asistencial",
@@ -1962,7 +2176,9 @@
       "prize": "€600",
       "eligibility": [],
       "submitVia": "Email",
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "xvi-concurso-internacional-de-fotograf-a-sobre-humanizaci-n-asistencial",
+      "orgInTitle": false
     },
     {
       "title": "light",
@@ -1981,7 +2197,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "light",
+      "orgInTitle": false
     },
     {
       "title": "Sharing and Caring Cities: Portraits of Collective Urban Life",
@@ -2003,7 +2221,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "3 images",
-      "images": "3 images"
+      "images": "3 images",
+      "slug": "sharing-and-caring-cities-portraits-of-collective-urban-life",
+      "orgInTitle": false
     },
     {
       "title": "Portrait Awards 2026",
@@ -2025,7 +2245,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "3, 6, or 12 images",
-      "images": "3, 6, or 12 images"
+      "images": "3, 6, or 12 images",
+      "slug": "portrait-awards-2026",
+      "orgInTitle": false
     },
     {
       "title": "ViewPoint Gallery International Photography Competition",
@@ -2041,7 +2263,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "3 images",
-      "images": "3 images"
+      "images": "3 images",
+      "slug": "viewpoint-gallery-international-photography-competition",
+      "orgInTitle": true
     },
     {
       "title": "The Cortona on The Move / BarTur Grant",
@@ -2058,7 +2282,9 @@
         "professional"
       ],
       "submitVia": "Picter",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "the-cortona-on-the-move-bartur-grant",
+      "orgInTitle": true
     },
     {
       "title": "Montgomery Photo Festival 2026",
@@ -2077,7 +2303,9 @@
       ],
       "submitVia": "ArtCall",
       "requirements": "3 images",
-      "images": "3 images"
+      "images": "3 images",
+      "slug": "montgomery-photo-festival-2026",
+      "orgInTitle": true
     },
     {
       "title": "LUMINOSITY - The Impact of Light",
@@ -2096,7 +2324,9 @@
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "luminosity-the-impact-of-light",
+      "orgInTitle": false
     },
     {
       "title": "FMoPA International Photography Competition 2026",
@@ -2110,7 +2340,9 @@
       "location": "Tampa, FL, USA",
       "prize": "$1,000",
       "eligibility": [],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "fmopa-international-photography-competition-2026",
+      "orgInTitle": false
     },
     {
       "title": "CITY Photography Exhibit",
@@ -2129,7 +2361,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "5 or 10 images",
-      "images": "5 or 10 images"
+      "images": "5 or 10 images",
+      "slug": "city-photography-exhibit",
+      "orgInTitle": false
     },
     {
       "title": "Film Photo Award 2026",
@@ -2147,7 +2381,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "1–15 images",
-      "images": "1–15 images"
+      "images": "1–15 images",
+      "slug": "film-photo-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "HOME Photography Exhibit",
@@ -2166,7 +2402,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "5 or 10 images",
-      "images": "5 or 10 images"
+      "images": "5 or 10 images",
+      "slug": "home-photography-exhibit",
+      "orgInTitle": false
     },
     {
       "title": "Masterclasses Program 2026/2027",
@@ -2180,7 +2418,9 @@
       "location": "Online",
       "prize": "",
       "eligibility": [],
-      "submitVia": "PhMuseum"
+      "submitVia": "PhMuseum",
+      "slug": "masterclasses-program-2026-2027",
+      "orgInTitle": false
     },
     {
       "title": "FOTOFILMIC OPEN 2026",
@@ -2202,7 +2442,9 @@
       "submitVia": "Fotofilmic",
       "requirements": "Up to 20 images",
       "ai": "Not accepted",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "fotofilmic-open-2026",
+      "orgInTitle": true
     },
     {
       "title": "Exposure One Awards - One Shot Photo Contest",
@@ -2225,7 +2467,9 @@
       ],
       "submitVia": "Exposure One Awards",
       "requirements": "1–5 images",
-      "images": "1–5 images"
+      "images": "1–5 images",
+      "slug": "exposure-one-awards-one-shot-photo-contest",
+      "orgInTitle": true
     },
     {
       "title": "The Hopper Prize Grants",
@@ -2248,7 +2492,9 @@
       ],
       "submitVia": "Hopper Prize",
       "requirements": "Up to 10 images",
-      "images": "10 images"
+      "images": "10 images",
+      "slug": "the-hopper-prize-grants",
+      "orgInTitle": true
     },
     {
       "title": "7th Annual Alternative Process Photography Exhibition",
@@ -2271,7 +2517,9 @@
       ],
       "submitVia": "ArtCall",
       "requirements": "Up to 3 images",
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "7th-annual-alternative-process-photography-exhibition",
+      "orgInTitle": false
     },
     {
       "title": "SHADOW PLAY 2026",
@@ -2284,7 +2532,9 @@
       "instagram": "@capecodartcenter",
       "location": "Online",
       "prize": "",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "shadow-play-2026",
+      "orgInTitle": false
     },
     {
       "title": "1839 Awards Color Photography Contest",
@@ -2308,7 +2558,9 @@
       ],
       "submitVia": "1839 Awards",
       "requirements": "1–5 images",
-      "images": "1–5 images"
+      "images": "1–5 images",
+      "slug": "1839-awards-color-photography-contest",
+      "orgInTitle": true
     },
     {
       "title": "Photographic Performance 2026",
@@ -2328,7 +2580,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "12–20 images",
-      "images": "12–20 images"
+      "images": "12–20 images",
+      "slug": "photographic-performance-2026",
+      "orgInTitle": false
     },
     {
       "title": "reFocus Awards - Black and White Photo Contest",
@@ -2351,7 +2605,9 @@
       ],
       "submitVia": "reFocus Awards",
       "requirements": "1–5 images",
-      "images": "1–5 images"
+      "images": "1–5 images",
+      "slug": "refocus-awards-black-and-white-photo-contest",
+      "orgInTitle": true
     },
     {
       "title": "The Book Project - Street Photography",
@@ -2370,7 +2626,9 @@
       ],
       "submitVia": "Email",
       "requirements": "5–10 images",
-      "images": "5–10 images"
+      "images": "5–10 images",
+      "slug": "the-book-project-street-photography",
+      "orgInTitle": false
     },
     {
       "title": "The Hand Magazine - Issue #53 Summer 2026",
@@ -2388,7 +2646,9 @@
       ],
       "submitVia": "Email",
       "requirements": "5 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "the-hand-magazine-issue-53-summer-2026",
+      "orgInTitle": true
     },
     {
       "title": "JUST ADD WATER",
@@ -2407,7 +2667,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "20 images",
-      "images": "20 images"
+      "images": "20 images",
+      "slug": "just-add-water",
+      "orgInTitle": false
     },
     {
       "title": "BOTANICALS",
@@ -2426,7 +2688,9 @@
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "botanicals",
+      "orgInTitle": false
     },
     {
       "title": "Snider Prize",
@@ -2444,7 +2708,9 @@
       ],
       "submitVia": "JotForm",
       "requirements": "10 images",
-      "images": "10 images"
+      "images": "10 images",
+      "slug": "snider-prize",
+      "orgInTitle": false
     },
     {
       "title": "Evolution Grant",
@@ -2460,7 +2726,9 @@
       "eligibility": [],
       "submitVia": "CaFE",
       "requirements": "5–20 images",
-      "images": "5–20 images"
+      "images": "5–20 images",
+      "slug": "evolution-grant",
+      "orgInTitle": false
     },
     {
       "title": "reFocus Awards - Color Photography Contest",
@@ -2483,7 +2751,9 @@
         "Paris Chong, Gallery Director, Leica Gallery LA",
         "Daniel Melamud, Editor, Rizzoli"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "refocus-awards-color-photography-contest",
+      "orgInTitle": true
     },
     {
       "title": "Helsinki Analog Festival 2026 - Analog Practice Exhibition",
@@ -2499,7 +2769,9 @@
       "eligibility": [
         "analog-photography"
       ],
-      "submitVia": "ForPhotographersOnly"
+      "submitVia": "ForPhotographersOnly",
+      "slug": "helsinki-analog-festival-2026-analog-practice-exhibition",
+      "orgInTitle": true
     },
     {
       "title": "2027 Artist-in-Residence Program",
@@ -2514,7 +2786,9 @@
       "prize": "$5,000 + apartment + publication",
       "eligibility": [],
       "submitVia": "SlideRoom",
-      "images": "20 images"
+      "images": "20 images",
+      "slug": "2027-artist-in-residence-program",
+      "orgInTitle": false
     },
     {
       "title": "Arte Laguna Prize 2026",
@@ -2537,7 +2811,9 @@
       ],
       "submitVia": "artelaguna.world",
       "requirements": "5 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "arte-laguna-prize-2026",
+      "orgInTitle": true
     },
     {
       "title": "IX International Mini Print Cantabria 2026",
@@ -2556,7 +2832,9 @@
         "Eugènia Agustí, Visual Artist & Lecturer, University of Barcelona",
         "Usama Habil, Artist & Assistant Professor, University of Salamanca"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "ix-international-mini-print-cantabria-2026",
+      "orgInTitle": true
     },
     {
       "title": "Photobook Open Call 2026",
@@ -2576,7 +2854,9 @@
         "Tiago Casanova, XYZ Books",
         "Francesca Todde, Depart Pour L'Image"
       ],
-      "submitVia": "Email + WeTransfer"
+      "submitVia": "Email + WeTransfer",
+      "slug": "photobook-open-call-2026",
+      "orgInTitle": false
     },
     {
       "title": "World Cyanotype Day",
@@ -2592,7 +2872,9 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "1 image",
-      "images": "1 image"
+      "images": "1 image",
+      "slug": "world-cyanotype-day",
+      "orgInTitle": false
     },
     {
       "title": "World Anthotype Day",
@@ -2608,7 +2890,9 @@
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "1 image",
-      "images": "1 image"
+      "images": "1 image",
+      "slug": "world-anthotype-day",
+      "orgInTitle": false
     },
     {
       "title": "Innovate Grants - Quarterly Grants",
@@ -2623,7 +2907,9 @@
       "prize": "$1,800",
       "eligibility": [],
       "submitVia": "Paperform",
-      "images": "3–10 images"
+      "images": "3–10 images",
+      "slug": "innovate-grants-quarterly-grants",
+      "orgInTitle": true
     },
     {
       "title": "Artist Features & Interviews",
@@ -2645,7 +2931,9 @@
         "Melissa Castro Keesor, Director, Harvey Milk Photo Center",
         "Catherine Couturier, Director, Catherine Couturier Gallery",
         "Crista Dix, Executive Director, Griffin Museum of Photography"
-      ]
+      ],
+      "slug": "artist-features-interviews",
+      "orgInTitle": false
     },
     {
       "title": "Open Doors Takeovers",
@@ -2660,7 +2948,9 @@
       "prize": "£1,500",
       "eligibility": [
         "emerging"
-      ]
+      ],
+      "slug": "open-doors-takeovers",
+      "orgInTitle": true
     },
     {
       "title": "Tomorrow's Talent - Open Submissions",
@@ -2678,7 +2968,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "5 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "tomorrow-s-talent-open-submissions",
+      "orgInTitle": false
     },
     {
       "title": "PhMuseum Days 2026 Open Call",
@@ -2700,7 +2992,9 @@
       ],
       "submitVia": "PhMuseum",
       "requirements": "5–20 images",
-      "images": "5–20 images"
+      "images": "5–20 images",
+      "slug": "phmuseum-days-2026-open-call",
+      "orgInTitle": true
     },
     {
       "title": "Brussels Street Photography Festival 2026",
@@ -2716,7 +3010,9 @@
       "eligibility": [],
       "submitVia": "JotForm",
       "requirements": "1–10 images",
-      "images": "1–10 images"
+      "images": "1–10 images",
+      "slug": "brussels-street-photography-festival-2026",
+      "orgInTitle": true
     },
     {
       "title": "Form Photo Award 2026",
@@ -2730,7 +3026,9 @@
       "location": "Basel, Switzerland",
       "prize": "Exhibition at photo basel",
       "eligibility": [],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "form-photo-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Head On Photo Festival 2026",
@@ -2745,7 +3043,9 @@
       "prize": "AUD 80,000",
       "eligibility": [],
       "images": "10 images",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "head-on-photo-festival-2026",
+      "orgInTitle": true
     },
     {
       "title": "Sirmione Photo Residency 2026",
@@ -2763,7 +3063,9 @@
         "Andréa Holzherr, Global Cultural Director, Magnum Photos",
         "Ludovica Pellegatta, Partnerships Director, Magnum Photos"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "sirmione-photo-residency-2026",
+      "orgInTitle": false
     },
     {
       "title": "9th Chania International Photo Festival",
@@ -2785,7 +3087,9 @@
       ],
       "submitVia": "Email",
       "requirements": "1–5 images",
-      "images": "1–5 images"
+      "images": "1–5 images",
+      "slug": "9th-chania-international-photo-festival",
+      "orgInTitle": false
     },
     {
       "title": "EuroNatur Photo Competition 2026",
@@ -2808,7 +3112,9 @@
       ],
       "submitVia": "Email",
       "requirements": "5 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "euronatur-photo-competition-2026",
+      "orgInTitle": true
     },
     {
       "title": "Vision(ary) 2026: Raising Our Voices",
@@ -2827,7 +3133,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "5–10 images",
-      "images": "5–10 images"
+      "images": "5–10 images",
+      "slug": "vision-ary-2026-raising-our-voices",
+      "orgInTitle": false
     },
     {
       "title": "Griffin Museum — Self Published Photobook Exhibition 2026",
@@ -2847,7 +3155,9 @@
       ],
       "submitVia": "CaFE",
       "requirements": "5 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "griffin-museum-self-published-photobook-exhibition-2026",
+      "orgInTitle": true
     },
     {
       "title": "Siena Creative Photo Awards 2026",
@@ -2871,7 +3181,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "siena-creative-photo-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Objectif FEMMES 2026",
@@ -2889,7 +3201,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "10 images",
-      "images": "10 images"
+      "images": "10 images",
+      "slug": "objectif-femmes-2026",
+      "orgInTitle": false
     },
     {
       "title": "Counter Histories Puerto Rico",
@@ -2905,7 +3219,9 @@
       "eligibility": [
         "puerto-rico"
       ],
-      "submitVia": "Submittable"
+      "submitVia": "Submittable",
+      "slug": "counter-histories-puerto-rico",
+      "orgInTitle": false
     },
     {
       "title": "Golden Shot International Photography Awards 2026",
@@ -2921,7 +3237,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "golden-shot-international-photography-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Meitar Award for Excellence in Photography 2026",
@@ -2944,7 +3262,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "6–12 images",
-      "images": "6–12 images"
+      "images": "6–12 images",
+      "slug": "meitar-award-for-excellence-in-photography-2026",
+      "orgInTitle": false
     },
     {
       "title": "Street Photography Barcelona Contest 2026",
@@ -2962,7 +3282,9 @@
         "Xavi Herrero, Festival Director",
         "Olivier Verdier, Curator, Galerie Art Nomade"
       ],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "street-photography-barcelona-contest-2026",
+      "orgInTitle": true
     },
     {
       "title": "Impressum Photo Award 2026",
@@ -2978,7 +3300,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "ai": "Dedicated category",
-      "images": "25 images"
+      "images": "25 images",
+      "slug": "impressum-photo-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "Black & White Spider Awards 2026",
@@ -3001,7 +3325,9 @@
       "submitVia": "Website form",
       "requirements": "Unlimited images",
       "ai": "Not accepted",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "black-white-spider-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "ND Awards 2026",
@@ -3015,7 +3341,9 @@
       "location": "Online",
       "prize": "$3,500",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "nd-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "International Photography Awards 2026",
@@ -3037,7 +3365,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "international-photography-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "London Photography Awards 2026",
@@ -3051,7 +3381,9 @@
       "location": "London, United Kingdom",
       "prize": "$3,000",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "london-photography-awards-2026",
+      "orgInTitle": false
     },
     {
       "title": "Photo Journalism Prize 2026",
@@ -3075,7 +3407,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "1–10 images",
-      "images": "1–10 images"
+      "images": "1–10 images",
+      "slug": "photo-journalism-prize-2026",
+      "orgInTitle": true
     },
     {
       "title": "Gomma Black and White Photo Award 2026",
@@ -3091,7 +3425,9 @@
       "eligibility": [],
       "submitVia": "Submittable",
       "images": "8–24 images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "gomma-black-and-white-photo-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Landskrona Foto & Breadfield Dummy Award 2026",
@@ -3107,7 +3443,9 @@
       "eligibility": [],
       "submitVia": "Picter",
       "requirements": "1 PDF",
-      "images": "1 PDF"
+      "images": "1 PDF",
+      "slug": "landskrona-foto-breadfield-dummy-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "International Aerial Photographer of the Year 2026",
@@ -3127,7 +3465,9 @@
         "Isabella Tabacchi, Photographer"
       ],
       "submitVia": "Website form",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "international-aerial-photographer-of-the-year-2026",
+      "orgInTitle": true
     },
     {
       "title": "ReA! Art Fair 2026",
@@ -3140,7 +3480,9 @@
       "instagram": "@rea.fair",
       "location": "Milan, Italy",
       "prize": "€1,500",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "rea-art-fair-2026",
+      "orgInTitle": true
     },
     {
       "title": "Prix Virginia 2026",
@@ -3165,7 +3507,9 @@
       ],
       "submitVia": "Award Force",
       "requirements": "12–18 images",
-      "images": "12–18 images"
+      "images": "12–18 images",
+      "slug": "prix-virginia-2026",
+      "orgInTitle": false
     },
     {
       "title": "MonoVisions Black & White Photography Awards 2026",
@@ -3181,7 +3525,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "1 or 8 images",
-      "images": "1 or 8 images"
+      "images": "1 or 8 images",
+      "slug": "monovisions-black-white-photography-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Nature Photographer of the Year 2026",
@@ -3196,7 +3542,9 @@
       "prize": "€25,000",
       "eligibility": [],
       "submitVia": "Website form",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "slug": "nature-photographer-of-the-year-2026",
+      "orgInTitle": true
     },
     {
       "title": "HIPA Photography Award 2026",
@@ -3210,7 +3558,9 @@
       "location": "Dubai, United Arab Emirates",
       "prize": "$1,000,000",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "hipa-photography-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "Natural Landscape Photography Awards 2026",
@@ -3234,7 +3584,9 @@
       "submitVia": "Website form",
       "requirements": "1–18 images",
       "ai": "Not accepted",
-      "images": "1–18 images"
+      "images": "1–18 images",
+      "slug": "natural-landscape-photography-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Queer Nature Photography Awards 2026",
@@ -3249,7 +3601,9 @@
       "prize": "€1,000",
       "eligibility": [],
       "images": "Up to 3 images",
-      "submitVia": "Email + WeTransfer"
+      "submitVia": "Email + WeTransfer",
+      "slug": "queer-nature-photography-awards-2026",
+      "orgInTitle": false
     },
     {
       "title": "The Shape of a Moment",
@@ -3268,7 +3622,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "the-shape-of-a-moment",
+      "orgInTitle": false
     },
     {
       "title": "Chromatic Photography Awards 2026",
@@ -3282,7 +3638,9 @@
       "location": "Online",
       "prize": "$2,000",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "chromatic-photography-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "PX3 Prix de la Photographie Paris 2026",
@@ -3301,7 +3659,9 @@
         "Steve McCurry, Photographer",
         "Samuel Nja Kwa, Forbes Afrique"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "px3-prix-de-la-photographie-paris-2026",
+      "orgInTitle": true
     },
     {
       "title": "Camera Clara Photo Award 2026",
@@ -3317,7 +3677,9 @@
       "eligibility": [
         "analog-photography"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "camera-clara-photo-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Tokyo International Foto Award 2026",
@@ -3336,7 +3698,9 @@
         "Casey Kelbaugh, Photography Consultant",
         "Susan Spiritus, Susan Spiritus Gallery"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "tokyo-international-foto-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "Milano Photo Awards 2026",
@@ -3352,7 +3716,9 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "2–10 images",
-      "images": "5 images"
+      "images": "5 images",
+      "slug": "milano-photo-awards-2026",
+      "orgInTitle": false
     },
     {
       "title": "Aesthetica Art Prize 2026",
@@ -3373,7 +3739,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "2 images",
-      "images": "2 images"
+      "images": "2 images",
+      "slug": "aesthetica-art-prize-2026",
+      "orgInTitle": true
     },
     {
       "title": "MUSE Photography Awards 2026",
@@ -3387,7 +3755,9 @@
       "location": "Online",
       "prize": "$3,000",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "muse-photography-awards-2026",
+      "orgInTitle": false
     },
     {
       "title": "International Color Awards 2026",
@@ -3408,7 +3778,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
-      "images": "Unlimited images"
+      "images": "Unlimited images",
+      "slug": "international-color-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "PX3 State of the World 2026",
@@ -3422,7 +3794,9 @@
       "location": "Paris, France",
       "prize": "€200 + exhibition",
       "eligibility": [],
-      "images": "Up to 10 images"
+      "images": "Up to 10 images",
+      "slug": "px3-state-of-the-world-2026",
+      "orgInTitle": false
     },
     {
       "title": "Blank Wall Gallery — Street Photography",
@@ -3437,7 +3811,9 @@
       "prize": "Exhibition",
       "eligibility": [],
       "images": "Up to 5 images",
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "blank-wall-gallery-street-photography",
+      "orgInTitle": true
     },
     {
       "title": "Blank Wall Gallery — Red",
@@ -3452,7 +3828,9 @@
       "prize": "Exhibition",
       "eligibility": [],
       "images": "Up to 5 images",
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "blank-wall-gallery-red",
+      "orgInTitle": true
     },
     {
       "title": "Blank Wall Gallery — Best Portfolio 2026",
@@ -3465,7 +3843,9 @@
       "instagram": "@blankwallgallery",
       "location": "Athens, Greece",
       "prize": "Solo exhibition",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "blank-wall-gallery-best-portfolio-2026",
+      "orgInTitle": true
     },
     {
       "title": "Color/less — Cambridge Photography Gallery",
@@ -3478,7 +3858,9 @@
       "instagram": "@cambridgephotogallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "color-less-cambridge-photography-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Daylight Photo Awards 2026",
@@ -3492,7 +3874,9 @@
       "location": "Online",
       "prize": "$2,500",
       "eligibility": [],
-      "images": "15 images"
+      "images": "15 images",
+      "slug": "daylight-photo-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Fotografiska HOME — Global Open Call",
@@ -3508,7 +3892,9 @@
       "eligibility": [
         "emerging"
       ],
-      "images": "3 images"
+      "images": "3 images",
+      "slug": "fotografiska-home-global-open-call",
+      "orgInTitle": true
     },
     {
       "title": "The Idle Class — Photography Issue",
@@ -3521,7 +3907,9 @@
       "instagram": "@theidleclass",
       "location": "Online",
       "prize": "Publication",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "the-idle-class-photography-issue",
+      "orgInTitle": true
     },
     {
       "title": "Berlin Photo Awards 2026",
@@ -3534,7 +3922,9 @@
       "instagram": "@berlinphotoawards",
       "location": "Berlin, Germany",
       "prize": "€4,000",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "berlin-photo-awards-2026",
+      "orgInTitle": true
     },
     {
       "title": "Galleri Format — Window Exhibition 2026",
@@ -3547,7 +3937,9 @@
       "instagram": "@galleriformat",
       "location": "Stockholm, Sweden",
       "prize": "Exhibition",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "galleri-format-window-exhibition-2026",
+      "orgInTitle": true
     },
     {
       "title": "Griffin Museum — Handmade Photobook Exhibition 2026",
@@ -3561,7 +3953,9 @@
       "location": "Winchester, MA, USA",
       "prize": "Exhibition",
       "eligibility": [],
-      "submitVia": "CaFE"
+      "submitVia": "CaFE",
+      "slug": "griffin-museum-handmade-photobook-exhibition-2026",
+      "orgInTitle": true
     },
     {
       "title": "Provoke USA — Open Call",
@@ -3574,7 +3968,9 @@
       "instagram": "@provokezineusa",
       "location": "Chicago, IL, USA",
       "prize": "Publication",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "provoke-usa-open-call",
+      "orgInTitle": false
     },
     {
       "title": "Hariban Award 2026",
@@ -3589,7 +3985,9 @@
       "prize": "Residency + exhibition",
       "eligibility": [],
       "images": "12 images",
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "hariban-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "Dark Frames III — Carlotta Gallery",
@@ -3603,7 +4001,9 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "dark-frames-iii-carlotta-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Flora — Carlotta Gallery",
@@ -3617,7 +4017,9 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "flora-carlotta-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Europe — Carlotta Gallery",
@@ -3631,7 +4033,9 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "europe-carlotta-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Candid — Carlotta Gallery",
@@ -3645,7 +4049,9 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "candid-carlotta-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Summer — Carlotta Gallery",
@@ -3659,7 +4065,9 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "images": "Up to 3 images"
+      "images": "Up to 3 images",
+      "slug": "summer-carlotta-gallery",
+      "orgInTitle": true
     },
     {
       "title": "Paradajs Photo Fest 2026 — Welcome to Paradise",
@@ -3674,7 +4082,9 @@
       "prize": "€2,000 + residency",
       "eligibility": [],
       "images": "Up to 10 images",
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "paradajs-photo-fest-2026-welcome-to-paradise",
+      "orgInTitle": true
     },
     {
       "title": "Beautiful Bizarre Art Prize — MPB Photography Award 2026",
@@ -3689,7 +4099,9 @@
       "prize": "$3,000",
       "eligibility": [],
       "images": "1 image",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "beautiful-bizarre-art-prize-mpb-photography-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "FotoDoc Photo Contest 2026",
@@ -3704,7 +4116,9 @@
       "prize": "Exhibition + travel",
       "eligibility": [],
       "images": "1–15 images",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "fotodoc-photo-contest-2026",
+      "orgInTitle": true
     },
     {
       "title": "SUB(SCAPE) — Manifest Gallery Season 22",
@@ -3718,7 +4132,9 @@
       "location": "Cincinnati, OH, USA",
       "prize": "$1,000",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "sub-scape-manifest-gallery-season-22",
+      "orgInTitle": true
     },
     {
       "title": "Artadia Awards 2026 — New York City",
@@ -3735,7 +4151,9 @@
         "united-states"
       ],
       "images": "8 images",
-      "submitVia": "Submittable"
+      "submitVia": "Submittable",
+      "slug": "artadia-awards-2026-new-york-city",
+      "orgInTitle": true
     },
     {
       "title": "XII Premio Internacional de Fotografía Jalón Ángel",
@@ -3750,7 +4168,9 @@
       "prize": "€1,500",
       "eligibility": [],
       "images": "1 image per category",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "xii-premio-internacional-de-fotograf-a-jal-n-ngel",
+      "orgInTitle": true
     },
     {
       "title": "Bethany Arts Community — Fall Multidisciplinary Residency 2026",
@@ -3764,7 +4184,9 @@
       "location": "Ossining, NY, USA",
       "prize": "$450 stipend + residency",
       "eligibility": [],
-      "submitVia": "Submittable"
+      "submitVia": "Submittable",
+      "slug": "bethany-arts-community-fall-multidisciplinary-residency-2026",
+      "orgInTitle": true
     },
     {
       "title": "Diane Dammeyer Fellowship in Photographic Arts and Social Awareness 2026/27",
@@ -3781,7 +4203,9 @@
         "professional"
       ],
       "images": "Up to 20 images",
-      "submitVia": "JotForm"
+      "submitVia": "JotForm",
+      "slug": "diane-dammeyer-fellowship-in-photographic-arts-and-social-awareness-2026-27",
+      "orgInTitle": false
     },
     {
       "title": "XIX Premio de Fotografía Fundación ENAIRE 2026",
@@ -3798,7 +4222,9 @@
         "professional"
       ],
       "images": "Up to 3 images",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "xix-premio-de-fotograf-a-fundaci-n-enaire-2026",
+      "orgInTitle": true
     },
     {
       "title": "International Photography and Football Open Call 2026",
@@ -3812,7 +4238,9 @@
       "location": "Mexico City, Mexico",
       "prize": "$18,000 total",
       "eligibility": [],
-      "images": "1–3 images"
+      "images": "1–3 images",
+      "slug": "international-photography-and-football-open-call-2026",
+      "orgInTitle": false
     },
     {
       "title": "Women Photograph + Leica Documentary Grant 2026",
@@ -3828,7 +4256,9 @@
       "eligibility": [
         "women"
       ],
-      "submitVia": "Picter"
+      "submitVia": "Picter",
+      "slug": "women-photograph-leica-documentary-grant-2026",
+      "orgInTitle": true
     },
     {
       "title": "Lenscratch Student Prize 2026",
@@ -3844,7 +4274,9 @@
       "eligibility": [
         "emerging"
       ],
-      "submitVia": "Google Forms"
+      "submitVia": "Google Forms",
+      "slug": "lenscratch-student-prize-2026",
+      "orgInTitle": true
     },
     {
       "title": "Lenscratch Motherhood Exhibition",
@@ -3859,7 +4291,9 @@
       "prize": "",
       "eligibility": [],
       "images": "1 image",
-      "submitVia": "Google Forms"
+      "submitVia": "Google Forms",
+      "slug": "lenscratch-motherhood-exhibition",
+      "orgInTitle": true
     },
     {
       "title": "Lenscratch Fatherhood Exhibition",
@@ -3874,7 +4308,9 @@
       "prize": "",
       "eligibility": [],
       "images": "1 image",
-      "submitVia": "Google Forms"
+      "submitVia": "Google Forms",
+      "slug": "lenscratch-fatherhood-exhibition",
+      "orgInTitle": true
     },
     {
       "title": "Lenscratch Fault Lines: America Exhibition",
@@ -3889,7 +4325,9 @@
       "prize": "",
       "eligibility": [],
       "images": "1 image",
-      "submitVia": "Google Forms"
+      "submitVia": "Google Forms",
+      "slug": "lenscratch-fault-lines-america-exhibition",
+      "orgInTitle": true
     },
     {
       "title": "SE Center for Photography — Magic of Light",
@@ -3903,7 +4341,9 @@
       "location": "Greenville, SC, USA",
       "prize": "",
       "eligibility": [],
-      "images": "Up to 15 images"
+      "images": "Up to 15 images",
+      "slug": "se-center-for-photography-magic-of-light",
+      "orgInTitle": true
     },
     {
       "title": "photoED Magazine — Home VS Away (Issue #76)",
@@ -3918,7 +4358,9 @@
       "prize": "Publication in print edition",
       "eligibility": [],
       "images": "Up to 8 images",
-      "submitVia": "Zealous"
+      "submitVia": "Zealous",
+      "slug": "photoed-magazine-home-vs-away-issue-76",
+      "orgInTitle": true
     },
     {
       "title": "photoED Magazine — Real VS Imagined",
@@ -3933,7 +4375,9 @@
       "prize": "Publication in print edition",
       "eligibility": [],
       "images": "Up to 8 images",
-      "submitVia": "Zealous"
+      "submitVia": "Zealous",
+      "slug": "photoed-magazine-real-vs-imagined",
+      "orgInTitle": true
     },
     {
       "title": "LUMA Rencontres Dummy Book Award 2026",
@@ -3950,7 +4394,9 @@
         "professional"
       ],
       "images": "1 dummy",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "luma-rencontres-dummy-book-award-2026",
+      "orgInTitle": true
     },
     {
       "title": "8th Chelsea International Photography Competition",
@@ -3965,7 +4411,9 @@
       "prize": "$500 x5",
       "eligibility": [],
       "images": "Up to 5 images",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "8th-chelsea-international-photography-competition",
+      "orgInTitle": false
     },
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
@@ -3978,7 +4426,9 @@
       "instagram": "@creaturamagazine",
       "location": "Online",
       "prize": "Publication in print edition",
-      "eligibility": []
+      "eligibility": [],
+      "slug": "creatura-magazine-issue-02-what-we-call-home",
+      "orgInTitle": true
     },
     {
       "title": "F-Stop Magazine Issue #137 — Open Theme",
@@ -3992,7 +4442,9 @@
       "location": "Online",
       "prize": "",
       "eligibility": [],
-      "images": "Up to 12 images"
+      "images": "Up to 12 images",
+      "slug": "f-stop-magazine-issue-137-open-theme",
+      "orgInTitle": true
     },
     {
       "title": "Photo Trouvée Virtual Artist Residency — Spring 2026",
@@ -4006,7 +4458,9 @@
       "location": "Online",
       "prize": "",
       "eligibility": [],
-      "submitVia": "JotForm"
+      "submitVia": "JotForm",
+      "slug": "photo-trouv-e-virtual-artist-residency-spring-2026",
+      "orgInTitle": true
     },
     {
       "title": "HNDL Magazine — PRIDE Issue",
@@ -4022,7 +4476,9 @@
       "eligibility": [
         "neurodivergent-disabled"
       ],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "hndl-magazine-pride-issue",
+      "orgInTitle": true
     },
     {
       "title": "Off The Clock 2026",
@@ -4037,7 +4493,9 @@
       "prize": "Exhibition + catalog",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "Unlimited single images"
+      "images": "Unlimited single images",
+      "slug": "off-the-clock-2026",
+      "orgInTitle": false
     },
     {
       "title": "The Female Show 2026",
@@ -4053,7 +4511,9 @@
       "eligibility": [
         "women"
       ],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "the-female-show-2026",
+      "orgInTitle": false
     },
     {
       "title": "Open Call — Il Reportage in Italia",
@@ -4068,7 +4528,9 @@
       "prize": "€500",
       "eligibility": [],
       "submitVia": "Google Form",
-      "images": "15–25 images"
+      "images": "15–25 images",
+      "slug": "open-call-il-reportage-in-italia",
+      "orgInTitle": false
     },
     {
       "title": "100 Emerging Artworks of 2026",
@@ -4083,7 +4545,9 @@
       "prize": "$1,000",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "Up to 20 artworks"
+      "images": "Up to 20 artworks",
+      "slug": "100-emerging-artworks-of-2026",
+      "orgInTitle": false
     },
     {
       "title": "Michael P. Smith Fund for Documentary Photography 2026",
@@ -4100,7 +4564,9 @@
         "united-states"
       ],
       "submitVia": "CaFE",
-      "images": "10–20 images"
+      "images": "10–20 images",
+      "slug": "michael-p-smith-fund-for-documentary-photography-2026",
+      "orgInTitle": false
     },
     {
       "title": "Luz e Sombra — National Photography Competition",
@@ -4117,7 +4583,9 @@
         "portugal"
       ],
       "submitVia": "Website form",
-      "images": "6 images"
+      "images": "6 images",
+      "slug": "luz-e-sombra-national-photography-competition",
+      "orgInTitle": false
     },
     {
       "title": "CPG Mentorship Programme 2026",
@@ -4131,7 +4599,9 @@
       "location": "Geneva, Switzerland",
       "prize": "CHF 500",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "cpg-mentorship-programme-2026",
+      "orgInTitle": false
     },
     {
       "title": "New Wave Photography Award 2026",
@@ -4148,7 +4618,9 @@
         "taiwan"
       ],
       "submitVia": "Website form",
-      "images": "15–25 images"
+      "images": "15–25 images",
+      "slug": "new-wave-photography-award-2026",
+      "orgInTitle": false
     },
     {
       "title": "Solo Statement — Doesn't Play Well with Others",
@@ -4163,7 +4635,9 @@
       "prize": "Solo exhibition",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "3–5 images"
+      "images": "3–5 images",
+      "slug": "solo-statement-doesn-t-play-well-with-others",
+      "orgInTitle": false
     },
     {
       "title": "The Woman Artist Award — 6th Edition",
@@ -4179,7 +4653,9 @@
       "eligibility": [
         "women"
       ],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "the-woman-artist-award-6th-edition",
+      "orgInTitle": false
     },
     {
       "title": "Solstice Magazine Issue 71 — Editorial Submissions",
@@ -4193,7 +4669,9 @@
       "location": "London, United Kingdom",
       "prize": "Publication",
       "eligibility": [],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "solstice-magazine-issue-71-editorial-submissions",
+      "orgInTitle": true
     },
     {
       "title": "LSI Women in Photography Grant 2026",
@@ -4210,7 +4688,9 @@
         "women"
       ],
       "submitVia": "Picter",
-      "images": "10 images"
+      "images": "10 images",
+      "slug": "lsi-women-in-photography-grant-2026",
+      "orgInTitle": false
     },
     {
       "title": "Roma E'Festival — Street Photography Awards 2026",
@@ -4225,7 +4705,9 @@
       "prize": "Exhibition + prizes from partners",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "3–15 images per category"
+      "images": "3–15 images per category",
+      "slug": "roma-e-festival-street-photography-awards-2026",
+      "orgInTitle": false
     },
     {
       "title": "Dyonyzine Issue 06 — Second Helpings",
@@ -4239,7 +4721,9 @@
       "location": "Online",
       "prize": "Publication",
       "eligibility": [],
-      "submitVia": "Google Form"
+      "submitVia": "Google Form",
+      "slug": "dyonyzine-issue-06-second-helpings",
+      "orgInTitle": true
     },
     {
       "title": "FeelsZine Issue 26 — Desire",
@@ -4253,7 +4737,9 @@
       "location": "Online",
       "prize": "Publication",
       "eligibility": [],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "feelszine-issue-26-desire",
+      "orgInTitle": true
     },
     {
       "title": "Cut+Paste Magazine Issue 17 — Gather",
@@ -4267,7 +4753,9 @@
       "location": "Online",
       "prize": "Publication + payment",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "cut-paste-magazine-issue-17-gather",
+      "orgInTitle": true
     },
     {
       "title": "Outdoor Photography Magazine — Creative Wildlife",
@@ -4282,7 +4770,9 @@
       "prize": "£229 in gear + publication",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "outdoor-photography-magazine-creative-wildlife",
+      "orgInTitle": true
     },
     {
       "title": "Outdoor Photography Magazine — Spring Landscapes",
@@ -4297,7 +4787,9 @@
       "prize": "£150 in gear + publication",
       "eligibility": [],
       "submitVia": "Website form",
-      "images": "Up to 5 images"
+      "images": "Up to 5 images",
+      "slug": "outdoor-photography-magazine-spring-landscapes",
+      "orgInTitle": true
     },
     {
       "title": "Zone Magazine — Open Submissions",
@@ -4312,7 +4804,9 @@
       "prize": "Publication",
       "eligibility": [],
       "submitVia": "Email",
-      "images": "Up to 20 images"
+      "images": "Up to 20 images",
+      "slug": "zone-magazine-open-submissions",
+      "orgInTitle": true
     },
     {
       "title": "Burn Magazine — Open Submissions",
@@ -4326,7 +4820,9 @@
       "location": "Online",
       "prize": "Publication",
       "eligibility": [],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "burn-magazine-open-submissions",
+      "orgInTitle": true
     },
     {
       "title": "Incandescent Zine — Color Film Photography",
@@ -4343,7 +4839,9 @@
         "analog-photography"
       ],
       "submitVia": "Email",
-      "images": "Up to 12 images"
+      "images": "Up to 12 images",
+      "slug": "incandescent-zine-color-film-photography",
+      "orgInTitle": true
     },
     {
       "title": "Phases Magazine — Open Submissions",
@@ -4357,7 +4855,9 @@
       "location": "Online",
       "prize": "Publication",
       "eligibility": [],
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "slug": "phases-magazine-open-submissions",
+      "orgInTitle": true
     },
     {
       "title": "Noice Magazine — Open Submissions",
@@ -4371,7 +4871,9 @@
       "location": "Online",
       "prize": "Publication",
       "eligibility": [],
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "slug": "noice-magazine-open-submissions",
+      "orgInTitle": true
     }
   ]
 }

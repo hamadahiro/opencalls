@@ -240,7 +240,7 @@ const orgCounts = {};
 data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 1; });
 
 function buildJsonLd(call) {
-  const pageUrl = `${SITE}/${slugify(call.title)}`;
+  const pageUrl = `${SITE}/${call.slug || slugify(call.title)}`;
   const ld = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -257,7 +257,7 @@ function buildJsonLd(call) {
 }
 
 function generatePage(call, cssVersion) {
-  const slug = slugify(call.title);
+  const slug = call.slug || slugify(call.title);
   const desc = metaDescription(call);
   const country = getCountry(call.location);
 
@@ -337,7 +337,7 @@ let generated = 0;
 let skipped = 0;
 
 data.calls.forEach(call => {
-  const slug = slugify(call.title);
+  const slug = call.slug || slugify(call.title);
 
   if (RESERVED.includes(slug)) {
     console.warn(`SKIPPED (reserved name): ${slug} — "${call.title}"`);
@@ -1148,7 +1148,7 @@ const openCalls = data.calls
   .slice(0, 50);
 
 const rssItems = openCalls.map(call => {
-  const slug = slugify(call.title);
+  const slug = call.slug || slugify(call.title);
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   const desc = `${escapeHtml(call.description)} — Deadline: ${deadlineText}. Fee: ${escapeHtml(call.fee || 'See website')}. Prize: ${escapeHtml(call.prize || 'None listed')}.`;
