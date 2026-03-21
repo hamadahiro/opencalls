@@ -436,6 +436,15 @@ data.calls.forEach(c => {
   });
 });
 
+// Validate all eligibility tags have a config entry
+Object.keys(eligibilityTags).forEach(tag => {
+  if (!eligibilityGroups[tag]) {
+    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityGroups. Add label, title, and desc for it.`);
+    hasErrors = true;
+  }
+});
+if (hasErrors) { console.error('Fix errors above before generating.'); process.exit(1); }
+
 const eligibilityPageSlugs = [];
 Object.entries(eligibilityTags).forEach(([tag, count]) => {
   const info = eligibilityGroups[tag];
@@ -481,12 +490,21 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'emerging', 'professional', 'under-30', 'under-40'] },
-  { heading: 'Where', tags: ['united-states', 'europe', 'italy'] },
+  { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-40'] },
+  { heading: 'Where', tags: ['united-states', 'europe', 'italy', 'portugal', 'taiwan'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
 ];
+
+// Validate all used eligibility tags appear in eligibilityOrder
+const allOrderedTags = new Set(eligibilityOrder.flatMap(g => g.tags));
+Object.keys(eligibilityTags).forEach(tag => {
+  if (!allOrderedTags.has(tag)) {
+    console.error(`ERROR: Eligibility tag "${tag}" exists in data but is not listed in eligibilityOrder. Add it to a group.`);
+    process.exit(1);
+  }
+});
 
 function buildEligibilityIndexItems() {
   let html = '';
