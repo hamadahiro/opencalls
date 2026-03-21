@@ -131,7 +131,7 @@ function buildHeader() {
       <a href="/browse" data-nav="browse">Browse</a>
     </div>
   </header>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':'browse';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
+  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
 }
 const HEADER = buildHeader();
 
