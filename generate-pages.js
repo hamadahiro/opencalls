@@ -303,8 +303,8 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
     function downloadICS(e) {
       e.preventDefault();
       var d = '${call.deadline}'.replace(/-/g, '');
-      var t = '${escapeHtml(call.title)}';
-      var u = '${escapeHtml(call.url)}';
+      var t = '${call.title.replace(/'/g, "\\'")}';
+      var u = '${call.url.replace(/'/g, "\\'")}';
       var o = '${call.org.replace(/'/g, "\\'")}';
       var dl = new Date('${call.deadline}T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + o + '\\\\n\\\\nDeadline: ' + dl${call.prize ? ` + '\\\\nPrize: ${call.prize.replace(/'/g, "\\'")}'` : ''}${call.fee ? ` + '\\\\nEntry fee: ${call.fee.replace(/'/g, "\\'")}'` : ''};
