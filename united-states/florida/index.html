@@ -84,7 +84,7 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && c.location.includes(', FL,') || c.location && c.location.includes(', FL, USA')).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', FL,') || c.location.includes(', FL, USA'))).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();

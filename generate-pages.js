@@ -947,7 +947,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && c.location.includes(', ${state},') || c.location && c.location.includes(', ${state}, USA')).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
@@ -1323,7 +1323,7 @@ const rssItems = rssCalls.map(call => {
     <guid>${SITE}/${slug}</guid>
     <description>${desc}</description>
     <category>${escapeHtml(call.category)}</category>
-    <pubDate>${new Date().toUTCString()}</pubDate>
+    <pubDate>${call.deadline !== 'Continuous' ? new Date(call.deadline + 'T00:00:00Z').toUTCString() : new Date().toUTCString()}</pubDate>
   </item>`;
 }).join('\n');
 
