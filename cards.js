@@ -56,15 +56,29 @@ const prizeCategoryLabel = {
   'fellowship': 'Fellowship'
 };
 
+function derivePrizeCategory(text) {
+  var p = text.toLowerCase();
+  if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/fellowship/.test(p)) return 'fellowship';
+  if (/residency|accommodation|apartment/.test(p)) return 'residency';
+  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
+  if (/exhibition/.test(p)) return 'exhibition';
+  return null;
+}
+
 function derivePrizeCategories(prize) {
   if (!prize) return [];
-  var cats = [], p = prize.toLowerCase();
-  if (/[$€£¥]|chf |sek |aud |twd |stipend/.test(p)) cats.push('cash');
-  if (/exhibition/.test(p)) cats.push('exhibition');
-  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) cats.push('publication');
-  if (/residency|accommodation/.test(p)) cats.push('residency');
-  if (/fellowship/.test(p)) cats.push('fellowship');
-  return cats;
+  var seen = {};
+  return splitPrizeParts(prize).map(function(part) { return derivePrizeCategory(part); }).filter(function(c) {
+    if (!c || seen[c]) return false;
+    seen[c] = true;
+    return true;
+  });
+}
+
+function splitPrizeParts(prize) {
+  if (!prize) return [];
+  return prize.split(/\s*\+\s*/).map(function(s) { return s.trim(); }).filter(Boolean);
 }
 
 const categorySlug = {
@@ -163,9 +177,12 @@ function renderTags(call) {
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   // Prize
   if (call.prize) {
-    const pCats = derivePrizeCategories(call.prize);
-    const prizeHref = pCats.length ? '/prize/' + pCats[0] : '/prize';
-    tags.push(`<a href="${prizeHref}" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
+    const parts = splitPrizeParts(call.prize);
+    parts.forEach(part => {
+      const cat = derivePrizeCategory(part);
+      const href = cat ? '/prize/' + cat : '/prize';
+      tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${esc(part)} prize</a>`);
+    });
   }
   // Fee
   if (call.fee && call.fee !== 'Check website') {
@@ -226,14 +243,12 @@ function renderInfoGrid(call) {
   }
   // Prize
   if (call.prize) {
-    const pCats = derivePrizeCategories(call.prize);
-    if (pCats.length <= 1) {
-      const prizeHtml = pCats.length === 1 ? infoLink('/prize/' + pCats[0], call.prize) : infoVal(call.prize);
-      rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
-    } else {
-      const prizeHtml = pCats.map(pc => infoLink('/prize/' + pc, prizeCategoryLabel[pc] || pc)).join(', ');
-      rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
-    }
+    const parts = splitPrizeParts(call.prize);
+    const prizeHtml = parts.map(part => {
+      const cat = derivePrizeCategory(part);
+      return cat ? infoLink('/prize/' + cat, part) : infoVal(part);
+    }).join(', ');
+    rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
   }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {

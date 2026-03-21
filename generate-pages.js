@@ -205,16 +205,24 @@ function buildKeywords(call) {
   return words.join(', ');
 }
 
+function derivePrizeCategory(text) {
+  const p = text.toLowerCase();
+  if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/fellowship/.test(p)) return 'fellowship';
+  if (/residency|accommodation|apartment/.test(p)) return 'residency';
+  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
+  if (/exhibition/.test(p)) return 'exhibition';
+  return null;
+}
+
 function derivePrizeCategories(prize) {
   if (!prize) return [];
-  const cats = [];
-  const p = prize.toLowerCase();
-  if (/[$€£¥]|chf |sek |aud |twd |stipend/.test(p)) cats.push('cash');
-  if (/exhibition/.test(p)) cats.push('exhibition');
-  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) cats.push('publication');
-  if (/residency|accommodation/.test(p)) cats.push('residency');
-  if (/fellowship/.test(p)) cats.push('fellowship');
-  return cats;
+  const seen = {};
+  return prize.split(/\s*\+\s*/).map(s => s.trim()).filter(Boolean).map(part => derivePrizeCategory(part)).filter(c => {
+    if (!c || seen[c]) return false;
+    seen[c] = true;
+    return true;
+  });
 }
 
 function categoryLabel(cat) {
@@ -711,13 +719,16 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   <script>
     function derivePrizeCats(prize) {
       if (!prize) return [];
-      var cats = [], p = prize.toLowerCase();
-      if (/[$€£¥]|chf |sek |aud |twd |stipend/.test(p)) cats.push('cash');
-      if (/exhibition/.test(p)) cats.push('exhibition');
-      if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) cats.push('publication');
-      if (/residency|accommodation/.test(p)) cats.push('residency');
-      if (/fellowship/.test(p)) cats.push('fellowship');
-      return cats;
+      var seen = {};
+      return prize.split(/\\s*\\+\\s*/).map(function(s){return s.trim()}).filter(Boolean).map(function(t){
+        var p = t.toLowerCase();
+        if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+        if (/fellowship/.test(p)) return 'fellowship';
+        if (/residency|accommodation|apartment/.test(p)) return 'residency';
+        if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
+        if (/exhibition/.test(p)) return 'exhibition';
+        return null;
+      }).filter(function(c){ if(!c||seen[c])return false; seen[c]=true; return true; });
     }
     async function loadFiltered() {
       const res = await fetch('/data.json');
