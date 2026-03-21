@@ -227,15 +227,13 @@ function renderInfoGrid(call) {
   // Prize
   if (call.prize) {
     const pCats = derivePrizeCategories(call.prize);
-    let prizeHtml;
-    if (pCats.length === 1) {
-      prizeHtml = infoLink('/prize/' + pCats[0], call.prize);
-    } else if (pCats.length > 1) {
-      prizeHtml = infoVal(call.prize) + ' · ' + pCats.map(pc => infoLink('/prize/' + pc, prizeCategoryLabel[pc] || pc)).join(', ');
+    if (pCats.length <= 1) {
+      const prizeHtml = pCats.length === 1 ? infoLink('/prize/' + pCats[0], call.prize) : infoVal(call.prize);
+      rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
     } else {
-      prizeHtml = infoVal(call.prize);
+      const prizeHtml = pCats.map(pc => infoLink('/prize/' + pc, prizeCategoryLabel[pc] || pc)).join(', ');
+      rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
     }
-    rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
   }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
