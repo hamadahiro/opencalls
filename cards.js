@@ -172,13 +172,6 @@ function renderTags(call) {
   // Category
   const catSlug = categorySlug[call.category];
   tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
-  // Organizer
-  const orgSlug = slugify(call.org);
-  if (orgPages.includes(orgSlug)) {
-    tags.push(`<a href="/${orgSlug}" class="meta-tag meta-tag-link meta-tag-truncate" title="${esc(call.org)}">${tagHtml(call.org)}</a>`);
-  } else {
-    tags.push(`<span class="meta-tag meta-tag-truncate" title="${esc(call.org)}">${tagHtml(call.org)}</span>`);
-  }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     call.eligibility.forEach(e => {
@@ -261,7 +254,7 @@ function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   return `
     <div class="call-card">
-      <${titleTag} class="call-title"><a href="/${slugify(call.title)}">${esc(call.title)}</a></${titleTag}>
+      <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}">${esc(call.title)}${!call.orgInTitle ? ' — ' + esc(call.org) : ''}</a></${titleTag}>
       <div class="call-meta">${renderTags(call)}</div>
       <p class="call-description">${esc(call.description)}</p>
     </div>`;
@@ -288,7 +281,7 @@ function renderCallList(calls, container) {
     container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Today</h3>');
     today.forEach(call => {
       container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      specialSlugs.add(slugify(call.title));
+      specialSlugs.add(call.slug || slugify(call.title));
     });
   }
 
@@ -298,13 +291,13 @@ function renderCallList(calls, container) {
     container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Tomorrow</h3>');
     tomorrow.forEach(call => {
       container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      specialSlugs.add(slugify(call.title));
+      specialSlugs.add(call.slug || slugify(call.title));
     });
   }
 
   // Open month sections (skip Today/Tomorrow items)
   let currentSection = '';
-  open.filter(c => !specialSlugs.has(slugify(c.title))).forEach(call => {
+  open.filter(c => !specialSlugs.has(c.slug || slugify(c.title))).forEach(call => {
     const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
     if (section !== currentSection) {
       currentSection = section;
