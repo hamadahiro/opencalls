@@ -1156,14 +1156,18 @@ const submitHtml = `<!DOCTYPE html>
 
     <section class="submit-form">
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
+        <h3 class="section-header">Where to apply</h3>
         <label for="url">Link to the open call</label>
         <input type="url" name="url" id="url" placeholder="https://" required>
 
-        <label for="email">Your email <span class="optional">(optional)</span></label>
-        <input type="email" name="email" id="email" placeholder="">
+        <details class="submit-details">
+          <summary>Add details <span class="optional">(optional)</span></summary>
+          <label for="note">Note</label>
+          <textarea name="note" id="note" rows="3" placeholder="Deadline, fee, or anything else you know"></textarea>
 
-        <label for="note">Note <span class="optional">(optional)</span></label>
-        <textarea name="note" id="note" rows="3" placeholder=""></textarea>
+          <label for="email">Your email</label>
+          <input type="email" name="email" id="email" placeholder="">
+        </details>
 
         <button type="submit">Submit</button>
       </form>

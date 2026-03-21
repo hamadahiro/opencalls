@@ -524,6 +524,29 @@ a.meta-tag-link.call-prize:hover {
   resize: vertical;
 }
 
+.submit-details {
+  margin-top: 24px;
+}
+
+.submit-details summary {
+  font-size: var(--fs-tag);
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+}
+
+.submit-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.submit-details summary::before {
+  content: '+ ';
+}
+
+.submit-details[open] summary::before {
+  content: '− ';
+}
+
 .submit-form button {
   margin-top: 24px;
   padding: 10px 28px;
