@@ -195,6 +195,10 @@ nav a:hover {
   text-decoration: none;
 }
 
+.mobile-nav a.active {
+  font-weight: 700;
+}
+
 /* === Main === */
 main {
   max-width: 960px;
