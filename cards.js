@@ -78,7 +78,7 @@ function derivePrizeCategories(prize) {
 
 function splitPrizeParts(prize) {
   if (!prize) return [];
-  return prize.split(/\s*\+\s*/).map(function(s) { return s.trim(); }).filter(Boolean);
+  return prize.split(/\s*\+\s*/).map(function(s) { s = s.trim(); return s.charAt(0).toUpperCase() + s.slice(1); }).filter(Boolean);
 }
 
 const categorySlug = {
