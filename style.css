@@ -720,7 +720,7 @@ a.meta-tag-link.call-prize:hover {
 .index-list {
   display: flex;
   flex-direction: column;
-  padding: 24px 0 48px;
+  padding: 0 0 48px;
 }
 
 .index-item {
