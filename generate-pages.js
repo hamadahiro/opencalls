@@ -126,9 +126,9 @@ function buildHeader(active) {
       </div>
     </div>
     <div class="mobile-nav">
-      <a href="/">Open</a>
-      <a href="/?view=past">Closed</a>
-      <a href="/browse">Browse</a>
+      <a href="/"${active === 'open' ? ' class="active"' : ''}>Open</a>
+      <a href="/?view=past"${active === 'closed' ? ' class="active"' : ''}>Closed</a>
+      <a href="/browse"${active === 'browse' ? ' class="active"' : ''}>Browse</a>
     </div>
   </header>`;
 }
