@@ -297,10 +297,10 @@ ${call.jury && call.jury.length ? `
         <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
       </div>
 ` : ''}
-      <div class="call-detail-actions">
+${isOpen(call) ? `      <div class="call-detail-actions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>` : ''}
-      </div>
+      </div>` : ''}
     </section>
 
     <section class="related-calls">
