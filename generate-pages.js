@@ -883,7 +883,8 @@ Object.entries(orgCounts)
 
     // Check for slug collision with call/country pages
     if (slugMap[slug]) {
-      console.warn(`  SKIPPED org page: ${slug} collides with "${slugMap[slug]}"`);
+      console.error(`  ERROR: Org page "${slug}" collides with call "${slugMap[slug]}". Rename the call title (e.g. add year).`);
+      hasErrors = true;
       return;
     }
 
@@ -924,6 +925,8 @@ Object.entries(orgCounts)
     sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls)`);
   });
+
+if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
 
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
