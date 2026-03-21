@@ -1124,7 +1124,7 @@ const deadlinesIndexHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Deadlines', 'Browse open calls by deadline month.')}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Deadlines', 'Browse open calls by deadline month — upcoming and past.')}
 
     <section class="index-list" id="indexList">
 ${deadlinesIndexItems}
