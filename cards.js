@@ -1,3 +1,21 @@
+const shortCountry = {
+  'United Kingdom': 'UK',
+  'United States': 'US',
+  'United Arab Emirates': 'UAE',
+  'Czech Republic': 'Czechia',
+  'Bosnia and Herzegovina': 'BiH',
+  'North Macedonia': 'N. Macedonia'
+};
+
+function shortenLocation(loc) {
+  if (!loc) return loc;
+  let s = loc.replace(/,\s*USA$/, '');
+  for (const [full, short] of Object.entries(shortCountry)) {
+    s = s.replace(full, short);
+  }
+  return s;
+}
+
 const categoryLabel = {
   'photography': 'Photography',
   'exhibition': 'Exhibition',
@@ -163,7 +181,7 @@ function renderTags(call) {
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
-    const locDisplay = call.location.replace(/,\s*USA$/, '');
+    const locDisplay = shortenLocation(call.location);
     if (locLink) {
       tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(locDisplay)}</a>`);
     } else {
@@ -227,7 +245,8 @@ function renderInfoGrid(call) {
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
-    const locHtml = locLink ? infoLink(locLink, call.location) : infoVal(call.location);
+    const locShort = shortenLocation(call.location);
+    const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
     rows.push(infoRow('<a href="/locations">Location</a>', locHtml));
   }
   // Category
