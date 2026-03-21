@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/analytics.js"></script>
+  <link rel="preload" href="/data.json" as="fetch" crossorigin>
+  <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+  <title>Counter Histories Puerto Rico · Magnum Foundation - Monographica</title>
+  <meta name="description" content="Fellowship for photographers engaging with Puerto Rico and its diaspora, supporting projects that creatively reframe the past. 8-... Deadline: April 1, 2026.">
+  <meta name="keywords" content="Counter Histories Puerto Rico, Magnum Foundation, Grant, open call, call for entries, artist grant, photography grant, open calls for artists, photography submissions">
+  <link rel="canonical" href="https://opencalls.monographica.com/counter-histories-puerto-rico-magnum-foundation">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:title" content="Counter Histories Puerto Rico · Magnum Foundation - Monographica">
+  <meta property="og:description" content="Fellowship for photographers engaging with Puerto Rico and its diaspora, supporting projects that creatively reframe the past. 8-... Deadline: April 1, 2026.">
+  <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
+  <meta property="og:url" content="https://opencalls.monographica.com/counter-histories-puerto-rico-magnum-foundation">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Monographica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Counter Histories Puerto Rico",
+  "description": "Fellowship for photographers engaging with Puerto Rico and its diaspora, supporting projects that creatively reframe the past. 8-month virtual fellowship with one in-person symposium. Up to 8 recipients. Applications in English or Spanish.",
+  "url": "https://opencalls.monographica.com/counter-histories-puerto-rico-magnum-foundation",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Monographica",
+    "url": "https://monographica.com"
+  }
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260320f">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="https://monographica.com" class="logo">Monographica</a>
+      <nav>
+        <a href="/" class="nav-link">Open</a>
+        <a href="/?view=past" class="nav-link">Closed</a>
+        <a href="/browse" class="nav-link nav-desktop">Browse</a>
+      </nav>
+      <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
+        <div class="hamburger"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="/">Open</a>
+      <a href="/?view=past">Closed</a>
+      <a href="/browse">Browse</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
+
+      <h1 class="call-detail-title">Counter Histories Puerto Rico</h1>
+
+      <p class="call-detail-description">Fellowship for photographers engaging with Puerto Rico and its diaspora, supporting projects that creatively reframe the past. 8-month virtual fellowship with one in-person symposium. Up to 8 recipients. Applications in English or Spanish.</p>
+
+      <div class="call-detail-info" id="detailInfo"></div>
+
+      <div class="call-detail-actions">
+        <a href="https://www.magnumfoundation.org/news/counter-histories-puerto-rico-2026-open-call" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-btn call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
+      </div>
+    </section>
+
+    <section class="related-calls">
+      <div id="similarCalls"></div>
+    </section>
+
+    <footer class="about-section" id="footer">
+      <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
+      <p>&copy; 2026 HH &mdash; still making sense of things.</p>
+    </footer>
+  </main>
+
+  <script>
+    const CURRENT_SLUG = 'counter-histories-puerto-rico-magnum-foundation';
+    const CURRENT_CALL = {"prize":"$10,000","category":"grant","org":"Magnum Foundation","location":"Online","fee":"Free","deadline":"2026-04-01","instagram":"@magnumfoundation","eligibility":["puerto-rico"],"jury":[],"submitVia":"Submittable","images":"","ai":""};
+    function downloadICS(e) {
+      e.preventDefault();
+      var d = '2026-04-01'.replace(/-/g, '');
+      var t = 'Counter Histories Puerto Rico';
+      var u = 'https://www.magnumfoundation.org/news/counter-histories-puerto-rico-2026-open-call';
+      var o = 'Magnum Foundation';
+      var dl = new Date('2026-04-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+      var desc = 'Open call by ' + o + '\\n\\nDeadline: ' + dl + '\\nPrize: $10,000' + '\\nEntry fee: Free';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:' + t + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + t + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = CURRENT_SLUG + '.ics';
+      a.click();
+    }
+  </script>
+  <script src="/cards.js"></script>
+  <script src="/call-detail.js"></script>
+
+</body>
+</html>
