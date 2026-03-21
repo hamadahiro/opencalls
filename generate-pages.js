@@ -70,7 +70,7 @@ if (hasErrors) { console.error('\nFix errors above before generating.'); process
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'prize', 'united-states', 'eligibility', 'browse'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'prize', 'united-states', 'eligibility', 'browse'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // Shared head snippets — change once, applies everywhere
@@ -409,11 +409,23 @@ const filterPages = [
     desc: 'Open calls with no entry fee. Free exhibitions, grants, residencies, and submissions for photographers and visual artists.',
     keywords: 'free open calls, free photography competitions, no fee art submissions, free call for entries, free exhibitions',
     filterJs: `c.fee && c.fee.toLowerCase().startsWith('free')`
+  },
+  {
+    slug: 'paid',
+    title: 'Paid Open Calls for Artists',
+    desc: 'Open calls with entry fees. Paid competitions, exhibitions, and submissions for photographers and visual artists.',
+    keywords: 'paid open calls, photography competition entry fee, paid call for entries, photography submissions with fee',
+    filterJs: `c.fee && !c.fee.toLowerCase().startsWith('free')`
   }
 ];
 
+const feeFilters = {
+  'free': c => c.fee && c.fee.toLowerCase().startsWith('free'),
+  'paid': c => c.fee && !c.fee.toLowerCase().startsWith('free')
+};
+
 filterPages.forEach(fp => {
-  const count = data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length;
+  const count = data.calls.filter(feeFilters[fp.slug]).length;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -964,7 +976,8 @@ const browseCategories = Object.entries(categories).map(([cat]) => {
 }).sort((a, b) => b.count - a.count);
 
 const browseFilters = [
-  { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length }
+  { label: 'Free to Enter', href: '/free', count: data.calls.filter(feeFilters['free']).length },
+  { label: 'Paid Entry', href: '/paid', count: data.calls.filter(feeFilters['paid']).length }
 ];
 prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
   browseFilters.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: prizeCatTags[tag] });
