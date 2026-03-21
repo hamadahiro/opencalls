@@ -1157,7 +1157,6 @@ const submitHtml = `<!DOCTYPE html>
     <section class="submit-form">
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
         <h3 class="section-header">Where to apply</h3>
-        <label for="url">Paste a link</label>
         <input type="url" name="url" id="url" placeholder="https://" required>
 
         <label for="category">Category</label>
