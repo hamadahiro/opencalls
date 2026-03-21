@@ -1042,7 +1042,6 @@ sortedMonths.forEach(key => {
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
   const count = g.calls.length;
   const openCount = g.calls.filter(isOpen).length;
-  const statusNote = openCount > 0 ? `${openCount} open` : 'All closed';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1054,7 +1053,7 @@ sortedMonths.forEach(key => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines">Deadlines</a></nav>', label, `${count} open calls with deadlines in ${label}. ${statusNote}.`)}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines">Deadlines</a></nav>', label, `${count} call${count !== 1 ? 's' : ''} with deadlines in ${label}${openCount > 0 && openCount < count ? ` — ${openCount} still open` : openCount === 0 ? ' — all closed' : ''}.`)}
 
     <section class="calls-list" id="callsList"></section>
 
