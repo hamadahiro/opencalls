@@ -1161,7 +1161,7 @@ const submitHtml = `<!DOCTYPE html>
         <input type="url" name="url" id="url" placeholder="https://" required>
 
         <details class="submit-details">
-          <summary>Add details <span class="optional">(if you have them)</span></summary>
+          <summary>Add details</summary>
 
           <label for="category">Category</label>
           <select name="category" id="category">
