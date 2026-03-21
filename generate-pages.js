@@ -260,11 +260,12 @@ function generatePage(call, cssVersion) {
   const slug = call.slug || slugify(call.title);
   const desc = metaDescription(call);
   const country = getCountry(call.location);
+  const metaTitle = call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org);
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: escapeHtml(call.title), description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), cssVersion })}
+  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), cssVersion })}
 </head>
 <body>
 
@@ -1153,7 +1154,7 @@ const rssItems = openCalls.map(call => {
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   const desc = `${escapeHtml(call.description)} — Deadline: ${deadlineText}. Fee: ${escapeHtml(call.fee || 'See website')}. Prize: ${escapeHtml(call.prize || 'None listed')}.`;
   return `  <item>
-    <title>${escapeHtml(call.title)}</title>
+    <title>${call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org)}</title>
     <link>${SITE}/${slug}</link>
     <guid>${SITE}/${slug}</guid>
     <description>${desc}</description>
