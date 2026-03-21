@@ -254,7 +254,7 @@ function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   return `
     <div class="call-card">
-      <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}">${esc(call.title)}${!call.orgInTitle ? ' — ' + esc(call.org) : ''}</a></${titleTag}>
+      <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}">${esc(call.title)}${!call.orgInTitle ? ' · ' + esc(call.org) : ''}</a></${titleTag}>
       <div class="call-meta">${renderTags(call)}</div>
       <p class="call-description">${esc(call.description)}</p>
     </div>`;
