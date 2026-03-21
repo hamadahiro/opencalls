@@ -466,8 +466,21 @@ a.meta-tag-link.call-prize:hover {
 .empty-state {
   padding: 48px 0;
   text-align: center;
+  color: var(--text-body);
+  font-size: var(--fs-h2);
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.empty-state a {
+  display: block;
+  margin-top: 12px;
+  font-size: var(--fs-body);
   color: var(--text-muted);
-  font-size: var(--fs-tag);
+  text-decoration: none;
+}
+
+.empty-state a:hover {
+  text-decoration: underline;
 }
 
 /* === Footer === */

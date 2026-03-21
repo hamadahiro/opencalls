@@ -204,7 +204,7 @@
           }
           container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
         });
-        if (!container.children.length) container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+        if (!container.children.length) container.innerHTML = emptyState();
       } else {
         renderCallList(processed, container);
       }
