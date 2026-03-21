@@ -151,6 +151,18 @@ function buildKeywords(call) {
   return words.join(', ');
 }
 
+function derivePrizeCategories(prize) {
+  if (!prize) return [];
+  const cats = [];
+  const p = prize.toLowerCase();
+  if (/[$€£¥]|chf |sek |aud |twd |stipend/.test(p)) cats.push('cash');
+  if (/exhibition/.test(p)) cats.push('exhibition');
+  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) cats.push('publication');
+  if (/residency|accommodation/.test(p)) cats.push('residency');
+  if (/fellowship/.test(p)) cats.push('fellowship');
+  return cats;
+}
+
 function categoryLabel(cat) {
   const labels = {
     'photography': 'Photography', 'exhibition': 'Exhibition', 'grant': 'Grant',
@@ -351,18 +363,11 @@ const filterPages = [
     desc: 'Open calls with no entry fee. Free exhibitions, grants, residencies, and submissions for photographers and visual artists.',
     keywords: 'free open calls, free photography competitions, no fee art submissions, free call for entries, free exhibitions',
     filterJs: `c.fee && c.fee.toLowerCase().startsWith('free')`
-  },
-  {
-    slug: 'prize',
-    title: 'Open Calls with Prizes',
-    desc: 'Open calls offering cash prizes, awards, and grants for photographers and visual artists. Find competitions worth entering.',
-    keywords: 'photography prizes, art competition prizes, photography awards money, open call prizes, cash prizes for photographers',
-    filterJs: `c.prize && c.prize !== ''`
   }
 ];
 
 filterPages.forEach(fp => {
-  const count = data.calls.filter(c => fp.slug === 'free' ? c.fee && c.fee.toLowerCase().startsWith('free') : c.prize && c.prize !== '').length;
+  const count = data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -527,6 +532,121 @@ if (eligibilityPageSlugs.length) {
   writeGenerated('eligibility/index.html', eligIndexHtml);
   sitemapEntries.push(`${SITE}/eligibility`);
   console.log(`  Eligibility index page (${eligibilityPageSlugs.length} groups)`);
+}
+
+// === Prize category pages ===
+const prizeGroups = {
+  'cash': { short: 'Cash Prize', title: 'Open Calls with Cash Prizes', desc: 'Open calls offering cash awards, grants, and monetary prizes for photographers and visual artists.' },
+  'exhibition': { short: 'Exhibition', title: 'Open Calls with Exhibition Prizes', desc: 'Open calls where the prize includes an exhibition — solo shows, group exhibitions, and gallery opportunities.' },
+  'publication': { short: 'Publication', title: 'Open Calls with Publication Prizes', desc: 'Open calls where the prize includes publication — photobooks, catalogs, magazine features, and print editions.' },
+  'residency': { short: 'Residency', title: 'Open Calls with Residency Prizes', desc: 'Open calls where the prize includes an artist residency, studio access, or accommodation.' },
+  'fellowship': { short: 'Fellowship', title: 'Open Calls with Fellowship Prizes', desc: 'Open calls offering fellowships for photographers and visual artists.' }
+};
+
+const prizeCatTags = {};
+data.calls.forEach(c => {
+  derivePrizeCategories(c.prize).forEach(tag => {
+    prizeCatTags[tag] = (prizeCatTags[tag] || 0) + 1;
+  });
+});
+
+const prizeCatPageSlugs = [];
+Object.entries(prizeCatTags).forEach(([tag, count]) => {
+  const info = prizeGroups[tag];
+  if (!info) return;
+  const slug = `prize/${tag}`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+</head>
+<body>
+
+  ${buildHeader('browse')}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize">Prizes</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+
+    <section class="calls-list" id="callsList"></section>
+
+    ${FOOTER}
+  </main>
+
+  <script src="/cards.js"></script>
+  <script>
+    function derivePrizeCats(prize) {
+      if (!prize) return [];
+      var cats = [], p = prize.toLowerCase();
+      if (/[$€£¥]|chf |sek |aud |twd |stipend/.test(p)) cats.push('cash');
+      if (/exhibition/.test(p)) cats.push('exhibition');
+      if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) cats.push('publication');
+      if (/residency|accommodation/.test(p)) cats.push('residency');
+      if (/fellowship/.test(p)) cats.push('fellowship');
+      return cats;
+    }
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('${tag}')).map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  prizeCatPageSlugs.push(tag);
+  writeGenerated(`${slug}/index.html`, html);
+  sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  Prize page: ${tag} (${count} calls)`);
+});
+
+// Prize index page
+const prizeOrder = ['cash', 'exhibition', 'publication', 'residency', 'fellowship'];
+
+function buildPrizeIndexItems() {
+  let html = '';
+  prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
+    const info = prizeGroups[tag];
+    html += `      <a href="/prize/${tag}" class="index-item">
+        <span class="index-item-name">${escapeHtml(info.short)}</span>
+        <span class="dots"></span>
+        <span class="index-item-count">${prizeCatTags[tag]}</span>
+      </a>\n`;
+  });
+  return html;
+}
+
+if (prizeCatPageSlugs.length) {
+  const prizeIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', canonical: `${SITE}/prize`, cssVersion })}
+</head>
+<body>
+
+  ${buildHeader('browse')}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Prizes', 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.')}
+
+    <section class="index-list" id="indexList">
+      ${buildPrizeIndexItems()}
+    </section>
+
+    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+  writeGenerated('prize/index.html', prizeIndexHtml);
+  sitemapEntries.push(`${SITE}/prize`);
+  console.log(`  Prize index page (${prizeCatPageSlugs.length} groups)`);
 }
 
 // === Country landing pages ===
@@ -769,9 +889,11 @@ const browseCategories = Object.entries(categories).map(([cat]) => {
 }).sort((a, b) => b.count - a.count);
 
 const browseFilters = [
-  { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length },
-  { label: 'Has Prize', href: '/prize', count: data.calls.filter(c => c.prize && c.prize !== '').length }
+  { label: 'Free to Enter', href: '/free', count: data.calls.filter(c => c.fee && c.fee.toLowerCase().startsWith('free')).length }
 ];
+prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
+  browseFilters.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: prizeCatTags[tag] });
+});
 
 const browseCountries = Object.entries(countryCounts)
   .map(([country, count]) => {

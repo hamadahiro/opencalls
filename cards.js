@@ -26,6 +26,25 @@ const eligibilityLabel = {
   'african-diaspora': 'African diaspora focus'
 };
 
+const prizeCategoryLabel = {
+  'cash': 'Cash prize',
+  'exhibition': 'Exhibition',
+  'publication': 'Publication',
+  'residency': 'Residency',
+  'fellowship': 'Fellowship'
+};
+
+function derivePrizeCategories(prize) {
+  if (!prize) return [];
+  var cats = [], p = prize.toLowerCase();
+  if (/[$€£¥]|chf |sek |aud |twd |stipend/.test(p)) cats.push('cash');
+  if (/exhibition/.test(p)) cats.push('exhibition');
+  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) cats.push('publication');
+  if (/residency|accommodation/.test(p)) cats.push('residency');
+  if (/fellowship/.test(p)) cats.push('fellowship');
+  return cats;
+}
+
 const categorySlug = {
   'photography': 'photography',
   'exhibition': 'exhibitions',
@@ -186,7 +205,14 @@ function renderInfoGrid(call) {
     rows.push(infoRow('Entry fee', feeHtml));
   }
   // Prize
-  if (call.prize) rows.push(infoRow('Prize', infoVal(call.prize)));
+  if (call.prize) {
+    rows.push(infoRow('Prize', infoVal(call.prize)));
+    const pCats = derivePrizeCategories(call.prize);
+    if (pCats.length) {
+      const prizeTypeHtml = pCats.map(pc => infoLink('/prize/' + pc, prizeCategoryLabel[pc] || pc)).join(', ');
+      rows.push(infoRow('<a href="/prize">Prize type</a>', prizeTypeHtml));
+    }
+  }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {

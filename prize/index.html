@@ -8,35 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls with Prizes 2026 - Monographica</title>
-  <meta name="description" content="Open calls offering cash prizes, awards, and grants for photographers and visual artists. Find competitions worth entering.">
-  <meta name="keywords" content="photography prizes, art competition prizes, photography awards money, open call prizes, cash prizes for photographers, 2026">
+  <title>Open Calls by Prize Type 2026 - Monographica</title>
+  <meta name="description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
+  
   <link rel="canonical" href="https://opencalls.monographica.com/prize">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls with Prizes 2026 - Monographica">
-  <meta property="og:description" content="Open calls offering cash prizes, awards, and grants for photographers and visual artists. Find competitions worth entering.">
+  <meta property="og:title" content="Open Calls by Prize Type 2026 - Monographica">
+  <meta property="og:description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/prize">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Open Calls with Prizes 2026",
-  "description": "Open calls offering cash prizes, awards, and grants for photographers and visual artists. Find competitions worth entering.",
-  "url": "https://opencalls.monographica.com/prize",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Monographica",
-    "url": "https://monographica.com"
-  }
-}
-  </script>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
@@ -58,28 +45,46 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
-      <h1>Open Calls with Prizes</h1>
-      <h2 class="subtitle">Open calls offering cash prizes, awards, and grants for photographers and visual artists. Find competitions worth entering.</h2>
+      <h1>Prizes</h1>
+      <h2 class="subtitle">Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="index-list" id="indexList">
+            <a href="/prize/cash" class="index-item">
+        <span class="index-item-name">Cash Prize</span>
+        <span class="dots"></span>
+        <span class="index-item-count">108</span>
+      </a>
+      <a href="/prize/exhibition" class="index-item">
+        <span class="index-item-name">Exhibition</span>
+        <span class="dots"></span>
+        <span class="index-item-count">25</span>
+      </a>
+      <a href="/prize/publication" class="index-item">
+        <span class="index-item-name">Publication</span>
+        <span class="dots"></span>
+        <span class="index-item-count">9</span>
+      </a>
+      <a href="/prize/residency" class="index-item">
+        <span class="index-item-name">Residency</span>
+        <span class="dots"></span>
+        <span class="index-item-count">6</span>
+      </a>
+      <a href="/prize/fellowship" class="index-item">
+        <span class="index-item-name">Fellowship</span>
+        <span class="dots"></span>
+        <span class="index-item-count">1</span>
+      </a>
+
+    </section>
+
+    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       <p>&copy; 2026 HH &mdash; still making sense of things.</p>
     </footer>
   </main>
-
-  <script src="/cards.js"></script>
-  <script>
-    async function loadFiltered() {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.prize && c.prize !== '').map(processCall);
-      renderCallList(calls, document.getElementById('callsList'));
-    }
-    loadFiltered();
-  </script>
 
 </body>
 </html>
