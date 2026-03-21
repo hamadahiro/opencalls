@@ -141,7 +141,7 @@ nav a.active {
 }
 
 nav a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .hamburger-click-area {
@@ -197,7 +197,7 @@ nav a:hover {
 }
 
 .mobile-nav a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .mobile-nav a.active {
@@ -787,7 +787,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .breadcrumbs a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* === Related Calls === */
