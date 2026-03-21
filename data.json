@@ -978,7 +978,7 @@
     {
       "title": "Photographers Without Borders Revolutionary Storyteller Grant",
       "org": "Photographers Without Borders",
-      "deadline": "2026-03-15",
+      "deadline": "2026-03-30",
       "fee": "PWB membership required",
       "category": "grant",
       "description": "Three recipients worldwide receive $5,000 USD each for impact-driven photography projects focused on environment, land/water protection, decolonized conservation, queer ecology, and climate change.",
@@ -4155,6 +4155,68 @@
       "prize": "CHF 500",
       "eligibility": [],
       "submitVia": "Website form"
+    },
+    {
+      "title": "New Wave Photography Award 2026",
+      "org": "Lightbox Photo Library",
+      "deadline": "2026-04-30",
+      "fee": "TWD 1,200",
+      "category": "photography",
+      "description": "Biennial award for emerging photographers, judged by 16 international curators and professionals from Taiwan, Japan, South Korea, and Singapore. Submit a series of 15–25 images (created after 2021) with artist statement in Chinese and English (500 words each). Grand Prize receives TWD 100,000 (~$3,000) plus exhibition. Applicants must not have held solo exhibitions at museums, commercial galleries, or art fairs, and no more than 5 group shows. Students and persons with disabilities pay reduced fee of TWD 600.",
+      "url": "https://www.lightboxlib.org/new-wave",
+      "instagram": "@lightbox_lib",
+      "location": "Online",
+      "prize": "TWD 100,000",
+      "eligibility": [
+        "taiwan"
+      ],
+      "submitVia": "Website form",
+      "images": "15–25 images"
+    },
+    {
+      "title": "Solo Statement — Doesn't Play Well with Others",
+      "org": "Bushwick Gallery",
+      "deadline": "2026-03-27",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "One-night solo takeover of Bushwick Gallery in Brooklyn — a full transformation of the space by a single artist. No shared walls, no compromise. All mediums welcome including photography, installation, performance, and digital. No prior gallery experience required. Submit artist statement (150 words), creative vision for the space, 3–5 recent work images, and two artistic influences. Gallery provides professional photography, press release, and promotional support. Exhibition April 17, 2026.",
+      "url": "https://bushwickgallery.com/doesnt-play-well-with-others/",
+      "instagram": "@bushwickgallery",
+      "location": "Brooklyn, New York, USA",
+      "prize": "Solo exhibition",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "images": "3–5 images"
+    },
+    {
+      "title": "The Woman Artist Award — 6th Edition",
+      "org": "Arts to Hearts Project",
+      "deadline": "2026-03-27",
+      "fee": "$35",
+      "category": "photography",
+      "description": "Juried award for women artists working in any visual arts medium including photography. Winner receives $500 cash prize, glass trophy, interview feature in hardcover coffee table book, website interview, one-year portfolio feature on Women in Arts Network (global directory for women artists), and one-year subscription to Arts to Hearts print + digital magazine. No specific theme — submit your best work. 6th edition.",
+      "url": "https://apply.artstoheartsproject.com/open-calls",
+      "instagram": "@artstoheartsproject",
+      "location": "Online",
+      "prize": "$500",
+      "eligibility": [
+        "women"
+      ],
+      "submitVia": "Website form"
+    },
+    {
+      "title": "Solstice Magazine Issue 71 — Editorial Submissions",
+      "org": "Solstice Magazine",
+      "deadline": "2026-03-21",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Submit fashion and editorial photography for publication in Issue 71 of Solstice Magazine, a London-based fashion publication. Send editorial submissions via email to submissions@solsticemagazine.co.uk.",
+      "url": "https://www.instagram.com/p/DV4RubMFe8a/",
+      "instagram": "@solstice_mag",
+      "location": "London, United Kingdom",
+      "prize": "Publication",
+      "eligibility": [],
+      "submitVia": "Email"
     }
   ]
 }
