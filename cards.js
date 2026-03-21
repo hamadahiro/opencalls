@@ -326,13 +326,29 @@ function renderCallList(calls, container) {
     container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
   });
 
-  // Past section (newest first)
+  // Past sections (newest first)
   if (closed.length) {
     closed.sort((a, b) => b.deadlineDate - a.deadlineDate);
-    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Past</h3>');
-    closed.forEach(call => {
-      container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-    });
+    const pastSlugs = new Set();
+
+    // Yesterday section
+    const yesterday = closed.filter(c => c.daysLeft !== null && c.daysLeft === -1);
+    if (yesterday.length >= 1) {
+      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Yesterday</h3>');
+      yesterday.forEach(call => {
+        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+        pastSlugs.add(call.slug || slugify(call.title));
+      });
+    }
+
+    // Remaining past calls
+    const rest = closed.filter(c => !pastSlugs.has(c.slug || slugify(c.title)));
+    if (rest.length) {
+      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Past</h3>');
+      rest.forEach(call => {
+        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      });
+    }
   }
 
   if (container.children.length === 0) {
