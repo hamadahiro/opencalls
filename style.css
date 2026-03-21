@@ -388,6 +388,7 @@ main {
 
 a.call-deadline:hover {
   opacity: 0.85;
+  text-decoration: none;
 }
 
 .call-deadline.ending { background: #4C447A; color: white; }
