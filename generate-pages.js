@@ -1157,11 +1157,11 @@ const submitHtml = `<!DOCTYPE html>
     <section class="submit-form">
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
         <h3 class="section-header">Where to apply</h3>
-        <label for="url">Link to the open call</label>
+        <label for="url">Paste a link</label>
         <input type="url" name="url" id="url" placeholder="https://" required>
 
         <details class="submit-details">
-          <summary>Add details <span class="optional">(optional)</span></summary>
+          <summary>Add details <span class="optional">(if you have them)</span></summary>
 
           <label for="title">Title</label>
           <input type="text" name="title" id="title">
