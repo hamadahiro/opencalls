@@ -89,8 +89,10 @@
       const now = new Date();
       const container = document.getElementById('indexList');
 
+      const today = new Date().toISOString().slice(0, 10);
+      const open = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= today);
       const counts = {};
-      data.calls.forEach(c => {
+      open.forEach(c => {
         const country = getCountry(c.location);
         if (!country) return;
         counts[country] = (counts[country] || 0) + 1;
