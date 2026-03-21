@@ -177,15 +177,26 @@
       }
 
       if (view === 'past') {
-        // Past view: sort newest first, no Today section
+        // Past view: sort newest first
         processed.sort((a, b) => {
           if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
           if (a.deadline === 'Continuous') return 1;
           if (b.deadline === 'Continuous') return -1;
           return b.deadlineDate - a.deadlineDate;
         });
+        // Yesterday section
+        const yesterday = processed.filter(c => c.daysLeft !== null && c.daysLeft === -1);
+        const yesterdaySlugs = new Set();
+        if (yesterday.length) {
+          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Yesterday</h3>');
+          yesterday.forEach(call => {
+            container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+            yesterdaySlugs.add(call.slug || slugify(call.title));
+          });
+        }
+        // Remaining past calls by month
         let currentSectionName = '';
-        processed.forEach(call => {
+        processed.filter(c => !yesterdaySlugs.has(c.slug || slugify(c.title))).forEach(call => {
           if (call.section !== currentSectionName) {
             currentSectionName = call.section;
             container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + call.section + '</h3>');
