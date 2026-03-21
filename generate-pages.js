@@ -1195,10 +1195,7 @@ const submitHtml = `<!DOCTYPE html>
           <input type="text" name="instagram" id="instagram" placeholder="@handle">
 
           <label for="description">Description</label>
-          <textarea name="description" id="description" rows="3"></textarea>
-
-          <label for="note">Note</label>
-          <textarea name="note" id="note" rows="2"></textarea>
+          <textarea name="description" id="description" rows="3" maxlength="250"></textarea>
 
         </details>
 
