@@ -519,6 +519,7 @@ const eligibilityGroups = {
   'italy': { short: 'Italy', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
   'emerging': { short: 'Emerging Artists', title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
   'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30.' },
+  'under-35': { short: 'Under 35', title: 'Open Calls for Under 35', desc: 'Open calls with age restrictions for photographers and artists under 35.' },
   'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40.' },
   'lgbtq': { short: 'LGBTQ+', title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
   'analog-photography': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
@@ -601,7 +602,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-40'] },
+  { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40'] },
   { heading: 'Where', tags: ['united-states', 'europe', 'italy', 'portugal', 'taiwan'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'puerto-rico', 'south-asian'] },

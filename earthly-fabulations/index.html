@@ -91,7 +91,7 @@
 
   <script>
     const CURRENT_SLUG = 'earthly-fabulations';
-    const CURRENT_CALL = {"prize":"","category":"photography","org":"Der Greif","location":"Online","fee":"Free","deadline":"2026-04-08","instagram":"","eligibility":["emerging"],"jury":[],"submitVia":"Picter","images":"","ai":""};
+    const CURRENT_CALL = {"prize":"Online exhibition + critique sessions","category":"photography","org":"Der Greif","location":"Online","fee":"Free (voluntary €10 donation)","deadline":"2026-04-08","instagram":"@der_greif","eligibility":["emerging"],"jury":[],"submitVia":"Picter","images":"","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       var d = '2026-04-08'.replace(/-/g, '');
@@ -99,7 +99,7 @@
       var u = 'https://site.picter.com/der-greif-earthly-fabulations';
       var o = 'Der Greif';
       var dl = new Date('2026-04-08T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + o + '\\n\\nDeadline: ' + dl + '\\nEntry fee: Free';
+      var desc = 'Open call by ' + o + '\\n\\nDeadline: ' + dl + '\\nPrize: Online exhibition + critique sessions' + '\\nEntry fee: Free (voluntary €10 donation)';
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:' + t + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + t + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
       var a = document.createElement('a');
