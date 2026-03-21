@@ -1194,8 +1194,8 @@ const submitHtml = `<!DOCTYPE html>
           <label for="instagram">Instagram</label>
           <input type="text" name="instagram" id="instagram" placeholder="@handle">
 
-          <label for="description">Description</label>
-          <textarea name="description" id="description" rows="3" maxlength="250"></textarea>
+          <label for="description">Description <span class="char-count" id="charCount">0 / 250</span></label>
+          <textarea name="description" id="description" rows="3" maxlength="250" oninput="document.getElementById('charCount').textContent=this.value.length+' / 250'"></textarea>
 
         </details>
 
