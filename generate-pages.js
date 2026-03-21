@@ -1152,7 +1152,7 @@ const submitHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Submit', 'Know an open call we should list? Send it our way.')}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Submit a call', 'Paste a link — add details if you have them.')}
 
     <section class="submit-form">
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
