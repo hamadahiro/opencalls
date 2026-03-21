@@ -504,7 +504,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .submit-form .optional {
-  color: var(--text-muted);
+  color: inherit;
 }
 
 .submit-form input,
