@@ -132,6 +132,61 @@ nav a:hover {
   text-decoration: none;
 }
 
+.hamburger-click-area {
+  display: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+}
+
+.hamburger {
+  width: 20px;
+  position: relative;
+}
+
+.hamburger i {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  margin-bottom: 4px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hamburger i:last-child {
+  margin-bottom: 0;
+}
+
+.show-responsive-nav .hamburger i:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.show-responsive-nav .hamburger i:nth-child(2) {
+  opacity: 0;
+}
+
+.show-responsive-nav .hamburger i:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 24px 8px;
+}
+
+.mobile-nav a {
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  text-decoration: none;
+}
+
 /* === Main === */
 main {
   max-width: 960px;
@@ -448,6 +503,14 @@ a.meta-tag-link.call-prize:hover {
 
   .nav-desktop {
     display: none;
+  }
+
+  .hamburger-click-area {
+    display: block;
+  }
+
+  .show-responsive-nav .mobile-nav {
+    display: flex;
   }
 
   .logo {
