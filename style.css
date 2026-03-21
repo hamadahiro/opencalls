@@ -502,7 +502,7 @@ a.meta-tag-link.call-prize:hover {
     gap: 16px;
   }
 
-  nav {
+  header nav {
     display: none;
   }
 
@@ -512,6 +512,7 @@ a.meta-tag-link.call-prize:hover {
 
   .show-responsive-nav .mobile-nav {
     display: flex;
+    padding: 16px 16px 8px;
   }
 
   .logo {

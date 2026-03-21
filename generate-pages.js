@@ -126,14 +126,9 @@ function buildHeader(active) {
       </div>
     </div>
     <div class="mobile-nav">
-      <a href="/">Open Calls</a>
-      <a href="/?view=past">Closed Calls</a>
+      <a href="/">Open</a>
+      <a href="/?view=past">Closed</a>
       <a href="/browse">Browse</a>
-      <a href="/fees">Fees</a>
-      <a href="/prize">Prizes</a>
-      <a href="/eligibility">Eligibility</a>
-      <a href="/locations">Locations</a>
-      <a href="/organizations">Organizations</a>
     </div>
   </header>`;
 }
