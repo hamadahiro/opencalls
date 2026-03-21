@@ -1,3 +1,7 @@
+const EMPTY_MESSAGES = ['Nothing here, for now.','No calls match this search.','Nothing came up this time.','No results, it seems.','No calls found for this.','Nothing fits this search.','No matches at the moment.','Nothing to show here.','No calls in this range.','Nothing here yet.'];
+const EMPTY_MSG = EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)];
+function emptyState() { return '<p class="empty-state">' + EMPTY_MSG + '<a href="/">Browse all calls &rarr;</a></p>'; }
+
 const shortCountry = {
   'United Kingdom': 'UK',
   'United States': 'US',
@@ -322,7 +326,7 @@ function renderCallList(calls, container, opts) {
   if (opts.skipSections) {
     const all = [...open, ...closed];
     all.forEach(call => container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')));
-    if (all.length === 0) container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+    if (all.length === 0) container.innerHTML = emptyState();
     return;
   }
 
@@ -384,6 +388,6 @@ function renderCallList(calls, container, opts) {
   }
 
   if (container.children.length === 0) {
-    container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+    container.innerHTML = emptyState();
   }
 }
