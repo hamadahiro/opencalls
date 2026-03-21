@@ -1204,8 +1204,6 @@ const submitHtml = `<!DOCTYPE html>
           <label for="note">Note</label>
           <textarea name="note" id="note" rows="2"></textarea>
 
-          <label for="email">Your email</label>
-          <input type="email" name="email" id="email">
         </details>
 
         <button type="submit">Submit</button>
