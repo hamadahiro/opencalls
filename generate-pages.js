@@ -70,7 +70,7 @@ if (hasErrors) { console.error('\nFix errors above before generating.'); process
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'prize', 'united-states', 'eligibility', 'browse'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse'];
 const MANUAL_FILES = ['index.html', '404.html'];
 
 // Shared head snippets — change once, applies everywhere
@@ -437,7 +437,7 @@ filterPages.forEach(fp => {
   ${buildHeader('browse')}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/browse">Browse</a></nav>', fp.title, escapeHtml(fp.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees">Fee &amp; Prizes</a></nav>', fp.title, escapeHtml(fp.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -462,6 +462,46 @@ filterPages.forEach(fp => {
   sitemapEntries.push(`${SITE}/${fp.slug}`);
   console.log(`  Filter page: ${fp.slug} (${count} calls)`);
 });
+
+// === Fees index page ===
+const freeCount = data.calls.filter(feeFilters['free']).length;
+const paidCount = data.calls.filter(feeFilters['paid']).length;
+const feesIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', keywords: `free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, ${YEAR}`, canonical: `${SITE}/fees`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Entry Fee ${YEAR}`, "description": "Browse open calls by entry fee.", "url": `${SITE}/fees`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+</head>
+<body>
+
+  ${buildHeader('browse')}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Fees', 'Browse open calls by entry fee. Find free submissions or paid competitions.')}
+
+    <section class="index-list" id="indexList">
+      <a href="/free" class="index-item">
+        <span class="index-item-name">Free to Enter</span>
+        <span class="dots"></span>
+        <span class="index-item-count">${freeCount}</span>
+      </a>
+      <a href="/paid" class="index-item">
+        <span class="index-item-name">Paid Entry</span>
+        <span class="dots"></span>
+        <span class="index-item-count">${paidCount}</span>
+      </a>
+    </section>
+
+    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+writeGenerated('fees/index.html', feesIndexHtml);
+sitemapEntries.push(`${SITE}/fees`);
+console.log(`  Fees index page`);
 
 // === Eligibility pages ===
 const eligibilityGroups = {
@@ -975,12 +1015,13 @@ const browseCategories = Object.entries(categories).map(([cat]) => {
   return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: data.calls.filter(c => c.category === cat).length };
 }).sort((a, b) => b.count - a.count);
 
-const browseFilters = [
+const browseFees = [
   { label: 'Free to Enter', href: '/free', count: data.calls.filter(feeFilters['free']).length },
   { label: 'Paid Entry', href: '/paid', count: data.calls.filter(feeFilters['paid']).length }
 ];
+const browsePrizes = [];
 prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
-  browseFilters.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: prizeCatTags[tag] });
+  browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: prizeCatTags[tag] });
 });
 
 const browseCountries = Object.entries(countryCounts)
@@ -1029,7 +1070,8 @@ const browseHtml = `<!DOCTYPE html>
 
     <section class="index-list">
 ${buildBrowseSection('Categories', browseCategories, '/categories')}
-${buildBrowseSection('Fee & Prizes', browseFilters)}
+${buildBrowseSection('Fees', browseFees, '/fees')}
+${buildBrowseSection('Prizes', browsePrizes, '/prize')}
 ${buildBrowseSection('Locations', browseCountries, '/locations')}
 ${buildBrowseSection('US States', browseStates, '/united-states')}
 ${buildBrowseSection('Eligibility', browseEligibility, '/eligibility')}
