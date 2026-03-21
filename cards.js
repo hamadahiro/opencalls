@@ -163,10 +163,11 @@ function renderTags(call) {
   if (call.location) {
     const country = getCountryFromLocation(call.location);
     const locLink = getLocationLink(call.location, country);
+    const locDisplay = call.location.replace(/,\s*USA$/, '');
     if (locLink) {
-      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(call.location)}</a>`);
+      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(locDisplay)}</a>`);
     } else {
-      tags.push(`<span class="meta-tag">${pinSvg}${esc(call.location)}</span>`);
+      tags.push(`<span class="meta-tag">${pinSvg}${esc(locDisplay)}</span>`);
     }
   }
   // Category
