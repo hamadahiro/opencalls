@@ -1163,7 +1163,7 @@ const submitHtml = `<!DOCTYPE html>
 
         <label for="category">Category</label>
         <select name="category" id="category" required>
-          <option value="">Select</option>
+          <option value="">Choose category</option>
           <option value="photography">Photography</option>
           <option value="exhibition">Exhibition</option>
           <option value="grant">Grant</option>
