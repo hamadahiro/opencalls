@@ -88,8 +88,10 @@
       const data = await res.json();
       const container = document.getElementById('indexList');
 
+      const today = new Date().toISOString().slice(0, 10);
+      const open = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= today);
       const counts = {};
-      data.calls.forEach(c => {
+      open.forEach(c => {
         counts[c.category] = (counts[c.category] || 0) + 1;
       });
 

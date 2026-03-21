@@ -48,20 +48,21 @@
     <div class="header-inner">
       <a href="https://monographica.com" class="logo">Monographica</a>
       <nav>
-        <a href="/" class="nav-link">Open</a>
-        <a href="/?view=past" class="nav-link">Closed</a>
-        <a href="/browse" class="nav-link nav-desktop active">Browse</a>
+        <a href="/" class="nav-link" data-nav="open">Open</a>
+        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/browse" class="nav-link nav-desktop" data-nav="browse">Browse</a>
       </nav>
       <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
         <div class="hamburger"><i></i><i></i><i></i></div>
       </div>
     </div>
     <div class="mobile-nav">
-      <a href="/">Open</a>
-      <a href="/?view=past">Closed</a>
-      <a href="/browse" class="active">Browse</a>
+      <a href="/" data-nav="open">Open</a>
+      <a href="/?view=past" data-nav="closed">Closed</a>
+      <a href="/browse" data-nav="browse">Browse</a>
     </div>
   </header>
+  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -74,12 +75,12 @@
       <a href="/free" class="index-item">
         <span class="index-item-name">Free to Enter</span>
         <span class="dots"></span>
-        <span class="index-item-count">105</span>
+        <span class="index-item-count">102</span>
       </a>
       <a href="/paid" class="index-item">
         <span class="index-item-name">Paid Entry</span>
         <span class="dots"></span>
-        <span class="index-item-count">146</span>
+        <span class="index-item-count">131</span>
       </a>
     </section>
 

@@ -72,6 +72,9 @@ const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse'];
 const MANUAL_FILES = ['index.html', '404.html'];
+const TODAY = new Date().toISOString().slice(0, 10);
+const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
+function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; }
 
 // Shared head snippets — change once, applies everywhere
 const THEME_LIGHT = '#f5f2ed';
@@ -482,8 +485,8 @@ filterPages.forEach(fp => {
 });
 
 // === Fees index page ===
-const freeCount = data.calls.filter(feeFilters['free']).length;
-const paidCount = data.calls.filter(feeFilters['paid']).length;
+const freeCount = openCalls.filter(feeFilters['free']).length;
+const paidCount = openCalls.filter(feeFilters['paid']).length;
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -550,6 +553,12 @@ const eligibilityTags = {};
 data.calls.forEach(c => {
   (c.eligibility || []).forEach(tag => {
     eligibilityTags[tag] = (eligibilityTags[tag] || 0) + 1;
+  });
+});
+const openEligibilityTags = {};
+openCalls.forEach(c => {
+  (c.eligibility || []).forEach(tag => {
+    openEligibilityTags[tag] = (openEligibilityTags[tag] || 0) + 1;
   });
 });
 
@@ -631,12 +640,12 @@ Object.keys(eligibilityTags).forEach(tag => {
 function buildEligibilityIndexItems() {
   let html = '';
   eligibilityOrder.forEach(group => {
-    const activeTags = group.tags.filter(t => eligibilityTags[t]);
+    const activeTags = group.tags.filter(t => openEligibilityTags[t]);
     if (!activeTags.length) return;
     html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
     activeTags.forEach(tag => {
       const info = eligibilityGroups[tag];
-      const count = eligibilityTags[tag];
+      const count = openEligibilityTags[tag];
       html += `      <a href="/eligibility/${tag}" class="index-item">
           <span class="index-item-name">${escapeHtml(info.short)}</span>
           <span class="dots"></span>
@@ -690,6 +699,12 @@ const prizeCatTags = {};
 data.calls.forEach(c => {
   derivePrizeCategories(c.prize).forEach(tag => {
     prizeCatTags[tag] = (prizeCatTags[tag] || 0) + 1;
+  });
+});
+const openPrizeCatTags = {};
+openCalls.forEach(c => {
+  derivePrizeCategories(c.prize).forEach(tag => {
+    openPrizeCatTags[tag] = (openPrizeCatTags[tag] || 0) + 1;
   });
 });
 
@@ -754,12 +769,12 @@ const prizeOrder = ['cash', 'exhibition', 'publication', 'residency', 'fellowshi
 
 function buildPrizeIndexItems() {
   let html = '';
-  prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
+  prizeOrder.filter(t => openPrizeCatTags[t]).forEach(tag => {
     const info = prizeGroups[tag];
     html += `      <a href="/prize/${tag}" class="index-item">
         <span class="index-item-name">${escapeHtml(info.short)}</span>
         <span class="dots"></span>
-        <span class="index-item-count">${prizeCatTags[tag]}</span>
+        <span class="index-item-count">${openPrizeCatTags[tag]}</span>
       </a>\n`;
   });
   return html;
@@ -844,8 +859,9 @@ ${country === 'USA' ? `
       const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
       const nameToAbbr = {};
       Object.entries(stateNames).forEach(([abbr, name]) => { nameToAbbr[name] = abbr; });
+      const today = new Date().toISOString().slice(0, 10);
       const counts = {};
-      data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+      data.calls.filter(c => c.location && c.location.endsWith('USA') && (c.deadline === 'Continuous' || c.deadline >= today)).forEach(c => {
         const parts = c.location.split(',');
         let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
         if (state && nameToAbbr[state]) state = nameToAbbr[state];
@@ -1015,10 +1031,11 @@ function midTruncateHtml(str, minLen) {
 }
 
 function buildBrowseSection(heading, items, headingLink) {
-  if (!items.length) return '';
+  const visible = items.filter(i => i.count > 0);
+  if (!visible.length) return '';
   const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
   let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
-  items.forEach(({ label, href, count }) => {
+  visible.forEach(({ label, href, count }) => {
     html += `      <a href="${href}" class="index-item">
         <span class="index-item-name">${midTruncateHtml(label)}</span>
         <span class="dots"></span>
@@ -1034,49 +1051,60 @@ const browseCategoryLabels = {
 };
 const browseCategories = Object.entries(categories).map(([cat]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
-  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: data.calls.filter(c => c.category === cat).length };
+  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: openCalls.filter(c => c.category === cat).length };
 }).sort((a, b) => b.count - a.count);
 
 const browseFees = [
-  { label: 'Free to Enter', href: '/free', count: data.calls.filter(feeFilters['free']).length },
-  { label: 'Paid Entry', href: '/paid', count: data.calls.filter(feeFilters['paid']).length }
+  { label: 'Free to Enter', href: '/free', count: openCalls.filter(feeFilters['free']).length },
+  { label: 'Paid Entry', href: '/paid', count: openCalls.filter(feeFilters['paid']).length }
 ];
 const browsePrizes = [];
 prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
-  browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: prizeCatTags[tag] });
+  browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: openPrizeCatTags[tag] || 0 });
 });
 
+const openCountryCounts = {};
+openCalls.forEach(c => { const country = getCountry(c.location); if (country) openCountryCounts[country] = (openCountryCounts[country] || 0) + 1; });
 const browseCountries = Object.entries(countryCounts)
-  .map(([country, count]) => {
+  .map(([country]) => {
     const countrySlug = countrySlugs[country] || slugify(country);
     const label = countryNames[country] ? countryNames[country].replace(/^the /, '') : country;
-    return { label, href: `/${countrySlug}`, count };
+    return { label, href: `/${countrySlug}`, count: openCountryCounts[country] || 0 };
   })
   .sort((a, b) => a.label.localeCompare(b.label));
 
+const openStateCounts = {};
+openCalls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+  const parts = c.location.split(',');
+  let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+  if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
+  if (state) openStateCounts[state] = (openStateCounts[state] || 0) + 1;
+});
 const browseStates = Object.entries(stateCounts)
   .sort((a, b) => {
     const nameA = (usStateNames[a[0]] || a[0]).toLowerCase();
     const nameB = (usStateNames[b[0]] || b[0]).toLowerCase();
     return nameA.localeCompare(nameB);
   })
-  .map(([state, count]) => {
+  .map(([state]) => {
     const fullName = usStateNames[state] || state;
-    return { label: fullName, href: `/united-states/${slugify(fullName)}`, count };
+    return { label: fullName, href: `/united-states/${slugify(fullName)}`, count: openStateCounts[state] || 0 };
   });
 
 const browseEligibility = [];
 eligibilityOrder.forEach(group => {
   group.tags.filter(t => eligibilityTags[t]).forEach(tag => {
     const info = eligibilityGroups[tag];
-    browseEligibility.push({ label: info.short, href: `/eligibility/${tag}`, count: eligibilityTags[tag] });
+    browseEligibility.push({ label: info.short, href: `/eligibility/${tag}`, count: openEligibilityTags[tag] || 0 });
   });
 });
 
+const openOrgCounts = {};
+openCalls.forEach(c => { openOrgCounts[c.org] = (openOrgCounts[c.org] || 0) + 1; });
 const browseOrgs = Object.entries(orgCounts)
   .filter(([org]) => createdOrgSlugs.includes(slugify(org)))
   .sort((a, b) => a[0].localeCompare(b[0]))
-  .map(([org, count]) => ({ label: org, href: `/${slugify(org)}`, count }));
+  .map(([org]) => ({ label: org, href: `/${slugify(org)}`, count: openOrgCounts[org] || 0 }));
 
 const browseHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -1151,8 +1179,8 @@ fs.writeFileSync('sitemap.xml', sitemapXml);
 
 // Generate RSS feed
 const now = new Date();
-const openCalls = data.calls
-  .filter(c => c.deadline === 'Continuous' || new Date(c.deadline) >= now)
+const rssCalls = openCalls
+  .slice()
   .sort((a, b) => {
     if (a.deadline === 'Continuous') return 1;
     if (b.deadline === 'Continuous') return -1;
@@ -1160,7 +1188,7 @@ const openCalls = data.calls
   })
   .slice(0, 50);
 
-const rssItems = openCalls.map(call => {
+const rssItems = rssCalls.map(call => {
   const slug = call.slug || slugify(call.title);
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
