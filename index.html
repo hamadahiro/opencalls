@@ -66,8 +66,8 @@
       </div>
     </div>
     <div class="mobile-nav">
-      <a href="/">Open</a>
-      <a href="/?view=past">Closed</a>
+      <a href="/" class="active" data-view="new">Open</a>
+      <a href="/?view=past" data-view="past">Closed</a>
       <a href="/browse">Browse</a>
     </div>
   </header>
@@ -126,8 +126,8 @@
       const initView = params.get('view') === 'past' ? 'past' : 'new';
       currentView = initView;
       if (initView === 'past') {
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        document.querySelector('.nav-link[data-view="past"]').classList.add('active');
+        document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('[data-view="past"]').forEach(l => l.classList.add('active'));
         document.querySelector('.hero h1').textContent = 'Past Calls';
       }
       renderCalls(initView);
@@ -199,14 +199,14 @@
     }
 
     function setupNav() {
-      document.querySelectorAll('.nav-link').forEach(link => {
+      document.querySelectorAll('[data-view]').forEach(link => {
         link.addEventListener('click', (e) => {
           const view = link.dataset.view;
-          if (!view) return; // Let regular links (Browse) navigate normally
+          if (!view) return;
           e.preventDefault();
 
-          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
+          document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
+          document.querySelectorAll('[data-view="' + view + '"]').forEach(l => l.classList.add('active'));
 
           currentView = view;
           currentFilter = 'all';
