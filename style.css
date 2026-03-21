@@ -14,7 +14,7 @@
   --dots: var(--text);
   --bg-image: url('bg.jpg');
   /* Type scale: 7 sizes only */
-  --fs-tag: 13px;       /* 1. tags, badges, breadcrumbs, nav, search, dots */
+  --fs-tag: 14px;       /* 1. tags, badges, breadcrumbs, nav, search, dots */
   --fs-btn: 15px;       /* 2. buttons, filter tabs, mobile-nav, action buttons */
   --fs-body: 20px;      /* 3. descriptions, subtitle, info grid, footer, index items */
   --fs-card-title: 22px;/* 4. call card titles */
