@@ -501,7 +501,7 @@ a.meta-tag-link.call-prize:hover {
     gap: 16px;
   }
 
-  .nav-desktop {
+  nav {
     display: none;
   }
 
