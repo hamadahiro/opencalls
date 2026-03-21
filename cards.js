@@ -239,7 +239,7 @@ function renderInfoGrid(call) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
       ? infoLink('/free', call.fee)
       : (call.fee === 'Check website' ? 'See official website' : infoVal(call.fee));
-    rows.push(infoRow('Entry fee', feeHtml));
+    rows.push(infoRow('<a href="/fees">Entry fee</a>', feeHtml));
   }
   // Prize
   if (call.prize) {
