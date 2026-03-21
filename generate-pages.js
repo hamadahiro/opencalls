@@ -70,7 +70,7 @@ if (hasErrors) { console.error('\nFix errors above before generating.'); process
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const TODAY = new Date().toISOString().slice(0, 10);
 const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
@@ -1018,6 +1018,109 @@ Object.entries(orgCounts)
 
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
 
+// === Deadline month pages ===
+const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+const MONTH_LABELS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// Group all non-Continuous calls by month
+const monthGroups = {};
+data.calls.filter(c => c.deadline !== 'Continuous').forEach(c => {
+  const d = new Date(c.deadline + 'T00:00:00');
+  const key = `${MONTH_NAMES[d.getMonth()]}-${d.getFullYear()}`;
+  if (!monthGroups[key]) monthGroups[key] = { month: d.getMonth(), year: d.getFullYear(), calls: [] };
+  monthGroups[key].calls.push(c);
+});
+
+// Sort months chronologically
+const sortedMonths = Object.keys(monthGroups).sort((a, b) => {
+  const ga = monthGroups[a], gb = monthGroups[b];
+  return (ga.year - gb.year) || (ga.month - gb.month);
+});
+
+sortedMonths.forEach(key => {
+  const g = monthGroups[key];
+  const label = `${MONTH_LABELS[g.month]} ${g.year}`;
+  const count = g.calls.length;
+  const openCount = g.calls.filter(isOpen).length;
+  const statusNote = openCount > 0 ? `${openCount} open` : 'All closed';
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, keywords: `open calls ${label.toLowerCase()}, photography deadlines ${label.toLowerCase()}, call for entries ${label.toLowerCase()}`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines">Deadlines</a></nav>', label, `${count} open calls with deadlines in ${label}. ${statusNote}.`)}
+
+    <section class="calls-list" id="callsList"></section>
+
+    ${FOOTER}
+  </main>
+
+  <script src="/cards.js"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')).map(processCall);
+      calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  writeGenerated(`deadlines/${key}/index.html`, html);
+  sitemapEntries.push(`${SITE}/deadlines/${key}`);
+  console.log(`  Deadline page: ${label} (${count} calls)`);
+});
+
+// === Deadlines index page ===
+const deadlinesIndexItems = sortedMonths.map(key => {
+  const g = monthGroups[key];
+  const label = `${MONTH_LABELS[g.month]} ${g.year}`;
+  const openCount = g.calls.filter(isOpen).length;
+  return `      <a href="/deadlines/${key}" class="index-item">
+        <span class="index-item-name">${label}</span>
+        <span class="dots"></span>
+        <span class="index-item-count">${openCount > 0 ? openCount : g.calls.length}</span>
+      </a>`;
+}).join('\n');
+
+const deadlinesIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls by Deadline ${YEAR}`, description: 'Browse open calls by deadline month. Find photography competitions, exhibitions, grants, and residencies organized by submission deadline.', keywords: `open calls by deadline, photography deadlines, call for entries by month, submission deadlines ${YEAR}`, canonical: `${SITE}/deadlines`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Deadline ${YEAR}`, "description": "Browse open calls by deadline month.", "url": `${SITE}/deadlines`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Deadlines', 'Browse open calls by deadline month.')}
+
+    <section class="index-list" id="indexList">
+${deadlinesIndexItems}
+    </section>
+
+    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+writeGenerated('deadlines/index.html', deadlinesIndexHtml);
+sitemapEntries.push(`${SITE}/deadlines`);
+console.log(`  Deadlines index page (${sortedMonths.length} months)`);
+
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
   minLen = minLen || 25;
@@ -1119,6 +1222,7 @@ const browseHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
 
     <section class="index-list">
+${buildBrowseSection('Deadlines', sortedMonths.filter(k => monthGroups[k].calls.some(isOpen)).map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}`, count: g.calls.filter(isOpen).length }; }), '/deadlines')}
 ${buildBrowseSection('Categories', browseCategories, '/categories')}
 ${buildBrowseSection('Fees', browseFees, '/fees')}
 ${buildBrowseSection('Prizes', browsePrizes, '/prize')}

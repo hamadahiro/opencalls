@@ -167,14 +167,20 @@ function processCall(call) {
     urgencyClass = 'normal';
   }
 
-  return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText };
+  const deadlineSlug = deadlineDate ? ['january','february','march','april','may','june','july','august','september','october','november','december'][deadlineDate.getMonth()] + '-' + deadlineDate.getFullYear() : null;
+
+  return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
 }
 
 function renderTags(call) {
   const pinSvg = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
   const tags = [];
   // Deadline badge
-  tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
+  if (call.deadlineSlug) {
+    tags.push(`<a href="/deadlines/${call.deadlineSlug}" class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</a>`);
+  } else {
+    tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
+  }
   // Prize
   if (call.prize) {
     const parts = splitPrizeParts(call.prize);
@@ -233,7 +239,8 @@ function renderInfoGrid(call) {
   // Deadline
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  rows.push(infoRow('Deadline', infoVal(deadlineText)));
+  const dlSlug = call.deadlineSlug;
+  rows.push(infoRow('<a href="/deadlines">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
   // Fee
   if (call.fee) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
@@ -299,7 +306,8 @@ function renderCard(call, titleTag) {
 
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-function renderCallList(calls, container) {
+function renderCallList(calls, container, opts) {
+  opts = opts || {};
   const open = calls.filter(c => c.urgencyClass !== 'closed');
   const closed = calls.filter(c => c.urgencyClass === 'closed');
 
@@ -310,6 +318,13 @@ function renderCallList(calls, container) {
     if (b.deadline === 'Continuous') return -1;
     return a.deadlineDate - b.deadlineDate;
   });
+
+  if (opts.skipSections) {
+    const all = [...open, ...closed];
+    all.forEach(call => container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')));
+    if (all.length === 0) container.innerHTML = '<p class="empty-state">No calls in this section yet.</p>';
+    return;
+  }
 
   // Today section
   const specialSlugs = new Set();
