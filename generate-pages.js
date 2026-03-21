@@ -442,7 +442,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, ${escapeHtml(info.short)} photography, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -508,7 +508,7 @@ if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', canonical: `${SITE}/eligibility`, cssVersion })}
+  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', keywords: `open calls eligibility, women photographers, emerging artists, LGBTQ photographers, photography residency eligibility, call for entries eligibility, ${YEAR}`, canonical: `${SITE}/eligibility`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Eligibility ${YEAR}`, "description": "Browse open calls by eligibility.", "url": `${SITE}/eligibility`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -623,7 +623,7 @@ if (prizeCatPageSlugs.length) {
   const prizeIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', canonical: `${SITE}/prize`, cssVersion })}
+  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', keywords: `open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, ${YEAR}`, canonical: `${SITE}/prize`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Prize Type ${YEAR}`, "description": "Browse open calls by prize type.", "url": `${SITE}/prize`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -1055,6 +1055,7 @@ indexPages.forEach(({ src, fallback }) => {
     if (!html.includes('og:site_name')) {
       html = html.replace(/<meta name="twitter:card"/, '<meta property="og:site_name" content="Monographica">\n  <meta name="twitter:card"');
     }
+    html = html.replace(/og-image\.jpg/g, 'og-image.png');
     html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
     html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
     html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
