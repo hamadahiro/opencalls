@@ -49,12 +49,12 @@
   }
 
   .meta-tag.call-prize {
-    background: var(--btn-bg);
-    color: var(--btn-text);
+    background: #e8e8e8;
+    color: #111;
   }
 
   a.meta-tag-link.call-prize:hover {
-    background: #bbb;
+    background: #fff;
   }
 
   .call-deadline {
