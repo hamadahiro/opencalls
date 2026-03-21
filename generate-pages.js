@@ -5,20 +5,34 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 // Validate data before generating
 const COUNTRY_ALIASES = { 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'US': 'United States' };
+const VALID_CATEGORIES = ['photography', 'exhibition', 'grant', 'zine', 'residency', 'education'];
 let hasErrors = false;
 data.calls.forEach((c, i) => {
+  // Validate country names
   const loc = c.location || '';
   const country = loc.split(',').pop().trim();
   if (COUNTRY_ALIASES[country]) {
     console.error(`ERROR: Call "${c.title}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
     hasErrors = true;
   }
+  // Validate eligibility tag format
   (c.eligibility || []).forEach(e => {
     if (e.length > 30 || /[^a-z0-9-]/.test(e)) {
       console.error(`ERROR: Call "${c.title}" has invalid eligibility tag: "${e}"`);
       hasErrors = true;
     }
   });
+  // Validate category
+  if (!VALID_CATEGORIES.includes(c.category)) {
+    console.error(`ERROR: Call "${c.title}" has unknown category: "${c.category}". Valid: ${VALID_CATEGORIES.join(', ')}`);
+    hasErrors = true;
+  }
+  // Validate required fields
+  if (!c.title) { console.error(`ERROR: Call at index ${i} is missing title`); hasErrors = true; }
+  if (!c.org) { console.error(`ERROR: Call "${c.title}" is missing org`); hasErrors = true; }
+  if (!c.deadline) { console.error(`ERROR: Call "${c.title}" is missing deadline`); hasErrors = true; }
+  if (!c.url) { console.error(`ERROR: Call "${c.title}" is missing url`); hasErrors = true; }
+  if (!c.description) { console.error(`ERROR: Call "${c.title}" is missing description`); hasErrors = true; }
 });
 if (hasErrors) { console.error('Fix errors above before generating.'); process.exit(1); }
 const SITE = 'https://opencalls.monographica.com';
@@ -436,10 +450,15 @@ data.calls.forEach(c => {
   });
 });
 
-// Validate all eligibility tags have a config entry
+// Validate all eligibility tags have a config entry in generate-pages.js AND cards.js
+const cardsSource = fs.readFileSync('cards.js', 'utf8');
 Object.keys(eligibilityTags).forEach(tag => {
   if (!eligibilityGroups[tag]) {
-    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityGroups. Add label, title, and desc for it.`);
+    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityGroups (generate-pages.js). Add label, title, and desc.`);
+    hasErrors = true;
+  }
+  if (!cardsSource.includes(`'${tag}'`)) {
+    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityLabel (cards.js). Add a display label.`);
     hasErrors = true;
   }
 });
