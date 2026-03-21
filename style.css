@@ -11,6 +11,9 @@
   --border: #ddd;
   --btn-bg: #111;
   --btn-text: #fff;
+  --prize-bg: #111;
+  --prize-text: #fff;
+  --prize-bg-hover: #333;
   --dots: var(--text);
   --bg-image: url('bg.jpg');
   /* Type scale: 7 sizes only */
@@ -36,6 +39,9 @@
     --border: #333;
     --btn-bg: #d4d4d4;
     --btn-text: #151515;
+    --prize-bg: #e0e0e0;
+    --prize-text: #111;
+    --prize-bg-hover: #fff;
     --dots: var(--text);
     --bg-image: none;
   }
@@ -46,15 +52,6 @@
 
   .search-bar {
     box-shadow: none;
-  }
-
-  .meta-tag.call-prize {
-    background: #e0e0e0;
-    color: #111;
-  }
-
-  a.meta-tag-link.call-prize:hover {
-    background: #fff;
   }
 
   .call-deadline {
@@ -451,12 +448,12 @@ a.meta-tag-link:hover {
 }
 
 .meta-tag.call-prize {
-  color: white;
-  background: #111;
+  color: var(--prize-text);
+  background: var(--prize-bg);
 }
 
 a.meta-tag-link.call-prize:hover {
-  background: #333;
+  background: var(--prize-bg-hover);
 }
 
 /* === Empty State === */
