@@ -383,6 +383,11 @@ main {
   vertical-align: middle;
   line-height: 1;
   letter-spacing: 0.2px;
+  text-decoration: none;
+}
+
+a.call-deadline:hover {
+  opacity: 0.85;
 }
 
 .call-deadline.ending { background: #4C447A; color: white; }
