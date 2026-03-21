@@ -140,7 +140,11 @@ function renderTags(call) {
   // Deadline badge
   tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   // Prize
-  if (call.prize) tags.push(`<a href="/prize" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
+  if (call.prize) {
+    const pCats = derivePrizeCategories(call.prize);
+    const prizeHref = pCats.length ? '/prize/' + pCats[0] : '/prize';
+    tags.push(`<a href="${prizeHref}" class="meta-tag meta-tag-link call-prize">${esc(call.prize)} prize</a>`);
+  }
   // Fee
   if (call.fee && call.fee !== 'Check website') {
     if (call.fee.toLowerCase().startsWith('free')) {
