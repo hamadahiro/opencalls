@@ -56,6 +56,10 @@
   a.meta-tag-link.call-prize:hover {
     background: #bbb;
   }
+
+  .call-deadline {
+    opacity: 0.85;
+  }
 }
 
 /* === Reset & Base === */
