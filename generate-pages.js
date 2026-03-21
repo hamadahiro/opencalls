@@ -1082,7 +1082,20 @@ sortedMonths.forEach(key => {
 });
 
 // === Deadlines index page ===
-const deadlinesIndexItems = sortedMonths.map(key => {
+const currentMonth = new Date().getMonth();
+const currentYear = new Date().getFullYear();
+
+const currentMonths = sortedMonths.filter(k => monthGroups[k].month === currentMonth && monthGroups[k].year === currentYear);
+const futureMonths = sortedMonths.filter(k => {
+  const g = monthGroups[k];
+  return (g.year > currentYear) || (g.year === currentYear && g.month > currentMonth);
+});
+const pastMonths = sortedMonths.filter(k => {
+  const g = monthGroups[k];
+  return (g.year < currentYear) || (g.year === currentYear && g.month < currentMonth);
+}).reverse();
+
+function deadlineItem(key, sectionLabel) {
   const g = monthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
   const openCount = g.calls.filter(isOpen).length;
@@ -1091,7 +1104,15 @@ const deadlinesIndexItems = sortedMonths.map(key => {
         <span class="dots"></span>
         <span class="index-item-count">${openCount > 0 ? openCount : g.calls.length}</span>
       </a>`;
-}).join('\n');
+}
+
+const deadlinesIndexItems = [
+  ...currentMonths.map(k => deadlineItem(k)),
+  ...(futureMonths.length ? [`      <h3 class="section-header">Upcoming</h3>`] : []),
+  ...futureMonths.map(k => deadlineItem(k)),
+  ...(pastMonths.length ? [`      <h3 class="section-header">Past</h3>`] : []),
+  ...pastMonths.map(k => deadlineItem(k))
+].join('\n');
 
 const deadlinesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
