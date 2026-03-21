@@ -437,7 +437,7 @@ filterPages.forEach(fp => {
   ${buildHeader('browse')}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees">Fee &amp; Prizes</a></nav>', fp.title, escapeHtml(fp.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees">Fees</a></nav>', fp.title, escapeHtml(fp.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
