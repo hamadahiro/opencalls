@@ -1162,11 +1162,50 @@ const submitHtml = `<!DOCTYPE html>
 
         <details class="submit-details">
           <summary>Add details <span class="optional">(optional)</span></summary>
+
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title">
+
+          <label for="org">Organization</label>
+          <input type="text" name="org" id="org">
+
+          <label for="deadline">Deadline</label>
+          <input type="date" name="deadline" id="deadline">
+
+          <label for="fee">Entry fee</label>
+          <input type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
+
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <option value=""></option>
+            <option value="photography">Photography</option>
+            <option value="exhibition">Exhibition</option>
+            <option value="grant">Grant</option>
+            <option value="residency">Residency</option>
+            <option value="zine">Zine / Book</option>
+            <option value="education">Education</option>
+          </select>
+
+          <label for="description">Description</label>
+          <textarea name="description" id="description" rows="3"></textarea>
+
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" placeholder="e.g. Berlin, Germany or Online">
+
+          <label for="prize">Prize</label>
+          <input type="text" name="prize" id="prize" placeholder="e.g. $5,000">
+
+          <label for="instagram">Instagram</label>
+          <input type="text" name="instagram" id="instagram" placeholder="@handle">
+
+          <label for="eligibility">Eligibility</label>
+          <input type="text" name="eligibility" id="eligibility" placeholder="e.g. International, 18+">
+
           <label for="note">Note</label>
-          <textarea name="note" id="note" rows="3" placeholder="Deadline, fee, or anything else you know"></textarea>
+          <textarea name="note" id="note" rows="2"></textarea>
 
           <label for="email">Your email</label>
-          <input type="email" name="email" id="email" placeholder="">
+          <input type="email" name="email" id="email">
         </details>
 
         <button type="submit">Submit</button>
