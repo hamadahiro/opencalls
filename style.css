@@ -186,7 +186,7 @@ nav a:hover {
 }
 
 .mobile-nav a {
-  font-size: var(--fs-btn);
+  font-size: var(--fs-tag);
   color: var(--text);
   text-decoration: none;
 }
@@ -254,7 +254,7 @@ main {
   background: var(--surface);
   border: none;
   padding: 8px 14px;
-  font-size: var(--fs-tag);
+  font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
   cursor: pointer;
@@ -458,7 +458,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .about-section p {
-  font-size: var(--fs-btn);
+  font-size: var(--fs-tag);
   line-height: 20px;
   color: var(--text);
   font-family: 'Source Serif 4', serif;
@@ -619,7 +619,7 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-btn {
   font-family: helvetica, sans-serif;
-  font-size: var(--fs-tag);
+  font-size: var(--fs-btn);
   letter-spacing: 0.3px;
   padding: 12px 28px;
   text-decoration: none;
