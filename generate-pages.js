@@ -70,7 +70,7 @@ if (hasErrors) { console.error('\nFix errors above before generating.'); process
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const TODAY = new Date().toISOString().slice(0, 10);
 const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
@@ -1140,6 +1140,44 @@ ${deadlinesIndexItems}
 writeGenerated('deadlines/index.html', deadlinesIndexHtml);
 sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
+
+// === Submit page ===
+const submitHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Submit an Open Call', description: 'Know an open call we should list? Submit it here. We review every suggestion.', keywords: 'submit open call, suggest call for entries, photography open call submission', canonical: `${SITE}/submit`, cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Submit', 'Know an open call we should list? Send it our way.')}
+
+    <section class="submit-form">
+      <form action="https://formspree.io/f/xkoqaveq" method="POST">
+        <label for="url">Link to the open call</label>
+        <input type="url" name="url" id="url" placeholder="https://" required>
+
+        <label for="email">Your email <span class="optional">(optional)</span></label>
+        <input type="email" name="email" id="email" placeholder="">
+
+        <label for="note">Note <span class="optional">(optional)</span></label>
+        <textarea name="note" id="note" rows="3" placeholder=""></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+writeGenerated('submit/index.html', submitHtml);
+sitemapEntries.push(`${SITE}/submit`);
+console.log('  Submit page');
 
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
