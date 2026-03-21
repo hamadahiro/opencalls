@@ -507,6 +507,13 @@ a.meta-tag-link.call-prize:hover {
   color: inherit;
 }
 
+.submit-form .char-count {
+  float: right;
+  font-size: var(--fs-tag);
+  font-family: helvetica, sans-serif;
+  color: var(--text-muted);
+}
+
 .submit-form input,
 .submit-form textarea,
 .submit-form select {
