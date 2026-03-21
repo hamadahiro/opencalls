@@ -226,12 +226,16 @@ function renderInfoGrid(call) {
   }
   // Prize
   if (call.prize) {
-    rows.push(infoRow('Prize', infoVal(call.prize)));
     const pCats = derivePrizeCategories(call.prize);
-    if (pCats.length) {
-      const prizeTypeHtml = pCats.map(pc => infoLink('/prize/' + pc, prizeCategoryLabel[pc] || pc)).join(', ');
-      rows.push(infoRow('<a href="/prize">Prize type</a>', prizeTypeHtml));
+    let prizeHtml;
+    if (pCats.length === 1) {
+      prizeHtml = infoLink('/prize/' + pCats[0], call.prize);
+    } else if (pCats.length > 1) {
+      prizeHtml = infoVal(call.prize) + ' · ' + pCats.map(pc => infoLink('/prize/' + pc, prizeCategoryLabel[pc] || pc)).join(', ');
+    } else {
+      prizeHtml = infoVal(call.prize);
     }
+    rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
   }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
