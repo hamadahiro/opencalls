@@ -1160,19 +1160,19 @@ const submitHtml = `<!DOCTYPE html>
         <label for="url">Paste a link</label>
         <input type="url" name="url" id="url" placeholder="https://" required>
 
+        <label for="category">Category</label>
+        <select name="category" id="category" required>
+          <option value="">Select</option>
+          <option value="photography">Photography</option>
+          <option value="exhibition">Exhibition</option>
+          <option value="grant">Grant</option>
+          <option value="residency">Residency</option>
+          <option value="zine">Zine / Book</option>
+          <option value="education">Education</option>
+        </select>
+
         <details class="submit-details">
           <summary>Add details</summary>
-
-          <label for="category">Category</label>
-          <select name="category" id="category">
-            <option value=""></option>
-            <option value="photography">Photography</option>
-            <option value="exhibition">Exhibition</option>
-            <option value="grant">Grant</option>
-            <option value="residency">Residency</option>
-            <option value="zine">Zine / Book</option>
-            <option value="education">Education</option>
-          </select>
 
           <label for="deadline">Deadline</label>
           <input type="date" name="deadline" id="deadline">
