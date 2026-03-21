@@ -121,6 +121,19 @@ function buildHeader(active) {
         <a href="/?view=past" class="nav-link${active === 'closed' ? ' active' : ''}">Closed</a>
         <a href="/browse" class="nav-link nav-desktop${active === 'browse' ? ' active' : ''}">Browse</a>
       </nav>
+      <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
+        <div class="hamburger"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="/">Open Calls</a>
+      <a href="/?view=past">Closed Calls</a>
+      <a href="/browse">Browse</a>
+      <a href="/fees">Fees</a>
+      <a href="/prize">Prizes</a>
+      <a href="/eligibility">Eligibility</a>
+      <a href="/locations">Locations</a>
+      <a href="/organizations">Organizations</a>
     </div>
   </header>`;
 }
