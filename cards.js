@@ -153,9 +153,9 @@ function renderTags(call) {
     if (call.fee.toLowerCase().startsWith('free')) {
       tags.push(`<a href="/free" class="meta-tag meta-tag-link">Free</a>`);
     } else if (/^[£$€¥]/.test(call.fee)) {
-      tags.push(`<span class="meta-tag">${esc(call.fee)} fee</span>`);
+      tags.push(`<a href="/paid" class="meta-tag meta-tag-link">${esc(call.fee)} fee</a>`);
     } else {
-      tags.push(`<span class="meta-tag">${esc(call.fee)}</span>`);
+      tags.push(`<a href="/paid" class="meta-tag meta-tag-link">${esc(call.fee)}</a>`);
     }
   }
   // Location
