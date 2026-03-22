@@ -1173,10 +1173,10 @@ const submitHtml = `<!DOCTYPE html>
     <section class="submit-form">
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
         <h3 class="section-header">Where to apply</h3>
-        <input type="url" name="url" id="url" placeholder="https://" required>
+        <input class="search-bar" type="url" name="url" id="url" placeholder="https://" required>
 
         <label for="category">Category</label>
-        <select name="category" id="category" required>
+        <select class="search-bar" name="category" id="category" required>
           <option value="">Choose category</option>
           <option value="photography">Photography</option>
           <option value="exhibition">Exhibition</option>
@@ -1190,28 +1190,28 @@ const submitHtml = `<!DOCTYPE html>
           <summary>Add details</summary>
 
           <label for="deadline">Deadline</label>
-          <input type="text" name="deadline" id="deadline" placeholder="e.g. April 15, 2026">
+          <input class="search-bar" type="text" name="deadline" id="deadline" placeholder="e.g. April 15, 2026">
 
           <label for="fee">Entry fee</label>
-          <input type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
+          <input class="search-bar" type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
 
           <label for="prize">Prize</label>
-          <input type="text" name="prize" id="prize" placeholder="e.g. $5,000">
+          <input class="search-bar" type="text" name="prize" id="prize" placeholder="e.g. $5,000">
 
           <label for="location">Location</label>
-          <input type="text" name="location" id="location" placeholder="e.g. Berlin, Germany or Online">
+          <input class="search-bar" type="text" name="location" id="location" placeholder="e.g. Berlin, Germany or Online">
 
           <label for="eligibility">Eligibility</label>
-          <input type="text" name="eligibility" id="eligibility" placeholder="e.g. International, 18+">
+          <input class="search-bar" type="text" name="eligibility" id="eligibility" placeholder="e.g. International, 18+">
 
           <label for="org">Organization</label>
-          <input type="text" name="org" id="org">
+          <input class="search-bar" type="text" name="org" id="org">
 
           <label for="instagram">Instagram</label>
-          <input type="text" name="instagram" id="instagram" placeholder="@handle">
+          <input class="search-bar" type="text" name="instagram" id="instagram" placeholder="@handle">
 
           <label for="description">Description <span class="char-count" id="charCount">0 / 250</span></label>
-          <textarea name="description" id="description" rows="3" maxlength="250" oninput="document.getElementById('charCount').textContent=this.value.length+' / 250'"></textarea>
+          <textarea class="search-bar" name="description" id="description" rows="3" maxlength="250" oninput="document.getElementById('charCount').textContent=this.value.length+' / 250'"></textarea>
 
         </details>
 
