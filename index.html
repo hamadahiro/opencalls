@@ -215,7 +215,7 @@
         });
         if (!container.children.length) container.innerHTML = emptyState();
       } else if (currentSort === 'recent') {
-        processed.sort((a, b) => (a._index || 0) - (b._index || 0));
+        processed.sort((a, b) => (b._index || 0) - (a._index || 0));
         container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Recently added</h3>');
         processed.forEach(call => container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')));
         if (!container.children.length) container.innerHTML = emptyState();
