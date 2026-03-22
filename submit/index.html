@@ -108,8 +108,6 @@
         <button type="submit" class="call-detail-btn call-detail-apply" id="submitBtn">Submit</button>
       </form>
       <div id="submitThanks" style="display:none">
-        <h3 class="section-header">Thanks for submitting</h3>
-        <p class="call-detail-description" style="margin-bottom:24px">I'll take a look and add it if it fits.</p>
         <a href="/submit" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Submit another</a>
       </div>
       <script>
@@ -126,6 +124,8 @@
             if (r.ok) {
               document.getElementById('submitForm').style.display = 'none';
               document.getElementById('submitThanks').style.display = '';
+              document.querySelector('.hero h1').textContent = 'Thanks for submitting';
+              document.querySelector('.hero .subtitle').textContent = "I'll take a look and add it if it fits.";
             } else {
               btn.textContent = 'Something went wrong, try again';
               btn.style.opacity = '1';
