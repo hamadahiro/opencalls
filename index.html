@@ -98,6 +98,12 @@
       <button class="filter-btn" data-filter="prize">Has prize</button>
     </section>
 
+    <div class="sort-bar" id="sortBar">
+      <span class="sort-label">Sort:</span>
+      <button class="sort-btn active" data-sort="deadline">Ending soon</button>
+      <button class="sort-btn" data-sort="recent">Recently added</button>
+    </div>
+
     <section class="calls-list" id="callsList">
       <!-- populated by JS -->
     </section>
@@ -117,7 +123,7 @@
     async function loadCalls() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      allCalls = data.calls;
+      allCalls = data.calls.map((c, i) => ({ ...c, _index: i }));
 
       const today = new Date().toISOString().slice(0, 10);
       const openCount = allCalls.filter(c => c.deadline === 'Continuous' || c.deadline >= today).length;
@@ -133,6 +139,7 @@
         document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
         document.querySelectorAll('[data-view="past"]').forEach(l => l.classList.add('active'));
         document.querySelector('.hero h1').textContent = 'Past Calls';
+        document.getElementById('sortBar').style.display = 'none';
       }
       renderCalls(initView);
       setupNav();
@@ -208,6 +215,11 @@
           container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
         });
         if (!container.children.length) container.innerHTML = emptyState();
+      } else if (currentSort === 'recent') {
+        processed.sort((a, b) => (a._index || 0) - (b._index || 0));
+        container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Recently added</h3>');
+        processed.forEach(call => container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')));
+        if (!container.children.length) container.innerHTML = emptyState();
       } else {
         renderCallList(processed, container);
       }
@@ -226,8 +238,12 @@
           currentView = view;
           currentFilter = 'all';
           currentSearch = '';
+          currentSort = 'deadline';
           document.getElementById('searchInput').value = '';
           document.getElementById('searchClear').classList.remove('visible');
+          document.getElementById('sortBar').style.display = view === 'past' ? 'none' : '';
+          document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+          document.querySelector('.sort-btn[data-sort="deadline"]').classList.add('active');
           renderCalls(view);
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
@@ -252,6 +268,7 @@
 
     let currentFilter = 'all';
     let currentSearch = '';
+    let currentSort = 'deadline';
 
     function applyFilters() {
       renderCalls(currentView);
@@ -263,6 +280,15 @@
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           currentFilter = btn.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentSort = btn.dataset.sort;
           applyFilters();
         });
       });
