@@ -174,6 +174,11 @@ function escapeHtml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function safeJsStr(str) {
+  if (!str) return '';
+  return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/</g, '\\x3c').replace(/>/g, '\\x3e').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
+}
+
 function getCountry(location) {
   if (!location) return '';
   const parts = location.split(',');
@@ -328,17 +333,19 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
 
   <script>
     const CURRENT_SLUG = '${slug}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', images: call.images || '', ai: call.ai || '' })};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', images: call.images || '', ai: call.ai || '' }).replace(/</g, '\\u003c')};
     function downloadICS(e) {
       e.preventDefault();
+      function icsE(s){return s.replace(/\\\\/g,'\\\\\\\\').replace(/;/g,'\\\\;').replace(/,/g,'\\\\,').replace(/\\n/g,'\\\\n');}
       var d = '${call.deadline}'.replace(/-/g, '');
-      var t = '${call.title.replace(/'/g, "\\'")}';
-      var u = '${call.url.replace(/'/g, "\\'")}';
-      var o = '${call.org.replace(/'/g, "\\'")}';
+      var nd = new Date('${call.deadline}T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var t = '${safeJsStr(call.title)}';
+      var u = '${safeJsStr(call.url)}';
+      var o = '${safeJsStr(call.org)}';
       var dl = new Date('${call.deadline}T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + o + '\\\\n\\\\nDeadline: ' + dl${call.prize ? ` + '\\\\nPrize: ${call.prize.replace(/'/g, "\\'")}'` : ''}${call.fee ? ` + '\\\\nEntry fee: ${call.fee.replace(/'/g, "\\'")}'` : ''};
-      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + d + '\\r\\nSUMMARY:' + t + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + t + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
-      var blob = new Blob([ics.replace(/\\r\\n/g, '\\r\\n')], {type: 'text/calendar'});
+      var desc = 'Open call by ' + icsE(o) + '\\\\n\\\\nDeadline: ' + icsE(dl)${call.prize ? ` + '\\\\nPrize: ' + icsE('${safeJsStr(call.prize)}')` : ''}${call.fee ? ` + '\\\\nEntry fee: ' + icsE('${safeJsStr(call.fee)}')` : ''};
+      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + de + '\\r\\nSUMMARY:' + icsE(t) + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
+      var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = CURRENT_SLUG + '.ics';

@@ -115,14 +115,16 @@
     const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Art Fluent","location":"Boston, MA, USA","fee":"$25","deadline":"2026-06-05","instagram":"@art_fluent","eligibility":[],"jury":["Amy Matteson Neill, Creative Director"],"submitVia":"CaFE","images":"20 images","ai":""};
     function downloadICS(e) {
       e.preventDefault();
+      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
       var d = '2026-06-05'.replace(/-/g, '');
+      var nd = new Date('2026-06-05T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
       var t = 'JUST ADD WATER';
       var u = 'https://art-fluent.com/calls-for-art/just-add-water-prospectus/';
       var o = 'Art Fluent';
       var dl = new Date('2026-06-05T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + o + '\\n\\nDeadline: ' + dl + '\\nEntry fee: $25';
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:' + t + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + t + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('$25');
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = CURRENT_SLUG + '.ics';
