@@ -1196,7 +1196,7 @@ const submitHtml = `<!DOCTYPE html>
           <input class="search-bar" type="text" name="fee" id="fee" placeholder="Free, $25, €10">
 
           <label for="prize">Prize</label>
-          <input class="search-bar" type="text" name="prize" id="prize" placeholder="$5,000">
+          <input class="search-bar" type="text" name="prize" id="prize" placeholder="$5,000, Exhibition, Publication">
 
           <label for="location">Location</label>
           <input class="search-bar" type="text" name="location" id="location" placeholder="Berlin, Germany or Online">
@@ -1205,7 +1205,7 @@ const submitHtml = `<!DOCTYPE html>
           <input class="search-bar" type="text" name="eligibility" id="eligibility" placeholder="International, 18+">
 
           <label for="org">Organization</label>
-          <input class="search-bar" type="text" name="org" id="org">
+          <input class="search-bar" type="text" name="org" id="org" placeholder="Organization name">
 
           <label for="instagram">Instagram</label>
           <input class="search-bar" type="text" name="instagram" id="instagram" placeholder="@handle">
