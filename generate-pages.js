@@ -352,7 +352,7 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
       a.click();
     }
   </script>
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script src="/call-detail.js"></script>
 
 </body>
@@ -426,7 +426,7 @@ Object.entries(categories).forEach(([cat, info]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -488,7 +488,7 @@ filterPages.forEach(fp => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -622,7 +622,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -754,7 +754,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     function derivePrizeCats(prize) {
       if (!prize) return [];
@@ -872,7 +872,7 @@ Object.entries(countryCounts)
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -965,7 +965,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -1018,7 +1018,7 @@ Object.entries(orgCounts)
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -1083,7 +1083,7 @@ sortedMonths.forEach(key => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js"></script>
+  <script src="/cards.js?v=${cssVersion}"></script>
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
