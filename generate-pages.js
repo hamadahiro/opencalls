@@ -1211,7 +1211,7 @@ const submitHtml = `<!DOCTYPE html>
           <input class="search-bar" type="text" name="instagram" id="instagram" placeholder="@handle">
 
           <label for="description">Description <span class="char-count" id="charCount">0 / 250</span></label>
-          <textarea class="search-bar" name="description" id="description" rows="3" maxlength="250" oninput="document.getElementById('charCount').textContent=this.value.length+' / 250'"></textarea>
+          <textarea class="search-bar" name="description" id="description" rows="5" maxlength="250" oninput="document.getElementById('charCount').textContent=this.value.length+' / 250'"></textarea>
 
         </details>
 
