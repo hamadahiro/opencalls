@@ -771,6 +771,7 @@ a.meta-tag-link.call-prize:hover {
   display: flex;
   align-items: baseline;
   padding: 8px 0;
+  overflow: hidden;
 }
 
 .info-label {
@@ -800,9 +801,6 @@ a.meta-tag-link.call-prize:hover {
   font-family: 'Source Serif 4', serif;
   color: var(--text);
   text-align: right;
-  overflow-wrap: break-word;
-  max-width: 60%;
-  flex-shrink: 1;
 }
 
 .call-detail-info a {
