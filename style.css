@@ -801,6 +801,7 @@ a.meta-tag-link.call-prize:hover {
   color: var(--text);
   text-align: right;
   overflow-wrap: break-word;
+  min-width: 0;
   flex-shrink: 1;
 }
 
