@@ -28,7 +28,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #e0e0e0;
+    --text: #cdcdcd;
     --text-muted: #777;
     --text-body: var(--text);
     --bg: #151515;
@@ -37,11 +37,11 @@
     --surface: #2a2a2a;
     --surface-hover: #333;
     --border: #333;
-    --btn-bg: #d4d4d4;
+    --btn-bg: #cdcdcd;
     --btn-text: #151515;
-    --prize-bg: #e0e0e0;
+    --prize-bg: #cdcdcd;
     --prize-text: #111;
-    --prize-bg-hover: #fff;
+    --prize-bg-hover: #cdcdcd;
     --dots: var(--text);
     --bg-image: none;
   }
