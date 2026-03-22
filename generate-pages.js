@@ -1174,7 +1174,7 @@ const submitHtml = `<!DOCTYPE html>
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
         <input type="hidden" name="_next" value="${SITE}/submit/thanks">
         <h3 class="section-header">Where to apply</h3>
-        <input class="search-bar" type="text" name="url" id="url" placeholder="https://" required pattern=".*\\.[a-zA-Z]{2,6}.*" title="Enter a valid link">
+        <input class="search-bar" type="text" name="url" id="url" placeholder="https://" required>
 
         <label for="category">Category</label>
         <select class="search-bar" name="category" id="category" required>
