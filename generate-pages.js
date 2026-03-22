@@ -1172,6 +1172,7 @@ const submitHtml = `<!DOCTYPE html>
 
     <section class="submit-form">
       <form action="https://formspree.io/f/xkoqaveq" method="POST">
+        <input type="hidden" name="_next" value="${SITE}/submit/thanks">
         <h3 class="section-header">Where to apply</h3>
         <input class="search-bar" type="url" name="url" id="url" placeholder="https://" required>
 
@@ -1228,6 +1229,33 @@ const submitHtml = `<!DOCTYPE html>
 writeGenerated('submit/index.html', submitHtml);
 sitemapEntries.push(`${SITE}/submit`);
 console.log('  Submit page');
+
+// === Submit thank you page ===
+const thanksHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Thanks for submitting', description: 'Your open call suggestion has been received.', keywords: '', canonical: `${SITE}/submit/thanks`, cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit">Submit</a></nav>', 'Thanks for submitting', 'We review every suggestion and add new calls regularly.')}
+
+    <section class="submit-form" style="padding-bottom:48px">
+      <p class="call-detail-description" style="margin-bottom:24px">If the call fits, it will appear on the site within a day or two.</p>
+      <a href="/submit" class="call-detail-btn call-detail-apply">Submit another</a>
+    </section>
+
+    ${FOOTER}
+  </main>
+
+</body>
+</html>`;
+
+writeGenerated('submit/thanks/index.html', thanksHtml);
+console.log('  Submit thanks page');
 
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
