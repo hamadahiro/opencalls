@@ -2,7 +2,7 @@
 :root {
   --text: #111;
   --text-muted: #999;
-  --text-body: #222;
+  --text-body: var(--text);
   --bg: #e6e6e6;
   --card-bg: #EAE7E2;
   --card-bg-hover: #ddd9d3;
@@ -13,7 +13,7 @@
   --btn-text: #fff;
   --prize-bg: #111;
   --prize-text: #fff;
-  --prize-bg-hover: #333;
+  --prize-bg-hover: #111;
   --dots: var(--text);
   --bg-image: url('bg.jpg');
   /* Type scale: 7 sizes only */
