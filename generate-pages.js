@@ -144,6 +144,7 @@ const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       <p>&copy; ${YEAR} HH &mdash; still making sense of things.</p>
     </footer>`;
+function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>`; }
 
 function buildBreadcrumbs(section, sectionUrl) {
   return `<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="${sectionUrl}">${section}</a></nav>`;
@@ -333,7 +334,7 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
 
   <script>
     const CURRENT_SLUG = '${slug}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', images: call.images || '', ai: call.ai || '' }).replace(/</g, '\\u003c')};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, resultsDate: call.resultsDate || '', instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', images: call.images || '', ai: call.ai || '' }).replace(/</g, '\\u003c')};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\\\/g,'\\\\\\\\').replace(/;/g,'\\\\;').replace(/,/g,'\\\\,').replace(/\\n/g,'\\\\n');}
@@ -352,7 +353,7 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
       a.click();
     }
   </script>
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script src="/call-detail.js"></script>
 
 </body>
@@ -426,7 +427,7 @@ Object.entries(categories).forEach(([cat, info]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -488,7 +489,7 @@ filterPages.forEach(fp => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -622,7 +623,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -754,7 +755,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     function derivePrizeCats(prize) {
       if (!prize) return [];
@@ -872,7 +873,7 @@ Object.entries(countryCounts)
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -965,7 +966,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -1018,7 +1019,7 @@ Object.entries(orgCounts)
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
@@ -1083,7 +1084,7 @@ sortedMonths.forEach(key => {
     ${FOOTER}
   </main>
 
-  <script src="/cards.js?v=${cssVersion}"></script>
+  ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
       const res = await fetch('/data.json');
