@@ -1316,13 +1316,13 @@ const browseHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
 
     <section class="index-list">
-${buildBrowseSection('Deadlines', sortedMonths.filter(k => monthGroups[k].calls.some(isOpen)).map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}`, count: g.calls.filter(isOpen).length }; }), '/deadlines')}
 ${buildBrowseSection('Categories', browseCategories, '/categories')}
 ${buildBrowseSection('Fees', browseFees, '/fees')}
 ${buildBrowseSection('Prizes', browsePrizes, '/prize')}
 ${buildBrowseSection('Locations', browseCountries, '/locations')}
 ${buildBrowseSection('US States', browseStates, '/united-states')}
 ${buildBrowseSection('Eligibility', browseEligibility, '/eligibility')}
+${buildBrowseSection('Deadlines', sortedMonths.filter(k => monthGroups[k].calls.some(isOpen)).map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}`, count: g.calls.filter(isOpen).length }; }), '/deadlines')}
 ${buildBrowseSection('Organizations', browseOrgs, '/organizations')}
     </section>
 
