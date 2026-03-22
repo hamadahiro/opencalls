@@ -111,14 +111,16 @@
     const CURRENT_CALL = {"prize":"€12,000 / €8,000 / €5,000","category":"photography","org":"Fundación ENAIRE","location":"Santander, Spain","fee":"Free","deadline":"2026-04-13","instagram":"@fundacionenaire","eligibility":["professional"],"jury":[],"submitVia":"Website form","images":"Up to 3 images","ai":""};
     function downloadICS(e) {
       e.preventDefault();
+      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
       var d = '2026-04-13'.replace(/-/g, '');
+      var nd = new Date('2026-04-13T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
       var t = 'XIX Premio de Fotografía Fundación ENAIRE 2026';
       var u = 'https://www.fundacionenaire.es/bases26/bases-premio-fotografia-2026.pdf';
       var o = 'Fundación ENAIRE';
       var dl = new Date('2026-04-13T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + o + '\\n\\nDeadline: ' + dl + '\\nPrize: €12,000 / €8,000 / €5,000' + '\\nEntry fee: Free';
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + d + '\r\nSUMMARY:' + t + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + t + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics.replace(/\r\n/g, '\r\n')], {type: 'text/calendar'});
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€12,000 / €8,000 / €5,000') + '\\nEntry fee: ' + icsE('Free');
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = CURRENT_SLUG + '.ics';

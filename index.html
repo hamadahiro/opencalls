@@ -112,10 +112,10 @@
   <script>
     let allCalls = [];
     let currentView = 'new';
-    const originalSubtitle = document.getElementById('subtitle').textContent;
+    let originalSubtitle = document.getElementById('subtitle').textContent;
 
     async function loadCalls() {
-      const res = await fetch('data.json');
+      const res = await fetch('/data.json');
       const data = await res.json();
       allCalls = data.calls;
 
@@ -124,6 +124,7 @@
       const roundedCount = Math.floor(openCount / 10) * 10;
       const sub = document.getElementById('subtitle');
       sub.textContent = sub.textContent.replace(/over \d+/, 'over ' + roundedCount);
+      originalSubtitle = sub.textContent;
 
       const params = new URLSearchParams(window.location.search);
       const initView = params.get('view') === 'past' ? 'past' : 'new';
