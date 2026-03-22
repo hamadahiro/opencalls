@@ -520,14 +520,15 @@ a.meta-tag-link.call-prize:hover {
 .submit-form select {
   display: block;
   width: 100%;
-  padding: 10px 12px;
+  padding: 14px 20px;
   font-size: 16px;
   font-family: inherit;
   background: var(--surface);
   color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 3px;
+  border: none;
+  border-radius: 6px;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .submit-form input,
