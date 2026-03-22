@@ -9,14 +9,14 @@
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>FMoPA International Photography Competition 2026 · Florida Museum of Photographic Arts - Monographica</title>
-  <meta name="description" content="International jury selection. Winning entries printed and exhibited June 16 - August 2, 2026 at Ybor City, Tampa. Deadline: April 21, 2026.">
+  <meta name="description" content="International jury selection. Winning entries printed and exhibited June 16 - August 2, 2026 at Ybor City, Tampa. Deadline: April 22, 2026.">
   <meta name="keywords" content="FMoPA International Photography Competition 2026, Florida Museum of Photographic Arts, Exhibition, open call, call for entries, Tampa, FL, USA, art exhibition, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="FMoPA International Photography Competition 2026 · Florida Museum of Photographic Arts - Monographica">
-  <meta property="og:description" content="International jury selection. Winning entries printed and exhibited June 16 - August 2, 2026 at Ybor City, Tampa. Deadline: April 21, 2026.">
+  <meta property="og:description" content="International jury selection. Winning entries printed and exhibited June 16 - August 2, 2026 at Ybor City, Tampa. Deadline: April 22, 2026.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts">
   <meta property="og:type" content="article">
@@ -86,7 +86,7 @@
           if (typeof isCallOpen === 'undefined') {
             window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
           }
-          if (!isCallOpen('2026-04-21')) {
+          if (!isCallOpen('2026-04-22')) {
             document.getElementById('applyBtn').style.display = 'none';
             var cal = document.getElementById('calBtn');
             if (cal) cal.style.display = 'none';
@@ -108,16 +108,16 @@
 
   <script>
     const CURRENT_SLUG = 'fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts';
-    const CURRENT_CALL = {"prize":"$1,000","category":"exhibition","org":"Florida Museum of Photographic Arts","location":"Tampa, FL, USA","fee":"$10","deadline":"2026-04-21","instagram":"@fmopa","eligibility":[],"jury":[],"submitVia":"Picter","images":"","ai":""};
+    const CURRENT_CALL = {"prize":"$1,000","category":"exhibition","org":"Florida Museum of Photographic Arts","location":"Tampa, FL, USA","fee":"$10","deadline":"2026-04-22","instagram":"@fmopa","eligibility":[],"jury":[],"submitVia":"Picter","images":"","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-04-21'.replace(/-/g, '');
-      var nd = new Date('2026-04-21T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var d = '2026-04-22'.replace(/-/g, '');
+      var nd = new Date('2026-04-22T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
       var t = 'FMoPA International Photography Competition 2026';
       var u = 'https://site.picter.com/fmopa-international-photography-competition-2026';
       var o = 'Florida Museum of Photographic Arts';
-      var dl = new Date('2026-04-21T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+      var dl = new Date('2026-04-22T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$1,000') + '\\nEntry fee: ' + icsE('$10');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});

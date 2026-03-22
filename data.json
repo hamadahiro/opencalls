@@ -191,7 +191,8 @@
       "requirements": "Up to 20 images",
       "images": "Up to 20 images",
       "slug": "rarefied-light-2026-alaska-photographic-center",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "Prix Mustaqbal 2026 — Momentum",
@@ -204,9 +205,7 @@
       "instagram": "@prixmustaqbal",
       "location": "Casablanca, Morocco",
       "prize": "",
-      "eligibility": [
-        "african-diaspora"
-      ],
+      "eligibility": [],
       "submitVia": "Website form",
       "requirements": "4–8 images",
       "images": "4–8 images",
@@ -675,7 +674,7 @@
     {
       "title": "Insight Foto Festival — Insight Out 2026",
       "org": "Insight Foto Festival",
-      "deadline": "2026-04-15",
+      "deadline": "2026-01-25",
       "fee": "Free",
       "category": "photography",
       "description": "Open circuit for independent photography exhibitions and projects inspired by the theme ABITO. Open to artists, collectives, and local organizations. Sixth edition of the festival in Varese, Italy.",
@@ -706,7 +705,7 @@
     {
       "title": "Penumbra Foundation Workspace Residency 2026",
       "org": "Penumbra Foundation",
-      "deadline": "2026-03-31",
+      "deadline": "2026-04-01",
       "fee": "Free",
       "category": "residency",
       "description": "6–8 week residency in New York City with $7,000 honorarium. Access to comprehensive photographic facilities including darkrooms, digital labs, and studio space. Juried by Makeda Best, Natasha Chuk, and Walead Beshty.",
@@ -724,7 +723,7 @@
     {
       "title": "Penumbra Foundation Risograph Publication Residency",
       "org": "Penumbra Foundation",
-      "deadline": "2026-03-31",
+      "deadline": "2026-04-01",
       "fee": "Free",
       "category": "zine",
       "description": "Residency to produce a small edition risograph photobook at Penumbra's facilities in NYC. No prior risograph experience required. Juried by Catherine McKinley, Joshua Chuang, and Travis Shaffer.",
@@ -749,9 +748,7 @@
       "instagram": "@generator_art_production_fund",
       "location": "Online",
       "prize": "",
-      "eligibility": [
-        "south-asian"
-      ],
+      "eligibility": [],
       "submitVia": "Google Form",
       "requirements": "10–15 images",
       "images": "10–15 images",
@@ -823,9 +820,7 @@
       "instagram": "@scantarragona",
       "location": "Tarragona, Spain",
       "prize": "€500",
-      "eligibility": [
-        "emerging"
-      ],
+      "eligibility": [],
       "submitVia": "JotForm",
       "requirements": "Up to 20 images",
       "images": "Up to 20 images",
@@ -836,7 +831,7 @@
       "title": "Lobster Club Artist Residency 2026",
       "org": "Lobster Club",
       "deadline": "2026-03-23",
-      "fee": "Free",
+      "fee": "$25",
       "category": "residency",
       "description": "Weeklong summer residency (June 1–8) at Camp Singers in Delhi, New York — 88 acres with restored 1870s lodge. Group show in NYC opening June 10. All disciplines welcome. Simple application: photos of work and a brief about your plans.",
       "url": "https://form.typeform.com/to/ac0jgFGX",
@@ -872,15 +867,13 @@
       "org": "Suboart Magazine",
       "deadline": "2026-04-06",
       "fee": "Free to submit, €30 if selected",
-      "category": "exhibition",
+      "category": "zine",
       "description": "Independent print magazine based in Lisbon seeking emerging visual artists for in-depth interviews, Q&As, and features. Photography, painting, sculpture, textile art, collage, and illustration welcome. Artists receive a free PDF copy.",
       "url": "https://www.suboartmagazine.com/call-for-artists-may-june-2026-print-issues/",
       "instagram": "@suboartmagazine",
       "location": "Online",
       "prize": "",
-      "eligibility": [
-        "emerging"
-      ],
+      "eligibility": [],
       "submitVia": "Email",
       "requirements": "Up to 6 images",
       "images": "6 images",
@@ -932,7 +925,7 @@
       "title": "Schloss Plüschow Artist-in-Residence 2026",
       "org": "Mecklenburg Artists' House",
       "deadline": "2026-05-03",
-      "fee": "Free",
+      "fee": "€10",
       "category": "residency",
       "description": "Five working scholarships for international visual artists. Three-month residency (October–December 2026) with €1,000/month stipend. On-site stay required at historic Schloss Plüschow in northern Germany.",
       "url": "https://www.plueschow.de/bewerbung/",
@@ -967,13 +960,13 @@
       "title": "Life Framer — Black & White",
       "org": "Life Framer",
       "deadline": "2026-03-31",
-      "fee": "$20–$40",
+      "fee": "$20–$100",
       "category": "photography",
       "description": "Monthly photography competition judged by Léa Thouin. All genres welcome. Winners exhibited at international galleries in New York, Tokyo, Milan, and Arles. $24,000 in total cash prizes across the year.",
       "url": "https://www.life-framer.com/competitions/",
       "instagram": "@life_framer",
       "location": "Online",
-      "prize": "$24,000",
+      "prize": "$2,000",
       "eligibility": [],
       "jury": [
         "Léa Thouin, Photography historian, Fondation Henri Cartier-Bresson"
@@ -988,13 +981,13 @@
       "title": "Life Framer — Colors",
       "org": "Life Framer",
       "deadline": "2026-04-30",
-      "fee": "$20–$40",
+      "fee": "$20–$100",
       "category": "photography",
       "description": "Monthly photography competition judged by Jimmy Marble. All genres welcome. Winners exhibited at international galleries in New York, Tokyo, Milan, and Arles.",
       "url": "https://www.life-framer.com/competitions/",
       "instagram": "@life_framer",
       "location": "Online",
-      "prize": "$24,000",
+      "prize": "$2,000",
       "eligibility": [],
       "jury": [
         "Jimmy Marble, Photographer & Creative Director"
@@ -1009,13 +1002,13 @@
       "title": "Life Framer — Portraits",
       "org": "Life Framer",
       "deadline": "2026-05-31",
-      "fee": "$20–$40",
+      "fee": "$20–$100",
       "category": "photography",
       "description": "Monthly photography competition judged by Robin Hammond. All genres welcome. Winners exhibited at international galleries in New York, Tokyo, Milan, and Arles.",
       "url": "https://www.life-framer.com/competitions/",
       "instagram": "@life_framer",
       "location": "Online",
-      "prize": "$24,000",
+      "prize": "$2,000",
       "eligibility": [],
       "jury": [
         "Robin Hammond, National Geographic Explorer & Documentary Photographer"
@@ -1030,7 +1023,7 @@
       "title": "BBA Photography Prize 2026",
       "org": "BBA Gallery",
       "deadline": "2026-03-30",
-      "fee": "€49",
+      "fee": "€59",
       "category": "photography",
       "description": "International photography prize open to all levels and themes. Selected work exhibited at BBA Gallery in Berlin. First prize includes solo exhibition in 2027 and Artsy profile.",
       "url": "https://bba-prizes.com/photography-prize",
@@ -1263,7 +1256,7 @@
       "category": "grant",
       "description": "Two $1,800 quarterly grants for visual artists and photographers. Twelve honorable mentions also featured.",
       "url": "https://innovateartistgrants.org",
-      "instagram": "",
+      "instagram": "@innovateartistgrants",
       "location": "Online",
       "prize": "$1,800",
       "eligibility": [],
@@ -1382,7 +1375,7 @@
     {
       "title": "Linkshouse Residency — Pier Arts Centre Orkney",
       "org": "Visual Arts Scotland",
-      "deadline": "2026-03-22",
+      "deadline": "2026-03-15",
       "fee": "Free",
       "category": "residency",
       "description": "Month-long funded residency at Linkshouse in Birsay, Orkney, May 1–31, 2026. Partnership with Wilhelmina Barns-Graham Trust and Pier Arts Centre. Includes accommodation, £2,200 stipend, and travel bursary up to £250. On-site artist support and opportunity for future exhibitions with VAS. VAS membership required.",
@@ -1454,7 +1447,7 @@
       "description": "Seeking work that surprises, delights, and transports viewers through playful storytelling, surreal elements, and unexpected juxtapositions.",
       "url": "https://www.aphotographersplace.photo/call-for-submissions",
       "instagram": "@aphotographersplace",
-      "location": "Online",
+      "location": "Raleigh, NC, USA",
       "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Smarter Entry",
@@ -1510,7 +1503,8 @@
       "requirements": "Up to 35 images",
       "images": "Up to 35 images",
       "slug": "fast-forward-analog-photography-as-a-third-space-los-angeles-center-for-photography",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "The Magic of Light - Photography Open Call",
@@ -1662,7 +1656,8 @@
       "requirements": "3 or 6 images",
       "images": "3 or 6 images",
       "slug": "contemporary-trends-in-beauty-alternative-processes-l-a-photo-curator",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "Centrale Festival Open Call 2026",
@@ -1696,7 +1691,7 @@
       "description": "Invites abstraction as a way of seeing, sensing, and surviving. Welcomes projects communicating through atmosphere, rhythm, colour, and form. Amsterdam.",
       "url": "https://www.artdoc.photo/open-call/abstract-visions",
       "instagram": "@artdoc_magazine",
-      "location": "Amsterdam, Netherlands",
+      "location": "Online",
       "prize": "",
       "eligibility": [
         "membership-required"
@@ -1714,7 +1709,7 @@
       "description": "Open call for workshops and artworks exploring alternative photographic processes. Presented in collaboration with Photobook Cafe.",
       "url": "https://www.alternativeprocesses.org/theprocessroom",
       "instagram": "@alternativeprocesses",
-      "location": "Online",
+      "location": "London, United Kingdom",
       "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Google Form",
@@ -1758,7 +1753,8 @@
       "requirements": "Single image",
       "images": "Single image",
       "slug": "colour-calendar-event-alternativephotography-com",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "FotoSlovo Award 2026",
@@ -1795,7 +1791,7 @@
       "category": "zine",
       "description": "Selected artist receives 100% production coverage for an eco-conscious monograph published in Japan, global distribution, and round-trip airfare to Tokyo for launch at Ephemere Photo Fest (October 2026).",
       "url": "https://www.ephemere.tokyo/grants",
-      "instagram": "@ephemerephotofest",
+      "instagram": "@ephemere.tokyo",
       "location": "Tokyo, Japan",
       "prize": "",
       "eligibility": [],
@@ -1815,7 +1811,7 @@
       "category": "photography",
       "description": "Monthly street photography competition. Submit candid moments from packed corners to stark geometry. Winner receives $1,000, exhibition at PBC Gallery London, and feature. Total prize pool $2,700. Judge: Gulnara Samoilova.",
       "url": "https://independent-photo.com/submit/",
-      "instagram": "@the.independent.photographer",
+      "instagram": "@theindependentphoto",
       "location": "Online",
       "prize": "$2,700",
       "eligibility": [],
@@ -1826,7 +1822,8 @@
       "requirements": "1, 3, or 6 images",
       "images": "1, 3, or 6 images",
       "slug": "2026-street-photo-award-the-independent-photographer",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "A Stranger's Face: Travel Portraits (KLPA)",
@@ -1883,7 +1880,7 @@
       "category": "photography",
       "description": "Celebrates Asian American life through photography. Professional and amateur photographers welcome to submit work exploring identity, heritage, and community.",
       "url": "https://asianamericanmuseumoc.org/event/mosaic/",
-      "instagram": "@aamuseumoc",
+      "instagram": "@asianamericanmuseumgp",
       "location": "Orange County, CA, USA",
       "prize": "",
       "eligibility": [
@@ -1910,7 +1907,7 @@
       "url": "https://www.decagongallery.com/night-works-entry",
       "instagram": "@decagon_gallery",
       "location": "Online",
-      "prize": "",
+      "prize": "$500",
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "1–8 images",
@@ -1958,7 +1955,8 @@
       ],
       "submitVia": "Picter",
       "slug": "hasselblad-foundation-photo-book-grant-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "AI mockups must be disclosed"
     },
     {
       "title": "Grants in Photography 2026",
@@ -1969,7 +1967,7 @@
       "description": "Five $3,000 grants for photographers in New York State (outside NYC region). Exhibition and publication in Contact Sheet.",
       "url": "https://lightwork.slideroom.com/",
       "instagram": "@lightworkorg",
-      "location": "New York, NY, USA",
+      "location": "Syracuse, NY, USA",
       "prize": "$3,000",
       "eligibility": [
         "united-states"
@@ -2008,7 +2006,7 @@
       "description": "Five $5,000 grants across five categories: emerging photographer, mid-career photographer, landscape photographer, LGBTQ+ photographer, and Monterey County resident.",
       "url": "https://www.photography.org/events/call-for-entry-cpa-artist-grants-2025-ptxxb",
       "instagram": "@centerphotographicart",
-      "location": "Monterey, CA, USA",
+      "location": "Carmel-by-the-Sea, CA, USA",
       "prize": "$5,000",
       "eligibility": [],
       "jury": [
@@ -2025,7 +2023,7 @@
     {
       "title": "Thoughts of Summer",
       "org": "Southeast Center for Photography",
-      "deadline": "2026-04-03",
+      "deadline": "2026-04-15",
       "fee": "$35",
       "category": "exhibition",
       "description": "Celebrating summer — family, friends, vacations. Jurors: Lisa Woodward and Mia Dalglish (Pictura co-curators). Greenville, SC.",
@@ -2060,7 +2058,8 @@
       "requirements": "10–15 images",
       "images": "10–15 images",
       "slug": "2026-international-portfolio-competition-soho-photo-gallery",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "THE PORTRAIT",
@@ -2124,7 +2123,8 @@
       ],
       "submitVia": "Website form",
       "slug": "sarajevo-photography-festival-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "Framed: Black and White",
@@ -2150,7 +2150,7 @@
     {
       "title": "Hiding in Plain Sight",
       "org": "Rhode Island Center for Photographic Arts",
-      "deadline": "2026-04-11",
+      "deadline": "2026-04-10",
       "fee": "$35",
       "category": "exhibition",
       "description": "Exploring the unseen and forgotten. Challenges myths and revalues overlooked subjects. Providence, RI.",
@@ -2171,13 +2171,13 @@
     {
       "title": "Queer Conscience 2026 Photography Exhibition",
       "org": "The Image Flow",
-      "deadline": "2026-04-11",
+      "deadline": "2026-04-04",
       "fee": "$40",
       "category": "exhibition",
       "description": "4th annual for LGBTQIA2+ community. Seeking work affirming our own truths and expressing resistance during Pride month. Mill Valley, CA.",
       "url": "https://theimageflow.com/gallery/call-for-entry-queer-conscience-2026-photography-exhibition/",
       "instagram": "@theimageflow",
-      "location": "Mill Valley, CA, USA",
+      "location": "San Anselmo, CA, USA",
       "prize": "",
       "eligibility": [
         "united-states",
@@ -2215,7 +2215,8 @@
       "requirements": "10–20 images",
       "images": "10–20 images",
       "slug": "ppa-photo-award-2026-pasadena-photography-arts",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "AI editing OK, fully generated not accepted"
     },
     {
       "title": "XVI Concurso Internacional de Fotografía sobre Humanización Asistencial",
@@ -2265,7 +2266,7 @@
       "url": "https://penniur.upenn.edu/media/photography-contest/2026-photography-contest-sharing-and-caring-cities",
       "instagram": "@pennurban",
       "location": "Philadelphia, PA, USA",
-      "prize": "",
+      "prize": "$500",
       "eligibility": [],
       "jury": [
         "Nikhil Anand, Professor of Anthropology, Penn",
@@ -2277,7 +2278,8 @@
       "requirements": "3 images",
       "images": "3 images",
       "slug": "sharing-and-caring-cities-portraits-of-collective-urban-life-penn-institute-for-urban-research",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "Portrait Awards 2026",
@@ -2365,7 +2367,7 @@
       "title": "LUMINOSITY - The Impact of Light",
       "org": "New York Center for Photographic Arts",
       "deadline": "2026-04-19",
-      "fee": "$35",
+      "fee": "$40",
       "category": "exhibition",
       "description": "Exploring light's presence, absence, and location. Winners receive $4,000 cash, online gallery feature, catalog publication. New York, NY.",
       "url": "https://www.nyc4pa.com/luminosity",
@@ -2385,7 +2387,7 @@
     {
       "title": "FMoPA International Photography Competition 2026",
       "org": "Florida Museum of Photographic Arts",
-      "deadline": "2026-04-21",
+      "deadline": "2026-04-22",
       "fee": "$10",
       "category": "exhibition",
       "description": "International jury selection. Winning entries printed and exhibited June 16 - August 2, 2026 at Ybor City, Tampa.",
@@ -2401,7 +2403,7 @@
     {
       "title": "CITY Photography Exhibit",
       "org": "Dusk Photo Gallery",
-      "deadline": "2026-04-23",
+      "deadline": "2026-04-16",
       "fee": "$40–$45",
       "category": "exhibition",
       "description": "Capturing personal urban experience from quiet, unnoticed moments to the bustling energy of a metropolis. Santa Fe, NM.",
@@ -2442,7 +2444,7 @@
     {
       "title": "HOME Photography Exhibit",
       "org": "Decode Gallery",
-      "deadline": "2026-04-26",
+      "deadline": "2026-04-18",
       "fee": "$40–$45",
       "category": "exhibition",
       "description": "Home as feeling, memory, sanctuary. Exploring domesticity, heritage, shelter, identity through diverse styles. Tucson, AZ.",
@@ -2479,7 +2481,7 @@
     {
       "title": "FOTOFILMIC OPEN 2026",
       "org": "FotoFilmic",
-      "deadline": "2026-05-02",
+      "deadline": "2026-02-28",
       "fee": "$50",
       "category": "exhibition",
       "description": "Open exhibition featuring contemporary film-based photography. Opening May 2, 2026 in Vancouver.",
@@ -2503,7 +2505,7 @@
     {
       "title": "Exposure One Awards - One Shot Photo Contest",
       "org": "Exposure One",
-      "deadline": "2026-05-03",
+      "deadline": "2026-03-25",
       "fee": "$25–$50",
       "category": "photography",
       "description": "Black and white photography celebration. Winners receive career-enhancing cash prizes, dedicated digital gallery, artist directory placement.",
@@ -2553,7 +2555,7 @@
     {
       "title": "7th Annual Alternative Process Photography Exhibition",
       "org": "The Image Flow / Praxis Gallery",
-      "deadline": "2026-05-15",
+      "deadline": "2023-07-24",
       "fee": "$35",
       "category": "exhibition",
       "description": "Seeking work in cyanotype, wet plate collodion, salt printing, anthotype, gum bichromate, lumen printing, platinum/palladium, and other alternative processes.",
@@ -2593,14 +2595,14 @@
     {
       "title": "1839 Awards Color Photography Contest",
       "org": "1839 Awards",
-      "deadline": "2026-05-17",
+      "deadline": "2026-05-18",
       "fee": "$25–$50",
       "category": "photography",
       "description": "Celebrating color photography. Winners receive $4,000 cash prizes, dedicated digital gallery, global artist directory placement.",
       "url": "https://1839awards.com/contests/color-photo-contest",
       "instagram": "@1839awards",
       "location": "Online",
-      "prize": "$4,000",
+      "prize": "$2,500",
       "eligibility": [],
       "jury": [
         "Alessa Widmer, University of Zurich",
@@ -2636,17 +2638,18 @@
       "requirements": "12–20 images",
       "images": "12–20 images",
       "slug": "photographic-performance-2026-a-smith-gallery",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "reFocus Awards - Black and White Photo Contest",
       "org": "reFocus Awards",
-      "deadline": "2026-05-25",
+      "deadline": "2026-05-27",
       "fee": "$25–$50",
       "category": "photography",
       "description": "Celebrating black and white photography. Winners receive career-enhancing cash prizes.",
       "url": "https://refocus-awards.com/about-us",
-      "instagram": "@refocusawards",
+      "instagram": "@refocus.awards",
       "location": "Online",
       "prize": "",
       "eligibility": [],
@@ -2713,8 +2716,8 @@
       "description": "Exploring water — oceans, rain, rivers, puddles. Artists worldwide invited. Online exhibition. Boston, MA.",
       "url": "https://art-fluent.com/calls-for-art/just-add-water-prospectus/",
       "instagram": "@art_fluent",
-      "location": "Boston, MA, USA",
-      "prize": "",
+      "location": "Online",
+      "prize": "$750",
       "eligibility": [],
       "jury": [
         "Amy Matteson Neill, Creative Director"
@@ -2723,13 +2726,14 @@
       "requirements": "20 images",
       "images": "20 images",
       "slug": "just-add-water-art-fluent",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "BOTANICALS",
       "org": "New York Center for Photographic Arts",
       "deadline": "2026-06-07",
-      "fee": "$35",
+      "fee": "$40",
       "category": "exhibition",
       "description": "All photographic processes accepted. Winners receive $4,000 cash, online gallery feature, catalog publication. New York, NY.",
       "url": "https://www.nyc4pa.com/from-a-seed",
@@ -2782,17 +2786,18 @@
       "requirements": "5–20 images",
       "images": "5–20 images",
       "slug": "evolution-grant-art-fluent",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "reFocus Awards - Color Photography Contest",
       "org": "reFocus Awards",
-      "deadline": "2026-06-21",
+      "deadline": "2026-06-22",
       "fee": "$25–$50",
       "category": "photography",
       "description": "Celebrating color photography. Winners receive career-enhancing cash prizes and digital gallery placement.",
       "url": "https://refocus-awards.com/about-us",
-      "instagram": "@refocusawards",
+      "instagram": "@refocus.awards",
       "location": "Online",
       "prize": "",
       "eligibility": [],
@@ -2893,12 +2898,12 @@
     {
       "title": "Photobook Open Call 2026",
       "org": "Photometria International Photography Festival",
-      "deadline": "2026-09-01",
-      "fee": "Free",
+      "deadline": "2026-02-20",
+      "fee": "€20",
       "category": "zine",
       "description": "Open call for artist books, self-published photobooks, limited editions, zines, and DIY publications. Selected works shown at the 18th Photometria Festival (Sep-Nov 2026).",
       "url": "https://www.photometria.gr/en/photobook-open-call/",
-      "instagram": "@photometriafestival",
+      "instagram": "@photometria_festival",
       "location": "Ioannina, Greece",
       "prize": "",
       "eligibility": [],
@@ -2956,7 +2961,7 @@
       "category": "grant",
       "description": "Quarterly grants: 2 x $1,800 (one photographer, one artist per quarter); 12 honorable mentions. Website and community recognition.",
       "url": "https://innovateartistgrants.org/apply",
-      "instagram": "@innovategrant",
+      "instagram": "@innovateartistgrants",
       "location": "Online",
       "prize": "$1,800",
       "eligibility": [],
@@ -3156,9 +3161,7 @@
       "instagram": "@euronatur",
       "location": "Radolfzell, Germany",
       "prize": "€1,500",
-      "eligibility": [
-        "europe"
-      ],
+      "eligibility": [],
       "jury": [
         "Kerstin Sauer, Art Director, EuroNatur",
         "Robin Vornholz, Editor, natur magazine",
@@ -3173,7 +3176,7 @@
     {
       "title": "Vision(ary) 2026: Raising Our Voices",
       "org": "Griffin Museum of Photography",
-      "deadline": "2026-04-05",
+      "deadline": "2026-03-30",
       "fee": "$45",
       "category": "exhibition",
       "description": "Annual outdoor public art exhibition transforming downtown Winchester, MA into an open-air gallery (June–September 2026). Theme: advocacy and social justice. Submit 5–10 images of a complete project via CaFE. Juror: Elizabeth Krist (National Geographic).",
@@ -3237,7 +3240,8 @@
       "requirements": "Unlimited images",
       "images": "Unlimited images",
       "slug": "siena-creative-photo-awards-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "Objectif FEMMES 2026",
@@ -3257,7 +3261,8 @@
       "requirements": "10 images",
       "images": "10 images",
       "slug": "objectif-femmes-2026-parisartistes",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "Counter Histories Puerto Rico",
@@ -3330,7 +3335,7 @@
       "url": "https://site.picter.com/street-photography-barcelona-2026",
       "instagram": "@streetphotography.barcelona",
       "location": "Barcelona, Spain",
-      "prize": "€1,000",
+      "prize": "€1,500",
       "eligibility": [],
       "jury": [
         "Xavi Herrero, Festival Director",
@@ -3368,7 +3373,7 @@
       "url": "https://www.thespiderawards.com/how-to-enter.php",
       "instagram": "@spiderawards",
       "location": "Online",
-      "prize": "$5,000",
+      "prize": "",
       "eligibility": [],
       "jury": [
         "Kelly Sidley, Head of Photographs, Bonhams",
@@ -3586,7 +3591,7 @@
     {
       "title": "Nature Photographer of the Year 2026",
       "org": "Nature Photographer of the Year",
-      "deadline": "2026-05-24",
+      "deadline": "2026-05-31",
       "fee": "€34",
       "category": "photography",
       "description": "International nature photography competition with 12 categories for individual images, a young photographers category, and the Fred Hazelhoff Award for portfolios. Award ceremony November 14, 2026.",
@@ -3614,7 +3619,8 @@
       "eligibility": [],
       "submitVia": "Website form",
       "slug": "hipa-photography-award-2026-hamdan-bin-mohammed-bin-rashid-al-maktoum",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Accepted only in AI category"
     },
     {
       "title": "Natural Landscape Photography Awards 2026",
@@ -3645,7 +3651,7 @@
     {
       "title": "Queer Nature Photography Awards 2026",
       "org": "Narwhal Rainbow Alliance",
-      "deadline": "2026-05-31",
+      "deadline": "2026-08-31",
       "fee": "Free",
       "category": "photography",
       "description": "Free-entry photography award celebrating LGBTQ+ diversity through nature photography. Theme: Queer Nature (non-human). Submit via WeTransfer. Prizes include exhibitions and publication.",
@@ -3700,13 +3706,13 @@
       "title": "PX3 Prix de la Photographie Paris 2026",
       "org": "Prix de la Photographie Paris",
       "deadline": "2026-07-22",
-      "fee": "$20–$50",
+      "fee": "€20–€50",
       "category": "photography",
       "description": "One of Europe's most prestigious photography awards. Categories include Analog, Architecture, Book, Fine Art, Nature, Portraiture, Press, and Advertising. Winners exhibited in Paris and internationally.",
       "url": "https://px3.fr/submit/",
       "instagram": "@px3",
       "location": "Paris, France",
-      "prize": "€3,000",
+      "prize": "€5,000",
       "eligibility": [],
       "jury": [
         "James Wellford, National Geographic",
@@ -3801,7 +3807,7 @@
       "title": "MUSE Photography Awards 2026",
       "org": "International Awards Associate",
       "deadline": "2026-03-26",
-      "fee": "$18–$50",
+      "fee": "$25–$55",
       "category": "photography",
       "description": "International photography competition across 14+ categories including Fine Art, Commercial, Nature, People, Minimalist, Editorial, B&W, Architecture, Fashion, and Mobile. Professional and Amateur/Student divisions. Winners featured on Muse.World.",
       "url": "https://musephotographyawards.com/photography-awards.php",
@@ -3823,7 +3829,7 @@
       "url": "https://www.colorawards.com/how-to-enter.html",
       "instagram": "@colorawards",
       "location": "Online",
-      "prize": "$5,000",
+      "prize": "$2,750",
       "eligibility": [],
       "jury": [
         "James A. Ganz, Senior Curator of Photographs, The J. Paul Getty Museum",
@@ -3834,7 +3840,8 @@
       "requirements": "Unlimited images",
       "images": "Unlimited images",
       "slug": "international-color-awards-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "PX3 State of the World 2026",
@@ -3943,9 +3950,7 @@
       "instagram": "@fotografiska.emerging",
       "location": "New York, NY, USA",
       "prize": "Exhibition",
-      "eligibility": [
-        "emerging"
-      ],
+      "eligibility": [],
       "images": "3 images",
       "slug": "fotografiska-home-global-open-call",
       "orgInTitle": true
@@ -3978,7 +3983,8 @@
       "prize": "€4,000",
       "eligibility": [],
       "slug": "berlin-photo-awards-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "AI editing OK, fully generated not accepted"
     },
     {
       "title": "Galleri Format — Window Exhibition 2026",
@@ -3989,7 +3995,7 @@
       "description": "Open call for artists working in the broad field of photography for the 6th edition of the Window Exhibition at Galleri Format, Stockholm. Exhibition runs June 12 – August 9, 2026.",
       "url": "https://www.galleriformat.se/",
       "instagram": "@galleriformat",
-      "location": "Stockholm, Sweden",
+      "location": "Malmö, Sweden",
       "prize": "Exhibition",
       "eligibility": [],
       "slug": "galleri-format-window-exhibition-2026",
@@ -4155,7 +4161,8 @@
       "images": "1 image",
       "submitVia": "Website form",
       "slug": "beautiful-bizarre-art-prize-mpb-photography-award-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "FotoDoc Photo Contest 2026",
@@ -4172,7 +4179,8 @@
       "images": "1–15 images",
       "submitVia": "Website form",
       "slug": "fotodoc-photo-contest-2026",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "SUB(SCAPE) — Manifest Gallery Season 22",
@@ -4224,7 +4232,8 @@
       "images": "1 image per category",
       "submitVia": "Website form",
       "slug": "xii-premio-internacional-de-fotograf-a-jal-n-ngel",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "Bethany Arts Community — Fall Multidisciplinary Residency 2026",
@@ -4441,12 +4450,10 @@
       "category": "zine",
       "description": "Annual award supporting publication of an unpublished photobook dummy. Special attention to experimental and innovative editorial forms. Winner's dummy and shortlisted entries exhibited at Les Rencontres d'Arles 2026. €25,000 production budget for the winning book.",
       "url": "https://www.rencontres-arles.com/en/luma-rencontresdummy-book-award/",
-      "instagram": "@renabordeaux",
+      "instagram": "@rencontresarles",
       "location": "Arles, France",
       "prize": "€25,000",
-      "eligibility": [
-        "professional"
-      ],
+      "eligibility": [],
       "images": "1 dummy",
       "submitVia": "Website form",
       "slug": "luma-rencontres-dummy-book-award-2026",
@@ -4460,14 +4467,15 @@
       "category": "exhibition",
       "description": "International photography competition with exhibition at Agora Gallery in Chelsea, New York. 30 photographers selected for collective exhibition. Open to all genres and camera types. Five winners receive $500 cash each plus exhibition and online promotion.",
       "url": "https://nyartcompetitions.com/photography/",
-      "instagram": "@agoragallery",
+      "instagram": "@nyartcompetitions",
       "location": "New York, NY, USA",
       "prize": "$500",
       "eligibility": [],
       "images": "Up to 5 images",
       "submitVia": "Website form",
       "slug": "8th-chelsea-international-photography-competition-agora-gallery",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
@@ -4489,7 +4497,7 @@
       "org": "F-Stop Magazine",
       "deadline": "2026-05-15",
       "fee": "Free",
-      "category": "photography",
+      "category": "zine",
       "description": "No theme — all fine art and documentary photography welcome. Submit up to 12 photographs. One submission per person per issue. Featured artist selected from submissions. Published since 2004.",
       "url": "https://www.fstopmagazine.com/submissions.html",
       "instagram": "@fstopmagazine",
@@ -4532,7 +4540,8 @@
       ],
       "submitVia": "Google Form",
       "slug": "hndl-magazine-pride-issue",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "Off The Clock 2026",
@@ -4549,7 +4558,8 @@
       "submitVia": "Website form",
       "images": "Unlimited single images",
       "slug": "off-the-clock-2026-apa-los-angeles",
-      "orgInTitle": false
+      "orgInTitle": false,
+      "ai": "Not accepted"
     },
     {
       "title": "The Female Show 2026",
@@ -4606,14 +4616,14 @@
     {
       "title": "Michael P. Smith Fund for Documentary Photography 2026",
       "org": "New Orleans Photo Alliance",
-      "deadline": "2026-05-04",
+      "deadline": "2026-02-02",
       "fee": "$25",
       "category": "grant",
       "description": "Annual grant honoring legendary New Orleans documentary photographer Michael P. Smith. Awards cash prizes and exhibition opportunities to Gulf Coast photographers whose work combines artistic excellence and a sustained commitment to a cultural documentary project. Submit 10–20 images plus project statement (530 words) and bio via CaFE (Call for Entry). Subject matter not limited to Gulf Coast region. Winners donate two prints to NOPA's permanent collection and submit a final report by August 2026.",
       "url": "https://neworleansphotoalliance.org/michael-p-smith-fund-for-documentary-photography/",
       "instagram": "@photoalliance",
       "location": "New Orleans, Louisiana, USA",
-      "prize": "$5,000",
+      "prize": "$3,000",
       "eligibility": [
         "united-states"
       ],
@@ -4696,14 +4706,14 @@
     {
       "title": "The Woman Artist Award — 6th Edition",
       "org": "Arts to Hearts Project",
-      "deadline": "2026-03-27",
+      "deadline": "2026-04-04",
       "fee": "$35",
       "category": "photography",
       "description": "Juried award for women artists working in any visual arts medium including photography. Winner receives $500 cash prize, glass trophy, interview feature in hardcover coffee table book, website interview, one-year portfolio feature on Women in Arts Network (global directory for women artists), and one-year subscription to Arts to Hearts print + digital magazine. No specific theme — submit your best work. 6th edition.",
       "url": "https://apply.artstoheartsproject.com/open-calls",
       "instagram": "@artstoheartsproject",
       "location": "Online",
-      "prize": "$500",
+      "prize": "$1,000",
       "eligibility": [
         "women"
       ],
@@ -4809,7 +4819,8 @@
       "eligibility": [],
       "submitVia": "Website form",
       "slug": "cut-paste-magazine-issue-17-gather",
-      "orgInTitle": true
+      "orgInTitle": true,
+      "ai": "Not accepted"
     },
     {
       "title": "Outdoor Photography Magazine — Creative Wildlife",
@@ -4881,7 +4892,7 @@
     {
       "title": "Incandescent Zine — Color Film Photography",
       "org": "Incandescent Zine",
-      "deadline": "Continuous",
+      "deadline": "2026-03-01",
       "fee": "Free",
       "category": "zine",
       "description": "Bi-annual zine exclusively for color film/analog photography. Submit up to 12 color film images. No digital photography. Published by Pine Island Press, Portland, Oregon. Submit to incandescentzine@gmail.com.",
@@ -5029,7 +5040,7 @@
       "url": "https://monoawards.com/",
       "instagram": "@monoawards",
       "location": "Online",
-      "prize": "$2,000",
+      "prize": "$3,000",
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "1 image per entry",
@@ -5062,7 +5073,7 @@
       "url": "https://annualphotoawards.com/",
       "instagram": "@annualphotoawards",
       "location": "Online",
-      "prize": "$5,000",
+      "prize": "$2,500",
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "1–8 images",
@@ -5128,7 +5139,8 @@
       "requirements": "Up to 4 images",
       "images": "Up to 4 images",
       "orgInTitle": true,
-      "slug": "wider-skies-magazine-issue-1"
+      "slug": "wider-skies-magazine-issue-1",
+      "ai": "Not accepted"
     },
     {
       "title": "Atlas of Ruins Vol.3 — Call for Photos",

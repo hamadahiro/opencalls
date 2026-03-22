@@ -9,14 +9,14 @@
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>Incandescent Zine — Color Film Photography - Monographica</title>
-  <meta name="description" content="Bi-annual zine exclusively for color film/analog photography. Submit up to 12 color film images. Rolling deadline.">
+  <meta name="description" content="Bi-annual zine exclusively for color film/analog photography. Submit up to 12 color film images. Deadline: March 1, 2026.">
   <meta name="keywords" content="Incandescent Zine — Color Film Photography, Incandescent Zine, Zines &amp; Books, open call, call for entries, photobook, zine submission, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/incandescent-zine-color-film-photography">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Incandescent Zine — Color Film Photography - Monographica">
-  <meta property="og:description" content="Bi-annual zine exclusively for color film/analog photography. Submit up to 12 color film images. Rolling deadline.">
+  <meta property="og:description" content="Bi-annual zine exclusively for color film/analog photography. Submit up to 12 color film images. Deadline: March 1, 2026.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/incandescent-zine-color-film-photography">
   <meta property="og:type" content="article">
@@ -78,7 +78,7 @@
 
       <div class="call-detail-actions" id="detailActions">
         <a href="https://incandescentzine.wordpress.com/submissions/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-
+        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
         <span class="call-detail-btn call-detail-apply" id="closedBtn" style="display:none;opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <script>
@@ -86,7 +86,7 @@
           if (typeof isCallOpen === 'undefined') {
             window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
           }
-          if (!isCallOpen('Continuous')) {
+          if (!isCallOpen('2026-03-01')) {
             document.getElementById('applyBtn').style.display = 'none';
             var cal = document.getElementById('calBtn');
             if (cal) cal.style.display = 'none';
@@ -108,16 +108,16 @@
 
   <script>
     const CURRENT_SLUG = 'incandescent-zine-color-film-photography';
-    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"Incandescent Zine","location":"Online","fee":"Free","deadline":"Continuous","instagram":"@incandescentzine","eligibility":["analog-photography"],"jury":[],"submitVia":"Email","images":"Up to 12 images","ai":""};
+    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"Incandescent Zine","location":"Online","fee":"Free","deadline":"2026-03-01","instagram":"@incandescentzine","eligibility":["analog-photography"],"jury":[],"submitVia":"Email","images":"Up to 12 images","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = 'Continuous'.replace(/-/g, '');
-      var nd = new Date('ContinuousT00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var d = '2026-03-01'.replace(/-/g, '');
+      var nd = new Date('2026-03-01T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
       var t = 'Incandescent Zine — Color Film Photography';
       var u = 'https://incandescentzine.wordpress.com/submissions/';
       var o = 'Incandescent Zine';
-      var dl = new Date('ContinuousT00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+      var dl = new Date('2026-03-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});

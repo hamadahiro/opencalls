@@ -108,7 +108,7 @@
 
   <script>
     const CURRENT_SLUG = 'schloss-pl-schow-artist-in-residence-2026-mecklenburg-artists-house';
-    const CURRENT_CALL = {"prize":"€3,000","category":"residency","org":"Mecklenburg Artists' House","location":"Plüschow, Germany","fee":"Free","deadline":"2026-05-03","instagram":"@schlossplueschow","eligibility":[],"jury":[],"submitVia":"Website form","images":"1 PDF","ai":""};
+    const CURRENT_CALL = {"prize":"€3,000","category":"residency","org":"Mecklenburg Artists' House","location":"Plüschow, Germany","fee":"€10","deadline":"2026-05-03","instagram":"@schlossplueschow","eligibility":[],"jury":[],"submitVia":"Website form","images":"1 PDF","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -118,7 +118,7 @@
       var u = 'https://www.plueschow.de/bewerbung/';
       var o = 'Mecklenburg Artists\' House';
       var dl = new Date('2026-05-03T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€3,000') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€3,000') + '\\nEntry fee: ' + icsE('€10');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

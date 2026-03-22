@@ -9,14 +9,14 @@
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>1839 Awards Color Photography Contest - Monographica</title>
-  <meta name="description" content="Celebrating color photography. Winners receive $4,000 cash prizes, dedicated digital gallery, global artist directory placement. Deadline: May 17, 2026.">
+  <meta name="description" content="Celebrating color photography. Winners receive $4,000 cash prizes, dedicated digital gallery, global artist directory placement. Deadline: May 18, 2026.">
   <meta name="keywords" content="1839 Awards Color Photography Contest, 1839 Awards, Photography, open call, call for entries, photography competition, photo contest, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/1839-awards-color-photography-contest">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="1839 Awards Color Photography Contest - Monographica">
-  <meta property="og:description" content="Celebrating color photography. Winners receive $4,000 cash prizes, dedicated digital gallery, global artist directory placement. Deadline: May 17, 2026.">
+  <meta property="og:description" content="Celebrating color photography. Winners receive $4,000 cash prizes, dedicated digital gallery, global artist directory placement. Deadline: May 18, 2026.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/1839-awards-color-photography-contest">
   <meta property="og:type" content="article">
@@ -90,7 +90,7 @@
           if (typeof isCallOpen === 'undefined') {
             window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
           }
-          if (!isCallOpen('2026-05-17')) {
+          if (!isCallOpen('2026-05-18')) {
             document.getElementById('applyBtn').style.display = 'none';
             var cal = document.getElementById('calBtn');
             if (cal) cal.style.display = 'none';
@@ -112,17 +112,17 @@
 
   <script>
     const CURRENT_SLUG = '1839-awards-color-photography-contest';
-    const CURRENT_CALL = {"prize":"$4,000","category":"photography","org":"1839 Awards","location":"Online","fee":"$25–$50","deadline":"2026-05-17","instagram":"@1839awards","eligibility":[],"jury":["Alessa Widmer, University of Zurich","Derek Eng, Dwell","Hanna Girma, Serpentine","Hilary Greenbaum, Whitney Museum","Kelly Sidley, Bonhams","Maia Murphy, Phaidon Press"],"submitVia":"1839 Awards","images":"1–5 images","ai":""};
+    const CURRENT_CALL = {"prize":"$2,500","category":"photography","org":"1839 Awards","location":"Online","fee":"$25–$50","deadline":"2026-05-18","instagram":"@1839awards","eligibility":[],"jury":["Alessa Widmer, University of Zurich","Derek Eng, Dwell","Hanna Girma, Serpentine","Hilary Greenbaum, Whitney Museum","Kelly Sidley, Bonhams","Maia Murphy, Phaidon Press"],"submitVia":"1839 Awards","images":"1–5 images","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-05-17'.replace(/-/g, '');
-      var nd = new Date('2026-05-17T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var d = '2026-05-18'.replace(/-/g, '');
+      var nd = new Date('2026-05-18T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
       var t = '1839 Awards Color Photography Contest';
       var u = 'https://1839awards.com/contests/color-photo-contest';
       var o = '1839 Awards';
-      var dl = new Date('2026-05-17T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$4,000') + '\\nEntry fee: ' + icsE('$25–$50');
+      var dl = new Date('2026-05-18T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$2,500') + '\\nEntry fee: ' + icsE('$25–$50');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

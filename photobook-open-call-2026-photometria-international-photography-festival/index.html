@@ -9,14 +9,14 @@
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>Photobook Open Call 2026 · Photometria International Photography Festival - Monographica</title>
-  <meta name="description" content="Open call for artist books, self-published photobooks, limited editions, zines, and DIY publications. Selected works shown at... Deadline: September 1, 2026.">
+  <meta name="description" content="Open call for artist books, self-published photobooks, limited editions, zines, and DIY publications. Selected works shown at... Deadline: February 20, 2026.">
   <meta name="keywords" content="Photobook Open Call 2026, Photometria International Photography Festival, Zines &amp; Books, open call, call for entries, Ioannina, Greece, photobook, zine submission, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/photobook-open-call-2026-photometria-international-photography-festival">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Photobook Open Call 2026 · Photometria International Photography Festival - Monographica">
-  <meta property="og:description" content="Open call for artist books, self-published photobooks, limited editions, zines, and DIY publications. Selected works shown at... Deadline: September 1, 2026.">
+  <meta property="og:description" content="Open call for artist books, self-published photobooks, limited editions, zines, and DIY publications. Selected works shown at... Deadline: February 20, 2026.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/photobook-open-call-2026-photometria-international-photography-festival">
   <meta property="og:type" content="article">
@@ -90,7 +90,7 @@
           if (typeof isCallOpen === 'undefined') {
             window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
           }
-          if (!isCallOpen('2026-09-01')) {
+          if (!isCallOpen('2026-02-20')) {
             document.getElementById('applyBtn').style.display = 'none';
             var cal = document.getElementById('calBtn');
             if (cal) cal.style.display = 'none';
@@ -112,17 +112,17 @@
 
   <script>
     const CURRENT_SLUG = 'photobook-open-call-2026-photometria-international-photography-festival';
-    const CURRENT_CALL = {"prize":"","category":"zine","org":"Photometria International Photography Festival","location":"Ioannina, Greece","fee":"Free","deadline":"2026-09-01","instagram":"@photometriafestival","eligibility":[],"jury":["Achilleas Tziakos, Co-Founder, Photometria Festival","Yorgos Yatromanolakis, Zoetrope Athens","Tiago Casanova, XYZ Books","Francesca Todde, Depart Pour L'Image"],"submitVia":"Email + WeTransfer","images":"","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"zine","org":"Photometria International Photography Festival","location":"Ioannina, Greece","fee":"€20","deadline":"2026-02-20","instagram":"@photometria_festival","eligibility":[],"jury":["Achilleas Tziakos, Co-Founder, Photometria Festival","Yorgos Yatromanolakis, Zoetrope Athens","Tiago Casanova, XYZ Books","Francesca Todde, Depart Pour L'Image"],"submitVia":"Email + WeTransfer","images":"","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-09-01'.replace(/-/g, '');
-      var nd = new Date('2026-09-01T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var d = '2026-02-20'.replace(/-/g, '');
+      var nd = new Date('2026-02-20T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
       var t = 'Photobook Open Call 2026';
       var u = 'https://www.photometria.gr/en/photobook-open-call/';
       var o = 'Photometria International Photography Festival';
-      var dl = new Date('2026-09-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free');
+      var dl = new Date('2026-02-20T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('€20');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
