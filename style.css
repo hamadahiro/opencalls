@@ -800,8 +800,8 @@ a.meta-tag-link.call-prize:hover {
   font-family: 'Source Serif 4', serif;
   color: var(--text);
   text-align: right;
-  white-space: nowrap;
-  flex-shrink: 0;
+  overflow-wrap: break-word;
+  flex-shrink: 1;
 }
 
 .call-detail-info a {
