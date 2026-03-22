@@ -47,7 +47,7 @@ const eligibilityLabel = {
   'asian-american': 'Asian American focus',
   'south-asian': 'South Asian focus',
   'african-diaspora': 'African diaspora focus',
-  'neurodivergent-disabled': 'Neurodivergent & Disabled',
+  'neurodivergent-disabled': 'Neurodivergent & disabled',
   'portugal': 'Portugal only',
   'taiwan': 'Taiwan only'
 };
