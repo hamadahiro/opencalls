@@ -518,25 +518,9 @@ a.meta-tag-link.call-prize:hover {
 .submit-form input,
 .submit-form textarea,
 .submit-form select {
-  display: block;
-  width: 100%;
-  padding: 14px 20px;
-  font-size: var(--fs-tag);
-  font-family: helvetica, sans-serif;
-  letter-spacing: 0.3px;
-  color: var(--text);
-  background: var(--surface);
-  color: var(--text);
-  border: none;
-  border-radius: 0;
-  box-sizing: border-box;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.submit-form input,
-.submit-form textarea {
   -webkit-appearance: none;
   appearance: none;
+  box-sizing: border-box;
 }
 
 .submit-form textarea {
