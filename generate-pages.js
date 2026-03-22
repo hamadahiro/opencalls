@@ -1171,8 +1171,7 @@ const submitHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Submit a call', 'Paste a link — add details if you have them.')}
 
     <section class="submit-form">
-      <form action="https://formspree.io/f/xkoqaveq" method="POST">
-        <input type="hidden" name="_next" value="${SITE}/submit/thanks">
+      <form id="submitForm">
         <h3 class="section-header">Where to apply</h3>
         <input class="search-bar" type="text" name="url" id="url" placeholder="https://" required>
 
@@ -1216,8 +1215,37 @@ const submitHtml = `<!DOCTYPE html>
 
         </details>
 
-        <button type="submit" class="call-detail-btn call-detail-apply">Submit</button>
+        <button type="submit" class="call-detail-btn call-detail-apply" id="submitBtn">Submit</button>
       </form>
+      <div id="submitThanks" style="display:none">
+        <h3 class="section-header">Thanks for submitting</h3>
+        <p class="call-detail-description" style="margin-bottom:24px">I'll take a look and add it if it fits.</p>
+        <a href="/submit" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Submit another</a>
+      </div>
+      <script>
+        document.getElementById('submitForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('submitBtn');
+          btn.textContent = 'Submitting...';
+          btn.style.opacity = '0.5';
+          fetch('https://formspree.io/f/xkoqaveq', {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+          }).then(function(r) {
+            if (r.ok) {
+              document.getElementById('submitForm').style.display = 'none';
+              document.getElementById('submitThanks').style.display = '';
+            } else {
+              btn.textContent = 'Something went wrong, try again';
+              btn.style.opacity = '1';
+            }
+          }).catch(function() {
+            btn.textContent = 'Something went wrong, try again';
+            btn.style.opacity = '1';
+          });
+        });
+      </script>
     </section>
 
     ${FOOTER}
