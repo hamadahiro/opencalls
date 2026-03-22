@@ -526,7 +526,7 @@ a.meta-tag-link.call-prize:hover {
   background: var(--surface);
   color: var(--text);
   border: none;
-  border-radius: 6px;
+  border-radius: 0;
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
