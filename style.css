@@ -30,7 +30,7 @@
   :root {
     --text: #e0e0e0;
     --text-muted: #777;
-    --text-body: #aaa;
+    --text-body: var(--text);
     --bg: #151515;
     --card-bg: #2a2a2a;
     --card-bg-hover: #3a3a3a;
@@ -47,7 +47,8 @@
   }
 
   body {
-    -webkit-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .search-bar {
