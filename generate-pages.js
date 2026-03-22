@@ -302,7 +302,7 @@ ${call.jury && call.jury.length ? `
       <div class="call-detail-actions" id="detailActions">
         <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}
-        <span class="call-detail-btn call-detail-apply" id="closedBtn" style="display:none;opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
+        <span class="call-detail-btn" id="closedBtn" style="display:none;background:#8C8B8C;color:white;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <script>
         (function() {
