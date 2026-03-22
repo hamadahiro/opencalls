@@ -252,7 +252,21 @@ function renderInfoGrid(call) {
   const dlSlug = call.deadline !== 'Continuous' ? (function() { const d = new Date(call.deadline + 'T00:00:00'); return ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear(); })() : null;
   rows.push(infoRow('<a href="/deadlines">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
   // Results date
-  if (call.resultsDate) rows.push(infoRow('Results announced', infoVal(call.resultsDate)));
+  if (call.resultsDate) {
+    const resultsPast = (function(s) {
+      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
+      const my = clean.match(/([A-Za-z]+)\s+(\d{4})/);
+      if (!my) return false;
+      const mi = months[my[1].toLowerCase()];
+      if (mi === undefined) return false;
+      const yr = parseInt(my[2]);
+      const dm = clean.match(/(\d{1,2})(?:[,\s-])/);
+      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
+      return new Date(yr, mi, day, 23, 59) < new Date();
+    })(call.resultsDate);
+    rows.push(infoRow(resultsPast ? 'Results' : 'Results announced', resultsPast ? infoVal(call.resultsDate + ' (announced)') : infoVal(call.resultsDate)));
+  }
   // Fee
   if (call.fee) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
