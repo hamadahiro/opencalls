@@ -529,7 +529,7 @@ a.meta-tag-link.call-prize:hover {
   box-sizing: border-box;
 }
 
-.submit-form input:not([type="date"]),
+.submit-form input,
 .submit-form textarea {
   -webkit-appearance: none;
   appearance: none;
@@ -565,20 +565,8 @@ a.meta-tag-link.call-prize:hover {
 
 .submit-form button {
   margin-top: 24px;
-  padding: 12px 28px;
-  font-family: helvetica, sans-serif;
-  font-size: var(--fs-btn);
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  background: var(--btn-bg);
-  color: var(--btn-text);
   border: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.submit-form button:hover {
-  opacity: 0.85;
 }
 
 /* === Footer === */
