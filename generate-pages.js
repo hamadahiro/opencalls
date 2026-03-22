@@ -1258,32 +1258,6 @@ writeGenerated('submit/index.html', submitHtml);
 sitemapEntries.push(`${SITE}/submit`);
 console.log('  Submit page');
 
-// === Submit thank you page ===
-const thanksHtml = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  ${HEAD({ title: 'Thanks for submitting', description: 'Your open call suggestion has been received.', keywords: '', canonical: `${SITE}/submit/thanks`, cssVersion })}
-</head>
-<body>
-
-  ${buildHeader()}
-
-  <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit">Submit</a></nav>', 'Thanks for submitting', "I'll take a look and add it if it fits.")}
-
-    <section class="submit-form" style="padding-bottom:48px">
-      <a href="/submit" class="call-detail-btn call-detail-apply">Submit another</a>
-    </section>
-
-    ${FOOTER}
-  </main>
-
-</body>
-</html>`;
-
-writeGenerated('submit/thanks/index.html', thanksHtml);
-console.log('  Submit thanks page');
-
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
   minLen = minLen || 25;
