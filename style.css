@@ -396,7 +396,7 @@ a.call-deadline:hover {
 .call-deadline.soon,
 .call-deadline.normal { background: #D3B36F; color: white; }
 .call-deadline.rolling { background: #9BB3BE; color: white; }
-.call-deadline.closed { background: #8C8B8C; color: white; }
+.call-deadline.closed { background: var(--btn-bg); color: var(--btn-text); opacity: 0.4; }
 
 /* === Meta Tags === */
 .call-meta {
