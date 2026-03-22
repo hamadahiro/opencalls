@@ -1241,7 +1241,7 @@ const thanksHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit">Submit</a></nav>', 'Thanks for submitting', 'I'll take a look and add it if it fits.')}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit">Submit</a></nav>', 'Thanks for submitting', "I'll take a look and add it if it fits.")}
 
     <section class="submit-form" style="padding-bottom:48px">
       <a href="/submit" class="call-detail-btn call-detail-apply">Submit another</a>
