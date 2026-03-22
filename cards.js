@@ -265,7 +265,7 @@ function renderInfoGrid(call) {
       const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
       return new Date(yr, mi, day, 23, 59) < new Date();
     })(call.resultsDate);
-    rows.push(infoRow(resultsPast ? 'Results (announced)' : 'Results announced', esc(call.resultsDate)));
+    rows.push(infoRow(resultsPast ? 'Results' : 'Results announced', resultsPast ? '<span style="white-space:nowrap">' + esc(call.resultsDate) + ' (announced)</span>' : esc(call.resultsDate)));
   }
   // Fee
   if (call.fee) {
