@@ -80,10 +80,24 @@
         <p class="call-detail-description">Jury: Alex Kahl, Online Editor, WePresent · Alex Pollack, Director of Photography, National Geographic · Anna Planas, Artistic Director, Paris Photo · Bindi Vora, Curator, Autograph · Cassidy Paul, Managing Editor Digital, Aperture · Claartje van Dijk, Senior Curator, Foam Photography Museum · Crista Dix, Executive Director, Griffin Museum · Darius Himes, International Head of Photographs, Christie's · Enrico Stefanelli, Artistic Director, Photolux Festival · Fiona Shields, Head of Photography, The Guardian · Giulia Zorzi, Founder, Micamera · Hannah Watson, Director, Trolley Books · Jane Yeomans, Senior Photo Editor, Bloomberg · Jessie Wender, Photo Editor, The New York Times · Jim Casper, Editor-in-Chief, LensCulture · Rhea Combs, Director of Curatorial Affairs, National Portrait Gallery · Rose Shoshana, Owner &amp; Director, Rose Gallery · Taous R. Dahmani, Curator, The Photographers' Gallery · Xavier Canonne, Director, Musée de la Photographie · Yuri Yamada, Curator, Tokyo Photographic Art Museum</p>
       </div>
 
-      <div class="call-detail-actions">
-        <a href="https://www.lensculture.com/photo-competitions/critics-choice" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" onclick="downloadICS(event)">Add to calendar</a>
+      <div class="call-detail-actions" id="detailActions">
+        <a href="https://www.lensculture.com/photo-competitions/critics-choice" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
+        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" id="closedBtn" style="display:none;opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
+      <script>
+        (function() {
+          if (typeof isCallOpen === 'undefined') {
+            window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
+          }
+          if (!isCallOpen('2026-04-22')) {
+            document.getElementById('applyBtn').style.display = 'none';
+            var cal = document.getElementById('calBtn');
+            if (cal) cal.style.display = 'none';
+            document.getElementById('closedBtn').style.display = '';
+          }
+        })();
+      </script>
     </section>
 
     <section class="related-calls">

@@ -80,7 +80,7 @@ async function loadSimilar() {
   const now = new Date();
   const candidates = data.calls
     .filter(c => (c.slug || slugify(c.title)) !== CURRENT_SLUG)
-    .filter(c => c.deadline === 'Continuous' || new Date(c.deadline + 'T23:59:59') >= now);
+    .filter(c => isCallOpen(c.deadline));
 
   const scored = candidates.map(c => ({
     call: c,

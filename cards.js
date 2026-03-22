@@ -141,6 +141,12 @@ function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
+// Central timezone logic — a call is open until the end of its deadline day (local time)
+function isCallOpen(deadline) {
+  if (deadline === 'Continuous') return true;
+  return new Date(deadline + 'T23:59:59') >= new Date();
+}
+
 function processCall(call) {
   const now = new Date();
   const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
