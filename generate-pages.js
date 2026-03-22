@@ -90,6 +90,7 @@ const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">`;
 function HEAD(opts) {
   const cssVersion = opts.cssVersion;
+  const canonical = opts.canonical.endsWith('/') ? opts.canonical : opts.canonical + '/';
   return `${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
@@ -99,12 +100,12 @@ function HEAD(opts) {
   <title>${opts.title}${TITLE_SUFFIX}</title>
   <meta name="description" content="${opts.description}">
   ${opts.keywords ? `<meta name="keywords" content="${opts.keywords}">` : ''}
-  <link rel="canonical" href="${opts.canonical}">
+  <link rel="canonical" href="${canonical}">
   ${ICONS}
   <meta property="og:title" content="${opts.title}${TITLE_SUFFIX}">
   <meta property="og:description" content="${opts.description}">
   <meta property="og:image" content="${SITE}/og-image.png">
-  <meta property="og:url" content="${opts.canonical}">
+  <meta property="og:url" content="${canonical}">
   <meta property="og:type" content="${opts.ogType || 'website'}">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -1414,7 +1415,7 @@ fs.writeFileSync('cards.js', cardsJs);
 
 // Generate sitemap.xml
 const today = new Date().toISOString().split('T')[0];
-const allUrls = [`${SITE}/`, ...sitemapEntries];
+const allUrls = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u : u + '/')];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1496,6 +1497,9 @@ indexPages.forEach(({ src, fallback }) => {
       const clean = content.replace(/\s*-\s*Monographica$/, '');
       return `${clean}${TITLE_SUFFIX}"`;
     });
+    // Ensure canonical and og:url have trailing slashes
+    html = html.replace(/(rel="canonical" href="[^"]*[^/])"/g, '$1/"');
+    html = html.replace(/(og:url"\s+content="[^"]*[^/])"/g, '$1/"');
     html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
     html = html.replace(/<header>[\s\S]*?<\/header>(\s*<script>\(function\(\)\{var p=location[\s\S]*?<\/script>)?/, buildHeader());
     const dir = path.dirname(src);
