@@ -73,7 +73,7 @@ data.calls.forEach((c, i) => {
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
 
 // Auto-fill dateAdded for entries missing it, then write back
-const dateAddedToday = new Date().toISOString().slice(0, 10);
+const dateAddedToday = new Date().toISOString().slice(0, 19);
 let dateAddedCount = 0;
 data.calls.forEach(c => {
   if (!c.dateAdded) { c.dateAdded = dateAddedToday; dateAddedCount++; }
