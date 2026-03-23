@@ -21,7 +21,7 @@
         "Christiane Paul, Adjunct Curator Digital Art, Whitney Museum",
         "Annie Bicknell, Curator Public Programmes, Tate"
       ],
-      "resultsDate": "August 2026 (finalists), November 2026 (winners)",
+      "images": "1 primary + up to 3 supporting images",
       "ai": "Accepted",
       "slug": "the-2026-lumen-prize",
       "orgInTitle": true,
@@ -45,6 +45,7 @@
         "Livvy Eden, Curator & Photographic Artist"
       ],
       "resultsDate": "May 22, 2026",
+      "ai": "Accepted (must disclose)",
       "slug": "nest-group-exhibition-fringe-arts-bath",
       "orgInTitle": false,
       "dateAdded": "2026-03-23"
@@ -59,12 +60,13 @@
       "url": "https://neworleansphotoalliance.org/michael-p-smith-fund-for-documentary-photography/",
       "instagram": "@photoalliance",
       "location": "New Orleans, Louisiana, USA",
-      "prize": "$3,000",
+      "prize": "$3,000 + exhibition",
       "eligibility": [
         "united-states"
       ],
       "submitVia": "CaFE",
       "images": "10–20 images",
+      "requirements": "10–20 images",
       "slug": "michael-p-smith-fund-for-documentary-photography-2025-new-orleans-photo-alliance",
       "orgInTitle": false,
       "dateAdded": "2026-03-23"
@@ -81,7 +83,7 @@
       "location": "Online",
       "prize": "",
       "eligibility": [],
-      "submitVia": "Website form",
+      "submitVia": "Google Form",
       "requirements": "Up to 3 images",
       "images": "Up to 3 images",
       "slug": "love-romance-show-blue-sky-gallery",
@@ -144,6 +146,16 @@
       "submitVia": "Picter",
       "requirements": "12 images",
       "images": "12 images",
+      "jury": [
+        "Corinne Dufka, Independent Researcher/Advisor",
+        "Whitney Johnson, President & CEO, Catalina Island Conservancy",
+        "Brent Lewis, Photo Editor, The New York Times",
+        "Enric Marti, Deputy Director of Photography, Associated Press",
+        "Benny Snyder, Photo Editor & Contest Coordinator, Associated Press",
+        "Sandra M. Stevenson, Deputy Director of Photography, The Washington Post",
+        "Bernadette Tuazon, Director of Photography, CNN Digital"
+      ],
+      "resultsDate": "May 2026",
       "slug": "anja-niedringhaus-courage-in-photojournalism-award-2026-international-women-s-media-foundation",
       "orgInTitle": false,
       "dateAdded": "2026-03-18"
@@ -163,6 +175,9 @@
       "submitVia": "Email",
       "requirements": "Up to 2 images",
       "images": "Up to 2 images",
+      "jury": [
+        "Robertino Ragazza, Curator"
+      ],
       "slug": "lt5-alternative-photography-show-kaleid-gallery",
       "orgInTitle": false,
       "resultsDate": "April 15, 2026",
@@ -183,6 +198,9 @@
       "submitVia": "Google Form",
       "requirements": "10–20 images",
       "images": "10–20 images",
+      "jury": [
+        "Caterina De Pietri, Curator, Artphilein Foundation"
+      ],
       "slug": "artphilein-open-call-2026",
       "orgInTitle": true,
       "resultsDate": "April 30, 2026",
