@@ -338,7 +338,7 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
 
   <script>
     const CURRENT_SLUG = '${slug}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, resultsDate: call.resultsDate || '', instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', ai: call.ai || '' }).replace(/</g, '\\u003c')};
+    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, resultsDate: call.resultsDate || '', instagram: call.instagram || '', eligibility: call.eligibility || [], jury: call.jury || [], submitVia: call.submitVia || '', email: call.email || '', ai: call.ai || '' }).replace(/</g, '\\u003c')};
 ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\\\/g,'\\\\\\\\').replace(/;/g,'\\\\;').replace(/,/g,'\\\\,').replace(/\\n/g,'\\\\n');}
