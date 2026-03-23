@@ -71,6 +71,18 @@ data.calls.forEach((c, i) => {
   }
 });
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
+
+// Auto-fill dateAdded for entries missing it, then write back
+const dateAddedToday = new Date().toISOString().slice(0, 10);
+let dateAddedCount = 0;
+data.calls.forEach(c => {
+  if (!c.dateAdded) { c.dateAdded = dateAddedToday; dateAddedCount++; }
+});
+if (dateAddedCount > 0) {
+  fs.writeFileSync('data.json', JSON.stringify(data, null, 2) + '\n');
+  console.log(`  Auto-filled dateAdded="${dateAddedToday}" on ${dateAddedCount} entries`);
+}
+
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
