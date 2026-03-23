@@ -4819,15 +4819,17 @@
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
       "org": "Creatura Magazine",
-      "deadline": "2026-03-22",
+      "deadline": "2026-03-29",
       "fee": "€15",
       "category": "zine",
       "description": "Open call for Issue 02 of this indie print magazine exploring the idea of home — not only as a physical space but as an emotional territory. Selected photographs featured in a collective section of the print edition.",
       "url": "https://www.creaturamagazine.com/",
-      "instagram": "@creaturamagazine",
+      "instagram": "@_.creatura",
       "location": "Online",
       "prize": "Publication",
-      "eligibility": [],
+      "eligibility": [
+        "latin-america"
+      ],
       "slug": "creatura-magazine-issue-02-what-we-call-home",
       "orgInTitle": true,
       "dateAdded": "2026-03-20"

@@ -44,6 +44,7 @@ const eligibilityLabel = {
   'professional': 'Professional only',
   'membership-required': 'Membership required',
   'puerto-rico': 'Puerto Rico focus',
+  'latin-america': 'Latin America',
   'asian-american': 'Asian American focus',
   'south-asian': 'South Asian focus',
   'african-diaspora': 'African diaspora focus',
