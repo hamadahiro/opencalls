@@ -76,6 +76,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Sven Eisenhut-Hug, Co-Founder &amp; Director, photo basel · Elwira Spychalska, Art Historian · Dimitri Bogachuk, Founder, Form</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://site.picter.com/form-photo-award-2026" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -94,7 +98,7 @@
 
   <script>
     const CURRENT_SLUG = 'form-photo-award-2026';
-    const CURRENT_CALL = {"prize":"Exhibition","category":"photography","org":"Form Gallery","location":"Basel, Switzerland","fee":"€35","deadline":"2026-03-29","resultsDate":"March 30, 2026","instagram":"@form.galerie","eligibility":[],"jury":[],"submitVia":"Picter","ai":""};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"photography","org":"Form Gallery","location":"Basel, Switzerland","fee":"€35","deadline":"2026-03-29","resultsDate":"March 30, 2026","instagram":"@form.galerie","eligibility":[],"jury":["Sven Eisenhut-Hug, Co-Founder & Director, photo basel","Elwira Spychalska, Art Historian","Dimitri Bogachuk, Founder, Form"],"submitVia":"Picter","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
