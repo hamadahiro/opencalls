@@ -415,7 +415,11 @@
             });
           }
           var text = parts.join(' ').toLowerCase();
-          return tokens.every(function(token) { return text.includes(token); });
+          var textNorm = text.replace(/[,.']/g, '');
+          return tokens.every(function(token) {
+            if (text.includes(token)) return true;
+            return textNorm.includes(token.replace(/[,.']/g, ''));
+          });
         });
       }
 
