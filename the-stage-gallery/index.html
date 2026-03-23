@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Prize Type 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
-  <meta name="keywords" content="open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/prize/">
+  <title>The Stage Gallery - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from The Stage Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="The Stage Gallery open call, The Stage Gallery call for entries, The Stage Gallery submissions, The Stage Gallery photography, The Stage Gallery exhibition, The Stage Gallery artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/the-stage-gallery/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Prize Type 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
+  <meta property="og:title" content="The Stage Gallery - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from The Stage Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/prize/">
+  <meta property="og:url" content="https://opencalls.monographica.com/the-stage-gallery/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Prize Type 2026",
-  "description": "Browse open calls by prize type.",
-  "url": "https://opencalls.monographica.com/prize",
+  "name": "The Stage Gallery - Open Calls",
+  "description": "Open calls and submission opportunities from The Stage Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/the-stage-gallery",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -68,47 +68,29 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
-      <h1>Prizes</h1>
-      <h2 class="subtitle">Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>The Stage Gallery</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from The Stage Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-            <a href="/prize/cash/" class="index-item">
-        <span class="index-item-name">Cash Prize</span>
-        <span class="dots"></span>
-        <span class="index-item-count">123</span>
-      </a>
-      <a href="/prize/exhibition/" class="index-item">
-        <span class="index-item-name">Exhibition</span>
-        <span class="dots"></span>
-        <span class="index-item-count">47</span>
-      </a>
-      <a href="/prize/publication/" class="index-item">
-        <span class="index-item-name">Publication</span>
-        <span class="dots"></span>
-        <span class="index-item-count">26</span>
-      </a>
-      <a href="/prize/residency/" class="index-item">
-        <span class="index-item-name">Residency</span>
-        <span class="dots"></span>
-        <span class="index-item-count">9</span>
-      </a>
-      <a href="/prize/fellowship/" class="index-item">
-        <span class="index-item-name">Fellowship</span>
-        <span class="dots"></span>
-        <span class="index-item-count">1</span>
-      </a>
-
-    </section>
-
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <section class="calls-list" id="callsList"></section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       <p>&copy; 2026 HH &mdash; still making sense of things.</p>
     </footer>
   </main>
+
+  <script src="/cards.js?v=20260323"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.org === 'The Stage Gallery').map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
