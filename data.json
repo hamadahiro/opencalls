@@ -2,6 +2,31 @@
   "lastUpdated": "2026-03-23",
   "calls": [
     {
+      "title": "Night Aesthetics",
+      "org": "Fotografiska",
+      "deadline": "2026-04-30",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Open call exploring the visual world of the night. Looking for works that engage with light, movement, atmosphere, intimacy, and the energy that appears when the day lets go. Whether captured on a crowded dance floor, in a quiet street, or somewhere in between. Welcomes lens-based photography in all forms including analog and digital. Three winners each receive €2,500 and feature on the Fotografiska Emerging platform. In partnership with Jägermeister.",
+      "url": "https://emerging.fotografiska.com/missions/night-aesthetics",
+      "instagram": "@fotografiska.emerging",
+      "location": "Online",
+      "prize": "€2,500",
+      "eligibility": [],
+      "jury": [
+        "Atiba Jefferson, Photographer & Canon Ambassador",
+        "Karl Hab, Photographer",
+        "Julia Schoierer, Photographer"
+      ],
+      "submitVia": "Fotografiska Emerging",
+      "requirements": "1 image",
+      "resultsDate": "May 20, 2026",
+      "ai": "Not accepted",
+      "slug": "night-aesthetics-fotografiska",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-23"
+    },
+    {
       "title": "The 2026 Lumen Prize",
       "org": "Lumen Prize",
       "deadline": "2026-05-23",
@@ -508,8 +533,8 @@
     {
       "title": "ZRNO Festival 2026 — Open Call",
       "org": "ZRNO Festival",
-      "deadline": "2026-03-31",
-      "fee": "Free",
+      "deadline": "2026-04-20",
+      "fee": "€14–€21",
       "category": "photography",
       "description": "International festival of alternative photography. Seeking analog photographers working with alternative and noble processes — cyanotype, wet plate, collodion, and experimental techniques. Single works or cohesive bodies of work welcome. Theme: Unfocus to see.",
       "url": "https://grain.mk/open-call-2026/",
@@ -531,6 +556,7 @@
       ],
       "submitVia": "Email",
       "requirements": "Up to 4 images",
+      "resultsDate": "May 15, 2026",
       "slug": "zrno-festival-2026-open-call",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -625,6 +651,7 @@
       ],
       "submitVia": "Picter",
       "requirements": "Up to 20 images",
+      "ai": "Not accepted",
       "slug": "portraits-hellerau-photography-award-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -641,6 +668,8 @@
       "location": "Online",
       "prize": "",
       "eligibility": [],
+      "requirements": "Download link + PDF via email",
+      "resultsDate": "April 18, 2026",
       "slug": "petard-magazine-issue-2-authentic",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
