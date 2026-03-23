@@ -50,8 +50,7 @@
       "ai": "Accepted",
       "slug": "the-2026-lumen-prize",
       "orgInTitle": true,
-      "dateAdded": "2026-03-23",
-      "requirements": "1 primary + up to 3 supporting images"
+      "dateAdded": "2026-03-23"
     },
     {
       "title": "Nest — Group Exhibition",
@@ -1555,7 +1554,8 @@
       "requirements": "Up to 3 images",
       "slug": "this-place-is-strange-midwest-nice-art",
       "orgInTitle": false,
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "resultsDate": "March 27, 2026"
     },
     {
       "title": "The Narrative",
@@ -1595,7 +1595,9 @@
       "slug": "bourse-laurent-troude-2026",
       "orgInTitle": true,
       "resultsDate": "April 2026",
-      "dateAdded": "2026-03-20"
+      "dateAdded": "2026-03-20",
+      "requirements": "5–10 images",
+      "ai": "Not accepted"
     },
     {
       "title": "Multi-Exposed",
@@ -1635,7 +1637,7 @@
       "orgInTitle": false,
       "resultsDate": "End of March 2026",
       "dateAdded": "2026-03-20",
-      "requirements": "1 PDF"
+      "requirements": "1 PDF (statement, 4 responses, 6 images)"
     },
     {
       "title": "Premio Mila 2026",
@@ -1683,7 +1685,14 @@
       "slug": "foto-tallinn-2026-art-fair",
       "orgInTitle": true,
       "resultsDate": "Late spring 2026",
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "jury": [
+        "Anna Tellgren, Curator",
+        "Jeppe Ugelvig, Curator & Writer",
+        "Margot Samel, Gallerist",
+        "Sara Giuliattini, Curator",
+        "Lilian Hiob-Küttis, Curator"
+      ]
     },
     {
       "title": "Whimsical",
@@ -1704,7 +1713,8 @@
       ],
       "slug": "whimsical-a-photographer-s-place",
       "orgInTitle": false,
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "resultsDate": "March 25, 2026"
     },
     {
       "title": "10x10 Photobooks Research Grants Cycle 5",
@@ -1728,7 +1738,8 @@
       "slug": "10x10-photobooks-research-grants-cycle-5",
       "orgInTitle": true,
       "resultsDate": "May 2026",
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "requirements": "Project description + bio"
     },
     {
       "title": "Fast Forward: Analog Photography as a Third Space",
@@ -1753,7 +1764,8 @@
       "slug": "fast-forward-analog-photography-as-a-third-space-los-angeles-center-for-photography",
       "orgInTitle": false,
       "ai": "Not accepted",
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "resultsDate": "March 27, 2026"
     },
     {
       "title": "The Magic of Light - Photography Open Call",
