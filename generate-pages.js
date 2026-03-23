@@ -573,7 +573,8 @@ const eligibilityGroups = {
   'african-diaspora': { short: 'African Diaspora', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' },
   'neurodivergent-disabled': { short: 'Neurodivergent & Disabled', title: 'Open Calls for Neurodivergent & Disabled Artists', desc: 'Open calls, publications, and awards for neurodivergent, disabled, and chronically ill photographers and visual artists.' },
   'portugal': { short: 'Portugal', title: 'Portugal-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Portuguese citizens or residents of Portugal.' },
-  'taiwan': { short: 'Taiwan', title: 'Taiwan-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan.' }
+  'taiwan': { short: 'Taiwan', title: 'Taiwan-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan.' },
+  'latin-america': { short: 'Latin America', title: 'Latin America Focus', desc: 'Open calls for Latin American artists or projects connected to Latin America.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -652,7 +653,7 @@ const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40'] },
   { heading: 'Where', tags: ['united-states', 'europe', 'italy', 'portugal', 'taiwan'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
-  { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'puerto-rico', 'south-asian'] },
+  { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
 ];
 
