@@ -1435,11 +1435,7 @@ fs.writeFileSync('sitemap.xml', sitemapXml);
 const now = new Date();
 const rssCalls = openCalls
   .slice()
-  .sort((a, b) => {
-    if (a.deadline === 'Continuous') return 1;
-    if (b.deadline === 'Continuous') return -1;
-    return new Date(a.deadline) - new Date(b.deadline);
-  })
+  .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
   .slice(0, 50);
 
 const rssItems = rssCalls.map(call => {
@@ -1453,7 +1449,7 @@ const rssItems = rssCalls.map(call => {
     <guid>${SITE}/${slug}</guid>
     <description>${desc}</description>
     <category>${escapeHtml(call.category)}</category>
-    <pubDate>${call.deadline !== 'Continuous' ? new Date(call.deadline + 'T00:00:00Z').toUTCString() : new Date().toUTCString()}</pubDate>
+    <pubDate>${new Date(call.dateAdded + 'T00:00:00Z').toUTCString()}</pubDate>
   </item>`;
 }).join('\n');
 
