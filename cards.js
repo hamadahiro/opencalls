@@ -312,7 +312,12 @@ function renderInfoGrid(call) {
   // AI policy
   if (call.ai) rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
-  if (call.submitVia) rows.push(infoRow('Submit via', infoVal(call.submitVia)));
+  if (call.email) {
+    const emailLabel = call.submitVia && call.submitVia !== 'Email' ? call.submitVia : 'Email';
+    rows.push(infoRow('Submit via', `<a href="mailto:${esc(call.email)}" target="_blank" rel="nofollow noopener">${infoVal(emailLabel)}</a>`));
+  } else if (call.submitVia) {
+    rows.push(infoRow('Submit via', infoVal(call.submitVia)));
+  }
   // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
