@@ -2231,7 +2231,8 @@
       "orgInTitle": true,
       "ai": "AI mockups must be disclosed",
       "resultsDate": "June 2026",
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "requirements": "Digital book dummy"
     },
     {
       "title": "Grants in Photography 2026",
@@ -3632,7 +3633,15 @@
       "requirements": "Unlimited images",
       "slug": "golden-shot-international-photography-awards-2026",
       "orgInTitle": true,
-      "dateAdded": "2026-03-18"
+      "dateAdded": "2026-03-18",
+      "jury": [
+        "Ed Kashi, Photojournalist",
+        "Andrea Bruce, Photojournalist",
+        "Anna Alexander, Photographer",
+        "Cheryl Newman, Artist & Curator",
+        "Tomas Neuwirth, Photographer",
+        "Remi Masson, Photographer"
+      ]
     },
     {
       "title": "Meitar Award for Excellence in Photography 2026",
