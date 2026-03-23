@@ -674,7 +674,7 @@ function buildEligibilityIndexItems() {
     activeTags.forEach(tag => {
       const info = eligibilityGroups[tag];
       const count = openEligibilityTags[tag];
-      html += `      <a href="/eligibility/${tag}" class="index-item">
+      html += `      <a href="/eligibility/${tag}/" class="index-item">
           <span class="index-item-name">${escapeHtml(info.short)}</span>
           <span class="dots"></span>
           <span class="index-item-count">${count}</span>
@@ -799,7 +799,7 @@ function buildPrizeIndexItems() {
   let html = '';
   prizeOrder.filter(t => openPrizeCatTags[t]).forEach(tag => {
     const info = prizeGroups[tag];
-    html += `      <a href="/prize/${tag}" class="index-item">
+    html += `      <a href="/prize/${tag}/" class="index-item">
         <span class="index-item-name">${escapeHtml(info.short)}</span>
         <span class="dots"></span>
         <span class="index-item-count">${openPrizeCatTags[tag]}</span>
@@ -905,7 +905,7 @@ ${country === 'USA' ? `
       let html = '';
       sorted.forEach(([state, count]) => {
         const fullName = stateNames[state] || state;
-        html += '<a href="/united-states/' + slugify(fullName) + '" class="index-item">' +
+        html += '<a href="/united-states/' + slugify(fullName) + '/" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
           '<span class="dots"></span>' +
           '<span class="index-item-count">' + count + '</span></a>';
@@ -1126,7 +1126,7 @@ function deadlineItem(key, sectionLabel) {
   const g = monthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
   const openCount = g.calls.filter(isOpen).length;
-  return `      <a href="/deadlines/${key}" class="index-item">
+  return `      <a href="/deadlines/${key}/" class="index-item">
         <span class="index-item-name">${label}</span>
         <span class="dots"></span>
         <span class="index-item-count">${openCount > 0 ? openCount : g.calls.length}</span>
@@ -1303,16 +1303,16 @@ const browseCategoryLabels = {
 };
 const browseCategories = Object.entries(categories).map(([cat]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
-  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}`, count: openCalls.filter(c => c.category === cat).length };
+  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}/`, count: openCalls.filter(c => c.category === cat).length };
 }).sort((a, b) => b.count - a.count);
 
 const browseFees = [
-  { label: 'Free to Enter', href: '/free', count: openCalls.filter(feeFilters['free']).length },
-  { label: 'Paid Entry', href: '/paid', count: openCalls.filter(feeFilters['paid']).length }
+  { label: 'Free to Enter', href: '/free/', count: openCalls.filter(feeFilters['free']).length },
+  { label: 'Paid Entry', href: '/paid/', count: openCalls.filter(feeFilters['paid']).length }
 ];
 const browsePrizes = [];
 prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
-  browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}`, count: openPrizeCatTags[tag] || 0 });
+  browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}/`, count: openPrizeCatTags[tag] || 0 });
 });
 
 const openCountryCounts = {};
@@ -1321,7 +1321,7 @@ const browseCountries = Object.entries(countryCounts)
   .map(([country]) => {
     const countrySlug = countrySlugs[country] || slugify(country);
     const label = countryNames[country] ? countryNames[country].replace(/^the /, '') : country;
-    return { label, href: `/${countrySlug}`, count: openCountryCounts[country] || 0 };
+    return { label, href: `/${countrySlug}/`, count: openCountryCounts[country] || 0 };
   })
   .sort((a, b) => a.label.localeCompare(b.label));
 
@@ -1340,14 +1340,14 @@ const browseStates = Object.entries(stateCounts)
   })
   .map(([state]) => {
     const fullName = usStateNames[state] || state;
-    return { label: fullName, href: `/united-states/${slugify(fullName)}`, count: openStateCounts[state] || 0 };
+    return { label: fullName, href: `/united-states/${slugify(fullName)}/`, count: openStateCounts[state] || 0 };
   });
 
 const browseEligibility = [];
 eligibilityOrder.forEach(group => {
   group.tags.filter(t => eligibilityTags[t]).forEach(tag => {
     const info = eligibilityGroups[tag];
-    browseEligibility.push({ label: info.short, href: `/eligibility/${tag}`, count: openEligibilityTags[tag] || 0 });
+    browseEligibility.push({ label: info.short, href: `/eligibility/${tag}/`, count: openEligibilityTags[tag] || 0 });
   });
 });
 
@@ -1356,7 +1356,7 @@ openCalls.forEach(c => { openOrgCounts[c.org] = (openOrgCounts[c.org] || 0) + 1;
 const browseOrgs = Object.entries(orgCounts)
   .filter(([org]) => createdOrgSlugs.includes(slugify(org)))
   .sort((a, b) => a[0].localeCompare(b[0]))
-  .map(([org]) => ({ label: org, href: `/${slugify(org)}`, count: openOrgCounts[org] || 0 }));
+  .map(([org]) => ({ label: org, href: `/${slugify(org)}/`, count: openOrgCounts[org] || 0 }));
 
 const browseHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -1371,14 +1371,14 @@ const browseHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
 
     <section class="index-list">
-${buildBrowseSection('Categories', browseCategories, '/categories')}
-${buildBrowseSection('Fees', browseFees, '/fees')}
-${buildBrowseSection('Prizes', browsePrizes, '/prize')}
-${buildBrowseSection('Locations', browseCountries, '/locations')}
-${buildBrowseSection('US States', browseStates, '/united-states')}
-${buildBrowseSection('Eligibility', browseEligibility, '/eligibility')}
-${buildBrowseSection('Deadlines', sortedMonths.filter(k => monthGroups[k].calls.some(isOpen)).map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}`, count: g.calls.filter(isOpen).length }; }), '/deadlines')}
-${buildBrowseSection('Organizations', browseOrgs, '/organizations')}
+${buildBrowseSection('Categories', browseCategories, '/categories/')}
+${buildBrowseSection('Fees', browseFees, '/fees/')}
+${buildBrowseSection('Prizes', browsePrizes, '/prize/')}
+${buildBrowseSection('Locations', browseCountries, '/locations/')}
+${buildBrowseSection('US States', browseStates, '/united-states/')}
+${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/')}
+${buildBrowseSection('Deadlines', sortedMonths.filter(k => monthGroups[k].calls.some(isOpen)).map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}/`, count: g.calls.filter(isOpen).length }; }), '/deadlines/')}
+${buildBrowseSection('Organizations', browseOrgs, '/organizations/')}
     </section>
 
     ${FOOTER}

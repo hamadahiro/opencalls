@@ -58,7 +58,7 @@
 
     <section class="index-list" id="indexList"></section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, location, eligibility &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, eligibility &rarr;</a></p>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -104,7 +104,7 @@
       let html = '';
       sorted.forEach(([org, count]) => {
         const slug = slugify(org);
-        html += `<a href="/${slug}" class="index-item" title="${esc(org)}">
+        html += `<a href="/${slug}/" class="index-item" title="${esc(org)}">
           <span class="index-item-name">${tagHtml(org)}</span>
           <span class="dots"></span>
           <span class="index-item-count">${count}</span>
