@@ -94,7 +94,7 @@
 
   <script>
     const CURRENT_SLUG = 'the-hand-magazine-issue-53-summer-2026';
-    const CURRENT_CALL = {"prize":"","category":"zine","org":"The Hand Magazine","location":"Online","fee":"$15–$30 (subscription required)","deadline":"2026-05-30","resultsDate":"","instagram":"@thehandmagazine","eligibility":["membership-required"],"jury":[],"submitVia":"Email","email": "","ai":""};
+    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"The Hand Magazine","location":"Online","fee":"$15–$30 (subscription required)","deadline":"2026-05-30","resultsDate":"","instagram":"@thehandmagazine","eligibility":["membership-required"],"jury":[],"submitVia":"Email","email": "","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -104,7 +104,7 @@
       var u = 'https://www.thehandmagazine.space/current-call-for-entries/';
       var o = 'The Hand Magazine';
       var dl = new Date('2026-05-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('$15–$30 (subscription required)');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication') + '\\nEntry fee: ' + icsE('$15–$30 (subscription required)');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
