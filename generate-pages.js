@@ -164,7 +164,8 @@ const FOOTER = `<footer class="about-section" id="footer">
 function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>`; }
 
 function buildBreadcrumbs(section, sectionUrl) {
-  return `<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="${sectionUrl}">${section}</a></nav>`;
+  const url = sectionUrl.endsWith('/') ? sectionUrl : sectionUrl + '/';
+  return `<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="${url}">${section}</a></nav>`;
 }
 
 function buildHero(breadcrumbs, title, subtitle) {
@@ -485,7 +486,7 @@ filterPages.forEach(fp => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees">Fees</a></nav>', fp.title, escapeHtml(fp.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees/">Fees</a></nav>', fp.title, escapeHtml(fp.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -527,12 +528,12 @@ const feesIndexHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Fees', 'Browse open calls by entry fee. Find free submissions or paid competitions.')}
 
     <section class="index-list" id="indexList">
-      <a href="/free" class="index-item">
+      <a href="/free/" class="index-item">
         <span class="index-item-name">Free to Enter</span>
         <span class="dots"></span>
         <span class="index-item-count">${freeCount}</span>
       </a>
-      <a href="/paid" class="index-item">
+      <a href="/paid/" class="index-item">
         <span class="index-item-name">Paid Entry</span>
         <span class="dots"></span>
         <span class="index-item-count">${paidCount}</span>
@@ -619,7 +620,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -751,7 +752,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize">Prizes</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -962,7 +963,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations">Locations</a> / <a href="/united-states">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList"></section>
 
@@ -1080,7 +1081,7 @@ sortedMonths.forEach(key => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines">Deadlines</a></nav>', label, `${count} call${count !== 1 ? 's' : ''} with deadlines in ${label}${openCount > 0 && openCount < count ? ` — ${openCount} still open` : openCount === 0 ? ' — all closed' : ''}.`)}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, `${count} call${count !== 1 ? 's' : ''} with deadlines in ${label}${openCount > 0 && openCount < count ? ` — ${openCount} still open` : openCount === 0 ? ' — all closed' : ''}.`)}
 
     <section class="calls-list" id="callsList"></section>
 
