@@ -1391,7 +1391,8 @@
       "orgInTitle": false,
       "resultsDate": "April 2026",
       "dateAdded": "2026-03-16",
-      "submitVia": "Website form"
+      "submitVia": "Website form",
+      "ai": "Not accepted"
     },
     {
       "title": "Temporary Storage",
@@ -1590,7 +1591,7 @@
       "title": "The Narrative",
       "org": "TCG Gallery",
       "deadline": "2026-04-20",
-      "fee": "Check website",
+      "fee": "$15",
       "category": "exhibition",
       "description": "International open call welcoming all forms of two-dimensional images, traditional and non-conventional media, and alternative photographic processes. Exhibition May 1 - June 1, 2026.",
       "url": "https://chateaugallery.com/call-for-entries/",
@@ -1702,7 +1703,7 @@
       "title": "Foto Tallinn 2026 Art Fair",
       "org": "Foto Tallinn",
       "deadline": "2026-03-23",
-      "fee": "See application PDF",
+      "fee": "€150–€250",
       "category": "exhibition",
       "description": "Estonia's only international art fair dedicated to contemporary photography. September 18-20, 2026 at Kai Art Centre in Tallinn.",
       "url": "https://www.fototallinn.ee/en/open-call/",
@@ -2583,7 +2584,8 @@
       "slug": "light-a-smith-gallery",
       "orgInTitle": false,
       "resultsDate": "April 24, 2026",
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "ai": "Not accepted"
     },
     {
       "title": "Sharing and Caring Cities: Portraits of Collective Urban Life",
@@ -2942,7 +2944,8 @@
       "slug": "shadow-play-2026-cape-cod-art-center",
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
-      "submitVia": "Smarter Entry"
+      "submitVia": "Smarter Entry",
+      "ai": "Not accepted"
     },
     {
       "title": "1839 Awards Color Photography Contest",
@@ -3347,7 +3350,7 @@
       "title": "Analog Forever Magazine — Calls for Entry",
       "org": "Analog Forever Magazine",
       "deadline": "Continuous",
-      "fee": "Varies by call",
+      "fee": "Free",
       "category": "zine",
       "description": "High-quality print magazine (150+ pages, 8×10\") dedicated to film and analog process photography, published roughly annually. Also runs themed online group exhibitions curated by guest curators about four times a year. Check their calls-for-entry page for current open submissions.",
       "url": "https://www.analogforevermagazine.com/calls-for-entry/",
@@ -4115,7 +4118,8 @@
       "slug": "the-shape-of-a-moment-exposure-photo-gallery",
       "orgInTitle": false,
       "resultsDate": "August 3, 2026",
-      "dateAdded": "2026-03-18"
+      "dateAdded": "2026-03-18",
+      "ai": "Not accepted"
     },
     {
       "title": "Chromatic Photography Awards 2026",
@@ -4356,7 +4360,7 @@
       "title": "Blank Wall Gallery — Best Portfolio 2026",
       "org": "Blank Wall Gallery",
       "deadline": "2026-05-31",
-      "fee": "Paid",
+      "fee": "€50",
       "category": "exhibition",
       "description": "International portfolio competition to discover and promote one photographer. Winner receives a two-week solo exhibition with 40 professionally produced prints plus international promotion, valued at over €2,200.",
       "url": "https://www.blankwallgallery.com/best-portfolio/",
@@ -4385,7 +4389,8 @@
       "slug": "color-less-cambridge-photography-gallery",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "submitVia": "Email"
+      "submitVia": "Email",
+      "ai": "Not accepted"
     },
     {
       "title": "Daylight Photo Awards 2026",
@@ -4423,7 +4428,8 @@
       "resultsDate": "October 2026",
       "dateAdded": "2026-03-18",
       "requirements": "3 images",
-      "submitVia": "Fotografiska Emerging"
+      "submitVia": "Fotografiska Emerging",
+      "ai": "Not accepted"
     },
     {
       "title": "The Idle Class — Photography Issue",
@@ -4447,7 +4453,7 @@
       "title": "Berlin Photo Awards 2026",
       "org": "Berlin Photo Awards",
       "deadline": "2026-06-27",
-      "fee": "Paid",
+      "fee": "€25",
       "category": "photography",
       "description": "International photography competition with 24 categories including Portrait, Landscape, Street, Fine Art, Wildlife, Drone, Smartphone, and more. Winners exhibited at ERSTERERSTER Gallery in Berlin and published in the official Winners Photobook.",
       "url": "https://www.berlinphotoawards.com/submit-new-entry/",
@@ -4741,7 +4747,8 @@
       "slug": "artadia-awards-2026-new-york-city",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "requirements": "8 images"
+      "requirements": "8 images",
+      "ai": "Accepted (must disclose)"
     },
     {
       "title": "XII Premio Internacional de Fotografía Jalón Ángel",
@@ -4820,7 +4827,8 @@
       "orgInTitle": true,
       "resultsDate": "June 11, 2026",
       "dateAdded": "2026-03-19",
-      "requirements": "Up to 3 images"
+      "requirements": "Up to 3 images",
+      "ai": "Accepted (must disclose)"
     },
     {
       "title": "International Photography and Football Open Call 2026",
@@ -5365,7 +5373,8 @@
       "slug": "roma-e-festival-street-photography-awards-2026-effe4-0-street-photography",
       "orgInTitle": false,
       "dateAdded": "2026-03-21",
-      "requirements": "3–15 images per category"
+      "requirements": "3–15 images per category",
+      "ai": "Accepted"
     },
     {
       "title": "Dyonyzine Issue 06 — Second Helpings",
@@ -5383,7 +5392,8 @@
       "slug": "dyonyzine-issue-06-second-helpings",
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
-      "requirements": "Up to 3 entries"
+      "requirements": "Up to 3 entries",
+      "ai": "Not accepted"
     },
     {
       "title": "FeelsZine Issue 26 — Desire",
@@ -5537,7 +5547,7 @@
       "title": "Noice Magazine — Open Submissions",
       "org": "Noice Magazine",
       "deadline": "Continuous",
-      "fee": "Paid",
+      "fee": "Free ($15–$50 optional)",
       "category": "zine",
       "description": "Print-to-order photography magazine with themed issues focusing on minimalism, social issues, and humor. Submit up to 10 images per themed call. Published as limited edition prints distributed worldwide.",
       "url": "https://noicemagazine.com/SUBMISSIONS",
