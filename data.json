@@ -5013,25 +5013,6 @@
       "submitVia": "Picter"
     },
     {
-      "title": "Women Photograph + Leica Documentary Grant 2026",
-      "org": "Women Photograph",
-      "deadline": "2026-05-15",
-      "fee": "Free",
-      "category": "grant",
-      "description": "Grant supporting women, nonbinary, and transgender documentary photographers. The $10,000 Leica grant supports ongoing documentary projects — submit 20 images showing substantial completed work. Seven additional $5,000 grants available for new or in-progress visual journalism projects. Applications open April 1.",
-      "url": "https://www.womenphotograph.com/grants",
-      "instagram": "@womenphotograph",
-      "location": "Online",
-      "prize": "$10,000",
-      "eligibility": [
-        "women"
-      ],
-      "submitVia": "Picter",
-      "slug": "women-photograph-leica-documentary-grant-2026",
-      "orgInTitle": true,
-      "dateAdded": "2026-03-19"
-    },
-    {
       "title": "Lenscratch Student Prize 2026",
       "org": "Lenscratch",
       "deadline": "2026-06-01",
@@ -5496,20 +5477,21 @@
       "title": "The Woman Artist Award — 6th Edition",
       "org": "Arts to Hearts Project",
       "deadline": "2026-04-04",
-      "fee": "$35",
+      "fee": "$12 per artwork",
       "category": "photography",
-      "description": "Juried award for women artists working in any visual arts medium including photography. Winner receives $500 cash prize, glass trophy, interview feature in hardcover coffee table book, website interview, one-year portfolio feature on Women in Arts Network (global directory for women artists), and one-year subscription to Arts to Hearts print + digital magazine. No specific theme — submit your best work. 6th edition.",
-      "url": "https://apply.artstoheartsproject.com/open-calls",
+      "description": "Global contemporary art prize celebrating emerging and mid-career women artists. Open theme — any subject, style, or medium including painting, sculpture, photography, performance, installation, and digital art. Winner receives cash prize, engraved glass trophy, book feature interview, website spotlight, and Women in Arts Network membership. Runners-up receive trophies, interviews, and network features.",
+      "url": "https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition",
       "instagram": "@artstoheartsproject",
       "location": "Online",
-      "prize": "$1,000",
+      "prize": "$500 + publication",
       "eligibility": [
         "women"
       ],
       "submitVia": "Website form",
       "slug": "the-woman-artist-award-6th-edition-arts-to-hearts-project",
       "orgInTitle": false,
-      "dateAdded": "2026-03-21"
+      "dateAdded": "2026-03-21",
+      "requirements": "Artwork images + artist statement"
     },
     {
       "title": "Solstice Magazine Issue 71 — Editorial Submissions",
