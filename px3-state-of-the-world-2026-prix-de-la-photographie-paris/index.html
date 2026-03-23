@@ -76,6 +76,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: James Wellford, National Geographic · Chiara Mariani, Corriere della Sera · Christian Gogolin, GEO Magazine · Christophe Loviny, Yangon Photo Festival · Moritz Neumüller, The Curator Ship · Guillaume Bonn, Photographer</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://px3.fr/state-of-the-world-photo-contest/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -94,7 +98,7 @@
 
   <script>
     const CURRENT_SLUG = 'px3-state-of-the-world-2026-prix-de-la-photographie-paris';
-    const CURRENT_CALL = {"prize":"€200 + exhibition","category":"photography","org":"Prix de la Photographie Paris","location":"Paris, France","fee":"€35","deadline":"2026-05-13","resultsDate":"","instagram":"@px3","eligibility":[],"jury":[],"submitVia":"","email": "","ai":""};
+    const CURRENT_CALL = {"prize":"€200 + exhibition","category":"photography","org":"Prix de la Photographie Paris","location":"Paris, France","fee":"€35","deadline":"2026-05-13","resultsDate":"","instagram":"@px3","eligibility":[],"jury":["James Wellford, National Geographic","Chiara Mariani, Corriere della Sera","Christian Gogolin, GEO Magazine","Christophe Loviny, Yangon Photo Festival","Moritz Neumüller, The Curator Ship","Guillaume Bonn, Photographer"],"submitVia":"","email": "","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
