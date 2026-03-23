@@ -94,7 +94,7 @@
 
   <script>
     const CURRENT_SLUG = 'berlin-photo-awards-2026';
-    const CURRENT_CALL = {"prize":"€4,000","category":"photography","org":"Berlin Photo Awards","location":"Berlin, Germany","fee":"Paid","deadline":"2026-06-27","resultsDate":"July 25, 2026","instagram":"@berlinphotoawards","eligibility":[],"jury":[],"submitVia":"Website form","email": "","ai":"AI editing OK, fully generated not accepted"};
+    const CURRENT_CALL = {"prize":"€4,000","category":"photography","org":"Berlin Photo Awards","location":"Berlin, Germany","fee":"€25","deadline":"2026-06-27","resultsDate":"July 25, 2026","instagram":"@berlinphotoawards","eligibility":[],"jury":[],"submitVia":"Website form","email": "","ai":"AI editing OK, fully generated not accepted"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -104,7 +104,7 @@
       var u = 'https://www.berlinphotoawards.com/submit-new-entry/';
       var o = 'Berlin Photo Awards';
       var dl = new Date('2026-06-27T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€4,000') + '\\nEntry fee: ' + icsE('Paid');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€4,000') + '\\nEntry fee: ' + icsE('€25');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
