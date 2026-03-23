@@ -98,7 +98,7 @@
 
   <script>
     const CURRENT_SLUG = 'lt5-alternative-photography-show-kaleid-gallery';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"KALEID Gallery","location":"San Jose, CA, USA","fee":"Free","deadline":"2026-04-12","resultsDate":"April 15, 2026","instagram":"@kaleidgallery","eligibility":[],"jury":["Robertino Ragazza, Curator"],"submitVia":"Email","email": "","ai":""};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"KALEID Gallery","location":"San Jose, CA, USA","fee":"Free","deadline":"2026-04-12","resultsDate":"April 15, 2026","instagram":"@kaleidgallery","eligibility":[],"jury":["Robertino Ragazza, Curator"],"submitVia":"Email","email": "","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -108,7 +108,7 @@
       var u = 'https://www.instagram.com/kaleidgallery/';
       var o = 'KALEID Gallery';
       var dl = new Date('2026-04-12T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
