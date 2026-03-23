@@ -76,6 +76,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Robertino Ragazza, Curator</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://www.instagram.com/p/DWHlTmvkcQj/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -94,7 +98,7 @@
 
   <script>
     const CURRENT_SLUG = 'lt5-alternative-photography-show-kaleid-gallery';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"KALEID Gallery","location":"San Jose, CA, USA","fee":"Free","deadline":"2026-04-12","resultsDate":"April 15, 2026","instagram":"@kaleidgallery","eligibility":[],"jury":[],"submitVia":"Email","images":"Up to 2 images","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"KALEID Gallery","location":"San Jose, CA, USA","fee":"Free","deadline":"2026-04-12","resultsDate":"April 15, 2026","instagram":"@kaleidgallery","eligibility":[],"jury":["Robertino Ragazza, Curator"],"submitVia":"Email","images":"Up to 2 images","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
