@@ -187,7 +187,7 @@ function renderTags(call) {
   const tags = [];
   // Deadline badge
   if (call.deadlineSlug) {
-    tags.push(`<a href="/deadlines/${call.deadlineSlug}" class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</a>`);
+    tags.push(`<a href="/deadlines/${call.deadlineSlug}/" class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</a>`);
   } else {
     tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
   }

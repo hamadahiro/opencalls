@@ -58,7 +58,7 @@
 
     <section class="index-list" id="indexList"></section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, eligibility, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, eligibility, organization &rarr;</a></p>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -110,7 +110,7 @@
       sorted.forEach(([country, count]) => {
         const fullName = countryNames[country] || country;
         const slug = countrySlugs[country] || slugify(country);
-        html += `<a href="/${slug}" class="index-item">
+        html += `<a href="/${slug}/" class="index-item">
           <span class="index-item-name">${esc(fullName)}</span>
           <span class="dots"></span>
           <span class="index-item-count">${count}</span>
