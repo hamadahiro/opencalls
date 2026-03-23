@@ -9,6 +9,10 @@ const VALID_CATEGORIES = ['photography', 'exhibition', 'grant', 'zine', 'residen
 let hasErrors = false;
 
 function err(msg) { console.error(`ERROR: ${msg}`); hasErrors = true; }
+function isCallOpen(deadline) {
+  if (deadline === 'Continuous') return true;
+  return new Date(deadline + 'T23:59:59') >= new Date();
+}
 
 data.calls.forEach((c, i) => {
   const label = c.title || `index ${i}`;
@@ -307,23 +311,9 @@ ${call.jury && call.jury.length ? `
       </div>
 ` : ''}
       <div class="call-detail-actions" id="detailActions">
-        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}
-        <span class="call-detail-btn call-detail-apply" id="closedBtn" style="display:none;opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
+${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
+${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
-      <script>
-        (function() {
-          if (typeof isCallOpen === 'undefined') {
-            window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
-          }
-          if (!isCallOpen('${call.deadline}')) {
-            document.getElementById('applyBtn').style.display = 'none';
-            var cal = document.getElementById('calBtn');
-            if (cal) cal.style.display = 'none';
-            document.getElementById('closedBtn').style.display = '';
-          }
-        })();
-      </script>
     </section>
 
     <section class="related-calls">

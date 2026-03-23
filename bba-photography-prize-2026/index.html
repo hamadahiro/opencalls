@@ -83,21 +83,7 @@
       <div class="call-detail-actions" id="detailActions">
         <a href="https://bba-prizes.com/photography-prize" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
-        <span class="call-detail-btn call-detail-apply" id="closedBtn" style="display:none;opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
-      <script>
-        (function() {
-          if (typeof isCallOpen === 'undefined') {
-            window.isCallOpen = function(d) { return d === 'Continuous' || new Date(d + 'T23:59:59') >= new Date(); };
-          }
-          if (!isCallOpen('2026-03-30')) {
-            document.getElementById('applyBtn').style.display = 'none';
-            var cal = document.getElementById('calBtn');
-            if (cal) cal.style.display = 'none';
-            document.getElementById('closedBtn').style.display = '';
-          }
-        })();
-      </script>
     </section>
 
     <section class="related-calls">
