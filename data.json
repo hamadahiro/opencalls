@@ -1156,6 +1156,7 @@
       ],
       "submitVia": "Website",
       "requirements": "Up to 10 images",
+      "ai": "Not accepted",
       "slug": "life-framer-black-white",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -1177,6 +1178,7 @@
       ],
       "submitVia": "Website",
       "requirements": "Up to 10 images",
+      "ai": "Not accepted",
       "slug": "life-framer-colors",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -1198,6 +1200,7 @@
       ],
       "submitVia": "Website",
       "requirements": "Up to 10 images",
+      "ai": "Not accepted",
       "slug": "life-framer-portraits",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -1224,6 +1227,7 @@
       ],
       "submitVia": "Website",
       "requirements": "5 images",
+      "resultsDate": "May 20, 2026",
       "slug": "bba-photography-prize-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -1256,8 +1260,10 @@
       "url": "http://www.msu.hr/stranice/News/18/en.html",
       "instagram": "@msuzagreb",
       "location": "Zagreb, Croatia",
-      "prize": "€1,500 + accommodation",
+      "prize": "€1,500 + accommodation + travel",
       "eligibility": [],
+      "requirements": "Motivational letter, CV/portfolio",
+      "resultsDate": "April 15, 2026",
       "slug": "msu-zagreb-artist-residency-2026-museum-of-contemporary-art-zagreb",
       "orgInTitle": false,
       "dateAdded": "2026-03-20"
@@ -1266,7 +1272,7 @@
       "title": "Louvre Unbound Magazine — Volume 6 Open Call",
       "org": "Louvre Unbound",
       "deadline": "2026-04-15",
-      "fee": "Free to submit, fee if selected ($39–$89)",
+      "fee": "Free to submit, fee if selected ($39–$139)",
       "category": "exhibition",
       "description": "International contemporary art magazine seeking visual artists worldwide. Painting, photography, sculpture, digital art, mixed media, and more. Submit up to 6 artworks for consideration. Selected artists are featured in print and promoted across social media.",
       "url": "https://louvreunbound.com/art-submission",
@@ -1311,6 +1317,12 @@
       "eligibility": [
         "membership-required"
       ],
+      "jury": [
+        "Eman Mohammed, Photographer",
+        "Sophia Nasif, Photographer",
+        "Natalia Ortiz Mantilla, Photographer"
+      ],
+      "requirements": "Up to 12 images",
       "slug": "photographers-without-borders-revolutionary-storyteller-grant",
       "orgInTitle": true,
       "dateAdded": "2026-03-16"
@@ -1327,6 +1339,16 @@
       "location": "Darmstadt, Germany",
       "prize": "€500",
       "eligibility": [],
+      "jury": [
+        "Robin Hinsch, Photographer & Professor",
+        "Sara-Lena Maierhofer, Photographer & Professor",
+        "Ute Noll, Curator",
+        "Marcel Rauschkolb, Curator",
+        "Kris Scholz, Professor",
+        "Gregor Schuster, Photographer"
+      ],
+      "requirements": "Up to 12 images",
+      "resultsDate": "April 20, 2026",
       "slug": "10-merck-preis-der-darmst-dter-tage-der-fotografie-darmstadt-days-of-photography",
       "orgInTitle": false,
       "dateAdded": "2026-03-16"
