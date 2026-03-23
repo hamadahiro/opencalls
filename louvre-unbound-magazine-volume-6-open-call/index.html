@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>Louvre Unbound Magazine — Volume 6 Open Call - Monographica</title>
   <meta name="description" content="International contemporary art magazine seeking visual artists worldwide. Painting, photography, sculpture, digital art, mixed m... Deadline: April 15, 2026.">
-  <meta name="keywords" content="Louvre Unbound Magazine — Volume 6 Open Call, Louvre Unbound, Exhibition, open call, call for entries, art exhibition, open calls for artists, photography submissions">
+  <meta name="keywords" content="Louvre Unbound Magazine — Volume 6 Open Call, Louvre Unbound, Zines &amp; Books, open call, call for entries, photobook, zine submission, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/louvre-unbound-magazine-volume-6-open-call/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
@@ -94,7 +94,7 @@
 
   <script>
     const CURRENT_SLUG = 'louvre-unbound-magazine-volume-6-open-call';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Louvre Unbound","location":"Online","fee":"Free to submit, fee if selected ($39–$139)","deadline":"2026-04-15","resultsDate":"","instagram":"@louvreunbound","eligibility":[],"jury":[],"submitVia":"Google Form","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"zine","org":"Louvre Unbound","location":"Online","fee":"Free to submit, $39–$139 if selected","deadline":"2026-04-15","resultsDate":"","instagram":"@louvreunbound","eligibility":[],"jury":[],"submitVia":"Google Form","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -104,7 +104,7 @@
       var u = 'https://louvreunbound.com/art-submission';
       var o = 'Louvre Unbound';
       var dl = new Date('2026-04-15T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free to submit, fee if selected ($39–$139)');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free to submit, $39–$139 if selected');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

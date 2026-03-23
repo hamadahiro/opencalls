@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>Arty Rat Magazine Open Call - Monographica</title>
   <meta name="description" content="Independent art magazine inviting artists and photographers worldwide to submit contemporary visual work. Two artists selected fo... Deadline: April 1, 2026.">
-  <meta name="keywords" content="Arty Rat Magazine Open Call, Arty Rat, Exhibition, open call, call for entries, Vienna, Austria, art exhibition, open calls for artists, photography submissions">
+  <meta name="keywords" content="Arty Rat Magazine Open Call, Arty Rat, Zines &amp; Books, open call, call for entries, Vienna, Austria, photobook, zine submission, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/arty-rat-magazine-open-call/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
@@ -94,7 +94,7 @@
 
   <script>
     const CURRENT_SLUG = 'arty-rat-magazine-open-call';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Arty Rat","location":"Vienna, Austria","fee":"Free to submit","deadline":"2026-04-01","resultsDate":"","instagram":"@artyratjournal","eligibility":[],"jury":[],"submitVia":"Website form","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"zine","org":"Arty Rat","location":"Vienna, Austria","fee":"Free to submit, €35–€100 if selected","deadline":"2026-04-01","resultsDate":"","instagram":"@artyratjournal","eligibility":[],"jury":[],"submitVia":"Website form","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -104,7 +104,7 @@
       var u = 'https://artyrat.com/opencall/';
       var o = 'Arty Rat';
       var dl = new Date('2026-04-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free to submit');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free to submit, €35–€100 if selected');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
