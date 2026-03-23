@@ -445,8 +445,7 @@
         processed.sort(function(a, b) {
           var da = a.dateAdded || '';
           var db = b.dateAdded || '';
-          if (da !== db) return da > db ? -1 : 1;
-          return (b._index || 0) - (a._index || 0);
+          return da > db ? -1 : da < db ? 1 : 0;
         });
         container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Recently added</h3>');
         processed.forEach(function(call) { container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')); });
