@@ -972,7 +972,8 @@
       "slug": "somewhere-i-have-never-travelled-group-exhibition-art-everywhere-behind-va-shadows",
       "orgInTitle": false,
       "resultsDate": "May 15, 2026",
-      "dateAdded": "2026-03-16"
+      "dateAdded": "2026-03-16",
+      "requirements": "Up to 5 images (single PDF)"
     },
     {
       "title": "Nes Artist Residency — Fall 2026",
@@ -2718,7 +2719,14 @@
       "slug": "fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts",
       "orgInTitle": false,
       "resultsDate": "May 13, 2026",
-      "dateAdded": "2026-03-15"
+      "dateAdded": "2026-03-15",
+      "jury": [
+        "Jessica Jarl, Global Director of Exhibitions, Fotografiska",
+        "Hiromi Nakamura, Photographer",
+        "Elena Paraskeva, Photographer",
+        "Bärbel Reinhard, Photographer, Curator & Educator",
+        "Kristen Roles, Photographic Artist & Educator"
+      ]
     },
     {
       "title": "CITY Photography Exhibit",
