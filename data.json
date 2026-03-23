@@ -238,6 +238,7 @@
         "Peter Watkins, Visual artist & lecturer, FAMU"
       ],
       "submitVia": "Email",
+      "requirements": "Portfolio + project PDFs",
       "slug": "2026-fotograf-magazine-open-call",
       "orgInTitle": true,
       "resultsDate": "July 30, 2026",
@@ -5690,6 +5691,23 @@
       "requirements": "1-5 JPG images, max 10MB each",
       "ai": "Not accepted",
       "slug": "outside-the-box-cameraless-photography-photosynthesis",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-23"
+    },
+    {
+      "title": "X ROID Bonn 2026",
+      "org": "The Stage Gallery",
+      "deadline": "2026-03-31",
+      "fee": "€225",
+      "category": "exhibition",
+      "description": "7th edition of the international instant art expo dedicated to Polaroid and Fuji Instax photography. Three-day juried exhibition at The Stage Gallery in Bonn featuring artist talks, a Pola walk, and creative exchanges. Only original instant photographs accepted — no prints. Fee includes professional framing. Gallery takes 25% commission on sales. In media partnership with Analog Forever.",
+      "url": "https://www.thestagegallery.com/call-for-x-roid-bonn-2026/",
+      "instagram": "@thestagegallery",
+      "location": "Bonn, Germany",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "requirements": "Up to 4 Polaroids or 2 large format (8x10)",
+      "slug": "x-roid-bonn-2026-the-stage-gallery",
       "orgInTitle": false,
       "dateAdded": "2026-03-23"
     }
