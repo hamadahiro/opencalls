@@ -139,8 +139,8 @@ function buildHeader() {
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
         <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/browse" class="nav-link nav-desktop" data-nav="browse">Browse</a>
-        <a href="/submit" class="nav-link nav-desktop" data-nav="submit">Submit</a>
+        <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
         <div class="hamburger"><i></i><i></i><i></i></div>
@@ -149,8 +149,8 @@ function buildHeader() {
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
       <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/browse" data-nav="browse">Browse</a>
-      <a href="/submit" data-nav="submit">Submit</a>
+      <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
   <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
@@ -539,7 +539,7 @@ const feesIndexHtml = `<!DOCTYPE html>
       </a>
     </section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
     ${FOOTER}
   </main>
@@ -700,7 +700,7 @@ if (eligibilityPageSlugs.length) {
       ${buildEligibilityIndexItems()}
     </section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
     ${FOOTER}
   </main>
@@ -824,7 +824,7 @@ if (prizeCatPageSlugs.length) {
       ${buildPrizeIndexItems()}
     </section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
     ${FOOTER}
   </main>
@@ -1156,7 +1156,7 @@ const deadlinesIndexHtml = `<!DOCTYPE html>
 ${deadlinesIndexItems}
     </section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
     ${FOOTER}
   </main>
@@ -1229,7 +1229,7 @@ const submitHtml = `<!DOCTYPE html>
         <button type="submit" class="call-detail-btn call-detail-apply" id="submitBtn">Submit</button>
       </form>
       <div id="submitThanks" style="display:none">
-        <a href="/submit" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Submit another</a>
+        <a href="/submit/" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Submit another</a>
       </div>
       <script>
         document.getElementById('submitForm').addEventListener('submit', function(e) {

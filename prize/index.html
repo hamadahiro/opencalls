@@ -50,8 +50,8 @@
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
         <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/browse" class="nav-link nav-desktop" data-nav="browse">Browse</a>
-        <a href="/submit" class="nav-link nav-desktop" data-nav="submit">Submit</a>
+        <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
         <div class="hamburger"><i></i><i></i><i></i></div>
@@ -60,8 +60,8 @@
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
       <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/browse" data-nav="browse">Browse</a>
-      <a href="/submit" data-nav="submit">Submit</a>
+      <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
   <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
@@ -102,7 +102,7 @@
 
     </section>
 
-    <p class="browse-more"><a href="/browse">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>

@@ -1,6 +1,6 @@
 const EMPTY_MESSAGES = ['Nothing here, for now.','No calls match this search.','Nothing came up this time.','No results, it seems.','No calls found for this.','Nothing fits this search.','No matches at the moment.','Nothing to show here.','No calls in this range.','Nothing here yet.'];
 const EMPTY_MSG = EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)];
-function emptyState() { return '<p class="empty-state">' + EMPTY_MSG + '<a href="/browse">Browse all calls &rarr;</a></p>'; }
+function emptyState() { return '<p class="empty-state">' + EMPTY_MSG + '<a href="/browse/">Browse all calls &rarr;</a></p>'; }
 
 const shortCountry = {
   'United Kingdom': 'UK',
@@ -203,11 +203,11 @@ function renderTags(call) {
   // Fee
   if (call.fee && call.fee !== 'Check website') {
     if (call.fee.toLowerCase().startsWith('free')) {
-      tags.push(`<a href="/free" class="meta-tag meta-tag-link">Free</a>`);
+      tags.push(`<a href="/free/" class="meta-tag meta-tag-link">Free</a>`);
     } else if (/^[£$€¥]/.test(call.fee)) {
-      tags.push(`<a href="/paid" class="meta-tag meta-tag-link">${esc(call.fee)} fee</a>`);
+      tags.push(`<a href="/paid/" class="meta-tag meta-tag-link">${esc(call.fee)} fee</a>`);
     } else {
-      tags.push(`<a href="/paid" class="meta-tag meta-tag-link">${esc(call.fee)}</a>`);
+      tags.push(`<a href="/paid/" class="meta-tag meta-tag-link">${esc(call.fee)}</a>`);
     }
   }
   // Location
@@ -223,12 +223,12 @@ function renderTags(call) {
   }
   // Category
   const catSlug = categorySlug[call.category];
-  tags.push(`<a href="/${catSlug}" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
+  tags.push(`<a href="/${catSlug}/" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     call.eligibility.forEach(e => {
       const label = eligibilityLabel[e] || e;
-      tags.push(`<a href="/eligibility/${e}" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
+      tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
     });
   }
   return tags.join(' ');
@@ -243,14 +243,14 @@ function renderInfoGrid(call) {
     </div>`;
   }
   function infoVal(str) { return tagHtml(str, 20); }
-  function infoLink(href, str) { return `<a href="${href}" title="${esc(str)}">${infoVal(str)}</a>`; }
+  function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${esc(str)}">${infoVal(str)}</a>`; }
 
   const rows = [];
   // Deadline
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   const dlSlug = call.deadline !== 'Continuous' ? (function() { const d = new Date(call.deadline + 'T00:00:00'); return ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear(); })() : null;
-  rows.push(infoRow('<a href="/deadlines">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
+  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
   // Results date
   if (call.resultsDate) {
     const resultsPast = (function(s) {
@@ -272,7 +272,7 @@ function renderInfoGrid(call) {
     const feeHtml = call.fee.toLowerCase().startsWith('free')
       ? infoLink('/free', call.fee)
       : (call.fee === 'Check website' ? 'See official website' : infoLink('/paid', call.fee));
-    rows.push(infoRow('<a href="/fees">Entry fee</a>', feeHtml));
+    rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
   }
   // Prize
   if (call.prize) {
@@ -281,7 +281,7 @@ function renderInfoGrid(call) {
       const cat = derivePrizeCategory(part);
       return cat ? infoLink('/prize/' + cat, part) : infoVal(part);
     }).join(', ');
-    rows.push(infoRow('<a href="/prize">Prize</a>', prizeHtml));
+    rows.push(infoRow('<a href="/prize/">Prize</a>', prizeHtml));
   }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
@@ -289,7 +289,7 @@ function renderInfoGrid(call) {
       const label = eligibilityLabel[e] || e;
       return infoLink('/eligibility/' + e, label);
     }).join(', ');
-    rows.push(infoRow('<a href="/eligibility">Eligibility</a>', eligHtml));
+    rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
   }
   // Location
   if (call.location) {
@@ -297,15 +297,15 @@ function renderInfoGrid(call) {
     const locLink = getLocationLink(call.location, country);
     const locShort = shortenLocation(call.location);
     const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
-    rows.push(infoRow('<a href="/locations">Location</a>', locHtml));
+    rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
   }
   // Category
   const catSlugInfo = categorySlug[call.category];
-  rows.push(infoRow('<a href="/categories">Category</a>', infoLink('/' + catSlugInfo, categoryLabel[call.category] || call.category)));
+  rows.push(infoRow('<a href="/categories/">Category</a>', infoLink('/' + catSlugInfo, categoryLabel[call.category] || call.category)));
   // Organizer
   const oSlug = slugify(call.org);
   const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
-  rows.push(infoRow('<a href="/organizations">Organizer</a>', orgHtml));
+  rows.push(infoRow('<a href="/organizations/">Organizer</a>', orgHtml));
   // Requirements
   if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
   // AI policy
@@ -324,7 +324,7 @@ function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   return `
     <div class="call-card">
-      <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}">${esc(call.title)}${!call.orgInTitle ? ' · ' + esc(call.org) : ''}</a></${titleTag}>
+      <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}/">${esc(call.title)}${!call.orgInTitle ? ' · ' + esc(call.org) : ''}</a></${titleTag}>
       <div class="call-meta">${renderTags(call)}</div>
       <p class="call-description">${esc(call.description)}</p>
     </div>`;
