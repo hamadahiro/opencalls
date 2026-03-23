@@ -76,6 +76,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Jano Viazo, CEO, Paradajs Photo · Zuzana Pustaiová, Photographer &amp; Editor · Branislav Štěpánek, Curator · Vanda Mesiariková, Photographer</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://festival.paradajsphoto.sk/program/open-call-2026" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -94,7 +98,7 @@
 
   <script>
     const CURRENT_SLUG = 'paradajs-photo-fest-2026-welcome-to-paradise';
-    const CURRENT_CALL = {"prize":"€2,000 + residency","category":"photography","org":"Paradajs Photo Festival","location":"Banská Štiavnica, Slovakia","fee":"€10–€15","deadline":"2026-03-29","resultsDate":"~April 19, 2026","instagram":"@paradajsphoto","eligibility":[],"jury":[],"submitVia":"Google Form","ai":""};
+    const CURRENT_CALL = {"prize":"€2,000 + residency","category":"photography","org":"Paradajs Photo Festival","location":"Banská Štiavnica, Slovakia","fee":"€10–€15","deadline":"2026-03-29","resultsDate":"~April 19, 2026","instagram":"@paradajsphoto","eligibility":[],"jury":["Jano Viazo, CEO, Paradajs Photo","Zuzana Pustaiová, Photographer & Editor","Branislav Štěpánek, Curator","Vanda Mesiariková, Photographer"],"submitVia":"Google Form","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
