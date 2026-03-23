@@ -76,6 +76,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Anna Tellgren, Curator · Jeppe Ugelvig, Curator &amp; Writer · Margot Samel, Gallerist · Sara Giuliattini, Curator · Lilian Hiob-Küttis, Curator</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://www.fototallinn.ee/en/open-call/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -94,7 +98,7 @@
 
   <script>
     const CURRENT_SLUG = 'foto-tallinn-2026-art-fair';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Foto Tallinn","location":"Tallinn, Estonia","fee":"See application PDF","deadline":"2026-03-23","resultsDate":"Late spring 2026","instagram":"@fototallinnfair","eligibility":[],"jury":[],"submitVia":"Website form","ai":""};
+    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Foto Tallinn","location":"Tallinn, Estonia","fee":"See application PDF","deadline":"2026-03-23","resultsDate":"Late spring 2026","instagram":"@fototallinnfair","eligibility":[],"jury":["Anna Tellgren, Curator","Jeppe Ugelvig, Curator & Writer","Margot Samel, Gallerist","Sara Giuliattini, Curator","Lilian Hiob-Küttis, Curator"],"submitVia":"Website form","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
