@@ -73,7 +73,7 @@ data.calls.forEach((c, i) => {
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
 
 // Auto-fill dateAdded for entries missing it, then write back
-const dateAddedToday = new Date().toISOString().slice(0, 19);
+const dateAddedToday = new Date().toISOString();
 let dateAddedCount = 0;
 data.calls.forEach(c => {
   if (!c.dateAdded) { c.dateAdded = dateAddedToday; dateAddedCount++; }
@@ -1449,7 +1449,7 @@ const rssItems = rssCalls.map(call => {
     <guid>${SITE}/${slug}</guid>
     <description>${desc}</description>
     <category>${escapeHtml(call.category)}</category>
-    <pubDate>${new Date(call.dateAdded + 'T00:00:00Z').toUTCString()}</pubDate>
+    <pubDate>${new Date(call.dateAdded.includes('T') ? call.dateAdded : call.dateAdded + 'T00:00:00Z').toUTCString()}</pubDate>
   </item>`;
 }).join('\n');
 
