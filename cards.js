@@ -122,12 +122,12 @@ function getLocationLink(location, country) {
   if (country === 'USA' && typeof statePages !== 'undefined') {
     const parts = location.split(',');
     const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-    if (state && statePages[state]) return '/' + statePages[state];
+    if (state && statePages[state]) return '/' + statePages[state] + '/';
   }
   // Map abbreviated country names to their URL slugs
   const countrySlugs = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
   const countrySlug = countrySlugs[country] || slugify(country);
-  if (countryPages.includes(countrySlug)) return '/' + countrySlug;
+  if (countryPages.includes(countrySlug)) return '/' + countrySlug + '/';
   return null;
 }
 
@@ -196,7 +196,7 @@ function renderTags(call) {
     const parts = splitPrizeParts(call.prize);
     parts.forEach(part => {
       const cat = derivePrizeCategory(part);
-      const href = cat ? '/prize/' + cat : '/prize';
+      const href = cat ? '/prize/' + cat + '/' : '/prize/';
       tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${esc(part)} prize</a>`);
     });
   }
