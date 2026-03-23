@@ -233,6 +233,19 @@
       });
       if (feeItems.length) groups['Fees'] = feeItems;
 
+      // Organizations (only when typing, not on empty focus)
+      if (q) {
+        var orgCounts = {};
+        relevant.forEach(function(c) { orgCounts[c.org] = (orgCounts[c.org] || 0) + 1; });
+        var orgItems = Object.entries(orgCounts).map(function(e) {
+          return { type: 'org', value: e[0], label: e[0], count: e[1] };
+        }).filter(function(item) {
+          return item.label.toLowerCase().includes(q)
+            && !activeChips.some(function(ch) { return ch.type === 'org' && ch.value === item.value; });
+        }).sort(function(a, b) { return b.count - a.count; });
+        if (orgItems.length) groups['Organizations'] = orgItems.slice(0, 5);
+      }
+
       // Merge Prizes + Fees into one group
       var pf = [];
       if (groups['Fees']) pf = pf.concat(groups['Fees']);
@@ -257,7 +270,7 @@
       var dd = document.getElementById('searchDropdown');
       var keys = Object.keys(groups);
       if (!keys.length) { dd.style.display = 'none'; return; }
-      var browseLinks = { 'Eligibility': { href: '/eligibility', text: 'All eligibility options' }, 'Locations': { href: '/locations', text: 'All locations' }, 'Prize / Fee': { href: '/prize', text: 'All fees and prizes' }, 'Categories': { href: '/categories', text: 'All categories' } };
+      var browseLinks = { 'Eligibility': { href: '/eligibility', text: 'All eligibility options' }, 'Locations': { href: '/locations', text: 'All locations' }, 'Prize / Fee': { href: '/prize', text: 'All fees and prizes' }, 'Categories': { href: '/categories', text: 'All categories' }, 'Organizations': { href: '/organizations', text: 'All organizations' } };
       var html = '';
       keys.forEach(function(groupName) {
         groups[groupName].forEach(function(item) {
@@ -383,6 +396,8 @@
         } else if (chip.type === 'fee') {
           if (chip.value === 'free') processed = processed.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
           else if (chip.value === 'paid') processed = processed.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free') && c.fee !== 'Check website'; });
+        } else if (chip.type === 'org') {
+          processed = processed.filter(function(c) { return c.org === chip.value; });
         }
       });
 
