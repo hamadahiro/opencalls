@@ -84,7 +84,10 @@
     <div class="search-wrap">
       <input type="text" class="search-bar" id="searchInput" placeholder="Search calls, locations, keywords" aria-label="Search open calls">
       <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">&times;</button>
+      <div id="searchDropdown" style="display:none; position:absolute; left:0; right:0; top:100%; z-index:100; background:var(--surface); box-shadow:0 4px 16px rgba(0,0,0,0.12); max-height:320px; overflow-y:auto;"></div>
     </div>
+
+    <div id="chipContainer" style="display:none; flex-wrap:wrap; gap:6px; padding:8px 0;"></div>
 
     <section class="filters">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -118,6 +121,11 @@
     let allCalls = [];
     let currentView = 'new';
     let originalSubtitle = document.getElementById('subtitle').textContent;
+    let currentFilter = 'all';
+    let currentSearch = '';
+    let currentSort = 'deadline';
+    let activeChips = [];
+    let selectedSuggestion = -1;
 
     async function loadCalls() {
       const res = await fetch('/data.json');
@@ -145,68 +153,261 @@
       setupFilters();
     }
 
+    // --- Chip + filter logic ---
+
+    function getRelevantCalls() {
+      var today = new Date().toISOString().slice(0, 10);
+      return currentView === 'past'
+        ? allCalls.filter(function(c) { return c.deadline !== 'Continuous' && c.deadline < today; })
+        : allCalls.filter(function(c) { return c.deadline === 'Continuous' || c.deadline >= today; });
+    }
+
+    function buildSuggestions(query) {
+      var relevant = getRelevantCalls();
+      var q = (query || '').toLowerCase().trim();
+      var groups = {};
+
+      // Categories
+      var catCounts = {};
+      relevant.forEach(function(c) { catCounts[c.category] = (catCounts[c.category] || 0) + 1; });
+      var catItems = Object.entries(categoryLabel).map(function(e) {
+        return { type: 'category', value: e[0], label: e[1], count: catCounts[e[0]] || 0 };
+      }).filter(function(item) {
+        return item.count > 0 && (!q || item.label.toLowerCase().includes(q))
+          && !activeChips.some(function(ch) { return ch.type === 'category' && ch.value === item.value; });
+      }).sort(function(a, b) { return b.count - a.count; });
+      if (catItems.length) groups['Categories'] = catItems.slice(0, 5);
+
+      // Countries
+      var countryCounts = {};
+      relevant.forEach(function(c) {
+        if (!c.location) return;
+        var parts = c.location.split(',');
+        var country = parts[parts.length - 1].trim();
+        if (country) countryCounts[country] = (countryCounts[country] || 0) + 1;
+      });
+      var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
+      var countryItems = Object.entries(countryCounts).map(function(e) {
+        var display = countryExpand[e[0]] || e[0];
+        return { type: 'country', value: e[0], label: display, count: e[1] };
+      }).filter(function(item) {
+        return (!q || item.label.toLowerCase().includes(q))
+          && !activeChips.some(function(ch) { return ch.type === 'country' && ch.value === item.value; });
+      }).sort(function(a, b) { return b.count - a.count; });
+      if (countryItems.length) groups['Locations'] = countryItems.slice(0, 6);
+
+      // Eligibility
+      var eligCounts = {};
+      relevant.forEach(function(c) { if (c.eligibility) c.eligibility.forEach(function(e) { eligCounts[e] = (eligCounts[e] || 0) + 1; }); });
+      var eligItems = Object.entries(eligibilityLabel).map(function(e) {
+        return { type: 'eligibility', value: e[0], label: e[1], count: eligCounts[e[0]] || 0 };
+      }).filter(function(item) {
+        return item.count > 0 && (!q || item.label.toLowerCase().includes(q))
+          && !activeChips.some(function(ch) { return ch.type === 'eligibility' && ch.value === item.value; });
+      }).sort(function(a, b) { return b.count - a.count; });
+      if (eligItems.length) groups['Eligibility'] = eligItems.slice(0, 5);
+
+      // Prizes
+      var prizeCounts = {};
+      relevant.forEach(function(c) {
+        if (!c.prize) return;
+        derivePrizeCategories(c.prize).forEach(function(pc) { prizeCounts[pc] = (prizeCounts[pc] || 0) + 1; });
+      });
+      var prizeItems = Object.entries(prizeCategoryLabel).map(function(e) {
+        return { type: 'prize', value: e[0], label: e[1], count: prizeCounts[e[0]] || 0 };
+      }).filter(function(item) {
+        return item.count > 0 && (!q || item.label.toLowerCase().includes(q))
+          && !activeChips.some(function(ch) { return ch.type === 'prize' && ch.value === item.value; });
+      }).sort(function(a, b) { return b.count - a.count; });
+      if (prizeItems.length) groups['Prizes'] = prizeItems.slice(0, 5);
+
+      // Fees
+      var freeCount = relevant.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); }).length;
+      var paidCount = relevant.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free') && c.fee !== 'Check website'; }).length;
+      var feeItems = [
+        { type: 'fee', value: 'free', label: 'Free', count: freeCount },
+        { type: 'fee', value: 'paid', label: 'Paid', count: paidCount }
+      ].filter(function(item) {
+        return item.count > 0 && (!q || item.label.toLowerCase().includes(q))
+          && !activeChips.some(function(ch) { return ch.type === 'fee' && ch.value === item.value; });
+      });
+      if (feeItems.length) groups['Fees'] = feeItems;
+
+      // On focus (no query): show only 2-3 groups
+      if (!q) {
+        var priority = ['Categories', 'Locations', 'Eligibility'];
+        var limited = {};
+        priority.forEach(function(key) { if (groups[key]) limited[key] = groups[key]; });
+        return limited;
+      }
+      return groups;
+    }
+
+    function showDropdown(groups) {
+      var dd = document.getElementById('searchDropdown');
+      var keys = Object.keys(groups);
+      if (!keys.length) { dd.style.display = 'none'; return; }
+      var html = '';
+      keys.forEach(function(groupName) {
+        html += '<div style="padding:10px 20px 4px; font-size:var(--fs-tag); color:var(--text-muted); letter-spacing:0.3px;">' + groupName + '</div>';
+        groups[groupName].forEach(function(item) {
+          html += '<div class="search-suggestion" style="padding:10px 20px; cursor:pointer; font-size:var(--fs-tag); color:var(--text); display:flex; justify-content:space-between; align-items:center;" data-type="' + item.type + '" data-value="' + esc(item.value) + '" data-label="' + esc(item.label) + '">';
+          html += '<span>' + esc(item.label) + '</span>';
+          html += '<span style="color:var(--text-muted);">' + item.count + '</span>';
+          html += '</div>';
+        });
+      });
+      dd.innerHTML = html;
+      dd.style.display = 'block';
+      selectedSuggestion = -1;
+      dd.querySelectorAll('.search-suggestion').forEach(function(el) {
+        el.addEventListener('mouseenter', function() { el.style.background = 'var(--card-bg)'; });
+        el.addEventListener('mouseleave', function() { el.style.background = ''; });
+        el.addEventListener('mousedown', function(e) {
+          e.preventDefault();
+          addChip({ type: el.dataset.type, value: el.dataset.value, label: el.dataset.label });
+        });
+      });
+    }
+
+    function hideDropdown() {
+      document.getElementById('searchDropdown').style.display = 'none';
+      selectedSuggestion = -1;
+    }
+
+    function addChip(chip) {
+      if (activeChips.some(function(c) { return c.type === chip.type && c.value === chip.value; })) return;
+      // Replace existing chip of same type for category/fee (only one at a time)
+      if (chip.type === 'category' || chip.type === 'fee') {
+        activeChips = activeChips.filter(function(c) { return c.type !== chip.type; });
+      }
+      activeChips.push(chip);
+      document.getElementById('searchInput').value = '';
+      currentSearch = '';
+      document.getElementById('searchClear').classList.remove('visible');
+      syncCategoryButtons();
+      renderChips();
+      hideDropdown();
+      applyFilters();
+    }
+
+    function removeChip(index) {
+      activeChips.splice(index, 1);
+      syncCategoryButtons();
+      renderChips();
+      applyFilters();
+    }
+
+    function renderChips() {
+      var container = document.getElementById('chipContainer');
+      if (!activeChips.length) { container.style.display = 'none'; container.innerHTML = ''; return; }
+      container.style.display = 'flex';
+      var html = '';
+      activeChips.forEach(function(chip, i) {
+        html += '<span class="meta-tag" style="cursor:pointer; gap:6px;" onclick="removeChip(' + i + ')">';
+        html += esc(chip.label);
+        html += ' <span style="opacity:0.5; margin-left:2px;">&times;</span>';
+        html += '</span>';
+      });
+      container.innerHTML = html;
+    }
+
+    function syncCategoryButtons() {
+      var catChip = activeChips.find(function(c) { return c.type === 'category'; });
+      var freeChip = activeChips.find(function(c) { return c.type === 'fee' && c.value === 'free'; });
+      if (catChip) currentFilter = catChip.value;
+      else if (freeChip) currentFilter = 'free';
+      else currentFilter = 'all';
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      var match = document.querySelector('.filter-btn[data-filter="' + currentFilter + '"]');
+      if (match) match.classList.add('active');
+      else document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+    }
+
+    // --- Render ---
+
     function renderCalls(view) {
-      const container = document.getElementById('callsList');
+      var container = document.getElementById('callsList');
       container.innerHTML = '';
 
-      let processed = allCalls.map(call => {
-        const p = processCall(call);
-        const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[p.deadlineDate.getMonth()] + ' ' + p.deadlineDate.getFullYear();
-        return { ...p, section };
+      var processed = allCalls.map(function(call) {
+        var p = processCall(call);
+        var section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[p.deadlineDate.getMonth()] + ' ' + p.deadlineDate.getFullYear();
+        return Object.assign({}, p, { section: section });
       });
 
-      if (view === 'new') processed = processed.filter(c => c.urgencyClass !== 'closed');
-      if (view === 'past') processed = processed.filter(c => c.urgencyClass === 'closed');
+      if (view === 'new') processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
+      if (view === 'past') processed = processed.filter(function(c) { return c.urgencyClass === 'closed'; });
 
-      if (currentFilter === 'prize') {
-        processed = processed.filter(c => c.prize && c.prize !== '');
-      } else if (currentFilter === 'free') {
-        processed = processed.filter(c => c.fee && c.fee.toLowerCase().startsWith('free'));
-      } else if (currentFilter !== 'all') {
-        processed = processed.filter(c => c.category === currentFilter);
+      // Category button filter (only if no category chip overrides it)
+      var hasCatChip = activeChips.some(function(c) { return c.type === 'category'; });
+      var hasFeeChip = activeChips.some(function(c) { return c.type === 'fee'; });
+      if (!hasCatChip && !hasFeeChip) {
+        if (currentFilter === 'prize') {
+          processed = processed.filter(function(c) { return c.prize && c.prize !== ''; });
+        } else if (currentFilter === 'free') {
+          processed = processed.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
+        } else if (currentFilter !== 'all') {
+          processed = processed.filter(function(c) { return c.category === currentFilter; });
+        }
       }
 
-      if (currentSearch) {
-        const stateMap = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
-        const countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
+      // Apply chip filters (AND logic)
+      activeChips.forEach(function(chip) {
+        if (chip.type === 'category') {
+          processed = processed.filter(function(c) { return c.category === chip.value; });
+        } else if (chip.type === 'country') {
+          processed = processed.filter(function(c) {
+            if (!c.location) return false;
+            if (chip.value === 'Online') return c.location === 'Online';
+            return c.location.split(',').pop().trim() === chip.value;
+          });
+        } else if (chip.type === 'eligibility') {
+          processed = processed.filter(function(c) { return c.eligibility && c.eligibility.includes(chip.value); });
+        } else if (chip.type === 'prize') {
+          processed = processed.filter(function(c) { return c.prize && derivePrizeCategories(c.prize).includes(chip.value); });
+        } else if (chip.type === 'fee') {
+          if (chip.value === 'free') processed = processed.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
+          else if (chip.value === 'paid') processed = processed.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free') && c.fee !== 'Check website'; });
+        }
+      });
 
-        const tokens = currentSearch.split(/\s+/).filter(Boolean);
-        processed = processed.filter(c => {
-          // Build expanded text: original fields + full state names + full country names
-          let parts = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category];
+      // Free-text search
+      if (currentSearch) {
+        var stateMap = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+        var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
+        var tokens = currentSearch.split(/\s+/).filter(Boolean);
+        processed = processed.filter(function(c) {
+          var parts = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category];
           if (c.location) {
-            const locParts = c.location.split(',').map(s => s.trim());
-            for (const lp of locParts) {
+            c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
               if (stateMap[lp]) parts.push(stateMap[lp]);
               if (countryExpand[lp]) parts.push(countryExpand[lp]);
-            }
+            });
           }
-          const text = parts.join(' ').toLowerCase();
-          return tokens.every(token => text.includes(token));
+          var text = parts.join(' ').toLowerCase();
+          return tokens.every(function(token) { return text.includes(token); });
         });
       }
 
       if (view === 'past') {
-        // Past view: sort newest first
-        processed.sort((a, b) => {
+        processed.sort(function(a, b) {
           if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
           if (a.deadline === 'Continuous') return 1;
           if (b.deadline === 'Continuous') return -1;
           return b.deadlineDate - a.deadlineDate;
         });
-        // Yesterday section
-        const yesterday = processed.filter(c => c.daysLeft !== null && c.daysLeft === -1);
-        const yesterdaySlugs = new Set();
+        var yesterday = processed.filter(function(c) { return c.daysLeft !== null && c.daysLeft === -1; });
+        var yesterdaySlugs = new Set();
         if (yesterday.length) {
           container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Yesterday</h3>');
-          yesterday.forEach(call => {
+          yesterday.forEach(function(call) {
             container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
             yesterdaySlugs.add(call.slug || slugify(call.title));
           });
         }
-        // Remaining past calls by month
-        let currentSectionName = '';
-        processed.filter(c => !yesterdaySlugs.has(c.slug || slugify(c.title))).forEach(call => {
+        var currentSectionName = '';
+        processed.filter(function(c) { return !yesterdaySlugs.has(c.slug || slugify(c.title)); }).forEach(function(call) {
           if (call.section !== currentSectionName) {
             currentSectionName = call.section;
             container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + call.section + '</h3>');
@@ -215,45 +416,43 @@
         });
         if (!container.children.length) container.innerHTML = emptyState();
       } else if (currentSort === 'recent') {
-        processed.sort((a, b) => (b._index || 0) - (a._index || 0));
+        processed.sort(function(a, b) { return (b._index || 0) - (a._index || 0); });
         container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Recently added</h3>');
-        processed.forEach(call => container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')));
+        processed.forEach(function(call) { container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')); });
         if (!container.children.length) container.innerHTML = emptyState();
       } else {
         renderCallList(processed, container);
       }
     }
 
+    // --- Setup ---
+
     function setupNav() {
-      document.querySelectorAll('[data-view]').forEach(link => {
-        link.addEventListener('click', (e) => {
-          const view = link.dataset.view;
+      document.querySelectorAll('[data-view]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var view = link.dataset.view;
           if (!view) return;
           e.preventDefault();
-
-          document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
-          document.querySelectorAll('[data-view="' + view + '"]').forEach(l => l.classList.add('active'));
-
+          document.querySelectorAll('[data-view]').forEach(function(l) { l.classList.remove('active'); });
+          document.querySelectorAll('[data-view="' + view + '"]').forEach(function(l) { l.classList.add('active'); });
           currentView = view;
           currentFilter = 'all';
           currentSearch = '';
           currentSort = 'deadline';
+          activeChips = [];
+          renderChips();
           document.getElementById('searchInput').value = '';
           document.getElementById('searchClear').classList.remove('visible');
           document.getElementById('sortBar').style.display = view === 'past' ? 'none' : '';
-          document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
           document.querySelector('.sort-btn[data-sort="deadline"]').classList.add('active');
-          renderCalls(view);
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-
-          // Update URL
-          const url = view === 'past' ? '/?view=past' : '/';
+          renderCalls(view);
+          var url = view === 'past' ? '/?view=past' : '/';
           history.replaceState(null, '', url);
-
-          // Update hero text
-          const h1 = document.querySelector('.hero h1');
-          const sub = document.getElementById('subtitle');
+          var h1 = document.querySelector('.hero h1');
+          var sub = document.getElementById('subtitle');
           if (view === 'past') {
             h1.textContent = 'Past Calls';
             sub.textContent = 'Archive of past open calls and closed submissions.';
@@ -265,54 +464,99 @@
       });
     }
 
-    let currentFilter = 'all';
-    let currentSearch = '';
-    let currentSort = 'deadline';
-
     function applyFilters() {
       renderCalls(currentView);
     }
 
     function setupFilters() {
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      // Category button clicks
+      document.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var filter = btn.dataset.filter;
+          // Remove category and fee chips when using buttons
+          activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
+          if (filter === 'free') {
+            activeChips.push({ type: 'fee', value: 'free', label: 'Free' });
+          } else if (filter !== 'all' && filter !== 'prize') {
+            activeChips.push({ type: 'category', value: filter, label: categoryLabel[filter] || filter });
+          }
+          currentFilter = filter;
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
-          currentFilter = btn.dataset.filter;
+          renderChips();
           applyFilters();
         });
       });
 
-      document.querySelectorAll('.sort-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      // Sort buttons
+      document.querySelectorAll('.sort-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           currentSort = btn.dataset.sort;
           applyFilters();
         });
       });
 
-      const searchInput = document.getElementById('searchInput');
-      const searchClear = document.getElementById('searchClear');
-      searchInput.addEventListener('focus', () => {
+      // Search input
+      var searchInput = document.getElementById('searchInput');
+      var searchClear = document.getElementById('searchClear');
+
+      searchInput.addEventListener('focus', function() {
+        showDropdown(buildSuggestions(searchInput.value));
         if (window.visualViewport) {
-          const onResize = () => {
+          var onResize = function() {
             window.visualViewport.removeEventListener('resize', onResize);
             searchInput.scrollIntoView({ block: 'start' });
           };
           window.visualViewport.addEventListener('resize', onResize);
         }
       });
-      searchInput.addEventListener('input', (e) => {
+
+      searchInput.addEventListener('input', function(e) {
         currentSearch = e.target.value.toLowerCase().trim();
         searchClear.classList.toggle('visible', e.target.value.length > 0);
+        showDropdown(buildSuggestions(e.target.value));
         applyFilters();
       });
-      searchClear.addEventListener('click', () => {
+
+      searchInput.addEventListener('blur', function() {
+        setTimeout(hideDropdown, 150);
+      });
+
+      searchInput.addEventListener('keydown', function(e) {
+        var dd = document.getElementById('searchDropdown');
+        if (dd.style.display === 'none') return;
+        var items = dd.querySelectorAll('.search-suggestion');
+        if (!items.length) return;
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          selectedSuggestion = Math.min(selectedSuggestion + 1, items.length - 1);
+          items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--card-bg)' : ''; });
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          selectedSuggestion = Math.max(selectedSuggestion - 1, -1);
+          items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--card-bg)' : ''; });
+        } else if (e.key === 'Enter' && selectedSuggestion >= 0) {
+          e.preventDefault();
+          var el = items[selectedSuggestion];
+          addChip({ type: el.dataset.type, value: el.dataset.value, label: el.dataset.label });
+        } else if (e.key === 'Escape') {
+          hideDropdown();
+        }
+      });
+
+      searchClear.addEventListener('click', function() {
         searchInput.value = '';
         currentSearch = '';
         searchClear.classList.remove('visible');
+        hideDropdown();
         applyFilters();
+      });
+
+      // Close dropdown on outside click
+      document.addEventListener('mousedown', function(e) {
+        if (!document.querySelector('.search-wrap').contains(e.target)) hideDropdown();
       });
     }
 
