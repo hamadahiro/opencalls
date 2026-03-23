@@ -504,13 +504,8 @@
       document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var filter = btn.dataset.filter;
-          // Remove category and fee chips when using buttons
+          // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
-          if (filter === 'free') {
-            activeChips.push({ type: 'fee', value: 'free', label: 'Free' });
-          } else if (filter !== 'all' && filter !== 'prize') {
-            activeChips.push({ type: 'category', value: filter, label: categoryLabel[filter] || filter });
-          }
           currentFilter = filter;
           document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
