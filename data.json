@@ -194,7 +194,9 @@
       "instagram": "@kaleidgallery",
       "location": "San Jose, CA, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "alternative-process"
+      ],
       "submitVia": "Email",
       "requirements": "Up to 2 images",
       "jury": [
