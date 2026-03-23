@@ -331,7 +331,10 @@
       "instagram": "@prixmustaqbal",
       "location": "Casablanca, Morocco",
       "prize": "Residency + exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "under-35",
+        "morocco"
+      ],
       "submitVia": "Website form",
       "requirements": "4–8 images",
       "slug": "prix-mustaqbal-2026-momentum-fondation-tgcc",
@@ -801,7 +804,9 @@
       "instagram": "@rfotofolio",
       "location": "Online",
       "prize": "$2,000",
-      "eligibility": [],
+      "eligibility": [
+        "alternative-process"
+      ],
       "submitVia": "Email",
       "requirements": "7 images",
       "ai": "Not accepted",
@@ -1326,7 +1331,9 @@
       "instagram": "@quaibranly",
       "location": "Paris, France",
       "prize": "€30,000",
-      "eligibility": [],
+      "eligibility": [
+        "non-european"
+      ],
       "slug": "mus-e-du-quai-branly-photography-award-2026",
       "orgInTitle": true,
       "resultsDate": "July 30, 2026",
@@ -1441,7 +1448,9 @@
       "instagram": "@stpetemonthofphotography",
       "location": "Tampa Bay, FL, USA",
       "prize": "Solo exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "united-states"
+      ],
       "slug": "photo-laureate-2026-saint-petersburg-month-of-photography",
       "orgInTitle": false,
       "resultsDate": "May 2026",
@@ -1557,7 +1566,9 @@
       "instagram": "@flytpa",
       "location": "Tampa, FL, USA",
       "prize": "$200,000–$1,200,000 commission",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "slug": "call-for-artists-2026-tampa-international-airport",
       "orgInTitle": false,
       "resultsDate": "June 2026",
@@ -3336,7 +3347,9 @@
       "instagram": "@alternativephotography_com",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "alternative-process"
+      ],
       "submitVia": "Email",
       "requirements": "1 image",
       "slug": "world-cyanotype-day-alternativephotography-com",
@@ -3355,7 +3368,9 @@
       "instagram": "@alternativephotography_com",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "alternative-process"
+      ],
       "submitVia": "Email",
       "requirements": "1 image",
       "slug": "world-anthotype-day-alternativephotography-com",
@@ -4056,7 +4071,9 @@
       "instagram": "@rea.fair",
       "location": "Milan, Italy",
       "prize": "€1,500",
-      "eligibility": [],
+      "eligibility": [
+        "emerging"
+      ],
       "slug": "rea-art-fair-2026",
       "orgInTitle": true,
       "resultsDate": "June 1, 2026",
@@ -5168,7 +5185,9 @@
       "instagram": "@rencontresarles",
       "location": "Arles, France",
       "prize": "€25,000",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Website form",
       "slug": "luma-rencontres-dummy-book-award-2026",
       "orgInTitle": true,
@@ -6195,7 +6214,9 @@
       "instagram": "@thestagegallery",
       "location": "Bonn, Germany",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "analog-photography"
+      ],
       "requirements": "Up to 4 Polaroids or 2 large format (8x10)",
       "slug": "x-roid-bonn-2026-the-stage-gallery",
       "orgInTitle": false,

@@ -50,7 +50,9 @@ const eligibilityLabel = {
   'african-diaspora': 'African diaspora focus',
   'neurodivergent-disabled': 'Neurodivergent & disabled',
   'portugal': 'Portugal only',
-  'taiwan': 'Taiwan only'
+  'taiwan': 'Taiwan only',
+  'morocco': 'Morocco only',
+  'non-european': 'Non-European only'
 };
 
 const prizeCategoryLabel = {
