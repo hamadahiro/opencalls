@@ -102,7 +102,7 @@ header {
 }
 
 .header-inner {
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -186,7 +186,7 @@ nav a.active:hover {
   display: none;
   flex-direction: column;
   gap: 0;
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 8px 24px;
 }
@@ -212,7 +212,7 @@ nav a.active:hover {
 
 /* === Main === */
 main {
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
 }
