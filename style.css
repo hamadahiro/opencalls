@@ -343,6 +343,7 @@ main {
 
 .search-bar::placeholder {
   color: #5f6368;
+  font-weight: 500;
 }
 
 @media (prefers-color-scheme: dark) {
