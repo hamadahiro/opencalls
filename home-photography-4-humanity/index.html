@@ -79,7 +79,7 @@
       <div class="call-detail-info" id="detailInfo"></div>
 
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: James Nachtwey, Photojournalist · Pauline Benthede, Global VP Artistic Direction, Fotografiska</p>
+        <p class="call-detail-description">Jury: James Nachtwey, Photojournalist · Pauline Benthede, Global VP Artistic Direction, Fotografiska · Sophia Emmerich, Lead Editor, Fotografiska Emerging Platform</p>
       </div>
 
       <div class="call-detail-actions" id="detailActions">
@@ -100,7 +100,7 @@
 
   <script>
     const CURRENT_SLUG = 'home-photography-4-humanity';
-    const CURRENT_CALL = {"prize":"Exhibition","category":"photography","org":"Photography 4 Humanity","location":"Online","fee":"Free","deadline":"2026-07-12","resultsDate":"October 2026","instagram":"@photography4humanity","eligibility":[],"jury":["James Nachtwey, Photojournalist","Pauline Benthede, Global VP Artistic Direction, Fotografiska"],"submitVia":"Fotografiska Emerging","submitUrl":"https://emerging.fotografiska.com/missions/home","email": "","ai":"Not accepted"};
+    const CURRENT_CALL = {"prize":"Exhibition at UN Headquarters NYC","category":"photography","org":"Photography 4 Humanity","location":"Online","fee":"Free","deadline":"2026-07-12","resultsDate":"October 2026","instagram":"@photography4humanity","eligibility":[],"jury":["James Nachtwey, Photojournalist","Pauline Benthede, Global VP Artistic Direction, Fotografiska","Sophia Emmerich, Lead Editor, Fotografiska Emerging Platform"],"submitVia":"Fotografiska Emerging","submitUrl":"https://emerging.fotografiska.com/missions/home","email": "","ai":"Not accepted"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -110,7 +110,7 @@
       var u = 'https://emerging.fotografiska.com/missions/home';
       var o = 'Photography 4 Humanity';
       var dl = new Date('2026-07-12T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition at UN Headquarters NYC') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
