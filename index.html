@@ -312,6 +312,7 @@
           document.getElementById('searchClear').classList.remove('visible');
           renderChips();
           hideDropdown();
+          closeMobileSearch();
           applyFilters();
           return;
         }
@@ -329,6 +330,7 @@
       syncCategoryButtons();
       renderChips();
       hideDropdown();
+      closeMobileSearch();
       applyFilters();
     }
 
