@@ -358,7 +358,7 @@
       var freeChip = activeChips.find(function(c) { return c.type === 'fee' && c.value === 'free'; });
       if (catChip) currentFilter = catChip.value;
       else if (freeChip) currentFilter = 'free';
-      else currentFilter = 'all';
+      // Otherwise keep currentFilter as-is (set by tab click or search selection)
       document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
       var match = document.querySelector('.filter-btn[data-filter="' + currentFilter + '"]');
       if (match) match.classList.add('active');
