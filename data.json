@@ -3230,7 +3230,7 @@
       "category": "exhibition",
       "description": "International open call for artists using analog processes across various mediums. Celebrating materiality and craftsmanship.",
       "url": "https://www.forphotographersonly.com/event-details/helsinki-analog-festival-2026-analog-practice-exhibition",
-      "instagram": "@helsinkianalogfestival",
+      "instagram": "@finnishdarkroom",
       "location": "Helsinki, Finland",
       "prize": "Exhibition",
       "eligibility": [
@@ -4170,7 +4170,7 @@
       "category": "photography",
       "description": "Major international photography award with 2026 theme 'Family.' Categories include Family, Dreams Through AI, Sports Photography, Portfolio, and General. Free entry, open to all photographers 18+.",
       "url": "https://www.hipa.ae/competitions",
-      "instagram": "@hipaawards",
+      "instagram": "@hipaae",
       "location": "Dubai, United Arab Emirates",
       "prize": "$1,000,000",
       "eligibility": [],
@@ -6277,7 +6277,7 @@
       "slug": "i-can-buy-myself-flowers-haze-gallery",
       "orgInTitle": false,
       "dateAdded": "2026-03-24T10:00:00Z",
-      "submitVia": "Haze Gallery"
+      "submitVia": "Website form"
     },
     {
       "title": "Fresh Legs 2026",
@@ -6291,10 +6291,11 @@
       "location": "Berlin, Germany",
       "prize": "Exhibition",
       "eligibility": [],
+      "requirements": "3–6 works",
       "slug": "fresh-legs-2026-galleri-heike-arndt-dk",
       "orgInTitle": false,
       "dateAdded": "2026-03-24T10:01:00Z",
-      "submitVia": "JotForm"
+      "submitVia": "Form"
     },
     {
       "title": "KH7 Artspace — Exhibitions 2026",
@@ -6329,6 +6330,11 @@
       "eligibility": [],
       "requirements": "5–20 images",
       "ai": "Not accepted",
+      "jury": [
+        "Elizabeth Krist, Photo Editor & Curator",
+        "Danese Kenon, Managing Editor of Visuals, Phila. Inquirer",
+        "Victor Blue, Photojournalist"
+      ],
       "slug": "the-alexia-grants-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-24T10:03:00Z",
