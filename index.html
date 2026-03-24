@@ -521,6 +521,7 @@
           var view = link.dataset.view;
           if (!view) return;
           e.preventDefault();
+          document.body.classList.remove('show-responsive-nav');
           document.querySelectorAll('[data-view]').forEach(function(l) { l.classList.remove('active'); });
           document.querySelectorAll('[data-view="' + view + '"]').forEach(function(l) { l.classList.add('active'); });
           currentView = view === 'recent' ? 'new' : view;
