@@ -141,6 +141,7 @@
       } else if (viewParam === 'recent') {
         document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
         document.querySelectorAll('[data-view="recent"]').forEach(l => l.classList.add('active'));
+        document.querySelector('.hero h1').textContent = 'Recently Added';
       }
       renderCalls(initView);
       setupNav();
@@ -522,6 +523,8 @@
           var sub = document.getElementById('subtitle');
           if (view === 'past') {
             sub.textContent = 'Archive of past open calls and closed submissions.';
+          } else if (view === 'recent') {
+            sub.textContent = 'Recently Added';
           } else {
             sub.textContent = originalSubtitle;
           }

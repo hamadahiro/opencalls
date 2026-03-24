@@ -139,6 +139,7 @@ function buildHeader() {
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
         <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -149,6 +150,7 @@ function buildHeader() {
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
       <a href="/?view=past" data-nav="closed">Closed</a>
+      <a href="/?view=recent" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
