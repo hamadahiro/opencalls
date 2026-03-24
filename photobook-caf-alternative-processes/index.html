@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Entry Fee 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
-  <meta name="keywords" content="free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/fees/">
+  <title>Photobook Café &amp; Alternative Processes - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Photobook Café &amp; Alternative Processes. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Photobook Café &amp; Alternative Processes open call, Photobook Café &amp; Alternative Processes call for entries, Photobook Café &amp; Alternative Processes submissions, Photobook Café &amp; Alternative Processes photography, Photobook Café &amp; Alternative Processes exhibition, Photobook Café &amp; Alternative Processes artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/photobook-caf-alternative-processes/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Entry Fee 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
+  <meta property="og:title" content="Photobook Café &amp; Alternative Processes - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Photobook Café &amp; Alternative Processes. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/fees/">
+  <meta property="og:url" content="https://opencalls.monographica.com/photobook-caf-alternative-processes/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Entry Fee 2026",
-  "description": "Browse open calls by entry fee.",
-  "url": "https://opencalls.monographica.com/fees",
+  "name": "Photobook Café & Alternative Processes - Open Calls",
+  "description": "Open calls and submission opportunities from Photobook Café & Alternative Processes. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/photobook-caf-alternative-processes",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -70,31 +70,29 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
-      <h1>Fees</h1>
-      <h2 class="subtitle">Browse open calls by entry fee. Find free submissions or paid competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Photobook Café &amp; Alternative Processes</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Photobook Café &amp; Alternative Processes. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-      <a href="/fees/free/" class="index-item">
-        <span class="index-item-name">Free to Enter</span>
-        <span class="dots"></span>
-        <span class="index-item-count">112</span>
-      </a>
-      <a href="/fees/entry-fee/" class="index-item">
-        <span class="index-item-name">Entry Fee</span>
-        <span class="dots"></span>
-        <span class="index-item-count">144</span>
-      </a>
-    </section>
-
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <section class="calls-list" id="callsList"></section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       <p>&copy; 2026 HH &mdash; still making sense of things.</p>
     </footer>
   </main>
+
+  <script src="/cards.js?v=20260325"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.org === 'Photobook Café & Alternative Processes').map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
