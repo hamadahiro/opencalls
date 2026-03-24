@@ -333,7 +333,7 @@ main {
   border: none;
   padding: 14px 20px;
   padding-right: 44px;
-  font-size: var(--fs-tag);
+  font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
   color: var(--text);
@@ -342,7 +342,7 @@ main {
 }
 
 .search-bar::placeholder {
-  color: var(--text-muted);
+  color: #666;
 }
 
 @media (prefers-color-scheme: dark) {
