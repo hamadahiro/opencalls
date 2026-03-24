@@ -244,6 +244,13 @@ main {
   color: var(--text-body);
 }
 
+.call-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .call-detail-description {
   margin-bottom: 32px;
 }
