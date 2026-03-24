@@ -81,6 +81,7 @@
     </section>
 
     <div class="search-wrap">
+      <button class="search-back" id="searchBack" type="button" aria-label="Close search">&#8249;</button>
       <input type="text" class="search-bar" id="searchInput" placeholder="Search calls, locations, keywords" aria-label="Search open calls">
       <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">&times;</button>
       <div id="searchDropdown" style="display:none; position:absolute; left:0; right:0; top:100%; z-index:100; background:var(--surface); box-shadow:0 4px 16px rgba(0,0,0,0.12); max-height:320px; overflow-y:auto;"></div>
@@ -544,15 +545,25 @@
       var searchInput = document.getElementById('searchInput');
       var searchClear = document.getElementById('searchClear');
 
+      var isMobile = function() { return window.innerWidth <= 640; };
+
+      function openMobileSearch() {
+        if (isMobile()) document.body.classList.add('search-active');
+      }
+      function closeMobileSearch() {
+        document.body.classList.remove('search-active');
+        searchInput.blur();
+        hideDropdown();
+      }
+
+      document.getElementById('searchBack').addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        closeMobileSearch();
+      });
+
       searchInput.addEventListener('focus', function() {
         showDropdown(buildSuggestions(searchInput.value));
-        if (window.visualViewport) {
-          var onResize = function() {
-            window.visualViewport.removeEventListener('resize', onResize);
-            searchInput.scrollIntoView({ block: 'start' });
-          };
-          window.visualViewport.addEventListener('resize', onResize);
-        }
+        openMobileSearch();
       });
 
       searchInput.addEventListener('input', function(e) {
@@ -563,7 +574,7 @@
       });
 
       searchInput.addEventListener('blur', function() {
-        setTimeout(hideDropdown, 150);
+        if (!isMobile()) setTimeout(hideDropdown, 150);
       });
 
       searchInput.addEventListener('keydown', function(e) {
