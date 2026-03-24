@@ -99,12 +99,8 @@
       <button class="filter-btn" data-filter="education">Education</button>
       <button class="filter-btn" data-filter="free">Free</button>
       <button class="filter-btn" data-filter="prize">Has prize</button>
+      <button class="filter-btn" data-filter="new">New</button>
     </section>
-
-    <div class="sort-bar" id="sortBar">
-      <button class="sort-btn" data-sort="recent">Recently added</button>
-      <button class="sort-btn active" data-sort="deadline">Ending soon</button>
-    </div>
 
     <section class="calls-list" id="callsList">
       <!-- populated by JS -->
@@ -139,7 +135,7 @@
         document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
         document.querySelectorAll('[data-view="past"]').forEach(l => l.classList.add('active'));
         document.querySelector('.hero h1').textContent = 'Past Calls';
-        document.getElementById('sortBar').style.display = 'none';
+        document.querySelector('.filter-btn[data-filter="new"]').style.display = 'none';
       }
       renderCalls(initView);
       setupNav();
@@ -511,9 +507,7 @@
           renderChips();
           document.getElementById('searchInput').value = '';
           document.getElementById('searchClear').classList.remove('visible');
-          document.getElementById('sortBar').style.display = view === 'past' ? 'none' : '';
-          document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
-          document.querySelector('.sort-btn[data-sort="deadline"]').classList.add('active');
+          document.querySelector('.filter-btn[data-filter="new"]').style.display = view === 'past' ? 'none' : '';
           document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
           renderCalls(view);
@@ -540,20 +534,16 @@
           var filter = btn.dataset.filter;
           // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
-          currentFilter = filter;
+          if (filter === 'new') {
+            currentFilter = 'all';
+            currentSort = 'recent';
+          } else {
+            currentFilter = filter;
+            currentSort = 'deadline';
+          }
           document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           renderChips();
-          applyFilters();
-        });
-      });
-
-      // Sort buttons
-      document.querySelectorAll('.sort-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          currentSort = btn.dataset.sort;
           applyFilters();
         });
       });
