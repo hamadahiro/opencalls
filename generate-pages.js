@@ -135,7 +135,7 @@ function HEAD(opts) {
 function buildHeader() {
   return `<header>
     <div class="header-inner">
-      <a href="https://monographica.com" class="logo">Monographica</a>
+      <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
         <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
