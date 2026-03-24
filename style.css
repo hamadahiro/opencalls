@@ -762,7 +762,7 @@ a.meta-tag-link.call-prize:hover {
     min-height: 100vh;
     min-height: 100dvh;
     z-index: 1000;
-    background: #fff;
+    background: var(--bg);
     margin: 0;
     padding: env(safe-area-inset-top, 0) 0 0;
     display: flex;
@@ -773,9 +773,12 @@ a.meta-tag-link.call-prize:hover {
 
   .search-active .search-back {
     display: block;
+    color: var(--text);
   }
 
   .search-active .search-bar {
+    background: var(--bg);
+    color: var(--text);
     box-shadow: none;
     flex: 1;
     width: auto;
@@ -792,40 +795,29 @@ a.meta-tag-link.call-prize:hover {
     width: 100%;
     max-height: none !important;
     box-shadow: none !important;
-    border-top: 1px solid #e0e0e0;
+    background: var(--bg) !important;
+    border-top: 1px solid var(--border);
     margin-top: 12px;
     overflow-y: auto;
     flex-basis: 100%;
   }
-}
 
-@media (max-width: 640px) and (prefers-color-scheme: dark) {
-  .search-active .search-wrap {
-    background: var(--bg);
-  }
-  .search-active .search-bar {
-    background: var(--bg);
-    color: var(--text);
-  }
-  .search-active .search-back {
-    color: var(--text);
-  }
-  .search-active #searchDropdown {
-    background: var(--bg) !important;
-    border-top-color: var(--border);
-  }
   .search-active #searchDropdown .search-suggestion {
     color: var(--text) !important;
   }
+
   .search-active #searchDropdown .search-suggestion span[style] {
     color: var(--text-muted) !important;
   }
+
   .search-active #searchDropdown .search-suggestion:hover {
     background: var(--card-bg) !important;
   }
+
   .search-active #searchDropdown a[style] {
     color: var(--text) !important;
   }
+
   .search-active #searchDropdown a[style]:hover {
     background: var(--card-bg);
   }
