@@ -228,9 +228,6 @@ main {
   overflow-wrap: break-word;
 }
 
-.home-h1 {
-  font-size: 36px;
-}
 
 /* === Shared serif text === */
 .subtitle,
@@ -683,6 +680,10 @@ a.meta-tag-link.call-prize:hover {
 
   .hero h1 {
     margin-bottom: 12px;
+  }
+
+  .home-h1 {
+    font-size: 24px;
   }
 
   .subtitle,
