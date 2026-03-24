@@ -290,6 +290,8 @@
       });
       dd.innerHTML = html;
       dd.style.display = 'block';
+      dd.style.pointerEvents = 'none';
+      setTimeout(function() { dd.style.pointerEvents = ''; }, 300);
       selectedSuggestion = -1;
       dd.querySelectorAll('.search-suggestion').forEach(function(el) {
         el.addEventListener('mouseenter', function() { el.style.background = 'var(--card-bg)'; });
