@@ -30,7 +30,7 @@
   :root {
     --text: #cdcdcd;
     --text-muted: #777;
-    --text-body: var(--text);
+    --text-body: #a8a8a8;
     --bg: #151515;
     --card-bg: #2a2a2a;
     --card-bg-hover: #3a3a3a;
