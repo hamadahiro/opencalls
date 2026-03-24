@@ -342,7 +342,7 @@ main {
 }
 
 .search-bar::placeholder {
-  color: #444;
+  color: #5f6368;
 }
 
 @media (prefers-color-scheme: dark) {
