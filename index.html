@@ -552,6 +552,7 @@
 
       function openMobileSearch() {
         if (isMobile()) {
+          window.scrollTo(0, 0);
           document.body.classList.add('search-active');
           if (themeColorMeta) themeColorMeta.content = window.matchMedia('(prefers-color-scheme: dark)').matches ? '#151515' : '#fff';
         }
