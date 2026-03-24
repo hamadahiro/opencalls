@@ -59,6 +59,7 @@
       <nav>
         <a href="/" class="nav-link" data-nav="open" data-view="new">Open</a>
         <a href="/?view=past" class="nav-link" data-nav="closed" data-view="past">Closed</a>
+        <a href="/?view=recent" class="nav-link" data-nav="recent" data-view="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -69,11 +70,12 @@
     <div class="mobile-nav">
       <a href="/" data-nav="open" data-view="new">Open</a>
       <a href="/?view=past" data-nav="closed" data-view="past">Closed</a>
+      <a href="/?view=recent" data-nav="recent" data-view="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'&&s.indexOf('view=recent')!==-1?'recent':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -99,7 +101,6 @@
       <button class="filter-btn" data-filter="education">Education</button>
       <button class="filter-btn" data-filter="free">Free</button>
       <button class="filter-btn" data-filter="prize">Has prize</button>
-      <button class="filter-btn" data-filter="new">New</button>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -129,13 +130,17 @@
       allCalls = data.calls.map((c, i) => ({ ...c, _index: i }));
 
       const params = new URLSearchParams(window.location.search);
-      const initView = params.get('view') === 'past' ? 'past' : 'new';
+      const viewParam = params.get('view');
+      const initView = viewParam === 'past' ? 'past' : 'new';
       currentView = initView;
-      if (initView === 'past') {
+      if (viewParam === 'recent') currentSort = 'recent';
+      if (viewParam === 'past') {
         document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
         document.querySelectorAll('[data-view="past"]').forEach(l => l.classList.add('active'));
         document.querySelector('.hero h1').textContent = 'Past Calls';
-        document.querySelector('.filter-btn[data-filter="new"]').style.display = 'none';
+      } else if (viewParam === 'recent') {
+        document.querySelectorAll('[data-view]').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('[data-view="recent"]').forEach(l => l.classList.add('active'));
       }
       renderCalls(initView);
       setupNav();
@@ -501,19 +506,18 @@
           e.preventDefault();
           document.querySelectorAll('[data-view]').forEach(function(l) { l.classList.remove('active'); });
           document.querySelectorAll('[data-view="' + view + '"]').forEach(function(l) { l.classList.add('active'); });
-          currentView = view;
+          currentView = view === 'recent' ? 'new' : view;
           currentFilter = 'all';
           currentSearch = '';
-          currentSort = 'deadline';
+          currentSort = view === 'recent' ? 'recent' : 'deadline';
           activeChips = [];
           renderChips();
           document.getElementById('searchInput').value = '';
           document.getElementById('searchClear').classList.remove('visible');
-          document.querySelector('.filter-btn[data-filter="new"]').style.display = view === 'past' ? 'none' : '';
           document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-          renderCalls(view);
-          var url = view === 'past' ? '/?view=past' : '/';
+          renderCalls(currentView);
+          var url = view === 'past' ? '/?view=past' : view === 'recent' ? '/?view=recent' : '/';
           history.replaceState(null, '', url);
           var sub = document.getElementById('subtitle');
           if (view === 'past') {
@@ -536,13 +540,8 @@
           var filter = btn.dataset.filter;
           // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
-          if (filter === 'new') {
-            currentFilter = 'all';
-            currentSort = 'recent';
-          } else {
-            currentFilter = filter;
-            currentSort = 'deadline';
-          }
+          currentFilter = filter;
+          currentSort = 'deadline';
           document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           renderChips();
