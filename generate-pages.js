@@ -86,7 +86,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'entry-fee'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const TODAY = new Date().toISOString().slice(0, 10);
 const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
@@ -453,28 +453,30 @@ Object.entries(categories).forEach(([cat, info]) => {
 // === Special filter pages (Free, Prize) ===
 const filterPages = [
   {
-    slug: 'free',
+    slug: 'fees/free',
+    feeKey: 'free',
     title: 'Free Open Calls for Artists',
     desc: 'Open calls with no entry fee. Free exhibitions, grants, residencies, and submissions for photographers and visual artists.',
     keywords: 'free open calls, free photography competitions, no fee art submissions, free call for entries, free exhibitions',
     filterJs: `c.fee && c.fee.toLowerCase().startsWith('free')`
   },
   {
-    slug: 'paid',
-    title: 'Paid Open Calls for Artists',
-    desc: 'Open calls with entry fees. Paid competitions, exhibitions, and submissions for photographers and visual artists.',
-    keywords: 'paid open calls, photography competition entry fee, paid call for entries, photography submissions with fee',
+    slug: 'fees/entry-fee',
+    feeKey: 'entry-fee',
+    title: 'Open Calls with Entry Fees',
+    desc: 'Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists.',
+    keywords: 'open calls entry fee, photography competition entry fee, call for entries with fee, photography submissions with fee',
     filterJs: `c.fee && !c.fee.toLowerCase().startsWith('free')`
   }
 ];
 
 const feeFilters = {
   'free': c => c.fee && c.fee.toLowerCase().startsWith('free'),
-  'paid': c => c.fee && !c.fee.toLowerCase().startsWith('free')
+  'entry-fee': c => c.fee && !c.fee.toLowerCase().startsWith('free')
 };
 
 filterPages.forEach(fp => {
-  const count = data.calls.filter(feeFilters[fp.slug]).length;
+  const count = data.calls.filter(feeFilters[fp.feeKey]).length;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -514,7 +516,7 @@ filterPages.forEach(fp => {
 
 // === Fees index page ===
 const freeCount = openCalls.filter(feeFilters['free']).length;
-const paidCount = openCalls.filter(feeFilters['paid']).length;
+const paidCount = openCalls.filter(feeFilters['entry-fee']).length;
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -528,13 +530,13 @@ const feesIndexHtml = `<!DOCTYPE html>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Fees', 'Browse open calls by entry fee. Find free submissions or paid competitions.')}
 
     <section class="index-list" id="indexList">
-      <a href="/free/" class="index-item">
+      <a href="/fees/free/" class="index-item">
         <span class="index-item-name">Free to Enter</span>
         <span class="dots"></span>
         <span class="index-item-count">${freeCount}</span>
       </a>
-      <a href="/paid/" class="index-item">
-        <span class="index-item-name">Paid Entry</span>
+      <a href="/fees/entry-fee/" class="index-item">
+        <span class="index-item-name">Entry Fee</span>
         <span class="dots"></span>
         <span class="index-item-count">${paidCount}</span>
       </a>
@@ -1310,8 +1312,8 @@ const browseCategories = Object.entries(categories).map(([cat]) => {
 }).sort((a, b) => b.count - a.count);
 
 const browseFees = [
-  { label: 'Free to Enter', href: '/free/', count: openCalls.filter(feeFilters['free']).length },
-  { label: 'Paid Entry', href: '/paid/', count: openCalls.filter(feeFilters['paid']).length }
+  { label: 'Free to Enter', href: '/fees/free/', count: openCalls.filter(feeFilters['free']).length },
+  { label: 'Entry Fee', href: '/fees/entry-fee/', count: openCalls.filter(feeFilters['entry-fee']).length }
 ];
 const browsePrizes = [];
 prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {

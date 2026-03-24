@@ -206,11 +206,11 @@ function renderTags(call) {
   // Fee
   if (call.fee && call.fee !== 'Check website') {
     if (call.fee.toLowerCase().startsWith('free')) {
-      tags.push(`<a href="/free/" class="meta-tag meta-tag-link">Free</a>`);
+      tags.push(`<a href="/fees/free/" class="meta-tag meta-tag-link">Free</a>`);
     } else if (/^[£$€¥]/.test(call.fee)) {
-      tags.push(`<a href="/paid/" class="meta-tag meta-tag-link">${esc(call.fee)} fee</a>`);
+      tags.push(`<a href="/fees/entry-fee/" class="meta-tag meta-tag-link">${esc(call.fee)} fee</a>`);
     } else {
-      tags.push(`<a href="/paid/" class="meta-tag meta-tag-link">${esc(call.fee)}</a>`);
+      tags.push(`<a href="/fees/entry-fee/" class="meta-tag meta-tag-link">${esc(call.fee)}</a>`);
     }
   }
   // Location
