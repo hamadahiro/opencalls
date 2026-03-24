@@ -362,6 +362,12 @@ main {
   background: #f0f0f0 !important;
 }
 
+#searchDropdown a[style] {
+  font-size: var(--fs-btn) !important;
+  font-weight: 500;
+  color: #151515 !important;
+}
+
 .search-clear {
   display: none;
   position: absolute;
