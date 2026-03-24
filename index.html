@@ -547,11 +547,18 @@
 
       var isMobile = function() { return window.innerWidth <= 640; };
 
+      var themeColorMeta = document.querySelector('meta[name="theme-color"][media*="' + (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') + '"]');
+      var originalThemeColor = themeColorMeta ? themeColorMeta.content : '';
+
       function openMobileSearch() {
-        if (isMobile()) document.body.classList.add('search-active');
+        if (isMobile()) {
+          document.body.classList.add('search-active');
+          if (themeColorMeta) themeColorMeta.content = window.matchMedia('(prefers-color-scheme: dark)').matches ? '#151515' : '#cdcdcd';
+        }
       }
       function closeMobileSearch() {
         document.body.classList.remove('search-active');
+        if (themeColorMeta) themeColorMeta.content = originalThemeColor;
         searchInput.blur();
         hideDropdown();
       }
