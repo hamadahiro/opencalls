@@ -53,6 +53,12 @@
 
   .search-bar {
     box-shadow: none;
+    background: #fff;
+    color: #151515;
+  }
+
+  .search-bar::placeholder {
+    color: #999;
   }
 
   .call-deadline {
