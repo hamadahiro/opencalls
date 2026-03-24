@@ -296,6 +296,27 @@
     }
 
     function addChip(chip) {
+      // If chip maps to a filter button, activate the button instead of creating a chip
+      var filterKey = null;
+      if (chip.type === 'category') filterKey = chip.value;
+      else if (chip.type === 'fee' && chip.value === 'free') filterKey = 'free';
+      if (filterKey) {
+        var btn = document.querySelector('.filter-btn[data-filter="' + filterKey + '"]');
+        if (btn) {
+          activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
+          currentFilter = filterKey;
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('searchInput').value = '';
+          currentSearch = '';
+          document.getElementById('searchClear').classList.remove('visible');
+          renderChips();
+          hideDropdown();
+          applyFilters();
+          return;
+        }
+      }
+
       if (activeChips.some(function(c) { return c.type === chip.type && c.value === chip.value; })) return;
       // Replace existing chip of same type for category/fee (only one at a time)
       if (chip.type === 'category' || chip.type === 'fee') {
