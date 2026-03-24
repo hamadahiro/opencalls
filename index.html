@@ -146,6 +146,21 @@
       setupFilters();
     }
 
+    // --- Mobile search ---
+    function isMobile() { return window.innerWidth <= 640; }
+    function openMobileSearch() {
+      if (isMobile()) {
+        window.scrollTo(0, 0);
+        document.body.classList.add('search-active');
+      }
+    }
+    function closeMobileSearch() {
+      document.body.classList.remove('search-active');
+      var si = document.getElementById('searchInput');
+      if (si) si.blur();
+      hideDropdown();
+    }
+
     // --- Chip + filter logic ---
 
     function getRelevantCalls() {
@@ -546,20 +561,6 @@
       // Search input
       var searchInput = document.getElementById('searchInput');
       var searchClear = document.getElementById('searchClear');
-
-      var isMobile = function() { return window.innerWidth <= 640; };
-
-      function openMobileSearch() {
-        if (isMobile()) {
-          window.scrollTo(0, 0);
-          document.body.classList.add('search-active');
-        }
-      }
-      function closeMobileSearch() {
-        document.body.classList.remove('search-active');
-        searchInput.blur();
-        hideDropdown();
-      }
 
       document.getElementById('searchBack').addEventListener('mousedown', function(e) {
         e.preventDefault();
