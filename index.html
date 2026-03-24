@@ -489,8 +489,24 @@
           var db = b.dateAdded || '';
           return da > db ? -1 : da < db ? 1 : 0;
         });
-        container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Recently added</h3>');
-        processed.forEach(function(call) { container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')); });
+        var now = new Date();
+        var todayStr = now.toISOString().slice(0, 10);
+        var yesterday = new Date(now);
+        yesterday.setDate(yesterday.getDate() - 1);
+        var yesterdayStr = yesterday.toISOString().slice(0, 10);
+        var weekAgo = new Date(now);
+        weekAgo.setDate(weekAgo.getDate() - 7);
+        var weekAgoStr = weekAgo.toISOString().slice(0, 10);
+        var currentSection = '';
+        processed.forEach(function(call) {
+          var added = (call.dateAdded || '').slice(0, 10);
+          var section = added >= todayStr ? 'Today' : added >= yesterdayStr ? 'Yesterday' : added >= weekAgoStr ? 'Past 7 days' : 'Earlier';
+          if (section !== currentSection) {
+            currentSection = section;
+            container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
+          }
+          container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+        });
         if (!container.children.length) container.innerHTML = emptyState();
       } else {
         renderCallList(processed, container);
@@ -524,7 +540,7 @@
           if (view === 'past') {
             sub.textContent = 'Archive of past open calls and closed submissions.';
           } else if (view === 'recent') {
-            sub.textContent = 'Recently Added';
+            sub.textContent = 'Recently added open calls and submission opportunities for photographers and visual artists.';
           } else {
             sub.textContent = originalSubtitle;
           }
