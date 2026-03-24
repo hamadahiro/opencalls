@@ -338,7 +338,7 @@ main {
 .search-bar {
   display: block;
   width: 100%;
-  background: #fff;
+  background: #cdcdcd;
   border: none;
   padding: 14px 20px;
   padding-right: 44px;
@@ -356,7 +356,7 @@ main {
 }
 
 #searchDropdown {
-  background: #fff !important;
+  background: #cdcdcd !important;
   color: #151515;
 }
 
@@ -765,7 +765,7 @@ a.meta-tag-link.call-prize:hover {
     right: 0;
     bottom: 0;
     z-index: 1000;
-    background: #fff;
+    background: #cdcdcd;
     margin: 0;
     padding: 0;
     display: flex;
