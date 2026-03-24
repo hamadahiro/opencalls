@@ -547,24 +547,16 @@
 
       var isMobile = function() { return window.innerWidth <= 640; };
 
-      var themeColorMeta = document.querySelector('meta[name="theme-color"][media*="' + (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') + '"]');
-      var originalThemeColor = themeColorMeta ? themeColorMeta.content : '';
-
       function openMobileSearch() {
         if (isMobile()) {
           window.scrollTo(0, 0);
           document.body.classList.add('search-active');
-          if (themeColorMeta) themeColorMeta.content = window.matchMedia('(prefers-color-scheme: dark)').matches ? '#151515' : '#fff';
         }
       }
       function closeMobileSearch() {
         document.body.classList.remove('search-active');
         searchInput.blur();
         hideDropdown();
-        if (themeColorMeta) {
-          themeColorMeta.content = '';
-          requestAnimationFrame(function() { themeColorMeta.content = originalThemeColor; });
-        }
       }
 
       document.getElementById('searchBack').addEventListener('mousedown', function(e) {
