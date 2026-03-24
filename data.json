@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-23",
+  "lastUpdated": "2026-03-24",
   "calls": [
     {
       "title": "Night Aesthetics",
@@ -6261,6 +6261,76 @@
       "dateAdded": "2026-03-23T20:51:00Z",
       "email": "",
       "submitVia": "Email"
+    },
+    {
+      "title": "I Can Buy Myself Flowers",
+      "org": "Haze Gallery",
+      "deadline": "2026-04-16",
+      "fee": "€35",
+      "category": "exhibition",
+      "description": "HAZEGALLERY, the curatorial platform of PURPLEHAZE Magazine, invites artists and image-makers to participate in a curated pop-up exhibition in Amsterdam alongside the launch of PURPLEHAZE Print Issue 012. Theme explores autonomy as identity, rituals of independence, intimacy turned inward, beauty chosen rather than granted, solitude as clarity, and desire as self-directed. Accepts fashion, fine art, and documentary photography, works on paper, fine art prints, and short looping video works. Selected artists participate in the June 2026 Amsterdam exhibition and may be published in the print issue.",
+      "url": "https://haze.gallery/open-call-i-can-buy-myself-flowers",
+      "instagram": "@haze.gallery",
+      "location": "Amsterdam, Netherlands",
+      "prize": "Exhibition + publication",
+      "eligibility": [],
+      "slug": "i-can-buy-myself-flowers-haze-gallery",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-24T10:00:00Z"
+    },
+    {
+      "title": "Fresh Legs 2026",
+      "org": "Galleri Heike Arndt DK",
+      "deadline": "2026-03-31",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Annual group exhibition initiative running since 2013, presenting painting, sculpture, illustration, drawing, street art, photography, short film, animation, and related media. Exhibition at two Berlin venues: Galleri Heike Arndt DK (June–October 2026) and INSELGALERIE Berlin (June–July 2026). No submission fee; €40 exhibition fee if accepted. Selected works must remain available for 12 months for potential follow-up exhibitions. All works must be for sale. Gallery takes 30–50% commission on sales.",
+      "url": "https://berlin.heike-arndt.dk/danish-open-call-fresh",
+      "instagram": "@galleriheikearndtberlin",
+      "location": "Berlin, Germany",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "slug": "fresh-legs-2026-galleri-heike-arndt-dk",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-24T10:01:00Z"
+    },
+    {
+      "title": "KH7 Artspace — Exhibitions 2026",
+      "org": "KH7 Artspace",
+      "deadline": "2026-03-29",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Open call for solo or group exhibition proposals at KH7 Artspace in Aarhus, Denmark for the second half of 2026. Available slots: December at KH7Artspace, September and November at KH7Smallspace. All artistic disciplines welcome including photography. Artists receive a small fee and PR support. Applicants from outside Denmark must cover their own transport and visa expenses. Submit project description (max 2 A4 pages with images) via email.",
+      "url": "https://www.kh7artspace.dk/about/opencalls-kh7",
+      "instagram": "@kh7artspace",
+      "location": "Aarhus, Denmark",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "resultsDate": "April 13, 2026",
+      "slug": "kh7-artspace-exhibitions-2026",
+      "orgInTitle": true,
+      "dateAdded": "2026-03-24T10:02:00Z",
+      "email": "",
+      "submitVia": "Email"
+    },
+    {
+      "title": "The Alexia Grants 2026",
+      "org": "The Alexia / Newhouse School at Syracuse University",
+      "deadline": "2026-02-13",
+      "fee": "$50",
+      "category": "grant",
+      "description": "Prestigious annual photojournalism and documentary photography grants from the Alexia Foundation at Syracuse University's Newhouse School. Professional Vision Grant awards $20,000 plus Sony camera/lens. Additional pop-up grants of $5,000 each for conservation, environmental change, and health themes. Student grants also available (free entry). Submissions judged anonymously. No AI-generated imagery accepted.",
+      "url": "https://newhouse.syracuse.edu/centers/the-alexia/grants/",
+      "instagram": "@thealexiagrants",
+      "location": "Syracuse, New York, USA",
+      "prize": "$20,000 + exhibition",
+      "eligibility": [],
+      "requirements": "5–20 images",
+      "ai": "Not accepted",
+      "slug": "the-alexia-grants-2026",
+      "orgInTitle": true,
+      "dateAdded": "2026-03-24T10:03:00Z",
+      "submitVia": "Visura"
     }
   ]
 }
