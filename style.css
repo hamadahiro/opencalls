@@ -358,6 +358,17 @@ main {
     background: #fff !important;
     color: #151515;
   }
+  #searchDropdown .search-suggestion {
+    color: #151515 !important;
+    font-size: var(--fs-btn) !important;
+    font-weight: 500;
+  }
+  #searchDropdown .search-suggestion span[style] {
+    color: #5f6368 !important;
+  }
+  #searchDropdown .search-suggestion:hover {
+    background: #f0f0f0 !important;
+  }
 }
 
 .search-clear {
