@@ -368,6 +368,10 @@ main {
   color: #151515 !important;
 }
 
+#searchDropdown a[style]:hover {
+  background: #f0f0f0;
+}
+
 .search-clear {
   display: none;
   position: absolute;
