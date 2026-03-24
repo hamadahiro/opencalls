@@ -802,6 +802,38 @@ a.meta-tag-link.call-prize:hover {
   }
 }
 
+@media (max-width: 640px) and (prefers-color-scheme: dark) {
+  .search-active .search-wrap {
+    background: var(--bg);
+  }
+  .search-active .search-bar {
+    background: var(--bg);
+    color: var(--text);
+  }
+  .search-active .search-back {
+    color: var(--text);
+  }
+  .search-active #searchDropdown {
+    background: var(--bg) !important;
+    border-top-color: var(--border);
+  }
+  .search-active #searchDropdown .search-suggestion {
+    color: var(--text) !important;
+  }
+  .search-active #searchDropdown .search-suggestion span[style] {
+    color: var(--text-muted) !important;
+  }
+  .search-active #searchDropdown .search-suggestion:hover {
+    background: var(--card-bg) !important;
+  }
+  .search-active #searchDropdown a[style] {
+    color: var(--text) !important;
+  }
+  .search-active #searchDropdown a[style]:hover {
+    background: var(--card-bg);
+  }
+}
+
 @media (max-width: 380px) {
   :root {
     --fs-card-title: 18px;
