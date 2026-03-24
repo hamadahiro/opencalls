@@ -78,6 +78,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Jean Fruth, Sports Photographer (2026–27 Mentor) · Bob Martin, Sports Photographer (2026–27 Mentor) · Jamie Schwaberow, Sports Photographer (2026–27 Mentor)</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://dougpensingerphotographyfund.org/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -96,7 +100,7 @@
 
   <script>
     const CURRENT_SLUG = 'dppf-2026-sports-photography-grants';
-    const CURRENT_CALL = {"prize":"7 × $5,000 + up to 3 × $2,500 Development Grants + mentorships","category":"grant","org":"Doug Pensinger Photography Fund","location":"Online","fee":"Free","deadline":"2026-05-02","resultsDate":"July 1, 2026","instagram":"@dppfund","eligibility":["emerging"],"jury":[],"submitVia":"Picter","submitUrl":"https://site.picter.com/dppf-2026-sports-photography-grants","email": "","ai":"Not accepted"};
+    const CURRENT_CALL = {"prize":"7 × $5,000 + up to 3 × $2,500 Development Grants + mentorships","category":"grant","org":"Doug Pensinger Photography Fund","location":"Online","fee":"Free","deadline":"2026-05-02","resultsDate":"July 1, 2026","instagram":"@dppfund","eligibility":["emerging"],"jury":["Jean Fruth, Sports Photographer (2026–27 Mentor)","Bob Martin, Sports Photographer (2026–27 Mentor)","Jamie Schwaberow, Sports Photographer (2026–27 Mentor)"],"submitVia":"Picter","submitUrl":"https://site.picter.com/dppf-2026-sports-photography-grants","email": "","ai":"Not accepted"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
