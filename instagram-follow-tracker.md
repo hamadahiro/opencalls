@@ -95,30 +95,30 @@
 | 89 | @fotofilmic | done |
 | 90 | @fotograf.zone | done |
 | 91 | @fotografiska.emerging | done |
-| 92 | @fotoslovo.art | pending (corrected) |
+| 92 | @fotoslovo.art | done (corrected) |
 | 93 | @fototallinnfair | done |
 | 94 | @fringeartsbath | done |
 | 95 | @fstopmagazine | done |
-| 96 | @fundacionenaire | pending |
-| 97 | @fundaciontelevisa | pending |
-| 98 | @galleriformat | pending |
-| 99 | @generator_art_production_fund | pending |
-| 100 | @goldenduckgallery | pending |
-| 101 | @gomma_books | pending |
-| 102 | @gridphotogallery | pending |
-| 103 | @griffinmuseum | pending |
-| 104 | @gspawards | pending |
-| 105 | @hasselbladfoundation | pending |
-| 106 | @headonphotofest | pending |
-| 107 | @helsinkianalogfestival | pending |
-| 108 | @hipaawards | pending |
-| 109 | @hndl_mag | pending |
-| 110 | @hopperprize | pending |
-| 111 | @hsjdleon | pending |
-| 112 | @i_photography_festival | pending |
-| 113 | @ilpoty | pending |
-| 114 | @incandescentzine | pending |
-| 115 | @innovateartistgrants | pending |
+| 96 | @fundacionenaire | done |
+| 97 | @fundaciontelevisa | done |
+| 98 | @galleriformat | done |
+| 99 | @generator_art_production_fund | done |
+| 100 | @goldenduckgallery | done |
+| 101 | @gomma_books | done |
+| 102 | @gridphotogallery | done |
+| 103 | @griffinmuseum | done |
+| 104 | @gspawards | done |
+| 105 | @hasselbladfoundation | done |
+| 106 | @headonphotofest | done |
+| 107 | @finnishdarkroom | done (corrected from @helsinkianalogfestival) |
+| 108 | @hipaae | done (corrected from @hipaawards) |
+| 109 | @hndl_mag | done |
+| 110 | @hopperprize | done |
+| 111 | @sanjuandedios_leon | done (corrected from @hsjdleon) |
+| 112 | @photois.rael | done (corrected from @i_photography_festival) |
+| 113 | @ilpoty | done |
+| 114 | @incandescentzine | NOT FOUND (account deleted, no IG exists) |
+| 115 | @innovategrant | done (corrected from @innovateartistgrants) |
 | 116 | @insight_foto_festival | pending |
 | 117 | @iphotoawards | pending |
 | 118 | @itsdrw | pending |
