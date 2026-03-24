@@ -314,11 +314,18 @@ function renderInfoGrid(call) {
   // AI policy
   if (call.ai) rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
-  if (call.email) {
-    const emailLabel = call.submitVia && call.submitVia !== 'Email' ? call.submitVia : 'Email';
-    rows.push(infoRow('Submit via', `<a href="mailto:${esc(call.email)}" target="_blank" rel="nofollow noopener">${infoVal(emailLabel)}</a>`));
-  } else if (call.submitVia) {
-    rows.push(infoRow('Submit via', infoVal(call.submitVia)));
+  if (call.submitVia) {
+    const open = isCallOpen(call.deadline);
+    const label = infoVal(call.submitVia);
+    if (!open) {
+      rows.push(infoRow('Submit via', label));
+    } else if (call.email) {
+      rows.push(infoRow('Submit via', `<a href="mailto:${esc(call.email)}" target="_blank" rel="nofollow noopener">${label}</a>`));
+    } else if (call.submitUrl) {
+      rows.push(infoRow('Submit via', `<a href="${esc(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`));
+    } else {
+      rows.push(infoRow('Submit via', label));
+    }
   }
   // Instagram
   if (call.instagram) {
