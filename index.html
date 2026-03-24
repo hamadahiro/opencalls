@@ -553,7 +553,7 @@
       function openMobileSearch() {
         if (isMobile()) {
           document.body.classList.add('search-active');
-          if (themeColorMeta) themeColorMeta.content = window.matchMedia('(prefers-color-scheme: dark)').matches ? '#151515' : '#cdcdcd';
+          if (themeColorMeta) themeColorMeta.content = window.matchMedia('(prefers-color-scheme: dark)').matches ? '#151515' : '#fff';
         }
       }
       function closeMobileSearch() {
