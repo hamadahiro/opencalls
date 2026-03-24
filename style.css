@@ -364,7 +364,7 @@ main {
     font-weight: 500;
   }
   #searchDropdown .search-suggestion span[style] {
-    color: #5f6368 !important;
+    color: #151515 !important;
   }
   #searchDropdown .search-suggestion:hover {
     background: #f0f0f0 !important;
