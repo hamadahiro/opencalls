@@ -364,7 +364,7 @@ main {
 
 #searchDropdown a[style] {
   font-size: var(--fs-btn) !important;
-  font-weight: 500;
+  font-weight: 700;
   color: #151515 !important;
 }
 
