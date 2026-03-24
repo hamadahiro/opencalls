@@ -468,7 +468,7 @@
         var yesterday = processed.filter(function(c) { return c.daysLeft !== null && c.daysLeft === -1; });
         var yesterdaySlugs = new Set();
         if (yesterday.length) {
-          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Yesterday</h3>');
+          container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Ended Yesterday</h3>');
           yesterday.forEach(function(call) {
             container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
             yesterdaySlugs.add(call.slug || slugify(call.title));
@@ -500,7 +500,7 @@
         var currentSection = '';
         processed.forEach(function(call) {
           var added = (call.dateAdded || '').slice(0, 10);
-          var section = added >= todayStr ? 'Today' : added >= yesterdayStr ? 'Yesterday' : added >= weekAgoStr ? 'Past 7 days' : 'Earlier';
+          var section = added >= todayStr ? 'Added Today' : added >= yesterdayStr ? 'Added Yesterday' : added >= weekAgoStr ? 'Past 7 days' : 'Earlier';
           if (section !== currentSection) {
             currentSection = section;
             container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
