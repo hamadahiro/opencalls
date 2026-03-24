@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls — July 2026 - Monographica</title>
-  <meta name="description" content="13 open calls for artists with deadlines in July 2026. Photography competitions, exhibitions, grants, and residencies.">
-  <meta name="keywords" content="open calls july 2026, photography deadlines july 2026, call for entries july 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/deadlines/july-2026/">
+  <title>Exibart Street - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Exibart Street. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Exibart Street open call, Exibart Street call for entries, Exibart Street submissions, Exibart Street photography, Exibart Street exhibition, Exibart Street artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/exibart-street/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls — July 2026 - Monographica">
-  <meta property="og:description" content="13 open calls for artists with deadlines in July 2026. Photography competitions, exhibitions, grants, and residencies.">
+  <meta property="og:title" content="Exibart Street - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Exibart Street. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/deadlines/july-2026/">
+  <meta property="og:url" content="https://opencalls.monographica.com/exibart-street/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls — July 2026",
-  "description": "Open calls with deadlines in July 2026.",
-  "url": "https://opencalls.monographica.com/deadlines/july-2026",
+  "name": "Exibart Street - Open Calls",
+  "description": "Open calls and submission opportunities from Exibart Street. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/exibart-street",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -70,9 +70,9 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>
-      <h1>July 2026</h1>
-      <h2 class="subtitle">13 calls with deadlines in July 2026.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Exibart Street</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Exibart Street. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -88,9 +88,8 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-07')).map(processCall);
-      calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+      const calls = data.calls.filter(c => c.org === 'Exibart Street').map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>
