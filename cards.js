@@ -367,22 +367,12 @@ function renderCallList(calls, container, opts) {
     return;
   }
 
-  // Today section
+  // Ending soon section (today + tomorrow combined)
   const specialSlugs = new Set();
-  const today = open.filter(c => c.daysLeft !== null && c.daysLeft === 0);
-  if (today.length >= 1) {
-    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Today</h3>');
-    today.forEach(call => {
-      container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
-      specialSlugs.add(call.slug || slugify(call.title));
-    });
-  }
-
-  // Tomorrow section
-  const tomorrow = open.filter(c => c.daysLeft !== null && c.daysLeft === 1);
-  if (tomorrow.length >= 1) {
-    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Tomorrow</h3>');
-    tomorrow.forEach(call => {
+  const endingSoon = open.filter(c => c.daysLeft !== null && c.daysLeft <= 1);
+  if (endingSoon.length >= 1) {
+    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Ending soon</h3>');
+    endingSoon.forEach(call => {
       container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
       specialSlugs.add(call.slug || slugify(call.title));
     });
@@ -407,7 +397,7 @@ function renderCallList(calls, container, opts) {
     // Yesterday section
     const yesterday = closed.filter(c => c.daysLeft !== null && c.daysLeft === -1);
     if (yesterday.length >= 1) {
-      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Yesterday</h3>');
+      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Ended Yesterday</h3>');
       yesterday.forEach(call => {
         container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
         pastSlugs.add(call.slug || slugify(call.title));
