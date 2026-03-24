@@ -558,9 +558,12 @@
       }
       function closeMobileSearch() {
         document.body.classList.remove('search-active');
-        if (themeColorMeta) themeColorMeta.content = originalThemeColor;
         searchInput.blur();
         hideDropdown();
+        if (themeColorMeta) {
+          themeColorMeta.content = '';
+          requestAnimationFrame(function() { themeColorMeta.content = originalThemeColor; });
+        }
       }
 
       document.getElementById('searchBack').addEventListener('mousedown', function(e) {
