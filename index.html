@@ -77,7 +77,7 @@
 
   <main>
     <section class="hero">
-      <h1>A continuously updated list of open calls and submission opportunities for photographers and visual artists.</h1>
+      <h1 id="subtitle">A continuously updated list of open calls and submission opportunities for photographers and visual artists.</h1>
     </section>
 
     <div class="search-wrap">
@@ -501,13 +501,10 @@
           renderCalls(view);
           var url = view === 'past' ? '/?view=past' : '/';
           history.replaceState(null, '', url);
-          var h1 = document.querySelector('.hero h1');
           var sub = document.getElementById('subtitle');
           if (view === 'past') {
-            h1.textContent = 'Past Calls';
             sub.textContent = 'Archive of past open calls and closed submissions.';
           } else {
-            h1.textContent = 'Open Calls for Artists';
             sub.textContent = originalSubtitle;
           }
         });
