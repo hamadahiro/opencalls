@@ -78,6 +78,10 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Aurelija Maknyte, Visual Artist &amp; Educator · Arturas Valiauga, Photographer, Artist &amp; Educator · Vilma Samulionytė, Photographer, Filmmaker &amp; Curator · Gytis Skudžinskas, Artist, Book Artist &amp; Curator</p>
+      </div>
+
       <div class="call-detail-actions" id="detailActions">
         <a href="https://site.picter.com/restart-2026" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -96,7 +100,7 @@
 
   <script>
     const CURRENT_SLUG = 'restart2026';
-    const CURRENT_CALL = {"prize":"Exhibition + catalogue; top 3 win solo exhibition at Vilnius Photography Gallery","category":"photography","org":"Lithuanian Photographers' Association","location":"Vilnius, Lithuania","fee":"€15","deadline":"2026-04-12","resultsDate":"July 29, 2026","instagram":"@lithuanian.photography","eligibility":["emerging"],"jury":[],"submitVia":"Picter","submitUrl":"https://site.picter.com/restart-2026","email": "","ai":""};
+    const CURRENT_CALL = {"prize":"Exhibition + catalogue; top 3 win solo exhibition at Vilnius Photography Gallery","category":"photography","org":"Lithuanian Photographers' Association","location":"Vilnius, Lithuania","fee":"€15","deadline":"2026-04-12","resultsDate":"July 29, 2026","instagram":"@lithuanian.photography","eligibility":["emerging"],"jury":["Aurelija Maknyte, Visual Artist & Educator","Arturas Valiauga, Photographer, Artist & Educator","Vilma Samulionytė, Photographer, Filmmaker & Curator","Gytis Skudžinskas, Artist, Book Artist & Curator"],"submitVia":"Picter","submitUrl":"https://site.picter.com/restart-2026","email": "","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
