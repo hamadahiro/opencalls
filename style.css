@@ -228,6 +228,10 @@ main {
   overflow-wrap: break-word;
 }
 
+.home-h1 {
+  font-size: 36px;
+}
+
 /* === Shared serif text === */
 .subtitle,
 .call-description,
