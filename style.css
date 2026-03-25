@@ -693,6 +693,13 @@ a.meta-tag-link.call-prize:hover {
     line-height: 28px;
   }
 
+  .call-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   .call-detail-actions {
     flex-direction: column;
   }
