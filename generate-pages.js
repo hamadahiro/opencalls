@@ -322,6 +322,10 @@ ${call.winners && call.winners.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
       </div>
+` : ''}${call.honourableMentions && call.honourableMentions.length ? `
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Honourable mentions: ${call.honourableMentions.map(w => escapeHtml(w)).join(' &middot; ')}</p>
+      </div>
 ` : ''}
       <div class="call-detail-info" id="detailInfo"></div>
 ${call.jury && call.jury.length ? `
