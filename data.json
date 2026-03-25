@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-24",
+  "lastUpdated": "2026-03-25",
   "calls": [
     {
       "title": "Home",
@@ -95,7 +95,9 @@
       "instagram": "@dppfund",
       "location": "Online",
       "prize": "7 × $5,000 + up to 3 × $2,500 Development Grants + mentorships",
-      "eligibility": ["emerging"],
+      "eligibility": [
+        "emerging"
+      ],
       "submitVia": "Picter",
       "requirements": "20 sports photographs (action and portrait). JPG only, min 1500px long side. All dated 2022+, 15 of 20 dated 2024+. Resume + bio (1500 chars)",
       "resultsDate": "July 1, 2026",
@@ -121,7 +123,9 @@
       "instagram": "@maph_photography",
       "location": "Wheelers Hill, VIC, Australia",
       "prize": "$50,000 + $10,000 Wai Tang Award + $5,000 People's Choice + 2 × $2,500 Honourable Mentions",
-      "eligibility": ["australia"],
+      "eligibility": [
+        "australia"
+      ],
       "submitVia": "MAPh",
       "requirements": "Up to 3 works per entry. JPEG 72dpi, shortest side 2048px. Still photo-based media, no video",
       "ai": "Permitted if not the substantial or overriding input",
@@ -6811,6 +6815,87 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-24T16:30:00Z",
       "submitVia": "Email"
+    },
+    {
+      "title": "Hasselblad Foundation Nature Photography Grant 2026",
+      "org": "Hasselblad Foundation",
+      "deadline": "2026-05-08",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Grant for photographic explorations of nature, landscape, and environment. Emphasis on originality, environmental issues, biodiversity, and human impact on nature and climate. Open to citizens of Nordic countries or permanent residents of the Nordic region. Projects should have a 1–3 year timeframe.",
+      "url": "https://site.picter.com/hasselblad-foundation-nature-photography-grant-2026",
+      "instagram": "@hassaborgsmuseet",
+      "location": "Sweden",
+      "prize": "100,000 SEK",
+      "eligibility": [
+        "nordic"
+      ],
+      "requirements": "Max 10 photographs with titles and dates. Application in Swedish or English",
+      "resultsDate": "July 15, 2026",
+      "slug": "hasselblad-foundation-nature-photography-grant-2026",
+      "orgInTitle": true,
+      "dateAdded": "2026-03-25T00:45:00Z",
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/c7a740a8-8507-4ad6-bb78-b53e5acd1088/start"
+    },
+    {
+      "title": "Guest Room: Shana Lopes & Aspen Mays",
+      "org": "Der Greif",
+      "deadline": "2026-04-02",
+      "fee": "Voluntary",
+      "category": "photography",
+      "description": "Open call curated by Shana Lopes and Aspen Mays exploring the theme “Have You Checked Your Screen Time? Forms and Logics of Excess.” Open to everyone. Selected work featured on Der Greif’s platform with feedback session from the curators.",
+      "url": "https://site.picter.com/der-greif-guest-room-lopes-mays",
+      "instagram": "@dergreif_",
+      "location": "Online",
+      "prize": "Feature on Der Greif + feedback session + €250 scholarship",
+      "eligibility": [],
+      "requirements": "1–5 single images, up to 10 min video allowed",
+      "slug": "guest-room-shana-lopes-aspen-mays-der-greif",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-25T00:45:00Z",
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/d27e4885-594f-4fda-879d-31cdb7c57155/start"
+    },
+    {
+      "title": "Photobook Feature — In Focus",
+      "org": "Der Greif",
+      "deadline": "2026-03-31",
+      "fee": "Voluntary",
+      "category": "photography",
+      "description": "Open call for photobooks to be featured in Der Greif’s Articles section with a dedicated editorial write-up. No fixed theme. Accepts self-published photobooks, artist books, zines, and small-edition press titles. Both recent releases and unpublished or in-progress projects eligible.",
+      "url": "https://site.picter.com/der-greif-photobook-feature",
+      "instagram": "@dergreif_",
+      "location": "Online",
+      "prize": "Editorial feature on Der Greif",
+      "eligibility": [],
+      "requirements": "Photobook, zine, or artist book. Self-published or small-edition",
+      "slug": "photobook-feature-in-focus-der-greif",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-25T00:45:00Z",
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/27d4a085-026b-4a9f-a1ad-7764269dba9e/start"
+    },
+    {
+      "title": "Jugend fotografiert Deutschland 2025",
+      "org": "laif foundation",
+      "deadline": "2026-04-17",
+      "fee": "Free",
+      "category": "photography",
+      "description": "German youth photography contest for ages 10–18. Submit photo stories of 5–10 images in documentary or journalistic style on any topic, with a written description. Individuals or groups of 3–10 participants. Must be residents of Germany.",
+      "url": "https://site.picter.com/jugend-fotografiert-2025",
+      "location": "Germany",
+      "prize": "€200–€500 per age category",
+      "eligibility": [
+        "youth",
+        "german-residents"
+      ],
+      "requirements": "5–10 images per photo story + written description. Ages 10–18, Germany residents",
+      "slug": "jugend-fotografiert-deutschland-2025-laif-foundation",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-25T00:45:00Z",
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/f1458471-f67d-4406-9076-1e18f4372944/start"
     }
   ]
 }
