@@ -3231,7 +3231,7 @@
       "deadline": "2026-02-28",
       "fee": "$50",
       "category": "exhibition",
-      "description": "Open exhibition featuring contemporary film-based photography. Opening May 2, 2026 in Vancouver.",
+      "description": "Open exhibition featuring contemporary film-based photography. Winners announced: Sharday Swanepoel, Katerina Kouzmitcheva (sel. Christopher McCall); Jon Laytner, Fiona Veronique (sel. Amanda Webster); Anastasia Davis, Carlos Folgoso Sueiro (sel. Clint & Alex Woodside). Honourable mentions: Mauro Curti, Melissa Renwick, Sasha Arutyunova, Will Warasila, Scott Offen, Jonah Reenders. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.",
       "url": "https://fotofilmic.com/open-call/",
       "instagram": "@fotofilmic",
       "location": "Vancouver, Canada",
@@ -3240,7 +3240,9 @@
         "analog-photography"
       ],
       "jury": [
-        "Emily Keegin, Photo Director & Consultant"
+        "Christopher McCall, Curator, former Director of Pier 24 Photography",
+        "Amanda Webster, Photo Editor, The New York Times",
+        "Clint & Alex Woodside, Deadbeat Club"
       ],
       "submitVia": "Fotofilmic",
       "requirements": "Up to 20 images",
@@ -3248,7 +3250,8 @@
       "slug": "fotofilmic-open-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://fotofilmic.com/open-call/"
+      "submitUrl": "https://fotofilmic.com/open-call/",
+      "resultsDate": "March 2026"
     },
     {
       "title": "Exposure One Awards - One Shot Photo Contest",
