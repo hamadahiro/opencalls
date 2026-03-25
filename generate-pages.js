@@ -585,7 +585,8 @@ const eligibilityGroups = {
   'latin-america': { short: 'Latin America', title: 'Latin America Focus', desc: 'Open calls for Latin American artists or projects connected to Latin America.' },
   'morocco': { short: 'Morocco', title: 'Morocco-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Morocco.' },
   'non-european': { short: 'Non-European', title: 'Non-European Artists Only', desc: 'Open calls restricted to artists from outside Europe — Africa, the Americas, Asia, and Oceania.' },
-  'australia': { short: 'Australia', title: 'Australia-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Australian citizens or permanent residents.' }
+  'australia': { short: 'Australia', title: 'Australia-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Australian citizens or permanent residents.' },
+  'ireland': { short: 'Ireland', title: 'Ireland-Only Open Calls', desc: 'Open calls restricted to photographers and artists resident on the island of Ireland.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -662,7 +663,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40'] },
-  { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'italy', 'portugal', 'taiwan', 'morocco', 'non-european'] },
+  { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'ireland', 'italy', 'portugal', 'taiwan', 'morocco', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
