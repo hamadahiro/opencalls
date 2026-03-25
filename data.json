@@ -7006,14 +7006,8 @@
       "location": "Online",
       "prize": "Kenya safari for 2 + Nikon gear + trophies",
       "eligibility": [],
-      "jury": [
-        "Tom Sullam, Co-founder & Competition Director (Chair)",
-        "Daisy Gilardini, Wildlife Photographer & Conservationist",
-        "Kate Humble, TV Presenter & Conservationist",
-        "Cam Whitnall, Wildlife Photographer & TV Presenter",
-        "Hugh Dennis, Actor & Comedian"
-      ],
-      "submitVia": "Comedy Wildlife Photography Awards",
+      "jury": [],
+      "submitVia": "Official website",
       "requirements": "Up to 10 images + 2 videos total. Max 3 images per category, 4 for Portfolio. JPEG, under 4MB. Video max 15 sec, 1080p HD 30fps, max 150MB. High-res originals required if shortlisted",
       "resultsDate": "December 2026",
       "ai": "Not specified",
@@ -7023,7 +7017,7 @@
       "submitUrl": "https://www.comedywildlifephoto.com/login.php"
     },
     {
-      "title": "FLORA — Shutter Hub Editions Photobook",
+      "title": "FLORA — Shutter Hub Editions Publication",
       "org": "Shutter Hub",
       "deadline": "2026-06-11",
       "fee": "£15+",
@@ -7034,17 +7028,17 @@
       "location": "Online",
       "prize": "Publication in printed photobook",
       "eligibility": [],
-      "submitVia": "Shutter Hub",
+      "submitVia": "Shutter Hub website",
       "requirements": "Max 10 images. JPEG, 300dpi, CMYK (Coated GRACoL 2006), A5 size (148×210mm), max 5MB. File naming: lastname_firstname_imagetitle.jpg. Alt text descriptions required",
       "ai": "Must disclose",
-      "slug": "flora-shutter-hub-editions-photobook",
+      "slug": "flora-shutter-hub-editions-publication",
       "orgInTitle": true,
       "dateAdded": "2026-03-25T18:19:00Z",
       "submitUrl": "https://shutterhub.org.uk/opportunity/flora-a-shutter-hub-editions-publication/"
     },
     {
       "title": "Hidden Narratives Residency 2026",
-      "org": "Photoworks / Royal Geographical Society",
+      "org": "Photoworks / Royal Geographical Society / Italian Cultural Institute",
       "deadline": "2026-04-13",
       "fee": "Free",
       "category": "residency",
@@ -7052,17 +7046,26 @@
       "url": "https://iiclondra.esteri.it/en/gli_eventi/calendario/22364/",
       "instagram": "@photoworks_uk",
       "location": "London, United Kingdom",
-      "prize": "Year-long residency at Royal Geographical Society",
+      "prize": "£1,500 + travel + accommodation + production",
       "eligibility": [
         "italy"
       ],
-      "submitVia": "Email",
-      "requirements": "Italian nationality, 18+, proficient in English. Contact info@photoworks.org.uk",
+      "submitVia": "Online form",
+      "requirements": "Italian nationality, 18+, proficient in English. Submit 1 PDF: expression of interest (max 300 words), bio with website/social links, 5–10 examples of recent work. Audio/video alternative accepted (max 3 min)",
       "ai": "Not specified",
       "slug": "hidden-narratives-residency-2026-photoworks-royal-geographical-society",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T18:19:00Z",
-      "submitUrl": "https://iiclondra.esteri.it/en/gli_eventi/calendario/22364/"
+      "submitUrl": "https://iiclondra.esteri.it/en/gli_eventi/calendario/22364/",
+      "jury": [
+        "Danit Ariel, Artist and Photoworks Curator",
+        "Louise Fedotov-Clements, Photoworks Director",
+        "Maria Teresa De Palma, Cultural Attaché, Italian Cultural Institute London",
+        "Jamie Owen, Curator, Royal Geographical Society",
+        "Rocco Venezia, Artist, Curator and Educator"
+      ],
+      "resultsDate": "April 27, 2026",
+      "email": ""
     }
   ]
 }

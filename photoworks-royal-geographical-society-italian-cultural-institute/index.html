@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Photoworks / Royal Geographical Society - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Photoworks / Royal Geographical Society. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="Photoworks / Royal Geographical Society open call, Photoworks / Royal Geographical Society call for entries, Photoworks / Royal Geographical Society submissions, Photoworks / Royal Geographical Society photography, Photoworks / Royal Geographical Society exhibition, Photoworks / Royal Geographical Society artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/photoworks-royal-geographical-society/">
+  <title>Photoworks / Royal Geographical Society / Italian Cultural Institute - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Photoworks / Royal Geographical Society / Italian Cultural Institute. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Photoworks / Royal Geographical Society / Italian Cultural Institute open call, Photoworks / Royal Geographical Society / Italian Cultural Institute call for entries, Photoworks / Royal Geographical Society / Italian Cultural Institute submissions, Photoworks / Royal Geographical Society / Italian Cultural Institute photography, Photoworks / Royal Geographical Society / Italian Cultural Institute exhibition, Photoworks / Royal Geographical Society / Italian Cultural Institute artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/photoworks-royal-geographical-society-italian-cultural-institute/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Photoworks / Royal Geographical Society - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Photoworks / Royal Geographical Society. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="Photoworks / Royal Geographical Society / Italian Cultural Institute - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Photoworks / Royal Geographical Society / Italian Cultural Institute. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/photoworks-royal-geographical-society/">
+  <meta property="og:url" content="https://opencalls.monographica.com/photoworks-royal-geographical-society-italian-cultural-institute/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Photoworks / Royal Geographical Society - Open Calls",
-  "description": "Open calls and submission opportunities from Photoworks / Royal Geographical Society. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/photoworks-royal-geographical-society",
+  "name": "Photoworks / Royal Geographical Society / Italian Cultural Institute - Open Calls",
+  "description": "Open calls and submission opportunities from Photoworks / Royal Geographical Society / Italian Cultural Institute. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/photoworks-royal-geographical-society-italian-cultural-institute",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -71,8 +71,8 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Photoworks / Royal Geographical Society</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Photoworks / Royal Geographical Society. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h1>Photoworks / Royal Geographical Society / Italian Cultural Institute</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Photoworks / Royal Geographical Society / Italian Cultural Institute. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -88,7 +88,7 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Photoworks / Royal Geographical Society').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Photoworks / Royal Geographical Society / Italian Cultural Institute').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
