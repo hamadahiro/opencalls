@@ -739,17 +739,17 @@
       "deadline": "2026-04-20",
       "fee": "£25",
       "category": "zine",
-      "description": "Sixth quarterly open call from Photobook Cafe and Rapid Eye Darkroom exploring the theme of Womanhood. Open to anyone engaging with or experiencing womanhood in all its forms — personally, indirectly, through distance, transition, or reflection. Selected photographers will be featured in a group exhibition and zine publication. All identities, backgrounds, and experience levels encouraged. Guest judge Francesca Allen.",
+      "description": "Sixth quarterly open call from Photobook Cafe and Rapid Eye Darkrooms exploring the theme of Womanhood with guest judge Francesca Allen. Invites work exploring the lived experiences of women and those who identify with womanhood — friendship, sisterhood, identity, growth, vulnerability, resistance, and becoming. Open to anyone, emerging, established or amateur, any age, background and identity from anywhere in the world. 35 selected photographers will be featured in a group exhibition and zine publication at The Photobook Cafe in London.",
       "url": "https://www.photobookuk.org/workshops-and-paid-events",
       "instagram": "@photobookcafe",
       "location": "London, United Kingdom",
-      "prize": "Exhibition + zine publication",
+      "prize": "Exhibition at The Photobook Cafe + printed zine + complimentary zine copy + physical print to take home. Best in Show winners receive complimentary summer group exhibition with Rapid Eye printing support",
       "eligibility": [],
       "jury": [
         "Francesca Allen, Photographer"
       ],
       "submitVia": "Photobook Cafe website",
-      "requirements": "",
+      "requirements": "2 images per entry. Analogue and digital photography accepted. No discriminatory or offensive content. High-quality JPG may be requested if selected. Prints produced on digital C-Type matte paper by Rapid Eye Darkrooms",
       "ai": "Not specified",
       "slug": "womanhood-photobook-cafe-rapid-eye-darkroom",
       "orgInTitle": false,
@@ -762,7 +762,7 @@
       "deadline": "2026-04-19",
       "fee": "$35 (membership required)",
       "category": "exhibition",
-      "description": "Houston Center for Photography's annual group exhibition, now in its 43rd year. Seeks to highlight current themes, technologies, and practices in photography. Features diverse works from HCP members worldwide — emerging, mid-career, and established photographers. Two artists selected for $500 HCP Juried Membership Honoraria. New juror each year. One of the longest-running annual photography exhibitions in the US.",
+      "description": "Houston Center for Photography's annual group exhibition, now in its 43rd year. Seeks to highlight current themes, technologies, and practices in photography. Features diverse works from HCP members worldwide — emerging, mid-career, and established photographers. Two artists selected for $500 HCP Juried Membership Honoraria. This year juried by Asha Iman Veal, curator for globally collaborative exhibitions of contemporary art. Exhibition runs June 4 – August 16, 2026.",
       "url": "https://hcponline.org/exhibitions/calls-for-entry/",
       "instagram": "@hcponline",
       "location": "Houston, Texas, United States",
@@ -770,16 +770,18 @@
       "eligibility": [
         "membership-required"
       ],
-      "jury": [],
+      "jury": [
+        "Asha Iman Veal, Curator and Professor, School of the Art Institute of Chicago"
+      ],
       "submitVia": "Submittable",
-      "requirements": "HCP membership required ($35 or $65 for combined membership)",
+      "requirements": "HCP membership required (from $35). Max 5 images and/or videos. JPEG/PNG, 72 DPI, 2000px longest side, Adobe RGB. Artist statement, biography, CV/resume required",
       "ai": "Not specified",
       "slug": "43rd-center-annual-houston-center-for-photography",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T15:45:00.000Z",
-      "submitUrl": "https://hcponline.submittable.com/submit"
+      "submitUrl": "https://hcponline.submittable.com/submit",
+      "resultsDate": "May 6, 2026"
     },
-
     {
       "title": "ZRNO Festival 2026 — Open Call",
       "org": "ZRNO Festival",
@@ -2774,9 +2776,9 @@
       "deadline": "2026-04-07",
       "fee": "Free",
       "category": "photography",
-      "description": "International wildlife photography competition in 13 categories: Animals in the Environment, Portrait of the Animal, Animal Behaviour, Microcosm, Underwater World, Art and Nature's Image, Landscape, Magic of Plants, Humans and Nature, Reserved Russia, Mobile Photography, and two youth categories. Up to 20 photos per author. Professional jury of international wildlife photographers. Finalists exhibited in Moscow autumn 2026, published in festival album. No zoo photography except Humans and Nature category. No AI, no composites. RAW files required from semifinalists.",
+      "description": "International wildlife photography competition in 12 categories: Animals in the Environment, Portrait of the Animal, Animal Behaviour, Microcosm, Underwater World, Art and Nature's Image, Landscape, Magic of Plants, Humans and Nature, Reserved Russia, Mobile Photography, and Youth (two age groups). Up to 20 photos per author. Professional jury of international wildlife photographers. Finalists exhibited in Moscow autumn 2026, published in festival album. No zoo photography except Humans and Nature category. No composites or montage. RAW files required from semifinalists.",
       "url": "https://wncontest.ru/en/photo/",
-      "instagram": "",
+      "instagram": "@goldenturtlefest",
       "location": "Moscow, Russia",
       "prize": "Photographer of the Year: 150,000 RUB (~$1,500) + trophy; Category winners: 75,000 RUB (~$750) + trophy + album",
       "eligibility": [],
@@ -6901,10 +6903,16 @@
       "category": "photography",
       "description": "Grant for photographic explorations of nature, landscape, and environment. Emphasis on originality, environmental issues, biodiversity, and human impact on nature and climate. Open to citizens of Nordic countries or permanent residents of the Nordic region. Projects should have a 1–3 year timeframe.",
       "url": "https://site.picter.com/hasselblad-foundation-nature-photography-grant-2026",
-      "instagram": "@hassaborgsmuseet",
+      "instagram": "@hasselbladfoundation",
       "location": "Gothenburg, Sweden",
       "prize": "100,000 SEK grant",
       "eligibility": [],
+      "jury": [
+        "Mats Björkman, Senior Lecturer, University of Gothenburg",
+        "Andréas Hagström, Archive/Library Manager, Hasselblad Foundation",
+        "Jenny Nordquist, Artist and Curator",
+        "Louise Wolthers, Head of Research/Curator, Hasselblad Foundation"
+      ],
       "requirements": "Nordic citizens/residents only. Max 10 photographs with titles and dates. Application in Swedish or English",
       "resultsDate": "July 15, 2026",
       "slug": "hasselblad-foundation-nature-photography-grant-2026",
@@ -6919,18 +6927,22 @@
       "deadline": "2026-04-02",
       "fee": "Voluntary",
       "category": "photography",
-      "description": "Open call curated by Shana Lopes and Aspen Mays exploring the theme “Have You Checked Your Screen Time? Forms and Logics of Excess.” Open to everyone. Selected work featured on Der Greif’s platform with feedback session from the curators.",
+      "description": "Open call curated by Shana Lopes (Assistant Curator of Photography, SFMOMA) and Aspen Mays (Associate Professor/Chair of Photography, California College of the Arts) exploring the theme \"A Little Bit of Magic\" — inviting work that engages with doubling, substitution, sleight of hand, constructed realities, staged impossibilities, and illusion in photography. Open to everyone. Selected work featured on Der Greif's platform with feedback session from the curators.",
       "url": "https://site.picter.com/der-greif-guest-room-lopes-mays",
-      "instagram": "@dergreif_",
+      "instagram": "@der_greif",
       "location": "Online",
       "prize": "Feature on Der Greif + feedback session + €250 scholarship",
       "eligibility": [],
-      "requirements": "1–5 single images, up to 10 min video allowed",
+      "requirements": "1–5 single images, up to 10 min video allowed. Previously unpublished by Der Greif Guest Curators",
       "slug": "guest-room-shana-lopes-aspen-mays-der-greif",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T00:45:00Z",
       "submitVia": "Picter",
-      "submitUrl": "https://app.picter.com/contests/d27e4885-594f-4fda-879d-31cdb7c57155/start"
+      "submitUrl": "https://app.picter.com/contests/d27e4885-594f-4fda-879d-31cdb7c57155/start",
+      "jury": [
+        "Shana Lopes, Assistant Curator of Photography, SFMOMA",
+        "Aspen Mays, Artist and Associate Professor/Chair of Photography, California College of the Arts"
+      ]
     },
     {
       "title": "Photobook Feature — In Focus",
@@ -6938,13 +6950,13 @@
       "deadline": "2026-03-31",
       "fee": "Voluntary",
       "category": "photography",
-      "description": "Open call for photobooks to be featured in Der Greif’s Articles section with a dedicated editorial write-up. No fixed theme. Accepts self-published photobooks, artist books, zines, and small-edition press titles. Both recent releases and unpublished or in-progress projects eligible.",
+      "description": "Open call for photobooks to be featured in Der Greif's Articles section with a dedicated editorial write-up. No fixed theme. Seeks photobooks demonstrating strong conceptual thinking, thoughtful sequencing, and an engaged relationship to the medium of the book. Accepts self-published photobooks, artist books, zines, experimental publications, and small-edition press titles. Both recent releases and unpublished or in-progress projects eligible (if publication-ready).",
       "url": "https://site.picter.com/der-greif-photobook-feature",
-      "instagram": "@dergreif_",
+      "instagram": "@der_greif",
       "location": "Online",
-      "prize": "Publication on Der Greif",
+      "prize": "Publication on Der Greif — editorial feature in Articles section + international visibility + long-term archival presence on platform",
       "eligibility": [],
-      "requirements": "Photobook, zine, or artist book. Self-published or small-edition",
+      "requirements": "Physical book/dummy photographs required. Vertical flip-through video (max 2 min, 1080x1920px MP4). Open to photographers, artists, designers, publishers, collectives, and small presses",
       "slug": "photobook-feature-in-focus-der-greif",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T00:45:00Z",
@@ -6957,17 +6969,19 @@
       "deadline": "2026-04-17",
       "fee": "Free",
       "category": "photography",
-      "description": "German youth photography contest for ages 10–18. Submit photo stories of 5–10 images in documentary or journalistic style on any topic, with a written description. Individuals or groups of 3–10 participants. Must be residents of Germany.",
+      "description": "German youth photography contest for ages 10–18, now in its 2025/26 edition. Theme: \"Be you. Be seen. Be heard.\" Submit documentary photo stories on any personally relevant topic. Smartphones or cameras welcome, no prior experience required. Individuals or teams of up to 10 participants with optional coaches from schools, youth centers, or community organizations. Must be residents of Germany.",
       "url": "https://site.picter.com/jugend-fotografiert-2025",
       "location": "Hamburg, Germany",
-      "prize": "€200–€500 cash prizes per age category",
+      "prize": "1st place €500, 2nd €300, 3rd €200 per age category (€2,000 total pool) + exhibition",
       "eligibility": [],
-      "requirements": "Ages 10–18, Germany residents only. 5–10 images per photo story + written description",
+      "requirements": "Ages 10–18, Germany residents only. 5–10 images per documentary photo story + written description. Multiple stories on different themes allowed. Real photos only — no AI-generated images, altered backgrounds, inserted objects/people, or heavy filters",
       "slug": "jugend-fotografiert-deutschland-2025-laif-foundation",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T00:45:00Z",
       "submitVia": "Picter",
-      "submitUrl": "https://app.picter.com/contests/f1458471-f67d-4406-9076-1e18f4372944/start"
+      "submitUrl": "https://app.picter.com/contests/f1458471-f67d-4406-9076-1e18f4372944/start",
+      "instagram": "@laiffoundation",
+      "ai": "Not accepted"
     }
   ]
-}  
+}
