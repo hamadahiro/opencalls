@@ -100,7 +100,7 @@
 
   <script>
     const CURRENT_SLUG = 'womanhood-photobook-cafe-rapid-eye-darkroom';
-    const CURRENT_CALL = {"prize":"Exhibition at The Photobook Cafe + printed zine + complimentary zine copy + physical print to take home. Best in Show winners receive complimentary summer group exhibition with Rapid Eye printing support","category":"zine","org":"Photobook Cafe & Rapid Eye Darkroom","location":"London, United Kingdom","fee":"£25","deadline":"2026-04-20","resultsDate":"","instagram":"@photobookcafe","eligibility":[],"jury":["Francesca Allen, Photographer"],"submitVia":"Photobook Cafe website","submitUrl":"https://www.photobookuk.org/workshops-and-paid-events","email": "","ai":"Not specified"};
+    const CURRENT_CALL = {"prize":"Exhibition + zine publication","category":"zine","org":"Photobook Cafe & Rapid Eye Darkroom","location":"London, United Kingdom","fee":"£25","deadline":"2026-04-20","resultsDate":"","instagram":"@photobookcafe","eligibility":[],"jury":["Francesca Allen, Photographer"],"submitVia":"Photobook Cafe website","submitUrl":"https://www.photobookuk.org/workshops-and-paid-events","email": "","ai":"Not specified"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -110,7 +110,7 @@
       var u = 'https://www.photobookuk.org/workshops-and-paid-events';
       var o = 'Photobook Cafe & Rapid Eye Darkroom';
       var dl = new Date('2026-04-20T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition at The Photobook Cafe + printed zine + complimentary zine copy + physical print to take home. Best in Show winners receive complimentary summer group exhibition with Rapid Eye printing support') + '\\nEntry fee: ' + icsE('£25');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition + zine publication') + '\\nEntry fee: ' + icsE('£25');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
