@@ -318,7 +318,11 @@ function generatePage(call, cssVersion) {
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
-
+${call.winners && call.winners.length ? `
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
+      </div>
+` : ''}
       <div class="call-detail-info" id="detailInfo"></div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">

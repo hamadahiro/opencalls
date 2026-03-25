@@ -3231,7 +3231,7 @@
       "deadline": "2026-02-28",
       "fee": "$50",
       "category": "exhibition",
-      "description": "Open exhibition featuring contemporary film-based photography. Winners announced: Sharday Swanepoel, Katerina Kouzmitcheva (sel. Christopher McCall); Jon Laytner, Fiona Veronique (sel. Amanda Webster); Anastasia Davis, Carlos Folgoso Sueiro (sel. Clint & Alex Woodside). Honourable mentions: Mauro Curti, Melissa Renwick, Sasha Arutyunova, Will Warasila, Scott Offen, Jonah Reenders. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.",
+      "description": "Open exhibition featuring contemporary film-based photography. Honourable mentions: Mauro Curti, Melissa Renwick, Sasha Arutyunova, Will Warasila, Scott Offen, Jonah Reenders. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.",
       "url": "https://fotofilmic.com/open-call/",
       "instagram": "@fotofilmic",
       "location": "Vancouver, Canada",
@@ -3251,7 +3251,15 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
       "submitUrl": "https://fotofilmic.com/open-call/",
-      "resultsDate": "March 17, 2026"
+      "resultsDate": "March 17, 2026",
+      "winners": [
+        "Sharday Swanepoel",
+        "Katerina Kouzmitcheva",
+        "Jon Laytner",
+        "Fiona Veronique",
+        "Anastasia Davis",
+        "Carlos Folgoso Sueiro"
+      ]
     },
     {
       "title": "Exposure One Awards - One Shot Photo Contest",
