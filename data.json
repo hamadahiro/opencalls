@@ -6993,6 +6993,76 @@
       "submitUrl": "https://app.picter.com/contests/f1458471-f67d-4406-9076-1e18f4372944/start",
       "instagram": "@laiffoundation",
       "ai": "Not accepted"
+    },
+    {
+      "title": "Nikon Comedy Wildlife Photography Awards 2026",
+      "org": "Comedy Wildlife Photography Awards",
+      "deadline": "2026-06-30",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Annual international competition celebrating the funniest moments in wildlife photography. Founded in 2015 by Paul Joynson-Hicks and Tom Sullam. Free to enter, open to everyone worldwide with any camera brand. Nine categories: Mammals, Birds, Reptiles/Amphibians/Insects, Fish & Aquatic Species, Nikon Young Photographer, Nikon Junior, Portfolio, Nikon Video, and People's Choice Award. Grand prize: week-long safari for two at Alex Walker's Serian in the Maasai Mara, Kenya. Category winners receive Nikon cameras and lenses plus handmade trophies. Over 10,000 entries from 100+ countries. Proceeds support wildlife conservation.",
+      "url": "https://www.comedywildlifephoto.com/",
+      "instagram": "@comedywildlifephoto",
+      "location": "Online",
+      "prize": "Kenya safari for 2 + Nikon gear + trophies",
+      "eligibility": [],
+      "jury": [
+        "Tom Sullam, Co-founder & Competition Director (Chair)",
+        "Daisy Gilardini, Wildlife Photographer & Conservationist",
+        "Kate Humble, TV Presenter & Conservationist",
+        "Cam Whitnall, Wildlife Photographer & TV Presenter",
+        "Hugh Dennis, Actor & Comedian"
+      ],
+      "submitVia": "Comedy Wildlife Photography Awards",
+      "requirements": "Up to 10 images + 2 videos total. Max 3 images per category, 4 for Portfolio. JPEG, under 4MB. Video max 15 sec, 1080p HD 30fps, max 150MB. High-res originals required if shortlisted",
+      "resultsDate": "December 2026",
+      "ai": "Not specified",
+      "slug": "nikon-comedy-wildlife-photography-awards-2026",
+      "orgInTitle": true,
+      "dateAdded": "2026-03-25T12:00:00Z",
+      "submitUrl": "https://www.comedywildlifephoto.com/login.php"
+    },
+    {
+      "title": "FLORA — Shutter Hub Editions Photobook",
+      "org": "Shutter Hub",
+      "deadline": "2026-06-11",
+      "fee": "£15+",
+      "category": "zine",
+      "description": "Open call for a printed photobook celebrating the diversity, resilience, subtleties, and poetry of growing things. Images should capture vegetation from mosses and ferns to forests, blossoms, vines, and roots — revealing the nuance of growth, patterns of nature's processes, and the quiet power of plant life in all environments. Selected images featured in a printed FLORA photobook, available through shutterhub.org.uk and selected stockists. Pay-what-you-can entry with £15 minimum donation. Free submissions available for photographers with limited income (email request required before entry). AI use must be disclosed.",
+      "url": "https://shutterhub.org.uk/opportunity/flora-a-shutter-hub-editions-publication/",
+      "instagram": "@shutter_hub",
+      "location": "Online",
+      "prize": "Publication in printed photobook",
+      "eligibility": [],
+      "submitVia": "Shutter Hub",
+      "requirements": "Max 10 images. JPEG, 300dpi, CMYK (Coated GRACoL 2006), A5 size (148×210mm), max 5MB. File naming: lastname_firstname_imagetitle.jpg. Alt text descriptions required",
+      "ai": "Must disclose",
+      "slug": "flora-shutter-hub-editions-photobook",
+      "orgInTitle": true,
+      "dateAdded": "2026-03-25T12:00:00Z",
+      "submitUrl": "https://shutterhub.org.uk/opportunity/flora-a-shutter-hub-editions-publication/"
+    },
+    {
+      "title": "Hidden Narratives Residency 2026",
+      "org": "Photoworks / Royal Geographical Society",
+      "deadline": "2026-04-13",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Year-long residency (2026–2027) for Italian photographers to immerse in the historic collections of the Royal Geographical Society in London. In partnership with the Italian Cultural Institute in London. Artists engage with archival materials relating to the environment and humanitarian themes, developing presentations and works around hidden narratives, loss, and human impact. Applicants should have experience in photographic archive research. Interviews on April 27, 2026.",
+      "url": "https://iiclondra.esteri.it/en/gli_eventi/calendario/22364/",
+      "instagram": "@photoworks_uk",
+      "location": "London, United Kingdom",
+      "prize": "Year-long residency at Royal Geographical Society",
+      "eligibility": [
+        "italy"
+      ],
+      "submitVia": "Email",
+      "requirements": "Italian nationality, 18+, proficient in English. Contact info@photoworks.org.uk",
+      "ai": "Not specified",
+      "slug": "hidden-narratives-residency-2026-photoworks-royal-geographical-society",
+      "orgInTitle": false,
+      "dateAdded": "2026-03-25T12:00:00Z",
+      "submitUrl": "https://iiclondra.esteri.it/en/gli_eventi/calendario/22364/"
     }
   ]
 }
