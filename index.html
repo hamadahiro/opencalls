@@ -500,19 +500,18 @@
         var twoWeeksAgo = new Date(now);
         twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
         var twoWeeksAgoStr = twoWeeksAgo.toISOString().slice(0, 10);
-        var latestAdded = processed.length ? (processed[0].dateAdded || '').slice(0, 10) : '';
         var currentSection = '';
         processed.forEach(function(call) {
           var added = (call.dateAdded || '').slice(0, 10);
           var section;
-          if (latestAdded >= todayStr) {
-            section = added >= todayStr ? 'Added today' : added >= yesterdayStr ? 'Added this week' : added >= weekAgoStr ? 'Added this week' : 'Added earlier';
-          } else if (latestAdded >= yesterdayStr) {
-            section = added >= yesterdayStr ? 'Added yesterday' : added >= weekAgoStr ? 'Added this week' : 'Added earlier';
-          } else if (latestAdded >= weekAgoStr) {
-            section = added >= weekAgoStr ? 'Added this week' : 'Added earlier';
-          } else if (latestAdded >= twoWeeksAgoStr) {
-            section = added >= twoWeeksAgoStr ? 'Added recently' : 'Added earlier';
+          if (added >= todayStr) {
+            section = 'Added today';
+          } else if (added >= yesterdayStr) {
+            section = 'Added yesterday';
+          } else if (added >= weekAgoStr) {
+            section = 'Added this week';
+          } else if (added >= twoWeeksAgoStr) {
+            section = 'Added recently';
           } else {
             section = 'Added earlier';
           }
