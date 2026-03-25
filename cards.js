@@ -285,7 +285,8 @@ function renderInfoGrid(call) {
       const cat = derivePrizeCategory(part);
       return cat ? infoLink('/prize/' + cat, part) : infoVal(part);
     }).join(', ');
-    rows.push(infoRow('<a href="/prize/">Prize</a>', prizeHtml));
+    const prizeLabel = parts.length > 1 ? 'Prizes' : 'Prize';
+    rows.push(infoRow('<a href="/prize/">' + prizeLabel + '</a>', prizeHtml));
   }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
