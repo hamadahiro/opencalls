@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls — March 2026 - Monographica</title>
-  <meta name="description" content="95 open calls for artists with deadlines in March 2026. Photography competitions, exhibitions, grants, and residencies.">
-  <meta name="keywords" content="open calls march 2026, photography deadlines march 2026, call for entries march 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/deadlines/march-2026/">
+  <title>laif foundation - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from laif foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="laif foundation open call, laif foundation call for entries, laif foundation submissions, laif foundation photography, laif foundation exhibition, laif foundation artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/laif-foundation/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls — March 2026 - Monographica">
-  <meta property="og:description" content="95 open calls for artists with deadlines in March 2026. Photography competitions, exhibitions, grants, and residencies.">
+  <meta property="og:title" content="laif foundation - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from laif foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/deadlines/march-2026/">
+  <meta property="og:url" content="https://opencalls.monographica.com/laif-foundation/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls — March 2026",
-  "description": "Open calls with deadlines in March 2026.",
-  "url": "https://opencalls.monographica.com/deadlines/march-2026",
+  "name": "laif foundation - Open Calls",
+  "description": "Open calls and submission opportunities from laif foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/laif-foundation",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -70,9 +70,9 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>
-      <h1>March 2026</h1>
-      <h2 class="subtitle">95 calls with deadlines in March 2026 — 67 still open.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>laif foundation</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from laif foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList"></section>
@@ -88,9 +88,8 @@
     async function loadFiltered() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-03')).map(processCall);
-      calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+      const calls = data.calls.filter(c => c.org === 'laif foundation').map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
     }
     loadFiltered();
   </script>

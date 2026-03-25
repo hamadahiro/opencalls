@@ -768,7 +768,7 @@
       "location": "Houston, Texas, United States",
       "prize": "Two $500 honoraria + exhibition",
       "eligibility": [
-        "membership"
+        "membership-required"
       ],
       "jury": [],
       "submitVia": "Submittable",
@@ -779,6 +779,7 @@
       "dateAdded": "2026-03-25T15:45:00.000Z",
       "submitUrl": "https://hcponline.submittable.com/submit"
     },
+
     {
       "title": "ZRNO Festival 2026 — Open Call",
       "org": "ZRNO Festival",
@@ -6901,12 +6902,10 @@
       "description": "Grant for photographic explorations of nature, landscape, and environment. Emphasis on originality, environmental issues, biodiversity, and human impact on nature and climate. Open to citizens of Nordic countries or permanent residents of the Nordic region. Projects should have a 1–3 year timeframe.",
       "url": "https://site.picter.com/hasselblad-foundation-nature-photography-grant-2026",
       "instagram": "@hassaborgsmuseet",
-      "location": "Sweden",
-      "prize": "100,000 SEK",
-      "eligibility": [
-        "nordic"
-      ],
-      "requirements": "Max 10 photographs with titles and dates. Application in Swedish or English",
+      "location": "Gothenburg, Sweden",
+      "prize": "100,000 SEK grant",
+      "eligibility": [],
+      "requirements": "Nordic citizens/residents only. Max 10 photographs with titles and dates. Application in Swedish or English",
       "resultsDate": "July 15, 2026",
       "slug": "hasselblad-foundation-nature-photography-grant-2026",
       "orgInTitle": true,
@@ -6943,7 +6942,7 @@
       "url": "https://site.picter.com/der-greif-photobook-feature",
       "instagram": "@dergreif_",
       "location": "Online",
-      "prize": "Editorial feature on Der Greif",
+      "prize": "Publication on Der Greif",
       "eligibility": [],
       "requirements": "Photobook, zine, or artist book. Self-published or small-edition",
       "slug": "photobook-feature-in-focus-der-greif",
@@ -6960,13 +6959,10 @@
       "category": "photography",
       "description": "German youth photography contest for ages 10–18. Submit photo stories of 5–10 images in documentary or journalistic style on any topic, with a written description. Individuals or groups of 3–10 participants. Must be residents of Germany.",
       "url": "https://site.picter.com/jugend-fotografiert-2025",
-      "location": "Germany",
-      "prize": "€200–€500 per age category",
-      "eligibility": [
-        "youth",
-        "german-residents"
-      ],
-      "requirements": "5–10 images per photo story + written description. Ages 10–18, Germany residents",
+      "location": "Hamburg, Germany",
+      "prize": "€200–€500 cash prizes per age category",
+      "eligibility": [],
+      "requirements": "Ages 10–18, Germany residents only. 5–10 images per photo story + written description",
       "slug": "jugend-fotografiert-deutschland-2025-laif-foundation",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T00:45:00Z",
