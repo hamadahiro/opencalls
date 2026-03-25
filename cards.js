@@ -343,7 +343,7 @@ function renderCard(call, titleTag) {
     <div class="call-card">
       <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}/">${esc(call.title)}${!call.orgInTitle ? ' · ' + esc(call.org) : ''}</a></${titleTag}>
       <div class="call-meta">${renderTags(call)}</div>
-      <p class="call-description">${esc(call.description)}</p>
+      <p class="call-description">${esc(call.summary || call.description)}</p>
     </div>`;
 }
 
