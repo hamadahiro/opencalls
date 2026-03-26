@@ -539,7 +539,7 @@
         var closedMatches = applySearchAndFilters(allProcessed.filter(function(c) { return c.urgencyClass === 'closed'; }));
         if (closedMatches.length) {
           closedMatches.sort(function(a, b) { return b.deadlineDate - a.deadlineDate; });
-          container.innerHTML = '<p class="empty-state">No open calls found for this.</p>'
+          container.innerHTML = '<p class="empty-state">No open calls found for this.<a href="/browse/">Browse all calls &rarr;</a></p>'
             + '<h3 class="section-header">Closed calls</h3>';
           closedMatches.forEach(function(call) {
             container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
