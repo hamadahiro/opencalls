@@ -1545,7 +1545,10 @@ indexPages.forEach(({ src, fallback }) => {
     html = html.replace(/(rel="canonical" href="[^"]*[^/])"/g, '$1/"');
     html = html.replace(/(og:url"\s+content="[^"]*[^/])"/g, '$1/"');
     html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
-    html = html.replace(/<header>[\s\S]*?<\/header>(\s*<script>\(function\(\)\{var p=location[\s\S]*?<\/script>)?/, buildHeader());
+    // Strip all existing global-search blocks and duplicate nav scripts before re-injecting
+    html = html.replace(/\s*<div class="global-search"[\s\S]*?<\/div>\s*<\/div>/g, '');
+    html = html.replace(/(\s*<script>\(function\(\)\{var p=location[\s\S]*?<\/script>)+/g, '');
+    html = html.replace(/<header>[\s\S]*?<\/header>/, buildHeader());
     // Inject cards.js + search.js if not already present
     if (!html.includes('cards.js')) {
       html = html.replace('</body>', `\n  ${CARDS_SCRIPT(cssVersion)}\n\n</body>`);
