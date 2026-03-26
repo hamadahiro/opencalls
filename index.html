@@ -388,51 +388,39 @@
 
     // --- Render ---
 
-    function renderCalls(view) {
-      var container = document.getElementById('callsList');
-      container.innerHTML = '';
-
-      var processed = allCalls.map(function(call) {
-        var p = processCall(call);
-        var section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[p.deadlineDate.getMonth()] + ' ' + p.deadlineDate.getFullYear();
-        return Object.assign({}, p, { section: section });
-      });
-
-      if (view === 'new') processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
-      if (view === 'past') processed = processed.filter(function(c) { return c.urgencyClass === 'closed'; });
-
+    function applySearchAndFilters(list) {
       // Category button filter (only if no category chip overrides it)
       var hasCatChip = activeChips.some(function(c) { return c.type === 'category'; });
       var hasFeeChip = activeChips.some(function(c) { return c.type === 'fee'; });
       if (!hasCatChip && !hasFeeChip) {
         if (currentFilter === 'prize') {
-          processed = processed.filter(function(c) { return c.prize && c.prize !== ''; });
+          list = list.filter(function(c) { return c.prize && c.prize !== ''; });
         } else if (currentFilter === 'free') {
-          processed = processed.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
+          list = list.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
         } else if (currentFilter !== 'all') {
-          processed = processed.filter(function(c) { return c.category === currentFilter; });
+          list = list.filter(function(c) { return c.category === currentFilter; });
         }
       }
 
       // Apply chip filters (AND logic)
       activeChips.forEach(function(chip) {
         if (chip.type === 'category') {
-          processed = processed.filter(function(c) { return c.category === chip.value; });
+          list = list.filter(function(c) { return c.category === chip.value; });
         } else if (chip.type === 'country') {
-          processed = processed.filter(function(c) {
+          list = list.filter(function(c) {
             if (!c.location) return false;
             if (chip.value === 'Online') return c.location === 'Online';
             return c.location.split(',').pop().trim() === chip.value;
           });
         } else if (chip.type === 'eligibility') {
-          processed = processed.filter(function(c) { return c.eligibility && c.eligibility.includes(chip.value); });
+          list = list.filter(function(c) { return c.eligibility && c.eligibility.includes(chip.value); });
         } else if (chip.type === 'prize') {
-          processed = processed.filter(function(c) { return c.prize && derivePrizeCategories(c.prize).includes(chip.value); });
+          list = list.filter(function(c) { return c.prize && derivePrizeCategories(c.prize).includes(chip.value); });
         } else if (chip.type === 'fee') {
-          if (chip.value === 'free') processed = processed.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
-          else if (chip.value === 'paid') processed = processed.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); });
+          if (chip.value === 'free') list = list.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
+          else if (chip.value === 'paid') list = list.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); });
         } else if (chip.type === 'org') {
-          processed = processed.filter(function(c) { return c.org === chip.value; });
+          list = list.filter(function(c) { return c.org === chip.value; });
         }
       });
 
@@ -441,7 +429,7 @@
         var stateMap = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
         var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
         var tokens = currentSearch.split(/\s+/).filter(Boolean);
-        processed = processed.filter(function(c) {
+        list = list.filter(function(c) {
           var parts = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category];
           if (c.location) {
             c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
@@ -457,6 +445,25 @@
           });
         });
       }
+
+      return list;
+    }
+
+    function renderCalls(view) {
+      var container = document.getElementById('callsList');
+      container.innerHTML = '';
+
+      var processed = allCalls.map(function(call) {
+        var p = processCall(call);
+        var section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[p.deadlineDate.getMonth()] + ' ' + p.deadlineDate.getFullYear();
+        return Object.assign({}, p, { section: section });
+      });
+
+      var allProcessed = processed.slice();
+      if (view === 'new') processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
+      if (view === 'past') processed = processed.filter(function(c) { return c.urgencyClass === 'closed'; });
+
+      processed = applySearchAndFilters(processed);
 
       if (view === 'past') {
         processed.sort(function(a, b) {
@@ -524,6 +531,20 @@
         if (!container.children.length) container.innerHTML = emptyState();
       } else {
         renderCallList(processed, container);
+      }
+
+      // Closed-calls fallback: when searching on Open view with no results,
+      // show matching closed calls so users know we have them
+      if (view === 'new' && processed.length === 0 && (currentSearch || activeChips.length || currentFilter !== 'all')) {
+        var closedMatches = applySearchAndFilters(allProcessed.filter(function(c) { return c.urgencyClass === 'closed'; }));
+        if (closedMatches.length) {
+          closedMatches.sort(function(a, b) { return b.deadlineDate - a.deadlineDate; });
+          container.innerHTML = '<p class="empty-state">No open calls found for this.</p>'
+            + '<h3 class="section-header">Closed calls</h3>';
+          closedMatches.forEach(function(call) {
+            container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+          });
+        }
       }
     }
 
