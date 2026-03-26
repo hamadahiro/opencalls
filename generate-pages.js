@@ -180,7 +180,7 @@ const HEADER = buildHeader();
 
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p>&copy; ${YEAR} HH &mdash; still making sense of things.</p>
+      <p>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a> &mdash; still making sense of things.</p>
     </footer>`;
 function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
