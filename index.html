@@ -303,7 +303,7 @@
       var dd = document.getElementById('searchDropdown');
       var keys = Object.keys(groups);
       if (!keys.length) { dd.style.display = 'none'; return; }
-      var browseLinks = { 'Eligibility': { href: '/eligibility', text: 'All eligibility options' }, 'Locations': { href: '/locations', text: 'All locations' }, 'Prize / Fee': { href: '/prize', text: 'All fees and prizes' }, 'Categories': { href: '/categories', text: 'All categories' }, 'Organizations': { href: '/organizations', text: 'All organizations' } };
+      var browseLinks = { 'Eligibility': { href: '/eligibility/', text: 'All eligibility options' }, 'Locations': { href: '/locations/', text: 'All locations' }, 'Prize / Fee': { href: '/prize/', text: 'All fees and prizes' }, 'Categories': { href: '/categories/', text: 'All categories' }, 'Organizations': { href: '/organizations/', text: 'All organizations' } };
       var html = '';
       keys.forEach(function(groupName) {
         groups[groupName].forEach(function(item) {
