@@ -146,6 +146,29 @@
       renderCalls(initView);
       setupNav();
       setupFilters();
+
+      // Handle incoming search from other pages (?q= and ?chip=)
+      var qParam = params.get('q');
+      var chipParam = params.get('chip');
+      if (chipParam) {
+        var parts = chipParam.split(':');
+        if (parts.length === 2) {
+          var chipType = parts[0], chipValue = parts[1];
+          var chipLabel = chipValue;
+          var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
+          if (chipType === 'category' && categoryLabel[chipValue]) chipLabel = categoryLabel[chipValue];
+          else if (chipType === 'eligibility' && eligibilityLabel[chipValue]) chipLabel = eligibilityLabel[chipValue];
+          else if (chipType === 'prize' && prizeCategoryLabel[chipValue]) chipLabel = prizeCategoryLabel[chipValue];
+          else if (chipType === 'country' && countryExpand[chipValue]) chipLabel = countryExpand[chipValue];
+          else if (chipType === 'fee') chipLabel = chipValue === 'free' ? 'Free' : 'Paid';
+          addChip({ type: chipType, value: chipValue, label: chipLabel });
+        }
+      } else if (qParam) {
+        document.getElementById('searchInput').value = qParam;
+        currentSearch = qParam.toLowerCase().trim();
+        document.getElementById('searchClear').classList.add('visible');
+        renderCalls(currentView);
+      }
     }
 
     // --- Mobile search ---

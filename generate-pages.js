@@ -155,6 +155,7 @@ function buildHeader() {
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
+      <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
       <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
         <div class="hamburger"><i></i><i></i><i></i></div>
       </div>
@@ -167,6 +168,12 @@ function buildHeader() {
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
+  <div class="global-search" id="globalSearchWrap">
+    <button class="search-back" id="globalSearchBack" type="button" aria-label="Close search">&#8249;</button>
+    <input type="text" class="search-bar" id="globalSearchInput" placeholder="Search calls, locations, keywords" aria-label="Search open calls">
+    <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
+    <div id="globalSearchDropdown" class="global-search-dropdown"></div>
+  </div>
   <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
 }
 const HEADER = buildHeader();
@@ -175,7 +182,7 @@ const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       <p>&copy; ${YEAR} HH &mdash; still making sense of things.</p>
     </footer>`;
-function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>`; }
+function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
 function buildBreadcrumbs(section, sectionUrl) {
   const url = sectionUrl.endsWith('/') ? sectionUrl : sectionUrl + '/';
@@ -565,6 +572,8 @@ const feesIndexHtml = `<!DOCTYPE html>
     ${FOOTER}
   </main>
 
+  ${CARDS_SCRIPT(cssVersion)}
+
 </body>
 </html>`;
 
@@ -732,6 +741,8 @@ if (eligibilityPageSlugs.length) {
     ${FOOTER}
   </main>
 
+  ${CARDS_SCRIPT(cssVersion)}
+
 </body>
 </html>`;
 
@@ -855,6 +866,8 @@ if (prizeCatPageSlugs.length) {
 
     ${FOOTER}
   </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
 
 </body>
 </html>`;
@@ -1188,6 +1201,8 @@ ${deadlinesIndexItems}
     ${FOOTER}
   </main>
 
+  ${CARDS_SCRIPT(cssVersion)}
+
 </body>
 </html>`;
 
@@ -1288,6 +1303,8 @@ const submitHtml = `<!DOCTYPE html>
 
     ${FOOTER}
   </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
 
 </body>
 </html>`;
@@ -1410,6 +1427,8 @@ ${buildBrowseSection('Organizations', browseOrgs, '/organizations/')}
     ${FOOTER}
   </main>
 
+  ${CARDS_SCRIPT(cssVersion)}
+
 </body>
 </html>`;
 
@@ -1527,6 +1546,10 @@ indexPages.forEach(({ src, fallback }) => {
     html = html.replace(/(og:url"\s+content="[^"]*[^/])"/g, '$1/"');
     html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
     html = html.replace(/<header>[\s\S]*?<\/header>(\s*<script>\(function\(\)\{var p=location[\s\S]*?<\/script>)?/, buildHeader());
+    // Inject cards.js + search.js if not already present
+    if (!html.includes('cards.js')) {
+      html = html.replace('</body>', `\n  ${CARDS_SCRIPT(cssVersion)}\n\n</body>`);
+    }
     const dir = path.dirname(src);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(src, html);
@@ -1559,6 +1582,10 @@ manualFiles.forEach(file => {
   }
   // Update footer
   html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
+  // Inject cards.js + search.js for 404 (skip index.html which has its own)
+  if (file !== 'index.html' && !html.includes('cards.js')) {
+    html = html.replace('</body>', `\n  ${CARDS_SCRIPT(cssVersion)}\n\n</body>`);
+  }
   // Update open count in index.html hero (only count calls with future deadlines or Continuous)
   if (file === 'index.html') {
     const today = new Date().toISOString().slice(0, 10);
