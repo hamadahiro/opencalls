@@ -4,7 +4,7 @@ const path = require('path');
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 // Validate data before generating
-const COUNTRY_ALIASES = { 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'US': 'United States' };
+const COUNTRY_ALIASES = { 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'US': 'United States', 'United States': 'USA' };
 const VALID_CATEGORIES = ['photography', 'exhibition', 'grant', 'zine', 'residency', 'education'];
 let hasErrors = false;
 
@@ -48,6 +48,18 @@ data.calls.forEach((c, i) => {
     if (COUNTRY_ALIASES[country]) {
       err(`"${label}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
     }
+    // US locations must use 2-letter state abbreviations, not full state names
+    if (country === 'USA' && parts.length >= 3) {
+      const state = parts[parts.length - 2];
+      if (state.length > 2) {
+        err(`"${label}" uses full state name "${state}" — must use 2-letter abbreviation (e.g. NY, CA, TX)`);
+      }
+    }
+  }
+
+  // Fee: reject "Check website" — if fee is unknown, leave it empty
+  if (c.fee && /^check\s*(the\s*)?website$/i.test(c.fee.trim())) {
+    err(`"${label}" has fee "Check website" — leave fee empty ("") if unknown`);
   }
 
   // Instagram format: must start with @ or be empty
@@ -355,7 +367,7 @@ ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function do
       var o = '${safeJsStr(call.org)}';
       var dl = new Date('${call.deadline}T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\\\n\\\\nDeadline: ' + icsE(dl)${call.prize ? ` + '\\\\nPrize: ' + icsE('${safeJsStr(call.prize)}')` : ''}${call.fee ? ` + '\\\\nEntry fee: ' + icsE('${safeJsStr(call.fee)}')` : ''};
-      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + de + '\\r\\nSUMMARY:' + icsE(t) + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
+      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nPRODID:-//Monographica//Open Calls//EN\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + de + '\\r\\nSUMMARY:' + icsE(t) + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);

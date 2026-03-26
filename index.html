@@ -233,7 +233,7 @@
 
       // Fees
       var freeCount = relevant.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); }).length;
-      var paidCount = relevant.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free') && c.fee !== 'Check website'; }).length;
+      var paidCount = relevant.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); }).length;
       var feeItems = [
         { type: 'fee', value: 'free', label: 'Free', count: freeCount },
         { type: 'fee', value: 'paid', label: 'Paid', count: paidCount }
@@ -430,7 +430,7 @@
           processed = processed.filter(function(c) { return c.prize && derivePrizeCategories(c.prize).includes(chip.value); });
         } else if (chip.type === 'fee') {
           if (chip.value === 'free') processed = processed.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
-          else if (chip.value === 'paid') processed = processed.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free') && c.fee !== 'Check website'; });
+          else if (chip.value === 'paid') processed = processed.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); });
         } else if (chip.type === 'org') {
           processed = processed.filter(function(c) { return c.org === chip.value; });
         }

@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>Michael P. Smith Fund for Documentary Photography 2025 · New Orleans Photo Alliance - Monographica</title>
   <meta name="description" content="Annual grant honoring legendary New Orleans documentary photographer Michael P. Smith. Deadline: May 4, 2026.">
-  <meta name="keywords" content="Michael P. Smith Fund for Documentary Photography 2025, New Orleans Photo Alliance, Grant, open call, call for entries, New Orleans, Louisiana, USA, artist grant, photography grant, open calls for artists, photography submissions">
+  <meta name="keywords" content="Michael P. Smith Fund for Documentary Photography 2025, New Orleans Photo Alliance, Grant, open call, call for entries, New Orleans, LA, USA, artist grant, photography grant, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/michael-p-smith-fund-for-documentary-photography-2025-new-orleans-photo-alliance/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
@@ -96,7 +96,7 @@
 
   <script>
     const CURRENT_SLUG = 'michael-p-smith-fund-for-documentary-photography-2025-new-orleans-photo-alliance';
-    const CURRENT_CALL = {"prize":"$3,000 + portfolio review + exhibition","category":"grant","org":"New Orleans Photo Alliance","location":"New Orleans, Louisiana, USA","fee":"$25","deadline":"2026-05-04","resultsDate":"","instagram":"@photoalliance","eligibility":["united-states"],"jury":[],"submitVia":"CaFE","submitUrl":"https://artist.callforentry.org/festivals_unique_info.php?ID=17070","email": "","ai":""};
+    const CURRENT_CALL = {"prize":"$3,000 + portfolio review + exhibition","category":"grant","org":"New Orleans Photo Alliance","location":"New Orleans, LA, USA","fee":"$25","deadline":"2026-05-04","resultsDate":"","instagram":"@photoalliance","eligibility":["united-states"],"jury":[],"submitVia":"CaFE","submitUrl":"https://artist.callforentry.org/festivals_unique_info.php?ID=17070","email": "","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -107,7 +107,7 @@
       var o = 'New Orleans Photo Alliance';
       var dl = new Date('2026-05-04T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$3,000 + portfolio review + exhibition') + '\\nEntry fee: ' + icsE('$25');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);

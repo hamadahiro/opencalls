@@ -77,7 +77,6 @@ async function loadSimilar() {
   const res = await fetch('/data.json');
   const data = await res.json();
 
-  const now = new Date();
   const candidates = data.calls
     .filter(c => (c.slug || slugify(c.title)) !== CURRENT_SLUG)
     .filter(c => isCallOpen(c.deadline));
