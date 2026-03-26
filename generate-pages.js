@@ -191,8 +191,7 @@ function buildBreadcrumbs(section, sectionUrl) {
 
 function buildHero(breadcrumbs, title, subtitle) {
   return `<section class="hero">
-      ${breadcrumbs}
-      <h1>${title}</h1>
+      ${breadcrumbs ? breadcrumbs + '\n      ' : ''}<h1>${title}</h1>
       <h2 class="subtitle">${subtitle}</h2>
     </section>`;
 }
@@ -332,8 +331,6 @@ function generatePage(call, cssVersion) {
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a></nav>
-
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
@@ -552,7 +549,7 @@ const feesIndexHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Fees', 'Browse open calls by entry fee. Find free submissions or paid competitions.')}
+    ${buildHero('', 'Fees', 'Browse open calls by entry fee. Find free submissions or paid competitions.')}
 
     <section class="index-list" id="indexList">
       <a href="/fees/free/" class="index-item">
@@ -730,7 +727,7 @@ if (eligibilityPageSlugs.length) {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Eligibility', 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.')}
+    ${buildHero('', 'Eligibility', 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.')}
 
     <section class="index-list" id="indexList">
       ${buildEligibilityIndexItems()}
@@ -856,7 +853,7 @@ if (prizeCatPageSlugs.length) {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Prizes', 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.')}
+    ${buildHero('', 'Prizes', 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.')}
 
     <section class="index-list" id="indexList">
       ${buildPrizeIndexItems()}
@@ -1190,7 +1187,7 @@ const deadlinesIndexHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Deadlines', 'Browse open calls by deadline month — upcoming and past.')}
+    ${buildHero('', 'Deadlines', 'Browse open calls by deadline month — upcoming and past.')}
 
     <section class="index-list" id="indexList">
 ${deadlinesIndexItems}
@@ -1221,7 +1218,7 @@ const submitHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Submit a call', 'Paste a link — add details if you have them.')}
+    ${buildHero('', 'Submit a call', 'Paste a link — add details if you have them.')}
 
     <section class="submit-form">
       <form id="submitForm">
@@ -1411,7 +1408,7 @@ const browseHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a></nav>', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
+    ${buildHero('', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
 
     <section class="index-list">
 ${buildBrowseSection('Categories', browseCategories, '/categories/')}
