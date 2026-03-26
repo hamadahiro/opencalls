@@ -85,10 +85,6 @@
 
       <div class="call-detail-info" id="detailInfo"></div>
 
-      <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: Michael Mack · Iman Hakimi</p>
-      </div>
-
       <div class="call-detail-actions" id="detailActions">
         <a href="https://mackbooks.co.uk/pages/submissions" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
@@ -107,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'mack-debut-photography-book-submissions-may-2026';
-    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"MACK","location":"London, United Kingdom","fee":"Free","deadline":"2026-05-31","resultsDate":"End of June 2026","instagram":"@mack_publishing","eligibility":["emerging"],"jury":["Michael Mack","Iman Hakimi"],"submitVia":"Email","submitUrl":"","email": "","ai":""};
+    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"MACK","location":"London, United Kingdom","fee":"Free","deadline":"2026-05-31","resultsDate":"End of June 2026","instagram":"@mack_publishing","eligibility":["emerging"],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
