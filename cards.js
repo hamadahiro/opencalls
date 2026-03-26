@@ -315,8 +315,8 @@ function renderInfoGrid(call) {
   rows.push(infoRow('<a href="/organizations/">Organizer</a>', orgHtml));
   // Requirements
   if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
-  // AI policy
-  if (call.ai) rows.push(infoRow('AI policy', infoVal(call.ai)));
+  // AI policy (only show if actually specified)
+  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
   if (call.submitVia) {
     const open = isCallOpen(call.deadline);
