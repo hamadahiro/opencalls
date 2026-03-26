@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>43rd Center Annual · Houston Center for Photography - Monographica</title>
   <meta name="description" content="Houston Center for Photography's annual group exhibition, now in its 43rd year. Seeks to highlight current themes, technologies,... Deadline: April 19, 2026.">
-  <meta name="keywords" content="43rd Center Annual, Houston Center for Photography, Exhibition, open call, call for entries, Houston, Texas, United States, art exhibition, open calls for artists, photography submissions">
+  <meta name="keywords" content="43rd Center Annual, Houston Center for Photography, Exhibition, open call, call for entries, Houston, TX, USA, art exhibition, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/43rd-center-annual-houston-center-for-photography/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
@@ -100,7 +100,7 @@
 
   <script>
     const CURRENT_SLUG = '43rd-center-annual-houston-center-for-photography';
-    const CURRENT_CALL = {"prize":"Two $500 honoraria + exhibition","category":"exhibition","org":"Houston Center for Photography","location":"Houston, Texas, United States","fee":"$35 (membership required)","deadline":"2026-04-19","resultsDate":"May 6, 2026","instagram":"@hcponline","eligibility":["membership-required"],"jury":["Asha Iman Veal, Curator and Professor, School of the Art Institute of Chicago"],"submitVia":"Submittable","submitUrl":"https://hcponline.submittable.com/submit","email": "","ai":"Not specified"};
+    const CURRENT_CALL = {"prize":"Two $500 honoraria + exhibition","category":"exhibition","org":"Houston Center for Photography","location":"Houston, TX, USA","fee":"$35 (membership required)","deadline":"2026-04-19","resultsDate":"May 6, 2026","instagram":"@hcponline","eligibility":["membership-required"],"jury":["Asha Iman Veal, Curator and Professor, School of the Art Institute of Chicago"],"submitVia":"Submittable","submitUrl":"https://hcponline.submittable.com/submit","email": "","ai":"Not specified"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +111,7 @@
       var o = 'Houston Center for Photography';
       var dl = new Date('2026-04-19T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Two $500 honoraria + exhibition') + '\\nEntry fee: ' + icsE('$35 (membership required)');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
