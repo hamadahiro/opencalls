@@ -11,7 +11,9 @@ let hasErrors = false;
 function err(msg) { console.error(`ERROR: ${msg}`); hasErrors = true; }
 function isCallOpen(deadline) {
   if (deadline === 'Continuous') return true;
-  return new Date(deadline + 'T23:59:59') >= new Date();
+  const end = new Date(deadline + 'T00:00:00');
+  end.setDate(end.getDate() + 1);
+  return end > new Date();
 }
 
 data.calls.forEach((c, i) => {

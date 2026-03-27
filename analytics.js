@@ -290,7 +290,7 @@
   document.addEventListener('click', function(e) {
     if (e.target.closest('.hamburger-click-area')) {
       gtag('event', 'hamburger_menu', {
-        action: document.body.classList.contains('show-responsive-nav') ? 'close' : 'open'
+        action: document.body.classList.contains('show-responsive-nav') ? 'open' : 'close'
       });
     }
   });
