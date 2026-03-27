@@ -1487,8 +1487,8 @@ const rssItems = rssCalls.map(call => {
   const desc = `${escapeHtml(call.description)} — Deadline: ${deadlineText}. Fee: ${escapeHtml(call.fee || 'See website')}. Prize: ${escapeHtml(call.prize || 'None listed')}.`;
   return `  <item>
     <title>${call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org)}</title>
-    <link>${SITE}/${slug}</link>
-    <guid>${SITE}/${slug}</guid>
+    <link>${SITE}/${slug}/</link>
+    <guid>${SITE}/${slug}/</guid>
     <description>${desc}</description>
     <category>${escapeHtml(call.category)}</category>
     <pubDate>${new Date(call.dateAdded.includes('T') ? call.dateAdded : call.dateAdded + 'T00:00:00Z').toUTCString()}</pubDate>
@@ -1521,8 +1521,10 @@ indexPages.forEach(({ src, fallback }) => {
   const readFrom = fs.existsSync(src) ? src : (fs.existsSync(fallback) ? fallback : null);
   if (readFrom) {
     let html = fs.readFileSync(readFrom, 'utf8');
-    // Sync CSS version
+    // Sync CSS and JS versions
     html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
+    html = html.replace(/src="\/cards\.js\?v=[^"]+"/g, `src="/cards.js?v=${cssVersion}"`);
+    html = html.replace(/src="\/search\.js\?v=[^"]+"/g, `src="/search.js?v=${cssVersion}"`);
     // favicon.ico + favicon.png links are already correct in templates
     if (!html.includes('og:site_name')) {
       html = html.replace(/<meta name="twitter:card"/, '<meta property="og:site_name" content="Monographica">\n  <meta name="twitter:card"');
@@ -1562,8 +1564,10 @@ indexPages.forEach(({ src, fallback }) => {
 const manualFiles = ['index.html', '404.html'];
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
-  // Sync CSS version
+  // Sync CSS and JS versions
   html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
+  html = html.replace(/src="\/cards\.js\?v=[^"]+"/g, `src="/cards.js?v=${cssVersion}"`);
+  html = html.replace(/src="\/search\.js\?v=[^"]+"/g, `src="/search.js?v=${cssVersion}"`);
   // Update year everywhere (titles, keywords, footer)
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
   html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
