@@ -1533,12 +1533,12 @@ indexPages.forEach(({ src, fallback }) => {
     html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
     html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
     html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
-    html = html.replace(/(<title>[^<]+?)(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
-      const clean = content.replace(/\s*-\s*Monographica$/, '');
+    html = html.replace(/(<title>[^<]+?)(\s*[-\u2014\u2013]\s*Monographica)?(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
+      const clean = content.replace(/\s*[-\u2014\u2013]\s*Monographica$/, '');
       return `${clean}${TITLE_SUFFIX}</title>`;
     });
-    html = html.replace(/(og:title"\s+content="[^"]+?)(\s*-\s*Monographica)?"/g, (m, content) => {
-      const clean = content.replace(/\s*-\s*Monographica$/, '');
+    html = html.replace(/(og:title"\s+content="[^"]+?)(\s*[-\u2014\u2013]\s*Monographica)?(\s*-\s*Monographica)?"/g, (m, content) => {
+      const clean = content.replace(/\s*[-\u2014\u2013]\s*Monographica$/, '');
       return `${clean}${TITLE_SUFFIX}"`;
     });
     // Ensure canonical and og:url have trailing slashes
@@ -1572,13 +1572,13 @@ manualFiles.forEach(file => {
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
   html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
   html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
-  // Ensure title suffix — remove any existing then re-add
-  html = html.replace(/(<title>[^<]+?)(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
-    const clean = content.replace(/\s*-\s*Monographica$/, '');
+  // Ensure title suffix — remove any existing then re-add (handle both hyphen and em dash)
+  html = html.replace(/(<title>[^<]+?)(\s*[-\u2014\u2013]\s*Monographica)?(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
+    const clean = content.replace(/\s*[-\u2014\u2013]\s*Monographica$/, '');
     return `${clean}${TITLE_SUFFIX}</title>`;
   });
-  html = html.replace(/(og:title"\s+content="[^"]+?)(\s*-\s*Monographica)?"/g, (m, content) => {
-    const clean = content.replace(/\s*-\s*Monographica$/, '');
+  html = html.replace(/(og:title"\s+content="[^"]+?)(\s*[-\u2014\u2013]\s*Monographica)?(\s*-\s*Monographica)?"/g, (m, content) => {
+    const clean = content.replace(/\s*[-\u2014\u2013]\s*Monographica$/, '');
     return `${clean}${TITLE_SUFFIX}"`;
   });
   // Update header (skip index.html which has its own nav with data-view attributes)
