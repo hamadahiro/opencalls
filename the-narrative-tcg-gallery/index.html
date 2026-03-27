@@ -106,7 +106,7 @@
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
       var d = '2026-04-20'.replace(/-/g, '');
-      var nd = new Date('2026-04-20T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var nd = new Date('2026-04-20T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
       var t = 'The Narrative';
       var u = 'https://chateaugallery.com/call-for-entries/';
       var o = 'TCG Gallery';

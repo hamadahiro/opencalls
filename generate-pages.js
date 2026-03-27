@@ -100,7 +100,8 @@ const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
 const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'entry-fee'];
 const MANUAL_FILES = ['index.html', '404.html'];
-const TODAY = new Date().toISOString().slice(0, 10);
+const _now = new Date();
+const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
 const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
 function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; }
 
@@ -365,7 +366,7 @@ ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function do
       e.preventDefault();
       function icsE(s){return s.replace(/\\\\/g,'\\\\\\\\').replace(/;/g,'\\\\;').replace(/,/g,'\\\\,').replace(/\\n/g,'\\\\n');}
       var d = '${call.deadline}'.replace(/-/g, '');
-      var nd = new Date('${call.deadline}T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var nd = new Date('${call.deadline}T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
       var t = '${safeJsStr(call.title)}';
       var u = '${safeJsStr(call.url)}';
       var o = '${safeJsStr(call.org)}';
@@ -924,7 +925,7 @@ ${country === 'USA' ? `
       const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
       const nameToAbbr = {};
       Object.entries(stateNames).forEach(([abbr, name]) => { nameToAbbr[name] = abbr; });
-      const today = new Date().toISOString().slice(0, 10);
+      const _n = new Date(); const today = _n.getFullYear() + '-' + String(_n.getMonth()+1).padStart(2,'0') + '-' + String(_n.getDate()).padStart(2,'0');
       const counts = {};
       data.calls.filter(c => c.location && c.location.endsWith('USA') && (c.deadline === 'Continuous' || c.deadline >= today)).forEach(c => {
         const parts = c.location.split(',');

@@ -110,7 +110,7 @@
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
       var d = '2026-06-05'.replace(/-/g, '');
-      var nd = new Date('2026-06-05T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var nd = new Date('2026-06-05T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
       var t = 'JUST ADD WATER';
       var u = 'https://art-fluent.com/calls-for-art/just-add-water-prospectus/';
       var o = 'Art Fluent';

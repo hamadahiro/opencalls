@@ -110,7 +110,7 @@
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
       var d = '2026-03-31'.replace(/-/g, '');
-      var nd = new Date('2026-03-31T00:00:00'); nd.setDate(nd.getDate() + 1); var de = nd.toISOString().slice(0,10).replace(/-/g,'');
+      var nd = new Date('2026-03-31T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
       var t = 'Ephemere Photobook Grant 2026';
       var u = 'https://www.ephemere.tokyo/grants';
       var o = 'Ephemere';
