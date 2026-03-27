@@ -1579,7 +1579,7 @@ manualFiles.forEach(file => {
   });
   // Update header (skip index.html which has its own nav with data-view attributes)
   if (file !== 'index.html') {
-    html = html.replace(/<header>[\s\S]*?<\/header>(\s*<script>\(function\(\)\{var p=location[\s\S]*?<\/script>)?/, HEADER);
+    html = html.replace(/<header>[\s\S]*?<\/header>(\s*<div class="global-search"[\s\S]*?<\/div>\s*<script>\(function\(\)\{var p=location[\s\S]*?<\/script>)*/, HEADER);
   }
   // Update footer
   html = html.replace(/<footer class="about-section"[\s\S]*?<\/footer>/, FOOTER);
