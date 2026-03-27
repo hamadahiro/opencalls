@@ -530,16 +530,17 @@
           return da > db ? -1 : da < db ? 1 : 0;
         });
         var now = new Date();
-        var todayStr = now.toISOString().slice(0, 10);
+        function localDateStr(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+        var todayStr = localDateStr(now);
         var yesterday = new Date(now);
         yesterday.setDate(yesterday.getDate() - 1);
-        var yesterdayStr = yesterday.toISOString().slice(0, 10);
+        var yesterdayStr = localDateStr(yesterday);
         var weekAgo = new Date(now);
         weekAgo.setDate(weekAgo.getDate() - 7);
-        var weekAgoStr = weekAgo.toISOString().slice(0, 10);
+        var weekAgoStr = localDateStr(weekAgo);
         var twoWeeksAgo = new Date(now);
         twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
-        var twoWeeksAgoStr = twoWeeksAgo.toISOString().slice(0, 10);
+        var twoWeeksAgoStr = localDateStr(twoWeeksAgo);
         var currentSection = '';
         processed.forEach(function(call) {
           var added = (call.dateAdded || '').slice(0, 10);
@@ -683,6 +684,11 @@
       });
 
       searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          hideDropdown();
+          if (isMobile()) closeMobileSearch();
+          return;
+        }
         var dd = document.getElementById('searchDropdown');
         if (dd.style.display === 'none') return;
         var items = dd.querySelectorAll('.search-suggestion');
@@ -701,8 +707,6 @@
           e.preventDefault();
           var el = items[selectedSuggestion];
           addChip({ type: el.dataset.type, value: el.dataset.value, label: el.dataset.label });
-        } else if (e.key === 'Escape') {
-          hideDropdown();
         }
       });
 
