@@ -101,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'the-woman-artist-award-6th-edition-arts-to-hearts-project';
-    const CURRENT_CALL = {"prize":"$500 + publication","category":"photography","org":"Arts to Hearts Project","location":"Online","fee":"$12 per artwork","deadline":"2026-04-04","resultsDate":"","instagram":"@artstoheartsproject","eligibility":["women"],"jury":[],"submitVia":"Website form","submitUrl":"https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition","email": "","ai":"","requirements":"Artwork images + artist statement"};
+    const CURRENT_CALL = {"prize":"$1,000 + publication","category":"photography","org":"Arts to Hearts Project","location":"Online","fee":"$12 per artwork","deadline":"2026-04-04","resultsDate":"","instagram":"@artstoheartsproject","eligibility":["women"],"jury":[],"submitVia":"Website form","submitUrl":"https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition","email": "","ai":"","requirements":"Artwork images + artist statement"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +111,7 @@
       var u = 'https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition';
       var o = 'Arts to Hearts Project';
       var dl = new Date('2026-04-04T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$500 + publication') + '\\nEntry fee: ' + icsE('$12 per artwork');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$1,000 + publication') + '\\nEntry fee: ' + icsE('$12 per artwork');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
