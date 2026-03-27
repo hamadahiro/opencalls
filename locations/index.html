@@ -96,10 +96,8 @@
     async function load() {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const now = new Date();
       const container = document.getElementById('indexList');
-
-      const today = new Date().toISOString().slice(0, 10);
+      const _n = new Date(); const today = _n.getFullYear() + '-' + String(_n.getMonth()+1).padStart(2,'0') + '-' + String(_n.getDate()).padStart(2,'0');
       const open = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= today);
       const counts = {};
       open.forEach(c => {
