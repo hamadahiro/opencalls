@@ -150,7 +150,9 @@ function slugify(title) {
 // Central timezone logic — a call is open until the end of its deadline day (local time)
 function isCallOpen(deadline) {
   if (deadline === 'Continuous') return true;
-  return new Date(deadline + 'T23:59:59') >= new Date();
+  var end = new Date(deadline + 'T00:00:00');
+  end.setDate(end.getDate() + 1);
+  return end > new Date();
 }
 
 function processCall(call) {

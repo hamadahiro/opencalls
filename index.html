@@ -720,7 +720,10 @@
 
       // Close dropdown on outside click
       document.addEventListener('mousedown', function(e) {
-        if (!document.querySelector('.search-wrap').contains(e.target)) hideDropdown();
+        if (!document.querySelector('.search-wrap').contains(e.target)) {
+          hideDropdown();
+          if (isMobile()) closeMobileSearch();
+        }
       });
     }
 
