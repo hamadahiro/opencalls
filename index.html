@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>Open Calls for Artists — Monographica - Monographica</title>
+  <title>Open Calls for Artists - Monographica</title>
   <meta name="description" content="Curated list of open calls for photographers and visual artists. Exhibitions, grants, residencies, and publications worldwide — updated regularly.">
   <meta name="keywords" content="open calls for artists, call for entries, photography grants 2026, photography submissions, art exhibitions, artist residency, photobook open call, art grants, visual artists, photography contests, photography awards">
   <link rel="canonical" href="https://opencalls.monographica.com/">
@@ -122,7 +122,7 @@
     </footer>
   </main>
 
-  <script src="/cards.js?v=20260322"></script>
+  <script src="/cards.js?v=20260326"></script>
   <script>
     let allCalls = [];
     let currentView = 'new';
@@ -198,7 +198,8 @@
     // --- Chip + filter logic ---
 
     function getRelevantCalls() {
-      var today = new Date().toISOString().slice(0, 10);
+      var now = new Date();
+      var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
       return currentView === 'past'
         ? allCalls.filter(function(c) { return c.deadline !== 'Continuous' && c.deadline < today; })
         : allCalls.filter(function(c) { return c.deadline === 'Continuous' || c.deadline >= today; });
@@ -649,7 +650,6 @@
           // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
           currentFilter = filter;
-          currentSort = 'deadline';
           document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           renderChips();
