@@ -217,6 +217,11 @@
   });
 
   searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      hideDropdown();
+      if (isMobile()) closeMobileSearch();
+      return;
+    }
     if (searchDropdown.style.display === 'none') {
       if (e.key === 'Enter') { navigateToFreeText(); return; }
       return;
@@ -240,9 +245,6 @@
       } else {
         navigateToFreeText();
       }
-    } else if (e.key === 'Escape') {
-      hideDropdown();
-      if (isMobile()) closeMobileSearch();
     }
   });
 

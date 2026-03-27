@@ -1,6 +1,5 @@
 const EMPTY_MESSAGES = ['Nothing here, for now.','No calls match this search.','Nothing came up this time.','No results, it seems.','No calls found for this.','Nothing fits this search.','No matches at the moment.','Nothing to show here.','No calls in this range.','Nothing here yet.'];
-const EMPTY_MSG = EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)];
-function emptyState() { return '<p class="empty-state">' + EMPTY_MSG + '<a href="/browse/">Browse all calls &rarr;</a></p>'; }
+function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)] + '<a href="/browse/">Browse all calls &rarr;</a></p>'; }
 
 const shortCountry = {
   'United Kingdom': 'UK',

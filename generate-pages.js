@@ -1036,7 +1036,12 @@ Object.entries(orgCounts)
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
 
-    // Check for slug collision with call/country pages
+    // Check for slug collision with reserved system pages or call/country pages
+    if (RESERVED.includes(slug)) {
+      console.error(`  ERROR: Org page "${slug}" collides with reserved system page. Rename the org.`);
+      hasErrors = true;
+      return;
+    }
     if (slugMap[slug]) {
       console.error(`  ERROR: Org page "${slug}" collides with call "${slugMap[slug]}". Rename the call title (e.g. add year).`);
       hasErrors = true;
@@ -1590,13 +1595,6 @@ manualFiles.forEach(file => {
   // Inject cards.js + search.js for 404 (skip index.html which has its own)
   if (file !== 'index.html' && !html.includes('cards.js')) {
     html = html.replace('</body>', `\n  ${CARDS_SCRIPT(cssVersion)}\n\n</body>`);
-  }
-  // Update open count in index.html hero (only count calls with future deadlines or Continuous)
-  if (file === 'index.html') {
-    const today = new Date().toISOString().slice(0, 10);
-    const openCount = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= today).length;
-    const roundedCount = Math.floor(openCount / 10) * 10;
-    html = html.replace(/over \d+ open calls/, `over ${roundedCount} open calls`);
   }
   fs.writeFileSync(file, html);
 });
