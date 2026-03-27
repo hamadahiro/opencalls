@@ -707,6 +707,7 @@ function buildEligibilityIndexItems() {
   eligibilityOrder.forEach(group => {
     const activeTags = group.tags.filter(t => openEligibilityTags[t]);
     if (!activeTags.length) return;
+    activeTags.sort((a, b) => (openEligibilityTags[b] || 0) - (openEligibilityTags[a] || 0));
     html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
     activeTags.forEach(tag => {
       const info = eligibilityGroups[tag];
@@ -1400,6 +1401,7 @@ eligibilityOrder.forEach(group => {
     browseEligibility.push({ label: info.short, href: `/eligibility/${tag}/`, count: openEligibilityTags[tag] || 0 });
   });
 });
+browseEligibility.sort((a, b) => b.count - a.count);
 
 const openOrgCounts = {};
 openCalls.forEach(c => { openOrgCounts[c.org] = (openOrgCounts[c.org] || 0) + 1; });
