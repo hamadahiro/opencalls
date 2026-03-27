@@ -600,6 +600,7 @@ const eligibilityGroups = {
   'asian-american': { short: 'Asian American', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
   'south-asian': { short: 'South Asian', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
   'african-diaspora': { short: 'African Diaspora', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' },
+  'black': { short: 'Black Artists', title: 'Open Calls for Black Artists', desc: 'Open calls, exhibitions, and awards for Black photographers and visual artists.' },
   'neurodivergent-disabled': { short: 'Neurodivergent & Disabled', title: 'Open Calls for Neurodivergent & Disabled Artists', desc: 'Open calls, publications, and awards for neurodivergent, disabled, and chronically ill photographers and visual artists.' },
   'portugal': { short: 'Portugal', title: 'Portugal-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Portuguese citizens or residents of Portugal.' },
   'taiwan': { short: 'Taiwan', title: 'Taiwan-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan.' },
@@ -685,7 +686,7 @@ Object.entries(eligibilityTags).forEach(([tag, count]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40'] },
+  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40'] },
   { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'ireland', 'italy', 'morocco', 'portugal', 'switzerland', 'taiwan', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'latin-america', 'puerto-rico', 'south-asian'] },
