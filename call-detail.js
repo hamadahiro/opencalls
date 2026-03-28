@@ -52,7 +52,7 @@
   var deadlinePct = (daysToDeadline / totalDays) * 100;
   var resultsPct = (resultsDays / totalDays) * 100;
 
-  var html = '<div style="display:flex;width:100%;height:10px;border-radius:5px;overflow:hidden;margin-top:32px">';
+  var html = '<div style="display:flex;width:100%;height:4px;border-radius:2px;overflow:hidden;margin-top:32px">';
   html += '<div style="width:' + deadlinePct + '%;background:' + deadlineColor + '"></div>';
   if (resultsPct > 0) {
     html += '<div style="width:' + resultsPct + '%;background:' + resultsColor + '"></div>';
