@@ -342,7 +342,6 @@ ${call.winners && call.winners.length ? `
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
       </div>
 ` : ''}
-      <div id="timelineBar"></div>
       <div class="call-detail-info" id="detailInfo"></div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
