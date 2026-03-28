@@ -105,7 +105,7 @@
 
   <script>
     const CURRENT_SLUG = 'zrno-festival-2026-open-call';
-    const CURRENT_CALL = {"prize":"Exhibition","category":"photography","org":"ZRNO Festival","location":"Skopje, North Macedonia","fee":"€14–€21","deadline":"2026-04-20","resultsDate":"May 15, 2026","instagram":"@zrnofestival","eligibility":["analog-photography"],"jury":["Anne-Mette S. Sommer-Kelter, Polaroid Photographer","Drago Vejnovic, Professor, Academy of Arts Banja Luka","Eva Schlogl, Visual Artist & Architect","Pep Minguez, Director, Revela'T Festival","Ivana Brezovac, Professor, Academy of Arts Novi Sad","Natasa Takac, Visual & Media Artist","Florian Kopr, Photographer & Printmaker","Sasho Alushevski, Alternative Photographer"],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"Up to 4 images"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"photography","org":"ZRNO Festival","location":"Skopje, North Macedonia","fee":"€21","deadline":"2026-04-20","resultsDate":"May 15, 2026","instagram":"@zrnofestival","eligibility":["analog-photography"],"jury":["Anne-Mette S. Sommer-Kelter, Polaroid Photographer","Drago Vejnovic, Professor, Academy of Arts Banja Luka","Eva Schlogl, Visual Artist & Architect","Pep Minguez, Director, Revela'T Festival","Ivana Brezovac, Professor, Academy of Arts Novi Sad","Natasa Takac, Visual & Media Artist","Florian Kopr, Photographer & Printmaker","Sasho Alushevski, Alternative Photographer"],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"Up to 4 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +115,7 @@
       var u = 'https://grain.mk/open-call-2026/';
       var o = 'ZRNO Festival';
       var dl = new Date('2026-04-20T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('€14–€21');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('€21');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
