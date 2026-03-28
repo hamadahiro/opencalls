@@ -101,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'graz-residency-grip-2026-camera-austria';
-    const CURRENT_CALL = {"prize":"€1,000 + furnished apartment + travel costs + presentation at Camera Austria","category":"residency","org":"Camera Austria","location":"Graz, Austria","fee":"Free","deadline":"2026-04-30","resultsDate":"End of May 2026","instagram":"@cameraaustriagraz","eligibility":["emerging"],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"Portfolio PDF"};
+    const CURRENT_CALL = {"prize":"€1,000 stipend","category":"residency","org":"Camera Austria","location":"Graz, Austria","fee":"Free","deadline":"2026-04-30","resultsDate":"End of May 2026","instagram":"@cameraaustriagraz","eligibility":["emerging"],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"Portfolio PDF"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +111,7 @@
       var u = 'https://camera-austria.at/en/2026/03/open-call-5th-graz-residency-for-international-photographers-grip/';
       var o = 'Camera Austria';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000 + furnished apartment + travel costs + presentation at Camera Austria') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000 stipend') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
