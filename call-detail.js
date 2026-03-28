@@ -5,6 +5,62 @@
   if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
 })();
 
+// Timeline bar
+(function() {
+  if (typeof CURRENT_CALL === 'undefined') return;
+  var bar = document.getElementById('timelineBar');
+  if (!bar) return;
+
+  var deadline = CURRENT_CALL.deadline;
+  if (deadline === 'Continuous') return;
+
+  var now = new Date();
+  var deadlineDate = new Date(deadline + 'T00:00:00');
+  var daysToDeadline = Math.ceil((deadlineDate - now) / 864e5);
+
+  if (daysToDeadline < 0) return;
+
+  // Match urgency colors from deadline tags
+  var deadlineColor;
+  if (daysToDeadline <= 1) deadlineColor = '#4C447A';
+  else if (daysToDeadline <= 14) deadlineColor = '#B6332F';
+  else deadlineColor = '#D3B36F';
+
+  var resultsColor = '#8CAA8C';
+
+  // Parse resultsDate to get days between deadline and results
+  var resultsDays = 0;
+  if (CURRENT_CALL.resultsDate) {
+    var months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+    var clean = CURRENT_CALL.resultsDate.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
+    var my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
+    if (my) {
+      var mi = months[my[1].toLowerCase()];
+      if (mi !== undefined) {
+        var yr = parseInt(my[2]);
+        var dm = clean.match(/(\d{1,2})[,\s-]/);
+        var day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
+        var rDate = new Date(yr, mi, day);
+        if (rDate > deadlineDate) {
+          resultsDays = Math.ceil((rDate - deadlineDate) / 864e5);
+        }
+      }
+    }
+  }
+
+  var totalDays = Math.max(daysToDeadline + resultsDays, 1);
+  var deadlinePct = (daysToDeadline / totalDays) * 100;
+  var resultsPct = (resultsDays / totalDays) * 100;
+
+  var html = '<div style="display:flex;width:100%;height:10px;border-radius:5px;overflow:hidden;margin-top:32px">';
+  html += '<div style="width:' + deadlinePct + '%;background:' + deadlineColor + '"></div>';
+  if (resultsPct > 0) {
+    html += '<div style="width:' + resultsPct + '%;background:' + resultsColor + '"></div>';
+  }
+  html += '</div>';
+  bar.innerHTML = html;
+})();
+
 function getState(location) {
   if (!location) return '';
   const parts = location.split(',');
