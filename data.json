@@ -257,30 +257,6 @@
       "dateAdded": "2026-03-26T00:04:53Z"
     },
     {
-      "title": "SIYU Award 2026",
-      "org": "SIYU Award",
-      "deadline": "2026-04-30",
-      "fee": "CHF 50",
-      "category": "photography",
-      "description": "Award for emerging photographic talent in Switzerland, formerly the VFG Young Talent Award. Free theme — submit a coherent series of 3–8 photographs with project description and presentation plan showing how work should be exhibited. Ten finalists selected for exhibition at Photobastei Zurich in October 2026 and catalogue publication. Includes the newly created Alois Ottiger Grant, in memory of Swiss photographer Alois Ottiger (1941–2025). Open to photographers with Swiss citizenship or non-Swiss individuals living, studying, or working in Switzerland, up to age 39.",
-      "url": "https://siyu-award.ch/en/",
-      "instagram": "@siyu.photography",
-      "location": "Zurich, Switzerland",
-      "prize": "CHF 5,000 + CHF 3,000 + CHF 2,000 + exhibition + catalogue",
-      "eligibility": [
-        "switzerland",
-        "under-40"
-      ],
-      "submitVia": "Picter",
-      "requirements": "3–8 images + project description",
-      "resultsDate": "October 2026",
-      "slug": "siyu-award-2026",
-      "orgInTitle": true,
-      "submitUrl": "https://site.picter.com/siyu-award-2026",
-      "summary": "Emerging talent award for Swiss-based photographers under 39. Ten finalists exhibited at Photobastei Zurich. Free theme.",
-      "dateAdded": "2026-03-26T00:04:53Z"
-    },
-    {
       "title": "Marilyn Stafford FotoReportage Award 2026",
       "org": "FotoDocument",
       "deadline": "2026-05-18",
@@ -6900,11 +6876,12 @@
       "fee": "CHF 50",
       "category": "photography",
       "description": "Award for young Swiss photographers (formerly vfg Young Talent Award). Ten finalists exhibited in a group show at Photobastei Zurich with a published catalogue. Three cash prizes awarded through the Alois Ottiger Grant, in memory of Swiss photographer Alois Ottiger (1941–2025). Free theme, all fields of photography. Submissions must be anonymous.",
-      "url": "https://siyu-award.ch/en/info-en/",
+      "url": "https://siyu-award.ch/en/",
       "instagram": "@siyu_award",
       "location": "Zurich, Switzerland",
-      "prize": "CHF 5,000",
+      "prize": "CHF 5,000 + CHF 3,000 + CHF 2,000 + exhibition + catalogue",
       "eligibility": [
+        "switzerland",
         "under-40"
       ],
       "submitVia": "Picter",
