@@ -8,28 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Womanhood · Photobook Cafe &amp; Rapid Eye Darkroom - Monographica</title>
-  <meta name="description" content="Sixth quarterly open call from Photobook Cafe and Rapid Eye Darkrooms exploring the theme of Womanhood with guest judge Francesc... Deadline: April 20, 2025.">
-  <meta name="keywords" content="Womanhood, Photobook Cafe &amp; Rapid Eye Darkroom, Zines &amp; Books, open call, call for entries, London, United Kingdom, photobook, zine submission, open calls for artists, photography submissions">
-  <link rel="canonical" href="https://opencalls.monographica.com/womanhood-photobook-cafe-rapid-eye-darkroom/">
+  <title>Open Calls — April 2025 - Monographica</title>
+  <meta name="description" content="1 open calls for artists with deadlines in April 2025. Photography competitions, exhibitions, grants, and residencies.">
+  <meta name="keywords" content="open calls april 2025, photography deadlines april 2025, call for entries april 2025">
+  <link rel="canonical" href="https://opencalls.monographica.com/deadlines/april-2025/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Womanhood · Photobook Cafe &amp; Rapid Eye Darkroom - Monographica">
-  <meta property="og:description" content="Sixth quarterly open call from Photobook Cafe and Rapid Eye Darkrooms exploring the theme of Womanhood with guest judge Francesc... Deadline: April 20, 2025.">
+  <meta property="og:title" content="Open Calls — April 2025 - Monographica">
+  <meta property="og:description" content="1 open calls for artists with deadlines in April 2025. Photography competitions, exhibitions, grants, and residencies.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/womanhood-photobook-cafe-rapid-eye-darkroom/">
-  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://opencalls.monographica.com/deadlines/april-2025/">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Womanhood",
-  "description": "Sixth quarterly open call from Photobook Cafe and Rapid Eye Darkrooms exploring the theme of Womanhood with guest judge Francesca Allen. Open to anyone engaging with or experiencing Womanhood in all its forms. 35 selected photographers featured in group exhibition and printed zine at The Photobook Cafe in London. Three Best in Show winners receive a complimentary group exhibition with printing by Rapid Eye Darkrooms and curation by Francesca Allen.",
-  "url": "https://opencalls.monographica.com/womanhood-photobook-cafe-rapid-eye-darkroom",
+  "@type": "CollectionPage",
+  "name": "Open Calls — April 2025",
+  "description": "Open calls with deadlines in April 2025.",
+  "url": "https://opencalls.monographica.com/deadlines/april-2025",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -76,25 +76,13 @@
   <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
-    <section class="call-detail">
-      <h1 class="call-detail-title">Womanhood</h1>
-
-      <p class="call-detail-description">Sixth quarterly open call from Photobook Cafe and Rapid Eye Darkrooms exploring the theme of Womanhood with guest judge Francesca Allen. Open to anyone engaging with or experiencing Womanhood in all its forms. 35 selected photographers featured in group exhibition and printed zine at The Photobook Cafe in London. Three Best in Show winners receive a complimentary group exhibition with printing by Rapid Eye Darkrooms and curation by Francesca Allen.</p>
-
-      <div class="call-detail-info" id="detailInfo"></div>
-
-      <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: Francesca Allen, Photographer</p>
-      </div>
-
-      <div class="call-detail-actions" id="detailActions">
-        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
-      </div>
+    <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>
+      <h1>April 2025</h1>
+      <h2 class="subtitle">1 call with deadlines in April 2025 — all closed.</h2>
     </section>
 
-    <section class="related-calls">
-      <div id="similarCalls"></div>
-    </section>
+    <section class="calls-list" id="callsList"></section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -102,14 +90,18 @@
     </footer>
   </main>
 
-  <script>
-    const CURRENT_SLUG = 'womanhood-photobook-cafe-rapid-eye-darkroom';
-    const CURRENT_CALL = {"prize":"Exhibition + zine publication","category":"zine","org":"Photobook Cafe & Rapid Eye Darkroom","location":"London, United Kingdom","fee":"£25","deadline":"2025-04-20","resultsDate":"","instagram":"@photobookcafe","eligibility":[],"jury":["Francesca Allen, Photographer"],"submitVia":"Photobook Cafe website","submitUrl":"","email": "","ai":"","requirements":"2 images per entry"};
-
-  </script>
   <script src="/cards.js?v=20260326"></script>
   <script src="/search.js?v=20260326"></script>
-  <script src="/call-detail.js"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2025-04')).map(processCall);
+      calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
