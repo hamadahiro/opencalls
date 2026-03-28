@@ -704,13 +704,12 @@ Object.keys(eligibilityTags).forEach(tag => {
 function buildEligibilityIndexItems() {
   let html = '';
   eligibilityOrder.forEach(group => {
-    const activeTags = group.tags.filter(t => openEligibilityTags[t]);
+    const activeTags = group.tags.slice().sort((a, b) => (openEligibilityTags[b] || 0) - (openEligibilityTags[a] || 0));
     if (!activeTags.length) return;
-    activeTags.sort((a, b) => (openEligibilityTags[b] || 0) - (openEligibilityTags[a] || 0));
     html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
     activeTags.forEach(tag => {
       const info = eligibilityGroups[tag];
-      const count = openEligibilityTags[tag];
+      const count = openEligibilityTags[tag] || 0;
       html += `      <a href="/eligibility/${tag}/" class="index-item">
           <span class="index-item-name">${escapeHtml(info.short)}</span>
           <span class="dots"></span>
@@ -1395,7 +1394,7 @@ const browseStates = Object.entries(stateCounts)
 
 const browseEligibility = [];
 eligibilityOrder.forEach(group => {
-  group.tags.filter(t => eligibilityTags[t]).forEach(tag => {
+  group.tags.forEach(tag => {
     const info = eligibilityGroups[tag];
     browseEligibility.push({ label: info.short, href: `/eligibility/${tag}/`, count: openEligibilityTags[tag] || 0 });
   });
