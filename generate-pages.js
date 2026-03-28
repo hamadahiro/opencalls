@@ -642,9 +642,8 @@ Object.keys(eligibilityTags).forEach(tag => {
 if (hasErrors) { console.error('Fix errors above before generating.'); process.exit(1); }
 
 const eligibilityPageSlugs = [];
-Object.entries(eligibilityTags).forEach(([tag, count]) => {
-  const info = eligibilityGroups[tag];
-  if (!info) return;
+Object.entries(eligibilityGroups).forEach(([tag, info]) => {
+  const count = eligibilityTags[tag] || 0;
   const slug = `eligibility/${tag}`;
 
   const html = `<!DOCTYPE html>
@@ -1605,24 +1604,25 @@ manualFiles.forEach(file => {
   fs.writeFileSync(file, html);
 });
 
-// Final cleanup: recursively remove stale HTML files and empty directories
-let cleaned = 0;
-function cleanDir(dir) {
+// Warn about stale HTML files (never auto-delete — pages may be indexed/bookmarked)
+const staleFiles = [];
+function findStale(dir) {
   if (!fs.existsSync(dir)) return;
   fs.readdirSync(dir).forEach(item => {
-    if (item.startsWith('.')) return; // skip hidden dirs (.git, .claude, etc.)
+    if (item.startsWith('.')) return;
     const fp = path.join(dir, item);
     if (fs.statSync(fp).isDirectory()) {
-      cleanDir(fp);
-      // Remove empty directories
-      if (fs.readdirSync(fp).length === 0) fs.rmdirSync(fp);
+      findStale(fp);
     } else if (fp.endsWith('.html') && !generatedFiles.has(fp) && !MANUAL_FILES.includes(fp)) {
-      fs.unlinkSync(fp);
-      cleaned++;
+      staleFiles.push(fp);
     }
   });
 }
-cleanDir('.');
-if (cleaned) console.log(`Cleaned up ${cleaned} stale/duplicate files`);
+findStale('.');
+if (staleFiles.length) {
+  console.warn(`\n⚠️  ${staleFiles.length} HTML file(s) not generated this run (NOT deleted — review manually):`);
+  staleFiles.forEach(f => console.warn(`   ${f}`));
+  console.warn('');
+}
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);
