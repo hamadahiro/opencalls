@@ -345,7 +345,7 @@ ${call.winners && call.winners.length ? `
 ` : ''}
       <div class="call-detail-info" id="detailInfo"></div>
       <div class="call-detail-jury">
-        <p class="call-detail-description">Organized by ${escapeHtml(call.org)}</p>
+        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
