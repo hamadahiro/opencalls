@@ -344,14 +344,14 @@ ${call.winners && call.winners.length ? `
       </div>
 ` : ''}
       <div class="call-detail-info" id="detailInfo"></div>
-      <div class="call-detail-jury">
-        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
-      </div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
       </div>
 ` : ''}
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
+      </div>
       <div class="call-detail-actions" id="detailActions">
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
