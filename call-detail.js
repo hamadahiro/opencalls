@@ -3,8 +3,6 @@
   if (typeof CURRENT_CALL === 'undefined') return;
   const info = document.getElementById('detailInfo');
   if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
-  const footer = document.getElementById('detailFooter');
-  if (footer) footer.innerHTML = renderDetailFooter(CURRENT_CALL);
 })();
 
 function getState(location) {
