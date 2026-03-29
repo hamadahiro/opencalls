@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/grants/">Grant open call</a></nav>
       <h1 class="call-detail-title">LSI Women in Photography Grant 2026</h1>
 
       <p class="call-detail-description">Grant for women photographers to complete an in-progress personal project. Theme: Where We Stand — seeking work rooted in lived experience, proximity, trust-based relationships, and ethical representation. Submit 10 images, artist statement, project proposal, and budget via Picter. Winner receives $10,000 plus a new Leica camera and lens from Leica North America. Limited to first 100 applicants. Open globally, no Leica camera or LSI membership required.</p>
@@ -87,6 +88,7 @@
         <a href="https://leicasocietyinternational.org/2026-women-in-photography-grant" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'lsi-women-in-photography-grant-2026-leica-society-international';
-    const CURRENT_CALL = {"prize":"$10,000","category":"grant","org":"Leica Society International","location":"Online","fee":"$35","deadline":"2026-04-24","resultsDate":"May 29, 2026","instagram":"@leicasociety","eligibility":["women"],"jury":[],"submitVia":"Picter","submitUrl":"https://app.picter.com/contests/d44232e6-c7f2-4e5a-8ec8-1b310b2993cc/start","email": "","ai":"","requirements":"10 images"};
+    const CURRENT_CALL = {"prize":"$10,000 grant + Leica camera & lens kit","category":"grant","org":"Leica Society International","location":"Online","fee":"$35","deadline":"2026-04-24","resultsDate":"May 29, 2026","instagram":"@leicasociety","eligibility":["women"],"jury":[],"submitVia":"Picter","submitUrl":"https://app.picter.com/contests/d44232e6-c7f2-4e5a-8ec8-1b310b2993cc/start","email": "","ai":"","requirements":"10 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://leicasocietyinternational.org/2026-women-in-photography-grant';
       var o = 'Leica Society International';
       var dl = new Date('2026-04-24T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$10,000') + '\\nEntry fee: ' + icsE('$35');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$10,000 grant + Leica camera & lens kit') + '\\nEntry fee: ' + icsE('$35');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

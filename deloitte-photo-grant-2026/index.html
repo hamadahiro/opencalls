@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/grants/">Grant open call</a></nav>
       <h1 class="call-detail-title">Deloitte Photo Grant 2026</h1>
 
       <p class="call-detail-description">Theme: Proximities. Open to photographers under 35. €25,000 open call prize plus solo exhibition at Triennale Milano. €50,000 nominations category. Explores social, economic, and relational dimensions of proximity.</p>
@@ -91,6 +92,7 @@
         <a href="https://deloittephotogrant.com/en/contests/open-call-2026/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'deloitte-photo-grant-2026';
-    const CURRENT_CALL = {"prize":"€25,000","category":"grant","org":"Fondazione Deloitte","location":"Milan, Italy","fee":"Free","deadline":"2026-06-14","resultsDate":"September 2026","instagram":"@deloitte_photogrant","eligibility":["under-35"],"jury":["Denis Curti, Artistic Director (Jury President)","Alec Soth, Photographer, Magnum Photos","Bruce Gilden, Photographer, Magnum Photos","Barbara Ceferin, Owner, Galerija Fotografija","Suzanne Cotter, Director, Museum of Contemporary Art Australia","Sunyoung Kim, Senior Curator, Museum Hanmi"],"submitVia":"Website form","submitUrl":"https://deloittephotogrant.com/en/contests/open-call-2026/","email": "","ai":"Accepted (must disclose)","requirements":"10 images"};
+    const CURRENT_CALL = {"prize":"€25,000 grant + solo exhibition at Triennale Milano","category":"grant","org":"Fondazione Deloitte","location":"Milan, Italy","fee":"Free","deadline":"2026-06-14","resultsDate":"September 2026","instagram":"@deloitte_photogrant","eligibility":["under-35"],"jury":["Denis Curti, Artistic Director (Jury President)","Alec Soth, Photographer, Magnum Photos","Bruce Gilden, Photographer, Magnum Photos","Barbara Ceferin, Owner, Galerija Fotografija","Suzanne Cotter, Director, Museum of Contemporary Art Australia","Sunyoung Kim, Senior Curator, Museum Hanmi"],"submitVia":"Website form","submitUrl":"https://deloittephotogrant.com/en/contests/open-call-2026/","email": "","ai":"Accepted (must disclose)","requirements":"Project proposal on theme \"Proximities\""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +117,7 @@
       var u = 'https://deloittephotogrant.com/en/contests/open-call-2026/';
       var o = 'Fondazione Deloitte';
       var dl = new Date('2026-06-14T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€25,000') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€25,000 grant + solo exhibition at Triennale Milano') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">Analog Sparks — International Film Photography Awards 2026</h1>
 
       <p class="call-detail-description">International awards discovering and promoting analog photographers worldwide. Categories: Architecture, Fine Art, Human, Lifestyle, Nature, Photo Journalism, Technique, Zines &amp; Photo Books. Accepts color/B&amp;W film, instant film, collodion, alternative techniques, and hybrid analog-digital (no purely digital). Winners exhibited at House of Lucie in Athens and Ostuni.</p>
@@ -91,6 +92,7 @@
         <a href="https://www.analogsparksawards.com/submission-guidelines/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'analog-sparks-international-film-photography-awards-2026';
-    const CURRENT_CALL = {"prize":"€1,000","category":"photography","org":"Analog Sparks","location":"Athens, Greece","fee":"€10–€25","deadline":"2026-07-31","resultsDate":"","instagram":"@analog_sparks","eligibility":["analog-photography"],"jury":["Barna Erdesz, Art Director & Gallerist","Danial Shah, Documentary Photographer","Eva Szombat, Visual Artist","Hossein Farmani, Founder","Ibrahim Mursal, Visual Artist & Writer","Kenro Izu, Photographer","Kira Krasz, Visual Artist","Mikkel Horlyck, Photojournalist","Mo Laudi, Curator","Wanda Martin, Canon Ambassador"],"submitVia":"Website form","submitUrl":"https://www.analogsparksawards.com/submission-guidelines/","email": "","ai":"Not accepted","requirements":"1–11 images"};
+    const CURRENT_CALL = {"prize":"€1,000 Photographer of the Year + €250 New Talent + €100 per category + exhibition","category":"photography","org":"Analog Sparks","location":"Athens, Greece","fee":"€10–€25","deadline":"2026-07-31","resultsDate":"","instagram":"@analog_sparks","eligibility":["analog-photography"],"jury":["Barna Erdesz, Art Director & Gallerist","Danial Shah, Documentary Photographer","Eva Szombat, Visual Artist","Hossein Farmani, Founder","Ibrahim Mursal, Visual Artist & Writer","Kenro Izu, Photographer","Kira Krasz, Visual Artist","Mikkel Horlyck, Photojournalist","Mo Laudi, Curator","Wanda Martin, Canon Ambassador"],"submitVia":"Website form","submitUrl":"https://www.analogsparksawards.com/submission-guidelines/","email": "","ai":"Not accepted","requirements":"1–11 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +117,7 @@
       var u = 'https://www.analogsparksawards.com/submission-guidelines/';
       var o = 'Analog Sparks';
       var dl = new Date('2026-07-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000') + '\\nEntry fee: ' + icsE('€10–€25');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000 Photographer of the Year + €250 New Talent + €100 per category + exhibition') + '\\nEntry fee: ' + icsE('€10–€25');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

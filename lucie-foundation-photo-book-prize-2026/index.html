@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
       <h1 class="call-detail-title">Lucie Foundation Photo Book Prize 2026</h1>
 
       <p class="call-detail-description">Celebrating the most innovative photographic books. Three categories: Book of the Year ($3,000), First Book ($2,000), and Self-Published ($2,000). Open to photographers and publishers worldwide.</p>
@@ -91,6 +92,7 @@
         <a href="https://www.luciefoundation.org/lucie-foundation-photo-book-prize/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'lucie-foundation-photo-book-prize-2026';
-    const CURRENT_CALL = {"prize":"$3,000","category":"zine","org":"Lucie Foundation","location":"Online","fee":"$50–$75","deadline":"2026-09-15","resultsDate":"Mid-September 2026","instagram":"@luciefoundation","eligibility":[],"jury":["Merve Arkunlar, Editor-in-Chief, 212 Magazine","Martin Schoeller, Photographer","Paul Baldonado, Street & Documentary Photographer","Elizabeth Krist, Independent Visual Editor","Jamel Shabazz, Photographer & Author","Monica Aguilar Villamarin, Visual Artist & Researcher","Eleni Mouzakiti, Curator & Artistic Director","Emmanuel Iduma, Co-Founder, Tender Photos","Yumi Goto, Independent Curator","Lele Saveri, Photographer & 8-Ball Community Co-Founder"],"submitVia":"Website form","submitUrl":"https://www.luciefoundation.org/lucie-foundation-photo-book-prize/","email": "","ai":"","requirements":"PDF of complete book"};
+    const CURRENT_CALL = {"prize":"$3,000 Book of Year + $2,000 First Book + $2,000 Self-Published","category":"zine","org":"Lucie Foundation","location":"Online","fee":"$50–$75","deadline":"2026-09-15","resultsDate":"Mid-September 2026","instagram":"@luciefoundation","eligibility":[],"jury":["Merve Arkunlar, Editor-in-Chief, 212 Magazine","Martin Schoeller, Photographer","Paul Baldonado, Street & Documentary Photographer","Elizabeth Krist, Independent Visual Editor","Jamel Shabazz, Photographer & Author","Monica Aguilar Villamarin, Visual Artist & Researcher","Eleni Mouzakiti, Curator & Artistic Director","Emmanuel Iduma, Co-Founder, Tender Photos","Yumi Goto, Independent Curator","Lele Saveri, Photographer & 8-Ball Community Co-Founder"],"submitVia":"Website form","submitUrl":"https://www.luciefoundation.org/lucie-foundation-photo-book-prize/","email": "","ai":"","requirements":"PDF of complete book"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +117,7 @@
       var u = 'https://www.luciefoundation.org/lucie-foundation-photo-book-prize/';
       var o = 'Lucie Foundation';
       var dl = new Date('2026-09-15T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$3,000') + '\\nEntry fee: ' + icsE('$50–$75');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$3,000 Book of Year + $2,000 First Book + $2,000 Self-Published') + '\\nEntry fee: ' + icsE('$50–$75');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

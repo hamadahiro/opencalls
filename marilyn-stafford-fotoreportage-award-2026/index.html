@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/grants/">Grant open call</a></nav>
       <h1 class="call-detail-title">Marilyn Stafford FotoReportage Award 2026</h1>
 
       <p class="call-detail-description">Annual £4,000 grant for professional female photographers working on documentary photo essays that address social, environmental, economic, or cultural issues. Landmark 10th edition, supported by Nikon. Selected work must showcase positive solutions and demonstrate practical engagement with the subject matter. Named after Marilyn Stafford, pioneering documentary photographer. Winner's work exhibited at POST, Brighton &amp; Hove's centre for photography, September 17–20, 2026, and featured on Lenscratch and FotoDocument. Open to female photographers (or those identifying as female) aged 18+ at any career stage, any nationality worldwide. Must have completed at least one prior documentary photo essay and already started the proposed project.</p>
@@ -91,6 +92,7 @@
         <a href="https://fotoaward.fotodocument.org/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'marilyn-stafford-fotoreportage-award-2026';
-    const CURRENT_CALL = {"prize":"£4,000","category":"grant","org":"FotoDocument","location":"Brighton, United Kingdom","fee":"Free","deadline":"2026-05-18","resultsDate":"June 30, 2026","instagram":"@fotodocument","eligibility":["women"],"jury":["Andrea Bruce, Photojournalist, NOOR Photo Agency co-owner, Nikon Ambassador","Donna De Cesare, Photojournalist, Associate Professor, University of Texas at Austin","Nina Emett, Director of FotoDocument, Documentary Photographer, Curator","Neo Ntsoma, Photojournalist, Founder of Neo Ntsoma Productions","Isabella Franceschini, 2024 Marilyn Stafford FotoReportage Award winner"],"submitVia":"FotoDocument","submitUrl":"https://fotoaward.fotodocument.org/","email": "","ai":"","requirements":"10 + 15 images (current + finished project)"};
+    const CURRENT_CALL = {"prize":"£4,000 grant (Nikon-supported) + exhibition at POST Hove + Honourable Mentions","category":"grant","org":"FotoDocument","location":"Brighton, United Kingdom","fee":"Free","deadline":"2026-05-18","resultsDate":"June 30, 2026","instagram":"@fotodocument","eligibility":["women"],"jury":["Andrea Bruce, Photojournalist, NOOR Photo Agency co-owner, Nikon Ambassador","Donna De Cesare, Photojournalist, Associate Professor, University of Texas at Austin","Nina Emett, Director of FotoDocument, Documentary Photographer, Curator","Neo Ntsoma, Photojournalist, Founder of Neo Ntsoma Productions","Isabella Franceschini, 2024 Marilyn Stafford FotoReportage Award winner"],"submitVia":"FotoDocument","submitUrl":"https://fotoaward.fotodocument.org/","email": "","ai":"","requirements":"10 + 15 images (current + finished project)"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +117,7 @@
       var u = 'https://fotoaward.fotodocument.org/';
       var o = 'FotoDocument';
       var dl = new Date('2026-05-18T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£4,000') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£4,000 grant (Nikon-supported) + exhibition at POST Hove + Honourable Mentions') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

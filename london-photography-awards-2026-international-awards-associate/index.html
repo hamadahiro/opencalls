@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">London Photography Awards 2026</h1>
 
       <p class="call-detail-description">International photography awards across 13 categories including Architecture, Fine Art, Nature, Minimalist, Fashion, and Black &amp; White. Separate professional and amateur/student divisions.</p>
@@ -88,9 +89,10 @@
       </div>
 
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://londonphotographyawards.com/london-photography-awards.php" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
+        <a href="https://londonphotographyawards.com/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,17 +107,17 @@
 
   <script>
     const CURRENT_SLUG = 'london-photography-awards-2026-international-awards-associate';
-    const CURRENT_CALL = {"prize":"$3,000","category":"photography","org":"International Awards Associate","location":"London, United Kingdom","fee":"$25–$50","deadline":"2026-04-30","resultsDate":"May 15, 2026","instagram":"@londonphotographyawards","eligibility":[],"jury":["Ryo Utsunomiya, Photographer & Artist","Francis De Andrés, Freelance Photographer","Marine Foissey, Artist Photographer","Tomáš Neuwirth, Qualified European Photographer","Alessandra Minotti, Professional Photographer & Visual Artist","Kalina Schneider, Master Photographer & Digital Artist","Patrizia Burra, Professional Photographer","José Martinez Silva, CEO & Principal Architect, ATELIER CENTRAL","Mel Hsieh, Experimental Filmmaker & Visual Artist","Donell Gumiran, Founder & Design Director, Muna Creative Agency","Lillian Liu, Photographer","Jean-Thomas Bedard, Painter, Filmmaker & Photographer","Gigi Chung, Fine Art Photographer","Ronn Lee, Creative Partner, BEAMY","Jai Thakur, Independent Photographer","Benny Lau, Photographer & Short Film Director","Eduardo Lopez Moreno, Co-Director & Social Photographer","Ella Mack, Photographer","Viral Padiya, Photographer","Raina Kirn, Photographer","Matthew Eric Lit, Photographer, Managing Editor & Educator","Sane Seven, Photographer","Pinu Rahman, Ambassador, World Photography Olympiad"],"submitVia":"Website form","submitUrl":"https://londonphotographyawards.com/london-photography-awards.php","email": "","ai":"","requirements":"Single image or series (2–8 images)"};
+    const CURRENT_CALL = {"prize":"$3,000 Photographer of the Year + $2,000 amateur + $100 per category","category":"photography","org":"International Awards Associate","location":"London, United Kingdom","fee":"$25–$50","deadline":"2026-04-30","resultsDate":"May 15, 2026","instagram":"@londonphotographyawards","eligibility":[],"jury":["Ryo Utsunomiya, Photographer & Artist","Francis De Andrés, Freelance Photographer","Marine Foissey, Artist Photographer","Tomáš Neuwirth, Qualified European Photographer","Alessandra Minotti, Professional Photographer & Visual Artist","Kalina Schneider, Master Photographer & Digital Artist","Patrizia Burra, Professional Photographer","José Martinez Silva, CEO & Principal Architect, ATELIER CENTRAL","Mel Hsieh, Experimental Filmmaker & Visual Artist","Donell Gumiran, Founder & Design Director, Muna Creative Agency","Lillian Liu, Photographer","Jean-Thomas Bedard, Painter, Filmmaker & Photographer","Gigi Chung, Fine Art Photographer","Ronn Lee, Creative Partner, BEAMY","Jai Thakur, Independent Photographer","Benny Lau, Photographer & Short Film Director","Eduardo Lopez Moreno, Co-Director & Social Photographer","Ella Mack, Photographer","Viral Padiya, Photographer","Raina Kirn, Photographer","Matthew Eric Lit, Photographer, Managing Editor & Educator","Sane Seven, Photographer","Pinu Rahman, Ambassador, World Photography Olympiad"],"submitVia":"Website form","submitUrl":"https://londonphotographyawards.com/london-photography-awards.php","email": "","ai":"","requirements":"Single image or series (2–8 images)"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
       var d = '2026-04-30'.replace(/-/g, '');
       var nd = new Date('2026-04-30T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
       var t = 'London Photography Awards 2026';
-      var u = 'https://londonphotographyawards.com/london-photography-awards.php';
+      var u = 'https://londonphotographyawards.com/';
       var o = 'International Awards Associate';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$3,000') + '\\nEntry fee: ' + icsE('$25–$50');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$3,000 Photographer of the Year + $2,000 amateur + $100 per category') + '\\nEntry fee: ' + icsE('$25–$50');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

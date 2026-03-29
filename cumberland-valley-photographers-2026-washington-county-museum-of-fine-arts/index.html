@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Cumberland Valley Photographers 2026</h1>
 
       <p class="call-detail-description">Annual juried photography exhibition at the Washington County Museum of Fine Arts, this year celebrating contemporary perspectives as the nation approaches its 250th anniversary. Photographers explore history, identity, place, and civic life through four themes: Unfinished Revolutions, Power of Place, Tell Everyone's Story, and American Experiment. Respond literally or metaphorically through documentary, conceptual, figurative, or abstract approaches. All photographic processes accepted. Submissions open April 1–30, 2026. Selected work exhibited June 20 – October 11, 2026. Open to photographers from Maryland, Virginia, West Virginia, Pennsylvania, and Washington, DC.</p>
@@ -87,6 +88,7 @@
         <a href="https://wcmfa.org/news-listing/call-for-entries/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'cumberland-valley-photographers-2026-washington-county-museum-of-fine-arts';
-    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Washington County Museum of Fine Arts","location":"Hagerstown, MD, USA","fee":"$15","deadline":"2026-04-30","resultsDate":"","instagram":"","eligibility":[],"jury":[],"submitVia":"Smarter Entry","submitUrl":"","email": "","ai":"","requirements":""};
+    const CURRENT_CALL = {"prize":"Exhibition at Washington County Museum of Fine Arts","category":"exhibition","org":"Washington County Museum of Fine Arts","location":"Hagerstown, MD, USA","fee":"$15","deadline":"2026-04-30","resultsDate":"","instagram":"","eligibility":[],"jury":[],"submitVia":"Smarter Entry","submitUrl":"","email": "","ai":"","requirements":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://wcmfa.org/news-listing/call-for-entries/';
       var o = 'Washington County Museum of Fine Arts';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$15');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition at Washington County Museum of Fine Arts') + '\\nEntry fee: ' + icsE('$15');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

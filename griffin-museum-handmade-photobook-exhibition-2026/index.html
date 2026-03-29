@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Griffin Museum — Handmade Photobook Exhibition 2026</h1>
 
       <p class="call-detail-description">2nd annual exhibition for handcrafted photobooks where the artist's hand shapes the object itself. Submit handmade photobooks via CaFE. Juror: Caleb Cain Marcus of Luminosity Lab.</p>
@@ -91,6 +92,7 @@
         <a href="https://www.griffinmuseum.org/calls-for-entry" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'griffin-museum-handmade-photobook-exhibition-2026';
-    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Griffin Museum of Photography","location":"Winchester, MA, USA","fee":"$45","deadline":"2026-03-30","resultsDate":"After May 1, 2026","instagram":"@griffinmuseum","eligibility":[],"jury":["Caleb Cain Marcus, Luminosity Lab"],"submitVia":"CaFE","submitUrl":"https://artist.callforentry.org/festivals_unique_info.php?ID=16876","email": "","ai":"","requirements":"Up to 3 photobooks"};
+    const CURRENT_CALL = {"prize":"Gallery exhibition at Griffin Museum (handmade books)","category":"exhibition","org":"Griffin Museum of Photography","location":"Winchester, MA, USA","fee":"$45","deadline":"2026-03-30","resultsDate":"After May 1, 2026","instagram":"@griffinmuseum","eligibility":[],"jury":["Caleb Cain Marcus, Luminosity Lab"],"submitVia":"CaFE","submitUrl":"https://artist.callforentry.org/festivals_unique_info.php?ID=16876","email": "","ai":"","requirements":"Up to 3 photobooks"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +117,7 @@
       var u = 'https://www.griffinmuseum.org/calls-for-entry';
       var o = 'Griffin Museum of Photography';
       var dl = new Date('2026-03-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$45');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Gallery exhibition at Griffin Museum (handmade books)') + '\\nEntry fee: ' + icsE('$45');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
