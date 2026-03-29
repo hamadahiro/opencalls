@@ -3,6 +3,17 @@
   if (typeof CURRENT_CALL === 'undefined') return;
   const info = document.getElementById('detailInfo');
   if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
+  var dp = document.getElementById('detailPrize');
+  if (dp && CURRENT_CALL.prize) {
+    var parts = splitPrizeParts(CURRENT_CALL.prize);
+    var label = parts.length > 1 ? 'Prizes' : 'Prize';
+    var tags = parts.map(function(part) {
+      var cat = derivePrizeCategory(part);
+      var href = cat ? '/prize/' + cat + '/' : '/prize/';
+      return '<a href="' + href + '" class="meta-tag meta-tag-link call-prize">' + part + ' prize</a>';
+    }).join(' ');
+    dp.innerHTML = '<div class="call-detail-prize"><span class="call-detail-prize-label">' + label + '</span> ' + tags + '</div>';
+  }
 })();
 
 function getState(location) {

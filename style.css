@@ -835,6 +835,20 @@ a.meta-tag-link.call-prize:hover {
   margin-bottom: 24px;
 }
 
+.call-detail-prize {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.call-detail-prize-label {
+  font-size: var(--fs-tag);
+  color: var(--text);
+  letter-spacing: 0.3px;
+}
+
 .call-detail-jury {
   margin-top: 32px;
 }

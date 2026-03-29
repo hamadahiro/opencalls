@@ -283,16 +283,6 @@ function renderInfoGrid(call) {
       : infoLink('/fees/entry-fee', call.fee);
     rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
   }
-  // Prize
-  if (call.prize) {
-    const parts = splitPrizeParts(call.prize);
-    const prizeHtml = parts.map(part => {
-      const cat = derivePrizeCategory(part);
-      return cat ? infoLink('/prize/' + cat, part) : infoVal(part);
-    }).join(', ');
-    const prizeLabel = parts.length > 1 ? 'Prizes' : 'Prize';
-    rows.push(infoRow('<a href="/prize/">' + prizeLabel + '</a>', prizeHtml));
-  }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
