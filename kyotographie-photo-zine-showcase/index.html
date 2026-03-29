@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
       <h1 class="call-detail-title">KYOTOGRAPHIE Photo Zine Showcase</h1>
 
       <p class="call-detail-description">Special exhibition within the KYOTOGRAPHIE Photobook Fair for emerging artists. Zines shown to international editors, photographers, curators, and publishers. Exhibition May 9–10, 2026 at Rohm Theatre Kyoto.</p>
@@ -88,7 +87,6 @@
         <a href="https://www.kyotographie.jp/photobook_fair/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -103,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'kyotographie-photo-zine-showcase';
-    const CURRENT_CALL = {"prize":"Exhibition at KYOTOGRAPHIE Photo Zine Showcase, Kyoto","category":"zine","org":"KYOTOGRAPHIE","location":"Kyoto, Japan","fee":"Free","deadline":"2026-04-20","resultsDate":"","instagram":"@kyotographie","eligibility":["emerging"],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLScbsaSCLRjy64Ea019gN2JyWuKbQsl5In4VaCGP4CF15BpKXw/viewform","email": "","ai":"","requirements":"1 zine"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"zine","org":"KYOTOGRAPHIE","location":"Kyoto, Japan","fee":"Free","deadline":"2026-04-20","resultsDate":"","instagram":"@kyotographie","eligibility":["emerging"],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLScbsaSCLRjy64Ea019gN2JyWuKbQsl5In4VaCGP4CF15BpKXw/viewform","email": "","ai":"","requirements":"1 zine"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -113,7 +111,7 @@
       var u = 'https://www.kyotographie.jp/photobook_fair/';
       var o = 'KYOTOGRAPHIE';
       var dl = new Date('2026-04-20T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition at KYOTOGRAPHIE Photo Zine Showcase, Kyoto') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

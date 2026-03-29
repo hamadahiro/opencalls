@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/grants/">Grant open call</a></nav>
       <h1 class="call-detail-title">CPA Artist Grants 2026</h1>
 
       <p class="call-detail-description">Five $5,000 grants across five categories: emerging photographer, mid-career photographer, landscape photographer, LGBTQ+ photographer, and Monterey County resident.</p>
@@ -92,7 +91,6 @@
         <a href="https://www.photography.org/events/call-for-entry-cpa-artist-grants-2025-ptxxb" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -107,7 +105,7 @@
 
   <script>
     const CURRENT_SLUG = 'cpa-artist-grants-2026-center-for-photographic-art';
-    const CURRENT_CALL = {"prize":"5 × $5,000 grants (emerging, mid-career, landscape, LGBTQ+, local)","category":"grant","org":"Center for Photographic Art","location":"Carmel-by-the-Sea, CA, USA","fee":"$30","deadline":"2026-04-07","resultsDate":"","instagram":"@centerphotographicart","eligibility":[],"jury":["Diane Chung, Founder, CHUNG 24 GALLERY","Gregory Harris, Curator of Photography, High Museum of Art","Frank Yamrus, Fine Art Photographer"],"submitVia":"Website form","submitUrl":"https://www.photography.org/events/call-for-entry-cpa-artist-grants-2025-ptxxb","email": "","ai":"","requirements":"10–20 images"};
+    const CURRENT_CALL = {"prize":"$5,000","category":"grant","org":"Center for Photographic Art","location":"Carmel-by-the-Sea, CA, USA","fee":"$30","deadline":"2026-04-07","resultsDate":"","instagram":"@centerphotographicart","eligibility":[],"jury":["Diane Chung, Founder, CHUNG 24 GALLERY","Gregory Harris, Curator of Photography, High Museum of Art","Frank Yamrus, Fine Art Photographer"],"submitVia":"Website form","submitUrl":"https://www.photography.org/events/call-for-entry-cpa-artist-grants-2025-ptxxb","email": "","ai":"","requirements":"10–20 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -117,7 +115,7 @@
       var u = 'https://www.photography.org/events/call-for-entry-cpa-artist-grants-2025-ptxxb';
       var o = 'Center for Photographic Art';
       var dl = new Date('2026-04-07T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('5 × $5,000 grants (emerging, mid-career, landscape, LGBTQ+, local)') + '\\nEntry fee: ' + icsE('$30');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$5,000') + '\\nEntry fee: ' + icsE('$30');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
