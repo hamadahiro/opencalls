@@ -248,6 +248,10 @@ main {
   margin-bottom: 32px;
 }
 
+.call-detail-description a {
+  color: var(--text-body);
+}
+
 /* === Filters === */
 .filters {
   display: flex;
