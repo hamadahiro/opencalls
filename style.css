@@ -714,9 +714,6 @@ a.meta-tag-link.call-prize:hover {
     padding: 8px 12px;
   }
 
-  .call-detail-fee-inline {
-    display: none;
-  }
 
   .filters {
     flex-wrap: nowrap;
@@ -852,17 +849,6 @@ a.meta-tag-link.call-prize:hover {
   margin-bottom: 24px;
 }
 
-.call-detail-fee-inline {
-  margin-left: auto;
-  font-size: var(--fs-body);
-  font-family: 'Source Serif 4', serif;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.call-detail-fee-inline:hover {
-  text-decoration: underline;
-}
 
 .call-detail-prize-label {
   font-size: var(--fs-body);
