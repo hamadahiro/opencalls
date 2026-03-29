@@ -111,7 +111,7 @@
 
   <script>
     const CURRENT_SLUG = 'on-the-block-street-urban-photography-lucie-foundation';
-    const CURRENT_CALL = {"prize":"$1,000 + exhibition","category":"exhibition","org":"Lucie Foundation","location":"Los Angeles, CA, USA","fee":"$20/image","deadline":"2026-03-31","resultsDate":"April 2026","instagram":"@luciefoundation","eligibility":[],"jury":["Paris Chong, Gallery Director, Leica Gallery Los Angeles","Lynn Johnson, Photographer, National Geographic"],"submitVia":"Website form","submitUrl":"https://www.luciefoundation.org/open-call-on-the-block-2nd-edition/","email": "","ai":"Not accepted","requirements":"1 image per entry"};
+    const CURRENT_CALL = {"prize":"$1,000 + exhibition","category":"exhibition","org":"Lucie Foundation","location":"Los Angeles, CA, USA","fee":"$20","deadline":"2026-03-31","resultsDate":"April 2026","instagram":"@luciefoundation","eligibility":[],"jury":["Paris Chong, Gallery Director, Leica Gallery Los Angeles","Lynn Johnson, Photographer, National Geographic"],"submitVia":"Website form","submitUrl":"https://www.luciefoundation.org/open-call-on-the-block-2nd-edition/","email": "","ai":"Not accepted","requirements":"1 image per entry"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -121,7 +121,7 @@
       var u = 'https://www.luciefoundation.org/open-call-on-the-block-2nd-edition/';
       var o = 'Lucie Foundation';
       var dl = new Date('2026-03-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$1,000 + exhibition') + '\\nEntry fee: ' + icsE('$20/image');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$1,000 + exhibition') + '\\nEntry fee: ' + icsE('$20');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
