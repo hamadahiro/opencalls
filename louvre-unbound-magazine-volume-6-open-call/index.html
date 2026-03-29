@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
       <h1 class="call-detail-title">Louvre Unbound Magazine — Volume 6 Open Call</h1>
 
       <p class="call-detail-description">International contemporary art magazine seeking visual artists worldwide. Painting, photography, sculpture, digital art, mixed media, and more. Submit up to 6 artworks for consideration. Selected artists are featured in print and promoted across social media.</p>
@@ -87,6 +88,7 @@
         <a href="https://louvreunbound.com/art-submission" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'louvre-unbound-magazine-volume-6-open-call';
-    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"Louvre Unbound","location":"Online","fee":"Free ($39–$139 if accepted)","deadline":"2026-04-15","resultsDate":"","instagram":"@louvreunbound","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSf2v_H1I_SV7aZKQIWPLXfFnuV2y4fOFxDUaTLEahnoQgsBCg/viewform","email": "","ai":"","requirements":"Up to 6 images"};
+    const CURRENT_CALL = {"prize":"Publication in Louvre Unbound Magazine (print + digital, 67+ countries) + 2-month social media promotion","category":"zine","org":"Louvre Unbound","location":"Online","fee":"Free ($39–$139 if accepted)","deadline":"2026-04-15","resultsDate":"","instagram":"@louvreunbound","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSf2v_H1I_SV7aZKQIWPLXfFnuV2y4fOFxDUaTLEahnoQgsBCg/viewform","email": "","ai":"","requirements":"Up to 6 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://louvreunbound.com/art-submission';
       var o = 'Louvre Unbound';
       var dl = new Date('2026-04-15T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication') + '\\nEntry fee: ' + icsE('Free ($39–$139 if accepted)');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication in Louvre Unbound Magazine (print + digital, 67+ countries) + 2-month social media promotion') + '\\nEntry fee: ' + icsE('Free ($39–$139 if accepted)');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

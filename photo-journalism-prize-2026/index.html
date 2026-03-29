@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">Photo Journalism Prize 2026</h1>
 
       <p class="call-detail-description">International award honoring editorial and documentary photography. 11 categories including Conflict, Daily Life, Documentary, Human Rights, and News. Founded by Hossein Farmani, creator of the Lucie Awards.</p>
@@ -91,6 +92,7 @@
         <a href="https://photojournalismprize.com/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -105,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'photo-journalism-prize-2026';
-    const CURRENT_CALL = {"prize":"€5,000","category":"photography","org":"Photo Journalism Prize","location":"Online","fee":"€20–€25","deadline":"2026-04-30","resultsDate":"June 15, 2026","instagram":"@photojournalismprize","eligibility":[],"jury":["Jim Colton, Editor at Large, ZUMA Press Wire","James Nachtwey, Photojournalist","Steve McCurry, Photojournalist","Ron Haviv, Co-Founder, VII Foundation","Natasha Egan, Executive Director, MoCP","Alex Pollack, Director of Photography, National Geographic"],"submitVia":"Website form","submitUrl":"https://photojournalismprize.com/","email": "","ai":"","requirements":"1–10 images"};
+    const CURRENT_CALL = {"prize":"€5,000 1st + €3,000 2nd + €1,000 3rd","category":"photography","org":"Photo Journalism Prize","location":"Online","fee":"€20–€25","deadline":"2026-04-30","resultsDate":"June 15, 2026","instagram":"@photojournalismprize","eligibility":[],"jury":["Jim Colton, Editor at Large, ZUMA Press Wire","James Nachtwey, Photojournalist","Steve McCurry, Photojournalist","Ron Haviv, Co-Founder, VII Foundation","Natasha Egan, Executive Director, MoCP","Alex Pollack, Director of Photography, National Geographic"],"submitVia":"Website form","submitUrl":"https://photojournalismprize.com/","email": "","ai":"","requirements":"1–10 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -115,7 +117,7 @@
       var u = 'https://photojournalismprize.com/';
       var o = 'Photo Journalism Prize';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€5,000') + '\\nEntry fee: ' + icsE('€20–€25');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€5,000 1st + €3,000 2nd + €1,000 3rd') + '\\nEntry fee: ' + icsE('€20–€25');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

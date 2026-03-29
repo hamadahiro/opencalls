@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">Luz e Sombra — National Photography Competition</h1>
 
       <p class="call-detail-description">National photography competition exploring the relationship between light and shadow across themes of heritage, nature, architecture, and daily life. Submit a series of 6 photographs with a conceptual synopsis (1,500 chars) and bio (1,000 chars). Six finalists selected — works published in an artist-edition book, shown in a traveling exhibition at three venues, and featured in the Égide digital gallery. Open to professional and amateur photographers who are Portuguese citizens or residents of Portugal.</p>
@@ -87,6 +88,7 @@
         <a href="https://www.egideartes.pt/luzsombra" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'luz-e-sombra-national-photography-competition-gide-associa-o-portuguesa-das-artes';
-    const CURRENT_CALL = {"prize":"€3,000","category":"photography","org":"Égide — Associação Portuguesa das Artes","location":"Online","fee":"Free","deadline":"2026-04-30","resultsDate":"May 2026","instagram":"@ensaio.pt","eligibility":["portugal"],"jury":[],"submitVia":"Website form","submitUrl":"https://www.egideartes.pt/luzsombra","email": "","ai":"","requirements":"6 images"};
+    const CURRENT_CALL = {"prize":"€3,000 prize","category":"photography","org":"Égide — Associação Portuguesa das Artes","location":"Online","fee":"Free","deadline":"2026-04-30","resultsDate":"May 2026","instagram":"@ensaio.pt","eligibility":["portugal"],"jury":[],"submitVia":"Website form","submitUrl":"https://www.egideartes.pt/luzsombra","email": "","ai":"","requirements":"6 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://www.egideartes.pt/luzsombra';
       var o = 'Égide — Associação Portuguesa das Artes';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€3,000') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€3,000 prize') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Inspired by Classics — Golden Duck Gallery</h1>
 
       <p class="call-detail-description">International open call for contemporary art engaging with classical art traditions. Study copies, homages, and modern interpretations welcome. Physical exhibition in Budapest, online exhibition in Vienna and New York. 3 artists exhibit free. €1,000 prize fund.</p>
@@ -87,6 +88,7 @@
         <a href="https://www.goldenduckgallery.com/open-calls/inspired-by-classics" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'inspired-by-classics-golden-duck-gallery';
-    const CURRENT_CALL = {"prize":"€1,000","category":"exhibition","org":"Golden Duck Gallery","location":"Budapest, Hungary","fee":"Free (€100/work if accepted)","deadline":"2026-03-29","resultsDate":"April 3, 2026","instagram":"@goldenduckgallery","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSf8IUXdDtZYLS4zWBx9WypngNqvzb6XQC8NRO23uvbReRP1Rw/viewform","email": "","ai":"","requirements":"Up to 5 images"};
+    const CURRENT_CALL = {"prize":"€1,000 prize","category":"exhibition","org":"Golden Duck Gallery","location":"Budapest, Hungary","fee":"Free (€100/work if accepted)","deadline":"2026-03-29","resultsDate":"April 3, 2026","instagram":"@goldenduckgallery","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSf8IUXdDtZYLS4zWBx9WypngNqvzb6XQC8NRO23uvbReRP1Rw/viewform","email": "","ai":"","requirements":"Up to 5 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://www.goldenduckgallery.com/open-calls/inspired-by-classics';
       var o = 'Golden Duck Gallery';
       var dl = new Date('2026-03-29T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000') + '\\nEntry fee: ' + icsE('Free (€100/work if accepted)');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000 prize') + '\\nEntry fee: ' + icsE('Free (€100/work if accepted)');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

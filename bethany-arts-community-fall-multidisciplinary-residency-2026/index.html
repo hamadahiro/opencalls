@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/residencies/">Residency open call</a></nav>
       <h1 class="call-detail-title">Bethany Arts Community — Fall Multidisciplinary Residency 2026</h1>
 
       <p class="call-detail-description">Two-week artist residency in Ossining, New York (Sep 22 – Oct 6, 2026) for 12 artists across all disciplines including photography, visual arts, film, writing, and performance. Residents receive a $450 stipend, private studio, room and board, and 3 meals daily. Each artist facilitates one community program during the residency. Requires one letter of recommendation and one reference. Funded by the National Endowment for the Arts and New York State Council on the Arts.</p>
@@ -87,6 +88,7 @@
         <a href="https://bethanyarts.org/residencies/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'bethany-arts-community-fall-multidisciplinary-residency-2026';
-    const CURRENT_CALL = {"prize":"$450 + residency","category":"residency","org":"Bethany Arts Community","location":"Ossining, NY, USA","fee":"Free","deadline":"2026-05-06","resultsDate":"June 26, 2026","instagram":"@bethanyartsorg","eligibility":[],"jury":[],"submitVia":"Submittable","submitUrl":"https://bethanyarts.submittable.com/submit","email": "","ai":"","requirements":""};
+    const CURRENT_CALL = {"prize":"$450 stipend + residency","category":"residency","org":"Bethany Arts Community","location":"Ossining, NY, USA","fee":"Free","deadline":"2026-05-06","resultsDate":"June 26, 2026","instagram":"@bethanyartsorg","eligibility":[],"jury":[],"submitVia":"Submittable","submitUrl":"https://bethanyarts.submittable.com/submit","email": "","ai":"","requirements":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://bethanyarts.org/residencies/';
       var o = 'Bethany Arts Community';
       var dl = new Date('2026-05-06T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$450 + residency') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$450 stipend + residency') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

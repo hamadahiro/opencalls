@@ -77,6 +77,7 @@
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
       <h1 class="call-detail-title">MACK — Debut Photography Book Submissions</h1>
 
       <p class="call-detail-description">MACK's annual submission window for first-time photobook authors. Founded by Michael Mack (former Managing Director of Steidl) in 2010, MACK is one of the most prestigious art and photography publishers in the world, releasing approximately 40 books per year with artists including Robert Adams, Alec Soth, and Wolfgang Tillmans. This window is specifically for artists who have not previously had a book published — seeking emerging voices and experimental approaches to the book form. Submit a PDF draft sequence and completed submissions form via email during the May 1–31 window only. No WeTransfer, Dropbox, or download links accepted. Email subject line: 'Submission: Debut Photography Book'. Response within one month after the window closes.</p>
@@ -87,6 +88,7 @@
         <a href="https://mackbooks.co.uk/pages/submissions" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
+      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -101,7 +103,7 @@
 
   <script>
     const CURRENT_SLUG = 'mack-debut-photography-book-submissions-may-2026';
-    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"MACK","location":"London, United Kingdom","fee":"Free","deadline":"2026-05-31","resultsDate":"End of June 2026","instagram":"@mack_publishing","eligibility":["emerging"],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"PDF draft sequence"};
+    const CURRENT_CALL = {"prize":"Publication by MACK Books","category":"zine","org":"MACK","location":"London, United Kingdom","fee":"Free","deadline":"2026-05-31","resultsDate":"End of June 2026","instagram":"@mack_publishing","eligibility":["emerging"],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"PDF draft sequence"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -111,7 +113,7 @@
       var u = 'https://mackbooks.co.uk/pages/submissions';
       var o = 'MACK';
       var dl = new Date('2026-05-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication by MACK Books') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
