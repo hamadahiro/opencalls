@@ -260,7 +260,7 @@ function buildKeywords(call) {
 
 function derivePrizeCategory(text) {
   const p = text.toLowerCase();
-  if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/[$€£¥]|chf |sek |aud |twd |rub |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
@@ -334,6 +334,7 @@ function generatePage(call, cssVersion) {
 
   <main>
     <section class="call-detail">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
