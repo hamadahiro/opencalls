@@ -839,14 +839,28 @@ a.meta-tag-link.call-prize:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
 .call-detail-prize-label {
-  font-size: var(--fs-tag);
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
   color: var(--text);
-  letter-spacing: 0.3px;
+}
+
+.call-detail-prize-label a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.call-detail-prize-label a:hover {
+  text-decoration: underline;
+}
+
+.call-detail-prize .call-prize {
+  background: var(--card-bg);
+  color: var(--text);
 }
 
 .call-detail-jury {
