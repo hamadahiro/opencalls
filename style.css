@@ -15,6 +15,7 @@
   --prize-text: #fff;
   --prize-bg-hover: #111;
   --tag-border: rgba(0, 0, 0, 0.2);
+  --tag-hover: rgba(0, 0, 0, 0.06);
   --dots: var(--text);
   --bg-image: none;
   /* Type scale: 7 sizes only */
@@ -44,6 +45,7 @@
     --prize-text: #111;
     --prize-bg-hover: #cdcdcd;
     --tag-border: rgba(255, 255, 255, 0.2);
+    --tag-hover: rgba(255, 255, 255, 0.08);
     --dots: var(--text);
     --bg-image: none;
   }
@@ -491,7 +493,7 @@ a.meta-tag-link {
 }
 
 a.meta-tag-link:hover {
-  background: var(--card-bg);
+  background: var(--tag-hover);
   text-decoration: none;
 }
 
@@ -867,7 +869,7 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .call-detail-prize a.meta-tag-link.call-prize:hover {
-  background: var(--card-bg);
+  background: var(--tag-hover);
 }
 
 .call-detail-jury {
