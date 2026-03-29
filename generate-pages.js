@@ -345,11 +345,11 @@ ${call.winners && call.winners.length ? `
 ` : ''}
       <div class="call-detail-info" id="detailInfo"></div>
       <div class="call-detail-jury">
-        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
+        <p class="breadcrumbs">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
+        <p class="breadcrumbs">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
       </div>
 ` : ''}
       <div class="call-detail-actions" id="detailActions">
