@@ -458,7 +458,8 @@ a.call-deadline.closed:hover { opacity: 0.5; }
   font-size: var(--fs-tag);
   padding: 8px 12px;
   border-radius: 999px;
-  background: var(--card-bg);
+  background: none;
+  border: 1px solid var(--card-bg);
   color: var(--text);
   white-space: nowrap;
   line-height: 1;
@@ -488,7 +489,7 @@ a.meta-tag-link {
 }
 
 a.meta-tag-link:hover {
-  background: var(--card-bg-hover);
+  background: var(--card-bg);
   text-decoration: none;
 }
 
@@ -859,12 +860,12 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .call-detail-prize .call-prize {
-  background: var(--card-bg);
+  background: none;
   color: var(--text);
 }
 
 .call-detail-prize a.meta-tag-link.call-prize:hover {
-  background: var(--card-bg-hover);
+  background: var(--card-bg);
 }
 
 .call-detail-jury {
