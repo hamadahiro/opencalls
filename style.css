@@ -923,7 +923,157 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: none;
 }
 
-.call-detail-info a:hover {
+.call-detail-info a:hover:not(.prize-card) {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .info-row {
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 0;
+  }
+
+  .info-label {
+    font-size: var(--fs-tag);
+    font-family: helvetica, sans-serif;
+    color: var(--text-muted);
+  }
+
+  .info-label a {
+    color: var(--text-muted);
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .info-value {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+/* === Prize Cards === */
+.prize-section {
+  margin-top: 32px;
+  grid-column: 1 / -1;
+}
+
+.detail-heading {
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+  font-weight: 400;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.detail-heading a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.detail-heading a:hover {
+  text-decoration: underline;
+}
+
+.prize-cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.prize-card {
+  background: var(--surface);
+  padding: 20px 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  min-width: 130px;
+  max-width: calc(33.33% - 7px);
+  flex: 1 1 0;
+}
+
+.prize-card:hover {
+  text-decoration: none;
+  background: var(--surface-hover);
+}
+
+.prize-amount {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  font-family: 'Source Serif 4', serif;
+  line-height: 1.2;
+}
+
+.prize-label {
+  font-size: var(--fs-tag);
+  color: var(--text-body);
+  margin-top: 4px;
+  font-family: helvetica, sans-serif;
+}
+
+.prize-card-text {
+  justify-content: center;
+}
+
+
+.prize-text {
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+}
+
+/* === Requirements Section === */
+.detail-requirements {
+  margin-top: 28px;
+}
+
+.detail-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-requirements li {
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+  color: var(--text);
+  padding: 3px 0;
+}
+
+.detail-requirements li::before {
+  content: '·  ';
+  color: var(--text-muted);
+}
+
+/* === Detail Footer (AI policy, Instagram) === */
+.detail-footer {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-footer-item {
+  font-size: var(--fs-tag);
+  font-family: helvetica, sans-serif;
+  color: var(--text-muted);
+}
+
+.detail-footer-label {
+  color: var(--text-body);
+}
+
+.detail-footer-item a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.detail-footer-item a:hover {
   text-decoration: underline;
 }
 
@@ -1088,6 +1238,29 @@ a.meta-tag-link.call-prize:hover {
 @media (max-width: 640px) {
   .call-detail {
     padding: 36px 0 24px;
+  }
+
+  .prize-cards {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .prize-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .prize-card {
+    min-width: 100px;
+    max-width: 180px;
+    flex: 0 0 auto;
+    padding: 16px 20px;
+  }
+
+  .prize-amount {
+    font-size: var(--fs-body);
   }
 
   .index-item-name {
