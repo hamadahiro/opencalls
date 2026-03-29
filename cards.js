@@ -92,12 +92,6 @@ function splitPrizeParts(prize) {
   return prize.split(/\s*\+\s*/).map(function(s) { s = s.trim(); return s.charAt(0).toUpperCase() + s.slice(1); }).filter(Boolean);
 }
 
-function parsePrizeAmount(text) {
-  var m = text.match(/^(\d+\s*×\s*)?(US\s*)?[€£$¥][\d,]+\+?/);
-  if (m) { var label = text.slice(m[0].length).trim(); return { amount: m[0], label: label || null }; }
-  return { amount: null, label: text };
-}
-
 const categorySlug = {
   'photography': 'photography',
   'exhibition': 'exhibitions',
@@ -322,6 +316,10 @@ function renderInfoGrid(call) {
   const oSlug = slugify(call.org);
   const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
   rows.push(infoRow('<a href="/organizations/">Organizer</a>', orgHtml));
+  // Requirements
+  if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
+  // AI policy (only show if actually specified)
+  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
   if (call.submitVia) {
     const open = isCallOpen(call.deadline);
@@ -336,43 +334,12 @@ function renderInfoGrid(call) {
       rows.push(infoRow('Submit via', label));
     }
   }
-
-  let html = rows.join('');
-
-  // Prize cards
-  if (call.prize) {
-    const parts = splitPrizeParts(call.prize);
-    const prizeHeading = parts.length > 1 ? 'Prizes' : 'Prize';
-    const cardsHtml = parts.map(part => {
-      const cat = derivePrizeCategory(part);
-      const href = (cat ? '/prize/' + cat + '/' : '/prize/');
-      const p = parsePrizeAmount(part);
-      if (p.amount) {
-        return `<a href="${href}" class="prize-card"><span class="prize-amount">${esc(p.amount)}</span>${p.label ? `<span class="prize-label">${esc(p.label)}</span>` : ''}</a>`;
-      }
-      return `<a href="${href}" class="prize-card prize-card-text"><span class="prize-text">${esc(p.label)}</span></a>`;
-    }).join('');
-    html += `<div class="prize-section"><h3 class="detail-heading"><a href="/prize/">${prizeHeading}</a></h3><div class="prize-cards">${cardsHtml}</div></div>`;
-  }
-
-  // Requirements
-  if (call.requirements) {
-    html += `<div class="detail-requirements"><h3 class="detail-heading">Requirements</h3><ul><li>${esc(call.requirements)}</li></ul></div>`;
-  }
-
-  return html;
-}
-
-function renderDetailFooter(call) {
-  let html = '';
-  if (call.ai && call.ai !== 'Not specified') {
-    html += `<div class="detail-footer-item"><span class="detail-footer-label">AI policy:</span> ${esc(call.ai)}</div>`;
-  }
+  // Instagram
   if (call.instagram) {
     const handle = call.instagram.replace('@', '');
-    html += `<div class="detail-footer-item"><a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${esc(call.instagram)}</a></div>`;
+    rows.push(infoRow('Instagram', `<a href="https://instagram.com/${esc(handle)}" target="_blank" rel="nofollow noopener">${infoVal(call.instagram)}</a>`));
   }
-  return html;
+  return rows.join('');
 }
 
 function renderCard(call, titleTag) {
