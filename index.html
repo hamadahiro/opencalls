@@ -163,6 +163,9 @@
         var parts = chipParam.split(':');
         if (parts.length === 2) {
           var chipType = parts[0], chipValue = parts[1];
+          // Redirect fee chips to dedicated pages
+          if (chipType === 'fee' && chipValue === 'free') { window.location.href = '/fees/free/'; return; }
+          if (chipType === 'fee' && chipValue === 'paid') { window.location.href = '/fees/entry-fee/'; return; }
           var chipLabel = chipValue;
           var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
           if (chipType === 'category' && categoryLabel[chipValue]) chipLabel = categoryLabel[chipValue];
@@ -348,10 +351,12 @@
     }
 
     function addChip(chip) {
+      // Redirect fee filters to dedicated pages
+      if (chip.type === 'fee' && chip.value === 'free') { window.location.href = '/fees/free/'; return; }
+      if (chip.type === 'fee' && chip.value === 'paid') { window.location.href = '/fees/entry-fee/'; return; }
       // If chip maps to a filter button, activate the button instead of creating a chip
       var filterKey = null;
       if (chip.type === 'category') filterKey = chip.value;
-      else if (chip.type === 'fee' && chip.value === 'free') filterKey = 'free';
       if (filterKey) {
         var btn = document.querySelector('.filter-btn[data-filter="' + filterKey + '"]');
         if (btn) {
@@ -648,6 +653,8 @@
       document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var filter = btn.dataset.filter;
+          // Navigate to dedicated pages for fee filters
+          if (filter === 'free') { window.location.href = '/fees/free/'; return; }
           // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
           currentFilter = filter;
