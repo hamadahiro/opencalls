@@ -309,6 +309,10 @@ function renderInfoGrid(call) {
     const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
     rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
   }
+  // Organizer
+  const oSlug = slugify(call.org);
+  const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
+  rows.push(infoRow('<a href="/organizations/">Organizer</a>', orgHtml));
   // Requirements
   if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
   // AI policy (only show if actually specified)
