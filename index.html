@@ -163,9 +163,9 @@
         var parts = chipParam.split(':');
         if (parts.length === 2) {
           var chipType = parts[0], chipValue = parts[1];
-          // Redirect fee chips to dedicated pages
-          if (chipType === 'fee' && chipValue === 'free') { window.location.href = '/fees/free/'; return; }
-          if (chipType === 'fee' && chipValue === 'paid') { window.location.href = '/fees/entry-fee/'; return; }
+          // Redirect to dedicated page if one exists
+          var chipUrl = chipToUrl(chipType, chipValue);
+          if (chipUrl) { window.location.href = chipUrl; return; }
           var chipLabel = chipValue;
           var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
           if (chipType === 'category' && categoryLabel[chipValue]) chipLabel = categoryLabel[chipValue];
@@ -351,9 +351,9 @@
     }
 
     function addChip(chip) {
-      // Redirect fee filters to dedicated pages
-      if (chip.type === 'fee' && chip.value === 'free') { window.location.href = '/fees/free/'; return; }
-      if (chip.type === 'fee' && chip.value === 'paid') { window.location.href = '/fees/entry-fee/'; return; }
+      // Navigate to dedicated page if one exists
+      var url = chipToUrl(chip.type, chip.value);
+      if (url) { window.location.href = url; return; }
       // If chip maps to a filter button, activate the button instead of creating a chip
       var filterKey = null;
       if (chip.type === 'category') filterKey = chip.value;
@@ -653,8 +653,9 @@
       document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var filter = btn.dataset.filter;
-          // Navigate to dedicated pages for fee filters
-          if (filter === 'free') { window.location.href = '/fees/free/'; return; }
+          // Navigate to dedicated page if one exists
+          var btnUrl = chipToUrl(filter === 'free' ? 'fee' : 'category', filter === 'free' ? 'free' : filter);
+          if (btnUrl) { window.location.href = btnUrl; return; }
           // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
           currentFilter = filter;
