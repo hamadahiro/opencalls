@@ -309,9 +309,6 @@ function renderInfoGrid(call) {
     const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
     rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
   }
-  // Category
-  const catSlugInfo = categorySlug[call.category];
-  rows.push(infoRow('<a href="/categories/">Category</a>', infoLink('/' + catSlugInfo, categoryLabel[call.category] || call.category)));
   // Organizer
   const oSlug = slugify(call.org);
   const orgHtml = orgPages.includes(oSlug) ? infoLink('/' + oSlug, call.org) : infoVal(call.org);
