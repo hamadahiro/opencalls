@@ -863,7 +863,7 @@ a.meta-tag-link.call-prize:hover {
   color: var(--text);
 }
 
-.call-detail-prize .call-prize:hover {
+.call-detail-prize a.meta-tag-link.call-prize:hover {
   background: var(--card-bg-hover);
 }
 
