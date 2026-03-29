@@ -3,14 +3,6 @@
   if (typeof CURRENT_CALL === 'undefined') return;
   const info = document.getElementById('detailInfo');
   if (info) info.innerHTML = renderInfoGrid(CURRENT_CALL);
-  var mp = document.getElementById('mobilePrizeTags');
-  if (mp && CURRENT_CALL.prize) {
-    mp.innerHTML = splitPrizeParts(CURRENT_CALL.prize).map(function(part) {
-      var cat = derivePrizeCategory(part);
-      var href = cat ? '/prize/' + cat + '/' : '/prize/';
-      return '<a href="' + href + '" class="meta-tag meta-tag-link call-prize">' + part + ' prize</a>';
-    }).join(' ');
-  }
 })();
 
 function getState(location) {
