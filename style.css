@@ -499,12 +499,12 @@ a.meta-tag-link:hover {
 }
 
 .meta-tag.call-prize {
-  color: var(--text);
-  background: var(--card-bg);
+  color: var(--prize-text);
+  background: var(--prize-bg);
 }
 
 a.meta-tag-link.call-prize:hover {
-  background: var(--card-bg-hover);
+  background: var(--prize-bg-hover);
 }
 
 /* === Empty State === */
