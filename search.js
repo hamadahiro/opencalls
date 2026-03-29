@@ -190,6 +190,9 @@
   }
 
   function navigateToSearch(type, value) {
+    // Redirect fee filters to dedicated pages
+    if (type === 'fee' && value === 'free') { window.location.href = '/fees/free/'; return; }
+    if (type === 'fee' && value === 'paid') { window.location.href = '/fees/entry-fee/'; return; }
     window.location.href = '/?chip=' + encodeURIComponent(type + ':' + value);
   }
 
