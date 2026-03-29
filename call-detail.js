@@ -12,7 +12,13 @@
       var href = cat ? '/prize/' + cat + '/' : '/prize/';
       return '<a href="' + href + '" class="meta-tag meta-tag-link call-prize">' + part + ' prize</a>';
     }).join(' ');
-    dp.innerHTML = '<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">' + label + '</a></span> ' + tags + '</div>';
+    var feeHtml = '';
+    if (CURRENT_CALL.fee && CURRENT_CALL.fee.length < 20) {
+      var feeText = CURRENT_CALL.fee.toLowerCase().startsWith('free') ? 'Free entry' : CURRENT_CALL.fee + ' entry fee';
+      var feeSlug = CURRENT_CALL.fee.toLowerCase().startsWith('free') ? 'free' : 'entry-fee';
+      feeHtml = '<a href="/fees/' + feeSlug + '/" class="call-detail-fee-inline">' + feeText + '</a>';
+    }
+    dp.innerHTML = '<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">' + label + '</a></span> ' + tags + feeHtml + '</div>';
   }
 })();
 
