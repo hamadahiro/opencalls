@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/grants/">Grant open call</a></nav>
       <h1 class="call-detail-title">Anja Niedringhaus Courage in Photojournalism Award 2026</h1>
 
       <p class="call-detail-description">Award honoring courageous, high-impact photojournalism by women, nonbinary, and gender-diverse creatives. Submit 12 photographs (6 from 2024–2026, 6 from broader career) plus a 500-word statement. Open to women, nonbinary, and gender non-conforming photojournalists working full-time in journalism. Self-nomination or third-party nomination accepted. Named after Pulitzer Prize-winning photographer Anja Niedringhaus (1965–2014).</p>
@@ -92,7 +91,6 @@
         <a href="https://www.iwmf.org/awards/anja-niedringhaus-courage-in-photojournalism-award/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -107,7 +105,7 @@
 
   <script>
     const CURRENT_SLUG = 'anja-niedringhaus-courage-in-photojournalism-award-2026-international-women-s-media-foundation';
-    const CURRENT_CALL = {"prize":"$20,000 award + work showcase","category":"grant","org":"International Women's Media Foundation","location":"Online","fee":"Free","deadline":"2026-03-31","resultsDate":"May 2026","instagram":"@theiwmf","eligibility":["women"],"jury":["Corinne Dufka, Independent Researcher/Advisor","Whitney Johnson, President & CEO, Catalina Island Conservancy","Brent Lewis, Photo Editor, The New York Times","Enric Marti, Deputy Director of Photography, Associated Press","Benny Snyder, Photo Editor & Contest Coordinator, Associated Press","Sandra M. Stevenson, Deputy Director of Photography, The Washington Post","Bernadette Tuazon, Director of Photography, CNN Digital"],"submitVia":"Picter","submitUrl":"https://site.picter.com/2026-iwmf-anja-niedringhaus-award","email": "","ai":"","requirements":"Work samples + statement"};
+    const CURRENT_CALL = {"prize":"$20,000","category":"grant","org":"International Women's Media Foundation","location":"Online","fee":"Free","deadline":"2026-03-31","resultsDate":"May 2026","instagram":"@theiwmf","eligibility":["women"],"jury":["Corinne Dufka, Independent Researcher/Advisor","Whitney Johnson, President & CEO, Catalina Island Conservancy","Brent Lewis, Photo Editor, The New York Times","Enric Marti, Deputy Director of Photography, Associated Press","Benny Snyder, Photo Editor & Contest Coordinator, Associated Press","Sandra M. Stevenson, Deputy Director of Photography, The Washington Post","Bernadette Tuazon, Director of Photography, CNN Digital"],"submitVia":"Picter","submitUrl":"https://site.picter.com/2026-iwmf-anja-niedringhaus-award","email": "","ai":"","requirements":"12 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -117,7 +115,7 @@
       var u = 'https://www.iwmf.org/awards/anja-niedringhaus-courage-in-photojournalism-award/';
       var o = 'International Women\'s Media Foundation';
       var dl = new Date('2026-03-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$20,000 award + work showcase') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$20,000') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

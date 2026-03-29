@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
       <h1 class="call-detail-title">Outdoor Photography Magazine — Spring Landscapes</h1>
 
       <p class="call-detail-description">Submit up to 5 spring landscape images with captions for publication in Outdoor Photography Magazine (UK). Winner receives Komperdell Carbon CXP Pro walking poles (RRP £150). JPG at 300ppi.</p>
@@ -88,7 +87,6 @@
         <a href="https://www.outdoorphotographymagazine.co.uk/submissions/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -103,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'outdoor-photography-magazine-spring-landscapes';
-    const CURRENT_CALL = {"prize":"£150 prize + publication","category":"zine","org":"Outdoor Photography Magazine","location":"Online","fee":"Free","deadline":"2026-04-30","resultsDate":"","instagram":"@outdoorphotographymag","eligibility":[],"jury":[],"submitVia":"Website form","submitUrl":"https://www.outdoorphotographymagazine.co.uk/submissions/","email": "","ai":"","requirements":"Up to 5 images"};
+    const CURRENT_CALL = {"prize":"£150 + publication","category":"zine","org":"Outdoor Photography Magazine","location":"Online","fee":"Free","deadline":"2026-04-30","resultsDate":"","instagram":"@outdoorphotographymag","eligibility":[],"jury":[],"submitVia":"Website form","submitUrl":"https://www.outdoorphotographymagazine.co.uk/submissions/","email": "","ai":"","requirements":"Up to 5 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -113,7 +111,7 @@
       var u = 'https://www.outdoorphotographymagazine.co.uk/submissions/';
       var o = 'Outdoor Photography Magazine';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£150 prize + publication') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£150 + publication') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

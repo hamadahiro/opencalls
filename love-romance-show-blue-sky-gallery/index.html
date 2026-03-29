@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Love &amp; Romance Show</h1>
 
       <p class="call-detail-description">Online exhibition exploring how love has transformed alongside cultural and societal changes, and how those shifts shape personal experience today. Submit up to 3 images connecting the theme of love and romance. Virtual exhibition launches May 7, 2026.</p>
@@ -88,7 +87,6 @@
         <a href="https://www.blueskygallery.org/news/the-love-and-romance-show-call-for-entry" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -103,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'love-romance-show-blue-sky-gallery';
-    const CURRENT_CALL = {"prize":"Exhibition at Blue Sky Gallery, Portland","category":"exhibition","org":"Blue Sky Gallery","location":"Online","fee":"Free","deadline":"2026-04-17","resultsDate":"May 7, 2026","instagram":"@blueskygallerypdx","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSdpmcTPu90gLgdsGLGrGnM-77xPTsq9MeSQ1eF__EKKOe3Kvw/viewform","email": "","ai":"","requirements":"Up to 3 images"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Blue Sky Gallery","location":"Online","fee":"Free","deadline":"2026-04-17","resultsDate":"May 7, 2026","instagram":"@blueskygallerypdx","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSdpmcTPu90gLgdsGLGrGnM-77xPTsq9MeSQ1eF__EKKOe3Kvw/viewform","email": "","ai":"","requirements":"Up to 3 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -113,7 +111,7 @@
       var u = 'https://www.blueskygallery.org/news/the-love-and-romance-show-call-for-entry';
       var o = 'Blue Sky Gallery';
       var dl = new Date('2026-04-17T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition at Blue Sky Gallery, Portland') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

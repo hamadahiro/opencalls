@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Solo Exhibition May 2026</h1>
 
       <p class="call-detail-description">Monthly featured photographer showcase. Winner receives a full month online solo exhibition (May 1–31, 2026), permanent gallery presence, exclusive interview, social media promotion, newsletter feature, international press coverage, and commission-free sales. Submit a cohesive project or portfolio of 6–14 images.</p>
@@ -92,7 +91,6 @@
         <a href="https://www.all-about-photo.com/all-about-photo-contest.php?cid=213" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -107,7 +105,7 @@
 
   <script>
     const CURRENT_SLUG = 'solo-exhibition-may-2026-all-about-photo';
-    const CURRENT_CALL = {"prize":"Solo online exhibition on All About Photo","category":"exhibition","org":"All About Photo","location":"Online","fee":"$45","deadline":"2026-04-21","resultsDate":"May 1, 2026","instagram":"@allaboutphoto","eligibility":[],"jury":["Sandrine Hermand-Grisel, Photographer & Founder, All About Photo"],"submitVia":"Website form","submitUrl":"https://www.all-about-photo.com/all-about-photo-contest.php?cid=213","email": "","ai":"","requirements":"6–14 images"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"All About Photo","location":"Online","fee":"$45","deadline":"2026-04-21","resultsDate":"May 1, 2026","instagram":"@allaboutphoto","eligibility":[],"jury":["Sandrine Hermand-Grisel, Photographer & Founder, All About Photo"],"submitVia":"Website form","submitUrl":"https://www.all-about-photo.com/all-about-photo-contest.php?cid=213","email": "","ai":"","requirements":"6–14 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -117,7 +115,7 @@
       var u = 'https://www.all-about-photo.com/all-about-photo-contest.php?cid=213';
       var o = 'All About Photo';
       var dl = new Date('2026-04-21T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Solo online exhibition on All About Photo') + '\\nEntry fee: ' + icsE('$45');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$45');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

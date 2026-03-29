@@ -263,9 +263,8 @@ function derivePrizeCategory(text) {
   if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment/.test(p)) return 'residency';
-  if (/publication|photobook|catalog|print edition|contributor|book|published|zine|quarterly|editorial/.test(p)) return 'publication';
-  if (/exhibition|collection|acquisition|gallery|outdoor|museum|festival|online exhibition/.test(p)) return 'exhibition';
-  if (/film|rolls|feature|magazine|directory|archive|mentorship|interview|showcase|diploma|trophy|feedback|award|prize|grant|commission|platform|featured|readers|calendar|curated/.test(p)) return 'cash';
+  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
+  if (/exhibition/.test(p)) return 'exhibition';
   return null;
 }
 
@@ -335,7 +334,6 @@ function generatePage(call, cssVersion) {
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
@@ -354,7 +352,6 @@ ${call.jury && call.jury.length ? `
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">

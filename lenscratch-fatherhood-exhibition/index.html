@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Lenscratch Fatherhood Exhibition</h1>
 
       <p class="call-detail-description">Online exhibition exploring fatherhood as an evolving role shaped by culture, responsibility, tenderness, and family expectations. Submit one image via Google Form (72dpi, 1000px long side).</p>
@@ -88,7 +87,6 @@
         <a href="https://lenscratch.com/exhibitions/submit/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -103,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'lenscratch-fatherhood-exhibition';
-    const CURRENT_CALL = {"prize":"Online exhibition on Lenscratch","category":"exhibition","org":"Lenscratch","location":"Online","fee":"Free","deadline":"2026-06-13","resultsDate":"June 21, 2026","instagram":"@lenscratch","eligibility":[],"jury":[],"submitVia":"Google Forms","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSds5lG23ZWvdexm_ZSkCAFX8h4qCABgsuECa26z9OGyveFdMw/viewform","email": "","ai":"","requirements":"1 image"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Lenscratch","location":"Online","fee":"Free","deadline":"2026-06-13","resultsDate":"June 21, 2026","instagram":"@lenscratch","eligibility":[],"jury":[],"submitVia":"Google Forms","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSds5lG23ZWvdexm_ZSkCAFX8h4qCABgsuECa26z9OGyveFdMw/viewform","email": "","ai":"","requirements":"1 image"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -113,7 +111,7 @@
       var u = 'https://lenscratch.com/exhibitions/submit/';
       var o = 'Lenscratch';
       var dl = new Date('2026-06-13T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Online exhibition on Lenscratch') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

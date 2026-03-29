@@ -77,7 +77,6 @@
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">Bowness Photography Prize 2026</h1>
 
       <p class="call-detail-description">Australia's richest photography prize, now in its 20th year. Open to Australian citizens or permanent residents (12+ months). Winner receives $50,000 AUD and acquisition into MAPh's permanent collection. Two Honourable Mentions receive $2,500 each. Wai Tang Commissioning Award of $10,000 for a future exhibition. People's Choice Award of $5,000. Finalists exhibited at MAPh gallery. Accepts still photo-based media including analogue and digital photography produced within the past year. Up to 3 works per $55 entry. AI permitted only if not the substantial or overriding input. Entries open April 16, 2026.</p>
@@ -88,7 +87,6 @@
         <a href="https://maph.org.au/bowness-photography-prize/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-      <div class="detail-footer" id="detailFooter"></div>
     </section>
 
     <section class="related-calls">
@@ -103,7 +101,7 @@
 
   <script>
     const CURRENT_SLUG = 'bowness-photography-prize-2026';
-    const CURRENT_CALL = {"prize":"$50,000 winner + $10,000 Commissioning Award + $5,000 People's Choice + 2 × $2,500 Honourable Mentions + museum acquisition","category":"photography","org":"Museum of Australian Photography","location":"Wheelers Hill, VIC, Australia","fee":"$55 AUD","deadline":"2026-06-15","resultsDate":"","instagram":"@maph_photography","eligibility":["australia"],"jury":[],"submitVia":"MAPh","submitUrl":"https://maph.org.au/bowness-photography-prize/","email": "","ai":"Permitted if not the substantial or overriding input","requirements":"Up to 3 images (produced within last year)"};
+    const CURRENT_CALL = {"prize":"$50,000 + $10,000 + $5,000 + 2 × $2,500","category":"photography","org":"Museum of Australian Photography","location":"Wheelers Hill, VIC, Australia","fee":"$55 AUD","deadline":"2026-06-15","resultsDate":"","instagram":"@maph_photography","eligibility":["australia"],"jury":[],"submitVia":"MAPh","submitUrl":"https://maph.org.au/bowness-photography-prize/","email": "","ai":"Permitted if not the substantial or overriding input","requirements":"Up to 3 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -113,7 +111,7 @@
       var u = 'https://maph.org.au/bowness-photography-prize/';
       var o = 'Museum of Australian Photography';
       var dl = new Date('2026-06-15T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$50,000 winner + $10,000 Commissioning Award + $5,000 People\'s Choice + 2 × $2,500 Honourable Mentions + museum acquisition') + '\\nEntry fee: ' + icsE('$55 AUD');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$50,000 + $10,000 + $5,000 + 2 × $2,500') + '\\nEntry fee: ' + icsE('$55 AUD');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
