@@ -422,7 +422,7 @@ main {
   align-items: center;
   font-size: var(--fs-tag);
   padding: 5px 10px;
-  border-radius: 3px;
+  border-radius: 999px;
   white-space: nowrap;
   vertical-align: middle;
   line-height: 1;
