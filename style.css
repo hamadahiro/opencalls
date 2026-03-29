@@ -457,7 +457,7 @@ a.call-deadline.closed:hover { opacity: 0.5; }
   gap: 3px;
   font-size: var(--fs-tag);
   padding: 5px 10px;
-  border-radius: 3px;
+  border-radius: 999px;
   background: var(--card-bg);
   color: var(--text);
   white-space: nowrap;
