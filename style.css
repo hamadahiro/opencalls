@@ -863,6 +863,10 @@ a.meta-tag-link.call-prize:hover {
   color: var(--text);
 }
 
+.call-detail-prize .call-prize:hover {
+  background: var(--card-bg-hover);
+}
+
 .call-detail-jury {
   margin-top: 32px;
 }
