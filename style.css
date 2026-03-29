@@ -15,7 +15,7 @@
   --prize-text: #fff;
   --prize-bg-hover: #111;
   --dots: var(--text);
-  --bg-image: url('bg.jpg');
+  --bg-image: none;
   /* Type scale: 7 sizes only */
   --fs-tag: 14px;       /* 1. tags, badges, breadcrumbs, nav, search, dots */
   --fs-btn: 15px;       /* 2. buttons, filter tabs, mobile-nav, action buttons */
