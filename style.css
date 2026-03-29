@@ -704,6 +704,11 @@ a.meta-tag-link.call-prize:hover {
     width: 100%;
   }
 
+  .meta-tag,
+  .call-deadline {
+    padding: 6px 12px;
+  }
+
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
