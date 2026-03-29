@@ -447,7 +447,7 @@ a.call-deadline.closed:hover { opacity: 0.5; }
 .call-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 12px;
   margin-bottom: 10px;
 }
 
