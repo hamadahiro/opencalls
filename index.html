@@ -19,7 +19,7 @@
   <meta property="og:title" content="Open Calls for Artists 2026 - Grants, Exhibitions & Residencies - Monographica">
   <meta property="og:description" content="Curated list of open calls for photographers and visual artists. Exhibitions, grants, residencies, and publications worldwide.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com">
+  <meta property="og:url" content="https://opencalls.monographica.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@
     "@type": "WebPage",
     "name": "Open Calls for Artists 2026",
     "description": "Curated list of open calls for photographers and visual artists. Exhibitions, grants, residencies, and publications worldwide.",
-    "url": "https://opencalls.monographica.com",
+    "url": "https://opencalls.monographica.com/",
     "publisher": {
       "@type": "Organization",
       "name": "Monographica",
@@ -653,9 +653,6 @@
       document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var filter = btn.dataset.filter;
-          // Navigate to dedicated page if one exists
-          var btnUrl = chipToUrl(filter === 'free' ? 'fee' : 'category', filter === 'free' ? 'free' : filter);
-          if (btnUrl) { window.location.href = btnUrl; return; }
           // Remove category and fee chips when using buttons (chips come from search only)
           activeChips = activeChips.filter(function(c) { return c.type !== 'category' && c.type !== 'fee'; });
           currentFilter = filter;
