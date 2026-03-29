@@ -336,6 +336,7 @@ function generatePage(call, cssVersion) {
     <section class="call-detail">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
+      <p class="breadcrumbs" style="margin-bottom:24px">${escapeHtml(call.org)}${call.instagram ? ' ' + escapeHtml(call.instagram) : ''}</p>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 ${call.winners && call.winners.length ? `
