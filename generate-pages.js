@@ -389,7 +389,7 @@ ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function do
     }` : ''}
   </script>
   ${CARDS_SCRIPT(cssVersion)}
-  <script src="/call-detail.js?v=${cssVersion}"></script>
+  <script src="/call-detail.js"></script>
 
 </body>
 </html>`;
