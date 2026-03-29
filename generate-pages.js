@@ -336,7 +336,6 @@ function generatePage(call, cssVersion) {
     <section class="call-detail">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
-      <div class="call-detail-meta"><a href="/${slugify(call.org)}/" class="meta-tag meta-tag-link">${escapeHtml(call.org)}</a>${call.instagram ? '<a class="meta-tag meta-tag-link" href="https://instagram.com/' + escapeHtml(call.instagram.replace('@', '')) + '" target="_blank" rel="nofollow noopener">' + escapeHtml(call.instagram) + '</a>' : ''}</div>
 
       <p class="call-detail-description">${escapeHtml(call.description)}</p>
 ${call.winners && call.winners.length ? `
@@ -354,6 +353,7 @@ ${call.jury && call.jury.length ? `
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
+${call.instagram ? `      <div class="call-detail-meta"><a class="meta-tag meta-tag-link" href="https://instagram.com/${escapeHtml(call.instagram.replace('@', ''))}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a></div>` : ''}
     </section>
 
     <section class="related-calls">
