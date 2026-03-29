@@ -244,8 +244,8 @@ function renderTags(call) {
 }
 
 function renderInfoGrid(call) {
-  function infoRow(label, value) {
-    return `<div class="info-row">
+  function infoRow(label, value, cls) {
+    return `<div class="info-row${cls ? ' ' + cls : ''}">
       <span class="info-label">${label}</span>
       <span class="dots"></span>
       <span class="info-value">${value}</span>
@@ -291,7 +291,7 @@ function renderInfoGrid(call) {
       return cat ? infoLink('/prize/' + cat, part) : infoVal(part);
     }).join(', ');
     const prizeLabel = parts.length > 1 ? 'Prizes' : 'Prize';
-    rows.push(infoRow('<a href="/prize/">' + prizeLabel + '</a>', prizeHtml));
+    rows.push(infoRow('<a href="/prize/">' + prizeLabel + '</a>', prizeHtml, 'info-row-prize'));
   }
   // Eligibility
   if (call.eligibility && call.eligibility.length) {

@@ -704,6 +704,14 @@ a.meta-tag-link.call-prize:hover {
     width: 100%;
   }
 
+  .info-row-prize {
+    display: none;
+  }
+
+  .mobile-prize-tags {
+    display: flex;
+  }
+
   .filters {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -828,6 +836,10 @@ a.meta-tag-link.call-prize:hover {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 24px;
+}
+
+.mobile-prize-tags {
+  display: none;
 }
 
 .call-detail-jury {
