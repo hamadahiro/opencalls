@@ -618,6 +618,10 @@ a.meta-tag-link.call-prize:hover {
   margin-bottom: 16px;
 }
 
+.mobile-prize-tags {
+  display: none;
+}
+
 /* === Responsive === */
 @media (max-width: 640px) {
   html, body {
@@ -836,10 +840,6 @@ a.meta-tag-link.call-prize:hover {
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 24px;
-}
-
-.mobile-prize-tags {
-  display: none;
 }
 
 .call-detail-jury {
