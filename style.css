@@ -316,9 +316,9 @@ main {
   display: block;
   width: 100%;
   background: var(--surface);
-  border: none;
-  padding: 14px 20px;
-  padding-right: 44px;
+  border: 1px solid var(--border);
+  padding: 13px 19px;
+  padding-right: 43px;
   font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
@@ -335,6 +335,7 @@ main {
 
 #searchDropdown {
   background: var(--surface) !important;
+  border: 1px solid var(--border);
   color: var(--text);
 }
 
@@ -1103,34 +1104,35 @@ a.meta-tag-link.call-prize:hover {
   right: 24px;
   top: 100%;
   z-index: 100;
-  background: #fff;
+  background: var(--surface);
+  border: 1px solid var(--border);
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   max-height: 320px;
   overflow-y: auto;
 }
 
 .global-search-dropdown .search-suggestion {
-  color: #151515 !important;
+  color: var(--text) !important;
   font-size: var(--fs-btn) !important;
   font-weight: 500;
 }
 
 .global-search-dropdown .search-suggestion span[style] {
-  color: #151515 !important;
+  color: var(--text-muted) !important;
 }
 
 .global-search-dropdown .search-suggestion:hover {
-  background: #f0f0f0 !important;
+  background: var(--surface-hover) !important;
 }
 
 .global-search-dropdown a[style] {
   font-size: var(--fs-btn) !important;
   font-weight: 700;
-  color: #151515 !important;
+  color: var(--text) !important;
 }
 
 .global-search-dropdown a[style]:hover {
-  background: #f0f0f0;
+  background: var(--surface-hover);
 }
 
 /* === Call Detail Responsive === */
