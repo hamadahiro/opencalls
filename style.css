@@ -1,5 +1,6 @@
 /* === Colors & Type Scale === */
 :root {
+  color-scheme: light dark;
   --text: #111;
   --text-muted: #999;
   --text-body: var(--text);
@@ -315,6 +316,7 @@ main {
 .search-bar {
   display: block;
   width: 100%;
+  color-scheme: light;
   background: #fff;
   border: none;
   padding: 14px 20px;
