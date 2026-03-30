@@ -78,7 +78,8 @@
       "slug": "motion-ph21-gallery",
       "orgInTitle": false,
       "summary": "Curated group show on motion in photography. Physical exhibition in Barcelona's Gothic Quarter. Student rates available.",
-      "dateAdded": "2026-03-29T19:15:07.835Z"
+      "dateAdded": "2026-03-29T19:15:07.835Z",
+      "email": ""
     },
     {
       "title": "Manipulation & Illusion",
@@ -112,11 +113,24 @@
       "prize": "US$50,000+ total prize pool",
       "eligibility": [],
       "submitVia": "Official website",
-      "requirements": "Panoramic format (2:1+ aspect ratio)",
+      "requirements": null,
       "slug": "epson-international-pano-awards-2026",
       "orgInTitle": true,
       "summary": "World's largest panoramic photography competition. $50K+ prizes incl. $15K cash. New Aerial category. Open, Amateur, VR/360.",
-      "dateAdded": "2026-03-28T18:07:47.501Z"
+      "dateAdded": "2026-03-28T18:07:47.501Z",
+      "resultsDate": "October 2026",
+      "ai": "Not accepted",
+      "jury": [
+        "Bill Bailey, Photographer",
+        "Aaron Spence, Photographer",
+        "Dan Zafra, Photographer",
+        "Jacky Lee, Photographer",
+        "Daniel Kordan, Photographer",
+        "Abe Blair, Photographer",
+        "Anette Mossbacher, Photographer",
+        "Jennifer Renwick, Photographer"
+      ],
+      "submitUrl": "https://app.thepanoawards.com/"
     },
     {
       "title": "REMEDY Photo Festival — Open Call 2026",
@@ -135,7 +149,8 @@
       "slug": "remedy-photo-festival-open-call-2026",
       "orgInTitle": true,
       "summary": "Free festival exploring health — physical, mental, chronic, invisible. Lincoln, UK. Print and display costs covered.",
-      "dateAdded": "2026-03-28T12:13:36.505Z"
+      "dateAdded": "2026-03-28T12:13:36.505Z",
+      "submitUrl": "https://forms.gle/ueKhk89HijPp6oQ27"
     },
     {
       "title": "SQUARE Photography Exhibit",
@@ -157,7 +172,8 @@
       "slug": "square-photography-exhibit-decode-gallery",
       "orgInTitle": false,
       "summary": "Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.",
-      "dateAdded": "2026-03-28T12:13:36.505Z"
+      "dateAdded": "2026-03-28T12:13:36.505Z",
+      "submitUrl": "https://decodegallery.com/square-submission/"
     },
     {
       "title": "Cumberland Valley Photographers 2026",
@@ -214,8 +230,8 @@
         "women"
       ],
       "submitVia": "Official website",
-      "requirements": "Documentary photography project",
-      "resultsDate": "June 2026",
+      "requirements": null,
+      "resultsDate": "September 2026",
       "slug": "canon-female-photojournalist-grant-2026",
       "orgInTitle": false,
       "summary": "€8,000 grant for female photojournalists. 26th edition with Canon. Long-term documentary projects. Exhibited at Perpignan.",
@@ -257,7 +273,7 @@
       "url": "https://www.praxisphotocenter.org/x2-sub-5-11",
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
-      "prize": "Exhibition + Directors' Choice award + 5 Honorable Mentions",
+      "prize": "Exhibition",
       "eligibility": [],
       "jury": [
         "Praxis Directors"
@@ -267,7 +283,10 @@
       "slug": "animal-life-praxis-photo-arts-center",
       "orgInTitle": false,
       "summary": "Exploring animal subjects with curiosity, empathy, and imagination. All lens-based work welcome. Minneapolis.",
-      "dateAdded": "2026-03-27T08:14:45.769Z"
+      "dateAdded": "2026-03-27T08:14:45.769Z",
+      "resultsDate": "April 24, 2026",
+      "submitUrl": "https://client.smarterentry.com/praxis",
+      "email": ""
     },
     {
       "title": "FFSP 2026 — Italian Photographers Open Call",
@@ -293,7 +312,8 @@
       "slug": "ffsp-2026-italian-photographers-open-call",
       "orgInTitle": false,
       "summary": "Free exhibition in São Paulo for Italian photographers in Brazil/Italy. Winner receives round-trip airfare.",
-      "dateAdded": "2026-03-27T00:08:04Z"
+      "dateAdded": "2026-03-27T00:08:04Z",
+      "email": ""
     },
     {
       "title": "Delfina Foundation — Latin America & Caribbean Residency 2026",
@@ -311,7 +331,7 @@
         "caribbean"
       ],
       "submitVia": "Cognito Forms",
-      "requirements": "Application via Cognito Forms",
+      "requirements": null,
       "resultsDate": "June 1, 2026",
       "slug": "delfina-foundation-latin-america-caribbean-residency-2026",
       "orgInTitle": true,
@@ -382,7 +402,8 @@
       "slug": "graz-residency-grip-2026-camera-austria",
       "orgInTitle": false,
       "summary": "One-month residency in Graz for early-career photographers. €1,000 stipend.",
-      "dateAdded": "2026-03-26T00:58:56.003Z"
+      "dateAdded": "2026-03-26T00:58:56.003Z",
+      "email": ""
     },
     {
       "title": "Hidden Narratives Residency 2026",
@@ -412,7 +433,8 @@
       "orgInTitle": false,
       "submitUrl": "https://forms.office.com/Pages/ResponsePage.aspx?id=0UdfPWg72kSq7r8nKxXfATmVz5OEB-1Khuhz_a3th_JUMUI3VFU5WTg5M004TlRFRVQwRUxHVERCVC4u",
       "summary": "Year-long residency with Royal Geographical Society's 1M+ photo archive (1845–1945). Three UK visits, Summit Photo exhibition. Italian artists only.",
-      "dateAdded": "2026-03-26T00:04:53Z"
+      "dateAdded": "2026-03-26T00:04:53Z",
+      "email": ""
     },
     {
       "title": "Marilyn Stafford FotoReportage Award 2026",
@@ -465,13 +487,14 @@
         "Executive Director, Magnum Foundation"
       ],
       "submitVia": "Submittable",
-      "requirements": "Long-term documentary project",
+      "requirements": null,
       "resultsDate": "July–August 2026",
       "slug": "inge-morath-award-2026",
       "orgInTitle": false,
       "submitUrl": "https://magnumfoundation.submittable.com/submit/350423/2026-inge-morath-award",
       "summary": "$7,500 grant for women/nonbinary photographers under 30. Long-term documentary project. 25th year. Selected by Magnum Photos membership.",
-      "dateAdded": "2026-03-25T21:23:55Z"
+      "dateAdded": "2026-03-25T21:23:55Z",
+      "email": ""
     },
     {
       "title": "Women in Nature — Artist's Commission",
@@ -491,7 +514,7 @@
       "requirements": "10–20 images",
       "slug": "women-in-nature-artists-commission-photo-museum-ireland",
       "orgInTitle": false,
-      "submitUrl": "https://photomuseumireland.ie/women-in-nature-open-call/",
+      "submitUrl": "https://forms.gle/RjVHLHWZ1bB8rw7i9",
       "summary": "€15,000 commission for 12 portraits of women in nature restoration across Ireland. Exhibition + publication.",
       "dateAdded": "2026-03-25T20:54:11.418Z"
     },
@@ -520,7 +543,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-24T22:00:00Z",
       "submitUrl": "https://emerging.fotografiska.com/missions/home",
-      "summary": "Exploring home — safety, belonging, dignity. Selected works exhibited at the United Nations HQ in New York."
+      "summary": "Exploring home — safety, belonging, dignity. Selected works exhibited at the United Nations HQ in New York.",
+      "email": ""
     },
     {
       "title": "Exibart Street Photography Contest — 5th Edition",
@@ -577,8 +601,9 @@
       "slug": "restart2026",
       "orgInTitle": false,
       "dateAdded": "2026-03-24T23:00:00Z",
-      "submitUrl": "https://site.picter.com/restart-2026",
-      "summary": "For photographers starting careers or reconsidering direction. 10-20 new photographs. Top 3 win solo exhibition in Vilnius."
+      "submitUrl": "https://app.picter.com/contests/90d51b08-bae3-4cc0-a1b2-22e418b74b58/start",
+      "summary": "For photographers starting careers or reconsidering direction. 10-20 new photographs. Top 3 win solo exhibition in Vilnius.",
+      "email": ""
     },
     {
       "title": "DPPF 2026 Sports Photography Grants",
@@ -607,7 +632,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-24T23:00:00Z",
       "submitUrl": "https://site.picter.com/dppf-2026-sports-photography-grants",
-      "summary": "Seven $5,000 grants for emerging sports photographers plus mentorship. Up to 3 additional $2,500 grants."
+      "summary": "Seven $5,000 grants for emerging sports photographers plus mentorship. Up to 3 additional $2,500 grants.",
+      "email": ""
     },
     {
       "title": "Bowness Photography Prize 2026",
@@ -630,7 +656,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-24T22:30:00Z",
       "submitUrl": "https://maph.org.au/bowness-photography-prize/",
-      "summary": "Australia's richest photography prize. $50,000 AUD winner. 20th year. Australian citizens/residents only."
+      "summary": "Australia's richest photography prize. $50,000 AUD winner. 20th year. Australian citizens/residents only.",
+      "email": ""
     },
     {
       "title": "Flanelle Print No. 47 — July 2026",
@@ -650,7 +677,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-24T20:00:00Z",
       "submitUrl": "https://kavyar.com/flanellemag",
-      "summary": "Montreal fashion and arts magazine. Quarterly print and digital with international distribution. Est. 2012."
+      "summary": "Montreal fashion and arts magazine. Quarterly print and digital with international distribution. Est. 2012.",
+      "email": ""
     },
     {
       "title": "Embracing Our Differences 2027 Outdoor Exhibition",
@@ -662,7 +690,7 @@
       "url": "https://www.embracingourdifferences.org/submit-art-2026-exhibition/",
       "instagram": "@embracingourdifferences",
       "location": "Sarasota, FL, USA",
-      "prize": "$2,000 Best-in-Show + $2,000 Student + $2,000 People's Choice",
+      "prize": "$6,000",
       "eligibility": [],
       "submitVia": "Submittable",
       "requirements": "1 image",
@@ -698,7 +726,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-23",
       "submitUrl": "https://emerging.fotografiska.com/missions/night-aesthetics",
-      "summary": "Exploring the visual world of the night — light, movement, atmosphere. Three winners receive €2,500 each."
+      "summary": "Exploring the visual world of the night — light, movement, atmosphere. Three winners receive €2,500 each.",
+      "email": ""
     },
     {
       "title": "The 2026 Lumen Prize",
@@ -713,7 +742,7 @@
       "prize": "$30,000",
       "eligibility": [],
       "submitVia": "Zealous",
-      "requirements": "1 primary + up to 3 supporting images",
+      "requirements": "1–4 images",
       "jury": [
         "Melanie Lenz, Digital Curator, V&A Museum",
         "Rachel Falconer, Senior Lecturer & Head of Digital Arts Computing, Goldsmiths University London",
@@ -795,7 +824,8 @@
       "resultsDate": "May 7, 2026",
       "dateAdded": "2026-03-22",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdpmcTPu90gLgdsGLGrGnM-77xPTsq9MeSQ1eF__EKKOe3Kvw/viewform",
-      "summary": "Online exhibition exploring how love has transformed alongside cultural and societal changes."
+      "summary": "Online exhibition exploring how love has transformed alongside cultural and societal changes.",
+      "email": ""
     },
     {
       "title": "EDITION 502 — Open Call for Photo Edition",
@@ -867,7 +897,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-18",
       "submitUrl": "https://site.picter.com/2026-iwmf-anja-niedringhaus-award",
-      "summary": "Honoring courageous photojournalism by women, nonbinary, and gender-diverse creatives. Named after Pulitzer winner."
+      "summary": "Honoring courageous photojournalism by women, nonbinary, and gender-diverse creatives. Named after Pulitzer winner.",
+      "email": ""
     },
     {
       "title": "LT5 Alternative Photography Show",
@@ -937,7 +968,7 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-18",
       "email": "",
-      "summary": "Selected artists exhibit in Nice, Sep-Oct 2026. €500 fee, transport, accommodation, and travel covered."
+      "summary": "Selected artists exhibit in Nice, Sep-Oct 2026. €500 honorarium, transport, accommodation, and travel covered."
     },
     {
       "title": "2026 Fotograf Magazine Open Call",
@@ -986,7 +1017,8 @@
       "dateAdded": "2026-03-18",
       "resultsDate": "June 26, 2026",
       "submitUrl": "https://fabula-works.com/opencall001",
-      "summary": "Two photographers exhibit at Millepiani Gallery in Rome. No thematic restrictions. All costs covered."
+      "summary": "Two photographers exhibit at Millepiani Gallery in Rome. No thematic restrictions. All costs covered.",
+      "email": ""
     },
     {
       "title": "Rarefied Light 2026",
@@ -1013,7 +1045,8 @@
       "ai": "Not accepted",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17169",
-      "summary": "Statewide juried exhibition with Nevada Wier (Nat Geo). Travels to four Alaska galleries from October 2026."
+      "summary": "Statewide juried exhibition with Nevada Wier (Nat Geo). Travels to four Alaska galleries from October 2026.",
+      "email": ""
     },
     {
       "title": "Prix Mustaqbal 2026 — Momentum",
@@ -1037,7 +1070,8 @@
       "resultsDate": "September 2026",
       "dateAdded": "2026-03-17",
       "submitUrl": "https://fondationtgcc.com/prix-mustaqbal/",
-      "summary": "Emerging artists 18-35, Moroccan or foreign residents in Morocco. Winner receives Jardin Rouge residency."
+      "summary": "Emerging artists 18-35, Moroccan or foreign residents in Morocco. Winner receives Jardin Rouge residency.",
+      "email": ""
     },
     {
       "title": "No Place Art — Edition Two: MATERIALITY",
@@ -1066,8 +1100,9 @@
       "slug": "no-place-art-edition-two-materiality",
       "orgInTitle": true,
       "dateAdded": "2026-03-17",
-      "submitUrl": "https://www.noplaceart.com/edition-two-materiality",
-      "summary": "80 artists exhibited in London. 30+ awards including purchase awards, residencies, and solo exhibitions."
+      "submitUrl": "https://app.dapplehq.com/o/no-place-art",
+      "summary": "80 artists exhibited in London. 30+ awards including purchase awards, residencies, and solo exhibitions.",
+      "email": ""
     },
     {
       "title": "59 Rivoli — Artist Residency 2026",
@@ -7825,7 +7860,10 @@
       "orgInTitle": false,
       "resultsDate": "April 21, 2026",
       "summary": "Appalachian nature photography. $500 Best of Show plus landscape and wildlife awards. MD, PA, VA, WV, DC residents.",
-      "dateAdded": "2026-03-30T15:11:40Z"
+      "dateAdded": "2026-03-30T15:11:40Z",
+      "email": "",
+      "ai": "Not accepted",
+      "instagram": "@arcadian_gallery"
     }
   ]
 }
