@@ -315,52 +315,50 @@ main {
 .search-bar {
   display: block;
   width: 100%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 13px 19px;
-  padding-right: 43px;
+  background: #fff;
+  border: none;
+  padding: 14px 20px;
+  padding-right: 44px;
   font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
-  color: var(--text);
+  color: #151515;
   outline: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  color-scheme: light dark;
 }
 
 .search-bar::placeholder {
-  color: var(--text-muted);
+  color: #5f6368;
   font-weight: 500;
 }
 
 #searchDropdown {
-  background: var(--surface) !important;
-  border: 1px solid var(--border);
-  color: var(--text);
+  background: #fff !important;
+  color: #151515;
 }
 
 #searchDropdown .search-suggestion {
-  color: var(--text) !important;
+  color: #151515 !important;
   font-size: var(--fs-btn) !important;
   font-weight: 500;
 }
 
 #searchDropdown .search-suggestion span[style] {
-  color: var(--text) !important;
+  color: #151515 !important;
 }
 
 #searchDropdown .search-suggestion:hover {
-  background: var(--surface-hover) !important;
+  background: #f0f0f0 !important;
 }
 
 #searchDropdown a[style] {
   font-size: var(--fs-btn) !important;
   font-weight: 700;
-  color: var(--text) !important;
+  color: #151515 !important;
 }
 
 #searchDropdown a[style]:hover {
-  background: var(--surface-hover);
+  background: #f0f0f0;
 }
 
 .search-clear {
@@ -1104,35 +1102,34 @@ a.meta-tag-link.call-prize:hover {
   right: 24px;
   top: 100%;
   z-index: 100;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: #fff;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   max-height: 320px;
   overflow-y: auto;
 }
 
 .global-search-dropdown .search-suggestion {
-  color: var(--text) !important;
+  color: #151515 !important;
   font-size: var(--fs-btn) !important;
   font-weight: 500;
 }
 
 .global-search-dropdown .search-suggestion span[style] {
-  color: var(--text-muted) !important;
+  color: #151515 !important;
 }
 
 .global-search-dropdown .search-suggestion:hover {
-  background: var(--surface-hover) !important;
+  background: #f0f0f0 !important;
 }
 
 .global-search-dropdown a[style] {
   font-size: var(--fs-btn) !important;
   font-weight: 700;
-  color: var(--text) !important;
+  color: #151515 !important;
 }
 
 .global-search-dropdown a[style]:hover {
-  background: var(--surface-hover);
+  background: #f0f0f0;
 }
 
 /* === Call Detail Responsive === */
