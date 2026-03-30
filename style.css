@@ -1,5 +1,6 @@
 /* === Colors & Type Scale === */
 :root {
+  color-scheme: light dark;
   --text: #111;
   --text-muted: #999;
   --text-body: var(--text);
