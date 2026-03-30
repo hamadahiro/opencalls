@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-30",
+  "lastUpdated": "2026-03-31",
   "calls": [
     {
       "title": "ABSURIA — International Abstract & Surrealist Photography Contest 2026",
@@ -7937,6 +7937,49 @@
       "summary": "European architectural photography award, 8th edition. Theme: Architecture & Landscape. €500 per nominee + exhibition in Strasbourg.",
       "instagram": "@la_chambre_strasbourg",
       "dateAdded": "2026-03-30T19:13:01.383Z"
+    },
+    {
+      "title": "2026 Booooooom Art & Photo Book Award",
+      "org": "Booooooom",
+      "deadline": "2026-06-05",
+      "fee": "Free (zines) / $20 (books)",
+      "category": "zine",
+      "description": "Annual award selecting 6 book projects and 2 zine projects for fully funded publication in partnership with Bookmobile. Books up to 100 pages and 10×10 inches, printed in 100 copies. Zines up to 36 pages, 5×7 inches, printed in 25 copies. Open to all artists, illustrators, and photographers. Non-members may submit one free zine proposal or pay $20 for a book proposal. Members submit unlimited at no extra cost.",
+      "url": "https://www.booooooom.com/2026/03/26/call-to-submit-2026-booooooom-art-photo-book-award/",
+      "location": "Online",
+      "prize": "Publication (6 books + 2 zines printed)",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "requirements": "10 images",
+      "slug": "2026-booooooom-art-photo-book-award",
+      "orgInTitle": true,
+      "summary": "8 projects (6 books, 2 zines) fully published for free. Books 100 copies, zines 25 copies. Free zine entry.",
+      "instagram": "@booooooom",
+      "dateAdded": "2026-03-30T23:27:35.597Z"
+    },
+    {
+      "title": "Nachleben 2026",
+      "org": "Grenze-Arsenali Fotografici",
+      "deadline": "2026-04-30",
+      "fee": "€28",
+      "category": "exhibition",
+      "description": "Open call for the Nachleben photography festival in Verona, Italy, September 2026. Three photographers or collectives selected for exhibition. Selected artists receive two nights accommodation during opening weekend, meals, travel reimbursement up to €300, and a production budget of up to €1,000 for prints and installation. Open to photographers of any age. No thematic restrictions — jury selects on artistic merit.",
+      "url": "https://www.grenzearsenalifotografici.com/nachleben2026",
+      "location": "Verona, Italy",
+      "prize": "Exhibition + €300 travel + €1,000 print budget",
+      "eligibility": [],
+      "submitVia": "Email",
+      "email": "",
+      "requirements": "10–20 images",
+      "slug": "nachleben-2026",
+      "orgInTitle": false,
+      "resultsDate": "May 30, 2026",
+      "jury": [
+        "Simone Azzoni, Curator",
+        "Francesca Marra, Curator"
+      ],
+      "summary": "Three photographers exhibited at September festival in Verona. €300 travel + €1,000 print budget + accommodation.",
+      "dateAdded": "2026-03-30T23:27:35.597Z"
     }
   ]
 }
