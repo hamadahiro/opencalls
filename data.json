@@ -3749,11 +3749,12 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "3 images",
+      "email": "",
       "slug": "viewpoint-gallery-international-photography-competition",
       "orgInTitle": true,
       "resultsDate": "May 8, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://www.viewpointgallery.ca/photocontest",
+      "submitUrl": "https://www.viewpointgallery.ca/vpipc-submission-guidelines",
       "summary": "Twelve winners displayed professionally printed and framed for one month each, June 2026 to May 2027. Eastern Canada."
     },
     {
@@ -3820,6 +3821,7 @@
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Unlimited images",
+      "email": "",
       "slug": "luminosity-the-impact-of-light-new-york-center-for-photographic-arts",
       "orgInTitle": false,
       "resultsDate": "~May 3-10, 2026",
@@ -3874,7 +3876,7 @@
       "requirements": "5 or 10 images",
       "slug": "city-photography-exhibit-dusk-photo-gallery",
       "orgInTitle": false,
-      "resultsDate": "~May 7, 2026",
+      "resultsDate": "~April 30, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://duskphotogallery.com/city-submission/",
       "summary": "Capturing personal urban experience from quiet moments to bustling energy. Santa Fe, NM."
@@ -3922,7 +3924,7 @@
       "requirements": "5 or 10 images",
       "slug": "home-photography-exhibit-decode-gallery",
       "orgInTitle": false,
-      "resultsDate": "~May 10, 2026",
+      "resultsDate": "~May 2, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://decodegallery.com/home-call-for-entry",
       "summary": "Home as feeling, memory, sanctuary. Exploring domesticity, heritage, shelter, and identity. Tucson, AZ."
@@ -4082,6 +4084,7 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
       "submitVia": "Smarter Entry",
+      "submitUrl": "https://client.smarterentry.com/CapeCodArt",
       "ai": "Not accepted",
       "requirements": "Up to 2 images",
       "resultsDate": "May 29, 2026",
@@ -4159,10 +4162,11 @@
       "eligibility": [],
       "jury": [
         "Gabriel H. Sanchez, Photo Editor, The New York Times",
-        "Anna Alexander, Director of Photography, WIRED",
-        "Dave Shelley, Co-Founder, Photoville",
-        "Paris Chong, Gallery Director, Leica Gallery LA",
-        "Maia Murphy, Senior Editor, Phaidon Press"
+        "Irene Opezzo, Photo Director, Robb Report",
+        "Rasha Kahil, Creative Director, HTSI Financial Times",
+        "Carol Olona",
+        "Karin Mueller, Condé Nast Traveller UK",
+        "Daniel Melamud, Editor, Rizzoli"
       ],
       "submitVia": "reFocus Awards",
       "requirements": "1–5 images",
@@ -4261,6 +4265,7 @@
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Unlimited images",
+      "email": "",
       "slug": "botanicals-new-york-center-for-photographic-arts",
       "orgInTitle": false,
       "resultsDate": "~Late June 2026",
@@ -4315,7 +4320,7 @@
     {
       "title": "reFocus Awards - Color Photography Contest",
       "org": "reFocus Awards",
-      "deadline": "2026-06-22",
+      "deadline": "2026-04-29",
       "fee": "$25–$50",
       "category": "photography",
       "description": "Celebrating color photography. Winners receive career-enhancing cash prizes and digital gallery placement.",
@@ -4328,9 +4333,8 @@
         "Gabriel H. Sanchez, Photo Editor, The New York Times",
         "Irene Opezzo, Photo Director, Robb Report",
         "Rasha Kahil, Creative Director, HTSI Financial Times",
-        "Anna Alexander, Director of Photography, WIRED",
-        "Dave Shelley, Co-Founder, Photoville",
-        "Paris Chong, Gallery Director, Leica Gallery LA",
+        "Carol Olona",
+        "Karin Mueller, Condé Nast Traveller UK",
         "Daniel Melamud, Editor, Rizzoli"
       ],
       "submitVia": "Website form",
@@ -4345,14 +4349,14 @@
     {
       "title": "Helsinki Analog Festival 2026 - Analog Practice Exhibition",
       "org": "Helsinki Analog Festival",
-      "deadline": "2026-06-01",
+      "deadline": "2025-12-14",
       "fee": "€20",
       "category": "exhibition",
       "description": "International open call for artists using analog processes across various mediums. Celebrating materiality and craftsmanship.",
       "url": "https://www.forphotographersonly.com/event-details/helsinki-analog-festival-2026-analog-practice-exhibition",
       "instagram": "@finnishdarkroom",
       "location": "Helsinki, Finland",
-      "prize": "Exhibition",
+      "prize": "€500 + exhibition",
       "eligibility": [
         "analog-photography"
       ],
@@ -4759,6 +4763,8 @@
       "jury": [
         "Kerstin Sauer, Art Director, EuroNatur",
         "Robin Vornholz, Editor, natur magazine",
+        "Christiane Stewen, Public Relations, GELSENWASSER AG",
+        "Darja Wintersig, Event Photographer",
         "Peter Laufmann, Environmental Journalist"
       ],
       "submitVia": "Email",
@@ -4783,7 +4789,7 @@
       "prize": "Exhibition",
       "eligibility": [],
       "jury": [
-        "Elizabeth Krist, Senior Photo Editor, National Geographic"
+        "Elizabeth Krist, Independent Visual Editor"
       ],
       "submitVia": "CaFE",
       "requirements": "5–10 images",
@@ -4822,7 +4828,7 @@
     {
       "title": "Siena Creative Photo Awards 2026",
       "org": "Siena Awards",
-      "deadline": "2026-04-01",
+      "deadline": "2026-04-07",
       "fee": "Free",
       "category": "photography",
       "description": "International contest rewarding originality and experimentation in photography across 8 categories including Fine Art, People, Architecture, and Nature. Winners honored at the ceremony in Siena's Teatro dei Rinnovati.",
@@ -4916,12 +4922,11 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "jury": [
-        "Ed Kashi, Photojournalist",
-        "Andrea Bruce, Photojournalist",
-        "Anna Alexander, Photographer",
-        "Cheryl Newman, Artist & Curator",
         "Tomas Neuwirth, Photographer",
-        "Remi Masson, Photographer"
+        "Remi Masson, Photographer",
+        "Muneera Alobaidli, Photographer",
+        "Dikye Ariani, Photographer",
+        "Mehdi Nazeri, Founder, GSP Awards"
       ],
       "resultsDate": "July 2026",
       "submitUrl": "https://gspawards.com/dashboard/",
@@ -4941,11 +4946,15 @@
       "prize": "$14,000",
       "eligibility": [],
       "jury": [
+        "Dafna Meitar Nechmad, Director General, Zvi and Ofra Meitar Family Fund",
         "Roger Ballen, Photographer & Artist",
         "Laura Letinsky, Professor, University of Chicago",
         "Anne Leighton Massoni, Director, Houston Center for Photography",
         "Michael Benson, Co-Founder, PHOTO LONDON",
-        "Dr. Gilad Reich, Curator of Photography, The Israel Museum"
+        "Dr. Gilad Reich, Curator of Photography, The Israel Museum",
+        "Rivka Saker, Chairman, Sotheby's Israel",
+        "Doron Oved, Photographer",
+        "Sarah Mei Hermann, Photographer"
       ],
       "submitVia": "Website form",
       "requirements": "6–12 images",
@@ -4973,6 +4982,7 @@
         "Olivier Verdier, Curator, Galerie Art Nomade"
       ],
       "submitVia": "Picter",
+      "email": "",
       "slug": "street-photography-barcelona-contest-2026",
       "orgInTitle": true,
       "resultsDate": "May 7, 2026",
@@ -4994,6 +5004,7 @@
       "eligibility": [],
       "submitVia": "Website form",
       "ai": "Dedicated category",
+      "email": "",
       "slug": "impressum-photo-award-2026-appennino-foto-festival",
       "orgInTitle": false,
       "resultsDate": "Autumn 2026",
@@ -5027,7 +5038,7 @@
       "orgInTitle": true,
       "resultsDate": "November 7, 2026",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://www.thespiderawards.com/how-to-enter.php",
+      "submitUrl": "https://www.thespiderawards.com/register.php",
       "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Judged by Steve McCurry and others.",
       "email": ""
     },
@@ -8094,8 +8105,9 @@
       "prize": "3 full grants (€750 each)",
       "eligibility": [],
       "submitVia": "Email",
-      "requirements": "15–30 images or 2–3 pages text or 1 film",
+      "requirements": "15–30 images",
       "email": "",
+      "instagram": "@reporter_akademie",
       "slug": "from-image-to-meaning-tirana-reporter-akademie",
       "orgInTitle": false,
       "summary": "3 full grants for a 7-day visual storytelling workshop in Tirana. Exhibition at Vila 31 x Art Explora. Projects pitched to editors.",
