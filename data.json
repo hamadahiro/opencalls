@@ -1203,7 +1203,7 @@
       "slug": "analog-sparks-international-film-photography-awards-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-17",
-      "submitUrl": "https://www.analogsparksawards.com/submission-guidelines/",
+      "submitUrl": "https://www.analogsparksawards.com/submit/login.php",
       "summary": "Discovering and promoting analog photographers. Exhibited at House of Lucie in Athens and Ostuni."
     },
     {
@@ -1676,7 +1676,7 @@
       "requirements": "PDF of complete book",
       "slug": "lucie-foundation-photo-book-prize-2026",
       "orgInTitle": true,
-      "resultsDate": "Mid-September 2026",
+      "resultsDate": "Fall 2026",
       "dateAdded": "2026-03-16",
       "submitUrl": "https://submit.luciefoundation.org/login.php",
       "summary": "Celebrating innovative photographic books. Three categories. $3,000 Book of the Year. Open worldwide."
@@ -3081,7 +3081,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
       "resultsDate": "May 2026",
-      "submitUrl": "https://fotoslovo.art/en/awards2026",
+      "submitUrl": "https://www.fotoslovo-contest.art/",
       "summary": "International competition. Prizes: €2,000 cash, exhibitions, Limassol Biennale, magazine feature, book production."
     },
     {
@@ -3206,7 +3206,8 @@
       "jury": [
         "Kim Chapin, Executive Director of Photography, LA Times",
         "Gong Cheng, Sports Photojournalist",
-        "Hiroshi Watanabe, Photographer"
+        "Hiroshi Watanabe, Photographer",
+        "Katherine Shen, Art Enthusiast"
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Up to 3 images",
@@ -3447,6 +3448,7 @@
         "emerging"
       ],
       "submitVia": "Picter",
+      "requirements": "1–10 images",
       "slug": "earthly-fabulations-der-greif",
       "orgInTitle": false,
       "resultsDate": "April 22, 2026",
@@ -3458,7 +3460,8 @@
         "Carolina Semprucci, Graphic Designer & Assistant Editor, Der Greif"
       ],
       "submitUrl": "https://site.picter.com/der-greif-earthly-fabulations",
-      "summary": "Earth Day call for lens-based artists deconstructing landscape photography tradition. Ephemeral online exhibition."
+      "summary": "Earth Day call for lens-based artists deconstructing landscape photography tradition. Ephemeral online exhibition.",
+      "email": ""
     },
     {
       "title": "Golden Turtle International Wildlife Festival 2026",
@@ -3470,7 +3473,7 @@
       "url": "https://wncontest.ru/en/photo/",
       "instagram": "@goldenturtlefest",
       "location": "Moscow, Russia",
-      "prize": "150,000 RUB grand + 75,000 RUB per category 1st + Trophy + Album",
+      "prize": "150,000 RUB",
       "eligibility": [],
       "jury": [
         "Andrey Kamenev, National Geographic Russia Photographer",
@@ -3488,7 +3491,7 @@
       "slug": "golden-turtle-international-wildlife-festival-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-25T15:30:00.000Z",
-      "submitUrl": "https://wncontest.ru/en/photo/",
+      "submitUrl": "https://photo.wncontest.ru/register",
       "summary": "International wildlife competition in 12 categories. Finalists exhibited in Moscow, published in festival album."
     },
     {
