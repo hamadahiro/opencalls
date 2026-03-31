@@ -3024,7 +3024,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
       "submitUrl": "https://form.jotform.com/253416257805055",
-      "summary": "Grant for emerging and mid-career artists working with found photography and alternative processes."
+      "summary": "Grant for emerging and mid-career artists working with found photography and alternative processes.",
+      "email": ""
     },
     {
       "title": "Colour Calendar Event",
@@ -3103,7 +3104,8 @@
       "requirements": "Book dummy",
       "resultsDate": "May 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd97f53OnATsmN6eJuq9VgpbyySKV2z-ab1luh4B9zjPs7LWg/viewform",
-      "summary": "100% production coverage for an eco-conscious monograph published in Japan. Airfare to Tokyo for launch included."
+      "summary": "100% production coverage for an eco-conscious monograph published in Japan. Airfare to Tokyo for launch included.",
+      "email": ""
     },
     {
       "title": "2026 Street Photo Award",
@@ -3127,7 +3129,8 @@
       "ai": "Not accepted",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://independent-photo.com/submit/",
-      "summary": "Monthly street photography competition. $1,000 winner prize, PBC Gallery London exhibition. $2,700 total pool."
+      "summary": "Monthly street photography competition. $1,000 winner prize, PBC Gallery London exhibition. $2,700 total pool.",
+      "email": ""
     },
     {
       "title": "A Stranger's Face: Travel Portraits (KLPA)",
@@ -3179,8 +3182,9 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
       "resultsDate": "May 30, 2026",
-      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=209",
-      "summary": "Mastering shadows in photography. $1,000 cash prize, publication, and global recognition."
+      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=209",
+      "summary": "Mastering shadows in photography. $1,000 cash prize, publication, and global recognition.",
+      "email": ""
     },
     {
       "title": "Color, Culture, Continuum – An Asian American Mosaic",
@@ -3207,7 +3211,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
       "submitUrl": "https://client.smarterentry.com/aamoc",
-      "summary": "Celebrating Asian American life through photography — identity, heritage, and community."
+      "summary": "Celebrating Asian American life through photography — identity, heritage, and community.",
+      "email": ""
     },
     {
       "title": "Night Works",
@@ -3301,7 +3306,8 @@
       "dateAdded": "2026-03-15",
       "requirements": "10–20 images",
       "submitUrl": "https://lightwork.slideroom.com/",
-      "summary": "Five $3,000 grants for photographers in New York State (outside NYC). Exhibition and publication in Contact Sheet."
+      "summary": "Five $3,000 grants for photographers in New York State (outside NYC). Exhibition and publication in Contact Sheet.",
+      "email": ""
     },
     {
       "title": "Portals: New Perspectives",
@@ -3323,7 +3329,7 @@
       "slug": "portals-new-perspectives-photoplace-gallery",
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
-      "submitUrl": "https://photoplacegallery.com/online-juried-shows/portals-new-perspectives",
+      "submitUrl": "https://submit.photoplacegallery.com/landing/default",
       "summary": "Exploring openings, thresholds, and transitions — windows, doorways, mirrors, gates, frames within frames."
     },
     {
@@ -3348,8 +3354,9 @@
       "slug": "cpa-artist-grants-2026-center-for-photographic-art",
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
-      "submitUrl": "https://www.photography.org/events/call-for-entry-cpa-artist-grants-2025-ptxxb",
-      "summary": "Five $5,000 grants: emerging, mid-career, landscape, LGBTQ+, and Monterey County resident photographers."
+      "submitUrl": "https://photography.app.neoncrm.com/event.jsp?event=1892",
+      "summary": "Five $5,000 grants: emerging, mid-career, landscape, LGBTQ+, and Monterey County resident photographers.",
+      "email": ""
     },
     {
       "title": "Thoughts of Summer",
@@ -3374,7 +3381,8 @@
       "resultsDate": "April 30, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://client.smarterentry.com/SEC4P",
-      "summary": "Celebrating summer — family, friends, vacations. Jurors: Pictura co-curators. Greenville, SC."
+      "summary": "Celebrating summer — family, friends, vacations. Jurors: Pictura co-curators. Greenville, SC.",
+      "email": ""
     },
     {
       "title": "2026 International Portfolio Competition",
@@ -3555,7 +3563,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17180",
-      "summary": "Exploring the unseen and forgotten. Challenging myths and revaluing overlooked subjects. Providence, RI."
+      "summary": "Exploring the unseen and forgotten. Challenging myths and revaluing overlooked subjects. Providence, RI.",
+      "email": ""
     },
     {
       "title": "Queer Conscience 2026 Photography Exhibition",
@@ -3611,7 +3620,8 @@
       "resultsDate": "August 21, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16748",
-      "summary": "For emerging US photographers. $2,000 prize, Lenscratch feature, virtual artist talk. Juror: Craig Krull."
+      "summary": "For emerging US photographers. $2,000 prize, Lenscratch feature, virtual artist talk. Juror: Craig Krull.",
+      "email": ""
     },
     {
       "title": "XVI Concurso Internacional de Fotografía sobre Humanización Asistencial",
@@ -3631,7 +3641,12 @@
       "dateAdded": "2026-03-20",
       "requirements": "Up to 3 images",
       "email": "",
-      "summary": "Photography reflecting humanization, solidarity, and care in healthcare and everyday life. Prizes: €600/€400/€200."
+      "summary": "Photography reflecting humanization, solidarity, and care in healthcare and everyday life. Prizes: €600/€400/€200.",
+      "jury": [
+        "Secundino Pérez, Photographer",
+        "Mauricio Peña, Photographer",
+        "Javier Casares, Photographer"
+      ]
     },
     {
       "title": "light",
@@ -3655,8 +3670,9 @@
       "resultsDate": "April 24, 2026",
       "dateAdded": "2026-03-15",
       "ai": "Not accepted",
-      "submitUrl": "https://asmithgallery.com/main-gallery-call-for-entry/",
-      "summary": "Exploring light as key element. 47 images selected. Juror: Elizabeth Avedon. Exhibition in Johnson City, TX."
+      "submitUrl": "https://asmithgallery.com/application/",
+      "summary": "Exploring light as key element. 47 images selected. Juror: Elizabeth Avedon. Exhibition in Johnson City, TX.",
+      "email": ""
     },
     {
       "title": "Sharing and Caring Cities: Portraits of Collective Urban Life",
@@ -3682,8 +3698,9 @@
       "orgInTitle": false,
       "ai": "Not accepted",
       "dateAdded": "2026-03-16",
-      "submitUrl": "https://penniur.upenn.edu/media/photography-contest/2026-photography-contest-sharing-and-caring-cities",
-      "summary": "10th annual contest exploring shared urban spaces addressing inequality and climate change."
+      "submitUrl": "https://upenn.co1.qualtrics.com/jfe/form/SV_8GFPkHcA4axbrnw",
+      "summary": "10th annual contest exploring shared urban spaces addressing inequality and climate change.",
+      "email": ""
     },
     {
       "title": "Portrait Awards 2026",
@@ -3853,7 +3870,7 @@
       "orgInTitle": false,
       "resultsDate": "~May 7, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://duskphotogallery.com/city/",
+      "submitUrl": "https://duskphotogallery.com/city-submission/",
       "summary": "Capturing personal urban experience from quiet moments to bustling energy. Santa Fe, NM."
     },
     {
@@ -3877,7 +3894,8 @@
       "resultsDate": "Late May 2026",
       "dateAdded": "2026-03-21",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17170",
-      "summary": "Three grants of professional film and processing by Praus Productions. US-based photographers only."
+      "summary": "Three grants of professional film and processing by Praus Productions. US-based photographers only.",
+      "email": ""
     },
     {
       "title": "HOME Photography Exhibit",
@@ -4062,7 +4080,8 @@
       "requirements": "Up to 2 images",
       "resultsDate": "May 29, 2026",
       "submitUrl": "https://www.smarterentry.com/CallsForEntry/CapeCodArt",
-      "summary": "Online photography exhibit exploring shadow and light. Any interpretation. Cash prizes."
+      "summary": "Online photography exhibit exploring shadow and light. Any interpretation. Cash prizes.",
+      "email": ""
     },
     {
       "title": "1839 Awards Color Photography Contest",
@@ -4116,8 +4135,9 @@
       "ai": "Not accepted",
       "resultsDate": "May 22, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://asmithgallery.com/photographic-performance-call-for-entry/",
-      "summary": "Sixth year. Seeking solo/cooperative exhibitions with conceptual narrative. Photography-based or mixed media. Texas."
+      "submitUrl": "https://asmithgallery.com/application-3/",
+      "summary": "Sixth year. Seeking solo/cooperative exhibitions with conceptual narrative. Photography-based or mixed media. Texas.",
+      "email": ""
     },
     {
       "title": "reFocus Awards - Black and White Photo Contest",
@@ -4312,7 +4332,7 @@
       "orgInTitle": true,
       "resultsDate": "July 13, 2026",
       "dateAdded": "2026-03-15",
-      "requirements": "Single image or series (2–5 images)",
+      "requirements": "1–5 images",
       "submitUrl": "https://refocus-awards.com/contests/color-photo-contest",
       "summary": "Celebrating color photography. Cash prizes and digital gallery placement."
     },
@@ -4383,8 +4403,9 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
       "resultsDate": "November 6, 2026",
-      "submitUrl": "https://artelagunaprize.com/terms-and-conditions-of-arte-laguna-prize-2026/",
-      "summary": "International competition at Arsenale Nord, Venice. 120 finalists. €10,000 first prize. All media."
+      "submitUrl": "https://artelaguna.world/reserved/registration.php",
+      "summary": "International competition at Arsenale Nord, Venice. 120 finalists. €10,000 first prize. All media.",
+      "email": ""
     },
     {
       "title": "IX International Mini Print Cantabria 2026",
@@ -4408,7 +4429,7 @@
       "orgInTitle": true,
       "resultsDate": "September 18, 2026",
       "dateAdded": "2026-03-15",
-      "requirements": "Up to 3 prints, max 20×20 cm",
+      "requirements": "Up to 3 prints",
       "submitUrl": "https://www.miniprintcantabria.es/en/ix-mini-print-2026",
       "summary": "Theme: Open Sea. All printmaking disciplines including digital. Max 20x20 cm. Cantabria, Spain."
     },
@@ -4522,7 +4543,8 @@
       "dateAdded": "2026-03-15",
       "submitVia": "JotForm",
       "submitUrl": "https://form.jotform.com/253296270119155",
-      "summary": "High-quality print magazine for film and analog photography. Also runs themed online group exhibitions."
+      "summary": "High-quality print magazine for film and analog photography. Also runs themed online group exhibitions.",
+      "email": ""
     },
     {
       "title": "Open Doors Takeovers",
@@ -4591,8 +4613,10 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
       "ai": "Accepted (must disclose)",
-      "submitUrl": "https://phmuseum.com/grants/2026-phmuseum-days-photography-open-call",
-      "summary": "International festival competition. 4 solo exhibitions plus additional opportunities. All approaches welcome."
+      "submitUrl": "https://phmuseum.com/apply?g=QeZJep",
+      "summary": "International festival competition. 4 solo exhibitions plus additional opportunities. All approaches welcome.",
+      "email": "",
+      "resultsDate": "Before June 2026"
     },
     {
       "title": "Brussels Street Photography Festival 2026",
@@ -4670,7 +4694,7 @@
       "category": "residency",
       "description": "Two-week photography residency in Sirmione, Lake Garda (October 2026). Mentorship from Andrea Holzherr and Ludovica Pellegatta (Magnum Photos). Resulting work published as a book by the municipality.",
       "url": "https://sirmionefotografia.it/en/concorso/sirmione-photo-residency/",
-      "instagram": "",
+      "instagram": "@comune_di_sirmione",
       "location": "Sirmione, Italy",
       "prize": "€2,500 + residency",
       "eligibility": [],
@@ -4683,8 +4707,9 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-18",
       "requirements": "PDF with min. 20 images",
-      "submitUrl": "https://sirmionefotografia.it/en/concorso/sirmione-photo-residency/",
-      "summary": "Two-week residency at Lake Garda. Mentorship from Andrea Holzherr and Ludovica Pellegatta (Magnum Photos)."
+      "submitUrl": "https://sirmionefotografia.it/en/ds/residency-en",
+      "summary": "Two-week residency at Lake Garda. Mentorship from Andrea Holzherr and Ludovica Pellegatta (Magnum Photos).",
+      "email": ""
     },
     {
       "title": "9th Chania International Photo Festival",
@@ -4815,13 +4840,14 @@
       "ai": "Not accepted",
       "resultsDate": "September 27, 2026",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://sienawards.com/creative",
-      "summary": "International contest rewarding originality across 8 categories. Winners honored at ceremony in Siena's Teatro dei Rinnovati."
+      "submitUrl": "https://contest.sienawards.com/login?target=creative",
+      "summary": "International contest rewarding originality across 8 categories. Winners honored at ceremony in Siena's Teatro dei Rinnovati.",
+      "email": ""
     },
     {
       "title": "Objectif FEMMES 2026",
       "org": "PARISARTISTES#",
-      "deadline": "2026-04-02",
+      "deadline": "2026-04-30",
       "fee": "€40",
       "category": "exhibition",
       "description": "Open call for female photographers exploring the bicentennial of photography. Selected artists exhibit at Salons Aguado in Paris. Submit up to 10 photographs with artist statement. Open to professional and emerging photographers.",
@@ -4839,7 +4865,8 @@
       "ai": "Not accepted",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.objectif-femmes.art/event/appel-a-candidatures-2026-2/register",
-      "summary": "Open call for female photographers exploring the bicentennial of photography. Exhibition at Salons Aguado in Paris."
+      "summary": "Open call for female photographers exploring the bicentennial of photography. Exhibition at Salons Aguado in Paris.",
+      "email": ""
     },
     {
       "title": "Counter Histories Puerto Rico",
@@ -4862,7 +4889,8 @@
       "requirements": "Work sample",
       "resultsDate": "May 2026",
       "submitUrl": "https://magnumfoundation.submittable.com/submit/bf7c1f63-21d4-4b56-a0a3-2111ba61306c/ch-pr-2026",
-      "summary": "Fellowship for photographers engaging with Puerto Rico and its diaspora. 8-month virtual fellowship, up to 8 recipients."
+      "summary": "Fellowship for photographers engaging with Puerto Rico and its diaspora. 8-month virtual fellowship, up to 8 recipients.",
+      "email": ""
     },
     {
       "title": "Golden Shot International Photography Awards 2026",
@@ -4890,8 +4918,9 @@
         "Remi Masson, Photographer"
       ],
       "resultsDate": "July 2026",
-      "submitUrl": "https://gspawards.com/",
-      "summary": "International competition across 16 categories including Portrait, Landscape, Street, Fine Art, and Documentary."
+      "submitUrl": "https://gspawards.com/dashboard/",
+      "summary": "International competition across 16 categories including Portrait, Landscape, Street, Fine Art, and Documentary.",
+      "email": ""
     },
     {
       "title": "Meitar Award for Excellence in Photography 2026",
@@ -4918,7 +4947,7 @@
       "orgInTitle": false,
       "resultsDate": "November 2026",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://meitar.photoisrael.org/",
+      "submitUrl": "https://meitar.photoisrael.org/login/?action=register",
       "summary": "International award. 20 finalists exhibited at Tel Aviv festival. Winner gets solo exhibition at 2027 festival."
     },
     {
@@ -4993,7 +5022,8 @@
       "resultsDate": "November 7, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.thespiderawards.com/how-to-enter.php",
-      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Judged by Steve McCurry and others."
+      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Judged by Steve McCurry and others.",
+      "email": ""
     },
     {
       "title": "ND Awards 2026",
@@ -5037,7 +5067,7 @@
         "Lydia Panas, Visual Artist",
         "Yossi Michaeli, Photographer"
       ],
-      "requirements": "Single image or series (2–5 images)",
+      "requirements": "1–5 images",
       "submitUrl": "https://ndawards.net/",
       "summary": "International competition across Architecture, Editorial, Fine Art, Nature, People, and Special categories."
     },
@@ -5110,9 +5140,10 @@
         "Sane Seven, Photographer",
         "Pinu Rahman, Ambassador, World Photography Olympiad"
       ],
-      "requirements": "Single image or series (2–8 images)",
+      "requirements": "1–8 images",
       "submitUrl": "https://londonphotographyawards.com/london-photography-awards.php",
-      "summary": "International awards across 13 categories. Separate professional and amateur/student divisions."
+      "summary": "International awards across 13 categories. Separate professional and amateur/student divisions.",
+      "email": ""
     },
     {
       "title": "Photo Journalism Prize 2026",
@@ -5140,8 +5171,9 @@
       "orgInTitle": true,
       "resultsDate": "June 15, 2026",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://photojournalismprize.com/",
-      "summary": "International award for editorial and documentary photography. 11 categories including Conflict and Human Rights."
+      "submitUrl": "https://photojournalismprize.com/submit/login.php",
+      "summary": "International award for editorial and documentary photography. 11 categories including Conflict and Human Rights.",
+      "email": ""
     },
     {
       "title": "Gomma Black and White Photo Award 2026",
@@ -5191,7 +5223,8 @@
         "Lin Wei-Lun, Photographer"
       ],
       "submitUrl": "https://site.picter.com/landskrona-foto-and-breadfield-dummy-award-2026",
-      "summary": "Photobook dummy competition. Winner receives full publication by Breadfield Press in 2027."
+      "summary": "Photobook dummy competition. Winner receives full publication by Breadfield Press in 2027.",
+      "email": ""
     },
     {
       "title": "International Aerial Photographer of the Year 2026",
@@ -5203,7 +5236,7 @@
       "url": "https://internationalaerialphotographer.com/index.php/info/about-us",
       "instagram": "@ilpoty",
       "location": "Online",
-      "prize": "$5,000",
+      "prize": "$10,000",
       "eligibility": [],
       "jury": [
         "Tom Hegen, Photographer",
@@ -5216,8 +5249,9 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "resultsDate": "July 2026",
-      "submitUrl": "https://internationalaerialphotographer.com/index.php/info/about-us",
-      "summary": "Celebrating aerial photography from all platforms — drones, planes, helicopters, mountains, and skyscrapers."
+      "submitUrl": "https://ipp.secure-platform.com:443/a/solicitations/25/home",
+      "summary": "Celebrating aerial photography from all platforms — drones, planes, helicopters, mountains, and skyscrapers.",
+      "email": ""
     },
     {
       "title": "ReA! Art Fair 2026",
@@ -5305,7 +5339,8 @@
         "Philip Flip Collier, Photographer"
       ],
       "submitUrl": "https://monovisionsawards.com/",
-      "summary": "International B&W competition across 12 categories including Abstract, Architecture, Fine Art, and Street."
+      "summary": "International B&W competition across 12 categories including Abstract, Architecture, Fine Art, and Street.",
+      "email": ""
     },
     {
       "title": "Nature Photographer of the Year 2026",
@@ -5347,7 +5382,8 @@
       "ai": "Accepted only in AI category",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.hipa.ae/competitions",
-      "summary": "Major international award. 2026 theme: Family. Free entry. Categories include Dreams Through AI and Sports."
+      "summary": "Major international award. 2026 theme: Family. Free entry. Categories include Dreams Through AI and Sports.",
+      "email": ""
     },
     {
       "title": "Natural Landscape Photography Awards 2026",
@@ -5422,7 +5458,8 @@
       "dateAdded": "2026-03-18",
       "ai": "Not accepted",
       "submitUrl": "https://www.exposure.gallery/call-002.htm",
-      "summary": "Capturing fleeting moments. Gold Award winner receives solo exhibition. Juror: Gary Hershorn (Reuters)."
+      "summary": "Capturing fleeting moments. Gold Award winner receives solo exhibition. Juror: Gary Hershorn (Reuters).",
+      "email": ""
     },
     {
       "title": "Chromatic Photography Awards 2026",
@@ -5466,7 +5503,7 @@
       "slug": "px3-prix-de-la-photographie-paris-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "requirements": "Single image or series (up to 9 images)",
+      "requirements": "1–9 images",
       "submitUrl": "https://px3.fr/submit/",
       "summary": "One of Europe's most prestigious awards. Categories from Analog to Advertising. Exhibited in Paris."
     },
@@ -5529,7 +5566,7 @@
       "slug": "tokyo-international-foto-award-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "requirements": "Single image or series (2–10 images)",
+      "requirements": "1–10 images",
       "submitUrl": "https://www.tokyofotoawards.jp/submit/",
       "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo."
     },
@@ -5677,7 +5714,8 @@
       ],
       "submitVia": "Website form",
       "submitUrl": "https://px3.fr/state-of-the-world-photo-contest/",
-      "summary": "Series reflecting unfiltered global stories. 30 photographers selected for curated exhibition at Paris Photo Prize."
+      "summary": "Series reflecting unfiltered global stories. 30 photographers selected for curated exhibition at Paris Photo Prize.",
+      "email": ""
     },
     {
       "title": "Blank Wall Gallery — Street Photography",
@@ -5778,7 +5816,8 @@
       "requirements": "15–20 images",
       "submitVia": "Website form",
       "submitUrl": "https://daylightphotoawards.com/guidelines",
-      "summary": "Competition recognizing outstanding work. Top prize includes cash and digital portfolio. Monograph opportunity."
+      "summary": "Competition recognizing outstanding work. Top prize includes cash and digital portfolio. Monograph opportunity.",
+      "email": ""
     },
     {
       "title": "Fotografiska HOME — Global Open Call",
@@ -5805,7 +5844,8 @@
         "Sophia Emmerich, Lead Editor, Fotografiska Emerging Platform"
       ],
       "submitUrl": "https://emerging.fotografiska.com/missions/home",
-      "summary": "Global open call exploring home. Exhibition at UN Headquarters. Guest curator: James Nachtwey. No AI."
+      "summary": "Global open call exploring home. Exhibition at UN Headquarters. Guest curator: James Nachtwey. No AI.",
+      "email": ""
     },
     {
       "title": "The Idle Class — Photography Issue",
@@ -5845,7 +5885,8 @@
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
       "submitUrl": "https://www.berlinphotoawards.com/submit-new-entry/",
-      "summary": "International competition with 24 categories. Winners exhibited at ERSTERERSTER Gallery Berlin."
+      "summary": "International competition with 24 categories. Winners exhibited at ERSTERERSTER Gallery Berlin.",
+      "email": ""
     },
     {
       "title": "Galleri Format — Window Exhibition 2026",
@@ -6083,8 +6124,9 @@
       "dateAdded": "2026-03-18",
       "requirements": "1 image",
       "resultsDate": "December 2026",
-      "submitUrl": "https://beautifulbizarreartprize.art/photography-award-prizes/",
-      "summary": "Representational photography. $3,000 first prize. Exhibition at Modern Eden Gallery, San Francisco. No AI."
+      "submitUrl": "https://beautifulbizarreartprize.art/enter-beautiful-bizarre-art-prize/entry-photography/",
+      "summary": "Representational photography. $3,000 first prize. Exhibition at Modern Eden Gallery, San Francisco. No AI.",
+      "email": ""
     },
     {
       "title": "FotoDoc Photo Contest 2026",
@@ -6106,7 +6148,8 @@
       "dateAdded": "2026-03-18",
       "requirements": "1–15 images",
       "submitUrl": "https://fotodoc.com.br/en/contest/",
-      "summary": "International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo."
+      "summary": "International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo.",
+      "email": ""
     },
     {
       "title": "SUB(SCAPE) — Manifest Gallery Season 22",
@@ -6150,7 +6193,8 @@
       "requirements": "8 images",
       "ai": "Accepted (must disclose)",
       "submitUrl": "https://artadia.submittable.com/submit",
-      "summary": "Unrestricted $15,000 grants for contemporary visual artists in NYC. Two-round jury process with studio visits."
+      "summary": "Unrestricted $15,000 grants for contemporary visual artists in NYC. Two-round jury process with studio visits.",
+      "email": ""
     },
     {
       "title": "XII Premio Internacional de Fotografía Jalón Ángel",
@@ -6382,7 +6426,8 @@
         "Wendi Schneider, Visual Artist"
       ],
       "submitUrl": "https://client.smarterentry.com/SEC4P",
-      "summary": "Virtual exhibition exploring light and shadow. Juror: Wendi Schneider. 35-40 images selected. 0% commission."
+      "summary": "Virtual exhibition exploring light and shadow. Juror: Wendi Schneider. 35-40 images selected. 0% commission.",
+      "email": ""
     },
     {
       "title": "photoED Magazine — Home VS Away (Issue #77)",
@@ -6471,8 +6516,9 @@
         "Roy Schweiger, Photographer & Director",
         "Sandra M. Stevenson, Deputy Director of Photography, The Washington Post"
       ],
-      "submitUrl": "https://nyartcompetitions.com/photography/",
-      "summary": "Exhibition at Agora Gallery in Chelsea, New York. 30 photographers. Five $500 cash prizes."
+      "submitUrl": "https://nyartcompetitions.com/photography/entries/register/",
+      "summary": "Exhibition at Agora Gallery in Chelsea, New York. 30 photographers. Five $500 cash prizes.",
+      "email": ""
     },
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
@@ -6533,7 +6579,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-20",
       "submitUrl": "https://form.jotform.com/220642967716665",
-      "summary": "10-week virtual residency for artists working with found/family photographs. Weekly Zoom calls, only 9 spots."
+      "summary": "10-week virtual residency for artists working with found/family photographs. Weekly Zoom calls, only 9 spots.",
+      "email": ""
     },
     {
       "title": "HNDL Magazine — PRIDE Issue",
@@ -6581,7 +6628,8 @@
         "Chris Pichler, Founder & Publisher, Nazraeli Press"
       ],
       "submitUrl": "https://apanational.org/contests/information/apa-la-2026-off-the-clock-call-for-entries",
-      "summary": "15th annual curated competition for personal work. Juror: Chris Pichler (Nazraeli Press). 100 winners, printed catalogue."
+      "summary": "15th annual curated competition for personal work. Juror: Chris Pichler (Nazraeli Press). 100 winners, printed catalogue.",
+      "email": ""
     },
     {
       "title": "The Female Show 2026",
@@ -7979,7 +8027,8 @@
         "Francesca Marra, Curator"
       ],
       "summary": "Three photographers exhibited at September festival in Verona. €300 travel + €1,000 print budget + accommodation.",
-      "dateAdded": "2026-03-30T23:27:35.597Z"
+      "dateAdded": "2026-03-30T23:27:35.597Z",
+      "instagram": "@grenze.arsenali.fotografici"
     },
     {
       "title": "Lucky Star Issue 5: Camera-Less",
