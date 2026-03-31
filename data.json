@@ -572,7 +572,9 @@
       "instagram": "@exibartstreetphotography",
       "location": "Online",
       "prize": "Leica Q3 + Xiaomi 17 Ultra + publication",
-      "eligibility": [],
+      "eligibility": [
+        "18+"
+      ],
       "jury": [
         "Alan Schaller, Photographer, Co-founder Street Photography International (President)",
         "Biba Giacchetti, Curator & Communication Strategist, Founder Sudest57 & Orion57",
@@ -589,10 +591,7 @@
       "dateAdded": "2026-03-24T22:00:00Z",
       "submitUrl": "https://www.exibartstreet.com/2026-contest-select-category/",
       "summary": "International street contest by Italy's leading art magazine. Leica Q3 grand prize. Five categories.",
-      "email": "",
-      "eligibility": [
-        "18+"
-      ]
+      "email": ""
     },
     {
       "title": "RESTART2026",
