@@ -48,7 +48,7 @@
       ],
       "submitVia": "Official website + mail",
       "submitUrl": "https://photofestival.gr/dummy-award-entry-form",
-      "requirements": "1 photobook dummy (PDF + physical)",
+      "requirements": "1 photobook dummy",
       "email": "",
       "instagram": "@athensphotofestival_official",
       "slug": "athens-photo-festival-dummy-award-2026",
@@ -79,7 +79,8 @@
       "orgInTitle": false,
       "summary": "Curated group show on motion in photography. Physical exhibition in Barcelona's Gothic Quarter. Student rates available.",
       "dateAdded": "2026-03-29T19:15:07.835Z",
-      "email": ""
+      "email": "",
+      "resultsDate": "May 2026"
     },
     {
       "title": "Manipulation & Illusion",
@@ -113,7 +114,7 @@
       "prize": "US$50,000+ total prize pool",
       "eligibility": [],
       "submitVia": "Official website",
-      "requirements": null,
+      "requirements": "Unlimited images",
       "slug": "epson-international-pano-awards-2026",
       "orgInTitle": true,
       "summary": "World's largest panoramic photography competition. $50K+ prizes incl. $15K cash. New Aerial category. Open, Amateur, VR/360.",
@@ -130,7 +131,8 @@
         "Anette Mossbacher, Photographer",
         "Jennifer Renwick, Photographer"
       ],
-      "submitUrl": "https://app.thepanoawards.com/"
+      "submitUrl": "https://app.thepanoawards.com/",
+      "email": ""
     },
     {
       "title": "REMEDY Photo Festival — Open Call 2026",
@@ -170,7 +172,7 @@
       ],
       "submitVia": "Website form",
       "requirements": "Up to 10 images",
-      "resultsDate": "Within 2 weeks of deadline",
+      "resultsDate": "Late June 2026",
       "slug": "square-photography-exhibit-decode-gallery",
       "orgInTitle": false,
       "summary": "Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.",
@@ -188,7 +190,7 @@
       "location": "Hagerstown, MD, USA",
       "prize": "$3,000+",
       "eligibility": [
-        "MD, VA, WV, PA, DC"
+        "mid-atlantic-us"
       ],
       "submitVia": "Smarter Entry",
       "requirements": "Up to 4 works",
@@ -245,7 +247,7 @@
       "orgInTitle": false,
       "summary": "€8,000 grant for female photojournalists. 26th edition with Canon. Long-term documentary projects. Exhibited at Perpignan.",
       "dateAdded": "2026-03-27T12:16:37.465Z",
-      "submitUrl": "https://visapourlimage.com/en/prix-et-bourses/bourse-canon-de-la-femme-photojournaliste/"
+      "submitUrl": null
     },
     {
       "title": "A Black Perspective: Celebrating the Voice & Vision",
@@ -285,9 +287,7 @@
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
       "prize": "Exhibition",
-      "eligibility": [
-        "18+"
-      ],
+      "eligibility": [],
       "jury": [
         "Praxis Directors"
       ],
@@ -311,7 +311,7 @@
       "url": "https://iicsanpaolo.esteri.it/it/news/dall_istituto/2026/03/bando-mostra-fotografica/",
       "instagram": "@festfotosaopaulo",
       "location": "São Paulo, Brazil",
-      "prize": "Exhibition + round-trip airfare",
+      "prize": "Exhibition",
       "eligibility": [
         "italy"
       ],
@@ -478,7 +478,7 @@
         "Isabella Franceschini, 2024 Marilyn Stafford FotoReportage Award winner"
       ],
       "submitVia": "FotoDocument",
-      "requirements": "10 + 15 images",
+      "requirements": "25 images",
       "resultsDate": "Late June 2026",
       "slug": "marilyn-stafford-fotoreportage-award-2026",
       "orgInTitle": false,
@@ -529,8 +529,7 @@
       "location": "Dublin, Ireland",
       "prize": "€15,000 commission + exhibition + publication",
       "eligibility": [
-        "ireland",
-        "18+"
+        "ireland"
       ],
       "submitVia": "Photo Museum Ireland",
       "requirements": "10–20 images",
@@ -580,9 +579,7 @@
       "instagram": "@exibartstreetphotography",
       "location": "Online",
       "prize": "Leica Q3 + Xiaomi 17 Ultra + publication",
-      "eligibility": [
-        "18+"
-      ],
+      "eligibility": [],
       "jury": [
         "Alan Schaller, Photographer, Co-founder Street Photography International (President)",
         "Biba Giacchetti, Curator & Communication Strategist, Founder Sudest57 & Orion57",
@@ -725,7 +722,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-24T18:00:00Z",
       "submitUrl": "https://embracingourdifferences.submittable.com/submit",
-      "summary": "50 artworks displayed as billboard-sized panels in Florida parks. Themes: diversity, inclusion, kindness."
+      "summary": "50 artworks displayed as billboard-sized panels in Florida parks. Themes: diversity, inclusion, kindness.",
+      "resultsDate": "Early fall 2026"
     },
     {
       "title": "Night Aesthetics",
@@ -738,9 +736,7 @@
       "instagram": "@fotografiska.emerging",
       "location": "Online",
       "prize": "3 × €2,500",
-      "eligibility": [
-        "legal-drinking-age"
-      ],
+      "eligibility": [],
       "jury": [
         "Atiba Jefferson, Staff Photographer Thrasher Magazine & Canon Explorer of Light",
         "Karl Hab, Photographer (aviation, architecture, fashion)",
@@ -8107,7 +8103,7 @@
       "description": "Open call for the Nachleben photography festival in Verona, Italy, September 2026. Three photographers or collectives selected for exhibition. Selected artists receive two nights accommodation during opening weekend, meals, travel reimbursement up to €300, and a production budget of up to €1,000 for prints and installation. Open to photographers of any age. No thematic restrictions — jury selects on artistic merit.",
       "url": "https://www.grenzearsenalifotografici.com/nachleben2026",
       "location": "Verona, Italy",
-      "prize": "Exhibition + €300 travel + €1,000 print budget",
+      "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Email",
       "email": "",
@@ -8149,7 +8145,7 @@
       "orgInTitle": true,
       "summary": "SF indie zine exploring camera-less photography — pinhole, cyanotype, chemigram, photogram, lumen and more. Free to submit.",
       "dateAdded": "2026-03-31T00:22:15.926Z",
-      "resultsDate": "Within 1 week of deadline"
+      "resultsDate": "Early May 2026"
     },
     {
       "title": "From Image to Meaning – Tirana",
@@ -8281,8 +8277,7 @@
       "prize": "Up to $20,000",
       "eligibility": [
         "women",
-        "united-states",
-        "18+"
+        "united-states"
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://www.nyfa.org/awards-grants/anonymous-was-a-woman-environmental-art-grants/",
@@ -8304,9 +8299,7 @@
       "url": "https://bwphotoawards.com/en/",
       "location": "Online",
       "prize": "€1,500 absolute + €200 per category",
-      "eligibility": [
-        "18+"
-      ],
+      "eligibility": [],
       "jury": [
         "Joel Tjintjelaar, Photographer",
         "Julia Anna Gospodarou, Photographer",
@@ -8315,7 +8308,7 @@
         "Néstor Rodan, Photographer"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://bwphotoawards.com/en/",
+      "submitUrl": null,
       "requirements": "5 images per category",
       "email": "",
       "instagram": "@blackandwhitephotoaward",

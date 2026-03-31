@@ -86,7 +86,7 @@
       <div class="call-detail-info" id="detailInfo"></div>
 
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: Simone Azzoni, Curator · Francesca Marra, Curator</p>
+        <p class="call-detail-description">Jury: Aida Redžepagić, Founder &amp; Director, Sarajevo Photography Festival · Jelena Janković, Program Director, Sarajevo Photography Festival · David Pujado, Founder, Belgrade Photo Month · Marta Szymańska, Curator, Fotofestiwal (Poland) · Simone Azzoni, Co-founder &amp; Artistic Director, Grenze · Francesca Marra, President &amp; Co-Artistic Director, Grenze</p>
       </div>
 
       <div class="call-detail-jury">
@@ -111,7 +111,7 @@
 
   <script>
     const CURRENT_SLUG = 'nachleben-2026';
-    const CURRENT_CALL = {"prize":"Exhibition + €300 travel + €1,000 print budget","category":"exhibition","org":"Grenze-Arsenali Fotografici","location":"Verona, Italy","fee":"€28","deadline":"2026-04-30","resultsDate":"May 30, 2026","instagram":"@grenze.arsenali.fotografici","eligibility":[],"jury":["Simone Azzoni, Curator","Francesca Marra, Curator"],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"10–20 images"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Grenze-Arsenali Fotografici","location":"Verona, Italy","fee":"€28","deadline":"2026-04-30","resultsDate":"May 30, 2026","instagram":"@grenze.arsenali.fotografici","eligibility":[],"jury":["Aida Redžepagić, Founder & Director, Sarajevo Photography Festival","Jelena Janković, Program Director, Sarajevo Photography Festival","David Pujado, Founder, Belgrade Photo Month","Marta Szymańska, Curator, Fotofestiwal (Poland)","Simone Azzoni, Co-founder & Artistic Director, Grenze","Francesca Marra, President & Co-Artistic Director, Grenze"],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"10–20 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -121,7 +121,7 @@
       var u = 'https://www.grenzearsenalifotografici.com/nachleben2026';
       var o = 'Grenze-Arsenali Fotografici';
       var dl = new Date('2026-04-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition + €300 travel + €1,000 print budget') + '\\nEntry fee: ' + icsE('€28');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('€28');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
