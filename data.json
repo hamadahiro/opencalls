@@ -148,6 +148,7 @@
       "resultsDate": "May 4, 2026",
       "slug": "remedy-photo-festival-open-call-2026",
       "orgInTitle": true,
+      "instagram": "@remedyphotofestival",
       "summary": "Free festival exploring health — physical, mental, chronic, invisible. Lincoln, UK. Print and display costs covered.",
       "dateAdded": "2026-03-28T12:13:36.505Z",
       "submitUrl": "https://forms.gle/ueKhk89HijPp6oQ27"
@@ -185,12 +186,19 @@
       "description": "Annual juried photography exhibition at the Washington County Museum of Fine Arts, this year celebrating contemporary perspectives as the nation approaches its 250th anniversary. Photographers explore history, identity, place, and civic life through four themes: Unfinished Revolutions, Power of Place, Tell Everyone's Story, and American Experiment. Respond literally or metaphorically through documentary, conceptual, figurative, or abstract approaches. All photographic processes accepted. Submissions open April 1–30, 2026. Selected work exhibited June 20 – October 11, 2026. Open to photographers from Maryland, Virginia, West Virginia, Pennsylvania, and Washington, DC.",
       "url": "https://wcmfa.org/news-listing/call-for-entries/",
       "location": "Hagerstown, MD, USA",
-      "prize": "Exhibition",
-      "eligibility": [],
+      "prize": "$3,000+",
+      "eligibility": [
+        "MD, VA, WV, PA, DC"
+      ],
       "submitVia": "Smarter Entry",
+      "requirements": "Up to 4 works",
+      "email": "",
+      "instagram": "@wcmfa",
+      "resultsDate": "May 8, 2026",
+      "submitUrl": "http://www.smarterentry.com/CallsForEntry",
       "slug": "cumberland-valley-photographers-2026-washington-county-museum-of-fine-arts",
       "orgInTitle": false,
-      "summary": "Juried museum exhibition on America's 250th anniversary themes. Open to MD, VA, WV, PA, DC photographers. All processes.",
+      "summary": "Juried museum exhibition on America's 250th anniversary themes. Open to MD, VA, WV, PA, DC photographers. $3K+ in cash prizes.",
       "dateAdded": "2026-03-28T00:15:39.212Z"
     },
     {
@@ -6505,6 +6513,7 @@
       "dateAdded": "2026-03-19",
       "requirements": "Up to 8 images",
       "submitUrl": "https://zealous.co/photoedmagazine/opportunity/home-vs-away-a-call-for-photography-submissions/",
+      "email": "",
       "summary": "Fine art projects investigating home, being away, or the tension between. Published in print edition."
     },
     {
@@ -6525,6 +6534,7 @@
       "dateAdded": "2026-03-19",
       "requirements": "Up to 8 images",
       "submitUrl": "https://www.photoed.ca/callforphotography",
+      "email": "",
       "summary": "Fine art projects engaging with what is real versus imagined. Published in print and digital editions."
     },
     {
@@ -8079,7 +8089,8 @@
       "location": "Online",
       "prize": "Publication (6 books + 2 zines printed)",
       "eligibility": [],
-      "submitVia": "Official website",
+      "submitVia": "Typeform",
+      "submitUrl": "https://form.typeform.com/to/bUl65dq3",
       "requirements": "10 images",
       "slug": "2026-booooooom-art-photo-book-award",
       "orgInTitle": true,
@@ -8222,6 +8233,8 @@
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc9UB6nFkiABwRR7alpOquC_cPlx63V-HMYuNShyN9h0knIlg/viewform",
       "requirements": "Up to 5 images",
       "instagram": "@elysetonna",
+      "email": "",
+      "resultsDate": "July 2026",
       "slug": "open-call-for-emerging-artists-elyse-tonna",
       "orgInTitle": false,
       "summary": "Open call for emerging Maltese/Malta-based visual artists. Exhibition, project and residency opportunities from July 2026.",
@@ -8246,7 +8259,11 @@
         "Ellen Cuylaerts, Curator"
       ],
       "submitVia": "Official website",
+      "submitUrl": "https://www.divephotoguide.com/wodphoto",
       "requirements": "1 image per category",
+      "resultsDate": "June 8, 2026",
+      "email": "",
+      "instagram": "@divephotoguide",
       "slug": "un-world-oceans-day-photo-competition-2026",
       "orgInTitle": false,
       "summary": "Free UN-backed ocean photography competition. 4 categories incl. above-water seascapes. Winners exhibited globally, announced at UN event.",
@@ -8264,11 +8281,14 @@
       "prize": "Up to $20,000",
       "eligibility": [
         "women",
-        "united-states"
+        "united-states",
+        "18+"
       ],
-      "submitVia": "NYFA portal",
+      "submitVia": "Submittable",
       "submitUrl": "https://www.nyfa.org/awards-grants/anonymous-was-a-woman-environmental-art-grants/",
       "email": "",
+      "requirements": "Up to 6 work samples",
+      "resultsDate": "August 2026",
       "slug": "anonymous-was-a-woman-environmental-art-grants-2026",
       "orgInTitle": true,
       "summary": "Up to $20K grants for environmental art by women/trans/GNC artists in the US. $470K+ total. All visual arts incl. photography.",
