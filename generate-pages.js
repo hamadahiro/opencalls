@@ -260,7 +260,7 @@ function buildKeywords(call) {
 
 function derivePrizeCategory(text) {
   const p = text.toLowerCase();
-  if (/[$€£¥]|chf |sek |aud |twd |rub |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
