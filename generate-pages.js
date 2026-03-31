@@ -616,7 +616,10 @@ const eligibilityGroups = {
   'australia': { short: 'Australia', title: 'Australia-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Australian citizens or permanent residents.' },
   'ireland': { short: 'Ireland', title: 'Ireland-Only Open Calls', desc: 'Open calls restricted to photographers and artists resident on the island of Ireland.' },
   'switzerland': { short: 'Switzerland', title: 'Switzerland-Only Open Calls', desc: 'Open calls restricted to photographers and artists with Swiss citizenship or based in Switzerland.' },
-  'caribbean': { short: 'Caribbean', title: 'Caribbean Focus', desc: 'Open calls for Caribbean artists or projects connected to the Caribbean.' }
+  'caribbean': { short: 'Caribbean', title: 'Caribbean Focus', desc: 'Open calls for Caribbean artists or projects connected to the Caribbean.' },
+  'nordic': { short: 'Nordic', title: 'Nordic-Only Open Calls', desc: 'Open calls restricted to citizens or residents of Nordic countries (Denmark, Finland, Iceland, Norway, Sweden).' },
+  'germany': { short: 'Germany', title: 'Germany-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Germany.' },
+  '10-18': { short: 'Ages 10–18', title: 'Open Calls for Ages 10–18', desc: 'Open calls for young photographers ages 10 to 18.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -691,8 +694,8 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40'] },
-  { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'ireland', 'italy', 'morocco', 'portugal', 'switzerland', 'taiwan', 'non-european'] },
+  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40', '10-18'] },
+  { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'germany', 'ireland', 'italy', 'morocco', 'nordic', 'portugal', 'switzerland', 'taiwan', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }

@@ -56,7 +56,10 @@ const eligibilityLabel = {
   'australia': 'Australia only',
   'ireland': 'Ireland only',
   'switzerland': 'Switzerland only',
-  'caribbean': 'Caribbean focus'
+  'caribbean': 'Caribbean focus',
+  'nordic': 'Nordic only',
+  'germany': 'Germany only',
+  '10-18': 'Ages 10–18'
 };
 
 const prizeCategoryLabel = {
