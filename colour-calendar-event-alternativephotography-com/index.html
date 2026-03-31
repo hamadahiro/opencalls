@@ -89,8 +89,7 @@
         <p class="call-detail-description">Organized by <a href="/alternativephotography-com/">AlternativePhotography.com</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.alternativephotography.com/calendar-event/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/alternativephotography_com" target="_blank" rel="nofollow noopener">@alternativephotography_com</a></div>
     </section>
@@ -108,23 +107,7 @@
   <script>
     const CURRENT_SLUG = 'colour-calendar-event-alternativephotography-com';
     const CURRENT_CALL = {"prize":"Publication (calendar)","category":"photography","org":"AlternativePhotography.com","location":"Online","fee":"Free","deadline":"2026-03-31","resultsDate":"","instagram":"@alternativephotography_com","eligibility":["alternative-process","membership-required"],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":"Not accepted","requirements":"Single image"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-03-31'.replace(/-/g, '');
-      var nd = new Date('2026-03-31T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Colour Calendar Event';
-      var u = 'https://www.alternativephotography.com/calendar-event/';
-      var o = 'AlternativePhotography.com';
-      var dl = new Date('2026-03-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication (calendar)') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
