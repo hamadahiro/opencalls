@@ -5211,7 +5211,8 @@
       "requirements": "8–24 images",
       "resultsDate": "December 2026",
       "submitUrl": "https://gomma.submittable.com/submit",
-      "summary": "Project-based B&W competition. Submit 8-24 images. Winners published in a dedicated book. 3rd edition."
+      "summary": "Project-based B&W competition. Submit 8-24 images. Winners published in a dedicated book. 3rd edition.",
+      "email": ""
     },
     {
       "title": "Landskrona Foto & Breadfield Dummy Award 2026",
@@ -5265,7 +5266,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "resultsDate": "July 2026",
-      "submitUrl": "https://ipp.secure-platform.com:443/a/solicitations/25/home",
+      "submitUrl": "https://ipp.secure-platform.com:443/a/solicitations/28/home",
       "summary": "Celebrating aerial photography from all platforms — drones, planes, helicopters, mountains, and skyscrapers.",
       "email": ""
     },
@@ -5285,11 +5286,19 @@
       ],
       "slug": "rea-art-fair-2026",
       "orgInTitle": true,
-      "resultsDate": "June 1, 2026",
+      "resultsDate": "June 15, 2026",
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
       "submitUrl": "https://www.reafair.com/open-call",
-      "summary": "Contemporary art fair at Fabbrica del Vapore, Milan. 50 emerging artists selected. No exhibiting costs."
+      "summary": "Contemporary art fair at Fabbrica del Vapore, Milan. 50 emerging artists selected. No exhibiting costs.",
+      "email": "",
+      "jury": [
+        "Milena Zanetti, Curator",
+        "Valeria Conti, Curator",
+        "Vittoria Martinotti, Curator",
+        "Erica Massaccesi, Curator",
+        "Maria Myasnikova, Curator"
+      ]
     },
     {
       "title": "Prix Virginia 2026",
@@ -5354,7 +5363,7 @@
         "Keivan Cadinouche, Photographer",
         "Philip Flip Collier, Photographer"
       ],
-      "submitUrl": "https://monovisionsawards.com/",
+      "submitUrl": "https://monovisionsawards.com/login/",
       "summary": "International B&W competition across 12 categories including Abstract, Architecture, Fine Art, and Street.",
       "email": ""
     },
@@ -5378,7 +5387,8 @@
       "dateAdded": "2026-03-18",
       "requirements": "Up to 20 images",
       "submitUrl": "https://naturephotographeroftheyear.com/enter-contest/npoty-2025/",
-      "summary": "International nature competition with 12 categories plus young photographers and portfolio awards."
+      "summary": "International nature competition with 12 categories plus young photographers and portfolio awards.",
+      "email": ""
     },
     {
       "title": "HIPA Photography Award 2026",
@@ -5397,7 +5407,8 @@
       "orgInTitle": false,
       "ai": "Accepted only in AI category",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://www.hipa.ae/competitions",
+      "requirements": "1 image (5–10 for Portfolio)",
+      "submitUrl": "https://hipa.ae/members/contests/contest-submission/3046fdcc-5395-42bf-8496-2119f85f8940",
       "summary": "Major international award. 2026 theme: Family. Free entry. Categories include Dreams Through AI and Sports.",
       "email": ""
     },
@@ -5473,7 +5484,7 @@
       "resultsDate": "August 3, 2026",
       "dateAdded": "2026-03-18",
       "ai": "Not accepted",
-      "submitUrl": "https://www.exposure.gallery/call-002.htm",
+      "submitUrl": "https://www.exposure.gallery/participate.htm",
       "summary": "Capturing fleeting moments. Gold Award winner receives solo exhibition. Juror: Gary Hershorn (Reuters).",
       "email": ""
     },
@@ -5495,7 +5506,7 @@
       "resultsDate": "December 20, 2026",
       "dateAdded": "2026-03-18",
       "requirements": "Single image per entry",
-      "submitUrl": "https://chromaticawards.com/information/",
+      "submitUrl": "https://chromaticawards.com/login/",
       "summary": "International color competition across 20 categories. Separate Professional and Amateur divisions."
     },
     {
@@ -5521,7 +5532,8 @@
       "dateAdded": "2026-03-18",
       "requirements": "1–9 images",
       "submitUrl": "https://px3.fr/submit/",
-      "summary": "One of Europe's most prestigious awards. Categories from Analog to Advertising. Exhibited in Paris."
+      "summary": "One of Europe's most prestigious awards. Categories from Analog to Advertising. Exhibited in Paris.",
+      "email": ""
     },
     {
       "title": "Camera Clara Photo Award 2026",
@@ -5538,6 +5550,8 @@
         "analog-photography"
       ],
       "submitVia": "Website form",
+      "ai": "Not accepted",
+      "email": "",
       "slug": "camera-clara-photo-award-2026",
       "orgInTitle": true,
       "resultsDate": "November 3, 2026",
@@ -5555,7 +5569,7 @@
         "Fabien Simode, Art Critic & Director, Maisons-Alfort Media Libraries"
       ],
       "requirements": "1 series",
-      "submitUrl": "https://en.prixcameraclara.com/apply",
+      "submitUrl": "https://prixcameraclara.plateformecandidature.com/",
       "summary": "Exclusively for large-format camera photographers. Unpublished series of 5-10 images. Prize money + exhibition."
     },
     {
@@ -5584,7 +5598,8 @@
       "dateAdded": "2026-03-18",
       "requirements": "1–10 images",
       "submitUrl": "https://www.tokyofotoawards.jp/submit/",
-      "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo."
+      "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.",
+      "email": ""
     },
     {
       "title": "Milano Photo Awards 2026",
@@ -5630,7 +5645,7 @@
       "orgInTitle": true,
       "resultsDate": "Spring 2027",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://aestheticamagazine.com/artprize/",
+      "submitUrl": "https://aestheticamagazine.com/artprize/submit",
       "summary": "Contemporary art prize. Winners exhibited at major public gallery and published in Aesthetica Magazine."
     },
     {
@@ -5729,7 +5744,7 @@
         "Guillaume Bonn, Photographer"
       ],
       "submitVia": "Website form",
-      "submitUrl": "https://px3.fr/state-of-the-world-photo-contest/",
+      "submitUrl": "https://px3.fr/submit/",
       "summary": "Series reflecting unfiltered global stories. 30 photographers selected for curated exhibition at Paris Photo Prize.",
       "email": ""
     },
@@ -5946,7 +5961,8 @@
       ],
       "requirements": "Up to 3 photobooks",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16876",
-      "summary": "Exhibition for handcrafted photobooks where the artist's hand shapes the object itself."
+      "summary": "Exhibition for handcrafted photobooks where the artist's hand shapes the object itself.",
+      "email": ""
     },
     {
       "title": "Provoke USA — Open Call",
@@ -5980,11 +5996,12 @@
       "prize": "Residency + exhibition",
       "eligibility": [],
       "submitVia": "Picter",
+      "ai": "Accepted",
       "slug": "hariban-award-2026-benrido",
       "orgInTitle": false,
-      "resultsDate": "September 15, 2026",
+      "resultsDate": "Early September 2026",
       "dateAdded": "2026-03-22",
-      "requirements": "12 images",
+      "requirements": "8–12 images",
       "jury": [
         "Diane Dufour, Founder & Artistic Director, LE BAL Paris",
         "Erin O'Toole, Curator & Head of Photography, SFMOMA",
@@ -6131,7 +6148,7 @@
       "url": "https://beautifulbizarreartprize.art/photography-award-prizes/",
       "instagram": "@beautifulbizarremagazine",
       "location": "Online",
-      "prize": "$4,500",
+      "prize": "$3,000",
       "eligibility": [],
       "submitVia": "Website form",
       "slug": "beautiful-bizarre-art-prize-mpb-photography-award-2026",
@@ -6141,7 +6158,7 @@
       "requirements": "1 image",
       "resultsDate": "December 2026",
       "submitUrl": "https://beautifulbizarreartprize.art/enter-beautiful-bizarre-art-prize/entry-photography/",
-      "summary": "Representational photography. $3,000 first prize. Exhibition at Modern Eden Gallery, San Francisco. No AI.",
+      "summary": "Representational photography. $3,000 first prize + exhibition at Modern Eden Gallery, San Francisco. No AI.",
       "email": ""
     },
     {
@@ -6163,7 +6180,7 @@
       "resultsDate": "November 2026",
       "dateAdded": "2026-03-18",
       "requirements": "1–15 images",
-      "submitUrl": "https://fotodoc.com.br/en/contest/",
+      "submitUrl": "https://fotodoc.com.br/en/contest-2026/single-image-submission/",
       "summary": "International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo.",
       "email": ""
     },
@@ -6252,7 +6269,8 @@
       "resultsDate": "June 26, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://bethanyarts.submittable.com/submit",
-      "summary": "Two-week residency in Ossining, NY. $450 stipend, private studio, room and board. 12 artists across all disciplines."
+      "summary": "Two-week residency in Ossining, NY. $450 stipend, private studio, room and board. 12 artists across all disciplines.",
+      "email": ""
     },
     {
       "title": "Diane Dammeyer Fellowship in Photographic Arts and Social Awareness 2026/27",
@@ -6297,8 +6315,9 @@
       "dateAdded": "2026-03-19",
       "requirements": "Up to 3 images",
       "ai": "Accepted (must disclose)",
-      "submitUrl": "https://www.fundacionenaire.es/bases26/bases-premio-fotografia-2026.pdf",
-      "summary": "Prestigious prize since 2005. Open theme. Winning works join the ENAIRE Contemporary Art Collection. No AI."
+      "submitUrl": "https://www.fundacionenaire.es",
+      "summary": "Prestigious prize since 2005. Open theme. Winning works join the ENAIRE Contemporary Art Collection.",
+      "email": ""
     },
     {
       "title": "International Photography and Football Open Call 2026",
@@ -6314,7 +6333,9 @@
       "eligibility": [],
       "slug": "international-photography-and-football-open-call-2026-fundaci-n-televisa",
       "orgInTitle": false,
-      "resultsDate": "May 2026",
+      "resultsDate": "May 10, 2026",
+      "ai": "Not accepted",
+      "email": "",
       "dateAdded": "2026-03-19",
       "requirements": "1–3 images",
       "jury": [
@@ -6355,7 +6376,8 @@
       ],
       "resultsDate": "July 13, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeq38rw1Q4H-VElJwbZi6DGe-_DZBdjCaRDJSCrVmmHoRp7pw/viewform",
-      "summary": "Annual prize for student photographers. $2,000 first prize plus mentorship with Aline Smithson."
+      "summary": "Annual prize for student photographers. $2,000 first prize plus mentorship with Aline Smithson.",
+      "email": ""
     },
     {
       "title": "Lenscratch Motherhood Exhibition",
@@ -6376,7 +6398,8 @@
       "requirements": "1 image",
       "resultsDate": "May 10, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeZ9n8QHSgpUR0jzd4BaAcYOwfS6-E7A75lSBiZHKJKW60ykw/viewform",
-      "summary": "Online exhibition exploring all dimensions of motherhood — chosen families, caregiving, absence, and resilience."
+      "summary": "Online exhibition exploring all dimensions of motherhood — chosen families, caregiving, absence, and resilience.",
+      "email": ""
     },
     {
       "title": "Lenscratch Fatherhood Exhibition",
@@ -6397,7 +6420,8 @@
       "requirements": "1 image",
       "resultsDate": "June 21, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSds5lG23ZWvdexm_ZSkCAFX8h4qCABgsuECa26z9OGyveFdMw/viewform",
-      "summary": "Online exhibition exploring fatherhood as an evolving role shaped by culture, responsibility, and tenderness."
+      "summary": "Online exhibition exploring fatherhood as an evolving role shaped by culture, responsibility, and tenderness.",
+      "email": ""
     },
     {
       "title": "Lenscratch Fault Lines: America Exhibition",
@@ -8131,7 +8155,10 @@
       "slug": "creative-capital-award-2027",
       "orgInTitle": true,
       "summary": "One of the US's largest arts grants. $15K–$50K for ambitious projects across all visual arts incl. photography. 5+ yrs experience required.",
-      "dateAdded": "2026-03-31T15:13:15.929Z"
+      "dateAdded": "2026-03-31T15:13:15.929Z",
+      "email": "",
+      "instagram": "@creative_capital",
+      "resultsDate": "Early 2027"
     },
     {
       "title": "La Napoule Art Foundation — Fall Residency 2026",
@@ -8142,7 +8169,7 @@
       "description": "One-month international artist residency at a historic château on the French Riviera, overlooking the Mediterranean Sea. Open to emerging and established artists of all disciplines including photography, aged 18+, with no limitation on nationality. Residents receive accommodations in the château, a private studio workspace, daily breakfast, and most evening meals. Participants must communicate effectively in English or French. Residency dates October 6 – November 3, 2026. Applications evaluated on artistic vision, professional commitment, work quality, project significance, and collaborative willingness. Artists may apply once per calendar year; previous recipients may reapply but are given lower priority. Note: the historic château is not handicapped accessible.",
       "url": "https://www.lnaf.org/residencies/application-process/",
       "location": "La Napoule, France",
-      "prize": "Accommodation + meals + studio",
+      "prize": "Residency",
       "eligibility": [],
       "submitVia": "SlideRoom",
       "submitUrl": "https://lnaf.slideroom.com/",
