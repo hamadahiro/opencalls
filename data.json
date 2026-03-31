@@ -165,10 +165,11 @@
       "prize": "Exhibition",
       "eligibility": [],
       "jury": [
-        "Holly Hart, Founder, Decode Gallery"
+        "Holly Hart, Conceptual Fine Art Photographer & Decode Gallery Founder"
       ],
       "submitVia": "Website form",
       "requirements": "Up to 10 images",
+      "resultsDate": "Within 2 weeks of deadline",
       "slug": "square-photography-exhibit-decode-gallery",
       "orgInTitle": false,
       "summary": "Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.",
@@ -235,7 +236,8 @@
       "slug": "canon-female-photojournalist-grant-2026",
       "orgInTitle": false,
       "summary": "€8,000 grant for female photojournalists. 26th edition with Canon. Long-term documentary projects. Exhibited at Perpignan.",
-      "dateAdded": "2026-03-27T12:16:37.465Z"
+      "dateAdded": "2026-03-27T12:16:37.465Z",
+      "submitUrl": "https://visapourlimage.com/en/prix-et-bourses/bourse-canon-de-la-femme-photojournaliste/"
     },
     {
       "title": "A Black Perspective: Celebrating the Voice & Vision",
@@ -275,7 +277,9 @@
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18+"
+      ],
       "jury": [
         "Praxis Directors"
       ],
@@ -299,7 +303,7 @@
       "url": "https://iicsanpaolo.esteri.it/it/news/dall_istituto/2026/03/bando-mostra-fotografica/",
       "instagram": "@festfotosaopaulo",
       "location": "São Paulo, Brazil",
-      "prize": "Exhibition",
+      "prize": "Exhibition + round-trip airfare",
       "eligibility": [
         "italy"
       ],
@@ -338,7 +342,9 @@
       "slug": "delfina-foundation-latin-america-caribbean-residency-2026",
       "orgInTitle": true,
       "summary": "Fully funded 12-week residency in London for Latin American/Caribbean artists. Excludes Chile, Peru, Ecuador, Brazil, Argentina.",
-      "dateAdded": "2026-03-26T12:06:07Z"
+      "dateAdded": "2026-03-26T12:06:07Z",
+      "email": "",
+      "submitUrl": "https://www.cognitoforms.com/DelfinaFoundation/OPENCALLRESIDENCYFORARTISTSLIVINGINLATINAMERICATHECARIBBEANANDRELATEDDIASPORICCOMMU"
     },
     {
       "title": "MACK — Debut Photography Book Submissions",
@@ -357,6 +363,10 @@
       "submitVia": "Email",
       "requirements": "PDF draft sequence",
       "resultsDate": "End of June 2026",
+      "jury": [
+        "Michael Mack, Publisher & Founder, MACK",
+        "Iman Hakimi, Editor, MACK"
+      ],
       "slug": "mack-debut-photography-book-submissions-may-2026",
       "orgInTitle": true,
       "summary": "MACK's window for first-time photobook authors. One of the world's most prestigious photography publishers.",
@@ -460,7 +470,7 @@
         "Isabella Franceschini, 2024 Marilyn Stafford FotoReportage Award winner"
       ],
       "submitVia": "FotoDocument",
-      "requirements": "25 images",
+      "requirements": "10 + 15 images",
       "resultsDate": "Late June 2026",
       "slug": "marilyn-stafford-fotoreportage-award-2026",
       "orgInTitle": false,
@@ -511,7 +521,8 @@
       "location": "Dublin, Ireland",
       "prize": "€15,000 commission + exhibition + publication",
       "eligibility": [
-        "ireland"
+        "ireland",
+        "18+"
       ],
       "submitVia": "Photo Museum Ireland",
       "requirements": "10–20 images",
@@ -519,7 +530,8 @@
       "orgInTitle": false,
       "submitUrl": "https://forms.gle/RjVHLHWZ1bB8rw7i9",
       "summary": "€15,000 commission for 12 portraits of women in nature restoration across Ireland. Exhibition + publication.",
-      "dateAdded": "2026-03-25T20:54:11.418Z"
+      "dateAdded": "2026-03-25T20:54:11.418Z",
+      "email": ""
     },
     {
       "title": "Home",
@@ -576,7 +588,11 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-24T22:00:00Z",
       "submitUrl": "https://www.exibartstreet.com/2026-contest-select-category/",
-      "summary": "International street contest by Italy's leading art magazine. Leica Q3 grand prize. Five categories."
+      "summary": "International street contest by Italy's leading art magazine. Leica Q3 grand prize. Five categories.",
+      "email": "",
+      "eligibility": [
+        "18+"
+      ]
     },
     {
       "title": "RESTART2026",
@@ -715,7 +731,9 @@
       "instagram": "@fotografiska.emerging",
       "location": "Online",
       "prize": "3 × €2,500",
-      "eligibility": [],
+      "eligibility": [
+        "legal-drinking-age"
+      ],
       "jury": [
         "Atiba Jefferson, Staff Photographer Thrasher Magazine & Canon Explorer of Light",
         "Karl Hab, Photographer (aviation, architecture, fashion)",
@@ -6442,7 +6460,8 @@
       "requirements": "1 image",
       "resultsDate": "July 4, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeie2kdGoMTIHazp1FVX1L6XI-Fnp7eWa85hdBo1_BMWA_oEw/viewform",
-      "summary": "Online exhibition examining tensions and transformations across America. Timed for July 4th."
+      "summary": "Online exhibition examining tensions and transformations across America. Timed for July 4th.",
+      "email": ""
     },
     {
       "title": "SE Center for Photography — Magic of Light",
@@ -6523,14 +6542,15 @@
       "eligibility": [
         "professional"
       ],
-      "submitVia": "Website form",
+      "submitVia": "Website form + physical parcel",
       "slug": "luma-rencontres-dummy-book-award-2026",
       "orgInTitle": true,
-      "resultsDate": "June 2026",
+      "resultsDate": "July 10, 2026",
       "dateAdded": "2026-03-20",
       "requirements": "1 dummy",
       "submitUrl": "https://www.rencontres-arles.com/en/luma-rencontres-dummy-book-award-2026",
-      "summary": "€25,000 production budget for winning photobook dummy. Exhibited at Les Rencontres d'Arles 2026."
+      "summary": "€25,000 production budget for winning photobook dummy. Exhibited at Les Rencontres d'Arles 2026.",
+      "email": ""
     },
     {
       "title": "8th Chelsea International Photography Competition",
@@ -6661,7 +6681,7 @@
       "slug": "off-the-clock-2026-apa-los-angeles",
       "orgInTitle": false,
       "ai": "Not accepted",
-      "resultsDate": "May 2026",
+      "resultsDate": "June 2026",
       "dateAdded": "2026-03-21",
       "requirements": "Unlimited single images",
       "jury": [
@@ -8086,8 +8106,12 @@
       "orgInTitle": false,
       "resultsDate": "May 30, 2026",
       "jury": [
-        "Simone Azzoni, Curator",
-        "Francesca Marra, Curator"
+        "Aida Redžepagić, Founder & Director, Sarajevo Photography Festival",
+        "Jelena Janković, Program Director, Sarajevo Photography Festival",
+        "David Pujado, Founder, Belgrade Photo Month",
+        "Marta Szymańska, Curator, Fotofestiwal (Poland)",
+        "Simone Azzoni, Co-founder & Artistic Director, Grenze",
+        "Francesca Marra, President & Co-Artistic Director, Grenze"
       ],
       "summary": "Three photographers exhibited at September festival in Verona. €300 travel + €1,000 print budget + accommodation.",
       "dateAdded": "2026-03-30T23:27:35.597Z",
@@ -8114,7 +8138,8 @@
       "slug": "lucky-star-issue-5-camera-less",
       "orgInTitle": true,
       "summary": "SF indie zine exploring camera-less photography — pinhole, cyanotype, chemigram, photogram, lumen and more. Free to submit.",
-      "dateAdded": "2026-03-31T00:22:15.926Z"
+      "dateAdded": "2026-03-31T00:22:15.926Z",
+      "resultsDate": "Within 1 week of deadline"
     },
     {
       "title": "From Image to Meaning – Tirana",
@@ -8260,7 +8285,9 @@
       "url": "https://bwphotoawards.com/en/",
       "location": "Online",
       "prize": "€1,500 absolute + €200 per category",
-      "eligibility": [],
+      "eligibility": [
+        "18+"
+      ],
       "jury": [
         "Joel Tjintjelaar, Photographer",
         "Julia Anna Gospodarou, Photographer",
@@ -8269,13 +8296,15 @@
         "Néstor Rodan, Photographer"
       ],
       "submitVia": "Official website",
+      "submitUrl": "https://bwphotoawards.com/en/",
       "requirements": "5 images per category",
       "email": "",
       "instagram": "@blackandwhitephotoaward",
       "slug": "black-and-white-photo-awards-2026",
       "orgInTitle": true,
       "summary": "International B&W competition — 6 categories incl. Architecture, Street, Landscape. €1,500 absolute winner + €200 per category.",
-      "dateAdded": "2026-03-31T19:54:25.607Z"
+      "dateAdded": "2026-03-31T19:54:25.607Z",
+      "ai": "Not accepted"
     }
   ]
 }
