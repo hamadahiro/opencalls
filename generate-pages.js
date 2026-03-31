@@ -619,6 +619,7 @@ const eligibilityGroups = {
   'caribbean': { short: 'Caribbean', title: 'Caribbean Focus', desc: 'Open calls for Caribbean artists or projects connected to the Caribbean.' },
   'nordic': { short: 'Nordic', title: 'Nordic-Only Open Calls', desc: 'Open calls restricted to citizens or residents of Nordic countries (Denmark, Finland, Iceland, Norway, Sweden).' },
   'germany': { short: 'Germany', title: 'Germany-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Germany.' },
+  'malta': { short: 'Malta', title: 'Malta-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Maltese nationals or based in Malta.' },
   '10-18': { short: 'Ages 10–18', title: 'Open Calls for Ages 10–18', desc: 'Open calls for young photographers ages 10 to 18.' }
 };
 
@@ -695,7 +696,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'germany', 'ireland', 'italy', 'morocco', 'nordic', 'portugal', 'switzerland', 'taiwan', 'non-european'] },
+  { heading: 'Where', tags: ['united-states', 'europe', 'australia', 'germany', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'switzerland', 'taiwan', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
