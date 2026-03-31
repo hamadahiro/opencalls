@@ -8,28 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Burn Magazine — Open Submissions - Monographica</title>
-  <meta name="description" content="Photography magazine founded by David Alan Harvey (Magnum). Accepts photo essays, slideshows, and multimedia pieces on any subject. Rolling deadline.">
-  <meta name="keywords" content="Burn Magazine — Open Submissions, Burn Magazine, Zines &amp; Books, open call, call for entries, photobook, zine submission, open calls for artists, photography submissions">
-  <link rel="canonical" href="https://opencalls.monographica.com/burn-magazine-open-submissions/">
+  <title>Open Calls for Ages 10–18 2026 - Monographica</title>
+  <meta name="description" content="Open calls for young photographers ages 10 to 18.">
+  <meta name="keywords" content="Ages 10–18 open calls, Ages 10–18 photography, call for entries Ages 10–18, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/10-18/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Burn Magazine — Open Submissions - Monographica">
-  <meta property="og:description" content="Photography magazine founded by David Alan Harvey (Magnum). Accepts photo essays, slideshows, and multimedia pieces on any subject. Rolling deadline.">
+  <meta property="og:title" content="Open Calls for Ages 10–18 2026 - Monographica">
+  <meta property="og:description" content="Open calls for young photographers ages 10 to 18.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/burn-magazine-open-submissions/">
-  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/10-18/">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Burn Magazine — Open Submissions",
-  "description": "Photography magazine founded by David Alan Harvey (Magnum). Accepts photo essays, slideshows, and multimedia pieces on any subject. Submit as PDF. Images at 1080px shortest side. Features published on homepage with consideration for print.",
-  "url": "https://opencalls.monographica.com/burn-magazine-open-submissions/",
+  "@type": "CollectionPage",
+  "name": "Open Calls for Ages 10–18 2026",
+  "description": "Open calls for young photographers ages 10 to 18.",
+  "url": "https://opencalls.monographica.com/eligibility/10-18/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -76,28 +76,13 @@
   <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
-    <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
-      <h1 class="call-detail-title">Burn Magazine — Open Submissions</h1>
-
-      <p class="call-detail-description">Photography magazine founded by David Alan Harvey (Magnum). Accepts photo essays, slideshows, and multimedia pieces on any subject. Submit as PDF. Images at 1080px shortest side. Features published on homepage with consideration for print.</p>
-
-      <div id="detailPrize"></div>
-      <div class="call-detail-info" id="detailInfo"></div>
-
-      <div class="call-detail-jury">
-        <p class="call-detail-description">Organized by <a href="/burn-magazine/">Burn Magazine</a></p>
-      </div>
-      <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.burnmagazine.org/submissions/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-
-      </div>
-      <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/burnmagazine" target="_blank" rel="nofollow noopener">@burnmagazine</a></div>
+    <section class="hero">
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Open Calls for Ages 10–18</h1>
+      <h2 class="subtitle">Open calls for young photographers ages 10 to 18.</h2>
     </section>
 
-    <section class="related-calls">
-      <div id="similarCalls"></div>
-    </section>
+    <section class="calls-list" id="callsList"></section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -105,14 +90,17 @@
     </footer>
   </main>
 
-  <script>
-    const CURRENT_SLUG = 'burn-magazine-open-submissions';
-    const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"Burn Magazine","location":"Online","fee":"Free","deadline":"Continuous","resultsDate":"","instagram":"@burnmagazine","eligibility":[],"jury":[],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"Photo essay"};
-
-  </script>
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
-  <script src="/call-detail.js"></script>
+  <script>
+    async function loadFiltered() {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('10-18')).map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
