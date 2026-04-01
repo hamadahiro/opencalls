@@ -1462,6 +1462,7 @@
       "dateAdded": "2026-03-16",
       "requirements": "1 book",
       "email": "",
+      "resultsDate": "December 2026",
       "summary": "Book prize for innovation in photography scholarship. Project grant for emerging scholars and curators."
     },
     {
@@ -3611,7 +3612,9 @@
       "instagram": "@riphotoarts",
       "location": "Providence, RI, USA",
       "prize": "$250",
-      "eligibility": [],
+      "eligibility": [
+        "18+"
+      ],
       "jury": [
         "Lou Jones, Photographer"
       ],
