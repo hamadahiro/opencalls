@@ -1931,7 +1931,7 @@
       "instagram": "@scantarragona",
       "location": "Tarragona, Spain",
       "prize": "€500",
-      "eligibility": ["18+"],
+      "eligibility": [],
       "submitVia": "JotForm",
       "requirements": "Up to 20 images",
       "slug": "scan-tarragona-talent-latent-2026",
@@ -2072,7 +2072,8 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
       "submitUrl": "https://www.plueschow.de/kuenstler/bewerbung/",
-      "summary": "Three-month residency in northern Germany (Oct-Dec 2026). €1,000/month stipend. Five visual artists selected."
+      "summary": "Three-month residency in northern Germany (Oct-Dec 2026). €1,000/month stipend. Five visual artists selected.",
+      "email": ""
     },
     {
       "title": "Inspired by Classics — Golden Duck Gallery",
@@ -2604,7 +2605,7 @@
       "instagram": "@chateau_gallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": ["18+"],
+      "eligibility": [],
       "submitVia": "Website form",
       "requirements": "Up to 3 images",
       "ai": "Not accepted",
@@ -3355,7 +3356,7 @@
       "location": "Syracuse, NY, USA",
       "prize": "$3,000",
       "eligibility": [
-        "New York State (outside NYC)"
+        "united-states"
       ],
       "submitVia": "SlideRoom",
       "slug": "grants-in-photography-2026-light-work",
@@ -3400,7 +3401,7 @@
       "instagram": "@centerphotographicart",
       "location": "Carmel-by-the-Sea, CA, USA",
       "prize": "$5,000",
-      "eligibility": ["18+"],
+      "eligibility": [],
       "jury": [
         "Diane Chung, Founder, CHUNG 24 GALLERY",
         "Gregory Harris, Curator of Photography, High Museum of Art",
@@ -3451,7 +3452,7 @@
       "url": "https://www.sohophoto.com/international-portfolio-competition/",
       "instagram": "@sohophotogallery",
       "location": "New York, NY, USA",
-      "prize": "Solo exhibition",
+      "prize": "3 solo exhibitions",
       "eligibility": [],
       "submitVia": "CaFE",
       "requirements": "10–15 images",
@@ -3460,7 +3461,8 @@
       "ai": "Not accepted",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16804",
-      "summary": "NYC's longest-running cooperative gallery awarding three solo shows. Portfolio of 10-15 images. No AI."
+      "summary": "NYC's longest-running cooperative gallery awarding three solo shows. Portfolio of 10-15 images. No AI.",
+      "email": ""
     },
     {
       "title": "THE PORTRAIT",
@@ -3484,7 +3486,8 @@
       "resultsDate": "April 16, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://www.praxisphotocenter.org/x1-sub-5-11",
-      "summary": "Exploring depth and complexity of the human subject. All lens-based practices welcome. Minneapolis, MN."
+      "summary": "Exploring depth and complexity of the human subject. All lens-based practices welcome. Minneapolis, MN.",
+      "email": ""
     },
     {
       "title": "Earthly Fabulations",
@@ -3545,7 +3548,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-25T15:30:00.000Z",
       "submitUrl": "https://photo.wncontest.ru/register",
-      "summary": "International wildlife competition in 12 categories. Finalists exhibited in Moscow, published in festival album."
+      "summary": "International wildlife competition in 12 categories. Finalists exhibited in Moscow, published in festival album.",
+      "email": ""
     },
     {
       "title": "Sarajevo Photography Festival 2026",
@@ -3558,9 +3562,7 @@
       "instagram": "@sarajevophotographyfestival",
       "location": "Sarajevo, Bosnia and Herzegovina",
       "prize": "€2,000",
-      "eligibility": [
-        "16+"
-      ],
+      "eligibility": [],
       "jury": [
         "Simone Azzoni, Professor, Contemporary Art History",
         "Marko Drobnjaković, Documentary Photographer",
@@ -3615,9 +3617,7 @@
       "instagram": "@riphotoarts",
       "location": "Providence, RI, USA",
       "prize": "$250",
-      "eligibility": [
-        "18+"
-      ],
+      "eligibility": [],
       "jury": [
         "Lou Jones, Photographer"
       ],
@@ -8027,10 +8027,19 @@
       "location": "Online",
       "prize": "Kenya safari for 2 + Nikon gear + trophies",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Paul Joynson-Hicks MBE, Co-Founder",
+        "Tom Sullam, Co-Founder",
+        "Kate Humble, TV Presenter & Author",
+        "Hugh Dennis, Comedian & Actor",
+        "Will Burrard-Lucas, Wildlife Photographer",
+        "Daisy Gilardini, Wildlife Photographer",
+        "Charlie Hamilton James, Wildlife Photographer"
+      ],
       "submitVia": "Official website",
-      "requirements": "Up to 10 images + 2 videos",
+      "requirements": "Up to 10 images",
       "resultsDate": "December 2026",
+      "ai": "Not accepted",
       "slug": "nikon-comedy-wildlife-photography-awards-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-25T18:19:00Z",
