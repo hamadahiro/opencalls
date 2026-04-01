@@ -134,6 +134,7 @@
     let selectedSuggestion = -1;
 
     async function loadCalls() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       allCalls = data.calls.map((c, i) => ({ ...c, _index: i }));
@@ -181,6 +182,9 @@
         document.getElementById('searchClear').classList.add('visible');
         renderCalls(currentView);
       }
+    } catch (e) {
+      document.getElementById('callsList').innerHTML = '<p class="empty-state">Could not load calls. Please try refreshing.<a href="/">Reload &rarr;</a></p>';
+    }
     }
 
     // --- Mobile search ---

@@ -107,10 +107,12 @@
       }).filter(function(c){ if(!c||seen[c])return false; seen[c]=true; return true; });
     }
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('residency')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
