@@ -10,7 +10,7 @@
     var tags = parts.map(function(part) {
       var cat = derivePrizeCategory(part);
       var href = cat ? '/prize/' + cat + '/' : '/prize/';
-      return '<a href="' + href + '" class="meta-tag meta-tag-link call-prize">' + part + ' prize</a>';
+      return '<a href="' + href + '" class="meta-tag meta-tag-link call-prize">' + esc(part) + ' prize</a>';
     }).join(' ');
     dp.innerHTML = '<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">' + label + '</a></span> ' + tags + '</div>';
   }

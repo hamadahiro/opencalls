@@ -75,7 +75,7 @@ const prizeCategoryLabel = {
 
 function derivePrizeCategory(text) {
   var p = text.toLowerCase();
-  if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
@@ -116,7 +116,7 @@ function chipToUrl(type, value) {
   if (type === 'country') {
     var expand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
     var slug = (expand[value] || value).toLowerCase().replace(/\s+/g, '-');
-    if (typeof countryPages !== 'undefined' && countryPages.includes(slug)) return '/locations/' + slug + '/';
+    if (typeof countryPages !== 'undefined' && countryPages.includes(slug)) return '/' + slug + '/';
   }
   return null;
 }
