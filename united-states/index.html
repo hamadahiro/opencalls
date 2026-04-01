@@ -94,6 +94,7 @@
   <script src="/search.js?v=20260329"></script>
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
 
@@ -126,6 +127,7 @@
       });
       container.innerHTML = html;
 
+    } catch (e) {}
     }
     loadFiltered();
   </script>

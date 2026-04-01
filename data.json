@@ -16,7 +16,7 @@
         "spain"
       ],
       "submitVia": "Digital form",
-      "requirements": "1 PDF (10–15 pages, English)",
+      "requirements": "1 PDF",
       "slug": "la-embajada-2026-el-local",
       "orgInTitle": false,
       "summary": "Six Spanish photographers exhibit at Rencontres d'Arles opening week. €1,400 each. Free, supported by Ministry of Culture.",
@@ -5050,13 +5050,13 @@
       "title": "Street Photography Barcelona Contest 2026",
       "org": "Street Photography Barcelona",
       "deadline": "2026-04-15",
-      "fee": "Free",
+      "fee": "€10–€40",
       "category": "photography",
       "description": "International street photography contest seeking authentic images of urban life. Three geographic categories: Local (Barcelona), National (Spain), and International. 25 finalists exhibited at Galerie Art Nomade, Barcelona.",
       "url": "https://www.streetphotographybarcelona.com/en/rules",
       "instagram": "@streetphotography.barcelona",
       "location": "Barcelona, Spain",
-      "prize": "€1,500",
+      "prize": "€1,000",
       "eligibility": [],
       "jury": [
         "Xavi Herrero, Festival Director",
@@ -5066,9 +5066,11 @@
       "email": "",
       "slug": "street-photography-barcelona-contest-2026",
       "orgInTitle": true,
-      "resultsDate": "May 7, 2026",
+      "resultsDate": "May 1, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://site.picter.com/street-photography-barcelona-2026",
+      "requirements": "1–5 images",
+      "ai": "Not accepted",
       "summary": "Authentic images of urban life. Three categories: Local, National, International. Exhibited at Galerie Art Nomade."
     },
     {
@@ -5091,7 +5093,19 @@
       "resultsDate": "Autumn 2026",
       "dateAdded": "2026-03-18",
       "requirements": "25 images",
-      "submitUrl": "https://www.impressumphotoaward.it/",
+      "submitUrl": "https://pci.jotform.com/form/260132802964353",
+      "jury": [
+        "Alessandro Bergamini, Photographer",
+        "Cinza Canneri, Photographer",
+        "Giuseppe Capriotti, Photographer",
+        "Edoardo Catini, Photographer",
+        "Alessandro Curti, Photographer",
+        "Barbara Dall'Angelo, Photographer",
+        "Valerio Minato, Photographer",
+        "Helmut Pilo, Photographer",
+        "Christian Tasso, Photographer",
+        "Francesca Tilio, Photographer"
+      ],
       "summary": "7 open-theme sections and 2 themed projects (Rigenerare). Free entry ages 16-20. Finalists exhibited one month."
     },
     {
@@ -5136,6 +5150,7 @@
       "prize": "$3,500",
       "eligibility": [],
       "submitVia": "Website form",
+      "email": "",
       "slug": "nd-awards-2026",
       "orgInTitle": true,
       "resultsDate": "November 22, 2026",
@@ -5189,6 +5204,7 @@
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
+      "email": "",
       "slug": "international-photography-awards-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -5239,7 +5255,7 @@
         "Pinu Rahman, Ambassador, World Photography Olympiad"
       ],
       "requirements": "1–8 images",
-      "submitUrl": "https://londonphotographyawards.com/london-photography-awards.php",
+      "submitUrl": "https://londonphotographyawards.com/entry.php",
       "summary": "International awards across 13 categories. Separate professional and amateur/student divisions.",
       "email": ""
     },
@@ -5343,6 +5359,7 @@
         "Isabella Tabacchi, Photographer"
       ],
       "submitVia": "Website form",
+      "requirements": "Unlimited images",
       "ai": "Not accepted",
       "slug": "international-aerial-photographer-of-the-year-2026",
       "orgInTitle": true,
@@ -5372,6 +5389,7 @@
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
       "submitUrl": "https://www.reafair.com/open-call",
+      "requirements": "Portfolio PDF",
       "summary": "Contemporary art fair at Fabbrica del Vapore, Milan. 50 emerging artists selected. No exhibiting costs.",
       "email": "",
       "jury": [
@@ -5492,7 +5510,7 @@
       "orgInTitle": false,
       "ai": "Accepted only in AI category",
       "dateAdded": "2026-03-18",
-      "requirements": "1 image (5–10 for Portfolio)",
+      "requirements": "1–10 images",
       "submitUrl": "https://hipa.ae/members/contests/contest-submission/3046fdcc-5395-42bf-8496-2119f85f8940",
       "summary": "Major international award. 2026 theme: Family. Free entry. Categories include Dreams Through AI and Sports.",
       "email": ""
@@ -5530,14 +5548,14 @@
     {
       "title": "Queer Nature Photography Awards 2026",
       "org": "Narwhal Rainbow Alliance",
-      "deadline": "2026-08-31",
+      "deadline": "2026-05-31",
       "fee": "Free",
       "category": "photography",
       "description": "Free-entry photography award celebrating LGBTQ+ diversity through nature photography. Theme: Queer Nature (non-human). Submit via WeTransfer. Prizes include exhibitions and publication.",
-      "url": "https://www.narwhalrainbowalliance.com/queer-nature-photography-awards",
+      "url": "https://www.narwhalrainbowalliance.com/queernaturephotographyawards2026",
       "instagram": "@narwhal_rainbow_alliance",
       "location": "Amsterdam, Netherlands",
-      "prize": "€1,000",
+      "prize": "€1,500",
       "eligibility": [],
       "submitVia": "Email + WeTransfer",
       "slug": "queer-nature-photography-awards-2026-narwhal-rainbow-alliance",
@@ -5701,9 +5719,10 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "2–10 images",
+      "ai": "Not accepted",
       "slug": "milano-photo-awards-2026-thestreetsoup",
       "orgInTitle": false,
-      "resultsDate": "September 25-27, 2026",
+      "resultsDate": "August 25, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://milanophotoawards.com/en/the-contest/",
       "summary": "Exhibition and contest in Milan with Sebastiao Salgado tribute. Street, portraits, reportage, nature. Nikon Italia."
@@ -5723,10 +5742,17 @@
       "jury": [
         "Carrie Chan, Curator, V&A",
         "Charlotte Hale, Head of Exhibitions, V&A Dundee",
-        "Taous Dahmani, Curator, The Photographers' Gallery"
+        "Taous Dahmani, Curator, The Photographers' Gallery",
+        "Sarah Coulson, Senior Curator, Yorkshire Sculpture Park",
+        "Jason Bruges, Artist, Jason Bruges Studio",
+        "Poppy Bowers, Senior Curator, The Whitworth",
+        "Dr James Finch, Curator & Art Historian, Royal Academy of Arts",
+        "Nephertiti Oboshie Schandorf, Producer & Commissioner",
+        "Farah Dailami, Assistant Curator, The Hepworth Wakefield"
       ],
       "submitVia": "Website form",
       "requirements": "2 images",
+      "email": "",
       "slug": "aesthetica-art-prize-2026",
       "orgInTitle": true,
       "resultsDate": "Spring 2027",
@@ -5872,6 +5898,7 @@
       "dateAdded": "2026-03-18",
       "requirements": "Up to 5 images",
       "email": "",
+      "resultsDate": "April 27, 2026",
       "summary": "Photos featuring red as the dominant color — passion, emotion, vibrant details. Free to submit. Athens."
     },
     {
@@ -5952,7 +5979,7 @@
       "orgInTitle": true,
       "resultsDate": "October 2026",
       "dateAdded": "2026-03-18",
-      "requirements": "3 images",
+      "requirements": "1–3 images",
       "submitVia": "Fotografiska Emerging",
       "ai": "Not accepted",
       "jury": [
@@ -5995,6 +6022,7 @@
       "location": "Berlin, Germany",
       "prize": "€4,000",
       "eligibility": [],
+      "requirements": "1 image",
       "slug": "berlin-photo-awards-2026",
       "orgInTitle": true,
       "ai": "AI editing OK, fully generated not accepted",
@@ -6002,6 +6030,16 @@
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
       "submitUrl": "https://www.berlinphotoawards.com/submit-new-entry/",
+      "jury": [
+        "Thomas Kakareko, Photographer & Creative Consultant",
+        "Jorg Nicht, Travel & Street Photographer",
+        "Ezgi Polat, Photographer & Creative Director",
+        "Yuto Yamada, Photographer & Videographer",
+        "Marcello Zerletti, Photographer & Photography Coach",
+        "Alina Rudya, Photographer & Founder, Bell Collective",
+        "Patrick Noack, Photographer",
+        "Tejasvi Gala, Wedding & Portrait Photographer"
+      ],
       "summary": "International competition with 24 categories. Winners exhibited at ERSTERERSTER Gallery Berlin.",
       "email": ""
     },
@@ -8240,7 +8278,7 @@
     {
       "title": "From Image to Meaning – Tirana",
       "org": "Reporter Akademie",
-      "deadline": "2026-04-20",
+      "deadline": "2026-04-12",
       "fee": "Free",
       "category": "grant",
       "description": "Three full grants available for a seven-day intensive visual storytelling and writing workshop in Tirana, Albania (25–31 May 2026). Open to emerging and mid-career photographers, filmmakers, writers, and journalists working at the intersection of image and text. Led by documentary photographer Ilir Tsouko and writer Gabriel Proedl. Participants research, produce, edit, and present a short story combining photography, video (optional), and text. Culminates in a public group exhibition and presentation at Vila 31 x Art Explora. Selected projects (2–3) prepared for pitching to editors in Europe and the United States. Grants cover the full €750 participation fee (1 photographer, 1 writer, 1 filmmaker). Maximum 15 participants. Working language English, one-to-one mentoring also available in German and Greek/Albanian. Organised by Reporter Akademie (Germany) in partnership with Vila 31 x Art Explora (Tirana).",

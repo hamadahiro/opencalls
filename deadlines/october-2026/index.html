@@ -94,11 +94,13 @@
   <script src="/search.js?v=20260329"></script>
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-10')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+    } catch (e) {}
     }
     loadFiltered();
   </script>

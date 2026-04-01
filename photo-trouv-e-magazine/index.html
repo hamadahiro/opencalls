@@ -94,10 +94,12 @@
   <script src="/search.js?v=20260329"></script>
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Photo Trouvée Magazine').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
