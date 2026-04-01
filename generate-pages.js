@@ -34,8 +34,10 @@ data.calls.forEach((c, i) => {
     err(`"${label}" has invalid deadline format: "${c.deadline}" — must be YYYY-MM-DD or "Continuous"`);
   }
 
-  // Category must be in list
-  if (c.category && !VALID_CATEGORIES.includes(c.category)) {
+  // Category is required and must be in list
+  if (!c.category) {
+    err(`"${label}" is missing category. Valid: ${VALID_CATEGORIES.join(', ')}`);
+  } else if (!VALID_CATEGORIES.includes(c.category)) {
     err(`"${label}" has unknown category: "${c.category}". Valid: ${VALID_CATEGORIES.join(', ')}`);
   }
 
@@ -817,7 +819,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
       var seen = {};
       return prize.split(/\\s*\\+\\s*/).map(function(s){return s.trim()}).filter(Boolean).map(function(t){
         var p = t.toLowerCase();
-        if (/[$€£¥]|chf |sek |aud |twd |stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+        if (/[$€£¥]|chf\\b|sek\\b|aud\\b|twd\\b|rub\\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
         if (/fellowship/.test(p)) return 'fellowship';
         if (/residency|accommodation|apartment/.test(p)) return 'residency';
         if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
