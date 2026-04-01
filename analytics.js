@@ -279,7 +279,7 @@
   })();
 
   // --- 404 page tracking ---
-  if (location.pathname === '/404.html' || document.title.indexOf('404') !== -1) {
+  if (location.pathname === '/404.html' || document.title.indexOf('Page not found') !== -1) {
     gtag('event', 'page_not_found', {
       page_url: location.href,
       referrer: document.referrer
