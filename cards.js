@@ -63,7 +63,10 @@ const eligibilityLabel = {
   '10-18': 'Ages 10–18',
   'mid-atlantic-us': 'Mid-Atlantic US',
   'alaska': 'Alaska only',
-  'spain': 'Spain only'
+  'spain': 'Spain only',
+  '18-plus': '18+',
+  '21-plus': '21+',
+  'student': 'Students'
 };
 
 const prizeCategoryLabel = {

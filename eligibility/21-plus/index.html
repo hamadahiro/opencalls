@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Prize Type 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
-  <meta name="keywords" content="open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/prize/">
+  <title>Open Calls Requiring 21+ 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists aged 21 or older.">
+  <meta name="keywords" content="21+ open calls, 21+ photography, call for entries 21+, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/21-plus/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Prize Type 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
+  <meta property="og:title" content="Open Calls Requiring 21+ 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists aged 21 or older.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/prize/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/21-plus/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Prize Type 2026",
-  "description": "Browse open calls by prize type.",
-  "url": "https://opencalls.monographica.com/prize/",
+  "name": "Open Calls Requiring 21+ 2026",
+  "description": "Open calls restricted to photographers and artists aged 21 or older.",
+  "url": "https://opencalls.monographica.com/eligibility/21-plus/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -77,40 +77,12 @@
 
   <main>
     <section class="hero">
-      <h1>Prizes</h1>
-      <h2 class="subtitle">Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Open Calls Requiring 21+</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists aged 21 or older.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-            <a href="/prize/cash/" class="index-item">
-        <span class="index-item-name">Cash Prize</span>
-        <span class="dots"></span>
-        <span class="index-item-count">129</span>
-      </a>
-      <a href="/prize/exhibition/" class="index-item">
-        <span class="index-item-name">Exhibition</span>
-        <span class="dots"></span>
-        <span class="index-item-count">85</span>
-      </a>
-      <a href="/prize/publication/" class="index-item">
-        <span class="index-item-name">Publication</span>
-        <span class="dots"></span>
-        <span class="index-item-count">46</span>
-      </a>
-      <a href="/prize/residency/" class="index-item">
-        <span class="index-item-name">Residency</span>
-        <span class="dots"></span>
-        <span class="index-item-count">7</span>
-      </a>
-      <a href="/prize/fellowship/" class="index-item">
-        <span class="index-item-name">Fellowship</span>
-        <span class="dots"></span>
-        <span class="index-item-count">1</span>
-      </a>
-
-    </section>
-
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <section class="calls-list" id="callsList"></section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -120,6 +92,17 @@
 
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('21-plus')).map(processCall);
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>

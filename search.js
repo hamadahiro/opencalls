@@ -46,7 +46,7 @@
     fetch('/data.json').then(function(r) { return r.json(); }).then(function(data) {
       allCalls = data.calls;
       cb();
-    });
+    }).catch(function() {});
   }
 
   function getOpenCalls() {
