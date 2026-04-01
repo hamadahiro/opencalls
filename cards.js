@@ -61,7 +61,8 @@ const eligibilityLabel = {
   'germany': 'Germany only',
   'malta': 'Malta only',
   '10-18': 'Ages 10–18',
-  'mid-atlantic-us': 'Mid-Atlantic US'
+  'mid-atlantic-us': 'Mid-Atlantic US',
+  'alaska': 'Alaska only'
 };
 
 const prizeCategoryLabel = {

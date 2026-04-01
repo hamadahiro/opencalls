@@ -771,6 +771,7 @@
         "Melanie Lenz, Digital Curator, V&A Museum",
         "Rachel Falconer, Senior Lecturer & Head of Digital Arts Computing, Goldsmiths University London",
         "Myriam Achard, Chief New Media Partnerships & PR, PHI",
+        "Kate Gu, Associate Curator Digital Special Projects, M+ Hong Kong",
         "Christiane Paul, Adjunct Curator Digital Art, Whitney Museum",
         "Annie Bicknell, Curator Public Programmes, Tate"
       ],
@@ -974,8 +975,7 @@
       "dateAdded": "2026-03-18",
       "submitUrl": "https://docs.google.com/forms/d/1zsZmmB1iST-WsTV0mC9HaOtmMaWXpohDXuDl6aI5eF4/viewform",
       "summary": "Exploring adolescence — digital culture, identity, contemporary pressures. Solo exhibition and CHF 1,000 award.",
-      "email": "",
-      "ai": "Not mentioned"
+      "email": ""
     },
     {
       "title": "L'Image Satellite 2026",
@@ -1059,7 +1059,7 @@
       "location": "Anchorage, AK, USA",
       "prize": "$300",
       "eligibility": [
-        "united-states"
+        "alaska"
       ],
       "jury": [
         "Nevada Wier, Photographer"
@@ -1087,7 +1087,7 @@
       "location": "Casablanca, Morocco",
       "prize": "Residency + exhibition",
       "eligibility": [
-        "18-35",
+        "under-35",
         "morocco"
       ],
       "submitVia": "Website form",
@@ -1099,7 +1099,6 @@
       "submitUrl": "https://fondationtgcc.com/prix-mustaqbal/",
       "summary": "Emerging artists 18-35, Moroccan or foreign residents in Morocco. Winner receives Jardin Rouge residency.",
       "email": "",
-      "ai": "Not mentioned",
       "jury": []
     },
     {
@@ -6741,7 +6740,8 @@
       "dateAdded": "2026-03-21",
       "requirements": "15–25 images",
       "submitUrl": "https://www.instagram.com/p/DV9MkL2FYJi/",
-      "summary": "Reportage photography projects made in Italy. €500 prize, festival projection, full hospitality. Ascoli Piceno."
+      "summary": "Reportage photography projects made in Italy. €500 prize, festival projection, full hospitality. Ascoli Piceno.",
+      "email": ""
     },
     {
       "title": "100 Emerging Artworks of 2026",
@@ -6761,7 +6761,8 @@
       "dateAdded": "2026-03-21",
       "requirements": "Up to 20 artworks",
       "submitUrl": "https://apply.artstoheartsproject.com/open-call/100-emerging-artworks-of-2026",
-      "summary": "100 artists selected for a hardcover collector's book distributed globally. $1,000 top prize. All mediums."
+      "summary": "100 artists selected for a hardcover collector's book distributed globally. $1,000 top prize. All mediums.",
+      "email": ""
     },
     {
       "title": "Michael P. Smith Fund for Documentary Photography 2026",
@@ -6914,7 +6915,8 @@
       "dateAdded": "2026-03-21",
       "requirements": "Artwork images",
       "submitUrl": "https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition",
-      "summary": "Global art prize celebrating emerging and mid-career women artists. Open theme, any medium including photography."
+      "summary": "Global art prize celebrating emerging and mid-career women artists. Open theme, any medium including photography.",
+      "email": ""
     },
     {
       "title": "Solstice Magazine Issue 71 — Editorial Submissions",
@@ -7056,7 +7058,8 @@
       "dateAdded": "2026-03-21",
       "resultsDate": "September 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLScXBCqVDVuLwCHju1OAYhlYtNCfyfpw5Sypk69EO5cOIRNQOA/viewform",
-      "summary": "Themed around autumn gathering — harvest, friends and family, cozy candlelit moments. Pays $15+ if selected."
+      "summary": "Themed around autumn gathering — harvest, friends and family, cozy candlelit moments. Pays $15+ if selected.",
+      "email": ""
     },
     {
       "title": "Outdoor Photography Magazine — Creative Wildlife",
@@ -7233,7 +7236,7 @@
       "url": "https://siyu-award.ch/en/",
       "instagram": "@siyu_award",
       "location": "Zurich, Switzerland",
-      "prize": "CHF 5,000 + CHF 3,000 + CHF 2,000 + exhibition",
+      "prize": "CHF 10,000 total + exhibition",
       "eligibility": [
         "switzerland",
         "under-40"
@@ -7335,7 +7338,8 @@
       "dateAdded": "2026-03-21",
       "resultsDate": "January 3, 2027",
       "submitUrl": "https://monoawards.com/",
-      "summary": "International B&W competition with 14 categories. Professional and amateur divisions. Annual book."
+      "summary": "International B&W competition with 14 categories. Professional and amateur divisions. Annual book.",
+      "email": ""
     },
     {
       "title": "Annual Photography Awards 2026",
@@ -7370,7 +7374,13 @@
         "Tomas Vrana",
         "Cristina Vatielli",
         "Jon Enoch",
-        "Nikolai Linares"
+        "Nikolai Linares",
+        "Laurin Schmid",
+        "Maria Portaluppi",
+        "Jodi Windvogel",
+        "Shunta Kimura",
+        "Matteo Bastianelli",
+        "Daniele Vita"
       ],
       "orgInTitle": true,
       "slug": "annual-photography-awards-2026",
@@ -8346,7 +8356,19 @@
       "slug": "british-wildlife-photography-awards-2026",
       "orgInTitle": true,
       "summary": "UK wildlife photography awards — 12 categories. Winners in Collection 14 book + UK touring exhibition. Youth entry free.",
-      "dateAdded": "2026-03-31T23:14:54.068Z"
+      "dateAdded": "2026-03-31T23:14:54.068Z",
+      "email": "",
+      "instagram": "@bwpawards",
+      "resultsDate": "March 2027",
+      "jury": [
+        "Ellie Rothnie, Wildlife Photographer",
+        "David Chapman, Wildlife Photographer",
+        "Lara Jackson, Conservation Biologist & Wildlife Photographer",
+        "Neil McIntyre, Wildlife Photographer",
+        "Gina Goodman, Underwater Photographer",
+        "Danny Green, Wildlife Photographer",
+        "Will Nicholls, BWPA Director & Wildlife Cameraman"
+      ]
     },
     {
       "title": "JGS Fellowship for Photography 2026",
