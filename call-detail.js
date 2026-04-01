@@ -85,6 +85,7 @@ function scoreSimilarity(current, other) {
 }
 
 async function loadSimilar() {
+  try {
   const res = await fetch('/data.json');
   const data = await res.json();
 
@@ -125,6 +126,7 @@ async function loadSimilar() {
     html += renderCard(processCall(s.call), 'h3');
   });
   container.innerHTML = html;
+} catch (e) {}
 }
 
 loadSimilar();

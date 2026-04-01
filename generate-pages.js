@@ -264,7 +264,7 @@ function derivePrizeCategory(text) {
   const p = text.toLowerCase();
   if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
-  if (/residency|accommodation|apartment/.test(p)) return 'residency';
+  if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
   if (/exhibition/.test(p)) return 'exhibition';
   return null;
@@ -831,7 +831,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
         var p = t.toLowerCase();
         if (/[$€£¥]|chf\\b|sek\\b|aud\\b|twd\\b|rub\\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
         if (/fellowship/.test(p)) return 'fellowship';
-        if (/residency|accommodation|apartment/.test(p)) return 'residency';
+        if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
         if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
         if (/exhibition/.test(p)) return 'exhibition';
         return null;
