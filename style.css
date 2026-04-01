@@ -327,6 +327,10 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+.search-bar:focus-visible {
+  box-shadow: 0 0 0 2px var(--btn-bg);
+}
+
 .search-bar::placeholder {
   color: #5f6368;
   font-weight: 500;
