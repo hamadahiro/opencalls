@@ -86,7 +86,7 @@
       <div class="call-detail-info" id="detailInfo"></div>
 
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: Aline Smithson, Founder &amp; Editor-in-Chief, Lenscratch · Alexa Dilworth, Former Publishing Director, CDS at Duke University · Kris Graves, Director, Kris Graves Projects · Karen Haas, Lane Curator of Photographs, Museum of Fine Arts Boston · Yorgos Efthymiadis, Founder, The Curated Fridge · Hamidah Glasgow, Curator &amp; Former Director, Center for Fine Art Photography</p>
+        <p class="call-detail-description">Jury: Aline Smithson, Founder &amp; Editor-in-Chief, Lenscratch · Daniel George, Photographer · Linda Alterwitz, Photographer · Kellye Eisworth, Photographer · Vicente Cayuela, Photographer · Alexa Dilworth, Former Publishing Director, CDS at Duke University · Kris Graves, Director, Kris Graves Projects · Karen Haas, Lane Curator of Photographs, Museum of Fine Arts Boston · Yorgos Efthymiadis, Founder, The Curated Fridge · Hamidah Glasgow, Curator &amp; Former Director, Center for Fine Art Photography · Samantha Johnson, Photographer · Alayna Pernell, Photographer · Epiphany Knedler, Photographer · Jeanine Michna-Bales, Photographer · Jordan Tovin, Photographer · Drew Leventhal, Photographer · Allie Tsubota, Photographer · Raymond Thompson Jr., Photographer · Guanyu Xu, Photographer · Shawn Bush, Photographer · Drew Nikonowicz, Photographer</p>
       </div>
 
       <div class="call-detail-jury">
@@ -111,7 +111,7 @@
 
   <script>
     const CURRENT_SLUG = 'lenscratch-student-prize-2026';
-    const CURRENT_CALL = {"prize":"$2,000","category":"photography","org":"Lenscratch","location":"Online","fee":"Free","deadline":"2026-06-01","resultsDate":"July 13, 2026","instagram":"@lenscratch","eligibility":["emerging"],"jury":["Aline Smithson, Founder & Editor-in-Chief, Lenscratch","Alexa Dilworth, Former Publishing Director, CDS at Duke University","Kris Graves, Director, Kris Graves Projects","Karen Haas, Lane Curator of Photographs, Museum of Fine Arts Boston","Yorgos Efthymiadis, Founder, The Curated Fridge","Hamidah Glasgow, Curator & Former Director, Center for Fine Art Photography"],"submitVia":"Google Forms","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSeq38rw1Q4H-VElJwbZi6DGe-_DZBdjCaRDJSCrVmmHoRp7pw/viewform","email": "","ai":"","requirements":""};
+    const CURRENT_CALL = {"prize":"$2,000 + $1,000 + $750 + 4 × $500","category":"photography","org":"Lenscratch","location":"Online","fee":"Free","deadline":"2026-06-01","resultsDate":"July 13, 2026","instagram":"@lenscratch","eligibility":["student"],"jury":["Aline Smithson, Founder & Editor-in-Chief, Lenscratch","Daniel George, Photographer","Linda Alterwitz, Photographer","Kellye Eisworth, Photographer","Vicente Cayuela, Photographer","Alexa Dilworth, Former Publishing Director, CDS at Duke University","Kris Graves, Director, Kris Graves Projects","Karen Haas, Lane Curator of Photographs, Museum of Fine Arts Boston","Yorgos Efthymiadis, Founder, The Curated Fridge","Hamidah Glasgow, Curator & Former Director, Center for Fine Art Photography","Samantha Johnson, Photographer","Alayna Pernell, Photographer","Epiphany Knedler, Photographer","Jeanine Michna-Bales, Photographer","Jordan Tovin, Photographer","Drew Leventhal, Photographer","Allie Tsubota, Photographer","Raymond Thompson Jr., Photographer","Guanyu Xu, Photographer","Shawn Bush, Photographer","Drew Nikonowicz, Photographer"],"submitVia":"Google Forms","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSeq38rw1Q4H-VElJwbZi6DGe-_DZBdjCaRDJSCrVmmHoRp7pw/viewform","email": "","ai":"","requirements":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -121,7 +121,7 @@
       var u = 'https://lenscratch.com/2026/03/the-2026-lenscratch-student-prize-is-open/';
       var o = 'Lenscratch';
       var dl = new Date('2026-06-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$2,000') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$2,000 + $1,000 + $750 + 4 × $500') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

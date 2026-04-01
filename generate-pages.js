@@ -467,10 +467,12 @@ Object.entries(categories).forEach(([cat, info]) => {
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.category === '${cat}').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -531,10 +533,12 @@ filterPages.forEach(fp => {
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => ${fp.filterJs}).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -625,7 +629,10 @@ const eligibilityGroups = {
   '10-18': { short: 'Ages 10–18', title: 'Open Calls for Ages 10–18', desc: 'Open calls for young photographers ages 10 to 18.' },
   'mid-atlantic-us': { short: 'Mid-Atlantic US', title: 'Mid-Atlantic US Open Calls', desc: 'Open calls restricted to photographers in the Mid-Atlantic region — Maryland, Virginia, West Virginia, Pennsylvania, and Washington DC.' },
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
-  'spain': { short: 'Spain', title: 'Spain-Only Open Calls', desc: 'Open calls restricted to photographers and artists born or based in Spain.' }
+  'spain': { short: 'Spain', title: 'Spain-Only Open Calls', desc: 'Open calls restricted to photographers and artists born or based in Spain.' },
+  '18-plus': { short: '18+', title: 'Open Calls Requiring 18+', desc: 'Open calls restricted to photographers and artists aged 18 or older.' },
+  '21-plus': { short: '21+', title: 'Open Calls Requiring 21+', desc: 'Open calls restricted to photographers and artists aged 21 or older.' },
+  'student': { short: 'Students', title: 'Open Calls for Students', desc: 'Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -681,10 +688,12 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('${tag}')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -700,7 +709,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'professional', 'under-30', 'under-35', 'under-40', '10-18'] },
+  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'student', 'professional', 'under-30', 'under-35', 'under-40', '18-plus', '21-plus', '10-18'] },
   { heading: 'Where', tags: ['united-states', 'alaska', 'mid-atlantic-us', 'europe', 'australia', 'germany', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'latin-america', 'puerto-rico', 'south-asian'] },
@@ -829,10 +838,12 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
       }).filter(function(c){ if(!c||seen[c])return false; seen[c]=true; return true; });
     }
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('${tag}')).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -936,6 +947,7 @@ Object.entries(countryCounts)
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
 ${country === 'USA' ? `
@@ -971,6 +983,7 @@ ${country === 'USA' ? `
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
 `}
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -1029,10 +1042,12 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))).map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -1087,10 +1102,12 @@ Object.entries(orgCounts)
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === '${org.replace(/'/g, "\\'")}').map(processCall);
       renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
     }
     loadFiltered();
   </script>
@@ -1152,11 +1169,13 @@ sortedMonths.forEach(key => {
   ${CARDS_SCRIPT(cssVersion)}
   <script>
     async function loadFiltered() {
+      try {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+    } catch (e) {}
     }
     loadFiltered();
   </script>

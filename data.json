@@ -19,7 +19,8 @@
       "slug": "abstract-2026-glasgow-gallery-of-photography",
       "orgInTitle": false,
       "summary": "Abstract photography in any style. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.",
-      "dateAdded": "2026-04-01T15:32:30.897Z"
+      "dateAdded": "2026-04-01T15:32:30.897Z",
+      "resultsDate": "April 29, 2026"
     },
     {
       "title": "Portrait 2026",
@@ -39,7 +40,8 @@
       "slug": "portrait-2026-glasgow-gallery-of-photography",
       "orgInTitle": false,
       "summary": "Portrait photography, open to all. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.",
-      "dateAdded": "2026-04-01T15:32:30.897Z"
+      "dateAdded": "2026-04-01T15:32:30.897Z",
+      "resultsDate": "April 29, 2026"
     },
     {
       "title": "Rancho Linda Vista — Summer Artist Residency 2026",
@@ -51,14 +53,15 @@
       "url": "https://www.interstice.us/rlvweb/residency-award.htm",
       "instagram": "@rancholindavistaarts",
       "location": "Oracle, AZ, USA",
-      "prize": "$1,000 stipend + housing + studio",
+      "prize": "$1,000 stipend",
       "eligibility": [],
       "submitVia": "Email",
       "email": "",
       "slug": "rancho-linda-vista-summer-artist-residency-2026",
       "orgInTitle": true,
       "summary": "One-month summer residency with $1,000 stipend, house, and studio on 100+ acres of Arizona wilderness.",
-      "dateAdded": "2026-04-01T15:32:30.897Z"
+      "dateAdded": "2026-04-01T15:32:30.897Z",
+      "resultsDate": "May 2026"
     },
     {
       "title": "La Embajada 2026",
@@ -426,12 +429,13 @@
         "italy"
       ],
       "jury": [
-        "Margherita Marziali",
-        "Lillo Teodoro Guarneri",
-        "João Kulcsár"
+        "Margherita Marziali, Vice-Director, Italian Cultural Institute of São Paulo",
+        "Lillo Teodoro Guarneri, Director & Cultural Attaché, Italian Cultural Institute of São Paulo",
+        "João Kulcsár, Director, São Paulo Photography Festival"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Google Forms",
       "requirements": "1–5 images",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeqR7TAdg4e7H2mO_svHAIjpxZWeHVOgL2ZcCMMCTXSetb_hA/viewform",
       "slug": "ffsp-2026-italian-photographers-open-call",
       "orgInTitle": false,
       "summary": "Free exhibition in São Paulo for Italian photographers in Brazil/Italy. Winner receives round-trip airfare.",
@@ -506,6 +510,12 @@
       "submitVia": "Email",
       "requirements": "PDF draft sequence",
       "resultsDate": "End of July 2026",
+      "jury": [
+        "Michael Mack, Publisher & Founder, MACK",
+        "Liv Constable-Maxwell, Editor, MACK",
+        "Morgan Crowcroft-Brown, Editor, MACK",
+        "Louis Rogers, Editor, MACK"
+      ],
       "slug": "mack-photography-submissions-june-2026",
       "orgInTitle": true,
       "summary": "MACK's annual photography window. Prioritizes underrepresented voices in the photobook landscape.",
@@ -639,7 +649,8 @@
       "location": "Dublin, Ireland",
       "prize": "€15,000 commission + exhibition + publication",
       "eligibility": [
-        "ireland"
+        "ireland",
+        "18-plus"
       ],
       "submitVia": "Photo Museum Ireland",
       "requirements": "10–20 images",
@@ -689,7 +700,9 @@
       "instagram": "@exibartstreetphotography",
       "location": "Online",
       "prize": "Leica Q3 + Xiaomi 17 Ultra + publication",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Alan Schaller, Photographer, Co-founder Street Photography International (President)",
         "Biba Giacchetti, Curator & Communication Strategist, Founder Sudest57 & Orion57",
@@ -764,7 +777,7 @@
       "slug": "dppf-2026-sports-photography-grants",
       "orgInTitle": true,
       "dateAdded": "2026-03-24T23:00:00Z",
-      "submitUrl": "https://site.picter.com/dppf-2026-sports-photography-grants",
+      "submitUrl": "https://app.picter.com/contests/be41a666-a3f5-4785-9517-bc0d8ccee811/start",
       "summary": "Seven $5,000 grants for emerging sports photographers plus mentorship. Up to 3 additional $2,500 grants.",
       "email": ""
     },
@@ -6423,7 +6436,9 @@
       "instagram": "@archivo_jalon_angel",
       "location": "Zaragoza, Spain",
       "prize": "€1,500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "slug": "xii-premio-internacional-de-fotograf-a-jal-n-ngel",
       "orgInTitle": true,
@@ -6444,8 +6459,10 @@
       "url": "https://bethanyarts.org/residencies/",
       "instagram": "@bethanyartsorg",
       "location": "Ossining, NY, USA",
-      "prize": "$450 + residency",
-      "eligibility": [],
+      "prize": "$450 stipend",
+      "eligibility": [
+        "21-plus"
+      ],
       "submitVia": "Submittable",
       "slug": "bethany-arts-community-fall-multidisciplinary-residency-2026",
       "orgInTitle": true,
@@ -6487,7 +6504,7 @@
       "url": "https://www.fundacionenaire.es/bases26/bases-premio-fotografia-2026.pdf",
       "instagram": "@fundacionenaire",
       "location": "Santander, Spain",
-      "prize": "€12,000",
+      "prize": "€12,000 / €8,000 / €5,000",
       "eligibility": [
         "professional"
       ],
@@ -6497,8 +6514,8 @@
       "resultsDate": "June 11, 2026",
       "dateAdded": "2026-03-19",
       "requirements": "Up to 3 images",
-      "ai": "Accepted (must disclose)",
-      "submitUrl": "https://www.fundacionenaire.es",
+      "ai": "Not accepted",
+      "submitUrl": "https://formulario.fundacionenaire.es/?f=fotografia",
       "summary": "Prestigious prize since 2005. Open theme. Winning works join the ENAIRE Contemporary Art Collection.",
       "email": ""
     },
@@ -6541,9 +6558,9 @@
       "url": "https://lenscratch.com/2026/03/the-2026-lenscratch-student-prize-is-open/",
       "instagram": "@lenscratch",
       "location": "Online",
-      "prize": "$2,000",
+      "prize": "$2,000 + $1,000 + $750 + 4 × $500",
       "eligibility": [
-        "emerging"
+        "student"
       ],
       "submitVia": "Google Forms",
       "slug": "lenscratch-student-prize-2026",
@@ -6551,11 +6568,26 @@
       "dateAdded": "2026-03-19",
       "jury": [
         "Aline Smithson, Founder & Editor-in-Chief, Lenscratch",
+        "Daniel George, Photographer",
+        "Linda Alterwitz, Photographer",
+        "Kellye Eisworth, Photographer",
+        "Vicente Cayuela, Photographer",
         "Alexa Dilworth, Former Publishing Director, CDS at Duke University",
         "Kris Graves, Director, Kris Graves Projects",
         "Karen Haas, Lane Curator of Photographs, Museum of Fine Arts Boston",
         "Yorgos Efthymiadis, Founder, The Curated Fridge",
-        "Hamidah Glasgow, Curator & Former Director, Center for Fine Art Photography"
+        "Hamidah Glasgow, Curator & Former Director, Center for Fine Art Photography",
+        "Samantha Johnson, Photographer",
+        "Alayna Pernell, Photographer",
+        "Epiphany Knedler, Photographer",
+        "Jeanine Michna-Bales, Photographer",
+        "Jordan Tovin, Photographer",
+        "Drew Leventhal, Photographer",
+        "Allie Tsubota, Photographer",
+        "Raymond Thompson Jr., Photographer",
+        "Guanyu Xu, Photographer",
+        "Shawn Bush, Photographer",
+        "Drew Nikonowicz, Photographer"
       ],
       "resultsDate": "July 13, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeq38rw1Q4H-VElJwbZi6DGe-_DZBdjCaRDJSCrVmmHoRp7pw/viewform",
@@ -8388,7 +8420,9 @@
       "url": "https://www.lnaf.org/residencies/application-process/",
       "location": "La Napoule, France",
       "prize": "Residency",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "SlideRoom",
       "submitUrl": "https://lnaf.slideroom.com/",
       "requirements": "Portfolio",
