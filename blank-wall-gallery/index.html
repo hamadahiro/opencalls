@@ -82,7 +82,13 @@
       <h2 class="subtitle">Open calls and submission opportunities from Blank Wall Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/blank-wall-gallery-red/">Blank Wall Gallery — Red</a></h3><p>April 23, 2026 · Free</p><p>Photos featuring red as the dominant color — passion, emotion, vibrant details. Free to submit. Athens.</p></div>
+      <div class="static-call-item"><h3><a href="/blank-wall-gallery-best-portfolio-2026/">Blank Wall Gallery — Best Portfolio 2026</a></h3><p>May 31, 2026 · €50</p><p>One photographer wins a two-week solo exhibition with 40 prints and international promotion. Valued at €2,200+.</p></div>
+      <div class="static-call-item"><h3><a href="/blank-wall-gallery-street-photography/">Blank Wall Gallery — Street Photography</a></h3><p>March 26, 2026 · Free</p><p>Candid, spontaneous street photography capturing city life. Free to submit. Exhibition in Athens.</p></div>
+      <div class="static-call-item"><h3><a href="/9th-chania-international-photo-festival-blank-wall-gallery/">9th Chania International Photo Festival &middot; Blank Wall Gallery</a></h3><p>March 31, 2026 · Free (€43 if accepted)</p><p>International exhibition in Chania's historic Grand Arsenali. Selected photos printed and framed by the festival.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +104,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Blank Wall Gallery').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

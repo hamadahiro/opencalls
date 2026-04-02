@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from laif foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/jugend-fotografiert-deutschland-2025-laif-foundation/">Jugend fotografiert Deutschland 2025 &middot; laif foundation</a></h3><p>April 17, 2026 · Free</p><p>German youth contest ages 10-18. Documentary photo stories. &quot;Be you. Be seen. Be heard.&quot; Teams welcome.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'laif foundation').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

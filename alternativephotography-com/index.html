@@ -82,7 +82,12 @@
       <h2 class="subtitle">Open calls and submission opportunities from AlternativePhotography.com. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/world-cyanotype-day-alternativephotography-com/">World Cyanotype Day &middot; AlternativePhotography.com</a></h3><p>October 2, 2026 · Free</p><p>Annual international celebration of the cyanotype process. Submit your cyanotype work to be featured.</p></div>
+      <div class="static-call-item"><h3><a href="/world-anthotype-day-alternativephotography-com/">World Anthotype Day &middot; AlternativePhotography.com</a></h3><p>October 31, 2026 · Free</p><p>Annual celebration of plant-based photographic printing processes. Entries open August through October.</p></div>
+      <div class="static-call-item"><h3><a href="/colour-calendar-event-alternativephotography-com/">Colour Calendar Event &middot; AlternativePhotography.com</a></h3><p>March 31, 2026 · Free</p><p>Annual event inviting artists to introduce colour into monochrome alternative processes — cyanotype, chemigram, anthotype.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +103,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'AlternativePhotography.com').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

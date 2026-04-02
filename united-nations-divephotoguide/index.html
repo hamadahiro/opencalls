@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from United Nations / DivePhotoGuide. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/un-world-oceans-day-photo-competition-2026/">UN World Oceans Day Photo Competition 2026 &middot; United Nations / DivePhotoGuide</a></h3><p>April 6, 2026 · Free</p><p>Free UN-backed ocean photography competition. 4 categories incl. above-water seascapes. Winners exhibited globally, announced at UN event.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'United Nations / DivePhotoGuide').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

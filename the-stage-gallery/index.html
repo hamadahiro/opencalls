@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from The Stage Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/x-roid-bonn-2026-the-stage-gallery/">X ROID Bonn 2026 &middot; The Stage Gallery</a></h3><p>March 31, 2026 · €225</p><p>7th edition of the international instant art expo for Polaroid and Fuji Instax. Three-day exhibition in Bonn.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'The Stage Gallery').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

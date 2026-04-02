@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from Soft Publishing. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/european-landscapes-open-call-soft-publishing/">European Landscapes Open Call &middot; Soft Publishing</a></h3><p>March 31, 2026 · Free</p><p>Photographs of European landscapes for a printed photo book. No manipulated or AI-generated photos.</p></div>
+      <div class="static-call-item"><h3><a href="/northern-europe-landscapes-open-call-soft-publishing/">Northern Europe Landscapes Open Call &middot; Soft Publishing</a></h3><p>March 31, 2026 · Free</p><p>Northern European natural and rural landscapes (no buildings) for a printed photo book. No AI-generated photos.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Soft Publishing').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

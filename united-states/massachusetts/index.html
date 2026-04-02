@@ -82,7 +82,13 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Massachusetts. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/vision-ary-2026-raising-our-voices-griffin-museum-of-photography/">Vision(ary) 2026: Raising Our Voices &middot; Griffin Museum of Photography</a></h3><p>April 5, 2026 · $45</p><p>Outdoor public art exhibition in Winchester, MA. Theme: advocacy and social justice. Juror: Elizabeth Krist (Nat Geo).</p></div>
+      <div class="static-call-item"><h3><a href="/somewhere-i-have-never-travelled-group-exhibition-art-everywhere-behind-va-shadows/">Somewhere I Have Never Travelled — Group Exhibition &middot; Art + Everywhere / Behind VA Shadows</a></h3><p>March 31, 2026 · Free</p><p>Exploring place as memory and memory as place. All mediums welcome. Exhibition in Harvard Square, Cambridge, MA.</p></div>
+      <div class="static-call-item"><h3><a href="/griffin-museum-self-published-photobook-exhibition-2026/">Griffin Museum — Self Published Photobook Exhibition 2026</a></h3><p>March 31, 2026 · $45</p><p>16th annual exhibition showcasing up to 50 self-published photobooks at the Griffin Gallery, summer 2026.</p></div>
+      <div class="static-call-item"><h3><a href="/griffin-museum-handmade-photobook-exhibition-2026/">Griffin Museum — Handmade Photobook Exhibition 2026</a></h3><p>March 31, 2026 · $45</p><p>Exhibition for handcrafted photobooks where the artist's hand shapes the object itself.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +104,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', MA,') || c.location.includes(', MA, USA'))).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

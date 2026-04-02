@@ -82,7 +82,11 @@
       <h2 class="subtitle">2 calls with deadlines in November 2026.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/8th-chelsea-international-photography-competition-agora-gallery/">8th Chelsea International Photography Competition &middot; Agora Gallery</a></h3><p>November 3, 2026 · $45–$55</p><p>Exhibition at Agora Gallery in Chelsea, New York. 30 photographers. Five $500 cash prizes.</p></div>
+      <div class="static-call-item"><h3><a href="/monochrome-awards-2026/">Monochrome Awards 2026</a></h3><p>November 15, 2026 · $22–$27</p><p>International B&amp;W competition with 14 categories. Professional and amateur divisions. Annual book.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +103,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-11')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
     } catch (e) {}
     }

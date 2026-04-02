@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls restricted to photographers and artists who are Maltese nationals or based in Malta.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/open-call-for-emerging-artists-elyse-tonna/">Open Call for Emerging Artists &middot; Elyse Tonna</a></h3><p>April 30, 2026 · Free</p><p>Open call for emerging Maltese/Malta-based visual artists. Exhibition, project and residency opportunities from July 2026.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('malta')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

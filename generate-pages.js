@@ -248,6 +248,27 @@ function metaDescription(call) {
   return escapeHtml(trimmed + ' ' + deadline);
 }
 
+// Pre-render static call list for SEO (Google sees content without JS)
+function buildStaticCallList(calls) {
+  if (!calls.length) return '';
+  const sorted = calls.slice().sort((a, b) => {
+    const aOpen = isOpen(a), bOpen = isOpen(b);
+    if (aOpen !== bOpen) return aOpen ? -1 : 1;
+    if (a.deadline === 'Continuous') return 1;
+    if (b.deadline === 'Continuous') return -1;
+    return a.deadline.localeCompare(b.deadline);
+  });
+  let html = '';
+  sorted.forEach(c => {
+    const slug = c.slug || slugify(c.title);
+    const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
+    const dl = formatDeadline(c.deadline);
+    const desc = escapeHtml(c.summary || c.description).substring(0, 160);
+    html += `      <div class="static-call-item"><h3><a href="/${slug}/">${title}</a></h3><p>${escapeHtml(dl)}${c.fee ? ' · ' + escapeHtml(c.fee) : ''}</p><p>${desc}</p></div>\n`;
+  });
+  return html;
+}
+
 function buildKeywords(call) {
   const words = [call.title, call.org, categoryLabel(call.category), 'open call', 'call for entries'];
   if (call.location && call.location !== 'Online') words.push(call.location);
@@ -445,7 +466,8 @@ const categories = {
 Object.entries(categories).forEach(([cat, info]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
   const slug = catSlug;
-  const count = data.calls.filter(c => c.category === cat).length;
+  const catCalls = data.calls.filter(c => c.category === cat);
+  const count = catCalls.length;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -459,7 +481,9 @@ Object.entries(categories).forEach(([cat, info]) => {
   <main>
     ${buildHero(buildBreadcrumbs('Categories', '/categories'), info.title, escapeHtml(info.desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(catCalls)}
+    </section>
 
     ${FOOTER}
   </main>
@@ -471,6 +495,7 @@ Object.entries(categories).forEach(([cat, info]) => {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.category === '${cat}').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
@@ -511,7 +536,8 @@ const feeFilters = {
 };
 
 filterPages.forEach(fp => {
-  const count = data.calls.filter(feeFilters[fp.feeKey]).length;
+  const fpCalls = data.calls.filter(feeFilters[fp.feeKey]);
+  const count = fpCalls.length;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -525,7 +551,9 @@ filterPages.forEach(fp => {
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees/">Fees</a></nav>', fp.title, escapeHtml(fp.desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(fpCalls)}
+    </section>
 
     ${FOOTER}
   </main>
@@ -537,6 +565,7 @@ filterPages.forEach(fp => {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => ${fp.filterJs}).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
@@ -681,7 +710,9 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.includes(tag)))}
+    </section>
 
     ${FOOTER}
   </main>
@@ -693,6 +724,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('${tag}')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
@@ -818,7 +850,9 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).includes(tag)))}
+    </section>
 
     ${FOOTER}
   </main>
@@ -843,6 +877,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('${tag}')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
@@ -940,7 +975,9 @@ Object.entries(countryCounts)
   <main>
     ${buildHero(buildBreadcrumbs('Locations', '/locations'), escapeHtml(title), escapeHtml(desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => getCountry(c.location) === country))}
+    </section>
 
     ${FOOTER}
   </main>
@@ -982,6 +1019,7 @@ ${country === 'USA' ? `
       container.innerHTML = html;
 ` : `
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 `}
     } catch (e) {}
@@ -1035,7 +1073,9 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + state + ', USA'))))}
+    </section>
 
     ${FOOTER}
   </main>
@@ -1047,6 +1087,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
@@ -1095,7 +1136,9 @@ Object.entries(orgCounts)
   <main>
     ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => c.org === org))}
+    </section>
 
     ${FOOTER}
   </main>
@@ -1107,6 +1150,7 @@ Object.entries(orgCounts)
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === '${org.replace(/'/g, "\\'")}').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
@@ -1162,7 +1206,9 @@ sortedMonths.forEach(key => {
   <main>
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, `${count} call${count !== 1 ? 's' : ''} with deadlines in ${label}${openCount > 0 && openCount < count ? ` — ${openCount} still open` : openCount === 0 ? ' — all closed' : ''}.`)}
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(g.calls)}
+    </section>
 
     ${FOOTER}
   </main>
@@ -1175,6 +1221,7 @@ sortedMonths.forEach(key => {
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
     } catch (e) {}
     }

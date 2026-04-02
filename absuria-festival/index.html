@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from ABSURIA Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/absuria-international-abstract-surrealist-photography-contest-2026/">ABSURIA — International Abstract &amp; Surrealist Photography Contest 2026</a></h3><p>April 26, 2026 · €20–€50</p><p>First international festival for abstract &amp; surrealist photography. Physical exhibition in Tours, France. Trophy + online 3D gallery.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'ABSURIA Festival').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

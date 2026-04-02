@@ -82,7 +82,12 @@
       <h2 class="subtitle">Open calls and submission opportunities from Der Greif. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/guest-room-shana-lopes-aspen-mays-der-greif/">Guest Room: Shana Lopes &amp; Aspen Mays &middot; Der Greif</a></h3><p>April 2, 2026 · PWYC</p><p>Theme: &quot;A Little Bit of Magic&quot; — doubling, sleight of hand, constructed realities, illusion. Curated for Der Greif.</p></div>
+      <div class="static-call-item"><h3><a href="/earthly-fabulations-der-greif/">Earthly Fabulations &middot; Der Greif</a></h3><p>April 8, 2026 · Free (€10 voluntary)</p><p>Earth Day call for lens-based artists deconstructing landscape photography tradition. Ephemeral online exhibition.</p></div>
+      <div class="static-call-item"><h3><a href="/photobook-feature-in-focus-der-greif/">Photobook Feature — In Focus &middot; Der Greif</a></h3><p>March 31, 2026 · PWYC</p><p>Photobooks featured in Der Greif's Articles section with editorial write-up. Self-published and small-edition welcome.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +103,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Der Greif').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

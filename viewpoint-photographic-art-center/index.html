@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Viewpoint Photographic Art Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/seeing-america-viewpoint-photographic-art-center/">Seeing America &middot; Viewpoint Photographic Art Center</a></h3><p>March 18, 2026 · $30–$50</p><p>Celebrating 250th Anniversary of the Declaration of Independence. Exhibition during Photography Month Sacramento.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Viewpoint Photographic Art Center').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

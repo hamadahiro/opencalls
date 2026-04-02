@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Brussels Street Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/brussels-street-photography-festival-2026/">Brussels Street Photography Festival 2026</a></h3><p>March 25, 2026 · €12–€45</p><p>International street photography competition with Singles and Series tracks. Exhibition in Brussels, May 2026.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Brussels Street Photography Festival').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

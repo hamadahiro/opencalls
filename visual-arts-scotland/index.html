@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Visual Arts Scotland. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/linkshouse-residency-pier-arts-centre-orkney-visual-arts-scotland/">Linkshouse Residency — Pier Arts Centre Orkney &middot; Visual Arts Scotland</a></h3><p>March 15, 2026 · Free</p><p>Month-long funded residency in Birsay, Orkney. Includes accommodation, £2,200 stipend, and travel bursary.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Visual Arts Scotland').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

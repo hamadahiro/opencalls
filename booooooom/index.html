@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from Booooooom. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/2026-booooooom-art-photo-book-award/">2026 Booooooom Art &amp; Photo Book Award</a></h3><p>June 5, 2026 · Free (zines) / $20 (books)</p><p>8 projects (6 books, 2 zines) fully published for free. Books 100 copies, zines 25 copies. Free zine entry.</p></div>
+      <div class="static-call-item"><h3><a href="/tomorrow-s-talent-open-submissions-booooooom/">Tomorrow's Talent - Open Submissions &middot; Booooooom</a></h3><p>Continuous · Free</p><p>Global platform featuring emerging artists. Potential feature and inclusion in book series.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Booooooom').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

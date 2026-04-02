@@ -82,7 +82,13 @@
       <h2 class="subtitle">4 calls with deadlines in February 2026 — all closed.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/michael-p-smith-fund-for-documentary-photography-2026-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2026 &middot; New Orleans Photo Alliance</a></h3><p>February 2, 2026 · $25</p><p>Annual grant for Gulf Coast photographers combining artistic excellence with sustained cultural documentary work.</p></div>
+      <div class="static-call-item"><h3><a href="/the-cortona-on-the-move-bartur-grant/">The Cortona on The Move / BarTur Grant</a></h3><p>February 13, 2026 · $25</p><p>Supporting photographers with ongoing projects and clear authorship. Winners exhibited at Cortona On The Move festival.</p></div>
+      <div class="static-call-item"><h3><a href="/photobook-open-call-2026-photometria-international-photography-festival/">Photobook Open Call 2026 &middot; Photometria International Photography Festival</a></h3><p>February 20, 2026 · €20</p><p>Artist books, self-published photobooks, limited editions, zines, and DIY publications for the 18th Photometria Festival.</p></div>
+      <div class="static-call-item"><h3><a href="/fotofilmic-open-2026/">FOTOFILMIC OPEN 2026</a></h3><p>February 28, 2026 · $50</p><p>Exhibition featuring contemporary film-based photography. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +105,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-02')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
     } catch (e) {}
     }

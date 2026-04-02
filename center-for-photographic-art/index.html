@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Center for Photographic Art. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/cpa-artist-grants-2026-center-for-photographic-art/">CPA Artist Grants 2026 &middot; Center for Photographic Art</a></h3><p>April 7, 2026 · $30</p><p>Five $5,000 grants: emerging, mid-career, landscape, LGBTQ+, and Monterey County resident photographers.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Center for Photographic Art').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

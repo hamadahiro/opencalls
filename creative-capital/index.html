@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Creative Capital. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/creative-capital-award-2027/">Creative Capital Award 2027</a></h3><p>April 2, 2026 · Free</p><p>One of the US's largest arts grants. $15K–$50K for ambitious projects across all visual arts incl. photography. 5+ yrs experience required.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Creative Capital').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

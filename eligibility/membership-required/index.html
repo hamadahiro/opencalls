@@ -82,7 +82,18 @@
       <h2 class="subtitle">Open calls that require membership or subscription to the organizing body.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/43rd-center-annual-houston-center-for-photography/">43rd Center Annual &middot; Houston Center for Photography</a></h3><p>April 19, 2026 · Free</p><p>Houston Center for Photography's annual group exhibition. Juried by Asha Iman Veal. Two $500 honoraria.</p></div>
+      <div class="static-call-item"><h3><a href="/the-hand-magazine-issue-53-summer-2026/">The Hand Magazine - Issue #53 Summer 2026</a></h3><p>May 31, 2026 · $15–$30</p><p>International publication for photographic printmaking and hand-printed work. No theme. Must be a subscriber.</p></div>
+      <div class="static-call-item"><h3><a href="/pn-awards-2026-book-prize-project-grant-photography-network/">PN Awards 2026 — Book Prize &amp; Project Grant &middot; Photography Network</a></h3><p>June 15, 2026 · Free</p><p>Book prize for innovation in photography scholarship. Project grant for emerging scholars and curators.</p></div>
+      <div class="static-call-item"><h3><a href="/tomorrow-s-talent-open-submissions-booooooom/">Tomorrow's Talent - Open Submissions &middot; Booooooom</a></h3><p>Continuous · Free</p><p>Global platform featuring emerging artists. Potential feature and inclusion in book series.</p></div>
+      <div class="static-call-item"><h3><a href="/linkshouse-residency-pier-arts-centre-orkney-visual-arts-scotland/">Linkshouse Residency — Pier Arts Centre Orkney &middot; Visual Arts Scotland</a></h3><p>March 15, 2026 · Free</p><p>Month-long funded residency in Birsay, Orkney. Includes accommodation, £2,200 stipend, and travel bursary.</p></div>
+      <div class="static-call-item"><h3><a href="/portfolio-2026-atlanta-photography-group/">Portfolio 2026 &middot; Atlanta Photography Group</a></h3><p>March 27, 2026 · $75–$105</p><p>Juried exhibition for cohesive bodies of work. Juror: Natasha Egan (MoCP). Winner eligible for $4,000 purchase award.</p></div>
+      <div class="static-call-item"><h3><a href="/photographers-without-borders-revolutionary-storyteller-grant/">Photographers Without Borders Revolutionary Storyteller Grant</a></h3><p>March 30, 2026 · Free</p><p>Three $5,000 grants for impact-driven photography projects focused on environment and climate change.</p></div>
+      <div class="static-call-item"><h3><a href="/abstract-visions-artdoc-photography-magazine/">Abstract Visions &middot; Artdoc Photography Magazine</a></h3><p>March 30, 2026 · Free</p><p>Abstraction as a way of seeing, sensing, and surviving. Projects communicating through atmosphere, rhythm, and form.</p></div>
+      <div class="static-call-item"><h3><a href="/colour-calendar-event-alternativephotography-com/">Colour Calendar Event &middot; AlternativePhotography.com</a></h3><p>March 31, 2026 · Free</p><p>Annual event inviting artists to introduce colour into monochrome alternative processes — cyanotype, chemigram, anthotype.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +109,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('membership-required')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

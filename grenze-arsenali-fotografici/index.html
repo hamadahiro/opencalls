@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Grenze-Arsenali Fotografici. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/nachleben-2026/">Nachleben 2026 &middot; Grenze-Arsenali Fotografici</a></h3><p>April 30, 2026 · €28</p><p>Three photographers exhibited at September festival in Verona. €300 travel + €1,000 print budget + accommodation.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Grenze-Arsenali Fotografici').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

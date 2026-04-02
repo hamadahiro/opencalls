@@ -82,7 +82,12 @@
       <h2 class="subtitle">Open calls and submission opportunities from Decode Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/home-photography-exhibit-decode-gallery/">HOME Photography Exhibit &middot; Decode Gallery</a></h3><p>April 18, 2026 · $40–$45</p><p>Home as feeling, memory, sanctuary. Exploring domesticity, heritage, shelter, and identity. Tucson, AZ.</p></div>
+      <div class="static-call-item"><h3><a href="/square-photography-exhibit-decode-gallery/">SQUARE Photography Exhibit &middot; Decode Gallery</a></h3><p>June 13, 2026 · $40</p><p>Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.</p></div>
+      <div class="static-call-item"><h3><a href="/color-photography-exhibit-decode-gallery/">COLOR Photography Exhibit &middot; Decode Gallery</a></h3><p>March 28, 2026 · $40–$45</p><p>Exploring color as one of the most powerful storytelling tools. Bold, subtle, vibrant, or muted. Tucson, AZ.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +103,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Decode Gallery').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

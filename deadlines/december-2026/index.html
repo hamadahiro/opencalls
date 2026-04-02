@@ -82,7 +82,10 @@
       <h2 class="subtitle">1 call with deadlines in December 2026.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/annual-photography-awards-2026/">Annual Photography Awards 2026</a></h3><p>December 13, 2026 · $25–$40</p><p>8th edition. Five main categories, 25 subcategories. Looking for bold and innovative approaches.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +102,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-12')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
     } catch (e) {}
     }

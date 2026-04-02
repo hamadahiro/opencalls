@@ -82,7 +82,11 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Canada. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/viewpoint-gallery-international-photography-competition/">ViewPoint Gallery International Photography Competition</a></h3><p>April 15, 2026 · $25</p><p>Twelve winners displayed professionally printed and framed for one month each, June 2026 to May 2027. Eastern Canada.</p></div>
+      <div class="static-call-item"><h3><a href="/fotofilmic-open-2026/">FOTOFILMIC OPEN 2026</a></h3><p>February 28, 2026 · $50</p><p>Exhibition featuring contemporary film-based photography. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +103,7 @@
       const data = await res.json();
 
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Canada').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
     } catch (e) {}

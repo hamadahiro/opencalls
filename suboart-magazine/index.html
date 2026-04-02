@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Suboart Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/suboart-magazine-may-june-2026-issues/">Suboart Magazine — May &amp; June 2026 Issues</a></h3><p>April 6, 2026 · Free (€30 if accepted)</p><p>Independent Lisbon print magazine seeking emerging visual artists for in-depth interviews and features.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Suboart Magazine').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

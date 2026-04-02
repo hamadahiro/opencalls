@@ -82,7 +82,10 @@
       <h2 class="subtitle">1 call with deadlines in January 2026 — all closed.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/insight-foto-festival-insight-out-2026/">Insight Foto Festival — Insight Out 2026</a></h3><p>January 25, 2026 · Free</p><p>Independent photography exhibitions and projects exploring the theme ABITO. Sixth edition in Varese, Italy.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +102,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-01')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
     } catch (e) {}
     }
