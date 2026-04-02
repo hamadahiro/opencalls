@@ -19,7 +19,8 @@
       "orgInTitle": false,
       "summary": "Fellowship for emerging photographers. 20 selected for exhibition, one awarded $200 + year-long online representation.",
       "email": "",
-      "dateAdded": "2026-04-02T19:18:52.699Z"
+      "dateAdded": "2026-04-02T19:18:52.699Z",
+      "submitUrl": "https://www.mwcponline.com/emerge-entry.html"
     },
     {
       "title": "Lisbon Street Photo Fest: Open Call 2026",
@@ -779,7 +780,9 @@
       "instagram": "@photography4humanity",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "James Nachtwey, Photojournalist",
         "Pauline Benthede, Global VP Artistic Direction, Fotografiska",
@@ -966,7 +969,9 @@
       "instagram": "@fotografiska.emerging",
       "location": "Online",
       "prize": "3 × €2,500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Atiba Jefferson, Staff Photographer Thrasher Magazine & Canon Explorer of Light",
         "Karl Hab, Photographer (aviation, architecture, fashion)",
@@ -1867,9 +1872,13 @@
       ],
       "jury": [
         "Denis Curti, Artistic Director (Jury President)",
+        "Guido Borsani, Chairman, Italian Deloitte Foundation",
         "Alec Soth, Photographer, Magnum Photos",
         "Bruce Gilden, Photographer, Magnum Photos",
         "Barbara Ceferin, Owner, Galerija Fotografija",
+        "Bernardino Castro, Director, Portuguese Photography Center",
+        "Carlos Idun-Tawiah, Photographer, 2025 Winner",
+        "Katarzyna Sagatowska, Curator, Jednostka Gallery",
         "Suzanne Cotter, Director, Museum of Contemporary Art Australia",
         "Sunyoung Kim, Senior Curator, Museum Hanmi"
       ],
@@ -5773,7 +5782,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "resultsDate": "September 15, 2026",
-      "submitUrl": "https://naturallandscapeawards.com/about/",
+      "submitUrl": "https://submit.naturallandscapeawards.com",
       "summary": "Celebrating realistic landscape photography. No AI or compositing. RAW file checks for finalists.",
       "email": ""
     },
@@ -5809,7 +5818,9 @@
       "instagram": "@exposurephotogallery",
       "location": "Rio Tercero, Argentina",
       "prize": "$500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Gary Hershorn, Photographer & Editor"
       ],
@@ -6213,7 +6224,9 @@
       "instagram": "@fotografiska.emerging",
       "location": "New York, NY, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "fotografiska-home-global-open-call",
       "orgInTitle": true,
       "resultsDate": "October 2026",
