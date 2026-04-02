@@ -1265,7 +1265,9 @@
       "instagram": "@noplaceart",
       "location": "London, United Kingdom",
       "prize": "£1,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Aga Kubish, Printmaker",
         "Conor Rush, Artist & Founder, Starving Artists",
@@ -1382,7 +1384,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-17",
       "submitUrl": "https://www.analogsparksawards.com/submit/login.php",
-      "summary": "Discovering and promoting analog photographers. Exhibited at House of Lucie in Athens and Ostuni."
+      "summary": "Discovering and promoting analog photographers. Exhibited at House of Lucie in Athens and Ostuni.",
+      "email": ""
     },
     {
       "title": "Athens Photo Festival 2026",
@@ -7219,7 +7222,8 @@
       "location": "Online",
       "prize": "$10,000",
       "eligibility": [
-        "women"
+        "women",
+        "18-plus"
       ],
       "submitVia": "Picter",
       "slug": "lsi-women-in-photography-grant-2026-leica-society-international",
@@ -7526,7 +7530,9 @@
       "resultsDate": "June 13, 2026",
       "dateAdded": "2026-03-21",
       "submitUrl": "https://site.picter.com/siyu-award-2026",
-      "summary": "Award for young Swiss photographers. Ten finalists exhibited at Photobastei Zurich with catalogue. Free theme."
+      "summary": "Award for young Swiss photographers. Ten finalists exhibited at Photobastei Zurich with catalogue. Free theme.",
+      "email": "",
+      "ai": "Accepted"
     },
     {
       "title": "Alpine Fellowship Visual Art Prize 2026",
@@ -7539,7 +7545,9 @@
       "instagram": "@alpinefellowship",
       "location": "Online",
       "prize": "£3,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Submittable",
       "requirements": "1 image per entry",
       "jury": [
@@ -7708,6 +7716,9 @@
       ],
       "submitVia": "Website form",
       "requirements": "Up to 4 images",
+      "jury": [
+        "Drew Arrieta, Curator, Wider Skies"
+      ],
       "orgInTitle": true,
       "slug": "wider-skies-magazine-issue-1",
       "ai": "Not accepted",
