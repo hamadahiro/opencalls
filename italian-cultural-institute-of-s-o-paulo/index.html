@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Italian Cultural Institute of São Paulo. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/ffsp-2026-italian-photographers-open-call/">FFSP 2026 — Italian Photographers Open Call &middot; Italian Cultural Institute of São Paulo</a></h3><p>April 19, 2026 · Free</p><p>Free exhibition in São Paulo for Italian photographers in Brazil/Italy. Winner receives round-trip airfare.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Italian Cultural Institute of São Paulo').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Bethany Arts Community. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/bethany-arts-community-fall-multidisciplinary-residency-2026/">Bethany Arts Community — Fall Multidisciplinary Residency 2026</a></h3><p>May 6, 2026 · Free</p><p>Two-week residency in Ossining, NY. $450 stipend, private studio, room and board. 12 artists across all disciplines.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Bethany Arts Community').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

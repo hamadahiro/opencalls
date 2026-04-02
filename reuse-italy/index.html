@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Reuse Italy. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/atlas-of-ruins-vol-3-call-for-photos-reuse-italy/">Atlas of Ruins Vol.3 — Call for Photos &middot; Reuse Italy</a></h3><p>October 1, 2026 · €10–€30</p><p>Photographs of architectural ruins from anywhere in the world for a printed book. Three registration tiers.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Reuse Italy').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

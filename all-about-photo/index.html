@@ -82,7 +82,12 @@
       <h2 class="subtitle">Open calls and submission opportunities from All About Photo. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/solo-exhibition-may-2026-all-about-photo/">Solo Exhibition May 2026 &middot; All About Photo</a></h3><p>April 21, 2026 · $45</p><p>Monthly featured photographer showcase. Full month online solo exhibition, interview, and press coverage.</p></div>
+      <div class="static-call-item"><h3><a href="/solo-exhibition-april-2026-all-about-photo/">Solo Exhibition April 2026 &middot; All About Photo</a></h3><p>March 20, 2026 · $45</p><p>Monthly featured photographer showcase with global audience visibility. April 2026 in La Jolla, CA.</p></div>
+      <div class="static-call-item"><h3><a href="/aap-magazine-56-shadows-all-about-photo/">AAP Magazine #56 Shadows &middot; All About Photo</a></h3><p>March 31, 2026 · $30–$35</p><p>Mastering shadows in photography. $1,000 cash prize, publication, and global recognition.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +103,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'All About Photo').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

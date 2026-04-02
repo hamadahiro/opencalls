@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Los Angeles Center for Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/fast-forward-analog-photography-as-a-third-space-los-angeles-center-for-photography/">Fast Forward: Analog Photography as a Third Space &middot; Los Angeles Center for Photography</a></h3><p>March 24, 2026 · $25–$200</p><p>Analog-only submissions exploring how photography creates space for camaraderie and interaction.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Los Angeles Center for Photography').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

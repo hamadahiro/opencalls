@@ -82,7 +82,12 @@
       <h2 class="subtitle">Open calls and submission opportunities from Praxis Photo Arts Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/the-portrait-praxis-photo-arts-center/">THE PORTRAIT &middot; Praxis Photo Arts Center</a></h3><p>April 5, 2026 · $35</p><p>Exploring depth and complexity of the human subject. All lens-based practices welcome. Minneapolis, MN.</p></div>
+      <div class="static-call-item"><h3><a href="/animal-life-praxis-photo-arts-center/">ANIMAL LIFE &middot; Praxis Photo Arts Center</a></h3><p>April 19, 2026 · $35</p><p>Exploring animal subjects with curiosity, empathy, and imagination. All lens-based work welcome. Minneapolis.</p></div>
+      <div class="static-call-item"><h3><a href="/multi-exposed-praxis-photo-arts-center/">Multi-Exposed &middot; Praxis Photo Arts Center</a></h3><p>March 22, 2026 · Free</p><p>Exploring time overlaps and memory through photography. Exhibition in Minneapolis, MN.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +103,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Praxis Photo Arts Center').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

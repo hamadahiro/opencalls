@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from International Aerial Photographer of the Year. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/international-aerial-photographer-of-the-year-2026/">International Aerial Photographer of the Year 2026</a></h3><p>April 30, 2026 · $22</p><p>Celebrating aerial photography from all platforms — drones, planes, helicopters, mountains, and skyscrapers.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'International Aerial Photographer of the Year').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

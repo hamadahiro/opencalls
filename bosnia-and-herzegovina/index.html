@@ -82,7 +82,10 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Bosnia and Herzegovina. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/sarajevo-photography-festival-2026/">Sarajevo Photography Festival 2026</a></h3><p>April 10, 2026 · €15-30</p><p>Opening week June 1-7. Grand Prix: €2,000. Canon-sponsored professional awards. Eight competition categories.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +102,7 @@
       const data = await res.json();
 
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Bosnia and Herzegovina').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
     } catch (e) {}

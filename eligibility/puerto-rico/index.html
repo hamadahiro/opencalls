@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls for projects related to Puerto Rico and its diaspora.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/counter-histories-puerto-rico-magnum-foundation/">Counter Histories Puerto Rico &middot; Magnum Foundation</a></h3><p>April 1, 2026 · Free</p><p>Fellowship for photographers engaging with Puerto Rico and its diaspora. 8-month virtual fellowship, up to 8 recipients.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('puerto-rico')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

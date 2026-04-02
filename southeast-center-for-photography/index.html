@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from Southeast Center for Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/thoughts-of-summer-southeast-center-for-photography/">Thoughts of Summer &middot; Southeast Center for Photography</a></h3><p>April 15, 2026 · $35</p><p>Celebrating summer — family, friends, vacations. Jurors: Pictura co-curators. Greenville, SC.</p></div>
+      <div class="static-call-item"><h3><a href="/se-center-for-photography-magic-of-light/">SE Center for Photography — Magic of Light</a></h3><p>May 15, 2026 · $35</p><p>Virtual exhibition exploring light and shadow. Juror: Wendi Schneider. 35-40 images selected. 0% commission.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Southeast Center for Photography').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

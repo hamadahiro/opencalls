@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from Arts to Hearts Project. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/100-emerging-artworks-of-2026-arts-to-hearts-project/">100 Emerging Artworks of 2026 &middot; Arts to Hearts Project</a></h3><p>May 4, 2026 · $35</p><p>100 artists selected for a hardcover collector's book distributed globally. $1,000 top prize. All mediums.</p></div>
+      <div class="static-call-item"><h3><a href="/the-woman-artist-award-6th-edition-arts-to-hearts-project/">The Woman Artist Award — 6th Edition &middot; Arts to Hearts Project</a></h3><p>March 27, 2026 · $12</p><p>Global art prize celebrating emerging and mid-career women artists. Open theme, any medium including photography.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Arts to Hearts Project').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

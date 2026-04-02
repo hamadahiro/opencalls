@@ -82,7 +82,12 @@
       <h2 class="subtitle">Open calls and submission opportunities from Art Fluent. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/just-add-water-art-fluent/">JUST ADD WATER &middot; Art Fluent</a></h3><p>June 5, 2026 · $25</p><p>Exploring water — oceans, rain, rivers, puddles. Online exhibition. Boston, MA.</p></div>
+      <div class="static-call-item"><h3><a href="/evolution-grant-art-fluent/">Evolution Grant &middot; Art Fluent</a></h3><p>June 19, 2026 · $35</p><p>Unrestricted $1,000 grant per cycle for individual artists with recognized artistic excellence.</p></div>
+      <div class="static-call-item"><h3><a href="/her-self-art-fluent/">HER.SELF &middot; Art Fluent</a></h3><p>July 17, 2026 · $25</p><p>Celebrating women in all complexities — presence, resilience, beauty, becoming. 100% commission-free sales.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +103,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Art Fluent').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Wider Skies. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/wider-skies-magazine-issue-1/">Wider Skies Magazine — Issue 1</a></h3><p>April 10, 2026 · Free</p><p>New magazine exploring speculative futurism through film photography. Free Kodak film available for those who need it.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Wider Skies').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

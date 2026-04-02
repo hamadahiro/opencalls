@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from reFocus Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/refocus-awards-black-and-white-photo-contest/">reFocus Awards - Black and White Photo Contest</a></h3><p>April 7, 2026 · $25–$50</p><p>Celebrating black and white photography. Cash prizes and career-enhancing recognition.</p></div>
+      <div class="static-call-item"><h3><a href="/refocus-awards-color-photography-contest/">reFocus Awards - Color Photography Contest</a></h3><p>April 29, 2026 · $25–$50</p><p>Celebrating color photography. Cash prizes and digital gallery placement.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'reFocus Awards').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

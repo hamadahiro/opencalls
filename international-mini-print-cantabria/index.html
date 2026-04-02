@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from International Mini Print Cantabria. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/ix-international-mini-print-cantabria-2026/">IX International Mini Print Cantabria 2026</a></h3><p>July 31, 2026 · €45–€65</p><p>Theme: Open Sea. All printmaking disciplines including digital. Max 20x20 cm. Cantabria, Spain.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'International Mini Print Cantabria').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

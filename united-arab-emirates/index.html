@@ -82,7 +82,10 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in United Arab Emirates. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/hipa-photography-award-2026-hamdan-bin-mohammed-bin-rashid-al-maktoum/">HIPA Photography Award 2026 &middot; Hamdan Bin Mohammed Bin Rashid Al Maktoum</a></h3><p>May 31, 2026 · Free</p><p>Major international award. 2026 theme: Family. Free entry. Categories include Dreams Through AI and Sports.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +102,7 @@
       const data = await res.json();
 
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'United Arab Emirates').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
     } catch (e) {}

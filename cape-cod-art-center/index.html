@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Cape Cod Art Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/shadow-play-2026-cape-cod-art-center/">SHADOW PLAY 2026 &middot; Cape Cod Art Center</a></h3><p>May 17, 2026 · $15</p><p>Online photography exhibit exploring shadow and light. Any interpretation. Cash prizes.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Cape Cod Art Center').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

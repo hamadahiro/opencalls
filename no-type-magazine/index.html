@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from No-Type Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/monograph-no-01-no-type-magazine/">Monograph No. 01 &middot; No-Type Magazine</a></h3><p>May 31, 2026 · $20</p><p>One artist receives full monograph publication — editing, design, printing, marketing, plus 20% of edition.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'No-Type Magazine').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

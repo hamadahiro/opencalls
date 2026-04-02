@@ -82,7 +82,13 @@
       <h2 class="subtitle">Open calls and submission opportunities from Lenscratch. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/lenscratch-motherhood-exhibition/">Lenscratch Motherhood Exhibition</a></h3><p>May 1, 2026 · Free</p><p>Online exhibition exploring all dimensions of motherhood — chosen families, caregiving, absence, and resilience.</p></div>
+      <div class="static-call-item"><h3><a href="/lenscratch-student-prize-2026/">Lenscratch Student Prize 2026</a></h3><p>June 1, 2026 · Free</p><p>Annual prize for student photographers. $2,000 first prize plus mentorship with Aline Smithson.</p></div>
+      <div class="static-call-item"><h3><a href="/lenscratch-fatherhood-exhibition/">Lenscratch Fatherhood Exhibition</a></h3><p>June 13, 2026 · Free</p><p>Online exhibition exploring fatherhood as an evolving role shaped by culture, responsibility, and tenderness.</p></div>
+      <div class="static-call-item"><h3><a href="/lenscratch-fault-lines-america-exhibition/">Lenscratch Fault Lines: America Exhibition</a></h3><p>June 19, 2026 · Free</p><p>Online exhibition examining tensions and transformations across America. Timed for July 4th.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +104,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Lenscratch').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

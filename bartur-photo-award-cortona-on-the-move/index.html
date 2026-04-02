@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from BarTur Photo Award / Cortona On The Move. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/the-cortona-on-the-move-bartur-grant/">The Cortona on The Move / BarTur Grant</a></h3><p>February 13, 2026 · $25</p><p>Supporting photographers with ongoing projects and clear authorship. Winners exhibited at Cortona On The Move festival.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'BarTur Photo Award / Cortona On The Move').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Égide — Associação Portuguesa das Artes. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/luz-e-sombra-national-photography-competition-gide-associa-o-portuguesa-das-artes/">Luz e Sombra — National Photography Competition &middot; Égide — Associação Portuguesa das Artes</a></h3><p>April 30, 2026 · Free</p><p>Portuguese competition exploring light and shadow. Six finalists published in artist-edition book and traveling exhibition.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Égide — Associação Portuguesa das Artes').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

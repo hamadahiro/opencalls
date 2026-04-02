@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls restricted to photographers in the Mid-Atlantic region — Maryland, Virginia, West Virginia, Pennsylvania, and Washington DC.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/cumberland-valley-photographers-2026-washington-county-museum-of-fine-arts/">Cumberland Valley Photographers 2026 &middot; Washington County Museum of Fine Arts</a></h3><p>April 30, 2026 · $15</p><p>Juried museum exhibition on America's 250th anniversary themes. Open to MD, VA, WV, PA, DC photographers. $3K+ in cash prizes.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('mid-atlantic-us')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

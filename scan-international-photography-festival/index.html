@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from SCAN International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/scan-tarragona-talent-latent-2026/">SCAN Tarragona — Talent Latent 2026</a></h3><p>April 12, 2026 · Free</p><p>International festival open call. Theme: Metamorphosis. €500 fee for selected projects. Exhibition Oct-Nov 2026.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'SCAN International Photography Festival').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

@@ -82,7 +82,11 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/appalachian-nature-art-photography-competition-exhibition-arcadian-gallery/">Appalachian Nature Art &amp; Photography Competition &amp; Exhibition &middot; Arcadian Gallery</a></h3><p>April 7, 2026 · $15</p><p>Appalachian nature photography. $500 Best of Show plus landscape and wildlife awards. MD, PA, VA, WV, DC residents.</p></div>
+      <div class="static-call-item"><h3><a href="/cumberland-valley-photographers-2026-washington-county-museum-of-fine-arts/">Cumberland Valley Photographers 2026 &middot; Washington County Museum of Fine Arts</a></h3><p>April 30, 2026 · $15</p><p>Juried museum exhibition on America's 250th anniversary themes. Open to MD, VA, WV, PA, DC photographers. $3K+ in cash prizes.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', MD,') || c.location.includes(', MD, USA'))).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

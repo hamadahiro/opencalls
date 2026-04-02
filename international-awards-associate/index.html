@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from International Awards Associate. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/london-photography-awards-2026-international-awards-associate/">London Photography Awards 2026 &middot; International Awards Associate</a></h3><p>April 30, 2026 · $25–$50</p><p>International awards across 13 categories. Separate professional and amateur/student divisions.</p></div>
+      <div class="static-call-item"><h3><a href="/muse-photography-awards-2026-international-awards-associate/">MUSE Photography Awards 2026 &middot; International Awards Associate</a></h3><p>March 26, 2026 · $25–$55</p><p>International competition across 14+ categories. Professional and Amateur divisions. Winners featured on Muse.World.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'International Awards Associate').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

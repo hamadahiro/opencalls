@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Effe4.0 Street Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/roma-e-festival-street-photography-awards-2026-effe4-0-street-photography/">Roma E'Festival — Street Photography Awards 2026 &middot; Effe4.0 Street Photography</a></h3><p>July 31, 2026 · €20–€70</p><p>Five categories including Smartphone and AI-Generated. Finalists exhibited in Rome. Leica-sponsored prizes.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Effe4.0 Street Photography').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

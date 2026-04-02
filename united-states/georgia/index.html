@@ -82,7 +82,10 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Georgia. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/portfolio-2026-atlanta-photography-group/">Portfolio 2026 &middot; Atlanta Photography Group</a></h3><p>March 27, 2026 · $75–$105</p><p>Juried exhibition for cohesive bodies of work. Juror: Natasha Egan (MoCP). Winner eligible for $4,000 purchase award.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', GA,') || c.location.includes(', GA, USA'))).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

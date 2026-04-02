@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Black &amp; White Spider Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/black-white-spider-awards-2026/">Black &amp; White Spider Awards 2026</a></h3><p>April 24, 2026 · $30–$35</p><p>Leading international B&amp;W photography award. 21st edition. 235+ title awards. Judged by Steve McCurry and others.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Black & White Spider Awards').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

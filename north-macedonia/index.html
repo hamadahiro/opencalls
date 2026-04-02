@@ -82,7 +82,10 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in North Macedonia. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/zrno-festival-2026-open-call/">ZRNO Festival 2026 — Open Call</a></h3><p>April 20, 2026 · €21</p><p>International festival of alternative photography. Analog and noble processes. Theme: Unfocus to see.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +102,7 @@
       const data = await res.json();
 
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'North Macedonia').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
     } catch (e) {}

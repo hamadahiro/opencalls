@@ -82,7 +82,13 @@
       <h2 class="subtitle">Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/abstract-2026-glasgow-gallery-of-photography/">Abstract 2026 &middot; Glasgow Gallery of Photography</a></h3><p>April 24, 2026 · Free (£48 if accepted)</p><p>Abstract photography in any style. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.</p></div>
+      <div class="static-call-item"><h3><a href="/portrait-2026-glasgow-gallery-of-photography/">Portrait 2026 &middot; Glasgow Gallery of Photography</a></h3><p>April 24, 2026 · Free (£48 if accepted)</p><p>Portrait photography, open to all. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.</p></div>
+      <div class="static-call-item"><h3><a href="/nature-2026-glasgow-gallery-of-photography/">Nature 2026 &middot; Glasgow Gallery of Photography</a></h3><p>March 27, 2026 · Free (£48 if accepted)</p><p>Exploring how we interact with nature — beauty, power, cruelty, and influence on daily life. Glasgow gallery exhibition.</p></div>
+      <div class="static-call-item"><h3><a href="/future-days-2026-glasgow-gallery-of-photography/">Future Days 2026 &middot; Glasgow Gallery of Photography</a></h3><p>March 27, 2026 · Free (£48 if accepted)</p><p>Open theme asking photographers to represent their vision of the future, hopeful or fearful. Glasgow gallery exhibition.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +104,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Glasgow Gallery of Photography').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

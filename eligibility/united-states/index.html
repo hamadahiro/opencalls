@@ -82,7 +82,23 @@
       <h2 class="subtitle">Open calls restricted to photographers and artists based in the United States.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/creative-capital-award-2027/">Creative Capital Award 2027</a></h3><p>April 2, 2026 · Free</p><p>One of the US's largest arts grants. $15K–$50K for ambitious projects across all visual arts incl. photography. 5+ yrs experience required.</p></div>
+      <div class="static-call-item"><h3><a href="/queer-conscience-2026-photography-exhibition-the-image-flow/">Queer Conscience 2026 Photography Exhibition &middot; The Image Flow</a></h3><p>April 4, 2026 · $40</p><p>4th annual for LGBTQIA2+ community. Affirming truths and expressing resistance during Pride month. Mill Valley, CA.</p></div>
+      <div class="static-call-item"><h3><a href="/appalachian-nature-art-photography-competition-exhibition-arcadian-gallery/">Appalachian Nature Art &amp; Photography Competition &amp; Exhibition &middot; Arcadian Gallery</a></h3><p>April 7, 2026 · $15</p><p>Appalachian nature photography. $500 Best of Show plus landscape and wildlife awards. MD, PA, VA, WV, DC residents.</p></div>
+      <div class="static-call-item"><h3><a href="/anonymous-was-a-woman-environmental-art-grants-2026/">Anonymous Was A Woman Environmental Art Grants 2026</a></h3><p>April 7, 2026 · Free</p><p>Up to $20K grants for environmental art by women/trans/GNC artists in the US. $470K+ total. All visual arts incl. photography.</p></div>
+      <div class="static-call-item"><h3><a href="/ppa-photo-award-2026-pasadena-photography-arts/">PPA Photo Award 2026 &middot; Pasadena Photography Arts</a></h3><p>April 12, 2026 · $42</p><p>For emerging US photographers. $2,000 prize, Lenscratch feature, virtual artist talk. Juror: Craig Krull.</p></div>
+      <div class="static-call-item"><h3><a href="/film-photo-award-2026/">Film Photo Award 2026</a></h3><p>April 26, 2026 · $25–$35</p><p>Three grants of professional film and processing by Praus Productions. US-based photographers only.</p></div>
+      <div class="static-call-item"><h3><a href="/michael-p-smith-fund-for-documentary-photography-2025-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2025 &middot; New Orleans Photo Alliance</a></h3><p>May 4, 2026 · $25</p><p>Annual grant for Gulf Coast photographers. $3,000 winner prize, PhotoNOLA Portfolio Review, and exhibition.</p></div>
+      <div class="static-call-item"><h3><a href="/tulsa-artist-fellowship-2027-2029/">Tulsa Artist Fellowship 2027–2029</a></h3><p>May 7, 2026 · Free</p><p>Three-year fellowship: $150,000 stipend, housing, and studio in Tulsa. Ten fellows selected. Age 25+, must relocate.</p></div>
+      <div class="static-call-item"><h3><a href="/7th-annual-alternative-process-photography-exhibition-the-image-flow-praxis-gallery/">7th Annual Alternative Process Photography Exhibition &middot; The Image Flow / Praxis Gallery</a></h3><p>July 24, 2023 · $35</p><p>Cyanotype, wet plate collodion, salt printing, platinum/palladium, and other alternative photographic processes.</p></div>
+      <div class="static-call-item"><h3><a href="/michael-p-smith-fund-for-documentary-photography-2026-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2026 &middot; New Orleans Photo Alliance</a></h3><p>February 2, 2026 · $25</p><p>Annual grant for Gulf Coast photographers combining artistic excellence with sustained cultural documentary work.</p></div>
+      <div class="static-call-item"><h3><a href="/photo-laureate-2026-saint-petersburg-month-of-photography/">Photo Laureate 2026 &middot; Saint Petersburg Month of Photography</a></h3><p>March 17, 2026 · Free</p><p>One photographer selected to document Tampa Bay for one year. Solo exhibition at Florida Museum of Photographic Arts.</p></div>
+      <div class="static-call-item"><h3><a href="/penumbra-foundation-workspace-residency-2026/">Penumbra Foundation Workspace Residency 2026</a></h3><p>March 31, 2026 · Free</p><p>6–8 week NYC residency with $7,000 honorarium. Darkrooms, digital labs, and studio space at Penumbra Foundation.</p></div>
+      <div class="static-call-item"><h3><a href="/grants-in-photography-2026-light-work/">Grants in Photography 2026 &middot; Light Work</a></h3><p>April 1, 2026 · Free</p><p>Five $3,000 grants for photographers in New York State (outside NYC). Exhibition and publication in Contact Sheet.</p></div>
+      <div class="static-call-item"><h3><a href="/artadia-awards-2026-new-york-city/">Artadia Awards 2026 — New York City</a></h3><p>April 1, 2026 · Free</p><p>Unrestricted $15,000 grants for contemporary visual artists in NYC. Two-round jury process with studio visits.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +114,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('united-states')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

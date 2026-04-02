@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls restricted to artists from outside Europe — Africa, the Americas, Asia, and Oceania.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/mus-e-du-quai-branly-photography-award-2026/">Musée du quai Branly Photography Award 2026</a></h3><p>March 15, 2026 · Free</p><p>Grant for non-European artists to create photographic works for the museum's permanent collection. €30,000 each.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('non-european')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

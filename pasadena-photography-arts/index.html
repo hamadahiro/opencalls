@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Pasadena Photography Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/ppa-photo-award-2026-pasadena-photography-arts/">PPA Photo Award 2026 &middot; Pasadena Photography Arts</a></h3><p>April 12, 2026 · $42</p><p>For emerging US photographers. $2,000 prize, Lenscratch feature, virtual artist talk. Juror: Craig Krull.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Pasadena Photography Arts').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

@@ -82,7 +82,21 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Germany. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/the-female-show-2026-munich-art-gallery/">The Female Show 2026 &middot; Munich Art Gallery</a></h3><p>April 8, 2026 · Free</p><p>Group exhibition of female artists at Munich Art Gallery in the Kunstareal. Contemporary art beyond gender clichés.</p></div>
+      <div class="static-call-item"><h3><a href="/jugend-fotografiert-deutschland-2025-laif-foundation/">Jugend fotografiert Deutschland 2025 &middot; laif foundation</a></h3><p>April 17, 2026 · Free</p><p>German youth contest ages 10-18. Documentary photo stories. &quot;Be you. Be seen. Be heard.&quot; Teams welcome.</p></div>
+      <div class="static-call-item"><h3><a href="/portraits-hellerau-photography-award-2026/">PORTRAITS — Hellerau Photography Award 2026</a></h3><p>May 3, 2026 · €30–€50</p><p>Theme: Escapism. 11th edition. €8,000 total prizes. Series and individual submissions. 50% student discount.</p></div>
+      <div class="static-call-item"><h3><a href="/schloss-pl-schow-artist-in-residence-2026-mecklenburg-artists-house/">Schloss Plüschow Artist-in-Residence 2026 &middot; Mecklenburg Artists' House</a></h3><p>May 3, 2026 · €10</p><p>Three-month residency in northern Germany (Oct-Dec 2026). €1,000/month stipend. Five visual artists selected.</p></div>
+      <div class="static-call-item"><h3><a href="/berlin-photo-awards-2026/">Berlin Photo Awards 2026</a></h3><p>June 27, 2026 · €25</p><p>International competition with 24 categories. Winners exhibited at ERSTERERSTER Gallery Berlin.</p></div>
+      <div class="static-call-item"><h3><a href="/10-merck-preis-der-darmst-dter-tage-der-fotografie-darmstadt-days-of-photography/">10. Merck-Preis der Darmstädter Tage der Fotografie &middot; Darmstadt Days of Photography</a></h3><p>March 15, 2026 · €25</p><p>Festival seeking projects exploring 'unstable presence' through direct contact with reality.</p></div>
+      <div class="static-call-item"><h3><a href="/discovery-art-fair-cologne-art-fair-spot-new-abstract-gallery-berlin/">Discovery Art Fair Cologne - Art Fair Spot &middot; New &amp; Abstract Gallery Berlin</a></h3><p>March 18, 2026 · €20</p><p>Exclusive art fair spot at Discovery Art Fair Cologne at the New &amp; Abstract booth. Abstract and contemporary art.</p></div>
+      <div class="static-call-item"><h3><a href="/bba-photography-prize-2026/">BBA Photography Prize 2026</a></h3><p>March 30, 2026 · €59</p><p>International photography prize. First prize: solo exhibition at BBA Gallery Berlin in 2027 and Artsy profile.</p></div>
+      <div class="static-call-item"><h3><a href="/photographic-exploration-project-entanglement-pep-photography/">Photographic Exploration Project: ENTANGLEMENT &middot; PEP Photography</a></h3><p>March 31, 2026 · €5–€15</p><p>Exploring intricate webs of connections from intimate relationships to global systems. Group exhibition in Berlin.</p></div>
+      <div class="static-call-item"><h3><a href="/euronatur-photo-competition-2026/">EuroNatur Photo Competition 2026</a></h3><p>March 31, 2026 · Free</p><p>Nature photography for European residents. Winners published in EuroNatur magazine and 2027 wall calendar.</p></div>
+      <div class="static-call-item"><h3><a href="/x-roid-bonn-2026-the-stage-gallery/">X ROID Bonn 2026 &middot; The Stage Gallery</a></h3><p>March 31, 2026 · €225</p><p>7th edition of the international instant art expo for Polaroid and Fuji Instax. Three-day exhibition in Bonn.</p></div>
+      <div class="static-call-item"><h3><a href="/fresh-legs-2026-galleri-heike-arndt-dk/">Fresh Legs 2026 &middot; Galleri Heike Arndt DK</a></h3><p>March 31, 2026 · Free</p><p>Annual group exhibition since 2013. Painting, sculpture, photography, film, and more. Two Berlin venues.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +113,7 @@
       const data = await res.json();
 
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Germany').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
     } catch (e) {}

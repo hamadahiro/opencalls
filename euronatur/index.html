@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from EuroNatur. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/euronatur-photo-competition-2026/">EuroNatur Photo Competition 2026</a></h3><p>March 31, 2026 · Free</p><p>Nature photography for European residents. Winners published in EuroNatur magazine and 2027 wall calendar.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'EuroNatur').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

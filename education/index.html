@@ -82,7 +82,11 @@
       <h2 class="subtitle">Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/masterclasses-program-2026-2027-phmuseum/">Masterclasses Program 2026/2027 &middot; PhMuseum</a></h3><p>April 30, 2026 · Paid</p><p>Online masterclasses by Aaron Schuman, Charlie Engman, Erik Kessels, Salvatore Vitale, and Vasantha Yoganathan.</p></div>
+      <div class="static-call-item"><h3><a href="/cpg-mentorship-programme-2026-centre-de-la-photographie-gen-ve/">CPG Mentorship Programme 2026 &middot; Centre de la Photographie Genève</a></h3><p>March 22, 2026 · Free</p><p>1:1 mentoring with established photographers and curators over six months. CHF 500 project support included.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.category === 'education').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

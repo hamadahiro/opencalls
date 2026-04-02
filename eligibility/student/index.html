@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/lenscratch-student-prize-2026/">Lenscratch Student Prize 2026</a></h3><p>June 1, 2026 · Free</p><p>Annual prize for student photographers. $2,000 first prize plus mentorship with Aline Smithson.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('student')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

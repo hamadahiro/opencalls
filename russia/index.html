@@ -82,7 +82,10 @@
       <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Russia. Browse and apply today.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/golden-turtle-international-wildlife-festival-2026/">Golden Turtle International Wildlife Festival 2026</a></h3><p>April 7, 2026 · Free</p><p>International wildlife competition in 12 categories. Finalists exhibited in Moscow, published in festival album.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +102,7 @@
       const data = await res.json();
 
       const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Russia').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
     } catch (e) {}

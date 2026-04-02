@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Alternative Processes. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/the-process-room-open-call-for-workshops-artworks-alternative-processes/">The Process Room - Open Call for Workshops &amp; Artworks &middot; Alternative Processes</a></h3><p>March 31, 2026 · PWYC</p><p>Workshops and artworks exploring alternative photographic processes. With Photobook Cafe.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Alternative Processes').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

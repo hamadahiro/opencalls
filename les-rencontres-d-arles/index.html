@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Les Rencontres d'Arles. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/luma-rencontres-dummy-book-award-2026/">LUMA Rencontres Dummy Book Award 2026</a></h3><p>May 13, 2026 · Free</p><p>€25,000 production budget for winning photobook dummy. Exhibited at Les Rencontres d'Arles 2026.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Les Rencontres d\'Arles').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

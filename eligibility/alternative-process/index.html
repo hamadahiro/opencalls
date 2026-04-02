@@ -82,7 +82,17 @@
       <h2 class="subtitle">Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/lt5-alternative-photography-show-kaleid-gallery/">LT5 Alternative Photography Show &middot; KALEID Gallery</a></h3><p>April 12, 2026 · Free</p><p>Toy cameras, Polaroid, pinhole, photograms, and alternative processes. Exhibition at KALEID Gallery, San Jose, CA.</p></div>
+      <div class="static-call-item"><h3><a href="/lucky-star-issue-5-camera-less/">Lucky Star Issue 5: Camera-Less</a></h3><p>April 27, 2026 · Free</p><p>SF indie zine exploring camera-less photography — pinhole, cyanotype, chemigram, photogram, lumen and more. Free to submit.</p></div>
+      <div class="static-call-item"><h3><a href="/denis-roussel-award-2026-rfotofolio/">Denis Roussel Award 2026 &middot; Rfotofolio</a></h3><p>June 27, 2026 · Free (donation optional)</p><p>For historical and alternative photographic processes including silver gelatin. $2,000 main award.</p></div>
+      <div class="static-call-item"><h3><a href="/world-cyanotype-day-alternativephotography-com/">World Cyanotype Day &middot; AlternativePhotography.com</a></h3><p>October 2, 2026 · Free</p><p>Annual international celebration of the cyanotype process. Submit your cyanotype work to be featured.</p></div>
+      <div class="static-call-item"><h3><a href="/world-anthotype-day-alternativephotography-com/">World Anthotype Day &middot; AlternativePhotography.com</a></h3><p>October 31, 2026 · Free</p><p>Annual celebration of plant-based photographic printing processes. Entries open August through October.</p></div>
+      <div class="static-call-item"><h3><a href="/contemporary-trends-in-beauty-alternative-processes-l-a-photo-curator/">Contemporary Trends in Beauty &middot; L.A. Photo Curator</a></h3><p>March 29, 2026 · $25</p><p>Handcrafted prints using alternative photographic processes. Final print must be handmade. No AI-generated images.</p></div>
+      <div class="static-call-item"><h3><a href="/colour-calendar-event-alternativephotography-com/">Colour Calendar Event &middot; AlternativePhotography.com</a></h3><p>March 31, 2026 · Free</p><p>Annual event inviting artists to introduce colour into monochrome alternative processes — cyanotype, chemigram, anthotype.</p></div>
+      <div class="static-call-item"><h3><a href="/outside-the-box-cameraless-photography-photosynthesis/">Outside the Box: Cameraless Photography &middot; PhotoSynthesis</a></h3><p>March 31, 2026 · $30</p><p>Photograms, chemigrams, lumen prints, cyanotypes, and composites blending camera and non-camera methods.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +108,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('alternative-process')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

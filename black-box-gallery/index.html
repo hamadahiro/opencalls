@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from Black Box Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/framed-black-and-white-black-box-gallery/">Framed: Black and White &middot; Black Box Gallery</a></h3><p>April 10, 2026 · $40</p><p>Juried black and white group show. Classic, nostalgic, and dynamic monochrome with diverse contemporary voices. Portland, OR.</p></div>
+      <div class="static-call-item"><h3><a href="/the-book-project-street-photography-black-box-gallery/">The Book Project - Street Photography &middot; Black Box Gallery</a></h3><p>May 25, 2026 · $40</p><p>Hardbound books each featuring 10 photographers. Sixth call focusing on street photography. Portland, OR.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Black Box Gallery').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

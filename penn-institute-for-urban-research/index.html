@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls and submission opportunities from Penn Institute for Urban Research. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/sharing-and-caring-cities-portraits-of-collective-urban-life-penn-institute-for-urban-research/">Sharing and Caring Cities: Portraits of Collective Urban Life &middot; Penn Institute for Urban Research</a></h3><p>April 15, 2026 · Free</p><p>10th annual contest exploring shared urban spaces addressing inequality and climate change.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Penn Institute for Urban Research').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

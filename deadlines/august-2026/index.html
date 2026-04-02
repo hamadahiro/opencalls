@@ -82,7 +82,12 @@
       <h2 class="subtitle">3 calls with deadlines in August 2026.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/tokyo-international-foto-award-2026/">Tokyo International Foto Award 2026</a></h3><p>August 1, 2026 · €15–€40</p><p>International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.</p></div>
+      <div class="static-call-item"><h3><a href="/milano-photo-awards-2026-thestreetsoup/">Milano Photo Awards 2026 &middot; TheStreetSoup</a></h3><p>August 15, 2026 · €20–€80</p><p>Exhibition and contest in Milan with Sebastiao Salgado tribute. Street, portraits, reportage, nature. Nikon Italia.</p></div>
+      <div class="static-call-item"><h3><a href="/aesthetica-art-prize-2026/">Aesthetica Art Prize 2026</a></h3><p>August 31, 2026 · £25</p><p>Contemporary art prize. Winners exhibited at major public gallery and published in Aesthetica Magazine.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -99,6 +104,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-08')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
     } catch (e) {}
     }

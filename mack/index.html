@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from MACK. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/mack-debut-photography-book-submissions-may-2026/">MACK — Debut Photography Book Submissions</a></h3><p>May 31, 2026 · Free</p><p>MACK's window for first-time photobook authors. One of the world's most prestigious photography publishers.</p></div>
+      <div class="static-call-item"><h3><a href="/mack-photography-submissions-june-2026/">MACK — Photography Submissions</a></h3><p>June 30, 2026 · Free</p><p>MACK's annual photography window. Prioritizes underrepresented voices in the photobook landscape.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'MACK').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

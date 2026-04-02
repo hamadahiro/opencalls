@@ -82,7 +82,11 @@
       <h2 class="subtitle">Open calls and submission opportunities from Dusk Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/city-photography-exhibit-dusk-photo-gallery/">CITY Photography Exhibit &middot; Dusk Gallery</a></h3><p>April 16, 2026 · $40–$45</p><p>Capturing personal urban experience from quiet moments to bustling energy. Santa Fe, NM.</p></div>
+      <div class="static-call-item"><h3><a href="/botanical-photography-exhibit-dusk-photo-gallery/">BOTANICAL Photography Exhibit &middot; Dusk Gallery</a></h3><p>March 26, 2026 · $40–$45</p><p>Beyond documentation — seeking character in a leaf, architecture in a seedpod. All styles welcome. Santa Fe, NM.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +102,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Dusk Gallery').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }

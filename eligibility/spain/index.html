@@ -82,7 +82,10 @@
       <h2 class="subtitle">Open calls restricted to photographers and artists born or based in Spain.</h2>
     </section>
 
-    <section class="calls-list" id="callsList"></section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/la-embajada-2026-el-local/">La Embajada 2026 &middot; El Local</a></h3><p>April 19, 2026 · Free</p><p>Six Spanish photographers exhibit at Rencontres d'Arles opening week. €1,400 each. Free, supported by Ministry of Culture.</p></div>
+
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -98,6 +101,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('spain')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
     }
