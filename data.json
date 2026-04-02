@@ -26,7 +26,8 @@
         "Francesca Chiacchio",
         "Latife Solak Baudet"
       ],
-      "dateAdded": "2026-04-02T03:27:49.065Z"
+      "dateAdded": "2026-04-02T03:27:49.065Z",
+      "resultsDate": "May 17, 2026"
     },
     {
       "title": "Abstract 2026",
@@ -102,6 +103,7 @@
       "location": "Arles, France",
       "prize": "€1,400 artist fee + exhibition",
       "eligibility": [
+        "18-plus",
         "spain"
       ],
       "submitVia": "Digital form",
@@ -3533,7 +3535,9 @@
       "instagram": "@centerphotographicart",
       "location": "Carmel-by-the-Sea, CA, USA",
       "prize": "$5,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Diane Chung, Founder, CHUNG 24 GALLERY",
         "Gregory Harris, Curator of Photography, High Museum of Art",
@@ -3580,20 +3584,22 @@
       "deadline": "2026-04-03",
       "fee": "$60",
       "category": "exhibition",
-      "description": "NYC's longest-running cooperative gallery awarding three solo shows. Portfolio: 10-15 images with consistent theme. No AI-generated work.",
+      "description": "NYC's longest-running cooperative gallery awarding three solo shows. Portfolio: 10-15 images with consistent theme. AI may assist but work must begin with real photographic image.",
       "url": "https://www.sohophoto.com/international-portfolio-competition/",
       "instagram": "@sohophotogallery",
       "location": "New York, NY, USA",
       "prize": "3 solo exhibitions",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "CaFE",
       "requirements": "10–15 images",
       "slug": "2026-international-portfolio-competition-soho-photo-gallery",
       "orgInTitle": false,
-      "ai": "Not accepted",
+      "ai": "Accepted",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16804",
-      "summary": "NYC's longest-running cooperative gallery awarding three solo shows. Portfolio of 10-15 images. No AI.",
+      "summary": "NYC's longest-running cooperative gallery awarding three solo shows. Portfolio of 10-15 images. AI assist OK.",
       "email": ""
     },
     {
@@ -3694,7 +3700,9 @@
       "instagram": "@sarajevophotographyfestival",
       "location": "Sarajevo, Bosnia and Herzegovina",
       "prize": "€2,000",
-      "eligibility": [],
+      "eligibility": [
+        "16-plus"
+      ],
       "jury": [
         "Simone Azzoni, Professor, Contemporary Art History",
         "Marko Drobnjaković, Documentary Photographer",
@@ -3712,7 +3720,8 @@
       "dateAdded": "2026-03-15",
       "requirements": "1–6 images",
       "submitUrl": "https://sarajevophotofest.com/spf-submit/",
-      "summary": "Opening week June 1-7. Grand Prix: €2,000. Canon-sponsored professional awards. Eight competition categories."
+      "summary": "Opening week June 1-7. Grand Prix: €2,000. Canon-sponsored professional awards. Eight competition categories.",
+      "email": ""
     },
     {
       "title": "Framed: Black and White",
@@ -3749,7 +3758,9 @@
       "instagram": "@riphotoarts",
       "location": "Providence, RI, USA",
       "prize": "$250",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Lou Jones, Photographer"
       ],
@@ -3932,7 +3943,7 @@
       "fee": "$25",
       "category": "exhibition",
       "description": "Twelve winners display professionally printed, matted, framed work for one month each from June 2026 to May 2027. Eastern Canada.",
-      "url": "https://www.viewpointgallery.ca/photocontest",
+      "url": "https://www.viewpointgallery.ca/photocompetition",
       "instagram": "@viewpointgalleryhfx",
       "location": "Halifax, Canada",
       "prize": "Exhibition",
@@ -4032,6 +4043,7 @@
       "prize": "$1,000",
       "eligibility": [],
       "submitVia": "Picter",
+      "email": "",
       "slug": "fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts",
       "orgInTitle": false,
       "resultsDate": "May 13, 2026",
@@ -4064,6 +4076,7 @@
       ],
       "submitVia": "Website form",
       "requirements": "5 or 10 images",
+      "email": "",
       "slug": "city-photography-exhibit-dusk-photo-gallery",
       "orgInTitle": false,
       "resultsDate": "~April 30, 2026",
@@ -5620,7 +5633,9 @@
       "instagram": "@hipaae",
       "location": "Dubai, United Arab Emirates",
       "prize": "$1,000,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "slug": "hipa-photography-award-2026-hamdan-bin-mohammed-bin-rashid-al-maktoum",
       "orgInTitle": false,
@@ -5679,7 +5694,7 @@
       "dateAdded": "2026-03-18",
       "requirements": "Up to 3 images",
       "email": "",
-      "resultsDate": "October 17, 2026",
+      "resultsDate": "Late July 2026",
       "summary": "Free-entry award celebrating LGBTQ+ diversity through nature photography. Prizes include exhibitions."
     },
     {
@@ -5733,7 +5748,7 @@
     {
       "title": "PX3 Prix de la Photographie Paris 2026",
       "org": "Prix de la Photographie Paris",
-      "deadline": "2026-07-22",
+      "deadline": "2026-07-25",
       "fee": "€20–€50",
       "category": "photography",
       "description": "One of Europe's most prestigious photography awards. Categories include Analog, Architecture, Book, Fine Art, Nature, Portraiture, Press, and Advertising. Winners exhibited in Paris and internationally.",
@@ -5804,7 +5819,9 @@
       "instagram": "@tokyofotoawards",
       "location": "Tokyo, Japan",
       "prize": "€3,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Hideko Kataoka, Photo Editor & Curator",
         "Mariama Attah, Curator",
@@ -6008,7 +6025,9 @@
       "instagram": "@blankwallgallery",
       "location": "Athens, Greece",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Email",
       "slug": "blank-wall-gallery-red",
       "orgInTitle": true,
