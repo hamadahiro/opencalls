@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-01",
+  "lastUpdated": "2026-04-02",
   "calls": [
     {
       "title": "Abstract 2026",
@@ -1167,7 +1167,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "resultsDate": "June 26, 2026",
-      "submitUrl": "https://fabula-works.com/opencall001",
+      "submitUrl": null,
       "summary": "Two photographers exhibit at Millepiani Gallery in Rome. No thematic restrictions. All costs covered.",
       "email": ""
     },
@@ -2028,7 +2028,9 @@
       "instagram": "@scantarragona",
       "location": "Tarragona, Spain",
       "prize": "€500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "JotForm",
       "requirements": "Up to 20 images",
       "slug": "scan-tarragona-talent-latent-2026",
@@ -6000,7 +6002,9 @@
       "instagram": "@blankwallgallery",
       "location": "Athens, Greece",
       "prize": "Solo exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "blank-wall-gallery-best-portfolio-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -6234,7 +6238,9 @@
       "instagram": "@carlottagallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "dark-frames-iii-carlotta-gallery",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -6254,7 +6260,9 @@
       "instagram": "@carlottagallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "flora-carlotta-gallery",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -6274,7 +6282,9 @@
       "instagram": "@carlottagallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "europe-carlotta-gallery",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -6294,7 +6304,9 @@
       "instagram": "@carlottagallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "candid-carlotta-gallery",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -6314,7 +6326,9 @@
       "instagram": "@carlottagallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "summer-carlotta-gallery",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -6739,7 +6753,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-19",
       "requirements": "Up to 8 images",
-      "submitUrl": "https://www.photoed.ca/callforphotography",
+      "submitUrl": null,
       "email": "",
       "summary": "Fine art projects engaging with what is real versus imagined. Published in print and digital editions."
     },
@@ -7106,23 +7120,24 @@
     {
       "title": "The Woman Artist Award — 6th Edition",
       "org": "Arts to Hearts Project",
-      "deadline": "2026-04-04",
+      "deadline": "2026-03-27",
       "fee": "$12",
       "category": "photography",
       "description": "Global contemporary art prize celebrating emerging and mid-career women artists. Open theme — any subject, style, or medium including painting, sculpture, photography, performance, installation, and digital art. Winner receives cash prize, engraved glass trophy, book feature interview, website spotlight, and Women in Arts Network membership. Runners-up receive trophies, interviews, and network features.",
       "url": "https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition",
       "instagram": "@artstoheartsproject",
       "location": "Online",
-      "prize": "$1,000 + publication",
+      "prize": "$500 + publication",
       "eligibility": [
-        "women"
+        "women",
+        "18-plus"
       ],
       "submitVia": "Website form",
       "slug": "the-woman-artist-award-6th-edition-arts-to-hearts-project",
       "orgInTitle": false,
       "dateAdded": "2026-03-21",
       "requirements": "Artwork images",
-      "submitUrl": "https://apply.artstoheartsproject.com/open-call/the-woman-artist-award-6th-edition",
+      "submitUrl": null,
       "summary": "Global art prize celebrating emerging and mid-career women artists. Open theme, any medium including photography.",
       "email": ""
     },
@@ -7566,7 +7581,9 @@
       "instagram": "@annualphotoawards",
       "location": "Online",
       "prize": "$2,500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "requirements": "1–8 images",
       "jury": [
@@ -7600,7 +7617,7 @@
       "slug": "annual-photography-awards-2026",
       "resultsDate": "February 21, 2027",
       "dateAdded": "2026-03-21",
-      "submitUrl": "https://annualphotoawards.com/",
+      "submitUrl": null,
       "summary": "8th edition. Five main categories, 25 subcategories. Looking for bold and innovative approaches."
     },
     {
@@ -7623,7 +7640,11 @@
       "resultsDate": "August 21, 2026",
       "dateAdded": "2026-03-21",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17147",
-      "summary": "Celebrating women in all complexities — presence, resilience, beauty, becoming. 100% commission-free sales."
+      "summary": "Celebrating women in all complexities — presence, resilience, beauty, becoming. 100% commission-free sales.",
+      "email": "",
+      "jury": [
+        "Amy Matteson Neill, Creative Director, Art Fluent"
+      ]
     },
     {
       "title": "Wider Skies Magazine — Issue 1",
@@ -8148,7 +8169,8 @@
         "Aspen Mays, Artist and Associate Professor/Chair of Photography, California College of the Arts"
       ],
       "summary": "Theme: \"A Little Bit of Magic\" — doubling, sleight of hand, constructed realities, illusion. Curated for Der Greif.",
-      "resultsDate": "April 24, 2026"
+      "resultsDate": "April 24, 2026",
+      "email": ""
     },
     {
       "title": "Photobook Feature — In Focus",
@@ -8410,7 +8432,11 @@
       "slug": "from-image-to-meaning-tirana-reporter-akademie",
       "orgInTitle": false,
       "summary": "3 full grants for a 7-day visual storytelling workshop in Tirana. Exhibition at Vila 31 x Art Explora. Projects pitched to editors.",
-      "dateAdded": "2026-03-31T12:48:21.365Z"
+      "dateAdded": "2026-03-31T12:48:21.365Z",
+      "jury": [
+        "Ilir Tsouko, Documentary Photographer/Filmmaker",
+        "Gabriel Proedl, Writer and Journalist"
+      ]
     },
     {
       "title": "Creative Capital Award 2027",
@@ -8546,7 +8572,9 @@
       "url": "https://bwphotoawards.com/en/",
       "location": "Online",
       "prize": "€1,500 absolute + €200 per category",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Joel Tjintjelaar, Photographer",
         "Julia Anna Gospodarou, Photographer",
@@ -8695,13 +8723,17 @@
       "url": "https://apply.workable.com/powerlines/j/243E093879/",
       "location": "Online",
       "prize": "$30,000 stipend",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Workable",
       "requirements": "20 images",
       "slug": "powerlines-documentary-photography-fellowship",
       "orgInTitle": true,
       "summary": "$30,000 documentary fellowship. Three months documenting the impact of rising utility costs on US communities.",
-      "dateAdded": "2026-04-01T23:11:49.610Z"
+      "dateAdded": "2026-04-01T23:11:49.610Z",
+      "instagram": "@powerlinesorg",
+      "email": ""
     }
   ]
 }
