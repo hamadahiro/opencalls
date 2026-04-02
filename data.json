@@ -52,7 +52,8 @@
       "slug": "the-photo-review-41st-annual-international-photography-competition",
       "orgInTitle": true,
       "summary": "41st edition. Juried by Dr. Sarah Kennel (VMFA). Exhibition at Woodmere Art Museum, Philadelphia. $1,000 purchase prize.",
-      "dateAdded": "2026-04-02T15:07:50Z"
+      "dateAdded": "2026-04-02T15:07:50Z",
+      "resultsDate": "June 30, 2026"
     },
     {
       "title": "Athens Street Photography Festival 2026",
@@ -263,7 +264,9 @@
       "instagram": "@ph21gallery",
       "location": "Barcelona, Spain",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Zsolt Bátori, Photographer & Philosophy of Art",
         "Borbála Jász, Art Historian & Philosophy of Art"
@@ -482,7 +485,9 @@
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Praxis Directors"
       ],
@@ -1872,6 +1877,9 @@
       "prize": "$2,000",
       "eligibility": [
         "alternative-process"
+      ],
+      "jury": [
+        "Christopher James, Professor, Lesley University College of Art and Design"
       ],
       "submitVia": "Email",
       "requirements": "7 images",
@@ -4871,8 +4879,8 @@
     {
       "title": "PhMuseum Days 2026 Open Call",
       "org": "PhMuseum",
-      "deadline": "2026-04-16",
-      "fee": "€18 early bird / €25",
+      "deadline": "2026-05-07",
+      "fee": "$28 early bird / $34",
       "category": "exhibition",
       "description": "International photo festival competition offering 4 solo exhibitions plus additional opportunities. All approaches welcome, including experimental.",
       "url": "https://phmuseum.com/grants/2026-phmuseum-days-photography-open-call",
@@ -5556,9 +5564,10 @@
       "prize": "$10,000",
       "eligibility": [],
       "jury": [
+        "Peter Eastway, Photographer (Chairman)",
         "Tom Hegen, Photographer",
-        "Tom Putt, Photographer",
-        "Isabella Tabacchi, Photographer"
+        "Isabella Tabacchi, Photographer",
+        "Joanna Steidle, Drone Photographer"
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
@@ -6715,6 +6724,7 @@
         "student"
       ],
       "submitVia": "Google Forms",
+      "requirements": "10 images",
       "slug": "lenscratch-student-prize-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-19",
@@ -7140,7 +7150,7 @@
       "url": "https://www.egideartes.pt/luzsombra",
       "instagram": "@ensaio.pt",
       "location": "Online",
-      "prize": "€3,000",
+      "prize": "€3,000 + €2,000 + €1,000",
       "eligibility": [
         "portugal"
       ],
