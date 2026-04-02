@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Entry Fee 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
-  <meta name="keywords" content="free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/fees/">
+  <title>Open Calls for Artists in Portugal 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.">
+  <meta name="keywords" content="open calls Portugal, call for entries Portugal, photography opportunities Portugal, art exhibitions Portugal, photography grants Portugal, artist residency Portugal">
+  <link rel="canonical" href="https://opencalls.monographica.com/portugal/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Entry Fee 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
+  <meta property="og:title" content="Open Calls for Artists in Portugal 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/fees/">
+  <meta property="og:url" content="https://opencalls.monographica.com/portugal/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Entry Fee 2026",
-  "description": "Browse open calls by entry fee.",
-  "url": "https://opencalls.monographica.com/fees/",
+  "name": "Open Calls for Artists in Portugal 2026",
+  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.",
+  "url": "https://opencalls.monographica.com/portugal/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -77,24 +77,15 @@
 
   <main>
     <section class="hero">
-      <h1>Fees</h1>
-      <h2 class="subtitle">Browse open calls by entry fee. Find free submissions or paid competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
+      <h1>Open Calls for Artists in Portugal</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-      <a href="/fees/free/" class="index-item">
-        <span class="index-item-name">Free to Enter</span>
-        <span class="dots"></span>
-        <span class="index-item-count">110</span>
-      </a>
-      <a href="/fees/entry-fee/" class="index-item">
-        <span class="index-item-name">Entry Fee</span>
-        <span class="dots"></span>
-        <span class="index-item-count">128</span>
-      </a>
-    </section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/lisbon-street-photo-fest-open-call-2026/">Lisbon Street Photo Fest: Open Call 2026</a></h3><p>May 31, 2026 · €10/image, €40/series</p><p>2nd edition. Street photography Singles &amp; Series. €4,000 in prizes. Exhibition in Lisbon, Sept 25–27.</p></div>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -104,6 +95,20 @@
 
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Portugal').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
