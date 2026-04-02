@@ -1640,6 +1640,7 @@ manualFiles.forEach(file => {
 });
 
 // Warn about stale HTML files (never auto-delete — pages may be indexed/bookmarked)
+// Fix noindex on stale pages — Google flags these as "Excluded by noindex tag"
 const staleFiles = [];
 function findStale(dir) {
   if (!fs.existsSync(dir)) return;
@@ -1654,6 +1655,25 @@ function findStale(dir) {
   });
 }
 findStale('.');
+let fixedNoindex = 0;
+staleFiles.forEach(f => {
+  let html = fs.readFileSync(f, 'utf8');
+  // Remove noindex from redirect pages and ended-call pages (404.html is excluded via MANUAL_FILES)
+  if (html.includes('<meta name="robots" content="noindex">')) {
+    // For redirect pages (meta refresh): remove the noindex line entirely — canonical handles SEO
+    if (html.includes('http-equiv="refresh"')) {
+      html = html.replace(/\s*<meta name="robots" content="noindex">\n?/, '\n');
+    } else {
+      // For ended-call pages: replace noindex with index,follow
+      html = html.replace('<meta name="robots" content="noindex">', '<meta name="robots" content="index, follow">');
+    }
+    fs.writeFileSync(f, html);
+    fixedNoindex++;
+  }
+});
+if (fixedNoindex > 0) {
+  console.log(`  Fixed noindex on ${fixedNoindex} stale page(s)`);
+}
 if (staleFiles.length) {
   console.warn(`\n⚠️  ${staleFiles.length} HTML file(s) not generated this run (NOT deleted — review manually):`);
   staleFiles.forEach(f => console.warn(`   ${f}`));
