@@ -2199,7 +2199,9 @@
       "instagram": "@the_eden_arts_foundation",
       "location": "New York, NY, USA",
       "prize": "$3,000",
-      "eligibility": [],
+      "eligibility": [
+        "25-plus"
+      ],
       "jury": [
         "Carmen Hermo, Curator of Contemporary Art, Museum of Fine Arts Boston",
         "Elena Ketelsen González, Associate Curator, MoMA PS1"
@@ -4323,7 +4325,7 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
       "submitVia": "Smarter Entry",
-      "submitUrl": "https://www.smarterentry.com/CallsForEntry/CapeCodArt",
+      "submitUrl": "https://client.smarterentry.com/CapeCodArt",
       "ai": "Not accepted",
       "requirements": "Up to 2 images",
       "resultsDate": "May 29, 2026",
@@ -4484,7 +4486,8 @@
       "resultsDate": "July 2, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16850",
-      "summary": "Exploring water — oceans, rain, rivers, puddles. Online exhibition. Boston, MA."
+      "summary": "Exploring water — oceans, rain, rivers, puddles. Online exhibition. Boston, MA.",
+      "email": ""
     },
     {
       "title": "BOTANICALS",
@@ -5439,8 +5442,22 @@
         "Steve McCurry, Photojournalist",
         "Ron Haviv, Co-Founder, VII Foundation",
         "Natasha Egan, Executive Director, MoCP",
-        "Alex Pollack, Director of Photography, National Geographic"
+        "Alex Pollack, Director of Photography, National Geographic",
+        "Magdalena Herrera, Art Director & Photo Editor",
+        "Alexia Singh, Senior Lecturer, London College of Communication",
+        "Elizabeth Krist, Visual Thinking Collective",
+        "Mike Davis, Visual Storytelling Consultant",
+        "Pia Peterson Haggarty, Photo Director, Lonely Planet",
+        "Sarah Gilbert, Features Photo Editor, The Guardian",
+        "Sandra M. Stevenson, Writer & Visual Editor",
+        "Jim Powell, Photo Editor, The Guardian",
+        "Tara Pixley, Professor of Journalism, Loyola Marymount University",
+        "Paolo Pellegrin, Photojournalist",
+        "Alison Nordstrom, Independent Curator & Historian of Photography",
+        "Ismail Ferdous, Photographer & Filmmaker",
+        "Svetlana Bachevanova, Director, FotoEvidence"
       ],
+      "ai": "Not accepted",
       "submitVia": "Website form",
       "requirements": "1–10 images",
       "slug": "photo-journalism-prize-2026",
@@ -5574,8 +5591,7 @@
       "location": "Paris, France",
       "prize": "€10,000",
       "eligibility": [
-        "women",
-        "professional"
+        "women"
       ],
       "jury": [
         "Damarice Amao, Centre Pompidou",
@@ -6304,7 +6320,8 @@
         "Leo Rongone, Photographer & CEO, Moncler"
       ],
       "submitUrl": "https://site.picter.com/hariban-award-2026",
-      "summary": "International collotype competition. Grand Prize: two-week residency in Kyoto with master collotype printers."
+      "summary": "International collotype competition. Grand Prize: two-week residency in Kyoto with master collotype printers.",
+      "email": ""
     },
     {
       "title": "Dark Frames III — Carlotta Gallery",
@@ -6463,6 +6480,9 @@
       "requirements": "1 image",
       "resultsDate": "December 2026",
       "submitUrl": "https://beautifulbizarreartprize.art/enter-beautiful-bizarre-art-prize/entry-photography/",
+      "jury": [
+        "Franz Szony, Photographer"
+      ],
       "summary": "Representational photography. $3,000 first prize + exhibition at Modern Eden Gallery, San Francisco. No AI.",
       "email": ""
     },
@@ -8324,7 +8344,16 @@
         "Hugh Dennis, Comedian & Actor",
         "Will Burrard-Lucas, Wildlife Photographer",
         "Daisy Gilardini, Wildlife Photographer",
-        "Charlie Hamilton James, Wildlife Photographer"
+        "Charlie Hamilton James, National Geographic Photographer",
+        "Stuart Goldsmith, Climate Comedian & Speaker",
+        "Jamie Smart, Wildlife Photographer",
+        "Cam Whitnall, Wildlife Photographer & TV Presenter",
+        "Roxy Furman, Wildlife Filmmaker & Photographer",
+        "Will Travers OBE, Born Free Foundation",
+        "Bella Lack, Conservationist & Author",
+        "Luke Inman, Underwater Photographer & Filmmaker",
+        "Hannah Stitfall, Wildlife Filmmaker & TV Presenter",
+        "Charlotte Kemsley, Regional Director, Nikon"
       ],
       "submitVia": "Official website",
       "requirements": "Up to 10 images",

@@ -67,6 +67,7 @@ const eligibilityLabel = {
   '16-plus': '16+',
   '18-plus': '18+',
   '21-plus': '21+',
+  '25-plus': '25+',
   'student': 'Students'
 };
 
