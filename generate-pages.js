@@ -630,6 +630,7 @@ const eligibilityGroups = {
   'mid-atlantic-us': { short: 'Mid-Atlantic US', title: 'Mid-Atlantic US Open Calls', desc: 'Open calls restricted to photographers in the Mid-Atlantic region — Maryland, Virginia, West Virginia, Pennsylvania, and Washington DC.' },
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
   'spain': { short: 'Spain', title: 'Spain-Only Open Calls', desc: 'Open calls restricted to photographers and artists born or based in Spain.' },
+  '16-plus': { short: '16+', title: 'Open Calls Requiring 16+', desc: 'Open calls restricted to photographers and artists aged 16 or older.' },
   '18-plus': { short: '18+', title: 'Open Calls Requiring 18+', desc: 'Open calls restricted to photographers and artists aged 18 or older.' },
   '21-plus': { short: '21+', title: 'Open Calls Requiring 21+', desc: 'Open calls restricted to photographers and artists aged 21 or older.' },
   'student': { short: 'Students', title: 'Open Calls for Students', desc: 'Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.' }
@@ -709,7 +710,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'student', 'professional', 'under-30', 'under-35', 'under-40', '18-plus', '21-plus', '10-18'] },
+  { heading: 'Who Can Apply', tags: ['women', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '10-18'] },
   { heading: 'Where', tags: ['united-states', 'alaska', 'mid-atlantic-us', 'europe', 'australia', 'germany', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'latin-america', 'puerto-rico', 'south-asian'] },

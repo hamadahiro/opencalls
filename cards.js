@@ -64,6 +64,7 @@ const eligibilityLabel = {
   'mid-atlantic-us': 'Mid-Atlantic US',
   'alaska': 'Alaska only',
   'spain': 'Spain only',
+  '16-plus': '16+',
   '18-plus': '18+',
   '21-plus': '21+',
   'student': 'Students'
