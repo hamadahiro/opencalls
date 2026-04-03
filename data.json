@@ -33,7 +33,9 @@
       "instagram": "@lisbonstreet.photo",
       "location": "Lisbon, Portugal",
       "prize": "€4,000 + exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Picter",
       "requirements": "1 image or 10–15 images",
       "slug": "lisbon-street-photo-fest-open-call-2026",
@@ -47,7 +49,7 @@
         "Rui Palha, Street Photographer"
       ],
       "ai": "Not accepted",
-      "submitUrl": "https://site.picter.com/lisbon-street-photo-fest-2026",
+      "submitUrl": "https://app.picter.com/contests/84786731-2818-4653-96e3-ab0ea97ee51f/start",
       "resultsDate": "July 2026",
       "email": "",
       "dateAdded": "2026-04-02T12:49:02.951Z"
@@ -189,7 +191,9 @@
       "dateAdded": "2026-04-01T11:11:51.546Z",
       "jury": [
         "TBA (announced via @embajada.arles)"
-      ]
+      ],
+      "email": "",
+      "submitUrl": "https://forms.gle/jRVv1iifGDPmd5XNA"
     },
     {
       "title": "APhF Pick:26 Book Award",
@@ -214,7 +218,7 @@
       "email": "",
       "slug": "aphf-pick-26-book-award",
       "orgInTitle": true,
-      "resultsDate": "June 2026",
+      "resultsDate": "June 16, 2026",
       "summary": "Photobook award from Athens Photo Festival. €2,000 prize. 20 shortlisted exhibited at Benaki Museum. Min 100-copy edition.",
       "dateAdded": "2026-04-01T03:11:24Z"
     },
@@ -554,7 +558,7 @@
     {
       "title": "Delfina Foundation — Latin America & Caribbean Residency 2026",
       "org": "Delfina Foundation",
-      "deadline": "2026-04-06",
+      "deadline": "2026-04-13",
       "fee": "Free",
       "category": "residency",
       "description": "Twelve-week fully funded residency at the Delfina Foundation in London, supported by Jorge M. Pérez and El Espacio 23. Open to visual artists based in Latin America, the Caribbean, and related diasporic communities in the United States. Artists from Chile, Peru, Ecuador, Brazil, and Argentina are not eligible for this cycle (these countries received dedicated residencies in prior years). Two artists will be selected from this call: one for the autumn 2026 residency (September 21 – December 13) and one for the winter 2027 residency (January 5 – March 25). Apply via Cognito Forms with completed application form — read the Guidance Notes document before applying.",
@@ -4099,7 +4103,8 @@
       "resultsDate": "May 22, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://themontgomeryphotofestival2026.artcall.org",
-      "summary": "Eighth annual festival. Four categories: Color, Monochromatic, Alternative process, Manipulation. No theme."
+      "summary": "Eighth annual festival. Four categories: Color, Monochromatic, Alternative process, Manipulation. No theme.",
+      "email": ""
     },
     {
       "title": "LUMINOSITY - The Impact of Light",
@@ -4726,13 +4731,13 @@
       "title": "IX International Mini Print Cantabria 2026",
       "org": "International Mini Print Cantabria",
       "deadline": "2026-07-31",
-      "fee": "€45–€65",
+      "fee": "€35–€65",
       "category": "exhibition",
       "description": "Theme: Open Sea — Reality, imagination and poetics. All printmaking disciplines including digital prints and monotype. Max image/paper: 20x20 cm. Cantabria, Spain.",
       "url": "https://www.miniprintcantabria.es/en/ix-mini-print-2026",
       "instagram": "@minimiranda",
       "location": "Cantabria, Spain",
-      "prize": "Exhibition",
+      "prize": "€4,000",
       "eligibility": [],
       "jury": [
         "Carinna Parraman, Professor, University of the West of England Bristol",
@@ -4746,7 +4751,8 @@
       "dateAdded": "2026-03-15",
       "requirements": "Up to 3 prints",
       "submitUrl": "https://www.miniprintcantabria.es/en/ix-mini-print-2026",
-      "summary": "Theme: Open Sea. All printmaking disciplines including digital. Max 20x20 cm. Cantabria, Spain."
+      "summary": "Theme: Open Sea. All printmaking disciplines including digital. Max 20x20 cm. Cantabria, Spain.",
+      "email": ""
     },
     {
       "title": "Photobook Open Call 2026",
@@ -5108,7 +5114,8 @@
       "resultsDate": "After May 1, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16878",
-      "summary": "Outdoor public art exhibition in Winchester, MA. Theme: advocacy and social justice. Juror: Elizabeth Krist (Nat Geo)."
+      "summary": "Outdoor public art exhibition in Winchester, MA. Theme: advocacy and social justice. Juror: Elizabeth Krist (Nat Geo).",
+      "email": ""
     },
     {
       "title": "Griffin Museum — Self Published Photobook Exhibition 2026",
@@ -5887,7 +5894,7 @@
     {
       "title": "PX3 Prix de la Photographie Paris 2026",
       "org": "Prix de la Photographie Paris",
-      "deadline": "2026-07-25",
+      "deadline": "2026-07-22",
       "fee": "€20–€50",
       "category": "photography",
       "description": "One of Europe's most prestigious photography awards. Categories include Analog, Architecture, Book, Fine Art, Nature, Portraiture, Press, and Advertising. Winners exhibited in Paris and internationally.",
@@ -5906,7 +5913,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "requirements": "1–9 images",
-      "submitUrl": "https://px3.fr/submit/",
+      "submitUrl": "https://px3.fr/submit/register.php",
       "summary": "One of Europe's most prestigious awards. Categories from Analog to Advertising. Exhibited in Paris.",
       "email": ""
     },
@@ -6238,7 +6245,14 @@
       "submitVia": "Website form",
       "submitUrl": "https://daylightphotoawards.com/guidelines",
       "summary": "Competition recognizing outstanding work. Top prize includes cash and digital portfolio. Monograph opportunity.",
-      "email": ""
+      "email": "",
+      "jury": [
+        "Mike Kamber, Bronx Documentary Center",
+        "Hideko Kataoka, Newsweek Japan",
+        "Tif Ng, Magnum Foundation",
+        "Momo Takahashi, The New Yorker",
+        "James Wellford, National Geographic"
+      ]
     },
     {
       "title": "Fotografiska HOME — Global Open Call",
@@ -7869,7 +7883,8 @@
       "dateAdded": "2026-03-21",
       "submitUrl": "https://tally.so/r/1ArL5l",
       "summary": "New magazine exploring speculative futurism through film photography. Free Kodak film available for those who need it.",
-      "email": ""
+      "email": "",
+      "resultsDate": "May 2026"
     },
     {
       "title": "Atlas of Ruins Vol.3 — Call for Photos",
@@ -8960,7 +8975,7 @@
       "description": "Annual international award recognizing photographs that express the idea of peaceful coexistence. Open to all photographers worldwide. Winners receive the Alfred Fried Peace Medal, cash prizes, and travel and accommodation to the award ceremony at the Austrian Parliament in Vienna (September 24, 2026). Submissions may be single photographs or photo projects with up to 12 images per project. All submissions may be included in international exhibitions. Separate Children's Peace Image category for photographers under 15.",
       "url": "https://globalpeacephotoaward.org/",
       "location": "Vienna, Austria",
-      "prize": "€11,000 total (€6,000 first prize + category prizes)",
+      "prize": "€11,000",
       "eligibility": [],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/global-peace-photo-award-2026",
@@ -8968,7 +8983,10 @@
       "slug": "global-peace-photo-award-2026",
       "orgInTitle": false,
       "summary": "Free award for photos of peaceful coexistence. €11,000 in prizes, Alfred Fried Peace Medal, Vienna ceremony.",
-      "resultsDate": "July 17, 2026",
+      "resultsDate": "September 24, 2026",
+      "email": "",
+      "ai": "Not accepted",
+      "instagram": "@globalpeacephotoaward",
       "dateAdded": "2026-04-03T15:33:44.038Z"
     },
     {
@@ -8987,6 +9005,8 @@
       "orgInTitle": false,
       "summary": "Six $10,000 grants for photography projects exploring family. Unrestricted funding for journalistic, artistic, or educational work.",
       "email": "",
+      "instagram": "@workingassumptions",
+      "resultsDate": "September 2026",
       "dateAdded": "2026-04-03T15:33:44.038Z"
     }
   ]
