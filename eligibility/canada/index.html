@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Entry Fee 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
-  <meta name="keywords" content="free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/fees/">
+  <title>Canada-Only Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.">
+  <meta name="keywords" content="Canada open calls, Canada photography, call for entries Canada, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/canada/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Entry Fee 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
+  <meta property="og:title" content="Canada-Only Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/fees/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/canada/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Entry Fee 2026",
-  "description": "Browse open calls by entry fee.",
-  "url": "https://opencalls.monographica.com/fees/",
+  "name": "Canada-Only Open Calls 2026",
+  "description": "Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.",
+  "url": "https://opencalls.monographica.com/eligibility/canada/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -77,24 +77,15 @@
 
   <main>
     <section class="hero">
-      <h1>Fees</h1>
-      <h2 class="subtitle">Browse open calls by entry fee. Find free submissions or paid competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Canada-Only Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-      <a href="/fees/free/" class="index-item">
-        <span class="index-item-name">Free to Enter</span>
-        <span class="dots"></span>
-        <span class="index-item-count">111</span>
-      </a>
-      <a href="/fees/entry-fee/" class="index-item">
-        <span class="index-item-name">Entry Fee</span>
-        <span class="dots"></span>
-        <span class="index-item-count">130</span>
-      </a>
-    </section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/barbara-spohr-memorial-award-for-photography-2027/">Barbara Spohr Memorial Award for Photography 2027 &middot; Banff Centre for Arts and Creativity</a></h3><p>June 17, 2026 · $35 CAD</p><p>Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.</p></div>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -104,6 +95,18 @@
 
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('canada')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>

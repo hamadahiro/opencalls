@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-02",
+  "lastUpdated": "2026-04-03",
   "calls": [
     {
       "title": "EMERGE 2026",
@@ -9008,6 +9008,26 @@
       "instagram": "@workingassumptions",
       "resultsDate": "September 2026",
       "dateAdded": "2026-04-03T15:33:44.038Z"
+    },
+    {
+      "title": "Barbara Spohr Memorial Award for Photography 2027",
+      "org": "Banff Centre for Arts and Creativity",
+      "deadline": "2026-06-17",
+      "fee": "$35 CAD",
+      "category": "residency",
+      "description": "Annual award supporting Canadian contemporary photography. One mid-career photographer receives a fully funded month-long self-directed residency at Banff Centre (January 18 – February 12, 2027). Access to the Crich Studio with private black and white analogue darkroom, facilitated digital print production, and technical photography support. Full scholarship covering tuition, single accommodation, and meal plan ($7,600 CAD value). $1,000 CAD materials allowance plus travel bursary. Applicants must have a minimum of ten exhibitions in a professional context and 8–15 years of professional arts experience.",
+      "url": "https://www.banffcentre.ca/barbara-spohr-memorial-award",
+      "location": "Banff, Alberta, Canada",
+      "prize": "Full residency ($7,600 CAD) + $1,000 CAD materials + travel bursary",
+      "instagram": "@banffcentre",
+      "eligibility": ["canada", "18-plus"],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.banffcentre.ca/programs/leighton-artists-studios-visual-arts/barbara-spohr-memorial-award-photography-2027",
+      "requirements": "10 work samples",
+      "slug": "barbara-spohr-memorial-award-for-photography-2027",
+      "orgInTitle": false,
+      "summary": "Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.",
+      "dateAdded": "2026-04-03T19:09:00Z"
     }
   ]
 }
