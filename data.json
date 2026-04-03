@@ -461,7 +461,8 @@
       "location": "Perpignan, France",
       "prize": "€8,000",
       "eligibility": [
-        "women"
+        "women",
+        "professional"
       ],
       "submitVia": "Official website",
       "requirements": null,
@@ -497,7 +498,8 @@
       "orgInTitle": false,
       "summary": "For Black photographers exploring resilience, heritage, joy, and identity. Exhibition in Columbia, SC. Juried by Arnika Dawkins.",
       "dateAdded": "2026-03-27T12:16:37.465Z",
-      "submitUrl": "https://client.smarterentry.com/photosc"
+      "submitUrl": "https://client.smarterentry.com/photosc",
+      "email": ""
     },
     {
       "title": "ANIMAL LIFE",
@@ -1901,7 +1903,7 @@
     {
       "title": "Denis Roussel Award 2026",
       "org": "Rfotofolio",
-      "deadline": "2026-06-27",
+      "deadline": "2026-06-07",
       "fee": "Free (donation optional)",
       "category": "photography",
       "description": "For photographers working with historical and alternative photographic processes including silver gelatin. Submit 7 images and statement. $2,000 main award plus merit awards. Portfolio review prize included.",
@@ -1918,7 +1920,7 @@
       "submitVia": "Email",
       "requirements": "7 images",
       "ai": "Not accepted",
-      "resultsDate": "August 2026",
+      "resultsDate": "July 19, 2026",
       "slug": "denis-roussel-award-2026-rfotofolio",
       "orgInTitle": false,
       "dateAdded": "2026-03-16",
@@ -2222,7 +2224,9 @@
       "instagram": "@suboartmagazine",
       "location": "Online",
       "prize": "Publication",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Email",
       "requirements": "Up to 6 images",
       "ai": "Not accepted",
@@ -2361,7 +2365,9 @@
       "instagram": "@life_framer",
       "location": "Online",
       "prize": "$2,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Jimmy Marble, Photographer & Creative Director"
       ],
@@ -2387,7 +2393,9 @@
       "instagram": "@life_framer",
       "location": "Online",
       "prize": "$2,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Robin Hammond, National Geographic Explorer & Documentary Photographer"
       ],
@@ -2837,7 +2845,9 @@
       "instagram": "@chateau_gallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "requirements": "Up to 3 images",
       "ai": "Not accepted",
@@ -2845,7 +2855,7 @@
       "orgInTitle": false,
       "resultsDate": "April 27, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://chateaugallery.com/call-for-entries/",
+      "submitUrl": "https://chateaugallery.com/call-for-entries/the-narrative-2026",
       "summary": "International open call for all forms of two-dimensional images, traditional and non-conventional media.",
       "email": ""
     },
@@ -3713,7 +3723,9 @@
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Elizabeth Flinsch, Editor, SHOTS Magazine"
       ],
@@ -3876,7 +3888,7 @@
     {
       "title": "Queer Conscience 2026 Photography Exhibition",
       "org": "The Image Flow",
-      "deadline": "2026-04-04",
+      "deadline": "2026-04-11",
       "fee": "$40",
       "category": "exhibition",
       "description": "4th annual for LGBTQIA2+ community. Seeking work affirming our own truths and expressing resistance during Pride month. Mill Valley, CA.",
@@ -4197,7 +4209,8 @@
       "location": "Online",
       "prize": "Film grant + publication",
       "eligibility": [
-        "united-states"
+        "united-states",
+        "18-plus"
       ],
       "submitVia": "CaFE",
       "requirements": "1–15 images",
@@ -4302,7 +4315,9 @@
       "instagram": "@exposureone.awards",
       "location": "Online",
       "prize": "$4,000+",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Beatrice Tamagnini, Vogue",
         "Lindsey Sharman, Art Gallery of Alberta",
@@ -4312,13 +4327,14 @@
       ],
       "submitVia": "Exposure One Awards",
       "requirements": "1–5 images",
-      "ai": "Not accepted",
+      "ai": null,
       "slug": "exposure-one-awards-one-shot-photo-contest",
       "orgInTitle": true,
-      "resultsDate": "June 15, 2026",
+      "resultsDate": "May 27, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://exposureoneawards.com/contests/one-shot-photo-contest",
-      "summary": "Black and white photography celebration. Cash prizes, digital gallery, and artist directory placement."
+      "summary": "Black and white photography celebration. Cash prizes, digital gallery, and artist directory placement.",
+      "email": ""
     },
     {
       "title": "The Hopper Prize Grants",
@@ -5167,7 +5183,7 @@
       "slug": "siena-creative-photo-awards-2026",
       "orgInTitle": true,
       "ai": "Not accepted",
-      "resultsDate": "September 27, 2026",
+      "resultsDate": "October 10, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://contest.sienawards.com/login?target=creative",
       "summary": "International contest rewarding originality across 8 categories. Winners honored at ceremony in Siena's Teatro dei Rinnovati.",
@@ -5185,17 +5201,19 @@
       "location": "Paris, France",
       "prize": "Exhibition",
       "eligibility": [
-        "women"
+        "women",
+        "18-plus"
       ],
       "submitVia": "Website form",
-      "requirements": "10 images",
+      "requirements": "Up to 10 images",
       "slug": "objectif-femmes-2026-parisartistes",
       "orgInTitle": false,
       "ai": "Not accepted",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.objectif-femmes.art/event/appel-a-candidatures-2026-2/register",
       "summary": "Open call for female photographers exploring the bicentennial of photography. Exhibition at Salons Aguado in Paris.",
-      "email": ""
+      "email": "",
+      "resultsDate": "November 10, 2026"
     },
     {
       "title": "Counter Histories Puerto Rico",
@@ -5232,7 +5250,9 @@
       "instagram": "@gspawards",
       "location": "Online",
       "prize": "$1,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
       "slug": "golden-shot-international-photography-awards-2026",
@@ -5286,13 +5306,13 @@
       "title": "Street Photography Barcelona Contest 2026",
       "org": "Street Photography Barcelona",
       "deadline": "2026-04-15",
-      "fee": "€10–€40",
+      "fee": "Free",
       "category": "photography",
       "description": "International street photography contest seeking authentic images of urban life. Three geographic categories: Local (Barcelona), National (Spain), and International. 25 finalists exhibited at Galerie Art Nomade, Barcelona.",
       "url": "https://www.streetphotographybarcelona.com/en/rules",
       "instagram": "@streetphotography.barcelona",
       "location": "Barcelona, Spain",
-      "prize": "€1,000",
+      "prize": "€1,500",
       "eligibility": [],
       "jury": [
         "Xavi Herrero, Festival Director",
@@ -5302,11 +5322,11 @@
       "email": "",
       "slug": "street-photography-barcelona-contest-2026",
       "orgInTitle": true,
-      "resultsDate": "May 1, 2026",
+      "resultsDate": "May 7, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://site.picter.com/street-photography-barcelona-2026",
       "requirements": "1–5 images",
-      "ai": "Not accepted",
+      "ai": null,
       "summary": "Authentic images of urban life. Three categories: Local, National, International. Exhibited at Galerie Art Nomade."
     },
     {
@@ -5320,7 +5340,9 @@
       "instagram": "@appenninofotofestival",
       "location": "Marche, Italy",
       "prize": "€3,900",
-      "eligibility": [],
+      "eligibility": [
+        "16-plus"
+      ],
       "submitVia": "Website form",
       "ai": "Dedicated category",
       "email": "",
@@ -5328,7 +5350,7 @@
       "orgInTitle": false,
       "resultsDate": "Autumn 2026",
       "dateAdded": "2026-03-18",
-      "requirements": "25 images",
+      "requirements": "Up to 25 images",
       "submitUrl": "https://pci.jotform.com/form/260132802964353",
       "jury": [
         "Alessandro Bergamini, Photographer",
@@ -5459,7 +5481,9 @@
       "instagram": "@londonphotographyawards",
       "location": "London, United Kingdom",
       "prize": "$3,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "slug": "london-photography-awards-2026-international-awards-associate",
       "orgInTitle": false,
@@ -5505,7 +5529,7 @@
       "url": "https://photojournalismprize.com/",
       "instagram": "@photojournalismprize",
       "location": "Online",
-      "prize": "€5,000",
+      "prize": "€5,000 + €3,000 + €1,000",
       "eligibility": [],
       "jury": [
         "Jim Colton, Editor at Large, ZUMA Press Wire",
@@ -5573,7 +5597,9 @@
       "instagram": "@landskronafoto",
       "location": "Landskrona, Sweden",
       "prize": "Publication",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Picter",
       "requirements": "1 PDF",
       "slug": "landskrona-foto-breadfield-dummy-award-2026",
@@ -6416,9 +6442,9 @@
       "ai": "Accepted",
       "slug": "hariban-award-2026-benrido",
       "orgInTitle": false,
-      "resultsDate": "Early September 2026",
+      "resultsDate": "September 15, 2026",
       "dateAdded": "2026-03-22",
-      "requirements": "8–12 images",
+      "requirements": "12 images",
       "jury": [
         "Diane Dufour, Founder & Artistic Director, LE BAL Paris",
         "Erin O'Toole, Curator & Head of Photography, SFMOMA",
@@ -6682,7 +6708,8 @@
       "dateAdded": "2026-03-18",
       "requirements": "1 image per category",
       "submitUrl": "https://www.jalonangel.com/premio",
-      "summary": "Three categories: Portrait, Travel, Migration & Borders. One photo per category. No AI. Zaragoza, Spain."
+      "summary": "Three categories: Portrait, Travel, Migration & Borders. One photo per category. No AI. Zaragoza, Spain.",
+      "email": ""
     },
     {
       "title": "Bethany Arts Community — Fall Multidisciplinary Residency 2026",
@@ -8472,7 +8499,8 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-25T18:19:00Z",
       "submitUrl": "https://www.comedywildlifephoto.com/login.php",
-      "summary": "Celebrating the funniest moments in wildlife photography. Free entry. Grand prize: Kenya safari for two."
+      "summary": "Celebrating the funniest moments in wildlife photography. Free entry. Grand prize: Kenya safari for two.",
+      "email": ""
     },
     {
       "title": "FLORA — Shutter Hub Editions Publication",
@@ -8885,7 +8913,9 @@
       "instagram": "@riphotoarts",
       "location": "Providence, RI, USA",
       "prize": "$250 / $150 / $75",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Crista Dix, Executive Director, Griffin Museum of Photography"
       ],
@@ -9018,16 +9048,20 @@
       "description": "Annual award supporting Canadian contemporary photography. One mid-career photographer receives a fully funded month-long self-directed residency at Banff Centre (January 18 – February 12, 2027). Access to the Crich Studio with private black and white analogue darkroom, facilitated digital print production, and technical photography support. Full scholarship covering tuition, single accommodation, and meal plan ($7,600 CAD value). $1,000 CAD materials allowance plus travel bursary. Applicants must have a minimum of ten exhibitions in a professional context and 8–15 years of professional arts experience.",
       "url": "https://www.banffcentre.ca/barbara-spohr-memorial-award",
       "location": "Banff, Alberta, Canada",
-      "prize": "Full residency ($7,600 CAD) + $1,000 CAD materials + travel bursary",
+      "prize": "$1,000 CAD + residency",
       "instagram": "@banffcentre",
-      "eligibility": ["canada", "18-plus"],
+      "eligibility": [
+        "canada",
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.banffcentre.ca/programs/leighton-artists-studios-visual-arts/barbara-spohr-memorial-award-photography-2027",
-      "requirements": "10 work samples",
+      "requirements": "Up to 10 images",
       "slug": "barbara-spohr-memorial-award-for-photography-2027",
       "orgInTitle": false,
       "summary": "Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.",
-      "dateAdded": "2026-04-03T19:09:00Z"
+      "dateAdded": "2026-04-03T19:09:00Z",
+      "email": ""
     }
   ]
 }
