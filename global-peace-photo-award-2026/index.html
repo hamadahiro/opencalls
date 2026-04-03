@@ -92,7 +92,7 @@
         <a href="https://globalpeacephotoaward.org/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
         <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
       </div>
-
+      <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/globalpeacephotoaward" target="_blank" rel="nofollow noopener">@globalpeacephotoaward</a></div>
     </section>
 
     <section class="related-calls">
@@ -107,7 +107,7 @@
 
   <script>
     const CURRENT_SLUG = 'global-peace-photo-award-2026';
-    const CURRENT_CALL = {"prize":"€11,000 total (€6,000 first prize + category prizes)","category":"photography","org":"Global Peace Photo Award","location":"Vienna, Austria","fee":"Free","deadline":"2026-05-24","resultsDate":"July 17, 2026","instagram":"","eligibility":[],"jury":[],"submitVia":"Picter","submitUrl":"https://site.picter.com/global-peace-photo-award-2026","email": "","ai":"","requirements":"Up to 12 images"};
+    const CURRENT_CALL = {"prize":"€11,000","category":"photography","org":"Global Peace Photo Award","location":"Vienna, Austria","fee":"Free","deadline":"2026-05-24","resultsDate":"September 24, 2026","instagram":"@globalpeacephotoaward","eligibility":[],"jury":[],"submitVia":"Picter","submitUrl":"https://site.picter.com/global-peace-photo-award-2026","email": "","ai":"Not accepted","requirements":"Up to 12 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -117,7 +117,7 @@
       var u = 'https://globalpeacephotoaward.org/';
       var o = 'Global Peace Photo Award';
       var dl = new Date('2026-05-24T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€11,000 total (€6,000 first prize + category prizes)') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€11,000') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
