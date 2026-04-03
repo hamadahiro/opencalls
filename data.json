@@ -1279,7 +1279,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "resultsDate": "June 26, 2026",
-      "submitUrl": null,
+      "submitUrl": "https://fabula-works.com/opencall001",
       "summary": "Two photographers exhibit at Millepiani Gallery in Rome. No thematic restrictions. All costs covered.",
       "email": ""
     },
@@ -1697,6 +1697,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-16",
       "submitUrl": "https://forms.gle/GzzpZz53qALDcLueA",
+      "resultsDate": "Late April 2026",
       "summary": "Zines shown to international editors, curators, and publishers at KYOTOGRAPHIE Photobook Fair in Kyoto.",
       "email": ""
     },
@@ -4858,7 +4859,10 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
       "submitVia": "JotForm",
-      "submitUrl": "https://form.jotform.com/253296270119155",
+      "submitUrl": "https://form.jotform.com/260895962691171",
+      "jury": [
+        "Michael Behlen, Founder, Analog Forever Magazine"
+      ],
       "summary": "High-quality print magazine for film and analog photography. Also runs themed online group exhibitions.",
       "email": ""
     },
@@ -5848,6 +5852,29 @@
       "prize": "$2,000",
       "eligibility": [],
       "submitVia": "Website form",
+      "jury": [
+        "Lenka Klicperova, Journalist & Photographer",
+        "Michael Dunn, Fine Art Photographer",
+        "Alena Grom, Visual Artist",
+        "GMB Akash, Documentary Photographer",
+        "Marylise Vigneau, Documentary Photographer",
+        "Miloš Nejezchleb, Fine Art Photographer",
+        "Yana Hryhorenko, Contemporary Artist",
+        "Niccolo' Rastrelli, Documentary Photographer",
+        "Andy Grimshaw, Commercial Photographer",
+        "Dino Kuznik, Fine Art Photographer",
+        "Stas Ginzburg, Documentary Photographer",
+        "Emily Steinberger, Visual Storyteller",
+        "Richard Boll, Commercial Photographer",
+        "Ioana Moldovan, Documentary Photographer",
+        "Federico Borella, Photojournalist",
+        "Alun Crockford, Visual Artist",
+        "Willian Zou, Fine Art Photographer",
+        "Hugh Cunningham, Photojournalist",
+        "Taiye Omokore, Fashion Photographer",
+        "Jed Bacason, Visual Storyteller",
+        "Kerry Skarbakka, Visual Artist"
+      ],
       "slug": "chromatic-photography-awards-2026",
       "orgInTitle": true,
       "resultsDate": "December 20, 2026",
@@ -7489,7 +7516,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
       "requirements": "Up to 5 images",
-      "submitUrl": "https://www.outdoorphotographymagazine.co.uk/submissions/",
+      "submitUrl": "https://forms.gle/Jzx17SHxn9XwfkAz6",
       "summary": "Submit spring landscape images for Outdoor Photography Magazine (UK). Winner receives walking poles."
     },
     {
@@ -7701,6 +7728,7 @@
       "slug": "this-is-a-person-decagon-gallery",
       "dateAdded": "2026-03-21",
       "submitUrl": "https://www.decagongallery.com/this-is-a-person-entry",
+      "resultsDate": "May 2026",
       "summary": "Portrait photography exploring interior life over surface identity. ~10-12% acceptance rate."
     },
     {
@@ -8501,7 +8529,8 @@
       "summary": "Indie photo + film festival in Detroit. Projections, gallery shows, screenings. Experimental and innovative work. June–July 2026.",
       "email": "",
       "instagram": "@nova.twentyfour",
-      "dateAdded": "2026-03-30T19:13:01.383Z"
+      "dateAdded": "2026-03-30T19:13:01.383Z",
+      "submitUrl": "https://www.novatwentyfour.com/2026festivalopen-call"
     },
     {
       "title": "Archifoto 2026 — Architecture & Landscape",
@@ -8521,7 +8550,8 @@
       "instagram": "@la_chambre_strasbourg",
       "dateAdded": "2026-03-30T19:13:01.383Z",
       "email": "",
-      "requirements": "5 images"
+      "requirements": "5 images",
+      "submitUrl": "https://www.la-chambre.org/autres-regards/archifoto/apply-for-the-contest/"
     },
     {
       "title": "2026 Booooooom Art & Photo Book Award",
@@ -8810,19 +8840,23 @@
     {
       "title": "JGS Fellowship for Photography 2026",
       "org": "New York Foundation for the Arts",
-      "deadline": "2026-05-21",
+      "deadline": "2026-05-19",
       "fee": "Free",
       "category": "grant",
       "description": "Annual fellowship awarding $8,000 each to five photographers working in New York State outside New York City. Supports traditional and experimental photography including light-based work, alternative processes, or any form in which photography or photographic techniques are pivotal. Applicants must be 25 or older, current full-time residents of eligible NY State regions for at least 12 months, and not enrolled in a degree-seeking programme. Past recipients are not eligible. Applications submitted via Submittable. Notification of results in summer 2026.",
       "url": "https://www.nyfa.org/awards-grants/the-jgs-fellowship-for-photography/",
       "location": "New York, USA",
       "prize": "$8,000",
-      "eligibility": [],
+      "eligibility": [
+        "united-states",
+        "25-plus"
+      ],
       "submitVia": "Submittable",
-      "requirements": "Portfolio",
+      "requirements": "5–10 images",
       "slug": "jgs-fellowship-for-photography-2026",
       "orgInTitle": false,
       "summary": "$8,000 fellowship for 5 NY State photographers (outside NYC). Supports traditional, experimental, and alternative process photography.",
+      "resultsDate": "Summer 2026",
       "dateAdded": "2026-03-31T23:14:54.068Z"
     },
     {
