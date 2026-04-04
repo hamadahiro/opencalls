@@ -11,7 +11,7 @@
       "url": "https://www.npg.org.uk/whatson/exhibitions/2026/taylor-wessing-photo-portrait-prize-2026",
       "instagram": "@nationalportraitgallery",
       "location": "London, United Kingdom",
-      "prize": "£15,000 first prize + exhibition at National Portrait Gallery",
+      "prize": "£15,000",
       "eligibility": [
         "18-plus"
       ],
@@ -5218,7 +5218,7 @@
       "fee": "€40",
       "category": "exhibition",
       "description": "Open call for female photographers exploring the bicentennial of photography. Selected artists exhibit at Salons Aguado in Paris. Submit up to 10 photographs with artist statement. Open to professional and emerging photographers.",
-      "url": "https://www.objectif-femmes.art/event/appel-a-candidatures-2026-2/register",
+      "url": "https://www.objectif-femmes.art/event/appel-a-candidatures-2026-2",
       "instagram": "@objectiffemmes",
       "location": "Paris, France",
       "prize": "Exhibition",
@@ -5428,7 +5428,6 @@
       "instagram": "@ndmagazine",
       "location": "Online",
       "prize": "$3,500",
-      "eligibility": [],
       "submitVia": "Website form",
       "email": "",
       "slug": "nd-awards-2026",
@@ -5459,6 +5458,9 @@
         "Pascal Beaudenon, Photographer",
         "Lydia Panas, Visual Artist",
         "Yossi Michaeli, Photographer"
+      ],
+      "eligibility": [
+        "18-plus"
       ],
       "requirements": "1–5 images",
       "submitUrl": "https://ndawards.net/",
