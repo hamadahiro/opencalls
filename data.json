@@ -21,7 +21,8 @@
       "orgInTitle": false,
       "summary": "Premier international portrait prize. £15,000 first prize. Exhibition at National Portrait Gallery, London, Nov 2026–Jan 2027.",
       "resultsDate": "November 2026",
-      "dateAdded": "2026-04-03T23:13:25.136Z"
+      "dateAdded": "2026-04-03T23:13:25.136Z",
+      "submitUrl": "https://www.competitions.npg.org.uk"
     },
     {
       "title": "EMERGE 2026",
@@ -398,7 +399,8 @@
       "instagram": "@remedyphotofestival",
       "summary": "Free festival exploring health — physical, mental, chronic, invisible. Lincoln, UK. Print and display costs covered.",
       "dateAdded": "2026-03-28T12:13:36.505Z",
-      "submitUrl": "https://forms.gle/ueKhk89HijPp6oQ27"
+      "submitUrl": "https://forms.gle/ueKhk89HijPp6oQ27",
+      "email": ""
     },
     {
       "title": "SQUARE Photography Exhibit",
@@ -7025,9 +7027,7 @@
       "instagram": "@rencontresarles",
       "location": "Arles, France",
       "prize": "€25,000",
-      "eligibility": [
-        "professional"
-      ],
+      "eligibility": [],
       "submitVia": "Website form + physical parcel",
       "slug": "luma-rencontres-dummy-book-award-2026",
       "orgInTitle": true,
