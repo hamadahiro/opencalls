@@ -133,7 +133,7 @@
 
   <script>
     const CURRENT_SLUG = 'taylor-wessing-photo-portrait-prize-2026';
-    const CURRENT_CALL = {"prize":"£15,000 first prize + exhibition at National Portrait Gallery","category":"photography","org":"National Portrait Gallery","location":"London, United Kingdom","fee":"£22/image","deadline":"2026-04-21","resultsDate":"November 2026","instagram":"@nationalportraitgallery","eligibility":["18-plus"],"jury":[],"submitVia":"Official website","submitUrl":"","email": "","ai":"","requirements":"Up to 6 images"};
+    const CURRENT_CALL = {"prize":"£15,000","category":"photography","org":"National Portrait Gallery","location":"London, United Kingdom","fee":"£22/image","deadline":"2026-04-21","resultsDate":"November 2026","instagram":"@nationalportraitgallery","eligibility":["18-plus"],"jury":[],"submitVia":"Official website","submitUrl":"","email": "","ai":"","requirements":"Up to 6 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -143,7 +143,7 @@
       var u = 'https://www.npg.org.uk/whatson/exhibitions/2026/taylor-wessing-photo-portrait-prize-2026';
       var o = 'National Portrait Gallery';
       var dl = new Date('2026-04-21T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£15,000 first prize + exhibition at National Portrait Gallery') + '\\nEntry fee: ' + icsE('£22/image');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£15,000') + '\\nEntry fee: ' + icsE('£22/image');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
