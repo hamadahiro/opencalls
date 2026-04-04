@@ -652,8 +652,8 @@ const eligibilityGroups = {
   'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30. Grants, exhibitions, awards, and emerging talent opportunities.' },
   'under-35': { short: 'Under 35', title: 'Open Calls for Under 35', desc: 'Open calls with age restrictions for photographers and artists under 35. Grants, exhibitions, awards, and emerging talent opportunities.' },
   'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40. Grants, exhibitions, awards, and mid-career opportunities.' },
-  'lgbtq': { short: 'LGBTQ+', title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
-  'analog-photography': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
+  'lgbtq': { short: 'LGBTQ+', title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists. Queer-focused grants, residencies, and competitions.' },
+  'analog-photography': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography. Exhibitions, awards, and publications for film and darkroom photographers.' },
   'alternative-process': { short: 'Alternative Process', title: 'Alternative Process Open Calls', desc: 'Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.' },
   'professional': { short: 'Professional', title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers. Juried exhibitions, industry awards, and competitions requiring professional credentials.' },
   'membership-required': { short: 'Membership Required', title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body. Exhibitions and awards from photography societies and associations.' },
@@ -661,16 +661,16 @@ const eligibilityGroups = {
   'asian-american': { short: 'Asian American', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience. Exhibitions, grants, and awards for Asian American photographers.' },
   'south-asian': { short: 'South Asian', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture. Exhibitions, grants, and awards for South Asian photographers and artists.' },
   'african-diaspora': { short: 'African Diaspora', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists. Exhibitions, grants, and awards celebrating African diaspora photography.' },
-  'black': { short: 'Black Artists', title: 'Open Calls for Black Artists', desc: 'Open calls, exhibitions, and awards for Black photographers and visual artists.' },
+  'black': { short: 'Black Artists', title: 'Open Calls for Black Artists', desc: 'Open calls, exhibitions, and awards for Black photographers and visual artists. Grants, residencies, and competitions celebrating Black artistry.' },
   'neurodivergent-disabled': { short: 'Neurodivergent & Disabled', title: 'Open Calls for Neurodivergent & Disabled Artists', desc: 'Open calls, publications, and awards for neurodivergent, disabled, and chronically ill photographers and visual artists.' },
   'portugal': { short: 'Portugal', title: 'Portugal-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Portuguese citizens or residents of Portugal.' },
   'taiwan': { short: 'Taiwan', title: 'Taiwan-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan.' },
   'latin-america': { short: 'Latin America', title: 'Latin America Focus', desc: 'Open calls for Latin American artists or projects connected to Latin America. Exhibitions, grants, and awards for Latin American photographers.' },
   'morocco': { short: 'Morocco', title: 'Morocco-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Morocco. Exhibitions, grants, and residencies for Moroccan artists.' },
-  'non-european': { short: 'Non-European', title: 'Non-European Artists Only', desc: 'Open calls restricted to artists from outside Europe — Africa, the Americas, Asia, and Oceania.' },
+  'non-european': { short: 'Non-European', title: 'Non-European Artists Only', desc: 'Open calls restricted to artists from outside Europe — Africa, the Americas, Asia, and Oceania. Exhibitions, grants, and residencies.' },
   'australia': { short: 'Australia', title: 'Australia-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Australian citizens or permanent residents.' },
   'canada': { short: 'Canada', title: 'Canada-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.' },
-  'ireland': { short: 'Ireland', title: 'Ireland-Only Open Calls', desc: 'Open calls restricted to photographers and artists resident on the island of Ireland.' },
+  'ireland': { short: 'Ireland', title: 'Ireland-Only Open Calls', desc: 'Open calls restricted to photographers and artists resident on the island of Ireland. Exhibitions, grants, and residencies for Irish artists.' },
   'switzerland': { short: 'Switzerland', title: 'Switzerland-Only Open Calls', desc: 'Open calls restricted to photographers and artists with Swiss citizenship or based in Switzerland.' },
   'caribbean': { short: 'Caribbean', title: 'Caribbean Focus', desc: 'Open calls for Caribbean artists or projects connected to the Caribbean. Exhibitions, grants, and awards for Caribbean photographers and visual artists.' },
   'nordic': { short: 'Nordic', title: 'Nordic-Only Open Calls', desc: 'Open calls restricted to citizens or residents of Nordic countries (Denmark, Finland, Iceland, Norway, Sweden).' },
@@ -784,7 +784,7 @@ Object.keys(eligibilityTags).forEach(tag => {
 function buildEligibilityIndexItems() {
   let html = '';
   eligibilityOrder.forEach(group => {
-    const activeTags = group.tags.filter(t => openEligibilityTags[t]);
+    const activeTags = group.tags.filter(t => eligibilityTags[t]);
     if (!activeTags.length) return;
     activeTags.sort((a, b) => (openEligibilityTags[b] || 0) - (openEligibilityTags[a] || 0));
     html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
@@ -1438,11 +1438,12 @@ function midTruncateHtml(str, minLen) {
 }
 
 function buildBrowseSection(heading, items, headingLink) {
-  const visible = items.filter(i => i.count > 0);
-  if (!visible.length) return '';
+  if (!items.length) return '';
   const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
   let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
-  visible.forEach(({ label, href, count }) => {
+  // Show items with open calls first, then items with 0 open (so Google can discover all pages)
+  const sorted = [...items].sort((a, b) => b.count - a.count);
+  sorted.forEach(({ label, href, count }) => {
     html += `      <a href="${href}" class="index-item">
         <span class="index-item-name">${midTruncateHtml(label)}</span>
         <span class="dots"></span>
