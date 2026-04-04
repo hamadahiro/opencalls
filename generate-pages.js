@@ -121,9 +121,29 @@ const ICONS = `<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">`;
+// Build BreadcrumbList JSON-LD from array of {name, url} items
+function buildBreadcrumbJsonLd(items) {
+  const list = [{ name: 'Home', url: SITE + '/' }, ...items];
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": list.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+  return JSON.stringify(ld, null, 2);
+}
+
 function HEAD(opts) {
   const cssVersion = opts.cssVersion;
   const canonical = opts.canonical.endsWith('/') ? opts.canonical : opts.canonical + '/';
+  const jsonLdBlocks = [];
+  if (opts.jsonLd) jsonLdBlocks.push(opts.jsonLd);
+  if (opts.breadcrumbs) jsonLdBlocks.push(buildBreadcrumbJsonLd(opts.breadcrumbs));
+  const jsonLdHtml = jsonLdBlocks.map(ld => `<script type="application/ld+json">\n  ${ld}\n  </script>`).join('\n  ');
   return `${GA_SNIPPET}
   ${PRELOAD}
   <meta charset="UTF-8">
@@ -143,7 +163,7 @@ function HEAD(opts) {
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
-  ${opts.jsonLd ? `<script type="application/ld+json">\n  ${opts.jsonLd}\n  </script>` : ''}
+  ${jsonLdHtml}
   ${FONTS}
   <link rel="stylesheet" href="/style.css?v=${cssVersion}">`;
 }
@@ -349,7 +369,7 @@ function generatePage(call, cssVersion) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), cssVersion })}
+  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: categoryLabel(call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -472,7 +492,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), keywords: escapeHtml(info.keywords + ', ' + YEAR), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), keywords: escapeHtml(info.keywords + ', ' + YEAR), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -542,7 +562,7 @@ filterPages.forEach(fp => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), keywords: `${escapeHtml(fp.keywords)}, ${YEAR}`, canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), keywords: `${escapeHtml(fp.keywords)}, ${YEAR}`, canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -625,46 +645,46 @@ console.log(`  Fees index page`);
 // === Eligibility pages ===
 const eligibilityGroups = {
   'women': { short: 'Women', title: 'Open Calls for Women Photographers', desc: 'Open calls, grants, and awards exclusively for women, nonbinary, and gender-diverse photographers and visual artists.' },
-  'united-states': { short: 'United States', title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States.' },
-  'europe': { short: 'Europe', title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe.' },
-  'italy': { short: 'Italy', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy.' },
+  'united-states': { short: 'United States', title: 'US-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in the United States. Exhibitions, grants, residencies, and competitions for US-based artists.' },
+  'europe': { short: 'Europe', title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe. Exhibitions, grants, residencies, and competitions for European artists.' },
+  'italy': { short: 'Italy', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy. Exhibitions, grants, residencies, and competitions for Italian artists.' },
   'emerging': { short: 'Emerging Artists', title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
-  'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30.' },
-  'under-35': { short: 'Under 35', title: 'Open Calls for Under 35', desc: 'Open calls with age restrictions for photographers and artists under 35.' },
-  'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40.' },
+  'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30. Grants, exhibitions, awards, and emerging talent opportunities.' },
+  'under-35': { short: 'Under 35', title: 'Open Calls for Under 35', desc: 'Open calls with age restrictions for photographers and artists under 35. Grants, exhibitions, awards, and emerging talent opportunities.' },
+  'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40. Grants, exhibitions, awards, and mid-career opportunities.' },
   'lgbtq': { short: 'LGBTQ+', title: 'LGBTQ+ Open Calls', desc: 'Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists.' },
   'analog-photography': { short: 'Analog & Film', title: 'Analog & Film Photography Open Calls', desc: 'Open calls exclusively for analog, film, and non-digital photography.' },
   'alternative-process': { short: 'Alternative Process', title: 'Alternative Process Open Calls', desc: 'Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.' },
-  'professional': { short: 'Professional', title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers.' },
-  'membership-required': { short: 'Membership Required', title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body.' },
-  'puerto-rico': { short: 'Puerto Rico', title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora.' },
-  'asian-american': { short: 'Asian American', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience.' },
-  'south-asian': { short: 'South Asian', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture.' },
-  'african-diaspora': { short: 'African Diaspora', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists.' },
+  'professional': { short: 'Professional', title: 'Professional Photographers Only', desc: 'Open calls restricted to professional photographers. Juried exhibitions, industry awards, and competitions requiring professional credentials.' },
+  'membership-required': { short: 'Membership Required', title: 'Membership Required', desc: 'Open calls that require membership or subscription to the organizing body. Exhibitions and awards from photography societies and associations.' },
+  'puerto-rico': { short: 'Puerto Rico', title: 'Puerto Rico Focus', desc: 'Open calls for projects related to Puerto Rico and its diaspora. Exhibitions, grants, and awards celebrating Puerto Rican art and culture.' },
+  'asian-american': { short: 'Asian American', title: 'Asian American Focus', desc: 'Open calls for projects exploring Asian American identity and experience. Exhibitions, grants, and awards for Asian American photographers.' },
+  'south-asian': { short: 'South Asian', title: 'South Asian Focus', desc: 'Open calls for projects related to South Asian art and culture. Exhibitions, grants, and awards for South Asian photographers and artists.' },
+  'african-diaspora': { short: 'African Diaspora', title: 'African Diaspora Focus', desc: 'Open calls for projects by or about African and diaspora artists. Exhibitions, grants, and awards celebrating African diaspora photography.' },
   'black': { short: 'Black Artists', title: 'Open Calls for Black Artists', desc: 'Open calls, exhibitions, and awards for Black photographers and visual artists.' },
   'neurodivergent-disabled': { short: 'Neurodivergent & Disabled', title: 'Open Calls for Neurodivergent & Disabled Artists', desc: 'Open calls, publications, and awards for neurodivergent, disabled, and chronically ill photographers and visual artists.' },
   'portugal': { short: 'Portugal', title: 'Portugal-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Portuguese citizens or residents of Portugal.' },
   'taiwan': { short: 'Taiwan', title: 'Taiwan-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan.' },
-  'latin-america': { short: 'Latin America', title: 'Latin America Focus', desc: 'Open calls for Latin American artists or projects connected to Latin America.' },
-  'morocco': { short: 'Morocco', title: 'Morocco-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Morocco.' },
+  'latin-america': { short: 'Latin America', title: 'Latin America Focus', desc: 'Open calls for Latin American artists or projects connected to Latin America. Exhibitions, grants, and awards for Latin American photographers.' },
+  'morocco': { short: 'Morocco', title: 'Morocco-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Morocco. Exhibitions, grants, and residencies for Moroccan artists.' },
   'non-european': { short: 'Non-European', title: 'Non-European Artists Only', desc: 'Open calls restricted to artists from outside Europe — Africa, the Americas, Asia, and Oceania.' },
   'australia': { short: 'Australia', title: 'Australia-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Australian citizens or permanent residents.' },
   'canada': { short: 'Canada', title: 'Canada-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.' },
   'ireland': { short: 'Ireland', title: 'Ireland-Only Open Calls', desc: 'Open calls restricted to photographers and artists resident on the island of Ireland.' },
   'switzerland': { short: 'Switzerland', title: 'Switzerland-Only Open Calls', desc: 'Open calls restricted to photographers and artists with Swiss citizenship or based in Switzerland.' },
-  'caribbean': { short: 'Caribbean', title: 'Caribbean Focus', desc: 'Open calls for Caribbean artists or projects connected to the Caribbean.' },
+  'caribbean': { short: 'Caribbean', title: 'Caribbean Focus', desc: 'Open calls for Caribbean artists or projects connected to the Caribbean. Exhibitions, grants, and awards for Caribbean photographers and visual artists.' },
   'nordic': { short: 'Nordic', title: 'Nordic-Only Open Calls', desc: 'Open calls restricted to citizens or residents of Nordic countries (Denmark, Finland, Iceland, Norway, Sweden).' },
   'germany': { short: 'Germany', title: 'Germany-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Germany.' },
   'malta': { short: 'Malta', title: 'Malta-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Maltese nationals or based in Malta.' },
-  '10-18': { short: 'Ages 10–18', title: 'Open Calls for Ages 10–18', desc: 'Open calls for young photographers ages 10 to 18.' },
+  '10-18': { short: 'Ages 10–18', title: 'Open Calls for Ages 10–18', desc: 'Open calls for young photographers ages 10 to 18. Photography competitions, exhibitions, and awards for young and teen artists.' },
   'mid-atlantic-us': { short: 'Mid-Atlantic US', title: 'Mid-Atlantic US Open Calls', desc: 'Open calls restricted to photographers in the Mid-Atlantic region — Maryland, Virginia, West Virginia, Pennsylvania, and Washington DC.' },
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
   'spain': { short: 'Spain', title: 'Spain-Only Open Calls', desc: 'Open calls restricted to photographers and artists born or based in Spain.' },
   'india': { short: 'India', title: 'India-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in India.' },
-  '16-plus': { short: '16+', title: 'Open Calls Requiring 16+', desc: 'Open calls restricted to photographers and artists aged 16 or older.' },
-  '18-plus': { short: '18+', title: 'Open Calls Requiring 18+', desc: 'Open calls restricted to photographers and artists aged 18 or older.' },
-  '21-plus': { short: '21+', title: 'Open Calls Requiring 21+', desc: 'Open calls restricted to photographers and artists aged 21 or older.' },
-  '25-plus': { short: '25+', title: 'Open Calls Requiring 25+', desc: 'Open calls restricted to photographers and artists aged 25 or older.' },
+  '16-plus': { short: '16+', title: 'Open Calls Requiring 16+', desc: 'Open calls restricted to photographers and artists aged 16 or older. Exhibitions, grants, competitions, and awards with a 16+ age requirement.' },
+  '18-plus': { short: '18+', title: 'Open Calls Requiring 18+', desc: 'Open calls restricted to photographers and artists aged 18 or older. Exhibitions, grants, competitions, and awards with an 18+ age requirement.' },
+  '21-plus': { short: '21+', title: 'Open Calls Requiring 21+', desc: 'Open calls restricted to photographers and artists aged 21 or older. Exhibitions, grants, competitions, and awards with a 21+ age requirement.' },
+  '25-plus': { short: '25+', title: 'Open Calls Requiring 25+', desc: 'Open calls restricted to photographers and artists aged 25 or older. Exhibitions, grants, competitions, and awards with a 25+ age requirement.' },
   'student': { short: 'Students', title: 'Open Calls for Students', desc: 'Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.' }
 };
 
@@ -704,7 +724,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, ${escapeHtml(info.short)} photography, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, ${escapeHtml(info.short)} photography, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -815,11 +835,11 @@ if (eligibilityPageSlugs.length) {
 
 // === Prize category pages ===
 const prizeGroups = {
-  'cash': { short: 'Cash Prize', title: 'Open Calls with Cash Prizes', desc: 'Open calls offering cash awards, grants, and monetary prizes for photographers and visual artists.' },
-  'exhibition': { short: 'Exhibition', title: 'Open Calls with Exhibition Prizes', desc: 'Open calls where the prize includes an exhibition — solo shows, group exhibitions, and gallery opportunities.' },
-  'publication': { short: 'Publication', title: 'Open Calls with Publication Prizes', desc: 'Open calls where the prize includes publication — photobooks, catalogs, magazine features, and print editions.' },
-  'residency': { short: 'Residency', title: 'Open Calls with Residency Prizes', desc: 'Open calls where the prize includes an artist residency, studio access, or accommodation.' },
-  'fellowship': { short: 'Fellowship', title: 'Open Calls with Fellowship Prizes', desc: 'Open calls offering fellowships for photographers and visual artists.' }
+  'cash': { short: 'Cash Prize', title: 'Open Calls with Cash Prizes', desc: 'Open calls offering cash awards, grants, and monetary prizes for photographers and visual artists. Browse competitions with cash prizes and apply today.' },
+  'exhibition': { short: 'Exhibition', title: 'Open Calls with Exhibition Prizes', desc: 'Open calls where the prize includes an exhibition — solo shows, group exhibitions, and gallery opportunities for photographers and visual artists worldwide.' },
+  'publication': { short: 'Publication', title: 'Open Calls with Publication Prizes', desc: 'Open calls where the prize includes publication — photobooks, catalogs, magazine features, and print editions for photographers and visual artists.' },
+  'residency': { short: 'Residency', title: 'Open Calls with Residency Prizes', desc: 'Open calls where the prize includes an artist residency, studio access, or accommodation. Find residency opportunities for photographers and visual artists.' },
+  'fellowship': { short: 'Fellowship', title: 'Open Calls with Fellowship Prizes', desc: 'Open calls offering fellowships for photographers and visual artists. Funded fellowships, mentoring programs, and professional development opportunities.' }
 };
 
 const prizeCatTags = {};
@@ -844,7 +864,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, photography ${escapeHtml(info.short.toLowerCase())} prize, call for entries ${escapeHtml(info.short.toLowerCase())}, art ${escapeHtml(info.short.toLowerCase())} award, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -969,7 +989,7 @@ Object.entries(countryCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -1067,7 +1087,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: `${escapeHtml(keywords)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: `${escapeHtml(keywords)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -1130,7 +1150,7 @@ Object.entries(orgCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion })}
 </head>
 <body>
 
@@ -1200,7 +1220,7 @@ sortedMonths.forEach(key => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, keywords: `open calls ${label.toLowerCase()}, photography deadlines ${label.toLowerCase()}, call for entries ${label.toLowerCase()}`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, keywords: `open calls ${label.toLowerCase()}, photography deadlines ${label.toLowerCase()}, call for entries ${label.toLowerCase()}`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion })}
 </head>
 <body>
 
@@ -1504,7 +1524,7 @@ const browseHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'Browse', 'Explore all open calls by category, location, eligibility, and organization.')}
+    ${buildHero('', 'Browse All Open Calls', 'Explore open calls by category, location, eligibility, and organization.')}
 
     <section class="index-list">
 ${buildBrowseSection('Categories', browseCategories, '/categories/')}
