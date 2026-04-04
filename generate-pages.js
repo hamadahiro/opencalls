@@ -1705,24 +1705,29 @@ function findStale(dir) {
   });
 }
 findStale('.');
-let fixedNoindex = 0;
+let fixedMeta = 0;
 staleFiles.forEach(f => {
   let html = fs.readFileSync(f, 'utf8');
-  // Remove noindex from redirect pages and ended-call pages (404.html is excluded via MANUAL_FILES)
-  if (html.includes('<meta name="robots" content="noindex">')) {
-    // For redirect pages (meta refresh): remove the noindex line entirely — canonical handles SEO
-    if (html.includes('http-equiv="refresh"')) {
-      html = html.replace(/\s*<meta name="robots" content="noindex">\n?/, '\n');
-    } else {
-      // For ended-call pages: replace noindex with index,follow
-      html = html.replace('<meta name="robots" content="noindex">', '<meta name="robots" content="index, follow">');
+  const isRedirect = html.includes('http-equiv="refresh"');
+  let changed = false;
+  if (isRedirect) {
+    // Redirect pages MUST have noindex — they are thin stubs, not real content
+    if (!html.includes('<meta name="robots" content="noindex">')) {
+      html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
+      changed = true;
     }
+  } else if (html.includes('<meta name="robots" content="noindex">')) {
+    // Non-redirect stale pages (ended calls with real content): allow indexing
+    html = html.replace('<meta name="robots" content="noindex">', '<meta name="robots" content="index, follow">');
+    changed = true;
+  }
+  if (changed) {
     fs.writeFileSync(f, html);
-    fixedNoindex++;
+    fixedMeta++;
   }
 });
-if (fixedNoindex > 0) {
-  console.log(`  Fixed noindex on ${fixedNoindex} stale page(s)`);
+if (fixedMeta > 0) {
+  console.log(`  Fixed meta robots on ${fixedMeta} stale page(s)`);
 }
 if (staleFiles.length) {
   console.warn(`\n⚠️  ${staleFiles.length} HTML file(s) not generated this run (NOT deleted — review manually):`);
