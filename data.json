@@ -73,7 +73,7 @@
       ],
       "ai": "Not accepted",
       "submitUrl": "https://app.picter.com/contests/84786731-2818-4653-96e3-ab0ea97ee51f/start",
-      "resultsDate": "July 2026",
+      "resultsDate": "September 26, 2026",
       "email": "",
       "dateAdded": "2026-04-02T12:49:02.951Z"
     },
@@ -1353,6 +1353,7 @@
       "location": "Casablanca, Morocco",
       "prize": "Residency + exhibition",
       "eligibility": [
+        "18-plus",
         "under-35",
         "morocco"
       ],
@@ -1476,7 +1477,8 @@
       "location": "Athens, Greece",
       "prize": "€1,000",
       "eligibility": [
-        "analog-photography"
+        "analog-photography",
+        "18-plus"
       ],
       "jury": [
         "Barna Erdesz, Art Director & Gallerist",
@@ -1492,7 +1494,6 @@
       ],
       "submitVia": "Website form",
       "requirements": "1–11 images",
-      "ai": "Not accepted",
       "slug": "analog-sparks-international-film-photography-awards-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-17",
@@ -7664,7 +7665,11 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
       "email": "",
-      "summary": "International contemporary photography magazine publishing 3 portfolios per issue."
+      "summary": "International contemporary photography magazine publishing 3 portfolios per issue.",
+      "jury": [
+        "Jerome Montagne, Editor",
+        "Alexis Vasilikos, Editor"
+      ]
     },
     {
       "title": "Noice Magazine — Open Submissions",
@@ -8561,7 +8566,8 @@
       "location": "Cumberland, MD, USA",
       "prize": "$500 Best of Show + additional awards",
       "eligibility": [
-        "united-states"
+        "united-states",
+        "18-plus"
       ],
       "jury": [
         "Steven David Johnson, Photography Juror",
@@ -9110,7 +9116,8 @@
       "eligibility": [
         "membership-required"
       ],
-      "resultsDate": "May 2026",
+      "resultsDate": "May 9, 2026",
+      "email": "",
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -9135,7 +9142,8 @@
       "eligibility": [
         "membership-required"
       ],
-      "resultsDate": "May 2026",
+      "resultsDate": "May 9, 2026",
+      "email": "",
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -9156,6 +9164,7 @@
       "summary": "Photography award on American identity. $500 prize. Fee waivers available. Founded by curator Francesca Hummler.",
       "eligibility": [],
       "email": "",
+      "resultsDate": "September 1, 2026",
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -9175,6 +9184,14 @@
       "summary": "Four-week residency with $1,000 stipend, studio, darkroom, and housing. For photographers, filmmakers, media artists.",
       "eligibility": [],
       "email": "",
+      "requirements": "Up to 10 images",
+      "resultsDate": "Late June 2026",
+      "instagram": "@visualstudiesworkshop",
+      "jury": [
+        "Aspen Mays, Artist, California College of Art",
+        "Le'Andra LeSeur, Artist, Tulsa Artist Fellow",
+        "Nando Alvarez-Perez, Editor-in-Chief, Cornelia Magazine"
+      ],
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -9221,6 +9238,7 @@
       "requirements": "1+ images",
       "ai": "Not accepted",
       "resultsDate": "June 2026",
+      "email": "",
       "dateAdded": "2026-04-04T07:12:02.821Z"
     },
     {
@@ -9305,12 +9323,13 @@
       "orgInTitle": false,
       "summary": "Free conservation photography awards — 6 categories. $1,000 Photographer of the Year + category prizes. Young photographer award.",
       "submitUrl": "https://www.photography.mangroveactionproject.org/enter-the-competition",
-      "resultsDate": "July 2026",
+      "resultsDate": "July 24, 2026",
       "jury": [
         "Esther Horvath, Photographer",
         "Karine Aigner, Photojournalist",
         "Dhritiman Mukherjee, Wildlife Photographer"
       ],
+      "email": "",
       "dateAdded": "2026-04-05T01:15:53.494Z"
     },
     {
@@ -9324,12 +9343,12 @@
       "location": "Sydney, Australia",
       "prize": "AUD $2,000 + category prizes",
       "eligibility": [],
-      "submitVia": "Official website",
+      "submitVia": "Secure-Platform",
       "requirements": "No limit",
       "slug": "better-photography-magazine-photographer-of-the-year-2026",
       "orgInTitle": true,
       "summary": "19th edition. Four categories judged by AIPP Grand Masters with individual feedback. AUD $5,000 total prizes.",
-      "submitUrl": "https://www.betterphotographyphotocomp.com/",
+      "submitUrl": "https://bpcomp.secure-platform.com/a/solicitations/29/home",
       "resultsDate": "June 2026",
       "dateAdded": "2026-04-05T01:15:53.494Z"
     },
@@ -9354,13 +9373,15 @@
       "orgInTitle": false,
       "summary": "4th annual national juried exhibition. $800 in total prizes. JFAC Gallery, Northern State University, SD.",
       "resultsDate": "June 1, 2026",
+      "email": "",
+      "submitUrl": "https://forms.gle/a36EXTKC26ffn59T9",
       "dateAdded": "2026-04-05T01:31:19.787Z"
     },
     {
       "title": "Photo of the Season — Worth a Thousand Words",
       "org": "The Image Flow",
       "deadline": "2026-06-20",
-      "fee": "$15/image",
+      "fee": "$15",
       "category": "photography",
       "description": "Seasonal photography competition inviting powerful standalone images that tell a compelling story. Theme: Worth a Thousand Words — narrative, emotion, and storytelling. Open worldwide. First prize $150, second $100, third $50 plus two honorable mentions. All winners featured in gallery, newsletter, website, and social media. Accepts film, digital, alternative process, and printmaking.",
       "url": "https://theimageflow.com/gallery/call-for-entry-photo-of-the-season-worth-a-thousand-words/",
@@ -9374,6 +9395,7 @@
       "orgInTitle": false,
       "summary": "Seasonal competition for narrative-driven images. $150 first prize. The Image Flow gallery, San Anselmo, CA.",
       "ai": "Not accepted",
+      "submitUrl": "https://theimageflow.com/submission-photo-of-the-season/",
       "dateAdded": "2026-04-05T01:31:19.787Z"
     },
     {
@@ -9400,6 +9422,7 @@
       "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=214",
       "summary": "Portrait photography competition. $1,000 cash prize, publication in AAP Magazine, and global recognition.",
       "email": "",
+      "resultsDate": "June 15, 2026",
       "dateAdded": "2026-04-05T03:12:11.470Z"
     }
   ]
