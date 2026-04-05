@@ -9,14 +9,14 @@
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
   <title>The Hopper Prize Grants - Monographica</title>
-  <meta name="description" content="$13,000 total: 2 artists x $4,500 and 4 artists x $1,000. All visual art media eligible. Deadline: May 5, 2026.">
+  <meta name="description" content="$13,000 total: 2 artists x $4,500 and 4 artists x $1,000. All visual art media eligible. Deadline: May 12, 2026.">
   <meta name="keywords" content="The Hopper Prize Grants, The Hopper Prize, Grant, open call, call for entries, artist grant, photography grant, open calls for artists, photography submissions">
   <link rel="canonical" href="https://opencalls.monographica.com/the-hopper-prize-grants/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="The Hopper Prize Grants - Monographica">
-  <meta property="og:description" content="$13,000 total: 2 artists x $4,500 and 4 artists x $1,000. All visual art media eligible. Deadline: May 5, 2026.">
+  <meta property="og:description" content="$13,000 total: 2 artists x $4,500 and 4 artists x $1,000. All visual art media eligible. Deadline: May 12, 2026.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
   <meta property="og:url" content="https://opencalls.monographica.com/the-hopper-prize-grants/">
   <meta property="og:type" content="article">
@@ -112,10 +112,6 @@
       <div class="call-detail-info" id="detailInfo"></div>
 
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: Lauren Rosati, Associate Curator, The Metropolitan Museum of Art · Laura Phipps, Assistant Curator, Whitney Museum · Jody Graf, Assistant Curator, MoMA PS1 · María Elena Ortiz, Curator, Pérez Art Museum Miami · Leila Grothe, Associate Curator, Baltimore Museum of Art</p>
-      </div>
-
-      <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/the-hopper-prize/">The Hopper Prize</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
@@ -137,16 +133,16 @@
 
   <script>
     const CURRENT_SLUG = 'the-hopper-prize-grants';
-    const CURRENT_CALL = {"prize":"$4,500","category":"grant","org":"The Hopper Prize","location":"Online","fee":"$40","deadline":"2026-05-05","resultsDate":"","instagram":"@hopperprize","eligibility":["18-plus"],"jury":["Lauren Rosati, Associate Curator, The Metropolitan Museum of Art","Laura Phipps, Assistant Curator, Whitney Museum","Jody Graf, Assistant Curator, MoMA PS1","María Elena Ortiz, Curator, Pérez Art Museum Miami","Leila Grothe, Associate Curator, Baltimore Museum of Art"],"submitVia":"Hopper Prize","submitUrl":"https://hopperprize.org/artist-grant-program/","email": "","ai":"","requirements":"Up to 10 images"};
+    const CURRENT_CALL = {"prize":"$4,500","category":"grant","org":"The Hopper Prize","location":"Online","fee":"$40","deadline":"2026-05-12","resultsDate":"August 28, 2026","instagram":"@hopperprize","eligibility":["18-plus"],"jury":[],"submitVia":"Hopper Prize","submitUrl":"https://hopperprize.org/artist-grant-program/","email": "","ai":"","requirements":"Up to 10 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-05-05'.replace(/-/g, '');
-      var nd = new Date('2026-05-05T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
+      var d = '2026-05-12'.replace(/-/g, '');
+      var nd = new Date('2026-05-12T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
       var t = 'The Hopper Prize Grants';
       var u = 'https://hopperprize.org/artist-grant-program/';
       var o = 'The Hopper Prize';
-      var dl = new Date('2026-05-05T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+      var dl = new Date('2026-05-12T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$4,500') + '\\nEntry fee: ' + icsE('$40');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});

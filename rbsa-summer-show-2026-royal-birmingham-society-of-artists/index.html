@@ -133,7 +133,7 @@
 
   <script>
     const CURRENT_SLUG = 'rbsa-summer-show-2026-royal-birmingham-society-of-artists';
-    const CURRENT_CALL = {"prize":"£600","category":"exhibition","org":"Royal Birmingham Society of Artists","location":"Birmingham, United Kingdom","fee":"£13","deadline":"2026-05-05","resultsDate":"May 21, 2026","instagram":"@rbsagallery","eligibility":[],"jury":[],"submitVia":"Typeform","submitUrl":"https://marketing663911.typeform.com/to/FwRWVYU8","email": "","ai":"","requirements":"Up to 3 images"};
+    const CURRENT_CALL = {"prize":"£600","category":"exhibition","org":"Royal Birmingham Society of Artists","location":"Birmingham, United Kingdom","fee":"£13–£39","deadline":"2026-05-05","resultsDate":"May 21, 2026","instagram":"@rbsagallery","eligibility":[],"jury":[],"submitVia":"Typeform","submitUrl":"https://marketing663911.typeform.com/to/FwRWVYU8","email": "","ai":"","requirements":"Up to 3 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -143,7 +143,7 @@
       var u = 'https://rbsa.org.uk/call-for-entries/rbsa-summer-show-2026/';
       var o = 'Royal Birmingham Society of Artists';
       var dl = new Date('2026-05-05T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£600') + '\\nEntry fee: ' + icsE('£13');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£600') + '\\nEntry fee: ' + icsE('£13–£39');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
