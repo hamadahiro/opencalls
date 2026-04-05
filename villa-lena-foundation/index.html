@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Austria 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Austria. Browse and apply today.">
-  <meta name="keywords" content="open calls Austria, call for entries Austria, photography opportunities Austria, art exhibitions Austria, photography grants Austria, artist residency Austria">
-  <link rel="canonical" href="https://opencalls.monographica.com/austria/">
+  <title>Villa Lena Foundation - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Villa Lena Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Villa Lena Foundation open call, Villa Lena Foundation call for entries, Villa Lena Foundation submissions, Villa Lena Foundation photography, Villa Lena Foundation exhibition, Villa Lena Foundation artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/villa-lena-foundation/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Austria 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Austria. Browse and apply today.">
+  <meta property="og:title" content="Villa Lena Foundation - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Villa Lena Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/austria/">
+  <meta property="og:url" content="https://opencalls.monographica.com/villa-lena-foundation/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Austria 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Austria. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/austria/",
+  "name": "Villa Lena Foundation - Open Calls",
+  "description": "Open calls and submission opportunities from Villa Lena Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/villa-lena-foundation/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Austria",
-      "item": "https://opencalls.monographica.com/austria/"
+      "name": "Villa Lena Foundation",
+      "item": "https://opencalls.monographica.com/villa-lena-foundation/"
     }
   ]
 }
@@ -103,16 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
-      <h1>Open Calls for Artists in Austria</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Austria. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Villa Lena Foundation</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Villa Lena Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/graz-residency-grip-2026-camera-austria/">Graz Residency for International Photographers (GRIP) 2026 &middot; Camera Austria</a></h3><p>April 30, 2026 · Free</p><p>One-month residency in Graz for early-career photographers. €1,000 stipend.</p></div>
-      <div class="static-call-item"><h3><a href="/global-peace-photo-award-2026/">Global Peace Photo Award 2026 &middot; Global Peace Photo Award</a></h3><p>May 24, 2026 · Free</p><p>Free award for photos of peaceful coexistence. €11,000 in prizes, Alfred Fried Peace Medal, Vienna ceremony.</p></div>
-      <div class="static-call-item"><h3><a href="/minimalist-photography-awards-2026/">Minimalist Photography Awards 2026</a></h3><p>June 2, 2026 · €20–25/image</p><p>International award for minimalist photography. €2,000 grand prize, book publication, and exhibition. 12 categories.</p></div>
-      <div class="static-call-item"><h3><a href="/arty-rat-magazine-open-call/">Arty Rat Magazine Open Call</a></h3><p>April 1, 2026 · Free (€35–€100 if accepted)</p><p>Independent art magazine for contemporary visual work. Two cover features and one free group exhibition in Vienna.</p></div>
+      <div class="static-call-item"><h3><a href="/villa-lena-foundation-artist-residency-2027/">Villa Lena Foundation — Artist Residency 2027</a></h3><p>April 30, 2026 · €21</p><p>4–5 week residency in a Tuscan villa with studio, accommodation, and meals. €150/week residency fee. All disciplines.</p></div>
 
     </section>
 
@@ -129,11 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Austria').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Villa Lena Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
-
     } catch (e) {}
     }
     loadFiltered();
