@@ -358,7 +358,9 @@
       "url": "https://absuria.fr/en/enter-the-competition/",
       "location": "Tours, France",
       "prize": "Exhibition + trophy",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Caroline Gasch, Photographer",
         "Marie-Pierre Cherrier, Photographer & Teacher",
@@ -4082,7 +4084,9 @@
       "instagram": "@sanjuandedios_leon",
       "location": "León, Spain",
       "prize": "€600",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Email",
       "slug": "xvi-concurso-internacional-de-fotograf-a-sobre-humanizaci-n-asistencial-hospital-san-juan-de-dios-de-le-n",
       "orgInTitle": false,
@@ -4094,7 +4098,9 @@
         "Secundino Pérez, Photographer",
         "Mauricio Peña, Photographer",
         "Javier Casares, Photographer"
-      ]
+      ],
+      "ai": "Not accepted",
+      "resultsDate": "April 24, 2026"
     },
     {
       "title": "light",
@@ -4238,7 +4244,7 @@
         "Carol McCusker, Juror"
       ],
       "submitVia": "ArtCall",
-      "requirements": "3 images",
+      "requirements": "Up to 3 images",
       "slug": "montgomery-photo-festival-2026",
       "orgInTitle": true,
       "resultsDate": "May 22, 2026",
@@ -4549,7 +4555,9 @@
       "instagram": "@1839awards",
       "location": "Online",
       "prize": "$4,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Alessa Widmer, University of Zurich",
         "Derek Eng, Dwell",
@@ -4605,7 +4613,9 @@
       "instagram": "@refocus.awards",
       "location": "Online",
       "prize": "$3,500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Gabriel H. Sanchez, Photo Editor, The New York Times",
         "Irene Opezzo, Photo Director, Robb Report",
@@ -4777,7 +4787,9 @@
       "instagram": "@refocus.awards",
       "location": "Online",
       "prize": "$2,500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Gabriel H. Sanchez, Photo Editor, The New York Times",
         "Irene Opezzo, Photo Director, Robb Report",
@@ -5407,7 +5419,10 @@
       "instagram": "@photois.rael",
       "location": "Tel Aviv, Israel",
       "prize": "$14,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
+      "ai": "Accepted",
       "jury": [
         "Dafna Meitar Nechmad, Director General, Zvi and Ofra Meitar Family Fund",
         "Roger Ballen, Photographer & Artist",
@@ -6066,7 +6081,7 @@
       "slug": "px3-prix-de-la-photographie-paris-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "requirements": "1–9 images",
+      "requirements": "1–8 images",
       "submitUrl": "https://px3.fr/submit/register.php",
       "summary": "One of Europe's most prestigious awards. Categories from Analog to Advertising. Exhibited in Paris.",
       "email": ""
@@ -6112,7 +6127,7 @@
       "title": "Tokyo International Foto Award 2026",
       "org": "Tokyo International Foto Awards",
       "deadline": "2026-08-01",
-      "fee": "€15–€40",
+      "fee": "€15–€50",
       "category": "photography",
       "description": "International photography competition introducing photographers to the creative community in Tokyo. Categories include Advertising, Architecture, Editorial, Fine Art, Nature, People, and Portfolio. Winners exhibited in Tokyo.",
       "url": "https://www.tokyofotoawards.jp/submit/",
@@ -6134,10 +6149,11 @@
       "slug": "tokyo-international-foto-award-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "requirements": "1–10 images",
+      "requirements": "1–9 images",
       "submitUrl": "https://www.tokyofotoawards.jp/submit/",
       "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.",
-      "email": ""
+      "email": "",
+      "resultsDate": "September 2026"
     },
     {
       "title": "Milano Photo Awards 2026",
@@ -6282,12 +6298,7 @@
       "dateAdded": "2026-03-18",
       "requirements": "Up to 10 images",
       "jury": [
-        "James Wellford, National Geographic",
-        "Chiara Mariani, Corriere della Sera",
-        "Christian Gogolin, GEO Magazine",
-        "Christophe Loviny, Yangon Photo Festival",
-        "Moritz Neumüller, The Curator Ship",
-        "Guillaume Bonn, Photographer"
+        "Hossein Farmani, Curator"
       ],
       "submitVia": "Website form",
       "submitUrl": "https://px3.fr/submit/",
@@ -8719,7 +8730,10 @@
       "url": "https://www.la-chambre.org/autres-regards/archifoto/",
       "location": "Strasbourg, France",
       "prize": "€500 + exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus",
+        "europe"
+      ],
       "submitVia": "Official website",
       "slug": "archifoto-2026-architecture-landscape",
       "orgInTitle": false,
@@ -8728,7 +8742,8 @@
       "dateAdded": "2026-03-30T19:13:01.383Z",
       "email": "",
       "requirements": "5 images",
-      "submitUrl": "https://www.la-chambre.org/autres-regards/archifoto/apply-for-the-contest/"
+      "submitUrl": "https://www.la-chambre.org/autres-regards/archifoto/apply-for-the-contest/",
+      "resultsDate": "September 2026"
     },
     {
       "title": "2026 Booooooom Art & Photo Book Award",
@@ -9034,7 +9049,8 @@
       "orgInTitle": false,
       "summary": "$8,000 fellowship for 5 NY State photographers (outside NYC). Supports traditional, experimental, and alternative process photography.",
       "resultsDate": "Summer 2026",
-      "dateAdded": "2026-03-31T23:14:54.068Z"
+      "dateAdded": "2026-03-31T23:14:54.068Z",
+      "submitUrl": "https://apply.nyfa.org/submit/351704/2026-jgs-fellowship-for-photography"
     },
     {
       "title": "12th Annual International Open Call",
@@ -9075,7 +9091,8 @@
       "location": "Tulsa, OK, USA",
       "prize": "$150,000 stipend + housing + studio",
       "eligibility": [
-        "united-states"
+        "united-states",
+        "25-plus"
       ],
       "submitVia": "Official website",
       "requirements": "5–10 images",
