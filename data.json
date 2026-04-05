@@ -2374,6 +2374,7 @@
         "Monica Mardare, Independent Curator"
       ],
       "submitVia": "CuratorSpace",
+      "requirements": "2+ images",
       "slug": "rebirth-monart-curates",
       "orgInTitle": true,
       "dateAdded": "2026-03-16",
@@ -5934,7 +5935,7 @@
       "title": "Nature Photographer of the Year 2026",
       "org": "Nature Photographer of the Year",
       "deadline": "2026-05-31",
-      "fee": "€35",
+      "fee": "€34",
       "category": "photography",
       "description": "International nature photography competition with 12 categories for individual images, a young photographers category (ages 10–17, free entry), and the Fred Hazelhoff Award for portfolios (€17.50). Award ceremony November 14, 2026.",
       "url": "https://naturephotographeroftheyear.com/enter-contest/npoty-2025/",
@@ -8677,7 +8678,9 @@
         "Bella Lack, Conservationist & Author",
         "Luke Inman, Underwater Photographer & Filmmaker",
         "Hannah Stitfall, Wildlife Filmmaker & TV Presenter",
-        "Charlotte Kemsley, Regional Director, Nikon"
+        "Charlotte Kemsley, Regional Director, Nikon",
+        "Andrew Skirrow, Co-Founder, Amazing Internet",
+        "Simon Pollock, Social Media, ThinkTankPhoto"
       ],
       "submitVia": "Official website",
       "requirements": "Up to 10 images",
@@ -9443,11 +9446,16 @@
       "eligibility": [],
       "submitVia": "JotForm",
       "submitUrl": "https://fieldworkphotojournal.com/#open-call-issue-2",
-      "requirements": "6–12 images",
+      "requirements": "Up to 12 images",
       "ai": "Not accepted",
       "slug": "fieldwork-photo-journal-issue-two-the-embodied-weight-of-place",
       "orgInTitle": true,
       "summary": "Print publication on place, memory, and history. Featured: Kristine Potter. Up to 30 photographers selected.",
+      "resultsDate": "June 3, 2026",
+      "jury": [
+        "Sam Angel, Founder, Fieldwork Photo Journal",
+        "Kristine Potter, Featured Photographer"
+      ],
       "dateAdded": "2026-04-04T19:22:35.148Z"
     },
     {
@@ -9463,6 +9471,7 @@
       "prize": "Publication",
       "eligibility": [],
       "submitVia": "Email",
+      "requirements": "No limit",
       "email": "",
       "slug": "pearl-press-issue-no-28-utopia",
       "orgInTitle": true,
