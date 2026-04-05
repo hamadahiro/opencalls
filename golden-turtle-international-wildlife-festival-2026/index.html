@@ -137,7 +137,7 @@
 
   <script>
     const CURRENT_SLUG = 'golden-turtle-international-wildlife-festival-2026';
-    const CURRENT_CALL = {"prize":"150,000 RUB","category":"photography","org":"Golden Turtle","location":"Moscow, Russia","fee":"Free","deadline":"2026-04-07","resultsDate":"Autumn 2026","instagram":"@goldenturtlefest","eligibility":[],"jury":["Andrey Kamenev, National Geographic Russia Photographer","Gheorghe Popa, Nature/Landscape Photographer (Romania)","Mario Suárez Porras, Canon Pro Master, Bird Photographer (Spain)","Cynthia Bandurek, Macro/Wildlife Photographer (Argentina/Costa Rica)","Fernando Faciole, National Geographic Explorer, Conservation Photographer (Brazil)","Francesco Pacienza, Underwater Photographer (Italy)","Anthony Ochieng, National Geographic Explorer, Wildlife Photographer (Kenya)"],"submitVia":"Golden Turtle website","submitUrl":"https://photo.wncontest.ru/register","email": "","ai":"Not accepted","requirements":"Up to 20 images"};
+    const CURRENT_CALL = {"prize":"$2,000","category":"photography","org":"Golden Turtle","location":"Moscow, Russia","fee":"Free","deadline":"2026-04-07","resultsDate":"Autumn 2026","instagram":"@goldenturtlefest","eligibility":[],"jury":["Andrey Kamenev, National Geographic Russia Photographer","Gheorghe Popa, Nature/Landscape Photographer (Romania)","Mario Suárez Porras, Canon Pro Master, Bird Photographer (Spain)","Cynthia Bandurek, Macro/Wildlife Photographer (Argentina/Costa Rica)","Fernando Faciole, National Geographic Explorer, Conservation Photographer (Brazil)","Francesco Pacienza, Underwater Photographer (Italy)","Anthony Ochieng, National Geographic Explorer, Wildlife Photographer (Kenya)"],"submitVia":"Golden Turtle website","submitUrl":"https://photo.wncontest.ru/register","email": "","ai":"Not accepted","requirements":"Up to 20 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -147,7 +147,7 @@
       var u = 'https://wncontest.ru/en/photo/';
       var o = 'Golden Turtle';
       var dl = new Date('2026-04-07T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('150,000 RUB') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$2,000') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

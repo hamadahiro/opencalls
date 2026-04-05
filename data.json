@@ -3946,7 +3946,7 @@
       "url": "https://wncontest.ru/en/photo/",
       "instagram": "@goldenturtlefest",
       "location": "Moscow, Russia",
-      "prize": "150,000 RUB",
+      "prize": "$2,000",
       "eligibility": [],
       "jury": [
         "Andrey Kamenev, National Geographic Russia Photographer",
@@ -4069,7 +4069,7 @@
       ],
       "jury": [
         "Conor Moynihan, Associate Curator, RISD Museum",
-        "Nathan Lomas, Gallery Coordinator, The Image Flow"
+        "Nathan Lomas, Gallery Manager, The Image Flow"
       ],
       "submitVia": "ArtCall",
       "requirements": "Up to 5 images",
@@ -5110,7 +5110,7 @@
       "title": "PhMuseum Days 2026 Open Call",
       "org": "PhMuseum",
       "deadline": "2026-05-07",
-      "fee": "$28 early bird / $34",
+      "fee": "€24 early bird / €30",
       "category": "exhibition",
       "description": "International photo festival competition offering 4 solo exhibitions plus additional opportunities. All approaches welcome, including experimental.",
       "url": "https://phmuseum.com/grants/2026-phmuseum-days-photography-open-call",
@@ -5346,12 +5346,12 @@
       "prize": "€500 + exhibition",
       "eligibility": [],
       "jury": [
-        "Ami Vitale, Photographer",
-        "Brian Skerry, Photographer",
-        "Steve Winter, Photographer",
-        "Kathy Moran, Photo Editor",
-        "Sarah Leen, Photographer",
-        "Yumi Goto, Curator"
+        "Gina Williams, Photographer",
+        "Raphaelle Granger, Photographer",
+        "Marianna Santoni, Photographer",
+        "Tetiana Udovychenko, Photographer",
+        "Daria Bonera, Photographer",
+        "Inessa Yurovskikh, Photographer"
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
@@ -5484,14 +5484,16 @@
       "title": "Street Photography Barcelona Contest 2026",
       "org": "Street Photography Barcelona",
       "deadline": "2026-04-15",
-      "fee": "Free",
+      "fee": "€10–€40",
       "category": "photography",
       "description": "International street photography contest seeking authentic images of urban life. Three geographic categories: Local (Barcelona), National (Spain), and International. 25 finalists exhibited at Galerie Art Nomade, Barcelona.",
       "url": "https://www.streetphotographybarcelona.com/en/rules",
       "instagram": "@streetphotography.barcelona",
       "location": "Barcelona, Spain",
-      "prize": "€1,500",
-      "eligibility": [],
+      "prize": "€1,000",
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Xavi Herrero, Festival Director",
         "Olivier Verdier, Curator, Galerie Art Nomade"
@@ -5500,11 +5502,11 @@
       "email": "",
       "slug": "street-photography-barcelona-contest-2026",
       "orgInTitle": true,
-      "resultsDate": "May 7, 2026",
+      "resultsDate": "May 1, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://site.picter.com/street-photography-barcelona-2026",
       "requirements": "1–5 images",
-      "ai": null,
+      "ai": "Not accepted",
       "summary": "Authentic images of urban life. Three categories: Local, National, International. Exhibited at Galerie Art Nomade."
     },
     {
@@ -5625,7 +5627,7 @@
     {
       "title": "International Photography Awards 2026",
       "org": "International Photography Awards",
-      "deadline": "2026-04-30",
+      "deadline": "2026-06-30",
       "fee": "$20–$40",
       "category": "photography",
       "description": "One of the world's most prestigious annual photography competitions. 23rd edition. Eleven categories including Fine Art, Documentary, Nature, Portrait, and Photojournalism. $60,000 total prize pool. Sister organization of the Lucie Foundation.",
@@ -5633,12 +5635,18 @@
       "instagram": "@iphotoawards",
       "location": "Online",
       "prize": "$10,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
-        "Hossein Farmani, Founder",
-        "Alex Pollack, National Geographic",
+        "Anne Morin, Curator, diChroma Photography",
+        "Caroline Metcalfe, Photography Director",
+        "Giovanna Calvenzi, Photo Editor & Curator",
+        "Juan Curto, Photographer",
+        "Kirk McKoy, Photojournalist",
+        "Michael Pritchard, Director-General, Royal Photographic Society",
         "Paris Chong, Leica Gallery LA",
-        "Phillip Prodger, Photography Historian"
+        "Peter Baki, Photographer"
       ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
@@ -5756,7 +5764,6 @@
       "prize": "€500",
       "eligibility": [],
       "submitVia": "Submittable",
-      "ai": "Not accepted",
       "slug": "gomma-black-and-white-photo-award-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -5791,7 +5798,7 @@
         "Greger Ulf Nilson, Creative Director",
         "Jenny Lindhe, Curator & Artist",
         "Mandy Barker, Photographer",
-        "Lin Wei-Lun, Photographer"
+        "Tommaso Parrillo, Publisher & Art Director, Witty Books"
       ],
       "submitUrl": "https://site.picter.com/landskrona-foto-and-breadfield-dummy-award-2026",
       "summary": "Photobook dummy competition. Winner receives full publication by Breadfield Press in 2027.",
@@ -6242,7 +6249,7 @@
       "email": "",
       "slug": "aesthetica-art-prize-2026",
       "orgInTitle": true,
-      "resultsDate": "Spring 2027",
+      "resultsDate": "Early 2027",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://aestheticamagazine.com/artprize/submit",
       "summary": "Contemporary art prize. Winners exhibited at major public gallery and published in Aesthetica Magazine."
@@ -6608,9 +6615,9 @@
       "title": "Hariban Award 2026",
       "org": "Benrido",
       "deadline": "2026-06-15",
-      "fee": "$50",
+      "fee": "$40–$50",
       "category": "photography",
-      "description": "International collotype competition combining 170-year-old analogue printing with contemporary photography. Submit 12 black-and-white photographs. Grand Prize: funded two-week residency in Kyoto collaborating with master collotype printers, solo exhibition, and publication in official catalogue. Juror's Choice and Benrido Award winners receive catalogue publication and free Collotype Academy course.",
+      "description": "International collotype competition combining 170-year-old analogue printing with contemporary photography. Submit 8–12 black-and-white photographs. Grand Prize: funded two-week residency in Kyoto collaborating with master collotype printers, solo exhibition, and publication in official catalogue. Juror's Choice and Benrido Award winners receive catalogue publication and free Collotype Academy course.",
       "url": "https://www.benrido.co.jp/haribanaward/",
       "instagram": "@benrido.atelier",
       "location": "Kyoto, Japan",
@@ -6622,7 +6629,7 @@
       "orgInTitle": false,
       "resultsDate": "September 15, 2026",
       "dateAdded": "2026-03-22",
-      "requirements": "12 images",
+      "requirements": "8–12 images",
       "jury": [
         "Diane Dufour, Founder & Artistic Director, LE BAL Paris",
         "Erin O'Toole, Curator & Head of Photography, SFMOMA",

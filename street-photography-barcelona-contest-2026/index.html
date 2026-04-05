@@ -137,7 +137,7 @@
 
   <script>
     const CURRENT_SLUG = 'street-photography-barcelona-contest-2026';
-    const CURRENT_CALL = {"prize":"€1,500","category":"photography","org":"Street Photography Barcelona","location":"Barcelona, Spain","fee":"Free","deadline":"2026-04-15","resultsDate":"May 7, 2026","instagram":"@streetphotography.barcelona","eligibility":[],"jury":["Xavi Herrero, Festival Director","Olivier Verdier, Curator, Galerie Art Nomade"],"submitVia":"Picter","submitUrl":"https://site.picter.com/street-photography-barcelona-2026","email": "","ai":"","requirements":"1–5 images"};
+    const CURRENT_CALL = {"prize":"€1,000","category":"photography","org":"Street Photography Barcelona","location":"Barcelona, Spain","fee":"€10–€40","deadline":"2026-04-15","resultsDate":"May 1, 2026","instagram":"@streetphotography.barcelona","eligibility":["18-plus"],"jury":["Xavi Herrero, Festival Director","Olivier Verdier, Curator, Galerie Art Nomade"],"submitVia":"Picter","submitUrl":"https://site.picter.com/street-photography-barcelona-2026","email": "","ai":"Not accepted","requirements":"1–5 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -147,7 +147,7 @@
       var u = 'https://www.streetphotographybarcelona.com/en/rules';
       var o = 'Street Photography Barcelona';
       var dl = new Date('2026-04-15T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,500') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€1,000') + '\\nEntry fee: ' + icsE('€10–€40');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
