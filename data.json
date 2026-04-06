@@ -2,6 +2,27 @@
   "lastUpdated": "2026-04-06",
   "calls": [
     {
+      "title": "Loghaven Artist Residency 2027",
+      "org": "Loghaven",
+      "deadline": "2026-07-15",
+      "fee": "$25",
+      "category": "residency",
+      "description": "Residency on 90 acres of forested land in Knoxville, Tennessee for practicing artists at any career stage. Sessions range from 2–6 weeks between February and October 2027. All fellows receive an $850/week living stipend, travel subsidy ($400–$800 on a sliding scale), and up to $200 in materials shipping reimbursement. Disciplines include visual arts, writing, dance, music composition, theater, and interdisciplinary work. Applicants must be 21+, live 120+ miles from Knoxville, and have legal US work authorization. International artists are not eligible. Applications open June 1, 2026. Submit 8 JPEG images for visual art via SlideRoom.",
+      "url": "https://loghaven.org/residencies/apply/",
+      "location": "Knoxville, TN, USA",
+      "prize": "$850/week stipend",
+      "eligibility": [
+        "21-plus",
+        "united-states"
+      ],
+      "submitVia": "SlideRoom",
+      "slug": "loghaven-artist-residency-2027",
+      "orgInTitle": true,
+      "requirements": "8 images",
+      "summary": "2–6 week residency on 90 forested acres. $850/week stipend plus travel subsidy. Visual arts, writing, and more.",
+      "dateAdded": "2026-04-06T15:09:35Z"
+    },
+    {
       "title": "FMoPA 2026 International Photography Competition",
       "org": "Florida Museum of Photographic Arts",
       "deadline": "2026-04-22",
