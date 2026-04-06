@@ -71,6 +71,7 @@
       "submitVia": "Email",
       "slug": "fotograf-magazine-2026-open-call",
       "orgInTitle": true,
+      "requirements": "1 project PDF",
       "jury": [
         "Felix Hoffmann, Curator and Director, FOTO ARSENAL WIEN",
         "Markéta Kinterová, Editor-in-Chief, Fotograf Magazine",
@@ -4981,11 +4982,11 @@
       "deadline": "2026-07-01",
       "fee": "Free",
       "category": "residency",
-      "description": "One-month artist residency in Syracuse, New York, for photographers and image-based media artists worldwide. Light Work has supported over 400 artists through this program since 1975, many achieving international recognition. Twelve to fifteen artists selected annually. Residents receive a $5,000 stipend, a furnished apartment, 24-hour access to state-of-the-art digital and darkroom facilities, and generous staff support. Selected artists are published in a special edition of Contact Sheet: The Light Work Annual with a commissioned essay. The program partners with Autograph ABP and the Darryl Chappell Foundation.",
+      "description": "One-month artist residency in Syracuse, New York, for photographers and image-based media artists worldwide. Light Work has supported over 400 artists through this program since 1975, many achieving international recognition. Twelve to fifteen artists selected annually. Residents receive a $7,500 stipend, a furnished apartment, 24-hour access to state-of-the-art digital and darkroom facilities, and generous staff support. Selected artists are published in a special edition of Contact Sheet: The Light Work Annual with a commissioned essay. The program partners with Autograph ABP and the Darryl Chappell Foundation.",
       "url": "https://www.lightwork.org/air/",
       "instagram": "@lightworkorg",
       "location": "Syracuse, NY, USA",
-      "prize": "$5,000 stipend + publication",
+      "prize": "$7,500 stipend + publication",
       "eligibility": [],
       "submitVia": "SlideRoom",
       "slug": "2027-artist-in-residence-program-light-work",
@@ -4994,7 +4995,7 @@
       "dateAdded": "2026-03-15",
       "requirements": "Portfolio",
       "submitUrl": "https://lightwork.slideroom.com/",
-      "summary": "One-month residency in Syracuse for photographers. $5,000 stipend, apartment, 24-hour darkroom/digital access. Published in Contact Sheet.",
+      "summary": "One-month residency in Syracuse for photographers. $7,500 stipend, apartment, 24-hour darkroom/digital access. Published in Contact Sheet.",
       "email": ""
     },
     {
@@ -5130,7 +5131,7 @@
       "deadline": "Continuous",
       "fee": "$35",
       "category": "grant",
-      "description": "Quarterly grants: 2 x $1,800 (one photographer, one artist per quarter); 12 honorable mentions. Website and community recognition.",
+      "description": "Quarterly grants: 2 x $1,800 (one photographer, one artist per quarter); 18 honorable mentions. Website and community recognition.",
       "url": "https://innovateartistgrants.org/apply",
       "instagram": "@innovategrant",
       "location": "Online",
@@ -5144,7 +5145,7 @@
       "dateAdded": "2026-03-15",
       "requirements": "3–10 images",
       "submitUrl": "https://innovateartistgrants.org/apply",
-      "summary": "Quarterly grants: 2 x $1,800 (one photographer, one artist). 12 honorable mentions per cycle."
+      "summary": "Quarterly grants: 2 x $1,800 (one photographer, one artist). 18 honorable mentions per cycle."
     },
     {
       "title": "Analog Forever Magazine — Calls for Entry",
@@ -6043,7 +6044,7 @@
     {
       "title": "Nature Photographer of the Year 2026",
       "org": "Nature Photographer of the Year",
-      "deadline": "2026-05-31",
+      "deadline": "2026-05-24",
       "fee": "€34",
       "category": "photography",
       "description": "International nature photography competition with 12 categories for individual images, a young photographers category (ages 10–17, free entry), and the Fred Hazelhoff Award for portfolios (€17.50). Award ceremony November 14, 2026.",
@@ -9771,6 +9772,7 @@
       "summary": "Free 7-month hybrid workshop for Ukrainian photographers on war's environmental impact. €1,500 production grant.",
       "email": "",
       "resultsDate": "May 15, 2026",
+      "ai": "Not accepted",
       "dateAdded": "2026-04-06T19:09:21Z"
     }
   ]
