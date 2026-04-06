@@ -133,7 +133,7 @@
 
   <script>
     const CURRENT_SLUG = 'delfina-foundation-india-residency-2026';
-    const CURRENT_CALL = {"prize":"Fully funded 12-week residency","category":"residency","org":"Delfina Foundation","location":"London, United Kingdom","fee":"Free","deadline":"2026-04-13","resultsDate":"","instagram":"@delfinafdn","eligibility":["india"],"jury":[],"submitVia":"Cognito Forms","submitUrl":"https://www.cognitoforms.com/DelfinaFoundation/OPENCALLRESIDENCYFORARTISTSBASEDININDIA","email": "","ai":"","requirements":""};
+    const CURRENT_CALL = {"prize":"Residency","category":"residency","org":"Delfina Foundation","location":"London, United Kingdom","fee":"Free","deadline":"2026-04-13","resultsDate":"","instagram":"@delfinafdn","eligibility":["india"],"jury":[],"submitVia":"Cognito Forms","submitUrl":"https://www.cognitoforms.com/DelfinaFoundation/OPENCALLRESIDENCYFORARTISTSBASEDININDIA","email": "","ai":"","requirements":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -143,7 +143,7 @@
       var u = 'https://www.delfinafoundation.com/open-calls/current/open-call-for-artists-based-in-india/';
       var o = 'Delfina Foundation';
       var dl = new Date('2026-04-13T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Fully funded 12-week residency') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Residency') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
