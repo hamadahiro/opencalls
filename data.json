@@ -9725,6 +9725,53 @@
       "email": "",
       "resultsDate": "June 15, 2026",
       "dateAdded": "2026-04-05T03:12:11.470Z"
+    },
+    {
+      "title": "Dodho Magazine #37",
+      "org": "Dodho Magazine",
+      "deadline": "2026-05-31",
+      "fee": "€45",
+      "category": "zine",
+      "description": "International open call for print edition #37 of Dodho Magazine. Conceived as an artistic and curatorial volume rather than a traditional magazine. Each selected photographer receives 20 full pages with visual rhythm, curatorial text, and breathing room for images. Two submission modes: Magazine Mode for a full portfolio feature, or Cover Mode for the front page. International distribution across galleries, festivals, museums, and institutions. 36 prior editions featuring 216 photographers from 32 countries.",
+      "url": "https://www.dodho.com/call-for-entries/",
+      "instagram": "@dodhomagazine",
+      "prize": "Publication + international distribution",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "slug": "dodho-magazine-37",
+      "orgInTitle": true,
+      "location": "Barcelona, Spain",
+      "summary": "Print edition #37. 20 full pages per selected photographer. Distributed to galleries, festivals, and institutions worldwide.",
+      "jury": [
+        "Holly Hart",
+        "Marcel Kollen",
+        "Frank Meo",
+        "Paris Chong"
+      ],
+      "dateAdded": "2026-04-06T19:09:21Z"
+    },
+    {
+      "title": "Odesa Workshop — Environmental Consequences of War in Ukraine",
+      "org": "Inland",
+      "deadline": "2026-05-10",
+      "fee": "Free",
+      "category": "education",
+      "description": "7-month hybrid workshop for Ukrainian or Ukraine-based documentary photographers documenting the environmental consequences of war. 10–12 participants selected. Program includes online lectures (June 2026), live sessions with international editors and experts, a 3-day in-person lab in Odesa (September 11–13, 2026), and individual mentorship through November 2026. One participant receives a €1,500 production grant. Supported by JournalismFund Europe.",
+      "url": "https://inlandstories.com/odesa-workshop",
+      "instagram": "@inlandstories",
+      "prize": "€1,500 production grant",
+      "eligibility": [
+        "ukraine"
+      ],
+      "submitVia": "Google Forms",
+      "requirements": "Up to 10 images",
+      "slug": "odesa-workshop-environmental-consequences-of-war",
+      "orgInTitle": false,
+      "location": "Odesa, Ukraine",
+      "summary": "Free 7-month hybrid workshop for Ukrainian photographers on war's environmental impact. €1,500 production grant.",
+      "email": "",
+      "resultsDate": "May 15, 2026",
+      "dateAdded": "2026-04-06T19:09:21Z"
     }
   ]
 }
