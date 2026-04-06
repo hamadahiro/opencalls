@@ -137,7 +137,7 @@
 
   <script>
     const CURRENT_SLUG = 'natural-landscape-photography-awards-2026';
-    const CURRENT_CALL = {"prize":"$5,000","category":"photography","org":"Natural Landscape Photography Awards","location":"Online","fee":"$17–$68","deadline":"2026-05-31","resultsDate":"September 15, 2026","instagram":"@naturallandscapeawards","eligibility":[],"jury":["Anna Morgan","Albert Dros","Wayne Suggs","Mark Littlejohn","Eric Bennett"],"submitVia":"Website form","submitUrl":"https://submit.naturallandscapeawards.com","email": "","ai":"Not accepted","requirements":"1–18 images"};
+    const CURRENT_CALL = {"prize":"$5,000","category":"photography","org":"Natural Landscape Photography Awards","location":"Online","fee":"$17–$113","deadline":"2026-05-31","resultsDate":"September 15, 2026","instagram":"@naturallandscapeawards","eligibility":[],"jury":["Anna Morgan","Albert Dros","Wayne Suggs","Mark Littlejohn","Eric Bennett"],"submitVia":"Website form","submitUrl":"https://submit.naturallandscapeawards.com","email": "","ai":"Not accepted","requirements":"1–18 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -147,7 +147,7 @@
       var u = 'https://naturallandscapeawards.com/about/';
       var o = 'Natural Landscape Photography Awards';
       var dl = new Date('2026-05-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$5,000') + '\\nEntry fee: ' + icsE('$17–$68');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$5,000') + '\\nEntry fee: ' + icsE('$17–$113');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
