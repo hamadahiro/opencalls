@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Maryland 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today.">
-  <meta name="keywords" content="open calls Maryland, call for entries Maryland, photography opportunities Maryland, art exhibitions Maryland, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/united-states/maryland/">
+  <title>COAL - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from COAL. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="COAL open call, COAL call for entries, COAL submissions, COAL photography, COAL exhibition, COAL artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/coal/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Maryland 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today.">
+  <meta property="og:title" content="COAL - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from COAL. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/united-states/maryland/">
+  <meta property="og:url" content="https://opencalls.monographica.com/coal/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Maryland 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/united-states/maryland/",
+  "name": "COAL - Open Calls",
+  "description": "Open calls and submission opportunities from COAL. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/coal/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,20 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "United States",
-      "item": "https://opencalls.monographica.com/united-states/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "MD",
-      "item": "https://opencalls.monographica.com/united-states/maryland/"
+      "name": "COAL",
+      "item": "https://opencalls.monographica.com/coal/"
     }
   ]
 }
@@ -109,14 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
-      <h1>Open Calls for Artists in Maryland</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>COAL</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from COAL. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/cumberland-valley-photographers-2026-washington-county-museum-of-fine-arts/">Cumberland Valley Photographers 2026 &middot; Washington County Museum of Fine Arts</a></h3><p>April 30, 2026 · $15</p><p>Juried museum exhibition on America's 250th anniversary themes. Open to MD, VA, WV, PA, DC photographers. $3K+ in cash prizes.</p></div>
-      <div class="static-call-item"><h3><a href="/appalachian-nature-art-photography-competition-exhibition-arcadian-gallery/">Appalachian Nature Art &amp; Photography Competition &amp; Exhibition &middot; Arcadian Gallery</a></h3><p>April 7, 2026 · $15</p><p>Appalachian nature photography. $500 Best of Show plus landscape and wildlife awards. MD, PA, VA, WV, DC residents.</p></div>
+      <div class="static-call-item"><h3><a href="/coal-prize-2026-the-night/">COAL Prize 2026 — The Night &middot; COAL</a></h3><p>April 28, 2026 · Free</p><p>€12,000 art &amp; ecology prize with residency. Theme: defending darkness. Jury Prize €3,000. Free, open worldwide.</p></div>
 
     </section>
 
@@ -133,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', MD,') || c.location.includes(', MD, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'COAL').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
