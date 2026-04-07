@@ -183,20 +183,29 @@
       "title": "Minimalist Photography Awards 2026",
       "org": "Minimalist Photography Awards",
       "deadline": "2026-06-02",
-      "fee": "€20–25/image",
+      "fee": "€20–€35",
       "category": "photography",
       "description": "Seventh edition of the international award celebrating minimalist photography as a visual language. Open to photographers worldwide. Submit single images or series (2–7 images) across 12 categories including Abstract, Architecture, Fine Art, Landscape, Long Exposure, Portrait, and Street. Grand prize: €2,000 cash, hand-crafted trophy, title of Minimalist Photographer of the Year, and inclusion in the official annual book. Earlybird deadline May 1; final deadline June 2, 2026.",
       "url": "https://minimalistphotographyawards.com/",
       "instagram": "@minimalistphotographyawards",
       "location": "Bregenz, Austria",
       "prize": "€2,000 + book + exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "requirements": "1+ images; series: 2–7",
       "slug": "minimalist-photography-awards-2026",
       "orgInTitle": true,
       "summary": "International award for minimalist photography. €2,000 grand prize, book publication, and exhibition. 12 categories.",
       "ai": "Only accepted if incorporating a real photograph",
+      "resultsDate": "July 2026",
+      "jury": [
+        "Sylvia Janschek, Photographer",
+        "Matthias Weissengruber, Photographer",
+        "Leon Boch, Photographer",
+        "Milad Safabakhsh, Founder, Minimalist Photography Awards"
+      ],
       "dateAdded": "2026-04-05T11:12:06.356Z",
       "submitUrl": "https://minimalistphotographyawards.com/dashboard/"
     },
@@ -667,6 +676,7 @@
       "slug": "manipulation-and-illusion-co-ex-collaborative",
       "orgInTitle": false,
       "summary": "Explore perception, belief, identity, and power through illusion and manipulation. All disciplines. Free, open worldwide.",
+      "email": "",
       "dateAdded": "2026-03-28T21:39:11.533Z"
     },
     {
@@ -768,6 +778,7 @@
       "slug": "home-decode-gallery",
       "orgInTitle": false,
       "summary": "Exploring the multifaceted nature of home — feeling, memory, sanctuary, heritage. Pro printing and museum framing in Tucson, AZ.",
+      "resultsDate": "~May 2, 2026",
       "dateAdded": "2026-04-07T03:09:19.335Z"
     },
     {
@@ -4820,14 +4831,15 @@
     {
       "title": "reFocus Awards - Black and White Photo Contest",
       "org": "reFocus Awards",
-      "deadline": "2026-04-07",
+      "deadline": "2026-05-25",
       "fee": "$25–$50",
       "category": "photography",
       "description": "Celebrating black and white photography. Winners receive career-enhancing cash prizes.",
       "url": "https://refocus-awards.com/contests/black-white-photo-contest",
       "instagram": "@refocus.awards",
       "location": "Online",
-      "prize": "$3,500",
+      "prize": "$2,500",
+      "email": "",
       "eligibility": [
         "18-plus"
       ],
@@ -4843,10 +4855,10 @@
       "requirements": "1–5 images",
       "slug": "refocus-awards-black-and-white-photo-contest",
       "orgInTitle": true,
-      "resultsDate": "June 15, 2026",
+      "resultsDate": "June 17, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://refocus-awards.com/contests/black-white-photo-contest",
-      "summary": "Celebrating black and white photography. Cash prizes and career-enhancing recognition."
+      "summary": "Celebrating black and white photography. $2,500 in cash prizes and career-enhancing recognition."
     },
     {
       "title": "The Book Project - Street Photography",
