@@ -112,6 +112,10 @@
       <div class="call-detail-info" id="detailInfo"></div>
 
       <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Fotobus Society student members</p>
+      </div>
+
+      <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/fotobus-society/">Fotobus Society</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
@@ -133,7 +137,7 @@
 
   <script>
     const CURRENT_SLUG = 'fotobus-library-award-2026';
-    const CURRENT_CALL = {"prize":"Exhibition","category":"zine","org":"Fotobus Society","location":"Arles, France","fee":"Free","deadline":"2026-05-15","resultsDate":"June 2026","instagram":"@fotobus_society","eligibility":[],"jury":[],"submitVia":"Post","submitUrl":"https://fotobus-society.com/en/application-library-award/","email": "","ai":"Not accepted","requirements":"1 book"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"zine","org":"Fotobus Society","location":"Arles, France","fee":"Free","deadline":"2026-05-15","resultsDate":"June 2026","instagram":"@fotobus_society","eligibility":[],"jury":["Fotobus Society student members"],"submitVia":"Post","submitUrl":"https://fotobus-society.com/en/application-library-award/","email": "","ai":"Not accepted","requirements":"1 book"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}

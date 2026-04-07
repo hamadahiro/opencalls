@@ -79,6 +79,7 @@
         "united-states"
       ],
       "submitVia": "Cognito Forms",
+      "submitUrl": "https://www.cognitoforms.com/TheMartinHouse/MartinHouseCreativeResidencyProgramApplicationForm2027",
       "slug": "martin-house-creative-residency-2026",
       "orgInTitle": true,
       "summary": "2–4 week residency at Frank Lloyd Wright's Martin House. $5,000 stipend + $1,000 travel. Work inspired by architecture and design.",
@@ -2251,6 +2252,7 @@
       "prize": "Exhibition",
       "eligibility": [],
       "ai": "Not accepted",
+      "jury": ["Fotobus Society student members"],
       "submitVia": "Post",
       "slug": "fotobus-library-award-2026",
       "orgInTitle": true,
@@ -9888,9 +9890,11 @@
       "instagram": "@inlandstories",
       "prize": "€1,500 production grant",
       "eligibility": [
-        "ukraine"
+        "ukraine",
+        "18-plus"
       ],
       "submitVia": "Google Forms",
+      "submitUrl": "https://docs.google.com/forms/d/1h1y1HjceYRXaT-e5njm2Y7K7fZYZBwjYDYUeKz9Q1QE/",
       "requirements": "Up to 10 images",
       "slug": "odesa-workshop-environmental-consequences-of-war",
       "orgInTitle": false,
