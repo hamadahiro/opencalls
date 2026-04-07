@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Siena Awards - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Siena Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="Siena Awards open call, Siena Awards call for entries, Siena Awards submissions, Siena Awards photography, Siena Awards exhibition, Siena Awards artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/siena-awards/">
+  <title>Gulf Coast Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists residing in US Gulf Coast states (Texas, Louisiana, Mississippi, Alabama, Georgia, Florida).">
+  <meta name="keywords" content="Gulf Coast open calls, Gulf Coast photography, call for entries Gulf Coast, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/gulf-coast/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Siena Awards - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Siena Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="Gulf Coast Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists residing in US Gulf Coast states (Texas, Louisiana, Mississippi, Alabama, Georgia, Florida).">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/siena-awards/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/gulf-coast/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Siena Awards - Open Calls",
-  "description": "Open calls and submission opportunities from Siena Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/siena-awards/",
+  "name": "Gulf Coast Open Calls 2026",
+  "description": "Open calls restricted to photographers and artists residing in US Gulf Coast states (Texas, Louisiana, Mississippi, Alabama, Georgia, Florida).",
+  "url": "https://opencalls.monographica.com/eligibility/gulf-coast/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Organizations",
-      "item": "https://opencalls.monographica.com/organizations/"
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Siena Awards",
-      "item": "https://opencalls.monographica.com/siena-awards/"
+      "name": "Gulf Coast Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/gulf-coast/"
     }
   ]
 }
@@ -103,13 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Siena Awards</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Siena Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Gulf Coast Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in US Gulf Coast states (Texas, Louisiana, Mississippi, Alabama, Georgia, Florida).</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/siena-creative-photo-awards-2026/">Siena Creative Photo Awards 2026</a></h3><p>April 15, 2026 · Free</p><p>International contest rewarding originality across 8 categories. Winners honored at ceremony in Siena's Teatro dei Rinnovati.</p></div>
+      <div class="static-call-item"><h3><a href="/michael-p-smith-fund-for-documentary-photography-2025-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2025 &middot; New Orleans Photo Alliance</a></h3><p>May 4, 2026 · $25</p><p>Annual grant for Gulf Coast photographers. $3,000 winner prize, PhotoNOLA Portfolio Review, and exhibition.</p></div>
 
     </section>
 
@@ -126,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Siena Awards').map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('gulf-coast')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
