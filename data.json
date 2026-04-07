@@ -1,6 +1,24 @@
 {
-  "lastUpdated": "2026-04-07",
+  "lastUpdated": "2026-04-08",
   "calls": [
+    {
+      "title": "COAL Prize 2026 — The Night",
+      "org": "COAL",
+      "deadline": "2026-04-28",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Annual art and ecology prize from French foundation COAL. 2026 theme: The Night — defending darkness as a common good, a major ecological issue for regeneration of life, a refuge, and a right to rest. Main prize: €12,000 grant plus creative residency at Domaine de Belval (François Sommer Foundation). Special Jury Prize: €3,000. Centre Wallonie-Bruxelles mention: €2,000 plus exhibition. Ateliers Médicis mention: residency near Paris. Ten artists nominated by committee, winners chosen by jury. Submit single PDF (max 30MB) with project description, technical note, budget, 2+ HD visuals, CV, and portfolio. Open worldwide, all disciplines including photography and lens-based media.",
+      "url": "https://projetcoal.org/en/prize/coal-prize/call-for-projects-2026/",
+      "location": "Paris, France",
+      "prize": "€12,000 + residency",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://upload.projetcoal.org",
+      "slug": "coal-prize-2026-the-night",
+      "orgInTitle": false,
+      "summary": "€12,000 art & ecology prize with residency. Theme: defending darkness. Jury Prize €3,000. Free, open worldwide.",
+      "dateAdded": "2026-04-07T23:15:12.510Z"
+    },
     {
       "title": "1st Photobook Grants 2026",
       "org": "Eyes Wide Open",
@@ -2252,7 +2270,9 @@
       "prize": "Exhibition",
       "eligibility": [],
       "ai": "Not accepted",
-      "jury": ["Fotobus Society student members"],
+      "jury": [
+        "Fotobus Society student members"
+      ],
       "submitVia": "Post",
       "slug": "fotobus-library-award-2026",
       "orgInTitle": true,
