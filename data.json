@@ -5200,6 +5200,7 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
       "email": "",
+      "resultsDate": "September 26, 2026",
       "summary": "Annual international celebration of the cyanotype process. Submit your cyanotype work to be featured."
     },
     {
@@ -6404,7 +6405,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "requirements": "1–9 images",
-      "submitUrl": "https://www.tokyofotoawards.jp/submit/",
+      "submitUrl": "https://www.tokyofotoawards.jp/submit/register.php",
       "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.",
       "email": "",
       "resultsDate": "September 2026"
@@ -9359,7 +9360,8 @@
         "united-states",
         "25-plus"
       ],
-      "submitVia": "Official website",
+      "submitVia": "SlideRoom",
+      "submitUrl": "https://taf.slideroom.com/",
       "requirements": "5–10 images",
       "slug": "tulsa-artist-fellowship-2027-2029",
       "orgInTitle": true,
