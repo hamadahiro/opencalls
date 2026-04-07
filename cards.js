@@ -64,6 +64,7 @@ const eligibilityLabel = {
   '10-18': 'Ages 10–18',
   'mid-atlantic-us': 'Mid-Atlantic US',
   'alaska': 'Alaska only',
+  'gulf-coast': 'Gulf Coast only',
   'spain': 'Spain only',
   'india': 'India only',
   '16-plus': '16+',
