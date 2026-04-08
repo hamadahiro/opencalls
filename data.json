@@ -37,7 +37,9 @@
       "url": "https://www.praxisphotocenter.org/x1-sub-6-12",
       "location": "Minneapolis, MN, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Smarter Entry",
       "submitUrl": "https://client.smarterentry.com/praxis",
       "slug": "black-and-white-praxis-photo-arts-center",
@@ -7646,7 +7648,7 @@
     {
       "title": "Photo Trouvée Virtual Artist Residency — Spring 2026",
       "org": "Photo Trouvée Magazine",
-      "deadline": "2026-04-08",
+      "deadline": "2026-04-13",
       "fee": "$650",
       "category": "residency",
       "description": "10-week virtual residency (April 24 – June 26, 2026) for artists who work with or are inspired by found/family photographs. Weekly Zoom calls, bio/statement workshops, artist talks, group feedback, accountability groups. Only 9 artists selected. Partial scholarships available.",
