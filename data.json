@@ -2,6 +2,57 @@
   "lastUpdated": "2026-04-08",
   "calls": [
     {
+      "title": "31st National Competition 2026",
+      "org": "Soho Photo Gallery",
+      "deadline": "2026-05-09",
+      "fee": "$55 for 1-5 images",
+      "category": "exhibition",
+      "description": "Soho Photo Gallery's 31st annual National Competition. Approximately 60 photographs selected for exhibition at the gallery's spacious W23rd Street location in Chelsea, New York. Cash prizes for first ($400) and second ($200) place. Third place and up to four honorable mentions receive prizes from sponsor Archival Methods. Juror: Joanna Lehan, Manager of Curatorial Projects at Museum of the City of New York. Open to photographers who are residents of the United States. Exhibition July 2026.",
+      "url": "https://www.sohophoto.com/national-competition/",
+      "location": "New York, NY, USA",
+      "prize": "$400 first place + exhibition",
+      "eligibility": [
+        "united-states"
+      ],
+      "submitVia": "CaFÉ",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17273",
+      "slug": "31st-national-competition-2026-soho-photo-gallery",
+      "orgInTitle": false,
+      "summary": "Annual photo competition at Soho Photo Gallery NYC. ~60 works exhibited. $400 first, $200 second. US residents only.",
+      "requirements": "5-12 images",
+      "jury": [
+        "Joanna Lehan"
+      ],
+      "resultsDate": "June 7, 2026",
+      "ai": "Not accepted",
+      "dateAdded": "2026-04-08T15:12:56.881Z"
+    },
+    {
+      "title": "BLACK & WHITE",
+      "org": "Praxis Photo Arts Center",
+      "deadline": "2026-05-03",
+      "fee": "$35 for 5 images",
+      "category": "exhibition",
+      "description": "International juried photography exhibition at Praxis Gallery in Minneapolis celebrating monochrome photography as a deliberate creative choice. Up to 74 images selected for exhibition June 20 – July 11, 2026. Awards include Juror's Choice (free entry to three future calls) and Directors' Choice (free entry to two future calls), plus eight honorable mentions. Members receive 10 images for the price of 5. Free submissions available for artists experiencing financial hardship. Juror: Sandrine Hermand-Grisel, fine art photographer, printmaker, and founder of All About Photo.",
+      "url": "https://www.praxisphotocenter.org/x1-sub-6-12",
+      "location": "Minneapolis, MN, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Smarter Entry",
+      "submitUrl": "https://client.smarterentry.com/praxis",
+      "slug": "black-and-white-praxis-photo-arts-center",
+      "orgInTitle": false,
+      "summary": "Monochrome juried exhibition at Praxis Gallery Minneapolis. Up to 74 works selected. Open internationally.",
+      "requirements": "1-10 images",
+      "jury": [
+        "Sandrine Hermand-Grisel"
+      ],
+      "resultsDate": "May 14, 2026",
+      "email": "",
+      "instagram": "@praxis_gallery",
+      "dateAdded": "2026-04-08T15:12:56.881Z"
+    },
+    {
       "title": "Thresholds 2026: Up, Close and Personal",
       "org": "Los Angeles Center of Photography",
       "deadline": "2026-04-21",
@@ -18,7 +69,9 @@
       "orgInTitle": false,
       "summary": "Street photography exhibition at LACP LA. $500 first place. Digital projection show + opening event. Open worldwide.",
       "requirements": "1-35 images",
-      "jury": ["Michaela Norah Mohrmann"],
+      "jury": [
+        "Michaela Norah Mohrmann"
+      ],
       "resultsDate": "April 28, 2026",
       "dateAdded": "2026-04-08T08:48:33.497Z"
     },
@@ -41,7 +94,9 @@
       "email": "",
       "instagram": "@karenhymer",
       "requirements": "3-10 images",
-      "jury": ["Jill Enfield"],
+      "jury": [
+        "Jill Enfield"
+      ],
       "ai": "Not accepted",
       "dateAdded": "2026-04-08T08:48:33.497Z"
     },
