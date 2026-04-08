@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in New Mexico 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.">
-  <meta name="keywords" content="open calls New Mexico, call for entries New Mexico, photography opportunities New Mexico, art exhibitions New Mexico, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/united-states/new-mexico/">
+  <title>Los Angeles Center of Photography - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Los Angeles Center of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Los Angeles Center of Photography open call, Los Angeles Center of Photography call for entries, Los Angeles Center of Photography submissions, Los Angeles Center of Photography photography, Los Angeles Center of Photography exhibition, Los Angeles Center of Photography artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/los-angeles-center-of-photography/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in New Mexico 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.">
+  <meta property="og:title" content="Los Angeles Center of Photography - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Los Angeles Center of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/united-states/new-mexico/">
+  <meta property="og:url" content="https://opencalls.monographica.com/los-angeles-center-of-photography/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in New Mexico 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/united-states/new-mexico/",
+  "name": "Los Angeles Center of Photography - Open Calls",
+  "description": "Open calls and submission opportunities from Los Angeles Center of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/los-angeles-center-of-photography/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,20 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "United States",
-      "item": "https://opencalls.monographica.com/united-states/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "NM",
-      "item": "https://opencalls.monographica.com/united-states/new-mexico/"
+      "name": "Los Angeles Center of Photography",
+      "item": "https://opencalls.monographica.com/los-angeles-center-of-photography/"
     }
   ]
 }
@@ -109,15 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
-      <h1>Open Calls for Artists in New Mexico</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Mexico. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Los Angeles Center of Photography</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Los Angeles Center of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/city-photography-exhibit-dusk-photo-gallery/">CITY Photography Exhibit &middot; Dusk Gallery</a></h3><p>April 16, 2026 · $40–$45</p><p>Capturing personal urban experience from quiet moments to bustling energy. Santa Fe, NM.</p></div>
-      <div class="static-call-item"><h3><a href="/light-dreams/">Light Dreams &middot; Light Art Space</a></h3><p>May 19, 2026 · $35 for 3 images</p><p>Alt-process juried show in New Mexico. Cyanotype, platinum, wet-plate &amp; more. Open worldwide, student rate $20.</p></div>
-      <div class="static-call-item"><h3><a href="/botanical-photography-exhibit-dusk-photo-gallery/">BOTANICAL Photography Exhibit &middot; Dusk Gallery</a></h3><p>March 26, 2026 · $40–$45</p><p>Beyond documentation — seeking character in a leaf, architecture in a seedpod. All styles welcome. Santa Fe, NM.</p></div>
+      <div class="static-call-item"><h3><a href="/thresholds-2026-up-close-and-personal/">Thresholds 2026: Up, Close and Personal &middot; Los Angeles Center of Photography</a></h3><p>April 21, 2026 · $25 for 1 image</p><p>Street photography exhibition at LACP LA. $500 first place. Digital projection show + opening event. Open worldwide.</p></div>
 
     </section>
 
@@ -134,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', NM,') || c.location.includes(', NM, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Los Angeles Center of Photography').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
