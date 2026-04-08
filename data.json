@@ -275,7 +275,9 @@
       "instagram": "@photography4humanity",
       "location": "New York, NY, USA",
       "prize": "Exhibition at UN Headquarters",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "slug": "photography-4-humanity-fotografiska-global-prize-2026",
       "orgInTitle": true,
@@ -283,9 +285,12 @@
       "summary": "Theme: HOME. Selected work exhibited at UN Headquarters NYC, curated by James Nachtwey. Free entry.",
       "resultsDate": "October 2026",
       "email": "",
+      "requirements": "Up to 3 images",
+      "ai": "Not accepted",
       "jury": [
         "James Nachtwey, Photojournalist & Guest Curator",
-        "Pauline Benthede, Global VP Artistic Direction & Exhibitions, Fotografiska"
+        "Pauline Benthede, Global VP Artistic Direction & Exhibitions, Fotografiska",
+        "Sophia Emmerich, Lead Editor, Fotografiska Emerging Platform"
       ],
       "dateAdded": "2026-04-06T01:15:47.460Z"
     },
