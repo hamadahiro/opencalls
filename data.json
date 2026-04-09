@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-08",
+  "lastUpdated": "2026-04-09",
   "calls": [
     {
       "title": "31st National Competition 2026",
@@ -10046,6 +10046,29 @@
       "resultsDate": "May 15, 2026",
       "ai": "Not accepted",
       "dateAdded": "2026-04-06T19:09:21Z"
+    },
+    {
+      "title": "Photobook Open Call",
+      "org": "Sonntag Grant",
+      "deadline": "2026-05-31",
+      "fee": "€10",
+      "category": "grant",
+      "description": "Open call for a fully-funded photobook from the Sonntag Grant for Photography, in collaboration with Replika Publishing. One FLINTA (female, lesbian, inter, non-binary, trans, agender) artist is selected to produce a photobook with Replika Publishing (350+ copies, 50 to artist). Book launch at Bildband Berlin with travel up to €300 and accommodation covered. Projects should be finished or at an advanced stage. Berlin-based grant launched in 2025. Open globally.",
+      "url": "https://sonntag-grant.org/photobook-open-call",
+      "location": "Berlin, Germany",
+      "instagram": "@sonntaggrant",
+      "email": "",
+      "prize": "Fully-funded photobook + book launch",
+      "eligibility": [
+        "flinta"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://sonntag-grant.org/photobook-open-call",
+      "requirements": "15-20 images",
+      "slug": "photobook-open-call-sonntag-grant",
+      "orgInTitle": false,
+      "summary": "Photobook open call for FLINTA artists with Replika Publishing. 350+ copy print run. Book launch at Bildband Berlin.",
+      "dateAdded": "2026-04-09T03:21:11.695Z"
     }
   ]
 }
