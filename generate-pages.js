@@ -1740,9 +1740,9 @@ staleFiles.forEach(f => {
       html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
       changed = true;
     }
-  } else if (html.includes('<meta name="robots" content="noindex">')) {
-    // Non-redirect stale pages (ended calls with real content): allow indexing
-    html = html.replace('<meta name="robots" content="noindex">', '<meta name="robots" content="index, follow">');
+  } else if (!html.includes('<meta name="robots" content="noindex">')) {
+    // Non-redirect stale pages (ended calls): add noindex — thin/outdated content hurts SEO
+    html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
     changed = true;
   }
   if (changed) {
