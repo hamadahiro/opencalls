@@ -73,7 +73,9 @@ const eligibilityLabel = {
   '25-plus': '25+',
   'student': 'Students',
   'ukraine': 'Ukraine only',
-  'flinta': 'FLINTA'
+  'flinta': 'FLINTA',
+  'global-south': 'Global South',
+  'france': 'France only'
 };
 
 const prizeCategoryLabel = {

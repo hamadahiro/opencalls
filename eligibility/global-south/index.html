@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Prize Type 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
-  <meta name="keywords" content="open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/prize/">
+  <title>Global South Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls for photographers and artists from the Global South — Africa, the Caribbean, Southeast Asia, Latin America, and the Middle East.">
+  <meta name="keywords" content="Global South open calls, Global South photography, call for entries Global South, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/global-south/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Prize Type 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.">
+  <meta property="og:title" content="Global South Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls for photographers and artists from the Global South — Africa, the Caribbean, Southeast Asia, Latin America, and the Middle East.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/prize/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/global-south/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,14 +27,40 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Prize Type 2026",
-  "description": "Browse open calls by prize type.",
-  "url": "https://opencalls.monographica.com/prize/",
+  "name": "Global South Open Calls 2026",
+  "description": "Open calls for photographers and artists from the Global South — Africa, the Caribbean, Southeast Asia, Latin America, and the Middle East.",
+  "url": "https://opencalls.monographica.com/eligibility/global-south/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
     "url": "https://monographica.com"
   }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://opencalls.monographica.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Global South Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/global-south/"
+    }
+  ]
 }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,40 +103,15 @@
 
   <main>
     <section class="hero">
-      <h1>Prizes</h1>
-      <h2 class="subtitle">Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Global South Open Calls</h1>
+      <h2 class="subtitle">Open calls for photographers and artists from the Global South — Africa, the Caribbean, Southeast Asia, Latin America, and the Middle East.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-            <a href="/prize/cash/" class="index-item">
-        <span class="index-item-name">Cash Prize</span>
-        <span class="dots"></span>
-        <span class="index-item-count">144</span>
-      </a>
-      <a href="/prize/exhibition/" class="index-item">
-        <span class="index-item-name">Exhibition</span>
-        <span class="dots"></span>
-        <span class="index-item-count">89</span>
-      </a>
-      <a href="/prize/publication/" class="index-item">
-        <span class="index-item-name">Publication</span>
-        <span class="dots"></span>
-        <span class="index-item-count">49</span>
-      </a>
-      <a href="/prize/residency/" class="index-item">
-        <span class="index-item-name">Residency</span>
-        <span class="dots"></span>
-        <span class="index-item-count">13</span>
-      </a>
-      <a href="/prize/fellowship/" class="index-item">
-        <span class="index-item-name">Fellowship</span>
-        <span class="dots"></span>
-        <span class="index-item-count">1</span>
-      </a>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/1st-photobook-grants-2026/">1st Photobook Grants 2026 &middot; Eyes Wide Open</a></h3><p>May 17, 2026 · Free</p><p>Three €5,000 grants for debut photobook projects. Categories: Global South, French, and female photographers. Free, needs French publisher.</p></div>
 
     </section>
-
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -120,6 +121,18 @@
 
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('global-south')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>

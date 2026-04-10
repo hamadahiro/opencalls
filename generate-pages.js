@@ -688,7 +688,9 @@ const eligibilityGroups = {
   '25-plus': { short: '25+', title: 'Open Calls Requiring 25+', desc: 'Open calls restricted to photographers and artists aged 25 or older. Exhibitions, grants, competitions, and awards with a 25+ age requirement.' },
   'student': { short: 'Students', title: 'Open Calls for Students', desc: 'Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.' },
   'ukraine': { short: 'Ukraine', title: 'Ukraine-Only Open Calls', desc: 'Open calls restricted to Ukrainian or Ukraine-based photographers and artists. Exhibitions, grants, workshops, and awards for Ukrainian artists.' },
-  'flinta': { short: 'FLINTA', title: 'Open Calls for FLINTA Artists', desc: 'Open calls for FLINTA (female, lesbian, inter, non-binary, trans, agender) photographers and visual artists. Grants, exhibitions, and awards.' }
+  'flinta': { short: 'FLINTA', title: 'Open Calls for FLINTA Artists', desc: 'Open calls for FLINTA (female, lesbian, inter, non-binary, trans, agender) photographers and visual artists. Grants, exhibitions, and awards.' },
+  'global-south': { short: 'Global South', title: 'Global South Open Calls', desc: 'Open calls for photographers and artists from the Global South — Africa, the Caribbean, Southeast Asia, Latin America, and the Middle East.' },
+  'france': { short: 'France', title: 'France-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are French nationals or based in France.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -769,9 +771,9 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'alaska', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'germany', 'india', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'non-european'] },
+  { heading: 'Where', tags: ['united-states', 'alaska', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
-  { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'latin-america', 'puerto-rico', 'south-asian'] },
+  { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
 ];
 
