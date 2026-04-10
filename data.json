@@ -75,6 +75,7 @@
         "Michaela Norah Mohrmann"
       ],
       "resultsDate": "April 28, 2026",
+      "instagram": "@la_centerofphoto",
       "dateAdded": "2026-04-08T08:48:33.497Z"
     },
     {
@@ -135,7 +136,11 @@
       "instagram": "@theeyesmag",
       "location": "Paris, France",
       "prize": "3 × €5,000",
-      "eligibility": [],
+      "eligibility": [
+        "global-south",
+        "france",
+        "women"
+      ],
       "submitVia": "Google Forms",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeucpZ5vWahhdJ65NeRIPe9_ej8HdDpKEP3AHMdnSJKujGVVQ/viewform",
       "slug": "1st-photobook-grants-2026",
@@ -4453,7 +4458,7 @@
     {
       "title": "PPA Photo Award 2026",
       "org": "Pasadena Photography Arts",
-      "deadline": "2026-04-12",
+      "deadline": "2026-04-26",
       "fee": "$42",
       "category": "grant",
       "description": "For emerging US photographers. Prize: $2,000 cash, interview, Lenscratch feature, virtual artist talk. Juror: Craig Krull, art dealer.",
@@ -5276,6 +5281,7 @@
       "jury": [
         "Sarah Crowe, Assistant Curator, Kunsthalle Wien",
         "Yuko Hasegawa, Curator & Director, 21st Century Museum, Kanazawa",
+        "Jemima Kulumba, Co-Founder, WIA",
         "Wang Chunchen, Chief Curator, CAFA Art Museum Beijing",
         "Hélio Menezes, Art Curator",
         "Gianluigi Ricuperati, Curator & Art Director"
