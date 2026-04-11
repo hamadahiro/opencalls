@@ -1975,7 +1975,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-17",
       "resultsDate": "May 1, 2026",
-      "submitUrl": "https://www.lensculture.com/enter",
+      "submitUrl": "https://www.lensculture.com/enter/competition/critics-choice-2026",
       "summary": "20 leading critics each select 3 photographers. Top Ten receive $1,000 and exhibition at Photo London 2027."
     },
     {
@@ -2748,7 +2748,7 @@
         "Monica Mardare, Independent Curator"
       ],
       "submitVia": "CuratorSpace",
-      "requirements": "2+ images",
+      "requirements": "Up to 2 works",
       "slug": "rebirth-monart-curates",
       "orgInTitle": true,
       "dateAdded": "2026-03-16",
@@ -10176,7 +10176,8 @@
       "orgInTitle": false,
       "summary": "Exhibition exploring abundance as presence and paradox. Documentary, staged, abstract, or experimental approaches welcome.",
       "dateAdded": "2026-04-11T07:12:14Z",
-      "resultsDate": "April 23, 2026"
+      "resultsDate": "April 23, 2026",
+      "email": ""
     }
   ]
 }
