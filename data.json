@@ -4607,14 +4607,14 @@
       "location": "Halifax, Canada",
       "prize": "Exhibition",
       "eligibility": [],
-      "submitVia": "Website form",
+      "submitVia": "Google Form",
       "requirements": "3 images",
       "email": "",
       "slug": "viewpoint-gallery-international-photography-competition",
       "orgInTitle": true,
       "resultsDate": "May 8, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://www.viewpointgallery.ca/vpipc-submission-guidelines",
+      "submitUrl": "https://docs.google.com/forms/d/1qU9-eG35bc6JUgMv1nH_ic0sakRh_HhTE9sws9jCAQk/edit",
       "summary": "Twelve winners displayed professionally printed and framed for one month each, June 2026 to May 2027. Eastern Canada."
     },
     {
@@ -7838,7 +7838,7 @@
       "submitUrl": "https://www.egideartes.pt/luzsombra",
       "summary": "Portuguese competition exploring light and shadow. Six finalists published in artist-edition book and traveling exhibition.",
       "email": "",
-      "ai": "Not mentioned",
+      "ai": null,
       "jury": []
     },
     {
@@ -8153,7 +8153,8 @@
       "dateAdded": "2026-03-21",
       "requirements": "Up to 5 images",
       "submitUrl": "https://forms.gle/Jzx17SHxn9XwfkAz6",
-      "summary": "Submit spring landscape images for Outdoor Photography Magazine (UK). Winner receives walking poles."
+      "summary": "Submit spring landscape images for Outdoor Photography Magazine (UK). Winner receives walking poles.",
+      "email": ""
     },
     {
       "title": "Zone Magazine — Open Submissions",
