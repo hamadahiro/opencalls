@@ -108,8 +108,8 @@
 
       <p class="call-detail-description">4th annual for LGBTQIA2+ community. Seeking work affirming our own truths and expressing resistance during Pride month. Mill Valley, CA.</p>
 
-      <div id="detailPrize"></div>
-      <div class="call-detail-info" id="detailInfo"></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 11, 2026">April 11, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">April 17, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$40">$40</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-states/" title="US only">US only</a>, <a href="/eligibility/lgbtq/" title="LGBTQ+">LGBTQ+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="San Anselmo, CA">San Anselmo, CA</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 5 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value">ArtCall</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Conor Moynihan, Associate Curator, RISD Museum · Nathan Lomas, Gallery Manager, The Image Flow</p>
@@ -119,14 +119,13 @@
         <p class="call-detail-description">Organized by <a href="/the-image-flow/">The Image Flow</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://theimageflow.com/gallery/call-for-entry-queer-conscience-2026-photography-exhibition/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/theimageflow" target="_blank" rel="nofollow noopener">@theimageflow</a></div>
     </section>
 
     <section class="related-calls">
-      <div id="similarCalls"></div>
+      <div id="similarCalls"><h2 class="section-header">More like this</h2><div class="call-card"><h3 class="call-title"><a href="/31st-national-competition-2026-soho-photo-gallery/">31st National Competition 2026 &middot; Soho Photo Gallery</a></h3><p class="call-description">Annual photo competition at Soho Photo Gallery NYC. ~60 works exhibited. $400 first, $200 second. US residents only.</p></div><div class="call-card"><h3 class="call-title"><a href="/developed-work-2026-midwest-center-for-photography/">Developed Work 2026 &middot; Midwest Center for Photography</a></h3><p class="call-description">National fellowship for developed bodies of work. $200 award + one year online representation at MWCP, Wichita.</p></div><div class="call-card"><h3 class="call-title"><a href="/black-and-white-praxis-photo-arts-center/">BLACK &amp; WHITE &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Monochrome juried exhibition at Praxis Gallery Minneapolis. Up to 74 works selected. Open internationally.</p></div><div class="call-card"><h3 class="call-title"><a href="/thresholds-2026-up-close-and-personal/">Thresholds 2026: Up, Close and Personal &middot; Los Angeles Center of Photography</a></h3><p class="call-description">Street photography exhibition at LACP LA. $500 first place. Digital projection show + opening event. Open worldwide.</p></div><div class="call-card"><h3 class="call-title"><a href="/blossom-midwest-center-for-photography/">Blossom &middot; Midwest Center for Photography</a></h3><p class="call-description">International floral photography exhibition at MWCP, Wichita. All styles welcome — nature, still life, macro, and more.</p></div><div class="call-card"><h3 class="call-title"><a href="/traversing-terrain-midwest-center-for-photography/">Traversing Terrain &middot; Midwest Center for Photography</a></h3><p class="call-description">International landscape and cityscape exhibition at MWCP, Wichita. Urban, suburban, and rural environments welcome.</p></div></div>
     </section>
 
     <footer class="about-section" id="footer">
@@ -138,23 +137,7 @@
   <script>
     const CURRENT_SLUG = 'queer-conscience-2026-photography-exhibition-the-image-flow';
     const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"The Image Flow","location":"San Anselmo, CA, USA","fee":"$40","deadline":"2026-04-11","resultsDate":"April 17, 2026","instagram":"@theimageflow","eligibility":["united-states","lgbtq"],"jury":["Conor Moynihan, Associate Curator, RISD Museum","Nathan Lomas, Gallery Manager, The Image Flow"],"submitVia":"ArtCall","submitUrl":"https://queerconscience2026.artcall.org/","email": "","ai":"","requirements":"Up to 5 images"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-04-11'.replace(/-/g, '');
-      var nd = new Date('2026-04-11T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Queer Conscience 2026 Photography Exhibition';
-      var u = 'https://theimageflow.com/gallery/call-for-entry-queer-conscience-2026-photography-exhibition/';
-      var o = 'The Image Flow';
-      var dl = new Date('2026-04-11T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$40');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>

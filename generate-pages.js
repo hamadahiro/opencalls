@@ -289,6 +289,241 @@ function buildStaticCallList(calls) {
   return html;
 }
 
+// === Helpers ported from cards.js / call-detail.js so detail pages can pre-render
+// the same content into static HTML (Google reads without JS). The browser JS
+// later replaces this with identical content — no visual change for users. ===
+
+const SHORT_COUNTRY = {
+  'United Kingdom': 'UK',
+  'United States': 'US',
+  'United Arab Emirates': 'UAE',
+  'Czech Republic': 'Czechia',
+  'Bosnia and Herzegovina': 'BiH',
+  'North Macedonia': 'N. Macedonia'
+};
+
+function shortenLocation(loc) {
+  if (!loc) return loc;
+  let s = loc.replace(/,\s*USA$/, '');
+  for (const [full, sh] of Object.entries(SHORT_COUNTRY)) s = s.replace(full, sh);
+  return s;
+}
+
+const ELIGIBILITY_LABEL = {
+  'women': 'Women', 'united-states': 'US only', 'europe': 'Europe only', 'italy': 'Italy only',
+  'emerging': 'Emerging artists', 'under-30': 'Under 30', 'under-35': 'Under 35', 'under-40': 'Under 40',
+  'lgbtq': 'LGBTQ+', 'analog-photography': 'Analog only', 'alternative-process': 'Alternative process',
+  'professional': 'Professional only', 'membership-required': 'Membership required',
+  'puerto-rico': 'Puerto Rico focus', 'latin-america': 'Latin America', 'asian-american': 'Asian American focus',
+  'south-asian': 'South Asian focus', 'african-diaspora': 'African diaspora focus', 'black': 'Black artists',
+  'neurodivergent-disabled': 'Neurodivergent & disabled', 'portugal': 'Portugal only', 'taiwan': 'Taiwan only',
+  'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only',
+  'canada': 'Canada only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only',
+  'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only',
+  '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
+  'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
+  '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+',
+  'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only'
+};
+
+function splitPrizeParts(prize) {
+  if (!prize) return [];
+  return prize.split(/\s*\+\s*/).map(s => { s = s.trim(); return s.charAt(0).toUpperCase() + s.slice(1); }).filter(Boolean);
+}
+
+function tagHtml(str, minLen) {
+  minLen = minLen || 25;
+  if (!str || str.length <= minLen) return escapeHtml(str || '');
+  const words = str.split(' ');
+  if (words.length <= 2) return escapeHtml(str);
+  const splitAt = Math.ceil(words.length * 0.6);
+  const front = words.slice(0, splitAt).join(' ');
+  const back = words.slice(splitAt).join(' ');
+  return `<span class="tag-front">${escapeHtml(front)}</span> <span class="tag-back">${escapeHtml(back)}</span>`;
+}
+
+// These get filled in once detail-page data is precomputed at the top of the script
+let PRECOMPUTED_COUNTRY_PAGES = new Set();
+let PRECOMPUTED_ORG_PAGES = new Set();
+let PRECOMPUTED_STATE_PAGES = {};
+
+function getStaticLocationLink(location, country) {
+  if (country === 'USA') {
+    const parts = location.split(',');
+    const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+    if (state && PRECOMPUTED_STATE_PAGES[state]) return '/' + PRECOMPUTED_STATE_PAGES[state] + '/';
+  }
+  const countrySlugs = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
+  const countrySlug = countrySlugs[country] || slugify(country || '');
+  if (PRECOMPUTED_COUNTRY_PAGES.has(countrySlug)) return '/' + countrySlug + '/';
+  return null;
+}
+
+// Mirrors the prize block call-detail.js writes into #detailPrize
+function buildStaticPrizeBlock(call) {
+  if (!call.prize) return '';
+  const parts = splitPrizeParts(call.prize);
+  const label = parts.length > 1 ? 'Prizes' : 'Prize';
+  const tags = parts.map(part => {
+    const cat = derivePrizeCategory(part);
+    const href = cat ? '/prize/' + cat + '/' : '/prize/';
+    return `<a href="${href}" class="meta-tag meta-tag-link call-prize">${escapeHtml(part)} prize</a>`;
+  }).join(' ');
+  return `<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">${label}</a></span> ${tags}</div>`;
+}
+
+// Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
+function buildStaticInfoGrid(call) {
+  function infoRow(label, value) {
+    return `<div class="info-row"><span class="info-label">${label}</span><span class="dots"></span><span class="info-value">${value}</span></div>`;
+  }
+  function infoVal(str) { return tagHtml(str, 20); }
+  function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${escapeHtml(str)}">${infoVal(str)}</a>`; }
+
+  const rows = [];
+
+  // Deadline
+  const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
+    new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  let dlSlug = null;
+  if (call.deadline !== 'Continuous') {
+    const d = new Date(call.deadline + 'T00:00:00');
+    dlSlug = ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear();
+  }
+  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
+
+  // Results date
+  if (call.resultsDate) {
+    const resultsPast = (function(s) {
+      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
+      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
+      if (!my) return false;
+      const mi = months[my[1].toLowerCase()];
+      if (mi === undefined) return false;
+      const yr = parseInt(my[2]);
+      const dm = clean.match(/(\d{1,2})[,\s-]/);
+      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
+      return new Date(yr, mi, day, 23, 59) < new Date();
+    })(call.resultsDate);
+    rows.push(infoRow('Results', escapeHtml(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
+  }
+
+  // Fee
+  if (call.fee) {
+    const feeHtml = call.fee.toLowerCase().startsWith('free')
+      ? infoLink('/fees/free', call.fee)
+      : infoLink('/fees/entry-fee', call.fee);
+    rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
+  }
+
+  // Eligibility
+  if (call.eligibility && call.eligibility.length) {
+    const eligHtml = call.eligibility.map(e => {
+      const label = ELIGIBILITY_LABEL[e] || e;
+      return infoLink('/eligibility/' + e, label);
+    }).join(', ');
+    rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
+  }
+
+  // Location
+  if (call.location) {
+    const country = getCountry(call.location);
+    const locLink = getStaticLocationLink(call.location, country);
+    const locShort = shortenLocation(call.location);
+    const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
+    rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
+  }
+
+  // Requirements
+  if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
+
+  // AI policy (only if specified)
+  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
+
+  // Submit via
+  if (call.submitVia) {
+    const open = isCallOpen(call.deadline);
+    const label = infoVal(call.submitVia);
+    if (!open) {
+      rows.push(infoRow('Submit via', label));
+    } else if (call.email) {
+      rows.push(infoRow('Submit via', `<a href="mailto:${escapeHtml(call.email)}" target="_blank" rel="nofollow noopener">${label}</a>`));
+    } else if (call.submitUrl) {
+      rows.push(infoRow('Submit via', `<a href="${escapeHtml(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`));
+    } else {
+      rows.push(infoRow('Submit via', label));
+    }
+  }
+
+  return rows.join('');
+}
+
+// Mirrors scoreSimilarity() + loadSimilar() in call-detail.js — pre-renders the
+// "More like this" block so internal links are visible to Google.
+function scoreSimilarityStatic(current, other) {
+  let score = 0;
+  const curElig = current.eligibility || [];
+  const othElig = other.eligibility || [];
+  curElig.forEach(t => { if (othElig.includes(t)) score += 5; });
+  if (current.category === other.category) score += 4; else score -= 3;
+  const curCountry = getCountry(current.location);
+  const othCountry = getCountry(other.location);
+  if (curCountry === 'USA' && othCountry === 'USA') {
+    const curParts = (current.location || '').split(',');
+    const othParts = (other.location || '').split(',');
+    const curState = curParts.length >= 3 ? curParts[curParts.length - 2].trim() : '';
+    const othState = othParts.length >= 3 ? othParts[othParts.length - 2].trim() : '';
+    if (curState && curState === othState) score += 3; else score += 2;
+  } else if (curCountry && curCountry === othCountry) {
+    score += 2;
+  }
+  const curFree = current.fee && current.fee.toLowerCase().startsWith('free');
+  const othFree = other.fee && other.fee.toLowerCase().startsWith('free');
+  if (curFree && othFree) score += 1;
+  if (!curFree && !othFree) score += 1;
+  if (current.deadline !== 'Continuous' && other.deadline !== 'Continuous' && current.deadline && other.deadline) {
+    const curDate = new Date(current.deadline + 'T00:00:00');
+    const othDate = new Date(other.deadline + 'T00:00:00');
+    const diff = Math.abs(curDate - othDate) / (1000 * 60 * 60 * 24);
+    if (diff <= 30) score += 1;
+  }
+  if (current.org === other.org) score += 2;
+  return score;
+}
+
+function buildStaticSimilarCalls(call, allCalls) {
+  const currentSlug = call.slug || slugify(call.title);
+  const candidates = allCalls
+    .filter(c => (c.slug || slugify(c.title)) !== currentSlug)
+    .filter(c => isCallOpen(c.deadline));
+  const scored = candidates.map(c => ({ call: c, score: scoreSimilarityStatic(call, c) }));
+  scored.sort((a, b) => b.score - a.score);
+  const curElig = call.eligibility || [];
+  const hasEligibility = curElig.length > 0;
+  const top = scored.filter(s => {
+    if (s.score < 5) return false;
+    if (hasEligibility) {
+      const othElig = s.call.eligibility || [];
+      const sharedElig = curElig.some(t => othElig.includes(t));
+      const sameCategory = s.call.category === call.category;
+      if (!sharedElig && !sameCategory) return false;
+    }
+    return true;
+  }).slice(0, 6);
+  if (top.length < 2) return '';
+
+  let html = '<h2 class="section-header">More like this</h2>';
+  top.forEach(s => {
+    const c = s.call;
+    const slug = c.slug || slugify(c.title);
+    const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
+    const desc = escapeHtml(c.summary || c.description || '').substring(0, 160);
+    html += `<div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>`;
+  });
+  return html;
+}
+
 function buildKeywords(call) {
   const words = [call.title, call.org, categoryLabel(call.category), 'open call', 'call for entries'];
   if (call.location && call.location !== 'Online') words.push(call.location);
@@ -386,8 +621,8 @@ ${call.winners && call.winners.length ? `
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
       </div>
 ` : ''}
-      <div id="detailPrize"></div>
-      <div class="call-detail-info" id="detailInfo"></div>
+      <div id="detailPrize">${buildStaticPrizeBlock(call)}</div>
+      <div class="call-detail-info" id="detailInfo">${buildStaticInfoGrid(call)}</div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
@@ -404,7 +639,7 @@ ${call.instagram ? `      <div class="call-detail-jury"><a class="breadcrumbs" h
     </section>
 
     <section class="related-calls">
-      <div id="similarCalls"></div>
+      <div id="similarCalls">${buildStaticSimilarCalls(call, data.calls)}</div>
     </section>
 
     ${FOOTER}
@@ -450,6 +685,27 @@ const createdCountrySlugs = [];
 const createdOrgSlugs = [];
 let generated = 0;
 let skipped = 0;
+
+// --- Precompute country/state/org slug sets so detail pages can pre-render
+//     correct internal links to landing pages (must run BEFORE generatePage). ---
+{
+  const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+  const stateNameToAbbr = {};
+  Object.entries(usStateNames).forEach(([abbr, name]) => { stateNameToAbbr[name] = abbr; });
+  const countrySlugFor = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
+
+  data.calls.forEach(c => {
+    const country = getCountry(c.location);
+    if (country) PRECOMPUTED_COUNTRY_PAGES.add(countrySlugFor[country] || slugify(country));
+    if (c.org) PRECOMPUTED_ORG_PAGES.add(slugify(c.org));
+    if (c.location && c.location.endsWith('USA')) {
+      const parts = c.location.split(',');
+      let st = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+      if (st && stateNameToAbbr[st]) st = stateNameToAbbr[st];
+      if (st && usStateNames[st]) PRECOMPUTED_STATE_PAGES[st] = 'united-states/' + slugify(usStateNames[st]);
+    }
+  });
+}
 
 data.calls.forEach(call => {
   const slug = call.slug || slugify(call.title);
