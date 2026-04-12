@@ -12,6 +12,7 @@
       "location": "New York, NY, USA",
       "prize": "$400 first place + exhibition",
       "eligibility": [
+        "18-plus",
         "united-states"
       ],
       "submitVia": "CaFÉ",
@@ -76,6 +77,7 @@
       ],
       "resultsDate": "April 28, 2026",
       "instagram": "@la_centerofphoto",
+      "email": "",
       "dateAdded": "2026-04-08T08:48:33.497Z"
     },
     {
@@ -720,7 +722,11 @@
       "summary": "Six Spanish photographers exhibit at Rencontres d'Arles opening week. €1,400 each. Free, supported by Ministry of Culture.",
       "dateAdded": "2026-04-01T11:11:51.546Z",
       "jury": [
-        "TBA (announced via @embajada.arles)"
+        "Christoph Wiesner, Director, Les Rencontres d'Arles",
+        "Elisa Medde, Director, Foto Colectania Foundation",
+        "Kim Boske, FUTURES Residencies",
+        "Mathieu Asselin, Co-Founder, doubledummy",
+        "Shinji Nagabe, Visual Artist"
       ],
       "email": "",
       "submitUrl": "https://forms.gle/jRVv1iifGDPmd5XNA"
@@ -2143,7 +2149,7 @@
       "url": "https://www.edu.hcponline.org/the-center-annual",
       "instagram": "@hcponline",
       "location": "Houston, TX, USA",
-      "prize": "Two $500 honoraria + $5,000 MFAH purchase award + exhibition",
+      "prize": "$5,000 + exhibition",
       "eligibility": [
         "membership-required"
       ],
@@ -8150,7 +8156,7 @@
       "url": "https://www.outdoorphotographymagazine.co.uk/submissions/",
       "instagram": "@outdoorphotographymag",
       "location": "Online",
-      "prize": "£150 + publication",
+      "prize": "Publication",
       "eligibility": [],
       "submitVia": "Website form",
       "slug": "outdoor-photography-magazine-spring-landscapes",
