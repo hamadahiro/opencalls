@@ -5,20 +5,21 @@
   <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls with Fellowship Prizes 2026 - Monographica</title>
-  <meta name="description" content="Open calls offering fellowships for photographers and visual artists. Funded fellowships, mentoring programs, and professional development opportunities.">
-  <meta name="keywords" content="Fellowship open calls, photography fellowship prize, call for entries fellowship, art fellowship award, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/prize/fellowship/">
+  <title>HELLERAU — European Centre for the Arts - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from HELLERAU — European Centre for the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="HELLERAU — European Centre for the Arts open call, HELLERAU — European Centre for the Arts call for entries, HELLERAU — European Centre for the Arts submissions, HELLERAU — European Centre for the Arts photography, HELLERAU — European Centre for the Arts exhibition, HELLERAU — European Centre for the Arts artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/hellerau-european-centre-for-the-arts/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls with Fellowship Prizes 2026 - Monographica">
-  <meta property="og:description" content="Open calls offering fellowships for photographers and visual artists. Funded fellowships, mentoring programs, and professional development opportunities.">
+  <meta property="og:title" content="HELLERAU — European Centre for the Arts - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from HELLERAU — European Centre for the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/prize/fellowship/">
+  <meta property="og:url" content="https://opencalls.monographica.com/hellerau-european-centre-for-the-arts/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +28,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls with Fellowship Prizes 2026",
-  "description": "Open calls offering fellowships for photographers and visual artists. Funded fellowships, mentoring programs, and professional development opportunities.",
-  "url": "https://opencalls.monographica.com/prize/fellowship/",
+  "name": "HELLERAU — European Centre for the Arts - Open Calls",
+  "description": "Open calls and submission opportunities from HELLERAU — European Centre for the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/hellerau-european-centre-for-the-arts/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +52,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Prizes",
-      "item": "https://opencalls.monographica.com/prize/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Open Calls with Fellowship Prizes",
-      "item": "https://opencalls.monographica.com/prize/fellowship/"
+      "name": "HELLERAU — European Centre for the Arts",
+      "item": "https://opencalls.monographica.com/hellerau-european-centre-for-the-arts/"
     }
   ]
 }
@@ -103,14 +104,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>
-      <h1>Open Calls with Fellowship Prizes</h1>
-      <h2 class="subtitle">Open calls offering fellowships for photographers and visual artists. Funded fellowships, mentoring programs, and professional development opportunities.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>HELLERAU — European Centre for the Arts</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from HELLERAU — European Centre for the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/eddie-adams-workshop-2026/">Eddie Adams Workshop 2026</a></h3><p>May 24, 2026 · $40</p><p>Legendary 4-day photojournalism seminar. 100 selected from emerging photographers. Free once accepted.</p></div>
-      <div class="static-call-item"><h3><a href="/diane-dammeyer-fellowship-in-photographic-arts-and-social-awareness-2026-27-museum-of-contemporary-photography-at-columbia/">Diane Dammeyer Fellowship in Photographic Arts and Social Awareness 2026/27 &middot; Museum of Contemporary Photography at Columbia</a></h3><p>June 12, 2026 · Free</p><p>Fellowship for socially engaged photographers partnering with a Chicago-based community organization.</p></div>
+      <div class="static-call-item"><h3><a href="/portraits-hellerau-photography-award-2026/">PORTRAITS — Hellerau Photography Award 2026</a></h3><p>May 3, 2026 · €50 series / €30 single</p><p>International portrait photography competition. €8,000 total prizes. Exhibition at Festspielhaus Hellerau in Dresden.</p></div>
 
     </section>
 
@@ -123,24 +123,11 @@
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
   <script>
-    function derivePrizeCats(prize) {
-      if (!prize) return [];
-      var seen = {};
-      return prize.split(/\s*\+\s*/).map(function(s){return s.trim()}).filter(Boolean).map(function(t){
-        var p = t.toLowerCase();
-        if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
-        if (/fellowship/.test(p)) return 'fellowship';
-        if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
-        if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-        if (/exhibition/.test(p)) return 'exhibition';
-        return null;
-      }).filter(function(c){ if(!c||seen[c])return false; seen[c]=true; return true; });
-    }
     async function loadFiltered() {
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('fellowship')).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'HELLERAU — European Centre for the Arts').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

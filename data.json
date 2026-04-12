@@ -10232,6 +10232,105 @@
       "requirements": "1 PDF in .zip (max 10MB)",
       "resultsDate": "July 13, 2026",
       "dateAdded": "2026-04-11T19:16:28.161Z"
+    },
+    {
+      "title": "Eddie Adams Workshop 2026",
+      "org": "Eddie Adams Workshop",
+      "deadline": "2026-05-24",
+      "fee": "$40",
+      "category": "education",
+      "description": "One of the most prestigious photojournalism programs in the world. 100 emerging photographers selected annually — evenly split between college students and early-career professionals — for a free 4-day seminar in Jeffersonville, NY. Participants work in teams led by top photographers and editors. Late entry available through May 31 at $55. Applicants must be at least 20 years old and have less than six years of full-time professional experience. Photographers holding staff positions at major publications for more than six years are ineligible.",
+      "url": "https://eddieadamsworkshop.org/apply/",
+      "instagram": "@eddieadamsworkshop",
+      "location": "Jeffersonville, NY, USA",
+      "prize": "Workshop fellowship",
+      "eligibility": [
+        "emerging"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://eddieadamsworkshop.submittable.com/submit",
+      "slug": "eddie-adams-workshop-2026",
+      "orgInTitle": true,
+      "summary": "Legendary 4-day photojournalism seminar. 100 selected from emerging photographers. Free once accepted.",
+      "requirements": "12-20 images",
+      "ai": "Not accepted",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "Marilyn Stafford FotoReportage Award 2026",
+      "org": "FotoDocument",
+      "deadline": "2026-05-18",
+      "fee": "Free",
+      "category": "grant",
+      "description": "10th edition. Annual award for professional female photographers towards the completion of a compelling documentary photo essay addressing important social, environmental, economic, or cultural issues. Supported by Nikon. Winner receives £4,000 to support the project. Special celebration of 10 years of the prize in September at POST, Brighton & Hove's new centre for photography. Open globally to female or female-identifying photographers aged 18+ at any career stage. Must have completed at least one previous documentary photo essay and have already started the submitted project.",
+      "url": "https://fotoaward.fotodocument.org/",
+      "location": "Brighton, United Kingdom",
+      "prize": "£4,000",
+      "eligibility": [
+        "women"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://fotoaward.fotodocument.org/signup",
+      "slug": "marilyn-stafford-fotoreportage-award-2026-fotodocument",
+      "orgInTitle": false,
+      "summary": "£4,000 grant for female documentary photographers. 10th edition. For photo essays on social, environmental, or cultural issues.",
+      "requirements": "10 + 15 images",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "JGS Fellowship for Photography 2026",
+      "org": "New York Foundation for the Arts",
+      "deadline": "2026-05-21",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Five $8,000 unrestricted cash grants for artists working in traditional and experimental photography, including light-based work, alternative processes, or any form in which photography or photographic techniques are pivotal. Open to New York State photography artists living and working outside of New York City. Notifications in summer 2026.",
+      "url": "https://www.nyfa.org/awards-grants/the-jgs-fellowship-for-photography/",
+      "location": "New York, USA",
+      "prize": "$8,000 (5 awarded)",
+      "eligibility": [],
+      "submitVia": "Submittable",
+      "submitUrl": "https://apply.nyfa.org/submit",
+      "slug": "jgs-fellowship-for-photography-2026-new-york-foundation-for-the-arts",
+      "orgInTitle": false,
+      "summary": "Five $8,000 unrestricted grants for photographers in NY State outside NYC. Traditional and experimental photography.",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "Light Work Artist-in-Residence 2027",
+      "org": "Light Work",
+      "deadline": "2026-07-01",
+      "fee": "Free",
+      "category": "residency",
+      "description": "One-month creative residency in Syracuse, New York. Selected artists receive a $7,500 stipend, a furnished artist apartment, 24-hour access to state-of-the-art facilities, and staff support. Work published in a special edition of Contact Sheet: The Light Work Annual with a commissioned essay. Open to all artists working in photography or image-based media from any country. 12–15 artists selected annually. Notifications by December 2026.",
+      "url": "https://www.lightwork.org/air/",
+      "location": "Syracuse, NY, USA",
+      "prize": "$7,500 stipend + apartment",
+      "eligibility": [],
+      "submitVia": "SlideRoom",
+      "submitUrl": "https://lightwork.slideroom.com",
+      "slug": "light-work-artist-in-residence-2027",
+      "orgInTitle": true,
+      "summary": "One-month residency with $7,500 stipend and furnished apartment. Published in Contact Sheet. Open worldwide.",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "Doug Pensinger Photography Fund 2026",
+      "org": "Doug Pensinger Photography Fund",
+      "deadline": "2026-05-01",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Seven $5,000 grants plus yearlong mentorships from industry professionals for emerging sports photographers. The only nonprofit dedicated to providing career development opportunities to emerging sports photographers. Past grantees range from high school students to recent graduates working as freelancers or interns. Applications close May 1.",
+      "url": "https://www.dougpensingerphotographyfund.org/",
+      "location": "Online",
+      "prize": "$5,000 (7 awarded) + mentorship",
+      "eligibility": [
+        "emerging"
+      ],
+      "submitVia": "Official website",
+      "slug": "doug-pensinger-photography-fund-2026",
+      "orgInTitle": true,
+      "summary": "Seven $5,000 grants plus mentorships for emerging sports photographers. Only nonprofit dedicated to sports photography careers.",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
     }
   ]
 }
