@@ -63,6 +63,7 @@ const eligibilityLabel = {
   'malta': 'Malta only',
   '10-18': 'Ages 10–18',
   'mid-atlantic-us': 'Mid-Atlantic US',
+  'new-york-state': 'NY State only',
   'alaska': 'Alaska only',
   'gulf-coast': 'Gulf Coast only',
   'spain': 'Spain only',
