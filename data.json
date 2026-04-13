@@ -862,7 +862,7 @@
       "summary": "Explore perception, belief, identity, and power through illusion and manipulation. All disciplines. Free, open worldwide.",
       "email": "",
       "dateAdded": "2026-03-28T21:39:11.533Z",
-      "submitUrl": "https://coexcollaborative.com/callforsubmissions"
+      "submitUrl": "https://coexcollaborative.com/callforsubmissions/18e72288-224e-47a4-bed5-acd3d5bd6c87"
     },
     {
       "title": "Epson International Pano Awards 2026",
@@ -10274,6 +10274,7 @@
       "summary": "Legendary 4-day photojournalism seminar. 100 selected from emerging photographers. Free once accepted.",
       "requirements": "12-20 images",
       "ai": "Not accepted",
+      "email": "",
       "dateAdded": "2026-04-12T07:20:01.698Z"
     },
     {
@@ -10311,9 +10312,12 @@
       "instagram": "@nyfacurrent",
       "location": "New York, USA",
       "prize": "$8,000 (5 awarded)",
-      "eligibility": [],
+      "eligibility": [
+        "25-plus",
+        "new-york-state"
+      ],
       "submitVia": "Submittable",
-      "submitUrl": "https://apply.nyfa.org/submit",
+      "submitUrl": "https://apply.nyfa.org/submit/351704/2026-jgs-fellowship-for-photography",
       "slug": "jgs-fellowship-for-photography-2026-new-york-foundation-for-the-arts",
       "orgInTitle": false,
       "summary": "Five $8,000 unrestricted grants for photographers in NY State outside NYC. Traditional and experimental photography.",
@@ -10356,7 +10360,17 @@
         "emerging"
       ],
       "instagram": "@dppfund",
-      "submitVia": "Official website",
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/be41a666-a3f5-4785-9517-bc0d8ccee811/start",
+      "requirements": "20 images",
+      "resultsDate": "July 1, 2026",
+      "ai": "Not accepted",
+      "email": "",
+      "jury": [
+        "Jean Fruth, Sports Photographer (2026–27 Mentor)",
+        "Bob Martin, Sports Photographer (2026–27 Mentor)",
+        "Jamie Schwaberow, Sports Photographer (2026–27 Mentor)"
+      ],
       "slug": "doug-pensinger-photography-fund-2026",
       "orgInTitle": true,
       "summary": "Seven $5,000 grants plus mentorships for emerging sports photographers. Only nonprofit dedicated to sports photography careers.",
@@ -10403,6 +10417,8 @@
       "slug": "dek-unu-magazine-june-july-2026-issue",
       "orgInTitle": true,
       "summary": "Not-for-profit journal publishing one artist per issue in print and online. June/July double issue. Free, email submissions.",
+      "email": "",
+      "resultsDate": "~May 1, 2026",
       "dateAdded": "2026-04-13T07:17:53.132Z"
     }
   ]

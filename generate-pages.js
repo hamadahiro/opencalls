@@ -934,6 +934,7 @@ const eligibilityGroups = {
   'malta': { short: 'Malta', title: 'Malta-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Maltese nationals or based in Malta.' },
   '10-18': { short: 'Ages 10–18', title: 'Open Calls for Ages 10–18', desc: 'Open calls for young photographers ages 10 to 18. Photography competitions, exhibitions, and awards for young and teen artists.' },
   'mid-atlantic-us': { short: 'Mid-Atlantic US', title: 'Mid-Atlantic US Open Calls', desc: 'Open calls restricted to photographers in the Mid-Atlantic region — Maryland, Virginia, West Virginia, Pennsylvania, and Washington DC.' },
+  'new-york-state': { short: 'New York State', title: 'New York State Open Calls', desc: 'Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.' },
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
   'gulf-coast': { short: 'Gulf Coast', title: 'Gulf Coast Open Calls', desc: 'Open calls restricted to photographers and artists residing in US Gulf Coast states (Texas, Louisiana, Mississippi, Alabama, Georgia, Florida).' },
   'spain': { short: 'Spain', title: 'Spain-Only Open Calls', desc: 'Open calls restricted to photographers and artists born or based in Spain.' },
@@ -1027,7 +1028,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'alaska', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'non-european'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'non-european'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
