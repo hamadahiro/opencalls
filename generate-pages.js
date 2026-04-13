@@ -1971,6 +1971,82 @@ manualFiles.forEach(file => {
   fs.writeFileSync(file, html);
 });
 
+// === Inject static content into manual hub pages (SEO: Google must see content without JS) ===
+
+// 1. HOME PAGE — inject full call list
+{
+  let html = fs.readFileSync('index.html', 'utf8');
+  const staticCalls = buildStaticCallList(openCalls);
+  html = html.replace(
+    /<!-- STATIC-CALLS-START -->[\s\S]*?<!-- STATIC-CALLS-END -->/,
+    `<!-- STATIC-CALLS-START -->\n${staticCalls}      <!-- STATIC-CALLS-END -->`
+  );
+  fs.writeFileSync('index.html', html);
+  console.log(`  Home page: injected ${openCalls.length} static call cards`);
+}
+
+// 2. CATEGORIES INDEX — inject category links with open-call counts
+{
+  const catSlugs = { photography: 'photography', exhibition: 'exhibitions', grant: 'grants', zine: 'zines', residency: 'residencies', education: 'education' };
+  const catLabels = { photography: 'Photography', exhibition: 'Exhibitions', grant: 'Grants', zine: 'Zines & Books', residency: 'Residencies', education: 'Education' };
+  let items = '';
+  Object.entries(catSlugs).forEach(([cat, slug]) => {
+    const count = openCalls.filter(c => c.category === cat).length;
+    items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${catLabels[cat]}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+  });
+  let html = fs.readFileSync('categories/index.html', 'utf8');
+  html = html.replace(
+    /<!-- STATIC-INDEX-START -->[\s\S]*?<!-- STATIC-INDEX-END -->/,
+    `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
+  );
+  fs.writeFileSync('categories/index.html', html);
+  console.log(`  Categories page: injected 6 category links`);
+}
+
+// 3. LOCATIONS INDEX — inject country links with open-call counts
+{
+  const countryCountsOpen = {};
+  const countrySlugMap = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
+  const countryDisplayNames = { 'USA': 'United States', 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates' };
+  openCalls.forEach(c => {
+    const country = getCountry(c.location);
+    if (country) countryCountsOpen[country] = (countryCountsOpen[country] || 0) + 1;
+  });
+  const sorted = Object.entries(countryCountsOpen).sort((a, b) => b[1] - a[1]);
+  let items = '';
+  sorted.forEach(([country, count]) => {
+    const slug = countrySlugMap[country] || slugify(country);
+    const display = countryDisplayNames[country] || country;
+    items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${escapeHtml(display)}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+  });
+  let html = fs.readFileSync('locations/index.html', 'utf8');
+  html = html.replace(
+    /<!-- STATIC-INDEX-START -->[\s\S]*?<!-- STATIC-INDEX-END -->/,
+    `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
+  );
+  fs.writeFileSync('locations/index.html', html);
+  console.log(`  Locations page: injected ${sorted.length} country links`);
+}
+
+// 4. ORGANIZATIONS INDEX — inject org links with total call counts
+{
+  const orgCountsAll = {};
+  data.calls.forEach(c => { orgCountsAll[c.org] = (orgCountsAll[c.org] || 0) + 1; });
+  const sorted = Object.entries(orgCountsAll).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  let items = '';
+  sorted.forEach(([org, count]) => {
+    const slug = slugify(org);
+    items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${escapeHtml(org)}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+  });
+  let html = fs.readFileSync('organizations/index.html', 'utf8');
+  html = html.replace(
+    /<!-- STATIC-INDEX-START -->[\s\S]*?<!-- STATIC-INDEX-END -->/,
+    `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
+  );
+  fs.writeFileSync('organizations/index.html', html);
+  console.log(`  Organizations page: injected ${sorted.length} org links`);
+}
+
 // Warn about stale HTML files (never auto-delete — pages may be indexed/bookmarked)
 // Fix noindex on stale pages — Google flags these as "Excluded by noindex tag"
 const staleFiles = [];
@@ -1990,19 +2066,25 @@ findStale('.');
 let fixedMeta = 0;
 staleFiles.forEach(f => {
   let html = fs.readFileSync(f, 'utf8');
-  const isRedirect = html.includes('http-equiv="refresh"');
   let changed = false;
-  if (isRedirect) {
-    // Redirect pages MUST have noindex — they are thin stubs, not real content
-    if (!html.includes('<meta name="robots" content="noindex">')) {
-      html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
+
+  // Ensure stale pages have noindex. Replace any existing robots tag to avoid duplicates.
+  if (html.includes('<meta name="robots" content="noindex">')) {
+    // Already has noindex — but might also have a conflicting "index, follow" tag
+    if (html.includes('<meta name="robots" content="index, follow">')) {
+      html = html.replace(/\s*<meta name="robots" content="index, follow">/g, '');
       changed = true;
     }
-  } else if (!html.includes('<meta name="robots" content="noindex">')) {
-    // Non-redirect stale pages (ended calls): add noindex — thin/outdated content hurts SEO
-    html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
+  } else {
+    // Replace existing "index, follow" with noindex, or insert noindex if neither exists
+    if (html.includes('<meta name="robots" content="index, follow">')) {
+      html = html.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex">');
+    } else {
+      html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
+    }
     changed = true;
   }
+
   if (changed) {
     fs.writeFileSync(f, html);
     fixedMeta++;
