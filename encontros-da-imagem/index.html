@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Portugal 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.">
-  <meta name="keywords" content="open calls Portugal, call for entries Portugal, photography opportunities Portugal, art exhibitions Portugal, photography grants Portugal, artist residency Portugal">
-  <link rel="canonical" href="https://opencalls.monographica.com/portugal/">
+  <title>Encontros da Imagem - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Encontros da Imagem. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Encontros da Imagem open call, Encontros da Imagem call for entries, Encontros da Imagem submissions, Encontros da Imagem photography, Encontros da Imagem exhibition, Encontros da Imagem artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/encontros-da-imagem/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Portugal 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.">
+  <meta property="og:title" content="Encontros da Imagem - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Encontros da Imagem. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/portugal/">
+  <meta property="og:url" content="https://opencalls.monographica.com/encontros-da-imagem/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Portugal 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/portugal/",
+  "name": "Encontros da Imagem - Open Calls",
+  "description": "Open calls and submission opportunities from Encontros da Imagem. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/encontros-da-imagem/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Portugal",
-      "item": "https://opencalls.monographica.com/portugal/"
+      "name": "Encontros da Imagem",
+      "item": "https://opencalls.monographica.com/encontros-da-imagem/"
     }
   ]
 }
@@ -103,14 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
-      <h1>Open Calls for Artists in Portugal</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Portugal. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Encontros da Imagem</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Encontros da Imagem. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="static-call-item"><h3><a href="/encontros-da-imagem-award-2026/">Encontros Da Imagem Award 2026 &middot; Encontros da Imagem</a></h3><p>April 30, 2026 · €35</p><p>Major European photo festival (36th edition). €2,000 prize + solo exhibition. Theme: Territory And Identity. Open worldwide.</p></div>
-      <div class="static-call-item"><h3><a href="/lisbon-street-photo-fest-open-call-2026/">Lisbon Street Photo Fest: Open Call 2026</a></h3><p>May 31, 2026 · €10/image, €40/series</p><p>2nd edition. Street photography Singles &amp; Series. €4,000 in prizes. Exhibition in Lisbon, Sept 25–27.</p></div>
 
     </section>
 
@@ -127,11 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Portugal').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Encontros da Imagem').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
-
     } catch (e) {}
     }
     loadFiltered();
