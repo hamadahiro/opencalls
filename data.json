@@ -23,6 +23,9 @@
       "jury": [
         "Richard Tuschman, Photographer"
       ],
+      "instagram": "@edwardhopperhouse",
+      "email": "",
+      "resultsDate": "May 11, 2026",
       "dateAdded": "2026-04-14T07:15:05.160Z"
     },
     {
@@ -4721,7 +4724,8 @@
       "resultsDate": "May 1-3, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://www.dodho.com/photography-awards/",
-      "summary": "Fourth edition celebrating portrait as a space of presence and authorship amidst visual saturation. Barcelona."
+      "summary": "Fourth edition celebrating portrait as a space of presence and authorship amidst visual saturation. Barcelona.",
+      "email": ""
     },
     {
       "title": "ViewPoint Gallery International Photography Competition",
@@ -7045,7 +7049,7 @@
       "resultsDate": "July 25, 2026",
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
-      "submitUrl": "https://www.berlinphotoawards.com/submit-new-entry/",
+      "submitUrl": "https://www.berlinphotoawards.com/login/",
       "jury": [
         "Thomas Kakareko, Photographer & Creative Consultant",
         "Jorg Nicht, Travel & Street Photographer",
@@ -7181,7 +7185,7 @@
       "title": "Flora — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-04-20",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Nature photography virtual exhibition exploring the quiet intensity of plant life. From delicate details to expansive landscapes of growth. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -7203,7 +7207,7 @@
       "title": "Europe — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-05-10",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Photography virtual exhibition exploring Europe as a continuous negotiation between tradition and innovation, memory and experimentation. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -7225,7 +7229,7 @@
       "title": "Candid — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-05-20",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Candid photography virtual exhibition. The art of attention — rooted in presence, patience, and trust in the unfolding moment. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -7333,7 +7337,7 @@
       "submitVia": "Website form",
       "slug": "fotodoc-photo-contest-2026",
       "orgInTitle": true,
-      "ai": "Not accepted",
+      "ai": "AI retouching OK if declared, fully generated not accepted",
       "resultsDate": "November 2026",
       "dateAdded": "2026-03-18",
       "requirements": "1–15 images",
@@ -10397,6 +10401,7 @@
       "requirements": "12-20 images",
       "ai": "Not accepted",
       "email": "",
+      "resultsDate": "Early July 2026",
       "dateAdded": "2026-04-12T07:20:01.698Z"
     },
     {
@@ -10414,13 +10419,21 @@
         "18-plus"
       ],
       "email": "",
-      "submitVia": "Official website",
+      "submitVia": "FotoDocument",
       "submitUrl": "https://fotoaward.fotodocument.org/signup",
+      "jury": [
+        "Andrea Bruce, Photojournalist, NOOR Photo Agency co-owner, Nikon Ambassador",
+        "Donna De Cesare, Photojournalist, Associate Professor, University of Texas at Austin",
+        "Nina Emett, Director of FotoDocument, Documentary Photographer, Curator",
+        "Neo Ntsoma, Photojournalist, Founder of Neo Ntsoma Productions",
+        "Isabella Franceschini, 2024 Marilyn Stafford FotoReportage Award winner"
+      ],
       "slug": "marilyn-stafford-fotoreportage-award-2026-fotodocument",
       "orgInTitle": false,
       "summary": "£4,000 grant for female documentary photographers. 10th edition. For photo essays on social, environmental, or cultural issues.",
       "requirements": "10 + 15 images",
       "resultsDate": "Late June 2026",
+      "instagram": "@fotodocument",
       "dateAdded": "2026-04-12T07:20:01.698Z"
     },
     {
