@@ -76,7 +76,8 @@ const eligibilityLabel = {
   'ukraine': 'Ukraine only',
   'flinta': 'FLINTA',
   'global-south': 'Global South',
-  'france': 'France only'
+  'france': 'France only',
+  'mid-career': 'Mid-career'
 };
 
 const prizeCategoryLabel = {
