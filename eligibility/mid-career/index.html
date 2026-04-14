@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Rhode Island 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Rhode Island. Browse and apply today.">
-  <meta name="keywords" content="open calls Rhode Island, call for entries Rhode Island, photography opportunities Rhode Island, art exhibitions Rhode Island, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/united-states/rhode-island/">
+  <title>Open Calls for Mid-Career Artists 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to mid-career photographers and artists with significant professional experience and exhibition history.">
+  <meta name="keywords" content="Mid-Career open calls, Mid-Career photography, call for entries Mid-Career, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/mid-career/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Rhode Island 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Rhode Island. Browse and apply today.">
+  <meta property="og:title" content="Open Calls for Mid-Career Artists 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to mid-career photographers and artists with significant professional experience and exhibition history.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/united-states/rhode-island/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/mid-career/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Rhode Island 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Rhode Island. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/united-states/rhode-island/",
+  "name": "Open Calls for Mid-Career Artists 2026",
+  "description": "Open calls restricted to mid-career photographers and artists with significant professional experience and exhibition history.",
+  "url": "https://opencalls.monographica.com/eligibility/mid-career/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,20 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "United States",
-      "item": "https://opencalls.monographica.com/united-states/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "RI",
-      "item": "https://opencalls.monographica.com/united-states/rhode-island/"
+      "name": "Open Calls for Mid-Career Artists",
+      "item": "https://opencalls.monographica.com/eligibility/mid-career/"
     }
   ]
 }
@@ -109,14 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
-      <h1>Open Calls for Artists in Rhode Island</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Rhode Island. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Open Calls for Mid-Career Artists</h1>
+      <h2 class="subtitle">Open calls restricted to mid-career photographers and artists with significant professional experience and exhibition history.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/12th-annual-international-open-call-rhode-island-center-for-photographic-arts/">12th Annual International Open Call &middot; Rhode Island Center for Photographic Arts</a></h3><p>May 3, 2026 · $45</p><p>International open call — no theme. Juried by Crista Dix (Griffin Museum). Exhibition in Providence, RI. Cash prizes.</p></div>
-      <div class="static-call-item"><h3><a href="/hiding-in-plain-sight-rhode-island-center-for-photographic-arts/">Hiding in Plain Sight &middot; Rhode Island Center for Photographic Arts</a></h3><p>April 10, 2026 · $35</p><p>Exploring the unseen and forgotten. Challenging myths and revaluing overlooked subjects. Providence, RI.</p></div>
+      <div class="static-call-item"><h3><a href="/barbara-spohr-memorial-award-for-photography-2027/">Barbara Spohr Memorial Award for Photography 2027 &middot; Banff Centre for Arts and Creativity</a></h3><p>June 17, 2026 · $35 CAD</p><p>Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.</p></div>
 
     </section>
 
@@ -133,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', RI, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('mid-career')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
