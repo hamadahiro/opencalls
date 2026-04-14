@@ -1,6 +1,75 @@
 {
-  "lastUpdated": "2026-04-13",
+  "lastUpdated": "2026-04-14",
   "calls": [
+    {
+      "title": "#HopperHappens Juried Photography Exhibition",
+      "org": "Edward Hopper House Museum",
+      "deadline": "2026-05-03",
+      "fee": "$30 members / $60 non-members",
+      "category": "exhibition",
+      "description": "Photography-only juried exhibition inspired by the #HopperHappens Instagram series — real-world moments evoking Edward Hopper's style, light, and mood. 55 photographs selected and displayed across 55 businesses and nonprofits in Nyack, NY, birthplace of Edward Hopper. $1,000 in cash prizes: First $500, Second $300, Third $200, plus Juror's and Visitor's Choice awards. Juror: Richard Tuschman, celebrated for his 'Hopper Meditations' series. Exhibition June 1 – July 5, 2026. Open internationally, ages 18+. Work must be completed after January 1, 2020 and never previously exhibited at EHHM. MFA student discounts available.",
+      "url": "https://www.edwardhopperhouse.org/upcomingexhibitions.html",
+      "location": "Nyack, NY, USA",
+      "prize": "$1,000 + exhibition across 55 venues",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://edwardhopperhousejuried2026hopperhappens.artcall.org",
+      "requirements": "Up to 3 images",
+      "slug": "hopperhappens-juried-photography-exhibition",
+      "orgInTitle": false,
+      "summary": "Photography inspired by Hopper's light and mood — 55 works displayed across 55 Nyack venues. Juror: Richard Tuschman.",
+      "jury": [
+        "Richard Tuschman, Photographer"
+      ],
+      "instagram": "@edwardhopperhouse",
+      "email": "",
+      "resultsDate": "May 11, 2026",
+      "dateAdded": "2026-04-14T07:15:05.160Z"
+    },
+    {
+      "title": "Narrative",
+      "org": "Chico Art Center",
+      "deadline": "2026-06-14",
+      "fee": "$35/7 images",
+      "category": "exhibition",
+      "description": "Photography exhibition exploring visual storytelling through single images or cohesive series. Documentary, street, conceptual, staged, and experimental approaches welcome. Exhibition at Chico Art Center gallery, August 15 – September 18, 2026, with opening reception September 4. Member fee $25. Free exhibition catalog via Blurb. Opportunity to sell work (30% commission to center). Previously exhibited work at CAC ineligible.",
+      "url": "https://chicoartcenter.com/narrative26/",
+      "location": "Chico, CA, USA",
+      "eligibility": [],
+      "requirements": "Up to 7 images",
+      "slug": "narrative-chico-art-center",
+      "orgInTitle": false,
+      "summary": "Photography exhibition on visual storytelling — documentary, street, conceptual, staged, or experimental approaches.",
+      "email": "",
+      "ai": "Discouraged",
+      "instagram": "@chico_art_center",
+      "resultsDate": "Late June 2026",
+      "submitUrl": "https://pci.jotform.com/form/250458279768070",
+      "submitVia": "JotForm",
+      "dateAdded": "2026-04-14T03:18:23.150Z"
+    },
+    {
+      "title": "Flatland Feature — Issue 2",
+      "org": "Midwest Center for Photography",
+      "deadline": "2026-05-01",
+      "fee": "$100/10 images",
+      "category": "exhibition",
+      "description": "Online photography feature showcasing photographers' work in a series format as a virtual gallery experience. Selected photographers' work featured for six months on the MWCP website (July–December 2026). Each feature consists of 10–20 images with an accompanying artist statement and biography. Visitors can view and purchase photographs online (50% commission). Open internationally, all subject matter and genres accepted.",
+      "url": "https://www.mwcponline.com/call-for-entries.html",
+      "instagram": "@mwcponline",
+      "location": "Online",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.mwcponline.com/flatland-feature-submission.html",
+      "requirements": "10–20 images",
+      "slug": "flatland-feature-issue-2-midwest-center-for-photography",
+      "orgInTitle": false,
+      "summary": "Online portfolio feature — 10–20 images showcased for 6 months on MWCP website. All genres, open internationally.",
+      "email": "",
+      "dateAdded": "2026-04-14T03:18:23.150Z"
+    },
     {
       "title": "The Art of Abandonment",
       "org": "TCG Gallery",
@@ -1012,6 +1081,7 @@
         "Holly Hart, Conceptual Fine Art Photographer & Decode Gallery Founder"
       ],
       "submitVia": "Website form",
+      "submitUrl": "https://decodegallery.com/home-submission/",
       "requirements": "5 or 10 images",
       "slug": "home-decode-gallery",
       "orgInTitle": false,
@@ -4654,7 +4724,8 @@
       "resultsDate": "May 1-3, 2026",
       "dateAdded": "2026-03-15",
       "submitUrl": "https://www.dodho.com/photography-awards/",
-      "summary": "Fourth edition celebrating portrait as a space of presence and authorship amidst visual saturation. Barcelona."
+      "summary": "Fourth edition celebrating portrait as a space of presence and authorship amidst visual saturation. Barcelona.",
+      "email": ""
     },
     {
       "title": "ViewPoint Gallery International Photography Competition",
@@ -5928,7 +5999,7 @@
     {
       "title": "Street Photography Barcelona Contest 2026",
       "org": "Street Photography Barcelona",
-      "deadline": "2026-04-15",
+      "deadline": "2026-04-20",
       "fee": "€10–€40",
       "category": "photography",
       "description": "International street photography contest seeking authentic images of urban life. Three geographic categories: Local (Barcelona), National (Spain), and International. 25 finalists exhibited at Galerie Art Nomade, Barcelona.",
@@ -6978,7 +7049,7 @@
       "resultsDate": "July 25, 2026",
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
-      "submitUrl": "https://www.berlinphotoawards.com/submit-new-entry/",
+      "submitUrl": "https://www.berlinphotoawards.com/login/",
       "jury": [
         "Thomas Kakareko, Photographer & Creative Consultant",
         "Jorg Nicht, Travel & Street Photographer",
@@ -7114,7 +7185,7 @@
       "title": "Flora — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-04-20",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Nature photography virtual exhibition exploring the quiet intensity of plant life. From delicate details to expansive landscapes of growth. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -7136,7 +7207,7 @@
       "title": "Europe — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-05-10",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Photography virtual exhibition exploring Europe as a continuous negotiation between tradition and innovation, memory and experimentation. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -7158,7 +7229,7 @@
       "title": "Candid — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-05-20",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Candid photography virtual exhibition. The art of attention — rooted in presence, patience, and trust in the unfolding moment. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -7266,7 +7337,7 @@
       "submitVia": "Website form",
       "slug": "fotodoc-photo-contest-2026",
       "orgInTitle": true,
-      "ai": "Not accepted",
+      "ai": "AI retouching OK if declared, fully generated not accepted",
       "resultsDate": "November 2026",
       "dateAdded": "2026-03-18",
       "requirements": "1–15 images",
@@ -10330,6 +10401,7 @@
       "requirements": "12-20 images",
       "ai": "Not accepted",
       "email": "",
+      "resultsDate": "Early July 2026",
       "dateAdded": "2026-04-12T07:20:01.698Z"
     },
     {
@@ -10347,13 +10419,21 @@
         "18-plus"
       ],
       "email": "",
-      "submitVia": "Official website",
+      "submitVia": "FotoDocument",
       "submitUrl": "https://fotoaward.fotodocument.org/signup",
+      "jury": [
+        "Andrea Bruce, Photojournalist, NOOR Photo Agency co-owner, Nikon Ambassador",
+        "Donna De Cesare, Photojournalist, Associate Professor, University of Texas at Austin",
+        "Nina Emett, Director of FotoDocument, Documentary Photographer, Curator",
+        "Neo Ntsoma, Photojournalist, Founder of Neo Ntsoma Productions",
+        "Isabella Franceschini, 2024 Marilyn Stafford FotoReportage Award winner"
+      ],
       "slug": "marilyn-stafford-fotoreportage-award-2026-fotodocument",
       "orgInTitle": false,
       "summary": "£4,000 grant for female documentary photographers. 10th edition. For photo essays on social, environmental, or cultural issues.",
       "requirements": "10 + 15 images",
       "resultsDate": "Late June 2026",
+      "instagram": "@fotodocument",
       "dateAdded": "2026-04-12T07:20:01.698Z"
     },
     {
