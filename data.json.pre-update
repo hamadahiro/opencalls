@@ -1,6 +1,59 @@
 {
-  "lastUpdated": "2026-04-09",
+  "lastUpdated": "2026-04-13",
   "calls": [
+    {
+      "title": "The Art of Abandonment",
+      "org": "TCG Gallery",
+      "deadline": "2026-05-20",
+      "fee": "$15",
+      "category": "exhibition",
+      "description": "International open call exploring abandoned and rediscovered objects, locations, and structures. Photographers examine what these forgotten spaces reveal about humanity, memory, and the passage of time. Online exhibition June 1 – July 1, 2026. Curator's Choice, Director's Choice, and Honorable Mentions awarded. Blind jury process — juror sees only the image and title.",
+      "url": "https://chateaugallery.com/call-for-entries/the-art-of-abandonment",
+      "instagram": "@chateau_gallery",
+      "location": "Online",
+      "prize": "Exhibition + awards",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://chateaugallery.com/call-for-entries/the-art-of-abandonment",
+      "requirements": "Up to 3 images",
+      "slug": "the-art-of-abandonment-tcg-gallery",
+      "orgInTitle": false,
+      "summary": "Themed exhibition exploring forgotten structures, objects, and places — what they reveal about humanity and time.",
+      "resultsDate": "May 27, 2026",
+      "email": "",
+      "ai": "Not accepted",
+      "dateAdded": "2026-04-13T23:20:16.103Z"
+    },
+    {
+      "title": "Encontros Da Imagem Award 2026",
+      "org": "Encontros da Imagem",
+      "deadline": "2026-04-30",
+      "fee": "€35",
+      "category": "exhibition",
+      "description": "Open call for the 36th edition of Encontros da Imagem, one of Europe's oldest photography festivals, founded in 1991 in Braga, Portugal. Three projects selected for solo exhibitions during the festival across multiple northern Portuguese cities, September 18 – November 1, 2026. One overall winner receives €2,000. Seventeen further projects included in a collective video screening. Theme: Territory And Identity. Projects must use photography or video with coherent narrative structure, produced within the last five years. Maximum three projects per applicant.",
+      "url": "https://encontrosdaimagem.com/2026/en/",
+      "location": "Braga, Portugal",
+      "prize": "€2,000 + solo exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/ei-award-2026",
+      "slug": "encontros-da-imagem-award-2026",
+      "orgInTitle": false,
+      "summary": "Major European photo festival (36th edition). €2,000 prize + solo exhibition. Theme: Territory And Identity. Open worldwide.",
+      "requirements": "15-20 images",
+      "jury": [
+        "Arianna Catania",
+        "Alexia Alexandropoulou",
+        "Arianna Rinaldo"
+      ],
+      "email": "",
+      "resultsDate": "July 2026",
+      "dateAdded": "2026-04-13T19:17:12.451Z"
+    },
     {
       "title": "31st National Competition 2026",
       "org": "Soho Photo Gallery",
@@ -12,6 +65,7 @@
       "location": "New York, NY, USA",
       "prize": "$400 first place + exhibition",
       "eligibility": [
+        "18-plus",
         "united-states"
       ],
       "submitVia": "CaFÉ",
@@ -76,6 +130,7 @@
       ],
       "resultsDate": "April 28, 2026",
       "instagram": "@la_centerofphoto",
+      "email": "",
       "dateAdded": "2026-04-08T08:48:33.497Z"
     },
     {
@@ -720,7 +775,11 @@
       "summary": "Six Spanish photographers exhibit at Rencontres d'Arles opening week. €1,400 each. Free, supported by Ministry of Culture.",
       "dateAdded": "2026-04-01T11:11:51.546Z",
       "jury": [
-        "TBA (announced via @embajada.arles)"
+        "Christoph Wiesner, Director, Les Rencontres d'Arles",
+        "Elisa Medde, Director, Foto Colectania Foundation",
+        "Kim Boske, FUTURES Residencies",
+        "Mathieu Asselin, Co-Founder, doubledummy",
+        "Shinji Nagabe, Visual Artist"
       ],
       "email": "",
       "submitUrl": "https://forms.gle/jRVv1iifGDPmd5XNA"
@@ -856,7 +915,7 @@
       "summary": "Explore perception, belief, identity, and power through illusion and manipulation. All disciplines. Free, open worldwide.",
       "email": "",
       "dateAdded": "2026-03-28T21:39:11.533Z",
-      "submitUrl": "https://coexcollaborative.com/callforsubmissions"
+      "submitUrl": "https://coexcollaborative.com/callforsubmissions/18e72288-224e-47a4-bed5-acd3d5bd6c87"
     },
     {
       "title": "Epson International Pano Awards 2026",
@@ -1512,7 +1571,7 @@
       "fee": "Free",
       "category": "exhibition",
       "description": "International outdoor juried exhibition in its 23rd year. 50 selected artworks are displayed as billboard-sized panels (16 ft × 12.5 ft) in public parks in Sarasota and St. Petersburg, Florida, from January to April 2027. Three awards: $2,000 Best-in-Show Adult, $2,000 Best-in-Show Student, $2,000 People's Choice. Work must reflect themes of diversity, inclusion, kindness, and respect. Accepts photography, painting, drawing, mixed media, digital art. Horizontal orientation only. No limit on entries per artist. 150-word artist statement required. Over 5.2 million visitors since 2004. AI-generated work not accepted.",
-      "url": "https://www.embracingourdifferences.org/submit-art-2026-exhibition/",
+      "url": "https://www.embracingourdifferences.org/submit-art-2027-exhibition/",
       "instagram": "@embracingourdifferences",
       "location": "Sarasota, FL, USA",
       "prize": "$6,000",
@@ -2069,7 +2128,7 @@
       "url": "https://rbsa.org.uk/call-for-entries/rbsa-summer-show-2026/",
       "instagram": "@rbsagallery",
       "location": "Birmingham, United Kingdom",
-      "prize": "£600",
+      "prize": "£600 / £300",
       "eligibility": [],
       "submitVia": "Typeform",
       "requirements": "Up to 3 images",
@@ -2143,7 +2202,7 @@
       "url": "https://www.edu.hcponline.org/the-center-annual",
       "instagram": "@hcponline",
       "location": "Houston, TX, USA",
-      "prize": "Two $500 honoraria + $5,000 MFAH purchase award + exhibition",
+      "prize": "$5,000 + exhibition",
       "eligibility": [
         "membership-required"
       ],
@@ -2500,7 +2559,8 @@
       "resultsDate": "Fall 2026",
       "dateAdded": "2026-03-16",
       "submitUrl": "https://submit.luciefoundation.org/login.php",
-      "summary": "Celebrating innovative photographic books. Three categories. $3,000 Book of the Year. Open worldwide."
+      "summary": "Celebrating innovative photographic books. Three categories. $3,000 Book of the Year. Open worldwide.",
+      "email": ""
     },
     {
       "title": "Insight Foto Festival — Insight Out 2026",
@@ -4208,7 +4268,7 @@
     {
       "title": "Thoughts of Summer",
       "org": "Southeast Center for Photography",
-      "deadline": "2026-04-15",
+      "deadline": "2026-04-19",
       "fee": "$35",
       "category": "exhibition",
       "description": "Celebrating summer — family, friends, vacations. Jurors: Lisa Woodward and Mia Dalglish (Pictura co-curators). Greenville, SC.",
@@ -4877,7 +4937,7 @@
       ],
       "submitVia": "Exposure One Awards",
       "requirements": "1–5 images",
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "exposure-one-awards-one-shot-photo-contest",
       "orgInTitle": true,
       "resultsDate": "May 27, 2026",
@@ -4900,7 +4960,9 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Misa Jeffereis, Assistant Curator, Contemporary Art Museum St. Louis"
+      ],
       "submitVia": "Hopper Prize",
       "requirements": "Up to 10 images",
       "slug": "the-hopper-prize-grants",
@@ -5255,7 +5317,7 @@
       "url": "https://www.lightwork.org/air/",
       "instagram": "@lightworkorg",
       "location": "Syracuse, NY, USA",
-      "prize": "$7,500 stipend + publication",
+      "prize": "$7,500 stipend",
       "eligibility": [],
       "submitVia": "SlideRoom",
       "slug": "2027-artist-in-residence-program-light-work",
@@ -6146,6 +6208,7 @@
       "location": "Online",
       "prize": "€500",
       "eligibility": [],
+      "ai": "Not accepted",
       "submitVia": "Submittable",
       "slug": "gomma-black-and-white-photo-award-2026",
       "orgInTitle": true,
@@ -6316,11 +6379,11 @@
     {
       "title": "Nature Photographer of the Year 2026",
       "org": "Nature Photographer of the Year",
-      "deadline": "2026-05-24",
+      "deadline": "2026-06-02",
       "fee": "€34",
       "category": "photography",
       "description": "International nature photography competition with 12 categories for individual images, a young photographers category (ages 10–17, free entry), and the Fred Hazelhoff Award for portfolios (€17.50). Award ceremony November 14, 2026.",
-      "url": "https://naturephotographeroftheyear.com/enter-contest/npoty-2025/",
+      "url": "https://naturephotographeroftheyear.com/enter-contest/npoty-2026/",
       "instagram": "@naturephotographeroftheyear",
       "location": "Medemblik, Netherlands",
       "prize": "€25,000",
@@ -6332,7 +6395,7 @@
       "resultsDate": "November 14, 2026",
       "dateAdded": "2026-03-18",
       "requirements": "Up to 20 images",
-      "submitUrl": "https://naturephotographeroftheyear.com/enter-contest/npoty-2025/",
+      "submitUrl": "https://naturephotographeroftheyear.com/enter-contest/npoty-2026/",
       "summary": "International nature competition with 12 categories plus young photographers and portfolio awards.",
       "email": "",
       "jury": [
@@ -7014,7 +7077,7 @@
       "orgInTitle": false,
       "resultsDate": "September 15, 2026",
       "dateAdded": "2026-03-22",
-      "requirements": "12 images",
+      "requirements": "8–12 images",
       "jury": [
         "Diane Dufour, Founder & Artistic Director, LE BAL Paris",
         "Erin O'Toole, Curator & Head of Photography, SFMOMA",
@@ -7494,7 +7557,11 @@
       "resultsDate": "July 4, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeie2kdGoMTIHazp1FVX1L6XI-Fnp7eWa85hdBo1_BMWA_oEw/viewform",
       "summary": "Online exhibition examining tensions and transformations across America. Timed for July 4th.",
-      "email": ""
+      "email": "",
+      "jury": [
+        "Norm Diamond",
+        "Marcy Palmer"
+      ]
     },
     {
       "title": "SE Center for Photography — Magic of Light",
@@ -8146,7 +8213,7 @@
       "url": "https://www.outdoorphotographymagazine.co.uk/submissions/",
       "instagram": "@outdoorphotographymag",
       "location": "Online",
-      "prize": "£150 + publication",
+      "prize": "Publication",
       "eligibility": [],
       "submitVia": "Website form",
       "slug": "outdoor-photography-magazine-spring-landscapes",
@@ -8357,7 +8424,7 @@
       "url": "https://www.decagongallery.com/this-is-a-person-entry",
       "instagram": "@decagongallery",
       "location": "Online",
-      "prize": "$500",
+      "prize": "$500 / $300 / $200",
       "eligibility": [
         "18-plus"
       ],
@@ -8853,7 +8920,8 @@
       "submitUrl": "https://haze.gallery/open-call-i-can-buy-myself-flowers",
       "summary": "Pop-up exhibition in Amsterdam exploring autonomy, intimacy turned inward, and self-directed desire. With PURPLEHAZE.",
       "email": "",
-      "ai": "Not mentioned"
+      "ai": "Not mentioned",
+      "resultsDate": "June 2026"
     },
     {
       "title": "Fresh Legs 2026",
@@ -9678,8 +9746,8 @@
         "canada",
         "18-plus"
       ],
-      "submitVia": "Official website",
-      "submitUrl": "https://www.banffcentre.ca/programs/leighton-artists-studios-visual-arts/barbara-spohr-memorial-award-photography-2027",
+      "submitVia": "SlideRoom",
+      "submitUrl": "https://banffcentre.slideroom.com",
       "requirements": "Up to 10 images",
       "slug": "barbara-spohr-memorial-award-for-photography-2027",
       "orgInTitle": false,
@@ -9758,6 +9826,12 @@
       "eligibility": [],
       "email": "",
       "resultsDate": "September 1, 2026",
+      "jury": [
+        "Cali M. Banks, Light Work / Syracuse University",
+        "Leah DeVun, Rutgers University",
+        "William Camargo, Pasadena City College",
+        "Francesca Hummler, Apparently in America / Der Greif"
+      ],
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -10051,6 +10125,7 @@
       "resultsDate": "May 12-13, 2026",
       "requirements": "3-10 images",
       "submitUrl": "https://www.dodho.com/call-for-entries/",
+      "email": "",
       "dateAdded": "2026-04-06T19:09:21Z"
     },
     {
@@ -10232,6 +10307,175 @@
       "requirements": "1 PDF in .zip (max 10MB)",
       "resultsDate": "July 13, 2026",
       "dateAdded": "2026-04-11T19:16:28.161Z"
+    },
+    {
+      "title": "Eddie Adams Workshop 2026",
+      "org": "Eddie Adams Workshop",
+      "deadline": "2026-05-24",
+      "fee": "$40",
+      "category": "education",
+      "description": "One of the most prestigious photojournalism programs in the world. 100 emerging photographers selected annually — evenly split between college students and early-career professionals — for a free 4-day seminar in Jeffersonville, NY. Participants work in teams led by top photographers and editors. Late entry available through May 31 at $55. Applicants must be at least 20 years old and have less than six years of full-time professional experience. Photographers holding staff positions at major publications for more than six years are ineligible.",
+      "url": "https://eddieadamsworkshop.org/",
+      "instagram": "@eddieadamsworkshop",
+      "location": "Jeffersonville, NY, USA",
+      "prize": "Workshop fellowship",
+      "eligibility": [
+        "emerging"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://eddieadamsworkshop.submittable.com/submit",
+      "slug": "eddie-adams-workshop-2026",
+      "orgInTitle": true,
+      "summary": "Legendary 4-day photojournalism seminar. 100 selected from emerging photographers. Free once accepted.",
+      "requirements": "12-20 images",
+      "ai": "Not accepted",
+      "email": "",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "Marilyn Stafford FotoReportage Award 2026",
+      "org": "FotoDocument",
+      "deadline": "2026-05-18",
+      "fee": "Free",
+      "category": "grant",
+      "description": "10th edition. Annual award for professional female photographers towards the completion of a compelling documentary photo essay addressing important social, environmental, economic, or cultural issues. Supported by Nikon. Winner receives £4,000 to support the project. Special celebration of 10 years of the prize in September at POST, Brighton & Hove's new centre for photography. Open globally to female or female-identifying photographers aged 18+ at any career stage. Must have completed at least one previous documentary photo essay and have already started the submitted project.",
+      "url": "https://fotoaward.fotodocument.org/",
+      "location": "Brighton, United Kingdom",
+      "prize": "£4,000",
+      "eligibility": [
+        "women",
+        "18-plus"
+      ],
+      "email": "",
+      "submitVia": "Official website",
+      "submitUrl": "https://fotoaward.fotodocument.org/signup",
+      "slug": "marilyn-stafford-fotoreportage-award-2026-fotodocument",
+      "orgInTitle": false,
+      "summary": "£4,000 grant for female documentary photographers. 10th edition. For photo essays on social, environmental, or cultural issues.",
+      "requirements": "10 + 15 images",
+      "resultsDate": "Late June 2026",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "JGS Fellowship for Photography 2026",
+      "org": "New York Foundation for the Arts",
+      "deadline": "2026-05-19",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Five $8,000 unrestricted cash grants for artists working in traditional and experimental photography, including light-based work, alternative processes, or any form in which photography or photographic techniques are pivotal. Open to New York State photography artists living and working outside of New York City. Notifications in summer 2026.",
+      "url": "https://www.nyfa.org/awards-grants/the-jgs-fellowship-for-photography/",
+      "instagram": "@nyfacurrent",
+      "location": "New York, USA",
+      "prize": "$8,000 (5 awarded)",
+      "eligibility": [
+        "25-plus",
+        "new-york-state"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://apply.nyfa.org/submit/351704/2026-jgs-fellowship-for-photography",
+      "slug": "jgs-fellowship-for-photography-2026-new-york-foundation-for-the-arts",
+      "orgInTitle": false,
+      "summary": "Five $8,000 unrestricted grants for photographers in NY State outside NYC. Traditional and experimental photography.",
+      "requirements": "5–10 images",
+      "resultsDate": "Summer 2026",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "Light Work Artist-in-Residence 2027",
+      "org": "Light Work",
+      "deadline": "2026-07-01",
+      "fee": "Free",
+      "category": "residency",
+      "description": "One-month creative residency in Syracuse, New York. Selected artists receive a $7,500 stipend, a furnished artist apartment, 24-hour access to state-of-the-art facilities, and staff support. Work published in a special edition of Contact Sheet: The Light Work Annual with a commissioned essay. Open to all artists working in photography or image-based media from any country. 12–15 artists selected annually. Notifications by December 2026.",
+      "url": "https://www.lightwork.org/air/",
+      "location": "Syracuse, NY, USA",
+      "prize": "$7,500 stipend",
+      "eligibility": [],
+      "instagram": "@lightworkorg",
+      "email": "",
+      "submitVia": "SlideRoom",
+      "submitUrl": "https://lightwork.slideroom.com",
+      "slug": "light-work-artist-in-residence-2027",
+      "orgInTitle": true,
+      "summary": "One-month residency with $7,500 stipend and furnished apartment. Published in Contact Sheet. Open worldwide.",
+      "resultsDate": "December 2026",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "Doug Pensinger Photography Fund 2026",
+      "org": "Doug Pensinger Photography Fund",
+      "deadline": "2026-05-01",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Seven $5,000 grants plus yearlong mentorships from industry professionals for emerging sports photographers. The only nonprofit dedicated to providing career development opportunities to emerging sports photographers. Past grantees range from high school students to recent graduates working as freelancers or interns. Applications close May 1.",
+      "url": "https://www.dougpensingerphotographyfund.org/",
+      "location": "Online",
+      "prize": "$5,000 (7 awarded)",
+      "eligibility": [
+        "emerging"
+      ],
+      "instagram": "@dppfund",
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/be41a666-a3f5-4785-9517-bc0d8ccee811/start",
+      "requirements": "20 images",
+      "resultsDate": "July 1, 2026",
+      "ai": "Not accepted",
+      "email": "",
+      "jury": [
+        "Jean Fruth, Sports Photographer (2026–27 Mentor)",
+        "Bob Martin, Sports Photographer (2026–27 Mentor)",
+        "Jamie Schwaberow, Sports Photographer (2026–27 Mentor)"
+      ],
+      "slug": "doug-pensinger-photography-fund-2026",
+      "orgInTitle": true,
+      "summary": "Seven $5,000 grants plus mentorships for emerging sports photographers. Only nonprofit dedicated to sports photography careers.",
+      "dateAdded": "2026-04-12T07:20:01.698Z"
+    },
+    {
+      "title": "The Paula Riff Award 2026",
+      "org": "Center for Photographic Art",
+      "deadline": "2026-06-01",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Annual award honoring artist Paula Riff's legacy, recognizing artists who challenge conventional photography through lensless photography, historical/alternative photographic processes, or physical intervention such as cutting, sewing, and collage. Created in 2021 by the Center for Photographic Art and Lenscratch. $1,000 prize plus featured on Lenscratch and the CPA website. Related group exhibition Changing the Narrative: the First 5 Years of Paula Riff Award Winners opens June 20 at CPA in Carmel. Open internationally to artists working at any career stage.",
+      "url": "https://www.photography.org/events/the-paula-riff-award-ngc48",
+      "location": "Carmel, CA, USA",
+      "prize": "$1,000 + featured on Lenscratch & CPA",
+      "eligibility": [],
+      "jury": [
+        "Tarrah von Lintel, Von Lintel Gallery"
+      ],
+      "submitVia": "Dropbox",
+      "submitUrl": "https://www.dropbox.com/request/00QN16Yq27qYcVbbo0HI",
+      "requirements": "5-10 images (single PDF)",
+      "slug": "the-paula-riff-award-2026",
+      "orgInTitle": false,
+      "summary": "Award for alternative/experimental photography — lensless, historical processes, physical intervention. $1,000 + Lenscratch feature.",
+      "instagram": "@centerphotographicart",
+      "resultsDate": "July 2026",
+      "email": "",
+      "dateAdded": "2026-04-12T15:15:56.295Z"
+    },
+    {
+      "title": "Dek Unu Magazine — June & July 2026 Issue",
+      "org": "Dek Unu Magazine",
+      "deadline": "2026-04-20",
+      "fee": "Free",
+      "category": "zine",
+      "description": "International not-for-profit journal publishing one accomplished artist per monthly issue in print and online paperback. All fine art projects in all photo genres and techniques are welcome. One artist selected for the combined June/July double issue. Technical excellence paired with artistic vision and conceptual intent.",
+      "url": "https://www.dekunumag.com/submit",
+      "instagram": "@dekunumag",
+      "location": "Online",
+      "prize": "Publication",
+      "eligibility": [],
+      "submitVia": "Email",
+      "requirements": "11 images",
+      "slug": "dek-unu-magazine-june-july-2026-issue",
+      "orgInTitle": true,
+      "summary": "Not-for-profit journal publishing one artist per issue in print and online. June/July double issue. Free, email submissions.",
+      "email": "",
+      "resultsDate": "~May 1, 2026",
+      "dateAdded": "2026-04-13T07:17:53.132Z"
     }
   ]
 }
