@@ -108,7 +108,7 @@
 
       <p class="call-detail-description">Photography-only juried exhibition inspired by the #HopperHappens Instagram series — real-world moments evoking Edward Hopper's style, light, and mood. 55 photographs selected and displayed across 55 businesses and nonprofits in Nyack, NY, birthplace of Edward Hopper. $1,000 in cash prizes: First $500, Second $300, Third $200, plus Juror's and Visitor's Choice awards. Juror: Richard Tuschman, celebrated for his 'Hopper Meditations' series. Exhibition June 1 – July 5, 2026. Open internationally, ages 18+. Work must be completed after January 1, 2020 and never previously exhibited at EHHM. MFA student discounts available.</p>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">$1,000 prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition across 55 venues prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">$500 prize</a></div></div>
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 3, 2026">May 3, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">May 11, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$30 members / $60 non-members"><span class="tag-front">$30 members /</span> <span class="tag-back">$60 non-members</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/new-york/" title="Nyack, NY">Nyack, NY</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 3 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:info@hopperhouse.org" target="_blank" rel="nofollow noopener">ArtCall</a></span></div></div>
 
       <div class="call-detail-jury">
@@ -137,7 +137,7 @@
 
   <script>
     const CURRENT_SLUG = 'hopperhappens-juried-photography-exhibition';
-    const CURRENT_CALL = {"prize":"$1,000 + exhibition across 55 venues","category":"exhibition","org":"Edward Hopper House Museum","location":"Nyack, NY, USA","fee":"$30 members / $60 non-members","deadline":"2026-05-03","resultsDate":"May 11, 2026","instagram":"@edwardhopperhouse","eligibility":["18-plus"],"jury":["Richard Tuschman, Photographer"],"submitVia":"ArtCall","submitUrl":"https://edwardhopperhousejuried2026hopperhappens.artcall.org","email": "","ai":"","requirements":"Up to 3 images"};
+    const CURRENT_CALL = {"prize":"$500","category":"exhibition","org":"Edward Hopper House Museum","location":"Nyack, NY, USA","fee":"$30 members / $60 non-members","deadline":"2026-05-03","resultsDate":"May 11, 2026","instagram":"@edwardhopperhouse","eligibility":["18-plus"],"jury":["Richard Tuschman, Photographer"],"submitVia":"ArtCall","submitUrl":"https://edwardhopperhousejuried2026hopperhappens.artcall.org","email": "","ai":"","requirements":"Up to 3 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -147,7 +147,7 @@
       var u = 'https://www.edwardhopperhouse.org/upcomingexhibitions.html';
       var o = 'Edward Hopper House Museum';
       var dl = new Date('2026-05-03T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$1,000 + exhibition across 55 venues') + '\\nEntry fee: ' + icsE('$30 members / $60 non-members');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$500') + '\\nEntry fee: ' + icsE('$30 members / $60 non-members');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
