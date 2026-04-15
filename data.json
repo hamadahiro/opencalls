@@ -12,7 +12,8 @@
       "location": "Dover, NH, USA",
       "prize": "Exhibition",
       "eligibility": [
-        "18-plus"
+        "18-plus",
+        "united-states"
       ],
       "jury": [
         "Brian Crowley, Landscape & Street Photographer",
@@ -39,11 +40,30 @@
       "prize": "$3,000",
       "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": "https://fineartphotoawards.com/",
+      "submitUrl": "https://fineartphotoawards.com/auth/login/",
       "requirements": "Single or series per category",
       "slug": "fine-art-photography-awards-2026-2027",
       "orgInTitle": true,
       "summary": "13th edition — 20 categories from landscape to street. $3K professional / $2K amateur grand prizes. 15 international jurors.",
+      "email": "",
+      "instagram": "@fineartphotoawards",
+      "resultsDate": "April 11, 2027",
+      "jury": [
+        "Jaco Marx, Photographer",
+        "Michele Palazzo, Photographer",
+        "Karolina Wojtasik, Photographer",
+        "Tugo Cheng, Photographer",
+        "Jan Møller Hansen, Photographer",
+        "Martin Krajczy, Photographer",
+        "Juan Pablo de Miguel, Photographer",
+        "Anika Molnar, Photographer",
+        "Chan Kwok-Chung, Photographer",
+        "Simone Werr, Photographer",
+        "Pierre Moreau, Photographer",
+        "Anna Tihanyi, Photographer",
+        "Enrico Markus Essl, Photographer",
+        "Lisa Saint, Photographer"
+      ],
       "dateAdded": "2026-04-15T19:24:26Z"
     },
     {
@@ -140,6 +160,9 @@
       "resultsDate": "Late June 2026",
       "submitUrl": "https://pci.jotform.com/form/250458279768070",
       "submitVia": "JotForm",
+      "jury": [
+        "Cameron Kelly, Gallery Director"
+      ],
       "dateAdded": "2026-04-14T03:18:23.150Z"
     },
     {
