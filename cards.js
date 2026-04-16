@@ -72,6 +72,7 @@ const eligibilityLabel = {
   '18-plus': '18+',
   '21-plus': '21+',
   '25-plus': '25+',
+  '45-plus': '45+',
   'student': 'Students',
   'ukraine': 'Ukraine only',
   'flinta': 'FLINTA',
