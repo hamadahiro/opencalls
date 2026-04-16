@@ -34,7 +34,9 @@
       "instagram": "@wsworkshop",
       "location": "Rosendale, NY, USA",
       "prize": "$350/week + materials + housing",
-      "eligibility": [],
+      "eligibility": [
+        "45-plus"
+      ],
       "submitVia": "Submittable",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201261/studio-residency-grant",
       "requirements": "Up to 10 images",
@@ -129,6 +131,7 @@
       "category": "exhibition",
       "description": "Photography exhibition celebrating America's diverse and dynamic essence — landscapes, people, culture, or any aspect that embodies the nation's spirit. Up to 3 images forming a cohesive series. Juried by Brian Crowley (landscape/street photographer) and Ron St. Jean (portrait/fine art photographer, 40+ years experience). Exhibition at The Art Center gallery in historic downtown Dover. Artists receive 70% of sale price. All work must be for sale and cannot be removed during the exhibition. Members enter free. Open to US photographers of all levels, 18+. Exhibition July 13 – August 31, 2026.",
       "url": "https://theartcenterdover.com/",
+      "instagram": "@theartcenterdover",
       "location": "Dover, NH, USA",
       "prize": "Exhibition",
       "eligibility": [
@@ -161,7 +164,7 @@
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://fineartphotoawards.com/auth/login/",
-      "requirements": "Single or series per category",
+      "requirements": "1+ images (single or series)",
       "slug": "fine-art-photography-awards-2026-2027",
       "orgInTitle": true,
       "summary": "13th edition — 20 categories from landscape to street. $3K professional / $2K amateur grand prizes. 15 international jurors.",
