@@ -1,6 +1,82 @@
 {
-  "lastUpdated": "2026-04-15",
+  "lastUpdated": "2026-04-16",
   "calls": [
+    {
+      "title": "Stories: Narrative Photography",
+      "org": "PH21 Gallery",
+      "deadline": "2026-05-25",
+      "fee": "€25–45",
+      "category": "exhibition",
+      "description": "Curated international group photography exhibition exploring narrative and storytelling. Seeking photographs that tell stories — personal or social, literal or symbolic, about persons, communities, objects, or places. All creative photographic interpretations welcome. Curated by Zsolt Bátori (PhD, Rutgers; founder/director PH21 Gallery; Photolucida board member) and Borbála Jász (art historian; Photolucida juror). Curator's choice receives three free entries for future PH21 exhibitions. Up to three honorable mentions. Special rate for students, unwaged, and low-income economies (€15–20). Images submitted by email as JPEG, longest side max 1280px. Early bird deadline May 18 at reduced rates; final deadline May 25. Exhibition at PH21 Gallery in Barcelona's Gothic Quarter, July 25 – August 18, 2026.",
+      "url": "https://www.ph21gallery.com/cfe-stories-26",
+      "instagram": "@ph21gallery",
+      "location": "Barcelona, Spain",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Zsolt Bátori, Photographer & Philosophy of Art",
+        "Borbála Jász, Art Historian & Philosophy of Art"
+      ],
+      "submitVia": "Email",
+      "requirements": "3–15 images",
+      "email": "",
+      "slug": "stories-narrative-photography-ph21-gallery",
+      "orgInTitle": false,
+      "summary": "Curated group show on narrative and storytelling. Physical exhibition in Barcelona's Gothic Quarter, July–August. Student rates available.",
+      "resultsDate": "June 2026",
+      "dateAdded": "2026-04-16T03:17:47.994Z"
+    },
+    {
+      "title": "PORTAL",
+      "org": "Decagon Gallery",
+      "deadline": "2026-06-03",
+      "fee": "$25/8 images",
+      "category": "exhibition",
+      "description": "Juried photography exhibition exploring the theme 'at the edge of becoming.' Seeking photographs depicting transition as a condition — figures between visibility and disappearance, spaces suggesting restricted entry, suspended moments, or structurally unstable compositions. The strongest images will resist resolution, embodying transition rather than describing it. Juried by Douglas Stockdale (visual artist, editor, educator; founder of PhotoBook Journal; work in collections at Museo d'Arte Contemporanea di Roma, Beinecke Library at Yale, Reminders Photography Stronghold). All photographic styles and processes accepted. Exhibition June 20 – August 20, 2026.",
+      "url": "https://www.decagongallery.com/portal-entry",
+      "instagram": "@decagongallery",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Douglas Stockdale, Visual Artist & Founder of PhotoBook Journal"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.decagongallery.com/portal-entry",
+      "requirements": "Up to 8 images",
+      "email": "",
+      "slug": "portal-decagon-gallery",
+      "orgInTitle": false,
+      "summary": "Transition & becoming — figures, spaces, suspended moments. Juried by Douglas Stockdale (PhotoBook Journal founder).",
+      "resultsDate": "June 15, 2026",
+      "dateAdded": "2026-04-16T03:17:47.994Z"
+    },
+    {
+      "title": "The Emergence Project 2026",
+      "org": "Glasgow Gallery of Photography",
+      "deadline": "2026-05-23",
+      "fee": "Free (£48 if accepted)",
+      "category": "exhibition",
+      "description": "Annual graduate showcase for recently graduated UK-based photographers (graduated 2023–2026). Free to submit. Gallery covers all printing and installation costs, with work printed on Fujifilm photographic paper and framed in gallery frames. Submit up to 8 images along with a brief statement about your work, graduation details, and why you'd like to participate. Exhibition July 3–31, 2026 at Glasgow Gallery of Photography.",
+      "url": "https://www.glasgowgalleryofphotography.com/exhibition",
+      "instagram": "@theglasgowgalleryofphotography",
+      "location": "Glasgow, United Kingdom",
+      "prize": "Exhibition",
+      "eligibility": [
+        "united-kingdom"
+      ],
+      "submitVia": "Email via file transfer",
+      "requirements": "Up to 8 images",
+      "email": "",
+      "slug": "the-emergence-project-2026-glasgow-gallery-of-photography",
+      "orgInTitle": false,
+      "summary": "Free graduate showcase for UK photography grads (2023–2026). Gallery covers printing and framing. Glasgow exhibition, July.",
+      "dateAdded": "2026-04-16T03:17:47.994Z"
+    },
     {
       "title": "Across America 2026",
       "org": "The Art Center",
