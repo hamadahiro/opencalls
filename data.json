@@ -7601,7 +7601,7 @@
       "ai": "Not accepted",
       "dateAdded": "2026-03-18",
       "requirements": "1 image",
-      "resultsDate": "December 2026",
+      "resultsDate": "September 2026",
       "submitUrl": "https://beautifulbizarreartprize.art/enter-beautiful-bizarre-art-prize/entry-photography/",
       "jury": [
         "Franz Szony, Photographer"
@@ -7999,7 +7999,9 @@
       "instagram": "@rencontresarles",
       "location": "Arles, France",
       "prize": "€25,000",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Website form + physical parcel",
       "slug": "luma-rencontres-dummy-book-award-2026",
       "orgInTitle": true,
