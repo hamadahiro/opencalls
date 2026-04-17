@@ -200,10 +200,12 @@
       "url": "https://fineartphotoawards.com/",
       "location": "Online",
       "prize": "$3,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://fineartphotoawards.com/auth/login/",
-      "requirements": "1+ images (single or series)",
+      "requirements": "1 or 2–5 images",
       "slug": "fine-art-photography-awards-2026-2027",
       "orgInTitle": true,
       "summary": "13th edition — 20 categories from landscape to street. $3K professional / $2K amateur grand prizes. 15 international jurors.",
@@ -318,7 +320,7 @@
       "orgInTitle": false,
       "summary": "Photography exhibition on visual storytelling — documentary, street, conceptual, staged, or experimental approaches.",
       "email": "",
-      "ai": "Discouraged",
+      "ai": "Not accepted",
       "instagram": "@chico_art_center",
       "resultsDate": "Late June 2026",
       "submitUrl": "https://pci.jotform.com/form/250458279768070",
@@ -5297,7 +5299,7 @@
       "orgInTitle": true,
       "resultsDate": "May 27, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://exposureoneawards.com/contests/one-shot-photo-contest",
+      "submitUrl": "https://exposureoneawards.com/auth/register",
       "summary": "Black and white photography celebration. Cash prizes, digital gallery, and artist directory placement.",
       "email": ""
     },
@@ -6919,7 +6921,9 @@
       "instagram": "@px3",
       "location": "Paris, France",
       "prize": "€5,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "James Wellford, National Geographic",
         "Steve McCurry, Photographer",
@@ -7140,7 +7144,9 @@
       "instagram": "@px3",
       "location": "Paris, France",
       "prize": "€200 + exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "slug": "px3-state-of-the-world-2026-prix-de-la-photographie-paris",
       "orgInTitle": false,
       "dateAdded": "2026-03-18",
