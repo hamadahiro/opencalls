@@ -2,3 +2,5 @@
 node_modules/
 *\ [0-9]*.html
 scripts/
+data.json.pre-update
+*.pre-update
