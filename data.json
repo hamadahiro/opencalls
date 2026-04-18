@@ -20,6 +20,8 @@
       "slug": "city-series-cambridge-shutter-hub-editions-publication",
       "orgInTitle": true,
       "summary": "Inaugural photobook in Shutter Hub's City Series, exploring Cambridge through atmosphere, routines, and personal moments. Pay-what-you-can.",
+      "ai": "Accepted",
+      "resultsDate": "Within 12 weeks of deadline",
       "dateAdded": "2026-04-18T11:10:39.705Z"
     },
     {
@@ -41,6 +43,8 @@
       "slug": "colour-library-yellow-shutter-hub-editions-publication",
       "orgInTitle": true,
       "summary": "Photobook dedicated to the colour yellow, from bold monochromes to subtle glows. Held in British Library and V&A collections.",
+      "ai": "Accepted",
+      "resultsDate": "Within 12 weeks of deadline",
       "dateAdded": "2026-04-18T11:10:39.705Z"
     },
     {
@@ -77,7 +81,7 @@
       "url": "https://www.northerncontemporarygallery.com/callforsubmissions",
       "instagram": "@northerncontemporary",
       "location": "Toronto, Canada",
-      "prize": "Exhibition at Northern Contemporary Gallery during CONTACT Festival",
+      "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Google Form",
       "submitUrl": "https://forms.gle/aCu4J2d8UUanpL4U8",
@@ -96,7 +100,7 @@
       "url": "https://wsworkshop.org/residencies/art-in-ed-workspace-residency/",
       "instagram": "@wsworkshop",
       "location": "Rosendale, NY, USA",
-      "prize": "$175/day + $525 lesson planning + housing + studio access",
+      "prize": "$175/day + $525 lesson planning",
       "eligibility": [],
       "submitVia": "Submittable",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit/33631/art-in-ed-workspace-residency",
@@ -412,7 +416,7 @@
       "fee": "$30 members / $60 non-members",
       "category": "exhibition",
       "description": "Photography-only juried exhibition inspired by the #HopperHappens Instagram series — real-world moments evoking Edward Hopper's style, light, and mood. 55 photographs selected and displayed across 55 businesses and nonprofits in Nyack, NY, birthplace of Edward Hopper. $1,000 in cash prizes: First $500, Second $300, Third $200, plus Juror's and Visitor's Choice awards. Juror: Richard Tuschman, celebrated for his 'Hopper Meditations' series. Exhibition June 1 – July 5, 2026. Open internationally, ages 18+. Work must be completed after January 1, 2020 and never previously exhibited at EHHM. MFA student discounts available.",
-      "url": "https://www.edwardhopperhouse.org/upcomingexhibitions.html",
+      "url": "https://www.edwardhopperhouse.org/hopperhappens-photo.html",
       "location": "Nyack, NY, USA",
       "prize": "$500",
       "eligibility": [
@@ -1452,7 +1456,9 @@
       "summary": "Free festival exploring health — physical, mental, chronic, invisible. Lincoln, UK. Print and display costs covered.",
       "dateAdded": "2026-03-28T12:13:36.505Z",
       "submitUrl": "https://forms.gle/ueKhk89HijPp6oQ27",
-      "email": ""
+      "email": "",
+      "jury": [],
+      "ai": null
     },
     {
       "title": "SQUARE Photography Exhibit",
@@ -10114,7 +10120,7 @@
       "url": "https://tulsaartistfellowship.org/award",
       "instagram": "@tulsaartistfellowship",
       "location": "Tulsa, OK, USA",
-      "prize": "$150,000 stipend + housing + studio",
+      "prize": "$150,000 stipend",
       "eligibility": [
         "united-states",
         "25-plus"
