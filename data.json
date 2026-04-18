@@ -57,9 +57,14 @@
       "url": "https://www.luciefoundation.org/programs/scholarship/",
       "instagram": "@luciefoundation",
       "location": "Los Angeles, USA",
-      "prize": "$8,000 total in cash grants + Sony camera + traveling exhibition",
+      "prize": "$8,000",
       "eligibility": [
         "18-plus"
+      ],
+      "jury": [
+        "Antares Wells, Assistant Curator, Museum of Contemporary Art Australia",
+        "Kateryna Radchenko, Curator, Photography Researcher",
+        "Elizabeth Ferrer, Curator and Writer"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://submit.luciefoundation.org/login.php",
@@ -127,6 +132,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://opencall.beerslondon.com/application-type/",
       "requirements": "Up to 5 artworks",
+      "email": "",
       "slug": "beers-london-group-exhibition-2026",
       "orgInTitle": true,
       "summary": "Group exhibition of ~12 artists at contemporary London gallery. All media including photography. Aug–Sep 2026 show.",
@@ -1545,7 +1551,7 @@
       "prize": "Publication (print)",
       "eligibility": [],
       "jury": [
-        "Karla Guerrero, Photographer & Curator"
+        "Karla Guerrero, Guest Curator"
       ],
       "submitVia": "Google Drive link via email",
       "requirements": "5–10 images",
@@ -2019,7 +2025,7 @@
       ],
       "submitVia": "MAPh",
       "requirements": "Up to 3 images",
-      "ai": "Permitted if not the substantial or overriding input",
+      "ai": "Accepted",
       "jury": [],
       "slug": "bowness-photography-prize-2026",
       "orgInTitle": true,
@@ -2132,7 +2138,8 @@
       "dateAdded": "2026-03-23",
       "resultsDate": "November 2026",
       "submitUrl": "https://zealous.co/lumenprize/opportunity/the-2026-lumen-prize/",
-      "summary": "Leading award for art created with technology. 15th year. $15,000 Gold Award. Categories include AI, VR, and more."
+      "summary": "Leading award for art created with technology. 15th year. $15,000 Gold Award. Categories include AI, VR, and more.",
+      "email": ""
     },
     {
       "title": "Nest — Group Exhibition",
@@ -2363,9 +2370,12 @@
       "instagram": "@fabula_works",
       "location": "Rome, Italy",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "requirements": "10–25 images",
+      "ai": "Not accepted",
       "slug": "fabula-works-duo-solo-show-in-rome",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
@@ -2493,7 +2503,7 @@
       "url": "https://www.lensculture.com/photo-competitions/critics-choice",
       "instagram": "@lensculture",
       "location": "Online",
-      "prize": "$10,000",
+      "prize": "10 × $1,000",
       "eligibility": [],
       "jury": [
         "Alex Kahl, Online Editor, WePresent",
@@ -9538,7 +9548,7 @@
       "url": "https://site.picter.com/hasselblad-foundation-nature-photography-grant-2026",
       "instagram": "@hasselbladfoundation",
       "location": "Gothenburg, Sweden",
-      "prize": "100,000 SEK grant",
+      "prize": "100,000 SEK",
       "eligibility": [
         "nordic"
       ],
@@ -9664,7 +9674,7 @@
       ],
       "submitVia": "Official website",
       "requirements": "Up to 10 images",
-      "resultsDate": "December 2026",
+      "resultsDate": "November 2026",
       "ai": "Not accepted",
       "slug": "nikon-comedy-wildlife-photography-awards-2026",
       "orgInTitle": true,
@@ -9683,7 +9693,7 @@
       "url": "https://shutterhub.org.uk/opportunity/flora-a-shutter-hub-editions-publication/",
       "instagram": "@shutter_hub",
       "location": "Online",
-      "prize": "Publication in printed photobook",
+      "prize": "Publication",
       "eligibility": [],
       "submitVia": "Shutter Hub website",
       "requirements": "Up to 10 images",
@@ -10036,7 +10046,7 @@
       "description": "Annual photography competition celebrating the diversity and beauty of British wildlife, now in its fourteenth year. Open to photographers worldwide, but all images must be taken in Britain or the British Isles. Twelve categories including Animal Behaviour, Animal Portraits, Botanical Britain, Black and White, British Seasons, Coast and Marine, Habitat, Hidden Britain, Urban Wildlife, Wild Woods, Documentary Series, and Video. Photos must be taken after January 1, 2019. Youth competition (17 and under) is free to enter. Winners announced March 2027 and featured in the Collection 14 coffee table book and a UK touring exhibition. Post-processing permitted but no compositing, sky swapping, or object removal. Proceeds from auction of award-winning prints donated to Birds on the Brink charity. AI-generated images strictly prohibited.",
       "url": "https://www.bwpawards.org",
       "location": "London, United Kingdom",
-      "prize": "£10,000 total + book + touring exhibition",
+      "prize": "£10,000",
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://enter.bwpawards.org",
@@ -10267,6 +10277,7 @@
       "url": "https://atlantaphotographygroup.org/events/call-for-entry-joy-and-the-everyday-2026/",
       "instagram": "@atlantaphotographygroup",
       "location": "Atlanta, GA, USA",
+      "prize": "Exhibition",
       "submitVia": "Official website",
       "submitUrl": "https://atlantaphotographygroup.org/shop/call-for-entry-joy-and-the-everyday-2026/",
       "requirements": "2–8 images",
@@ -10293,6 +10304,7 @@
       "url": "https://atlantaphotographygroup.org/events/call-for-entry-analog-exhibition-filmisnotdead-2/",
       "instagram": "@atlantaphotographygroup",
       "location": "Atlanta, GA, USA",
+      "prize": "Exhibition",
       "submitVia": "Official website",
       "submitUrl": "https://atlantaphotographygroup.org/shop/call-for-entry-filmisnotdead-2026/",
       "requirements": "2–8 images",
@@ -10807,6 +10819,9 @@
       "submitVia": "Email",
       "email": "",
       "instagram": "@fondazionecapri",
+      "jury": [
+        "Denis Curti, Curator"
+      ],
       "slug": "festival-di-fotografia-capri-2026-viaggi-e-miraggi",
       "orgInTitle": false,
       "summary": "Free photography festival on Capri. Theme: Journeys and Mirages. Winning project exhibited at Certosa di San Giacomo. Open worldwide.",
