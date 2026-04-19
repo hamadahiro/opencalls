@@ -5515,7 +5515,7 @@
       "dateAdded": "2026-03-16",
       "submitVia": "Smarter Entry",
       "submitUrl": "https://client.smarterentry.com/CapeCodArt",
-      "ai": "Not accepted",
+      "ai": "AI editing OK, fully generated not accepted",
       "requirements": "Up to 2 images",
       "resultsDate": "May 29, 2026",
       "summary": "Online photography exhibit exploring shadow and light. Any interpretation. Cash prizes.",
@@ -7687,7 +7687,7 @@
       "title": "Summer — Carlotta Gallery",
       "org": "Carlotta Gallery",
       "deadline": "2026-06-10",
-      "fee": "Free (£20 if accepted)",
+      "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Summer photography virtual exhibition. Summer is experienced differently across the world — intensity, brightness, stillness, or transformation. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
       "url": "https://www.carlottagallery.co.uk/opencalls",
@@ -11180,7 +11180,8 @@
       "slug": "abbott-watts-photography-residency-fall-2026-monson-arts",
       "orgInTitle": false,
       "summary": "Photography residency in Maine with full darkroom (up to 40×50 silver gelatin) and digital studio. Housing, meals, and stipend included.",
-      "dateAdded": "2026-04-19T03:17:01.047Z"
+      "dateAdded": "2026-04-19T03:17:01.047Z",
+      "instagram": "@abbottwatts_monsonarts"
     },
     {
       "title": "Peyton Evans Artist Residency (PEAR) 2026–2027",
@@ -11199,7 +11200,8 @@
       "slug": "peyton-evans-artist-residency-2026-2027-studios-of-key-west",
       "orgInTitle": false,
       "summary": "One-month live/work residency on Key West. PEAR House accommodation, bike, and shared kitchen. No residency fee once accepted.",
-      "dateAdded": "2026-04-19T03:17:01.047Z"
+      "dateAdded": "2026-04-19T03:17:01.047Z",
+      "instagram": "@thestudiosofkeywest"
     }
   ]
 }
