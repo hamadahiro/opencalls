@@ -1221,7 +1221,7 @@
       "fee": "Free (£48 if accepted)",
       "category": "exhibition",
       "description": "International photography exhibition on the theme of portrait. Open to everyone. Selected work displayed in a month-long gallery exhibition in Glasgow, with work also appearing in an online gallery on the gallery's website. Images printed on Fujifilm photographic paper and framed in gallery frames. Photographers retain all copyright.",
-      "url": "https://www.glasgowgalleryofphotography.com/exhibition",
+      "url": "https://www.glasgowgalleryofphotography.com/exhibition/portrait-2026",
       "instagram": "@theglasgowgalleryofphotography",
       "location": "Glasgow, United Kingdom",
       "prize": "Exhibition",
@@ -10213,7 +10213,7 @@
       "url": "https://wsworkshop.org/residencies/studio-workspace-residency/",
       "instagram": "@wsworkshop",
       "location": "Rosendale, NY, USA",
-      "prize": "Housing + studio",
+      "prize": "Residency",
       "eligibility": [],
       "submitVia": "Submittable",
       "slug": "womens-studio-workshop-studio-workspace-residency",
@@ -11294,7 +11294,7 @@
       "url": "https://grunt.ca/events-and-calls/",
       "instagram": "@gruntgallery",
       "location": "Vancouver, BC, Canada",
-      "prize": "$3,500 + materials + housing",
+      "prize": "$3,500",
       "eligibility": [
         "canada",
         "emerging",
@@ -11307,6 +11307,7 @@
       "submitUrl": "https://forms.gle/9JbvgA9U8wMTCdAx6",
       "requirements": "Portfolio",
       "resultsDate": "Mid-May 2026",
+      "email": "",
       "slug": "eco-process-artist-residency-grunt-gallery",
       "orgInTitle": false,
       "summary": "One-month Blue Cabin residency for emerging lens-based artists. Alt process mentorship (cyanotype, lumen, phytogram). LGBTQ+ 2S priority.",
@@ -11335,7 +11336,9 @@
       "slug": "2026-national-juried-photography-exhibition-academy-center-of-the-arts",
       "orgInTitle": true,
       "summary": "National juried exhibition at Academy Center of the Arts, Lynchburg VA. $1,000 Best in Show. Juror: Kiera Hight.",
-      "dateAdded": "2026-04-19T15:16:00.433Z"
+      "dateAdded": "2026-04-19T15:16:00.433Z",
+      "instagram": "@attheacademy",
+      "resultsDate": "July 14, 2026"
     }
   ]
 }
