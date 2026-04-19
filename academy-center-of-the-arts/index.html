@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>LGBTQ+ Open Calls 2026 - Monographica</title>
-  <meta name="description" content="Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists. Queer-focused grants, residencies, and competitions.">
-  <meta name="keywords" content="LGBTQ+ open calls, LGBTQ+ photography, call for entries LGBTQ+, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/lgbtq/">
+  <title>Academy Center of the Arts - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Academy Center of the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Academy Center of the Arts open call, Academy Center of the Arts call for entries, Academy Center of the Arts submissions, Academy Center of the Arts photography, Academy Center of the Arts exhibition, Academy Center of the Arts artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/academy-center-of-the-arts/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="LGBTQ+ Open Calls 2026 - Monographica">
-  <meta property="og:description" content="Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists. Queer-focused grants, residencies, and competitions.">
+  <meta property="og:title" content="Academy Center of the Arts - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Academy Center of the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/lgbtq/">
+  <meta property="og:url" content="https://opencalls.monographica.com/academy-center-of-the-arts/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "LGBTQ+ Open Calls 2026",
-  "description": "Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists. Queer-focused grants, residencies, and competitions.",
-  "url": "https://opencalls.monographica.com/eligibility/lgbtq/",
+  "name": "Academy Center of the Arts - Open Calls",
+  "description": "Open calls and submission opportunities from Academy Center of the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/academy-center-of-the-arts/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Eligibility",
-      "item": "https://opencalls.monographica.com/eligibility/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "LGBTQ+ Open Calls",
-      "item": "https://opencalls.monographica.com/eligibility/lgbtq/"
+      "name": "Academy Center of the Arts",
+      "item": "https://opencalls.monographica.com/academy-center-of-the-arts/"
     }
   ]
 }
@@ -103,14 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
-      <h1>LGBTQ+ Open Calls</h1>
-      <h2 class="subtitle">Open calls, exhibitions, and awards for LGBTQ+ photographers and visual artists. Queer-focused grants, residencies, and competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Academy Center of the Arts</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Academy Center of the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/eco-process-artist-residency-grunt-gallery/">Eco-Process Artist Residency 2026 &middot; grunt gallery</a></h3><p>May 1, 2026 · Free</p><p>One-month Blue Cabin residency for emerging lens-based artists. Alt process mentorship (cyanotype, lumen, phytogram). LGBTQ+ 2S priority.</p></div>
-      <div class="static-call-item"><h3><a href="/queer-conscience-2026-photography-exhibition-the-image-flow/">Queer Conscience 2026 Photography Exhibition &middot; The Image Flow</a></h3><p>April 11, 2026 · $40</p><p>4th annual for LGBTQIA2+ community. Affirming truths and expressing resistance during Pride month. Mill Valley, CA.</p></div>
+      <div class="static-call-item"><h3><a href="/2026-national-juried-photography-exhibition-academy-center-of-the-arts/">2026 National Juried Photography Exhibition</a></h3><p>June 30, 2026 · $45</p><p>National juried exhibition at Academy Center of the Arts, Lynchburg VA. $1,000 Best in Show. Juror: Kiera Hight.</p></div>
 
     </section>
 
@@ -127,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('lgbtq')).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Academy Center of the Arts').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
