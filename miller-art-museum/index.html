@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Entry Fee 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
-  <meta name="keywords" content="free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/fees/">
+  <title>Miller Art Museum - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Miller Art Museum. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Miller Art Museum open call, Miller Art Museum call for entries, Miller Art Museum submissions, Miller Art Museum photography, Miller Art Museum exhibition, Miller Art Museum artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/miller-art-museum/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Entry Fee 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
+  <meta property="og:title" content="Miller Art Museum - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Miller Art Museum. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/fees/">
+  <meta property="og:url" content="https://opencalls.monographica.com/miller-art-museum/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,14 +27,40 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Entry Fee 2026",
-  "description": "Browse open calls by entry fee.",
-  "url": "https://opencalls.monographica.com/fees/",
+  "name": "Miller Art Museum - Open Calls",
+  "description": "Open calls and submission opportunities from Miller Art Museum. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/miller-art-museum/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
     "url": "https://monographica.com"
   }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://opencalls.monographica.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Miller Art Museum",
+      "item": "https://opencalls.monographica.com/miller-art-museum/"
+    }
+  ]
 }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,24 +103,15 @@
 
   <main>
     <section class="hero">
-      <h1>Fees</h1>
-      <h2 class="subtitle">Browse open calls by entry fee. Find free submissions or paid competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Miller Art Museum</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Miller Art Museum. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-      <a href="/fees/free/" class="index-item">
-        <span class="index-item-name">Free to Enter</span>
-        <span class="dots"></span>
-        <span class="index-item-count">107</span>
-      </a>
-      <a href="/fees/entry-fee/" class="index-item">
-        <span class="index-item-name">Entry Fee</span>
-        <span class="dots"></span>
-        <span class="index-item-count">156</span>
-      </a>
-    </section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/al-and-mickey-quinlan-artist-residency-2026/">Al &amp; Mickey Quinlan Artist Residency 2026 &middot; Miller Art Museum</a></h3><p>April 30, 2026 · Free</p><p>8-week residency at Door Peninsula's Dome House for Midwest US artists. $500 stipend, housing, studio. Photography welcome.</p></div>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -104,6 +121,18 @@
 
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.org === 'Miller Art Museum').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
