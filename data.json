@@ -9077,7 +9077,9 @@
       "instagram": "@monoawards",
       "location": "Online",
       "prize": "$3,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "requirements": "1 image per entry",
       "jury": [
@@ -9959,9 +9961,7 @@
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSdL5cFpervSFCmnvbRDZD1_pIBq24JOlgcDJJSdQ5x5ZvjniA/viewform",
       "location": "San Francisco, USA",
       "prize": "Publication",
-      "eligibility": [
-        "alternative-process"
-      ],
+      "eligibility": [],
       "submitVia": "Google Forms",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdL5cFpervSFCmnvbRDZD1_pIBq24JOlgcDJJSdQ5x5ZvjniA/viewform",
       "requirements": "5+ images",
