@@ -11401,6 +11401,54 @@
       "dateAdded": "2026-04-19T23:11:12.174Z",
       "ai": null,
       "resultsDate": null
+    },
+    {
+      "title": "Tasweer 2026 Project Award",
+      "org": "Tasweer Photo Festival Qatar",
+      "deadline": "2026-05-01",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Annual grant from Tasweer, Qatar's leading photo festival organised by Qatar Museums. Open to photographers aged 18+ currently residing in the Western Asia and North Africa (WANA) region — Algeria, Bahrain, Egypt, Iraq, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman, Palestine, Qatar, Saudi Arabia, South Sudan, Sudan, Syria, Turkey, UAE, and Yemen. The award provides 30,000 QAR (~$8,200) per awardee to support the initiation, development, or completion of a photographic project. Winners receive opportunities to exhibit at Tasweer Photo Festival Qatar and participate in public and digital programming. Applicants may apply simultaneously to the Single Image Award. Submit one PDF file containing 20 images with titles and captions.",
+      "url": "https://tasweer.org.qa/en/calendar/tasweer-2026-project-award-open-call/",
+      "instagram": "@tasweer.qa",
+      "location": "Doha, Qatar",
+      "prize": "30,000 QAR (~$8,200)",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://tasweer.org.qa/en/calendar/tasweer-2026-project-award-open-call/",
+      "requirements": "20 images",
+      "email": "",
+      "slug": "tasweer-2026-project-award",
+      "orgInTitle": true,
+      "summary": "Qatar Museums grant for photographers in WANA region. 30,000 QAR to develop a photographic project. Exhibition at Tasweer Photo Festival.",
+      "jury": [],
+      "dateAdded": "2026-04-20T03:12:07.272Z"
+    },
+    {
+      "title": "Tasweer 2026 Single Image Award",
+      "org": "Tasweer Photo Festival Qatar",
+      "deadline": "2026-05-01",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Annual single-image competition from Tasweer, Qatar's photo festival organised by Qatar Museums. Open to photographers aged 18+ currently residing in the Western Asia and North Africa (WANA) region. Each photographer submits one image representing their personal narrative and experience. Winners receive 2,000 QAR per awardee, with selected images showcased in an online exhibition and featured as part of Tasweer Photo Festival Qatar's public and digital programme. Submit one JPEG or TIFF, 3000 pixels max on longest side, 3–8 MB.",
+      "url": "https://tasweer.org.qa/en/calendar/tasweer-2026-single-image-award-open-call/",
+      "instagram": "@tasweer.qa",
+      "location": "Doha, Qatar",
+      "prize": "2,000 QAR (~$550)",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://qmforms.qm.org.qa/253342213000840",
+      "requirements": "1 image",
+      "email": "",
+      "slug": "tasweer-2026-single-image-award",
+      "orgInTitle": true,
+      "summary": "Single image award from Qatar Museums for WANA region photographers. 2,000 QAR prize plus online exhibition at Tasweer Photo Festival.",
+      "jury": [],
+      "dateAdded": "2026-04-20T03:12:07.272Z"
     }
   ]
 }
