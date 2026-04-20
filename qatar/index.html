@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Entry Fee 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
-  <meta name="keywords" content="free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/fees/">
+  <title>Open Calls for Artists in Qatar 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Qatar. Browse and apply today.">
+  <meta name="keywords" content="open calls Qatar, call for entries Qatar, photography opportunities Qatar, art exhibitions Qatar, photography grants Qatar, artist residency Qatar">
+  <link rel="canonical" href="https://opencalls.monographica.com/qatar/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Entry Fee 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
+  <meta property="og:title" content="Open Calls for Artists in Qatar 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Qatar. Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/fees/">
+  <meta property="og:url" content="https://opencalls.monographica.com/qatar/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,14 +27,40 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Entry Fee 2026",
-  "description": "Browse open calls by entry fee.",
-  "url": "https://opencalls.monographica.com/fees/",
+  "name": "Open Calls for Artists in Qatar 2026",
+  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Qatar. Browse and apply today.",
+  "url": "https://opencalls.monographica.com/qatar/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
     "url": "https://monographica.com"
   }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://opencalls.monographica.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Locations",
+      "item": "https://opencalls.monographica.com/locations/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Qatar",
+      "item": "https://opencalls.monographica.com/qatar/"
+    }
+  ]
 }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,24 +103,16 @@
 
   <main>
     <section class="hero">
-      <h1>Fees</h1>
-      <h2 class="subtitle">Browse open calls by entry fee. Find free submissions or paid competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
+      <h1>Open Calls for Artists in Qatar</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Qatar. Browse and apply today.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-      <a href="/fees/free/" class="index-item">
-        <span class="index-item-name">Free to Enter</span>
-        <span class="dots"></span>
-        <span class="index-item-count">106</span>
-      </a>
-      <a href="/fees/entry-fee/" class="index-item">
-        <span class="index-item-name">Entry Fee</span>
-        <span class="dots"></span>
-        <span class="index-item-count">155</span>
-      </a>
-    </section>
+    <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/tasweer-2026-project-award/">Tasweer 2026 Project Award</a></h3><p>May 1, 2026 · Free</p><p>Qatar Museums grant for photographers in WANA region. 30,000 QAR to develop a photographic project. Exhibition at Tasweer Photo Festival.</p></div>
+      <div class="static-call-item"><h3><a href="/tasweer-2026-single-image-award/">Tasweer 2026 Single Image Award</a></h3><p>May 1, 2026 · Free</p><p>Single image award from Qatar Museums for WANA region photographers. 2,000 QAR prize plus online exhibition at Tasweer Photo Festival.</p></div>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -104,6 +122,20 @@
 
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Qatar').map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
