@@ -65,6 +65,7 @@ const eligibilityLabel = {
   'mid-atlantic-us': 'Mid-Atlantic US',
   'new-york-state': 'NY State only',
   'alaska': 'Alaska only',
+  'bay-area': 'Bay Area only',
   'gulf-coast': 'Gulf Coast only',
   'spain': 'Spain only',
   'india': 'India only',

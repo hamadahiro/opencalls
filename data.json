@@ -1737,7 +1737,7 @@
         "professional"
       ],
       "submitVia": "Official website",
-      "requirements": null,
+      "requirements": "10–20 images",
       "resultsDate": "September 2026",
       "slug": "canon-female-photojournalist-grant-2026",
       "orgInTitle": false,
@@ -11552,7 +11552,9 @@
       "instagram": "@recologyair",
       "location": "San Francisco, CA, USA",
       "prize": "Stipend",
-      "eligibility": [],
+      "eligibility": [
+        "bay-area"
+      ],
       "submitVia": "SlideRoom",
       "submitUrl": "https://recologyair.slideroom.com/",
       "requirements": "1–6 works",
