@@ -224,11 +224,16 @@
       "prize": "£2,000 + portfolio printing + review",
       "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": "https://rps.org/opportunities/bursaries/joan-wakelin-bursary/",
+      "submitUrl": null,
       "slug": "joan-wakelin-bursary-2026",
       "orgInTitle": true,
       "summary": "£2,000 bursary for overseas documentary photo essays. RPS x The Guardian. Free entry, open worldwide. Named after Joan Wakelin.",
-      "dateAdded": "2026-04-16T23:10:03.956Z"
+      "dateAdded": "2026-04-16T23:10:03.956Z",
+      "ai": null,
+      "jury": [],
+      "email": null,
+      "resultsDate": null,
+      "requirements": null
     },
     {
       "title": "Women's Studio Workshop — Studio Residency Grant 2026",
@@ -305,7 +310,8 @@
       "orgInTitle": false,
       "summary": "Curated group show on narrative and storytelling. Physical exhibition in Barcelona's Gothic Quarter, July–August. Student rates available.",
       "resultsDate": "June 2026",
-      "dateAdded": "2026-04-16T03:17:47.994Z"
+      "dateAdded": "2026-04-16T03:17:47.994Z",
+      "ai": null
     },
     {
       "title": "PORTAL",
@@ -325,14 +331,15 @@
         "Douglas Stockdale, Visual Artist & Founder of PhotoBook Journal"
       ],
       "submitVia": "Website form",
-      "submitUrl": "https://www.decagongallery.com/portal-entry",
+      "submitUrl": null,
       "requirements": "Up to 8 images",
       "email": "",
       "slug": "portal-decagon-gallery",
       "orgInTitle": false,
       "summary": "Transition & becoming — figures, spaces, suspended moments. Juried by Douglas Stockdale (PhotoBook Journal founder).",
       "resultsDate": "June 15, 2026",
-      "dateAdded": "2026-04-16T03:17:47.994Z"
+      "dateAdded": "2026-04-16T03:17:47.994Z",
+      "ai": null
     },
     {
       "title": "The Emergence Project 2026",
@@ -354,7 +361,10 @@
       "slug": "the-emergence-project-2026-glasgow-gallery-of-photography",
       "orgInTitle": false,
       "summary": "Free graduate showcase for UK photography grads (2023–2026). Gallery covers printing and framing. Glasgow exhibition, July.",
-      "dateAdded": "2026-04-16T03:17:47.994Z"
+      "dateAdded": "2026-04-16T03:17:47.994Z",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Across America 2026",
@@ -448,7 +458,9 @@
       "slug": "black-and-white-decode-gallery",
       "orgInTitle": false,
       "summary": "B&W photography — all genres. Pro printing on Ilford Pearl paper and museum framing included. Exhibition in Tucson, AZ.",
-      "dateAdded": "2026-04-15T07:16:46.472Z"
+      "dateAdded": "2026-04-15T07:16:46.472Z",
+      "email": null,
+      "ai": null
     },
     {
       "title": "Global Ability Photography Challenge 2026",
@@ -472,7 +484,9 @@
       "instagram": "@youth4jobsfoundation",
       "email": "",
       "resultsDate": "Before June 24, 2026",
-      "dateAdded": "2026-04-14T11:18:08.768Z"
+      "dateAdded": "2026-04-14T11:18:08.768Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "#HopperHappens Juried Photography Exhibition",
@@ -630,7 +644,8 @@
       "resultsDate": "June 7, 2026",
       "ai": "Not accepted",
       "instagram": "@sohophotogallery",
-      "dateAdded": "2026-04-08T15:12:56.881Z"
+      "dateAdded": "2026-04-08T15:12:56.881Z",
+      "email": null
     },
     {
       "title": "BLACK & WHITE",
@@ -657,7 +672,8 @@
       "resultsDate": "May 14, 2026",
       "email": "",
       "instagram": "@praxis_gallery",
-      "dateAdded": "2026-04-08T15:12:56.881Z"
+      "dateAdded": "2026-04-08T15:12:56.881Z",
+      "ai": null
     },
     {
       "title": "Thresholds 2026: Up, Close and Personal",
@@ -682,7 +698,8 @@
       "resultsDate": "April 28, 2026",
       "instagram": "@la_centerofphoto",
       "email": "",
-      "dateAdded": "2026-04-08T08:48:33.497Z"
+      "dateAdded": "2026-04-08T08:48:33.497Z",
+      "ai": null
     },
     {
       "title": "Light Dreams",
@@ -707,7 +724,8 @@
         "Jill Enfield"
       ],
       "ai": "Not accepted",
-      "dateAdded": "2026-04-08T08:48:33.497Z"
+      "dateAdded": "2026-04-08T08:48:33.497Z",
+      "resultsDate": null
     },
     {
       "title": "COAL Prize 2026 — The Night",
@@ -753,7 +771,11 @@
       "orgInTitle": false,
       "summary": "Three €5,000 grants for debut photobook projects. Categories: Global South, French, and female photographers. Free, needs French publisher.",
       "resultsDate": "June 2026",
-      "dateAdded": "2026-04-07T15:14:49.109Z"
+      "dateAdded": "2026-04-07T15:14:49.109Z",
+      "email": null,
+      "ai": null,
+      "jury": [],
+      "requirements": null
     },
     {
       "title": "Ten x Ten – 18th Annual Small Works",
@@ -821,7 +843,11 @@
       "summary": "2–4 week residency at Frank Lloyd Wright's Martin House. $5,000 stipend + $1,000 travel. Work inspired by architecture and design.",
       "email": "",
       "instagram": "@themartinhouse",
-      "dateAdded": "2026-04-06T23:11:31.193Z"
+      "dateAdded": "2026-04-06T23:11:31.193Z",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null,
+      "requirements": null
     },
     {
       "title": "Loghaven Artist Residency 2027",
@@ -845,7 +871,10 @@
       "email": "",
       "instagram": "@loghavenartistresidency",
       "resultsDate": "By November 1, 2026",
-      "dateAdded": "2026-04-06T15:09:35Z"
+      "dateAdded": "2026-04-06T15:09:35Z",
+      "ai": null,
+      "jury": [],
+      "submitUrl": null
     },
     {
       "title": "FMoPA 2026 International Photography Competition",
@@ -904,7 +933,9 @@
       "summary": "Publication opportunity in leading international photography magazine based in Prague. Two projects selected for print.",
       "email": "",
       "resultsDate": "July 30, 2026",
-      "dateAdded": "2026-04-06T01:15:47.460Z"
+      "dateAdded": "2026-04-06T01:15:47.460Z",
+      "ai": null,
+      "submitUrl": null
     },
     {
       "title": "Grenze Arsenali Fotografici 2026 Open Call",
@@ -932,7 +963,9 @@
       "resultsDate": "May 30, 2026",
       "summary": "International photography festival in Verona. Theme: Nachleben. Three artists exhibited. Strong international jury.",
       "email": "",
-      "dateAdded": "2026-04-06T01:15:47.460Z"
+      "dateAdded": "2026-04-06T01:15:47.460Z",
+      "ai": null,
+      "submitUrl": null
     },
     {
       "title": "Photography 4 Humanity / Fotografiska Global Prize 2026",
@@ -1064,7 +1097,10 @@
       "summary": "Fellowship for emerging photographers. 20 selected for exhibition, one awarded $200 + year-long online representation.",
       "email": "",
       "dateAdded": "2026-04-02T19:18:52.699Z",
-      "submitUrl": "https://www.mwcponline.com/emerge-entry.html"
+      "submitUrl": "https://www.mwcponline.com/emerge-entry.html",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Human Depiction",
@@ -1104,7 +1140,10 @@
       "summary": "International floral photography exhibition at MWCP, Wichita. All styles welcome — nature, still life, macro, and more.",
       "email": "",
       "submitUrl": "https://www.mwcponline.com/blossom-entry.html",
-      "dateAdded": "2026-04-05T07:25:22.097Z"
+      "dateAdded": "2026-04-05T07:25:22.097Z",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Traversing Terrain",
@@ -7285,7 +7324,7 @@
       "orgInTitle": false,
       "resultsDate": "September 25, 2026",
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://milanophotoawards.com/en/the-contest/",
+      "submitUrl": "https://milanophotoawards.com/checkout/",
       "summary": "Exhibition and contest in Milan with Sebastiao Salgado tribute. Street, portraits, reportage, nature. Nikon Italia.",
       "email": null,
       "jury": []
@@ -7646,7 +7685,9 @@
       "requirements": "1 PDF",
       "email": "",
       "resultsDate": "Late April 2026",
-      "summary": "Street-facing window exhibition in Malmö. Contemporary photography, video, and film. Production costs covered."
+      "summary": "Street-facing window exhibition in Malmö. Contemporary photography, video, and film. Production costs covered.",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Griffin Museum — Handmade Photobook Exhibition 2026",
@@ -7763,7 +7804,10 @@
       "requirements": "Up to 3 images",
       "email": "",
       "submitVia": "Email",
-      "summary": "Nature photography exploring the quiet intensity of plant life. Virtual exhibition with catalogue."
+      "summary": "Nature photography exploring the quiet intensity of plant life. Virtual exhibition with catalogue.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Europe — Carlotta Gallery",
@@ -7785,7 +7829,10 @@
       "requirements": "Up to 3 images",
       "email": "",
       "submitVia": "Email",
-      "summary": "Exploring Europe as a negotiation between tradition and innovation, memory and experimentation. Virtual exhibition."
+      "summary": "Exploring Europe as a negotiation between tradition and innovation, memory and experimentation. Virtual exhibition.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Candid — Carlotta Gallery",
@@ -7807,7 +7854,10 @@
       "requirements": "Up to 3 images",
       "email": "",
       "submitVia": "Email",
-      "summary": "The art of attention — rooted in presence, patience, and trust in the unfolding moment. Virtual exhibition."
+      "summary": "The art of attention — rooted in presence, patience, and trust in the unfolding moment. Virtual exhibition.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Summer — Carlotta Gallery",
@@ -7829,7 +7879,10 @@
       "requirements": "Up to 3 images",
       "email": "",
       "submitVia": "Email",
-      "summary": "Summer experienced differently across the world — intensity, brightness, stillness. Virtual exhibition."
+      "summary": "Summer experienced differently across the world — intensity, brightness, stillness. Virtual exhibition.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Paradajs Photo Fest 2026 — Welcome to Paradise",
@@ -7905,7 +7958,8 @@
       "requirements": "1–15 images",
       "submitUrl": "https://fotodoc.com.br/en/contest-2026/single-image-submission/",
       "summary": "International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo.",
-      "email": ""
+      "email": "",
+      "jury": []
     },
     {
       "title": "SUB(SCAPE) — Manifest Gallery Season 22",
@@ -7973,9 +8027,10 @@
       "resultsDate": "June 25, 2026",
       "dateAdded": "2026-03-18",
       "requirements": "1 image per category",
-      "submitUrl": "https://www.jalonangel.com/premio",
+      "submitUrl": null,
       "summary": "Three categories: Portrait, Travel, Migration & Borders. One photo per category. No AI. Zaragoza, Spain.",
-      "email": ""
+      "email": "",
+      "jury": []
     },
     {
       "title": "Bethany Arts Community — Fall Multidisciplinary Residency 2026",
@@ -8023,7 +8078,11 @@
       "dateAdded": "2026-03-19",
       "requirements": "Up to 20 images",
       "submitUrl": "https://form.jotform.com/260464559982168",
-      "summary": "Fellowship for socially engaged photographers partnering with a Chicago-based community organization."
+      "summary": "Fellowship for socially engaged photographers partnering with a Chicago-based community organization.",
+      "email": null,
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "XIX Premio de Fotografía Fundación ENAIRE 2026",
@@ -8127,7 +8186,8 @@
       "resultsDate": "July 13, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeq38rw1Q4H-VElJwbZi6DGe-_DZBdjCaRDJSCrVmmHoRp7pw/viewform",
       "summary": "Annual prize for student photographers. $2,000 first prize plus mentorship with Aline Smithson.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "Lenscratch Motherhood Exhibition",
@@ -8222,7 +8282,8 @@
       ],
       "submitUrl": "https://client.smarterentry.com/SEC4P",
       "summary": "Virtual exhibition exploring light and shadow. Juror: Wendi Schneider. 35-40 images selected. 0% commission.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "photoED Magazine — Home VS Away (Issue #77)",
@@ -8243,7 +8304,10 @@
       "requirements": "Up to 8 images",
       "submitUrl": "https://zealous.co/photoedmagazine/opportunity/home-vs-away-a-call-for-photography-submissions/",
       "email": "",
-      "summary": "Fine art projects investigating home, being away, or the tension between. Published in print edition."
+      "summary": "Fine art projects investigating home, being away, or the tension between. Published in print edition.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "photoED Magazine — Real VS Imagined",
@@ -11346,7 +11410,10 @@
       "orgInTitle": false,
       "summary": "Photography residency in Maine with full darkroom (up to 40×50 silver gelatin) and digital studio. Housing, meals, and stipend included.",
       "dateAdded": "2026-04-19T03:17:01.047Z",
-      "instagram": "@abbottwatts_monsonarts"
+      "instagram": "@abbottwatts_monsonarts",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Peyton Evans Artist Residency (PEAR) 2026–2027",
@@ -11366,7 +11433,11 @@
       "orgInTitle": false,
       "summary": "One-month live/work residency on Key West. PEAR House accommodation, bike, and shared kitchen. No residency fee once accepted.",
       "dateAdded": "2026-04-19T03:17:01.047Z",
-      "instagram": "@thestudiosofkeywest"
+      "instagram": "@thestudiosofkeywest",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null,
+      "submitUrl": null
     },
     {
       "title": "Eco-Process Artist Residency 2026",
@@ -11470,7 +11541,9 @@
       "orgInTitle": true,
       "summary": "Qatar Museums grant for photographers in WANA region. 30,000 QAR to develop a photographic project. Exhibition at Tasweer Photo Festival.",
       "jury": [],
-      "dateAdded": "2026-04-20T03:12:07.272Z"
+      "dateAdded": "2026-04-20T03:12:07.272Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Tasweer 2026 Single Image Award",
@@ -11494,7 +11567,9 @@
       "orgInTitle": true,
       "summary": "Single image award from Qatar Museums for WANA region photographers. 2,000 QAR prize plus online exhibition at Tasweer Photo Festival.",
       "jury": [],
-      "dateAdded": "2026-04-20T03:12:07.272Z"
+      "dateAdded": "2026-04-20T03:12:07.272Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Al & Mickey Quinlan Artist Residency 2026",
