@@ -623,7 +623,7 @@
         "18-plus"
       ],
       "submitVia": "Website form",
-      "submitUrl": "https://chateaugallery.com/call-for-entries/the-art-of-abandonment",
+      "submitUrl": null,
       "requirements": "Up to 3 images",
       "slug": "the-art-of-abandonment-tcg-gallery",
       "orgInTitle": false,
@@ -856,7 +856,7 @@
       ],
       "requirements": "Up to 12 images",
       "submitVia": "Official website",
-      "submitUrl": "https://calling.fotohof.at/open-call",
+      "submitUrl": null,
       "slug": "fotohof-calling",
       "orgInTitle": true,
       "summary": "Biennial call for contemporary photo projects. 25 selected for publication, 10 finalists present in Salzburg. Open to European artists.",
@@ -5548,7 +5548,7 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
       "requirements": "Portfolio link",
-      "submitUrl": "https://phmuseum.com/m26",
+      "submitUrl": null,
       "summary": "Online masterclasses by Aaron Schuman, Charlie Engman, Erik Kessels, Salvatore Vitale, and Vasantha Yoganathan.",
       "email": ""
     },
@@ -5785,7 +5785,7 @@
       "orgInTitle": true,
       "resultsDate": "June 17, 2026",
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://refocus-awards.com/contests/black-white-photo-contest",
+      "submitUrl": null,
       "summary": "Black and white photography contest with $4,000 in prizes. Trophy, press coverage, artist directory. 19 categories.",
       "ai": "Not accepted"
     },
@@ -5964,7 +5964,7 @@
       "resultsDate": "July 15, 2026",
       "dateAdded": "2026-03-15",
       "requirements": "1–5 images",
-      "submitUrl": "https://refocus-awards.com/contests/color-photo-contest",
+      "submitUrl": null,
       "summary": "Celebrating color photography. Cash prizes and digital gallery placement.",
       "email": ""
     },
@@ -6124,10 +6124,10 @@
     {
       "title": "World Anthotype Day",
       "org": "AlternativePhotography.com",
-      "deadline": "2026-10-25",
+      "deadline": "2026-10-31",
       "fee": "Free",
       "category": "photography",
-      "description": "Annual celebration of plant-based photographic printing processes. Entries open August 1; submission deadline October 25 (last Saturday in October).",
+      "description": "Annual celebration of plant-based photographic printing processes. Entries open August 1; submission deadline October 31 (last Saturday in October).",
       "url": "https://www.alternativephotography.com/world-anthotype-day/",
       "instagram": "@alternativephotography_com",
       "location": "Online",
@@ -6232,7 +6232,7 @@
       "slug": "tomorrow-s-talent-open-submissions-booooooom",
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
-      "submitUrl": "https://www.booooooom.com/submit-your-work-to-booooooom-art-photo-blog/",
+      "submitUrl": null,
       "summary": "Global platform featuring emerging artists. Potential feature and inclusion in book series.",
       "email": ""
     },
@@ -11620,6 +11620,7 @@
     {
       "title": "Al & Mickey Quinlan Artist Residency 2026",
       "org": "Miller Art Museum",
+      "instagram": "@thedomehouse",
       "deadline": "2026-04-30",
       "category": "residency",
       "description": "Eight-week residency at the Dome House — a twin-lobed concrete structure built into sand dunes on Lake Michigan adjacent to Whitefish Dunes State Park on Wisconsin's Door Peninsula. Open to one artist residing in the Midwest US (Wisconsin, Illinois, Indiana, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, North Dakota, Ohio, South Dakota) working in drawing, painting, printmaking, photography or related fine-art mediums. 2026 residency runs August 2 – September 27. Semi-private loft living quarters and adjacent studio/workspace provided, fully furnished. Resident must provide a minimum of 5 hours/week of educational outreach (workshops, artist talks, demonstrations). Partnership between the Quinlan family and the Miller Art Museum.",
