@@ -774,7 +774,7 @@
     {
       "title": "Thresholds 2026: Up, Close and Personal",
       "org": "Los Angeles Center of Photography",
-      "deadline": "2026-04-22",
+      "deadline": "2026-04-21",
       "fee": "$25 for 1 image",
       "category": "exhibition",
       "description": "Annual street photography exhibition at the Los Angeles Center of Photography, one of LA's leading photography institutions. 2026 theme: Up, Close and Personal — intimate street photography. Digital projection exhibition and in-person opening event at LACP Helms Design District, May 7–31, 2026. Open to international photographers of all skill levels. Prizes: 1st place $500 plus one-year LACP membership, 2nd place $500 LACP gift card, 3rd place $250 LACP gift card. Juror: Michaela Norah Mohrmann, assistant curator at UC Irvine Langson Orange County Museum of Art. Members receive 25% discount on fees.",
@@ -807,7 +807,9 @@
       "url": "https://www.lightartspace.com",
       "location": "Silver City, NM, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "CaFÉ",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17184",
       "slug": "light-dreams",
@@ -821,7 +823,7 @@
       ],
       "ai": "Not accepted",
       "dateAdded": "2026-04-08T08:48:33.497Z",
-      "resultsDate": null
+      "resultsDate": "May 24, 2026"
     },
     {
       "title": "COAL Prize 2026 — The Night",
@@ -7058,7 +7060,7 @@
       "resultsDate": "June 15, 2026",
       "dateAdded": "2026-03-18",
       "submitVia": "Website form",
-      "submitUrl": "https://www.reafair.com/open-call",
+      "submitUrl": null,
       "requirements": "Portfolio PDF",
       "summary": "Contemporary art fair at Fabbrica del Vapore, Milan. 50 emerging artists selected. No exhibiting costs.",
       "email": "",
@@ -7721,7 +7723,7 @@
         "Pauline Benthede, Global VP Artistic Direction & Exhibitions, Fotografiska",
         "Sophia Emmerich, Lead Editor, Fotografiska Emerging Platform"
       ],
-      "submitUrl": "https://emerging.fotografiska.com/missions/home",
+      "submitUrl": null,
       "summary": "Global open call exploring home. Exhibition at UN Headquarters. Guest curator: James Nachtwey. No AI.",
       "email": ""
     },
@@ -10967,7 +10969,7 @@
       "prize": "Publication + international distribution",
       "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": "https://www.dodho.com/call-for-entries/",
+      "submitUrl": null,
       "slug": "dodho-magazine-37",
       "orgInTitle": true,
       "location": "Barcelona, Spain",
