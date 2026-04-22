@@ -22,7 +22,9 @@
       "orgInTitle": true,
       "summary": "Three guest-curated shows at Baxter St NYC. Emerging curators, tri-state area. Curator and artist fees plus production budget.",
       "email": "",
-      "dateAdded": "2026-04-22T03:11:06.098Z"
+      "dateAdded": "2026-04-22T03:11:06.098Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Fresh Eyes x Hungry Eye vol. 2",
@@ -43,7 +45,10 @@
       "orgInTitle": true,
       "summary": "Softcover publication + group exhibition at Hungry Eye Fair Amsterdam. Emerging photographers worldwide. Jury by GUP editors.",
       "email": "",
-      "dateAdded": "2026-04-22T03:11:06.098Z"
+      "dateAdded": "2026-04-22T03:11:06.098Z",
+      "ai": null,
+      "jury": [],
+      "resultsDate": "September 2026"
     },
     {
       "title": "Copenhagen Photo Festival 2026 Open Exhibition",
@@ -277,7 +282,9 @@
       "slug": "beers-london-group-exhibition-2026",
       "orgInTitle": true,
       "summary": "Group exhibition of ~12 artists at contemporary London gallery. All media including photography. Aug–Sep 2026 show.",
-      "dateAdded": "2026-04-17T23:18:00.338Z"
+      "dateAdded": "2026-04-17T23:18:00.338Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "L'OLTRE 2026",
@@ -704,7 +711,8 @@
       "email": "",
       "instagram": "@eimagem",
       "resultsDate": "September 2026",
-      "dateAdded": "2026-04-13T19:17:12.451Z"
+      "dateAdded": "2026-04-13T19:17:12.451Z",
+      "ai": null
     },
     {
       "title": "31st National Competition 2026",
@@ -1245,13 +1253,15 @@
       "location": "Wichita, KS, USA",
       "eligibility": [],
       "submitVia": "Email",
-      "requirements": "5+ images",
+      "requirements": "5–10 images",
       "slug": "traversing-terrain-midwest-center-for-photography",
       "orgInTitle": false,
       "summary": "International landscape and cityscape exhibition at MWCP, Wichita. Urban, suburban, and rural environments welcome.",
       "email": "",
       "submitUrl": "https://www.mwcponline.com/traversing-terrain-entry.html",
-      "dateAdded": "2026-04-05T07:25:22.097Z"
+      "dateAdded": "2026-04-05T07:25:22.097Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "White: Absence of Color",
@@ -1265,13 +1275,15 @@
       "location": "Wichita, KS, USA",
       "eligibility": [],
       "submitVia": "Email",
-      "requirements": "5+ images",
+      "requirements": "5–10 images",
       "slug": "white-absence-of-color-midwest-center-for-photography",
       "orgInTitle": false,
       "summary": "International achromatic photography exhibition at MWCP, Wichita. Explores the lightest end of the spectrum with minimal color.",
       "email": "",
       "submitUrl": "https://www.mwcponline.com/white-entry.html",
-      "dateAdded": "2026-04-05T07:25:22.097Z"
+      "dateAdded": "2026-04-05T07:25:22.097Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Developed Work 2026",
@@ -1294,7 +1306,9 @@
       "summary": "National fellowship for developed bodies of work. $200 award + one year online representation at MWCP, Wichita.",
       "email": "",
       "submitUrl": "https://www.mwcponline.com/developed-work-entry.html",
-      "dateAdded": "2026-04-05T07:25:22.097Z"
+      "dateAdded": "2026-04-05T07:25:22.097Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Lisbon Street Photo Fest: Open Call 2026",
@@ -1350,7 +1364,8 @@
       "orgInTitle": true,
       "summary": "41st edition. Juried by Dr. Sarah Kennel (VMFA). Exhibition at Woodmere Art Museum, Philadelphia. $1,000 purchase prize.",
       "dateAdded": "2026-04-02T15:07:50Z",
-      "resultsDate": "June 30, 2026"
+      "resultsDate": "June 30, 2026",
+      "ai": null
     },
     {
       "title": "Athens Street Photography Festival 2026",
@@ -1399,7 +1414,9 @@
       "orgInTitle": false,
       "summary": "Abstract photography in any style. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.",
       "dateAdded": "2026-04-01T15:32:30.897Z",
-      "resultsDate": "April 29, 2026"
+      "resultsDate": "April 29, 2026",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Portrait 2026",
@@ -1420,7 +1437,9 @@
       "orgInTitle": false,
       "summary": "Portrait photography, open to all. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.",
       "dateAdded": "2026-04-01T15:32:30.897Z",
-      "resultsDate": "April 29, 2026"
+      "resultsDate": "April 29, 2026",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Rancho Linda Vista — Summer Artist Residency 2026",
@@ -1498,7 +1517,8 @@
       "orgInTitle": true,
       "resultsDate": "June 16, 2026",
       "summary": "Photobook award from Athens Photo Festival. €2,000 prize. 20 shortlisted exhibited at Benaki Museum. Min 100-copy edition.",
-      "dateAdded": "2026-04-01T03:11:24Z"
+      "dateAdded": "2026-04-01T03:11:24Z",
+      "ai": null
     },
     {
       "title": "ABSURIA — International Abstract & Surrealist Photography Contest 2026",
@@ -1690,7 +1710,8 @@
       "orgInTitle": false,
       "summary": "Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.",
       "dateAdded": "2026-03-28T12:13:36.505Z",
-      "submitUrl": "https://decodegallery.com/square-submission/"
+      "submitUrl": "https://decodegallery.com/square-submission/",
+      "ai": null
     },
     {
       "title": "HOME",
@@ -5499,7 +5520,8 @@
       ],
       "requirements": "Up to 15 images",
       "submitUrl": "https://site.picter.com/fmopa-international-photography-competition-2026",
-      "summary": "International jury selection. Winning entries printed and exhibited at Ybor City, Tampa, June-August 2026."
+      "summary": "International jury selection. Winning entries printed and exhibited at Ybor City, Tampa, June-August 2026.",
+      "ai": null
     },
     {
       "title": "CITY Photography Exhibit",
@@ -6207,7 +6229,9 @@
       "dateAdded": "2026-03-15",
       "requirements": "3–10 images",
       "submitUrl": "https://innovateartistgrants.org/apply",
-      "summary": "Quarterly grants: 2 x $1,800 (one photographer, one artist). 18 honorable mentions per cycle."
+      "summary": "Quarterly grants: 2 x $1,800 (one photographer, one artist). 18 honorable mentions per cycle.",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Analog Forever Magazine — Calls for Entry",
@@ -8297,7 +8321,9 @@
       "resultsDate": "May 10, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeZ9n8QHSgpUR0jzd4BaAcYOwfS6-E7A75lSBiZHKJKW60ykw/viewform",
       "summary": "Online exhibition exploring all dimensions of motherhood — chosen families, caregiving, absence, and resilience.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Lenscratch Fatherhood Exhibition",
@@ -8319,7 +8345,9 @@
       "resultsDate": "June 21, 2026",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSds5lG23ZWvdexm_ZSkCAFX8h4qCABgsuECa26z9OGyveFdMw/viewform",
       "summary": "Online exhibition exploring fatherhood as an evolving role shaped by culture, responsibility, and tenderness.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Lenscratch Fault Lines: America Exhibition",
@@ -8345,7 +8373,8 @@
       "jury": [
         "Norm Diamond",
         "Marcy Palmer"
-      ]
+      ],
+      "ai": null
     },
     {
       "title": "SE Center for Photography — Magic of Light",
@@ -8413,7 +8442,7 @@
       "slug": "photoed-magazine-real-vs-imagined",
       "orgInTitle": true,
       "dateAdded": "2026-03-19",
-      "requirements": "Up to 8 images",
+      "requirements": "1–8 images",
       "submitUrl": "https://zealous.co/photoedmagazine/opportunity/real-vs-imagined-a-call-for-photography-submissions/",
       "email": "",
       "summary": "Fine art projects engaging with what is real versus imagined. Published in print and digital editions.",
@@ -8515,7 +8544,9 @@
       "email": "",
       "submitVia": "Email",
       "resultsDate": "June 1, 2026",
-      "summary": "No theme — all fine art and documentary photography welcome. Published since 2004."
+      "summary": "No theme — all fine art and documentary photography welcome. Published since 2004.",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Photo Trouvée Virtual Artist Residency — Spring 2026",
@@ -8631,7 +8662,9 @@
       "requirements": "15–25 images",
       "submitUrl": "https://www.instagram.com/p/DV9MkL2FYJi/",
       "summary": "Reportage photography projects made in Italy. €500 prize, festival projection, full hospitality. Ascoli Piceno.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "100 Emerging Artworks of 2026",
@@ -8654,7 +8687,9 @@
       "requirements": "Up to 20 artworks",
       "submitUrl": "https://apply.artstoheartsproject.com/open-call/100-emerging-artworks-of-2026",
       "summary": "100 artists selected for a hardcover collector's book distributed globally. $1,000 top prize. All mediums.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Michael P. Smith Fund for Documentary Photography 2026",
@@ -8765,7 +8800,8 @@
       "submitUrl": "https://newwave.lightboxlib.org/brd/nwp-2026/apply",
       "summary": "Biennial award for emerging photographers. Judged by 16 curators from Taiwan, Japan, South Korea, and Singapore.",
       "email": "",
-      "resultsDate": "July 2026"
+      "resultsDate": "July 2026",
+      "ai": null
     },
     {
       "title": "Solo Statement — Doesn't Play Well with Others",
@@ -8957,7 +8993,9 @@
       "requirements": "1–2 works",
       "resultsDate": "January 2027",
       "summary": "Canadian creative zine's 10th anniversary issue. Theme: belonging. Accepts photography, illustration, collage, and more.",
-      "dateAdded": "2026-04-11T15:13:35.278Z"
+      "dateAdded": "2026-04-11T15:13:35.278Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Cut+Paste Magazine Issue 17 — Gather",
@@ -9277,7 +9315,8 @@
       "resultsDate": "January 3, 2027",
       "submitUrl": "https://monoawards.com/",
       "summary": "International B&W competition with 14 categories. Professional and amateur divisions. Annual book.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "Annual Photography Awards 2026",
@@ -9327,7 +9366,8 @@
       "resultsDate": "February 21, 2027",
       "dateAdded": "2026-03-21",
       "submitUrl": "https://annualphotoawards.com/sign-in/",
-      "summary": "8th edition. Five main categories, 25 subcategories. Looking for bold and innovative approaches."
+      "summary": "8th edition. Five main categories, 25 subcategories. Looking for bold and innovative approaches.",
+      "ai": null
     },
     {
       "title": "HER.SELF",
@@ -9442,14 +9482,15 @@
       "eligibility": [],
       "submitVia": "Typeform",
       "requirements": "Cohesive body of work",
-      "ai": "",
+      "ai": null,
       "slug": "monograph-no-01-no-type-magazine",
       "orgInTitle": false,
       "dateAdded": "2026-03-23",
       "resultsDate": "June 15, 2026",
       "submitUrl": "https://form.typeform.com/to/CEplPAvV",
       "summary": "One artist receives full monograph publication — editing, design, printing, marketing, plus 20% of edition.",
-      "email": ""
+      "email": "",
+      "jury": []
     },
     {
       "title": "37th Annual Juried Photography Show",
