@@ -9143,7 +9143,8 @@
       "jury": [
         "Jerome Montagne, Editor",
         "Alexis Vasilikos, Editor"
-      ]
+      ],
+      "requirements": "Web link or low-res images"
     },
     {
       "title": "Noice Magazine — Open Submissions",
@@ -9513,7 +9514,10 @@
       "resultsDate": "June 5, 2026",
       "submitUrl": "https://app.entrythingy.com/apply/13789/",
       "summary": "Annual juried show in Ithaca, NY. Up to $1,000 in prizes. All photographic media accepted.",
-      "email": ""
+      "email": "",
+      "jury": [
+        "3-5 SOAG artist members + TBA prize judge"
+      ]
     },
     {
       "title": "Homo Technologicus",
@@ -11501,7 +11505,7 @@
     {
       "title": "Chester Photo Festival 2026 — Making Voices Heard",
       "org": "Chester Photo Festival",
-      "deadline": "2026-06-15",
+      "deadline": "2026-07-15",
       "fee": "Free entry; £45–£60 per selected work",
       "category": "exhibition",
       "description": "Second edition of the annual Chester Photo Festival, running 16–29 October 2026 across University of Chester, Picturehouse, churches, and a museum. Theme: Making Voices Heard — exploring photography through myths, feelings, memories, and personal narratives. Free entry of up to 5 works; selection fees only apply if chosen (£45/work early deadline 15 May, £60/work late deadline 15 June, covering printing and standard framing). Open to photographers of all experience levels internationally. Accepts photography, moving image (online link + still), and artist books (PDF). Selected works included in the exhibition book and displayed across Chester venues. Late entries close when 300 works are selected. Organised by academics and researchers including Dr Alexandru Modoi and Professor Erik Knudsen.",
@@ -11752,7 +11756,12 @@
       "orgInTitle": false,
       "summary": "Annual $10,000 grant for Black trans women visual artists including photographers. Four finalists get $1,250 each. US-based, early-career.",
       "email": "",
-      "dateAdded": "2026-04-21T07:20:06.600Z"
+      "dateAdded": "2026-04-21T07:20:06.600Z",
+      "jury": [
+        "Jordyn Jay, Founder & Executive Director, Black Trans Femmes in the Arts Collective",
+        "Isis Awad, Curator & Editor, Participant Inc",
+        "Utē Petit, Visual Artist"
+      ]
     },
     {
       "title": "Ucross Foundation Spring 2027 Residency",
@@ -11765,7 +11774,9 @@
       "instagram": "@ucrossfoundation",
       "location": "Ucross, WY, USA",
       "prize": "Residency + stipend",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Submittable",
       "submitUrl": "https://ucrossfoundation.submittable.com/submit",
       "requirements": "Work samples",
@@ -11773,7 +11784,8 @@
       "orgInTitle": true,
       "summary": "2–6 week residency on a 20,000-acre Wyoming ranch. Studio, meals, stipend. Photography eligible. Portal opens May 1.",
       "jury": [],
-      "dateAdded": "2026-04-22T07:09:07.424Z"
+      "dateAdded": "2026-04-22T07:09:07.424Z",
+      "email": ""
     },
     {
       "title": "Create! Magazine Issue #58 — In Full Color",
@@ -11797,7 +11809,9 @@
       "jury": [
         "Liz Lidgett, art advisor and gallery owner, Des Moines, Iowa"
       ],
-      "dateAdded": "2026-04-22T07:09:07.424Z"
+      "dateAdded": "2026-04-22T07:09:07.424Z",
+      "email": "",
+      "resultsDate": "Summer 2026"
     }
   ]
 }
