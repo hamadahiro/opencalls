@@ -109,7 +109,7 @@
       <p class="call-detail-description">Exhibition exploring abundance as both presence and paradox — accumulation and scarcity, fullness and absence, wealth and waste. Seeking photographic responses through documentary, staged, abstract, or experimental approaches. Selections based on thematic relevance, technical quality, originality, and artistic vision. Selected artists may have work printed on Canon ImageProGraf Pro-1100 for an additional fee. Exhibition May 1–30, 2026 with opening reception May 1.</p>
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 21, 2026">April 21, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">April 23, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 for 5 images">$35 for 5 images</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/north-carolina/" title="Raleigh, NC">Raleigh, NC</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 5 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:info@aphotographersplace.photo" target="_blank" rel="nofollow noopener">Smarter Entry</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 21, 2026">April 21, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">April 23, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 for 5 images">$35 for 5 images</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/north-carolina/" title="Raleigh, NC">Raleigh, NC</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 5 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value">Smarter Entry</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Sarah Shae Roberto</p>
@@ -119,8 +119,7 @@
         <p class="call-detail-description">Organized by <a href="/a-photographer-s-place/">A Photographer's Place</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.aphotographersplace.photo/call-for-submissions" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/aphotographersplace" target="_blank" rel="nofollow noopener">@aphotographersplace</a></div>
     </section>
@@ -138,23 +137,7 @@
   <script>
     const CURRENT_SLUG = 'abundance-a-photographer-s-place';
     const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"A Photographer's Place","location":"Raleigh, NC, USA","fee":"$35 for 5 images","deadline":"2026-04-21","resultsDate":"April 23, 2026","instagram":"@aphotographersplace","eligibility":[],"jury":["Sarah Shae Roberto"],"submitVia":"Smarter Entry","submitUrl":"https://client.smarterentry.com/aphotographersplace","email": "","ai":"","requirements":"Up to 5 images"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-04-21'.replace(/-/g, '');
-      var nd = new Date('2026-04-21T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Abundance';
-      var u = 'https://www.aphotographersplace.photo/call-for-submissions';
-      var o = 'A Photographer\'s Place';
-      var dl = new Date('2026-04-21T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$35 for 5 images');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
