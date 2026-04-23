@@ -26,7 +26,7 @@
         "Kristin Taylor, Curator of Academic Programs and Collections, Museum of Contemporary Photography",
         "Yechen Zhao, Assistant Curator of Photography and Media, Art Institute of Chicago"
       ],
-      "email": null,
+      "email": "",
       "ai": null,
       "dateAdded": "2026-04-23T19:08:33.512Z"
     },
@@ -7367,7 +7367,9 @@
       "instagram": "@chromaticawards",
       "location": "Online",
       "prize": "$2,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "jury": [
         "Lenka Klicperova, Journalist & Photographer",
