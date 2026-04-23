@@ -471,7 +471,7 @@
     }
 
     function buildSuggestions(query) {
-      var relevant = getRelevantCalls();
+      var relevant = allCalls;
       var q = (query || '').toLowerCase().trim();
       var groups = {};
 
@@ -760,7 +760,8 @@
       });
 
       var allProcessed = processed.slice();
-      if (view === 'new') processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
+      var hasSearch = currentSearch || activeChips.length;
+      if (view === 'new' && !hasSearch) processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
       if (view === 'past') processed = processed.filter(function(c) { return c.urgencyClass === 'closed'; });
 
       processed = applySearchAndFilters(processed);
