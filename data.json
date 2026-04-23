@@ -20,7 +20,10 @@
       "orgInTitle": true,
       "summary": "11-month Harlem residency for artists of African and Afro-Latinx descent. $50K stipend, private studio, culminating exhibition.",
       "resultsDate": "2026",
-      "dateAdded": "2026-04-23T03:13:25.182Z"
+      "dateAdded": "2026-04-23T03:13:25.182Z",
+      "email": null,
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Baxter St 2026–2027 Guest Curatorial Open Call",
@@ -86,13 +89,16 @@
         "18-plus"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://copenhagenphotofestival.com/open-exhibition-2026/",
+      "submitUrl": null,
       "requirements": "1 image",
       "slug": "copenhagen-photo-festival-2026-open-exhibition",
       "orgInTitle": true,
       "summary": "Open exhibition at Copenhagen Photo Festival — 50 works printed and shown at the Royal Theatre. Theme: Imagine if...?",
       "dateAdded": "2026-04-21T11:08:32.183Z",
-      "resultsDate": "June 2026"
+      "resultsDate": "June 2026",
+      "email": null,
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Outdoor Photography Magazine — Local Landscapes",
@@ -113,7 +119,9 @@
       "submitUrl": "https://www.outdoorphotographymagazine.co.uk/submissions/one-thing-this-month",
       "summary": "Submit local landscape images for Outdoor Photography Magazine (UK). Winner receives Sunski sunglasses.",
       "email": "",
-      "dateAdded": "2026-04-21T11:08:32.183Z"
+      "dateAdded": "2026-04-21T11:08:32.183Z",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Print Swap Inaugural Exhibition",
@@ -2315,7 +2323,10 @@
       "dateAdded": "2026-03-24T20:00:00Z",
       "submitUrl": "https://kavyar.com/flanellemag",
       "summary": "Montreal fashion and arts magazine. Quarterly print and digital with international distribution. Est. 2012.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Embracing Our Differences 2027 Outdoor Exhibition",
@@ -2338,7 +2349,8 @@
       "submitUrl": "https://zealous.co/embracingourdifferences1/opportunity/2027-call-to-artists-cash-awards-juried-competition/",
       "email": "",
       "summary": "50 artworks displayed as billboard-sized panels in Florida parks. Themes: diversity, inclusion, kindness.",
-      "resultsDate": "Early fall 2026"
+      "resultsDate": "Early fall 2026",
+      "jury": []
     },
     {
       "title": "Night Aesthetics",
@@ -2366,7 +2378,7 @@
       "slug": "night-aesthetics-fotografiska",
       "orgInTitle": false,
       "dateAdded": "2026-03-23",
-      "submitUrl": "https://emerging.fotografiska.com/missions/night-aesthetics",
+      "submitUrl": null,
       "summary": "Exploring the visual world of the night — light, movement, atmosphere. Three winners receive €2,500 each.",
       "email": ""
     },
@@ -2451,7 +2463,9 @@
       "dateAdded": "2026-03-23",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17070",
       "summary": "Annual grant for Gulf Coast photographers. $3,000 winner prize, PhotoNOLA Portfolio Review, and exhibition.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Love & Romance Show",
@@ -2494,7 +2508,10 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-22",
       "email": "",
-      "summary": "Independent 6x9 photo edition of 12 small photographs. All production and distribution costs covered."
+      "summary": "Independent 6x9 photo edition of 12 small photographs. All production and distribution costs covered.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Texture of Light",
@@ -2618,7 +2635,10 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-18",
       "email": "",
-      "summary": "Selected artists exhibit in Nice, Sep-Oct 2026. €500 honorarium, transport, accommodation, and travel covered."
+      "summary": "Selected artists exhibit in Nice, Sep-Oct 2026. €500 honorarium, transport, accommodation, and travel covered.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Fabula Works — Duo/Solo Show in Rome",
@@ -2641,9 +2661,10 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
       "resultsDate": "June 26, 2026",
-      "submitUrl": "https://fabula-works.com/opencall001",
+      "submitUrl": null,
       "summary": "Two photographers exhibit at Millepiani Gallery in Rome. No thematic restrictions. All costs covered.",
-      "email": ""
+      "email": "",
+      "jury": []
     },
     {
       "title": "Rarefied Light 2026",
@@ -2695,10 +2716,11 @@
       "orgInTitle": false,
       "resultsDate": "September 2026",
       "dateAdded": "2026-03-17",
-      "submitUrl": "https://fondationtgcc.com/prix-mustaqbal/",
+      "submitUrl": null,
       "summary": "Emerging artists 18-35, Moroccan or foreign residents in Morocco. Winner receives Jardin Rouge residency.",
       "email": "",
-      "jury": []
+      "jury": [],
+      "ai": null
     },
     {
       "title": "No Place Art — Edition Two: MATERIALITY",
@@ -2731,7 +2753,8 @@
       "dateAdded": "2026-03-17",
       "submitUrl": "https://app.dapplehq.com/o/no-place-art",
       "summary": "80 artists exhibited in London. 30+ awards including purchase awards, residencies, and solo exhibitions.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "59 Rivoli — Artist Residency 2026",
@@ -3038,7 +3061,8 @@
       "requirements": "1 book",
       "email": "",
       "resultsDate": "December 2026",
-      "summary": "Book prize for innovation in photography scholarship. Project grant for emerging scholars and curators."
+      "summary": "Book prize for innovation in photography scholarship. Project grant for emerging scholars and curators.",
+      "ai": null
     },
     {
       "title": "KYOTOGRAPHIE Photo Zine Showcase",
@@ -3089,9 +3113,10 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-16",
       "requirements": "3 images",
-      "submitUrl": "https://emerging.fotografiska.com",
+      "submitUrl": null,
       "summary": "Multiple open calls for emerging photographers. Exhibitions at Fotografiska museums and the UN Headquarters.",
-      "email": ""
+      "email": "",
+      "resultsDate": null
     },
     {
       "title": "PORTRAITS — Hellerau Photography Award 2026",
@@ -8684,11 +8709,12 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-21",
       "requirements": "15–25 images",
-      "submitUrl": "https://www.instagram.com/p/DV9MkL2FYJi/",
+      "submitUrl": null,
       "summary": "Reportage photography projects made in Italy. €500 prize, festival projection, full hospitality. Ascoli Piceno.",
       "email": "",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "100 Emerging Artworks of 2026",
@@ -8709,11 +8735,12 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-21",
       "requirements": "Up to 20 artworks",
-      "submitUrl": "https://apply.artstoheartsproject.com/open-call/100-emerging-artworks-of-2026",
+      "submitUrl": null,
       "summary": "100 artists selected for a hardcover collector's book distributed globally. $1,000 top prize. All mediums.",
       "email": "",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Michael P. Smith Fund for Documentary Photography 2026",
@@ -8757,7 +8784,7 @@
       "resultsDate": "May 2026",
       "dateAdded": "2026-03-21",
       "requirements": "6 images",
-      "submitUrl": "https://www.egideartes.pt/luzsombra",
+      "submitUrl": null,
       "summary": "Portuguese competition exploring light and shadow. Six finalists published in artist-edition book and traveling exhibition.",
       "email": "",
       "ai": null,
@@ -8950,7 +8977,7 @@
         "Gianluca De Dominici, Writer & Photography Editor"
       ],
       "resultsDate": "October 16, 2026",
-      "submitUrl": "https://romaefestival.com/iscrizione-al-contest/",
+      "submitUrl": null,
       "summary": "Five categories including Smartphone and AI-Generated. Finalists exhibited in Rome. Leica-sponsored prizes.",
       "email": ""
     },
@@ -8975,7 +9002,8 @@
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdYyrJjqZcFwki5p-IKZ-4O7Bol78mrQX7wm39JGM3iXaWIHg/viewform",
       "summary": "Asian-American creative arts magazine. Issue themed around food — a meal is never just a meal. Free to submit.",
       "email": "",
-      "resultsDate": "May 5–8, 2026"
+      "resultsDate": "May 5–8, 2026",
+      "jury": []
     },
     {
       "title": "FeelsZine Issue 26 — Desire",
@@ -9082,7 +9110,10 @@
       "requirements": "Up to 5 images",
       "submitUrl": "https://forms.gle/Jzx17SHxn9XwfkAz6",
       "summary": "Submit spring landscape images for Outdoor Photography Magazine (UK). Winner receives walking poles.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Zone Magazine — Open Submissions",
@@ -9102,7 +9133,10 @@
       "dateAdded": "2026-03-21",
       "requirements": "Up to 20 images",
       "email": "",
-      "summary": "International photography zine. No genre restrictions. Open to all ages worldwide. Year-round submissions."
+      "summary": "International photography zine. No genre restrictions. Open to all ages worldwide. Year-round submissions.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Burn Magazine — Open Submissions",
@@ -9122,7 +9156,12 @@
       "dateAdded": "2026-03-21",
       "email": "",
       "requirements": "Photo essay",
-      "summary": "Photography magazine founded by David Alan Harvey (Magnum). Photo essays and multimedia on any subject."
+      "summary": "Photography magazine founded by David Alan Harvey (Magnum). Photo essays and multimedia on any subject.",
+      "ai": null,
+      "jury": [
+        "David Alan Harvey, Founder & Magnum Photographer"
+      ],
+      "resultsDate": null
     },
     {
       "title": "Incandescent Zine — Color Film Photography",
@@ -9168,7 +9207,9 @@
         "Jerome Montagne, Editor",
         "Alexis Vasilikos, Editor"
       ],
-      "requirements": "Web link or low-res images"
+      "requirements": "Few low-res images",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Noice Magazine — Open Submissions",
@@ -9186,10 +9227,13 @@
       "slug": "noice-magazine-open-submissions",
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
-      "submitUrl": "https://noicemagazine.com/submit",
+      "submitUrl": null,
       "summary": "Print-to-order magazine with themed issues. Minimalism, social issues, and humor. Limited editions.",
       "email": "",
-      "requirements": "Up to 20 images"
+      "requirements": "Up to 20 images",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Solo Exhibition May 2026",
@@ -9274,7 +9318,8 @@
       "dateAdded": "2026-03-21",
       "submitUrl": "https://alpinefellowship.submittable.com/submit/341395/alpine-fellowship-visual-art-prize-2026",
       "summary": "Annual prize on the theme of JOY. All visual art media including photography. No AI.",
-      "email": ""
+      "email": "",
+      "resultsDate": null
     },
     {
       "title": "This Is a Person",
@@ -9298,10 +9343,11 @@
       "orgInTitle": false,
       "slug": "this-is-a-person-decagon-gallery",
       "dateAdded": "2026-03-21",
-      "submitUrl": "https://www.decagongallery.com/this-is-a-person-entry",
+      "submitUrl": null,
       "resultsDate": "May 2026",
       "summary": "Portrait photography exploring interior life over surface identity. ~10-12% acceptance rate.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "Monochrome Awards 2026",
@@ -9392,7 +9438,8 @@
       "dateAdded": "2026-03-21",
       "submitUrl": "https://annualphotoawards.com/sign-in/",
       "summary": "8th edition. Five main categories, 25 subcategories. Looking for bold and innovative approaches.",
-      "ai": null
+      "ai": null,
+      "email": null
     },
     {
       "title": "HER.SELF",
@@ -9465,8 +9512,12 @@
       "orgInTitle": false,
       "slug": "atlas-of-ruins-vol-3-call-for-photos-reuse-italy",
       "dateAdded": "2026-03-22",
-      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
-      "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Three registration tiers."
+      "submitUrl": null,
+      "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Three registration tiers.",
+      "email": null,
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "SVĚTOVA 1 Artist Residency 2026",
@@ -9557,13 +9608,15 @@
       "eligibility": [],
       "submitVia": "LoosenArt website",
       "requirements": "1–3 works",
-      "ai": "",
+      "ai": null,
       "slug": "homo-technologicus-loosenart",
       "orgInTitle": false,
       "dateAdded": "2026-03-23",
       "resultsDate": "November 2026",
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
-      "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome."
+      "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
+      "email": null,
+      "jury": []
     },
     {
       "title": "Residency Program 2026",
@@ -9765,7 +9818,10 @@
       "dateAdded": "2026-03-23T20:51:00Z",
       "email": "",
       "submitVia": "Email",
-      "summary": "Black-and-white photography for a print publication. Theme: imagining what seems impossible, a tomorrow."
+      "summary": "Black-and-white photography for a print publication. Theme: imagining what seems impossible, a tomorrow.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "I Can Buy Myself Flowers",
@@ -9927,7 +9983,8 @@
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/c7a740a8-8507-4ad6-bb78-b53e5acd1088/start",
       "summary": "Grant for photographic explorations of nature, landscape, and environment. Nordic citizens/residents. 1-3 year projects.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "Guest Room: Shana Lopes & Aspen Mays",
