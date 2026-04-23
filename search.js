@@ -56,7 +56,7 @@
   }
 
   function buildSuggestions(query) {
-    var relevant = getOpenCalls();
+    var relevant = allCalls;
     var q = (query || '').toLowerCase().trim();
     var groups = {};
 
