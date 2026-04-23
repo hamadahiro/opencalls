@@ -10470,7 +10470,9 @@
       "url": "https://www.bwpawards.org",
       "location": "London, United Kingdom",
       "prize": "£10,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://enter.bwpawards.org",
       "requirements": "No limit",
