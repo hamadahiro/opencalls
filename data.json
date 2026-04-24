@@ -98,7 +98,8 @@
       "email": "",
       "dateAdded": "2026-04-22T03:11:06.098Z",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Fresh Eyes x Hungry Eye vol. 2",
@@ -366,7 +367,8 @@
       "summary": "Group exhibition of ~12 artists at contemporary London gallery. All media including photography. Aug–Sep 2026 show.",
       "dateAdded": "2026-04-17T23:18:00.338Z",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "L'OLTRE 2026",
@@ -1345,7 +1347,8 @@
       "submitUrl": "https://www.mwcponline.com/traversing-terrain-entry.html",
       "dateAdded": "2026-04-05T07:25:22.097Z",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "White: Absence of Color",
@@ -1367,7 +1370,8 @@
       "submitUrl": "https://www.mwcponline.com/white-entry.html",
       "dateAdded": "2026-04-05T07:25:22.097Z",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Developed Work 2026",
@@ -1392,7 +1396,8 @@
       "submitUrl": "https://www.mwcponline.com/developed-work-entry.html",
       "dateAdded": "2026-04-05T07:25:22.097Z",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Lisbon Street Photo Fest: Open Call 2026",
@@ -6219,8 +6224,9 @@
         "Yuko Hasegawa, Curator & Director, 21st Century Museum, Kanazawa",
         "Jemima Kulumba, Co-Founder, WIA",
         "Wang Chunchen, Chief Curator, CAFA Art Museum Beijing",
-        "Hélio Menezes, Art Curator",
-        "Gianluigi Ricuperati, Curator & Art Director"
+        "Hèlio Menezes, Art Curator",
+        "Gianluigi Ricuperati, Curator & Art Director",
+        "Linzi Stauvers, Artistic Director, Ikon Gallery"
       ],
       "submitVia": "artelaguna.world",
       "requirements": "5 images",
@@ -6724,7 +6730,8 @@
       "submitUrl": "https://www.objectif-femmes.art/event/appel-a-candidatures-2026-2/register",
       "summary": "Open call for female photographers exploring the bicentennial of photography. Exhibition at Salons Aguado in Paris.",
       "email": "",
-      "resultsDate": "November 10, 2026"
+      "resultsDate": "November 10, 2026",
+      "jury": []
     },
     {
       "title": "Counter Histories Puerto Rico",
@@ -6849,7 +6856,7 @@
     {
       "title": "Impressum Photo Award 2026",
       "org": "Appennino Foto Festival",
-      "deadline": "2026-04-26",
+      "deadline": "2026-04-30",
       "fee": "€30",
       "category": "photography",
       "description": "International photography contest with 7 open-theme sections and 2 themed projects (2026 theme: Rigenerare). Submit up to 25 photos. Free entry for ages 16–20. Finalists exhibited at the festival galleries for one month.",
@@ -7058,7 +7065,9 @@
       "instagram": "@photojournalismprize",
       "location": "Online",
       "prize": "€5,000 + €3,000 + €1,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Jim Colton, Editor at Large, ZUMA Press Wire",
         "James Nachtwey, Photojournalist",
@@ -7236,7 +7245,8 @@
       "dateAdded": "2026-03-18",
       "submitUrl": "https://prixvirginia.awardsplatform.com",
       "summary": "International photography prize exclusively for professional women photographers. Submit 12-18 cohesive photographs.",
-      "ai": null
+      "ai": null,
+      "email": null
     },
     {
       "title": "MonoVisions Black & White Photography Awards 2026",
@@ -10628,6 +10638,7 @@
       "orgInTitle": false,
       "resultsDate": "July 2026",
       "summary": "International open call — no theme. Juried by Crista Dix (Griffin Museum). Exhibition in Providence, RI. Cash prizes.",
+      "ai": null,
       "dateAdded": "2026-04-01T07:09:52Z"
     },
     {
@@ -10775,7 +10786,10 @@
       "orgInTitle": false,
       "summary": "Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.",
       "dateAdded": "2026-04-03T19:09:00Z",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null
     },
     {
       "title": "Joy and the Everyday 2026",
@@ -10802,6 +10816,7 @@
       ],
       "resultsDate": "May 9, 2026",
       "email": "",
+      "ai": null,
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -10829,6 +10844,7 @@
       ],
       "resultsDate": "May 9, 2026",
       "email": "",
+      "ai": null,
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -10857,6 +10873,7 @@
         "William Camargo, Pasadena City College",
         "Francesca Hummler, Apparently in America / Der Greif"
       ],
+      "ai": null,
       "dateAdded": "2026-04-04T03:12:51.760Z"
     },
     {
@@ -11356,6 +11373,7 @@
       "summary": "Free photography festival on Capri. Theme: Journeys and Mirages. Winning project exhibited at Certosa di San Giacomo. Open worldwide.",
       "requirements": "1 PDF in .zip (max 10MB)",
       "resultsDate": "July 13, 2026",
+      "ai": null,
       "dateAdded": "2026-04-11T19:16:28.161Z"
     },
     {
@@ -11636,6 +11654,7 @@
       "resultsDate": "September 2026",
       "summary": "Major new commission for 2027 exhibition at VISUAL Carlow. Any medium. Artist fee + significant production budget.",
       "email": "",
+      "ai": null,
       "dateAdded": "2026-04-17T19:14:57.871Z"
     },
     {
@@ -11817,7 +11836,8 @@
       "summary": "National juried exhibition at Academy Center of the Arts, Lynchburg VA. $1,000 Best in Show. Juror: Kiera Hight.",
       "dateAdded": "2026-04-19T15:16:00.433Z",
       "instagram": "@attheacademy",
-      "resultsDate": "July 14, 2026"
+      "resultsDate": "July 14, 2026",
+      "ai": null
     },
     {
       "title": "Recology San Francisco Artist-in-Residence Program 2027",
@@ -11918,6 +11938,9 @@
       "orgInTitle": false,
       "summary": "8-week residency at Door Peninsula's Dome House for Midwest US artists. $500 stipend, housing, studio. Photography welcome.",
       "jury": [],
+      "ai": null,
+      "resultsDate": null,
+      "requirements": null,
       "dateAdded": "2026-04-20T15:11:44.903Z"
     },
     {
