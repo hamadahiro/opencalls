@@ -580,18 +580,27 @@ data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 
 
 function buildJsonLd(call) {
   const pageUrl = `${SITE}/${call.slug || slugify(call.title)}/`;
+  const submitUrl = call.submitUrl || call.url || pageUrl;
   const ld = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "Event",
     "name": call.title,
     "description": call.description,
-    "url": pageUrl,
-    "publisher": {
+    "url": submitUrl,
+    "organizer": {
       "@type": "Organization",
-      "name": "Monographica",
-      "url": "https://monographica.com"
-    }
+      "name": call.org
+    },
+    "location": {
+      "@type": "Place",
+      "name": call.location || "Online"
+    },
+    "endDate": call.deadline === 'Continuous' ? undefined : call.deadline,
+    "isAccessibleForFree": call.fee ? call.fee.toLowerCase().startsWith('free') : undefined
   };
+  if (call.dateAdded) ld.startDate = call.dateAdded.split('T')[0];
+  // Clean undefined values
+  Object.keys(ld).forEach(k => { if (ld[k] === undefined) delete ld[k]; });
   return JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
 }
 
