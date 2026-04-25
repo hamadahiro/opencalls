@@ -193,7 +193,10 @@
       "slug": "print-swap-inaugural-exhibition",
       "orgInTitle": true,
       "summary": "Inaugural exhibition at The Print Space London via new print-exchange iOS app. 50 artists selected, prints fully produced and shown.",
-      "dateAdded": "2026-04-20T23:16:32.935Z"
+      "dateAdded": "2026-04-20T23:16:32.935Z",
+      "ai": null,
+      "jury": [],
+      "requirements": "1+ images via app"
     },
     {
       "title": "From Your Archive",
@@ -388,7 +391,10 @@
       "summary": "Photobook call exploring visions beyond conventional reality. Winner published in limited edition by The Docks Publishing.",
       "ai": "Accepted",
       "email": "",
-      "dateAdded": "2026-04-17T07:12:13.568Z"
+      "dateAdded": "2026-04-17T07:12:13.568Z",
+      "jury": [],
+      "resultsDate": null,
+      "requirements": null
     },
     {
       "title": "Joan Wakelin Bursary 2026",
@@ -12046,7 +12052,9 @@
       "slug": "unstaged-journal-impermanence",
       "orgInTitle": true,
       "summary": "Free indie photography journal on authenticity. Theme: Impermanence. Guest curated by Benjamin Osborne. Print publication.",
-      "dateAdded": "2026-04-22T23:09:08.128Z"
+      "dateAdded": "2026-04-22T23:09:08.128Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Slow Exposures 2026 — Main Exhibition",
