@@ -393,8 +393,8 @@
       "email": "",
       "dateAdded": "2026-04-17T07:12:13.568Z",
       "jury": [],
-      "resultsDate": null,
-      "requirements": null
+      "resultsDate": "May 30, 2026",
+      "requirements": "10–20 images"
     },
     {
       "title": "Joan Wakelin Bursary 2026",
@@ -578,7 +578,8 @@
       "orgInTitle": false,
       "summary": "Photography celebrating America's diverse essence — landscapes, people, culture. Juried exhibition in Dover, NH, July–August.",
       "dateAdded": "2026-04-15T19:24:26Z",
-      "ai": null
+      "ai": null,
+      "email": ""
     },
     {
       "title": "Fine Art Photography Awards 2026/2027",
@@ -11870,7 +11871,16 @@
       "slug": "recology-san-francisco-artist-in-residence-program-2027",
       "orgInTitle": true,
       "summary": "Four-month residency at SF's recycling center — artists make work from discarded materials. Monthly stipend, studio access. Bay Area only.",
-      "jury": [],
+      "jury": [
+        "Michael Arcega, Advisory Board",
+        "Charmin Roundtree-Baaqee, Advisory Board",
+        "JD Beltran, Advisory Board",
+        "Terry Berlier, Advisory Board",
+        "Kevin B. Chen, Advisory Board",
+        "Elena Gross, Advisory Board",
+        "Jamil Hellu, Advisory Board",
+        "Jonathan Carver Moore, Advisory Board"
+      ],
       "dateAdded": "2026-04-19T23:11:12.174Z",
       "ai": null,
       "resultsDate": null
