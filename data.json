@@ -516,7 +516,7 @@
         "Douglas Stockdale, Visual Artist & Founder of PhotoBook Journal"
       ],
       "submitVia": "Website form",
-      "submitUrl": "https://www.decagongallery.com/portal-entry",
+      "submitUrl": "https://www.decagongallery.com/portal-entry-form",
       "requirements": "Up to 8 images",
       "email": "",
       "slug": "portal-decagon-gallery",
@@ -10474,7 +10474,8 @@
       "slug": "open-call-for-emerging-artists-elyse-tonna",
       "orgInTitle": false,
       "summary": "Open call for emerging Maltese/Malta-based visual artists. Exhibition, project and residency opportunities from July 2026.",
-      "dateAdded": "2026-03-31T19:44:02.093Z"
+      "dateAdded": "2026-03-31T19:44:02.093Z",
+      "jury": []
     },
     {
       "title": "UN World Oceans Day Photo Competition 2026",
@@ -10670,7 +10671,8 @@
       "resultsDate": "November 6, 2026",
       "summary": "Three-year fellowship: $150,000 stipend, housing, and studio in Tulsa. Ten fellows selected. Age 25+, must relocate.",
       "email": "",
-      "dateAdded": "2026-04-01T19:11:56.985Z"
+      "dateAdded": "2026-04-01T19:11:56.985Z",
+      "jury": []
     },
     {
       "title": "Women's Studio Workshop — Studio Workspace Residency",
@@ -10692,7 +10694,8 @@
       "email": "",
       "dateAdded": "2026-04-01T19:11:56.985Z",
       "requirements": "Up to 10 images",
-      "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201261/studio-residency-grant"
+      "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201261/studio-residency-grant",
+      "jury": []
     },
     {
       "title": "PowerLines Documentary Photography Fellowship",
@@ -10767,7 +10770,8 @@
       "email": "",
       "instagram": "@workingassumptions",
       "resultsDate": "September 2026",
-      "dateAdded": "2026-04-03T15:33:44.038Z"
+      "dateAdded": "2026-04-03T15:33:44.038Z",
+      "jury": []
     },
     {
       "title": "Barbara Spohr Memorial Award for Photography 2027",
@@ -11728,7 +11732,7 @@
       "prize": "Exhibition + book publication",
       "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": null,
+      "submitUrl": "https://chesterphotofestival.com/Open-Calls/",
       "requirements": "Up to 5 images",
       "slug": "chester-photo-festival-2026-making-voices-heard",
       "orgInTitle": true,
