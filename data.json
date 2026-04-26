@@ -10227,7 +10227,7 @@
       "slug": "flora-shutter-hub-editions-publication",
       "orgInTitle": true,
       "dateAdded": "2026-03-25T18:19:00Z",
-      "submitUrl": null,
+      "submitUrl": "https://shutterhub.org.uk/opportunity/flora-a-shutter-hub-editions-publication/",
       "summary": "Printed photobook celebrating plant life and natural growth. Pay-what-you-can entry, £15 minimum.",
       "email": "",
       "resultsDate": "September 2026"
@@ -12359,8 +12359,10 @@
       "url": "https://youngphotographers.gr/open-call-en",
       "instagram": "@athensphotofestival_official",
       "location": "Athens, Greece",
-      "prize": "Benaki Museum exhibition + production + Crete residency for 2 finalists",
-      "eligibility": [],
+      "prize": "Exhibition",
+      "eligibility": [
+        "under-35"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://youngphotographers.gr/open-call-submit-en",
       "slug": "young-greek-photographers-2026",
@@ -12369,7 +12371,12 @@
       "email": "",
       "resultsDate": "2026-05-10",
       "ai": null,
-      "jury": [],
+      "jury": [
+        "Natasha Christia, Independent Curator, Writer, Educator",
+        "Yorgos Prinos, Visual Artist",
+        "Stamatis Schizakis, Curator of Photography and New Media, National Museum of Contemporary Art Athens",
+        "Marilia Fotopoulou, Head of Programming, Athens Photo Festival"
+      ],
       "dateAdded": "2026-04-26T03:15:45.259Z"
     }
   ]
