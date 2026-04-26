@@ -62,16 +62,19 @@
       "instagram": "@studiomuseum",
       "location": "New York, USA",
       "prize": "$50,000 stipend + studio",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus",
+        "emerging"
+      ],
       "submitVia": "SlideRoom",
       "submitUrl": "https://studiomuseum.slideroom.com/",
       "requirements": "5–10 images or videos",
       "slug": "studio-museum-in-harlem-artist-in-residence-2026-2027",
       "orgInTitle": true,
       "summary": "11-month Harlem residency for artists of African and Afro-Latinx descent. $50K stipend, private studio, culminating exhibition.",
-      "resultsDate": "2026",
+      "resultsDate": "July 2026",
       "dateAdded": "2026-04-23T03:13:25.182Z",
-      "email": null,
+      "email": "",
       "ai": null,
       "jury": []
     },
@@ -1601,8 +1604,11 @@
       "prize": "€2,000 + exhibition",
       "eligibility": [],
       "jury": [
+        "Katerina Gregos, Artistic Director, EMST",
         "Marta Weiss, Curator of Photography, Victoria and Albert Museum",
+        "Joan Fontcuberta, Artist",
         "Katy Hundertmark, Curator & Editor, Foam",
+        "Cécile Sayuri Poimboeuf-Koizumi, Publisher, Chose Commune",
         "Sylvia Sachini, Curator, APhF Book Program"
       ],
       "submitVia": "Official website + mail",
@@ -6370,7 +6376,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
       "requirements": "3–10 images",
-      "submitUrl": "https://innovateartistgrants.org/apply",
+      "submitUrl": "https://igapp2644721.paperform.co/",
       "summary": "Quarterly grants: 2 x $1,800 (one photographer, one artist). 18 honorable mentions per cycle.",
       "ai": null,
       "jury": []
@@ -11085,8 +11091,12 @@
       "resultsDate": "June 30, 2026",
       "email": "",
       "dateAdded": "2026-04-05T01:15:53.494Z",
-      "ai": null,
-      "jury": []
+      "ai": "Not accepted",
+      "jury": [
+        "Tony Hewitt, AIPP Grand Master of Photography",
+        "David Oliver, AIPP Grand Master of Photography",
+        "Peter Eastway, Publisher of Better Photography Magazine"
+      ]
     },
     {
       "title": "nice;04",
