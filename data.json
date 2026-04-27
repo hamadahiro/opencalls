@@ -13,8 +13,8 @@
       "location": "Ioannina, Greece",
       "prize": "Nikon Z30 + solo exhibition",
       "eligibility": [],
-      "submitVia": "Official website",
-      "submitUrl": "https://www.photometria.gr/en/photometria-awards/",
+      "submitVia": "Photometria app",
+      "submitUrl": "https://app.photometria.gr",
       "requirements": "1 or 3 images",
       "jury": [
         "Alec Soth, Photographer, Magnum Photos"
@@ -24,6 +24,7 @@
       "summary": "18th Photometria Festival open call. Theme: Coming of Age. Sole judge Alec Soth. Nikon Z30 + solo exhibition for top three.",
       "email": "",
       "ai": "Not accepted",
+      "resultsDate": "Within 2 months of deadline",
       "dateAdded": "2026-04-27T03:09:48.509Z"
     },
     {
@@ -10284,10 +10285,11 @@
       "slug": "flora-shutter-hub-editions-publication",
       "orgInTitle": true,
       "dateAdded": "2026-03-25T18:19:00Z",
-      "submitUrl": "https://shutterhub.org.uk/opportunity/flora-a-shutter-hub-editions-publication/",
+      "submitUrl": null,
       "summary": "Printed photobook celebrating plant life and natural growth. Pay-what-you-can entry, £15 minimum.",
       "email": "",
-      "resultsDate": "September 2026"
+      "resultsDate": "September 2026",
+      "jury": []
     },
     {
       "title": "Appalachian Nature Art & Photography Competition & Exhibition",
@@ -10363,7 +10365,9 @@
       "email": "",
       "requirements": "5 images",
       "submitUrl": "https://www.la-chambre.org/autres-regards/archifoto/apply-for-the-contest/",
-      "resultsDate": "June 2026"
+      "resultsDate": "June 2026",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "2026 Booooooom Art & Photo Book Award",
@@ -10384,6 +10388,8 @@
       "summary": "8 projects (6 books, 2 zines) fully published for free. Books 100 copies, zines 25 copies. Free zine entry.",
       "instagram": "@booooooom",
       "email": "",
+      "ai": null,
+      "jury": [],
       "dateAdded": "2026-03-30T23:27:35.597Z",
       "resultsDate": "August 2026"
     },
@@ -10414,7 +10420,8 @@
       ],
       "summary": "Three photographers exhibited at September festival in Verona. €300 travel + €1,000 print budget + accommodation.",
       "dateAdded": "2026-03-30T23:27:35.597Z",
-      "instagram": "@grenze.arsenali.fotografici"
+      "instagram": "@grenze.arsenali.fotografici",
+      "ai": null
     },
     {
       "title": "Lucky Star Issue 5: Camera-Less",
@@ -10436,7 +10443,9 @@
       "orgInTitle": true,
       "summary": "SF indie zine exploring camera-less photography — pinhole, cyanotype, chemigram, photogram, lumen and more. Free to submit.",
       "dateAdded": "2026-03-31T00:22:15.926Z",
-      "resultsDate": "Early May 2026"
+      "resultsDate": "Early May 2026",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "From Image to Meaning – Tirana",
@@ -10533,7 +10542,8 @@
       "orgInTitle": false,
       "summary": "Open call for emerging Maltese/Malta-based visual artists. Exhibition, project and residency opportunities from July 2026.",
       "dateAdded": "2026-03-31T19:44:02.093Z",
-      "jury": []
+      "jury": [],
+      "ai": null
     },
     {
       "title": "UN World Oceans Day Photo Competition 2026",
@@ -10617,7 +10627,8 @@
       "orgInTitle": true,
       "summary": "International B&W competition — 6 categories incl. Architecture, Street, Landscape. €1,500 absolute winner + €200 per category.",
       "dateAdded": "2026-03-31T19:54:25.607Z",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "resultsDate": null
     },
     {
       "title": "British Wildlife Photography Awards 2026",
@@ -10676,7 +10687,9 @@
       "dateAdded": "2026-03-31T23:14:54.068Z",
       "submitUrl": "https://apply.nyfa.org/submit/351704/2026-jgs-fellowship-for-photography",
       "instagram": "@nyfacurrent",
-      "jury": []
+      "jury": [],
+      "ai": null,
+      "email": null
     },
     {
       "title": "12th Annual International Open Call",
@@ -10730,7 +10743,8 @@
       "summary": "Three-year fellowship: $150,000 stipend, housing, and studio in Tulsa. Ten fellows selected. Age 25+, must relocate.",
       "email": "",
       "dateAdded": "2026-04-01T19:11:56.985Z",
-      "jury": []
+      "jury": [],
+      "ai": null
     },
     {
       "title": "Women's Studio Workshop — Studio Workspace Residency",
@@ -10753,7 +10767,8 @@
       "dateAdded": "2026-04-01T19:11:56.985Z",
       "requirements": "Up to 10 images",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201261/studio-residency-grant",
-      "jury": []
+      "jury": [],
+      "ai": null
     },
     {
       "title": "PowerLines Documentary Photography Fellowship",
@@ -10828,6 +10843,7 @@
       "email": "",
       "instagram": "@workingassumptions",
       "resultsDate": "September 2026",
+      "ai": null,
       "dateAdded": "2026-04-03T15:33:44.038Z",
       "jury": []
     },
@@ -11669,7 +11685,7 @@
       "orgInTitle": true,
       "summary": "Photobook award from Shutter Hub Editions. First-book photographers welcome. Publication + Close Up feature to 500K audience.",
       "email": "",
-      "submitUrl": "https://shutterhub.org.uk/opportunity/shutter-hub-editions-photobook-award/",
+      "submitUrl": null,
       "dateAdded": "2026-04-16T07:12:21.853Z",
       "ai": null,
       "resultsDate": "~July 2026"
@@ -12327,6 +12343,9 @@
       "slug": "see-zeen-issue-20-open-call",
       "orgInTitle": true,
       "summary": "Independent online magazine curating contemporary emerging photography. Open theme. Free, worldwide.",
+      "email": null,
+      "ai": null,
+      "jury": [],
       "dateAdded": "2026-04-25T03:08:38.697Z"
     },
     {
@@ -12352,6 +12371,7 @@
         "Juliana Naufel, Co-Founder, Photo Trouvée Magazine",
         "Twiggy Boyer, Co-Founder, Photo Trouvée Magazine"
       ],
+      "resultsDate": null,
       "dateAdded": "2026-04-25T03:08:38.697Z"
     },
     {
@@ -12426,6 +12446,7 @@
       ],
       "submitVia": "Official website",
       "submitUrl": "https://youngphotographers.gr/open-call-submit-en",
+      "requirements": null,
       "slug": "young-greek-photographers-2026",
       "orgInTitle": true,
       "summary": "Exhibition at Benaki Museum, Athens. For Greek artists/diaspora under 35. Free. Production covered + Crete residency for 2 finalists.",
