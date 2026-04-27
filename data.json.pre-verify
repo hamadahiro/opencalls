@@ -13,16 +13,14 @@
       "location": "Cape Town, South Africa",
       "prize": "Festival exhibition (Sep 2–26, 2026)",
       "eligibility": [],
-      "submitVia": "Official website (form sent after payment)",
-      "submitUrl": null,
+      "submitVia": "Official website",
+      "submitUrl": "https://capetownphotofest.co.za/open-call/",
       "requirements": "4–8 images",
       "slug": "cape-town-photo-festival-2026-open-call-truth",
       "orgInTitle": true,
       "summary": "Cape Town Photo Festival 2026 open call. Theme: TRUTH. Solo or group exhibition at Sep 2026 festival. Students discounted.",
       "email": "",
       "resultsDate": "2026-05-25",
-      "ai": null,
-      "jury": [],
       "dateAdded": "2026-04-27T19:10:59.536Z"
     },
     {
@@ -610,7 +608,7 @@
       "title": "The Emergence Project 2026",
       "org": "Glasgow Gallery of Photography",
       "deadline": "2026-05-23",
-      "fee": "Free",
+      "fee": "Free (£48 if accepted)",
       "category": "exhibition",
       "description": "Annual graduate showcase for recently graduated UK-based photographers (graduated 2023–2026). Free to submit. Gallery covers all printing and installation costs, with work printed on Fujifilm photographic paper and framed in gallery frames. Submit up to 8 images along with a brief statement about your work, graduation details, and why you'd like to participate. Exhibition July 3–31, 2026 at Glasgow Gallery of Photography.",
       "url": "https://www.glasgowgalleryofphotography.com/exhibition",
@@ -8688,7 +8686,7 @@
       "summary": "Fine art projects engaging with what is real versus imagined. Published in print and digital editions.",
       "ai": null,
       "jury": [],
-      "resultsDate": "November 2026"
+      "resultsDate": null
     },
     {
       "title": "LUMA Rencontres Dummy Book Award 2026",
@@ -11436,6 +11434,35 @@
       "ai": null
     },
     {
+      "title": "Lucie Foundation Scholarship Program 2026",
+      "org": "Lucie Foundation",
+      "deadline": "2026-09-30",
+      "fee": "$15–$25",
+      "category": "grant",
+      "description": "Four cash grants supporting emerging and established photographers. Two tracks: Fine Art and Photojournalism/Documentary, each with Professional ($3,000) and Emerging ($1,000) tiers. Documentary Emerging winner also receives a Sony camera and lens. Winners exhibited together at House of Lucie galleries worldwide including Los Angeles, Athens, Budapest, Ostuni, and Samui. Submit project proposal and 20 images. Early bird pricing available through April.",
+      "url": "https://www.luciefoundation.org/program/scholarship",
+      "instagram": "@luciefoundation",
+      "location": "Los Angeles, CA, USA",
+      "prize": "$3,000 + exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Antares Wells, MCA Australia",
+        "Kateryna Radchenko, Founder, Odesa Photo Days",
+        "Elizabeth Ferrer, Latinx Photography Specialist"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://submit.luciefoundation.org/login.php",
+      "requirements": "20 images",
+      "resultsDate": "October 2026",
+      "slug": "lucie-foundation-scholarship-program-2026",
+      "orgInTitle": true,
+      "summary": "Four cash grants for emerging and pro photographers. Fine Art and Documentary tracks. Exhibition at Lucie galleries worldwide.",
+      "dateAdded": "2026-04-11T03:14:51.247Z",
+      "email": ""
+    },
+    {
       "title": "Abundance",
       "org": "A Photographer's Place",
       "deadline": "2026-04-21",
@@ -12297,7 +12324,6 @@
       "orgInTitle": false,
       "submitUrl": "https://form.jotform.com/260895962691171",
       "summary": "Online exhibition on loss and absence — film/analog photographers. Curated by Michael Behlen. Exhibition launches May 29.",
-      "ai": null,
       "dateAdded": "2026-04-24T19:12:04.277Z",
       "resultsDate": "May 29, 2026"
     },
@@ -12320,8 +12346,6 @@
       "submitUrl": "https://forms.gle/RcKJXfafTSE7w5be9",
       "summary": "Online exhibition on shelter and nature — intimate interiors, wild backyards. Blue Sky Gallery 50th anniversary series.",
       "email": "",
-      "ai": null,
-      "jury": [],
       "dateAdded": "2026-04-24T19:12:04.277Z",
       "resultsDate": "June 4, 2026"
     },
@@ -12347,9 +12371,6 @@
       "summary": "Film photography print magazine. Issue 13 invites work responding to curated vernacular photos. Analog only, no AI.",
       "email": "",
       "ai": "Not accepted",
-      "jury": [
-        "Nora Lalle, Founder, Pamplemousse Magazine"
-      ],
       "dateAdded": "2026-04-24T19:12:04.277Z"
     },
     {
