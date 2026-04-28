@@ -323,7 +323,8 @@ const ELIGIBILITY_LABEL = {
   '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
   '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+',
-  'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only'
+  'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
+  'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only'
 };
 
 function splitPrizeParts(prize) {
@@ -947,6 +948,8 @@ const eligibilityGroups = {
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
   'bay-area': { short: 'Bay Area', title: 'Bay Area Open Calls', desc: 'Open calls restricted to photographers and artists based in the San Francisco Bay Area.' },
   'chicago-area': { short: 'Chicago Area', title: 'Chicago Area Open Calls', desc: 'Open calls restricted to photographers and artists based in the Chicago metropolitan area.' },
+  'tri-state': { short: 'Tri-State', title: 'Tri-State (NY/NJ/CT) Open Calls', desc: 'Open calls restricted to photographers, artists, and curators based in the New York tri-state area — New York, New Jersey, and Connecticut.' },
+  'wana': { short: 'WANA Region', title: 'WANA Region Open Calls', desc: 'Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region.' },
   'gulf-coast': { short: 'Gulf Coast', title: 'Gulf Coast Open Calls', desc: 'Open calls restricted to photographers and artists residing in US Gulf Coast states (Texas, Louisiana, Mississippi, Alabama, Georgia, Florida).' },
   'spain': { short: 'Spain', title: 'Spain-Only Open Calls', desc: 'Open calls restricted to photographers and artists born or based in Spain.' },
   'india': { short: 'India', title: 'India-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in India.' },
@@ -1042,7 +1045,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'bay-area', 'chicago-area', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'bay-area', 'chicago-area', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }

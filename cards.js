@@ -67,6 +67,7 @@ const eligibilityLabel = {
   'alaska': 'Alaska only',
   'bay-area': 'Bay Area only',
   'chicago-area': 'Chicago Area only',
+  'tri-state': 'NY/NJ/CT only',
   'gulf-coast': 'Gulf Coast only',
   'spain': 'Spain only',
   'india': 'India only',
@@ -79,6 +80,7 @@ const eligibilityLabel = {
   'ukraine': 'Ukraine only',
   'flinta': 'FLINTA',
   'global-south': 'Global South',
+  'wana': 'WANA region only',
   'france': 'France only',
   'mid-career': 'Mid-career',
   'united-kingdom': 'UK only'

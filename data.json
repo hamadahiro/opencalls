@@ -167,7 +167,7 @@
       "location": "New York, USA",
       "prize": "Curator and artist fees + production budget",
       "eligibility": [
-        "united-states"
+        "tri-state"
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://cameraclubofny.submittable.com/submit",
@@ -192,7 +192,9 @@
       "instagram": "@fresheyesphoto",
       "location": "Amsterdam, Netherlands",
       "prize": "Publication + exhibition at Hungry Eye Fair",
-      "eligibility": [],
+      "eligibility": [
+        "emerging"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.fresheyesphoto.com/submission",
       "requirements": "15 images",
@@ -858,7 +860,7 @@
     {
       "title": "Encontros Da Imagem Award 2026",
       "org": "Encontros da Imagem",
-      "deadline": "2026-04-30",
+      "deadline": "2026-05-10",
       "fee": "€35",
       "category": "exhibition",
       "description": "Open call for the 36th edition of Encontros da Imagem, one of Europe's oldest photography festivals, founded in 1991 in Braga, Portugal. Three projects selected for solo exhibitions during the festival across multiple northern Portuguese cities, September 18 – November 1, 2026. One overall winner receives €2,000. Seventeen further projects included in a collective video screening. Theme: Territory And Identity. Projects must use photography or video with coherent narrative structure, produced within the last five years. Maximum three projects per applicant.",
@@ -11996,7 +11998,8 @@
       "location": "Doha, Qatar",
       "prize": "30,000 QAR (~$8,200)",
       "eligibility": [
-        "18-plus"
+        "18-plus",
+        "wana"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://qmforms.qm.org.qa/253342623058858",
@@ -12022,7 +12025,8 @@
       "location": "Doha, Qatar",
       "prize": "2,000 QAR (~$550)",
       "eligibility": [
-        "18-plus"
+        "18-plus",
+        "wana"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://qmforms.qm.org.qa/253342213000840",
