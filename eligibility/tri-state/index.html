@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>PH21 Gallery - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="PH21 Gallery open call, PH21 Gallery call for entries, PH21 Gallery submissions, PH21 Gallery photography, PH21 Gallery exhibition, PH21 Gallery artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/ph21-gallery/">
+  <title>Tri-State (NY/NJ/CT) Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers, artists, and curators based in the New York tri-state area — New York, New Jersey, and Connecticut.">
+  <meta name="keywords" content="Tri-State open calls, Tri-State photography, call for entries Tri-State, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/tri-state/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="PH21 Gallery - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="Tri-State (NY/NJ/CT) Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers, artists, and curators based in the New York tri-state area — New York, New Jersey, and Connecticut.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/ph21-gallery/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/tri-state/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "PH21 Gallery - Open Calls",
-  "description": "Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/ph21-gallery/",
+  "name": "Tri-State (NY/NJ/CT) Open Calls 2026",
+  "description": "Open calls restricted to photographers, artists, and curators based in the New York tri-state area — New York, New Jersey, and Connecticut.",
+  "url": "https://opencalls.monographica.com/eligibility/tri-state/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Organizations",
-      "item": "https://opencalls.monographica.com/organizations/"
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "PH21 Gallery",
-      "item": "https://opencalls.monographica.com/ph21-gallery/"
+      "name": "Tri-State (NY/NJ/CT) Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/tri-state/"
     }
   ]
 }
@@ -103,14 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>PH21 Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Tri-State (NY/NJ/CT) Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers, artists, and curators based in the New York tri-state area — New York, New Jersey, and Connecticut.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/stories-narrative-photography-ph21-gallery/">Stories: Narrative Photography &middot; PH21 Gallery</a></h3><p>May 25, 2026 · €25–€50</p><p>Curated group show on narrative and storytelling. Physical exhibition in Barcelona's Gothic Quarter, July–August. Student rates available.</p></div>
-      <div class="static-call-item"><h3><a href="/motion-ph21-gallery/">Motion &middot; PH21 Gallery</a></h3><p>April 27, 2026 · €25–€50</p><p>Curated group show on motion in photography. Physical exhibition in Barcelona's Gothic Quarter. Student rates available.</p></div>
+      <div class="static-call-item"><h3><a href="/baxter-st-2026-2027-guest-curatorial-open-call/">Baxter St 2026–2027 Guest Curatorial Open Call</a></h3><p>May 18, 2026 · Free</p><p>Three guest-curated shows at Baxter St NYC. Emerging curators, tri-state area. Curator and artist fees plus production budget.</p></div>
 
     </section>
 
@@ -127,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'PH21 Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('tri-state')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

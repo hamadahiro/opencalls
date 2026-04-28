@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>PH21 Gallery - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="PH21 Gallery open call, PH21 Gallery call for entries, PH21 Gallery submissions, PH21 Gallery photography, PH21 Gallery exhibition, PH21 Gallery artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/ph21-gallery/">
+  <title>WANA Region Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region.">
+  <meta name="keywords" content="WANA Region open calls, WANA Region photography, call for entries WANA Region, 2026">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/wana/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="PH21 Gallery - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="WANA Region Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/ph21-gallery/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/wana/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "PH21 Gallery - Open Calls",
-  "description": "Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/ph21-gallery/",
+  "name": "WANA Region Open Calls 2026",
+  "description": "Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region.",
+  "url": "https://opencalls.monographica.com/eligibility/wana/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Organizations",
-      "item": "https://opencalls.monographica.com/organizations/"
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "PH21 Gallery",
-      "item": "https://opencalls.monographica.com/ph21-gallery/"
+      "name": "WANA Region Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/wana/"
     }
   ]
 }
@@ -103,14 +103,14 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>PH21 Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>WANA Region Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/stories-narrative-photography-ph21-gallery/">Stories: Narrative Photography &middot; PH21 Gallery</a></h3><p>May 25, 2026 · €25–€50</p><p>Curated group show on narrative and storytelling. Physical exhibition in Barcelona's Gothic Quarter, July–August. Student rates available.</p></div>
-      <div class="static-call-item"><h3><a href="/motion-ph21-gallery/">Motion &middot; PH21 Gallery</a></h3><p>April 27, 2026 · €25–€50</p><p>Curated group show on motion in photography. Physical exhibition in Barcelona's Gothic Quarter. Student rates available.</p></div>
+      <div class="static-call-item"><h3><a href="/tasweer-2026-project-award/">Tasweer 2026 Project Award</a></h3><p>May 1, 2026 · Free</p><p>Qatar Museums grant for photographers in WANA region. 30,000 QAR to develop a photographic project. Exhibition at Tasweer Photo Festival.</p></div>
+      <div class="static-call-item"><h3><a href="/tasweer-2026-single-image-award/">Tasweer 2026 Single Image Award</a></h3><p>May 1, 2026 · Free</p><p>Single image award from Qatar Museums for WANA region photographers. 2,000 QAR prize plus online exhibition at Tasweer Photo Festival.</p></div>
 
     </section>
 
@@ -127,7 +127,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'PH21 Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('wana')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
