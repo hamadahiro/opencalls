@@ -115,14 +115,13 @@
       <p class="call-detail-description">Asian-American-founded creative arts magazine accepting submissions for Issue 06 themed around food — a meal is never just a meal. Accepting photography, visual art, drawings, paintings, digital illustrations, multimedia works, and more alongside poetry, prose, and essays. Open to all ages, backgrounds, locations, and experience levels. Volunteer-run, completely free to submit.</p>
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize">Publication prize</a></div></div>
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 28, 2026">April 28, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">May 5–8, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 3 entries</span></div><div class="info-row"><span class="info-label">AI policy</span><span class="dots"></span><span class="info-value">Not accepted</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:dyonyzinemagazine@gmail.com" target="_blank" rel="nofollow noopener">Google Form</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 28, 2026">April 28, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">May 5–8, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 3 entries</span></div><div class="info-row"><span class="info-label">AI policy</span><span class="dots"></span><span class="info-value">Not accepted</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value">Google Form</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/dyonyzine/">Dyonyzine</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.instagram.com/dyonyzine/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/dyonyzine" target="_blank" rel="nofollow noopener">@dyonyzine</a></div>
     </section>
@@ -140,23 +139,7 @@
   <script>
     const CURRENT_SLUG = 'dyonyzine-issue-06-second-helpings';
     const CURRENT_CALL = {"prize":"Publication","category":"zine","org":"Dyonyzine","location":"Online","fee":"Free","deadline":"2026-04-28","resultsDate":"May 5–8, 2026","instagram":"@dyonyzine","eligibility":[],"jury":[],"submitVia":"Google Form","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSdYyrJjqZcFwki5p-IKZ-4O7Bol78mrQX7wm39JGM3iXaWIHg/viewform","email": "","ai":"Not accepted","requirements":"Up to 3 entries"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-04-28'.replace(/-/g, '');
-      var nd = new Date('2026-04-28T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Dyonyzine Issue 06 — Second Helpings';
-      var u = 'https://www.instagram.com/dyonyzine/';
-      var o = 'Dyonyzine';
-      var dl = new Date('2026-04-28T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
