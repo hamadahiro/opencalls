@@ -286,7 +286,7 @@
       "url": "https://copenhagenphotofestival.com/open-exhibition-2026/",
       "instagram": "@copenhagenphotofestival",
       "location": "Copenhagen, Denmark",
-      "prize": "4,000 / 2,000 / 1,000 DKK voucher + Royal Theatre exhibition",
+      "prize": "Exhibition + DKK 4,000 voucher",
       "eligibility": [
         "18-plus"
       ],
@@ -9516,7 +9516,7 @@
       "slug": "noice-magazine-open-submissions",
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
-      "submitUrl": "https://noicemagazine.com/submit",
+      "submitUrl": null,
       "summary": "Print-to-order magazine with themed issues. Minimalism, social issues, and humor. Limited editions.",
       "email": "",
       "requirements": "Up to 20 images",
@@ -9658,7 +9658,7 @@
       "orgInTitle": false,
       "slug": "this-is-a-person-decagon-gallery",
       "dateAdded": "2026-03-21",
-      "submitUrl": "https://www.decagongallery.com/this-is-a-person-entry",
+      "submitUrl": null,
       "resultsDate": "May 2026",
       "summary": "Portrait photography exploring interior life over surface identity. ~10-12% acceptance rate.",
       "email": "",
@@ -9827,7 +9827,7 @@
       "orgInTitle": false,
       "slug": "atlas-of-ruins-vol-3-call-for-photos-reuse-italy",
       "dateAdded": "2026-03-22",
-      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
+      "submitUrl": null,
       "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Two registration tiers, prizes up to €1,200.",
       "email": null,
       "ai": null,
@@ -12716,7 +12716,9 @@
       "eligibility": [
         "global-south"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/9gQjvgDWoyCk2JpN8",
+      "email": "",
       "slug": "e-co-26-about-time-vist-foundation",
       "orgInTitle": false,
       "summary": "€5,000 production grant for 12 collectives from Latin America and Africa. Theme: time, memory, ancestral knowledge. Free.",
