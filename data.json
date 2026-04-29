@@ -1506,7 +1506,8 @@
       "dateAdded": "2026-04-05T07:25:22.097Z",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "prize": "Exhibition"
     },
     {
       "title": "White: Absence of Color",
@@ -1529,7 +1530,8 @@
       "dateAdded": "2026-04-05T07:25:22.097Z",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "prize": "Exhibition"
     },
     {
       "title": "Developed Work 2026",
@@ -11014,7 +11016,7 @@
         "mid-career"
       ],
       "submitVia": "SlideRoom",
-      "submitUrl": "https://banffcentre.slideroom.com",
+      "submitUrl": "https://banffcentre.slideroom.com/#/Login/program/87483",
       "requirements": "Up to 10 images",
       "slug": "barbara-spohr-memorial-award-for-photography-2027",
       "orgInTitle": false,
@@ -11848,7 +11850,9 @@
       "instagram": "@visual_carlow",
       "location": "Carlow, Ireland",
       "prize": "Artist fee + production budget + exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "jury": [
         "Aileen Nolan, Carlow County Arts Officer",
         "Aisling Prior, Independent Curator",
@@ -12147,7 +12151,7 @@
       "url": "https://millerartmuseum.org/quinlan-residency",
       "location": "Door County, WI, USA",
       "fee": "Free",
-      "prize": "8-week residency + $500 stipend + housing",
+      "prize": "$500 stipend",
       "eligibility": [
         "united-states"
       ],
@@ -12688,7 +12692,7 @@
       ],
       "submitVia": "Online form + physical book",
       "submitUrl": "https://www.rencontres-arles.com/en/les-prix-du-livre-2026",
-      "requirements": "1 published book per submission",
+      "requirements": "1 book",
       "resultsDate": "July 7, 2026",
       "slug": "rencontres-arles-2026-book-awards",
       "orgInTitle": true,
