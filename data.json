@@ -569,7 +569,7 @@
       "jury": [],
       "email": null,
       "resultsDate": null,
-      "requirements": null
+      "requirements": "Photo essay proposal"
     },
     {
       "title": "Women's Studio Workshop — Studio Residency Grant 2026",
@@ -2952,7 +2952,7 @@
         "under-35",
         "morocco"
       ],
-      "submitVia": "Website form",
+      "submitVia": "Email + SwissTransfer",
       "requirements": "4–8 images",
       "slug": "prix-mustaqbal-2026-momentum-fondation-tgcc",
       "orgInTitle": false,
@@ -3096,7 +3096,9 @@
       "dateAdded": "2026-03-17",
       "submitUrl": "https://www.analogsparksawards.com/submit/login.php",
       "summary": "Discovering and promoting analog photographers. Exhibited at House of Lucie in Athens and Ostuni.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Athens Photo Festival 2026",
@@ -3163,7 +3165,9 @@
       "dateAdded": "2026-03-16",
       "submitUrl": "https://marketing663911.typeform.com/to/FwRWVYU8",
       "summary": "Largest annual open exhibition at RBSA Gallery Birmingham. All techniques and media. £600 first prize.",
-      "email": ""
+      "email": "",
+      "ai": null,
+      "jury": []
     },
     {
       "title": "Womanhood",
@@ -12189,7 +12193,8 @@
         "Jordyn Jay, Founder & Executive Director, Black Trans Femmes in the Arts Collective",
         "Isis Awad, Curator & Editor, Participant Inc",
         "Utē Petit, Visual Artist"
-      ]
+      ],
+      "ai": null
     },
     {
       "title": "Ucross Foundation Spring 2027 Residency",
@@ -12213,7 +12218,9 @@
       "summary": "2–6 week residency on a 20,000-acre Wyoming ranch. Studio, meals, stipend. Photography eligible. Portal opens May 1.",
       "jury": [],
       "dateAdded": "2026-04-22T07:09:07.424Z",
-      "email": ""
+      "email": "",
+      "resultsDate": "November 2026",
+      "ai": null
     },
     {
       "title": "Create! Magazine Issue #58 — In Full Color",
@@ -12315,7 +12322,8 @@
       "summary": "Traces of human presence and absence — forgotten structures and personal relics. Free pro printing & framing. Santa Fe, NM.",
       "email": "",
       "resultsDate": "~Early June 2026",
-      "dateAdded": "2026-04-24T07:13:17.586Z"
+      "dateAdded": "2026-04-24T07:13:17.586Z",
+      "ai": null
     },
     {
       "title": "The Life of Color",
