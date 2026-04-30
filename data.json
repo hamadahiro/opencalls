@@ -11,14 +11,13 @@
       "url": "https://yaddo.org/apply/",
       "instagram": "@yaddotoday",
       "location": "Saratoga Springs, NY, USA",
-      "prize": "2-week to 2-month residency with room, board, studio",
-      "eligibility": [
-        "18-plus"
-      ],
+      "prize": "Residency",
+      "eligibility": [],
       "submitVia": "SlideRoom",
       "submitUrl": "https://yaddo.slideroom.com",
       "email": "",
       "requirements": "7 images",
+      "resultsDate": "Early October 2026",
       "slug": "yaddo-residency-summer-2026-cycle",
       "orgInTitle": true,
       "summary": "2-week to 2-month residency in Saratoga Springs, NY. Photography eligible. Founded 1900. Encourages underrepresented backgrounds.",
@@ -684,7 +683,7 @@
       "url": "https://www.decagongallery.com/portal-entry",
       "instagram": "@decagongallery",
       "location": "Online",
-      "prize": "Exhibition",
+      "prize": "$500 + exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -1137,10 +1136,10 @@
       "summary": "Three €5,000 grants for debut photobook projects. Categories: Global South, French, and female photographers. Free, needs French publisher.",
       "resultsDate": "June 2026",
       "dateAdded": "2026-04-07T15:14:49.109Z",
-      "email": null,
+      "email": "",
       "ai": null,
       "jury": [],
-      "requirements": null
+      "requirements": "1 PDF (max 25MB)"
     },
     {
       "title": "Ten x Ten – 18th Annual Small Works",
@@ -3618,7 +3617,8 @@
       "dateAdded": "2026-03-16",
       "submitUrl": "https://submit.luciefoundation.org/login.php",
       "summary": "Celebrating innovative photographic books. Three categories. $3,000 Book of the Year. Open worldwide.",
-      "email": ""
+      "email": "",
+      "ai": null
     },
     {
       "title": "Insight Foto Festival — Insight Out 2026",
@@ -8502,7 +8502,7 @@
       "resultsDate": "June 25, 2026",
       "dateAdded": "2026-03-18",
       "requirements": "1 image per category",
-      "submitUrl": "https://www.jalonangel.com/premio",
+      "submitUrl": null,
       "summary": "Three categories: Portrait, Travel, Migration & Borders. One photo per category. No AI. Zaragoza, Spain.",
       "email": "",
       "jury": []
