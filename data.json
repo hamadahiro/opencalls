@@ -1450,7 +1450,7 @@
     {
       "title": "Villa Lena Foundation — Artist Residency 2027",
       "org": "Villa Lena Foundation",
-      "deadline": "2026-04-30",
+      "deadline": "2026-05-03",
       "fee": "€21",
       "category": "residency",
       "description": "Residency program for artists of all disciplines in a 19th-century villa in Tuscany, Italy. Residencies run 4–5 weeks between April and October 2027. Includes studio space, accommodation, and half-board meals five days a week. Residency fee of €150/week covers room, studio, and meals. Artists must donate a completed work to the foundation's collection. Access to ceramic and wood workshops, screening room, and weekly excursions.",
@@ -9596,7 +9596,7 @@
       "slug": "noice-magazine-open-submissions",
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
-      "submitUrl": null,
+      "submitUrl": "https://noicemagazine.com/submit",
       "summary": "Print-to-order magazine with themed issues. Minimalism, social issues, and humor. Limited editions.",
       "email": "",
       "requirements": "Up to 20 images",
@@ -12805,6 +12805,7 @@
       "summary": "€5,000 production grant for 12 collectives from Latin America and Africa. Theme: time, memory, ancestral knowledge. Free.",
       "ai": null,
       "jury": [],
+      "requirements": "10–20 reference images",
       "dateAdded": "2026-04-29T19:28:14.818Z"
     },
     {
