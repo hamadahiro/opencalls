@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>SCAN International Photography Festival - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from SCAN International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="SCAN International Photography Festival open call, SCAN International Photography Festival call for entries, SCAN International Photography Festival submissions, SCAN International Photography Festival photography, SCAN International Photography Festival exhibition, SCAN International Photography Festival artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/scan-international-photography-festival/">
+  <title>No-Type - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from No-Type. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="No-Type open call, No-Type call for entries, No-Type submissions, No-Type photography, No-Type exhibition, No-Type artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/no-type/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="SCAN International Photography Festival - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from SCAN International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="No-Type - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from No-Type. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/scan-international-photography-festival/">
+  <meta property="og:url" content="https://opencalls.monographica.com/no-type/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "SCAN International Photography Festival - Open Calls",
-  "description": "Open calls and submission opportunities from SCAN International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/scan-international-photography-festival/",
+  "name": "No-Type - Open Calls",
+  "description": "Open calls and submission opportunities from No-Type. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/no-type/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -57,8 +57,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "SCAN International Photography Festival",
-      "item": "https://opencalls.monographica.com/scan-international-photography-festival/"
+      "name": "No-Type",
+      "item": "https://opencalls.monographica.com/no-type/"
     }
   ]
 }
@@ -104,13 +104,12 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>SCAN International Photography Festival</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from SCAN International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h1>No-Type</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from No-Type. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/scan-tarragona-full-contact-award-2026/">SCAN Tarragona — Full Contact Award 2026 &middot; SCAN International Photography Festival</a></h3><p>May 10, 2026 · Free</p><p>Free open call from SCAN Tarragona. 12 projects to Full Contact meeting; winner gets 2027 solo show + €900.</p></div>
-      <div class="static-call-item"><h3><a href="/scan-tarragona-talent-latent-2026/">SCAN Tarragona — Talent Latent 2026</a></h3><p>April 12, 2026 · Free</p><p>International festival open call. Theme: Metamorphosis. €500 fee for selected projects. Exhibition Oct-Nov 2026.</p></div>
+      <div class="static-call-item"><h3><a href="/no-type-monograph-no-01/">No-Type Monograph No. 01</a></h3><p>May 31, 2026 · $20</p><p>Fully-funded monograph publication from independent Chicago photo publisher No-Type. Shortlist gets website interviews.</p></div>
 
     </section>
 
@@ -127,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'SCAN International Photography Festival').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'No-Type').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
