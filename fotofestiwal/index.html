@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Photography Workshops & Education 2026 - Monographica</title>
-  <meta name="description" content="Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.">
-  <meta name="keywords" content="photography workshops, photography masterclass, call for entries education, photography mentoring, photography education, artist development, 2026">
-  <link rel="canonical" href="https://opencalls.monographica.com/education/">
+  <title>Fotofestiwal - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Fotofestiwal. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Fotofestiwal open call, Fotofestiwal call for entries, Fotofestiwal submissions, Fotofestiwal photography, Fotofestiwal exhibition, Fotofestiwal artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/fotofestiwal/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Photography Workshops & Education 2026 - Monographica">
-  <meta property="og:description" content="Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.">
+  <meta property="og:title" content="Fotofestiwal - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Fotofestiwal. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/education/">
+  <meta property="og:url" content="https://opencalls.monographica.com/fotofestiwal/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Photography Workshops & Education 2026",
-  "description": "Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.",
-  "url": "https://opencalls.monographica.com/education/",
+  "name": "Fotofestiwal - Open Calls",
+  "description": "Open calls and submission opportunities from Fotofestiwal. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/fotofestiwal/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Categories",
-      "item": "https://opencalls.monographica.com/categories/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Photography Workshops & Education",
-      "item": "https://opencalls.monographica.com/education/"
+      "name": "Fotofestiwal",
+      "item": "https://opencalls.monographica.com/fotofestiwal/"
     }
   ]
 }
@@ -103,17 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
-      <h1>Photography Workshops & Education</h1>
-      <h2 class="subtitle">Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Fotofestiwal</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Fotofestiwal. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/odesa-workshop-environmental-consequences-of-war/">Odesa Workshop — Environmental Consequences of War in Ukraine &middot; Inland</a></h3><p>May 10, 2026 · Free</p><p>Free 7-month hybrid workshop for Ukrainian photographers on war's environmental impact. €1,500 production grant.</p></div>
       <div class="static-call-item"><h3><a href="/lodz-photo-match-2026-portfolio-review-fotofestiwal/">Łódź Photo-Match 2026 Portfolio Review &middot; Fotofestiwal</a></h3><p>May 15, 2026 · Free</p><p>Free two-day portfolio review at Fotofestiwal Łódź. Twenty photographers meet 20 European curators.</p></div>
-      <div class="static-call-item"><h3><a href="/eddie-adams-workshop-2026/">Eddie Adams Workshop 2026</a></h3><p>May 24, 2026 · $40</p><p>Legendary 4-day photojournalism seminar. 100 selected from emerging photographers. Free once accepted.</p></div>
-      <div class="static-call-item"><h3><a href="/masterclasses-program-2026-2027-phmuseum/">Masterclasses Program 2026/2027 &middot; PhMuseum</a></h3><p>May 28, 2026 · Paid</p><p>Online masterclasses by Aaron Schuman, Charlie Engman, Erik Kessels, Salvatore Vitale, and Vasantha Yoganathan.</p></div>
-      <div class="static-call-item"><h3><a href="/cpg-mentorship-programme-2026-centre-de-la-photographie-gen-ve/">CPG Mentorship Programme 2026 &middot; Centre de la Photographie Genève</a></h3><p>March 22, 2026 · Free</p><p>1:1 mentoring with established photographers and curators over six months. CHF 500 project support included.</p></div>
 
     </section>
 
@@ -130,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.category === 'education').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Fotofestiwal').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
