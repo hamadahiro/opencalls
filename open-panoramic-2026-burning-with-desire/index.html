@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">Open call from Festival Panoràmic (10th anniversary edition) in Granollers, Barcelona and Terrassa. Theme Burning with Desire takes the bicentennial of photography as its starting point, positioning photography and cinema as practices of desire — for memory, justice, beauty, permanence. Three categories: still image (series or single works), audiovisual essay (5-18 min .mov/.mp4), and installation/other formats. Selected projects included in the festival's exhibition programme, October 15 – December 27, 2026. Open to artists and collectives of any nationality, 18+, individually or collectively. Projects must be created between 2022 and 2026. One project per category maximum.</p>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Festival exhibition (Granollers, Barcelona, Terrassa) prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 25, 2026">May 25, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/spain/" title="Granollers, Barcelona &amp; Terrassa, Spain"><span class="tag-front">Granollers, Barcelona &amp;</span> <span class="tag-back">Terrassa, Spain</span></a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Project portfolio</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:contacte@festivalpanoramic.cat" target="_blank" rel="nofollow noopener">Online form</a></span></div></div>
 
       <div class="call-detail-jury">
@@ -139,7 +139,7 @@
 
   <script>
     const CURRENT_SLUG = 'open-panoramic-2026-burning-with-desire';
-    const CURRENT_CALL = {"prize":"Festival exhibition (Granollers, Barcelona, Terrassa)","category":"exhibition","org":"Festival Panoràmic","location":"Granollers, Barcelona & Terrassa, Spain","fee":"Free","deadline":"2026-05-25","resultsDate":"","instagram":"@panoramicfestival","eligibility":["18-plus"],"jury":[],"submitVia":"Online form","submitUrl":"https://form.jotform.com/GrisartLab/FestivalPanoramic-OpenPanoramic26","email": "","ai":"","requirements":"Project portfolio"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Festival Panoràmic","location":"Granollers, Barcelona & Terrassa, Spain","fee":"Free","deadline":"2026-05-25","resultsDate":"","instagram":"@panoramicfestival","eligibility":["18-plus"],"jury":[],"submitVia":"Online form","submitUrl":"https://form.jotform.com/GrisartLab/FestivalPanoramic-OpenPanoramic26","email": "","ai":"","requirements":"Project portfolio"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -149,7 +149,7 @@
       var u = 'https://festivalpanoramic.cat/en/project/open-panoramic-2026-open-call/';
       var o = 'Festival Panoràmic';
       var dl = new Date('2026-05-25T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Festival exhibition (Granollers, Barcelona, Terrassa)') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
