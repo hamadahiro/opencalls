@@ -11399,7 +11399,8 @@
       "location": "San Francisco, CA, USA",
       "prize": "$15,000",
       "eligibility": [
-        "united-states"
+        "united-states",
+        "bay-area"
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://artadia.submittable.com/submit",
@@ -13144,6 +13145,7 @@
       "orgInTitle": false,
       "summary": "Black Box Gallery Portland open theme show. 26 prints exhibited + 50 online + Blurb catalog. Free framing.",
       "ai": null,
+      "resultsDate": "~Late June 2026",
       "dateAdded": "2026-05-01T11:19:02.955Z"
     },
     {
