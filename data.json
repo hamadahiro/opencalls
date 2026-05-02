@@ -2,6 +2,58 @@
   "lastUpdated": "2026-04-24",
   "calls": [
     {
+      "title": "Rotlicht Festival 2026 — Anthropocene: Hybrid Realities",
+      "org": "Rotlicht Festival",
+      "deadline": "2026-06-30",
+      "fee": "€20",
+      "category": "photography",
+      "description": "International open call from the Rotlicht Festival for Analog Photography in Vienna. Theme: Anthropocene: Hybrid Realities — submissions engaging with the tensions of the human-shaped epoch through experimental, critical, and process-oriented approaches in analog and hybrid photography. Purely digital work is excluded; at least one analog process must be involved. Open to anyone aged 16+ not affiliated with the festival. Photos must be from the last 5 years (2021–2026). Submit a single series or project (max 15 images). 20 winners are exhibited at the Academy of Fine Arts Vienna, each receiving a €250 honorarium, €150 travel allowance, festival pass, and inclusion in the official catalogue. The Grand Prix winner receives an additional solo exhibition, €250, and festival cover feature. Winners announced beginning of September 2026.",
+      "url": "https://www.rotlicht-festival.at/open-call",
+      "instagram": "@rotlichtfestival",
+      "location": "Vienna, Austria",
+      "prize": "€250 + €150 travel + exhibition + catalogue (Grand Prix: solo show)",
+      "eligibility": [
+        "16-plus",
+        "analog-photography"
+      ],
+      "submitVia": "Official website",
+      "requirements": "Up to 15 images",
+      "slug": "rotlicht-festival-2026-anthropocene-hybrid-realities",
+      "orgInTitle": true,
+      "summary": "Open call for analog photography festival in Vienna. Theme: Anthropocene. 20 winners exhibited; €250 honorarium + €150 travel.",
+      "resultsDate": "2026-09",
+      "ai": "Not accepted",
+      "jury": [],
+      "dateAdded": "2026-05-02T23:22:18.080Z"
+    },
+    {
+      "title": "AAP Magazine #58 Black & White",
+      "org": "All About Photo",
+      "deadline": "2026-06-02",
+      "fee": "$30–$35",
+      "category": "zine",
+      "description": "Black & white theme issue of AAP Magazine. Open to photographers 18+; submit a cohesive series of at least 3 images (up to 40). 25 winners published in AAP Magazine Volume 58 with online gallery placement and a free copy. Cash prizes: $500 (1st), $300 (2nd), $200 (3rd). Early-bird fee ($30 for first 3 images, $5 each additional) ends May 15, 2026; regular fee $35 thereafter. Winners announced approximately July 15, 2026.",
+      "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=222",
+      "instagram": "@allaboutphoto",
+      "location": "Online",
+      "prize": "$1,000 + publication",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=222",
+      "requirements": "Up to 40 images (min 3)",
+      "slug": "aap-magazine-58-black-and-white-all-about-photo",
+      "orgInTitle": false,
+      "summary": "B&W themed issue of AAP Magazine. $1,000 cash + publication. Up to 40 images, min 3 as a cohesive series.",
+      "resultsDate": "2026-07-15",
+      "ai": "Not accepted",
+      "jury": [
+        "Sandrine Hermand-Grisel, Founder & Editor, All About Photo"
+      ],
+      "dateAdded": "2026-05-02T23:22:18.080Z"
+    },
+    {
       "title": "Prairie Ronde Artist Residency — Fall 2026",
       "org": "Prairie Ronde Artist Residency",
       "deadline": "2026-06-15",
