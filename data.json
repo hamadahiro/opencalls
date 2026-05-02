@@ -13200,6 +13200,56 @@
       "ai": null,
       "email": "",
       "dateAdded": "2026-05-01T23:26:59.323Z"
+    },
+    {
+      "title": "Transforming Landscapes — 20/20 Photo Festival 2026",
+      "org": "20/20 Photo Festival",
+      "deadline": "2026-06-01",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "International juried exhibition for analog photographers exploring how American landscapes have evolved over 250 years — physical, technological, societal, political, scientific, and artistic. Open exclusively to work made with analog photographic methods including film types (color negative, black-and-white, slide, instant) and formats (35mm, 120, 4×5 large format, 110, 126). Selected works exhibited at Cherry Street Pier during the 20/20 Photo Festival in Philadelphia, September 10–13, 2026. Juried by photographer Andrew Piccone.",
+      "url": "https://www.2020photofestival.org/call-for-entry-2026",
+      "instagram": "@2020photofestival",
+      "location": "Philadelphia, PA, USA",
+      "prize": "$500 + $250 + $150",
+      "eligibility": [
+        "analog-photography"
+      ],
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/iiLRh4QWTUXBAQbZA",
+      "slug": "transforming-landscapes-20-20-photo-festival-2026",
+      "orgInTitle": true,
+      "summary": "Analog-only juried festival exhibition exploring 250 years of American landscapes. Cherry Street Pier, Philadelphia. Juror: Andrew Piccone.",
+      "email": "",
+      "ai": null,
+      "jury": [
+        "Andrew Piccone, Photographer"
+      ],
+      "dateAdded": "2026-05-02T07:31:50.009Z"
+    },
+    {
+      "title": "Lens Work: Trees and Water",
+      "org": "Black Box Gallery",
+      "deadline": "2026-07-10",
+      "fee": "$40",
+      "category": "exhibition",
+      "description": "Juried group exhibition exploring trees and water as subjects in contemporary photography — dynamic and diverse imagery, including 'magical and poetic pictures' celebrating visual composition and contemporary photographic technique. Selected work shown in physical gallery and online annex; included in printed catalog. Free printing, matting, and framing for accepted artists. 50/50 sales commission. Exhibition August 1–25, 2026 in Portland, OR. Juror: Todd Johnson, Black Box Gallery founder. Open worldwide to amateur and professional photographers.",
+      "url": "https://blackboxgallery.com/Lens%20Work-Trees%20and%20Water%202026-CFE.html",
+      "instagram": "@blackboxgallerypdx",
+      "location": "Portland, OR, USA",
+      "prize": "Exhibition + free framing",
+      "eligibility": [],
+      "submitVia": "Email",
+      "requirements": "Up to 5 images",
+      "slug": "lens-work-trees-and-water-black-box-gallery",
+      "orgInTitle": false,
+      "summary": "Black Box Gallery juried exhibition exploring trees and water. Free printing/framing. Portland, OR. Juror: Todd Johnson.",
+      "email": "",
+      "ai": null,
+      "jury": [
+        "Todd Johnson, Founder, Black Box Gallery"
+      ],
+      "dateAdded": "2026-05-02T07:31:50.009Z"
     }
   ]
 }
