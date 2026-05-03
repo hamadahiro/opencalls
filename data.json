@@ -19,8 +19,10 @@
         "lgbtq"
       ],
       "submitVia": "Official website",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdmQ6VgKMg8MmDbtBvjlH7JjY3g6jNRWHaC406W05KG9h1HSw/viewform",
       "email": "",
       "requirements": "Up to 20 images",
+      "resultsDate": "Aug–Sep 2026",
       "slug": "sonntag-grant-2026-photobook-open-call",
       "orgInTitle": true,
       "summary": "Berlin photobook open call for FLINTA artists, in collaboration with Replika Publishing. Winner gets photobook with 350+ print run.",
@@ -39,7 +41,9 @@
       "instagram": "@ucrossfoundation",
       "location": "Ucross, WY, USA",
       "prize": "2–6 week residency",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Submittable",
       "submitUrl": "https://ucrossfoundation.submittable.com/submit",
       "requirements": "Up to 10 images",
@@ -95,6 +99,7 @@
       "submitVia": "Email",
       "email": "",
       "requirements": "Up to 5 images",
+      "resultsDate": "Mid-May 2026",
       "slug": "camera-work-shadow-and-light-2026-black-box-gallery",
       "orgInTitle": false,
       "summary": "Portland gallery juried photography show exploring shadow and light. Free printing, matting, and framing for the 26 accepted works.",
@@ -3085,6 +3090,7 @@
         "professional"
       ],
       "submitVia": "Visa pour l'Image",
+      "requirements": "10–20 images",
       "slug": "camille-lepage-award-2026",
       "orgInTitle": true,
       "summary": "€8,000 prize for a photojournalist on a long-term reporting project. Free entry, worldwide. Presented at Visa pour l'Image-Perpignan.",
@@ -7010,7 +7016,7 @@
       "slug": "tomorrow-s-talent-open-submissions-booooooom",
       "orgInTitle": false,
       "dateAdded": "2026-03-15",
-      "submitUrl": null,
+      "submitUrl": "https://www.booooooom.com/memberships/#signup",
       "summary": "Global platform featuring emerging artists. Potential feature and inclusion in book series.",
       "email": "",
       "ai": null,
