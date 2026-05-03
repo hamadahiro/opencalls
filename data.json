@@ -11,12 +11,14 @@
       "url": "https://www.rotlicht-festival.at/open-call",
       "instagram": "@rotlichtfestival",
       "location": "Vienna, Austria",
-      "prize": "€250 + €150 travel + exhibition + catalogue (Grand Prix: solo show)",
+      "prize": "€250 + exhibition",
       "eligibility": [
         "16-plus",
         "analog-photography"
       ],
       "submitVia": "Official website",
+      "submitUrl": "https://www.rotlicht-festival.at/open-call-submission/",
+      "email": "",
       "requirements": "Up to 15 images",
       "slug": "rotlicht-festival-2026-anthropocene-hybrid-realities",
       "orgInTitle": true,
@@ -51,6 +53,7 @@
       "jury": [
         "Sandrine Hermand-Grisel, Founder & Editor, All About Photo"
       ],
+      "email": "",
       "dateAdded": "2026-05-02T23:22:18.080Z"
     },
     {
@@ -794,7 +797,7 @@
       "dateAdded": "2026-04-17T23:18:00.338Z",
       "ai": null,
       "jury": [],
-      "resultsDate": "~April–May 2026"
+      "resultsDate": null
     },
     {
       "title": "L'OLTRE 2026",
