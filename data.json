@@ -9509,7 +9509,7 @@
       "orgInTitle": false,
       "dateAdded": "2026-03-21",
       "requirements": "Up to 20 artworks",
-      "submitUrl": "https://apply.artstoheartsproject.com/open-call/100-emerging-artworks-of-2026",
+      "submitUrl": null,
       "summary": "100 artists selected for a hardcover collector's book distributed globally. $1,000 top prize. All mediums.",
       "email": "",
       "ai": null,
@@ -9751,7 +9751,7 @@
         "Gianluca De Dominici, Writer & Photography Editor"
       ],
       "resultsDate": "October 16, 2026",
-      "submitUrl": "https://romaefestival.com/iscrizione-al-contest/",
+      "submitUrl": null,
       "summary": "Five categories including Smartphone and AI-Generated. Finalists exhibited in Rome. Leica-sponsored prizes.",
       "email": ""
     },
@@ -13021,7 +13021,7 @@
         "Juliana Naufel, Co-Founder, Photo Trouvée Magazine",
         "Twiggy Boyer, Co-Founder, Photo Trouvée Magazine"
       ],
-      "resultsDate": null,
+      "resultsDate": "Late June 2026",
       "dateAdded": "2026-04-25T03:08:38.697Z"
     },
     {
@@ -13617,6 +13617,7 @@
       "category": "photography",
       "description": "24th edition of this international photography prize organized by Hotusa Group in Barcelona. 2026 theme: Barcelona, World Capital of Architecture, marking the city's UNESCO designation. Submit up to three photographic triptychs that form a cohesive visual narrative on the city's architectural identity. Named in memory of architect Josep Juanpere (1953–2025), designer of Hotel Grand Marina. First prize: €5,000 + trophy. Second prize: €3,000 + trophy. Eight finalists receive trophies and free stays at Eurostars hotels.",
       "url": "https://www.eurostarshotels.com/eurostars-grand-marina/premio-de-fotografia.html",
+      "instagram": "@eurostarshotels",
       "location": "Barcelona, Spain",
       "prize": "€5,000 (1st), €3,000 (2nd)",
       "eligibility": [
