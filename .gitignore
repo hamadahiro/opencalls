@@ -4,3 +4,4 @@ node_modules/
 scripts/
 data.json.pre-update
 *.pre-update
+*.pre-verify
