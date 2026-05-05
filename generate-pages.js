@@ -599,7 +599,10 @@ function buildJsonLd(call) {
     "endDate": call.deadline === 'Continuous' ? undefined : call.deadline,
     "isAccessibleForFree": call.fee ? call.fee.toLowerCase().startsWith('free') : undefined
   };
-  if (call.dateAdded) ld.startDate = call.dateAdded.split('T')[0];
+  if (call.dateAdded) {
+    const start = call.dateAdded.split('T')[0];
+    ld.startDate = (ld.endDate && start > ld.endDate) ? ld.endDate : start;
+  }
   // Clean undefined values
   Object.keys(ld).forEach(k => { if (ld[k] === undefined) delete ld[k]; });
   return JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
