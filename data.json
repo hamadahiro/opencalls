@@ -134,7 +134,7 @@
       "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Picter",
-      "submitUrl": "https://site.picter.com/rencontres-marrakech-off-arles-2026",
+      "submitUrl": "https://app.picter.com/contests/3e121d62-fac6-4e2e-b0d7-10da53feba10/start",
       "requirements": "10–20 images",
       "slug": "rencontres-marrakech-off-arles-2026-open-call",
       "orgInTitle": false,
@@ -637,7 +637,9 @@
       "instagram": "@yaddotoday",
       "location": "Saratoga Springs, NY, USA",
       "prize": "Residency",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "SlideRoom",
       "submitUrl": "https://yaddo.slideroom.com",
       "email": "",
@@ -13002,7 +13004,9 @@
       "instagram": "@slowexposures",
       "location": "Zebulon, GA, USA",
       "prize": "Exhibition in rural Georgia",
-      "eligibility": [],
+      "eligibility": [
+        "united-states"
+      ],
       "jury": [
         "Dennis Kiel",
         "Coco Conroy"
