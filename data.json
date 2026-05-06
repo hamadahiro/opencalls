@@ -46,6 +46,8 @@
       "orgInTitle": true,
       "summary": "Argentine indie photo magazine's printed edition open call. Free theme, $5 USD international fee, July 2026 publication.",
       "ai": null,
+      "email": "",
+      "resultsDate": null,
       "dateAdded": "2026-05-06T03:22:15.440Z"
     },
     {
@@ -60,7 +62,8 @@
       "location": "The Hague, Netherlands",
       "prize": "Curated group exhibition",
       "eligibility": [],
-      "submitVia": "Online form",
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/6kmd3GL7jSU8n23Q7",
       "requirements": "One portfolio link",
       "resultsDate": "2026-06-20",
       "jury": [],
@@ -13536,6 +13539,9 @@
       "email": "",
       "requirements": "Min 15 images",
       "summary": "Fashion and editorial photography for Issue 72 of this London fashion magazine. Issue releases June 21, 2026.",
+      "ai": null,
+      "jury": [],
+      "resultsDate": null,
       "dateAdded": "2026-04-30T23:11:55.221Z"
     },
     {
@@ -13907,7 +13913,13 @@
       "orgInTitle": true,
       "summary": "2–4 week summer or winter residency in upstate NY. Photography eligible. Sliding-scale fee $0–$900; private bedroom + studio.",
       "resultsDate": "Early October 2026",
-      "jury": [],
+      "jury": [
+        "Eve Biddle, Co-Director, Wassaic Project",
+        "Bowie Zunino, Co-Director, Wassaic Project",
+        "Jeff Barnett-Winsby, Co-Director, Wassaic Project",
+        "Will Hutnick, Director of Artistic Programming",
+        "Danielle Klebes, Assistant Director of Exhibitions and Residency"
+      ],
       "dateAdded": "2026-05-05T03:12:47.484Z"
     },
     {
