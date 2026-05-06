@@ -1908,7 +1908,7 @@
         "united-states"
       ],
       "submitVia": "SlideRoom",
-      "submitUrl": "https://loghaven.slideroom.com/",
+      "submitUrl": null,
       "slug": "loghaven-artist-residency-2027",
       "orgInTitle": true,
       "requirements": "8 images",
@@ -1918,8 +1918,7 @@
       "resultsDate": "By November 1, 2026",
       "dateAdded": "2026-04-06T15:09:35Z",
       "ai": null,
-      "jury": [],
-      "submitUrl": null
+      "jury": []
     },
     {
       "title": "FMoPA 2026 International Photography Competition",
@@ -14049,6 +14048,54 @@
       "email": "",
       "resultsDate": "August 10, 2026",
       "dateAdded": "2026-05-05T15:11:03.920Z"
+    },
+    {
+      "title": "Quinn Emanuel Los Angeles Artist-in-Residence 2026",
+      "org": "Quinn Emanuel",
+      "deadline": "2026-05-14",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Four-month studio residency at Quinn Emanuel's Los Angeles office for emerging and mid-career artists working in any discipline, including photography. The selected artist receives $5,000 per month for four months ($20,000 total) plus an art materials allowance of up to $1,500. The residency runs September–December 2026, followed by a one-month exhibition. The studio is located within the Quinn Emanuel LA office with 24/7 keycard access, parking, and full firm support. At least one work from the residency will be incorporated into the firm's permanent collection. Open to artists living in greater Los Angeles only; international applicants accepted if they secure their own visas. Preference given to underrepresented artists in early/mid-career stages. Submit a CV, an 8–10 image PDF portfolio, and a project proposal (one PDF, max 20MB) by 11:59pm PST May 14, 2026.",
+      "url": "https://www.quinnemanuel.com/artists-in-residence/our-participating-offices/los-angeles-ca/",
+      "location": "Los Angeles, CA, USA",
+      "prize": "$20,000 stipend + $1,500 materials",
+      "eligibility": [
+        "los-angeles",
+        "emerging"
+      ],
+      "submitVia": "Email",
+      "email": "",
+      "requirements": "8–10 images",
+      "slug": "quinn-emanuel-los-angeles-artist-in-residence-2026",
+      "orgInTitle": true,
+      "summary": "$20,000 + $1,500 materials. 4-month studio residency at Quinn Emanuel LA office. Open to all media including photography. Greater LA only.",
+      "jury": [],
+      "ai": null,
+      "dateAdded": "2026-05-06T19:08:33.549Z"
+    },
+    {
+      "title": "Fundación Botín Art Grants 2026/2027",
+      "org": "Fundación Botín",
+      "deadline": "2026-05-08",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Six annual visual arts grants of €23,000 each to support a research project or training in the visual arts. Photography is explicitly included alongside drawing, film/video/new media, mixed-media, painting, sculpture, and craft. Grants run for nine months and cover living expenses, travel, accommodation, studio rental, equipment, and production costs, plus medical insurance for recipients travelling outside their country of residence. One grant prioritizes Spanish artists or Spain residents (5+ years) under age 30 relocating abroad. Applications open to individual artists of any nationality; project must involve practical artistic work, not theoretical study. Online registration is followed by postal submission of up to 40 single-sided A4 pages including ID, CV (3 pages max), project description (10 pages max), and graphic documentation. Applications must be postmarked by Friday, May 8, 2026 (received until May 22 if postmarked by deadline). Results announced before July 17, 2026. Public exhibition at Centro Botín; possible acquisitions for the Foundation's Collection.",
+      "url": "https://fundacionbotin.org/en/grants-and-calls-for-applications/plastic-arts-grants/",
+      "location": "Santander, Spain (international applicants)",
+      "prize": "€23,000",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Postal mail",
+      "submitUrl": "https://www.fundacionbotin.org/en/grants-and-calls-for-applications",
+      "requirements": "Up to 40 A4 pages",
+      "slug": "fundacion-botin-art-grants-2026-2027",
+      "orgInTitle": true,
+      "summary": "Six €23,000 nine-month research grants for international visual artists, photography included. Postal application postmarked by May 8.",
+      "resultsDate": "Before July 17, 2026",
+      "jury": [],
+      "ai": null,
+      "dateAdded": "2026-05-06T19:08:33.549Z"
     }
   ]
 }
