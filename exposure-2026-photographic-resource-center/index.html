@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">Photographic Resource Center's 30th annual members' juried exhibition. Twelve photographers selected to exhibit three works each. Juried by Audrey Lee Sands, Richard L. Menschel Associate Curator of Photography at Harvard Art Museums. Exhibition runs July 31 – September 6, 2026 at University Hall, Lesley University in Cambridge, MA. Applicants must be PRC members through September. Awards: Juror's Choice Award ($200) and two PRC Choice Awards ($100 each).</p>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">$200 Juror's Choice prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">2× $100 PRC Choice prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">$400 in awards prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/june-2026/" title="June 15, 2026">June 15, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35">$35</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/membership-required/" title="Membership required">Membership required</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/massachusetts/" title="Cambridge, MA">Cambridge, MA</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">3 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:info@prcboston.org" target="_blank" rel="nofollow noopener">Google Form</a></span></div></div>
 
       <div class="call-detail-jury">
@@ -143,7 +143,7 @@
 
   <script>
     const CURRENT_SLUG = 'exposure-2026-photographic-resource-center';
-    const CURRENT_CALL = {"prize":"$200 Juror's Choice + 2× $100 PRC Choice + exhibition","category":"exhibition","org":"Photographic Resource Center","location":"Cambridge, MA, USA","fee":"$35","deadline":"2026-06-15","resultsDate":"","instagram":"@prcboston","eligibility":["membership-required"],"jury":["Audrey Lee Sands, Richard L. Menschel Associate Curator of Photography, Harvard Art Museums"],"submitVia":"Google Form","submitUrl":"https://forms.gle/eAPtTXyVjrRtY3ai7","email": "","ai":"","requirements":"3 images"};
+    const CURRENT_CALL = {"prize":"$400 in awards + Exhibition","category":"exhibition","org":"Photographic Resource Center","location":"Cambridge, MA, USA","fee":"$35","deadline":"2026-06-15","resultsDate":"","instagram":"@prcboston","eligibility":["membership-required"],"jury":["Audrey Lee Sands, Richard L. Menschel Associate Curator of Photography, Harvard Art Museums"],"submitVia":"Google Form","submitUrl":"https://forms.gle/eAPtTXyVjrRtY3ai7","email": "","ai":"","requirements":"3 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -153,7 +153,7 @@
       var u = 'https://www.prcboston.org/exposure-2026-call-for-entry/';
       var o = 'Photographic Resource Center';
       var dl = new Date('2026-06-15T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$200 Juror\'s Choice + 2× $100 PRC Choice + exhibition') + '\\nEntry fee: ' + icsE('$35');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$400 in awards + Exhibition') + '\\nEntry fee: ' + icsE('$35');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
