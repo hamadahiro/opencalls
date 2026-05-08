@@ -7410,7 +7410,13 @@
       "summary": "Annual celebration of plant-based photographic printing processes. Entries open August through October.",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "World Anthotype Day is an annual celebration of the anthotype process — a 19th-century photographic technique that uses plant-based emulsions and sunlight to make images. The event runs from August 1 through the last Saturday in October each year, with submissions free and open to anyone working with the process. The 2026 cycle closes October 31.",
+        "Entries require three components: a written description of the process used (including the plant material, exposure time, and any layering), the final anthotype image at 2,500 pixels minimum, and a photograph of the source plant taken before processing. Each non-member submits a single print, made within the prior twelve months. Files go via WeTransfer, Dropbox, or Google Drive to anthotype@alternativephotography.com.",
+        "Selected work is featured across AlternativePhotography.com (~85,000 monthly visitors), the site's Facebook (12,000+ followers), Instagram (14,000), and YouTube channels. Exceptional images are considered for inclusion in the Anthotype Emulsions book series. There is no cash prize — recognition is editorial.",
+        "The event was originally held in August but moved to October after a participant survey: 99% of respondents preferred the later window for longer exposure times and access to ripe plant material. AlternativePhotography.com is a non-profit and runs the event without sponsor backing. The site's resource library lists 25+ commonly-used plants — beetroot, blackberry, butterfly pea, turmeric, walnut — and explicitly encourages experimentation with unusual emulsions."
+      ]
     },
     {
       "title": "Innovate Grants - Quarterly Grants",
@@ -8550,7 +8556,13 @@
       "submitUrl": "https://chromaticawards.com/login/",
       "summary": "International color competition across 20 categories. Separate Professional and Amateur divisions.",
       "email": "",
-      "ai": null
+      "ai": null,
+      "prose": [
+        "Chromatic Photography Awards is the color counterpart to several long-running monochrome competitions — entries must be in color, and black-and-white work is explicitly excluded. The 2026 cycle is the awards' 8th edition. Submissions are open to professionals and amateurs worldwide, with no age restriction stated on the official information page.",
+        "Entries can be made in 20 categories: Abstract, Architecture, Cityscapes, Conceptual, Culture, Environmental, Fashion and Beauty, Fine Art, Landscapes, Nature, Nudes, People, Photojournalism, Photomanipulation, Portrait, Sports, Still Life, Street, Travel, and Wildlife and Animal. Category winners receive Gold, Silver, or Bronze medals. The Professional and Amateur top winners receive $2,000 and $1,000 respectively, plus inclusion in the awards' Official Book. Honorable mentions receive certificates and badges.",
+        "Entry fees follow a tiered structure: $17 amateur / $22 professional per entry at the early deadline (July 19, 2026), rising to $22 amateur / $27 professional at final deadline (October 25, 2026). Winners are announced December 20, 2026.",
+        "The jury is composed of magazine editors, gallery curators, professional agents, and other industry-side professionals — names rotate per edition and are listed on the awards site. The competition does not state an AI policy on its information page, so applicants making AI-assisted work should email organizers before entering."
+      ]
     },
     {
       "title": "PX3 Prix de la Photographie Paris 2026",
@@ -9737,7 +9749,8 @@
       ],
       "submitUrl": "https://nyartcompetitions.com/photography/entries/register/",
       "summary": "Exhibition at Agora Gallery in Chelsea, New York. 30 photographers. Five $500 cash prizes.",
-      "email": ""
+      "email": "",
+      "proseSkipped": "official site (nyartcompetitions.com) and gallery site (agora-gallery.com) both blocked WebFetch — revisit when reachable; data.json has substantial detail to use later"
     },
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
@@ -10638,7 +10651,12 @@
       "submitUrl": "https://monoawards.com/",
       "summary": "International B&W competition with 14 categories. Professional and amateur divisions. Annual book.",
       "email": "",
-      "ai": null
+      "ai": null,
+      "prose": [
+        "Monochrome Photography Awards is a competition exclusively for black-and-white photography, founded in 2014 and run annually. Entries are split between two main category groups — Professional and Amateur — with subcategories under each (Architecture, Fine Art, Photojournalism, Portrait, and others). Winners receive the titles \"Monochrome Photographer of the Year\" (Professional) and \"Monochrome Discovery of the Year\" (Amateur).",
+        "The cash prize pool is $3,000 across the two main categories, with category and subcategory medals stacking on top. Selected work is published in the Monochrome Photography Awards Annual Book — a print collection of first-, second-, and third-place winners plus honorable mention names — which functions as the long-term archive of each edition.",
+        "Submission requirements are tight: JPEG at 1200 pixels on the longest side, sRGB or Adobe98 8-bit, no watermarks or borders, no special characters in filenames. The entry portal is profile-based — applicants create an account, upload, and submit only after fees are paid. Early-deadline entries close July 5, 2026; final deadline runs through to November 15, with results announced January 3, 2027."
+      ]
     },
     {
       "title": "Annual Photography Awards 2026",
@@ -10690,7 +10708,12 @@
       "submitUrl": "https://annualphotoawards.com/sign-in/",
       "summary": "8th edition. Five main categories, 25 subcategories. Looking for bold and innovative approaches.",
       "ai": null,
-      "email": null
+      "email": null,
+      "prose": [
+        "Now in its eighth edition, Annual Photography Awards is a worldwide competition open to professionals, amateurs, and students aged 18 and over. Submissions are accepted across five main categories — Architecture, Fine Art, Nature, People, and Special — with 25 subcategories in total. The Special category covers Aerial & Drone, Analog/Film, Minimalism, Night Photography, and Open; the People category includes Documentary, Portrait, Street, Body & Nudes, and Travel & Culture. Each subcategory has its own award track, so a photographer can be a category winner without competing across genres.",
+        "The cash prize pool is $5,000, distributed as a $2,500 Grand Prize plus five $500 Category Photographer of the Year awards. Beyond cash, winners and honorable mentions receive downloadable medals and certificates and inclusion in an online gallery on the awards site. Entries are judged anonymously by a panel of 20+ international photographers.",
+        "Entry fees follow a tiered structure: $25 for a single image or $35 for a series of up to 8 images at the early bird rate (deadline June 7, 2026), rising to $30 single / $40 series at final deadline (December 13, 2026). The contest is restricted to legal worldwide residents who are the original authors of submitted work. There is no nomination process; artists submit directly through the awards site."
+      ]
     },
     {
       "title": "HER.SELF",
