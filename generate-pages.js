@@ -628,7 +628,9 @@ function generatePage(call, cssVersion) {
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
-      <p class="call-detail-description">${escapeHtml(call.description)}</p>
+${call.prose && call.prose.length
+  ? call.prose.map(p => `      <p class="call-detail-description">${escapeHtml(p)}</p>`).join('\n')
+  : `      <p class="call-detail-description">${escapeHtml(call.description)}</p>`}
 ${call.winners && call.winners.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
@@ -650,11 +652,7 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
       </div>
 ${call.instagram ? `      <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/${escapeHtml(call.instagram.replace('@', ''))}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a></div>` : ''}
     </section>
-${call.prose && call.prose.length ? `
-    <section class="call-detail">
-${call.prose.map(p => `      <p class="call-detail-description">${escapeHtml(p)}</p>`).join('\n')}
-    </section>
-` : ''}
+
     <section class="related-calls">
       <div id="similarCalls">${buildStaticSimilarCalls(call, data.calls)}</div>
     </section>
