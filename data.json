@@ -4227,7 +4227,12 @@
       "submitUrl": "https://emerging.fotografiska.com/explore",
       "summary": "Multiple open calls for emerging photographers. Exhibitions at Fotografiska museums and the UN Headquarters.",
       "email": "",
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "Fotografiska's emerging program is structured around continuous open calls plus rotating themed cycles. The \"Foto of the Day\" track runs weekly: seven images selected from open submissions, featured on Fotografiska's website and social channels. Themed calls run alongside it, with regional eligibility for some — Sweden-only for the Stockholm shows, Baltics-and-Finland for Tallinn — and global eligibility for others.",
+        "Selected work has been shown at Fotografiska's museum locations in Berlin, Stockholm, and Tallinn. The platform doesn't publish guaranteed compensation; outcomes vary by call. Submissions are free, limited to three images per cycle, and AI-generated work is excluded.",
+        "The platform's permanent jury includes James Nachtwey and Pauline Benthede, Fotografiska's VP of Artistic Direction. Themed calls bring in additional jurors specific to each theme. The \"Home\" call is currently open with a July 12, 2026 deadline; \"Foto of the Day\" remains continuous."
+      ]
     },
     {
       "title": "PORTRAITS — Hellerau Photography Award 2026",
@@ -4630,7 +4635,7 @@
       "deadline": "Continuous",
       "fee": "€850/month",
       "category": "residency",
-      "description": "Residency in Skagaströnd, Iceland for Sept/Oct/Nov 2026. Private bedroom, shared studio and library. 1–3 month stays. Open to artists, musicians, writers, and researchers. Remote location with opportunities for artistic and cultural exchange.",
+      "description": "Residency in Skagaströnd, Iceland for Sept/Oct/Nov 2026. Private bedroom, shared studio and library. 1–6 month stays. Open to artists, musicians, writers, and researchers. Remote location with opportunities for artistic and cultural exchange.",
       "url": "https://neslist.is/apply",
       "instagram": "@nesartistresidency",
       "location": "Skagaströnd, Iceland",
@@ -4642,11 +4647,16 @@
       "dateAdded": "2026-03-16",
       "requirements": "1 PDF",
       "submitUrl": "https://nes.slideroom.com/#/permalink/program/88722",
-      "summary": "Residency in Skagaströnd, Iceland. 1-3 month stays. Private bedroom, shared studio. Artists and writers.",
+      "summary": "Residency in Skagaströnd, Iceland. 1-6 month stays. Private bedroom, shared studio. Artists and writers.",
       "email": "",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "Nes is a 1- to 6-month residency in Skagaströnd, a small fishing town on Iceland's north coast. The program is deliberately interdisciplinary: the same campus hosts visual artists, writers, musicians, dancers, and researchers, with discipline-specific spaces — a research library for writers, the BioPol dance studio, a ceramics workshop, and access to the local music school. Visual artists receive an individual workspace inside a shared open-plan studio.",
+        "The fall 2026 cycle covers September, October, and November; private bedrooms and shared common areas are included. Monthly cost is €850. The application fee is $15 and submissions go through SlideRoom; selection prioritizes \"curiosity and experimentation\" over conventional credentials. Nes does not currently offer scholarships or stipends — artists fund their own stay.",
+        "The location is remote: Skagaströnd has a population of about 500, and the residency draws on that isolation as part of its program. Past residents have used the time for self-directed projects, with optional artistic and cultural exchange built into the schedule."
+      ]
     },
     {
       "title": "SCAN Tarragona — Talent Latent 2026",
@@ -7426,7 +7436,8 @@
       "ai": null,
       "jury": [],
       "email": null,
-      "resultsDate": null
+      "resultsDate": null,
+      "proseSkipped": "official site about page is empty placeholder; application page only shows current cycle prize structure — not enough source material for substantive prose"
     },
     {
       "title": "Analog Forever Magazine — Calls for Entry",
@@ -7454,7 +7465,12 @@
       "summary": "High-quality print magazine for film and analog photography. Also runs themed online group exhibitions.",
       "email": "",
       "ai": null,
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "Analog Forever runs roughly four cycles per year, each with a different theme and guest curator. Recent themes include \"Remnants\" (loss and what remains after absence), \"Nonconformity,\" \"Regional Resonance,\" \"Harmony,\" and \"Wild.\" Themes are loosely interpreted; submissions stay limited to film and analog processes — digital work is not accepted.",
+        "Selected work appears in online themed exhibitions and, periodically, in print editions. Edition 11 is described as the magazine's First Annual Journal — a 150-page softcover printed at 8×10 inches. Submissions are free, with one image per applicant per call. AI-generated work falls outside the magazine's editorial scope.",
+        "The magazine is run by Michael Behlen as founder and primary curator, with rotating guest curators drawn from photography institutions. Submissions are made via JotForm. Selected work is featured in the online exhibition for several months before the next cycle takes over, and standout images move into the printed edition."
+      ]
     },
     {
       "title": "Open Doors Takeovers",
@@ -7480,7 +7496,8 @@
       "ai": null,
       "jury": [],
       "resultsDate": null,
-      "requirements": null
+      "requirements": null,
+      "proseSkipped": "official site has no description of the Takeovers program; submissions go through Instagram DM, no public source material to draft from"
     },
     {
       "title": "Tomorrow's Talent - Open Submissions",
