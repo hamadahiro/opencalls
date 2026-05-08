@@ -31,9 +31,9 @@ In rough priority order — only include if the source material supports it:
 
 ## Length
 
-A detail page should add 2–4 short paragraphs of prose, ~200–350 words total. If we don't have enough source material to fill 200 words substantively, we skip prose for that page and ship just the data fields.
+Aim for 200–350 words. Acceptable down to ~150 if the content is dense with facts (especially for indie zines and small magazines, which don't always have 200 words of public source material). Below ~140 we skip — fewer paragraphs of fact beat any amount of padding.
 
-Better to have 100 pages with rich prose than 500 with thin filler.
+Better 100 pages with rich prose than 500 with thin filler.
 
 ## Sourcing
 
