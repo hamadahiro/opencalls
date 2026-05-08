@@ -628,6 +628,8 @@ function generatePage(call, cssVersion) {
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
+      <div id="detailPrize">${buildStaticPrizeBlock(call)}</div>
+
 ${call.prose && call.prose.length
   ? call.prose.map(p => `      <p class="call-detail-description">${escapeHtml(p)}</p>`).join('\n')
   : `      <p class="call-detail-description">${escapeHtml(call.description)}</p>`}
@@ -636,7 +638,6 @@ ${call.winners && call.winners.length ? `
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
       </div>
 ` : ''}
-      <div id="detailPrize">${buildStaticPrizeBlock(call)}</div>
       <div class="call-detail-info" id="detailInfo">${buildStaticInfoGrid(call)}</div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
