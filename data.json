@@ -2114,7 +2114,14 @@
       "resultsDate": "By November 1, 2026",
       "dateAdded": "2026-04-06T15:09:35Z",
       "ai": null,
-      "jury": []
+      "jury": [],
+      "prose": [
+        "Loghaven is an artist residency on 90 acres of woodland at 1001 Loghaven Drive in Knoxville, Tennessee. Artists are housed in five historic log cabins that have been rehabilitated and modernized, with access to purpose-built studio space on the grounds.",
+        "The 2027 program runs across six sessions of varying lengths: a four-week February cycle, a six-week April–May cycle, a two-week June cycle for fellows only, a two-week July cycle for teaching/faculty artists, a two-week September cycle, and a four-week October–November cycle. Applicants choose their preferred session at submission.",
+        "Financial support is unusually substantive for a residency: an $850 per week living stipend for the duration of the stay, a sliding-scale travel subsidy of $400–$800, and up to $200 reimbursement for materials shipping. Disciplines accepted include visual arts, writing, dance, music composition, theater, and interdisciplinary work.",
+        "Eligibility is restricted: artists must be at least 21 years old, hold U.S. work authorization, live at least 120 miles from Knoxville, and not be enrolled in a degree-seeking program. International artists are not eligible. Two professional references are required.",
+        "The application fee is $25, with waivers available June 1–July 15. Applications open June 1 and close July 15, 2026 at midnight Eastern Time. The selection panel — a national committee of artist peers and arts professionals — meets August through September, with applicants notified by November 1."
+      ]
     },
     {
       "title": "FMoPA 2026 International Photography Competition",
@@ -2822,7 +2829,14 @@
         "Jennifer Renwick, Photographer"
       ],
       "submitUrl": "https://app.thepanoawards.com/",
-      "email": ""
+      "email": "",
+      "prose": [
+        "The Epson International Pano Awards is the world's largest competition exclusively for panoramic photography, now in its 17th edition. The prize is sponsored by Epson with major presence in Australia and Southeast Asia.",
+        "Three competition divisions run in parallel: Open (professional and amateur photographers, $22 per image), Amateur (restricted to non-professionals earning less than $20,000 annually from photography, $20 per image), and VR/360 ($20 per image). The 2026 cycle introduces a new Aerial category for drone and aircraft images, alongside the existing Nature/Landscapes and Built Environment subcategories.",
+        "The total prize pool exceeds US$50,000, with US$15,000 in direct cash. The Open category first prize is a package valued over $11,000. Early-bird entries (closing June 22) are eligible for the additional $1,000 Curator's Award; final-deadline entries (closing July 13) cost slightly more per image.",
+        "Submissions must meet the panoramic format requirement: an aspect ratio greater than 2:1 horizontally, or less than 1:2 vertically. All photographic capture methods are welcome — digital, film, and stitched panoramas. AI-generated work is not accepted.",
+        "The 2026 jury comprises Bill Bailey, Aaron Spence, Dan Zafra, Jacky Lee, Daniel Kordan, Abe Blair, Anette Mossbacher, and Jennifer Renwick. Eligibility is open worldwide. Results announced October 2026."
+      ]
     },
     {
       "title": "REMEDY Photo Festival — Open Call 2026",
@@ -13044,7 +13058,14 @@
       "dateAdded": "2026-04-18T07:12:24.949Z",
       "resultsDate": "August 30, 2026",
       "ai": "Accepted",
-      "jury": []
+      "jury": [],
+      "prose": [
+        "Chester Photo Festival is a UK photography festival held in Chester, England, with the second edition running October 16–29, 2026 across six city center venues: University of Chester, Chester Picturehouse, St Werburgh's Church, St John's Church, the Grosvenor Museum, and one additional space. The festival was founded in 2023 with its inaugural edition in May 2025.",
+        "The 2026 theme is \"Making Voices Heard,\" exploring photography through myths, feelings, memories, and personal narratives. Submissions are accepted across photography (up to 5 JPEGs per artist), moving images and short films (online link plus still), and artist books or zines (as PDF).",
+        "The fee structure is unusual: submission is free for up to 5 works, with fees charged only if the work is selected. Selected work pays £45 at the early deadline (May 15) or £60 (£45 for students) at the late deadline (July 15), at which point selection closes once 300 works have been accepted.",
+        "Selected work is exhibited across the Chester venues with standard framing provided in three sizes (50×40, 40×30, 30×30 cm), published in the festival book, and the artist receives a participation certificate plus invitations to networking events and artist talks. AI-generated work is accepted.",
+        "The festival is open to photographers at all experience levels with international submissions welcome. Selection is overseen by academics and researchers including Dr Alexandru Modoi and Professor Erik Knudsen."
+      ]
     },
     {
       "title": "Abbott Watts Photography Residency — Fall 2026",
@@ -13312,7 +13333,7 @@
       "deadline": "2026-07-15",
       "fee": "$40",
       "category": "residency",
-      "description": "2–6 week residency on a 20,000-acre ranch in northern Wyoming. Private studio, living quarters, chef-prepared meals Monday–Friday, weekly housekeeping, and a stipend. Application portal opens May 1 and closes July 15, 2026 for the Spring 2027 session (February – early June 2027). Approximately 115 artists hosted annually, with up to 10 in residence at any time. Open to visual artists (including photographers), writers, composers, choreographers, interdisciplinary and performance artists, and collaborative teams. Both emerging and established artists of professional standing are welcome. Notification approximately 16 weeks after the deadline.",
+      "description": "2–6 week residency on a 20,000-acre ranch in northern Wyoming. Private studio, living quarters, chef-prepared meals Monday–Friday, and weekly housekeeping. No stipend — residents provide their own materials and travel. Application portal opens May 1 and closes July 15, 2026 for the Spring 2027 session (February – early June 2027). Approximately 115 artists hosted annually, with up to 10 in residence at any time. Open to visual artists (including photographers), writers, composers, choreographers, interdisciplinary and performance artists, and collaborative teams. Both emerging and established artists of professional standing are welcome. Notification approximately 16 weeks after the deadline.",
       "url": "https://www.ucrossfoundation.org/residency-program.html",
       "instagram": "@ucrossfoundation",
       "location": "Ucross, WY, USA",
@@ -13325,12 +13346,18 @@
       "requirements": "Work samples",
       "slug": "ucross-foundation-spring-2027-residency",
       "orgInTitle": true,
-      "summary": "2–6 week residency on a 20,000-acre Wyoming ranch. Studio, meals, stipend. Photography eligible. Portal opens May 1.",
+      "summary": "2–6 week residency on a 20,000-acre Wyoming ranch. Studio and meals; no stipend. Photography eligible. Portal opens May 1.",
       "jury": [],
       "dateAdded": "2026-04-22T07:09:07.424Z",
       "email": "",
       "resultsDate": "November 2026",
-      "ai": null
+      "ai": null,
+      "prose": [
+        "The Ucross Foundation runs an artist residency on a 20,000-acre working ranch in northeastern Wyoming. The program was founded in 1981 with the first residency in 1983, and now hosts approximately 115 residents annually across two sessions: Fall (August through early December) and Spring (February through early June). Residencies run between two and six weeks; up to ten artists are in residence at any time, typically split as four writers, four visual artists, and two composers.",
+        "There is no residency fee. Residents receive private living accommodations, dedicated work space, all weekday meals prepared by the in-house chef (with self-catering provisions for weekends and breakfasts), weekly housekeeping, linens, and wireless internet. There is no stipend — artists provide their own materials and arrange their own travel to Sheridan, Wyoming, the nearest airport.",
+        "Eligibility is open globally to visual artists, writers, composers, choreographers, interdisciplinary and performance artists, and collaborative teams, at both established and emerging career stages. Applicants must demonstrate professional standing, with both U.S. and international applicants welcome.",
+        "The application fee is $40, with no waivers available. Spring 2027 applications are accepted through Submittable from May 1 through July 15, 2026; Fall applications open later in the year (November 1 through January 15). Decisions are typically released within several months of each deadline."
+      ]
     },
     {
       "title": "Create! Magazine Issue #58 — In Full Color",
@@ -13810,7 +13837,13 @@
       "summary": "5th edition. All interpretations of monochromatic photography. Finalists in a 30×30 cm annual printed book.",
       "email": "",
       "ai": null,
-      "dateAdded": "2026-04-29T03:13:20.894Z"
+      "dateAdded": "2026-04-29T03:13:20.894Z",
+      "prose": [
+        "The Monochromatic Awards is Dodho Magazine's annual prize for monochromatic photography, now in its 5th edition. The interpretation of \"monochromatic\" is unusually broad: traditional black and white, grayscale, sepia, cyanotype, or any other variation based on a single tone is accepted. Color photographs reduced to single-tone palettes qualify alongside historical alternative-process work.",
+        "Selection is not divided by genre. Instead the jury evaluates work on \"clear vision and a defined intention,\" with no separate tracks for portrait, landscape, documentary, or fine art. The jury comprises winners from previous editions: Carl Doghouse (2025, UK), Luca Onnis (2024, Italy), Zhenhuan Zhou (2023, Canada), and Ian Pettigrew (2022, Canada) — a structural choice that lineages the award through its own history.",
+        "Entry fees scale by image count: €30 for 3 images, €45 for 6, €60 for 12. The first prize winner is recognized as \"Photographer of the Year.\" The top five (1st, 2nd, 3rd, plus two honorable mentions) receive prominent editorial coverage on Dodho's site. All 100 finalists are included in the annual printed volume, a 30×30 cm hardcover on premium matte paper.",
+        "Eligibility is open globally to individuals and collectives. Previously published work is accepted, and there is no restriction on when the images were created. The 2026 deadline is July 15, with results announced late July."
+      ]
     },
     {
       "title": "2026 Book Awards",
