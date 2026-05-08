@@ -650,12 +650,7 @@ ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn c
       </div>
 ${call.instagram ? `      <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/${escapeHtml(call.instagram.replace('@', ''))}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a></div>` : ''}
     </section>
-${call.seoContent && call.seoContent.length ? `
-    <section class="call-detail">
-${call.seoContent.map(s => `      <h2 class="section-header">${escapeHtml(s.heading)}</h2>
-${(s.paragraphs || []).map(p => `      <p class="call-detail-description">${escapeHtml(p)}</p>`).join('\n')}`).join('\n')}
-    </section>
-` : ''}
+
     <section class="related-calls">
       <div id="similarCalls">${buildStaticSimilarCalls(call, data.calls)}</div>
     </section>
