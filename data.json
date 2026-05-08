@@ -7523,7 +7523,8 @@
       "email": "",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "proseSkipped": "entry references 'Tomorrow's Talent book series' but current Booooooom site shows different submission programs (book/photo/illustration awards, blog feature) — entry needs verification before prose"
     },
     {
       "title": "PhMuseum Days 2026 Open Call",
@@ -10344,7 +10345,12 @@
       "summary": "International photography zine. No genre restrictions. Open to all ages worldwide. Year-round submissions.",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "Zone is a photography-based publication that opens submissions to any visual artist, with no restrictions on age, medium, or approach. The submission format is unusual for the genre: artists send up to 20 JPG images bundled in a ZIP file, with a strict 20MB cap and no external links or WeTransfer accepted. There is no submission fee, and artists are explicitly invited to submit multiple times throughout the year.",
+        "Selected work appears primarily on the magazine's Instagram, where the editorial team curates the rollout — they reserve the right to select a subset from a series, reorder images, and occasionally crop. Some work is grouped with other artists in collective posts. Print publications are produced separately; recent print titles include Z3NE, Amongst the More Irritating Minor Ideas, and Alone Together.",
+        "The submission flow is deliberately low-friction. There is no themed brief; an optional bio, artist statement, and Instagram handle accompany the file. Artists receive no guarantee of feature, and the team does not provide individualized feedback on rejections."
+      ]
     },
     {
       "title": "Burn Magazine — Open Submissions",
@@ -10369,7 +10375,12 @@
       "jury": [
         "David Alan Harvey, Founder & Magnum Photographer"
       ],
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "Burn was founded by David Alan Harvey in 2008 as an online photography magazine. It accepts work in any photographic genre — documentary, photojournalism, fashion, sports, science, natural history, art photography — with no curatorial preference for one over another. Submissions are sent as a PDF to submissions@burnmagazine.org, with images viewable in an online gallery (password-protected is fine), capped at 1080 pixels on the shortest side. A short explanatory text and artist statement accompany each submission.",
+        "Selected essays are published on the magazine's homepage and presented as multimedia pieces rather than flat galleries — slideshows, layered text, sequenced reveals. There is no fixed publication cadence; features run as they are accepted.",
+        "There is no submission fee and no eligibility restriction. Editorial leadership beyond Harvey has shifted in recent years, though the current editor is not publicly named. Burn does not run a formal prize or award alongside the open submission — homepage publication is the recognition."
+      ]
     },
     {
       "title": "Incandescent Zine — Color Film Photography",
@@ -10417,7 +10428,12 @@
       ],
       "requirements": "Few low-res images",
       "ai": null,
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "Phases is an online photography magazine specializing in international contemporary work, founded in December 2012 by Jerome Montagne (France) and Alexis Vasilikos (Greece). The magazine has published 1,290 portfolios across irregular issues, with three portfolios featured per issue.",
+        "Submissions are open continuously, with no formal guidelines or themed brief. Artists send a link to their website, online work, or a few low-resolution attached images to submissions@phasesmag.com. The team receives high submission volume daily and cannot provide individualized responses or feedback — resubmission is encouraged if artists do not hear back.",
+        "There is no submission fee. Selected portfolios are published online; the magazine does not specify additional compensation or rights claims beyond publication. The editors' Greek and French base shows in recent contributor lists, with names like Mike Almiroudis, Yorgos Yatromanolakis, Yiannis Trifonopoulos, Gelly Siganou, and Georges Salameh appearing across recent and past selections."
+      ]
     },
     {
       "title": "Noice Magazine — Open Submissions",
@@ -10441,7 +10457,8 @@
       "requirements": "Up to 20 images",
       "ai": null,
       "jury": [],
-      "resultsDate": null
+      "resultsDate": null,
+      "proseSkipped": "submit page is just a navigation/footer template with no submission detail; need to find an alternate source URL before drafting"
     },
     {
       "title": "Solo Exhibition May 2026",
