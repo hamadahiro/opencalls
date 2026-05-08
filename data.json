@@ -10731,7 +10731,9 @@
       "submitUrl": "https://milanophotoawards.com/checkout/",
       "summary": "Exhibition and contest in Milan with Sebastiao Salgado tribute. Street, portraits, reportage, nature. Nikon Italia.",
       "email": null,
-      "jury": [],
+      "jury": [
+        "Estevan Oriol, Lead Judge, The Oriol Vision Award"
+      ],
       "prose": [
         "Milano Photo Awards is an Italian photography contest and exhibition run by TheStreetSoup, with Nikon Italia as official sponsor. The 2026 edition runs September 25–27 at Via Maurizio Gonzaga 7 in Milan, scheduled to coincide with Milano Fashion Week. The exhibition format is a 4×3 meter Samsung LED wall for digital display of selected work, with the top three winners in each category also receiving printed and framed prints. The 2026 edition includes a tribute to Sebastião Salgado.",
         "The total prize pool is €30,000 in cash plus Nikon hardware. There are eight competition categories: Street Photography, Portrait & Identity, Wildlife & Nature, Movement & Sport, Human Landscape, Documentary & Social Vision, Conceptual & Fine Art, and Fashion & Style. AI-generated work is not accepted.",
@@ -17646,7 +17648,10 @@
       "slug": "quinn-emanuel-los-angeles-artist-in-residence-2026",
       "orgInTitle": true,
       "summary": "$20,000 + $1,500 materials. 4-month studio residency at Quinn Emanuel LA office. Open to all media including photography. Greater LA only.",
-      "jury": [],
+      "jury": [
+        "Alexis Hyde, Curator",
+        "John Quinn, Founding Partner, Quinn Emanuel"
+      ],
       "ai": null,
       "dateAdded": "2026-05-06T19:08:33.549Z",
       "instagram": "@qeartistresidency",
