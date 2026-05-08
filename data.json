@@ -8649,7 +8649,12 @@
       "summary": "One of Europe's most prestigious awards. Categories from Analog to Advertising. Exhibited in Paris.",
       "email": "",
       "ai": null,
-      "resultsDate": null
+      "resultsDate": null,
+      "prose": [
+        "PX3 (Prix de la Photographie Paris) is an international photography competition based in Paris, awarding work across eight categories: Analog, Architecture, Book, Fine Art, Nature, Portraiture, Press, and Advertising. The structure separates traditional editorial categories (Press, Portraiture) from medium-specific tracks (Analog, Book), giving applicants flexibility in how they position a series.",
+        "The main prize is €5,000, with category and subcategory recognitions stacking on top. Winners are exhibited at PX3's annual Paris showcase and featured in the prize's annual book and online archive.",
+        "The 2026 jury includes James Wellford (National Geographic), Steve McCurry (photographer), and Samuel Nja Kwa (Forbes Afrique), with the full jury list published on px3.fr. Entry fees range from €20 to €50 depending on category and submission tier. Eligibility is open to photographers 18 and over worldwide. The deadline is July 22, 2026; AI policy is not stated on the public submission page, so applicants making AI-assisted work should email organizers before entering."
+      ]
     },
     {
       "title": "Camera Clara Photo Award 2026",
@@ -8686,7 +8691,13 @@
       ],
       "requirements": "1 series",
       "submitUrl": "https://prixcameraclara.plateformecandidature.com/",
-      "summary": "Exclusively for large-format camera photographers. Unpublished series of 5-10 images. Prize money + exhibition."
+      "summary": "Exclusively for large-format camera photographers. Unpublished series of 5-10 images. Prize money + exhibition.",
+      "prose": [
+        "Camera Clara is a French photography prize dedicated specifically to large-format photography. Founded in 2012 by Joséphine de Bodinat Moreno, it rewards an unpublished body of work made with a large-format camera, presented as a coherent series of 5 to 10 images. The €8,000 prize is paid by Joséphine de Bodinat Moreno and includes exhibition production support for the winner.",
+        "Submissions are free of charge. The award accepts only large-format work and excludes AI-generated images. Selection criteria emphasize coherence both in form and content, treating the series as the unit of evaluation rather than individual images — applicants are reviewed on whether the body of work holds together, not on whether any single image stands out.",
+        "The 2026 jury is unusually senior for a niche prize: Dominique de Font-Reaulx (Jury President), Aurélie Chauffert-Yvart (Artistic Director), Héloïse Conésa (Curator at the National Library of France), Marc Donnadieu (art critic and independent curator), Anne Lacoste (Director of the Institute for Photography of Hauts-de-France), Chantal Nedjib (communications consultant), Guillaume Piens (art historian and founder of Culture Squad Communication), Michel Poivert (Professor of Art History at Université Paris 1 Panthéon-Sorbonne), and Fabien Simode (art critic and director of Maisons-Alfort Media Libraries), alongside founder Joséphine de Bodinat Moreno.",
+        "The 2026 deadline is midnight July 31; results are announced November 3. Applications are made through prixcameraclara.plateformecandidature.com."
+      ]
     },
     {
       "title": "Tokyo International Foto Award 2026",
@@ -10276,7 +10287,13 @@
       "resultsDate": "October 16, 2026",
       "submitUrl": null,
       "summary": "Five categories including Smartphone and AI-Generated. Finalists exhibited in Rome. Leica-sponsored prizes.",
-      "email": ""
+      "email": "",
+      "prose": [
+        "Roma E'Festival is an international street photography competition organized by Effe4.0 Street Photography, in its third edition for 2026. The festival proper runs October 16–18 in Rome, with finalists exhibited at Officine Fotografiche.",
+        "Submissions are split across five categories: Single Image (color/open), Black & White, Smartphone, Photographic Project (5 to 15 images), and AI-Generated images, which are judged separately under their own selection process — generative AI is explicitly excluded from the four conventional street categories. Multi-category passes provide a 50% discount: the EFFE4 PRO pass (€50) covers Street, B&W, and Smartphone; the EFFE4 FULL pass (€70) covers all categories.",
+        "Finalists receive a physical print and exhibition for the duration of the festival, inclusion in the official catalogue, a touring exhibition appearing alongside the main festival, and visibility through the festival's website and social channels. Top three finalists per category receive prizes from partners Fotodiego, Fowa, and Ricoh GR — equipment, monographs, solo exhibitions, and editorial reviews depending on category.",
+        "The jury comprises ten international photographers and editors: Rui Palha, Pau Buscató, Barbara Di Maio, Liliana Ranalletta, Mario Mencacci, Arez Prod, Claudio Palmisano, Dario Coletti, Sonia Simbolo, and Gianluca De Dominici. Eligibility is open globally; previously published or award-winning work is permitted, except images that won first prize at major international festivals. The deadline is July 31, 2026."
+      ]
     },
     {
       "title": "Dyonyzine Issue 06 — Second Helpings",
@@ -10976,7 +10993,8 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "email": null,
-      "jury": []
+      "jury": [],
+      "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
       "title": "Residency Program 2026",
@@ -14278,6 +14296,11 @@
       "submitUrl": "https://www.life-framer.com/enter/",
       "summary": "Monthly competition judged by Myrtille Delamarche (GEO Magazine). Winners exhibited in New York, Tokyo, Milan, and Arles.",
       "email": "",
+      "prose": [
+        "Life Framer runs as a monthly themed photography competition with a different juror each round. The \"Planet Earth\" call covers nature, landscape, environmental documentary, and aerial work — broadly, photography that engages with the planet itself rather than its inhabitants. The 2026 cycle of this theme is judged by Myrtille Delamarche, Editor-in-Chief of GEO Magazine.",
+        "The main prize is $2,000, with additional category awards and inclusion in Life Framer's online archive. Selected work is exhibited at Life Framer's partner galleries in New York, Tokyo, Milan, and Arles — a touring physical presence that runs alongside the online platform.",
+        "Entry fees are tiered between $20 and $100 depending on the number of images submitted (up to 10 maximum per applicant). AI-generated work is not accepted. Eligibility is open to photographers worldwide aged 18 or over. The Planet Earth theme deadline is July 31, 2026, with results announced in mid-August. Other Life Framer themes follow on a rolling monthly schedule, each with a different jury and slightly different focus."
+      ],
       "dateAdded": "2026-05-04T11:11:53.799Z"
     },
     {
