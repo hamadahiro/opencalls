@@ -84,7 +84,8 @@ const eligibilityLabel = {
   'wana': 'WANA region only',
   'france': 'France only',
   'mid-career': 'Mid-career',
-  'united-kingdom': 'UK only'
+  'united-kingdom': 'UK only',
+  'kazakhstan': 'Kazakhstan only'
 };
 
 const prizeCategoryLabel = {
