@@ -17945,12 +17945,18 @@
       "eligibility": [
         "student"
       ],
-      "jury": [],
+      "jury": [
+        "Emma Lambert, Silvergrass Press",
+        "Matt Johnston, Photobooks &"
+      ],
       "submitVia": "Post",
-      "requirements": "1 photobook or photo-based publication",
+      "requirements": "1 photobook",
       "slug": "future-photobook-award-2026",
       "orgInTitle": false,
       "summary": "Inaugural photobook award for HE students and recent grads. Open to any format including zines and handmade books. Free entry.",
+      "email": null,
+      "ai": null,
+      "resultsDate": null,
       "dateAdded": "2026-05-09T11:13:46Z",
       "prose": [
         "The Future Photobook Award is a new prize launched by the MA Photography programme at Coventry University in partnership with Fast Forward, the international research and advocacy network for women in photography based at the University for the Creative Arts (UCA).",
@@ -17973,12 +17979,20 @@
       "eligibility": [
         "united-kingdom"
       ],
-      "jury": [],
+      "jury": [
+        "Mark Kasumovic, Artist & Academic, De Montfort University",
+        "Michael Pinsky, Artist",
+        "Louise Fedotov-Clements, Director, Photoworks",
+        "Debbie Cooper, Deputy Director, Photoworks"
+      ],
       "submitVia": "Online form",
-      "requirements": "5-page PDF or 3-min audio/video",
+      "requirements": "5-page PDF",
       "slug": "photoworks-artist-venturing-labs-ease-crete-2026-2027",
       "orgInTitle": true,
       "summary": "UK-based artist joins art–science fieldwork lab in Crete. £1,000 stipend, all expenses covered. Climate, landscape, deep time.",
+      "email": "",
+      "ai": null,
+      "resultsDate": null,
       "dateAdded": "2026-05-09T11:13:46Z",
       "prose": [
         "Photoworks is the UK's national photography commissioning agency, based in Brighton. Artist Venturing Labs is a programme produced with EASE (Entrepreneurship, Art & Science for Environmental Sustainability), an interdisciplinary research initiative funded by UK Research and Innovation (UKRI) in collaboration with Nottingham Trent University, De Montfort University, and PicturingClimate.org.",
