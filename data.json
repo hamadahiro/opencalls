@@ -17879,7 +17879,10 @@
       "instagram": "@festival_circulations",
       "location": "Paris, France",
       "prize": "Festival exhibition",
-      "eligibility": ["europe", "emerging"],
+      "eligibility": [
+        "europe",
+        "emerging"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.festival-circulations.com/boutique/jeux/call-for-applications-2027/",
       "email": "",
@@ -17912,7 +17915,9 @@
       "instagram": "@gridphotogallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": ["18-plus"],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [],
       "email": "",
       "submitVia": "Website form",
@@ -18000,6 +18005,71 @@
         "The selected artist receives a £1,000 stipend for the week on site. All travel, accommodation, and meals are covered. The artist gets access to scientific teams, fellow artists in the EASE cohort, and Photoworks' venture-building support, with potential features on Photoworks' digital and editorial platforms.",
         "Eligibility is restricted to UK-based artists, per the UKRI funding requirement. Application is via online form with either a 5-page PDF (expression of interest, bio, project examples, available lab dates) or a 3-minute audio or video recording. The deadline is June 29, 2026 at 23:59 BST."
       ]
+    },
+    {
+      "title": "Portal: At the Edge of Becoming",
+      "org": "Decagon Gallery",
+      "deadline": "2026-06-03",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "Photographs that hold the viewer at the edge of something — work where a shift is imminent but not yet complete. Online curated exhibition with catalog inclusion and Instagram feature. First place receives $500 plus a solo webpage exhibition; second $300; third $200. Open worldwide, all photographic styles and processes welcome.",
+      "url": "https://www.decagongallery.com/portal-entry",
+      "instagram": "@decagongallery",
+      "location": "Online",
+      "prize": "$1,000 total + solo webpage",
+      "submitVia": "Website form",
+      "submitUrl": "https://www.decagongallery.com/portal-entry",
+      "requirements": "Up to 8 images",
+      "jury": [
+        "Douglas Stockdale, founder, PhotoBook Journal"
+      ],
+      "eligibility": [],
+      "slug": "portal-at-the-edge-of-becoming-decagon-gallery",
+      "orgInTitle": false,
+      "summary": "Online photography exhibition on tension and threshold. Juror Douglas Stockdale. $1,000 total + solo webpage.",
+      "email": "",
+      "ai": null,
+      "resultsDate": "June 2026",
+      "prose": [
+        "Decagon Gallery is an online curatorial platform that runs themed photography exhibitions with published catalogs and social distribution. \"Portal: At the Edge of Becoming\" is the gallery's call for photographs that hold a viewer at the edge of something — where a shift is imminent but not yet complete. The brief asks for work that embodies tension and resists easy resolution, functioning as a threshold rather than a literal representation.",
+        "The selection structure is online-first. Selected photographers are featured in a curated online exhibition with a published catalog distributed through Decagon's mailing list and social channels. All accepted artists receive an exhibition page, an Instagram feature, and catalog inclusion. The first-place winner additionally receives a solo webpage exhibition on the gallery site.",
+        "Cash awards: $500 first place, $300 second, $200 third. The 2026 cycle is juried by Douglas Stockdale — visual artist, editor, photobook publisher, and founder of PhotoBook Journal. Eligibility is open worldwide; all photographic styles and processes are welcome.",
+        "Entry fee is $25 per submission of up to 8 images (JPG, 2100 pixels on long side, no watermarks or borders). The 2026 deadline is June 3, with the exhibition running June 20 through August 20, 2026."
+      ],
+      "dateAdded": "2026-05-10T03:07:26.379Z"
+    },
+    {
+      "title": "A Celebration of Contemporary Photography",
+      "org": "PhotoPlace Gallery",
+      "deadline": "2026-06-08",
+      "fee": "$39 / 5 images + $6 each",
+      "category": "exhibition",
+      "description": "Open call celebrating the creativity, diversity, and evolving practice of photography today. Aligned with World Photography Day. Up to 35 images selected for the physical Middlebury, Vermont gallery and 40 for the online gallery, with all selected work appearing in the exhibition catalog and remaining permanently on the website. Open worldwide, all subjects, styles, and processes welcome.",
+      "url": "https://www.photoplacegallery.com/online-juried-shows/open-call-a-celebration-of-contemporary-photography/detail",
+      "instagram": "@photoplacegallery",
+      "location": "Middlebury, VT, USA",
+      "prize": "Gallery + online exhibition + catalog",
+      "submitVia": "Website form",
+      "submitUrl": "https://submit.photoplacegallery.com/landing/default",
+      "requirements": "5+ images",
+      "jury": [
+        "Paula Tognarelli",
+        "Zach Hoffman, Director, PhotoPlace Gallery"
+      ],
+      "eligibility": [],
+      "slug": "celebration-of-contemporary-photography-photoplace-gallery",
+      "orgInTitle": false,
+      "summary": "PhotoPlace's most inclusive call. World Photography Day exhibition in Middlebury, VT + online + catalog.",
+      "email": "",
+      "ai": "Not accepted",
+      "prose": [
+        "PhotoPlace Gallery is a photography gallery in Middlebury, Vermont, that programs juried thematic exhibitions on a rolling schedule. \"A Celebration of Contemporary Photography\" is one of the gallery's most open and inclusive calls of the year — explicitly framed as a celebration of the creativity, diversity, and evolving practice of photography today.",
+        "The exhibition is timed to World Photography Day (August 19) and welcomes all photographic subjects, styles, and processes — from traditional landscape and portraiture to experimental and alternative approaches.",
+        "Selection structure is layered: up to 35 images are selected for the physical exhibition in the Middlebury gallery, and up to 40 for the online gallery. All selected work appears in the exhibition catalog, remains permanently on the PhotoPlace website, and receives social media promotion with photographer URL links.",
+        "Selection is by Paula Tognarelli (former director of the Griffin Museum of Photography) and Zach Hoffman (Gallery Owner/Director).",
+        "AI-generated work is not accepted. Eligibility is open globally. Submission is through the gallery's website. Fee is $39 for up to 5 images plus $6 per additional image. The 2026 deadline is June 8, with the exhibition running August 7 through August 29, 2026."
+      ],
+      "dateAdded": "2026-05-10T03:07:26.379Z"
     }
   ]
 }
