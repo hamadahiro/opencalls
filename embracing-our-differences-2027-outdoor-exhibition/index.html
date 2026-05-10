@@ -112,7 +112,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Embracing Our Differences 2027 Outdoor Exhibition</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">$6,000 prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">$2,000 × 3 prize</a></div></div>
 
       <p class="call-detail-description">Embracing Our Differences is an international juried public-art exhibition that has run annually since 2004, now in its 23rd year. Selected artworks are displayed as billboard-sized panels — 16 feet by 12.5 feet — in public parks in Sarasota and St. Petersburg, Florida, from January through April. Since the program's founding the exhibitions have drawn over 5.2 million visitors collectively, making it one of the most heavily-visited outdoor art shows in the United States.</p>
       <p class="call-detail-description">Fifty artworks are selected per cycle. Three cash awards of $2,000 each are given: Best-in-Show Adult, Best-in-Show Student, and People's Choice. The brief asks for work that reflects diversity, inclusion, kindness, and respect, with the panel format favoring strong horizontal compositions readable at billboard scale.</p>
@@ -120,6 +120,10 @@
       <p class="call-detail-description">Submissions go through Zealous. The 2027 cycle deadline is July 1, 2026, with results announced in early fall.</p>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/july-2026/" title="July 1, 2026">July 1, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Early fall 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/florida/" title="Sarasota, FL">Sarasota, FL</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">1 image</span></div><div class="info-row"><span class="info-label">AI policy</span><span class="dots"></span><span class="info-value">Not accepted</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:Exhibit@EmbracingOurDifferences.org" target="_blank" rel="nofollow noopener">Zealous</a></span></div></div>
+
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Blind judging panel of artists, curators, and art professionals</p>
+      </div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/embracing-our-differences/">Embracing Our Differences</a></p>
@@ -143,7 +147,7 @@
 
   <script>
     const CURRENT_SLUG = 'embracing-our-differences-2027-outdoor-exhibition';
-    const CURRENT_CALL = {"prize":"$6,000","category":"exhibition","org":"Embracing Our Differences","location":"Sarasota, FL, USA","fee":"Free","deadline":"2026-07-01","resultsDate":"Early fall 2026","instagram":"@embracingourdifferences","eligibility":[],"jury":[],"submitVia":"Zealous","submitUrl":"https://zealous.co/embracingourdifferences1/opportunity/2027-call-to-artists-cash-awards-juried-competition/","email": "","ai":"Not accepted","requirements":"1 image"};
+    const CURRENT_CALL = {"prize":"$2,000 × 3","category":"exhibition","org":"Embracing Our Differences","location":"Sarasota, FL, USA","fee":"Free","deadline":"2026-07-01","resultsDate":"Early fall 2026","instagram":"@embracingourdifferences","eligibility":[],"jury":["Blind judging panel of artists, curators, and art professionals"],"submitVia":"Zealous","submitUrl":"https://zealous.co/embracingourdifferences1/opportunity/2027-call-to-artists-cash-awards-juried-competition/","email": "","ai":"Not accepted","requirements":"1 image"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -153,7 +157,7 @@
       var u = 'https://www.embracingourdifferences.org/submit-art-2027-exhibition/';
       var o = 'Embracing Our Differences';
       var dl = new Date('2026-07-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$6,000') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$2,000 × 3') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
