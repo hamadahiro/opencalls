@@ -120,14 +120,13 @@
       <p class="call-detail-description">Eligibility is open globally with no experience-level restriction. Submissions are made through Picter, up to 10 images. The fee is voluntary — €5 or €10 suggested. Financial assistance is available on request: applicants in financial hardship can email voucher-special-2@dergreif.org for a 50–100% discount code.</p>
       <p class="call-detail-description">The 2026 deadline is May 10.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 10, 2026">May 10, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="PWYC">PWYC</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 10 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:info@dergreif.org" target="_blank" rel="nofollow noopener">Picter</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 10, 2026">May 10, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="PWYC">PWYC</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 10 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value">Picter</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/der-greif/">Der Greif</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://site.picter.com/der-greif-inner-landscapes" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/der_greif" target="_blank" rel="nofollow noopener">@der_greif</a></div>
     </section>
@@ -145,23 +144,7 @@
   <script>
     const CURRENT_SLUG = 'inner-landscapes-der-greif';
     const CURRENT_CALL = {"prize":"Online exhibition + critique session","category":"photography","org":"Der Greif","location":"Online","fee":"PWYC","deadline":"2026-05-10","resultsDate":"","instagram":"@der_greif","eligibility":[],"jury":[],"submitVia":"Picter","submitUrl":"https://app.picter.com/contests/6790c3ab-d7ae-4a27-b3a0-db60df23c3dc/start","email": "","ai":"","requirements":"Up to 10 images"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-05-10'.replace(/-/g, '');
-      var nd = new Date('2026-05-10T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Inner Landscapes';
-      var u = 'https://site.picter.com/der-greif-inner-landscapes';
-      var o = 'Der Greif';
-      var dl = new Date('2026-05-10T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Online exhibition + critique session') + '\\nEntry fee: ' + icsE('PWYC');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260329"></script>
   <script src="/search.js?v=20260329"></script>
