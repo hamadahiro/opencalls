@@ -39,6 +39,7 @@
       "category": "exhibition",
       "description": "20th annual Main Exhibition of contemporary photography of the American South. Submissions must be made in 16 Southern US states (AL, AR, DE, FL, GA, KY, LA, MD, MS, NC, OK, SC, TN, TX, VA, WV). Up to 6 images. Selected work shown September 18–20, 2026 at the historic R.F. Strickland Building in Concord, GA, then travels to Cochran Gallery in LaGrange, GA. Jurors Dennis Kiel and Coco Conroy.",
       "url": "https://www.slowexposures.org/open-calls/",
+      "instagram": "@slowexposures",
       "location": "Concord, GA, USA",
       "prize": "Exhibition",
       "eligibility": [],
@@ -70,7 +71,7 @@
       "url": "https://atlantaphotographygroup.org/events/call-for-entry-focus-2026/",
       "instagram": "@apgatl",
       "location": "Atlanta, GA, USA",
-      "prize": "$1,000 APG/MOCA GA Purchase Award + permanent collection acquisition",
+      "prize": "$1,000",
       "eligibility": [
         "membership-required"
       ],
@@ -78,7 +79,9 @@
         "Anne Leighton Massoni, Executive Director, Houston Center for Photography"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://atlantaphotographygroup.org/events/call-for-entry-focus-2026/",
+      "submitUrl": "https://atlantaphotographygroup.org/shop/call-for-entry-focus-2026/",
+      "email": "",
+      "resultsDate": "June 12, 2026",
       "requirements": "2–8 images",
       "slug": "focus-2026-atlanta-photography-group",
       "orgInTitle": true,
@@ -13411,7 +13414,7 @@
       "orgInTitle": false,
       "slug": "atlas-of-ruins-vol-3-call-for-photos-reuse-italy",
       "dateAdded": "2026-03-22",
-      "submitUrl": null,
+      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
       "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Two registration tiers, prizes up to €1,200.",
       "email": null,
       "ai": null,
