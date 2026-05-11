@@ -162,7 +162,7 @@ function HEAD(opts) {
   <meta property="og:type" content="${opts.ogType || 'website'}">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${opts.robots || 'index, follow'}">
   ${jsonLdHtml}
   ${FONTS}
   <link rel="stylesheet" href="/style.css?v=${cssVersion}">`;
@@ -581,27 +581,29 @@ data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 
 
 function buildJsonLd(call) {
   const pageUrl = `${SITE}/${call.slug || slugify(call.title)}/`;
-  const submitUrl = call.submitUrl || call.url || pageUrl;
+  // CreativeWork is the closest Schema.org type for an open-call posting.
+  // Event was misused: there is no public event with date+location — only an
+  // application deadline. Using Event misled Google about the page's nature.
   const ld = {
     "@context": "https://schema.org",
-    "@type": "Event",
+    "@type": "CreativeWork",
     "name": call.title,
     "description": call.description,
-    "url": submitUrl,
-    "organizer": {
+    "url": pageUrl,
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Monographica",
+      "url": "https://monographica.com"
+    },
+    "creator": {
       "@type": "Organization",
       "name": call.org
     },
-    "location": {
-      "@type": "Place",
-      "name": call.location || "Online"
-    },
-    "endDate": call.deadline === 'Continuous' ? undefined : call.deadline,
     "isAccessibleForFree": call.fee ? call.fee.toLowerCase().startsWith('free') : undefined
   };
   if (call.dateAdded) {
-    const start = call.dateAdded.split('T')[0];
-    ld.startDate = (ld.endDate && start > ld.endDate) ? ld.endDate : start;
+    ld.datePublished = call.dateAdded.split('T')[0];
   }
   // Clean undefined values
   Object.keys(ld).forEach(k => { if (ld[k] === undefined) delete ld[k]; });
@@ -614,10 +616,11 @@ function generatePage(call, cssVersion) {
   const country = getCountry(call.location);
   const metaTitle = call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org);
 
+  const robotsDirective = isCallOpen(call.deadline) ? 'index, follow' : 'noindex, follow';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: categoryLabel(call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: categoryLabel(call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -741,7 +744,12 @@ data.calls.forEach(call => {
   slugMap[slug] = call.title;
   const html = generatePage(call, cssVersion);
   writeGenerated(`${slug}/index.html`, html);
-  sitemapEntries.push(`${SITE}/${slug}`);
+  // Only include open calls in the sitemap. Expired call pages remain
+  // accessible (noindex, follow) but are excluded so Google does not keep
+  // re-discovering low-value pages past their relevance window.
+  if (isCallOpen(call.deadline)) {
+    sitemapEntries.push(`${SITE}/${slug}`);
+  }
   generated++;
 });
 
