@@ -112,7 +112,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">XVIII Festival di Fotografia a Capri — Viaggi e Miraggi</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition (production covered) prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
 
       <p class="call-detail-description">Festival di Fotografia a Capri is an annual photography festival on the island of Capri organized by Fondazione Capri, now in its 18th edition. The 2026 theme is Viaggi e Miraggi — &quot;Journeys and Mirages&quot; — chosen to mark the 200th anniversary of the rediscovery of the Blue Grotto, the sea cave that became the symbol of Romantic-era travel to Capri. The brief invites work that treats photography as the medium between physical journey and imagined place: pilgrimages, returns, displacements, and image-making as a kind of mirage in itself.</p>
       <p class="call-detail-description">Submissions are free. The winning project is exhibited at the Certosa di San Giacomo, the 14th-century Carthusian monastery that serves as Capri's main cultural venue. Production and installation costs are covered by Fondazione Capri.</p>
@@ -147,7 +147,7 @@
 
   <script>
     const CURRENT_SLUG = 'festival-di-fotografia-capri-2026-viaggi-e-miraggi';
-    const CURRENT_CALL = {"prize":"Exhibition (production covered)","category":"exhibition","org":"Fondazione Capri","location":"Capri, Italy","fee":"Free","deadline":"2026-07-05","resultsDate":"July 13, 2026","instagram":"@fondazionecapri","eligibility":[],"jury":["Denis Curti, Curator"],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"1 PDF in .zip (max 10MB)"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Fondazione Capri","location":"Capri, Italy","fee":"Free","deadline":"2026-07-05","resultsDate":"July 13, 2026","instagram":"@fondazionecapri","eligibility":[],"jury":["Denis Curti, Curator"],"submitVia":"Email","submitUrl":"","email": "","ai":"","requirements":"1 PDF in .zip (max 10MB)"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -157,7 +157,7 @@
       var u = 'https://fondazionecapri.org/?page_id=6609';
       var o = 'Fondazione Capri';
       var dl = new Date('2026-07-05T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition (production covered)') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
