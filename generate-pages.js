@@ -568,16 +568,26 @@ function categoryLabel(cat) {
 
 // Compute countries for landing pages (including Online)
 const countryCounts = {};
+const openCountryCounts = {};
 data.calls.forEach(call => {
   const country = getCountry(call.location);
   if (country) {
     countryCounts[country] = (countryCounts[country] || 0) + 1;
+    if (isCallOpen(call.deadline)) {
+      openCountryCounts[country] = (openCountryCounts[country] || 0) + 1;
+    }
   }
 });
 
 // Compute orgs for landing pages
 const orgCounts = {};
-data.calls.forEach(call => { orgCounts[call.org] = (orgCounts[call.org] || 0) + 1; });
+const openOrgCounts = {};
+data.calls.forEach(call => {
+  orgCounts[call.org] = (orgCounts[call.org] || 0) + 1;
+  if (isCallOpen(call.deadline)) {
+    openOrgCounts[call.org] = (openOrgCounts[call.org] || 0) + 1;
+  }
+});
 
 function buildJsonLd(call) {
   const pageUrl = `${SITE}/${call.slug || slugify(call.title)}/`;
@@ -599,8 +609,7 @@ function buildJsonLd(call) {
     "creator": {
       "@type": "Organization",
       "name": call.org
-    },
-    "isAccessibleForFree": call.fee ? call.fee.toLowerCase().startsWith('free') : undefined
+    }
   };
   if (call.dateAdded) {
     ld.datePublished = call.dateAdded.split('T')[0];
@@ -766,7 +775,8 @@ const categories = {
 Object.entries(categories).forEach(([cat, info]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
   const slug = catSlug;
-  const catCalls = data.calls.filter(c => c.category === cat);
+  // Only list open calls on landing pages so internal links flow to indexable URLs.
+  const catCalls = data.calls.filter(c => c.category === cat && isCallOpen(c.deadline));
   const count = catCalls.length;
 
   const html = `<!DOCTYPE html>
@@ -836,7 +846,8 @@ const feeFilters = {
 };
 
 filterPages.forEach(fp => {
-  const fpCalls = data.calls.filter(feeFilters[fp.feeKey]);
+  // Only list open calls on fee landing pages.
+  const fpCalls = data.calls.filter(c => feeFilters[fp.feeKey](c) && isCallOpen(c.deadline));
   const count = fpCalls.length;
 
   const html = `<!DOCTYPE html>
@@ -1014,12 +1025,16 @@ if (hasErrors) { console.error('Fix errors above before generating.'); process.e
 const eligibilityPageSlugs = [];
 Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   const count = eligibilityTags[tag] || 0;
+  const openCount = openEligibilityTags[tag] || 0;
   const slug = `eligibility/${tag}`;
+  // Noindex tag pages with zero open calls — they exist only as archive
+  // and have no current value for search users.
+  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, ${escapeHtml(info.short)} photography, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, ${escapeHtml(info.short)} photography, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1029,7 +1044,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.includes(tag)))}
+${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.includes(tag) && isCallOpen(c.deadline)))}
     </section>
 
     ${FOOTER}
@@ -1054,8 +1069,8 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
   eligibilityPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  sitemapEntries.push(`${SITE}/${slug}`);
-  console.log(`  Eligibility page: ${tag} (${count} calls)`);
+  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  Eligibility page: ${tag} (${count} calls, ${openCount} open)`);
 });
 
 // Eligibility index page
@@ -1154,12 +1169,14 @@ const prizeCatPageSlugs = [];
 Object.entries(prizeCatTags).forEach(([tag, count]) => {
   const info = prizeGroups[tag];
   if (!info) return;
+  const openCount = openPrizeCatTags[tag] || 0;
   const slug = `prize/${tag}`;
+  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, photography ${escapeHtml(info.short.toLowerCase())} prize, call for entries ${escapeHtml(info.short.toLowerCase())}, art ${escapeHtml(info.short.toLowerCase())} award, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, photography ${escapeHtml(info.short.toLowerCase())} prize, call for entries ${escapeHtml(info.short.toLowerCase())}, art ${escapeHtml(info.short.toLowerCase())} award, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1169,7 +1186,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).includes(tag)))}
+${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).includes(tag) && isCallOpen(c.deadline)))}
     </section>
 
     ${FOOTER}
@@ -1207,8 +1224,8 @@ ${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).incl
 
   prizeCatPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  sitemapEntries.push(`${SITE}/${slug}`);
-  console.log(`  Prize page: ${tag} (${count} calls)`);
+  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  Prize page: ${tag} (${count} calls, ${openCount} open)`);
 });
 
 // Prize index page
@@ -1273,6 +1290,8 @@ Object.entries(countryCounts)
     const countrySlug = countrySlugs[country] || slugify(country);
     const slug = countrySlug;
     const isOnline = country === 'Online';
+    const openCount = openCountryCounts[country] || 0;
+    const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
     const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
     const desc = isOnline
       ? 'Online open calls, competitions, and submissions for photographers and visual artists. No travel required — apply from anywhere.'
@@ -1284,7 +1303,7 @@ Object.entries(countryCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1294,7 +1313,7 @@ Object.entries(countryCounts)
     ${buildHero(buildBreadcrumbs('Locations', '/locations'), escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => getCountry(c.location) === country))}
+${buildStaticCallList(data.calls.filter(c => getCountry(c.location) === country && isCallOpen(c.deadline)))}
     </section>
 
     ${FOOTER}
@@ -1351,8 +1370,8 @@ ${country === 'USA' ? `
     slugMap[slug] = `country: ${fullName}`;
     createdCountrySlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
-    sitemapEntries.push(`${SITE}/${slug}`);
-    console.log(`  Country page: ${slug} (${count} calls)`);
+    if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+    console.log(`  Country page: ${slug} (${count} calls, ${openCount} open)`);
   });
 
 // === US State landing pages ===
@@ -1363,18 +1382,26 @@ const stateNameToAbbr = {};
 Object.entries(usStateNames).forEach(([abbr, name]) => { stateNameToAbbr[name] = abbr; });
 
 const stateCounts = {};
+const openStateCounts = {};
 data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
   const parts = c.location.split(',');
   let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
   // Normalize full state names to abbreviations to prevent duplicate pages
   if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
-  if (state) stateCounts[state] = (stateCounts[state] || 0) + 1;
+  if (state) {
+    stateCounts[state] = (stateCounts[state] || 0) + 1;
+    if (isCallOpen(c.deadline)) {
+      openStateCounts[state] = (openStateCounts[state] || 0) + 1;
+    }
+  }
 });
 
 Object.entries(stateCounts).forEach(([state, count]) => {
   const fullStateName = usStateNames[state] || state;
   const stateSlug = slugify(fullStateName);
   const slug = `united-states/${stateSlug}`;
+  const openCount = openStateCounts[state] || 0;
+  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
   const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
@@ -1382,7 +1409,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: `${escapeHtml(keywords)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: `${escapeHtml(keywords)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1392,7 +1419,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + state + ', USA'))))}
+${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + state + ', USA')) && isCallOpen(c.deadline)))}
     </section>
 
     ${FOOTER}
@@ -1417,8 +1444,8 @@ ${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(
 
   slugMap[slug] = `state: ${fullStateName}`;
   writeGenerated(`${slug}/index.html`, html);
-  sitemapEntries.push(`${SITE}/${slug}`);
-  console.log(`  State page: ${slug} (${count} calls)`);
+  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  State page: ${slug} (${count} calls, ${openCount} open)`);
 });
 
 // === Org landing pages ===
@@ -1426,6 +1453,8 @@ Object.entries(orgCounts)
   .forEach(([org, count]) => {
     const orgSlug = slugify(org);
     const slug = orgSlug;
+    const openCount = openOrgCounts[org] || 0;
+    const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
@@ -1445,7 +1474,7 @@ Object.entries(orgCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1455,7 +1484,7 @@ Object.entries(orgCounts)
     ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.org === org))}
+${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadline)))}
     </section>
 
     ${FOOTER}
@@ -1481,8 +1510,8 @@ ${buildStaticCallList(data.calls.filter(c => c.org === org))}
     slugMap[slug] = `org: ${org}`;
     createdOrgSlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
-    sitemapEntries.push(`${SITE}/${slug}`);
-    console.log(`  Org page: ${slug} (${count} calls)`);
+    if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+    console.log(`  Org page: ${slug} (${count} calls, ${openCount} open)`);
   });
 
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
@@ -1511,11 +1540,14 @@ sortedMonths.forEach(key => {
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
   const count = g.calls.length;
   const openCount = g.calls.filter(isOpen).length;
+  // Past-month pages where every call has closed → noindex + drop from sitemap.
+  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+  const visibleCalls = openCount > 0 ? g.calls.filter(isOpen) : g.calls;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, keywords: `open calls ${label.toLowerCase()}, photography deadlines ${label.toLowerCase()}, call for entries ${label.toLowerCase()}`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion })}
+  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, keywords: `open calls ${label.toLowerCase()}, photography deadlines ${label.toLowerCase()}, call for entries ${label.toLowerCase()}`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1525,7 +1557,7 @@ sortedMonths.forEach(key => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, `${count} call${count !== 1 ? 's' : ''} with deadlines in ${label}${openCount > 0 && openCount < count ? ` — ${openCount} still open` : openCount === 0 ? ' — all closed' : ''}.`)}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(g.calls)}
+${buildStaticCallList(visibleCalls)}
     </section>
 
     ${FOOTER}
@@ -1550,8 +1582,8 @@ ${buildStaticCallList(g.calls)}
 </html>`;
 
   writeGenerated(`deadlines/${key}/index.html`, html);
-  sitemapEntries.push(`${SITE}/deadlines/${key}`);
-  console.log(`  Deadline page: ${label} (${count} calls)`);
+  if (openCount > 0) sitemapEntries.push(`${SITE}/deadlines/${key}`);
+  console.log(`  Deadline page: ${label} (${count} calls, ${openCount} open)`);
 });
 
 // === Deadlines index page ===
@@ -1766,8 +1798,6 @@ prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
   browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}/`, count: openPrizeCatTags[tag] || 0 });
 });
 
-const openCountryCounts = {};
-openCalls.forEach(c => { const country = getCountry(c.location); if (country) openCountryCounts[country] = (openCountryCounts[country] || 0) + 1; });
 const browseCountries = Object.entries(countryCounts)
   .map(([country]) => {
     const countrySlug = countrySlugs[country] || slugify(country);
@@ -1776,13 +1806,6 @@ const browseCountries = Object.entries(countryCounts)
   })
   .sort((a, b) => a.label.localeCompare(b.label));
 
-const openStateCounts = {};
-openCalls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
-  const parts = c.location.split(',');
-  let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-  if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
-  if (state) openStateCounts[state] = (openStateCounts[state] || 0) + 1;
-});
 const browseStates = Object.entries(stateCounts)
   .sort((a, b) => {
     const nameA = (usStateNames[a[0]] || a[0]).toLowerCase();
@@ -1803,8 +1826,6 @@ eligibilityOrder.forEach(group => {
 });
 browseEligibility.sort((a, b) => b.count - a.count);
 
-const openOrgCounts = {};
-openCalls.forEach(c => { openOrgCounts[c.org] = (openOrgCounts[c.org] || 0) + 1; });
 const browseOrgs = Object.entries(orgCounts)
   .filter(([org]) => createdOrgSlugs.includes(slugify(org)))
   .sort((a, b) => a[0].localeCompare(b[0]))
