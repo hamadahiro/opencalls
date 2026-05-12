@@ -1860,7 +1860,10 @@
       "instagram": "@wsworkshop",
       "location": "Rosendale, NY, USA",
       "prize": "$175/day + $525 lesson planning",
-      "eligibility": [],
+      "eligibility": [
+        "women",
+        "lgbtq"
+      ],
       "submitVia": "Submittable",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit/33631/art-in-ed-workspace-residency",
       "requirements": "Up to 10 images",
@@ -14777,7 +14780,10 @@
       "instagram": "@wsworkshop",
       "location": "Rosendale, NY, USA",
       "prize": "Residency",
-      "eligibility": [],
+      "eligibility": [
+        "women",
+        "lgbtq"
+      ],
       "submitVia": "Submittable",
       "slug": "womens-studio-workshop-studio-workspace-residency",
       "orgInTitle": true,
@@ -17797,6 +17803,7 @@
         "Alexis Hyde, Curator",
         "John Quinn, Founding Partner, Quinn Emanuel"
       ],
+      "resultsDate": "August 2026",
       "ai": null,
       "dateAdded": "2026-05-06T19:08:33.549Z",
       "instagram": "@qeartistresidency",
