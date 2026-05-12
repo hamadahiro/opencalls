@@ -128,7 +128,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('alternative-process')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('alternative-process') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

@@ -804,7 +804,7 @@ ${buildStaticCallList(catCalls)}
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.category === '${cat}').map(processCall);
+      const calls = data.calls.filter(c => c.category === '${cat}' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -875,7 +875,7 @@ ${buildStaticCallList(fpCalls)}
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => ${fp.filterJs}).map(processCall);
+      const calls = data.calls.filter(c => (${fp.filterJs}) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -1056,7 +1056,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('${tag}')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -1211,7 +1211,7 @@ ${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).incl
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('${tag}')).map(processCall);
+      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -1355,7 +1355,7 @@ ${country === 'USA' ? `
       });
       container.innerHTML = html;
 ` : `
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}').map(processCall);
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 `}
@@ -1431,7 +1431,7 @@ ${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -1496,7 +1496,7 @@ ${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadl
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === '${org.replace(/'/g, "\\'")}').map(processCall);
+      const calls = data.calls.filter(c => c.org === '${org.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -1569,7 +1569,7 @@ ${buildStaticCallList(visibleCalls)}
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')).map(processCall);
+      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });

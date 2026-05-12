@@ -163,7 +163,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-07')).map(processCall);
+      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-07') && isCallOpen(c.deadline)).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { skipSections: true });

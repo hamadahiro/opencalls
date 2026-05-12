@@ -134,7 +134,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', KS,') || c.location.includes(', KS, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', KS,') || c.location.includes(', KS, USA')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

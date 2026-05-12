@@ -266,7 +266,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('cash')).map(processCall);
+      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('cash') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
