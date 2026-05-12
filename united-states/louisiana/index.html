@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -115,7 +115,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/light-on-cut-paper-photography-collage-new-orleans-photo-alliance/">Light on Cut Paper: Photography &amp; Collage &middot; New Orleans Photo Alliance</a></h3><p>May 12, 2026 · $25 members / $35 non-members</p><p>Third in a NOPA series at the intersection of photography and collage. Photomontage, darkroom collage, hybrid composition. New Orleans.</p></div>
 
     </section>
 
@@ -132,7 +131,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', LA,') || c.location.includes(', LA, USA')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', LA,') || c.location.includes(', LA, USA'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

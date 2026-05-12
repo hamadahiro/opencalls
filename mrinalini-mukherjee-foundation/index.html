@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Canada 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Canada. Browse and apply today.">
-  <meta name="keywords" content="open calls Canada, call for entries Canada, photography opportunities Canada, art exhibitions Canada, photography grants Canada, artist residency Canada">
-  <link rel="canonical" href="https://opencalls.monographica.com/canada/">
+  <title>Mrinalini Mukherjee Foundation - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Mrinalini Mukherjee Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Mrinalini Mukherjee Foundation open call, Mrinalini Mukherjee Foundation call for entries, Mrinalini Mukherjee Foundation submissions, Mrinalini Mukherjee Foundation photography, Mrinalini Mukherjee Foundation exhibition, Mrinalini Mukherjee Foundation artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/mrinalini-mukherjee-foundation/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Canada 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Canada. Browse and apply today.">
+  <meta property="og:title" content="Mrinalini Mukherjee Foundation - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Mrinalini Mukherjee Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/canada/">
+  <meta property="og:url" content="https://opencalls.monographica.com/mrinalini-mukherjee-foundation/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Canada 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Canada. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/canada/",
+  "name": "Mrinalini Mukherjee Foundation - Open Calls",
+  "description": "Open calls and submission opportunities from Mrinalini Mukherjee Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/mrinalini-mukherjee-foundation/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -51,14 +51,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Canada",
-      "item": "https://opencalls.monographica.com/canada/"
+      "name": "Mrinalini Mukherjee Foundation",
+      "item": "https://opencalls.monographica.com/mrinalini-mukherjee-foundation/"
     }
   ]
 }
@@ -103,14 +103,13 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
-      <h1>Open Calls for Artists in Canada</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Canada. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Mrinalini Mukherjee Foundation</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Mrinalini Mukherjee Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/fondation-grantham-residency-for-artists-in-visual-arts-2027/">Fondation Grantham Residency for Artists in Visual Arts 2027</a></h3><p>May 27, 2026 · Free</p><p>4-week residency in Quebec for established artists at the intersection of visual arts and environmental issues. CAD $5,000–$10,000 grant.</p></div>
-      <div class="static-call-item"><h3><a href="/barbara-spohr-memorial-award-for-photography-2027/">Barbara Spohr Memorial Award for Photography 2027 &middot; Banff Centre for Arts and Creativity</a></h3><p>June 17, 2026 · $35 CAD</p><p>Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.</p></div>
+      <div class="static-call-item"><h3><a href="/mrinalini-mukherjee-creative-arts-grant-2026/">Mrinalini Mukherjee Creative Arts Grant 2026 &middot; Mrinalini Mukherjee Foundation</a></h3><p>May 15, 2026 · Free</p><p>INR 10 lakhs (~USD 12,000) grant from the Mrinalini Mukherjee Foundation for established Indian artists including lens-based practitioners.</p></div>
 
     </section>
 
@@ -127,11 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Canada' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Mrinalini Mukherjee Foundation' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
-
     } catch (e) {}
     }
     loadFiltered();
