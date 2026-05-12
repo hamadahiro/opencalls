@@ -129,7 +129,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Austria').map(processCall);
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Austria' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
