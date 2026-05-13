@@ -15481,7 +15481,7 @@
       "deadline": "2026-05-31",
       "fee": "€10",
       "category": "grant",
-      "description": "Open call for a fully-funded photobook from the Sonntag Grant for Photography, in collaboration with Replika Publishing. One FLINTA (female, lesbian, inter, non-binary, trans, agender) artist is selected to produce a photobook with Replika Publishing (350+ copies, 50 to artist). Book launch at Bildband Berlin with travel up to €300 and accommodation covered. Projects should be finished or at an advanced stage. Berlin-based grant launched in 2025. Open globally.",
+      "description": "Open call for a fully-funded photobook from the Sonntag Grant for Photography, in collaboration with Replika Publishing. One FLINTA (female, lesbian, inter, non-binary, trans, agender) artist is selected to produce a photobook with Replika Publishing (350+ copies, 50 to artist). Book launch at Bildband Berlin with travel up to €600 and accommodation covered. Projects should be finished or at an advanced stage. Berlin-based grant launched in 2025. Open globally.",
       "url": "https://sonntag-grant.org/photobook-open-call",
       "location": "Berlin, Germany",
       "instagram": "@sonntaggrant",
@@ -15489,6 +15489,8 @@
       "prize": "Fully-funded photobook + book launch",
       "eligibility": [
         "flinta",
+        "women",
+        "lgbtq",
         "18-plus"
       ],
       "submitVia": "Google Form",
@@ -15503,7 +15505,7 @@
       "jury": [],
       "prose": [
         "The Sonntag Grant is a Berlin-based grant for photography administered annually, with the 2026 photobook track run in collaboration with Replika Publishing. The grant is one of the few major photobook awards specifically reserved for FLINTA artists — female, lesbian, inter, non-binary, trans, and agender — at any career stage and any nationality.",
-        "One artist is selected to work directly with Replika Publishing to produce a new photobook. The print run is at least 350 copies, with 50 copies going to the artist. The book launch takes place at Bildband Berlin with travel support up to €300 and accommodation covered. The selected artist works with the publisher on book design, sequence, and production over several months.",
+        "One artist is selected to work directly with Replika Publishing to produce a new photobook. The print run is at least 350 copies, with 50 copies going to the artist. The book launch takes place at Bildband Berlin with travel support up to €600 and accommodation covered. The selected artist works with the publisher on book design, sequence, and production over several months.",
         "The brief asks for projects that challenge the boundaries of the book as form, with emphasis on conceptual depth, material inquiry, and artistic dialogue. All forms of photographic work are accepted; projects must be completed or at an advanced stage suitable for production. AI-generated images are not accepted.",
         "Eligibility is open to FLINTA artists 18 years and over, anywhere in the world. Submissions accept 15 to 20 images and require a project description and artist statement. Application fee is €10. The 2026 cycle accepts submissions through May 31, 2026; results announced August 2026."
       ]
@@ -18274,8 +18276,9 @@
         "professional"
       ],
       "jury": [],
-      "submitVia": "Official website",
-      "submitUrl": "https://mrinalinimukherjeefoundation.com/exhibitions/32-call-for-proposals-mrinalini-mukherjee-creative-arts-deadline-15-may-2026/",
+      "submitVia": "Google Form",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLScMvhjtEB4nznocpLOBt90ohsSjouTXu7jct8It7wh267dMPw/viewform",
+      "requirements": "Portfolio (PDF)",
       "email": "",
       "slug": "mrinalini-mukherjee-creative-arts-grant-2026",
       "orgInTitle": false,
