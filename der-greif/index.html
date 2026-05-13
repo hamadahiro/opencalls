@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,9 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/guest-room-annet-dekker-margriet-schavemaker-der-greif/">Guest Room: Annet Dekker &amp; Margriet Schavemaker &middot; Der Greif</a></h3><p>June 6, 2026 · PWYC</p><p>Theme: &quot;The Brilliance of the Mundane&quot; — everyday, accidental, and overlooked imagery as digital folklore.</p></div>
+      <div class="static-call-item"><h3><a href="/der-greif-issue-19-mother-earth-zanele-muholi/">Der Greif Issue 19 — I Am Because of You, Mother Earth &middot; Der Greif</a></h3><p>June 20, 2026 · PWYC</p><p>Print issue guest-edited by Zanele Muholi. Theme: &quot;I Am Because of You, Mother Earth&quot; — environment as inseparable from body and breath.</p></div>
+      <div class="static-call-item"><h3><a href="/photobook-feature-in-focus-der-greif/">Photobook Feature — In Focus &middot; Der Greif</a></h3><p>June 30, 2026 · PWYC</p><p>Photobooks featured in Der Greif's Articles section with editorial write-up. Self-published and small-edition welcome.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Der Greif').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Der Greif' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

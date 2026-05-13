@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,8 +109,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/luma-rencontres-dummy-book-award-2026/">LUMA Rencontres Dummy Book Award 2026</a></h3><p>May 13, 2026 · Free</p><p>€25,000 production budget for winning photobook dummy. Exhibited at Les Rencontres d'Arles 2026.</p></div>
-      <div class="static-call-item"><h3><a href="/rencontres-arles-2026-book-awards/">2026 Book Awards</a></h3><p>May 13, 2026 · Free</p><p>Three €6,000 awards for photobooks (Author's, Historical, Photo-Text). Winners exhibited at Rencontres d'Arles and Jimei x Arles.</p></div>
 
     </section>
 
@@ -127,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Les Rencontres d\'Arles' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Les Rencontres d\'Arles').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
