@@ -1984,7 +1984,10 @@
       "instagram": "@wsworkshop",
       "location": "Rosendale, NY, USA",
       "prize": "$350/week",
-      "eligibility": [],
+      "eligibility": [
+        "women",
+        "lgbtq"
+      ],
       "submitVia": "Submittable",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201261/studio-residency-grant",
       "requirements": "Up to 10 images",
@@ -2016,7 +2019,9 @@
       "location": "Rosendale, NY, USA",
       "prize": "$350/week",
       "eligibility": [
-        "45-plus"
+        "45-plus",
+        "women",
+        "lgbtq"
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201261/studio-residency-grant",
