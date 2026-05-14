@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,7 +109,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/quinn-emanuel-los-angeles-artist-in-residence-2026/">Quinn Emanuel Los Angeles Artist-in-Residence 2026</a></h3><p>May 14, 2026 · Free</p><p>$20,000 + $1,500 materials. 4-month studio residency at Quinn Emanuel LA office. Open to all media including photography. Greater LA only.</p></div>
 
     </section>
 
@@ -126,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Quinn Emanuel' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Quinn Emanuel').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
