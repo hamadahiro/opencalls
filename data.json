@@ -5485,13 +5485,15 @@
       "instagram": "@fotografiska.emerging",
       "location": "Online",
       "prize": "",
-      "eligibility": [],
+      "eligibility": [
+        "emerging"
+      ],
       "jury": [
         "Jessica Jarl, Global Director of Exhibitions, Fotografiska",
         "Thomas Schäfer, Director of Exhibitions, Fotografiska Berlin"
       ],
       "submitVia": "Fotografiska Emerging",
-      "submitUrl": "https://emerging.fotografiska.com/missions/portfolioreview",
+      "submitUrl": null,
       "email": "",
       "requirements": "Cohesive project",
       "slug": "fotografiska-emerging-portfolio-review-2026",
