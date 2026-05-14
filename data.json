@@ -782,7 +782,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdmQ6VgKMg8MmDbtBvjlH7JjY3g6jNRWHaC406W05KG9h1HSw/viewform",
       "email": "",
-      "requirements": "Up to 20 images",
+      "requirements": "15–20 images",
       "resultsDate": "Aug–Sep 2026",
       "slug": "sonntag-grant-2026-photobook-open-call",
       "orgInTitle": true,
@@ -14344,9 +14344,9 @@
       "title": "2026 Booooooom Art & Photo Book Award",
       "org": "Booooooom",
       "deadline": "2026-06-05",
-      "fee": "Free (zines) / $20 (books)",
+      "fee": "Free (zines) / $25 (books)",
       "category": "zine",
-      "description": "Annual award selecting 6 book projects and 2 zine projects for fully funded publication in partnership with Bookmobile. Books up to 100 pages and 10×10 inches, printed in 100 copies. Zines up to 36 pages, 5×7 inches, printed in 25 copies. Open to all artists, illustrators, and photographers. Non-members may submit one free zine proposal or pay $20 for a book proposal. Members submit unlimited at no extra cost.",
+      "description": "Annual award selecting 6 book projects and 2 zine projects for fully funded publication in partnership with Bookmobile. Books up to 100 pages and 10×10 inches, printed in 100 copies. Zines up to 36 pages, 5×7 inches, printed in 25 copies. Open to all artists, illustrators, and photographers. Non-members may submit one free zine proposal or pay $25 for a book proposal. Members submit unlimited at no extra cost.",
       "url": "https://www.booooooom.com/2026/03/26/call-to-submit-2026-booooooom-art-photo-book-award/",
       "location": "Online",
       "prize": "Publication (6 books + 2 zines printed)",
@@ -14367,7 +14367,7 @@
         "Booooooom is the long-running art and photography platform run by Jeff Hamada. The Annual Art & Photo Book Award is its flagship publishing program, run in partnership with Bookmobile — the Minneapolis-based printing and distribution company founded in 1982.",
         "The 2026 cycle selects 8 projects total: 6 for full book publication and 2 for perfect-bound zines. The book format is up to 100 pages at up to 10×10 inches, printed in editions of up to 100 copies. The zine format is up to 36 pages at 5×7 inches, printed in editions of 25 copies.",
         "Books and zines are published at zero cost to the artist, and winners retain full creative control: \"These will be your books, not ours, so each of you will have full control of the design and layout.\" The publishing partnership covers printing, with the artist retaining their print run for sale or distribution.",
-        "Submission requires 10 images of the proposed project at maximum 2500×2500 pixels with the filename format FIRSTNAME_LASTNAME_01.JPG. Non-members may submit one free zine proposal or pay $20 for a book proposal. Booooooom members may submit unlimited proposals at no additional cost. The 2026 deadline is June 5 at 11:59 PM PST; results announced August 2026 (selection takes a minimum of 8 weeks)."
+        "Submission requires 10 images of the proposed project at maximum 2500×2500 pixels with the filename format FIRSTNAME_LASTNAME_01.JPG. Non-members may submit one free zine proposal or pay $25 for a book proposal. Booooooom members may submit unlimited proposals at no additional cost. The 2026 deadline is June 5 at 11:59 PM PST; results announced August 2026 (selection takes a minimum of 8 weeks)."
       ]
     },
     {
@@ -18419,7 +18419,11 @@
       "orgInTitle": false,
       "summary": "Free contest by Les Amis de Jean Giono and Regards Alpins. Photos inspired by Giono's Noé. Awards at Rencontres Giono, Manosque.",
       "ai": null,
-      "resultsDate": "August 2026",
+      "jury": [
+        "Sylvie Giono, Jean Giono's daughter (Co-Chair)",
+        "Hans Silvester, Photographer (Co-Chair)"
+      ],
+      "resultsDate": "July 20, 2026",
       "dateAdded": "2026-05-14T15:10:50.981Z"
     }
   ]
