@@ -327,6 +327,19 @@ main {
   color: #151515;
   outline: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: border-radius 0.12s ease;
+}
+
+/* When suggestions dropdown is open, the bar + dropdown form a single
+   rounded container. Bar flattens at the bottom, dropdown rounds at
+   the bottom — they visually merge. */
+.search-wrap.has-suggestions .search-bar {
+  border-radius: 24px 24px 0 0;
+  box-shadow: none;
+}
+
+.search-wrap.has-suggestions #searchDropdown {
+  border-radius: 0 0 24px 24px;
 }
 
 .search-bar:focus-visible {
