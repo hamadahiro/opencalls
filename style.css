@@ -593,6 +593,7 @@ a.meta-tag-link.call-prize:hover {
 
 .submit-form textarea {
   resize: vertical;
+  border-radius: 24px;
 }
 
 .submit-details {
@@ -908,6 +909,7 @@ a.meta-tag-link.call-prize:hover {
   font-size: var(--fs-btn);
   letter-spacing: 0.3px;
   padding: 12px 28px;
+  border-radius: 999px;
   text-decoration: none;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
