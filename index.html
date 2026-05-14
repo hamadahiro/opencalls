@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260514b">
+  <link rel="stylesheet" href="/style.css?v=20260514c">
 </head>
 <body>
 
@@ -368,7 +368,7 @@
     </footer>
   </main>
 
-  <script src="/cards.js?v=20260514b"></script>
+  <script src="/cards.js?v=20260514c"></script>
   <script>
     let allCalls = [];
     let currentView = 'new';
@@ -565,7 +565,7 @@
     function showDropdown(groups) {
       var dd = document.getElementById('searchDropdown');
       var keys = Object.keys(groups);
-      if (!keys.length) { dd.style.display = 'none'; return; }
+      if (!keys.length) { dd.style.display = 'none'; document.querySelector('.search-wrap').classList.remove('has-suggestions'); return; }
       var browseLinks = { 'Eligibility': { href: '/eligibility/', text: 'All eligibility options' }, 'Locations': { href: '/locations/', text: 'All locations' }, 'Prize / Fee': { href: '/prize/', text: 'All fees and prizes' }, 'Categories': { href: '/categories/', text: 'All categories' }, 'Organizations': { href: '/organizations/', text: 'All organizations' } };
       var html = '';
       keys.forEach(function(groupName) {
@@ -582,6 +582,7 @@
       });
       dd.innerHTML = html;
       dd.style.display = 'block';
+      document.querySelector('.search-wrap').classList.add('has-suggestions');
       dd.style.pointerEvents = 'none';
       setTimeout(function() { dd.style.pointerEvents = ''; }, 300);
       selectedSuggestion = -1;
@@ -597,6 +598,7 @@
 
     function hideDropdown() {
       document.getElementById('searchDropdown').style.display = 'none';
+      document.querySelector('.search-wrap').classList.remove('has-suggestions');
       selectedSuggestion = -1;
     }
 
