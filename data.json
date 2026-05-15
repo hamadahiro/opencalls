@@ -11729,7 +11729,9 @@
       "instagram": "@festivalfotodoc",
       "location": "São Paulo, Brazil",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "16-plus"
+      ],
       "submitVia": "Website form",
       "slug": "fotodoc-photo-contest-2026",
       "orgInTitle": true,
@@ -13324,7 +13326,7 @@
       "title": "Monochrome Awards 2026",
       "org": "Monochrome Awards",
       "deadline": "2026-11-15",
-      "fee": "$22–$27",
+      "fee": "$17–$27",
       "category": "photography",
       "description": "International black and white photography competition with professional and amateur divisions across 14 categories including Abstract, Architecture, Fine Art, Landscapes, Nature, Portrait, Street, and Wildlife. Winners published in annual book and featured in online Winners Gallery.",
       "url": "https://monoawards.com/page/how-to-enter/",
