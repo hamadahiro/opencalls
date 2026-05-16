@@ -12,7 +12,9 @@
       "instagram": "@passageartresidency",
       "location": "Wittenberg, Germany",
       "prize": "€5,000 + accommodation",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [],
       "submitVia": "Official website",
       "submitUrl": "https://passageair.org/application/",
@@ -47,8 +49,8 @@
       ],
       "jury": [],
       "submitVia": "Official website",
-      "submitUrl": "https://cci.pamm.org/en/fellowships/",
-      "email": null,
+      "submitUrl": "https://cci-pamm.slideroom.com/",
+      "email": "",
       "requirements": "Portfolio",
       "slug": "cci-fellowships-2026-perez-art-museum-miami",
       "orgInTitle": false,
@@ -924,6 +926,7 @@
       "resultsDate": "July 2026",
       "requirements": "5 images",
       "jury": [],
+      "ai": null,
       "dateAdded": "2026-05-03T23:15:07.383Z",
       "prose": [
         "The Bureau of Land Management's Canyon Country District Artist in Residence program is a public-lands residency hosted at the Moab Field Office in Utah — the gateway to public lands surrounding Arches National Park, Canyonlands, and the wider Colorado Plateau red rock country. The residency is funded in partnership with the Canyonlands Natural History Association.",
