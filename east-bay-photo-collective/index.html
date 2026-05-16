@@ -8,28 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Monson Arts - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Monson Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="Monson Arts open call, Monson Arts call for entries, Monson Arts submissions, Monson Arts photography, Monson Arts exhibition, Monson Arts artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/monson-arts/">
+  <title>East Bay Photo Collective - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from East Bay Photo Collective. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="East Bay Photo Collective open call, East Bay Photo Collective call for entries, East Bay Photo Collective submissions, East Bay Photo Collective photography, East Bay Photo Collective exhibition, East Bay Photo Collective artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/east-bay-photo-collective/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Monson Arts - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Monson Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="East Bay Photo Collective - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from East Bay Photo Collective. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/monson-arts/">
+  <meta property="og:url" content="https://opencalls.monographica.com/east-bay-photo-collective/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Monson Arts - Open Calls",
-  "description": "Open calls and submission opportunities from Monson Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/monson-arts/",
+  "name": "East Bay Photo Collective - Open Calls",
+  "description": "Open calls and submission opportunities from East Bay Photo Collective. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/east-bay-photo-collective/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -57,8 +57,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Monson Arts",
-      "item": "https://opencalls.monographica.com/monson-arts/"
+      "name": "East Bay Photo Collective",
+      "item": "https://opencalls.monographica.com/east-bay-photo-collective/"
     }
   ]
 }
@@ -104,11 +104,12 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Monson Arts</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Monson Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h1>East Bay Photo Collective</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from East Bay Photo Collective. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/no-theme-open-call-2026-east-bay-photo-collective/">No Theme Open Call 2026 &middot; East Bay Photo Collective</a></h3><p>May 21, 2026 · $35 / $20 student/low-income</p><p>Open-theme show at Oakland Photo Workshop. 30–45 in-person + 10–20 online. Bay Area artists. Opening Aug 7, 2026.</p></div>
 
     </section>
 
@@ -125,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Monson Arts').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'East Bay Photo Collective' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,7 +109,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/ciar-fall-artists-residency-2026-cuttyhunk-island-artists-residency/">CIAR Fall Artists' Residency 2026 &middot; Cuttyhunk Island Artists' Residency</a></h3><p>May 15, 2026 · $25</p><p>8-day visual arts residency on Cuttyhunk Island, MA. Photography accepted. Fellowships cover full cost for artists of color, parent artists, and others.</p></div>
 
     </section>
 
@@ -126,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Cuttyhunk Island Artists\' Residency' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Cuttyhunk Island Artists\' Residency').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
