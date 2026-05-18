@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/expand-and-contract-2026-lacp/">Expand and Contract 2026 — American Documentary Photography &middot; Los Angeles Center of Photography</a></h3><p>June 16, 2026 · $25–$200</p><p>LACP virtual exhibition on American documentary photography in the 21st century. Juried by Dr. Rotem Rozental. $500 1st prize.</p></div>
 
     </section>
 
@@ -125,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Los Angeles Center of Photography').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Los Angeles Center of Photography' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
