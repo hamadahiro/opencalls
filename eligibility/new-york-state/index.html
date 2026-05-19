@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,8 +109,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/jgs-fellowship-for-photography-2026/">JGS Fellowship for Photography 2026 &middot; New York Foundation for the Arts</a></h3><p>May 19, 2026 · Free</p><p>$8,000 fellowship for 5 NY State photographers (outside NYC). Supports traditional, experimental, and alternative process photography.</p></div>
-      <div class="static-call-item"><h3><a href="/jgs-fellowship-for-photography-2026-new-york-foundation-for-the-arts/">JGS Fellowship for Photography 2026 &middot; New York Foundation for the Arts</a></h3><p>May 19, 2026 · Free</p><p>Five $8,000 unrestricted grants for photographers in NY State outside NYC. Traditional and experimental photography.</p></div>
 
     </section>
 
@@ -127,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('new-york-state') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('new-york-state')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,7 +109,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/canon-female-photojournalist-grant-2026/">Canon Female Photojournalist Grant 2026 &middot; Visa pour l'Image</a></h3><p>May 19, 2026 · Free</p><p>€8,000 grant for female photojournalists. 26th edition with Canon. Long-term documentary projects. Exhibited at Perpignan.</p></div>
 
     </section>
 
@@ -126,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Visa pour l\'Image' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Visa pour l\'Image').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
