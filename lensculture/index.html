@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/lensculture-street-photography-awards-2026/">LensCulture Street Photography Awards 2026</a></h3><p>June 17, 2026 · Free–$45</p><p>LensCulture annual street photography awards. $10,000 in prizes, 9 international jurors, exhibition at Photo London 2027. Free single entry.</p></div>
 
     </section>
 
@@ -125,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'LensCulture').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'LensCulture' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
