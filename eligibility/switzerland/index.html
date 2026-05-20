@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/near-prize-2026/">Near. Prize 2026</a></h3><p>June 7, 2026 · Free</p><p>Swiss prize from Near. + Galerie Stephan Witschi. CHF 1,000 + solo show + festival exhibition at Fotofestival Lenzburg. Near. members only.</p></div>
 
     </section>
 
@@ -125,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('switzerland')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('switzerland') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
