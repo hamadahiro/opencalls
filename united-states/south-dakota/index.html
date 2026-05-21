@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -115,7 +115,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/nice-04-midwest-nice-art/">nice;04 &middot; midwest nice art</a></h3><p>May 20, 2026 · Free</p><p>4th annual national juried exhibition. $800 in total prizes. JFAC Gallery, Northern State University, SD.</p></div>
 
     </section>
 
@@ -132,7 +131,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', SD,') || c.location.includes(', SD, USA')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', SD,') || c.location.includes(', SD, USA'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

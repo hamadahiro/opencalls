@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,7 +109,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/esc-2036-0-1-gallery-open-call/">ESC 2036 — 0—1 Gallery Open Call &middot; 0—1 Gallery</a></h3><p>May 20, 2026 · Free</p><p>Free open call from The Hague gallery. Theme: nature, tech &amp; humanity ten years ahead. Curated group exhibition 2026–2027.</p></div>
 
     </section>
 
@@ -126,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === '0—1 Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === '0—1 Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

@@ -22,7 +22,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -120,7 +120,7 @@
       <p class="call-detail-description">Each photographer submits 5 to 10 photographs as JPG files (long edge 2000px, 300 DPI) plus a project description up to 500 words. The submission process is unusual: applicants upload work to a publicly accessible Google Drive folder and send the link (with the project description as a PDF) to reach@arek-ratai.com. Files must be named Name_ProjectTitle_01. Emails with attachments are deleted unread.</p>
       <p class="call-detail-description">Submission is free of charge. Eligibility is open globally. The 2026 deadline is May 20.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 20, 2026">May 20, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">5–10 images</span></div><div class="info-row"><span class="info-label">AI policy</span><span class="dots"></span><span class="info-value">Not accepted</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:reach@arek-ratai.com" target="_blank" rel="nofollow noopener"><span class="tag-front">Google Drive link</span> <span class="tag-back">via email</span></a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 20, 2026">May 20, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">5–10 images</span></div><div class="info-row"><span class="info-label">AI policy</span><span class="dots"></span><span class="info-value">Not accepted</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><span class="tag-front">Google Drive link</span> <span class="tag-back">via email</span></span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Dani (@d.m.terblanche), Guest Curator</p>
@@ -130,8 +130,7 @@
         <p class="call-detail-description">Organized by <a href="/unstaged/">UNSTAGED</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.instagram.com/unstaged.journal/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/unstaged.journal" target="_blank" rel="nofollow noopener">@unstaged.journal</a></div>
     </section>
@@ -149,23 +148,7 @@
   <script>
     const CURRENT_SLUG = 'unstaged-journal-instant-photography';
     const CURRENT_CALL = {"prize":"Publication (print)","category":"zine","org":"UNSTAGED","location":"Online","fee":"Free","deadline":"2026-05-20","resultsDate":"","instagram":"@unstaged.journal","eligibility":[],"jury":["Dani (@d.m.terblanche), Guest Curator"],"submitVia":"Google Drive link via email","submitUrl":"","email": "","ai":"Not accepted","requirements":"5–10 images"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-05-20'.replace(/-/g, '');
-      var nd = new Date('2026-05-20T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'UNSTAGED Journal — Instant Photography';
-      var u = 'https://www.instagram.com/unstaged.journal/';
-      var o = 'UNSTAGED';
-      var dl = new Date('2026-05-20T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication (print)') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260514e"></script>
   <script src="/search.js?v=20260514e"></script>
