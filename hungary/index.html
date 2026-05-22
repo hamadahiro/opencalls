@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/eidolon-grant-2026/">Eidolon Grant 2026</a></h3><p>September 30, 2026 · Free</p><p>€25,000 grant pool for research and projects on vernacular and everyday photography. Two categories: contemporary and historical.</p></div>
 
     </section>
 
@@ -126,7 +127,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Hungary').map(processCall);
+      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === 'Hungary' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 

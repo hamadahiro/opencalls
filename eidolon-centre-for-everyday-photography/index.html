@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Glasgow Gallery of Photography - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <meta name="keywords" content="Glasgow Gallery of Photography open call, Glasgow Gallery of Photography call for entries, Glasgow Gallery of Photography submissions, Glasgow Gallery of Photography photography, Glasgow Gallery of Photography exhibition, Glasgow Gallery of Photography artists">
-  <link rel="canonical" href="https://opencalls.monographica.com/glasgow-gallery-of-photography/">
+  <title>Eidolon Centre for Everyday Photography - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Eidolon Centre for Everyday Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta name="keywords" content="Eidolon Centre for Everyday Photography open call, Eidolon Centre for Everyday Photography call for entries, Eidolon Centre for Everyday Photography submissions, Eidolon Centre for Everyday Photography photography, Eidolon Centre for Everyday Photography exhibition, Eidolon Centre for Everyday Photography artists">
+  <link rel="canonical" href="https://opencalls.monographica.com/eidolon-centre-for-everyday-photography/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Glasgow Gallery of Photography - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="Eidolon Centre for Everyday Photography - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Eidolon Centre for Everyday Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/glasgow-gallery-of-photography/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eidolon-centre-for-everyday-photography/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,9 +27,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Glasgow Gallery of Photography - Open Calls",
-  "description": "Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/glasgow-gallery-of-photography/",
+  "name": "Eidolon Centre for Everyday Photography - Open Calls",
+  "description": "Open calls and submission opportunities from Eidolon Centre for Everyday Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/eidolon-centre-for-everyday-photography/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -57,8 +57,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Glasgow Gallery of Photography",
-      "item": "https://opencalls.monographica.com/glasgow-gallery-of-photography/"
+      "name": "Eidolon Centre for Everyday Photography",
+      "item": "https://opencalls.monographica.com/eidolon-centre-for-everyday-photography/"
     }
   ]
 }
@@ -104,12 +104,12 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Glasgow Gallery of Photography</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h1>Eidolon Centre for Everyday Photography</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Eidolon Centre for Everyday Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/the-emergence-project-2026-glasgow-gallery-of-photography/">The Emergence Project 2026 &middot; Glasgow Gallery of Photography</a></h3><p>May 30, 2026 · Free</p><p>Free graduate showcase for UK photography grads (2023–2026). Gallery covers printing and framing. Glasgow exhibition, July.</p></div>
+      <div class="static-call-item"><h3><a href="/eidolon-grant-2026/">Eidolon Grant 2026</a></h3><p>September 30, 2026 · Free</p><p>€25,000 grant pool for research and projects on vernacular and everyday photography. Two categories: contemporary and historical.</p></div>
 
     </section>
 
@@ -126,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Glasgow Gallery of Photography' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Eidolon Centre for Everyday Photography' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
