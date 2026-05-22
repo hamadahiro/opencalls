@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/18th-annual-nude-manifest-gallery/">18th Annual NUDE — Manifest Gallery</a></h3><p>May 24, 2026 · $45 (3 images)</p><p>18-year annual themed exhibition on the human form. Open to photography. $50 honorarium + $1,000 Grand Jury Award. Cincinnati.</p></div>
 
     </section>
 
@@ -125,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Manifest Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Manifest Gallery' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
