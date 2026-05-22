@@ -22,7 +22,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -109,6 +109,8 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/making-strange-praxis-photo-arts-center/">Making Strange &middot; Praxis Photo Arts Center</a></h3><p>May 31, 2026 · $35 (5 images) + $5 each additional</p><p>Praxis Gallery (Minneapolis) juried photography exhibition on the everyday made strange. 30 images selected, July–August 2026.</p></div>
+      <div class="static-call-item"><h3><a href="/water-sky-praxis-photo-arts-center/">Water ~ Sky &middot; Praxis Photo Arts Center</a></h3><p>June 21, 2026 · $35 (5 images) + $5 each additional</p><p>Praxis Gallery (Minneapolis) landscape photo exhibition on water and sky. 30 images selected, July–August 2026.</p></div>
 
     </section>
 
@@ -125,7 +127,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Praxis Photo Arts Center').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Praxis Photo Arts Center' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
