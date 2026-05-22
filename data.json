@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-22T13:04:01.962Z",
+  "lastUpdated": "2026-05-22",
   "calls": [
     {
       "title": "The Print Center 101st ANNUAL International Competition",
@@ -19705,6 +19705,104 @@
       "orgInTitle": true,
       "summary": "18-year annual themed exhibition on the human form. Open to photography. $50 honorarium + $1,000 Grand Jury Award. Cincinnati.",
       "dateAdded": "2026-05-22T03:10:03.359Z"
+    },
+    {
+      "title": "AOP OPEN 2026",
+      "org": "Association of Photographers",
+      "deadline": "2026-06-08",
+      "fee": "£15 / £20 single (member / non-member)",
+      "category": "photography",
+      "description": "16th edition of the Association of Photographers' international open award. No categories, no themes — open to professional, emerging, and amateur photographers. Single image, series (2–5 images), and moving image entries accepted. Innovative work using AR, VR, CGI or other techniques is eligible if created by a person. Judged by a panel of leading industry professionals — photographers, commissioners, curators, and specialists. Gold and Silver awards may be given in each format. Best in Show wins £1,250 plus a Fujifilm X Series kit (worth £1,500) and a 1-year Capture One Studio subscription. Gold and Silver winners receive AOP Photographer Membership and Capture One subscriptions. Selected finalists and winners exhibited at the Fujifilm House of Photography in early 2027. All images must have been created on or after 1 January 2024.",
+      "url": "https://www.aopawards.com/aop-open-2026/",
+      "location": "London, United Kingdom",
+      "prize": "£1,250 + Fujifilm kit + exhibition",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.aopawards.com/aop-open-2026/",
+      "requirements": "1 image or 2–5 series",
+      "slug": "aop-open-2026",
+      "orgInTitle": false,
+      "summary": "16th AOP Open Award — no themes, no categories. Best in Show: £1,250 + Fujifilm kit + Fujifilm House of Photography exhibition.",
+      "jury": [
+        "Joseph Ford, Photographer & Director",
+        "Louise Hagger, Photographer",
+        "Carolyn Mendelsohn, Photographer",
+        "Violeta Sofia, Photographer",
+        "Nick Turpin, Photographer",
+        "Dawn Moretti, DAWN Productions",
+        "Julian Rodriguez, Impressions Gallery"
+      ],
+      "dateAdded": "2026-05-22T19:16:03.674Z"
+    },
+    {
+      "title": "Making Strange",
+      "org": "Praxis Photo Arts Center",
+      "deadline": "2026-05-31",
+      "fee": "$35 (5 images) + $5 each additional",
+      "category": "exhibition",
+      "description": "Juried photography exhibition at Praxis Gallery in Minneapolis on the theme of rendering the everyday unfamiliar. Looking for photographs that transform the ordinary through framing, timing, light, distance, or construction — work where the iconic, the ironic, and the overlooked are constructed through deliberate acts of seeing. Thirty images are selected for the in-person exhibition at Praxis Gallery, July 18 – August 8, 2026, with a Juror's Choice award, two Honorable Mentions, and a Directors Choice award (for the most cohesive series). Open internationally to all photographers.",
+      "url": "https://www.praxisphotocenter.org/calls-for-entry",
+      "instagram": "@praxisphotocenter",
+      "location": "Minneapolis, MN, USA",
+      "prize": "Exhibition + Juror's Choice + Directors Choice",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.praxisphotocenter.org/calls-for-entry",
+      "requirements": "Up to 5 images",
+      "slug": "making-strange-praxis-photo-arts-center",
+      "orgInTitle": false,
+      "summary": "Praxis Gallery (Minneapolis) juried photography exhibition on the everyday made strange. 30 images selected, July–August 2026.",
+      "jury": [],
+      "dateAdded": "2026-05-22T19:16:03.674Z"
+    },
+    {
+      "title": "Water ~ Sky",
+      "org": "Praxis Photo Arts Center",
+      "deadline": "2026-06-21",
+      "fee": "$35 (5 images) + $5 each additional",
+      "category": "exhibition",
+      "description": "Landscape photography exhibition at Praxis Gallery in Minneapolis exploring the relationship between water and sky as elemental forms in landscape practice. The call seeks work that engages surface and depth, presence and distance, observation and sensation — sea, river, ocean, puddle, sky, cloud, weather, motion, horizon. All approaches welcome from documentary to conceptual. Thirty images selected for in-person exhibition at Praxis Gallery, July 18 – August 8, 2026. Open internationally.",
+      "url": "https://www.praxisphotocenter.org/calls-for-entry",
+      "instagram": "@praxisphotocenter",
+      "location": "Minneapolis, MN, USA",
+      "prize": "Exhibition + Juror's Choice + Directors Choice",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.praxisphotocenter.org/calls-for-entry",
+      "requirements": "Up to 5 images",
+      "slug": "water-sky-praxis-photo-arts-center",
+      "orgInTitle": false,
+      "summary": "Praxis Gallery (Minneapolis) landscape photo exhibition on water and sky. 30 images selected, July–August 2026.",
+      "jury": [],
+      "dateAdded": "2026-05-22T19:16:03.674Z"
+    },
+    {
+      "title": "Bay Area Photography Open Exhibition 2026",
+      "org": "The Image Flow",
+      "deadline": "2026-07-05",
+      "fee": "$40 (up to 3 images)",
+      "category": "exhibition",
+      "description": "Second annual juried exhibition by The Image Flow (Mill Valley, CA) showcasing photographic artists in the extended San Francisco Bay Area. Open theme — all subject matter and media explorations eligible including digital, alternative processes, and analog. AI-generated images excluded. Restricted to photographers in nine Bay Area counties: Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma. Jurors: Ann Jastrab, Nelson Chan, and Nathan Lomas. Selected work shown in a group exhibition with reception at The Image Flow gallery; online showcasing; softcover catalog produced.",
+      "url": "https://theimageflow.com/gallery/call-for-entry/bay-area-photography-open-exhibition-2026/",
+      "instagram": "@theimageflow",
+      "location": "Mill Valley, CA, USA",
+      "prize": "Group exhibition + catalog",
+      "eligibility": [
+        "united-states"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://bapo2026.artcall.org/",
+      "requirements": "Up to 3 images",
+      "ai": "Not accepted",
+      "slug": "bay-area-photography-open-exhibition-2026-image-flow",
+      "orgInTitle": false,
+      "summary": "The Image Flow (Mill Valley) 2nd annual juried exhibition for 9-county SF Bay Area photographers. Jurors: Ann Jastrab, Nelson Chan, Nathan Lomas.",
+      "jury": [
+        "Ann Jastrab",
+        "Nelson Chan",
+        "Nathan Lomas"
+      ],
+      "dateAdded": "2026-05-22T19:16:03.674Z"
     }
   ]
 }
