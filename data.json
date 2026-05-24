@@ -11,11 +11,13 @@
       "url": "https://www.tokyoartsandspace.jp/en/archive/application/2026/20260430-317.html",
       "instagram": "@tokyoartsandspace",
       "location": "Tokyo, Japan",
-      "prize": "Airfare + accommodation + 4,200 JPY/day + 300,000 JPY fee",
-      "eligibility": [],
+      "prize": "¥300,000",
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://form.run/@2027ICR",
-      "requirements": "Portfolio + 2 letters of recommendation",
+      "requirements": "Portfolio",
       "slug": "tokas-international-creator-residency-program-2027",
       "orgInTitle": true,
       "summary": "Three-month Tokyo residency. Airfare, accommodation, 4,200 JPY/day per diem, 300,000 JPY creative fee. Free to apply.",
@@ -38,9 +40,13 @@
       "instagram": "@fluxus_art_projects",
       "location": "Multiple, France",
       "prize": "£2,100 / €2,500 monthly + accommodation",
-      "eligibility": [],
+      "eligibility": [
+        "france",
+        "united-kingdom",
+        "professional"
+      ],
       "submitVia": "Google Forms",
-      "requirements": "Project proposal + motivational statement + portfolio",
+      "requirements": "Portfolio",
       "slug": "magnetic-5-residency-programme-2026-fluxus",
       "orgInTitle": false,
       "summary": "France–UK cross-Channel residency. 2-3 months, £2,100/€2,500 monthly. For visual artists resident in FR or UK only.",
@@ -50,7 +56,9 @@
         "Each residency runs 2 to 3 months and provides a minimum monthly allowance of £2,100 (or €2,500), accommodation, workspace access, and curatorial mentoring. The 2026 brief frames the programme around societal and environmental issues, asking artists to engage with the geographical, historical, social, and artistic context of the host site. Eligibility is restricted to professional visual artists with exhibition history in recognized contemporary art venues, individuals only (no collectives or duos), French nationals or those resident in France for at least five years, and British nationals or those resident in the UK for at least five years. Students are not eligible, with PhD candidates as the exception.",
         "Applications close at midnight on Tuesday 2 June 2026 via Google Forms, requiring an artistic proposal articulating the practice's relevance to the residency context and a motivational statement on why an international residency matters at this point in the applicant's career. Interviews are held 6–10 July; results are announced 20 July 2026."
       ],
-      "dateAdded": "2026-05-24T19:12:49.480Z"
+      "dateAdded": "2026-05-24T19:12:49.480Z",
+      "email": "",
+      "resultsDate": "July 20, 2026"
     },
     {
       "title": "Southern Survey Biennial III",
