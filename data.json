@@ -915,7 +915,8 @@
       "location": "Atlanta, GA, USA",
       "prize": "$1,000",
       "eligibility": [
-        "membership-required"
+        "membership-required",
+        "united-states"
       ],
       "jury": [
         "Anne Leighton Massoni, Executive Director, Houston Center for Photography"
@@ -1845,7 +1846,9 @@
       "summary": "5–6 week residency at a historic paper mill in Vicksburg, MI. All media incl. photography. $2,000 + travel + housing + gallery show.",
       "resultsDate": "2026-07-30",
       "ai": null,
-      "jury": [],
+      "jury": [
+        "Six-person panel: three former residents, one community member, the Residency Director, and Residency Coordinator"
+      ],
       "email": "",
       "dateAdded": "2026-05-02T15:17:16.316Z",
       "prose": [
@@ -20053,10 +20056,11 @@
       "eligibility": [],
       "submitVia": "CuratorSpace",
       "submitUrl": "https://www.curatorspace.com/opportunities/detail/open-call-for-artists-and-writers-on-the-theme-of-the-liminality-of-time/10654",
-      "requirements": "1 image (artists); up to 1000 words or 3 poems (writers)",
+      "requirements": "1 image",
       "slug": "haus-a-rest-issue-72-liminality-of-time",
       "orgInTitle": true,
       "summary": "UK indie art/lit zine, theme 'The Liminality of Time'. Photography accepted alongside other media. Free, publication only.",
+      "resultsDate": "Mid June 2026",
       "prose": [
         "Haus-a-rest is a UK-based independent art zine run by editors Jenna Fox and Nichola Rodgers. The publication's editorial line is bluntly stated: a space for the bold, curious, and uncompromising — work that resists the obvious. Each themed issue brings together visual art, photography, and writing from artists at any career stage, with emerging and underrepresented voices especially encouraged to apply.",
         "Issue 72's theme is 'The Liminality of Time' — temporal thresholds where past, present, and future blur, overlap, or dissolve. The editors are looking for works that engage with temporal dislocation, memory, ritual, grief, and states of becoming. Photography sits alongside painting, video, installation, sound art, and writing in the issue.",
