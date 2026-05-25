@@ -152,7 +152,6 @@ function HEAD(opts) {
   <meta name="theme-color" content="${THEME_DARK}" media="(prefers-color-scheme: dark)">
   <title>${opts.title}${TITLE_SUFFIX}</title>
   <meta name="description" content="${opts.description}">
-  ${opts.keywords ? `<meta name="keywords" content="${opts.keywords}">` : ''}
   <link rel="canonical" href="${canonical}">
   ${ICONS}
   <meta property="og:title" content="${opts.title}${TITLE_SUFFIX}">
