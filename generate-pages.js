@@ -3,6 +3,26 @@ const path = require('path');
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
+// Per-call verification timestamps written by scripts/verify-batch.js.
+// Used to render "Verified by Monographica on [date]" on every detail page
+// and to set JSON-LD dateModified — real evidence of human curation, not
+// filler. Missing file is non-fatal (some envs may not have run verify yet).
+let verifyState = { entries: {} };
+try {
+  verifyState = JSON.parse(fs.readFileSync('scripts/verify-state.json', 'utf8'));
+} catch (e) {
+  console.warn('  verify-state.json not found — skipping verification timestamps');
+}
+function getVerifiedAt(slug) {
+  const entry = verifyState.entries && verifyState.entries[slug];
+  return entry ? entry.at : null;
+}
+function formatVerifiedDate(iso) {
+  if (!iso) return null;
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
 // Validate data before generating
 const COUNTRY_ALIASES = { 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'US': 'United States', 'United States': 'USA' };
 const VALID_CATEGORIES = ['photography', 'exhibition', 'grant', 'zine', 'residency', 'education'];
@@ -613,6 +633,12 @@ function buildJsonLd(call) {
   if (call.dateAdded) {
     ld.datePublished = call.dateAdded.split('T')[0];
   }
+  const verifiedAt = getVerifiedAt(call.slug || slugify(call.title));
+  if (verifiedAt) {
+    ld.dateModified = verifiedAt.split('T')[0];
+  } else if (call.dateAdded) {
+    ld.dateModified = call.dateAdded.split('T')[0];
+  }
   // Clean undefined values
   Object.keys(ld).forEach(k => { if (ld[k] === undefined) delete ld[k]; });
   return JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
@@ -658,7 +684,10 @@ ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
-      <div class="call-detail-actions" id="detailActions">
+${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-detail-jury">
+        <p class="call-detail-description">Verified by Monographica on ${formatVerifiedDate(v)}</p>
+      </div>
+` : ''; })()}      <div class="call-detail-actions" id="detailActions">
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
