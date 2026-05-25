@@ -1890,9 +1890,53 @@ cardsJs = cardsJs.replace(
 );
 fs.writeFileSync('cards.js', cardsJs);
 
-// Generate sitemap.xml
+// Generate sitemap.xml — PRUNED to the high-value canonical structure only.
+// As of 2026-05-25 the site is at 0 indexed / 1.48K not-indexed in Search
+// Console, dominated by 774 "Crawled — currently not indexed" (the Helpful
+// Content classifier). Promoting 500+ thin call pages in the sitemap was
+// reinforcing the "aggregator with little unique value" signal. We now
+// promote ONLY the structural pages (home, taxonomy indexes, category
+// landings, fee landings, top country pages). Individual call pages remain
+// crawlable via internal links from those indexes — Google can find them
+// when it wants — but they are no longer pushed at Google as "please index
+// these too." This is a one-shot signal change; the bulk crawl-vs-index
+// decision is still Google's, but the sitemap now expresses a clear quality
+// hierarchy instead of dumping every URL.
 const today = new Date().toISOString().split('T')[0];
-const allUrls = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u : u + '/')];
+const allUrlsRaw = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u : u + '/')];
+
+const STRUCTURAL_EXACT = new Set([
+  `${SITE}/`,
+  `${SITE}/browse/`,
+  `${SITE}/categories/`,
+  `${SITE}/locations/`,
+  `${SITE}/organizations/`,
+  `${SITE}/fees/`,
+  `${SITE}/eligibility/`,
+  `${SITE}/prize/`,
+  `${SITE}/deadlines/`,
+  `${SITE}/submit/`,
+  `${SITE}/photography/`,
+  `${SITE}/exhibitions/`,
+  `${SITE}/grants/`,
+  `${SITE}/residencies/`,
+  `${SITE}/zines/`,
+  `${SITE}/education/`,
+  `${SITE}/fees/free/`,
+  `${SITE}/fees/entry-fee/`,
+]);
+// Top country pages: include any country page that's a single-segment path
+// directly under root (e.g. /united-states/, /germany/, /united-kingdom/).
+// Individual state/city sub-paths and individual call/org pages are excluded.
+function isTopCountryPage(url) {
+  const path = url.slice(SITE.length);
+  // Single segment under root, ends with slash, not in RESERVED/non-country list.
+  if (!/^\/[a-z0-9-]+\/$/.test(path)) return false;
+  const slug = path.slice(1, -1);
+  return PRECOMPUTED_COUNTRY_PAGES.has(slug);
+}
+
+const allUrls = allUrlsRaw.filter(url => STRUCTURAL_EXACT.has(url) || isTopCountryPage(url));
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1903,6 +1947,7 @@ ${allUrls.map(url => `  <url>
 </urlset>`;
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
+console.log(`  Sitemap pruned to ${allUrls.length} structural URLs (was ${allUrlsRaw.length})`);
 
 // Generate RSS feed
 const now = new Date();
