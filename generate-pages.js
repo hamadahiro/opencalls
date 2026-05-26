@@ -20,7 +20,9 @@ function getVerifiedAt(slug) {
 function formatVerifiedDate(iso) {
   if (!iso) return null;
   const d = new Date(iso);
-  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  // Non-breaking space between day and year so "May 23, 2026" never wraps with
+  // the year alone on the next line on narrow viewports.
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).replace(/, /, ', ');
 }
 
 // Validate data before generating
@@ -682,16 +684,13 @@ ${call.jury && call.jury.length ? `
       </div>
 ` : ''}
       <div class="call-detail-jury">
-        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
+        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a>${call.instagram ? ` (<a href="https://instagram.com/${escapeHtml(call.instagram.replace('@', ''))}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a>)` : ''}</p>
       </div>
-${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-detail-jury">
-        <p class="call-detail-description">Verified by Monographica on ${formatVerifiedDate(v)}</p>
-      </div>
-` : ''; })()}      <div class="call-detail-actions" id="detailActions">
+      <div class="call-detail-actions" id="detailActions">
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
-${call.instagram ? `      <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/${escapeHtml(call.instagram.replace('@', ''))}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a></div>` : ''}
+${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on ${formatVerifiedDate(v).replace(/, /, ', ')}</span></div>` : ''; })()}
     </section>
 
     <section class="related-calls">
