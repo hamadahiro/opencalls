@@ -21,7 +21,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -120,7 +120,7 @@
       <p class="call-detail-description">Eligibility is restricted to persons with disabilities; there is no age restriction. Submission is free. Each photographer submits a maximum of 3 photos in JPEG format, RGB, maximum 2000 pixels on the longest side, minimum 4 MB file size, with no watermarks or identifying marks.</p>
       <p class="call-detail-description">Across its first four editions, GAPC reports reaching 8 million people, 50,000+ lives inspired, and participants from 30+ countries. The 2026 deadline is May 25; results announced before the June 24 award ceremony.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 25, 2026">May 25, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Before June 24, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/neurodivergent-disabled/" title="Neurodivergent &amp; disabled"><span class="tag-front">Neurodivergent &amp;</span> <span class="tag-back">disabled</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/india/" title="Ahmedabad, India">Ahmedabad, India</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 3 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value"><a href="mailto:satyander.pal@youth4jobs.org" target="_blank" rel="nofollow noopener">Google Forms</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 25, 2026">May 25, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Before June 24, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/neurodivergent-disabled/" title="Neurodivergent &amp; disabled"><span class="tag-front">Neurodivergent &amp;</span> <span class="tag-back">disabled</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/india/" title="Ahmedabad, India">Ahmedabad, India</a></span></div><div class="info-row"><span class="info-label">Requirements</span><span class="dots"></span><span class="info-value">Up to 3 images</span></div><div class="info-row"><span class="info-label">Submit via</span><span class="dots"></span><span class="info-value">Google Forms</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/not-just-art/">Not Just Art</a></p>
@@ -129,8 +129,7 @@
         <p class="call-detail-description">Verified by Monographica on May 25, 2026</p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.notjustartglobal.org/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><a class="breadcrumbs" href="https://instagram.com/youth4jobsfoundation" target="_blank" rel="nofollow noopener">@youth4jobsfoundation</a></div>
     </section>
@@ -148,23 +147,7 @@
   <script>
     const CURRENT_SLUG = 'global-ability-photography-challenge-2026-not-just-art';
     const CURRENT_CALL = {"prize":"$20,000 total","category":"photography","org":"Not Just Art","location":"Ahmedabad, India","fee":"Free","deadline":"2026-05-25","resultsDate":"Before June 24, 2026","instagram":"@youth4jobsfoundation","eligibility":["neurodivergent-disabled"],"jury":[],"submitVia":"Google Forms","submitUrl":"https://docs.google.com/forms/d/e/1FAIpQLSfqMDi_k1GTxL88x6ZErEUaADQ-zzeoBm0iFUEy2D7qc8uVAw/viewform","email": "","ai":"","requirements":"Up to 3 images"};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-05-25'.replace(/-/g, '');
-      var nd = new Date('2026-05-25T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Global Ability Photography Challenge 2026';
-      var u = 'https://www.notjustartglobal.org/';
-      var o = 'Not Just Art';
-      var dl = new Date('2026-05-25T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$20,000 total') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/cards.js?v=20260514e"></script>
   <script src="/search.js?v=20260514e"></script>
