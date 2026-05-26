@@ -17,6 +17,39 @@ function getVerifiedAt(slug) {
   const entry = verifyState.entries && verifyState.entries[slug];
   return entry ? entry.at : null;
 }
+// Linkify the FIRST mention of the org name and any @instagram handles in a
+// block of prose. Subsequent mentions stay as plain text — this avoids the
+// over-linking pattern Google flags as low-quality, while still surfacing the
+// internal org link (good for SEO) and the IG handle for users who want it.
+// State tracking is per-call (the linkifyState object) so the first mention
+// across the WHOLE prose array gets linked, not the first mention per paragraph.
+function makeLinkifyState() {
+  return { orgLinked: false, handlesLinked: {} };
+}
+function linkifyProse(paragraph, call, state) {
+  // Escape first, then inject anchor tags — safer than parsing HTML.
+  let html = escapeHtml(paragraph);
+  // 1. First mention of org name — link to org page if it exists in PRECOMPUTED.
+  if (!state.orgLinked && call.org) {
+    const orgEsc = escapeHtml(call.org);
+    const orgSlug = slugify(call.org);
+    // Use \b-style boundary via lookarounds so "Carlotta Gallery" matches inside
+    // "Carlotta Gallery's" without consuming the apostrophe-s.
+    const re = new RegExp('(^|[^a-z0-9])(' + orgEsc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![a-z0-9])', 'i');
+    if (re.test(html) && PRECOMPUTED_ORG_PAGES.has(orgSlug)) {
+      html = html.replace(re, '$1<a href="/' + orgSlug + '/">$2</a>');
+      state.orgLinked = true;
+    }
+  }
+  // 2. First mention of any @handle — link to instagram.com/<handle>.
+  html = html.replace(/@([A-Za-z0-9_.]+)/g, function (match, handle) {
+    if (state.handlesLinked[handle]) return match;
+    state.handlesLinked[handle] = true;
+    return '<a href="https://instagram.com/' + handle + '" target="_blank" rel="nofollow noopener">' + match + '</a>';
+  });
+  return html;
+}
+
 function formatVerifiedDate(iso) {
   if (!iso) return null;
   const d = new Date(iso);
@@ -669,9 +702,9 @@ function generatePage(call, cssVersion) {
 
       <div id="detailPrize">${buildStaticPrizeBlock(call)}</div>
 
-${call.prose && call.prose.length
-  ? call.prose.map(p => `      <p class="call-detail-description">${escapeHtml(p)}</p>`).join('\n')
-  : `      <p class="call-detail-description">${escapeHtml(call.description)}</p>`}
+${(() => { const state = makeLinkifyState(); return call.prose && call.prose.length
+  ? call.prose.map(p => `      <p class="call-detail-description">${linkifyProse(p, call, state)}</p>`).join('\n')
+  : `      <p class="call-detail-description">${linkifyProse(call.description, call, state)}</p>`; })()}
 ${call.winners && call.winners.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
