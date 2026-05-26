@@ -1129,6 +1129,15 @@ a.meta-tag-link.call-prize:hover {
   overflow-y: auto;
 }
 
+.global-search.has-suggestions .search-bar {
+  border-radius: 24px 24px 0 0;
+  box-shadow: none;
+}
+
+.global-search.has-suggestions .global-search-dropdown {
+  border-radius: 0 0 24px 24px;
+}
+
 .global-search-dropdown .search-suggestion {
   color: #151515 !important;
   font-size: var(--fs-btn) !important;

@@ -154,7 +154,7 @@
 
   function showDropdown(groups) {
     var keys = Object.keys(groups);
-    if (!keys.length) { searchDropdown.style.display = 'none'; return; }
+    if (!keys.length) { searchDropdown.style.display = 'none'; searchWrap.classList.remove('has-suggestions'); return; }
     var browseLinks = { 'Eligibility': { href: '/eligibility/', text: 'All eligibility options' }, 'Locations': { href: '/locations/', text: 'All locations' }, 'Prize / Fee': { href: '/prize/', text: 'All fees and prizes' }, 'Categories': { href: '/categories/', text: 'All categories' }, 'Organizations': { href: '/organizations/', text: 'All organizations' } };
     var html = '';
     keys.forEach(function(groupName) {
@@ -171,6 +171,7 @@
     });
     searchDropdown.innerHTML = html;
     searchDropdown.style.display = 'block';
+    searchWrap.classList.add('has-suggestions');
     searchDropdown.style.pointerEvents = 'none';
     setTimeout(function() { searchDropdown.style.pointerEvents = ''; }, 300);
     selectedSuggestion = -1;
@@ -186,6 +187,7 @@
 
   function hideDropdown() {
     searchDropdown.style.display = 'none';
+    searchWrap.classList.remove('has-suggestions');
     selectedSuggestion = -1;
   }
 
