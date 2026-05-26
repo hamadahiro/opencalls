@@ -1,5 +1,11 @@
 // Google Analytics
 (function() {
+  // Hostname guard: this property (G-PGN8M3LZMZ / "Open Calls") must only ever
+  // log hits from opencalls.monographica.com. Bail out on any other hostname
+  // (local dev, staging, accidental embed elsewhere). The main monographica.com
+  // site uses a separate property entirely.
+  if (location.hostname !== 'opencalls.monographica.com') return;
+
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PGN8M3LZMZ';
