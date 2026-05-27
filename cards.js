@@ -96,6 +96,126 @@ const prizeCategoryLabel = {
   'fellowship': 'Fellowship'
 };
 
+// === Shared search suggestion logic ===
+// Both the home page's inline search and search.js (used on every other page)
+// call into this so per-row counts, sort order, and group composition stay
+// consistent. Fixing a bug here fixes it everywhere — no more "I changed
+// search.js but the home page still shows wrong numbers."
+//
+// `opts.excludeChips`: array of { type, value } already active on the page
+//   (home page uses chips; others don't — pass [] or omit).
+// `opts.skipCategoriesOnFocus`: when true and the query is empty, omit the
+//   Categories group from the result (home page has category buttons above the
+//   search bar so categories there would be redundant).
+function getOpenCallsFromArray(calls) {
+  var now = new Date();
+  var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  return calls.filter(function(c) { return c.deadline === 'Continuous' || c.deadline >= today; });
+}
+function buildSearchSuggestions(allCalls, query, opts) {
+  opts = opts || {};
+  var excludeChips = opts.excludeChips || [];
+  var skipCategoriesOnFocus = !!opts.skipCategoriesOnFocus;
+  var relevant = getOpenCallsFromArray(allCalls);
+  var q = (query || '').toLowerCase().trim();
+  var groups = {};
+  function notExcluded(type, value) {
+    return !excludeChips.some(function(ch) { return ch.type === type && ch.value === value; });
+  }
+
+  // Categories
+  var catCounts = {};
+  relevant.forEach(function(c) { catCounts[c.category] = (catCounts[c.category] || 0) + 1; });
+  var catItems = Object.entries(categoryLabel).map(function(e) {
+    return { type: 'category', value: e[0], label: e[1], count: catCounts[e[0]] || 0 };
+  }).filter(function(item) {
+    return item.count > 0 && (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
+  }).sort(function(a, b) { return b.count - a.count; });
+  if (catItems.length) groups['Categories'] = catItems.slice(0, 5);
+
+  // Countries
+  var countryCounts = {};
+  relevant.forEach(function(c) {
+    if (!c.location) return;
+    var parts = c.location.split(',');
+    var country = parts[parts.length - 1].trim();
+    if (country) countryCounts[country] = (countryCounts[country] || 0) + 1;
+  });
+  var countryExpand = { USA: 'United States', UK: 'United Kingdom', UAE: 'United Arab Emirates' };
+  var countryItems = Object.entries(countryCounts).map(function(e) {
+    var display = countryExpand[e[0]] || e[0];
+    return { type: 'country', value: e[0], label: display, count: e[1] };
+  }).filter(function(item) {
+    return (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
+  }).sort(function(a, b) { return b.count - a.count; });
+  if (countryItems.length) groups['Locations'] = countryItems.slice(0, 6);
+
+  // Eligibility
+  var eligCounts = {};
+  relevant.forEach(function(c) { if (c.eligibility) c.eligibility.forEach(function(e) { eligCounts[e] = (eligCounts[e] || 0) + 1; }); });
+  var eligItems = Object.entries(eligibilityLabel).map(function(e) {
+    return { type: 'eligibility', value: e[0], label: e[1], count: eligCounts[e[0]] || 0 };
+  }).filter(function(item) {
+    return item.count > 0 && (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
+  }).sort(function(a, b) { return b.count - a.count; });
+  if (eligItems.length) groups['Eligibility'] = eligItems.slice(0, 5);
+
+  // Prizes
+  var prizeCounts = {};
+  relevant.forEach(function(c) {
+    if (!c.prize) return;
+    derivePrizeCategories(c.prize).forEach(function(pc) { prizeCounts[pc] = (prizeCounts[pc] || 0) + 1; });
+  });
+  var prizeItems = Object.entries(prizeCategoryLabel).map(function(e) {
+    return { type: 'prize', value: e[0], label: e[1], count: prizeCounts[e[0]] || 0 };
+  }).filter(function(item) {
+    return item.count > 0 && (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
+  }).sort(function(a, b) { return b.count - a.count; });
+  if (prizeItems.length) groups['Prizes'] = prizeItems.slice(0, 5);
+
+  // Fees
+  var freeCount = relevant.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); }).length;
+  var paidCount = relevant.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); }).length;
+  var feeItems = [
+    { type: 'fee', value: 'free', label: 'Free', count: freeCount },
+    { type: 'fee', value: 'paid', label: 'Paid', count: paidCount }
+  ].filter(function(item) {
+    return item.count > 0 && (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
+  });
+  if (feeItems.length) groups['Fees'] = feeItems;
+
+  // Organizations — only when typing
+  if (q) {
+    var orgCounts = {};
+    relevant.forEach(function(c) { orgCounts[c.org] = (orgCounts[c.org] || 0) + 1; });
+    var orgItems = Object.entries(orgCounts).map(function(e) {
+      return { type: 'org', value: e[0], label: e[0], count: e[1] };
+    }).filter(function(item) {
+      return item.label.toLowerCase().includes(q) && notExcluded(item.type, item.value);
+    }).sort(function(a, b) { return b.count - a.count; });
+    if (orgItems.length) groups['Organizations'] = orgItems.slice(0, 5);
+  }
+
+  // Merge Prizes + Fees into one display group
+  var pf = [];
+  if (groups['Fees']) pf = pf.concat(groups['Fees']);
+  if (groups['Prizes']) pf = pf.concat(groups['Prizes']);
+  delete groups['Fees'];
+  delete groups['Prizes'];
+  if (pf.length) groups['Prize / Fee'] = pf.slice(0, 5);
+
+  // Home page strips Categories on focus (empty query) because category
+  // buttons already sit above the search bar.
+  if (!q && skipCategoriesOnFocus) {
+    var limited = {};
+    if (groups['Eligibility']) limited['Eligibility'] = groups['Eligibility'];
+    if (groups['Locations']) limited['Locations'] = groups['Locations'];
+    if (groups['Prize / Fee']) limited['Prize / Fee'] = groups['Prize / Fee'];
+    return limited;
+  }
+  return groups;
+}
+
 function derivePrizeCategory(text) {
   var p = text.toLowerCase();
   if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
