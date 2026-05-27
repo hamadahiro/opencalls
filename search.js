@@ -119,11 +119,19 @@
     openMobileSearch();
   });
 
+  // Debounce expensive suggestion-build (~4000 iterations over ~600 calls) so
+  // mobile typing isn't blocked. Clear-button toggle stays immediate; the
+  // dropdown render fires 150ms after the user stops typing.
+  var searchInputTimer = null;
   searchInput.addEventListener('input', function(e) {
-    searchClear.classList.toggle('visible', e.target.value.length > 0);
-    loadData(function() {
-      showDropdown(buildSuggestions(e.target.value));
-    });
+    var val = e.target.value;
+    searchClear.classList.toggle('visible', val.length > 0);
+    if (searchInputTimer) clearTimeout(searchInputTimer);
+    searchInputTimer = setTimeout(function() {
+      loadData(function() {
+        showDropdown(buildSuggestions(val));
+      });
+    }, 150);
   });
 
   searchInput.addEventListener('blur', function() {
