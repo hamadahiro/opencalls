@@ -56,7 +56,10 @@
   }
 
   function buildSuggestions(query) {
-    var relevant = allCalls;
+    // Use open calls only so dropdown counts match what's actually displayed
+    // when clicked through. Otherwise "Portugal 6" leads to a page showing 4
+    // because the other 2 calls have already closed.
+    var relevant = getOpenCalls();
     var q = (query || '').toLowerCase().trim();
     var groups = {};
 
