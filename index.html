@@ -57,7 +57,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260527b">
+  <link rel="stylesheet" href="/style.css?v=20260527c">
 </head>
 <body>
 
@@ -362,7 +362,7 @@
     </footer>
   </main>
 
-  <script src="/cards.js?v=20260527b"></script>
+  <script src="/cards.js?v=20260527c"></script>
   <script>
     let allCalls = [];
     let currentView = 'new';
@@ -829,11 +829,22 @@
         openMobileSearch();
       });
 
+      // Debounce expensive search work so mobile typing isn't blocked.
+      // Cheap UI updates (current value, clear-button visibility) happen
+      // immediately on every keystroke; the suggestion build (~4000 iterations
+      // over ~600 calls) and the calls-list re-render only run after the user
+      // stops typing for 150ms. Eliminates the per-keystroke jank where one
+      // letter would block the next from appearing.
+      var searchInputTimer = null;
       searchInput.addEventListener('input', function(e) {
-        currentSearch = e.target.value.toLowerCase().trim();
-        searchClear.classList.toggle('visible', e.target.value.length > 0);
-        showDropdown(buildSuggestions(e.target.value));
-        applyFilters();
+        var val = e.target.value;
+        searchClear.classList.toggle('visible', val.length > 0);
+        if (searchInputTimer) clearTimeout(searchInputTimer);
+        searchInputTimer = setTimeout(function() {
+          currentSearch = val.toLowerCase().trim();
+          showDropdown(buildSuggestions(val));
+          applyFilters();
+        }, 150);
       });
 
       searchInput.addEventListener('blur', function() {
