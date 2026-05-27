@@ -56,103 +56,10 @@
   }
 
   function buildSuggestions(query) {
-    // Use open calls only so dropdown counts match what's actually displayed
-    // when clicked through. Otherwise "Portugal 6" leads to a page showing 4
-    // because the other 2 calls have already closed.
-    var relevant = getOpenCalls();
-    var q = (query || '').toLowerCase().trim();
-    var groups = {};
-
-    // Categories
-    var catCounts = {};
-    relevant.forEach(function(c) { catCounts[c.category] = (catCounts[c.category] || 0) + 1; });
-    var catItems = Object.entries(categoryLabel).map(function(e) {
-      return { type: 'category', value: e[0], label: e[1], count: catCounts[e[0]] || 0 };
-    }).filter(function(item) {
-      return item.count > 0 && (!q || item.label.toLowerCase().includes(q));
-    }).sort(function(a, b) { return b.count - a.count; });
-    if (catItems.length) groups['Categories'] = catItems.slice(0, 5);
-
-    // Countries
-    var countryCounts = {};
-    relevant.forEach(function(c) {
-      if (!c.location) return;
-      var parts = c.location.split(',');
-      var country = parts[parts.length - 1].trim();
-      if (country) countryCounts[country] = (countryCounts[country] || 0) + 1;
-    });
-    var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
-    var countryItems = Object.entries(countryCounts).map(function(e) {
-      var display = countryExpand[e[0]] || e[0];
-      return { type: 'country', value: e[0], label: display, count: e[1] };
-    }).filter(function(item) {
-      return (!q || item.label.toLowerCase().includes(q));
-    }).sort(function(a, b) { return b.count - a.count; });
-    if (countryItems.length) groups['Locations'] = countryItems.slice(0, 6);
-
-    // Eligibility
-    var eligCounts = {};
-    relevant.forEach(function(c) { if (c.eligibility) c.eligibility.forEach(function(e) { eligCounts[e] = (eligCounts[e] || 0) + 1; }); });
-    var eligItems = Object.entries(eligibilityLabel).map(function(e) {
-      return { type: 'eligibility', value: e[0], label: e[1], count: eligCounts[e[0]] || 0 };
-    }).filter(function(item) {
-      return item.count > 0 && (!q || item.label.toLowerCase().includes(q));
-    }).sort(function(a, b) { return b.count - a.count; });
-    if (eligItems.length) groups['Eligibility'] = eligItems.slice(0, 5);
-
-    // Prizes
-    var prizeCounts = {};
-    relevant.forEach(function(c) {
-      if (!c.prize) return;
-      derivePrizeCategories(c.prize).forEach(function(pc) { prizeCounts[pc] = (prizeCounts[pc] || 0) + 1; });
-    });
-    var prizeItems = Object.entries(prizeCategoryLabel).map(function(e) {
-      return { type: 'prize', value: e[0], label: e[1], count: prizeCounts[e[0]] || 0 };
-    }).filter(function(item) {
-      return item.count > 0 && (!q || item.label.toLowerCase().includes(q));
-    }).sort(function(a, b) { return b.count - a.count; });
-    if (prizeItems.length) groups['Prizes'] = prizeItems.slice(0, 5);
-
-    // Fees
-    var freeCount = relevant.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); }).length;
-    var paidCount = relevant.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); }).length;
-    var feeItems = [
-      { type: 'fee', value: 'free', label: 'Free', count: freeCount },
-      { type: 'fee', value: 'paid', label: 'Paid', count: paidCount }
-    ].filter(function(item) {
-      return item.count > 0 && (!q || item.label.toLowerCase().includes(q));
-    });
-    if (feeItems.length) groups['Fees'] = feeItems;
-
-    // Organizations (only when typing)
-    if (q) {
-      var orgCounts = {};
-      relevant.forEach(function(c) { orgCounts[c.org] = (orgCounts[c.org] || 0) + 1; });
-      var orgItems = Object.entries(orgCounts).map(function(e) {
-        return { type: 'org', value: e[0], label: e[0], count: e[1] };
-      }).filter(function(item) {
-        return item.label.toLowerCase().includes(q);
-      }).sort(function(a, b) { return b.count - a.count; });
-      if (orgItems.length) groups['Organizations'] = orgItems.slice(0, 5);
-    }
-
-    // Merge Prizes + Fees
-    var pf = [];
-    if (groups['Fees']) pf = pf.concat(groups['Fees']);
-    if (groups['Prizes']) pf = pf.concat(groups['Prizes']);
-    delete groups['Fees'];
-    delete groups['Prizes'];
-    if (pf.length) groups['Prize / Fee'] = pf.slice(0, 5);
-
-    // On focus (no query): skip Categories
-    if (!q) {
-      var limited = {};
-      if (groups['Eligibility']) limited['Eligibility'] = groups['Eligibility'];
-      if (groups['Locations']) limited['Locations'] = groups['Locations'];
-      if (groups['Prize / Fee']) limited['Prize / Fee'] = groups['Prize / Fee'];
-      return limited;
-    }
-    return groups;
+    // Delegate to the shared logic in cards.js so home and non-home stay in sync.
+    // No chip exclusion on detail pages; same on-focus behavior as home (skip
+    // Categories) for consistency.
+    return buildSearchSuggestions(allCalls, query, { skipCategoriesOnFocus: true });
   }
 
   function showDropdown(groups) {
