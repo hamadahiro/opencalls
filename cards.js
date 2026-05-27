@@ -508,10 +508,17 @@ function renderCallList(calls, container, opts) {
     return a.deadlineDate - b.deadlineDate;
   });
 
+  // Build one big HTML string and assign to innerHTML once at the end.
+  // Calling insertAdjacentHTML in a loop forces the browser to re-parse and
+  // mutate the DOM N times, which on mobile turns a 600-card render into
+  // ~1 second of main-thread block (visible as keystroke lag during search).
+  // One innerHTML assignment is typically 5-10x faster.
+  let html = '';
+
   if (opts.skipSections) {
     const all = [...open, ...closed];
-    all.forEach(call => container.insertAdjacentHTML('beforeend', renderCard(call, 'h4')));
-    if (all.length === 0) container.innerHTML = emptyState();
+    all.forEach(call => { html += renderCard(call, 'h4'); });
+    container.innerHTML = html || emptyState();
     return;
   }
 
@@ -519,9 +526,9 @@ function renderCallList(calls, container, opts) {
   const specialSlugs = new Set();
   const endingSoon = open.filter(c => c.daysLeft !== null && c.daysLeft <= 1);
   if (endingSoon.length >= 1) {
-    container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Ending soon</h3>');
+    html += '<h3 class="section-header">Ending soon</h3>';
     endingSoon.forEach(call => {
-      container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+      html += renderCard(call, 'h4');
       specialSlugs.add(call.slug || slugify(call.title));
     });
   }
@@ -532,9 +539,9 @@ function renderCallList(calls, container, opts) {
     const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
     if (section !== currentSection) {
       currentSection = section;
-      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">' + section + '</h3>');
+      html += '<h3 class="section-header">' + section + '</h3>';
     }
-    container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+    html += renderCard(call, 'h4');
   });
 
   // Past sections (newest first)
@@ -545,9 +552,9 @@ function renderCallList(calls, container, opts) {
     // Yesterday section
     const yesterday = closed.filter(c => c.daysLeft !== null && c.daysLeft === -1);
     if (yesterday.length >= 1) {
-      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Ended Yesterday</h3>');
+      html += '<h3 class="section-header">Ended Yesterday</h3>';
       yesterday.forEach(call => {
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+        html += renderCard(call, 'h4');
         pastSlugs.add(call.slug || slugify(call.title));
       });
     }
@@ -555,14 +562,12 @@ function renderCallList(calls, container, opts) {
     // Remaining past calls
     const rest = closed.filter(c => !pastSlugs.has(c.slug || slugify(c.title)));
     if (rest.length) {
-      container.insertAdjacentHTML('beforeend', '<h3 class="section-header">Past</h3>');
+      html += '<h3 class="section-header">Past</h3>';
       rest.forEach(call => {
-        container.insertAdjacentHTML('beforeend', renderCard(call, 'h4'));
+        html += renderCard(call, 'h4');
       });
     }
   }
 
-  if (container.children.length === 0) {
-    container.innerHTML = emptyState();
-  }
+  container.innerHTML = html || emptyState();
 }
