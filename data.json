@@ -19,6 +19,7 @@
       "submitVia": "Website form",
       "submitUrl": "https://decodegallery.com/endless-summer-submission",
       "requirements": "Up to 10 images",
+      "resultsDate": "Within 2 weeks of deadline",
       "slug": "endless-summer-photography-exhibit-decode-gallery",
       "orgInTitle": false,
       "summary": "Summer-themed photography exhibit in Tucson. 26 images juried by Holly Hart. Pro printing and 22×22 museum framing included.",
@@ -18576,7 +18577,6 @@
         "18-plus"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://www.eurostarshotels.com/eurostars-grand-marina/premio-de-fotografia.html",
       "requirements": "Up to 3 triptychs",
       "slug": "xxiv-eurostars-grand-marina-photography-award-josep-juanpere-2026",
       "orgInTitle": true,
@@ -18779,7 +18779,9 @@
       "orgInTitle": true,
       "summary": "$10,000 grant for emerging visual storytellers, with emphasis on underserved and diverse communities. Honors Stanley Greene's legacy.",
       "ai": "Not accepted",
-      "jury": [],
+      "jury": [
+        "Three members of the Stanley Greene Foundation Board of Directors"
+      ],
       "email": "",
       "resultsDate": "August 10, 2026",
       "dateAdded": "2026-05-05T15:11:03.920Z",
