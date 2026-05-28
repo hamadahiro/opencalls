@@ -1,6 +1,93 @@
 {
-  "lastUpdated": "2026-05-27",
+  "lastUpdated": "2026-05-28",
   "calls": [
+    {
+      "title": "BINNAR Festival 2026",
+      "org": "BINNAR",
+      "deadline": "2026-06-30",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Multidisciplinary festival in Vila Nova de Famalicão, Portugal, running since 2016 with municipal support. Open call for the November 2026 edition welcomes photography and video for a collective exhibition with free theme. BINNAR handles all production: selected photos are printed and framed at no cost to the artist; videos must not exceed 2 minutes. Submissions are open internationally — artists send name, nationality, age, an artist statement and biography, plus a direct link to view the work, by email to info.binnar@gmail.com with subject line 'open call'.",
+      "url": "https://binnar.org/Open-call",
+      "instagram": "@binnar_org",
+      "location": "Vila Nova de Famalicão, Portugal",
+      "prize": "Exhibition (production covered)",
+      "eligibility": [],
+      "submitVia": "Email",
+      "email": "",
+      "requirements": "Direct link to images/video",
+      "slug": "binnar-festival-2026",
+      "orgInTitle": true,
+      "summary": "Free open call for BINNAR Festival in Famalicão, Portugal. Free theme. Photos printed and framed by the festival; videos under 2 min.",
+      "prose": [
+        "BINNAR is a multidisciplinary artistic festival and year-round platform based in Vila Nova de Famalicão, northern Portugal, founded in 2016 and run with municipal support under artistic director Filipe Miranda. The festival programs music, performance, photography, theatre, video, sculpture, and installation, with free admission to all events.",
+        "The 2026 open call is for a collective exhibition of photography and video taking place in November 2026. The brief is open theme — any subject or approach is accepted. Videos must not exceed two minutes; the photography component is shown as printed and framed work.",
+        "What distinguishes the call: there is no entry fee, and BINNAR covers the full production cost of selected works. Selected photographs are printed and framed by the festival; artists are not asked to provide prints or pay for production.",
+        "Submission is by email to info.binnar@gmail.com with subject line 'open call', including the artist's name, nationality, age (gender optional), a direct link to view the photos or video, an artist statement, and a biography. Selected artists are contacted directly by the organizers. The deadline is June 30, 2026."
+      ],
+      "dateAdded": "2026-05-28T07:10:31.164Z"
+    },
+    {
+      "title": "RED",
+      "org": "Dusk Gallery",
+      "deadline": "2026-06-25",
+      "fee": "$40–$45",
+      "category": "exhibition",
+      "description": "Themed exhibition at Dusk Gallery in Santa Fe celebrating bold uses of red in photography — images where red commands the frame. Documentary, fine art, abstract, and experimental approaches all welcome. Juried by Dusk founder Holly Hart. Selected photographers receive complimentary professional printing and framing in 24×24 inch black museum-quality frames with matting; the artist supplies only the high-resolution JPEG (500KB–5MB, 4500px on the longest side). The gallery adjusts file dimensions for presentation without cropping. Exhibition runs August 7–28, 2026 in Santa Fe. Sales split 50/50; selected images retained in the gallery's flat files for six months post-exhibition. Open worldwide.",
+      "url": "https://duskphotogallery.com/red",
+      "instagram": "@dusk.photogallery",
+      "location": "Santa Fe, NM, USA",
+      "prize": "Exhibition + professional printing & framing",
+      "eligibility": [],
+      "jury": [
+        "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://duskphotogallery.com/red-submission/",
+      "requirements": "5 or 10 images",
+      "slug": "red-dusk-gallery",
+      "orgInTitle": false,
+      "summary": "Themed show on bold uses of red at Santa Fe's Dusk Gallery. Pro printing and 24×24 museum framing included. Juried by Holly Hart.",
+      "prose": [
+        "Dusk Gallery is a Santa Fe, New Mexico photography gallery founded by fine art photographer Holly Hart, who also juries the gallery's calls. RED is a themed cycle built around a single color used as compositional force: images where red commands the frame rather than appearing as background or detail.",
+        "The brief is open across approach — documentary, fine art, abstract, and experimental work are all welcome. The gallery is interested in the use of red as a structural element of the photograph, not in subject matter alone.",
+        "What distinguishes Dusk's calls is the production model: the gallery covers professional printing and framing in 24×24 inch black museum-quality frames with matting at no cost to the artist. Photographers supply only a high-resolution JPEG (500KB–5MB, 4500px on the longest side); the gallery adjusts presentation dimensions without cropping the composition.",
+        "The exhibition runs August 7–28, 2026 at Dusk Gallery in Santa Fe. Sales split 50/50 between gallery and artist, with selected images retained in the gallery's flat files for six months post-exhibition. The entry fee is $40 for 5 images or $45 for up to 10. Eligibility is open worldwide to amateur and professional photographers. The deadline is June 25, 2026."
+      ],
+      "dateAdded": "2026-05-28T07:10:31.164Z"
+    },
+    {
+      "title": "A Celebration of Contemporary Photography",
+      "org": "PhotoPlace Gallery",
+      "deadline": "2026-06-08",
+      "fee": "$39 (5 images) + $6 each additional",
+      "category": "exhibition",
+      "description": "International juried exhibition at PhotoPlace Gallery in Middlebury, Vermont, programmed around World Photography Day (August 19). The call welcomes any subject, style, or process — landscape, portraiture, documentary, experimental, alternative process. Up to 35 images selected for the physical gallery exhibition, plus 40 additional images for the online exhibition; all 75 selected works appear in a printed catalog and remain permanently on the gallery's website. Awards include a Juror's Award ($300), Director's Award ($200), and three Honorable Mentions ($50 each). Juried by Paula Tognarelli (retired Executive Director, Griffin Museum of Photography) and Zach Hoffman (Gallery Owner/Director). Fully AI-generated work is not eligible. Exhibition runs August 7–29, 2026; prints due July 24.",
+      "url": "https://www.photoplacegallery.com/online-juried-shows/open-call-a-celebration-of-contemporary-photography/detail",
+      "instagram": "@photoplacegallery",
+      "location": "Middlebury, VT, USA",
+      "prize": "$300 + $200 + 3×$50 + exhibition + catalog",
+      "eligibility": [],
+      "jury": [
+        "Paula Tognarelli, retired Executive Director, Griffin Museum of Photography",
+        "Zach Hoffman, Owner/Director, PhotoPlace Gallery"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://submit.photoplacegallery.com/landing/default",
+      "requirements": "5+ images",
+      "slug": "a-celebration-of-contemporary-photography-photoplace-gallery",
+      "orgInTitle": false,
+      "ai": "Not accepted",
+      "email": "",
+      "summary": "PhotoPlace's open-theme show around World Photography Day. 75 works selected for gallery, online and catalog. Paula Tognarelli juries.",
+      "prose": [
+        "A Celebration of Contemporary Photography is PhotoPlace Gallery's annual broad-brief juried exhibition, programmed around World Photography Day (August 19). PhotoPlace Gallery is a photography gallery in Middlebury, Vermont, that runs themed calls on a rolling schedule alongside its own programming.",
+        "The brief is intentionally inclusive — any subject, any style, any photographic process. The gallery explicitly welcomes traditional landscape and portraiture alongside experimental and alternative-process work, framing the show as a panorama of contemporary photographic practice rather than a thematic exhibition.",
+        "Selection is by two jurors: Paula Tognarelli, retired Executive Director of the Griffin Museum of Photography, and Zach Hoffman, owner and director of PhotoPlace Gallery. They select up to 35 images for the physical exhibition in Middlebury and 40 additional images for an online companion exhibition. All 75 selected works are reproduced in a printed catalog and remain permanently accessible on the gallery's website.",
+        "Awards include a $300 Juror's Award, a $200 Director's Award, and three $50 Honorable Mentions. Fully AI-generated images are not eligible; AI-assisted editing tools applied to camera-originated work are acceptable. The fee is $39 for 5 images, $6 each additional. The deadline is June 8, 2026; the physical exhibition runs August 7–29, 2026, with prints due July 24."
+      ],
+      "dateAdded": "2026-05-28T07:10:31.164Z"
+    },
     {
       "title": "A Show of Hands",
       "org": "Blue Sky Gallery",
