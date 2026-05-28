@@ -2,6 +2,63 @@
   "lastUpdated": "2026-05-28",
   "calls": [
     {
+      "title": "Folk House Darkroom Residency 2026",
+      "org": "Bristol Folk House Darkroom",
+      "deadline": "2026-06-22",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Darkroom residency at Bristol Folk House Darkroom, a community darkroom in central Bristol working towards more sustainable photographic processes. The residency is aimed at photographers and artists using or wanting to explore experimental, sustainable, and alternative processes — past residents have done work such as making developers from oats. Dates and length are flexible and chosen by the resident based on the darkroom's term schedule. Residents receive a stipend, darkroom training, darkroom space and equipment, and discounts in the Folk House café and programme. Open internationally; apply by email.",
+      "url": "https://www.bristolfolkhouse.co.uk/darkroom",
+      "instagram": "@folkhousedarkroom",
+      "location": "Bristol, United Kingdom",
+      "prize": "Residency (stipend + darkroom access)",
+      "eligibility": [],
+      "submitVia": "Email",
+      "email": "",
+      "slug": "folk-house-darkroom-residency-2026",
+      "orgInTitle": true,
+      "summary": "Free Bristol darkroom residency for experimental, sustainable and alternative processes. Stipend, darkroom training, and full access included.",
+      "prose": [
+        "Bristol Folk House Darkroom is a community darkroom in central Bristol (40a Park St), run as part of the Bristol Folk House and working towards more sustainable photographic processes.",
+        "The 2026 residency is aimed at photographers and artists using or wanting to explore experimental, sustainable, and alternative photographic processes — for example, making developers from plant material or other low-impact darkroom approaches. The dates and length of the residency are flexible and decided by the resident based on the darkroom's term schedule.",
+        "Selected residents receive a stipend, darkroom training, darkroom space and equipment, and discounts in the Folk House café and programme.",
+        "Applications are open until 22 June 2026. To apply, email darkroom@bristolfolkhouse.co.uk for more information and an application."
+      ],
+      "dateAdded": "2026-05-28T21:12:56.374Z"
+    },
+    {
+      "title": "Solo Exhibition July 2026",
+      "org": "All About Photo",
+      "deadline": "2026-06-23",
+      "fee": "$45",
+      "category": "exhibition",
+      "description": "Monthly featured photographer showcase. Winner receives a full month online solo exhibition (July 1–31, 2026), permanent gallery presence, exclusive interview, social media promotion, newsletter feature, international press coverage, and commission-free sales. Submit a cohesive project or portfolio of 6–14 images.",
+      "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=226",
+      "instagram": "@allaboutphoto",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "requirements": "6–14 images",
+      "jury": [
+        "Sandrine Hermand-Grisel, Photographer & Founder, All About Photo"
+      ],
+      "orgInTitle": false,
+      "slug": "solo-exhibition-july-2026-all-about-photo",
+      "resultsDate": "July 1, 2026",
+      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=226",
+      "summary": "Monthly featured photographer showcase. Full month online solo exhibition, interview, and press coverage.",
+      "email": "",
+      "prose": [
+        "All About Photo runs a monthly Solo Exhibition program — each month features a different photographer with a dedicated month-long online presentation. The July 2026 cycle is the next available slot.",
+        "The selected photographer receives a full month of online solo exhibition (July 1–31, 2026) featured on All About Photo's homepage, competition gallery, and showroom pages. Beyond the month, the work is permanently archived on the platform with a dedicated portfolio page, accompanied by an exclusive artist interview and social media promotion across the platform's Instagram, Facebook, and other channels.",
+        "Past winners have been featured in major international press outlets. Sales are commission-free — the artist retains 100% of the sale price.",
+        "Submission is open to photographers worldwide at any career level. Submissions are 6 to 14 cohesive images forming a project or portfolio. JPEG format, 72 dpi, no watermarks, flattened layers, file size under 2 MB, longest dimension max 1,200 pixels.",
+        "Selection is by Sandrine Hermand-Grisel, Founder & Editor of All About Photo. Entry fee is $45. The 2026 deadline is June 23; the selected photographer's solo exhibition opens July 1."
+      ],
+      "dateAdded": "2026-05-28T21:12:56.374Z"
+    },
+    {
       "title": "BINNAR Festival 2026",
       "org": "BINNAR",
       "deadline": "2026-06-30",
@@ -172,7 +229,7 @@
       ],
       "submitVia": "Website form",
       "submitUrl": "https://decodegallery.com/endless-summer-submission",
-      "requirements": "Up to 10 images",
+      "requirements": "Up to 5 images",
       "resultsDate": "Within 2 weeks of deadline",
       "slug": "endless-summer-photography-exhibit-decode-gallery",
       "orgInTitle": false,
@@ -181,7 +238,7 @@
         "ENDLESS SUMMER is Decode Gallery's late-summer themed exhibition, framed around the sensory persistence of the season — golden hour repeating, humid air thick with weight, days that refuse to darken. The brief is open to interpretation across all photographic styles and approaches; the gallery clarifies that black-and-white is welcome but not a requirement.",
         "Twenty-six images are juried by Decode founder Holly Hart, a conceptual fine art photographer based in Tucson. The selected works are shown in a three-week physical exhibition at the gallery, running September 5–26, 2026, with high-resolution JPEGs due two days after acceptance notification.",
         "What distinguishes Decode's open calls from typical fee-based group shows: the gallery covers professional printing on Epson Ultra Premium Luster paper and museum-quality 22×22 inch white framing with precut mats. The artist provides only the file. Sales split 50/50 between gallery and photographer, and selected prints remain in the gallery's flat files for six months after the show for continued promotion.",
-        "The entry fee is $40 for up to 10 images (5- and 10-image submission tiers are offered). Eligibility is open worldwide to amateur and professional photographers; payment via PayPal or Square. The 2026 deadline is July 24; acceptance notifications go out within two weeks."
+        "The entry fee is $40 per entry, which includes up to 5 images. Eligibility is open worldwide to amateur and professional photographers; payment via PayPal or Square. The 2026 deadline is July 24; acceptance notifications go out within two weeks."
       ],
       "dateAdded": "2026-05-27T03:32:25.626Z"
     },
@@ -1934,7 +1991,12 @@
       "orgInTitle": true,
       "summary": "Berlin photobook open call for FLINTA artists, in collaboration with Replika Publishing. Winner gets photobook with 350+ print run.",
       "ai": "Not accepted",
-      "jury": [],
+      "jury": [
+        "Veronika Epple, C/O Berlin",
+        "Chris Neophytou, Out Of Place Books",
+        "Anne Murayama, Ephemere Tokyo",
+        "Youvalle Levy, Bildband Berlin & Replika Publishing"
+      ],
       "dateAdded": "2026-05-03T15:12:39.253Z",
       "prose": [
         "The Sonntag Grant is a Berlin-based grant for photography administered annually, with the 2026 photobook track run in collaboration with Replika Publishing. The grant is one of the few major photobook awards specifically reserved for FLINTA artists — female, lesbian, inter, non-binary, trans, and agender — at any career stage and any nationality.",
@@ -19519,7 +19581,7 @@
       "url": "https://site.picter.com/der-greif-issue-19",
       "instagram": "@der_greif",
       "location": "Munich, Germany",
-      "prize": "Publication + Paris Photo 2026 events",
+      "prize": "Publication + 2×€1,000 stipend",
       "eligibility": [],
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/21b0af77-ed6e-4cc9-9fb2-f5108a19ff62/start",
