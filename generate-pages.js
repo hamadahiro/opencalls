@@ -376,7 +376,7 @@ const ELIGIBILITY_LABEL = {
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only',
   '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
-  '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+',
+  '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
   'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only'
 };
@@ -1044,6 +1044,7 @@ const eligibilityGroups = {
   '21-plus': { short: '21+', title: 'Open Calls Requiring 21+', desc: 'Open calls restricted to photographers and artists aged 21 or older. Exhibitions, grants, competitions, and awards with a 21+ age requirement.' },
   '25-plus': { short: '25+', title: 'Open Calls Requiring 25+', desc: 'Open calls restricted to photographers and artists aged 25 or older. Exhibitions, grants, competitions, and awards with a 25+ age requirement.' },
   '45-plus': { short: '45+', title: 'Open Calls for Artists 45+', desc: 'Open calls restricted to photographers and artists aged 45 or older. Residencies, grants, and awards for mature and established artists.' },
+  '65-plus': { short: '65+', title: 'Open Calls for Artists 65+', desc: 'Open calls restricted to photographers and artists aged 65 or older. Exhibitions, grants, and awards for senior and later-career artists.' },
   'student': { short: 'Students', title: 'Open Calls for Students', desc: 'Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.' },
   'ukraine': { short: 'Ukraine', title: 'Ukraine-Only Open Calls', desc: 'Open calls restricted to Ukrainian or Ukraine-based photographers and artists. Exhibitions, grants, workshops, and awards for Ukrainian artists.' },
   'flinta': { short: 'FLINTA', title: 'Open Calls for FLINTA Artists', desc: 'Open calls for FLINTA (female, lesbian, inter, non-binary, trans, agender) photographers and visual artists. Grants, exhibitions, and awards.' },
@@ -1135,7 +1136,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '10-18'] },
+  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
   { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
