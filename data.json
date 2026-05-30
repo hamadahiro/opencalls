@@ -2,6 +2,26 @@
   "lastUpdated": "2026-05-28",
   "calls": [
     {
+      "title": "Trois Points Mag — Vol 14: Party",
+      "org": "Trois Points Mag",
+      "deadline": "2026-07-01",
+      "fee": "Free (€5 donation suggested)",
+      "category": "zine",
+      "description": "Themed print issue (Vol 14, Summer 2026) of Trois Points Mag, an independent contemporary photography magazine based in Paris. The Party call invites photographers to explore the many dimensions of celebration — real or imagined, intimate or collective, visible or unseen — across gatherings, nightlife, performance, intimacy, mass, bodies in space, noise and silence, freedom and escape. Submit up to 15 high-resolution images (300 dpi, together max 50 MB via WeTransfer), each titled with your full name, plus a short 3–4 sentence text on the theme (published in the magazine), a brief 4–5 sentence bio, website/social links, current location, and the camera used. iPhone/smartphone captures are not accepted. Email submissions to troispoints.paris@gmail.com with the subject line Party. Submission fee is voluntary (suggested €5 donation).",
+      "url": "https://www.troispointsmag.com/submissions",
+      "instagram": "@trois_points_mag",
+      "location": "Online",
+      "prize": "Publication (print)",
+      "eligibility": [],
+      "submitVia": "Email",
+      "requirements": "Up to 15 images",
+      "email": "",
+      "slug": "trois-points-mag-vol-14-party",
+      "orgInTitle": true,
+      "summary": "Indie Paris contemporary photography magazine, print issue. Theme: Party. Up to 15 images; voluntary €5 fee. Vol 14, Summer 2026.",
+      "dateAdded": "2026-05-30T23:09:27.939Z"
+    },
+    {
       "title": "Put a Pin(hole) In It",
       "org": "Blue Moon Camera & Machine",
       "deadline": "2026-06-15",
@@ -20495,7 +20515,10 @@
       "dateAdded": "2026-05-24T11:24:21.322Z",
       "email": null,
       "ai": null,
-      "jury": ["Jenna Fox, Editor", "Nichola Rodgers, Editor"]
+      "jury": [
+        "Jenna Fox, Editor",
+        "Nichola Rodgers, Editor"
+      ]
     },
     {
       "title": "Paris Photo–Aperture PhotoBook Awards 2026",
