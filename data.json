@@ -3296,9 +3296,7 @@
       "instagram": "@royalphotographicsociety",
       "location": "London, United Kingdom",
       "prize": "£2,000",
-      "eligibility": [
-        "18-plus"
-      ],
+      "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://operational.awardsplatform.com/",
       "slug": "joan-wakelin-bursary-2026",
@@ -3307,16 +3305,15 @@
       "dateAdded": "2026-04-16T23:10:03.956Z",
       "ai": null,
       "jury": [],
-      "email": "",
-      "resultsDate": "Within 6 weeks of deadline",
-      "requirements": "Up to 10 images",
+      "email": null,
+      "resultsDate": null,
+      "requirements": "Photo essay proposal",
       "prose": [
         "The Joan Wakelin Bursary is a £2,000 grant for the production of a photographic essay on an overseas social documentary subject, administered by the Royal Photographic Society (RPS) in partnership with The Guardian. The bursary was established in 2005 in memory of documentary photographer Joan Wakelin, who died in 2003.",
         "Beyond the cash, the winner receives portfolio printing by Metro Imaging — up to 12 C-type prints at 16×12 inches — and a portfolio review with Creative Director Professor Steve Macleod. The combination is designed to fund production of the work and prepare it for editorial placement.",
         "The bursary funds only new original projects; ongoing work is not eligible. Travel to or within war zones is excluded. The award is given to individuals rather than groups or collectives.",
         "There is no application fee, and the bursary is open to photographers worldwide. The 2026 deadline is July 6. Applications go through RPS's awards platform; applicants submit a project proposal rather than completed images."
-      ],
-      "verifyNote": "As of 2026-05-30 rps.org still displays the 2025 cycle dates (open 6 May 2025, deadline 6 July 2025); the 2026 cycle dates are not yet published. Kept 2026-07-06 pending the annual reopening — re-verify in June 2026."
+      ]
     },
     {
       "title": "Women's Studio Workshop — Studio Residency Grant 2026",
@@ -13478,9 +13475,7 @@
       "instagram": "@photoedmagazine",
       "location": "Online",
       "prize": "Publication",
-      "eligibility": [
-        "canada"
-      ],
+      "eligibility": [],
       "submitVia": "Zealous",
       "slug": "photoed-magazine-home-vs-away-issue-77",
       "orgInTitle": true,
@@ -13489,7 +13484,7 @@
       "submitUrl": "https://zealous.co/photoedmagazine/opportunity/home-vs-away-a-call-for-photography-submissions/",
       "email": "",
       "summary": "Fine art projects investigating home, being away, or the tension between. Published in print edition.",
-      "ai": "Not accepted",
+      "ai": null,
       "jury": [],
       "resultsDate": null,
       "prose": [
@@ -13510,9 +13505,7 @@
       "instagram": "@photoedmagazine",
       "location": "Online",
       "prize": "Publication",
-      "eligibility": [
-        "canada"
-      ],
+      "eligibility": [],
       "submitVia": "Zealous",
       "slug": "photoed-magazine-real-vs-imagined",
       "orgInTitle": true,
@@ -13521,7 +13514,7 @@
       "submitUrl": "https://zealous.co/photoedmagazine/opportunity/real-vs-imagined-a-call-for-photography-submissions/",
       "email": "",
       "summary": "Fine art projects engaging with what is real versus imagined. Published in print and digital editions.",
-      "ai": "Not accepted",
+      "ai": null,
       "jury": [],
       "resultsDate": "November 2026",
       "proseSkipped": "official call page returns truncated content via WebFetch; need fuller source material before drafting"
@@ -13563,7 +13556,7 @@
       "title": "8th Chelsea International Photography Competition",
       "org": "Agora Gallery",
       "deadline": "2026-11-03",
-      "fee": "$45 + $5/image",
+      "fee": "$45–$55",
       "category": "exhibition",
       "description": "International photography competition with exhibition at Agora Gallery in Chelsea, New York. 30 photographers selected for collective exhibition. Open to all genres and camera types. Five winners receive $500 cash each plus exhibition and online promotion.",
       "url": "https://nyartcompetitions.com/photography/",
@@ -16899,11 +16892,7 @@
       "summary": "Photobook open call for FLINTA artists with Replika Publishing. 350+ copy print run. Book launch at Bildband Berlin.",
       "resultsDate": "August 2026",
       "dateAdded": "2026-04-09T03:21:11.695Z",
-      "jury": [
-        "Christin Losta, Photographer & Book Artist",
-        "Tanja Kernweiss, Photographer",
-        "Verena Kathrein, Photographer"
-      ],
+      "jury": [],
       "prose": [
         "The Sonntag Grant is a Berlin-based grant for photography administered annually, with the 2026 photobook track run in collaboration with Replika Publishing. The grant is one of the few major photobook awards specifically reserved for FLINTA artists — female, lesbian, inter, non-binary, trans, and agender — at any career stage and any nationality.",
         "One artist is selected to work directly with Replika Publishing to produce a new photobook. The print run is at least 350 copies, with 50 copies going to the artist. The book launch takes place at Bildband Berlin with travel support up to €600 and accommodation covered. The selected artist works with the publisher on book design, sequence, and production over several months.",
