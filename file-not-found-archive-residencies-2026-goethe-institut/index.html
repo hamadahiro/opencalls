@@ -112,7 +112,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/residencies/">Residency open call</a></nav>
       <h1 class="call-detail-title">FILE NOT FOUND — Archive Residencies 2026</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">€4,000 prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">Up to €2,000 travel prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">€4,000 prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
 
       <p class="call-detail-description">International open call selecting ten artists for residencies at cultural archives worldwide, run by <a href="/goethe-institut/">Goethe-Institut</a> in collaboration with Gerador. Each residency lasts 2 weeks to 2 months between August 2026 and May 2027, on-site at one of ten participating archives: Acervo Bajubá (São Paulo), The ArQuives (Toronto), China Modern Art Archive (Beijing), documenta archiv (Kassel), Arsenal Filminstitut (Berlin), Kurdistan Center for Arts &amp; Culture (Erbil), Imagine IC &amp; The Need for Legacy (Amsterdam), VEHA Archive (Podlasie), Museu Nacional de Arte Contemporânea (Lisbon), and South African History Archive (Johannesburg). Each selected artist receives €2,000 artist fee, €2,000 production budget, and up to €2,000 for travel and accommodation. Final works exhibited at BLMK (Brandenburgisches Landesmuseum für moderne Kunst) in Cottbus, Germany, in Fall 2027. Open to artists worldwide, all disciplines including photography. Working language English.</p>
 
@@ -140,7 +140,7 @@
 
   <script>
     const CURRENT_SLUG = 'file-not-found-archive-residencies-2026-goethe-institut';
-    const CURRENT_CALL = {"prize":"€4,000 + up to €2,000 travel + exhibition","category":"residency","org":"Goethe-Institut","location":"Cottbus, Germany","fee":"Free","deadline":"2026-06-07","resultsDate":"","instagram":"","eligibility":[],"jury":[],"submitVia":"Goethe Application Portal","submitUrl":"https://portal.gap.goethe.de/en-US/","email": "","ai":"","requirements":""};
+    const CURRENT_CALL = {"prize":"€4,000 + exhibition","category":"residency","org":"Goethe-Institut","location":"Cottbus, Germany","fee":"Free","deadline":"2026-06-07","resultsDate":"","instagram":"","eligibility":[],"jury":[],"submitVia":"Goethe Application Portal","submitUrl":"https://portal.gap.goethe.de/en-US/","email": "","ai":"","requirements":""};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -150,7 +150,7 @@
       var u = 'https://www.goethe.de/prj/fnf/en/oca.html';
       var o = 'Goethe-Institut';
       var dl = new Date('2026-06-07T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€4,000 + up to €2,000 travel + exhibition') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('€4,000 + exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

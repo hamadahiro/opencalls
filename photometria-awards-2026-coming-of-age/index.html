@@ -112,7 +112,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">Photometria Awards 2026 — Coming of Age</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/" class="meta-tag meta-tag-link call-prize">Nikon Z30 prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Solo exhibition prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Solo exhibition prize</a></div></div>
 
       <p class="call-detail-description">Photometria Awards is the international competition track of the <a href="/photometria-international-photography-festival/">Photometria International Photography Festival</a> in Ioannina, Greece. The 2026 edition is the festival's 18th — Photometria has run since approximately 2008 and is one of the longer-standing photography festivals in Greece.</p>
       <p class="call-detail-description">The 2026 theme is &quot;Coming of Age (18+)&quot; — the brief asks for work exploring transitions to adulthood through personal and collective experiences, examining autonomy, identity negotiation, and the tension between freedom and responsibility. The themes are ambiguous by design and welcome both literal and metaphorical interpretation.</p>
@@ -148,7 +148,7 @@
 
   <script>
     const CURRENT_SLUG = 'photometria-awards-2026-coming-of-age';
-    const CURRENT_CALL = {"prize":"Nikon Z30 + solo exhibition","category":"photography","org":"Photometria International Photography Festival","location":"Ioannina, Greece","fee":"Free / €5","deadline":"2026-05-31","resultsDate":"Within 2 months of deadline","instagram":"@photometria_festival","eligibility":[],"jury":["Alec Soth, Photographer, Magnum Photos"],"submitVia":"Photometria app","submitUrl":"https://app.photometria.gr","email": "","ai":"Not accepted","requirements":"1 or 3 images"};
+    const CURRENT_CALL = {"prize":"Solo exhibition","category":"photography","org":"Photometria International Photography Festival","location":"Ioannina, Greece","fee":"Free / €5","deadline":"2026-05-31","resultsDate":"Within 2 months of deadline","instagram":"@photometria_festival","eligibility":[],"jury":["Alec Soth, Photographer, Magnum Photos"],"submitVia":"Photometria app","submitUrl":"https://app.photometria.gr","email": "","ai":"Not accepted","requirements":"1 or 3 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -158,7 +158,7 @@
       var u = 'https://www.photometria.gr/en/photometria-awards/';
       var o = 'Photometria International Photography Festival';
       var dl = new Date('2026-05-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Nikon Z30 + solo exhibition') + '\\nEntry fee: ' + icsE('Free / €5');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Solo exhibition') + '\\nEntry fee: ' + icsE('Free / €5');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
