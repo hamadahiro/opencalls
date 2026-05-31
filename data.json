@@ -98,7 +98,10 @@
       "url": "https://iicpraga.esteri.it/it/news/dall_istituto/2026/05/open-call-per-residenza-dartista-metamorfosi-2026/",
       "location": "Prague, Czech Republic",
       "prize": "Residency (€5,000 grant)",
-      "eligibility": [],
+      "eligibility": [
+        "italy",
+        "18-plus"
+      ],
       "submitVia": "Email",
       "email": "",
       "slug": "metamorfosi-residency-2026",
@@ -112,7 +115,9 @@
         "The call is open to Italian artists with no age restriction. Applications are submitted by email and must include the application form, a valid ID or passport, a signed CV and portfolio, a detailed presentation of one completed project, a motivation letter (which may outline the proposed residency project), and the data-processing consent form. The deadline is June 30, 2026 at 12:00 PM."
       ],
       "dateAdded": "2026-05-29T03:10:37.801Z",
-      "instagram": "@iicpraga"
+      "instagram": "@iicpraga",
+      "resultsDate": "By September 30, 2026",
+      "requirements": "Portfolio (max 10 pages)"
     },
     {
       "title": "Folk House Darkroom Residency 2026",
@@ -13053,7 +13058,7 @@
       "title": "FotoDoc Photo Contest 2026",
       "org": "FotoDoc Festival",
       "deadline": "2026-06-30",
-      "fee": "Free",
+      "fee": "Free to enter; $29 if selected",
       "category": "photography",
       "description": "International documentary photography contest with three categories: Single Image (1–3 photos), Photo Essay (6–8 photos), and Portfolio (10–15 photos). Free to submit; $29 publication fee only if selected. 60 finalists published in festival catalog. 25 winners exhibited at FotoDoc Festival in São Paulo in November 2026. Overall Portfolio winner receives trophy, airfare, and accommodation to attend the festival. No AI-generated images accepted.",
       "url": "https://fotodoc.com.br/en/contest/",
