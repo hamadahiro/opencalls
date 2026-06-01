@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,7 +108,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/the-midnight-garden-visionary-art-collective/">The Midnight Garden &middot; Visionary Art Collective</a></h3><p>May 31, 2026 · $25–35</p><p>NYC pop-up curated by Jessica Libor on cultivation, transformation, and growth. Magazine feature + Artsy listing via Warnes Contemporary.</p></div>
 
     </section>
 
@@ -125,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Visionary Art Collective' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Visionary Art Collective').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

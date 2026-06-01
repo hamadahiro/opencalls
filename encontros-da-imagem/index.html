@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,7 +108,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/encontros-da-imagem-portfolio-reviews-2026/">Encontros da Imagem Portfolio Reviews 2026</a></h3><p>May 31, 2026 · €30</p><p>Two-stage portfolio review at Braga's Encontros da Imagem festival. €3,000 + solo 2027 show + KATALOG publication for the winner.</p></div>
 
     </section>
 
@@ -125,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Encontros da Imagem' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Encontros da Imagem').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
