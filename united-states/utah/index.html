@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/blm-canyon-country-district-artist-in-residence-2026/">BLM Canyon Country District Artist in Residence 2026</a></h3><p>June 1, 2026 · Free</p><p>2–4 week residency in Moab, UT, hosted by the BLM. Photography eligible. Free; $125/week stipend + campsite.</p></div>
 
     </section>
 
@@ -131,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', UT,') || c.location.includes(', UT, USA')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', UT,') || c.location.includes(', UT, USA'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
