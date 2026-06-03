@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,6 +108,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/personality-the-face-and-its-absence-ph21-gallery/">Personality: The Face and Its Absence &middot; PH21 Gallery</a></h3><p>June 22, 2026 · €25–€50</p><p>Curated group show on personality and portraiture beyond the face. Exhibition in Barcelona's Gothic Quarter, Aug–Sep. Student rates.</p></div>
 
     </section>
 
@@ -124,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'PH21 Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'PH21 Gallery' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

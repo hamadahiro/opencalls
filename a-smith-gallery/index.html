@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,6 +108,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/forgotten-a-smith-gallery/">forgotten &middot; A Smith Gallery</a></h3><p>July 6, 2026 · $40</p><p>Themed online juried show on the forgotten — lost, buried, neglected, vanished. Juror Ann Mitchell. 47 images selected.</p></div>
 
     </section>
 
@@ -124,7 +125,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'A Smith Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'A Smith Gallery' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
