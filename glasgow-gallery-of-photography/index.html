@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,6 +108,8 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/open-2026-glasgow-gallery-of-photography/">Open 2026 &middot; Glasgow Gallery of Photography</a></h3><p>June 19, 2026 · Free (£48 if accepted)</p><p>Open-themed photography exhibition — any genre. Glasgow gallery exhibition Oct 2026, plus online gallery and catalogue.</p></div>
+      <div class="static-call-item"><h3><a href="/time-2026-glasgow-gallery-of-photography/">Time 2026 &middot; Glasgow Gallery of Photography</a></h3><p>June 19, 2026 · Free (£48 if accepted)</p><p>Photography exhibition on the theme of time — the captured moment and the passage of time. Glasgow exhibition Oct 2026, plus catalogue.</p></div>
 
     </section>
 
@@ -124,7 +126,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Glasgow Gallery of Photography').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Glasgow Gallery of Photography' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
