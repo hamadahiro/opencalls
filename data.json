@@ -458,7 +458,7 @@
         "Luisa Dörr, Photographer"
       ],
       "submitVia": "Website form",
-      "submitUrl": null,
+      "submitUrl": "https://independent-photo.com/submit/",
       "email": "",
       "requirements": "1, 3, or 6 images",
       "slug": "2026-portrait-award-the-independent-photographer",
@@ -740,7 +740,9 @@
       "instagram": "@folkhousedarkroom",
       "location": "Bristol, United Kingdom",
       "prize": "Residency",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Email",
       "email": "",
       "slug": "folk-house-darkroom-residency-2026",
@@ -7489,7 +7491,7 @@
       "orgInTitle": true,
       "summary": "Free one-on-one online portfolio review with two senior Fotografiska curators. Apply by June 15; review day July 3, 2026.",
       "ai": null,
-      "resultsDate": null,
+      "resultsDate": "By July 3, 2026",
       "prose": [
         "Fotografiska Emerging is the international photography platform run by Fotografiska, the museum group with locations in Stockholm, Tallinn, Berlin, New York, and Shanghai. The Portfolio Review is a recurring open call where selected photographers get direct one-on-one feedback from senior Fotografiska curators — pitched as a developmental opportunity rather than a prize competition.",
         "Selected applicants are paired with one of two reviewers: Jessica Jarl, Global Director of Exhibitions based in Stockholm, or Thomas Schäfer, Director of Exhibitions at Fotografiska Berlin. Each session runs 20 minutes online in English. Reviews are oriented around understanding where a project is headed — exhibition, editorial, or further development — rather than generic feedback.",
@@ -13576,7 +13578,7 @@
     {
       "title": "Summer — Carlotta Gallery",
       "org": "Carlotta Gallery",
-      "deadline": "2026-06-10",
+      "deadline": "2026-06-20",
       "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Summer photography virtual exhibition. Summer is experienced differently across the world — intensity, brightness, stillness, or transformation. Submit up to 3 images via email. Selected work shown in virtual exhibition with catalogue and certificate.",
@@ -13601,7 +13603,7 @@
         "Carlotta Gallery is a UK-based virtual photography gallery that runs themed open calls roughly bi-monthly. \"Summer\" is the gallery's seasonal call inviting photography that captures the season as it's experienced differently across the world — its intensity, brightness, stillness, or quiet transformation. Both literal and conceptual approaches are welcome.",
         "The submission model is free to apply, pay-only-if-selected: £20 for one accepted artwork, £30 for two, or £35 for three. There are no cash prizes — selection is the recognition.",
         "Selected work is shown in a virtual online exhibition for a minimum of six months and up to one year. Selected photographers also receive permanent placement on the Carlotta Gallery Collections page with their biography, a free PDF of the exhibition catalogue, a Certificate of Recognition, and potential feature on the gallery's Instagram account (@carlottagallery).",
-        "Eligibility is open globally to photographers aged 18 and over. Each photographer submits up to 3 JPG images by email, accompanied by name, Instagram handle, biography, artist statement, and artwork details. The 2026 deadline is June 10."
+        "Eligibility is open globally to photographers aged 18 and over. Each photographer submits up to 3 JPG images by email, accompanied by name, Instagram handle, biography, artist statement, and artwork details. The 2026 deadline is June 20."
       ]
     },
     {
