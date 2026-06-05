@@ -327,18 +327,20 @@ main {
   color: #151515;
   outline: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: border-radius 0.12s ease;
 }
 
-/* When suggestions dropdown is open, the bar + dropdown form a single
-   rounded container. Bar flattens at the bottom, dropdown rounds at
-   the bottom — they visually merge. */
-.search-wrap.has-suggestions .search-bar {
+/* When the suggestions dropdown is open, the bar + dropdown form a single
+   rounded container: the bar flattens at the bottom, the dropdown rounds at
+   the bottom, and they visually merge. The radius snaps instantly (no
+   transition) so the dropdown never appears below a still-rounded bar.
+   `.has-suggestions` lives on both .search-wrap (home) and .global-search
+   (detail pages), so these rules drive every search on the site at once. */
+.has-suggestions .search-bar {
   border-radius: 24px 24px 0 0;
   box-shadow: none;
 }
 
-.search-wrap.has-suggestions #searchDropdown {
+.has-suggestions .search-dropdown {
   border-radius: 0 0 24px 24px;
 }
 
@@ -351,32 +353,44 @@ main {
   font-weight: 500;
 }
 
-#searchDropdown {
-  background: #fff !important;
+/* Shared search-dropdown styling — single source of truth for the home page
+   (#searchDropdown) and detail/category pages (.global-search-dropdown). Only
+   the horizontal inset differs per page and lives on those selectors below. */
+.search-dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 100;
+  background: #fff;
   color: #151515;
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.12);
+  max-height: 320px;
+  overflow-y: auto;
 }
 
-#searchDropdown .search-suggestion {
+.search-dropdown .search-suggestion {
   color: #151515 !important;
   font-size: var(--fs-btn) !important;
   font-weight: 500;
 }
 
-#searchDropdown .search-suggestion span[style] {
+.search-dropdown .search-suggestion span[style] {
   color: #151515 !important;
 }
 
-#searchDropdown .search-suggestion:hover {
+.search-dropdown .search-suggestion:hover {
   background: #f0f0f0 !important;
 }
 
-#searchDropdown a[style] {
+.search-dropdown a[style] {
   font-size: var(--fs-btn) !important;
   font-weight: 700;
   color: #151515 !important;
 }
 
-#searchDropdown a[style]:hover {
+.search-dropdown a[style]:hover {
   background: #f0f0f0;
 }
 
@@ -800,7 +814,7 @@ a.meta-tag-link.call-prize:hover {
     padding-right: 20px;
   }
 
-  .search-active #searchDropdown {
+  .search-active .search-dropdown {
     position: static !important;
     width: 100%;
     max-height: none !important;
@@ -810,25 +824,27 @@ a.meta-tag-link.call-prize:hover {
     margin-top: 12px;
     overflow-y: auto;
     flex-basis: 100%;
+    left: auto;
+    right: auto;
   }
 
-  .search-active #searchDropdown .search-suggestion {
+  .search-active .search-dropdown .search-suggestion {
     color: var(--text) !important;
   }
 
-  .search-active #searchDropdown .search-suggestion span[style] {
+  .search-active .search-dropdown .search-suggestion span[style] {
     color: var(--text-muted) !important;
   }
 
-  .search-active #searchDropdown .search-suggestion:hover {
+  .search-active .search-dropdown .search-suggestion:hover {
     background: var(--card-bg) !important;
   }
 
-  .search-active #searchDropdown a[style] {
+  .search-active .search-dropdown a[style] {
     color: var(--text) !important;
   }
 
-  .search-active #searchDropdown a[style]:hover {
+  .search-active .search-dropdown a[style]:hover {
     background: var(--card-bg);
   }
 }
@@ -1116,50 +1132,11 @@ a.meta-tag-link.call-prize:hover {
   margin-top: 8px;
 }
 
+/* Detail/category-page dropdown: cosmetics come from the shared .search-dropdown
+   rules above; only the wider horizontal inset is page-specific. */
 .global-search-dropdown {
-  display: none;
-  position: absolute;
   left: 24px;
   right: 24px;
-  top: 100%;
-  z-index: 100;
-  background: #fff;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  max-height: 320px;
-  overflow-y: auto;
-}
-
-.global-search.has-suggestions .search-bar {
-  border-radius: 24px 24px 0 0;
-  box-shadow: none;
-}
-
-.global-search.has-suggestions .global-search-dropdown {
-  border-radius: 0 0 24px 24px;
-}
-
-.global-search-dropdown .search-suggestion {
-  color: #151515 !important;
-  font-size: var(--fs-btn) !important;
-  font-weight: 500;
-}
-
-.global-search-dropdown .search-suggestion span[style] {
-  color: #151515 !important;
-}
-
-.global-search-dropdown .search-suggestion:hover {
-  background: #f0f0f0 !important;
-}
-
-.global-search-dropdown a[style] {
-  font-size: var(--fs-btn) !important;
-  font-weight: 700;
-  color: #151515 !important;
-}
-
-.global-search-dropdown a[style]:hover {
-  background: #f0f0f0;
 }
 
 /* === Call Detail Responsive === */
@@ -1226,37 +1203,6 @@ a.meta-tag-link.call-prize:hover {
     padding-right: 20px;
   }
 
-  .search-active .global-search .global-search-dropdown {
-    position: static;
-    width: 100%;
-    max-height: none;
-    box-shadow: none;
-    background: var(--bg);
-    border-top: 1px solid var(--border);
-    margin-top: 12px;
-    overflow-y: auto;
-    flex-basis: 100%;
-    left: auto;
-    right: auto;
-  }
-
-  .search-active .global-search .global-search-dropdown .search-suggestion {
-    color: var(--text) !important;
-  }
-
-  .search-active .global-search .global-search-dropdown .search-suggestion span[style] {
-    color: var(--text-muted) !important;
-  }
-
-  .search-active .global-search .global-search-dropdown .search-suggestion:hover {
-    background: var(--card-bg) !important;
-  }
-
-  .search-active .global-search .global-search-dropdown a[style] {
-    color: var(--text) !important;
-  }
-
-  .search-active .global-search .global-search-dropdown a[style]:hover {
-    background: var(--card-bg);
-  }
+  /* The dropdown's mobile fullscreen cosmetics come from the shared
+     .search-active .search-dropdown rules in the home media block above. */
 }

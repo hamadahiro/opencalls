@@ -217,6 +217,57 @@ function buildSearchSuggestions(allCalls, query, opts) {
   return groups;
 }
 
+// Browse-all links appended under each suggestion group.
+var SEARCH_BROWSE_LINKS = {
+  'Eligibility': { href: '/eligibility/', text: 'All eligibility options' },
+  'Locations': { href: '/locations/', text: 'All locations' },
+  'Prize / Fee': { href: '/prize/', text: 'All fees and prizes' },
+  'Categories': { href: '/categories/', text: 'All categories' },
+  'Organizations': { href: '/organizations/', text: 'All organizations' }
+};
+
+// Shared search-dropdown renderer — single source of truth for the suggestion
+// markup, browse links, and hover/select wiring. Used by both the home page
+// (index.html inline script) and detail/category pages (search.js). The only
+// per-page difference is the action on select: `onSelect(type, value, label)`
+// — home adds a filter chip in place, other pages navigate to the listing.
+function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
+  var keys = Object.keys(groups);
+  if (!keys.length) {
+    dropdownEl.style.display = 'none';
+    wrapEl.classList.remove('has-suggestions');
+    return;
+  }
+  var html = '';
+  keys.forEach(function(groupName) {
+    groups[groupName].forEach(function(item) {
+      html += '<div class="search-suggestion" style="padding:10px 20px; cursor:pointer; font-size:var(--fs-tag); color:var(--text); display:flex; justify-content:space-between; align-items:center;" data-type="' + item.type + '" data-value="' + esc(item.value) + '" data-label="' + esc(item.label) + '">';
+      html += '<span>' + esc(item.label) + '</span>';
+      html += '<span style="color:var(--text-muted);">' + item.count + '</span>';
+      html += '</div>';
+    });
+    if (SEARCH_BROWSE_LINKS[groupName]) {
+      var link = SEARCH_BROWSE_LINKS[groupName];
+      html += '<a href="' + link.href + '" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); text-decoration:none; letter-spacing:0.3px;">' + link.text + ' &rarr;</a>';
+    }
+  });
+  dropdownEl.innerHTML = html;
+  dropdownEl.style.display = 'block';
+  wrapEl.classList.add('has-suggestions');
+  // Guard against the focus/tap that opened the dropdown also landing on a
+  // suggestion (mobile fast-tap); re-enable clicks shortly after.
+  dropdownEl.style.pointerEvents = 'none';
+  setTimeout(function() { dropdownEl.style.pointerEvents = ''; }, 300);
+  dropdownEl.querySelectorAll('.search-suggestion').forEach(function(el) {
+    el.addEventListener('mouseenter', function() { el.style.background = 'var(--card-bg)'; });
+    el.addEventListener('mouseleave', function() { el.style.background = ''; });
+    el.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      onSelect(el.dataset.type, el.dataset.value, el.dataset.label);
+    });
+  });
+}
+
 function derivePrizeCategory(text) {
   var p = text.toLowerCase();
   if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
