@@ -33,12 +33,14 @@
       "category": "zine",
       "description": "International juried magazine spotlighting women artists across all visual disciplines, including photography. Selected artists are featured in the Summer 2026 Issue XIV with social media promotion and a complimentary digital copy. The sliding-scale entry fee (symbolic €10 / reduced €25 / standard €35) lets artists choose what reflects their circumstances; those from countries affected by conflict, disaster, or the suppression of women's rights can request a fee waiver. Submit up to four works of recent or best work.",
       "url": "https://www.womenunitedartmovement.com/artmagazine",
+      "instagram": "@womenunited_art_magazine",
       "location": "Online",
       "prize": "Publication",
       "eligibility": [
         "women"
       ],
       "submitVia": "Official website",
+      "submitUrl": "https://womenunitedartmovement.wufoo.com/forms/z123ifxa1t7j602/",
       "requirements": "Up to 4 images",
       "slug": "women-united-art-magazine-issue-xiv",
       "orgInTitle": true,
@@ -1571,6 +1573,13 @@
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/bad7ea97-7b0d-4a9c-9e85-38e73529d62b/start",
       "requirements": "Portfolio",
+      "jury": [
+        "Laura Boushnak, Photographer",
+        "Adriana Garcia, CatchLight",
+        "Paloma Shutes, WIRED",
+        "C. Rose Smith, Memphis Brooks Museum of Art",
+        "Cengiz Yar, ProPublica"
+      ],
       "ai": "Must disclose",
       "email": "",
       "slug": "women-photograph-leica-project-grants-2026",
