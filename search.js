@@ -63,36 +63,11 @@
   }
 
   function showDropdown(groups) {
-    var keys = Object.keys(groups);
-    if (!keys.length) { searchDropdown.style.display = 'none'; searchWrap.classList.remove('has-suggestions'); return; }
-    var browseLinks = { 'Eligibility': { href: '/eligibility/', text: 'All eligibility options' }, 'Locations': { href: '/locations/', text: 'All locations' }, 'Prize / Fee': { href: '/prize/', text: 'All fees and prizes' }, 'Categories': { href: '/categories/', text: 'All categories' }, 'Organizations': { href: '/organizations/', text: 'All organizations' } };
-    var html = '';
-    keys.forEach(function(groupName) {
-      groups[groupName].forEach(function(item) {
-        html += '<div class="search-suggestion" style="padding:10px 20px; cursor:pointer; font-size:var(--fs-tag); color:var(--text); display:flex; justify-content:space-between; align-items:center;" data-type="' + item.type + '" data-value="' + esc(item.value) + '" data-label="' + esc(item.label) + '">';
-        html += '<span>' + esc(item.label) + '</span>';
-        html += '<span style="color:var(--text-muted);">' + item.count + '</span>';
-        html += '</div>';
-      });
-      if (browseLinks[groupName]) {
-        var link = browseLinks[groupName];
-        html += '<a href="' + link.href + '" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); text-decoration:none; letter-spacing:0.3px;">' + link.text + ' &rarr;</a>';
-      }
+    // Shared renderer in cards.js — keeps home and detail-page dropdowns identical.
+    renderSearchDropdown(searchDropdown, searchWrap, groups, function(type, value) {
+      navigateToSearch(type, value);
     });
-    searchDropdown.innerHTML = html;
-    searchDropdown.style.display = 'block';
-    searchWrap.classList.add('has-suggestions');
-    searchDropdown.style.pointerEvents = 'none';
-    setTimeout(function() { searchDropdown.style.pointerEvents = ''; }, 300);
     selectedSuggestion = -1;
-    searchDropdown.querySelectorAll('.search-suggestion').forEach(function(el) {
-      el.addEventListener('mouseenter', function() { el.style.background = 'var(--card-bg)'; });
-      el.addEventListener('mouseleave', function() { el.style.background = ''; });
-      el.addEventListener('mousedown', function(e) {
-        e.preventDefault();
-        navigateToSearch(el.dataset.type, el.dataset.value);
-      });
-    });
   }
 
   function hideDropdown() {
