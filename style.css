@@ -335,7 +335,8 @@ main {
    transition) so the dropdown never appears below a still-rounded bar.
    `.has-suggestions` lives on both .search-wrap (home) and .global-search
    (detail pages), so these rules drive every search on the site at once. */
-.has-suggestions .search-bar {
+.has-suggestions .search-bar,
+.has-suggestions .search-bar:focus-visible {
   border-radius: 24px 24px 0 0;
   box-shadow: none;
 }
@@ -344,6 +345,9 @@ main {
   border-radius: 0 0 24px 24px;
 }
 
+/* Focus ring only when the bar stands alone. Once suggestions open, the bar +
+   dropdown merge into one container carried by the dropdown's drop shadow, so
+   the ring is suppressed above to avoid an outline around just the bar. */
 .search-bar:focus-visible {
   box-shadow: 0 0 0 2px var(--btn-bg);
 }
