@@ -334,10 +334,10 @@ function processCall(call) {
     urgencyText = 'Closed';
     urgencyClass = 'closed';
   } else if (daysLeft !== null && daysLeft === 0) {
-    urgencyText = 'Ends today';
+    urgencyText = 'Ending today';
     urgencyClass = 'ending';
   } else if (daysLeft !== null && daysLeft === 1) {
-    urgencyText = 'Ends tomorrow';
+    urgencyText = 'Ending tomorrow';
     urgencyClass = 'ending';
   } else if (daysLeft !== null && daysLeft <= 14) {
     urgencyText = daysLeft + ' days left';
