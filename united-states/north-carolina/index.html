@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,6 +114,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/abandoned-a-photographer-s-place/">Abandoned &middot; A Photographer's Place</a></h3><p>June 22, 2026 · $35</p><p>Themed exhibition on abandonment — decay, absence, what remains. Juror Marty Evans. Optional in-gallery printing. Raleigh, NC.</p></div>
 
     </section>
 
@@ -130,7 +131,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', NC,') || c.location.includes(', NC, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', NC,') || c.location.includes(', NC, USA')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
