@@ -523,12 +523,20 @@ function renderCallList(calls, container, opts) {
     return;
   }
 
-  // Ending soon section (today + tomorrow combined)
+  // Ending Today / Ending Tomorrow sections
   const specialSlugs = new Set();
-  const endingSoon = open.filter(c => c.daysLeft !== null && c.daysLeft <= 1);
-  if (endingSoon.length >= 1) {
-    html += '<h3 class="section-header">Ending soon</h3>';
-    endingSoon.forEach(call => {
+  const endingToday = open.filter(c => c.daysLeft !== null && c.daysLeft === 0);
+  if (endingToday.length >= 1) {
+    html += '<h3 class="section-header">Ending Today</h3>';
+    endingToday.forEach(call => {
+      html += renderCard(call, 'h4');
+      specialSlugs.add(call.slug || slugify(call.title));
+    });
+  }
+  const endingTomorrow = open.filter(c => c.daysLeft !== null && c.daysLeft === 1);
+  if (endingTomorrow.length >= 1) {
+    html += '<h3 class="section-header">Ending Tomorrow</h3>';
+    endingTomorrow.forEach(call => {
       html += renderCard(call, 'h4');
       specialSlugs.add(call.slug || slugify(call.title));
     });
