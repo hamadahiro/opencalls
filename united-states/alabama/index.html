@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,6 +114,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="static-call-item"><h3><a href="/in-the-practice-of-seeing-national-juried-photography-exhibition-jacksonville-state-university/">In The Practice of Seeing — National Juried Photography Exhibition &middot; Jacksonville State University</a></h3><p>July 6, 2026 · $20</p><p>JSU national juried photography show in all processes — digital, film, alternative, installation. Cash prizes + gallery exhibition.</p></div>
 
     </section>
 
@@ -130,7 +131,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', AL,') || c.location.includes(', AL, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', AL,') || c.location.includes(', AL, USA')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
