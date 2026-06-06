@@ -349,6 +349,95 @@ function buildStaticCallList(calls) {
   return html;
 }
 
+// === Server-side mirror of cards.js's card + tag + section rendering ===
+// The homepage ships ONE list: this produces byte-equivalent markup to what
+// cards.js renderCallList() builds for the default (open) view, so the browser
+// can keep the server-rendered list instead of rebuilding it on load. Keep in
+// sync with renderTags()/renderCard()/renderCallList() in cards.js.
+const PIN_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
+const CATEGORY_SLUG = { photography: 'photography', exhibition: 'exhibitions', grant: 'grants', zine: 'zines', residency: 'residencies', education: 'education' };
+const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function computeUrgency(call, now) {
+  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
+  const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
+  let urgencyClass = '', urgencyText = '';
+  if (call.deadline === 'Continuous') { urgencyText = 'Continuous'; urgencyClass = 'rolling'; }
+  else if (daysLeft < 0) { urgencyText = 'Closed'; urgencyClass = 'closed'; }
+  else if (daysLeft === 0) { urgencyText = 'Ending today'; urgencyClass = 'ending'; }
+  else if (daysLeft === 1) { urgencyText = 'Ending tomorrow'; urgencyClass = 'ending'; }
+  else if (daysLeft <= 14) { urgencyText = daysLeft + ' days left'; urgencyClass = 'urgent'; }
+  else if (daysLeft <= 30) { urgencyText = daysLeft + ' days left'; urgencyClass = 'soon'; }
+  else { urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); urgencyClass = 'normal'; }
+  const deadlineSlug = deadlineDate ? MONTHS_CAP[deadlineDate.getMonth()].toLowerCase() + '-' + deadlineDate.getFullYear() : null;
+  return { deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
+}
+
+function renderStaticTags(call, u) {
+  const tags = [];
+  if (u.deadlineSlug) tags.push(`<a href="/deadlines/${u.deadlineSlug}/" class="call-deadline ${u.urgencyClass}">${escapeHtml(u.urgencyText)}</a>`);
+  else tags.push(`<span class="call-deadline ${u.urgencyClass}">${escapeHtml(u.urgencyText)}</span>`);
+  if (call.prize) splitPrizeParts(call.prize).forEach(part => {
+    const cat = derivePrizeCategory(part);
+    const href = cat ? '/prize/' + cat + '/' : '/prize/';
+    tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${escapeHtml(part)} prize</a>`);
+  });
+  if (call.fee) {
+    if (call.fee.toLowerCase().startsWith('free')) tags.push(`<a href="/fees/free/" class="meta-tag meta-tag-link">Free</a>`);
+    else if (/^[£$€¥]/.test(call.fee)) tags.push(`<a href="/fees/entry-fee/" class="meta-tag meta-tag-link">${escapeHtml(call.fee)} fee</a>`);
+    else tags.push(`<a href="/fees/entry-fee/" class="meta-tag meta-tag-link">${escapeHtml(call.fee)}</a>`);
+  }
+  if (call.location) {
+    const country = getCountry(call.location);
+    const locLink = getStaticLocationLink(call.location, country);
+    const locDisplay = shortenLocation(call.location);
+    if (locLink) tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${PIN_SVG}${escapeHtml(locDisplay)}</a>`);
+    else tags.push(`<span class="meta-tag">${PIN_SVG}${escapeHtml(locDisplay)}</span>`);
+  }
+  tags.push(`<a href="/${CATEGORY_SLUG[call.category]}/" class="meta-tag meta-tag-link">${escapeHtml(categoryLabel(call.category))}</a>`);
+  if (call.eligibility && call.eligibility.length) call.eligibility.forEach(e => {
+    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${escapeHtml(ELIGIBILITY_LABEL[e] || e)}</a>`);
+  });
+  return tags.join(' ');
+}
+
+function renderStaticCard(call, u) {
+  const slug = call.slug || slugify(call.title);
+  const title = escapeHtml(call.title) + (!call.orgInTitle ? ' &middot; ' + escapeHtml(call.org) : '');
+  return `      <div class="call-card">
+        <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
+        <div class="call-meta">${renderStaticTags(call, u)}</div>
+        <p class="call-description">${escapeHtml(call.summary || call.description)}</p>
+      </div>\n`;
+}
+
+function buildStaticHomeList(callsList) {
+  const now = new Date();
+  const processed = callsList
+    .filter(c => isCallOpen(c.deadline))
+    .map(c => ({ call: c, u: computeUrgency(c, now) }))
+    .filter(x => x.u.urgencyClass !== 'closed');
+  processed.sort((a, b) => {
+    if (a.call.deadline === 'Continuous' && b.call.deadline === 'Continuous') return 0;
+    if (a.call.deadline === 'Continuous') return 1;
+    if (b.call.deadline === 'Continuous') return -1;
+    return a.u.deadlineDate - b.u.deadlineDate;
+  });
+  let html = '';
+  const used = new Set();
+  const today = processed.filter(x => x.u.daysLeft === 0);
+  if (today.length) { html += '      <h3 class="section-header">Ending Today</h3>\n'; today.forEach(x => { html += renderStaticCard(x.call, x.u); used.add(x); }); }
+  const tomorrow = processed.filter(x => x.u.daysLeft === 1);
+  if (tomorrow.length) { html += '      <h3 class="section-header">Ending Tomorrow</h3>\n'; tomorrow.forEach(x => { html += renderStaticCard(x.call, x.u); used.add(x); }); }
+  let currentSection = '';
+  processed.filter(x => !used.has(x)).forEach(x => {
+    const section = x.call.deadline === 'Continuous' ? 'Continuous' : MONTHS_CAP[x.u.deadlineDate.getMonth()] + ' ' + x.u.deadlineDate.getFullYear();
+    if (section !== currentSection) { currentSection = section; html += '      <h3 class="section-header">' + section + '</h3>\n'; }
+    html += renderStaticCard(x.call, x.u);
+  });
+  return html;
+}
+
 // === Helpers ported from cards.js / call-detail.js so detail pages can pre-render
 // the same content into static HTML (Google reads without JS). The browser JS
 // later replaces this with identical content — no visual change for users. ===
@@ -2302,7 +2391,7 @@ manualFiles.forEach(file => {
 // 1. HOME PAGE — inject full call list
 {
   let html = fs.readFileSync('index.html', 'utf8');
-  const staticCalls = buildStaticCallList(openCalls);
+  const staticCalls = buildStaticHomeList(openCalls);
   html = html.replace(
     /<!-- STATIC-CALLS-START -->[\s\S]*?<!-- STATIC-CALLS-END -->/,
     `<!-- STATIC-CALLS-START -->\n${staticCalls}      <!-- STATIC-CALLS-END -->`
