@@ -256,8 +256,8 @@ main {
 .call-detail-description a {
   color: var(--text-body);
   text-decoration: underline dotted var(--link-underline);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 /* === Filters === */
@@ -1014,8 +1014,8 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-info a {
   color: var(--text);
   text-decoration: underline dotted var(--link-underline);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 .call-detail-info a:hover {
