@@ -42,10 +42,12 @@ function linkifyProse(paragraph, call, state) {
     }
   }
   // 2. First mention of any @handle — link to instagram.com/<handle>.
-  html = html.replace(/@([A-Za-z0-9_.]+)/g, function (match, handle) {
+  // The leading boundary (start, whitespace, or punctuation) prevents matching
+  // the "@dergreif" inside an email like "voucher-guestroom@dergreif.org".
+  html = html.replace(/(^|[^A-Za-z0-9._-])@([A-Za-z0-9_.]+)/g, function (match, before, handle) {
     if (state.handlesLinked[handle]) return match;
     state.handlesLinked[handle] = true;
-    return '<a href="https://instagram.com/' + handle + '" target="_blank" rel="nofollow noopener">' + match + '</a>';
+    return before + '<a href="https://instagram.com/' + handle + '" target="_blank" rel="nofollow noopener">@' + handle + '</a>';
   });
   return html;
 }
