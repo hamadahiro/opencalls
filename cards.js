@@ -460,6 +460,28 @@ function renderTags(call) {
   return tags.join(' ');
 }
 
+// Maps a free-text requirements string to a single browse bucket slug.
+// Keep in sync with deriveRequirementBucket() in generate-pages.js.
+function deriveRequirementBucket(r) {
+  if (!r) return null;
+  const s = r.toLowerCase();
+  if (/photobook|book dummy|\bbook\b|\bzine\b|photo book|dummy/.test(s)) return 'photobook';
+  if (/proposal|intent|budget|project pdf|project in progress|solo exhibit|\bapplication\b/.test(s)) return 'proposal';
+  if (/unlimited|no limit/.test(s)) return 'unlimited';
+  if (/portfolio|work sample|body of work|cohesive|\bproject\b|\bseries\b|photo essay|looks/.test(s)) return 'portfolio';
+  const nums = (s.match(/\d+/g) || []).map(Number);
+  if (nums.length) {
+    const m = Math.max.apply(null, nums);
+    if (m <= 1) return '1-image';
+    if (m <= 5) return '2-5-images';
+    if (m <= 10) return '6-10-images';
+    if (m <= 20) return '11-20-images';
+    return '21-plus-images';
+  }
+  if (/single|1 photo|one photo/.test(s)) return '1-image';
+  return 'portfolio';
+}
+
 function renderInfoGrid(call) {
   function infoRow(label, value) {
     return `<div class="info-row">
@@ -517,7 +539,11 @@ function renderInfoGrid(call) {
     rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
   }
   // Requirements
-  if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
+  if (call.requirements) {
+    const reqBucket = deriveRequirementBucket(call.requirements);
+    const reqHtml = reqBucket ? infoLink('/requirements/' + reqBucket, call.requirements) : infoVal(call.requirements);
+    rows.push(infoRow('<a href="/requirements/">Requirements</a>', reqHtml));
+  }
   // AI policy (only show if actually specified)
   if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
