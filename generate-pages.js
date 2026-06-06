@@ -1184,7 +1184,9 @@ Object.keys(eligibilityTags).forEach(tag => {
 function buildEligibilityIndexItems() {
   let html = '';
   eligibilityOrder.forEach(group => {
-    const activeTags = group.tags.filter(t => eligibilityTags[t]);
+    // Only list eligibility tags with open calls — zero-open pages are noindex
+    // and stay reachable via search.
+    const activeTags = group.tags.filter(t => (openEligibilityTags[t] || 0) > 0);
     if (!activeTags.length) return;
     activeTags.sort((a, b) => (openEligibilityTags[b] || 0) - (openEligibilityTags[a] || 0));
     html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
