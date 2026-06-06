@@ -167,7 +167,7 @@ function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; 
 // Shared head snippets — change once, applies everywhere
 const THEME_LIGHT = '#f5f2ed';
 const THEME_DARK = '#151515';
-const GA_SNIPPET = `<script src="/analytics.js"></script>`;
+const GA_SNIPPET = `<script defer src="/analytics.js"></script>`;
 const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
 const ICONS = `<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
@@ -199,10 +199,14 @@ function HEAD(opts) {
   if (opts.jsonLd) jsonLdBlocks.push(opts.jsonLd);
   if (opts.breadcrumbs) jsonLdBlocks.push(buildBreadcrumbJsonLd(opts.breadcrumbs));
   const jsonLdHtml = jsonLdBlocks.map(ld => `<script type="application/ld+json">\n  ${ld}\n  </script>`).join('\n  ');
-  return `${GA_SNIPPET}
-  ${PRELOAD}
-  <meta charset="UTF-8">
+  // Order matters for first paint: charset first, then the render-blocking
+  // stylesheet as early as possible so the CSSOM is ready before the browser
+  // paints. Scripts (GA) come LAST and are deferred — a blocking script ahead
+  // of the stylesheet causes a flash of unstyled content.
+  return `<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <link rel="stylesheet" href="/style.css?v=${cssVersion}">
+  ${FONTS}
   <meta name="theme-color" content="${THEME_LIGHT}" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="${THEME_DARK}" media="(prefers-color-scheme: dark)">
   <title>${opts.title}${TITLE_SUFFIX}</title>
@@ -218,8 +222,8 @@ function HEAD(opts) {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="${opts.robots || 'index, follow'}">
   ${jsonLdHtml}
-  ${FONTS}
-  <link rel="stylesheet" href="/style.css?v=${cssVersion}">`;
+  ${PRELOAD}
+  ${GA_SNIPPET}`;
 }
 
 // Shared header and footer
@@ -1890,7 +1894,7 @@ const submitHtml = `<!DOCTYPE html>
         </select>
 
         <details class="submit-details">
-          <summary>Add details</summary>
+          <summary>Add details <span style="color:var(--text-muted)">(optional)</span></summary>
 
           <label for="deadline">Deadline</label>
           <input class="search-bar" type="text" name="deadline" id="deadline" placeholder="April 15, 2026">
