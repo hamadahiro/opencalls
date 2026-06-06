@@ -17,6 +17,8 @@
   --tag-border: rgba(0, 0, 0, 0.2);
   --tag-hover: rgba(0, 0, 0, 0.06);
   --link-underline: #D3B36F;
+  --link-highlight: rgba(211, 179, 111, 0.28);
+  --link-highlight-hover: rgba(211, 179, 111, 0.5);
   --dots: var(--text);
   --bg-image: none;
   /* Type scale: 7 sizes only */
@@ -256,11 +258,17 @@ main {
 .call-detail-description a {
   color: var(--text-body);
   text-decoration: none;
-  background-image: radial-gradient(circle at center, var(--link-underline) 0.7px, transparent 1px);
-  background-size: 9px 2px;
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  padding-bottom: 3px;
+  background-color: var(--link-highlight);
+  box-shadow: 0 0 0 2px var(--link-highlight);
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.call-detail-description a:hover {
+  background-color: var(--link-highlight-hover);
+  box-shadow: 0 0 0 2px var(--link-highlight-hover);
 }
 
 /* === Filters === */
@@ -1017,15 +1025,17 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-info a {
   color: var(--text);
   text-decoration: none;
-  background-image: radial-gradient(circle at center, var(--link-underline) 0.7px, transparent 1px);
-  background-size: 9px 2px;
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  padding-bottom: 3px;
+  background-color: var(--link-highlight);
+  box-shadow: 0 0 0 2px var(--link-highlight);
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-color 0.15s, box-shadow 0.15s;
 }
 
 .call-detail-info a:hover {
-  text-decoration: underline solid var(--link-underline);
+  background-color: var(--link-highlight-hover);
+  box-shadow: 0 0 0 2px var(--link-highlight-hover);
 }
 
 /* === Index Pages === */
