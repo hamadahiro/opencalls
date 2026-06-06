@@ -159,7 +159,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'entry-fee', 'requirements'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'about', 'entry-fee', 'requirements'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -263,7 +263,7 @@ const HEADER = buildHeader();
 
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a> &mdash; still making sense of things.</p>
+      <p>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a> &mdash; <a href="/about/">About</a> &mdash; <a href="/feed.xml">RSS</a></p>
     </footer>`;
 function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
@@ -2060,6 +2060,60 @@ writeGenerated('submit/index.html', submitHtml);
 sitemapEntries.push(`${SITE}/submit`);
 console.log('  Submit page');
 
+// === About / editorial process page ===
+const aboutJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Monographica Open Calls",
+  "description": "Editorial process and verification notes for Monographica Open Calls.",
+  "url": `${SITE}/about/`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Monographica",
+    "url": "https://monographica.com"
+  }
+}, null, 2);
+
+const aboutHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'About Open Calls', description: 'How Monographica curates, verifies, and updates open calls for photographers and visual artists.', keywords: 'about Monographica open calls, photography open calls editorial process, open call verification', canonical: `${SITE}/about`, jsonLd: aboutJsonLd, breadcrumbs: [{ name: 'About', url: `${SITE}/about/` }], cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'About Open Calls', 'How Monographica curates and verifies opportunities for photographers and visual artists.')}
+
+    <section class="call-detail">
+      <p class="call-detail-description">Monographica Open Calls is an editorial directory of submission opportunities for photographers and visual artists. The site focuses on exhibitions, grants, residencies, awards, publications, portfolio reviews, and education programs with clear deadlines or rolling application windows.</p>
+
+      <h2 class="section-header">How calls are selected</h2>
+      <p class="call-detail-description">Calls are gathered from official organization pages, organizer announcements, newsletters, public listings, and reader submissions. Listings are prioritized when they include enough practical information for artists to decide whether an opportunity is relevant: deadline, fee, prize or outcome, location, eligibility, submission requirements, organizer, and application link.</p>
+
+      <h2 class="section-header">Verification</h2>
+      <p class="call-detail-description">Before publication, details are checked against the official call page where possible. Many detail pages show a "Verified by Monographica" date; that date records the most recent editorial check in the local verification log. Because organizers can change deadlines, fees, juries, or eligibility after publication, each listing links to the official source and asks readers to confirm details before applying.</p>
+
+      <h2 class="section-header">Updates and archives</h2>
+      <p class="call-detail-description">The directory is updated regularly as new calls are found and existing calls are checked. Open calls are shown first across the homepage and browse pages. Closed calls may remain accessible for reference, but expired listings are not promoted as current opportunities.</p>
+
+      <h2 class="section-header">Corrections</h2>
+      <p class="call-detail-description">If a listing is wrong, outdated, duplicated, or missing important context, send the official source through the <a href="/submit/">submit form</a>. Corrections are handled from the official call information rather than from secondary summaries.</p>
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+
+writeGenerated('about/index.html', aboutHtml);
+sitemapEntries.push(`${SITE}/about`);
+console.log('  About page');
+
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
   minLen = minLen || 25;
@@ -2207,23 +2261,15 @@ cardsJs = cardsJs.replace(
 );
 fs.writeFileSync('cards.js', cardsJs);
 
-// Generate sitemap.xml — PRUNED to the high-value canonical structure only.
-// As of 2026-05-25 the site is at 0 indexed / 1.48K not-indexed in Search
-// Console, dominated by 774 "Crawled — currently not indexed" (the Helpful
-// Content classifier). Promoting 500+ thin call pages in the sitemap was
-// reinforcing the "aggregator with little unique value" signal. We now
-// promote ONLY the structural pages (home, taxonomy indexes, category
-// landings, fee landings, top country pages). Individual call pages remain
-// crawlable via internal links from those indexes — Google can find them
-// when it wants — but they are no longer pushed at Google as "please index
-// these too." This is a one-shot signal change; the bulk crawl-vs-index
-// decision is still Google's, but the sitemap now expresses a clear quality
-// hierarchy instead of dumping every URL.
+// Generate sitemap.xml with a restrained, high-value canonical set.
+// Keep expired/noindex archives out, but submit active call detail pages:
+// those are the pages users need while deadlines are still relevant.
 const today = new Date().toISOString().split('T')[0];
 const allUrlsRaw = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u : u + '/')];
 
 const STRUCTURAL_EXACT = new Set([
   `${SITE}/`,
+  `${SITE}/about/`,
   `${SITE}/browse/`,
   `${SITE}/categories/`,
   `${SITE}/locations/`,
@@ -2254,7 +2300,23 @@ function isTopCountryPage(url) {
   return PRECOMPUTED_COUNTRY_PAGES.has(slug);
 }
 
-const allUrls = allUrlsRaw.filter(url => STRUCTURAL_EXACT.has(url) || isTopCountryPage(url));
+const ACTIVE_CALL_URLS = new Set(
+  data.calls
+    .filter(c => isCallOpen(c.deadline))
+    .map(c => `${SITE}/${c.slug || slugify(c.title)}/`)
+);
+const ACTIVE_DEADLINE_URLS = new Set(
+  Object.entries(monthGroups)
+    .filter(([, group]) => group.calls.some(isOpen))
+    .map(([key]) => `${SITE}/deadlines/${key}/`)
+);
+
+const allUrls = allUrlsRaw.filter(url =>
+  STRUCTURAL_EXACT.has(url) ||
+  isTopCountryPage(url) ||
+  ACTIVE_CALL_URLS.has(url) ||
+  ACTIVE_DEADLINE_URLS.has(url)
+);
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -2265,7 +2327,7 @@ ${allUrls.map(url => `  <url>
 </urlset>`;
 
 fs.writeFileSync('sitemap.xml', sitemapXml);
-console.log(`  Sitemap pruned to ${allUrls.length} structural URLs (was ${allUrlsRaw.length})`);
+console.log(`  Sitemap includes ${allUrls.length} active/structural URLs (from ${allUrlsRaw.length} generated candidates)`);
 
 // Generate RSS feed
 const now = new Date();
@@ -2469,10 +2531,12 @@ manualFiles.forEach(file => {
 const staleFiles = [];
 function findStale(dir) {
   if (!fs.existsSync(dir)) return;
+  const ignoredDirs = new Set(['.git', 'node_modules', '.wrangler']);
   fs.readdirSync(dir).forEach(item => {
     if (item.startsWith('.')) return;
     const fp = path.join(dir, item);
     if (fs.statSync(fp).isDirectory()) {
+      if (ignoredDirs.has(item)) return;
       findStale(fp);
     } else if (fp.endsWith('.html') && !generatedFiles.has(fp) && !MANUAL_FILES.includes(fp)) {
       staleFiles.push(fp);
