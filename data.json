@@ -705,7 +705,7 @@
         "Luisa Dörr, Photographer"
       ],
       "submitVia": "Website form",
-      "submitUrl": "https://independent-photo.com/submit/",
+      "submitUrl": null,
       "email": "",
       "requirements": "1, 3, or 6 images",
       "slug": "2026-portrait-award-the-independent-photographer",
@@ -21134,8 +21134,8 @@
       "location": "Lanesboro, MN, USA",
       "prize": "Residency + $1,250/week + $500 supplies",
       "eligibility": [
-        "united-states",
-        "black"
+        "minnesota",
+        "bipoc"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://lanesboroarts.org/bipoc-artist-residency/application/",

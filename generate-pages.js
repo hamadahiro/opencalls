@@ -375,6 +375,7 @@ const ELIGIBILITY_LABEL = {
   'canada': 'Canada only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only',
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only',
   '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
+  'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
   '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
@@ -1031,6 +1032,8 @@ const eligibilityGroups = {
   'mid-atlantic-us': { short: 'Mid-Atlantic US', title: 'Mid-Atlantic US Open Calls', desc: 'Open calls restricted to photographers in the Mid-Atlantic region — Maryland, Virginia, West Virginia, Pennsylvania, and Washington DC.' },
   'new-york-state': { short: 'New York State', title: 'New York State Open Calls', desc: 'Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.' },
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
+  'minnesota': { short: 'Minnesota', title: 'Minnesota-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Minnesota.' },
+  'bipoc': { short: 'BIPOC Artists', title: 'Open Calls for BIPOC Artists', desc: 'Open calls, exhibitions, and awards for Black, Indigenous, and People of Color (BIPOC) photographers and visual artists.' },
   'bay-area': { short: 'Bay Area', title: 'Bay Area Open Calls', desc: 'Open calls restricted to photographers and artists based in the San Francisco Bay Area.' },
   'chicago-area': { short: 'Chicago Area', title: 'Chicago Area Open Calls', desc: 'Open calls restricted to photographers and artists based in the Chicago metropolitan area.' },
   'los-angeles': { short: 'Los Angeles', title: 'Los Angeles Open Calls', desc: 'Open calls restricted to photographers and artists based in the greater Los Angeles area.' },
@@ -1136,8 +1139,8 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
+  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'minnesota', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }

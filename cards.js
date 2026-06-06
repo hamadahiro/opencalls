@@ -65,6 +65,8 @@ const eligibilityLabel = {
   'mid-atlantic-us': 'Mid-Atlantic US',
   'new-york-state': 'NY State only',
   'alaska': 'Alaska only',
+  'minnesota': 'Minnesota only',
+  'bipoc': 'BIPOC artists',
   'bay-area': 'Bay Area only',
   'chicago-area': 'Chicago Area only',
   'los-angeles': 'LA only',
