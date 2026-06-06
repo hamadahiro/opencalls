@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/2026-honeywell-photography-competition-honeywell-arts-entertainment/">2026 Honeywell Photography Competition &middot; Honeywell Arts &amp; Entertainment</a></h3><p class="call-description">Honeywell Center's juried photo competition in Wabash, Indiana. US residents, all ages. Cash prizes + gallery exhibition.</p></div>
 
     </section>
 
@@ -128,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', IN,') || c.location.includes(', IN, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', IN,') || c.location.includes(', IN, USA')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
