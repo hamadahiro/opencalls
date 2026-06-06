@@ -21,7 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,7 +108,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="static-call-item"><h3><a href="/focus-2026-atlanta-photography-group/">Focus 2026 — Atlanta Photography Group</a></h3><p>June 5, 2026 · $35–$95 (members) / $30–$70 (students)</p><p>APG's open-themed juried show. $1,000 MOCA GA purchase award + permanent collection. Members-only, Georgia artists.</p></div>
 
     </section>
 
@@ -125,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Atlanta Photography Group' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Atlanta Photography Group').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
