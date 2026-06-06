@@ -1974,11 +1974,13 @@ function midTruncateHtml(str, minLen) {
 }
 
 function buildBrowseSection(heading, items, headingLink) {
-  if (!items.length) return '';
+  // Only surface destinations that actually have open calls. Zero-count pages
+  // are noindex anyway and just bloat the page; they stay reachable via search.
+  const live = items.filter(i => i.count > 0);
+  if (!live.length) return '';
   const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
   let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
-  // Show items with open calls first, then items with 0 open (so Google can discover all pages)
-  const sorted = [...items].sort((a, b) => b.count - a.count);
+  const sorted = [...live].sort((a, b) => b.count - a.count);
   sorted.forEach(({ label, href, count }) => {
     html += `      <a href="${href}" class="index-item">
         <span class="index-item-name">${midTruncateHtml(label)}</span>
