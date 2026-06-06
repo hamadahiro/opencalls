@@ -936,10 +936,17 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-prize-label a {
   color: var(--text);
   text-decoration: none;
+  background-color: var(--link-highlight);
+  box-shadow: 0 0 0 2px var(--link-highlight);
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-color 0.15s, box-shadow 0.15s;
 }
 
 .call-detail-prize-label a:hover {
-  text-decoration: underline;
+  background-color: var(--link-highlight-hover);
+  box-shadow: 0 0 0 2px var(--link-highlight-hover);
 }
 
 .call-detail-prize .call-prize {
