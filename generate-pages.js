@@ -173,9 +173,7 @@ const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
 const ICONS = `<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
-const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">`;
+const FONTS = `<link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>`;
 // Build BreadcrumbList JSON-LD from array of {name, url} items
 function buildBreadcrumbJsonLd(items) {
   const list = [{ name: 'Home', url: SITE + '/' }, ...items];
