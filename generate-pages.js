@@ -19,10 +19,13 @@ function getVerifiedAt(slug) {
 }
 // Linkify the FIRST mention of the org name and any @instagram handles in a
 // block of prose. Subsequent mentions stay as plain text — this avoids the
-// over-linking pattern Google flags as low-quality, while still surfacing the
-// internal org link (good for SEO) and the IG handle for users who want it.
+// over-linking pattern Google flags as low-quality while still surfacing
+// Instagram handles for users who want them.
 // State tracking is per-call (the linkifyState object) so the first mention
 // across the WHOLE prose array gets linked, not the first mention per paragraph.
+// During the product-reset index test PRECOMPUTED_ORG_PAGES is left empty, so
+// org pages stay available from the explicit "Organized by" line without extra
+// prose links from every generated detail page.
 function makeLinkifyState() {
   return { orgLinked: false, handlesLinked: {} };
 }
@@ -165,6 +168,35 @@ const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
 const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
 function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; }
+
+// Product-reset index policy: keep user browsing pages live, but only ask
+// Google to index strong, current pages instead of every generated facet.
+const INDEX_POLICY = {
+  minCategoryOpenCalls: 5,
+  minCountryOpenCalls: 5,
+  minStateOpenCalls: 5
+};
+function robotsFor(indexable) {
+  return indexable ? 'index, follow' : 'noindex, follow';
+}
+function shouldIndexCategoryPage(openCount) {
+  return openCount >= INDEX_POLICY.minCategoryOpenCalls;
+}
+function shouldIndexCountryPage(country, openCount) {
+  return !!country && openCount >= INDEX_POLICY.minCountryOpenCalls;
+}
+function shouldIndexStatePage(openCount) {
+  return openCount >= INDEX_POLICY.minStateOpenCalls;
+}
+function shouldIndexFeePage(slug, openCount) {
+  return slug === 'fees/free' && openCount >= INDEX_POLICY.minCategoryOpenCalls;
+}
+function setRobotsMeta(html, directive) {
+  if (/<meta name="robots" content="[^"]*">/.test(html)) {
+    return html.replace(/<meta name="robots" content="[^"]*">/, `<meta name="robots" content="${directive}">`);
+  }
+  return html.replace('<meta charset="UTF-8">', `<meta charset="UTF-8">\n  <meta name="robots" content="${directive}">`);
+}
 
 // Shared head snippets — change once, applies everywhere
 const THEME_LIGHT = '#f5f2ed';
@@ -895,26 +927,40 @@ const slugMap = {};
 const sitemapEntries = [];
 const createdCountrySlugs = [];
 const createdOrgSlugs = [];
+const linkedCountrySlugs = [];
 let generated = 0;
 let skipped = 0;
 
-// --- Precompute country/state/org slug sets so detail pages can pre-render
-//     correct internal links to landing pages (must run BEFORE generatePage). ---
+// --- Precompute strong country/state slug sets so detail pages can pre-render
+//     only the location links we still want to promote from every call card.
+//     Org pages remain live for users but are noindex and not prose-linked.
 {
   const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
   const stateNameToAbbr = {};
   Object.entries(usStateNames).forEach(([abbr, name]) => { stateNameToAbbr[name] = abbr; });
   const countrySlugFor = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
+  const openStateCountsForLinks = {};
+
+  data.calls.forEach(c => {
+    if (!isCallOpen(c.deadline) || !c.location || !c.location.endsWith('USA')) return;
+    const parts = c.location.split(',');
+    let st = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+    if (st && stateNameToAbbr[st]) st = stateNameToAbbr[st];
+    if (st) openStateCountsForLinks[st] = (openStateCountsForLinks[st] || 0) + 1;
+  });
 
   data.calls.forEach(c => {
     const country = getCountry(c.location);
-    if (country) PRECOMPUTED_COUNTRY_PAGES.add(countrySlugFor[country] || slugify(country));
-    if (c.org) PRECOMPUTED_ORG_PAGES.add(slugify(c.org));
+    if (shouldIndexCountryPage(country, openCountryCounts[country] || 0)) {
+      PRECOMPUTED_COUNTRY_PAGES.add(countrySlugFor[country] || slugify(country));
+    }
     if (c.location && c.location.endsWith('USA')) {
       const parts = c.location.split(',');
       let st = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
       if (st && stateNameToAbbr[st]) st = stateNameToAbbr[st];
-      if (st && usStateNames[st]) PRECOMPUTED_STATE_PAGES[st] = 'united-states/' + slugify(usStateNames[st]);
+      if (st && usStateNames[st] && shouldIndexStatePage(openStateCountsForLinks[st] || 0)) {
+        PRECOMPUTED_STATE_PAGES[st] = 'united-states/' + slugify(usStateNames[st]);
+      }
     }
   });
 }
@@ -962,11 +1008,13 @@ Object.entries(categories).forEach(([cat, info]) => {
   // Only list open calls on landing pages so internal links flow to indexable URLs.
   const catCalls = data.calls.filter(c => c.category === cat && isCallOpen(c.deadline));
   const count = catCalls.length;
+  const indexable = shouldIndexCategoryPage(count);
+  const robotsDirective = robotsFor(indexable);
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), keywords: escapeHtml(info.keywords + ', ' + YEAR), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion })}
+  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), keywords: escapeHtml(info.keywords + ', ' + YEAR), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1000,8 +1048,8 @@ ${buildStaticCallList(catCalls)}
 </html>`;
 
   writeGenerated(`${slug}/index.html`, html);
-  sitemapEntries.push(`${SITE}/${slug}`);
-  console.log(`  Category page: ${slug} (${count} calls)`);
+  if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  Category page: ${slug} (${count} calls, ${robotsDirective})`);
 });
 
 // === Special filter pages (Free, Prize) ===
@@ -1033,11 +1081,13 @@ filterPages.forEach(fp => {
   // Only list open calls on fee landing pages.
   const fpCalls = data.calls.filter(c => feeFilters[fp.feeKey](c) && isCallOpen(c.deadline));
   const count = fpCalls.length;
+  const indexable = shouldIndexFeePage(fp.slug, count);
+  const robotsDirective = robotsFor(indexable);
 
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), keywords: `${escapeHtml(fp.keywords)}, ${YEAR}`, canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion })}
+  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), keywords: `${escapeHtml(fp.keywords)}, ${YEAR}`, canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1071,8 +1121,8 @@ ${buildStaticCallList(fpCalls)}
 </html>`;
 
   writeGenerated(`${fp.slug}/index.html`, html);
-  sitemapEntries.push(`${SITE}/${fp.slug}`);
-  console.log(`  Filter page: ${fp.slug} (${count} calls)`);
+  if (indexable) sitemapEntries.push(`${SITE}/${fp.slug}`);
+  console.log(`  Filter page: ${fp.slug} (${count} calls, ${robotsDirective})`);
 });
 
 // === Fees index page ===
@@ -1081,7 +1131,7 @@ const paidCount = openCalls.filter(feeFilters['entry-fee']).length;
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', keywords: `free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, ${YEAR}`, canonical: `${SITE}/fees`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Entry Fee ${YEAR}`, "description": "Browse open calls by entry fee.", "url": `${SITE}/fees/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', keywords: `free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, ${YEAR}`, canonical: `${SITE}/fees`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Entry Fee ${YEAR}`, "description": "Browse open calls by entry fee.", "url": `${SITE}/fees/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1114,7 +1164,6 @@ const feesIndexHtml = `<!DOCTYPE html>
 </html>`;
 
 writeGenerated('fees/index.html', feesIndexHtml);
-sitemapEntries.push(`${SITE}/fees`);
 console.log(`  Fees index page`);
 
 // === Eligibility pages ===
@@ -1214,9 +1263,9 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   const count = eligibilityTags[tag] || 0;
   const openCount = openEligibilityTags[tag] || 0;
   const slug = `eligibility/${tag}`;
-  // Noindex tag pages with zero open calls — they exist only as archive
-  // and have no current value for search users.
-  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+  // Facet pages stay useful for users but are intentionally not standalone
+  // search landing pages during the product-reset test.
+  const robotsDirective = 'noindex, follow';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1256,7 +1305,6 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
   eligibilityPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  Eligibility page: ${tag} (${count} calls, ${openCount} open)`);
 });
 
@@ -1304,7 +1352,7 @@ if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', keywords: `open calls eligibility, women photographers, emerging artists, LGBTQ photographers, photography residency eligibility, call for entries eligibility, ${YEAR}`, canonical: `${SITE}/eligibility`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Eligibility ${YEAR}`, "description": "Browse open calls by eligibility.", "url": `${SITE}/eligibility/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', keywords: `open calls eligibility, women photographers, emerging artists, LGBTQ photographers, photography residency eligibility, call for entries eligibility, ${YEAR}`, canonical: `${SITE}/eligibility`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Eligibility ${YEAR}`, "description": "Browse open calls by eligibility.", "url": `${SITE}/eligibility/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1328,7 +1376,6 @@ if (eligibilityPageSlugs.length) {
 </html>`;
 
   writeGenerated('eligibility/index.html', eligIndexHtml);
-  sitemapEntries.push(`${SITE}/eligibility`);
   console.log(`  Eligibility index page (${eligibilityPageSlugs.length} groups)`);
 }
 
@@ -1360,7 +1407,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   if (!info) return;
   const openCount = openPrizeCatTags[tag] || 0;
   const slug = `prize/${tag}`;
-  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+  const robotsDirective = 'noindex, follow';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1413,7 +1460,6 @@ ${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).incl
 
   prizeCatPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  Prize page: ${tag} (${count} calls, ${openCount} open)`);
 });
 
@@ -1437,7 +1483,7 @@ if (prizeCatPageSlugs.length) {
   const prizeIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', keywords: `open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, ${YEAR}`, canonical: `${SITE}/prize`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Prize Type ${YEAR}`, "description": "Browse open calls by prize type.", "url": `${SITE}/prize/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', keywords: `open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, ${YEAR}`, canonical: `${SITE}/prize`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Prize Type ${YEAR}`, "description": "Browse open calls by prize type.", "url": `${SITE}/prize/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1461,7 +1507,6 @@ if (prizeCatPageSlugs.length) {
 </html>`;
 
   writeGenerated('prize/index.html', prizeIndexHtml);
-  sitemapEntries.push(`${SITE}/prize`);
   console.log(`  Prize index page (${prizeCatPageSlugs.length} groups)`);
 }
 
@@ -1494,7 +1539,7 @@ requirementOrder.filter(tag => requirementTags[tag]).forEach(tag => {
   const count = requirementTags[tag] || 0;
   const openCount = openRequirementTags[tag] || 0;
   const slug = `requirements/${tag}`;
-  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+  const robotsDirective = 'noindex, follow';
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1534,7 +1579,6 @@ ${buildStaticCallList(data.calls.filter(c => deriveRequirementBucket(c.requireme
 
   requirementPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  Requirements page: ${tag} (${count} calls, ${openCount} open)`);
 });
 
@@ -1556,7 +1600,7 @@ if (requirementPageSlugs.length) {
   const requirementsIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', keywords: `open calls submission requirements, how many images, portfolio open calls, photobook open calls, single image competitions, ${YEAR}`, canonical: `${SITE}/requirements`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Requirements ${YEAR}`, "description": "Browse open calls by submission requirements.", "url": `${SITE}/requirements/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', keywords: `open calls submission requirements, how many images, portfolio open calls, photobook open calls, single image competitions, ${YEAR}`, canonical: `${SITE}/requirements`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Requirements ${YEAR}`, "description": "Browse open calls by submission requirements.", "url": `${SITE}/requirements/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1580,7 +1624,6 @@ if (requirementPageSlugs.length) {
 </html>`;
 
   writeGenerated('requirements/index.html', requirementsIndexHtml);
-  sitemapEntries.push(`${SITE}/requirements`);
   console.log(`  Requirements index page (${requirementPageSlugs.length} groups)`);
 }
 
@@ -1599,7 +1642,8 @@ Object.entries(countryCounts)
     const slug = countrySlug;
     const isOnline = country === 'Online';
     const openCount = openCountryCounts[country] || 0;
-    const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+    const indexable = shouldIndexCountryPage(country, openCount);
+    const robotsDirective = robotsFor(indexable);
     const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
     const desc = isOnline
       ? 'Online open calls, competitions, and submissions for photographers and visual artists. No travel required — apply from anywhere.'
@@ -1677,8 +1721,9 @@ ${country === 'USA' ? `
 
     slugMap[slug] = `country: ${fullName}`;
     createdCountrySlugs.push(slug);
+    if (indexable) linkedCountrySlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
-    if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+    if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls, ${openCount} open)`);
   });
 
@@ -1709,7 +1754,8 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const stateSlug = slugify(fullStateName);
   const slug = `united-states/${stateSlug}`;
   const openCount = openStateCounts[state] || 0;
-  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+  const indexable = shouldIndexStatePage(openCount);
+  const robotsDirective = robotsFor(indexable);
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
   const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
@@ -1752,7 +1798,7 @@ ${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(
 
   slugMap[slug] = `state: ${fullStateName}`;
   writeGenerated(`${slug}/index.html`, html);
-  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+  if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
   console.log(`  State page: ${slug} (${count} calls, ${openCount} open)`);
 });
 
@@ -1762,7 +1808,7 @@ Object.entries(orgCounts)
     const orgSlug = slugify(org);
     const slug = orgSlug;
     const openCount = openOrgCounts[org] || 0;
-    const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+    const robotsDirective = 'noindex, follow';
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
@@ -1818,7 +1864,6 @@ ${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadl
     slugMap[slug] = `org: ${org}`;
     createdOrgSlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
-    if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Org page: ${slug} (${count} calls, ${openCount} open)`);
   });
 
@@ -2238,20 +2283,19 @@ console.log(`  Browse directory page`);
 
 // Add index pages to sitemap
 sitemapEntries.push(`${SITE}/categories`);
-sitemapEntries.push(`${SITE}/locations`);
-sitemapEntries.push(`${SITE}/organizations`);
 
 // Build state pages map for cards.js
 const statePageMap = {};
 Object.keys(stateCounts).forEach(state => {
+  if (!shouldIndexStatePage(openStateCounts[state] || 0)) return;
   const fullName = usStateNames[state] || state;
   statePageMap[state] = 'united-states/' + slugify(fullName);
 });
 
 // Update page lists in cards.js (between markers) — only include actually created pages
 const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
-const countryPages = ${JSON.stringify(createdCountrySlugs)};
-const orgPages = ${JSON.stringify(createdOrgSlugs)};
+const countryPages = ${JSON.stringify(linkedCountrySlugs)};
+const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
@@ -2272,12 +2316,6 @@ const STRUCTURAL_EXACT = new Set([
   `${SITE}/about/`,
   `${SITE}/browse/`,
   `${SITE}/categories/`,
-  `${SITE}/locations/`,
-  `${SITE}/organizations/`,
-  `${SITE}/fees/`,
-  `${SITE}/eligibility/`,
-  `${SITE}/prize/`,
-  `${SITE}/requirements/`,
   `${SITE}/deadlines/`,
   `${SITE}/submit/`,
   `${SITE}/photography/`,
@@ -2285,9 +2323,7 @@ const STRUCTURAL_EXACT = new Set([
   `${SITE}/grants/`,
   `${SITE}/residencies/`,
   `${SITE}/zines/`,
-  `${SITE}/education/`,
   `${SITE}/fees/free/`,
-  `${SITE}/fees/entry-fee/`,
 ]);
 // Top country pages: include any country page that's a single-segment path
 // directly under root (e.g. /united-states/, /germany/, /united-kingdom/).
@@ -2310,10 +2346,16 @@ const ACTIVE_DEADLINE_URLS = new Set(
     .filter(([, group]) => group.calls.some(isOpen))
     .map(([key]) => `${SITE}/deadlines/${key}/`)
 );
+const INDEXABLE_STATE_URLS = new Set(
+  Object.entries(openStateCounts)
+    .filter(([, openCount]) => shouldIndexStatePage(openCount || 0))
+    .map(([state]) => `${SITE}/united-states/${slugify(usStateNames[state] || state)}/`)
+);
 
 const allUrls = allUrlsRaw.filter(url =>
   STRUCTURAL_EXACT.has(url) ||
   isTopCountryPage(url) ||
+  INDEXABLE_STATE_URLS.has(url) ||
   ACTIVE_CALL_URLS.has(url) ||
   ACTIVE_DEADLINE_URLS.has(url)
 );
@@ -2474,6 +2516,7 @@ manualFiles.forEach(file => {
     items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${catLabels[cat]}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
   });
   let html = fs.readFileSync('categories/index.html', 'utf8');
+  html = setRobotsMeta(html, 'index, follow');
   html = html.replace(
     /<!-- STATIC-INDEX-START -->[\s\S]*?<!-- STATIC-INDEX-END -->/,
     `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
@@ -2499,6 +2542,7 @@ manualFiles.forEach(file => {
     items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${escapeHtml(display)}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
   });
   let html = fs.readFileSync('locations/index.html', 'utf8');
+  html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
     /<!-- STATIC-INDEX-START -->[\s\S]*?<!-- STATIC-INDEX-END -->/,
     `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
@@ -2518,6 +2562,7 @@ manualFiles.forEach(file => {
     items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${escapeHtml(org)}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
   });
   let html = fs.readFileSync('organizations/index.html', 'utf8');
+  html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
     /<!-- STATIC-INDEX-START -->[\s\S]*?<!-- STATIC-INDEX-END -->/,
     `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
