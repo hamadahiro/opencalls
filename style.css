@@ -255,9 +255,12 @@ main {
 
 .call-detail-description a {
   color: var(--text-body);
-  text-decoration: underline dotted var(--link-underline);
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
+  background-image: radial-gradient(circle at center, var(--link-underline) 1.1px, transparent 1.4px);
+  background-size: 9px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  padding-bottom: 3px;
 }
 
 /* === Filters === */
@@ -1013,9 +1016,12 @@ a.meta-tag-link.call-prize:hover {
 
 .call-detail-info a {
   color: var(--text);
-  text-decoration: underline dotted var(--link-underline);
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
+  background-image: radial-gradient(circle at center, var(--link-underline) 1.1px, transparent 1.4px);
+  background-size: 9px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  padding-bottom: 3px;
 }
 
 .call-detail-info a:hover {
