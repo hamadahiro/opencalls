@@ -334,13 +334,17 @@ function buildStaticCallList(calls) {
     if (b.deadline === 'Continuous') return -1;
     return a.deadline.localeCompare(b.deadline);
   });
+  // Use the real card classes (.call-card / .call-title / .call-description) so
+  // the first paint is fully styled by the design system. cards.js later swaps
+  // in the interactive cards (with meta pills + sections); this keeps the
+  // pre-hydration list looking like a proper card list instead of unstyled
+  // default text. Mirrors renderCard() in cards.js (sans the meta-pill row).
   let html = '';
   sorted.forEach(c => {
     const slug = c.slug || slugify(c.title);
     const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
-    const dl = formatDeadline(c.deadline);
-    const desc = escapeHtml(c.summary || c.description).substring(0, 160);
-    html += `      <div class="static-call-item"><h3><a href="/${slug}/">${title}</a></h3><p>${escapeHtml(dl)}${c.fee ? ' · ' + escapeHtml(c.fee) : ''}</p><p>${desc}</p></div>\n`;
+    const desc = escapeHtml(c.summary || c.description);
+    html += `      <div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>\n`;
   });
   return html;
 }
