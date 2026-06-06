@@ -157,7 +157,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'entry-fee'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'entry-fee', 'requirements'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -428,6 +428,28 @@ function buildStaticPrizeBlock(call) {
   return `<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">${label}</a></span> ${tags}</div>`;
 }
 
+// Maps a free-text requirements string to a single browse bucket slug.
+// Keep in sync with deriveRequirementBucket() in cards.js.
+function deriveRequirementBucket(r) {
+  if (!r) return null;
+  const s = r.toLowerCase();
+  if (/photobook|book dummy|\bbook\b|\bzine\b|photo book|dummy/.test(s)) return 'photobook';
+  if (/proposal|intent|budget|project pdf|project in progress|solo exhibit|\bapplication\b/.test(s)) return 'proposal';
+  if (/unlimited|no limit/.test(s)) return 'unlimited';
+  if (/portfolio|work sample|body of work|cohesive|\bproject\b|\bseries\b|photo essay|looks/.test(s)) return 'portfolio';
+  const nums = (s.match(/\d+/g) || []).map(Number);
+  if (nums.length) {
+    const m = Math.max.apply(null, nums);
+    if (m <= 1) return '1-image';
+    if (m <= 5) return '2-5-images';
+    if (m <= 10) return '6-10-images';
+    if (m <= 20) return '11-20-images';
+    return '21-plus-images';
+  }
+  if (/single|1 photo|one photo/.test(s)) return '1-image';
+  return 'portfolio';
+}
+
 // Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
 function buildStaticInfoGrid(call) {
   function infoRow(label, value) {
@@ -492,7 +514,11 @@ function buildStaticInfoGrid(call) {
   }
 
   // Requirements
-  if (call.requirements) rows.push(infoRow('Requirements', infoVal(call.requirements)));
+  if (call.requirements) {
+    const reqBucket = deriveRequirementBucket(call.requirements);
+    const reqHtml = reqBucket ? infoLink('/requirements/' + reqBucket, call.requirements) : infoVal(call.requirements);
+    rows.push(infoRow('<a href="/requirements/">Requirements</a>', reqHtml));
+  }
 
   // AI policy (only if specified)
   if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
@@ -1340,6 +1366,125 @@ if (prizeCatPageSlugs.length) {
   console.log(`  Prize index page (${prizeCatPageSlugs.length} groups)`);
 }
 
+// === Requirements (submission) pages ===
+const requirementGroups = {
+  '1-image': { short: 'Single image', title: 'Open Calls Requiring a Single Image', desc: 'Open calls and competitions where you submit just one image. Single-photo entries for photographers and visual artists.' },
+  '2-5-images': { short: '2–5 images', title: 'Open Calls Requiring 2–5 Images', desc: 'Open calls accepting a small set of 2 to 5 images. Compact submissions for photographers and visual artists.' },
+  '6-10-images': { short: '6–10 images', title: 'Open Calls Requiring 6–10 Images', desc: 'Open calls accepting a mid-size set of 6 to 10 images. Browse and apply with a short series.' },
+  '11-20-images': { short: '11–20 images', title: 'Open Calls Requiring 11–20 Images', desc: 'Open calls accepting a larger set of 11 to 20 images. Ideal for extended series and bodies of work.' },
+  '21-plus-images': { short: '21+ images', title: 'Open Calls Requiring 21+ Images', desc: 'Open calls accepting large submissions of more than 20 images. For extensive projects and bodies of work.' },
+  'unlimited': { short: 'Unlimited images', title: 'Open Calls With No Image Limit', desc: 'Open calls that place no cap on the number of images you can submit. Show as much work as you like.' },
+  'portfolio': { short: 'Portfolio / series', title: 'Open Calls Requiring a Portfolio', desc: 'Open calls asking for a portfolio, cohesive series, or body of work rather than a fixed image count.' },
+  'photobook': { short: 'Photobook / dummy', title: 'Open Calls Requiring a Photobook', desc: 'Open calls and awards asking for a photobook, book dummy, or zine. Submissions for photobook makers and publishers.' },
+  'proposal': { short: 'Proposal / project', title: 'Open Calls Requiring a Proposal', desc: 'Open calls, grants, and residencies asking for a project proposal, statement of intent, or budget alongside work.' }
+};
+const requirementOrder = ['1-image', '2-5-images', '6-10-images', '11-20-images', '21-plus-images', 'unlimited', 'portfolio', 'photobook', 'proposal'];
+
+const requirementTags = {};
+const openRequirementTags = {};
+data.calls.forEach(c => {
+  const b = deriveRequirementBucket(c.requirements);
+  if (!b) return;
+  requirementTags[b] = (requirementTags[b] || 0) + 1;
+  if (isCallOpen(c.deadline)) openRequirementTags[b] = (openRequirementTags[b] || 0) + 1;
+});
+
+const requirementPageSlugs = [];
+requirementOrder.filter(tag => requirementTags[tag]).forEach(tag => {
+  const info = requirementGroups[tag];
+  const count = requirementTags[tag] || 0;
+  const openCount = openRequirementTags[tag] || 0;
+  const slug = `requirements/${tag}`;
+  const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, photography submission requirements, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Requirements', url: `${SITE}/requirements/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/requirements/">Requirements</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => deriveRequirementBucket(c.requirements) === tag && isCallOpen(c.deadline)))}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => deriveRequirementBucket(c.requirements) === '${tag}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  requirementPageSlugs.push(tag);
+  writeGenerated(`${slug}/index.html`, html);
+  if (openCount > 0) sitemapEntries.push(`${SITE}/${slug}`);
+  console.log(`  Requirements page: ${tag} (${count} calls, ${openCount} open)`);
+});
+
+// Requirements index page
+function buildRequirementIndexItems() {
+  let html = '';
+  requirementOrder.filter(t => requirementTags[t]).forEach(tag => {
+    const info = requirementGroups[tag];
+    html += `      <a href="/requirements/${tag}/" class="index-item">
+        <span class="index-item-name">${escapeHtml(info.short)}</span>
+        <span class="dots"></span>
+        <span class="index-item-count">${openRequirementTags[tag] || 0}</span>
+      </a>\n`;
+  });
+  return html;
+}
+
+if (requirementPageSlugs.length) {
+  const requirementsIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', keywords: `open calls submission requirements, how many images, portfolio open calls, photobook open calls, single image competitions, ${YEAR}`, canonical: `${SITE}/requirements`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Requirements ${YEAR}`, "description": "Browse open calls by submission requirements.", "url": `${SITE}/requirements/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'Requirements', 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.')}
+
+    <section class="index-list" id="indexList">
+      ${buildRequirementIndexItems()}
+    </section>
+
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+
+  writeGenerated('requirements/index.html', requirementsIndexHtml);
+  sitemapEntries.push(`${SITE}/requirements`);
+  console.log(`  Requirements index page (${requirementPageSlugs.length} groups)`);
+}
+
 // === Country landing pages ===
 const countryNames = {
   'USA': 'the United States', 'UK': 'the United Kingdom', 'UAE': 'the United Arab Emirates', 'Netherlands': 'the Netherlands'
@@ -1862,6 +2007,11 @@ prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
   browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}/`, count: openPrizeCatTags[tag] || 0 });
 });
 
+const browseRequirements = [];
+requirementOrder.filter(t => requirementTags[t]).forEach(tag => {
+  browseRequirements.push({ label: requirementGroups[tag].short, href: `/requirements/${tag}/`, count: openRequirementTags[tag] || 0 });
+});
+
 const browseCountries = Object.entries(countryCounts)
   .map(([country]) => {
     const countrySlug = countrySlugs[country] || slugify(country);
@@ -1911,6 +2061,7 @@ const browseHtml = `<!DOCTYPE html>
 ${buildBrowseSection('Categories', browseCategories, '/categories/')}
 ${buildBrowseSection('Fees', browseFees, '/fees/')}
 ${buildBrowseSection('Prizes', browsePrizes, '/prize/')}
+${buildBrowseSection('Requirements', browseRequirements, '/requirements/')}
 ${buildBrowseSection('Locations', browseCountries, '/locations/')}
 ${buildBrowseSection('US States', browseStates, '/united-states/')}
 ${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/')}
@@ -1979,6 +2130,7 @@ const STRUCTURAL_EXACT = new Set([
   `${SITE}/fees/`,
   `${SITE}/eligibility/`,
   `${SITE}/prize/`,
+  `${SITE}/requirements/`,
   `${SITE}/deadlines/`,
   `${SITE}/submit/`,
   `${SITE}/photography/`,
