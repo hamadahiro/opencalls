@@ -1518,24 +1518,13 @@ ${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).incl
 
   ${CARDS_SCRIPT(cssVersion)}
   <script>
-    function derivePrizeCats(prize) {
-      if (!prize) return [];
-      var seen = {};
-      return prize.split(/\\s*\\+\\s*/).map(function(s){return s.trim()}).filter(Boolean).map(function(t){
-        var p = t.toLowerCase();
-        if (/[$€£¥]|chf\\b|sek\\b|aud\\b|twd\\b|rub\\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
-        if (/fellowship/.test(p)) return 'fellowship';
-        if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
-        if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-        if (/exhibition/.test(p)) return 'exhibition';
-        return null;
-      }).filter(function(c){ if(!c||seen[c])return false; seen[c]=true; return true; });
-    }
+    // derivePrizeCategories comes from cards.js (loaded above) — the single
+    // source of truth injected at build time. No local copy (it used to drift).
     async function loadFiltered() {
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
+      const calls = data.calls.filter(c => derivePrizeCategories(c.prize).includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
@@ -2390,10 +2379,12 @@ const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
 // eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
 const eligibilityLabel = ${JSON.stringify(ELIGIBILITY_LABEL)};
-// shortenFee + feeChip + submitViaLink: single source of truth is generate-pages.js (injected verbatim)
+// shortenFee + feeChip + submitViaLink + derivePrizeCategor*: single source of truth is generate-pages.js (injected verbatim)
 ${shortenFee.toString()}
 ${feeChip.toString()}
 ${submitViaLink.toString()}
+${derivePrizeCategory.toString()}
+${derivePrizeCategories.toString()}
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
@@ -2417,7 +2408,7 @@ fs.writeFileSync('cards.js', cardsJs);
   if (countOf(/==AUTO-GENERATED-START==/g) !== 1) gateErrs.push('AUTO-GENERATED-START marker must appear exactly once');
   if (countOf(/==AUTO-GENERATED-END==/g) !== 1) gateErrs.push('AUTO-GENERATED-END marker must appear exactly once');
   // Injected SSOT functions: exactly one copy each.
-  for (const fn of ['function shortenFee', 'function feeChip']) {
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(']) {
     const n = written.split(fn).length - 1;
     if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n}) — injection corrupted`);
   }
