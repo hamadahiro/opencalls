@@ -951,15 +951,18 @@ let skipped = 0;
   });
 
   data.calls.forEach(c => {
+    // Link to every location page that actually gets generated (one per country/
+    // state that appears in any call), independent of the SEO index threshold —
+    // a noindex page is still live and should never have its chip link dropped.
     const country = getCountry(c.location);
-    if (shouldIndexCountryPage(country, openCountryCounts[country] || 0)) {
+    if (country) {
       PRECOMPUTED_COUNTRY_PAGES.add(countrySlugFor[country] || slugify(country));
     }
     if (c.location && c.location.endsWith('USA')) {
       const parts = c.location.split(',');
       let st = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
       if (st && stateNameToAbbr[st]) st = stateNameToAbbr[st];
-      if (st && usStateNames[st] && shouldIndexStatePage(openStateCountsForLinks[st] || 0)) {
+      if (st && usStateNames[st]) {
         PRECOMPUTED_STATE_PAGES[st] = 'united-states/' + slugify(usStateNames[st]);
       }
     }
@@ -1722,7 +1725,9 @@ ${country === 'USA' ? `
 
     slugMap[slug] = `country: ${fullName}`;
     createdCountrySlugs.push(slug);
-    if (indexable) linkedCountrySlugs.push(slug);
+    // Every generated country page is linkable (noindex pages included); the
+    // `indexable` flag only controls SEO robots + sitemap, not internal links.
+    linkedCountrySlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
     if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
     console.log(`  Country page: ${slug} (${count} calls, ${openCount} open)`);
@@ -2288,7 +2293,8 @@ sitemapEntries.push(`${SITE}/categories`);
 // Build state pages map for cards.js
 const statePageMap = {};
 Object.keys(stateCounts).forEach(state => {
-  if (!shouldIndexStatePage(openStateCounts[state] || 0)) return;
+  // A state page is generated for every state that appears; link to all of them
+  // (noindex pages included). The index threshold only governs SEO, not links.
   const fullName = usStateNames[state] || state;
   statePageMap[state] = 'united-states/' + slugify(fullName);
 });
