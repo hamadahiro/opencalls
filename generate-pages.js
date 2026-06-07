@@ -6,8 +6,10 @@ const path = require('path');
 const shared = require('./shared.js');
 const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
+  PIN_SVG, PRIZE_SVG,
   isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-  deriveRequirementBucket, shortenFee, feeChip, submitViaLink
+  deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
+  getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock
 } = shared;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -350,12 +352,6 @@ function safeJsStr(str) {
   return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/</g, '\\x3c').replace(/>/g, '\\x3e').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
 }
 
-function getCountry(location) {
-  if (!location) return '';
-  const parts = location.split(',');
-  return parts[parts.length - 1].trim();
-}
-
 function jsonStr(str) {
   return JSON.stringify(str).slice(1, -1);
 }
@@ -405,8 +401,6 @@ function buildStaticCallList(calls) {
 // cards.js renderCallList() builds for the default (open) view, so the browser
 // can keep the server-rendered list instead of rebuilding it on load. Keep in
 // sync with renderTags()/renderCard()/renderCallList() in cards.js.
-const PIN_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
-const PRIZE_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>';
 const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function computeUrgency(call, now) {
@@ -424,36 +418,12 @@ function computeUrgency(call, now) {
   return { deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
 }
 
-function renderStaticTags(call, u) {
-  const tags = [];
-  if (u.deadlineSlug) tags.push(`<a href="/deadlines/${u.deadlineSlug}/" class="call-deadline ${u.urgencyClass}">${escapeHtml(u.urgencyText)}</a>`);
-  else tags.push(`<span class="call-deadline ${u.urgencyClass}">${escapeHtml(u.urgencyText)}</span>`);
-  if (call.prize) splitPrizeParts(call.prize).forEach(part => {
-    const cat = derivePrizeCategory(part);
-    const href = cat ? '/prize/' + cat + '/' : '/prize/';
-    tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${escapeHtml(part)}</a>`);
-  });
-  if (call.fee) tags.push(feeChip(call.fee, escapeHtml));
-  if (call.location) {
-    const country = getCountry(call.location);
-    const locLink = getStaticLocationLink(call.location, country);
-    const locDisplay = shortenLocation(call.location);
-    if (locLink) tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${PIN_SVG}${escapeHtml(locDisplay)}</a>`);
-    else tags.push(`<span class="meta-tag">${PIN_SVG}${escapeHtml(locDisplay)}</span>`);
-  }
-  tags.push(`<a href="/${categorySlug[call.category]}/" class="meta-tag meta-tag-link">${escapeHtml((categoryLabel[call.category] || call.category))}</a>`);
-  if (call.eligibility && call.eligibility.length) call.eligibility.forEach(e => {
-    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${escapeHtml(eligibilityLabel[e] || e)}</a>`);
-  });
-  return tags.join(' ');
-}
-
 function renderStaticCard(call, u) {
   const slug = call.slug || slugify(call.title);
   const title = escapeHtml(call.title) + (!call.orgInTitle ? ' &middot; ' + escapeHtml(call.org) : '');
   return `      <div class="call-card">
         <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
-        <div class="call-meta">${renderStaticTags(call, u)}</div>
+        <div class="call-meta">${renderTags(call, { esc: escapeHtml, urgency: u, locationLink: getStaticLocationLink })}</div>
         <p class="call-description">${escapeHtml(call.summary || call.description)}</p>
       </div>\n`;
 }
@@ -490,17 +460,6 @@ function buildStaticHomeList(callsList) {
 // later replaces this with identical content — no visual change for users. ===
 
 
-function tagHtml(str, minLen) {
-  minLen = minLen || 25;
-  if (!str || str.length <= minLen) return escapeHtml(str || '');
-  const words = str.split(' ');
-  if (words.length <= 2) return escapeHtml(str);
-  const splitAt = Math.ceil(words.length * 0.6);
-  const front = words.slice(0, splitAt).join(' ');
-  const back = words.slice(splitAt).join(' ');
-  return `<span class="tag-front">${escapeHtml(front)}</span> <span class="tag-back">${escapeHtml(back)}</span>`;
-}
-
 // These get filled in once detail-page data is precomputed at the top of the script
 let PRECOMPUTED_COUNTRY_PAGES = new Set();
 let PRECOMPUTED_ORG_PAGES = new Set();
@@ -518,101 +477,9 @@ function getStaticLocationLink(location, country) {
 }
 
 // Mirrors the prize block call-detail.js writes into #detailPrize
-function buildStaticPrizeBlock(call) {
-  if (!call.prize) return '';
-  const parts = splitPrizeParts(call.prize);
-  const label = parts.length > 1 ? 'Prizes' : 'Prize';
-  const tags = parts.map(part => {
-    const cat = derivePrizeCategory(part);
-    const href = cat ? '/prize/' + cat + '/' : '/prize/';
-    return `<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${escapeHtml(part)}</a>`;
-  }).join(' ');
-  return `<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">${label}</a></span> ${tags}</div>`;
-}
-
 // Maps a free-text requirements string to a single browse bucket slug.
 // Keep in sync with deriveRequirementBucket() in cards.js.
 // Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
-function buildStaticInfoGrid(call) {
-  function infoRow(label, value) {
-    return `<div class="info-row"><span class="info-label">${label}</span><span class="dots"></span><span class="info-value">${value}</span></div>`;
-  }
-  function infoVal(str) { return tagHtml(str, 20); }
-  function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${escapeHtml(str)}">${infoVal(str)}</a>`; }
-
-  const rows = [];
-
-  // Deadline
-  const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
-    new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  let dlSlug = null;
-  if (call.deadline !== 'Continuous') {
-    const d = new Date(call.deadline + 'T00:00:00');
-    dlSlug = ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear();
-  }
-  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
-
-  // Results date
-  if (call.resultsDate) {
-    const resultsPast = (function(s) {
-      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
-      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
-      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
-      if (!my) return false;
-      const mi = months[my[1].toLowerCase()];
-      if (mi === undefined) return false;
-      const yr = parseInt(my[2]);
-      const dm = clean.match(/(\d{1,2})[,\s-]/);
-      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
-      return new Date(yr, mi, day, 23, 59) < new Date();
-    })(call.resultsDate);
-    rows.push(infoRow('Results', escapeHtml(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
-  }
-
-  // Fee
-  if (call.fee) {
-    const feeHtml = call.fee.toLowerCase().startsWith('free')
-      ? infoLink('/fees/free', call.fee)
-      : infoLink('/fees/entry-fee', call.fee);
-    rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
-  }
-
-  // Eligibility
-  if (call.eligibility && call.eligibility.length) {
-    const eligHtml = call.eligibility.map(e => {
-      const label = eligibilityLabel[e] || e;
-      return infoLink('/eligibility/' + e, label);
-    }).join(', ');
-    rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
-  }
-
-  // Location
-  if (call.location) {
-    const country = getCountry(call.location);
-    const locLink = getStaticLocationLink(call.location, country);
-    const locShort = shortenLocation(call.location);
-    const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
-    rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
-  }
-
-  // Requirements
-  if (call.requirements) {
-    const reqBucket = deriveRequirementBucket(call.requirements);
-    const reqHtml = reqBucket ? infoLink('/requirements/' + reqBucket, call.requirements) : infoVal(call.requirements);
-    rows.push(infoRow('<a href="/requirements/">Requirements</a>', reqHtml));
-  }
-
-  // AI policy (only if specified)
-  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
-
-  // Submit via
-  if (call.submitVia) {
-    rows.push(infoRow('Submit via', submitViaLink(call, escapeHtml)));
-  }
-
-  return rows.join('');
-}
-
 // Mirrors scoreSimilarity() + loadSimilar() in call-detail.js — pre-renders the
 // "More like this" block so internal links are visible to Google.
 function scoreSimilarityStatic(current, other) {
@@ -770,7 +637,7 @@ function generatePage(call, cssVersion) {
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
 
-      <div id="detailPrize">${buildStaticPrizeBlock(call)}</div>
+      <div id="detailPrize">${buildPrizeBlock(call, escapeHtml)}</div>
 
 ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.length
   ? call.prose.map(p => `      <p class="call-detail-description">${linkifyProse(p, call, state)}</p>`).join('\n')
@@ -780,7 +647,7 @@ ${call.winners && call.winners.length ? `
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
       </div>
 ` : ''}
-      <div class="call-detail-info" id="detailInfo">${buildStaticInfoGrid(call)}</div>
+      <div class="call-detail-info" id="detailInfo">${renderInfoGrid(call, { esc: escapeHtml, locationLink: getStaticLocationLink })}</div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
@@ -1612,7 +1479,7 @@ ${country === 'USA' ? `
       });
       container.innerHTML = html;
 ` : `
-      const calls = data.calls.filter(c => getCountryFromLocation(c.location) === '${country.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === '${country.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 `}
@@ -2230,7 +2097,7 @@ fs.writeFileSync('cards.js', cardsJs);
   if (countOf(written, /==AUTO-GENERATED-START==/g) !== 1) gateErrs.push('AUTO-GENERATED-START marker must appear exactly once in cards.js');
   if (countOf(written, /==AUTO-GENERATED-END==/g) !== 1) gateErrs.push('AUTO-GENERATED-END marker must appear exactly once in cards.js');
   // Shared SSOT functions: exactly once in shared.js, and ZERO copies in cards.js.
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(']) {
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     const inCards = written.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
@@ -2242,7 +2109,7 @@ fs.writeFileSync('cards.js', cardsJs);
     if (written.split(decl).length - 1 !== 0) gateErrs.push(`${decl} is re-declared in cards.js — it must live ONLY in shared.js`);
   }
   // Hand-written core cards.js functions must not be duplicated.
-  for (const fn of ['function renderCallList', 'function renderTags', 'function esc', 'function processCall']) {
+  for (const fn of ['function renderCallList', 'function renderCard', 'function esc', 'function processCall']) {
     const n = written.split(fn).length - 1;
     if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n})`);
   }
