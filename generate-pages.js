@@ -139,6 +139,15 @@ data.calls.forEach((c, i) => {
   if (c.submitUrl && !/^https?:\/\/.+/i.test(String(c.submitUrl).trim())) {
     err(`"${label}" has invalid submitUrl: "${c.submitUrl}" — must be an http(s) URL`);
   }
+  // For OPEN calls, if submitVia names a SaaS submission platform a submitUrl is
+  // mandatory — otherwise the rendered link can only fall back to email/website,
+  // never the platform the label promises. (Closed calls render label-only, no
+  // link, so they're exempt. Generic labels like "Official website" are exempt:
+  // the renderer falls those back to the call's official url, never to mailto.)
+  if (c.submitVia && !c.submitUrl && isCallOpen(c.deadline) &&
+      /^(picter|submittable|cafe|slideroom|jotform|typeform|entrythingy|smarter\s?entry|zealous|paperform|cognito forms|formsite|surveymonkey|artcall|google forms?|fillout|goethe application portal)$/i.test(c.submitVia.trim())) {
+    err(`"${label}" submitVia is "${c.submitVia}" (a submission platform) but has no submitUrl — add the platform URL or relabel (e.g. "Official website").`);
+  }
 
   // Eligibility tag format
   (c.eligibility || []).forEach(e => {
@@ -457,6 +466,22 @@ function feeChip(fee, esc) {
   return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
 }
 
+// SSOT for the "Submit via" link target. `label` is the pre-formatted display
+// text (infoVal). Order matters: a specific submission URL wins; mailto is used
+// ONLY when the label signals email intent; otherwise we fall back to the call's
+// official page — NEVER to email on a web/platform label (that was the bug:
+// clicking "Picter"/"Website form" opened the mail client). Depends only on the
+// global isCallOpen, so it stays valid when injected verbatim into cards.js.
+function submitViaLink(call, esc, label) {
+  if (!isCallOpen(call.deadline)) return label;
+  const emailIntent = /e-?mail|wetransfer/i.test(call.submitVia || '');
+  if (call.submitUrl) return `<a href="${esc(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`;
+  if (emailIntent && call.email) return `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`;
+  if (call.url) return `<a href="${esc(call.url)}" target="_blank" rel="nofollow noopener">${label}</a>`;
+  if (call.email) return `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`;
+  return label;
+}
+
 function renderStaticTags(call, u) {
   const tags = [];
   if (u.deadlineSlug) tags.push(`<a href="/deadlines/${u.deadlineSlug}/" class="call-deadline ${u.urgencyClass}">${escapeHtml(u.urgencyText)}</a>`);
@@ -703,18 +728,7 @@ function buildStaticInfoGrid(call) {
 
   // Submit via
   if (call.submitVia) {
-    const open = isCallOpen(call.deadline);
-    const label = infoVal(call.submitVia);
-    // Prefer the actual submission URL (Picter, Submittable, gallery form, …);
-    // only fall back to mailto when there is no URL. Linking email over an
-    // existing URL opened the mail client on web-platform labels — wrong target.
-    if (open && call.submitUrl) {
-      rows.push(infoRow('Submit via', `<a href="${escapeHtml(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`));
-    } else if (open && call.email) {
-      rows.push(infoRow('Submit via', `<a href="mailto:${escapeHtml(call.email)}" rel="nofollow noopener">${label}</a>`));
-    } else {
-      rows.push(infoRow('Submit via', label));
-    }
+    rows.push(infoRow('Submit via', submitViaLink(call, escapeHtml, infoVal(call.submitVia))));
   }
 
   return rows.join('');
@@ -2357,9 +2371,10 @@ const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
 // eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
 const eligibilityLabel = ${JSON.stringify(ELIGIBILITY_LABEL)};
-// shortenFee + feeChip: single source of truth is generate-pages.js (injected verbatim)
+// shortenFee + feeChip + submitViaLink: single source of truth is generate-pages.js (injected verbatim)
 ${shortenFee.toString()}
 ${feeChip.toString()}
+${submitViaLink.toString()}
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
