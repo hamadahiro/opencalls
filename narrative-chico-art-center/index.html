@@ -110,7 +110,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Narrative</h1>
 
-      <div id="detailPrize"></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Exhibition prize</a></div></div>
 
       <p class="call-detail-description">Chico Art Center is a community arts gallery at 450 Orange Street, Suite 6 in Chico, California. &quot;Narrative&quot; is the gallery's open call for photography that explores visual storytelling — work that communicates a narrative through a single image or cohesive series, whether personal journey, cultural or historical commentary, political statement, or fiction.</p>
       <p class="call-detail-description">All photographic mediums and styles are welcome — documentary, street, conceptual, staged, experimental — with no thematic constraint beyond the storytelling brief. AI-generated images are not currently accepted. Work previously exhibited at CAC is ineligible.</p>
@@ -146,7 +146,7 @@
 
   <script>
     const CURRENT_SLUG = 'narrative-chico-art-center';
-    const CURRENT_CALL = {"prize":"","category":"exhibition","org":"Chico Art Center","location":"Chico, CA, USA","fee":"$35/7 images","deadline":"2026-06-14","resultsDate":"Late June 2026","instagram":"@chico_art_center","eligibility":[],"jury":["Cameron Kelly, Gallery Director"],"submitVia":"JotForm","submitUrl":"https://pci.jotform.com/form/250458279768070","email": "","ai":"Not accepted","requirements":"Up to 7 images"};
+    const CURRENT_CALL = {"prize":"Exhibition","category":"exhibition","org":"Chico Art Center","location":"Chico, CA, USA","fee":"$35/7 images","deadline":"2026-06-14","resultsDate":"Late June 2026","instagram":"@chico_art_center","eligibility":[],"jury":["Cameron Kelly, Gallery Director"],"submitVia":"JotForm","submitUrl":"https://pci.jotform.com/form/250458279768070","email": "","ai":"Not accepted","requirements":"Up to 7 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -156,7 +156,7 @@
       var u = 'https://chicoartcenter.com/narrative26/';
       var o = 'Chico Art Center';
       var dl = new Date('2026-06-14T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('$35/7 images');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$35/7 images');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
