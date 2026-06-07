@@ -319,7 +319,7 @@ function chipToUrl(type, value) {
 }
 
 // ==AUTO-GENERATED-START== (do not edit manually)
-const countryPages = ["united-states","online","united-kingdom","italy","france","greece"];
+const countryPages = ["united-states","france","online","united-kingdom","italy","greece"];
 const orgPages = [];
 const statePages = {"CA":"united-states/california","NY":"united-states/new-york","OR":"united-states/oregon"};
 // ==AUTO-GENERATED-END==
