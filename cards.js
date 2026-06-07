@@ -1,44 +1,9 @@
 const EMPTY_MESSAGES = ['Nothing here, for now.','No calls match this search.','Nothing came up this time.','No results, it seems.','No calls found for this.','Nothing fits this search.','No matches at the moment.','Nothing to show here.','No calls in this range.','Nothing here yet.'];
 function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)] + '<a href="/browse/">Browse all calls &rarr;</a></p>'; }
 
-const shortCountry = {
-  'United Kingdom': 'UK',
-  'United States': 'US',
-  'United Arab Emirates': 'UAE',
-  'Czech Republic': 'Czechia',
-  'Bosnia and Herzegovina': 'BiH',
-  'North Macedonia': 'N. Macedonia'
-};
-
-function shortenLocation(loc) {
-  if (!loc) return loc;
-  let s = loc.replace(/,\s*USA$/, '');
-  for (const [full, short] of Object.entries(shortCountry)) {
-    s = s.replace(full, short);
-  }
-  return s;
-}
-
-const categoryLabel = {
-  'photography': 'Photography',
-  'exhibition': 'Exhibition',
-  'grant': 'Grant',
-  'zine': 'Zines & Books',
-  'residency': 'Residency',
-  'education': 'Education'
-};
-
 // NOTE: `eligibilityLabel` is the single source of truth defined in
 // generate-pages.js (ELIGIBILITY_LABEL) and injected into the
 // ==AUTO-GENERATED== block below at build time. Do not redeclare it here.
-
-const prizeCategoryLabel = {
-  'cash': 'Cash prize',
-  'exhibition': 'Exhibition',
-  'publication': 'Publication',
-  'residency': 'Residency',
-  'fellowship': 'Fellowship'
-};
 
 // === Shared search suggestion logic ===
 // Both the home page's inline search and search.js (used on every other page)
@@ -219,20 +184,6 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
 // Use " + " ONLY to separate DISTINCT prizes. Never put a literal + inside one
 // prize (e.g. "(1+ month)") or it breaks into garbage chips. Keep parts short
 // (~<=30 chars) for mobile; drop dates/cities/parentheticals.
-function splitPrizeParts(prize) {
-  if (!prize) return [];
-  return prize.split(/\s*\+\s*/).map(function(s) { s = s.trim(); return s.charAt(0).toUpperCase() + s.slice(1); }).filter(Boolean);
-}
-
-const categorySlug = {
-  'photography': 'photography',
-  'exhibition': 'exhibitions',
-  'grant': 'grants',
-  'zine': 'zines',
-  'residency': 'residencies',
-  'education': 'education'
-};
-
 // Map chip selections to dedicated page URLs (avoids duplicate content with homepage)
 function chipToUrl(type, value) {
   if (type === 'category' && categorySlug[value]) return '/' + categorySlug[value] + '/';
@@ -251,79 +202,6 @@ function chipToUrl(type, value) {
 const countryPages = ["united-states","france","online","spain","united-kingdom","italy","czech-republic","portugal","sweden","japan","hungary","ukraine","greece","germany","argentina","netherlands","morocco","canada","austria","northern-ireland","switzerland","south-africa","lithuania","singapore","denmark","india","brazil","ireland","australia","north-macedonia","iceland","croatia","estonia","romania","malaysia","russia","bosnia-and-herzegovina","finland","belgium","israel","united-arab-emirates","slovakia","mexico","albania","malta","norway","qatar","poland","spain-international-applicants","south-korea"];
 const orgPages = [];
 const statePages = {"GA":"united-states/georgia","AL":"united-states/alabama","IL":"united-states/illinois","NC":"united-states/north-carolina","CA":"united-states/california","OH":"united-states/ohio","FL":"united-states/florida","NY":"united-states/new-york","MO":"united-states/missouri","TX":"united-states/texas","OR":"united-states/oregon","TN":"united-states/tennessee","NM":"united-states/new-mexico","VT":"united-states/vermont","AZ":"united-states/arizona","PA":"united-states/pennsylvania","LA":"united-states/louisiana","SC":"united-states/south-carolina","MA":"united-states/massachusetts","VA":"united-states/virginia","UT":"united-states/utah","WY":"united-states/wyoming","MI":"united-states/michigan","NH":"united-states/new-hampshire","MN":"united-states/minnesota","KS":"united-states/kansas","MD":"united-states/maryland","DC":"united-states/washington-dc","AK":"united-states/alaska","RI":"united-states/rhode-island","IN":"united-states/indiana","CT":"united-states/connecticut","OK":"united-states/oklahoma","SD":"united-states/south-dakota","ME":"united-states/maine","WI":"united-states/wisconsin","WA":"united-states/washington","CO":"united-states/colorado"};
-// eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
-const eligibilityLabel = {"women":"Women","united-states":"US only","europe":"Europe only","italy":"Italy only","emerging":"Emerging artists","under-30":"Under 30","under-35":"Under 35","under-40":"Under 40","lgbtq":"LGBTQ+","analog-photography":"Analog only","alternative-process":"Alternative process","professional":"Professional only","membership-required":"Membership required","puerto-rico":"Puerto Rico focus","latin-america":"Latin America","asian-american":"Asian American focus","south-asian":"South Asian focus","african-diaspora":"African diaspora focus","black":"Black artists","neurodivergent-disabled":"Neurodivergent & disabled","portugal":"Portugal only","taiwan":"Taiwan only","morocco":"Morocco only","non-european":"Non-European only","australia":"Australia only","canada":"Canada only","ireland":"Ireland only","switzerland":"Switzerland only","caribbean":"Caribbean focus","nordic":"Nordic only","germany":"Germany only","malta":"Malta only","10-18":"Ages 10–18","mid-atlantic-us":"Mid-Atlantic US","alaska":"Alaska only","minnesota":"Minnesota only","bipoc":"BIPOC artists","gulf-coast":"Gulf Coast only","spain":"Spain only","india":"India only","16-plus":"16+","18-plus":"18+","21-plus":"21+","25-plus":"25+","45-plus":"45+","65-plus":"65+","student":"Students","ukraine":"Ukraine only","flinta":"FLINTA","global-south":"Global South","france":"France only","tri-state":"NY/NJ/CT only","wana":"WANA region only","bay-area":"Bay Area only","chicago-area":"Chicago Area only","los-angeles":"LA only","new-york-state":"NY State only","kazakhstan":"Kazakhstan only","mid-career":"Mid-career","united-kingdom":"UK only"};
-// shortenFee + feeChip + submitViaLink + derivePrizeCategor*: single source of truth is generate-pages.js (injected verbatim)
-function shortenFee(fee) {
-  if (!fee) return fee;
-  var s = String(fee).trim();
-  var strip = function(n) { return n.replace(/\.0+$/, ''); };
-  if (/^free/i.test(s)) {
-    var rest = s.replace(/^free/i, '');
-    return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
-  }
-  var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
-  if (range) return range[1] + strip(range[2]) + '–' + range[1] + strip(range[4]);
-  // currency token: £ $ € ¥ or R (Rand). Letter-codes (TWD, AUD…) pass through.
-  var sym = (s.match(/[£$€¥R]/) || [])[0];
-  if (!sym) return s;
-  var first = s.match(new RegExp('\\' + sym + '\\s?(\\d[\\d.,]*)'));
-  if (!first) return s;
-  var amount = sym + strip(first[1]);
-  var isBare = new RegExp('^\\' + sym + '\\s?\\d[\\d.,]*( fee)?$', 'i').test(s);
-  return isBare ? amount : amount + '+';
-}
-function feeChip(fee, esc) {
-  const feeShort = shortenFee(fee);
-  const href = fee.toLowerCase().startsWith('free') ? '/fees/free/' : '/fees/entry-fee/';
-  const body = /^[£$€¥]/.test(feeShort) ? feeShort + ' fee' : feeShort;
-  const title = feeShort !== fee ? ` title="${esc(fee)}"` : '';
-  return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
-}
-function submitViaLink(call, esc) {
-  const s = (call.submitVia || '').toLowerCase().trim();
-  if (!s) return '';
-  let label;
-  if (/\b(post|postal)\b|physical|parcel/.test(s) && !/website|online|form|platform|portal|email|dropbox|drive|instagram|wetransfer|app/.test(s)) label = 'Post';
-  else if (/website|online|form|platform|portal/.test(s)) label = 'Website';
-  else if (/email/.test(s)) label = 'Email';
-  else if (/wetransfer|swisstransfer/.test(s)) label = 'WeTransfer';
-  else if (/instagram/.test(s)) label = 'Instagram';
-  else if (/dropbox/.test(s)) label = 'Dropbox';
-  else if (/google drive/.test(s)) label = 'Google Drive';
-  else label = 'Website';
-
-  const emailIntent = /email|wetransfer|swisstransfer/.test(s);
-  let href = null;
-  if (call.submitUrl) href = call.submitUrl;
-  else if (emailIntent && call.email) href = 'mailto:' + call.email;
-  else if (call.url) href = call.url;
-  else if (call.email) href = 'mailto:' + call.email;
-
-  if (!isCallOpen(call.deadline) || !href) return esc(label);
-  const isMail = href.slice(0, 7) === 'mailto:';
-  // Keep the original value on hover so the specific platform isn't lost.
-  const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
-  return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
-}
-function derivePrizeCategory(text) {
-  const p = text.toLowerCase();
-  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
-  if (/fellowship/.test(p)) return 'fellowship';
-  if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
-  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-  if (/exhibition/.test(p)) return 'exhibition';
-  return null;
-}
-function derivePrizeCategories(prize) {
-  if (!prize) return [];
-  const seen = {};
-  return prize.split(/\s*\+\s*/).map(s => s.trim()).filter(Boolean).map(part => derivePrizeCategory(part)).filter(c => {
-    if (!c || seen[c]) return false;
-    seen[c] = true;
-    return true;
-  });
-}
 // ==AUTO-GENERATED-END==
 
 function esc(str) {
@@ -351,7 +229,6 @@ function getLocationLink(location, country) {
     if (state && statePages[state]) return '/' + statePages[state] + '/';
   }
   // Map abbreviated country names to their URL slugs
-  const countrySlugs = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
   const countrySlug = countrySlugs[country] || slugify(country);
   if (countryPages.includes(countrySlug)) return '/' + countrySlug + '/';
   return null;
@@ -363,18 +240,7 @@ function getCountryFromLocation(location) {
   return parts[parts.length - 1].trim();
 }
 
-function slugify(title) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-}
-
 // Central timezone logic — a call is open until the end of its deadline day (local time)
-function isCallOpen(deadline) {
-  if (deadline === 'Continuous') return true;
-  var end = new Date(deadline + 'T00:00:00');
-  end.setDate(end.getDate() + 1);
-  return end > new Date();
-}
-
 function processCall(call) {
   const now = new Date();
   const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
@@ -459,26 +325,6 @@ function renderTags(call) {
 
 // Maps a free-text requirements string to a single browse bucket slug.
 // Keep in sync with deriveRequirementBucket() in generate-pages.js.
-function deriveRequirementBucket(r) {
-  if (!r) return null;
-  const s = r.toLowerCase();
-  if (/photobook|book dummy|\bbook\b|\bzine\b|photo book|dummy/.test(s)) return 'photobook';
-  if (/proposal|intent|budget|project pdf|project in progress|solo exhibit|\bapplication\b/.test(s)) return 'proposal';
-  if (/unlimited|no limit/.test(s)) return 'unlimited';
-  if (/portfolio|work sample|body of work|cohesive|\bproject\b|\bseries\b|photo essay|looks/.test(s)) return 'portfolio';
-  const nums = (s.match(/\d+/g) || []).map(Number);
-  if (nums.length) {
-    const m = Math.max.apply(null, nums);
-    if (m <= 1) return '1-image';
-    if (m <= 5) return '2-5-images';
-    if (m <= 10) return '6-10-images';
-    if (m <= 20) return '11-20-images';
-    return '21-plus-images';
-  }
-  if (/single|1 photo|one photo/.test(s)) return '1-image';
-  return 'portfolio';
-}
-
 function renderInfoGrid(call) {
   function infoRow(label, value) {
     return `<div class="info-row">
