@@ -30,10 +30,9 @@ function getVerifiedAt(slug) {
   const entry = verifyState.entries && verifyState.entries[slug];
   return entry ? entry.at : null;
 }
-// Linkify the FIRST mention of the org name and any @instagram handles in a
-// block of prose. Subsequent mentions stay as plain text — this avoids the
-// over-linking pattern Google flags as low-quality while still surfacing
-// Instagram handles for users who want them.
+// Linkify the FIRST mention of the org name in a block of prose. Subsequent
+// mentions stay as plain text — this avoids the over-linking pattern Google
+// flags as low-quality. Instagram handles are NOT linked here (see step 2).
 // State tracking is per-call (the linkifyState object) so the first mention
 // across the WHOLE prose array gets linked, not the first mention per paragraph.
 // During the product-reset index test PRECOMPUTED_ORG_PAGES is left empty, so
@@ -57,14 +56,9 @@ function linkifyProse(paragraph, call, state) {
       state.orgLinked = true;
     }
   }
-  // 2. First mention of any @handle — link to instagram.com/<handle>.
-  // The leading boundary (start, whitespace, or punctuation) prevents matching
-  // the "@dergreif" inside an email like "voucher-guestroom@dergreif.org".
-  html = html.replace(/(^|[^A-Za-z0-9._-])@([A-Za-z0-9_.]+)/g, function (match, before, handle) {
-    if (state.handlesLinked[handle]) return match;
-    state.handlesLinked[handle] = true;
-    return before + '<a href="https://instagram.com/' + handle + '" target="_blank" rel="nofollow noopener">@' + handle + '</a>';
-  });
+  // 2. Instagram handles are intentionally NOT linked in prose. The organizer's
+  // Instagram now lives on the org landing page (a deliberate UI element), not on
+  // call detail pages, so any @handle mentioned in description text stays plain.
   return html;
 }
 
@@ -612,7 +606,7 @@ ${call.jury && call.jury.length ? `
       </div>
 ` : ''}
       <div class="call-detail-jury">
-        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a>${call.instagram ? ` (<a href="https://instagram.com/${escapeHtml(call.instagram.replace('@', ''))}" target="_blank" rel="nofollow noopener">${escapeHtml(call.instagram)}</a>)` : ''}</p>
+        <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
@@ -1541,6 +1535,16 @@ Object.entries(orgCounts)
     const slug = orgSlug;
     const openCount = openOrgCounts[org] || 0;
     const robotsDirective = 'noindex, follow';
+    // Organizer Instagram is an org-level signal — pick the handle most commonly
+    // seen across this org's calls (handles the few orgs with handle variants).
+    const orgInstagram = (() => {
+      const counts = {};
+      for (const c of data.calls) {
+        if (c.org === org && c.instagram) counts[c.instagram] = (counts[c.instagram] || 0) + 1;
+      }
+      const handles = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+      return handles[0] || '';
+    })();
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
@@ -1568,7 +1572,11 @@ Object.entries(orgCounts)
 
   <main>
     ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
-
+${orgInstagram ? `
+    <div class="call-detail-actions">
+      <a href="https://instagram.com/${escapeHtml(orgInstagram.replace('@', ''))}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-calendar">Instagram ${escapeHtml(orgInstagram)} &rarr;</a>
+    </div>
+` : ''}
     <section class="calls-list" id="callsList">
 ${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadline)))}
     </section>
