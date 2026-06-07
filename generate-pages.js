@@ -2416,20 +2416,14 @@ staleFiles.forEach(f => {
   let html = fs.readFileSync(f, 'utf8');
   let changed = false;
 
-  // Ensure stale pages have noindex. Replace any existing robots tag to avoid duplicates.
-  if (html.includes('<meta name="robots" content="noindex">')) {
-    // Already has noindex — but might also have a conflicting "index, follow" tag
-    if (html.includes('<meta name="robots" content="index, follow">')) {
-      html = html.replace(/\s*<meta name="robots" content="index, follow">/g, '');
-      changed = true;
-    }
-  } else {
-    // Replace existing "index, follow" with noindex, or insert noindex if neither exists
-    if (html.includes('<meta name="robots" content="index, follow">')) {
-      html = html.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex">');
-    } else {
-      html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
-    }
+  // Ensure stale pages carry exactly one noindex robots tag. Match any existing
+  // directive ("noindex, follow", "index, follow", etc.) and collapse duplicates
+  // — string-exact checks miss variants and leave conflicting tags behind.
+  const robotsTags = html.match(/\s*<meta name="robots" content="[^"]*">/g) || [];
+  const alreadyCorrect = robotsTags.length === 1 && /content="noindex">/.test(robotsTags[0]);
+  if (!alreadyCorrect) {
+    html = html.replace(/\s*<meta name="robots" content="[^"]*">/g, '');
+    html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
     changed = true;
   }
 
