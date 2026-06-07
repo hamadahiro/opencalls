@@ -2353,7 +2353,9 @@ ${feeChip.toString()}
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
   /\/\/ ==AUTO-GENERATED-START==[\s\S]*?\/\/ ==AUTO-GENERATED-END==/,
-  pageListsBlock
+  // Function replacement (not a string) so `$`-sequences in the injected
+  // regex sources (e.g. `( fee)?$'`) aren't interpreted as replace patterns.
+  () => pageListsBlock
 );
 fs.writeFileSync('cards.js', cardsJs);
 
