@@ -110,7 +110,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/photography/">Photography open call</a></nav>
       <h1 class="call-detail-title">British Wildlife Photography Awards 2026</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">£10,000 prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">£3,500 prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize">~£10,000 total fund prize</a></div></div>
 
       <p class="call-detail-description">The British Wildlife Photography Awards (BWPA) is now in its 15th year and one of the more long-running UK wildlife photography competitions. The awards run with director Will Nicholls and cover the breadth of British nature photography across twelve categories.</p>
       <p class="call-detail-description">Categories: Animal Behaviour, Animal Portraits, Botanical Britain, Black and White, British Seasons, Coast and Marine, Habitat, Hidden Britain, Urban Wildlife, Wild Woods, Documentary Series, and Video. The £10,000 main prize is awarded across the program. Photos must be taken in Britain or the British Isles, made after January 1, 2019, and the rules forbid compositing, sky swapping, or object removal — post-processing is permitted within those constraints. AI-generated work is strictly prohibited.</p>
@@ -146,7 +146,7 @@
 
   <script>
     const CURRENT_SLUG = 'british-wildlife-photography-awards-2026';
-    const CURRENT_CALL = {"prize":"£10,000","category":"photography","org":"British Wildlife Photography Awards","location":"London, United Kingdom","fee":"£35–£40","deadline":"2026-06-07","resultsDate":"March 2027","instagram":"@bwpawards","eligibility":["18-plus"],"jury":["Ellie Rothnie, Wildlife Photographer","David Chapman, Wildlife Photographer","Lara Jackson, Conservation Biologist & Wildlife Photographer","Neil McIntyre, Wildlife Photographer","Gina Goodman, Underwater Photographer","Danny Green, Wildlife Photographer","Will Nicholls, BWPA Director & Wildlife Cameraman"],"submitVia":"Official website","submitUrl":"https://enter.bwpawards.org","email": "","ai":"Not accepted","requirements":"No limit"};
+    const CURRENT_CALL = {"prize":"£3,500 + ~£10,000 total fund","category":"photography","org":"British Wildlife Photography Awards","location":"London, United Kingdom","fee":"£35–£40","deadline":"2026-06-07","resultsDate":"March 2027","instagram":"@bwpawards","eligibility":["18-plus"],"jury":["Ellie Rothnie, Wildlife Photographer","David Chapman, Wildlife Photographer","Lara Jackson, Conservation Biologist & Wildlife Photographer","Neil McIntyre, Wildlife Photographer","Gina Goodman, Underwater Photographer","Danny Green, Wildlife Photographer","Will Nicholls, BWPA Director & Wildlife Cameraman"],"submitVia":"Official website","submitUrl":"https://enter.bwpawards.org","email": "","ai":"Not accepted","requirements":"No limit"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -156,7 +156,7 @@
       var u = 'https://www.bwpawards.org';
       var o = 'British Wildlife Photography Awards';
       var dl = new Date('2026-06-07T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£10,000') + '\\nEntry fee: ' + icsE('£35–£40');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('£3,500 + ~£10,000 total fund') + '\\nEntry fee: ' + icsE('£35–£40');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
