@@ -956,15 +956,6 @@ a.meta-tag-link.call-prize:hover {
   box-shadow: 0 0 0 2px var(--link-highlight-hover);
 }
 
-.call-detail-prize .call-prize {
-  background: none;
-  color: var(--text);
-}
-
-.call-detail-prize a.meta-tag-link.call-prize:hover {
-  background: var(--tag-hover);
-}
-
 .call-detail-jury {
   margin-top: 32px;
 }
