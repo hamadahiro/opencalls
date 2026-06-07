@@ -507,9 +507,12 @@ const ELIGIBILITY_LABEL = {
   '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
-  '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '65-plus': '65+',
+  '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '45-plus': '45+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
-  'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only'
+  'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only',
+  'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'los-angeles': 'LA only',
+  'new-york-state': 'NY State only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
+  'united-kingdom': 'UK only'
 };
 
 function splitPrizeParts(prize) {
@@ -1248,15 +1251,17 @@ openCalls.forEach(c => {
   });
 });
 
-// Validate all eligibility tags have a config entry in generate-pages.js AND cards.js
-const cardsSource = fs.readFileSync('cards.js', 'utf8');
+// Validate every eligibility tag used in data has a chip label (ELIGIBILITY_LABEL,
+// the single source of truth injected into cards.js) AND a facet-page config
+// (eligibilityGroups). cards.js no longer keeps a second hand-maintained copy, so
+// these two maps can't drift apart from each other the way they used to.
 Object.keys(eligibilityTags).forEach(tag => {
   if (!eligibilityGroups[tag]) {
-    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityGroups (generate-pages.js). Add label, title, and desc.`);
+    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityGroups (generate-pages.js). Add short, title, and desc.`);
     hasErrors = true;
   }
-  if (!cardsSource.includes(`'${tag}'`)) {
-    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityLabel (cards.js). Add a display label.`);
+  if (!(tag in ELIGIBILITY_LABEL)) {
+    console.error(`ERROR: Eligibility tag "${tag}" has no entry in ELIGIBILITY_LABEL (generate-pages.js) — the chip would render as the raw slug. Add a display label.`);
     hasErrors = true;
   }
 });
@@ -2304,6 +2309,8 @@ const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ${JSON.stringify(linkedCountrySlugs)};
 const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
+// eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
+const eligibilityLabel = ${JSON.stringify(ELIGIBILITY_LABEL)};
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
