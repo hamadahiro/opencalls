@@ -28,68 +28,9 @@ const categoryLabel = {
   'education': 'Education'
 };
 
-const eligibilityLabel = {
-  'women': 'Women',
-  'united-states': 'US only',
-  'europe': 'Europe only',
-  'italy': 'Italy only',
-  'emerging': 'Emerging artists',
-  'under-30': 'Under 30',
-  'under-35': 'Under 35',
-  'under-40': 'Under 40',
-  'lgbtq': 'LGBTQ+',
-  'analog-photography': 'Analog only',
-  'alternative-process': 'Alternative process',
-  'professional': 'Professional only',
-  'membership-required': 'Membership required',
-  'puerto-rico': 'Puerto Rico focus',
-  'latin-america': 'Latin America',
-  'asian-american': 'Asian American focus',
-  'south-asian': 'South Asian focus',
-  'african-diaspora': 'African diaspora focus',
-  'black': 'Black artists',
-  'neurodivergent-disabled': 'Neurodivergent & disabled',
-  'portugal': 'Portugal only',
-  'taiwan': 'Taiwan only',
-  'morocco': 'Morocco only',
-  'non-european': 'Non-European only',
-  'australia': 'Australia only',
-  'canada': 'Canada only',
-  'ireland': 'Ireland only',
-  'switzerland': 'Switzerland only',
-  'caribbean': 'Caribbean focus',
-  'nordic': 'Nordic only',
-  'germany': 'Germany only',
-  'malta': 'Malta only',
-  '10-18': 'Ages 10–18',
-  'mid-atlantic-us': 'Mid-Atlantic US',
-  'new-york-state': 'NY State only',
-  'alaska': 'Alaska only',
-  'minnesota': 'Minnesota only',
-  'bipoc': 'BIPOC artists',
-  'bay-area': 'Bay Area only',
-  'chicago-area': 'Chicago Area only',
-  'los-angeles': 'LA only',
-  'tri-state': 'NY/NJ/CT only',
-  'gulf-coast': 'Gulf Coast only',
-  'spain': 'Spain only',
-  'india': 'India only',
-  '16-plus': '16+',
-  '18-plus': '18+',
-  '21-plus': '21+',
-  '25-plus': '25+',
-  '45-plus': '45+',
-  '65-plus': '65+',
-  'student': 'Students',
-  'ukraine': 'Ukraine only',
-  'flinta': 'FLINTA',
-  'global-south': 'Global South',
-  'wana': 'WANA region only',
-  'france': 'France only',
-  'mid-career': 'Mid-career',
-  'united-kingdom': 'UK only',
-  'kazakhstan': 'Kazakhstan only'
-};
+// NOTE: `eligibilityLabel` is the single source of truth defined in
+// generate-pages.js (ELIGIBILITY_LABEL) and injected into the
+// ==AUTO-GENERATED== block below at build time. Do not redeclare it here.
 
 const prizeCategoryLabel = {
   'cash': 'Cash prize',
@@ -326,6 +267,8 @@ function chipToUrl(type, value) {
 const countryPages = ["united-states","france","online","spain","united-kingdom","italy","czech-republic","portugal","sweden","japan","hungary","ukraine","greece","germany","argentina","netherlands","morocco","canada","austria","northern-ireland","switzerland","south-africa","lithuania","singapore","denmark","india","brazil","ireland","australia","north-macedonia","iceland","croatia","estonia","romania","malaysia","russia","bosnia-and-herzegovina","finland","belgium","israel","united-arab-emirates","slovakia","mexico","albania","malta","norway","qatar","poland","spain-international-applicants","south-korea"];
 const orgPages = [];
 const statePages = {"GA":"united-states/georgia","AL":"united-states/alabama","IL":"united-states/illinois","NC":"united-states/north-carolina","CA":"united-states/california","OH":"united-states/ohio","FL":"united-states/florida","NY":"united-states/new-york","MO":"united-states/missouri","TX":"united-states/texas","OR":"united-states/oregon","TN":"united-states/tennessee","NM":"united-states/new-mexico","VT":"united-states/vermont","AZ":"united-states/arizona","PA":"united-states/pennsylvania","LA":"united-states/louisiana","SC":"united-states/south-carolina","MA":"united-states/massachusetts","VA":"united-states/virginia","UT":"united-states/utah","WY":"united-states/wyoming","MI":"united-states/michigan","NH":"united-states/new-hampshire","MN":"united-states/minnesota","KS":"united-states/kansas","MD":"united-states/maryland","DC":"united-states/washington-dc","AK":"united-states/alaska","RI":"united-states/rhode-island","IN":"united-states/indiana","CT":"united-states/connecticut","OK":"united-states/oklahoma","SD":"united-states/south-dakota","ME":"united-states/maine","WI":"united-states/wisconsin","WA":"united-states/washington","CO":"united-states/colorado"};
+// eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
+const eligibilityLabel = {"women":"Women","united-states":"US only","europe":"Europe only","italy":"Italy only","emerging":"Emerging artists","under-30":"Under 30","under-35":"Under 35","under-40":"Under 40","lgbtq":"LGBTQ+","analog-photography":"Analog only","alternative-process":"Alternative process","professional":"Professional only","membership-required":"Membership required","puerto-rico":"Puerto Rico focus","latin-america":"Latin America","asian-american":"Asian American focus","south-asian":"South Asian focus","african-diaspora":"African diaspora focus","black":"Black artists","neurodivergent-disabled":"Neurodivergent & disabled","portugal":"Portugal only","taiwan":"Taiwan only","morocco":"Morocco only","non-european":"Non-European only","australia":"Australia only","canada":"Canada only","ireland":"Ireland only","switzerland":"Switzerland only","caribbean":"Caribbean focus","nordic":"Nordic only","germany":"Germany only","malta":"Malta only","10-18":"Ages 10–18","mid-atlantic-us":"Mid-Atlantic US","alaska":"Alaska only","minnesota":"Minnesota only","bipoc":"BIPOC artists","gulf-coast":"Gulf Coast only","spain":"Spain only","india":"India only","16-plus":"16+","18-plus":"18+","21-plus":"21+","25-plus":"25+","45-plus":"45+","65-plus":"65+","student":"Students","ukraine":"Ukraine only","flinta":"FLINTA","global-south":"Global South","france":"France only","tri-state":"NY/NJ/CT only","wana":"WANA region only","bay-area":"Bay Area only","chicago-area":"Chicago Area only","los-angeles":"LA only","new-york-state":"NY State only","kazakhstan":"Kazakhstan only","mid-career":"Mid-career","united-kingdom":"UK only"};
 // ==AUTO-GENERATED-END==
 
 function esc(str) {
