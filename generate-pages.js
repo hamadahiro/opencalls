@@ -421,7 +421,7 @@ function computeUrgency(call, now) {
 
 function renderStaticCard(call, u) {
   const slug = call.slug || slugify(call.title);
-  const title = escapeHtml(call.title) + (!call.orgInTitle ? ' &middot; ' + escapeHtml(call.org) : '');
+  const title = escapeHtml(call.title) + (!call.orgInTitle ? ' · ' + escapeHtml(call.org) : '');
   return `      <div class="call-card">
         <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
         <div class="call-meta">${renderTags(call, { esc: escapeHtml, urgency: u, locationLink: getStaticLocationLink })}</div>

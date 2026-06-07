@@ -151,8 +151,10 @@ function shortenFee(fee) {
     return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
   }
   var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
-  if (range) return range[1] + strip(range[2]) + '–' + range[1] + strip(range[4]);
-  var sym = (s.match(/[£$€¥R]/) || [])[0];
+  if (range) return range[1] + strip(range[2]) + '–' + (range[3] || range[1]) + strip(range[4]);
+  // R is a currency (Rand) ONLY before a digit — otherwise a capital-R word
+  // (e.g. "Regular $35") would be grabbed as the symbol and break extraction.
+  var sym = (s.match(/[£$€¥]|R(?=\s?\d)/) || [])[0];
   if (!sym) return s;
   var first = s.match(new RegExp('\\' + sym + '\\s?(\\d[\\d.,]*)'));
   if (!first) return s;
