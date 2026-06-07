@@ -519,12 +519,12 @@ function renderInfoGrid(call) {
   if (call.submitVia) {
     const open = isCallOpen(call.deadline);
     const label = infoVal(call.submitVia);
-    if (!open) {
-      rows.push(infoRow('Submit via', label));
-    } else if (call.email) {
-      rows.push(infoRow('Submit via', `<a href="mailto:${esc(call.email)}" target="_blank" rel="nofollow noopener">${label}</a>`));
-    } else if (call.submitUrl) {
+    // Prefer the actual submission URL; fall back to mailto only when no URL.
+    // (Email-over-URL wrongly opened the mail client on web-platform labels.)
+    if (open && call.submitUrl) {
       rows.push(infoRow('Submit via', `<a href="${esc(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`));
+    } else if (open && call.email) {
+      rows.push(infoRow('Submit via', `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`));
     } else {
       rows.push(infoRow('Submit via', label));
     }
