@@ -515,7 +515,7 @@
       "url": "https://www.atlantacenterforphotography.org/",
       "instagram": "@atlantacenterforphotography",
       "location": "Atlanta, GA, USA",
-      "prize": "Inclusion in printed group publication",
+      "prize": "Publication",
       "submitVia": "Official website",
       "submitUrl": "https://forms.gle/yuH7R2absMG4QpWP6",
       "requirements": "1–5 images",
@@ -530,7 +530,9 @@
         "The call is open to both emerging and established photographers, and ACP especially encourages submissions from artists who identify as Black, Indigenous, Latinx, Asian, LGBTQ+, and people with disabilities. Photographers may submit 1–5 images representing their lens-based practice.",
         "Selected works are featured in a high-quality 8x10 printed book ranging from 60 to 100+ pages, with the number of contributing artists and copies determined by the strength of submissions. The book is produced and sold through the ACP website, approved retailers, and in person in Atlanta by early October 2026. The application fee is $15, and the deadline is June 15, 2026."
       ],
-      "dateAdded": "2026-06-03T19:12:43.729Z"
+      "dateAdded": "2026-06-03T19:12:43.729Z",
+      "jury": [],
+      "resultsDate": "October 2026"
     },
     {
       "title": "Space to Feel — SaveArtSpace Bus Shelter Exhibition",
@@ -901,7 +903,10 @@
         "The brief centres on social life in Germany, inviting photographs that resist a single reading. Artists are asked to submit work that tells more than one story and leaves room for different interpretations, holding the tension between what is seen and how it is understood.",
         "Selected work is featured in an exhibition. Submission is free and handled through Picter; the deadline is September 1, 2026 at 11:59 PM CET. Full details are shared by Der Greif (info@dergreif.org) and Fondament (kontakt@fondament.de)."
       ],
-      "dateAdded": "2026-06-01T07:08:20.133Z"
+      "dateAdded": "2026-06-01T07:08:20.133Z",
+      "jury": [],
+      "requirements": "Up to 10 images",
+      "resultsDate": "October/November 2026"
     },
     {
       "title": "Pine Meadow Ranch 2027 Artist Residency",
@@ -1348,7 +1353,8 @@
         "Eligibility is open to international artists with at least five years of professional practice. Applicants cannot be students at the time of the residency. Previous TOKAS participants are allowed to reapply, but only for a program they have not yet completed. Applications close June 16, 2026 at 18:00 Japan Standard Time. Inquiries through the dedicated contact form are accepted until June 7, 2026.",
         "Submission is via an online form alongside an uploaded PDF Application Form, two letters of recommendation from referees versed in art and culture, and a portfolio. Selection is by the TOKAS jury, with results communicated by email; the residency itself begins from May 2027 for the first cohort."
       ],
-      "dateAdded": "2026-05-24T19:12:49.480Z"
+      "dateAdded": "2026-05-24T19:12:49.480Z",
+      "jury": []
     },
     {
       "title": "Magnetic 5 Residency Programme 2026",
@@ -4647,7 +4653,8 @@
         "Selected work is exhibited at Chico Art Center August 15 through September 18, 2026, with an opening reception on September 4. The gallery handles installation. Each artist receives a free copy of a printed exhibition catalog produced via Blurb, and selected work is promoted through the gallery's website and social channels.",
         "Sales are facilitated by the gallery, which requests a 30% donation but pays the artist the full listed price. Artists are responsible for shipping and insurance.",
         "Entry fee is $35 (general) or $25 for CAC members. Submissions take up to 7 images via JotForm. The 2026 deadline is June 14 at 11:59 PM. Selection is by Gallery Director Cameron Kelly with a CAC board member."
-      ]
+      ],
+      "prize": "Exhibition"
     },
     {
       "title": "Flatland Feature — Issue 2",
@@ -4996,7 +5003,9 @@
         "Ten x Ten is the Midwest Center for Photography's annual square-format exhibition, now in its 18th year. The brief is unusually concrete: every accepted print is exactly 10 inches by 10 inches, and every print is sold at the same price — $200 each — for the duration of the show. The format levels the field across genres and career stages and produces a uniform grid hang that has become the show's signature.",
         "MWCP is a small photography-focused space in Wichita, Kansas. Selected work is exhibited both physically and online; MWCP covers all printing costs for accepted entries, which is unusual for a juried show at this scale. A $30 frame rental is the only out-of-pocket expense for selected artists who want their work framed for the wall.",
         "Submissions are open internationally to photographers working in any process — film, digital, iPhone, or alternative. The 2026 exhibition runs November 14 through December 31, with the submission deadline August 1."
-      ]
+      ],
+      "jury": [],
+      "prize": "Exhibition"
     },
     {
       "title": "FOTOHOF>CALLING",
@@ -5229,14 +5238,13 @@
       "orgInTitle": true,
       "submitUrl": "https://emerging.fotografiska.com/missions/home",
       "summary": "Theme: HOME. Selected work exhibited at UN Headquarters NYC, curated by James Nachtwey. Free entry.",
-      "resultsDate": "October 5, 2026",
+      "resultsDate": "October 2026",
       "email": "",
       "requirements": "Up to 3 images",
       "ai": "Not accepted",
       "jury": [
         "James Nachtwey, Photojournalist & Guest Curator",
-        "Pauline Benthede, Global VP Artistic Direction & Exhibitions, Fotografiska",
-        "Sophia Emmerich, Lead Editor, Fotografiska Emerging Platform"
+        "Pauline Benthede, Global VP Artistic Direction & Exhibitions, Fotografiska"
       ],
       "dateAdded": "2026-04-06T01:15:47.460Z",
       "prose": [
@@ -21636,7 +21644,7 @@
       "url": "https://playasummerlake.org/2027-artsci/",
       "instagram": "@playasummerlake",
       "location": "Lake County, OR, USA",
-      "prize": "11–25 night residency + cabin + studio access",
+      "prize": "Residency",
       "eligibility": [
         "18-plus"
       ],
@@ -21710,7 +21718,8 @@
       "summary": "Fotografiska Tallinn open call for emerging photographers from the Baltics & Finland — autumn 2027 group exhibition plus mentorship.",
       "instagram": "@fotografiska.emerging",
       "email": "",
-      "dateAdded": "2026-06-06T07:10:02.719Z"
+      "dateAdded": "2026-06-06T07:10:02.719Z",
+      "jury": []
     },
     {
       "title": "AAP Magazine #59 Shapes",
