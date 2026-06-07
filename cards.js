@@ -209,18 +209,6 @@ function esc(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function tagHtml(str, minLen) {
-  minLen = minLen || 25;
-  if (!str || str.length <= minLen) return esc(str);
-  // Split at ~60% on a word boundary for the front, keep last word(s) for the tail
-  const words = str.split(' ');
-  if (words.length <= 2) return esc(str);
-  const splitAt = Math.ceil(words.length * 0.6);
-  const front = words.slice(0, splitAt).join(' ');
-  const back = words.slice(splitAt).join(' ');
-  return `<span class="tag-front">${esc(front)}</span> <span class="tag-back">${esc(back)}</span>`;
-}
-
 function getLocationLink(location, country) {
   // For USA locations, link to state page if available
   if (country === 'USA' && typeof statePages !== 'undefined') {
@@ -232,12 +220,6 @@ function getLocationLink(location, country) {
   const countrySlug = countrySlugs[country] || slugify(country);
   if (countryPages.includes(countrySlug)) return '/' + countrySlug + '/';
   return null;
-}
-
-function getCountryFromLocation(location) {
-  if (!location) return '';
-  const parts = location.split(',');
-  return parts[parts.length - 1].trim();
 }
 
 // Central timezone logic — a call is open until the end of its deadline day (local time)
@@ -276,132 +258,14 @@ function processCall(call) {
   return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
 }
 
-function renderTags(call) {
-  const pinSvg = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
-  const prizeSvg = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>';
-  const tags = [];
-  // Deadline badge
-  if (call.deadlineSlug) {
-    tags.push(`<a href="/deadlines/${call.deadlineSlug}/" class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</a>`);
-  } else {
-    tags.push(`<span class="call-deadline ${call.urgencyClass}">${esc(call.urgencyText)}</span>`);
-  }
-  // Prize
-  if (call.prize) {
-    const parts = splitPrizeParts(call.prize);
-    parts.forEach(part => {
-      const cat = derivePrizeCategory(part);
-      const href = cat ? '/prize/' + cat + '/' : '/prize/';
-      tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${prizeSvg}${esc(part)}</a>`);
-    });
-  }
-  // Fee — compact chip via injected feeChip (SSOT in generate-pages.js)
-  if (call.fee) {
-    tags.push(feeChip(call.fee, esc));
-  }
-  // Location
-  if (call.location) {
-    const country = getCountryFromLocation(call.location);
-    const locLink = getLocationLink(call.location, country);
-    const locDisplay = shortenLocation(call.location);
-    if (locLink) {
-      tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${pinSvg}${esc(locDisplay)}</a>`);
-    } else {
-      tags.push(`<span class="meta-tag">${pinSvg}${esc(locDisplay)}</span>`);
-    }
-  }
-  // Category
-  const catSlug = categorySlug[call.category];
-  tags.push(`<a href="/${catSlug}/" class="meta-tag meta-tag-link">${categoryLabel[call.category] || esc(call.category)}</a>`);
-  // Eligibility
-  if (call.eligibility && call.eligibility.length) {
-    call.eligibility.forEach(e => {
-      const label = eligibilityLabel[e] || e;
-      tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${esc(label)}</a>`);
-    });
-  }
-  return tags.join(' ');
-}
-
 // Maps a free-text requirements string to a single browse bucket slug.
 // Keep in sync with deriveRequirementBucket() in generate-pages.js.
-function renderInfoGrid(call) {
-  function infoRow(label, value) {
-    return `<div class="info-row">
-      <span class="info-label">${label}</span>
-      <span class="dots"></span>
-      <span class="info-value">${value}</span>
-    </div>`;
-  }
-  function infoVal(str) { return tagHtml(str, 20); }
-  function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${esc(str)}">${infoVal(str)}</a>`; }
-
-  const rows = [];
-  // Deadline
-  const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
-    new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  const dlSlug = call.deadline !== 'Continuous' ? (function() { const d = new Date(call.deadline + 'T00:00:00'); return ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear(); })() : null;
-  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
-  // Results date
-  if (call.resultsDate) {
-    const resultsPast = (function(s) {
-      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
-      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
-      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
-      if (!my) return false;
-      const mi = months[my[1].toLowerCase()];
-      if (mi === undefined) return false;
-      const yr = parseInt(my[2]);
-      const dm = clean.match(/(\d{1,2})[,\s-]/);
-      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
-      return new Date(yr, mi, day, 23, 59) < new Date();
-    })(call.resultsDate);
-    rows.push(infoRow('Results', esc(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
-  }
-  // Fee
-  if (call.fee) {
-    const feeHtml = call.fee.toLowerCase().startsWith('free')
-      ? infoLink('/fees/free', call.fee)
-      : infoLink('/fees/entry-fee', call.fee);
-    rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
-  }
-  // Eligibility
-  if (call.eligibility && call.eligibility.length) {
-    const eligHtml = call.eligibility.map(e => {
-      const label = eligibilityLabel[e] || e;
-      return infoLink('/eligibility/' + e, label);
-    }).join(', ');
-    rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
-  }
-  // Location
-  if (call.location) {
-    const country = getCountryFromLocation(call.location);
-    const locLink = getLocationLink(call.location, country);
-    const locShort = shortenLocation(call.location);
-    const locHtml = locLink ? infoLink(locLink, locShort) : infoVal(locShort);
-    rows.push(infoRow('<a href="/locations/">Location</a>', locHtml));
-  }
-  // Requirements
-  if (call.requirements) {
-    const reqBucket = deriveRequirementBucket(call.requirements);
-    const reqHtml = reqBucket ? infoLink('/requirements/' + reqBucket, call.requirements) : infoVal(call.requirements);
-    rows.push(infoRow('<a href="/requirements/">Requirements</a>', reqHtml));
-  }
-  // AI policy (only show if actually specified)
-  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
-  // Submit via
-  if (call.submitVia) {
-    rows.push(infoRow('Submit via', submitViaLink(call, esc)));
-  }
-  return rows.join('');
-}
-
 function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   return `
     <div class="call-card">
       <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}/">${esc(call.title)}${!call.orgInTitle ? ' · ' + esc(call.org) : ''}</a></${titleTag}>
-      <div class="call-meta">${renderTags(call)}</div>
+      <div class="call-meta">${renderTags(call, { esc: esc, urgency: call, locationLink: getLocationLink })}</div>
       <p class="call-description">${esc(call.summary || call.description)}</p>
     </div>`;
 }

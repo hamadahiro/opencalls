@@ -201,11 +201,144 @@ function submitViaLink(call, esc) {
   return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
 }
 
+// ---- Shared SVG glyphs ----
+const PIN_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
+const PRIZE_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>';
+
+function getCountry(location) {
+  if (!location) return '';
+  const parts = location.split(',');
+  return parts[parts.length - 1].trim();
+}
+
+// Wrap a long value onto two lines for the info grid. Takes the env escaper.
+function tagHtml(str, minLen, esc) {
+  minLen = minLen || 25;
+  if (!str || str.length <= minLen) return esc(str || '');
+  const words = str.split(' ');
+  if (words.length <= 2) return esc(str);
+  const splitAt = Math.ceil(words.length * 0.6);
+  const front = words.slice(0, splitAt).join(' ');
+  const back = words.slice(splitAt).join(' ');
+  return `<span class="tag-front">${esc(front)}</span> <span class="tag-back">${esc(back)}</span>`;
+}
+
+// Meta-tag row for a card. opts = { esc, urgency, locationLink }
+//   urgency = { deadlineSlug, urgencyClass, urgencyText }
+//   locationLink = (location, country) => href|null  (env-specific page lookup:
+//     client uses injected countryPages/statePages; build uses PRECOMPUTED sets)
+function renderTags(call, opts) {
+  const esc = opts.esc, u = opts.urgency || {}, locationLink = opts.locationLink;
+  const tags = [];
+  if (u.deadlineSlug) tags.push(`<a href="/deadlines/${u.deadlineSlug}/" class="call-deadline ${u.urgencyClass}">${esc(u.urgencyText)}</a>`);
+  else tags.push(`<span class="call-deadline ${u.urgencyClass}">${esc(u.urgencyText)}</span>`);
+  if (call.prize) splitPrizeParts(call.prize).forEach(part => {
+    const cat = derivePrizeCategory(part);
+    const href = cat ? '/prize/' + cat + '/' : '/prize/';
+    tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${esc(part)}</a>`);
+  });
+  if (call.fee) tags.push(feeChip(call.fee, esc));
+  if (call.location) {
+    const country = getCountry(call.location);
+    const locLink = locationLink ? locationLink(call.location, country) : null;
+    const locDisplay = shortenLocation(call.location);
+    if (locLink) tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${PIN_SVG}${esc(locDisplay)}</a>`);
+    else tags.push(`<span class="meta-tag">${PIN_SVG}${esc(locDisplay)}</span>`);
+  }
+  tags.push(`<a href="/${categorySlug[call.category]}/" class="meta-tag meta-tag-link">${esc(categoryLabel[call.category] || call.category)}</a>`);
+  if (call.eligibility && call.eligibility.length) call.eligibility.forEach(e => {
+    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${esc(eligibilityLabel[e] || e)}</a>`);
+  });
+  return tags.join(' ');
+}
+
+// The "Prize / Prizes" block under a detail-page title. Takes the env escaper.
+function buildPrizeBlock(call, esc) {
+  if (!call.prize) return '';
+  const parts = splitPrizeParts(call.prize);
+  const label = parts.length > 1 ? 'Prizes' : 'Prize';
+  const tags = parts.map(part => {
+    const cat = derivePrizeCategory(part);
+    const href = cat ? '/prize/' + cat + '/' : '/prize/';
+    return `<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${esc(part)}</a>`;
+  }).join(' ');
+  return `<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">${label}</a></span> ${tags}</div>`;
+}
+
+// Detail-page info grid (deadline/fee/prize/location/etc.). opts = { esc, locationLink }
+function renderInfoGrid(call, opts) {
+  const esc = opts.esc, locationLink = opts.locationLink;
+  function infoRow(label, value) {
+    return `<div class="info-row"><span class="info-label">${label}</span><span class="dots"></span><span class="info-value">${value}</span></div>`;
+  }
+  function infoVal(str) { return tagHtml(str, 20, esc); }
+  function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${esc(str)}">${infoVal(str)}</a>`; }
+
+  const rows = [];
+
+  const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
+    new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  let dlSlug = null;
+  if (call.deadline !== 'Continuous') {
+    const d = new Date(call.deadline + 'T00:00:00');
+    dlSlug = ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear();
+  }
+  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
+
+  if (call.resultsDate) {
+    const resultsPast = (function(s) {
+      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11};
+      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
+      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
+      if (!my) return false;
+      const mi = months[my[1].toLowerCase()];
+      if (mi === undefined) return false;
+      const yr = parseInt(my[2]);
+      const dm = clean.match(/(\d{1,2})[,\s-]/);
+      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
+      return new Date(yr, mi, day, 23, 59) < new Date();
+    })(call.resultsDate);
+    rows.push(infoRow('Results', esc(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
+  }
+
+  if (call.fee) {
+    const feeHtml = call.fee.toLowerCase().startsWith('free')
+      ? infoLink('/fees/free', call.fee)
+      : infoLink('/fees/entry-fee', call.fee);
+    rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
+  }
+
+  if (call.eligibility && call.eligibility.length) {
+    const eligHtml = call.eligibility.map(e => infoLink('/eligibility/' + e, eligibilityLabel[e] || e)).join(', ');
+    rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
+  }
+
+  if (call.location) {
+    const country = getCountry(call.location);
+    const locLink = locationLink ? locationLink(call.location, country) : null;
+    const locShort = shortenLocation(call.location);
+    rows.push(infoRow('<a href="/locations/">Location</a>', locLink ? infoLink(locLink, locShort) : infoVal(locShort)));
+  }
+
+  if (call.requirements) {
+    const reqBucket = deriveRequirementBucket(call.requirements);
+    rows.push(infoRow('<a href="/requirements/">Requirements</a>', reqBucket ? infoLink('/requirements/' + reqBucket, call.requirements) : infoVal(call.requirements)));
+  }
+
+  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
+
+  if (call.submitVia) rows.push(infoRow('Submit via', submitViaLink(call, esc)));
+
+  return rows.join('');
+}
+
 // Node export guard (no-op in the browser, where `module` is undefined).
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
+    PIN_SVG, PRIZE_SVG,
     isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-    deriveRequirementBucket, shortenFee, feeChip, submitViaLink
+    deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
+    getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock
   };
 }
