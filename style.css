@@ -582,6 +582,12 @@ a.meta-tag-link:hover {
   background: var(--prize-bg);
 }
 
+.call-prize .pin-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
 a.meta-tag-link.call-prize:hover {
   background: var(--prize-bg-hover);
 }
