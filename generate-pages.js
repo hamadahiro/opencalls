@@ -1535,16 +1535,6 @@ Object.entries(orgCounts)
     const slug = orgSlug;
     const openCount = openOrgCounts[org] || 0;
     const robotsDirective = 'noindex, follow';
-    // Organizer Instagram is an org-level signal — pick the handle most commonly
-    // seen across this org's calls (handles the few orgs with handle variants).
-    const orgInstagram = (() => {
-      const counts = {};
-      for (const c of data.calls) {
-        if (c.org === org && c.instagram) counts[c.instagram] = (counts[c.instagram] || 0) + 1;
-      }
-      const handles = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
-      return handles[0] || '';
-    })();
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
     const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
@@ -1572,11 +1562,6 @@ Object.entries(orgCounts)
 
   <main>
     ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
-${orgInstagram ? `
-    <div class="call-detail-actions">
-      <a href="https://instagram.com/${escapeHtml(orgInstagram.replace('@', ''))}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-calendar">Instagram ${escapeHtml(orgInstagram)} &rarr;</a>
-    </div>
-` : ''}
     <section class="calls-list" id="callsList">
 ${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadline)))}
     </section>
