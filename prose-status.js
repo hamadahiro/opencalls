@@ -86,7 +86,7 @@ console.log(`Closed:                  ${closed.length}`);
 console.log(`  with prose:            ${closedWithProse}`);
 console.log(`  pending:               ${pendingClosed.length}`);
 console.log('');
-console.log(`Open coverage: ${openWithProse}/${open.length} (${((openWithProse/open.length)*100).toFixed(1)}%) — pending ${pendingOpen.length}`);
+console.log(`Open coverage: ${openWithProse}/${open.length} (${(open.length ? (openWithProse/open.length)*100 : 0).toFixed(1)}%) — pending ${pendingOpen.length}`);
 console.log('');
 
 if (pendingOpen.length) {
