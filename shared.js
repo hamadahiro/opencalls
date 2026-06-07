@@ -100,7 +100,7 @@ function splitPrizeParts(prize) {
 
 function derivePrizeCategory(text) {
   const p = text.toLowerCase();
-  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|zar\b|\br\s?\d|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
@@ -166,7 +166,9 @@ function shortenFee(fee) {
 function feeChip(fee, esc) {
   const feeShort = shortenFee(fee);
   const href = fee.toLowerCase().startsWith('free') ? '/fees/free/' : '/fees/entry-fee/';
-  const body = /^[£$€¥]/.test(feeShort) ? feeShort + ' fee' : feeShort;
+  // Append " fee" only to a money amount (currency symbol + digit). Must include
+  // R (Rand) to match shortenFee's currency class — otherwise "R250+" loses " fee".
+  const body = /^[£$€¥R]\d/.test(feeShort) ? feeShort + ' fee' : feeShort;
   const title = feeShort !== fee ? ` title="${esc(fee)}"` : '';
   return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
 }
