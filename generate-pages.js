@@ -131,6 +131,15 @@ data.calls.forEach((c, i) => {
     err(`"${label}" has invalid instagram: "${c.instagram}" — must start with @`);
   }
 
+  // Submit-via link targets must be valid, or the "Submit via" link is broken.
+  // email -> mailto (must be a real address); submitUrl -> link (must be http(s)).
+  if (c.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(c.email).trim())) {
+    err(`"${label}" has invalid email: "${c.email}" — would produce a broken mailto: link`);
+  }
+  if (c.submitUrl && !/^https?:\/\/.+/i.test(String(c.submitUrl).trim())) {
+    err(`"${label}" has invalid submitUrl: "${c.submitUrl}" — must be an http(s) URL`);
+  }
+
   // Eligibility tag format
   (c.eligibility || []).forEach(e => {
     if (e.length > 30 || /[^a-z0-9-]/.test(e)) {
@@ -696,12 +705,13 @@ function buildStaticInfoGrid(call) {
   if (call.submitVia) {
     const open = isCallOpen(call.deadline);
     const label = infoVal(call.submitVia);
-    if (!open) {
-      rows.push(infoRow('Submit via', label));
-    } else if (call.email) {
-      rows.push(infoRow('Submit via', `<a href="mailto:${escapeHtml(call.email)}" target="_blank" rel="nofollow noopener">${label}</a>`));
-    } else if (call.submitUrl) {
+    // Prefer the actual submission URL (Picter, Submittable, gallery form, …);
+    // only fall back to mailto when there is no URL. Linking email over an
+    // existing URL opened the mail client on web-platform labels — wrong target.
+    if (open && call.submitUrl) {
       rows.push(infoRow('Submit via', `<a href="${escapeHtml(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`));
+    } else if (open && call.email) {
+      rows.push(infoRow('Submit via', `<a href="mailto:${escapeHtml(call.email)}" rel="nofollow noopener">${label}</a>`));
     } else {
       rows.push(infoRow('Submit via', label));
     }
