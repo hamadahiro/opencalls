@@ -10,7 +10,8 @@ const {
   isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
   getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
-  isFree, getState, scoreSimilarity
+  isFree, getState, scoreSimilarity,
+  isValidEmail, isValidHttpUrl, submitViaIsPlatform
 } = shared;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -139,10 +140,10 @@ data.calls.forEach((c, i) => {
 
   // Submit-via link targets must be valid, or the "Submit via" link is broken.
   // email -> mailto (must be a real address); submitUrl -> link (must be http(s)).
-  if (c.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(c.email).trim())) {
+  if (c.email && !isValidEmail(c.email)) {
     err(`"${label}" has invalid email: "${c.email}" — would produce a broken mailto: link`);
   }
-  if (c.submitUrl && !/^https?:\/\/.+/i.test(String(c.submitUrl).trim())) {
+  if (c.submitUrl && !isValidHttpUrl(c.submitUrl)) {
     err(`"${label}" has invalid submitUrl: "${c.submitUrl}" — must be an http(s) URL`);
   }
   // For OPEN calls, if submitVia names a SaaS submission platform a submitUrl is
@@ -150,8 +151,7 @@ data.calls.forEach((c, i) => {
   // never the platform the label promises. (Closed calls render label-only, no
   // link, so they're exempt. Generic labels like "Official website" are exempt:
   // the renderer falls those back to the call's official url, never to mailto.)
-  if (c.submitVia && !c.submitUrl && isCallOpen(c.deadline) &&
-      /^(picter|submittable|cafe|slideroom|jotform|typeform|entrythingy|smarter\s?entry|zealous|paperform|cognito forms|formsite|surveymonkey|artcall|google forms?|fillout|goethe application portal)$/i.test(c.submitVia.trim())) {
+  if (c.submitVia && !c.submitUrl && isCallOpen(c.deadline) && submitViaIsPlatform(c.submitVia)) {
     err(`"${label}" submitVia is "${c.submitVia}" (a submission platform) but has no submitUrl — add the platform URL or relabel (e.g. "Official website").`);
   }
 
@@ -2057,10 +2057,12 @@ fs.writeFileSync('cards.js', cardsJs);
   // Shared SSOT functions: exactly once in shared.js, and ZERO copies in the
   // browser consumers (cards.js, call-detail.js) — they must use the shared one.
   const callDetailSrc = fs.readFileSync('call-detail.js', 'utf8');
+  // scripts/ is gitignored local tooling — guard so the build works without it.
+  const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
   for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
-    for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc]]) {
+    for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc]]) {
       if (csrc.split(fn).length - 1 !== 0) gateErrs.push(`${fn} is re-declared in ${consumer} — it must live ONLY in shared.js`);
     }
   }
