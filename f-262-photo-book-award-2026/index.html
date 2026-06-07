@@ -110,7 +110,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/zines/">Zines &amp; Books open call</a></nav>
       <h1 class="call-detail-title">F/262 Photo Book Award 2026</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize">Full photobook production (262-copy edition) prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize">Photobook production (262 copies) prize</a></div></div>
 
       <p class="call-detail-description">F/262 is the inaugural international photography festival of Caldas da Rainha, a UNESCO Creative City in Portugal. The Photo Book Award is the festival's dedicated photobook track — a sister program to its photography awards, run during the festival's 2026 edition (May 16 – September 13). The festival's curatorial focus for 2026 is Water as ecological, cultural, and symbolic element.</p>
       <p class="call-detail-description">The award honors the best unpublished photobook project of the year. Eligibility is broad: collectives are permitted, and self-published works with print runs of 100 copies or fewer are still considered unpublished for the purposes of the award. There is no per-author entry limit; multiple projects may be submitted with separate fees.</p>
@@ -146,7 +146,7 @@
 
   <script>
     const CURRENT_SLUG = 'f-262-photo-book-award-2026';
-    const CURRENT_CALL = {"prize":"Full photobook production (262-copy edition)","category":"zine","org":"F/262 International Photography Festival","location":"Caldas da Rainha, Portugal","fee":"€35/project","deadline":"2026-07-01","resultsDate":"August 15, 2026","instagram":"@festival.262","eligibility":[],"jury":["Jacqueline Tobin, Author & Former Editor-in-Chief, Rangefinder","Yegan Mazandarani & William Keo, Four Eyes Editions","Rúben R. Dias, Editorial Designer & Educator","João Agostinho, Designer"],"submitVia":"Official website","submitUrl":"https://festival262.com/f-262-submission-form/","email": "","ai":"","requirements":"Photobook dummy"};
+    const CURRENT_CALL = {"prize":"Photobook production (262 copies)","category":"zine","org":"F/262 International Photography Festival","location":"Caldas da Rainha, Portugal","fee":"€35/project","deadline":"2026-07-01","resultsDate":"August 15, 2026","instagram":"@festival.262","eligibility":[],"jury":["Jacqueline Tobin, Author & Former Editor-in-Chief, Rangefinder","Yegan Mazandarani & William Keo, Four Eyes Editions","Rúben R. Dias, Editorial Designer & Educator","João Agostinho, Designer"],"submitVia":"Official website","submitUrl":"https://festival262.com/f-262-submission-form/","email": "","ai":"","requirements":"Photobook dummy"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -156,7 +156,7 @@
       var u = 'https://festival262.com/photo-book-award/';
       var o = 'F/262 International Photography Festival';
       var dl = new Date('2026-07-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Full photobook production (262-copy edition)') + '\\nEntry fee: ' + icsE('€35/project');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Photobook production (262 copies)') + '\\nEntry fee: ' + icsE('€35/project');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');

@@ -110,7 +110,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Viewpoint Photographic Art Center — 2027 Call for Exhibit Proposals</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Solo or group exhibition (~4 weeks) prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Solo or group exhibition prize</a></div></div>
 
       <p class="call-detail-description">Sacramento non-profit photography center seeking proposals for solo and group exhibitions running January–December 2027. Main Gallery proposals are open to all artists working in the photographic arts; the more intimate Step-Up Gallery is reserved for current Viewpoint members. Exhibits run roughly four weeks in both galleries. Submit a cohesive body of work — a representative selection of 20 images plus a short artist statement — reviewed by the Viewpoint Curatorial Committee. Maximum two proposals per artist; past solo exhibitors must wait three years before another solo show.</p>
 
@@ -138,7 +138,7 @@
 
   <script>
     const CURRENT_SLUG = 'viewpoint-photographic-art-center-2027-call-for-exhibit-proposals';
-    const CURRENT_CALL = {"prize":"Solo or group exhibition (~4 weeks)","category":"exhibition","org":"Viewpoint Photographic Art Center","location":"Sacramento, CA, USA","fee":"Free","deadline":"2026-06-30","resultsDate":"","instagram":"@viewpointphotoartcenter","eligibility":[],"jury":[],"submitVia":"EntryThingy","submitUrl":"https://app.entrythingy.com/viewpointgallery.org/","email": "","ai":"","requirements":"20 images"};
+    const CURRENT_CALL = {"prize":"Solo or group exhibition","category":"exhibition","org":"Viewpoint Photographic Art Center","location":"Sacramento, CA, USA","fee":"Free","deadline":"2026-06-30","resultsDate":"","instagram":"@viewpointphotoartcenter","eligibility":[],"jury":[],"submitVia":"EntryThingy","submitUrl":"https://app.entrythingy.com/viewpointgallery.org/","email": "","ai":"","requirements":"20 images"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -148,7 +148,7 @@
       var u = 'https://www.viewpointphotoartcenter.org/2027-call-for-proposals/';
       var o = 'Viewpoint Photographic Art Center';
       var dl = new Date('2026-06-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Solo or group exhibition (~4 weeks)') + '\\nEntry fee: ' + icsE('Free');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Solo or group exhibition') + '\\nEntry fee: ' + icsE('Free');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
