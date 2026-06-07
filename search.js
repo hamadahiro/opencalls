@@ -49,12 +49,6 @@
     }).catch(function() {});
   }
 
-  function getOpenCalls() {
-    var now = new Date();
-    var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    return allCalls.filter(function(c) { return c.deadline === 'Continuous' || c.deadline >= today; });
-  }
-
   function buildSuggestions(query) {
     // Delegate to the shared logic in cards.js so home and non-home stay in sync.
     // No chip exclusion on detail pages; same on-focus behavior as home (skip
