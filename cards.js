@@ -290,6 +290,10 @@ function derivePrizeCategories(prize) {
   });
 }
 
+// `prize` is split on " + " into one chip per part (renderer appends " prize").
+// Use " + " ONLY to separate DISTINCT prizes. Never put a literal + inside one
+// prize (e.g. "(1+ month)") or it breaks into garbage chips. Keep parts short
+// (~<=30 chars) for mobile; drop dates/cities/parentheticals.
 function splitPrizeParts(prize) {
   if (!prize) return [];
   return prize.split(/\s*\+\s*/).map(function(s) { s = s.trim(); return s.charAt(0).toUpperCase() + s.slice(1); }).filter(Boolean);
