@@ -276,11 +276,12 @@ function shortenFee(fee) {
   var strip = function(n) { return n.replace(/\.0+$/, ''); };
   if (/^free/i.test(s)) {
     var rest = s.replace(/^free/i, '');
-    return /[£$€¥]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
+    return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
   }
-  var range = s.match(/^([£$€¥])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥])?\s?(\d[\d.,]*)$/);
+  var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
   if (range) return range[1] + strip(range[2]) + '–' + range[1] + strip(range[4]);
-  var sym = (s.match(/[£$€¥]/) || [])[0];
+  // currency token: £ $ € ¥ or R (Rand). Letter-codes (TWD, AUD…) pass through.
+  var sym = (s.match(/[£$€¥R]/) || [])[0];
   if (!sym) return s;
   var first = s.match(new RegExp('\\' + sym + '\\s?(\\d[\\d.,]*)'));
   if (!first) return s;

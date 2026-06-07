@@ -425,11 +425,12 @@ function shortenFee(fee) {
   var strip = function(n) { return n.replace(/\.0+$/, ''); };
   if (/^free/i.test(s)) {
     var rest = s.replace(/^free/i, '');
-    return /[£$€¥]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
+    return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
   }
-  var range = s.match(/^([£$€¥])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥])?\s?(\d[\d.,]*)$/);
+  var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
   if (range) return range[1] + strip(range[2]) + '–' + range[1] + strip(range[4]);
-  var sym = (s.match(/[£$€¥]/) || [])[0];
+  // currency token: £ $ € ¥ or R (Rand). Letter-codes (TWD, AUD…) pass through.
+  var sym = (s.match(/[£$€¥R]/) || [])[0];
   if (!sym) return s;
   var first = s.match(new RegExp('\\' + sym + '\\s?(\\d[\\d.,]*)'));
   if (!first) return s;
@@ -2358,6 +2359,60 @@ cardsJs = cardsJs.replace(
   () => pageListsBlock
 );
 fs.writeFileSync('cards.js', cardsJs);
+
+// === HARD GATE 1: cards.js integrity after auto-block injection ===
+// The auto-block injects DATA and function SOURCE (shortenFee/feeChip) into
+// cards.js. A bad injection — e.g. String.replace interpreting `$`-sequences in
+// the injected regex source (`( fee)?$'`) as replacement patterns — silently
+// corrupts the file and breaks ALL client-side hydration. Never ship that:
+// re-read what we wrote, prove it parses, and prove nothing is missing/dupe'd.
+{
+  const written = fs.readFileSync('cards.js', 'utf8');
+  const gateErrs = [];
+  const countOf = (re) => (written.match(re) || []).length;
+  if (countOf(/==AUTO-GENERATED-START==/g) !== 1) gateErrs.push('AUTO-GENERATED-START marker must appear exactly once');
+  if (countOf(/==AUTO-GENERATED-END==/g) !== 1) gateErrs.push('AUTO-GENERATED-END marker must appear exactly once');
+  // Injected SSOT functions: exactly one copy each.
+  for (const fn of ['function shortenFee', 'function feeChip']) {
+    const n = written.split(fn).length - 1;
+    if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n}) — injection corrupted`);
+  }
+  // Hand-written core functions must NOT be duplicated (a `$'` expansion symptom).
+  for (const fn of ['function renderCallList', 'function renderTags', 'function esc', 'function processCall']) {
+    const n = written.split(fn).length - 1;
+    if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n}) — injection corrupted`);
+  }
+  // Whole file must be syntactically valid JS (compile, do not run).
+  try { new (require('vm').Script)(written, { filename: 'cards.js' }); }
+  catch (e) { gateErrs.push(`cards.js failed to parse: ${e.message}`); }
+  if (gateErrs.length) {
+    console.error('FATAL: cards.js integrity gate failed after auto-block injection:');
+    gateErrs.forEach(e => console.error('  - ' + e));
+    console.error('Inspect the auto-block injection (must use a FUNCTION replacement, not a string).');
+    process.exit(1);
+  }
+}
+
+// === HARD GATE 2: fee chips must stay short ===
+// Every fee renders through shortenFee(); a format it can't condense passes
+// through raw and produces an ugly long chip. Fail the build so an unhandled
+// fee format must be taught to shortenFee rather than silently shipped long.
+{
+  const MAX_FEE_CHIP = 12; // longest legit compact output is a range like "€150–€250" (9)
+  const offenders = [];
+  const seenFee = new Set();
+  data.calls.forEach(c => {
+    if (!c.fee || seenFee.has(c.fee)) return;
+    seenFee.add(c.fee);
+    const out = shortenFee(c.fee);
+    if (out && out.length > MAX_FEE_CHIP) offenders.push(`${out.length} chars: "${out}"  <=  "${c.fee}"`);
+  });
+  if (offenders.length) {
+    console.error(`FATAL: ${offenders.length} fee chip(s) exceed ${MAX_FEE_CHIP} chars — extend shortenFee() to handle them:`);
+    offenders.forEach(o => console.error('  - ' + o));
+    process.exit(1);
+  }
+}
 
 // Generate sitemap.xml with a restrained, high-value canonical set.
 // Keep expired/noindex archives out, but submit active call detail pages:
