@@ -110,7 +110,7 @@
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/exhibitions/">Exhibition open call</a></nav>
       <h1 class="call-detail-title">Intentional Unconventional — Experimental Photography &amp; Video</h1>
 
-      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Group exhibition at The Brownhoist, Cleveland prize</a></div></div>
+      <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize">Group exhibition at The Brownhoist prize</a></div></div>
 
       <p class="call-detail-description">Photo Cleveland is a Cleveland, Ohio photography community and exhibition project led by Jim Szudy. &quot;Intentional Unconventional&quot; is its open call for an avant-garde multimedia exhibition built around experimentation within the medium — work that breaks away from conventional imagery and mainstream storytelling.</p>
       <p class="call-detail-description">The brief is specific about what &quot;non-traditional&quot; means here: not unusual subject matter, but unusual making. The jury wants images where the artist experimented and thought outside the box in how the work was created — abstract concepts, non-linear structures, and unconventional techniques. Photography, video, and mixed media are accepted, with mixed media required to use photography as its main component.</p>
@@ -141,7 +141,7 @@
 
   <script>
     const CURRENT_SLUG = 'intentional-unconventional-photo-cleveland';
-    const CURRENT_CALL = {"prize":"Group exhibition at The Brownhoist, Cleveland","category":"exhibition","org":"Photo Cleveland","location":"Cleveland, OH, USA","fee":"$35 (3 works) / $20 (2 videos)","deadline":"2026-06-27","resultsDate":"","instagram":"@photo_cleveland","eligibility":[],"jury":[],"submitVia":"Google Drive","submitUrl":"https://drive.google.com/drive/folders/1b71_-uuo49MrKC3vKjNEcRCQn-mou8fY","email": "","ai":"","requirements":"Up to 3 works"};
+    const CURRENT_CALL = {"prize":"Group exhibition at The Brownhoist","category":"exhibition","org":"Photo Cleveland","location":"Cleveland, OH, USA","fee":"$35 (3 works) / $20 (2 videos)","deadline":"2026-06-27","resultsDate":"","instagram":"@photo_cleveland","eligibility":[],"jury":[],"submitVia":"Google Drive","submitUrl":"https://drive.google.com/drive/folders/1b71_-uuo49MrKC3vKjNEcRCQn-mou8fY","email": "","ai":"","requirements":"Up to 3 works"};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -151,7 +151,7 @@
       var u = 'https://photocleveland.org/intentional-unconventional-experimental-photography-and-video/';
       var o = 'Photo Cleveland';
       var dl = new Date('2026-06-27T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Group exhibition at The Brownhoist, Cleveland') + '\\nEntry fee: ' + icsE('$35 (3 works) / $20 (2 videos)');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Group exhibition at The Brownhoist') + '\\nEntry fee: ' + icsE('$35 (3 works) / $20 (2 videos)');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
