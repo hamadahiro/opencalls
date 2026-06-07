@@ -408,6 +408,45 @@ function computeUrgency(call, now) {
   return { deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
 }
 
+// SINGLE SOURCE OF TRUTH for the compact fee shown on list/card chips. Defined
+// once here and injected verbatim into cards.js's ==AUTO-GENERATED== block, so
+// the browser and the build can never drift. The full fee string is always kept
+// intact on the detail page (info grid); this only condenses the chip.
+//   Free…            -> "Free" (or "Free*" when there's a conditional cost)
+//   clean "X–Y" range -> normalized range, e.g. "€20–€50"
+//   anything with tiers/additional text -> first amount + "+", e.g. "$39+"
+//     (FIRST currency amount = entry floor; "+" never understates it)
+//   bare single fee  -> shown as-is ("$35")
+//   unrecognised currency (R, TWD, "PWYC"…) -> shown as-is (conservative)
+// Must stay self-contained (no external helpers) so .toString() injection works.
+function shortenFee(fee) {
+  if (!fee) return fee;
+  var s = String(fee).trim();
+  var strip = function(n) { return n.replace(/\.0+$/, ''); };
+  if (/^free/i.test(s)) {
+    var rest = s.replace(/^free/i, '');
+    return /[£$€¥]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
+  }
+  var range = s.match(/^([£$€¥])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥])?\s?(\d[\d.,]*)$/);
+  if (range) return range[1] + strip(range[2]) + '–' + range[1] + strip(range[4]);
+  var sym = (s.match(/[£$€¥]/) || [])[0];
+  if (!sym) return s;
+  var first = s.match(new RegExp('\\' + sym + '\\s?(\\d[\\d.,]*)'));
+  if (!first) return s;
+  var amount = sym + strip(first[1]);
+  var isBare = new RegExp('^\\' + sym + '\\s?\\d[\\d.,]*( fee)?$', 'i').test(s);
+  return isBare ? amount : amount + '+';
+}
+
+// Build the fee chip (compact) — full fee kept in a title tooltip when shortened.
+function feeChip(fee, esc) {
+  const feeShort = shortenFee(fee);
+  const href = fee.toLowerCase().startsWith('free') ? '/fees/free/' : '/fees/entry-fee/';
+  const body = /^[£$€¥]/.test(feeShort) ? feeShort + ' fee' : feeShort;
+  const title = feeShort !== fee ? ` title="${esc(fee)}"` : '';
+  return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
+}
+
 function renderStaticTags(call, u) {
   const tags = [];
   if (u.deadlineSlug) tags.push(`<a href="/deadlines/${u.deadlineSlug}/" class="call-deadline ${u.urgencyClass}">${escapeHtml(u.urgencyText)}</a>`);
@@ -417,11 +456,7 @@ function renderStaticTags(call, u) {
     const href = cat ? '/prize/' + cat + '/' : '/prize/';
     tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${escapeHtml(part)}</a>`);
   });
-  if (call.fee) {
-    if (call.fee.toLowerCase().startsWith('free')) tags.push(`<a href="/fees/free/" class="meta-tag meta-tag-link">Free</a>`);
-    else if (/^[£$€¥]/.test(call.fee)) tags.push(`<a href="/fees/entry-fee/" class="meta-tag meta-tag-link">${escapeHtml(call.fee)} fee</a>`);
-    else tags.push(`<a href="/fees/entry-fee/" class="meta-tag meta-tag-link">${escapeHtml(call.fee)}</a>`);
-  }
+  if (call.fee) tags.push(feeChip(call.fee, escapeHtml));
   if (call.location) {
     const country = getCountry(call.location);
     const locLink = getStaticLocationLink(call.location, country);
@@ -2311,6 +2346,9 @@ const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
 // eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
 const eligibilityLabel = ${JSON.stringify(ELIGIBILITY_LABEL)};
+// shortenFee + feeChip: single source of truth is generate-pages.js (injected verbatim)
+${shortenFee.toString()}
+${feeChip.toString()}
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
