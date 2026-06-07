@@ -1,6 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
+// Single source of truth for pure logic + data maps shared with the browser
+// (cards.js). Defined once in shared.js; never re-declare these here.
+const shared = require('./shared.js');
+const {
+  categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
+  isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
+  deriveRequirementBucket, shortenFee, feeChip, submitViaLink
+} = shared;
+
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
 // Per-call verification timestamps written by scripts/verify-batch.js.
@@ -69,12 +78,6 @@ const VALID_CATEGORIES = ['photography', 'exhibition', 'grant', 'zine', 'residen
 let hasErrors = false;
 
 function err(msg) { console.error(`ERROR: ${msg}`); hasErrors = true; }
-function isCallOpen(deadline) {
-  if (deadline === 'Continuous') return true;
-  const end = new Date(deadline + 'T00:00:00');
-  end.setDate(end.getDate() + 1);
-  return end > new Date();
-}
 
 data.calls.forEach((c, i) => {
   const label = c.title || `index ${i}`;
@@ -315,7 +318,7 @@ const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       <p>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a> &mdash; <a href="/about/">About</a> &mdash; <a href="/feed.xml">RSS</a></p>
     </footer>`;
-function CARDS_SCRIPT(cssVersion) { return `<script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
+function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
 function buildBreadcrumbs(section, sectionUrl) {
   const url = sectionUrl.endsWith('/') ? sectionUrl : sectionUrl + '/';
@@ -336,10 +339,6 @@ function writeGenerated(filepath, content) {
   if (dir !== '.' && !fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(filepath, content);
   generatedFiles.add(filepath);
-}
-
-function slugify(title) {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
 function escapeHtml(str) {
@@ -408,7 +407,6 @@ function buildStaticCallList(calls) {
 // sync with renderTags()/renderCard()/renderCallList() in cards.js.
 const PIN_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
 const PRIZE_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>';
-const CATEGORY_SLUG = { photography: 'photography', exhibition: 'exhibitions', grant: 'grants', zine: 'zines', residency: 'residencies', education: 'education' };
 const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 function computeUrgency(call, now) {
@@ -424,81 +422,6 @@ function computeUrgency(call, now) {
   else { urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); urgencyClass = 'normal'; }
   const deadlineSlug = deadlineDate ? MONTHS_CAP[deadlineDate.getMonth()].toLowerCase() + '-' + deadlineDate.getFullYear() : null;
   return { deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
-}
-
-// SINGLE SOURCE OF TRUTH for the compact fee shown on list/card chips. Defined
-// once here and injected verbatim into cards.js's ==AUTO-GENERATED== block, so
-// the browser and the build can never drift. The full fee string is always kept
-// intact on the detail page (info grid); this only condenses the chip.
-//   Free…            -> "Free" (or "Free*" when there's a conditional cost)
-//   clean "X–Y" range -> normalized range, e.g. "€20–€50"
-//   anything with tiers/additional text -> first amount + "+", e.g. "$39+"
-//     (FIRST currency amount = entry floor; "+" never understates it)
-//   bare single fee  -> shown as-is ("$35")
-//   unrecognised currency (R, TWD, "PWYC"…) -> shown as-is (conservative)
-// Must stay self-contained (no external helpers) so .toString() injection works.
-function shortenFee(fee) {
-  if (!fee) return fee;
-  var s = String(fee).trim();
-  var strip = function(n) { return n.replace(/\.0+$/, ''); };
-  if (/^free/i.test(s)) {
-    var rest = s.replace(/^free/i, '');
-    return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
-  }
-  var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
-  if (range) return range[1] + strip(range[2]) + '–' + range[1] + strip(range[4]);
-  // currency token: £ $ € ¥ or R (Rand). Letter-codes (TWD, AUD…) pass through.
-  var sym = (s.match(/[£$€¥R]/) || [])[0];
-  if (!sym) return s;
-  var first = s.match(new RegExp('\\' + sym + '\\s?(\\d[\\d.,]*)'));
-  if (!first) return s;
-  var amount = sym + strip(first[1]);
-  var isBare = new RegExp('^\\' + sym + '\\s?\\d[\\d.,]*( fee)?$', 'i').test(s);
-  return isBare ? amount : amount + '+';
-}
-
-// Build the fee chip (compact) — full fee kept in a title tooltip when shortened.
-function feeChip(fee, esc) {
-  const feeShort = shortenFee(fee);
-  const href = fee.toLowerCase().startsWith('free') ? '/fees/free/' : '/fees/entry-fee/';
-  const body = /^[£$€¥]/.test(feeShort) ? feeShort + ' fee' : feeShort;
-  const title = feeShort !== fee ? ` title="${esc(fee)}"` : '';
-  return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
-}
-
-// SSOT for the "Submit via" row: collapses the 77 messy raw values into a small
-// honest set of methods, and links to the real submission target. Self-contained
-// (only needs global isCallOpen) so it stays valid injected verbatim into cards.js.
-//   submitMethod label: Website (all forms/platforms/apps), Email, Post, or a
-//   recognizable service kept by name (Dropbox, Google Drive, Instagram,
-//   WeTransfer). Combos collapse to their primary online method, never "X + Y".
-//   target: submitUrl > mailto(only on email/transfer intent) > official url >
-//   email. A web label can never fall back to opening the mail client.
-function submitViaLink(call, esc) {
-  const s = (call.submitVia || '').toLowerCase().trim();
-  if (!s) return '';
-  let label;
-  if (/\b(post|postal)\b|physical|parcel/.test(s) && !/website|online|form|platform|portal|email|dropbox|drive|instagram|wetransfer|app/.test(s)) label = 'Post';
-  else if (/website|online|form|platform|portal/.test(s)) label = 'Website';
-  else if (/email/.test(s)) label = 'Email';
-  else if (/wetransfer|swisstransfer/.test(s)) label = 'WeTransfer';
-  else if (/instagram/.test(s)) label = 'Instagram';
-  else if (/dropbox/.test(s)) label = 'Dropbox';
-  else if (/google drive/.test(s)) label = 'Google Drive';
-  else label = 'Website';
-
-  const emailIntent = /email|wetransfer|swisstransfer/.test(s);
-  let href = null;
-  if (call.submitUrl) href = call.submitUrl;
-  else if (emailIntent && call.email) href = 'mailto:' + call.email;
-  else if (call.url) href = call.url;
-  else if (call.email) href = 'mailto:' + call.email;
-
-  if (!isCallOpen(call.deadline) || !href) return esc(label);
-  const isMail = href.slice(0, 7) === 'mailto:';
-  // Keep the original value on hover so the specific platform isn't lost.
-  const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
-  return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
 }
 
 function renderStaticTags(call, u) {
@@ -518,9 +441,9 @@ function renderStaticTags(call, u) {
     if (locLink) tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${PIN_SVG}${escapeHtml(locDisplay)}</a>`);
     else tags.push(`<span class="meta-tag">${PIN_SVG}${escapeHtml(locDisplay)}</span>`);
   }
-  tags.push(`<a href="/${CATEGORY_SLUG[call.category]}/" class="meta-tag meta-tag-link">${escapeHtml(categoryLabel(call.category))}</a>`);
+  tags.push(`<a href="/${categorySlug[call.category]}/" class="meta-tag meta-tag-link">${escapeHtml((categoryLabel[call.category] || call.category))}</a>`);
   if (call.eligibility && call.eligibility.length) call.eligibility.forEach(e => {
-    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${escapeHtml(ELIGIBILITY_LABEL[e] || e)}</a>`);
+    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${escapeHtml(eligibilityLabel[e] || e)}</a>`);
   });
   return tags.join(' ');
 }
@@ -566,48 +489,6 @@ function buildStaticHomeList(callsList) {
 // the same content into static HTML (Google reads without JS). The browser JS
 // later replaces this with identical content — no visual change for users. ===
 
-const SHORT_COUNTRY = {
-  'United Kingdom': 'UK',
-  'United States': 'US',
-  'United Arab Emirates': 'UAE',
-  'Czech Republic': 'Czechia',
-  'Bosnia and Herzegovina': 'BiH',
-  'North Macedonia': 'N. Macedonia'
-};
-
-function shortenLocation(loc) {
-  if (!loc) return loc;
-  let s = loc.replace(/,\s*USA$/, '');
-  for (const [full, sh] of Object.entries(SHORT_COUNTRY)) s = s.replace(full, sh);
-  return s;
-}
-
-const ELIGIBILITY_LABEL = {
-  'women': 'Women', 'united-states': 'US only', 'europe': 'Europe only', 'italy': 'Italy only',
-  'emerging': 'Emerging artists', 'under-30': 'Under 30', 'under-35': 'Under 35', 'under-40': 'Under 40',
-  'lgbtq': 'LGBTQ+', 'analog-photography': 'Analog only', 'alternative-process': 'Alternative process',
-  'professional': 'Professional only', 'membership-required': 'Membership required',
-  'puerto-rico': 'Puerto Rico focus', 'latin-america': 'Latin America', 'asian-american': 'Asian American focus',
-  'south-asian': 'South Asian focus', 'african-diaspora': 'African diaspora focus', 'black': 'Black artists',
-  'neurodivergent-disabled': 'Neurodivergent & disabled', 'portugal': 'Portugal only', 'taiwan': 'Taiwan only',
-  'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only',
-  'canada': 'Canada only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only',
-  'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only',
-  '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
-  'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists',
-  'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
-  '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '45-plus': '45+', '65-plus': '65+',
-  'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
-  'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only',
-  'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'los-angeles': 'LA only',
-  'new-york-state': 'NY State only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
-  'united-kingdom': 'UK only'
-};
-
-function splitPrizeParts(prize) {
-  if (!prize) return [];
-  return prize.split(/\s*\+\s*/).map(s => { s = s.trim(); return s.charAt(0).toUpperCase() + s.slice(1); }).filter(Boolean);
-}
 
 function tagHtml(str, minLen) {
   minLen = minLen || 25;
@@ -631,8 +512,7 @@ function getStaticLocationLink(location, country) {
     const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
     if (state && PRECOMPUTED_STATE_PAGES[state]) return '/' + PRECOMPUTED_STATE_PAGES[state] + '/';
   }
-  const countrySlugs = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
-  const countrySlug = countrySlugs[country] || slugify(country || '');
+    const countrySlug = countrySlugs[country] || slugify(country || '');
   if (PRECOMPUTED_COUNTRY_PAGES.has(countrySlug)) return '/' + countrySlug + '/';
   return null;
 }
@@ -652,26 +532,6 @@ function buildStaticPrizeBlock(call) {
 
 // Maps a free-text requirements string to a single browse bucket slug.
 // Keep in sync with deriveRequirementBucket() in cards.js.
-function deriveRequirementBucket(r) {
-  if (!r) return null;
-  const s = r.toLowerCase();
-  if (/photobook|book dummy|\bbook\b|\bzine\b|photo book|dummy/.test(s)) return 'photobook';
-  if (/proposal|intent|budget|project pdf|project in progress|solo exhibit|\bapplication\b/.test(s)) return 'proposal';
-  if (/unlimited|no limit/.test(s)) return 'unlimited';
-  if (/portfolio|work sample|body of work|cohesive|\bproject\b|\bseries\b|photo essay|looks/.test(s)) return 'portfolio';
-  const nums = (s.match(/\d+/g) || []).map(Number);
-  if (nums.length) {
-    const m = Math.max.apply(null, nums);
-    if (m <= 1) return '1-image';
-    if (m <= 5) return '2-5-images';
-    if (m <= 10) return '6-10-images';
-    if (m <= 20) return '11-20-images';
-    return '21-plus-images';
-  }
-  if (/single|1 photo|one photo/.test(s)) return '1-image';
-  return 'portfolio';
-}
-
 // Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
 function buildStaticInfoGrid(call) {
   function infoRow(label, value) {
@@ -720,7 +580,7 @@ function buildStaticInfoGrid(call) {
   // Eligibility
   if (call.eligibility && call.eligibility.length) {
     const eligHtml = call.eligibility.map(e => {
-      const label = ELIGIBILITY_LABEL[e] || e;
+      const label = eligibilityLabel[e] || e;
       return infoLink('/eligibility/' + e, label);
     }).join(', ');
     rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
@@ -819,7 +679,7 @@ function buildStaticSimilarCalls(call, allCalls) {
 }
 
 function buildKeywords(call) {
-  const words = [call.title, call.org, categoryLabel(call.category), 'open call', 'call for entries'];
+  const words = [call.title, call.org, (categoryLabel[call.category] || call.category), 'open call', 'call for entries'];
   if (call.location && call.location !== 'Online') words.push(call.location);
   if (call.category === 'photography') words.push('photography competition', 'photo contest');
   if (call.category === 'grant') words.push('artist grant', 'photography grant');
@@ -829,35 +689,6 @@ function buildKeywords(call) {
   words.push('open calls for artists', 'photography submissions');
   return words.join(', ');
 }
-
-function derivePrizeCategory(text) {
-  const p = text.toLowerCase();
-  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
-  if (/fellowship/.test(p)) return 'fellowship';
-  if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
-  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-  if (/exhibition/.test(p)) return 'exhibition';
-  return null;
-}
-
-function derivePrizeCategories(prize) {
-  if (!prize) return [];
-  const seen = {};
-  return prize.split(/\s*\+\s*/).map(s => s.trim()).filter(Boolean).map(part => derivePrizeCategory(part)).filter(c => {
-    if (!c || seen[c]) return false;
-    seen[c] = true;
-    return true;
-  });
-}
-
-function categoryLabel(cat) {
-  const labels = {
-    'photography': 'Photography', 'exhibition': 'Exhibition', 'grant': 'Grant',
-    'zine': 'Zines & Books', 'residency': 'Residency', 'education': 'Education'
-  };
-  return labels[cat] || cat;
-}
-
 
 // Compute countries for landing pages (including Online)
 const countryCounts = {};
@@ -928,7 +759,7 @@ function generatePage(call, cssVersion) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: categoryLabel(call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: (categoryLabel[call.category] || call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1330,7 +1161,7 @@ openCalls.forEach(c => {
   });
 });
 
-// Validate every eligibility tag used in data has a chip label (ELIGIBILITY_LABEL,
+// Validate every eligibility tag used in data has a chip label (eligibilityLabel,
 // the single source of truth injected into cards.js) AND a facet-page config
 // (eligibilityGroups). cards.js no longer keeps a second hand-maintained copy, so
 // these two maps can't drift apart from each other the way they used to.
@@ -1339,8 +1170,8 @@ Object.keys(eligibilityTags).forEach(tag => {
     console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityGroups (generate-pages.js). Add short, title, and desc.`);
     hasErrors = true;
   }
-  if (!(tag in ELIGIBILITY_LABEL)) {
-    console.error(`ERROR: Eligibility tag "${tag}" has no entry in ELIGIBILITY_LABEL (generate-pages.js) — the chip would render as the raw slug. Add a display label.`);
+  if (!(tag in eligibilityLabel)) {
+    console.error(`ERROR: Eligibility tag "${tag}" has no entry in eligibilityLabel (shared.js) — the chip would render as the raw slug. Add a display label.`);
     hasErrors = true;
   }
 });
@@ -1707,9 +1538,6 @@ if (requirementPageSlugs.length) {
 // === Country landing pages ===
 const countryNames = {
   'USA': 'the United States', 'UK': 'the United Kingdom', 'UAE': 'the United Arab Emirates', 'Netherlands': 'the Netherlands'
-};
-const countrySlugs = {
-  'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates'
 };
 
 Object.entries(countryCounts)
@@ -2373,18 +2201,12 @@ Object.keys(stateCounts).forEach(state => {
 });
 
 // Update page lists in cards.js (between markers) — only include actually created pages
+// Only build-DERIVED data (which pages actually got generated) is injected.
+// All shared LOGIC + static maps live in shared.js, loaded before cards.js.
 const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ${JSON.stringify(linkedCountrySlugs)};
 const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
-// eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
-const eligibilityLabel = ${JSON.stringify(ELIGIBILITY_LABEL)};
-// shortenFee + feeChip + submitViaLink + derivePrizeCategor*: single source of truth is generate-pages.js (injected verbatim)
-${shortenFee.toString()}
-${feeChip.toString()}
-${submitViaLink.toString()}
-${derivePrizeCategory.toString()}
-${derivePrizeCategories.toString()}
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
@@ -2395,35 +2217,43 @@ cardsJs = cardsJs.replace(
 );
 fs.writeFileSync('cards.js', cardsJs);
 
-// === HARD GATE 1: cards.js integrity after auto-block injection ===
-// The auto-block injects DATA and function SOURCE (shortenFee/feeChip) into
-// cards.js. A bad injection — e.g. String.replace interpreting `$`-sequences in
-// the injected regex source (`( fee)?$'`) as replacement patterns — silently
-// corrupts the file and breaks ALL client-side hydration. Never ship that:
-// re-read what we wrote, prove it parses, and prove nothing is missing/dupe'd.
+// === HARD GATE 1: cards.js + shared.js integrity ===
+// shared.js is the single source of truth for shared logic; cards.js consumes it
+// and only gets build-derived DATA injected into its ==AUTO-GENERATED== block.
+// Prove both parse, the markers/derived data are intact, shared logic is defined
+// exactly once in shared.js, and is NOT re-declared (drifted) into cards.js.
 {
   const written = fs.readFileSync('cards.js', 'utf8');
+  const sharedSrc = fs.readFileSync('shared.js', 'utf8');
   const gateErrs = [];
-  const countOf = (re) => (written.match(re) || []).length;
-  if (countOf(/==AUTO-GENERATED-START==/g) !== 1) gateErrs.push('AUTO-GENERATED-START marker must appear exactly once');
-  if (countOf(/==AUTO-GENERATED-END==/g) !== 1) gateErrs.push('AUTO-GENERATED-END marker must appear exactly once');
-  // Injected SSOT functions: exactly one copy each.
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(']) {
-    const n = written.split(fn).length - 1;
-    if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n}) — injection corrupted`);
+  const countOf = (src, re) => (src.match(re) || []).length;
+  if (countOf(written, /==AUTO-GENERATED-START==/g) !== 1) gateErrs.push('AUTO-GENERATED-START marker must appear exactly once in cards.js');
+  if (countOf(written, /==AUTO-GENERATED-END==/g) !== 1) gateErrs.push('AUTO-GENERATED-END marker must appear exactly once in cards.js');
+  // Shared SSOT functions: exactly once in shared.js, and ZERO copies in cards.js.
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(']) {
+    const inShared = sharedSrc.split(fn).length - 1;
+    const inCards = written.split(fn).length - 1;
+    if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
+    if (inCards !== 0) gateErrs.push(`${fn} is re-declared in cards.js (found ${inCards}) — it must live ONLY in shared.js`);
   }
-  // Hand-written core functions must NOT be duplicated (a `$'` expansion symptom).
+  // Shared data maps: defined once in shared.js, not re-declared in cards.js.
+  for (const decl of ['const eligibilityLabel', 'const categoryLabel', 'const prizeCategoryLabel', 'const categorySlug', 'const shortCountry', 'const countrySlugs']) {
+    if (sharedSrc.split(decl).length - 1 !== 1) gateErrs.push(`${decl} must be defined exactly once in shared.js`);
+    if (written.split(decl).length - 1 !== 0) gateErrs.push(`${decl} is re-declared in cards.js — it must live ONLY in shared.js`);
+  }
+  // Hand-written core cards.js functions must not be duplicated.
   for (const fn of ['function renderCallList', 'function renderTags', 'function esc', 'function processCall']) {
     const n = written.split(fn).length - 1;
-    if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n}) — injection corrupted`);
+    if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n})`);
   }
-  // Whole file must be syntactically valid JS (compile, do not run).
-  try { new (require('vm').Script)(written, { filename: 'cards.js' }); }
-  catch (e) { gateErrs.push(`cards.js failed to parse: ${e.message}`); }
+  // Both files must be syntactically valid JS (compile, do not run).
+  for (const [name, src] of [['cards.js', written], ['shared.js', sharedSrc]]) {
+    try { new (require('vm').Script)(src, { filename: name }); }
+    catch (e) { gateErrs.push(`${name} failed to parse: ${e.message}`); }
+  }
   if (gateErrs.length) {
-    console.error('FATAL: cards.js integrity gate failed after auto-block injection:');
+    console.error('FATAL: shared.js/cards.js integrity gate failed:');
     gateErrs.forEach(e => console.error('  - ' + e));
-    console.error('Inspect the auto-block injection (must use a FUNCTION replacement, not a string).');
     process.exit(1);
   }
 }
@@ -2565,8 +2395,13 @@ indexPages.forEach(({ src, fallback }) => {
     let html = fs.readFileSync(readFrom, 'utf8');
     // Sync CSS and JS versions
     html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
+    html = html.replace(/src="\/shared\.js\?v=[^"]+"/g, `src="/shared.js?v=${cssVersion}"`);
     html = html.replace(/src="\/cards\.js\?v=[^"]+"/g, `src="/cards.js?v=${cssVersion}"`);
     html = html.replace(/src="\/search\.js\?v=[^"]+"/g, `src="/search.js?v=${cssVersion}"`);
+    // shared.js must load before cards.js; inject it if the page predates the split.
+    if (html.includes('cards.js') && !html.includes('shared.js')) {
+      html = html.replace('<script src="/cards.js', `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js`);
+    }
     // favicon.ico + favicon.png links are already correct in templates
     if (!html.includes('og:site_name')) {
       html = html.replace(/<meta name="twitter:card"/, '<meta property="og:site_name" content="Monographica">\n  <meta name="twitter:card"');
@@ -2608,8 +2443,13 @@ manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   // Sync CSS and JS versions
   html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
+  html = html.replace(/src="\/shared\.js\?v=[^"]+"/g, `src="/shared.js?v=${cssVersion}"`);
   html = html.replace(/src="\/cards\.js\?v=[^"]+"/g, `src="/cards.js?v=${cssVersion}"`);
   html = html.replace(/src="\/search\.js\?v=[^"]+"/g, `src="/search.js?v=${cssVersion}"`);
+  // shared.js must load before cards.js; inject it if the page predates the split.
+  if (html.includes('cards.js') && !html.includes('shared.js')) {
+    html = html.replace('<script src="/cards.js', `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js`);
+  }
   // Update year everywhere (titles, keywords, footer)
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
   html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
