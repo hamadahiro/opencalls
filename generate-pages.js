@@ -466,20 +466,39 @@ function feeChip(fee, esc) {
   return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
 }
 
-// SSOT for the "Submit via" link target. `label` is the pre-formatted display
-// text (infoVal). Order matters: a specific submission URL wins; mailto is used
-// ONLY when the label signals email intent; otherwise we fall back to the call's
-// official page — NEVER to email on a web/platform label (that was the bug:
-// clicking "Picter"/"Website form" opened the mail client). Depends only on the
-// global isCallOpen, so it stays valid when injected verbatim into cards.js.
-function submitViaLink(call, esc, label) {
-  if (!isCallOpen(call.deadline)) return label;
-  const emailIntent = /e-?mail|wetransfer/i.test(call.submitVia || '');
-  if (call.submitUrl) return `<a href="${esc(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`;
-  if (emailIntent && call.email) return `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`;
-  if (call.url) return `<a href="${esc(call.url)}" target="_blank" rel="nofollow noopener">${label}</a>`;
-  if (call.email) return `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`;
-  return label;
+// SSOT for the "Submit via" row: collapses the 77 messy raw values into a small
+// honest set of methods, and links to the real submission target. Self-contained
+// (only needs global isCallOpen) so it stays valid injected verbatim into cards.js.
+//   submitMethod label: Website (all forms/platforms/apps), Email, Post, or a
+//   recognizable service kept by name (Dropbox, Google Drive, Instagram,
+//   WeTransfer). Combos collapse to their primary online method, never "X + Y".
+//   target: submitUrl > mailto(only on email/transfer intent) > official url >
+//   email. A web label can never fall back to opening the mail client.
+function submitViaLink(call, esc) {
+  const s = (call.submitVia || '').toLowerCase().trim();
+  if (!s) return '';
+  let label;
+  if (/\b(post|postal)\b|physical|parcel/.test(s) && !/website|online|form|platform|portal|email|dropbox|drive|instagram|wetransfer|app/.test(s)) label = 'Post';
+  else if (/website|online|form|platform|portal/.test(s)) label = 'Website';
+  else if (/email/.test(s)) label = 'Email';
+  else if (/wetransfer|swisstransfer/.test(s)) label = 'WeTransfer';
+  else if (/instagram/.test(s)) label = 'Instagram';
+  else if (/dropbox/.test(s)) label = 'Dropbox';
+  else if (/google drive/.test(s)) label = 'Google Drive';
+  else label = 'Website';
+
+  const emailIntent = /email|wetransfer|swisstransfer/.test(s);
+  let href = null;
+  if (call.submitUrl) href = call.submitUrl;
+  else if (emailIntent && call.email) href = 'mailto:' + call.email;
+  else if (call.url) href = call.url;
+  else if (call.email) href = 'mailto:' + call.email;
+
+  if (!isCallOpen(call.deadline) || !href) return esc(label);
+  const isMail = href.slice(0, 7) === 'mailto:';
+  // Keep the original value on hover so the specific platform isn't lost.
+  const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
+  return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
 }
 
 function renderStaticTags(call, u) {
@@ -728,7 +747,7 @@ function buildStaticInfoGrid(call) {
 
   // Submit via
   if (call.submitVia) {
-    rows.push(infoRow('Submit via', submitViaLink(call, escapeHtml, infoVal(call.submitVia))));
+    rows.push(infoRow('Submit via', submitViaLink(call, escapeHtml)));
   }
 
   return rows.join('');
