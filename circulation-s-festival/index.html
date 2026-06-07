@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Circulation(s) Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/circulation-s-festival-2027-17th-edition/">Circulation(s) Festival 2027 — 17th Edition Open Call</a></h3><p class="call-description">Major European festival of young photography at CENTQUATRE-Paris. Free until May 24, then €20. ~15 photographers selected for spring 2027.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Circulation(s) Festival' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Circulation(s) Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
