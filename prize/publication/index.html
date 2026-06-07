@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260607f">
+  <link rel="stylesheet" href="/style.css?v=20260607g">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -160,27 +160,16 @@
     </footer>
   </main>
 
-  <script src="/cards.js?v=20260607f"></script>
-  <script src="/search.js?v=20260607f"></script>
+  <script src="/cards.js?v=20260607g"></script>
+  <script src="/search.js?v=20260607g"></script>
   <script>
-    function derivePrizeCats(prize) {
-      if (!prize) return [];
-      var seen = {};
-      return prize.split(/\s*\+\s*/).map(function(s){return s.trim()}).filter(Boolean).map(function(t){
-        var p = t.toLowerCase();
-        if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
-        if (/fellowship/.test(p)) return 'fellowship';
-        if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
-        if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-        if (/exhibition/.test(p)) return 'exhibition';
-        return null;
-      }).filter(function(c){ if(!c||seen[c])return false; seen[c]=true; return true; });
-    }
+    // derivePrizeCategories comes from cards.js (loaded above) — the single
+    // source of truth injected at build time. No local copy (it used to drift).
     async function loadFiltered() {
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCats(c.prize).includes('publication') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => derivePrizeCategories(c.prize).includes('publication') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

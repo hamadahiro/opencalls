@@ -211,25 +211,9 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
   });
 }
 
-function derivePrizeCategory(text) {
-  var p = text.toLowerCase();
-  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
-  if (/fellowship/.test(p)) return 'fellowship';
-  if (/residency|accommodation|apartment/.test(p)) return 'residency';
-  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-  if (/exhibition/.test(p)) return 'exhibition';
-  return null;
-}
-
-function derivePrizeCategories(prize) {
-  if (!prize) return [];
-  var seen = {};
-  return splitPrizeParts(prize).map(function(part) { return derivePrizeCategory(part); }).filter(function(c) {
-    if (!c || seen[c]) return false;
-    seen[c] = true;
-    return true;
-  });
-}
+// NOTE: derivePrizeCategory + derivePrizeCategories are the single source of
+// truth in generate-pages.js, injected into the ==AUTO-GENERATED== block below
+// at build time. Do not redeclare them here (they used to drift out of sync).
 
 // `prize` is split on " + " into one chip per part (renderer appends " prize").
 // Use " + " ONLY to separate DISTINCT prizes. Never put a literal + inside one
@@ -269,7 +253,7 @@ const orgPages = [];
 const statePages = {"GA":"united-states/georgia","AL":"united-states/alabama","IL":"united-states/illinois","NC":"united-states/north-carolina","CA":"united-states/california","OH":"united-states/ohio","FL":"united-states/florida","NY":"united-states/new-york","MO":"united-states/missouri","TX":"united-states/texas","OR":"united-states/oregon","TN":"united-states/tennessee","NM":"united-states/new-mexico","VT":"united-states/vermont","AZ":"united-states/arizona","PA":"united-states/pennsylvania","LA":"united-states/louisiana","SC":"united-states/south-carolina","MA":"united-states/massachusetts","VA":"united-states/virginia","UT":"united-states/utah","WY":"united-states/wyoming","MI":"united-states/michigan","NH":"united-states/new-hampshire","MN":"united-states/minnesota","KS":"united-states/kansas","MD":"united-states/maryland","DC":"united-states/washington-dc","AK":"united-states/alaska","RI":"united-states/rhode-island","IN":"united-states/indiana","CT":"united-states/connecticut","OK":"united-states/oklahoma","SD":"united-states/south-dakota","ME":"united-states/maine","WI":"united-states/wisconsin","WA":"united-states/washington","CO":"united-states/colorado"};
 // eligibilityLabel: single source of truth is ELIGIBILITY_LABEL in generate-pages.js
 const eligibilityLabel = {"women":"Women","united-states":"US only","europe":"Europe only","italy":"Italy only","emerging":"Emerging artists","under-30":"Under 30","under-35":"Under 35","under-40":"Under 40","lgbtq":"LGBTQ+","analog-photography":"Analog only","alternative-process":"Alternative process","professional":"Professional only","membership-required":"Membership required","puerto-rico":"Puerto Rico focus","latin-america":"Latin America","asian-american":"Asian American focus","south-asian":"South Asian focus","african-diaspora":"African diaspora focus","black":"Black artists","neurodivergent-disabled":"Neurodivergent & disabled","portugal":"Portugal only","taiwan":"Taiwan only","morocco":"Morocco only","non-european":"Non-European only","australia":"Australia only","canada":"Canada only","ireland":"Ireland only","switzerland":"Switzerland only","caribbean":"Caribbean focus","nordic":"Nordic only","germany":"Germany only","malta":"Malta only","10-18":"Ages 10–18","mid-atlantic-us":"Mid-Atlantic US","alaska":"Alaska only","minnesota":"Minnesota only","bipoc":"BIPOC artists","gulf-coast":"Gulf Coast only","spain":"Spain only","india":"India only","16-plus":"16+","18-plus":"18+","21-plus":"21+","25-plus":"25+","45-plus":"45+","65-plus":"65+","student":"Students","ukraine":"Ukraine only","flinta":"FLINTA","global-south":"Global South","france":"France only","tri-state":"NY/NJ/CT only","wana":"WANA region only","bay-area":"Bay Area only","chicago-area":"Chicago Area only","los-angeles":"LA only","new-york-state":"NY State only","kazakhstan":"Kazakhstan only","mid-career":"Mid-career","united-kingdom":"UK only"};
-// shortenFee + feeChip + submitViaLink: single source of truth is generate-pages.js (injected verbatim)
+// shortenFee + feeChip + submitViaLink + derivePrizeCategor*: single source of truth is generate-pages.js (injected verbatim)
 function shortenFee(fee) {
   if (!fee) return fee;
   var s = String(fee).trim();
@@ -321,6 +305,24 @@ function submitViaLink(call, esc) {
   // Keep the original value on hover so the specific platform isn't lost.
   const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
   return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
+}
+function derivePrizeCategory(text) {
+  const p = text.toLowerCase();
+  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/fellowship/.test(p)) return 'fellowship';
+  if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
+  if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
+  if (/exhibition/.test(p)) return 'exhibition';
+  return null;
+}
+function derivePrizeCategories(prize) {
+  if (!prize) return [];
+  const seen = {};
+  return prize.split(/\s*\+\s*/).map(s => s.trim()).filter(Boolean).map(part => derivePrizeCategory(part)).filter(c => {
+    if (!c || seen[c]) return false;
+    seen[c] = true;
+    return true;
+  });
 }
 // ==AUTO-GENERATED-END==
 
