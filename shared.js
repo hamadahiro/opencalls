@@ -371,6 +371,16 @@ function scoreSimilarity(current, other) {
   return score;
 }
 
+// ---- Data validators (shared by the build's hard gates AND verify-batch.js, so
+//      the verifier flags exactly what the build would reject — no drift) ----
+function isValidEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s || '').trim()); }
+function isValidHttpUrl(s) { return /^https?:\/\/.+/i.test(String(s || '').trim()); }
+// submitVia values that name a SaaS submission platform and therefore REQUIRE a
+// submitUrl (the link can't fall back to email/website and still be the platform).
+function submitViaIsPlatform(submitVia) {
+  return /^(picter|submittable|cafe|slideroom|jotform|typeform|entrythingy|smarter\s?entry|zealous|paperform|cognito forms|formsite|surveymonkey|artcall|google forms?|fillout|goethe application portal)$/i.test(String(submitVia || '').trim());
+}
+
 // Node export guard (no-op in the browser, where `module` is undefined).
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
@@ -379,6 +389,7 @@ if (typeof module !== 'undefined' && module.exports) {
     isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
     getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
-    isFree, getState, scoreSimilarity
+    isFree, getState, scoreSimilarity,
+    isValidEmail, isValidHttpUrl, submitViaIsPlatform
   };
 }
