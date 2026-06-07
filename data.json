@@ -2,6 +2,56 @@
   "lastUpdated": "2026-06-05",
   "calls": [
     {
+      "title": "Overcoming",
+      "org": "Decagon Gallery",
+      "deadline": "2026-08-03",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "Online juried photography exhibition on the theme \"What Remains Standing\" — survival, resilience, and endurance after hardship, including personal loss, illness, grief, and displacement. Selected work is shown in a curated online exhibition with published catalog, social and newsletter promotion, certificate of participation, and digital badge; first place also receives a solo webpage exhibition. Juried by photographer and Vision Quest Workshops founder Douglas Beasley. Online exhibition runs August 20 – October 20, 2026. Open to photographers worldwide, all experience levels. $1,000 total cash awards.",
+      "url": "https://www.decagongallery.com/overcoming-entry",
+      "instagram": "@decagongallery",
+      "location": "Online",
+      "prize": "$500 / $250 / $150 + HMs",
+      "eligibility": [],
+      "jury": [
+        "Douglas Beasley, Vision Quest Workshops"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.decagongallery.com/overcoming-entry",
+      "requirements": "Up to 8 images",
+      "slug": "overcoming-decagon-gallery",
+      "orgInTitle": false,
+      "summary": "Online photography show on resilience and endurance after hardship. Juror Douglas Beasley. $1,000 total cash awards.",
+      "email": "",
+      "resultsDate": "August 15, 2026",
+      "dateAdded": "2026-06-07T07:05:16Z"
+    },
+    {
+      "title": "Through The Lens 2026",
+      "org": "Marin Society of Artists",
+      "deadline": "2026-07-12",
+      "fee": "$30–$35",
+      "category": "exhibition",
+      "description": "Online juried photography exhibition from the Marin Society of Artists, a long-running California artist organization. Open to all styles of photography, all subjects, and all types of photographic manipulation. Juried by Susan Spiritus, a fine-art photography gallerist and curator with over 50 years in the field. Selected work is presented in an online virtual gallery and YouTube showcase, July 26 – September 26, 2026, with a virtual reception on August 2. Cash awards: $500 first, $300 second, $100 third, plus honorable mentions.",
+      "url": "https://www.marinsocietyofartists.org/through-the-lens-2026",
+      "instagram": "@msa_gallery",
+      "location": "Online",
+      "prize": "$500 / $300 / $100",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Susan Spiritus, Fine Art Photography Gallerist"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17544",
+      "requirements": "3–10 images",
+      "slug": "through-the-lens-2026-marin-society-of-artists",
+      "orgInTitle": true,
+      "summary": "Online juried photo show from Marin Society of Artists, all styles welcome. Juror Susan Spiritus. Cash awards.",
+      "dateAdded": "2026-06-07T07:05:16Z"
+    },
+    {
       "title": "In The Practice of Seeing — National Juried Photography Exhibition",
       "org": "Jacksonville State University",
       "deadline": "2026-07-06",
