@@ -332,6 +332,45 @@ function renderInfoGrid(call, opts) {
   return rows.join('');
 }
 
+function isFree(fee) { return fee && fee.toLowerCase().startsWith('free'); }
+
+// US state from "City, ST, USA" (empty otherwise).
+function getState(location) {
+  if (!location) return '';
+  const parts = location.split(',');
+  return parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+}
+
+// "More like this" relevance score between two calls. One copy (was duplicated
+// as scoreSimilarity in call-detail.js and scoreSimilarityStatic in the build,
+// which had already drifted on the deadline null-guard and the dead Online branch).
+function scoreSimilarity(current, other) {
+  let score = 0;
+  const curElig = current.eligibility || [];
+  const othElig = other.eligibility || [];
+  curElig.forEach(tag => { if (othElig.includes(tag)) score += 5; });
+  if (current.category === other.category) score += 4; else score -= 3;
+  const curCountry = getCountry(current.location);
+  const othCountry = getCountry(other.location);
+  if (curCountry === 'USA' && othCountry === 'USA') {
+    const curState = getState(current.location);
+    const othState = getState(other.location);
+    if (curState && curState === othState) score += 3; else score += 2;
+  } else if (curCountry && curCountry === othCountry) {
+    score += 2;
+  }
+  const curFree = isFree(current.fee);
+  const othFree = isFree(other.fee);
+  if (curFree && othFree) score += 1;
+  if (!curFree && !othFree) score += 1;
+  if (current.deadline !== 'Continuous' && other.deadline !== 'Continuous' && current.deadline && other.deadline) {
+    const diff = Math.abs(new Date(current.deadline + 'T00:00:00') - new Date(other.deadline + 'T00:00:00')) / (1000 * 60 * 60 * 24);
+    if (diff <= 30) score += 1;
+  }
+  if (current.org === other.org) score += 2;
+  return score;
+}
+
 // Node export guard (no-op in the browser, where `module` is undefined).
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
@@ -339,6 +378,7 @@ if (typeof module !== 'undefined' && module.exports) {
     PIN_SVG, PRIZE_SVG,
     isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
-    getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock
+    getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
+    isFree, getState, scoreSimilarity
   };
 }

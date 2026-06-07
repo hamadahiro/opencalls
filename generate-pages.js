@@ -9,7 +9,8 @@ const {
   PIN_SVG, PRIZE_SVG,
   isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
-  getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock
+  getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
+  isFree, getState, scoreSimilarity
 } = shared;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -482,43 +483,12 @@ function getStaticLocationLink(location, country) {
 // Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
 // Mirrors scoreSimilarity() + loadSimilar() in call-detail.js — pre-renders the
 // "More like this" block so internal links are visible to Google.
-function scoreSimilarityStatic(current, other) {
-  let score = 0;
-  const curElig = current.eligibility || [];
-  const othElig = other.eligibility || [];
-  curElig.forEach(t => { if (othElig.includes(t)) score += 5; });
-  if (current.category === other.category) score += 4; else score -= 3;
-  const curCountry = getCountry(current.location);
-  const othCountry = getCountry(other.location);
-  if (curCountry === 'USA' && othCountry === 'USA') {
-    const curParts = (current.location || '').split(',');
-    const othParts = (other.location || '').split(',');
-    const curState = curParts.length >= 3 ? curParts[curParts.length - 2].trim() : '';
-    const othState = othParts.length >= 3 ? othParts[othParts.length - 2].trim() : '';
-    if (curState && curState === othState) score += 3; else score += 2;
-  } else if (curCountry && curCountry === othCountry) {
-    score += 2;
-  }
-  const curFree = current.fee && current.fee.toLowerCase().startsWith('free');
-  const othFree = other.fee && other.fee.toLowerCase().startsWith('free');
-  if (curFree && othFree) score += 1;
-  if (!curFree && !othFree) score += 1;
-  if (current.deadline !== 'Continuous' && other.deadline !== 'Continuous' && current.deadline && other.deadline) {
-    const curDate = new Date(current.deadline + 'T00:00:00');
-    const othDate = new Date(other.deadline + 'T00:00:00');
-    const diff = Math.abs(curDate - othDate) / (1000 * 60 * 60 * 24);
-    if (diff <= 30) score += 1;
-  }
-  if (current.org === other.org) score += 2;
-  return score;
-}
-
 function buildStaticSimilarCalls(call, allCalls) {
   const currentSlug = call.slug || slugify(call.title);
   const candidates = allCalls
     .filter(c => (c.slug || slugify(c.title)) !== currentSlug)
     .filter(c => isCallOpen(c.deadline));
-  const scored = candidates.map(c => ({ call: c, score: scoreSimilarityStatic(call, c) }));
+  const scored = candidates.map(c => ({ call: c, score: scoreSimilarity(call, c) }));
   scored.sort((a, b) => b.score - a.score);
   const curElig = call.eligibility || [];
   const hasEligibility = curElig.length > 0;
@@ -543,18 +513,6 @@ function buildStaticSimilarCalls(call, allCalls) {
     html += `<div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>`;
   });
   return html;
-}
-
-function buildKeywords(call) {
-  const words = [call.title, call.org, (categoryLabel[call.category] || call.category), 'open call', 'call for entries'];
-  if (call.location && call.location !== 'Online') words.push(call.location);
-  if (call.category === 'photography') words.push('photography competition', 'photo contest');
-  if (call.category === 'grant') words.push('artist grant', 'photography grant');
-  if (call.category === 'residency') words.push('artist residency');
-  if (call.category === 'exhibition') words.push('art exhibition');
-  if (call.category === 'zine') words.push('photobook', 'zine submission');
-  words.push('open calls for artists', 'photography submissions');
-  return words.join(', ');
 }
 
 // Compute countries for landing pages (including Online)
@@ -626,7 +584,7 @@ function generatePage(call, cssVersion) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: metaTitle, description: desc, keywords: escapeHtml(buildKeywords(call)), canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: (categoryLabel[call.category] || call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: metaTitle, description: desc, canonical: `${SITE}/${slug}`, ogType: 'article', jsonLd: buildJsonLd(call), breadcrumbs: [{ name: (categoryLabel[call.category] || call.category), url: `${SITE}/${call.category === 'zine' ? 'zines' : call.category === 'exhibition' ? 'exhibitions' : call.category === 'residency' ? 'residencies' : call.category === 'grant' ? 'grants' : call.category}/` }, { name: call.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -778,12 +736,12 @@ data.calls.forEach(call => {
 
 // === Category landing pages ===
 const categories = {
-  'photography': { title: 'Photography Open Calls', desc: 'Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews.', keywords: 'photography open calls, call for entries photography, photo competitions, photography submissions, photography awards, photography grants, photography contests' },
-  'exhibition': { title: 'Exhibition Open Calls', desc: 'Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists.', keywords: 'exhibition open calls, call for entries exhibition, art exhibition submissions, gallery open call, group exhibition, art show submissions' },
-  'grant': { title: 'Grants for Photographers & Visual Artists', desc: 'Funding opportunities for photographers and visual artists. Project grants, production funds, and artist support programs — apply now.', keywords: 'photography grants, artist grants, call for entries grants, art funding, project grants for photographers, artist funding opportunities' },
-  'residency': { title: 'Artist Residencies for Photographers', desc: 'Residency programs for photographers and visual artists worldwide. Studio residencies, international programs, and creative retreats.', keywords: 'artist residency, photography residency, call for entries residency, art residency programs, international artist residency' },
-  'zine': { title: 'Zine & Photobook Open Calls', desc: 'Submit to photobook prizes, zine publications, and dummy awards. Publishing opportunities for photographers and visual artists.', keywords: 'photobook open call, call for entries photobook, zine submissions, photography publications, dummy award, photo book prize' },
-  'education': { title: 'Photography Workshops & Education', desc: 'Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.', keywords: 'photography workshops, photography masterclass, call for entries education, photography mentoring, photography education, artist development' }
+  'photography': { title: 'Photography Open Calls', desc: 'Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews.'},
+  'exhibition': { title: 'Exhibition Open Calls', desc: 'Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists.'},
+  'grant': { title: 'Grants for Photographers & Visual Artists', desc: 'Funding opportunities for photographers and visual artists. Project grants, production funds, and artist support programs — apply now.'},
+  'residency': { title: 'Artist Residencies for Photographers', desc: 'Residency programs for photographers and visual artists worldwide. Studio residencies, international programs, and creative retreats.'},
+  'zine': { title: 'Zine & Photobook Open Calls', desc: 'Submit to photobook prizes, zine publications, and dummy awards. Publishing opportunities for photographers and visual artists.'},
+  'education': { title: 'Photography Workshops & Education', desc: 'Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.'}
 };
 
 Object.entries(categories).forEach(([cat, info]) => {
@@ -798,7 +756,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), keywords: escapeHtml(info.keywords + ', ' + YEAR), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -843,7 +801,7 @@ const filterPages = [
     feeKey: 'free',
     title: 'Free Open Calls for Artists',
     desc: 'Open calls with no entry fee. Free exhibitions, grants, residencies, and submissions for photographers and visual artists.',
-    keywords: 'free open calls, free photography competitions, no fee art submissions, free call for entries, free exhibitions',
+    
     filterJs: `c.fee && c.fee.toLowerCase().startsWith('free')`
   },
   {
@@ -851,7 +809,7 @@ const filterPages = [
     feeKey: 'entry-fee',
     title: 'Open Calls with Entry Fees',
     desc: 'Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists.',
-    keywords: 'open calls entry fee, photography competition entry fee, call for entries with fee, photography submissions with fee',
+    
     filterJs: `c.fee && !c.fee.toLowerCase().startsWith('free')`
   }
 ];
@@ -871,7 +829,7 @@ filterPages.forEach(fp => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), keywords: `${escapeHtml(fp.keywords)}, ${YEAR}`, canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -915,7 +873,7 @@ const paidCount = openCalls.filter(feeFilters['entry-fee']).length;
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', keywords: `free open calls, paid open calls, no fee photography competitions, entry fee, call for entries free, ${YEAR}`, canonical: `${SITE}/fees`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Entry Fee ${YEAR}`, "description": "Browse open calls by entry fee.", "url": `${SITE}/fees/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', canonical: `${SITE}/fees`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Entry Fee ${YEAR}`, "description": "Browse open calls by entry fee.", "url": `${SITE}/fees/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1056,7 +1014,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, ${escapeHtml(info.short)} photography, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1138,7 +1096,7 @@ if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', keywords: `open calls eligibility, women photographers, emerging artists, LGBTQ photographers, photography residency eligibility, call for entries eligibility, ${YEAR}`, canonical: `${SITE}/eligibility`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Eligibility ${YEAR}`, "description": "Browse open calls by eligibility.", "url": `${SITE}/eligibility/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', canonical: `${SITE}/eligibility`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Eligibility ${YEAR}`, "description": "Browse open calls by eligibility.", "url": `${SITE}/eligibility/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1198,7 +1156,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, photography ${escapeHtml(info.short.toLowerCase())} prize, call for entries ${escapeHtml(info.short.toLowerCase())}, art ${escapeHtml(info.short.toLowerCase())} award, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1258,7 +1216,7 @@ if (prizeCatPageSlugs.length) {
   const prizeIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', keywords: `open calls prizes, photography awards, cash prizes photographers, exhibition prizes, publication prizes, residency prizes, photography competitions, ${YEAR}`, canonical: `${SITE}/prize`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Prize Type ${YEAR}`, "description": "Browse open calls by prize type.", "url": `${SITE}/prize/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', canonical: `${SITE}/prize`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Prize Type ${YEAR}`, "description": "Browse open calls by prize type.", "url": `${SITE}/prize/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1319,7 +1277,7 @@ requirementOrder.filter(tag => requirementTags[tag]).forEach(tag => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), keywords: `${escapeHtml(info.short)} open calls, photography submission requirements, call for entries ${escapeHtml(info.short)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Requirements', url: `${SITE}/requirements/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Requirements', url: `${SITE}/requirements/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1375,7 +1333,7 @@ if (requirementPageSlugs.length) {
   const requirementsIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', keywords: `open calls submission requirements, how many images, portfolio open calls, photobook open calls, single image competitions, ${YEAR}`, canonical: `${SITE}/requirements`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Requirements ${YEAR}`, "description": "Browse open calls by submission requirements.", "url": `${SITE}/requirements/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', canonical: `${SITE}/requirements`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Requirements ${YEAR}`, "description": "Browse open calls by submission requirements.", "url": `${SITE}/requirements/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1427,7 +1385,7 @@ Object.entries(countryCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1537,7 +1495,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), keywords: `${escapeHtml(keywords)}, ${YEAR}`, canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1602,7 +1560,7 @@ Object.entries(orgCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), keywords: escapeHtml(keywords), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1674,7 +1632,7 @@ sortedMonths.forEach(key => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, keywords: `open calls ${label.toLowerCase()}, photography deadlines ${label.toLowerCase()}, call for entries ${label.toLowerCase()}`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1749,7 +1707,7 @@ const deadlinesIndexItems = [
 const deadlinesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Deadline ${YEAR}`, description: 'Browse open calls by deadline month. Find photography competitions, exhibitions, grants, and residencies organized by submission deadline.', keywords: `open calls by deadline, photography deadlines, call for entries by month, submission deadlines ${YEAR}`, canonical: `${SITE}/deadlines`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Deadline ${YEAR}`, "description": "Browse open calls by deadline month.", "url": `${SITE}/deadlines/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls by Deadline ${YEAR}`, description: 'Browse open calls by deadline month. Find photography competitions, exhibitions, grants, and residencies organized by submission deadline.', canonical: `${SITE}/deadlines`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Deadline ${YEAR}`, "description": "Browse open calls by deadline month.", "url": `${SITE}/deadlines/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -1780,7 +1738,7 @@ console.log(`  Deadlines index page (${sortedMonths.length} months)`);
 const submitHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: 'Submit an Open Call', description: 'Know an open call we should list? Submit it here. We review every suggestion.', keywords: 'submit open call, suggest call for entries, photography open call submission', canonical: `${SITE}/submit`, cssVersion })}
+  ${HEAD({ title: 'Submit an Open Call', description: 'Know an open call we should list? Submit it here. We review every suggestion.', canonical: `${SITE}/submit`, cssVersion })}
 </head>
 <body>
 
@@ -1896,7 +1854,7 @@ const aboutJsonLd = JSON.stringify({
 const aboutHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: 'About Open Calls', description: 'How Monographica curates, verifies, and updates open calls for photographers and visual artists.', keywords: 'about Monographica open calls, photography open calls editorial process, open call verification', canonical: `${SITE}/about`, jsonLd: aboutJsonLd, breadcrumbs: [{ name: 'About', url: `${SITE}/about/` }], cssVersion })}
+  ${HEAD({ title: 'About Open Calls', description: 'How Monographica curates, verifies, and updates open calls for photographers and visual artists.', canonical: `${SITE}/about`, jsonLd: aboutJsonLd, breadcrumbs: [{ name: 'About', url: `${SITE}/about/` }], cssVersion })}
 </head>
 <body>
 
@@ -2022,7 +1980,7 @@ const browseOrgs = Object.entries(orgCounts)
 const browseHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Browse All Open Calls ${YEAR}`, description: 'Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.', keywords: `open calls for artists, photography open calls, call for entries, art exhibitions, photography grants, artist residency, browse open calls ${YEAR}`, canonical: `${SITE}/browse`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Browse All Open Calls ${YEAR}`, "description": "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.", "url": `${SITE}/browse/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Browse All Open Calls ${YEAR}`, description: 'Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.', canonical: `${SITE}/browse`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Browse All Open Calls ${YEAR}`, "description": "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.", "url": `${SITE}/browse/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
 </head>
 <body>
 
@@ -2096,12 +2054,15 @@ fs.writeFileSync('cards.js', cardsJs);
   const countOf = (src, re) => (src.match(re) || []).length;
   if (countOf(written, /==AUTO-GENERATED-START==/g) !== 1) gateErrs.push('AUTO-GENERATED-START marker must appear exactly once in cards.js');
   if (countOf(written, /==AUTO-GENERATED-END==/g) !== 1) gateErrs.push('AUTO-GENERATED-END marker must appear exactly once in cards.js');
-  // Shared SSOT functions: exactly once in shared.js, and ZERO copies in cards.js.
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(']) {
+  // Shared SSOT functions: exactly once in shared.js, and ZERO copies in the
+  // browser consumers (cards.js, call-detail.js) — they must use the shared one.
+  const callDetailSrc = fs.readFileSync('call-detail.js', 'utf8');
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
     const inShared = sharedSrc.split(fn).length - 1;
-    const inCards = written.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
-    if (inCards !== 0) gateErrs.push(`${fn} is re-declared in cards.js (found ${inCards}) — it must live ONLY in shared.js`);
+    for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc]]) {
+      if (csrc.split(fn).length - 1 !== 0) gateErrs.push(`${fn} is re-declared in ${consumer} — it must live ONLY in shared.js`);
+    }
   }
   // Shared data maps: defined once in shared.js, not re-declared in cards.js.
   for (const decl of ['const eligibilityLabel', 'const categoryLabel', 'const prizeCategoryLabel', 'const categorySlug', 'const shortCountry', 'const countrySlugs']) {
