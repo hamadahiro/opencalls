@@ -691,7 +691,8 @@ a.meta-tag-link.call-prize:hover {
   font-size: var(--fs-tag);
   line-height: 20px;
   color: var(--text);
-  font-family: 'Source Serif 4', serif;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .about-section .disclaimer {
