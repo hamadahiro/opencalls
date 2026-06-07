@@ -19,7 +19,8 @@
       "slug": "the-salon-london-photo-show-2026",
       "orgInTitle": true,
       "summary": "Juried group show at Hoxton Arches, London (June 24–28). Selected work is printed and exhibited; partner prizes from Think Tank & Point 101.",
-      "dateAdded": "2026-06-07T19:09:11.453Z"
+      "dateAdded": "2026-06-07T19:09:11.453Z",
+      "email": ""
     },
     {
       "title": "SlowExposures 2026 — Pop-Up Tour",
@@ -817,7 +818,9 @@
       "instagram": "@theindependentphoto",
       "location": "London, United Kingdom",
       "prize": "$2,700 pool",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Luisa Dörr, Photographer"
       ],
@@ -976,7 +979,8 @@
         "The 2027 cycle is themed \"Process and Material\" and welcomes a wide range of disciplines, with photography (digital) explicitly listed as eligible. Applications are submitted through SlideRoom and evaluated by panels of external reviewers established in fields associated with PMRCAA's mission. The deadline is July 6, 2026 at midnight PST; finalist interviews take place in mid-August and residency decisions are announced in September 2026."
       ],
       "dateAdded": "2026-05-31T19:08:46.701Z",
-      "email": ""
+      "email": "",
+      "requirements": "Portfolio"
     },
     {
       "title": "Put a Pin(hole) In It",
@@ -2497,7 +2501,7 @@
       "url": "https://www.sec4p.com/architectural-prospectus-26",
       "instagram": "@sec4p",
       "location": "Greenville, SC, USA",
-      "prize": "Exhibition + Portfolio review",
+      "prize": "Exhibition",
       "eligibility": [],
       "jury": [
         "Michael Pannier, Fine Art Photographer"
@@ -21413,7 +21417,7 @@
       "location": "Mill Valley, CA, USA",
       "prize": "Group exhibition + catalog",
       "eligibility": [
-        "united-states"
+        "bay-area"
       ],
       "submitVia": "ArtCall",
       "submitUrl": "https://bapo2026.artcall.org/",
