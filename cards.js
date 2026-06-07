@@ -296,14 +296,31 @@ function feeChip(fee, esc) {
   const title = feeShort !== fee ? ` title="${esc(fee)}"` : '';
   return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
 }
-function submitViaLink(call, esc, label) {
-  if (!isCallOpen(call.deadline)) return label;
-  const emailIntent = /e-?mail|wetransfer/i.test(call.submitVia || '');
-  if (call.submitUrl) return `<a href="${esc(call.submitUrl)}" target="_blank" rel="nofollow noopener">${label}</a>`;
-  if (emailIntent && call.email) return `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`;
-  if (call.url) return `<a href="${esc(call.url)}" target="_blank" rel="nofollow noopener">${label}</a>`;
-  if (call.email) return `<a href="mailto:${esc(call.email)}" rel="nofollow noopener">${label}</a>`;
-  return label;
+function submitViaLink(call, esc) {
+  const s = (call.submitVia || '').toLowerCase().trim();
+  if (!s) return '';
+  let label;
+  if (/\b(post|postal)\b|physical|parcel/.test(s) && !/website|online|form|platform|portal|email|dropbox|drive|instagram|wetransfer|app/.test(s)) label = 'Post';
+  else if (/website|online|form|platform|portal/.test(s)) label = 'Website';
+  else if (/email/.test(s)) label = 'Email';
+  else if (/wetransfer|swisstransfer/.test(s)) label = 'WeTransfer';
+  else if (/instagram/.test(s)) label = 'Instagram';
+  else if (/dropbox/.test(s)) label = 'Dropbox';
+  else if (/google drive/.test(s)) label = 'Google Drive';
+  else label = 'Website';
+
+  const emailIntent = /email|wetransfer|swisstransfer/.test(s);
+  let href = null;
+  if (call.submitUrl) href = call.submitUrl;
+  else if (emailIntent && call.email) href = 'mailto:' + call.email;
+  else if (call.url) href = call.url;
+  else if (call.email) href = 'mailto:' + call.email;
+
+  if (!isCallOpen(call.deadline) || !href) return esc(label);
+  const isMail = href.slice(0, 7) === 'mailto:';
+  // Keep the original value on hover so the specific platform isn't lost.
+  const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
+  return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
 }
 // ==AUTO-GENERATED-END==
 
@@ -526,7 +543,7 @@ function renderInfoGrid(call) {
   if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
   // Submit via
   if (call.submitVia) {
-    rows.push(infoRow('Submit via', submitViaLink(call, esc, infoVal(call.submitVia))));
+    rows.push(infoRow('Submit via', submitViaLink(call, esc)));
   }
   return rows.join('');
 }
