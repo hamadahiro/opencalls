@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from British Wildlife Photography Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/british-wildlife-photography-awards-2026/">British Wildlife Photography Awards 2026</a></h3><p class="call-description">UK wildlife photography awards — 12 categories. Winners in Collection 14 book + UK touring exhibition. Youth entry free.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'British Wildlife Photography Awards' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'British Wildlife Photography Awards').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

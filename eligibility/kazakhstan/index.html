@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/delfina-foundation-kazakhstan-residency-2026/">Delfina Foundation — Kazakhstan Residency 2026</a></h3><p class="call-description">Fully funded 3-month London residency for contemporary visual artists from Kazakhstan. Autumn 2026 season.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('kazakhstan') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('kazakhstan')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
