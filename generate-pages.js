@@ -303,7 +303,7 @@ function buildHeader() {
   </header>
   <div class="global-search" id="globalSearchWrap">
     <button class="search-back" id="globalSearchBack" type="button" aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" width="20" height="20"><path d="M15 19l-7-7 7-7"/></svg></button>
-    <input type="text" class="search-bar" id="globalSearchInput" placeholder="Search calls and opportunities&hellip;" aria-label="Search open calls">
+    <input type="text" class="search-bar" id="globalSearchInput" placeholder="Search calls and opportunities&hellip;" aria-label="Search open calls" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
