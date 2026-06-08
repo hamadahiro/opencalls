@@ -222,40 +222,11 @@ function getLocationLink(location, country) {
   return null;
 }
 
-// Central timezone logic — a call is open until the end of its deadline day (local time)
+// Central timezone logic — a call is open until the end of its deadline day
+// (local time). Urgency class/label/slug come from the shared computeUrgency()
+// in shared.js (the single contract the server static render also uses).
 function processCall(call) {
-  const now = new Date();
-  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
-  const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
-
-  let urgencyClass = '';
-  let urgencyText = '';
-  if (call.deadline === 'Continuous') {
-    urgencyText = 'Continuous';
-    urgencyClass = 'rolling';
-  } else if (daysLeft !== null && daysLeft < 0) {
-    urgencyText = 'Closed';
-    urgencyClass = 'closed';
-  } else if (daysLeft !== null && daysLeft === 0) {
-    urgencyText = 'Ending today';
-    urgencyClass = 'ending';
-  } else if (daysLeft !== null && daysLeft === 1) {
-    urgencyText = 'Ending tomorrow';
-    urgencyClass = 'ending';
-  } else if (daysLeft !== null && daysLeft <= 14) {
-    urgencyText = daysLeft + ' days left';
-    urgencyClass = 'urgent';
-  } else if (daysLeft !== null && daysLeft <= 30) {
-    urgencyText = daysLeft + ' days left';
-    urgencyClass = 'soon';
-  } else if (deadlineDate) {
-    urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    urgencyClass = 'normal';
-  }
-
-  const deadlineSlug = deadlineDate ? ['january','february','march','april','may','june','july','august','september','october','november','december'][deadlineDate.getMonth()] + '-' + deadlineDate.getFullYear() : null;
-
-  return { ...call, deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
+  return { ...call, ...computeUrgency(call, new Date()) };
 }
 
 // Maps a free-text requirements string to a single browse bucket slug.

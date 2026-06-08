@@ -129,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', WI,') || c.location.includes(', WI, USA'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', WI,') || c.location.includes(', Wisconsin,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
