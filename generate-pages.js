@@ -133,11 +133,19 @@ data.calls.forEach((c, i) => {
     if (COUNTRY_ALIASES[country]) {
       err(`"${label}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
     }
-    // US locations must use 2-letter state abbreviations, not full state names
-    if (country === 'USA' && parts.length >= 3) {
-      const state = parts[parts.length - 2];
-      if (state.length > 2) {
-        err(`"${label}" uses full state name "${state}" — must use 2-letter abbreviation (e.g. NY, CA, TX)`);
+    // US locations MUST include a state: "City, ST, USA". A 2-part "City, USA"
+    // renders a chip labeled with the city but links to the country page (the
+    // US-states list), not the city's state — confusing, since there are no
+    // per-city pages. Force the state so the chip resolves to a state page.
+    if (country === 'USA') {
+      if (parts.length < 3) {
+        err(`"${label}" has US location "${loc}" missing a state — must be "City, ST, USA" (e.g. "Chicago, IL, USA")`);
+      } else {
+        // US locations must use 2-letter state abbreviations, not full state names
+        const state = parts[parts.length - 2];
+        if (state.length > 2) {
+          err(`"${label}" uses full state name "${state}" — must use 2-letter abbreviation (e.g. NY, CA, TX)`);
+        }
       }
     }
   }
