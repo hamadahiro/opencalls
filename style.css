@@ -1028,12 +1028,11 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-info a {
   color: var(--text);
   text-decoration: none;
-  background-color: var(--link-highlight);
-  box-shadow: 0 0 0 2px var(--link-highlight);
-  border-radius: 2px;
+  /* Lowlight band covering the bottom ~half of the letters (hard gradient stop). */
+  background-image: linear-gradient(to top, var(--link-highlight) 0.55em, transparent 0.55em);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background-color 0.15s, box-shadow 0.15s;
+  transition: background-image 0.15s;
 }
 
 /* Prose links sit in body-colored text, so match it (the only per-context tweak). */
@@ -1042,8 +1041,7 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-description a:hover,
 .call-detail-prize-label a:hover,
 .call-detail-info a:hover {
-  background-color: var(--link-highlight-hover);
-  box-shadow: 0 0 0 2px var(--link-highlight-hover);
+  background-image: linear-gradient(to top, var(--link-highlight-hover) 0.55em, transparent 0.55em);
 }
 
 /* === Index Pages === */
