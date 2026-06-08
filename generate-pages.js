@@ -17,6 +17,25 @@ const {
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
+// Organizer emails are kept OUT of the public data.json (it's served as a
+// downloadable file). They live in the PRIVATE, gitignored contacts store.
+// Hydrate call.email here in memory so the on-page "Submit via" mailto: links
+// still render for submit-by-email calls. If the store is absent (e.g. a fresh
+// public checkout), mailto simply falls back to the call's website — no crash.
+try {
+  const contacts = JSON.parse(fs.readFileSync('scripts/outreach/contacts.json', 'utf8'));
+  let hydrated = 0;
+  for (const c of data.calls) {
+    if (!c.email && c.slug && contacts[c.slug] && contacts[c.slug].email) {
+      c.email = contacts[c.slug].email;
+      hydrated++;
+    }
+  }
+  console.log(`  Hydrated ${hydrated} email(s) from private contacts store (for mailto links)`);
+} catch (e) {
+  console.warn('  contacts.json not found — mailto links will fall back to website');
+}
+
 // Per-call verification timestamps written by scripts/verify-batch.js.
 // Used to render "Verified by Monographica on [date]" on every detail page
 // and to set JSON-LD dateModified — real evidence of human curation, not
