@@ -113,6 +113,17 @@ data.calls.forEach((c, i) => {
   // Deadline format: YYYY-MM-DD or "Continuous"
   if (c.deadline && c.deadline !== 'Continuous' && !/^\d{4}-\d{2}-\d{2}$/.test(c.deadline)) {
     err(`"${label}" has invalid deadline format: "${c.deadline}" — must be YYYY-MM-DD or "Continuous"`);
+  } else if (c.deadline && c.deadline !== 'Continuous') {
+    // Format is fine, but the regex still passes calendar-impossible dates.
+    // "2026-13-01"/"2026-00-10" parse to Invalid Date (renders "Invalid Date"
+    // on the page); "2026-02-31" silently rolls forward to Mar 3 (wrong deadline,
+    // wrong month bucket, wrong sitemap/RSS). Round-trip the parse to catch both.
+    const d = new Date(c.deadline + 'T00:00:00');
+    const roundTrip = isNaN(d) ? '' :
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    if (roundTrip !== c.deadline) {
+      err(`"${label}" has a non-existent calendar date: "${c.deadline}" — check the month (01–12) and day`);
+    }
   }
 
   // Category is required and must be in list
@@ -546,7 +557,7 @@ function buildStaticSimilarCalls(call, allCalls) {
     const c = s.call;
     const slug = c.slug || slugify(c.title);
     const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
-    const desc = escapeHtml(c.summary || c.description || '').substring(0, 160);
+    const desc = escapeHtml((c.summary || c.description || '').substring(0, 160));
     html += `<div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>`;
   });
   return html;
