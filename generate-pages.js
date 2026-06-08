@@ -329,6 +329,34 @@ function buildHero(breadcrumbs, title, subtitle) {
     </section>`;
 }
 
+// CollectionPage JSON-LD for the listing/landing pages (category, fees, eligibility,
+// prize, requirements, submit-via, locations, deadlines, browse, org). Same shape
+// everywhere — only name/description/url differ.
+function collectionPageLd(name, description, url) {
+  return JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": name, "description": description, "url": url, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2);
+}
+
+// Client-side hydration for a listing page: fetch data.json, filter to this
+// facet's calls, and re-render the list. filterExpr is the arrow passed to
+// Array.filter (e.g. `c => c.category === 'photography' && isCallOpen(...)`).
+// Used by the simple facet pages (category/fees/eligibility/requirements/
+// submit-via/locations/state). Pages that need extra steps (prize's comment,
+// country's USA state index, deadlines' sort) keep their own inline script.
+function facetListScript(filterExpr) {
+  return `<script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(${filterExpr}).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>`;
+}
+
 // Track generated files for cleanup at the end
 const generatedFiles = new Set();
 function writeGenerated(filepath, content) {
@@ -755,7 +783,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${info.title} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${info.title} ${YEAR}`, info.desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Categories', url: `${SITE}/categories/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -772,18 +800,7 @@ ${buildStaticCallList(catCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.category === '${cat}' && isCallOpen(c.deadline)).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => c.category === '${cat}' && isCallOpen(c.deadline)`)}
 
 </body>
 </html>`;
@@ -828,7 +845,7 @@ filterPages.forEach(fp => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), canonical: `${SITE}/${fp.slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${fp.title} ${YEAR}`, "description": fp.desc, "url": `${SITE}/${fp.slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${fp.title} ${YEAR}`, description: escapeHtml(fp.desc), canonical: `${SITE}/${fp.slug}`, jsonLd: collectionPageLd(`${fp.title} ${YEAR}`, fp.desc, `${SITE}/${fp.slug}/`), breadcrumbs: [{ name: 'Fees', url: `${SITE}/fees/` }, { name: fp.title, url: `${SITE}/${fp.slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -845,18 +862,7 @@ ${buildStaticCallList(fpCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => (${fp.filterJs}) && isCallOpen(c.deadline)).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => (${fp.filterJs}) && isCallOpen(c.deadline)`)}
 
 </body>
 </html>`;
@@ -872,7 +878,7 @@ const paidCount = openCalls.filter(feeFilters['entry-fee']).length;
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', canonical: `${SITE}/fees`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Entry Fee ${YEAR}`, "description": "Browse open calls by entry fee.", "url": `${SITE}/fees/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Entry Fee ${YEAR}`, description: 'Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.', canonical: `${SITE}/fees`, jsonLd: collectionPageLd(`Open Calls by Entry Fee ${YEAR}`, "Browse open calls by entry fee.", `${SITE}/fees/`), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1013,7 +1019,7 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${info.title} ${YEAR}`, info.desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Eligibility', url: `${SITE}/eligibility/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1030,18 +1036,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => c.eligibility && c.eligibility.includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
 
 </body>
 </html>`;
@@ -1095,7 +1090,7 @@ if (eligibilityPageSlugs.length) {
   const eligIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', canonical: `${SITE}/eligibility`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Eligibility ${YEAR}`, "description": "Browse open calls by eligibility.", "url": `${SITE}/eligibility/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Eligibility ${YEAR}`, description: 'Browse open calls by eligibility. Find calls for women, emerging artists, LGBTQ+ photographers, regional restrictions, analog photography, and more.', canonical: `${SITE}/eligibility`, jsonLd: collectionPageLd(`Open Calls by Eligibility ${YEAR}`, "Browse open calls by eligibility.", `${SITE}/eligibility/`), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1155,7 +1150,7 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${info.title} ${YEAR}`, info.desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Prizes', url: `${SITE}/prize/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1215,7 +1210,7 @@ if (prizeCatPageSlugs.length) {
   const prizeIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', canonical: `${SITE}/prize`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Prize Type ${YEAR}`, "description": "Browse open calls by prize type.", "url": `${SITE}/prize/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Prize Type ${YEAR}`, description: 'Browse open calls by prize type. Find calls with cash prizes, exhibitions, publications, residencies, and fellowships.', canonical: `${SITE}/prize`, jsonLd: collectionPageLd(`Open Calls by Prize Type ${YEAR}`, "Browse open calls by prize type.", `${SITE}/prize/`), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1276,7 +1271,7 @@ requirementOrder.filter(tag => requirementTags[tag]).forEach(tag => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Requirements', url: `${SITE}/requirements/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${info.title} ${YEAR}`, info.desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Requirements', url: `${SITE}/requirements/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1293,18 +1288,7 @@ ${buildStaticCallList(data.calls.filter(c => deriveRequirementBucket(c.requireme
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => deriveRequirementBucket(c.requirements) === '${tag}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => deriveRequirementBucket(c.requirements) === '${tag}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
 
 </body>
 </html>`;
@@ -1332,7 +1316,7 @@ if (requirementPageSlugs.length) {
   const requirementsIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', canonical: `${SITE}/requirements`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Requirements ${YEAR}`, "description": "Browse open calls by submission requirements.", "url": `${SITE}/requirements/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Submission Requirements ${YEAR}`, description: 'Browse open calls by what you need to submit — a single image, a small set, a full series, a portfolio, a photobook, or a project proposal.', canonical: `${SITE}/requirements`, jsonLd: collectionPageLd(`Open Calls by Submission Requirements ${YEAR}`, "Browse open calls by submission requirements.", `${SITE}/requirements/`), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1398,7 +1382,7 @@ submitViaOrder.filter(slug => openSubmitViaTags[slug]).forEach(slug => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${pageSlug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${pageSlug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Submit via', url: `${SITE}/submit-via/` }, { name: info.title, url: `${SITE}/${pageSlug}/` }], cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${pageSlug}`, jsonLd: collectionPageLd(`${info.title} ${YEAR}`, info.desc, `${SITE}/${pageSlug}/`), breadcrumbs: [{ name: 'Submit via', url: `${SITE}/submit-via/` }, { name: info.title, url: `${SITE}/${pageSlug}/` }], cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1415,18 +1399,7 @@ ${buildStaticCallList(data.calls.filter(c => submitViaSlugByLabel[submitViaLabel
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === ${JSON.stringify(info.label)} && isCallOpen(c.deadline)).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => submitViaLabel(c.submitVia) === ${JSON.stringify(info.label)} && isCallOpen(c.deadline)`)}
 
 </body>
 </html>`;
@@ -1455,7 +1428,7 @@ if (submitViaPageSlugs.length) {
   const submitViaIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Submission Method ${YEAR}`, description: submitViaDesc, canonical: `${SITE}/submit-via`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Method ${YEAR}`, "description": submitViaDesc, "url": `${SITE}/submit-via/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: `Open Calls by Submission Method ${YEAR}`, description: submitViaDesc, canonical: `${SITE}/submit-via`, jsonLd: collectionPageLd(`Open Calls by Submission Method ${YEAR}`, submitViaDesc, `${SITE}/submit-via/`), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -1507,7 +1480,7 @@ Object.entries(countryCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${title} ${YEAR}`, desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: country, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1617,7 +1590,7 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${title} ${YEAR}`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `${escapeHtml(title)} ${YEAR}`, description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${title} ${YEAR}`, desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Locations', url: `${SITE}/locations/` }, { name: 'United States', url: `${SITE}/united-states/` }, { name: state, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1634,18 +1607,7 @@ ${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
 
 </body>
 </html>`;
@@ -1682,7 +1644,7 @@ Object.entries(orgCounts)
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${org} - Open Calls`, "description": desc, "url": `${SITE}/${slug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: escapeHtml(title), description: escapeHtml(desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${org} - Open Calls`, desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'Organizations', url: `${SITE}/organizations/` }, { name: org, url: `${SITE}/${slug}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1698,18 +1660,7 @@ ${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadl
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.org === '${org.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  ${facetListScript(`c => c.org === '${org.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
 
 </body>
 </html>`;
@@ -1753,7 +1704,7 @@ sortedMonths.forEach(key => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, canonical: `${SITE}/deadlines/${key}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls — ${label}`, "description": `Open calls with deadlines in ${label}.`, "url": `${SITE}/deadlines/${key}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, canonical: `${SITE}/deadlines/${key}`, jsonLd: collectionPageLd(`Open Calls — ${label}`, `Open calls with deadlines in ${label}.`, `${SITE}/deadlines/${key}/`), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
@@ -1828,7 +1779,7 @@ const deadlinesIndexItems = [
 const deadlinesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls by Deadline ${YEAR}`, description: 'Browse open calls by deadline month. Find photography competitions, exhibitions, grants, and residencies organized by submission deadline.', canonical: `${SITE}/deadlines`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Deadline ${YEAR}`, "description": "Browse open calls by deadline month.", "url": `${SITE}/deadlines/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Open Calls by Deadline ${YEAR}`, description: 'Browse open calls by deadline month. Find photography competitions, exhibitions, grants, and residencies organized by submission deadline.', canonical: `${SITE}/deadlines`, jsonLd: collectionPageLd(`Open Calls by Deadline ${YEAR}`, "Browse open calls by deadline month.", `${SITE}/deadlines/`), cssVersion })}
 </head>
 <body>
 
@@ -2101,7 +2052,7 @@ const browseOrgs = Object.entries(orgCounts)
 const browseHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Browse All Open Calls ${YEAR}`, description: 'Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.', canonical: `${SITE}/browse`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Browse All Open Calls ${YEAR}`, "description": "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.", "url": `${SITE}/browse/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion })}
+  ${HEAD({ title: `Browse All Open Calls ${YEAR}`, description: 'Browse open calls for photographers and visual artists by category, location, eligibility, and organization. Find exhibitions, grants, residencies, and competitions worldwide.', canonical: `${SITE}/browse`, jsonLd: collectionPageLd(`Browse All Open Calls ${YEAR}`, "Browse open calls for photographers and visual artists by category, location, eligibility, and organization.", `${SITE}/browse/`), cssVersion })}
 </head>
 <body>
 
