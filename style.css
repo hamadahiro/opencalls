@@ -22,9 +22,10 @@
 
 /* === Colors & Type Scale === */
 :root {
-  --text: #111;
+  --text: #555;          /* dimmed: all static text */
   --text-muted: #999;
   --text-body: var(--text);
+  --link: #111;          /* strong: every link, light mode */
   --bg: #e6e6e6;
   --card-bg: #EAE7E2;
   --card-bg-hover: #ddd9d3;
@@ -38,11 +39,6 @@
   --prize-bg-hover: #111;
   --tag-border: rgba(0, 0, 0, 0.2);
   --tag-hover: rgba(0, 0, 0, 0.06);
-  --link-underline: #D3B36F;
-  /* Inline "highlighter" link color. Single source of truth: change it here and
-     every highlighted link (prose, prize label, info grid) updates at once. */
-  --link-highlight: rgba(211, 179, 111, 0.28);
-  --link-highlight-hover: rgba(211, 179, 111, 0.5);
   --dots: var(--text);
   --bg-image: none;
   /* Type scale: 7 sizes only */
@@ -57,9 +53,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #cdcdcd;
+    --text: #8f8f8f;       /* dimmed: all static text */
     --text-muted: #777;
-    --text-body: #a8a8a8;
+    --text-body: var(--text);
+    --link: #f0f0f0;       /* strong: every link, dark mode */
     --bg: #151515;
     --card-bg: #2a2a2a;
     --card-bg-hover: #3a3a3a;
@@ -111,8 +108,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Every link, set once. Per-element rules below no longer repeat a color —
+   they inherit this so links read strong against the dimmed --text body. */
 a {
-  color: var(--text);
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -143,7 +142,6 @@ header {
   line-height: 1.2;
   text-decoration: none;
   font-family: 'Source Serif 4', serif;
-  color: var(--text);
 }
 
 .logo:hover {
@@ -158,7 +156,6 @@ nav {
 nav a {
   font-size: var(--fs-tag);
   letter-spacing: 0.3px;
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -222,7 +219,6 @@ nav a.active:hover {
 .mobile-nav a {
   font-size: var(--fs-tag);
   padding: 10px 0;
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -472,7 +468,6 @@ main {
 }
 
 .call-title a {
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -548,6 +543,7 @@ a.call-deadline.closed:hover { opacity: 0.5; }
 }
 
 a.meta-tag-link {
+  color: var(--link);
   text-decoration: none;
   transition: background 0.15s ease;
 }
@@ -592,7 +588,6 @@ a.meta-tag-link.call-prize:hover {
   display: block;
   margin-top: 12px;
   font-size: var(--fs-body);
-  color: var(--text-muted);
   text-decoration: none;
 }
 
@@ -1019,33 +1014,9 @@ a.meta-tag-link.call-prize:hover {
   flex-shrink: 1;
 }
 
-/* === Inline highlighter links — single source of truth ===
-   Every "yellow highlight" link (prose body, the Prize label, and the info-grid
-   rows) shares this one rule: a soft gold block behind the word. Change the color
-   once via --link-highlight (in :root) and it updates everywhere. */
-.call-detail-description a,
-.call-detail-prize-label a,
-.call-detail-info a {
-  color: var(--text);
-  text-decoration: none;
-  /* Soft gold block behind the whole word. Identical in light and dark mode. */
-  background-color: var(--link-highlight);
-  box-shadow: 0 0 0 2px var(--link-highlight);
-  border-radius: 2px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: background-color 0.15s, box-shadow 0.15s;
-}
-
-/* Prose links sit in body-colored text, so match it (the only per-context tweak). */
-.call-detail-description a { color: var(--text-body); }
-
-.call-detail-description a:hover,
-.call-detail-prize-label a:hover,
-.call-detail-info a:hover {
-  background-color: var(--link-highlight-hover);
-  box-shadow: 0 0 0 2px var(--link-highlight-hover);
-}
+/* Inline links in prose, the Prize label and the info grid inherit the global
+   strong --link color, so they read as links against the dimmed body text.
+   Hover underline comes from the global a:hover rule. */
 
 /* === Index Pages === */
 .index-list {
@@ -1063,7 +1034,6 @@ a.meta-tag-link.call-prize:hover {
   align-items: baseline;
   padding: 10px 0;
   text-decoration: none;
-  color: var(--text);
 }
 
 .index-item:hover {
@@ -1077,14 +1047,12 @@ a.meta-tag-link.call-prize:hover {
 .index-item-name {
   font-size: var(--fs-body);
   font-family: 'Source Serif 4', serif;
-  color: var(--text);
 }
 
 
 .index-item-count {
   font-size: var(--fs-body);
   font-family: 'Source Serif 4', serif;
-  color: var(--text);
   white-space: nowrap;
 }
 
@@ -1096,7 +1064,6 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .browse-more a {
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -1113,7 +1080,6 @@ a.meta-tag-link.call-prize:hover {
 }
 
 .breadcrumbs a {
-  color: var(--text);
   text-decoration: none;
 }
 
