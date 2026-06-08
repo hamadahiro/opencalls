@@ -61,10 +61,10 @@
     --text-muted: #777;
     --text-body: #a8a8a8;
     --bg: #151515;
-    /* Over black behind light text, the faint light-mode gold reads as a shadow.
-       Bump opacity so the band reads as a deliberate highlight. */
-    --link-highlight: rgba(211, 179, 111, 0.5);
-    --link-highlight-hover: rgba(211, 179, 111, 0.7);
+    /* The light-mode lowlight band reads as a shadow over black behind light
+       text, so dark mode uses a full block instead (see rule below). */
+    --link-highlight: rgba(211, 179, 111, 0.4);
+    --link-highlight-hover: rgba(211, 179, 111, 0.6);
     --card-bg: #2a2a2a;
     --card-bg-hover: #3a3a3a;
     --surface: #2a2a2a;
@@ -79,6 +79,21 @@
     --tag-hover: rgba(255, 255, 255, 0.08);
     --dots: var(--text);
     --bg-image: none;
+  }
+
+  /* Dark mode: full gold block behind the word instead of the lower-half band,
+     which over black behind light text reads as a shadow. */
+  .call-detail-description a,
+  .call-detail-prize-label a,
+  .call-detail-info a {
+    background-image: linear-gradient(var(--link-highlight), var(--link-highlight));
+    border-radius: 2px;
+  }
+
+  .call-detail-description a:hover,
+  .call-detail-prize-label a:hover,
+  .call-detail-info a:hover {
+    background-image: linear-gradient(var(--link-highlight-hover), var(--link-highlight-hover));
   }
 
   body {
