@@ -1054,14 +1054,14 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: none;
   /* Marker band: covers only the lower part of the letters (not a classic
      underline), same highlight color/opacity. Hard gradient stop = flat top edge. */
-  background-image: linear-gradient(to top, var(--link-highlight) 0.5em, transparent 0.5em);
+  background-image: linear-gradient(to top, var(--link-highlight) 0.35em, transparent 0.35em);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   transition: background-image 0.15s;
 }
 
 .call-detail-info a:hover {
-  background-image: linear-gradient(to top, var(--link-highlight-hover) 0.5em, transparent 0.5em);
+  background-image: linear-gradient(to top, var(--link-highlight-hover) 0.35em, transparent 0.35em);
 }
 
 /* === Index Pages === */
