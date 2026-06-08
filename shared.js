@@ -50,6 +50,14 @@ const countrySlugs = {
   'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates'
 };
 
+// US state abbreviation → full name. ONE copy — consumed by generate-pages.js
+// (state pages + the country page's embedded state-index script) and any client
+// code, so the map can never drift between server and browser.
+const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
+// Reverse lookup: full state name → abbreviation (e.g. 'California' → 'CA').
+const stateNameToAbbr = {};
+Object.keys(usStateNames).forEach(abbr => { stateNameToAbbr[usStateNames[abbr]] = abbr; });
+
 const eligibilityLabel = {
   'women': 'Women', 'united-states': 'US only', 'europe': 'Europe only', 'italy': 'Italy only',
   'emerging': 'Emerging artists', 'under-30': 'Under 30', 'under-35': 'Under 35', 'under-40': 'Under 40',
@@ -78,6 +86,26 @@ function isCallOpen(deadline) {
   const end = new Date(deadline + 'T00:00:00');
   end.setDate(end.getDate() + 1);
   return end > new Date();
+}
+
+// Deadline urgency for a call as of `now`: CSS class, human label, and month
+// slug. ONE definition — the client (cards.js processCall) and the server static
+// pre-render (generate-pages.js) both consume it, so the buckets/labels Google
+// sees in the static HTML can never drift from what the browser re-renders.
+const URGENCY_MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+function computeUrgency(call, now) {
+  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
+  const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
+  let urgencyClass = '', urgencyText = '';
+  if (call.deadline === 'Continuous') { urgencyText = 'Continuous'; urgencyClass = 'rolling'; }
+  else if (daysLeft < 0) { urgencyText = 'Closed'; urgencyClass = 'closed'; }
+  else if (daysLeft === 0) { urgencyText = 'Ending today'; urgencyClass = 'ending'; }
+  else if (daysLeft === 1) { urgencyText = 'Ending tomorrow'; urgencyClass = 'ending'; }
+  else if (daysLeft <= 14) { urgencyText = daysLeft + ' days left'; urgencyClass = 'urgent'; }
+  else if (daysLeft <= 30) { urgencyText = daysLeft + ' days left'; urgencyClass = 'soon'; }
+  else { urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); urgencyClass = 'normal'; }
+  const deadlineSlug = deadlineDate ? URGENCY_MONTHS[deadlineDate.getMonth()] + '-' + deadlineDate.getFullYear() : null;
+  return { deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
 }
 
 function slugify(title) {
@@ -396,8 +424,9 @@ function submitViaIsPlatform(submitVia) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
+    usStateNames, stateNameToAbbr,
     PIN_SVG, PRIZE_SVG,
-    isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
+    isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
     isFree, getState, scoreSimilarity,

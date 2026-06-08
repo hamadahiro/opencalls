@@ -6,8 +6,9 @@ const path = require('path');
 const shared = require('./shared.js');
 const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
+  usStateNames, stateNameToAbbr,
   PIN_SVG, PRIZE_SVG,
-  isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
+  isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
   isFree, getState, scoreSimilarity,
@@ -426,20 +427,7 @@ function buildStaticCallList(calls) {
 // sync with renderTags()/renderCard()/renderCallList() in cards.js.
 const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-function computeUrgency(call, now) {
-  const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
-  const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
-  let urgencyClass = '', urgencyText = '';
-  if (call.deadline === 'Continuous') { urgencyText = 'Continuous'; urgencyClass = 'rolling'; }
-  else if (daysLeft < 0) { urgencyText = 'Closed'; urgencyClass = 'closed'; }
-  else if (daysLeft === 0) { urgencyText = 'Ending today'; urgencyClass = 'ending'; }
-  else if (daysLeft === 1) { urgencyText = 'Ending tomorrow'; urgencyClass = 'ending'; }
-  else if (daysLeft <= 14) { urgencyText = daysLeft + ' days left'; urgencyClass = 'urgent'; }
-  else if (daysLeft <= 30) { urgencyText = daysLeft + ' days left'; urgencyClass = 'soon'; }
-  else { urgencyText = deadlineDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); urgencyClass = 'normal'; }
-  const deadlineSlug = deadlineDate ? MONTHS_CAP[deadlineDate.getMonth()].toLowerCase() + '-' + deadlineDate.getFullYear() : null;
-  return { deadlineDate, daysLeft, urgencyClass, urgencyText, deadlineSlug };
-}
+// computeUrgency() lives in shared.js (one contract for server + client).
 
 function renderStaticCard(call, u) {
   const slug = call.slug || slugify(call.title);
@@ -701,9 +689,7 @@ let skipped = 0;
 //     only the location links we still want to promote from every call card.
 //     Org pages remain live for users but are noindex and not prose-linked.
 {
-  const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
-  const stateNameToAbbr = {};
-  Object.entries(usStateNames).forEach(([abbr, name]) => { stateNameToAbbr[name] = abbr; });
+  // usStateNames + stateNameToAbbr come from shared.js (single source of truth).
   const countrySlugFor = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
   const openStateCountsForLinks = {};
 
@@ -1503,28 +1489,26 @@ ${buildStaticCallList(data.calls.filter(c => getCountry(c.location) === country 
       const res = await fetch('/data.json');
       const data = await res.json();
 ${country === 'USA' ? `
-      // State index for USA
-      const stateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
-      const nameToAbbr = {};
-      Object.entries(stateNames).forEach(([abbr, name]) => { nameToAbbr[name] = abbr; });
+      // State index for USA — usStateNames + stateNameToAbbr are the shared.js
+      // globals (loaded above), so this never drifts from the server map.
       const _n = new Date(); const today = _n.getFullYear() + '-' + String(_n.getMonth()+1).padStart(2,'0') + '-' + String(_n.getDate()).padStart(2,'0');
       const counts = {};
       data.calls.filter(c => c.location && c.location.endsWith('USA') && (c.deadline === 'Continuous' || c.deadline >= today)).forEach(c => {
         const parts = c.location.split(',');
         let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-        if (state && nameToAbbr[state]) state = nameToAbbr[state];
+        if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
         if (state) counts[state] = (counts[state] || 0) + 1;
       });
       const sorted = Object.entries(counts).sort((a, b) => {
-        const nameA = (stateNames[a[0]] || a[0]).toLowerCase();
-        const nameB = (stateNames[b[0]] || b[0]).toLowerCase();
+        const nameA = (usStateNames[a[0]] || a[0]).toLowerCase();
+        const nameB = (usStateNames[b[0]] || b[0]).toLowerCase();
         return nameA.localeCompare(nameB);
       });
       const container = document.getElementById('callsList');
       container.className = 'index-list';
       let html = '';
       sorted.forEach(([state, count]) => {
-        const fullName = stateNames[state] || state;
+        const fullName = usStateNames[state] || state;
         html += '<a href="/united-states/' + slugify(fullName) + '/" class="index-item">' +
           '<span class="index-item-name">' + esc(fullName) + '</span>' +
           '<span class="dots"></span>' +
@@ -1555,11 +1539,7 @@ ${country === 'USA' ? `
   });
 
 // === US State landing pages ===
-const usStateNames = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC'};
-
-// Build reverse lookup: full state name → abbreviation
-const stateNameToAbbr = {};
-Object.entries(usStateNames).forEach(([abbr, name]) => { stateNameToAbbr[name] = abbr; });
+// usStateNames + stateNameToAbbr come from shared.js (single source of truth).
 
 const stateCounts = {};
 const openStateCounts = {};
@@ -2131,15 +2111,16 @@ fs.writeFileSync('cards.js', cardsJs);
   const callDetailSrc = fs.readFileSync('call-detail.js', 'utf8');
   // scripts/ is gitignored local tooling — guard so the build works without it.
   const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
+  const updateStateSrc = fs.existsSync('scripts/update-verify-state.js') ? fs.readFileSync('scripts/update-verify-state.js', 'utf8') : '';
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
-    for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc]]) {
+    for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc], ['scripts/update-verify-state.js', updateStateSrc]]) {
       if (csrc.split(fn).length - 1 !== 0) gateErrs.push(`${fn} is re-declared in ${consumer} — it must live ONLY in shared.js`);
     }
   }
   // Shared data maps: defined once in shared.js, not re-declared in cards.js.
-  for (const decl of ['const eligibilityLabel', 'const categoryLabel', 'const prizeCategoryLabel', 'const categorySlug', 'const shortCountry', 'const countrySlugs']) {
+  for (const decl of ['const eligibilityLabel', 'const categoryLabel', 'const prizeCategoryLabel', 'const categorySlug', 'const shortCountry', 'const countrySlugs', 'const usStateNames', 'const stateNameToAbbr']) {
     if (sharedSrc.split(decl).length - 1 !== 1) gateErrs.push(`${decl} must be defined exactly once in shared.js`);
     if (written.split(decl).length - 1 !== 0) gateErrs.push(`${decl} is re-declared in cards.js — it must live ONLY in shared.js`);
   }
