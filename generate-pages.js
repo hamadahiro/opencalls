@@ -645,7 +645,7 @@ ${call.jury && call.jury.length ? `
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
-${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on ${formatVerifiedDate(v).replace(/, /, ', ')}</span></div>` : ''; })()}
+${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on ${formatVerifiedDate(v)}</span></div>` : ''; })()}
     </section>
 
     <section class="related-calls">
@@ -1600,14 +1600,14 @@ Object.entries(stateCounts).forEach(([state, count]) => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + state + ', USA')) && isCallOpen(c.deadline)))}
+${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + fullStateName + ',')) && isCallOpen(c.deadline)))}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${state}, USA'))${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
+  ${facetListScript(`c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${fullStateName},'))${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
 
 </body>
 </html>`;
