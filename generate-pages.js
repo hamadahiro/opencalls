@@ -1478,9 +1478,6 @@ Object.entries(countryCounts)
     const desc = isOnline
       ? 'Online open calls, competitions, and submissions for photographers and visual artists. No travel required — apply from anywhere.'
       : `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullName}. Browse and apply today.`;
-    const keywords = isOnline
-      ? 'online open calls, online photography competitions, remote art submissions, virtual exhibitions, online call for entries, photography contests online'
-      : `open calls ${fullName}, call for entries ${fullName}, photography opportunities ${fullName}, art exhibitions ${fullName}, photography grants ${fullName}, artist residency ${fullName}`;
 
     const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1584,7 +1581,6 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   const robotsDirective = robotsFor(indexable);
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
-  const keywords = `open calls ${fullStateName}, call for entries ${fullStateName}, photography opportunities ${fullStateName}, art exhibitions ${fullStateName}`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1626,7 +1622,6 @@ Object.entries(orgCounts)
     const robotsDirective = 'noindex, follow';
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
-    const keywords = `${org} open call, ${org} call for entries, ${org} submissions, ${org} photography, ${org} exhibition, ${org} artists`;
 
     // Check for slug collision with reserved system pages or call/country pages
     if (RESERVED.includes(slug)) {
