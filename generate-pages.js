@@ -8,7 +8,7 @@ const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
   PIN_SVG, PRIZE_SVG,
   isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-  deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
+  deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform
@@ -180,7 +180,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'about', 'entry-fee', 'requirements'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -1352,6 +1352,129 @@ if (requirementPageSlugs.length) {
 
   writeGenerated('requirements/index.html', requirementsIndexHtml);
   console.log(`  Requirements index page (${requirementPageSlugs.length} groups)`);
+}
+
+// === Submit-via (submission method) pages ===
+// One honest method per call (Website / Email / Post / WeTransfer / Instagram /
+// Dropbox / Google Drive), grouped with the SAME submitViaLabel() the "Submit via"
+// row links from. The label on every detail page points at /submit-via/.
+const submitViaGroups = {
+  'website':      { label: 'Website',      short: 'Website / form', title: 'Open Calls You Submit Online',           desc: 'Open calls you enter through the organiser’s website, an online entry form, or a submission platform.' },
+  'email':        { label: 'Email',        short: 'Email',          title: 'Open Calls You Submit by Email',          desc: 'Open calls you enter by emailing your work directly to the organiser.' },
+  'post':         { label: 'Post',         short: 'Post / mail',    title: 'Open Calls You Submit by Post',           desc: 'Open calls that ask for physical prints, books, or materials sent by mail.' },
+  'wetransfer':   { label: 'WeTransfer',   short: 'WeTransfer',     title: 'Open Calls You Submit via WeTransfer',    desc: 'Open calls that collect files through WeTransfer or a similar file-transfer service.' },
+  'instagram':    { label: 'Instagram',    short: 'Instagram',      title: 'Open Calls You Submit via Instagram',     desc: 'Open calls you enter through Instagram — by tagging, posting, or direct message.' },
+  'dropbox':      { label: 'Dropbox',      short: 'Dropbox',        title: 'Open Calls You Submit via Dropbox',       desc: 'Open calls that collect files through a shared Dropbox folder or link.' },
+  'google-drive': { label: 'Google Drive', short: 'Google Drive',   title: 'Open Calls You Submit via Google Drive',  desc: 'Open calls that collect files through a shared Google Drive folder or link.' }
+};
+const submitViaOrder = ['website', 'email', 'post', 'wetransfer', 'instagram', 'dropbox', 'google-drive'];
+const submitViaSlugByLabel = {};
+submitViaOrder.forEach(slug => { submitViaSlugByLabel[submitViaGroups[slug].label] = slug; });
+
+const submitViaTags = {};
+const openSubmitViaTags = {};
+data.calls.forEach(c => {
+  if (!c.submitVia) return;
+  const slug = submitViaSlugByLabel[submitViaLabel(c.submitVia)];
+  if (!slug) return;
+  submitViaTags[slug] = (submitViaTags[slug] || 0) + 1;
+  if (isCallOpen(c.deadline)) openSubmitViaTags[slug] = (openSubmitViaTags[slug] || 0) + 1;
+});
+
+// Build a sub-page only when the method has at least one OPEN call (avoids stale
+// empty pages). Future calls re-introduce a method automatically on the next run.
+const submitViaPageSlugs = [];
+submitViaOrder.filter(slug => openSubmitViaTags[slug]).forEach(slug => {
+  const info = submitViaGroups[slug];
+  const count = submitViaTags[slug] || 0;
+  const openCount = openSubmitViaTags[slug] || 0;
+  const pageSlug = `submit-via/${slug}`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${pageSlug}`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `${info.title} ${YEAR}`, "description": info.desc, "url": `${SITE}/${pageSlug}/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), breadcrumbs: [{ name: 'Submit via', url: `${SITE}/submit-via/` }, { name: info.title, url: `${SITE}/${pageSlug}/` }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(data.calls.filter(c => submitViaSlugByLabel[submitViaLabel(c.submitVia)] === slug && isCallOpen(c.deadline)))}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === ${JSON.stringify(info.label)} && isCallOpen(c.deadline)).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'));
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
+
+</body>
+</html>`;
+
+  submitViaPageSlugs.push(slug);
+  writeGenerated(`${pageSlug}/index.html`, html);
+  console.log(`  Submit-via page: ${slug} (${count} calls, ${openCount} open)`);
+});
+
+// Submit-via index (hub) page — the target of the "Submit via" detail-page label.
+function buildSubmitViaIndexItems() {
+  let html = '';
+  submitViaOrder.filter(slug => openSubmitViaTags[slug]).forEach(slug => {
+    const info = submitViaGroups[slug];
+    html += `      <a href="/submit-via/${slug}/" class="index-item">
+        <span class="index-item-name">${escapeHtml(info.short)}</span>
+        <span class="dots"></span>
+        <span class="index-item-count">${openSubmitViaTags[slug] || 0}</span>
+      </a>\n`;
+  });
+  return html;
+}
+
+if (submitViaPageSlugs.length) {
+  const submitViaDesc = 'How you send your work to the open calls listed here — through a website or online form, by email, by post, or via a file-transfer service.';
+  const submitViaIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls by Submission Method ${YEAR}`, description: submitViaDesc, canonical: `${SITE}/submit-via`, jsonLd: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": `Open Calls by Submission Method ${YEAR}`, "description": submitViaDesc, "url": `${SITE}/submit-via/`, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2), cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'Submit via', submitViaDesc)}
+
+    <section class="index-list" id="indexList">
+      ${buildSubmitViaIndexItems()}
+    </section>
+
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+
+  writeGenerated('submit-via/index.html', submitViaIndexHtml);
+  console.log(`  Submit-via index page (${submitViaPageSlugs.length} methods)`);
 }
 
 // === Country landing pages ===
