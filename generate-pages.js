@@ -605,9 +605,9 @@ function generatePage(call, cssVersion) {
   const robotsDirective = isCallOpen(call.deadline) ? 'index, follow' : 'noindex, follow';
   // The info grid + prize block are pre-rendered server-side below, so call-detail.js
   // no longer re-renders them on the client — it only reads CURRENT_CALL to score
-  // "More like this". So ship only the fields scoreSimilarity()/loadSimilar() read.
-  // Keep this object in sync with those functions; do NOT trim further.
-  const currentCallJson = JSON.stringify({ category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, eligibility: call.eligibility || [] }).replace(/</g, '\\u003c');
+  // "More like this" (scoreSimilarity/loadSimilar), and analytics.js reads .title for
+  // the GA call_title dimension. Ship only those fields; do NOT trim further.
+  const currentCallJson = JSON.stringify({ title: call.title, category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, eligibility: call.eligibility || [] }).replace(/</g, '\\u003c');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2456,6 +2456,40 @@ manualFiles.forEach(file => {
   fs.writeFileSync('organizations/index.html', html);
   console.log(`  Organizations page: injected ${sorted.length} org links`);
 }
+
+// === Redirect stubs for renamed calls (old slug → current slug) ===
+// When a call's title changes its slug changes too, orphaning the old directory.
+// We never delete pages (they may be bookmarked/indexed), so replace the stale
+// empty shell with a lightweight client redirect to the call's current URL.
+// Add an entry here whenever a rename leaves a dead old slug behind.
+const REDIRECTS = {
+  '2026-fotograf-magazine-open-call': 'fotograf-magazine-2026-open-call',
+  'after-dark-night-sky-and-shadow': 'after-dark-night-sky-and-shadow-photoplace-gallery',
+  'fundacion-enaire-photography-prize-2026': 'xix-premio-de-fotograf-a-fundaci-n-enaire-2026',
+  'remedy-photo-festival-2026-open-call': 'remedy-photo-festival-open-call-2026',
+  'photoed-magazine-home-vs-away-issue-76': 'photoed-magazine-home-vs-away-issue-77'
+};
+Object.entries(REDIRECTS).forEach(([from, to]) => {
+  if (slugMap[from]) { console.error(`ERROR: redirect source "${from}" collides with a live page — remove it from REDIRECTS.`); process.exit(1); }
+  if (!slugMap[to]) { console.error(`ERROR: redirect target "${to}" does not exist — fix the REDIRECTS entry for "${from}".`); process.exit(1); }
+  const dest = `/${to}/`;
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="${SITE}${dest}">
+  <meta http-equiv="refresh" content="0; url=${dest}">
+  <title>Redirecting&hellip;${TITLE_SUFFIX}</title>
+  <script>location.replace('${dest}' + location.search + location.hash);</script>
+</head>
+<body>
+  <p>This open call has moved to <a href="${dest}">${dest}</a>.</p>
+</body>
+</html>`;
+  writeGenerated(`${from}/index.html`, html);
+  console.log(`  Redirect: ${from} -> ${to}`);
+});
 
 // Warn about stale HTML files (never auto-delete — pages may be indexed/bookmarked)
 // Fix noindex on stale pages — Google flags these as "Excluded by noindex tag"
