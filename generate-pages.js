@@ -561,7 +561,7 @@ function buildStaticSimilarCalls(call, allCalls) {
     const c = s.call;
     const slug = c.slug || slugify(c.title);
     const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
-    const desc = escapeHtml((c.summary || c.description || '').substring(0, 160));
+    const desc = escapeHtml(c.summary || c.description || '');
     html += `<div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>`;
   });
   return html;
