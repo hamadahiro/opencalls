@@ -1512,8 +1512,12 @@
       });
 
       var allProcessed = processed.slice();
-      var hasSearch = currentSearch || activeChips.length;
-      if (view === 'new' && !hasSearch) processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
+      // Main list shows only open calls in 'new' view (and only closed in
+      // 'past'); matching calls from the OTHER view are appended once by the
+      // cross-view block below. The filter must run even while searching —
+      // without it, closed matches render twice (here via renderCallList's
+      // "Past" section AND again under the cross-view "Closed calls" header).
+      if (view === 'new') processed = processed.filter(function(c) { return c.urgencyClass !== 'closed'; });
       if (view === 'past') processed = processed.filter(function(c) { return c.urgencyClass === 'closed'; });
 
       processed = applySearchAndFilters(processed);
