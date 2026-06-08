@@ -30,7 +30,7 @@
     if (p.startsWith('/prize/')) return p === '/prize/' ? 'prize_index' : 'prize';
     if (p.startsWith('/fees/')) return p === '/fees/' ? 'fees_index' : 'fee';
     if (p.startsWith('/deadlines/')) return p === '/deadlines/' ? 'deadlines_index' : 'deadline';
-    if (p.startsWith('/united-states/')) return 'state';
+    if (p.startsWith('/united-states/') && p !== '/united-states/') return 'state';
     // Individual call detail pages have CURRENT_CALL defined
     if (typeof CURRENT_CALL !== 'undefined') return 'call_detail';
     return 'collection';
