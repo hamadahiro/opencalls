@@ -575,6 +575,11 @@ function generatePage(call, cssVersion) {
   const metaTitle = call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org);
 
   const robotsDirective = isCallOpen(call.deadline) ? 'index, follow' : 'noindex, follow';
+  // The info grid + prize block are pre-rendered server-side below, so call-detail.js
+  // no longer re-renders them on the client — it only reads CURRENT_CALL to score
+  // "More like this". So ship only the fields scoreSimilarity()/loadSimilar() read.
+  // Keep this object in sync with those functions; do NOT trim further.
+  const currentCallJson = JSON.stringify({ category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, eligibility: call.eligibility || [] }).replace(/</g, '\\u003c');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -624,7 +629,7 @@ ${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-det
 
   <script>
     const CURRENT_SLUG = '${slug}';
-    const CURRENT_CALL = ${JSON.stringify({ prize: call.prize || '', category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, resultsDate: call.resultsDate || '', eligibility: call.eligibility || [], submitVia: call.submitVia || '', submitUrl: call.submitUrl || '', email: call.email || '', ai: call.ai || '', requirements: call.requirements || '' }).replace(/</g, '\\u003c')};
+    const CURRENT_CALL = ${currentCallJson};
 ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\\\/g,'\\\\\\\\').replace(/;/g,'\\\\;').replace(/,/g,'\\\\,').replace(/\\n/g,'\\\\n');}
@@ -644,7 +649,7 @@ ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function do
     }` : ''}
   </script>
   ${CARDS_SCRIPT(cssVersion)}
-  <script src="/call-detail.js"></script>
+  <script src="/call-detail.js?v=${cssVersion}"></script>
 
 </body>
 </html>`;
