@@ -20,7 +20,11 @@
       "orgInTitle": false,
       "summary": "Juried photo book exhibition at Filter Space, Chicago (Sept 4–Oct 31), juried by Nick Larsen of Radius Books. $500 Juror's Choice.",
       "resultsDate": "September 2026",
-      "dateAdded": "2026-06-07T23:06:53.175Z"
+      "dateAdded": "2026-06-07T23:06:53.175Z",
+      "jury": [
+        "Nick Larsen, Radius Books"
+      ],
+      "email": ""
     },
     {
       "title": "The Salon — London Photo Show 2026",
@@ -6469,7 +6473,7 @@
       "prize": "Publication",
       "eligibility": [],
       "submitVia": "Email",
-      "requirements": "PDF draft sequence",
+      "requirements": "1 PDF",
       "resultsDate": "End of July 2026",
       "jury": [
         "Morgan Crowcroft-Brown, Editor, MACK"
@@ -15934,7 +15938,7 @@
       "orgInTitle": false,
       "slug": "atlas-of-ruins-vol-3-call-for-photos-reuse-italy",
       "dateAdded": "2026-03-22",
-      "submitUrl": null,
+      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
       "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Two registration tiers, prizes up to €1,200.",
       "email": null,
       "ai": null,
@@ -19654,7 +19658,7 @@
       "url": "https://www.decagongallery.com/",
       "instagram": "@decagongallery",
       "location": "Online",
-      "prize": "$1,000 total",
+      "prize": "$900 total",
       "eligibility": [
         "18-plus"
       ],
@@ -19666,7 +19670,7 @@
       ],
       "slug": "seen-unseen-decagon-gallery",
       "orgInTitle": false,
-      "summary": "Online photography exhibition on the visible and the implied. Juror Ann M. Jastrab. $1,000 total awards.",
+      "summary": "Online photography exhibition on the visible and the implied. Juror Ann M. Jastrab. $900 total awards.",
       "email": "",
       "ai": null,
       "resultsDate": "July 18, 2026",
