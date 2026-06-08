@@ -422,10 +422,6 @@ function safeJsStr(str) {
   return str.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/</g, '\\x3c').replace(/>/g, '\\x3e').replace(/\n/g, '\\n').replace(/\r/g, '\\r');
 }
 
-function jsonStr(str) {
-  return JSON.stringify(str).slice(1, -1);
-}
-
 function formatDeadline(deadline) {
   if (deadline === 'Continuous') return 'Continuous';
   const d = new Date(deadline + 'T00:00:00');
