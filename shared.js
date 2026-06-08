@@ -179,18 +179,25 @@ function feeChip(fee, esc) {
 // target. Website (forms/platforms/apps), Email, Post, or a recognizable service
 // kept by name (Dropbox, Google Drive, Instagram, WeTransfer). Combos collapse to
 // their primary online method. target: submitUrl > mailto(email intent) > url > email.
+// Collapse a raw submitVia value to one honest method label. Shared by the link
+// (below) and the /submit-via/ facet pages, so grouping never drifts from display.
+function submitViaLabel(submitVia) {
+  const s = (submitVia || '').toLowerCase().trim();
+  if (!s) return '';
+  if (/\b(post|postal)\b|physical|parcel/.test(s) && !/website|online|form|platform|portal|email|dropbox|drive|instagram|wetransfer|app/.test(s)) return 'Post';
+  if (/website|online|form|platform|portal/.test(s)) return 'Website';
+  if (/email/.test(s)) return 'Email';
+  if (/wetransfer|swisstransfer/.test(s)) return 'WeTransfer';
+  if (/instagram/.test(s)) return 'Instagram';
+  if (/dropbox/.test(s)) return 'Dropbox';
+  if (/google drive/.test(s)) return 'Google Drive';
+  return 'Website';
+}
+
 function submitViaLink(call, esc) {
   const s = (call.submitVia || '').toLowerCase().trim();
   if (!s) return '';
-  let label;
-  if (/\b(post|postal)\b|physical|parcel/.test(s) && !/website|online|form|platform|portal|email|dropbox|drive|instagram|wetransfer|app/.test(s)) label = 'Post';
-  else if (/website|online|form|platform|portal/.test(s)) label = 'Website';
-  else if (/email/.test(s)) label = 'Email';
-  else if (/wetransfer|swisstransfer/.test(s)) label = 'WeTransfer';
-  else if (/instagram/.test(s)) label = 'Instagram';
-  else if (/dropbox/.test(s)) label = 'Dropbox';
-  else if (/google drive/.test(s)) label = 'Google Drive';
-  else label = 'Website';
+  const label = submitViaLabel(call.submitVia);
 
   const emailIntent = /email|wetransfer|swisstransfer/.test(s);
   let href = null;
@@ -331,7 +338,7 @@ function renderInfoGrid(call, opts) {
 
   if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
 
-  if (call.submitVia) rows.push(infoRow('Submit via', submitViaLink(call, esc)));
+  if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
   return rows.join('');
 }
@@ -391,7 +398,7 @@ if (typeof module !== 'undefined' && module.exports) {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
     PIN_SVG, PRIZE_SVG,
     isCallOpen, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-    deriveRequirementBucket, shortenFee, feeChip, submitViaLink,
+    deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform
