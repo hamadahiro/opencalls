@@ -61,6 +61,10 @@
     --text-muted: #777;
     --text-body: #a8a8a8;
     --bg: #151515;
+    /* Over black behind light text, the faint light-mode gold reads as a shadow.
+       Bump opacity so the band reads as a deliberate highlight. */
+    --link-highlight: rgba(211, 179, 111, 0.5);
+    --link-highlight-hover: rgba(211, 179, 111, 0.7);
     --card-bg: #2a2a2a;
     --card-bg-hover: #3a3a3a;
     --surface: #2a2a2a;
@@ -1028,8 +1032,11 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-info a {
   color: var(--text);
   text-decoration: none;
-  /* Lowlight band covering the bottom ~half of the letters (hard gradient stop). */
-  background-image: linear-gradient(to top, var(--link-highlight) 0.55em, transparent 0.55em);
+  /* Lowlight band over the lower ~half of the letters. The 0.1em transparent
+     stop at the bottom lifts the band slightly up off the baseline; the 1px
+     side padding extends the band just past the text on each edge. */
+  background-image: linear-gradient(to top, transparent 0.1em, var(--link-highlight) 0.1em, var(--link-highlight) 0.65em, transparent 0.65em);
+  padding: 0 1px;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   transition: background-image 0.15s;
@@ -1041,7 +1048,7 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-description a:hover,
 .call-detail-prize-label a:hover,
 .call-detail-info a:hover {
-  background-image: linear-gradient(to top, var(--link-highlight-hover) 0.55em, transparent 0.55em);
+  background-image: linear-gradient(to top, transparent 0.1em, var(--link-highlight-hover) 0.1em, var(--link-highlight-hover) 0.65em, transparent 0.65em);
 }
 
 /* === Index Pages === */
