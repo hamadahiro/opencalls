@@ -215,7 +215,12 @@ data.calls.forEach(c => {
   if (!c.dateAdded) { c.dateAdded = dateAddedToday; dateAddedCount++; }
 });
 if (dateAddedCount > 0) {
-  fs.writeFileSync('data.json', JSON.stringify(data, null, 2) + '\n');
+  // PRIVACY: organizer emails are hydrated onto data.calls in memory (above) for
+  // mailto links, but must NEVER be persisted to the PUBLIC data.json. The
+  // replacer strips every `email` key from the serialized output WITHOUT mutating
+  // the in-memory objects, so later page rendering still has the address. This is
+  // the on-disk guarantee; the pre-commit harvester is now just a backstop.
+  fs.writeFileSync('data.json', JSON.stringify(data, (k, v) => k === 'email' ? undefined : v, 2) + '\n');
   console.log(`  Auto-filled dateAdded="${dateAddedToday}" on ${dateAddedCount} entries`);
 }
 
