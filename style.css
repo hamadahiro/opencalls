@@ -41,6 +41,12 @@
   --link-underline: #D3B36F;
   --link-highlight: rgba(211, 179, 111, 0.28);
   --link-highlight-hover: rgba(211, 179, 111, 0.5);
+  /* Inline "highlighter" link band — bottom marker covering the lower part of the
+     letters (not a classic underline). Single source of truth: edit the color via
+     --link-highlight above, or the thickness via the em stop here, and every
+     highlighted link updates at once (see .highlight-link below). */
+  --link-band: linear-gradient(to top, var(--link-highlight) 0.14em, transparent 0.14em);
+  --link-band-hover: linear-gradient(to top, var(--link-highlight-hover) 0.14em, transparent 0.14em);
   --dots: var(--text);
   --bg-image: none;
   /* Type scale: 7 sizes only */
@@ -275,22 +281,6 @@ main {
 
 .call-detail-description {
   margin-bottom: 32px;
-}
-
-.call-detail-description a {
-  color: var(--text-body);
-  text-decoration: none;
-  background-color: var(--link-highlight);
-  box-shadow: 0 0 0 2px var(--link-highlight);
-  border-radius: 2px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: background-color 0.15s, box-shadow 0.15s;
-}
-
-.call-detail-description a:hover {
-  background-color: var(--link-highlight-hover);
-  box-shadow: 0 0 0 2px var(--link-highlight-hover);
 }
 
 /* === Filters === */
@@ -940,22 +930,6 @@ a.meta-tag-link.call-prize:hover {
   color: var(--text);
 }
 
-.call-detail-prize-label a {
-  color: var(--text);
-  text-decoration: none;
-  background-color: var(--link-highlight);
-  box-shadow: 0 0 0 2px var(--link-highlight);
-  border-radius: 2px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: background-color 0.15s, box-shadow 0.15s;
-}
-
-.call-detail-prize-label a:hover {
-  background-color: var(--link-highlight-hover);
-  box-shadow: 0 0 0 2px var(--link-highlight-hover);
-}
-
 .call-detail-jury {
   margin-top: 32px;
 }
@@ -1049,19 +1023,31 @@ a.meta-tag-link.call-prize:hover {
   flex-shrink: 1;
 }
 
+/* === Inline highlighter links — single source of truth ===
+   Every "yellow highlight" link (prose body, the Prize label, and the info-grid
+   rows) shares this one rule. Change the band once via --link-band / --link-highlight
+   (defined in :root) and it updates everywhere. */
+.call-detail-description a,
+.call-detail-prize-label a,
 .call-detail-info a {
   color: var(--text);
   text-decoration: none;
-  /* Marker band: covers only the lower part of the letters (not a classic
-     underline), same highlight color/opacity. Hard gradient stop = flat top edge. */
-  background-image: linear-gradient(to top, var(--link-highlight) 0.35em, transparent 0.35em);
+  /* Pad below the text so the band clears the letters, leaving a small gap
+     (gap = padding-bottom − band thickness). */
+  padding-bottom: 0.22em;
+  background-image: var(--link-band);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   transition: background-image 0.15s;
 }
 
+/* Prose links sit in body-colored text, so match it (the only per-context tweak). */
+.call-detail-description a { color: var(--text-body); }
+
+.call-detail-description a:hover,
+.call-detail-prize-label a:hover,
 .call-detail-info a:hover {
-  background-image: linear-gradient(to top, var(--link-highlight-hover) 0.35em, transparent 0.35em);
+  background-image: var(--link-band-hover);
 }
 
 /* === Index Pages === */
