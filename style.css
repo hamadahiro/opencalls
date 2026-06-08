@@ -1034,7 +1034,7 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: none;
   /* Pad below the text so the band clears the letters, leaving a small gap
      (gap = padding-bottom − band thickness). */
-  padding-bottom: 0.22em;
+  padding-bottom: 0.18em;
   background-image: var(--link-band);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
