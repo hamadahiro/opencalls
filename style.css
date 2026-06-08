@@ -1052,17 +1052,16 @@ a.meta-tag-link.call-prize:hover {
 .call-detail-info a {
   color: var(--text);
   text-decoration: none;
-  background-color: var(--link-highlight);
-  box-shadow: 0 0 0 2px var(--link-highlight);
-  border-radius: 2px;
+  /* Marker band: covers only the lower part of the letters (not a classic
+     underline), same highlight color/opacity. Hard gradient stop = flat top edge. */
+  background-image: linear-gradient(to top, var(--link-highlight) 0.5em, transparent 0.5em);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: background-color 0.15s, box-shadow 0.15s;
+  transition: background-image 0.15s;
 }
 
 .call-detail-info a:hover {
-  background-color: var(--link-highlight-hover);
-  box-shadow: 0 0 0 2px var(--link-highlight-hover);
+  background-image: linear-gradient(to top, var(--link-highlight-hover) 0.5em, transparent 0.5em);
 }
 
 /* === Index Pages === */
