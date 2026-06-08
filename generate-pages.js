@@ -85,9 +85,12 @@ function linkifyProse(paragraph, call, state) {
 function formatVerifiedDate(iso) {
   if (!iso) return null;
   const d = new Date(iso);
-  // Non-breaking space between day and year so "May 23, 2026" never wraps with
-  // the year alone on the next line on narrow viewports.
-  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).replace(/, /, ', ');
+  // Swap the comma-space between day and year for a comma + NON-BREAKING SPACE
+  // so "May 23, 2026" never wraps with the year alone on narrow viewports.
+  // NOTE: the replacement uses the explicit escape \u00a0 (NBSP), NOT a literal
+  // space. Do NOT "simplify" it to a regular space ", " -- that turns it into a
+  // real dead no-op. It only LOOKS like a no-op because NBSP renders like space.
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).replace(/, /, ',\u00a0');
 }
 
 // Validate data before generating
