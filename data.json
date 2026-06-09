@@ -24,7 +24,9 @@
       "slug": "wassaic-project-2027-summer-exhibition",
       "orgInTitle": true,
       "summary": "Juried group show at the Wassaic Project, Hudson Valley NY. Open to all media incl. photography; accepted artists get a modest honorarium.",
-      "dateAdded": "2026-06-08T23:07:53Z"
+      "dateAdded": "2026-06-08T23:07:53Z",
+      "requirements": "1–10 images",
+      "resultsDate": "By November 2026"
     },
     {
       "title": "Create! Magazine Issue #59",
@@ -47,7 +49,8 @@
       "slug": "create-magazine-issue-59",
       "orgInTitle": true,
       "summary": "Issue #59 of the contemporary art print + digital magazine. Open theme, juried by Indira Cesarine. Photography welcome worldwide.",
-      "dateAdded": "2026-06-08T23:07:53Z"
+      "dateAdded": "2026-06-08T23:07:53Z",
+      "resultsDate": "August 30, 2026"
     },
     {
       "title": "The Hand Magazine - Issue #54 Autumn 2026",
@@ -107,7 +110,7 @@
       "slug": "on-the-shelf-2026-filter-photo",
       "orgInTitle": false,
       "summary": "Juried photo book exhibition at Filter Space, Chicago (Sept 4–Oct 31), juried by Nick Larsen of Radius Books. $500 Juror's Choice.",
-      "resultsDate": "September 2026",
+      "resultsDate": "Early August 2026",
       "dateAdded": "2026-06-07T23:06:53.175Z",
       "jury": [
         "Nick Larsen, Radius Books"
@@ -15825,7 +15828,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt Shopify storefront still entirely unavailable on 2026-06-07 (re-checked; every loosenart.com URL returns the 'store unavailable' message, down since 2026-05-18). Call status uncertain — could not verify any gap fields.",
+      "verifyNote": "LoosenArt Shopify storefront still entirely unavailable on 2026-06-09 (re-checked via Chrome; loosenart.com/pages/calls returns the 'This store is unavailable' message, down since 2026-05-18). Call status uncertain — could not verify any gap fields.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
@@ -16857,7 +16860,7 @@
         "Néstor Rodan, Photographer"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://bwphotoawards.com/en/entries-closed/",
+      "submitUrl": "https://2026.bwphotoawards.com/",
       "requirements": "5 images per category",
       "instagram": "@blackandwhitephotoaward",
       "slug": "black-and-white-photo-awards-2026",
@@ -19317,7 +19320,7 @@
       "url": "https://www.decagongallery.com/",
       "instagram": "@decagongallery",
       "location": "Online",
-      "prize": "$900 total",
+      "prize": "$1,000 total",
       "eligibility": [
         "18-plus"
       ],
@@ -19329,7 +19332,7 @@
       ],
       "slug": "seen-unseen-decagon-gallery",
       "orgInTitle": false,
-      "summary": "Online photography exhibition on the visible and the implied. Juror Ann M. Jastrab. $900 total awards.",
+      "summary": "Online photography exhibition on the visible and the implied. Juror Ann M. Jastrab. $1,000 total awards.",
       "ai": null,
       "resultsDate": "July 18, 2026",
       "dateAdded": "2026-04-30T11:20:18.768Z",
@@ -21509,7 +21512,7 @@
       "orgInTitle": false,
       "summary": "CPAC's biennial student photo show, juried by LensCulture's Laura Sackett. Best in Show wins a LensCulture feature article.",
       "instagram": "@cpacphoto",
-      "ai": "Must disclose",
+      "ai": "Accepted",
       "resultsDate": "September 30, 2026",
       "dateAdded": "2026-06-06T19:09:43Z"
     },
