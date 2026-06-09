@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/hit-me-with-your-best-shot-bird-photography-2026-gallery-by-the-lake/">Hit Me With Your Best Shot! Bird Photography 2026 &middot; Gallery by the Lake</a></h3><p class="call-description">Bird photography show at Lake Charles' Historic City Hall Arts &amp; Cultural Center. $1,325 in awards, $450 Best in Show.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', LA,') || c.location.includes(', Louisiana,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', LA,') || c.location.includes(', Louisiana,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

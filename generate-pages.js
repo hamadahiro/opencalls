@@ -981,6 +981,7 @@ const eligibilityGroups = {
   'alaska': { short: 'Alaska', title: 'Alaska-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Alaska.' },
   'minnesota': { short: 'Minnesota', title: 'Minnesota-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Minnesota.' },
   'colorado': { short: 'Colorado', title: 'Colorado-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Colorado.' },
+  'texas': { short: 'Texas', title: 'Texas-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Texas.' },
   'midwest-us': { short: 'Midwest US', title: 'Midwest US Open Calls', desc: 'Open calls restricted to photographers and artists living or working in the US Midwest — Iowa, Illinois, Indiana, Kansas, Kentucky, Michigan, Minnesota, Missouri, North Dakota, Nebraska, Ohio, South Dakota, and Wisconsin.' },
   'bipoc': { short: 'BIPOC Artists', title: 'Open Calls for BIPOC Artists', desc: 'Open calls, exhibitions, and awards for Black, Indigenous, and People of Color (BIPOC) photographers and visual artists.' },
   'bay-area': { short: 'Bay Area', title: 'Bay Area Open Calls', desc: 'Open calls restricted to photographers and artists based in the San Francisco Bay Area.' },
@@ -1079,7 +1080,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'colorado', 'minnesota', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'colorado', 'minnesota', 'texas', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'canada', 'europe', 'australia', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
