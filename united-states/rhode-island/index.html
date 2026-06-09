@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/7th-annual-spotlight-member-exhibition-rhode-island-center-for-photographic-arts/">7th Annual Spotlight Member Exhibition &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">Juried members' show at the Rhode Island Center for Photographic Arts. Five-image sets; one member wins a 2026 solo show.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', Rhode Island,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', Rhode Island,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

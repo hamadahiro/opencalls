@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Grenze Arsenali Fotografici. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/grenze-off-circuit-2026-nachleben/">Grenze OFF Circuit 2026 — Nachleben</a></h3><p class="call-description">Free open call for the OFF circuit of Grenze's Nachleben festival in Verona — selected projects shown open-air, September 2026.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Grenze Arsenali Fotografici').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Grenze Arsenali Fotografici' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
