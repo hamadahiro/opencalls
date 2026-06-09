@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Haus-a-rest. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/haus-a-rest-issue-73-essence-of-movement/">Haus-a-rest — Issue 73: The Essence of Movement</a></h3><p class="call-description">UK indie art/lit zine, theme 'The Essence of Movement'. Photography accepted alongside other media. Free, publication only.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Haus-a-rest').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Haus-a-rest' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
