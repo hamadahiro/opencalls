@@ -77,7 +77,7 @@ const eligibilityLabel = {
   'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only',
   'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'los-angeles': 'LA only',
   'new-york-state': 'NY State only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
-  'united-kingdom': 'UK only'
+  'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'colorado': 'Colorado only'
 };
 
 // ---- Pure functions ----

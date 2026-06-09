@@ -2,6 +2,137 @@
   "lastUpdated": "2026-06-09",
   "calls": [
     {
+      "title": "Hamburg Portfolio Review 2026",
+      "org": "Hamburg Portfolio Review",
+      "deadline": "2026-06-14",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Annual call from the Hamburg Portfolio Review, hosted by the FREELENS Foundation and supported by the Hamburg Ministry of Culture and Media and Canon Europe. A jury selects 100 photographers, who each meet one-on-one with up to 4 of more than 50 international reviewers — editors, publishers, curators, festival and museum professionals — in virtual sessions, and selected portfolios are also shown in exhibitions in Hamburg. Open to photographers over 18 worldwide; the focus is narrative photography rather than commercial or advertising imagery. Submit two projects of up to 10 images each or one project of up to 20 images. Free to enter; the 2026 deadline has been extended to June 14.",
+      "url": "https://hamburgportfolioreview.de/",
+      "location": "Hamburg, Germany",
+      "prize": "Expert portfolio reviews + Hamburg exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/hamburg-portfolio-review-2026",
+      "requirements": "Up to 20 images",
+      "slug": "hamburg-portfolio-review-2026",
+      "orgInTitle": true,
+      "summary": "Free FREELENS call — 100 photographers get 1:1 virtual reviews with 50+ international experts plus exhibitions in Hamburg.",
+      "dateAdded": "2026-06-09T19:27:08.931Z"
+    },
+    {
+      "title": "Bourse Photographe 2026 — Fondation Jean-Luc Lagardère",
+      "org": "Fondation Jean-Luc Lagardère",
+      "deadline": "2026-06-14",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Annual €10,000 grant from the Fondation Jean-Luc Lagardère for a professional photographer aged 35 or under who wants to carry out a documentary photography production — in the social, economic, political or cultural field — in France or abroad. Applicants must already have published at least two documentary projects in the press, in a book or in an exhibition catalogue. The application dossier is submitted online and the project must be presented in French. Recent laureates include Marion Péhée, Aline Deschamps and Adrienne Surprenant.",
+      "url": "https://www.lagardere.com/fondation/bourses/photographe/",
+      "location": "Paris, France",
+      "prize": "€10,000 grant",
+      "eligibility": [
+        "under-35"
+      ],
+      "submitVia": "Official website",
+      "slug": "bourse-photographe-2026-fondation-jean-luc-lagardere",
+      "orgInTitle": true,
+      "summary": "€10,000 from the Fondation Jean-Luc Lagardère for a documentary photography project by a photographer aged 35 or under.",
+      "dateAdded": "2026-06-09T19:27:08.931Z"
+    },
+    {
+      "title": "The Big Picture",
+      "org": "Texas Photographic Society",
+      "deadline": "2026-07-01",
+      "fee": "$40 (5 images), $30 members",
+      "category": "exhibition",
+      "description": "Texas Photographic Society juried exhibition celebrating large-format photography, on view at the Arlington Museum of Art from August 7 to November 1, 2026. Juror Dornith Doherty, 2012 Guggenheim Fellow, selects work that holds a monumental wall — monumentality, intimacy through detail, excess, immersion and presence. All accepted works are professionally printed at around 40 inches wide at no cost to the artist, sponsored by Fort Worth Camera, the Print Refinery and Red River Paper. Open internationally to photographers 18 and over; submit up to 12 images. Works previously exhibited in a TPS show are not eligible.",
+      "url": "https://texasphoto.org/big-picture",
+      "location": "Arlington, TX, USA",
+      "prize": "Museum exhibition + Free large-format printing",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Dornith Doherty, 2012 Guggenheim Fellow"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17623",
+      "requirements": "Up to 12 images",
+      "slug": "the-big-picture-texas-photographic-society",
+      "orgInTitle": false,
+      "summary": "TPS juried show at the Arlington Museum of Art — accepted works printed ~40 inches wide at no cost. Juror Dornith Doherty.",
+      "dateAdded": "2026-06-09T19:27:08.931Z"
+    },
+    {
+      "title": "PhotoMidwest Biennial Exhibition 2026",
+      "org": "PhotoMidwest",
+      "deadline": "2026-07-01",
+      "fee": "$45 (3 images)",
+      "category": "exhibition",
+      "description": "14th biennial juried exhibition from PhotoMidwest, the Madison, Wisconsin photography nonprofit, presented in collaboration with Promega Art Showcases. Open to photographers living or working in 13 Midwest states (IA, IL, IN, KS, KY, MI, MN, MO, ND, NE, OH, SD, WI), with all photographic approaches welcome — film, digital and alternative processes. Juror Karen Irvine, Chief Curator and Deputy Director of the Museum of Contemporary Photography at Columbia College Chicago, awards a $1,000 Best of Show and three $250 Images of Distinction. The exhibition runs September 17, 2026 – February 26, 2027 across Promega's Art Showcase gallery, PhotoMidwest Studio and UW–Madison's Pyle Center. PhotoMidwest members receive a $10 discount on the entry fee.",
+      "url": "https://www.photomidwest.org/biennial-2026",
+      "location": "Madison, WI, USA",
+      "prize": "$1,000 Best of Show + Exhibition",
+      "eligibility": [
+        "midwest-us"
+      ],
+      "jury": [
+        "Karen Irvine, Chief Curator, Museum of Contemporary Photography"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17426",
+      "requirements": "3–5 images",
+      "slug": "photomidwest-biennial-exhibition-2026",
+      "orgInTitle": true,
+      "summary": "Juried biennial for photographers in 13 Midwest states — $1,000 Best of Show, juried by MoCP chief curator Karen Irvine.",
+      "dateAdded": "2026-06-09T19:27:08.931Z"
+    },
+    {
+      "title": "Penland Resident Artist Program",
+      "org": "Penland School of Craft",
+      "deadline": "2026-06-15",
+      "fee": "$30 application",
+      "category": "residency",
+      "description": "Penland School of Craft's long-running residency for professional craft artists at a pivotal moment in their practice, on its campus in the North Carolina mountains. Two options are offered: a 1-year project-based residency and a 3-year career-transition residency, both beginning March 15, 2027. Photography is among the accepted media alongside books, clay, drawing and painting, glass, iron, letterpress, metals, paper, printmaking, textiles and wood (hot glass excluded this cycle). Residents receive a private studio and apartment with utilities included, meals while school is in session, one tuition-free workshop annually and studio representation at the Penland Gallery — no housing or studio rental fees. No prior connection to Penland is required; reduced application fees are available on request.",
+      "url": "https://penland.org/residencies/resident-artist-program/",
+      "location": "Penland, NC, USA",
+      "prize": "1–3 year residency",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "slug": "penland-resident-artist-program",
+      "orgInTitle": true,
+      "summary": "1-year and 3-year residencies at Penland School of Craft — private studio, housing and meals; photography included.",
+      "dateAdded": "2026-06-09T19:27:08.931Z"
+    },
+    {
+      "title": "Celebrate Colorado: Show Us Your Downtown",
+      "org": "Colorado Photographic Arts Center",
+      "deadline": "2026-06-30",
+      "fee": "$15 (3 images)",
+      "category": "exhibition",
+      "description": "Colorado Photographic Arts Center juried online exhibition celebrating downtowns across Colorado — historic landmarks, civic spaces, contemporary developments and architectural details, with interpretations of 'downtown' intentionally open. Open to Colorado photographers 18 and over; film, digital, mobile and screen-capture work are all accepted. Thirty images are selected by juror Darrin Alfred, Curator of Architecture and Design at the Denver Art Museum, for an online exhibition on CPAC's website from August 21 to December 31, 2026. Best in Show and honorable mentions receive CPAC memberships.",
+      "url": "https://cpacphoto.org/call-for-entry/",
+      "location": "Online",
+      "prize": "Online exhibition + CPAC membership",
+      "eligibility": [
+        "colorado",
+        "18-plus"
+      ],
+      "jury": [
+        "Darrin Alfred, Curator of Architecture and Design, Denver Art Museum"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17467",
+      "requirements": "1–3 images",
+      "ai": "Must disclose",
+      "slug": "celebrate-colorado-show-us-your-downtown-colorado-photographic-arts-center",
+      "orgInTitle": false,
+      "summary": "CPAC juried online show of Colorado downtowns, selected by Denver Art Museum curator Darrin Alfred. Colorado artists 18+.",
+      "dateAdded": "2026-06-09T19:27:08.931Z"
+    },
+    {
       "title": "Grenze OFF Circuit 2026 — Nachleben",
       "org": "Grenze Arsenali Fotografici",
       "deadline": "2026-06-30",
@@ -2188,7 +2319,7 @@
     {
       "title": "Read Against the Machine — Arles 2026",
       "org": "Der Greif",
-      "deadline": "2026-06-07",
+      "deadline": "2026-06-14",
       "fee": "PWYC",
       "category": "photography",
       "description": "Der Greif × Foundation Manuel Rivera-Ortiz open call for Les Rencontres d'Arles 2026, themed Read Against the Machine. Invites work that resists automated interpretation and reclaims the social act of looking — how meaning is shaped through conversation rather than algorithms. 12–16 selected artists join an intensive collective image-reading workshop on July 8; an additional cohort is invited to 1:1 Face-to-Face portfolio reviews on July 10. All selected work is presented in a collective screening at the MRO Foundation during the festival. Applicants must already be attending Arles — travel and accommodation are not covered. Voluntary 15€ donation; vouchers available on request.",
@@ -2211,14 +2342,14 @@
       "requirements": "Portfolio",
       "slug": "read-against-the-machine-arles-2026-der-greif",
       "orgInTitle": false,
-      "summary": "Der Greif × MRO Arles 2026 workshop & 1:1 portfolio reviews. Group screening at MRO Foundation. PWYC; deadline 7 June 2026.",
+      "summary": "Der Greif × MRO Arles 2026 workshop & 1:1 portfolio reviews. Group screening at MRO Foundation. PWYC; deadline 14 June 2026.",
       "ai": null,
       "resultsDate": null,
       "prose": [
         "Read Against the Machine is a Der Greif × Foundation Manuel Rivera-Ortiz collaboration for the 57th Rencontres d'Arles. The brief invites photographic work that resists automated interpretation and reclaims the social act of looking, asking what happens when meaning is shaped through conversation rather than algorithms.",
         "The programme has two strands. 12–16 selected artists join a collaborative editing workshop on July 8 led by Der Greif's jury and MRO's Artistic Director Alejandro León Cannock — an intensive collective image-reading session. A separate cohort is invited to one-on-one Face-to-Face portfolio reviews on July 10 with Der Greif editors and an MRO guest reviewer.",
         "All selected participants' work is included in a collective screening at the MRO Foundation during Arles, on July 10. The screening sits within the wider Rencontres programme and brings the workshop conversations into a public, communal viewing.",
-        "Submission is through Picter. The fee is voluntary, with a 15€ suggested donation; vouchers are available on request via voucher-special@dergreif.org. Applicants must already be attending Les Rencontres d'Arles — travel and accommodation are not covered. The deadline is June 7, 2026 at 11:59 PM CET."
+        "Submission is through Picter. The fee is voluntary, with a 15€ suggested donation; vouchers are available on request via voucher-special@dergreif.org. Applicants must already be attending Les Rencontres d'Arles — travel and accommodation are not covered. The deadline is June 14, 2026 at 11:59 PM CET, extended from June 7."
       ],
       "dateAdded": "2026-05-18T03:21:09.330Z"
     },
