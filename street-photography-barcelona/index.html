@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Street Photography Barcelona. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/street-photography-barcelona-contest-2026-2nd-edition/">Street Photography Barcelona Contest 2026 — 2nd Edition</a></h3><p class="call-description">25 finalists exhibited at Galerie Art Nomade with production covered. €1,000 in cash prizes; screenings at Ibizacinefest 2027.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Street Photography Barcelona').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Street Photography Barcelona' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
