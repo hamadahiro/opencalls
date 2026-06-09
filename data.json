@@ -20,7 +20,8 @@
       "slug": "hamburg-portfolio-review-2026",
       "orgInTitle": true,
       "summary": "Free FREELENS call — 100 photographers get 1:1 virtual reviews with 50+ international experts plus exhibitions in Hamburg.",
-      "dateAdded": "2026-06-09T19:27:08.931Z"
+      "dateAdded": "2026-06-09T19:27:08.931Z",
+      "instagram": "@hamburgportfolioreview"
     },
     {
       "title": "Bourse Photographe 2026 — Fondation Jean-Luc Lagardère",
@@ -39,7 +40,20 @@
       "slug": "bourse-photographe-2026-fondation-jean-luc-lagardere",
       "orgInTitle": true,
       "summary": "€10,000 from the Fondation Jean-Luc Lagardère for a documentary photography project by a photographer aged 35 or under.",
-      "dateAdded": "2026-06-09T19:27:08.931Z"
+      "dateAdded": "2026-06-09T19:27:08.931Z",
+      "jury": [
+        "Héloïse Conesa, Jury President",
+        "Gabriel Bauret",
+        "Christophe Caudroy",
+        "Emmanuelle Halkin",
+        "Patrick Le Bescont",
+        "Delphine Lelu",
+        "Irene Lombardo",
+        "Leo d’Oriano",
+        "Christine Yvaren"
+      ],
+      "submitUrl": "https://www.lagardere.com/fondation/page/depot-des-candidatures-en-ligne/",
+      "instagram": "@fondationjeanluclagardere"
     },
     {
       "title": "The Big Picture",
@@ -63,7 +77,9 @@
       "slug": "the-big-picture-texas-photographic-society",
       "orgInTitle": false,
       "summary": "TPS juried show at the Arlington Museum of Art — accepted works printed ~40 inches wide at no cost. Juror Dornith Doherty.",
-      "dateAdded": "2026-06-09T19:27:08.931Z"
+      "dateAdded": "2026-06-09T19:27:08.931Z",
+      "instagram": "@texasphotosociety",
+      "resultsDate": "July 8, 2026"
     },
     {
       "title": "PhotoMidwest Biennial Exhibition 2026",
@@ -74,7 +90,7 @@
       "description": "14th biennial juried exhibition from PhotoMidwest, the Madison, Wisconsin photography nonprofit, presented in collaboration with Promega Art Showcases. Open to photographers living or working in 13 Midwest states (IA, IL, IN, KS, KY, MI, MN, MO, ND, NE, OH, SD, WI), with all photographic approaches welcome — film, digital and alternative processes. Juror Karen Irvine, Chief Curator and Deputy Director of the Museum of Contemporary Photography at Columbia College Chicago, awards a $1,000 Best of Show and three $250 Images of Distinction. The exhibition runs September 17, 2026 – February 26, 2027 across Promega's Art Showcase gallery, PhotoMidwest Studio and UW–Madison's Pyle Center. PhotoMidwest members receive a $10 discount on the entry fee.",
       "url": "https://www.photomidwest.org/biennial-2026",
       "location": "Madison, WI, USA",
-      "prize": "$1,000 Best of Show + Exhibition",
+      "prize": "$1,000 Best of Show + $250 ×3 + Exhibition",
       "eligibility": [
         "midwest-us"
       ],
@@ -83,11 +99,13 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17426",
-      "requirements": "3–5 images",
+      "requirements": "Up to 5 images",
       "slug": "photomidwest-biennial-exhibition-2026",
       "orgInTitle": true,
       "summary": "Juried biennial for photographers in 13 Midwest states — $1,000 Best of Show, juried by MoCP chief curator Karen Irvine.",
-      "dateAdded": "2026-06-09T19:27:08.931Z"
+      "dateAdded": "2026-06-09T19:27:08.931Z",
+      "instagram": "@photomidwest",
+      "resultsDate": "August 5, 2026"
     },
     {
       "title": "Penland Resident Artist Program",
@@ -100,11 +118,14 @@
       "location": "Penland, NC, USA",
       "prize": "1–3 year residency",
       "eligibility": [],
-      "submitVia": "Official website",
+      "submitVia": "SlideRoom",
       "slug": "penland-resident-artist-program",
       "orgInTitle": true,
       "summary": "1-year and 3-year residencies at Penland School of Craft — private studio, housing and meals; photography included.",
-      "dateAdded": "2026-06-09T19:27:08.931Z"
+      "dateAdded": "2026-06-09T19:27:08.931Z",
+      "resultsDate": "August 2026",
+      "submitUrl": "https://penland.slideroom.com/",
+      "instagram": "@penlandschool"
     },
     {
       "title": "Celebrate Colorado: Show Us Your Downtown",
@@ -130,7 +151,9 @@
       "slug": "celebrate-colorado-show-us-your-downtown-colorado-photographic-arts-center",
       "orgInTitle": false,
       "summary": "CPAC juried online show of Colorado downtowns, selected by Denver Art Museum curator Darrin Alfred. Colorado artists 18+.",
-      "dateAdded": "2026-06-09T19:27:08.931Z"
+      "dateAdded": "2026-06-09T19:27:08.931Z",
+      "resultsDate": "July 30, 2026",
+      "instagram": "@cpacphoto"
     },
     {
       "title": "Grenze OFF Circuit 2026 — Nachleben",
@@ -387,7 +410,7 @@
       "prize": "$500 Juror's Choice",
       "eligibility": [],
       "submitVia": "Submittable",
-      "submitUrl": "https://filterphoto.submittable.com/submit",
+      "submitUrl": "https://filterphoto.submittable.com/submit/83d11dd6-9413-4f52-9344-705278d18aef/on-the-shelf-2026",
       "requirements": "1 photo book",
       "slug": "on-the-shelf-2026-filter-photo",
       "orgInTitle": false,
@@ -688,7 +711,10 @@
       "slug": "the-space-between-us-decagon-gallery",
       "orgInTitle": false,
       "summary": "Free online photography exhibition on the emotional residue of human connection. Catalog plus individual curatorial reflections.",
-      "dateAdded": "2026-06-05T08:04:15.324Z"
+      "dateAdded": "2026-06-05T08:04:15.324Z",
+      "jury": [
+        "Decagon Gallery team"
+      ]
     },
     {
       "title": "Abandoned",
@@ -1510,7 +1536,7 @@
       "category": "exhibition",
       "description": "Monthly featured photographer showcase. Winner receives a full month online solo exhibition (July 1–31, 2026), permanent gallery presence, exclusive interview, social media promotion, newsletter feature, international press coverage, and commission-free sales. Submit a cohesive project or portfolio of 6–14 images.",
       "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=226",
-      "instagram": "@allaboutphoto",
+      "instagram": "@allaboutphotocom",
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
@@ -16003,7 +16029,7 @@
       "orgInTitle": false,
       "slug": "atlas-of-ruins-vol-3-call-for-photos-reuse-italy",
       "dateAdded": "2026-03-22",
-      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
+      "submitUrl": null,
       "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Two registration tiers, prizes up to €1,200.",
       "ai": null,
       "jury": [],
@@ -16129,7 +16155,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt Shopify storefront still entirely unavailable on 2026-06-09 (re-checked via Chrome; loosenart.com/pages/calls returns the 'This store is unavailable' message, down since 2026-05-18). Call status uncertain — could not verify any gap fields.",
+      "verifyNote": "LoosenArt Shopify storefront still unavailable on 2026-06-09 (loosenart.com/pages/calls now returns 404 via direct fetch; 'store unavailable' since 2026-05-18). Call status uncertain — could not verify any gap fields.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
@@ -16749,7 +16775,7 @@
       "eligibility": [],
       "submitVia": "Shutter Hub website",
       "requirements": "Up to 10 images",
-      "ai": "Accepted",
+      "ai": "Must disclose",
       "slug": "flora-shutter-hub-editions-publication",
       "orgInTitle": true,
       "dateAdded": "2026-03-25T18:19:00Z",
@@ -18708,7 +18734,7 @@
       "jury": [
         "Kiera Hight, Photographer & Filmmaker"
       ],
-      "submitVia": "Email",
+      "submitVia": "Google Form",
       "requirements": "Up to 3 images",
       "slug": "2026-national-juried-photography-exhibition-academy-center-of-the-arts",
       "orgInTitle": true,
@@ -18722,7 +18748,8 @@
         "Cash prizes include the Best in Show award of $1,000, with additional cash awards given at the juror's discretion based on the installed exhibition. Selection is unusual: rather than judging from digital files alone, the juror selects work after installation — the physical hang influences the awards.",
         "Selected work is exhibited September 4 through 25, 2026, with an opening reception on September 4. The Academy Center provides insurance coverage during the exhibition period and includes selected work in a full-color exhibition catalog. Sales are processed through the gallery, which retains a 35% commission.",
         "Eligibility is restricted to U.S. residents aged 18 or over. Submitted photographs must be original work completed after January 1, 2021 and cannot have been previously exhibited in a Lynchburg juried photography show. The entry fee is $45 per artist for up to three submissions. Submissions are JPEG at 300 DPI, minimum 4×6 inches, accepted via email or flash drive. The 2026 deadline is June 30; results announced July 14."
-      ]
+      ],
+      "submitUrl": "https://forms.gle/Tq1JK3LrX6WyAudFA"
     },
     {
       "title": "Recology San Francisco Artist-in-Residence Program 2027",
@@ -20822,7 +20849,7 @@
       ],
       "submitVia": "Google Drive link via email",
       "requirements": "5–10 images",
-      "verifyNote": "As of 2026-06-08: un-staged.com/open-calls/ shows only 'Coming Soon'; latest published issue is Issue 04 'Eerie'. Official linktree (linktr.ee/arek_ratai) lists submissions via email to opencall@un-staged.com but shows NO 'Materiality' theme or deadline. The Materiality theme & guest curator Francisco Gonzalez Camacho were human-confirmed when this entry was added but are NOT currently visible on any official source. IG handle is @unstaged.lab (@unstaged.journal 404s). Deadline/theme retained pending re-verification.",
+      "verifyNote": "As of 2026-06-09: un-staged.com/open-calls/ still shows only 'Coming Soon'; latest published issue is Issue 04 'Eerie'. Official linktree (linktr.ee/arek_ratai) lists submissions via email to opencall@un-staged.com but shows NO 'Materiality' theme or deadline. The Materiality theme & guest curator Francisco Gonzalez Camacho were human-confirmed when this entry was added but are NOT currently visible on any official source. IG handle is @unstaged.lab (@unstaged.journal 404s). Deadline/theme retained pending re-verification.",
       "slug": "unstaged-journal-materiality",
       "orgInTitle": true,
       "summary": "Free indie photography journal on authenticity. Theme: Materiality. Guest curated by Francisco Gonzalez Camacho. Print publication.",
@@ -20841,7 +20868,7 @@
       "title": "THAT ONE PHOTOGRAPH",
       "org": "Decagon Gallery",
       "deadline": "2026-06-20",
-      "fee": "$15",
+      "fee": "$15 + $5 each additional",
       "category": "exhibition",
       "description": "Juried single-image call from Decagon Gallery for a photograph carrying emotional weight tied to memory, attachment, intimacy, grief, distance, tenderness, longing, or time. The brief favors images 'never fully left behind' over technical perfection. $1,000 total cash awards across five placements ($500 first plus solo website exhibition, $250 second, $150 third, two $50 honorable mentions). All selected photographers receive a dedicated exhibition page, Instagram feature, and catalog placement. Online exhibition July 1 – September 1, 2026. Open worldwide, all photographic styles and processes.",
       "url": "https://www.decagongallery.com/that-one-photograph-entry",
@@ -21325,14 +21352,14 @@
       "url": "https://www.praxisphotocenter.org/x1-sub-1-7",
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
-      "prize": "Exhibition + Juror's Choice + Directors' Choice",
+      "prize": "Exhibition",
       "eligibility": [
         "18-plus"
       ],
       "resultsDate": "June 26, 2026",
       "submitVia": "SmarterEntry",
       "submitUrl": "https://client.smarterentry.com/praxis",
-      "requirements": "Up to 5 images",
+      "requirements": "Up to 10 images",
       "slug": "water-sky-praxis-photo-arts-center",
       "orgInTitle": false,
       "summary": "Praxis Gallery (Minneapolis) landscape photo exhibition on water and sky. Up to 74 images selected, July–August 2026.",
