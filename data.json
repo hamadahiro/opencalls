@@ -41,7 +41,9 @@
       "orgInTitle": false,
       "summary": "Photograph Sirmione and Lake Garda — €1,500 top prizes per theme plus hospitality awards. €10 flat fee, open until October 31.",
       "ai": "Not accepted",
-      "dateAdded": "2026-06-10T11:33:54.869Z"
+      "dateAdded": "2026-06-10T11:33:54.869Z",
+      "instagram": "@comune_di_sirmione",
+      "submitUrl": "https://sirmionefotografia.it/en/ds/challenge-en"
     },
     {
       "title": "1839 Awards Photographer of the Year Contest",
@@ -56,14 +58,22 @@
       "prize": "$4,000",
       "eligibility": [],
       "submitVia": "1839 Awards",
-      "submitUrl": "https://1839awards.com/contests/photographer-of-the-year",
+      "submitUrl": "https://1839awards.com/auth/register",
       "requirements": "1–5 images",
       "resultsDate": "October 28, 2026",
       "slug": "1839-awards-photographer-of-the-year-contest",
       "orgInTitle": true,
       "summary": "Open-genre flagship contest across 22 categories. $4,000 in cash prizes, digital gallery, artist directory. Final deadline Sep 16.",
       "ai": "Not accepted",
-      "dateAdded": "2026-06-10T11:33:54.869Z"
+      "dateAdded": "2026-06-10T11:33:54.869Z",
+      "jury": [
+        "Alessa Widmer, Art Historian & Curator, University of Zurich",
+        "Derek Eng, Art Director, Dwell",
+        "Hanna Girma, Senior Editor, Serpentine",
+        "Hilary Greenbaum, Director of Graphic Design, Whitney Museum",
+        "Kelly Sidley, Head of Photographs, Bonhams",
+        "Maia Murphy, Senior Editor, Phaidon Press"
+      ]
     },
     {
       "title": "Raccont'Arti: Contemporary Photography Award 2026",
@@ -103,7 +113,8 @@
       "slug": "liminal-magazine-issue-2-phantasmal-gallery",
       "orgInTitle": false,
       "summary": "Photo-book-style indie mag of the uncanny — horror, surrealism, liminal spaces. Up to 6 works; contributors get a print copy.",
-      "dateAdded": "2026-06-10T11:33:54.869Z"
+      "dateAdded": "2026-06-10T11:33:54.869Z",
+      "instagram": "@phantasmal.gallery"
     },
     {
       "title": "Benjamin Hall Photography Award 2026",
@@ -1373,7 +1384,7 @@
       "category": "exhibition",
       "description": "Sacramento non-profit photography center seeking proposals for solo and group exhibitions running January–December 2027. Main Gallery proposals are open to all artists working in the photographic arts; the more intimate Step-Up Gallery is reserved for current Viewpoint members. Exhibits run roughly four weeks in both galleries. Submit a cohesive body of work — a representative selection of 20 images plus a short artist statement — reviewed by the Viewpoint Curatorial Committee. Maximum two proposals per artist; past solo exhibitors must wait three years before another solo show.",
       "url": "https://www.viewpointphotoartcenter.org/2027-call-for-proposals/",
-      "instagram": "@viewpointphotoartcenter",
+      "instagram": "@viewpoint_photo_artcenter",
       "location": "Sacramento, CA, USA",
       "prize": "Solo or group exhibition",
       "submitVia": "EntryThingy",
@@ -1383,7 +1394,10 @@
       "slug": "viewpoint-photographic-art-center-2027-call-for-exhibit-proposals",
       "orgInTitle": true,
       "summary": "Proposals for solo/group photography exhibitions in 2027 at Sacramento's Viewpoint center. Submit 20 images + statement.",
-      "dateAdded": "2026-06-04T07:07:55Z"
+      "dateAdded": "2026-06-04T07:07:55Z",
+      "jury": [
+        "Viewpoint Curatorial Committee"
+      ]
     },
     {
       "title": "Fabula Works — Cycle(s)",
@@ -1792,7 +1806,7 @@
       "title": "DECAY, CORROSION, RUST",
       "org": "New York Center for Photographic Arts",
       "deadline": "2026-08-16",
-      "fee": "$40",
+      "fee": "$40/3 images",
       "category": "exhibition",
       "description": "Themed juried call for photography of decay, corrosion, and rust — abandoned buildings, rusted vehicles, peeling paint, junkyards — in any photographic medium. Cash prizes total $4,000 across ten awards: $1,100 Grand Prize, three First Prizes of $400, three Second Prizes of $325, three Third Prizes of $250, plus 20 Juror Selections and 20 Honorable Mentions. Juried by Darren Ching, co-owner of Klompching Gallery, New York. Winners featured in the NYC4PA online gallery and catalog with certificates; the winning image appears on the NYC4PA homepage. Open worldwide to amateur and professional photographers; 2-D work only.",
       "url": "https://www.nyc4pa.com/decay",
@@ -2880,7 +2894,7 @@
       "category": "exhibition",
       "description": "LACP's annual virtual juried open call focusing on American documentary photography in the 21st century. The brief asks how America sees itself, what it highlights, and what might be missing from the frame. Open internationally to all skill levels and to any photographic medium. Juror Dr. Rotem Rozental, LACP's Executive Director and Chief Curator, selects works for a virtual exhibition on LACP's website running July 16–October 16, 2026, with top three winners invited to show in an in-person component. Prizes: 1st place $500 cash plus in-person invitation; 2nd place $250 LACP gift card, one-year membership, and in-person; 3rd place $250 LACP gift card and in-person. Honorable mentions placed in the online gallery for three months. AI involvement beyond basic editing must be disclosed; no watermarks accepted. Members receive a 25% fee discount across all tiers.",
       "url": "https://lacphoto.org/exhibition/expand-and-contract-2026-call/",
-      "instagram": "@lacphoto",
+      "instagram": "@la_centerofphoto",
       "location": "Online + Los Angeles, CA, USA",
       "prize": "$500 cash + exhibition",
       "eligibility": [
