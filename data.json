@@ -19,7 +19,14 @@
       "orgInTitle": false,
       "summary": "New £1,000 photography award from Holt Art Projects. Any genre, worldwide; shortlist exhibited in Holt, North Norfolk, in July.",
       "requirements": "Up to 3 images",
-      "dateAdded": "2026-06-10T03:23:45.721Z"
+      "dateAdded": "2026-06-10T03:23:45.721Z",
+      "ai": "Not accepted",
+      "jury": [
+        "Benjamin Hall, Journalist & War Correspondent",
+        "Sheila Rock, Photographer",
+        "Rick Findler, Photojournalist & Co-founder, Story Picture Agency"
+      ],
+      "instagram": "@holtartprojects"
     },
     {
       "title": "Next Generation RBSA 2026",
@@ -42,7 +49,11 @@
       "orgInTitle": false,
       "summary": "Free early-career show at RBSA Gallery Birmingham for artists near the city. 6–10 images; 3-year membership and September show.",
       "requirements": "6–10 images",
-      "dateAdded": "2026-06-10T03:23:45.721Z"
+      "dateAdded": "2026-06-10T03:23:45.721Z",
+      "jury": [
+        "RBSA Director and RBSA Members"
+      ],
+      "resultsDate": "By September 18, 2026"
     },
     {
       "title": "RBSA Prize 2026",
@@ -75,7 +86,7 @@
       "url": "https://numeromagazine.ch/plus/",
       "instagram": "@numeroswitzerland",
       "location": "Online",
-      "prize": "Publication in Numéro + Cover feature + Nanlite lighting kit",
+      "prize": "Publication + Cover feature",
       "eligibility": [
         "18-plus"
       ],
@@ -772,7 +783,7 @@
       "url": "https://www.outdoorphotographymagazine.co.uk/submissions/",
       "instagram": "@outdoorphotographymag",
       "location": "Online",
-      "prize": "£330 + publication",
+      "prize": "Samsung SSD (£330) + Publication",
       "eligibility": [],
       "submitVia": "Website form",
       "submitUrl": "https://www.outdoorphotographymagazine.co.uk/submissions/one-thing-this-month/",
@@ -1522,7 +1533,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://pci.jotform.com/saveartspace/ode-to-womanhood-upload-form",
       "requirements": "1–3 images",
-      "resultsDate": "2026-07-06",
+      "resultsDate": "After July 6, 2026",
       "jury": [
         "Ceres (Diaja), Curator"
       ],
@@ -3978,7 +3989,7 @@
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://ucrossfoundation.submittable.com/submit",
-      "requirements": "Up to 10 images",
+      "requirements": "10 images",
       "slug": "ucross-spring-2027-residency",
       "orgInTitle": true,
       "summary": "2–6 week residency on a 20,000-acre Wyoming ranch. Photography eligible. Lodging + meals + work space; international applicants welcome.",
@@ -3991,7 +4002,7 @@
         "Eligibility is open globally to visual artists, writers, composers, choreographers, interdisciplinary and performance artists, and collaborative teams, at both established and emerging career stages. Applicants must demonstrate professional standing, with both U.S. and international applicants welcome.",
         "The application fee is $40, with no waivers available. Spring 2027 applications are accepted through Submittable from May 1 through July 15, 2026; Fall applications open later in the year (November 1 through January 15). Decisions are typically released within several months of each deadline."
       ],
-      "resultsDate": "Within 4–5 months of deadline"
+      "resultsDate": "~16 weeks after deadline"
     },
     {
       "title": "SCAN Full Contact 2026",
@@ -21039,7 +21050,9 @@
       "prize": "Exhibition",
       "eligibility": [
         "18-plus",
-        "student"
+        "student",
+        "united-kingdom",
+        "ireland"
       ],
       "jury": [
         "Emma Lambert, Silvergrass Press",
