@@ -105,6 +105,8 @@
       <h2 class="subtitle">Open calls and submission opportunities from Visual Arts Scotland. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/bothy-project-residency-sweeney-s-bothy-isle-of-eigg-visual-arts-scotland/">Bothy Project Residency — Sweeney's Bothy, Isle of Eigg &middot; Visual Arts Scotland</a></h3><p class="call-description">Week-long off-grid residency at Sweeney's Bothy on the Isle of Eigg. Accommodation, £720 artist fee and £250 travel. VAS members.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fidra-fine-art-professional-members-exhibition-visual-arts-scotland/">Fidra Fine Art Professional Members Exhibition &middot; Visual Arts Scotland</a></h3><p class="call-description">Sales exhibition for VAS professional members at Fidra Fine Art in Gullane. Up to two works shown, October 17 – November 29, 2026.</p></div>
 
     </section>
 
@@ -122,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Visual Arts Scotland').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Visual Arts Scotland' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
