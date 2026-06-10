@@ -1074,12 +1074,13 @@
       ],
       "submitVia": "Typeform",
       "submitUrl": "https://form.typeform.com/to/f0TsWrtf",
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "no-type-issue-no-03-america",
       "orgInTitle": true,
       "summary": "Themed issue from indie Chicago photo publisher No-Type, guest-edited by Kenn Cook Jr. Photographs exploring American life.",
       "resultsDate": "September 15, 2026",
-      "dateAdded": "2026-06-05T15:08:57.848Z"
+      "dateAdded": "2026-06-05T15:08:57.848Z",
+      "requirements": "5 images"
     },
     {
       "title": "Women United Art Magazine — Issue XIV",
@@ -1340,7 +1341,9 @@
       "submitVia": "Official website",
       "submitUrl": "https://cupoty.com/enter/",
       "requirements": "6–30 images",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Bart Somers, Founder, Insectguru",
         "David Maitland, Wildlife Photographer",
@@ -1362,7 +1365,7 @@
         "Viktoria Haack, Photographer",
         "Wim van Egmond, Photomicrographer"
       ],
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "close-up-photographer-of-the-year-2026-cupoty-8",
       "orgInTitle": true,
       "summary": "International macro & close-up competition — 11 categories from insects to intimate landscapes. £2,500 top prize.",
@@ -5298,7 +5301,7 @@
       "title": "Across America 2026",
       "org": "The Art Center",
       "deadline": "2026-06-14",
-      "fee": "$25/3 images",
+      "fee": "$25/3 images (members free)",
       "category": "exhibition",
       "description": "Photography exhibition celebrating America's diverse and dynamic essence — landscapes, people, culture, or any aspect that embodies the nation's spirit. Up to 3 images forming a cohesive series. Originally launched as a national photography exhibition, the 2026 edition now welcomes artists working in all mediums while continuing to celebrate the original theme. Exhibition at The Art Center gallery in historic downtown Dover. Artists receive 70% of sale price. All work must be for sale and cannot be removed during the exhibition. Members enter free. Open to US artists of all levels, 18+. Exhibition July 13 – August 31, 2026.",
       "url": "https://theartcenterdover.com/",
@@ -5819,7 +5822,7 @@
     {
       "title": "Ten x Ten – 18th Annual Small Works",
       "org": "Midwest Center for Photography",
-      "deadline": "2026-08-01",
+      "deadline": "2026-09-01",
       "fee": "$50/5 images + $30 framing",
       "category": "exhibition",
       "description": "Annual small works exhibition at the Midwest Center for Photography in Wichita, Kansas (November 14 – December 31, 2026). Celebrates creative expression within the square photographic format. All works are 10\"×10\" and priced at $200 each. MWCP provides printing at no cost to selected artists. Open to all photographers internationally.",
@@ -15087,7 +15090,7 @@
       "title": "photoED Magazine — Home VS Away (Issue #77)",
       "org": "photoED Magazine",
       "deadline": "2026-06-15",
-      "fee": "$20 CAD",
+      "fee": "$20 CAD (subscribers free)",
       "category": "zine",
       "description": "Fine art photography projects investigating the idea of home, the experience of being away, or the tension between the two. 10 selected projects published in print edition, 25 more in digital companion. Contributors receive printed copies with worldwide shipping. Free for subscribers and economically challenged artists.",
       "url": "https://www.photoed.ca/callforphotography",
@@ -15096,7 +15099,7 @@
       "prize": "Publication",
       "eligibility": [],
       "submitVia": "Zealous",
-      "resultsDate": null,
+      "resultsDate": "August 2026",
       "slug": "photoed-magazine-home-vs-away-issue-77",
       "orgInTitle": true,
       "dateAdded": "2026-03-19",
@@ -15116,7 +15119,7 @@
       "title": "photoED Magazine — Real VS Imagined",
       "org": "photoED Magazine",
       "deadline": "2026-09-09",
-      "fee": "$20 CAD",
+      "fee": "$20 CAD (subscribers free)",
       "category": "zine",
       "description": "Fine art photography projects engaging with what is real versus what is imagined. 10 selected projects published in print edition, 25 more in digital companion. Contributors receive printed copies with worldwide shipping. Free for subscribers.",
       "url": "https://www.photoed.ca/callforphotography",
