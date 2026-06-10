@@ -259,7 +259,8 @@
       "jury": [
         "Sarah Leen, former Director of Photography, National Geographic",
         "Gulnara Lyabib Samoilova, Founder, Women Street Photographers"
-      ]
+      ],
+      "resultsDate": "August 2026"
     },
     {
       "title": "InCadaqués Photo Festival Open Call 2026",
@@ -451,7 +452,13 @@
       "slug": "form-photo-award-x-unseen",
       "orgInTitle": true,
       "summary": "Open-theme award from Paris-based Form. Selected photographers present their projects at the UNSEEN 2027 photography fair.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "jury": [
+        "Domenico De Chirico, Curator, UNSEEN at Art Rotterdam",
+        "Manuela Klerkx, Head of VIP & Gallery Relations, Unseen",
+        "Dimitri Bogachuk, Founder, Form"
+      ],
+      "resultsDate": "Late December 2026"
     },
     {
       "title": "PhotoVogue Regional Open Call — MENA Panorama",
@@ -16770,7 +16777,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt Shopify storefront still unavailable on 2026-06-09 (loosenart.com/pages/calls now returns 404 via direct fetch; 'store unavailable' since 2026-05-18). Call status uncertain — could not verify any gap fields.",
+      "verifyNote": "LoosenArt Shopify storefront still unavailable on 2026-06-10 (loosenart.com/pages/calls returns 404; 'store unavailable' since 2026-05-18). Call status uncertain — could not verify any gap fields.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
@@ -21466,7 +21473,7 @@
       ],
       "submitVia": "Google Drive link via email",
       "requirements": "5–10 images",
-      "verifyNote": "As of 2026-06-09: un-staged.com/open-calls/ still shows only 'Coming Soon'; latest published issue is Issue 04 'Eerie'. Official linktree (linktr.ee/arek_ratai) lists submissions via email to opencall@un-staged.com but shows NO 'Materiality' theme or deadline. The Materiality theme & guest curator Francisco Gonzalez Camacho were human-confirmed when this entry was added but are NOT currently visible on any official source. IG handle is @unstaged.lab (@unstaged.journal 404s). Deadline/theme retained pending re-verification.",
+      "verifyNote": "As of 2026-06-10: un-staged.com/open-calls/ still shows only 'Coming Soon'; latest published issue is Issue 04 'Eerie'. Official linktree (linktr.ee/arek_ratai) lists submissions via email to opencall@un-staged.com (stored as contact) but shows NO 'Materiality' theme or deadline. The Materiality theme & guest curator Francisco Gonzalez Camacho were human-confirmed when this entry was added but are NOT currently visible on any official source. IG handle is @unstaged.lab (@unstaged.journal 404s). Deadline/theme retained pending re-verification.",
       "slug": "unstaged-journal-materiality",
       "orgInTitle": true,
       "summary": "Free indie photography journal on authenticity. Theme: Materiality. Guest curated by Francisco Gonzalez Camacho. Print publication.",
@@ -22375,7 +22382,9 @@
       "location": "Online",
       "prize": "£1,000 + £250 ×3",
       "eligibility": [
-        "under-30"
+        "18-plus",
+        "under-30",
+        "commonwealth"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://app.royalcwsociety.org/cypc",

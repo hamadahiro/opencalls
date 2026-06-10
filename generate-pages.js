@@ -969,6 +969,7 @@ const eligibilityGroups = {
   'non-european': { short: 'Non-European', title: 'Non-European Artists Only', desc: 'Open calls restricted to artists from outside Europe — Africa, the Americas, Asia, and Oceania. Exhibitions, grants, and residencies.' },
   'australia': { short: 'Australia', title: 'Australia-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Australian citizens or permanent residents.' },
   'baltics-finland': { short: 'Baltics & Finland', title: 'Open Calls for Baltic & Finnish Artists', desc: 'Open calls restricted to photographers and artists from the Baltic states (Estonia, Latvia, Lithuania) and Finland.' },
+  'commonwealth': { short: 'Commonwealth', title: 'Commonwealth-Only Open Calls', desc: 'Open calls restricted to citizens or residents of Commonwealth nations. Competitions, exhibitions, and awards for Commonwealth photographers and artists.' },
   'canada': { short: 'Canada', title: 'Canada-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Canadian citizens or permanent residents.' },
   'ireland': { short: 'Ireland', title: 'Ireland-Only Open Calls', desc: 'Open calls restricted to photographers and artists resident on the island of Ireland. Exhibitions, grants, and residencies for Irish artists.' },
   'switzerland': { short: 'Switzerland', title: 'Switzerland-Only Open Calls', desc: 'Open calls restricted to photographers and artists with Swiss citizenship or based in Switzerland.' },
@@ -1082,7 +1083,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'colorado', 'minnesota', 'texas', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'canada', 'europe', 'australia', 'baltics-finland', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'colorado', 'minnesota', 'texas', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'canada', 'europe', 'australia', 'baltics-finland', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
