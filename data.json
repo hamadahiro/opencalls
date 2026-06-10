@@ -18,7 +18,9 @@
       "slug": "san-francisco-photo-book-fair-2026-harvey-milk-photo-center",
       "orgInTitle": false,
       "summary": "Photobook fair at the Harvey Milk Photo Center, Oct 17–18. Publishers, artists and zine makers apply for tables; scholarships available.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "instagram": "@harveymilkphoto",
+      "requirements": "1 PDF"
     },
     {
       "title": "Women Street Photographers Exhibition Call 2026",
@@ -36,11 +38,15 @@
       ],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/wsp-barcelona-exhibition-2026",
-      "requirements": "Single images",
+      "requirements": "1 image per entry",
       "slug": "women-street-photographers-exhibition-call-2026",
       "orgInTitle": true,
       "summary": "34 women & non-binary photographers selected for a Barcelona exhibition, Nov 5–Dec 11. Printing covered; global WSP feature.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "jury": [
+        "Sarah Leen, former Director of Photography, National Geographic",
+        "Gulnara Lyabib Samoilova, Founder, Women Street Photographers"
+      ]
     },
     {
       "title": "InCadaqués Photo Festival Open Call 2026",
@@ -52,7 +58,7 @@
       "url": "https://incadaques.com/open-call-2026",
       "instagram": "@incadaques_festival",
       "location": "Cadaqués, Spain",
-      "prize": "€1,000 grand prize + Festival exhibition + Production covered",
+      "prize": "€1,000 + Exhibition",
       "eligibility": [],
       "submitVia": "Official website",
       "requirements": "10-15 images",
@@ -60,7 +66,21 @@
       "slug": "incadaques-photo-festival-open-call-2026",
       "orgInTitle": true,
       "summary": "20 projects exhibited at the festival's 10th edition. €1,000 grand prize plus Women Photography and New Realities awards.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "jury": [
+        "Ana Planas, Art Director, Paris Photo",
+        "Esther Friedman, Photographer & Curator",
+        "Fabrice Laroche, Editor-in-Chief, Fisheye Magazine",
+        "Florent Basiletti & Juliette Larochette, Co-directors, La Kabine",
+        "François Bouchara, Head of Granon Digital",
+        "Julia de Bierre, Founder, Galerie Huit Arles",
+        "Olivia Seigneurgens, Co-Founder, InCadaqués",
+        "Silvia Omedes, Director, Photographic Social Vision",
+        "Teona Gogichaishvili, Curator & Co-founder, KOLGA TBILISI PHOTO",
+        "Thibaut Wychowanok, Editor-in-Chief, Numéro Art",
+        "Tom Page, Director, Open Doors Gallery",
+        "Valentina Sinis, Open Call 2025 Winner"
+      ]
     },
     {
       "title": "God Is Dead — Premio BìFoto Fest 2026",
@@ -72,7 +92,7 @@
       "url": "https://www.bifotofest.it/",
       "instagram": "@bifotofest",
       "location": "Mogoro, Sardinia, Italy",
-      "prize": "Exhibition at BìFoto Fest + Opening-day stay covered",
+      "prize": "Exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -147,7 +167,8 @@
       "slug": "earth-partner-prize-2026",
       "orgInTitle": true,
       "summary": "Free climate-art prize for creatives 14–30 with GEF and Re:wild. Eight finalists win $10K, $5K or $2K; jury incl. Hans Ulrich Obrist.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "ai": "Tool use only (disclose)"
     },
     {
       "title": "ProfiFoto New Talent Award 26/2",
@@ -159,7 +180,7 @@
       "url": "https://www.profifoto.de/new-talent-award/",
       "instagram": "@profifoto.de",
       "location": "Online",
-      "prize": "ProfiFoto publication + WhiteWall exhibition + Share of €3,000",
+      "prize": "Share of €3,000 + Publication + Exhibition",
       "eligibility": [],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/profifoto-nta-26-pt2",
@@ -167,7 +188,8 @@
       "slug": "profifoto-new-talent-award-26-2",
       "orgInTitle": true,
       "summary": "German photo magazine's open call for emerging talent. Winners published in ProfiFoto, WhiteWall print exhibition, €3,000 cash pool.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "ai": "Concept use only (labeled)"
     },
     {
       "title": "Street Photography Barcelona Contest 2026 — 2nd Edition",
@@ -179,7 +201,7 @@
       "url": "https://www.streetphotographybarcelona.com/",
       "instagram": "@streetphotographybarcelona",
       "location": "Barcelona, Spain",
-      "prize": "€500 first prize + Galerie Art Nomade show + Ibizacinefest screening",
+      "prize": "€500 + Exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -205,7 +227,7 @@
       "category": "photography",
       "description": "Open-theme round of the Form Photo Award from Form., the Paris-based multidisciplinary institution encompassing a gallery, magazine, publishing house and educational program. Open to professionals, amateurs and students of all nationalities over 18; black-and-white or colour work is accepted as single images or complete projects, with projects preferred for conveying the author's broader vision. Selected artists present their work in Form's exhibition at the UNSEEN 2027 photography fair.",
       "url": "https://form.photography/",
-      "instagram": "@form.photography",
+      "instagram": "@form.galerie",
       "location": "Rotterdam, Netherlands",
       "prize": "Exhibition at UNSEEN 2027",
       "eligibility": [
@@ -228,7 +250,7 @@
       "url": "https://site.picter.com/photovogue-regional-open-call-mena-panorama-2026",
       "instagram": "@photovogue",
       "location": "Online",
-      "prize": "$8,000 in grants + PhotoVogue Festival 2027 + Condé Nast publication",
+      "prize": "$8,000 in grants + Publication",
       "eligibility": [
         "wana",
         "18-plus"
@@ -262,7 +284,9 @@
       "slug": "road-trip-across-america-photography-exhibition-city-of-frisco",
       "orgInTitle": false,
       "summary": "City of Frisco exhibition marking 250 years of American travel. Texas photographers 18+; free entry, Discovery Center show.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "resultsDate": "July 11, 2026",
+      "instagram": "@friscoartgallery"
     },
     {
       "title": "Photography — Your Vision",
@@ -273,7 +297,7 @@
       "description": "National juried exhibition at MVA Gallery (Modern Visual Arts) in historic Bethlehem, Pennsylvania, open to photography and photo collage of all styles and subjects with no restrictions. US residents 18+ may submit 3 to 9 images ($35 for three, $5 each additional). Awards include a $200 Director's Choice, an Art of Distinction award with a special exhibition, an honorable mention with free entry to a future show, and an annual grand prize of a New York City exhibition opportunity. Exhibition October 10 – November 7, 2026.",
       "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17551",
       "location": "Bethlehem, PA, USA",
-      "prize": "$200 Director's Choice + NYC exhibition grand prize",
+      "prize": "$200 + NYC exhibition",
       "eligibility": [
         "united-states",
         "18-plus"
@@ -284,7 +308,9 @@
       "slug": "photography-your-vision-mva-gallery",
       "orgInTitle": false,
       "summary": "All-genre photography show at MVA Gallery in historic Bethlehem, PA. $200 Director's Choice and an NYC exhibition grand prize.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "resultsDate": "Late August 2026",
+      "instagram": "@mvaartgallery"
     },
     {
       "title": "Hit Me With Your Best Shot! Bird Photography 2026",
@@ -296,14 +322,23 @@
       "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17405",
       "location": "Lake Charles, LA, USA",
       "prize": "$450 Best in Show + $1,325 total awards",
-      "eligibility": [],
+      "eligibility": [
+        "united-states"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17405",
       "requirements": "5-8 images",
       "slug": "hit-me-with-your-best-shot-bird-photography-2026-gallery-by-the-lake",
       "orgInTitle": false,
       "summary": "Bird photography show at Lake Charles' Historic City Hall Arts & Cultural Center. $1,325 in awards, $450 Best in Show.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "resultsDate": "July 10, 2026",
+      "instagram": "@gallerybythelakeswla",
+      "jury": [
+        "Dawn Hewitt, Managing Editor, BWD Magazine",
+        "Bruce Wunderlich, Photo Editor, BWD Magazine"
+      ],
+      "ai": "AI sharpening only"
     },
     {
       "title": "National Juried Photography Exhibition 2026",
@@ -325,7 +360,11 @@
       "slug": "2026-national-juried-photography-exhibition-delaplaine",
       "orgInTitle": false,
       "summary": "The Delaplaine's national juried show in Frederick, MD — Nov 7–29. $1,000 grand prize; work made in the past two years.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "jury": [
+        "E. Brady Robinson, Photographer & Creative Director"
+      ],
+      "resultsDate": "October 8, 2026"
     },
     {
       "title": "TSHOW PHOTO.1",
@@ -336,7 +375,7 @@
       "description": "First photography-dedicated edition of TSHOW, the international juried exhibition from Texas nonprofit Tyler Art Lift, created to highlight the diversity of contemporary photographic practice — traditional, experimental, documentary, conceptual, film and digital. Juried by Latvian fine art and fashion photographer Kristine Madjare, whose work has appeared in The New York Times, The Wall Street Journal and Financial Times. Exhibition at Gallery Main Street in Tyler, Texas, October 15–24, 2026, with cash prizes of $1,000 Best in Show, $500 runner-up and a $500 People's Choice chosen at the opening. Open internationally to artists 18+; $45 for the first entry, $5 each additional; 30% sales commission supports the show.",
       "url": "https://artshowtyler.com",
       "location": "Tyler, TX, USA",
-      "prize": "$1,000 Best in Show + $500 runner-up + $500 People's Choice",
+      "prize": "$1,000 / $500 / $500",
       "eligibility": [
         "18-plus"
       ],
@@ -350,7 +389,8 @@
       "slug": "tshow-photo-1-tyler-art-lift",
       "orgInTitle": false,
       "summary": "First photography edition of Tyler Art Lift's international TSHOW, juried by Kristine Madjare. $2,000 in cash prizes at Gallery Main Street.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "instagram": "@tylerartlift"
     },
     {
       "title": "Hamburg Portfolio Review 2026",
@@ -721,7 +761,7 @@
         "membership-required"
       ],
       "submitVia": "Email",
-      "requirements": "5 images",
+      "requirements": "Up to 5 images",
       "slug": "the-hand-magazine-issue-54-autumn-2026",
       "orgInTitle": true,
       "summary": "International publication for photographic printmaking and hand-printed work. No theme. Must be a subscriber.",
@@ -746,7 +786,10 @@
       "orgInTitle": false,
       "summary": "Debut digital publication on slow landscape photography. Theme 'Traces' — signs of presence in the landscape. Free, open to all.",
       "ai": null,
-      "dateAdded": "2026-06-08T07:08:40.856Z"
+      "dateAdded": "2026-06-08T07:08:40.856Z",
+      "requirements": "Up to 5 images",
+      "resultsDate": "Mid-July 2026",
+      "verifyNote": "Site banner says call active 10 May–20 July 2026, but the submission form timeline says entries close July 10 with mid-July selection. Kept the site deadline; flagged 2026-06-10."
     },
     {
       "title": "On the Shelf 2026",
@@ -886,7 +929,8 @@
       "orgInTitle": true,
       "summary": "Online juried photo show from Marin Society of Artists, all styles welcome. Juror Susan Spiritus. Cash awards.",
       "ai": null,
-      "dateAdded": "2026-06-07T07:05:16Z"
+      "dateAdded": "2026-06-07T07:05:16Z",
+      "resultsDate": "July 20, 2026"
     },
     {
       "title": "In The Practice of Seeing — National Juried Photography Exhibition",
@@ -19293,7 +19337,7 @@
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://ucrossfoundation.submittable.com/submit",
-      "requirements": "Work samples",
+      "requirements": "10 images",
       "slug": "ucross-foundation-spring-2027-residency",
       "orgInTitle": true,
       "summary": "2–6 week residency on a 20,000-acre Wyoming ranch. Studio and meals; no stipend. Photography eligible. Portal opens May 1.",
