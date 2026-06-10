@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/adex-dugong-photo-of-the-year-2027/">ADEX Dugong Photo of the Year 2027</a></h3><p class="call-description">Free dugong-conservation photo campaign. Winner hosted at ADEX 2027 Singapore; shortlist exhibited at the expo.</p></div>
 
     </section>
 
@@ -124,7 +125,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Singapore').map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Singapore' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
