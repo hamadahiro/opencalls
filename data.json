@@ -5174,7 +5174,7 @@
     {
       "title": "BEERS London Group Exhibition 2026",
       "org": "BEERS London",
-      "deadline": "2026-08-01",
+      "deadline": "2026-06-29",
       "fee": "£10",
       "category": "exhibition",
       "description": "Open call for a group exhibition of approximately 12 artists at BEERS London, a contemporary gallery in the heart of the City. All artistic media welcome including photography. Selected artists consigned for exhibition period plus up to three months, with 50/50 commission split on sales. Gallery actively promotes selected work to collectors. No guaranteed representation or sales. Open worldwide. Exhibition runs October 2026 (autumn). Selected artists notified approximately two months before opening.",
@@ -5188,13 +5188,13 @@
       "requirements": "Up to 5 artworks",
       "slug": "beers-london-group-exhibition-2026",
       "orgInTitle": true,
-      "summary": "Group exhibition of ~8–10 artists at contemporary London gallery. All media including photography. October 2026 show.",
+      "summary": "Group exhibition of ~8–10 artists at contemporary London gallery. All media including photography. Show Aug 20–29, 2026.",
       "dateAdded": "2026-04-17T23:18:00.338Z",
       "ai": null,
       "jury": [
         "BEERS London team & guest curators"
       ],
-      "resultsDate": "August 2026",
+      "resultsDate": "July 2026",
       "prose": [
         "BEERS London is a contemporary commercial gallery in the City of London that runs an annual open call for a curated group exhibition. The 2026 cycle selects approximately 8–10 artists working across all media — painting, sculpture, photography, video, mixed media — for a show in October 2026 (autumn).",
         "Selected artists consign their work for the duration of the exhibition plus up to three months afterward, during which the gallery actively promotes the work to its collector base. Sales split commission 50/50. Insurance is provided by the gallery during the exhibition window.",
@@ -23197,7 +23197,7 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Website form",
-      "submitUrl": "https://www.manifestgallery.org/proposals_photo/index.html",
+      "submitUrl": "https://www.manifestgallery.org/proposals_photo/entry/index.html",
       "requirements": "Up to 12 images",
       "resultsDate": "Early-mid August 2026",
       "slug": "photo-solo-exhibition-proposals-season-23-manifest-gallery",
@@ -23226,7 +23226,8 @@
       "slug": "21c-artadia-award-2026-northwest-arkansas",
       "orgInTitle": true,
       "summary": "Unrestricted $15,000 for one visual artist in Bentonville/Washington Counties, AR — Artadia × 21c Museum Hotels. Free.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "requirements": "8 images"
     },
     {
       "title": "Southwest Artist",
@@ -23239,7 +23240,9 @@
       "instagram": "@dusk.photogallery",
       "location": "Santa Fe, NM, USA",
       "prize": "Exhibition + professional printing & framing",
-      "eligibility": [],
+      "eligibility": [
+        "southwest-us"
+      ],
       "jury": [
         "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
       ],
@@ -23249,13 +23252,14 @@
       "slug": "southwest-artist-dusk-gallery",
       "orgInTitle": false,
       "summary": "Dusk Gallery (Santa Fe) show on the American Southwest. Pro printing and framing covered; exhibition Sep 2026.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "submitUrl": "https://duskphotogallery.com/southwest-artist-submission/"
     },
     {
       "title": "Wild",
       "org": "Photo Artfolio",
       "deadline": "2026-07-29",
-      "fee": "$20",
+      "fee": "$20 + $5 media fee",
       "category": "photography",
       "description": "Global online exhibit celebrating the natural world — wildlife, landscape, conservation, macro, documentary, fine art, aerial, and experimental nature photography all welcome. Open internationally to photographers of all experience levels. Entrants must demonstrate ethical photographic practice and respect for the well-being of animals and their habitats. Cash prizes of $500, $350, and $150. $20 for the first image plus media fees for additional entries; no AI-generated imagery. Acceptance notifications by August 19, 2026.",
       "url": "https://www.photo-artfolio.com/calls-for-entry",
@@ -23271,7 +23275,8 @@
       "slug": "wild-photo-artfolio",
       "orgInTitle": false,
       "summary": "Photo Artfolio's nature cycle — wildlife to experimental. $1,000 in cash prizes across three awards; online exhibit; no AI.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "requirements": "Up to 20 images"
     },
     {
       "title": "POOLSIDE 2026",
@@ -23294,7 +23299,9 @@
       "slug": "poolside-2026-jag-gallery",
       "orgInTitle": false,
       "summary": "Key West's Jag Gallery wants pools — any medium incl. photography. Show Aug 2026 with reception; winners get a 2027 group show.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "instagram": "@jaggallery",
+      "resultsDate": "Mid-July 2026"
     },
     {
       "title": "Life in Baltimore",
@@ -23345,7 +23352,8 @@
       "slug": "abandoned-haunts-curious-trappings-the-firefly-artists",
       "orgInTitle": false,
       "summary": "Urbex-friendly juried show in Northport, NY judged by Abandoned America's Matthew Christopher. Exhibit Oct–Nov 2026.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "resultsDate": "September 19, 2026"
     },
     {
       "title": "Kahilu Theatre 2027 Exhibition Proposals",
@@ -23366,7 +23374,9 @@
       "slug": "kahilu-theatre-2027-exhibition-proposals",
       "orgInTitle": true,
       "summary": "Propose a 2027 solo or group show at Kahilu Theatre's galleries on Hawaiʻi Island. Three slots; up to six proposals chosen.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "requirements": "10–20 images",
+      "instagram": "@kahilutheatre"
     },
     {
       "title": "Lacawac Artists' Residency 2026",
@@ -23434,7 +23444,8 @@
       "slug": "paralaje-magazine-issue-1",
       "orgInTitle": true,
       "summary": "New Spanish/English photo quarterly seeks series on memory, territory, and the everyday for its debut issue. Free entry.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "resultsDate": "June 19, 2026"
     }
   ]
 }
