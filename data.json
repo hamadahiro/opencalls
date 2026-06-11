@@ -729,7 +729,9 @@
       "url": "https://penland.org/residencies/resident-artist-program/",
       "location": "Penland, NC, USA",
       "prize": "1–3 year residency",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "SlideRoom",
       "slug": "penland-resident-artist-program",
       "orgInTitle": true,
@@ -16779,7 +16781,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt Shopify storefront still unavailable on 2026-06-10 (loosenart.com/pages/calls returns 404; 'store unavailable' since 2026-05-18). Call status uncertain — could not verify any gap fields.",
+      "verifyNote": "LoosenArt Shopify storefront still unavailable on 2026-06-11 (loosenart.com/pages/calls returns 404; 'store unavailable' since 2026-05-18). Call status uncertain — could not verify any gap fields.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
@@ -20343,7 +20345,7 @@
       "summary": "Fashion and editorial photography for Issue 72 of this London fashion magazine. Issue releases June 21, 2026.",
       "ai": null,
       "jury": [],
-      "resultsDate": null,
+      "resultsDate": "June 21, 2026",
       "dateAdded": "2026-04-30T23:11:55.221Z",
       "prose": [
         "Solstice Magazine is a London-based independently-run fashion and beauty publication that publishes both digital and print editorials. Issue 72 publishes June 21, 2026.",
@@ -21053,7 +21055,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://festival262.com/f-262-submission-form/",
       "requirements": "1–20 images",
-      "resultsDate": null,
+      "resultsDate": "September 2026",
       "slug": "f-262-photography-awards-2026",
       "orgInTitle": true,
       "summary": "Single-image awards from the inaugural F/262 Festival in Caldas da Rainha, Portugal. Public outdoor installations + 2028 solo show.",
@@ -23934,7 +23936,7 @@
       "url": "https://www.rencontres-arles.com/en/photo-folio-review",
       "instagram": "@rencontresarles",
       "location": "Arles, France",
-      "prize": "Expert portfolio reviews + Exhibition at Arles 2027",
+      "prize": "Portfolio reviews + Exhibition",
       "eligibility": [],
       "jury": [],
       "submitVia": "Official website",
@@ -24037,7 +24039,9 @@
       "slug": "her-art-her-voice-2027-biennial-nmc-nmwa",
       "orgInTitle": false,
       "summary": "Women-identifying New Mexico artists (NMC-NMWA members) show at Canyon Road galleries in Santa Fe, March 2027. $50, up to 3 works.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "resultsDate": "November 10, 2026",
+      "instagram": "@newmexicowomeninthearts"
     },
     {
       "title": "agriCultural: A Biennial Exhibition",
@@ -24062,7 +24066,9 @@
       "slug": "agricultural-biennial-exhibition-new-bedford-art-museum",
       "orgInTitle": false,
       "summary": "Juried biennial on agriculture and the land at New Bedford Art Museum, Sep–Nov 2026. MA/RI artists, $25 for up to 3 works.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "resultsDate": "July 23, 2026",
+      "instagram": "@nbam_aw"
     },
     {
       "title": "Space: Negative, Outer, Living",
@@ -24086,7 +24092,8 @@
       "slug": "space-negative-outer-living-arts-center-east",
       "orgInTitle": false,
       "summary": "Themed juried show on negative, outer, and living space at Arts Center East, CT. All media, from $35. On view Aug 8 – Sep 12, 2026.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "instagram": "@artscentereastct"
     },
     {
       "title": "Vision 250: America in Harmony",
@@ -24098,7 +24105,10 @@
       "url": "https://www.wham-art.org/callforart",
       "location": "Surprise, AZ",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
       "jury": [],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/wham-art/vision-250-america-in-harmony/",
@@ -24107,7 +24117,9 @@
       "slug": "vision-250-america-in-harmony-wham-art-association",
       "orgInTitle": false,
       "summary": "Themed show for America's 250th at WHAM Art Center, AZ — imagining a unified, harmonious America. $40 for 5 entries, Jul 2–30.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "ai": "Not accepted",
+      "instagram": "@whamartassociation"
     },
     {
       "title": "Pop Art Exhibition",
@@ -24129,7 +24141,8 @@
       "slug": "pop-art-exhibition-sparks-gallery",
       "orgInTitle": false,
       "summary": "Pop-culture-inspired works at Sparks Gallery, San Diego. US artists, original work for sale, from $20. Deadline June 15.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "instagram": "@sparksgallery"
     },
     {
       "title": "Artist in Focus",
@@ -24141,7 +24154,7 @@
       "url": "https://emerging.fotografiska.com/missions/artist-in-focus",
       "instagram": "@fotografiska.emerging",
       "location": "Online",
-      "prize": "Signed Corbijn photobook + B&W headphones + Instagram feature",
+      "prize": "Signed Corbijn photobook + B&W headphones",
       "eligibility": [],
       "jury": [],
       "submitVia": "Fotografiska Emerging",
