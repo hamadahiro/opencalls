@@ -476,7 +476,7 @@
         "18-plus"
       ],
       "submitVia": "Picter",
-      "submitUrl": "https://site.picter.com/photovogue-regional-open-call-mena-panorama-2026",
+      "submitUrl": "https://app.picter.com/contests/8310dd88-420e-433b-8089-009680d8ad25/start",
       "requirements": "Up to 15 images",
       "ai": "Not accepted",
       "slug": "photovogue-mena-panorama-2026",
@@ -3549,7 +3549,7 @@
       "title": "Critical Mass 2026",
       "org": "Photolucida",
       "deadline": "2026-07-01",
-      "fee": "$65 early bird / $75 regular; +$200 if Top 200 finalist",
+      "fee": "$75; +$200 if Top 200 finalist",
       "category": "photography",
       "description": "Photolucida's annual program connecting photographers with the international photography community. Submit 10 images for pre-screening; approximately 200 finalists are then reviewed by up to 200 photography professionals worldwide — curators, gallerists, publishers, editors, educators, and media. The Top 50 are announced each year, alongside book awards and exhibition opportunities. Past finalists have gained acquisitions, exhibitions, and publication features. Open to photographers at any career stage. AI-generated imagery is not accepted for the 2026 cycle.",
       "url": "https://www.photolucida.org/critical-mass/",
@@ -20267,15 +20267,15 @@
       "fee": "$25",
       "category": "exhibition",
       "description": "Photography exhibition exploring the visible and the implied — works that engage with what is shown, suggested, or hidden. Online curated exhibition with published catalog, social media and newsletter promotion, certificate of participation, and digital badge. First place receives a solo webpage exhibition. Open to photographers worldwide aged 18+. $1,000 total cash awards.",
-      "url": "https://www.decagongallery.com/",
+      "url": "https://www.decagongallery.com/seen-unseen-entry",
       "instagram": "@decagongallery",
       "location": "Online",
       "prize": "$1,000 total",
       "eligibility": [
         "18-plus"
       ],
-      "submitVia": "Website form",
-      "submitUrl": "https://www.decagongallery.com/seen-unseen-entry",
+      "submitVia": "JotForm",
+      "submitUrl": "https://form.jotform.com/261055346994162",
       "requirements": "Up to 8 images",
       "jury": [
         "Ann M. Jastrab, Executive Director, Center for Photographic Art"
@@ -22469,7 +22469,7 @@
       "orgInTitle": false,
       "summary": "CPAC's biennial student photo show, juried by LensCulture's Laura Sackett. Best in Show wins a LensCulture feature article.",
       "instagram": "@cpacphoto",
-      "ai": "Accepted",
+      "ai": "Accepted (must disclose)",
       "resultsDate": "September 30, 2026",
       "dateAdded": "2026-06-06T19:09:43Z"
     },
@@ -22928,7 +22928,7 @@
       "resultsDate": "September 2026",
       "slug": "underwater-awards-australasia-2026",
       "orgInTitle": true,
-      "summary": "Underwater imaging competition with ~AU$70,000 in prizes across 9 categories. Winners shown at Go Diving Show ANZ, Sydney.",
+      "summary": "Underwater imaging competition with ~AU$70,000 in prizes across 9 categories, for images shot in Australasia. Winners shown at Go Diving Show ANZ, Sydney.",
       "jury": [
         "Tobias Friedrich",
         "Matty Smith",
@@ -22937,7 +22937,8 @@
         "Ross Long",
         "Ray Collins"
       ],
-      "dateAdded": "2026-06-10T23:47:50.955Z"
+      "dateAdded": "2026-06-10T23:47:50.955Z",
+      "submitUrl": "https://www.underwatercompetition.com/Register"
     },
     {
       "title": "ADEX Dugong Photo of the Year 2027",
@@ -22984,7 +22985,8 @@
       "jury": [
         "Andre Wright Jr."
       ],
-      "dateAdded": "2026-06-10T23:47:50.955Z"
+      "dateAdded": "2026-06-10T23:47:50.955Z",
+      "ai": "Not accepted"
     },
     {
       "title": "2027 Solo and Group Exhibition Proposals",
