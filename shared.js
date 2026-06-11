@@ -81,7 +81,9 @@ const eligibilityLabel = {
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'north-east-england': 'North East England only',
   'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only',
-  'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'southwest-us': 'Southwest US only'
+  'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'southwest-us': 'Southwest US only',
+  'virginia': 'Virginia only', 'native-american': 'Native American artists',
+  'northern-california': 'Northern California only'
 };
 
 // ---- Pure functions ----
