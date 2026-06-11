@@ -985,6 +985,9 @@ const eligibilityGroups = {
   'colorado': { short: 'Colorado', title: 'Colorado-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Colorado.' },
   'texas': { short: 'Texas', title: 'Texas-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Texas.' },
   'washington': { short: 'Washington', title: 'Washington-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Washington State.' },
+  'virginia': { short: 'Virginia', title: 'Virginia-Only Open Calls', desc: 'Open calls restricted to photographers and artists living or working in Virginia.' },
+  'native-american': { short: 'Native American', title: 'Open Calls for Native American Artists', desc: 'Open calls, residencies, and awards for Native American photographers and artists, including enrolled members of US federally recognized tribes.' },
+  'northern-california': { short: 'Northern California', title: 'Northern California Open Calls', desc: 'Open calls restricted to photographers and artists based in Northern California.' },
   'arkansas': { short: 'Arkansas', title: 'Arkansas-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Arkansas.' },
   'maryland': { short: 'Maryland', title: 'Maryland-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Maryland.' },
   'midwest-us': { short: 'Midwest US', title: 'Midwest US Open Calls', desc: 'Open calls restricted to photographers and artists living or working in the US Midwest — Iowa, Illinois, Indiana, Kansas, Kentucky, Michigan, Minnesota, Missouri, North Dakota, Nebraska, Ohio, South Dakota, and Wisconsin.' },
@@ -1087,8 +1090,8 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'arkansas', 'colorado', 'maryland', 'minnesota', 'texas', 'washington', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'southwest-us', 'canada', 'europe', 'australia', 'baltics-finland', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'north-east-england', 'non-european', 'wana'] },
+  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'native-american', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'arkansas', 'colorado', 'maryland', 'minnesota', 'texas', 'virginia', 'washington', 'bay-area', 'chicago-area', 'los-angeles', 'northern-california', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'southwest-us', 'canada', 'europe', 'australia', 'baltics-finland', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'north-east-england', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }

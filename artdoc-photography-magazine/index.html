@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Artdoc Photography Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/living-space-artdoc-photography-magazine/">Living Space — Artdoc Magazine Open Call &middot; Artdoc Photography Magazine</a></h3><p class="call-description">Artdoc's themed call on the spaces of everyday life — interiors, cityscapes, the built environment. Publication and online exhibition.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Artdoc Photography Magazine').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Artdoc Photography Magazine' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
