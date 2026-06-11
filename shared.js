@@ -83,7 +83,7 @@ const eligibilityLabel = {
   'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only',
   'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'native-american': 'Native American artists',
-  'northern-california': 'Northern California only'
+  'northern-california': 'Northern California only', 'tampa-bay': 'Tampa Bay only'
 };
 
 // ---- Pure functions ----
