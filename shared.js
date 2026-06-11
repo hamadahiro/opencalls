@@ -80,7 +80,7 @@ const eligibilityLabel = {
   'new-york-state': 'NY State only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'north-east-england': 'North East England only',
-  'colorado': 'Colorado only', 'texas': 'Texas only'
+  'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only'
 };
 
 // ---- Pure functions ----
