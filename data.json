@@ -1847,7 +1847,7 @@
       "fee": "$15–$45",
       "category": "photography",
       "description": "The Independent Photographer's monthly themed competition cycle, this round dedicated to portrait photography. Total prize pool $2,700: 1st prize $1,000, 2nd $600, 3rd $400, plus seven $100 finalist prizes. Winners exhibited in London and featured to the platform's 970k+ Instagram following. All entrants receive a free online portfolio. Judge: Luisa Dörr, the Brazilian photographer known for her portrait work. Submissions are tiered: $15 for 1 image, $30 for 3, $45 for 6. AI-generated work not accepted; photography-based submissions only. JPEG or PNG, minimum 1200px longest side, maximum 10MB.",
-      "url": "https://independent-photo.com/submit/",
+      "url": "https://independent-photo.com/awards/",
       "instagram": "@theindependentphoto",
       "location": "London, United Kingdom",
       "prize": "$2,700 pool",
@@ -1858,7 +1858,7 @@
         "Luisa Dörr, Photographer"
       ],
       "submitVia": "Website form",
-      "submitUrl": null,
+      "submitUrl": "https://independent-photo.com/submit/",
       "requirements": "1, 3, or 6 images",
       "slug": "2026-portrait-award-the-independent-photographer",
       "orgInTitle": false,
@@ -8952,7 +8952,7 @@
     {
       "title": "Denis Roussel Award 2026",
       "org": "Rfotofolio",
-      "deadline": "2026-06-27",
+      "deadline": "2026-06-28",
       "fee": "Free (donation optional)",
       "category": "photography",
       "description": "For photographers working with historical and alternative photographic processes including silver gelatin. Submit 7 images and statement. $2,000 main award plus merit awards. Portfolio review prize included.",
@@ -22662,7 +22662,7 @@
       "title": "Louvre Unbound Magazine — Volumes 7 & 8 Open Call",
       "org": "Louvre Unbound",
       "deadline": "2026-06-15",
-      "fee": "Free ($39–$89 if accepted)",
+      "fee": "Free ($39–$139 if accepted)",
       "category": "zine",
       "description": "International contemporary art magazine seeking visual artists worldwide for Volumes 7 and 8 — painting, photography, sculpture, digital art, mixed media and more. Submit up to 6 artworks via Google Form for free; fees apply only on acceptance, with discounted tiers for these volumes from $39 (full page) to $69 (double page) and $89 (exclusive interview or solo portfolio spotlight). Selected artists are featured in print with their portrait and artwork and promoted weekly for two months across the magazine's social media channels, with distribution to 83+ countries.",
       "url": "https://louvreunbound.com/art-submission",
@@ -22745,7 +22745,11 @@
       "slug": "larnaca-biennale-2027-open-call",
       "orgInTitle": true,
       "summary": "Fifth Larnaca Biennale under the theme Metatopies: Geographies in Motion. Photography eligible; 13 awards including the Grand Prix.",
-      "dateAdded": "2026-06-10T07:44:39.248Z"
+      "dateAdded": "2026-06-10T07:44:39.248Z",
+      "jury": [
+        "Niki Papaspirou, Art Historian & Curator",
+        "Marios Fournaris, Visual Artist & Art Historian"
+      ]
     },
     {
       "title": "PRC Artist-in-Residence 2026",
@@ -23507,7 +23511,16 @@
       "slug": "arts-of-the-terrace-2026-mountlake-terrace",
       "orgInTitle": false,
       "summary": "46th annual juried show near Seattle with a dedicated photography category; $6,000+ in awards. On view Sep 2026.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "ai": "Not accepted",
+      "jury": [
+        "Robert Stahl, Photography Judge",
+        "Tim Lord, Paintings, Prints & Drawings Judge",
+        "Mike O'Day, 3-D & Artisan Works Judge"
+      ],
+      "resultsDate": "Late August 2026",
+      "requirements": "Up to 4 works per category",
+      "instagram": "@mltfriendsofthearts"
     },
     {
       "title": "2026 Virginia Artist Juried Exhibition",
@@ -23532,7 +23545,8 @@
       "slug": "2026-virginia-artist-juried-exhibition-hampton-arts",
       "orgInTitle": false,
       "summary": "Statewide juried annual for Virginia artists at Hampton's Charles H. Taylor Visual Arts Center; $2,750 in awards.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@ctvisualarts"
     },
     {
       "title": "Zion National Park Artist-in-Residence 2027",
@@ -23553,7 +23567,9 @@
       "slug": "zion-national-park-artist-in-residence-2027",
       "orgInTitle": true,
       "summary": "Four-week residency in Zion's historic Grotto House with free park housing and a $500 stipend. All mediums welcome.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@zionnps",
+      "resultsDate": "October 2026"
     },
     {
       "title": "2027 Grand Canyon Artist in Residence",
@@ -23575,7 +23591,8 @@
       "slug": "grand-canyon-artist-in-residence-2027",
       "orgInTitle": false,
       "summary": "4–8 week South Rim residency with $800/week stipend, housing, and travel subsidy. Three artists chosen for 2027.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@grand_canyon_conservancy"
     },
     {
       "title": "Villa Barr Art Park Artist in Residency 2027",
@@ -23584,7 +23601,7 @@
       "fee": "$20",
       "category": "residency",
       "description": "Three-month residencies (Spring, Summer, or Fall 2027) at Villa Barr Art Park, a four-acre former sculptor's estate run by the City of Novi, Michigan. Each session hosts a Visiting Artist living in the four-bedroom house plus a Local Artist with studio access; private and shared studios include woodworking and metalworking tools. All residents receive a $500 materials stipend, and Visiting Artists an additional $500 travel stipend. Open internationally to artists 18+; strong proposals engage the public through workshops, exhibitions, or installations responding to the grounds.",
-      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17359",
+      "url": "https://cityofnovi.org/villabarr",
       "location": "Novi, MI, USA",
       "prize": "3-month residency + $500 stipend",
       "eligibility": [
@@ -23596,7 +23613,8 @@
       "slug": "villa-barr-art-park-residency-2027",
       "orgInTitle": false,
       "summary": "Three-month live-in residency at a Michigan art park with house, studios, and $500 stipends. Open internationally.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@cityofnovi"
     },
     {
       "title": "sƛ̓x̣etkʷ Artist-in-Residence Program — Round 3",
@@ -23605,7 +23623,7 @@
       "fee": "Free",
       "category": "residency",
       "description": "Three-month winter residency (January 5 – March 26, 2027) at Spokane Falls Community College for emerging Native American artists who are enrolled members of a US federally recognized tribe, with priority for Pacific Northwest and Washington tribes, particularly the Schitsu'umsh (Coeur d'Alene). Offers a $9,000 stipend paid monthly, furnished off-campus housing, up to $500 travel reimbursement, access to fine-art facilities including ceramics, printmaking, digital art, and sculpture, and optional mentorship. Residents commit 35 hours weekly on campus; 'emerging' means without gallery representation.",
-      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17500",
+      "url": "https://sfcc.spokane.edu/Artist-in-Residence-Program",
       "location": "Spokane, WA, USA",
       "prize": "$9,000 stipend + Housing + Studio access",
       "eligibility": [
@@ -23618,7 +23636,9 @@
       "slug": "spokane-falls-artist-in-residence-round-3",
       "orgInTitle": false,
       "summary": "Funded 3-month residency at Spokane Falls CC for emerging Native American artists: $9,000 stipend, housing, studios.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@spokanefallscommunitycollege",
+      "resultsDate": "By November 10, 2026"
     },
     {
       "title": "Lucid Art Residency 2027",
@@ -23627,7 +23647,7 @@
       "fee": "$40",
       "category": "residency",
       "description": "Three-week residency in Inverness, California, on the edge of Point Reyes, founded in the lineage of surrealist painter Gordon Onslow Ford. Residents get a fully furnished house, the skylit Ark studio, optional water-based printmaking facilities, mentorship meetings with artist associates, and curation into an online exhibition of residency work. Open to US and Canadian artists 18+ with an MFA or equivalent and exhibition history, working in nonrepresentational styles across visual arts, eco-art, video, writing, music, or choreography; first-time applicants only. No stipend or meals, and a car is required.",
-      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17545",
+      "url": "https://www.lucidart.org/residency",
       "location": "Inverness, CA, USA",
       "prize": "3-week residency + Housing & studio",
       "eligibility": [
@@ -23642,7 +23662,8 @@
       "slug": "lucid-art-residency-2027",
       "orgInTitle": true,
       "summary": "Three weeks at Point Reyes with house and Ark studio for US/Canadian artists working nonrepresentationally.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@lucidartfoundation"
     },
     {
       "title": "SCG Artist in Residence & Teaching Program 2027 — Regional",
@@ -23664,7 +23685,9 @@
       "slug": "scg-artist-in-residence-2027-regional-blue-line-arts",
       "orgInTitle": false,
       "summary": "$10,000 three-week teaching residency at Blue Line Arts for Northern California artists (six-county region).",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@bluelinearts",
+      "resultsDate": "November 6, 2026"
     },
     {
       "title": "SCG Artist in Residence & Teaching Program 2027 — National",
@@ -23686,7 +23709,9 @@
       "slug": "scg-artist-in-residence-2027-national-blue-line-arts",
       "orgInTitle": false,
       "summary": "$10,000 three-week teaching residency at Blue Line Arts (CA) with housing and travel covered. US artists nationwide.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@bluelinearts",
+      "resultsDate": "February 5, 2027"
     },
     {
       "title": "Max Thelen Studio Residency",
@@ -23695,7 +23720,7 @@
       "fee": "Free",
       "category": "residency",
       "description": "Twelve-month free studio residency (September 2026 – August 2027) at Art Works Downtown in San Rafael, California, for an emerging visual artist with a committed early-to-mid-stage practice. Covers a 92 sq ft street-level studio with utilities, plus a solo exhibition, waived membership fees, social media promotion, and scholarship funding for Marin Open Studios participation. Applicants should live within commuting distance of San Rafael and work regularly in the studio.",
-      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17530",
+      "url": "https://artworksdowntown.org/the-max-thelen-studio-residency",
       "location": "San Rafael, CA, USA",
       "prize": "12-month free studio + Solo exhibition",
       "eligibility": [
@@ -23709,7 +23734,8 @@
       "slug": "max-thelen-studio-residency-art-works-downtown",
       "orgInTitle": false,
       "summary": "Free 12-month studio plus solo show at Art Works Downtown, San Rafael, for an emerging Bay Area visual artist.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "instagram": "@artworksdowntownmarin"
     },
     {
       "title": "Hard Water, Soft Stone",
