@@ -12323,7 +12323,7 @@
       "dateAdded": "2026-03-15",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16950",
       "summary": "Unrestricted $1,000 grant per cycle for individual artists with recognized artistic excellence.",
-      "resultsDate": "By July 11, 2026",
+      "resultsDate": "By July 31, 2026",
       "jury": [],
       "prose": [
         "The Evolution Grant is a recurring unrestricted grant from Art Fluent, the same Boston-based curatorial platform that runs themed open calls like HER.SELF and Manipulation & Illusion. Each grant cycle awards $1,000 to one visual artist with the funds explicitly unrestricted — applicants do not need to propose a specific project, and the grant can support any expense that enhances the artist's ability to make work (materials, studio rent, equipment, time off).",
@@ -12631,8 +12631,8 @@
       "slug": "analog-forever-magazine-calls-for-entry",
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
-      "submitVia": "JotForm",
-      "submitUrl": "https://form.jotform.com/260895962691171",
+      "submitVia": "Official website",
+      "submitUrl": null,
       "jury": [
         "Michael Behlen, Founder, Analog Forever Magazine"
       ],
@@ -14425,9 +14425,9 @@
       "url": "https://www.berlinphotoawards.com/submit-new-entry/",
       "instagram": "@berlinphotoawards",
       "location": "Berlin, Germany",
-      "prize": "€4,000",
+      "prize": "€4,000 prize fund",
       "eligibility": [],
-      "requirements": "1 image",
+      "requirements": "Unlimited, fee per image",
       "slug": "berlin-photo-awards-2026",
       "orgInTitle": true,
       "ai": "AI editing OK, fully generated not accepted",
@@ -21179,9 +21179,7 @@
       "prize": "Exhibition",
       "eligibility": [
         "18-plus",
-        "student",
-        "united-kingdom",
-        "ireland"
+        "student"
       ],
       "jury": [
         "Emma Lambert, Silvergrass Press",
@@ -22496,7 +22494,8 @@
       "orgInTitle": false,
       "summary": "Free juried show at CWC's Robert A. Peck Gallery — images shot in Wyoming. $10,000 in awards, no entry fee or commission.",
       "ai": "Not accepted",
-      "dateAdded": "2026-06-06T19:09:43Z"
+      "dateAdded": "2026-06-06T19:09:43Z",
+      "instagram": "@cwc_rustlers"
     },
     {
       "title": "2026 Honeywell Photography Competition",
@@ -23063,7 +23062,9 @@
       "instagram": "@boxxgallery",
       "location": "Tieton, WA, USA",
       "prize": "Three $100 awards + Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "washington"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17480",
       "requirements": "Up to 3 works",
@@ -23086,7 +23087,9 @@
       "url": "https://www.fl3tch3rexhibit.com/",
       "location": "Johnson City, TN, USA",
       "prize": "Best of Show award + Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.fl3tch3rexhibit.com/enter_here.html",
       "requirements": "Up to 3 works",
@@ -23137,6 +23140,7 @@
       "location": "Gateshead, United Kingdom",
       "prize": "Exhibition at BALTIC",
       "eligibility": [
+        "18-plus",
         "north-east-england"
       ],
       "submitVia": "Submittable",
