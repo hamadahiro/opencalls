@@ -985,6 +985,8 @@ const eligibilityGroups = {
   'colorado': { short: 'Colorado', title: 'Colorado-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Colorado.' },
   'texas': { short: 'Texas', title: 'Texas-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Texas.' },
   'washington': { short: 'Washington', title: 'Washington-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Washington State.' },
+  'arkansas': { short: 'Arkansas', title: 'Arkansas-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Arkansas.' },
+  'maryland': { short: 'Maryland', title: 'Maryland-Only Open Calls', desc: 'Open calls restricted to photographers and artists residing in Maryland.' },
   'midwest-us': { short: 'Midwest US', title: 'Midwest US Open Calls', desc: 'Open calls restricted to photographers and artists living or working in the US Midwest — Iowa, Illinois, Indiana, Kansas, Kentucky, Michigan, Minnesota, Missouri, North Dakota, Nebraska, Ohio, South Dakota, and Wisconsin.' },
   'north-east-england': { short: 'North East England', title: 'North East England Open Calls', desc: 'Open calls restricted to photographers and artists based in the North East of England — Tyne and Wear, Northumberland, County Durham, and Tees Valley.' },
   'western-us': { short: 'Western US', title: 'Western US Open Calls', desc: 'Open calls restricted to photographers and artists living in the western United States — Alaska, Arizona, California, Colorado, Hawaii, Idaho, Kansas, Montana, Nebraska, Nevada, New Mexico, North Dakota, Oregon, South Dakota, Texas, Utah, Washington, and Wyoming.' },
@@ -1085,7 +1087,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 // Eligibility index page
 const eligibilityOrder = [
   { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
-  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'colorado', 'minnesota', 'texas', 'washington', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'canada', 'europe', 'australia', 'baltics-finland', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'north-east-england', 'non-european', 'wana'] },
+  { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'arkansas', 'colorado', 'maryland', 'minnesota', 'texas', 'washington', 'bay-area', 'chicago-area', 'los-angeles', 'tri-state', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'canada', 'europe', 'australia', 'baltics-finland', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'north-east-england', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
   { heading: 'Other', tags: ['membership-required'] }
