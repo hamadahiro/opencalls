@@ -1043,7 +1043,7 @@
       "title": "The Salon — London Photo Show 2026",
       "org": "London Photo Show",
       "deadline": "2026-06-17",
-      "fee": "£35 (1 image)",
+      "fee": "£35–£100",
       "category": "exhibition",
       "description": "Open call for The Salon, a juried group exhibition at Hoxton Arches in London, June 24–28 2026. Selected images are professionally printed (8×6\") and displayed with the photographer's name in the gallery. Open to all photographers, whether or not they have exhibited before. Standout entries receive partner prizes from Think Tank, 36exp and Point 101, including a large-format archival Hahnemühle print. Submit 1, 3 or 5 images (£35 / £75 / £100).",
       "url": "https://www.londonphotoshow.org/the-salon-london-photo-show/",
@@ -1052,7 +1052,7 @@
       "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": null,
+      "submitUrl": "https://londonphotoshow.org/enter/",
       "requirements": "1, 3 or 5 images",
       "slug": "the-salon-london-photo-show-2026",
       "orgInTitle": true,
@@ -1758,7 +1758,7 @@
       "title": "forgotten",
       "org": "A Smith Gallery",
       "deadline": "2026-07-06",
-      "fee": "$40",
+      "fee": "$40/5 images + $5 each",
       "category": "exhibition",
       "description": "Online juried exhibition exploring the forgotten — abandoned, buried, erased, lost, repressed, bygone, neglected, vanished. Juror Ann Mitchell, a Southern California artist, curator, and educator (BFA Art Center College of Design, MFA Claremont Graduate University) whose work explores landscape, memory, and transformation. Up to 47 images selected; 27 featured in the hardbound \"The 27\" exhibition book. Awards: Juror's Award (online solo exhibition, book, blog feature), Directors' Award (book, blog feature), Visitors' Award ($100 for most Instagram likes). Exhibition July 31 – September 10, 2026 online, with reception August 29 at 3pm CST.",
       "url": "https://asmithgallery.com/main-gallery-call-for-entry/",
@@ -1824,7 +1824,7 @@
       "title": "DECAY, CORROSION, RUST",
       "org": "New York Center for Photographic Arts",
       "deadline": "2026-08-16",
-      "fee": "$40/3 images",
+      "fee": "$40/3 images + $10 each",
       "category": "exhibition",
       "description": "Themed juried call for photography of decay, corrosion, and rust — abandoned buildings, rusted vehicles, peeling paint, junkyards — in any photographic medium. Cash prizes total $4,000 across ten awards: $1,100 Grand Prize, three First Prizes of $400, three Second Prizes of $325, three Third Prizes of $250, plus 20 Juror Selections and 20 Honorable Mentions. Juried by Darren Ching, co-owner of Klompching Gallery, New York. Winners featured in the NYC4PA online gallery and catalog with certificates; the winning image appears on the NYC4PA homepage. Open worldwide to amateur and professional photographers; 2-D work only.",
       "url": "https://www.nyc4pa.com/decay",
@@ -2311,7 +2311,7 @@
       "title": "Encontros da Imagem Portfolio Reviews 2026",
       "org": "Encontros da Imagem",
       "deadline": "2026-06-13",
-      "fee": "€30",
+      "fee": "€30 (+€80 if selected)",
       "category": "exhibition",
       "description": "Portfolio Review program of the 36th edition of Encontros da Imagem, one of Europe's longest-running photography festivals, held in Braga, Portugal. Two-stage process: an initial pre-selection via the Picter platform, then 32 photographers travel to Braga for in-person reviews on October 8–9, 2026. Each selected photographer gives a 10-minute public presentation followed by eight 10-minute one-on-one review appointments with the jury. The Portfolio Review Prize awards €3,000 cash, a solo exhibition at the 2027 edition of the festival, and publication in KATALOG magazine. Three Honorable Mentions are featured in a video projection during the 2026 festival. Submissions: up to 3 projects per applicant, 15–20 images per project plus synopsis. Fee structure: €30 application fee for the initial pre-selection; €80 second-stage fee for selected photographers attending the in-person review. Open globally. Festival theme: Territory and Identity.",
       "url": "https://site.picter.com/ei-portfolio-reviews-2026",
@@ -8964,14 +8964,14 @@
     {
       "title": "Denis Roussel Award 2026",
       "org": "Rfotofolio",
-      "deadline": "2026-06-28",
+      "deadline": "2026-06-27",
       "fee": "Free (donation optional)",
       "category": "photography",
       "description": "For photographers working with historical and alternative photographic processes including silver gelatin. Submit 7 images and statement. $2,000 main award plus merit awards. Portfolio review prize included.",
       "url": "https://rfotofolio.org/about-the-denis-roussel-award/",
       "instagram": "@rfotofolio",
       "location": "Online",
-      "prize": "$2,000",
+      "prize": "$2,000 + $500 merit awards",
       "eligibility": [
         "alternative-process"
       ],
@@ -9004,7 +9004,7 @@
       "url": "https://www.luciefoundation.org/lucie-foundation-photo-book-prize/",
       "instagram": "@luciefoundation",
       "location": "Online",
-      "prize": "$3,000",
+      "prize": "$3,000 + 2×$2,000",
       "eligibility": [],
       "jury": [
         "Merve Arkunlar, Editor-in-Chief, 212 Magazine",
@@ -13875,7 +13875,7 @@
       "url": "https://chromaticawards.com/information/",
       "instagram": "@chromaticawards",
       "location": "Online",
-      "prize": "$2,000",
+      "prize": "$2,000 (Pro) + $1,000 (Amateur)",
       "eligibility": [
         "18-plus"
       ],
@@ -23221,7 +23221,7 @@
       "submitVia": "Website form",
       "submitUrl": "https://www.manifestgallery.org/proposals_photo/entry/index.html",
       "requirements": "Up to 12 images",
-      "resultsDate": "Early-mid August 2026",
+      "resultsDate": "Early August 2026",
       "slug": "photo-solo-exhibition-proposals-season-23-manifest-gallery",
       "orgInTitle": false,
       "summary": "Propose a photography solo show at Manifest (Cincinnati) for the 2026 FotoFocus Biennial period. $100 honorarium.",
@@ -23262,9 +23262,7 @@
       "instagram": "@dusk.photogallery",
       "location": "Santa Fe, NM, USA",
       "prize": "Exhibition + professional printing & framing",
-      "eligibility": [
-        "southwest-us"
-      ],
+      "eligibility": [],
       "jury": [
         "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
       ],
@@ -23323,16 +23321,16 @@
       "summary": "Key West's Jag Gallery wants pools — any medium incl. photography. Show Aug 2026 with reception; winners get a 2027 group show.",
       "dateAdded": "2026-06-11T07:35:55Z",
       "instagram": "@jaggallery",
-      "resultsDate": "Mid-July 2026"
+      "resultsDate": "~July 12, 2026"
     },
     {
       "title": "Life in Baltimore",
       "org": "The Peale",
       "deadline": "2026-08-31",
-      "fee": "$35",
+      "fee": "$25 + $10 media fee",
       "category": "exhibition",
       "description": "Open call from The Peale, Baltimore's community museum, for work portraying life in Baltimore. Open to artists 18+ residing in Baltimore City and surrounding counties. All media welcome — painting, drawing, photography, printmaking, sculpture, assemblage — as physical 2D and 3D works (digital work must be presented as physical output; no screen-based media). Work must be original, created within the past three years, and not previously exhibited at The Peale. Exhibition October 8 – November 5, 2027 at The Peale; works are available for purchase with artists receiving 60% of the sale price. $25 entry plus $10 media fee.",
-      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=16810",
+      "url": "https://thepeale.org/life-in-baltimore/",
       "instagram": "@thepealecenter",
       "location": "Baltimore, MD, USA",
       "prize": "Exhibition",
@@ -23384,13 +23382,15 @@
       "fee": "$45",
       "category": "exhibition",
       "description": "Kahilu Exhibits invites proposals for solo and group exhibitions in the theatre's galleries in Waimea, on Hawaiʻi Island, for three 2027 slots: June 10 – July 25, August 5 – September 12, and September 23 – October 31. Open internationally to artists 18+ in all media, including photography. Up to six proposals will be selected. Kahilu handles installation, signage, and promotional materials; artists receive 60% on sales but cover their own shipping, with no artist fees or honoraria provided.",
-      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17520",
+      "url": "https://kahilu.org/exhibits/",
       "location": "Waimea, HI, USA",
       "prize": "Exhibition",
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Kahilu Exhibitions Committee"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17520",
       "slug": "kahilu-theatre-2027-exhibition-proposals",
@@ -24399,7 +24399,7 @@
         "alternative-process"
       ],
       "jury": [
-        "Sam Wang"
+        "Sam Wang, Professor Emeritus, Clemson University"
       ],
       "submitVia": "Website form",
       "submitUrl": "https://submit.photoplacegallery.com/landing/default",
@@ -24451,7 +24451,8 @@
       "slug": "black-and-white-show-sacramento-fine-arts-center",
       "orgInTitle": false,
       "summary": "All-media black, white and grey show at Sacramento Fine Arts Center — photography welcome, cash awards, Best of Show wins a solo exhibit.",
-      "dateAdded": "2026-06-12T08:00:25.703Z"
+      "dateAdded": "2026-06-12T08:00:25.703Z",
+      "ai": "Not accepted"
     },
     {
       "title": "26th Annual Vivian & Stanley Reed Marine Show",
@@ -24494,7 +24495,7 @@
       ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/calls/public/13705/",
-      "requirements": "Up to 2 works per category",
+      "requirements": "Up to 2 works/category",
       "resultsDate": "June 25, 2026",
       "slug": "echoes-of-place-island-arts-council",
       "orgInTitle": false,
@@ -24525,7 +24526,8 @@
       "slug": "lucent-the-art-of-light-artlink",
       "orgInTitle": false,
       "summary": "Light-themed juried show at Fort Wayne's Artlink — work that depicts or emits light, all media, $12 entry.",
-      "dateAdded": "2026-06-12T08:00:25.703Z"
+      "dateAdded": "2026-06-12T08:00:25.703Z",
+      "resultsDate": "After June 23, 2026"
     },
     {
       "title": "Light/Shadow",
