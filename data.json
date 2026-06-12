@@ -1436,9 +1436,9 @@
       "title": "Still, Life",
       "org": "Photobook Cafe & Rapid Eye Darkroom",
       "deadline": "2026-07-20",
-      "fee": "£25",
+      "fee": "£25/10 images",
       "category": "zine",
-      "description": "Quarterly open call from Photobook Cafe and Rapid Eye Darkrooms, themed Still, Life — exploring the tension between motion and pause, presence and aftermath, with guest judge Elliott Gunn. Open to amateur, emerging, and established photographers worldwide. 35 selected photographers are featured in a group exhibition and printed zine at The Photobook Cafe in London. Three Best in Show winners receive a complimentary group exhibition. Exhibition opening July 30, 2026.",
+      "description": "Quarterly open call from Photobook Cafe and Rapid Eye Darkrooms on the theme Still, Life — everyday photography sitting in the tension between motion and pause, living and lingering, presence and aftermath — with guest judge Elliott Gunn. 35 selected photographers are featured in a group exhibition and printed zine at The Photobook Cafe in London, each receiving a complimentary zine copy and their exhibition print to take home. Three Best in Show winners receive a complimentary group exhibition at year's end with curatorial direction from Elliott Gunn. Any photographic method accepted — analog, digital, or alternative process. Exhibition opens July 30, 2026.",
       "url": "https://www.photobookuk.org/workshops-and-paid-events/p/photobook-cafe-rapid-eye-darkrooms-presents-our-third-quarterly-open-call-love",
       "instagram": "@photobookcafe",
       "location": "London, United Kingdom",
@@ -1454,7 +1454,14 @@
       "slug": "still-life-photobook-cafe-rapid-eye-darkroom",
       "orgInTitle": false,
       "summary": "Quarterly themed open call — Still, Life. 35 photographers in a group show and zine at The Photobook Cafe, London.",
-      "dateAdded": "2026-06-04T03:07:42Z"
+      "dateAdded": "2026-06-04T03:07:42Z",
+      "prose": [
+        "The Photobook Cafe is a London photography venue with a café, exhibition space, and bookstore focused on photobooks. Rapid Eye Darkrooms is a London photographic printing service. Together they run a quarterly themed open call; Still, Life follows LOVE and Womanhood in the series.",
+        "The brief is everyday photography — the moments that sit in the tension between motion and pause, living and lingering, presence and aftermath. Any photographic method is accepted: analog, digital, or alternative process, with images from anywhere in the world.",
+        "The guest judge is Elliott Gunn, known for candid, cinematic photographs built on fleeting gestures, shadow and light, and the quiet tension of public spaces.",
+        "Selection structure has two tiers. Thirty-five selected photographers are featured in a group exhibition and printed zine at The Photobook Cafe, each receiving a complimentary zine copy and their physical exhibition print to take home. From the 35, three Best in Show winners receive a complimentary group exhibition at the end of the year with curatorial direction from Elliott Gunn.",
+        "Submission is through Photobook Cafe's website at £25 per entry of 10 images; multiple entries are allowed. Open to emerging, established, and amateur photographers of any age, background, and identity. The deadline is July 20, 2026 at midnight, with the exhibition opening July 30."
+      ]
     },
     {
       "title": "Close-up Photographer of the Year 2026 (CUPOTY 8)",
@@ -5210,7 +5217,7 @@
     {
       "title": "L'OLTRE 2026",
       "org": "The Docks",
-      "deadline": "2026-05-05",
+      "deadline": "2026-07-07",
       "fee": "€15",
       "category": "zine",
       "description": "Open call from Naples-based photography association The Docks (founded 2020) inviting photographers and visual artists to explore visions that lie at the edges of conventional reality — beyond appearance, logic, and the visible. Winning project published as the first volume of L'OLTRE 2026 in a limited edition by The Docks Publishing. Honorable mentions featured on The Docks' channels as emerging artists. Fee is €15 total (€5 membership + €10 minimum donation). Open to all nationalities, genders, and ages. AI-generated works explicitly accepted.",
@@ -5226,15 +5233,15 @@
       "ai": "Accepted",
       "dateAdded": "2026-04-17T07:12:13.568Z",
       "jury": [],
-      "resultsDate": "May 30, 2026",
       "requirements": "10–20 images",
       "prose": [
         "L'OLTRE — \"the beyond\" — is a photobook open call from The Docks, a Naples-based photography association founded in 2020. The 2026 edition is the launch of L'OLTRE as a publishing series.",
         "The brief asks photographers and visual artists to work at the edges of conventional reality — visions that exceed appearance, logic, and the visible. The concept is open to interpretation: documentary projects pushed toward the speculative, staged work, abstraction, dream-states, and computational image-making are all on the table.",
         "Notably, AI-generated work is explicitly accepted — a position that distinguishes L'OLTRE from most contemporary photobook calls. Eligibility is fully open: all nationalities, genders, ages.",
         "The selected project is published as the first volume in the L'OLTRE 2026 series, in a limited edition by The Docks Publishing. Honorable mentions are featured on The Docks' channels as emerging artists.",
-        "The €15 fee is composed of a €5 association membership and a €10 minimum donation. Submission is through The Docks' website, 10–20 images. The 2026 deadline was May 5; results announced May 30, 2026."
-      ]
+        "The €15 fee is composed of a €5 association membership and a €10 minimum donation. Submission is through The Docks' website, 10–20 images. The 2026 deadline was extended to July 7 at 10pm (GMT+1)."
+      ],
+      "verifyNote": "Deadline extended: official page (checked 2026-06-12) now says 07/07/2026 10pm GMT+1; original May 5 deadline and May 30 results date superseded."
     },
     {
       "title": "Joan Wakelin Bursary 2026",
@@ -24341,6 +24348,38 @@
       "orgInTitle": false,
       "summary": "Blind-juried show over four fall weekends at Bucks County's longest-running gallery. Over $3,000 in prizes; $30 for one work.",
       "dateAdded": "2026-06-11T23:35:01.835Z"
+    },
+    {
+      "title": "The Essence of a Woman 2026",
+      "org": "MVA Gallery",
+      "deadline": "2026-06-14",
+      "fee": "$35/3 images",
+      "category": "exhibition",
+      "description": "National all-media call from MVA Gallery (Modern Visual Arts) in Bethlehem, Pennsylvania, exploring the essence of a woman — her physical, psychological, and spiritual characteristics, from a simple portrait in tranquil repose to complex images of women performing personal and professional roles. Environmental portraits showing an individual in her surroundings are welcome. Photography is explicitly included alongside painting, printmaking, digital, sculpture, and more. Exhibition at MVA Gallery October 10 – November 7, 2026. Awards include a $200 Director's Choice, an Art of Distinction award carrying a future exhibition, and an annual Grand Prize NYC exhibition opportunity. $35 for 3 images, $5 each additional up to 9. Open to US artists 18+.",
+      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17542",
+      "instagram": "@mvaartgallery",
+      "location": "Bethlehem, PA, USA",
+      "prize": "Exhibition + $200 Director's Choice",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "jury": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17542",
+      "requirements": "Up to 9 images",
+      "resultsDate": "August 17, 2026",
+      "slug": "the-essence-of-a-woman-2026-mva-gallery",
+      "orgInTitle": false,
+      "summary": "All-media national call on the essence of a woman — portraits of strength and vulnerability. Gallery show in Bethlehem, PA.",
+      "prose": [
+        "MVA Gallery — Modern Visual Arts — is a gallery at 35 E. Elizabeth Avenue in historic Bethlehem, Pennsylvania, showing painting, printmaking, photography, sculpture, and more. The Essence of a Woman is its national themed exhibition for fall 2026.",
+        "The brief asks artists to explore in art the essence of a woman — her physical, psychological, and spiritual characteristics. That can mean a simple portrait of a woman in tranquil repose or a complex image of her actively performing personal and professional roles; she can reveal vulnerability or strength. Environmental portraits showing an individual in her surroundings are explicitly welcomed.",
+        "Accepted media span painting, watercolor, printmaking, mixed media, digital, pastel, encaustic, sculpture, fiber, drawing, and photography.",
+        "The exhibition runs October 10 through November 7, 2026 at the gallery. Awards include a $200 Director's Choice, an Art of Distinction award carrying a special future exhibition, an annual Grand Prize with a New York City exhibition opportunity, and an honorable mention granting a free future submission. Selection is by an anonymous rotating committee of artists, gallerists, reviewers, publishers, and academics.",
+        "Entry is $35 for 3 images, $5 each additional up to 9 total. Open to current US residents aged 18 and over. Submission is via CaFE. The deadline is June 14, 2026 at 11:59 PM MDT; notifications go out on or about August 17, and accepted work is due at the gallery by October 6."
+      ],
+      "dateAdded": "2026-06-12T03:30:15.921Z"
     }
   ]
 }
