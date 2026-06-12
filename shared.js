@@ -80,7 +80,7 @@ const eligibilityLabel = {
   'new-york-state': 'NY State only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'north-east-england': 'North East England only',
-  'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only',
+  'california': 'California only', 'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only',
   'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'native-american': 'Native American artists',
   'northern-california': 'Northern California only', 'tampa-bay': 'Tampa Bay only',
