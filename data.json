@@ -852,7 +852,7 @@
       "title": "7th Annual Spotlight Member Exhibition",
       "org": "Rhode Island Center for Photographic Arts",
       "deadline": "2026-06-15",
-      "fee": "$35 (members)",
+      "fee": "$35 (Supporting members free)",
       "category": "exhibition",
       "description": "Annual juried exhibition for members of the Rhode Island Center for Photographic Arts (RICPA), juried by photographer and educator Neal Rantoul. Each entry is a set of five photographs that together tell a story or present a unified idea, juried as a complete set. One selected member wins a solo show in RICPA's Focus Gallery in 2026. Open to all current RICPA members — membership can be purchased at the time of entry; entry is free for Supporting Members and above and $35 for Exhibiting and Community Members. Selected work is shown in the gallery from August 20 to September 11, 2026 and online, and every entrant receives a live Zoom portfolio review with the juror.",
       "url": "https://www.riphotocenter.org/call-for-entries-7th-annual-spotlight-member-exhibition/",
@@ -865,7 +865,7 @@
       "jury": [
         "Neal Rantoul"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Email",
       "requirements": "5 images",
       "ai": null,
       "slug": "7th-annual-spotlight-member-exhibition-rhode-island-center-for-photographic-arts",
@@ -1180,7 +1180,7 @@
       "summary": "JSU national juried photography show in all processes — digital, film, alternative, installation. Cash prizes + gallery exhibition.",
       "instagram": "@jaxstategalleries",
       "ai": "AI editing OK, fully generated not accepted",
-      "resultsDate": "July 17, 2026",
+      "resultsDate": "By July 20, 2026",
       "dateAdded": "2026-06-05T19:11:51.696Z"
     },
     {
@@ -14570,9 +14570,10 @@
       "dateAdded": "2026-03-22",
       "requirements": "8–12 images",
       "jury": [
+        "Diane Dufour, Founder & Artistic Director, LE BAL Paris",
+        "Erin O'Toole, Curator & Head of Photography, SFMOMA",
         "KIM Jeong Eun, Founder, THE REFERENCE Seoul",
-        "Leo Rongone, Photographer & CEO, Moncler",
-        "Deborah Klochko, Curator & Director Emeritus, San Diego Museum of Photographic Arts"
+        "Leo Rongone, Photographer & CEO, Moncler"
       ],
       "submitUrl": "https://site.picter.com/hariban-award-2026",
       "summary": "International collotype competition. Grand Prize: two-week residency in Kyoto with master collotype printers.",
@@ -21210,7 +21211,8 @@
         "The award is intentionally inclusive on format. Submissions can be a finished photobook, a zine, a handmade artist's book, a printed essay, or any photo-based publication — the brief does not prescribe a binding, length, or production method. The intent is to recognise the photobook in its widest sense, including DIY and small-edition forms that often fall outside the criteria of larger photobook prizes.",
         "Eligibility is open to anyone over 18 who is currently studying at, or has recently graduated from, a Higher Education institution. There is no fee. Entry is by post — physical books are submitted to the award via the link in the brief. All entrants receive written feedback from industry professionals. The winner receives personalised portfolio reviews with each of the judges, and the winning publication is shown in an exhibition at a Coventry venue.",
         "The inaugural deadline is August 7, 2026."
-      ]
+      ],
+      "submitUrl": "https://forms.office.com/e/vedeuBbt76"
     },
     {
       "title": "Photoworks Artist Venturing Labs — EASE: Crete 2026–2027",
@@ -22592,7 +22594,8 @@
       "prize": "$2,500 stipend + mentorship",
       "eligibility": [
         "united-states",
-        "lgbtq"
+        "lgbtq",
+        "emerging"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSe4s3bvU-MM9S1L4DDW6YYTzw0zzw5qggOd7PVlT67EYn0L4A/viewform",
@@ -24367,7 +24370,7 @@
       "jury": [],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17542",
-      "requirements": "Up to 9 images",
+      "requirements": "3–9 images",
       "resultsDate": "August 17, 2026",
       "slug": "the-essence-of-a-woman-2026-mva-gallery",
       "orgInTitle": false,
