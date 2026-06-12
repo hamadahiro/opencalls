@@ -129,7 +129,7 @@
       "eligibility": [],
       "submitVia": "CuratorSpace",
       "submitUrl": "https://www.curatorspace.com/opportunities/detail/benjamin-hall-photography-prize/10447",
-      "resultsDate": "June 22, 2026",
+      "resultsDate": "July 19, 2026",
       "slug": "benjamin-hall-photography-award-2026-holt-art-projects",
       "orgInTitle": false,
       "summary": "New £1,000 photography award from Holt Art Projects. Any genre, worldwide; shortlist exhibited in Holt, North Norfolk, in July.",
@@ -896,7 +896,8 @@
       "orgInTitle": true,
       "summary": "UK indie art/lit zine, theme 'The Essence of Movement'. Photography accepted alongside other media. Free, publication only.",
       "resultsDate": "Mid July 2026",
-      "dateAdded": "2026-06-09T07:12:23.411Z"
+      "dateAdded": "2026-06-09T07:12:23.411Z",
+      "submitUrl": "https://www.curatorspace.com/opportunities/detail/open-call--the-essence-of-movement/10770"
     },
     {
       "title": "Outdoor Photography Magazine — Bird Portraits",
@@ -1107,7 +1108,7 @@
       "title": "Overcoming",
       "org": "Decagon Gallery",
       "deadline": "2026-08-03",
-      "fee": "$25",
+      "fee": "$25 (4 images)",
       "category": "exhibition",
       "description": "Online juried photography exhibition on the theme \"What Remains Standing\" — survival, resilience, and endurance after hardship, including personal loss, illness, grief, and displacement. Selected work is shown in a curated online exhibition with published catalog, social and newsletter promotion, certificate of participation, and digital badge; first place also receives a solo webpage exhibition. Juried by photographer and Vision Quest Workshops founder Douglas Beasley. Online exhibition runs August 20 – October 20, 2026. Open to photographers worldwide, all experience levels. $1,000 total cash awards.",
       "url": "https://www.decagongallery.com/overcoming-entry",
@@ -1120,7 +1121,7 @@
       ],
       "submitVia": "JotForm",
       "submitUrl": "https://form.jotform.com/261543266403150",
-      "requirements": "Up to 8 images",
+      "requirements": "Up to 10 images",
       "slug": "overcoming-decagon-gallery",
       "orgInTitle": false,
       "summary": "Online photography show on resilience and endurance after hardship. Juror Douglas Beasley. $1,000 total cash awards.",
@@ -12286,7 +12287,7 @@
       "url": "https://www.mocp.org/about-museum-of-contemporary-photography/opportunities/the-snider-prize/",
       "instagram": "@mocpchi",
       "location": "Chicago, IL, USA",
-      "prize": "$3,000",
+      "prize": "$3,000 + 2 × $500",
       "eligibility": [
         "emerging"
       ],
@@ -20157,7 +20158,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://www.dodho.com/photography-awards/",
       "requirements": "3, 6, or 12 images",
-      "resultsDate": "Late July 2026",
+      "resultsDate": "July 21–23, 2026",
       "slug": "monochromatic-awards-2026-dodho-magazine",
       "orgInTitle": false,
       "summary": "5th edition. All interpretations of monochromatic photography. Finalists in a 30×30 cm annual printed book.",
@@ -22452,7 +22453,7 @@
       "title": "2026 Emerging Vision: CPAC Biennial Student Show",
       "org": "Colorado Photographic Arts Center",
       "deadline": "2026-09-11",
-      "fee": "$20",
+      "fee": "$20 (3 images)",
       "category": "exhibition",
       "description": "Biennial juried student exhibition at the Colorado Photographic Arts Center (CPAC) in Denver, open internationally to current undergraduate and graduate students enrolled at a post-secondary institution who are not graduating before the end of the 2025–2026 academic year. All lens-based media eligible. Juried by Laura Sackett, creative director and co-founder of LensCulture. Best in Show receives a feature article on LensCulture.com, promotion in its newsletter (580,000+ subscribers), $150 custom printing from Digital Silver Imaging, and CPAC membership; Honorable Mention receives printing and membership. Exhibition November 20, 2026 – January 2, 2027.",
       "url": "https://www.cpacphoto.org",
@@ -22933,7 +22934,7 @@
       "prize": "AU$70,000 prize pool",
       "eligibility": [],
       "submitVia": "Official website",
-      "resultsDate": "September 2026",
+      "resultsDate": "September 5, 2026",
       "slug": "underwater-awards-australasia-2026",
       "orgInTitle": true,
       "summary": "Underwater imaging competition with ~AU$70,000 in prizes across 9 categories, for images shot in Australasia. Winners shown at Go Diving Show ANZ, Sydney.",
@@ -22946,7 +22947,9 @@
         "Ray Collins"
       ],
       "dateAdded": "2026-06-10T23:47:50.955Z",
-      "submitUrl": "https://www.underwatercompetition.com/Register"
+      "submitUrl": "https://www.underwatercompetition.com/Register",
+      "ai": "Not accepted",
+      "requirements": "1 image per entry"
     },
     {
       "title": "ADEX Dugong Photo of the Year 2027",
@@ -24253,14 +24256,18 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Caleb Bell, Executive Director, Tyler Museum of Art"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17625",
       "slug": "tshow-2-tyler-art-lift",
       "orgInTitle": false,
       "summary": "Tyler Art Lift's international all-media juried show, photography welcome. $5,000 in cash prizes at Gallery Main Street, TX.",
       "instagram": "@tylerartlift",
-      "dateAdded": "2026-06-11T23:35:01.835Z"
+      "dateAdded": "2026-06-11T23:35:01.835Z",
+      "resultsDate": "September 9, 2026",
+      "requirements": "Up to 20 works"
     },
     {
       "title": "Chew on This",
@@ -24322,7 +24329,10 @@
       "location": "Erwinna, PA",
       "prize": "Over $3,000 in prizes",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Laura Turner Igoe, Chief Curator, Michener Art Museum",
+        "Robert Seufert, Artist"
+      ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/stovermillgallery/eleventh-juried-art-show-stover-mill-gallery/",
       "requirements": "1 work",
