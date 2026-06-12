@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/peggy-doole-national-small-works-2026-washington-print-foundation/">Peggy Doole National Small Works 2026 &middot; Washington Print Foundation</a></h3><p class="call-description">National small-works competition in DC accepting fine art photographs — $1,000 Grand Prize, gallery show Jul 30-Aug 30.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', DC,') || c.location.includes(', Washington DC,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', DC,') || c.location.includes(', Washington DC,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

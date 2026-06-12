@@ -24417,9 +24417,9 @@
       "title": "Black & White Images — Photobook Open Call",
       "org": "Soft Publishing",
       "deadline": "2026-08-31",
-      "fee": "Free",
+      "fee": "€10 (€16 after Jul 10)",
       "category": "zine",
-      "description": "Open call from Treviso-based independent publisher Soft Publishing for black-and-white images of any subject — cohesive bodies of work or individual images. Up to 10 images per artist, minimum 2000px on one side, submitted with full captions (title, year, medium, dimensions) and a short description. Open to artists from anywhere and of all ages. Selected work is published in a limited-edition photobook.",
+      "description": "Open call from Treviso-based independent publisher Soft Publishing for black-and-white images of any subject — cohesive bodies of work or individual images. Up to 10 images per artist, minimum 2000px on one side, submitted with full captions (title, year, medium, dimensions) and a short description. Open to artists from anywhere and of all ages. Selected work is published in a limited-edition photobook. Entry €10 until July 10, €16 after; selected artists announced September 30, 2026.",
       "url": "https://green-triangle-9b6e.squarespace.com/open-calls",
       "instagram": "@soft_publisher",
       "location": "Online",
@@ -24431,8 +24431,9 @@
       "requirements": "Up to 10 images",
       "slug": "black-white-images-photobook-soft-publishing",
       "orgInTitle": false,
-      "summary": "Soft Publishing seeks black-and-white images of any subject for a limited-edition photobook — up to 10 photos, free to enter.",
-      "dateAdded": "2026-06-12T08:00:25.703Z"
+      "summary": "Soft Publishing seeks black-and-white images of any subject for a limited-edition photobook — up to 10 photos, €10–€16 fee.",
+      "dateAdded": "2026-06-12T08:00:25.703Z",
+      "resultsDate": "September 30, 2026"
     },
     {
       "title": "The Black & White Show",
@@ -24762,6 +24763,257 @@
       "orgInTitle": false,
       "summary": "Artlink reviews solo, group and curated exhibition proposals annually each March for its Fort Wayne gallery schedule. $25.",
       "dateAdded": "2026-06-12T11:51:23.164Z"
+    },
+    {
+      "title": "59th Annual Newport Beach Art Exhibition",
+      "org": "City of Newport Beach",
+      "deadline": "2026-06-15",
+      "fee": "$35 ($50 for 2 works)",
+      "category": "exhibition",
+      "description": "59th annual juried exhibition and sale held in and around the Newport Beach Civic Center Community Room — a one-day show on August 15, 2026 with an awards reception at 4 p.m. Photography is its own award category alongside paintings, drawings and 3D art, with $300/$200/$100 prizes per category plus Juror's Choice and People's Choice. Up to two recently created original works per artist, hand-delivered; all work must be for sale with a 20% donation to the Newport Beach Arts Foundation on sales.",
+      "url": "https://www.newportbeachca.gov/government/departments/library-services/cultural-arts/newport-beach-art-exhibition",
+      "instagram": "@nbculturalarts",
+      "location": "Newport Beach, CA, USA",
+      "prize": "$300/$200/$100 per category",
+      "eligibility": [
+        "california",
+        "18-plus"
+      ],
+      "jury": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16938",
+      "requirements": "Up to 2 images",
+      "resultsDate": null,
+      "ai": null,
+      "slug": "59th-annual-newport-beach-art-exhibition",
+      "orgInTitle": true,
+      "summary": "One-day juried show and sale at the Newport Beach Civic Center with a dedicated photography category and $300 top prize.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "44th Rock Island Art Guild Fine Arts Exhibition",
+      "org": "Rock Island Art Guild & Figge Art Museum",
+      "deadline": "2026-06-21",
+      "fee": "$35 (up to 3 works)",
+      "category": "exhibition",
+      "description": "Long-running juried exhibition presented with the Figge Art Museum in Davenport, Iowa, on view in the museum's fourth-floor gallery September 5, 2026 – January 10, 2027. Open to artists within a 200-mile radius of the Figge working in all media — photography, painting, sculpture, installation, sound, video, digital art and works on paper. Juried by Katherine Alcauskas, chief curator at the Chazen Museum of Art. $1,500/$750/$500 general awards plus watercolor and specialty awards.",
+      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=16869",
+      "instagram": "@figgeartmuseum",
+      "location": "Davenport, IA, USA",
+      "prize": "$1,500 + $750 + $500",
+      "eligibility": [
+        "midwest-us"
+      ],
+      "jury": [
+        "Katherine Alcauskas, Chief Curator, Chazen Museum of Art"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16869",
+      "requirements": "Up to 3 images",
+      "resultsDate": "July 10, 2026",
+      "ai": null,
+      "slug": "44th-rock-island-art-guild-fine-arts-exhibition",
+      "orgInTitle": true,
+      "summary": "All-media juried show at the Figge Art Museum for artists within 200 miles of Davenport. $1,500 top prize; on view into 2027.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "Kenmore Art Show 2026: Togetherness",
+      "org": "The Arts of Kenmore",
+      "deadline": "2026-06-24",
+      "fee": "$25 ($15 2nd piece)",
+      "category": "exhibition",
+      "description": "Annual community juried show at Kenmore City Hall north of Seattle, themed 'Togetherness' for 2026 and inviting artists across the Pacific Northwest. Photography (film or digital) is one of four categories alongside 2D, 3D and the Little Gallery of small works. Per-category awards of $200/$150/$100 plus $300 Best in Show, $200 People's Choice and a Mayor's Purchase Award. Up to 2 pieces per category, hand-delivered; exhibition August 14–23, 2026.",
+      "url": "https://www.artsofkenmore.com/art-show-2026",
+      "instagram": "@artsofkenmore",
+      "location": "Kenmore, WA, USA",
+      "prize": "$300 Best in Show + category awards",
+      "eligibility": [
+        "washington",
+        "18-plus"
+      ],
+      "jury": [
+        "Melinda Hurst Frye, photographer (Photography category)"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17364",
+      "requirements": "Up to 2 works per category",
+      "resultsDate": "July 15, 2026",
+      "ai": "Not accepted",
+      "slug": "kenmore-art-show-2026-togetherness",
+      "orgInTitle": true,
+      "summary": "Community juried show near Seattle with a dedicated photography category, $300 Best in Show and per-category cash awards.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "Works on Paper",
+      "org": "The Firefly Artists",
+      "deadline": "2026-06-27",
+      "fee": "$35 (+$5 each addl)",
+      "category": "exhibition",
+      "description": "National juried works-on-paper exhibition from Long Island artist cooperative The Firefly Artists, hung at the Darcy Arts Center in Northport, NY, July 21 – August 21, 2026. Photography is explicitly accepted alongside drawing, painting, printmaking, mixed media and digital media — original, human-made 2D works on paper up to 36\"×36\". First through third place and honorable mention awards; all work for sale with a 35% gallery commission. Reception August 6.",
+      "url": "https://thefireflyartists.com/works-on-paper-2026/",
+      "instagram": "@thefireflyartists",
+      "location": "Northport, NY, USA",
+      "prize": "Gallery exhibition + 1st-3rd place awards",
+      "eligibility": [
+        "united-states"
+      ],
+      "jury": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17384",
+      "requirements": "Up to 3 images",
+      "resultsDate": "July 3, 2026",
+      "ai": "Not accepted",
+      "slug": "works-on-paper-the-firefly-artists",
+      "orgInTitle": false,
+      "summary": "National juried works-on-paper show at a Long Island co-op gallery — photography welcome, exhibition in Northport, NY.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "Peggy Doole National Small Works 2026",
+      "org": "Washington Print Foundation",
+      "deadline": "2026-07-03",
+      "fee": "$35",
+      "category": "exhibition",
+      "description": "28th annual national small-works competition honoring printmaking advocate Peggy Doole, exhibited at Washington Printmakers Gallery in Washington, DC, July 30 – August 30, 2026. Accepts hand-pulled prints, screen prints, digital prints, fine art photographs and 3D work with print components — 2D work up to 250 square inches framed, made within the past two years. Juried by Washington art critic Mark Jenkins. $1,000 Grand Prize and $750 Washington Print Foundation Prize; reception August 1.",
+      "url": "https://www.washingtonprintfoundation.org/national-small-works",
+      "instagram": "@washingtonprintmakers",
+      "location": "Washington, DC, USA",
+      "prize": "$1,000 Grand Prize + $750 WPF Prize",
+      "eligibility": [
+        "united-states",
+        "18-plus"
+      ],
+      "jury": [
+        "Mark Jenkins, art critic"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17452",
+      "requirements": "1-3 images",
+      "resultsDate": "July 10, 2026",
+      "ai": null,
+      "slug": "peggy-doole-national-small-works-2026-washington-print-foundation",
+      "orgInTitle": false,
+      "summary": "National small-works competition in DC accepting fine art photographs — $1,000 Grand Prize, gallery show Jul 30-Aug 30.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "97th Michigan Contemporary Art Exhibition",
+      "org": "Muskegon Museum of Art",
+      "deadline": "2026-07-10",
+      "fee": "$35 ($20 members)",
+      "category": "exhibition",
+      "description": "97th edition of the Muskegon Museum of Art's statewide juried exhibition, on view September 10 – November 4, 2026. Open to Michigan artists 18+ working in any medium except video and performance; photography and digital prints should be from limited editions. Up to two original works completed in the last two years. Juried by Detroit-born photographer Lauren Semivan (MFA, Cranbrook Academy of Art). Best of Show $1,500, second place $1,000, third place $750, plus additional prizes.",
+      "url": "https://www.muskegonartmuseum.org/exhibitions/97th-michigan-contemporary-art-exhibition/",
+      "instagram": "@muskegonartmuseum",
+      "location": "Muskegon, MI, USA",
+      "prize": "$1,500 + $1,000 + $750",
+      "eligibility": [
+        "michigan",
+        "18-plus"
+      ],
+      "jury": [
+        "Lauren Semivan, photographer"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17101",
+      "requirements": "1-4 images",
+      "resultsDate": "By July 31, 2026",
+      "ai": null,
+      "slug": "97th-michigan-contemporary-art-exhibition-muskegon-museum-of-art",
+      "orgInTitle": false,
+      "summary": "Muskegon Museum of Art's statewide juried show for Michigan artists, juried by photographer Lauren Semivan. $1,500 top prize.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "The Beauty of It",
+      "org": "Old Town Arts & Crafts Guild",
+      "deadline": "2026-06-30",
+      "fee": "$25 (+$5 each addl)",
+      "category": "exhibition",
+      "description": "8th annual juried competition from the Old Town Arts & Crafts Guild, a community gallery on Long Island's North Fork founded in 1948. Entries in three categories — Fine Art, Photography, and Mixed Media/Crafts — with $150/$100/$75 awards in each. Juried by artist Esther Marie Caponigro. Accepted work is exhibited and offered for sale in the Guild's virtual exhibition August 1 – September 30, 2026 (30% commission on sales).",
+      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=16970",
+      "instagram": "@oldtownartsguild",
+      "location": "Online",
+      "prize": "$150/$100/$75 per category",
+      "eligibility": [
+        "united-states",
+        "18-plus"
+      ],
+      "jury": [
+        "Esther Marie Caponigro, artist"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16970",
+      "requirements": "Up to 20 images",
+      "resultsDate": "July 15-21, 2026",
+      "ai": null,
+      "slug": "the-beauty-of-it-old-town-arts-crafts-guild",
+      "orgInTitle": false,
+      "summary": "78-year-old Long Island guild's annual juried competition with a photography category — online exhibition and sale.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "Leigh Weimers Emerging Artists Awards 2026",
+      "org": "Rotary Club of San Jose",
+      "deadline": "2026-06-30",
+      "fee": "$10",
+      "category": "grant",
+      "description": "Annual unrestricted cash awards from the Rotary Club of San Jose honoring Mercury News columnist Leigh Weimers, for emerging artists whose work meaningfully engages or benefits residents of Santa Clara County (county residency itself not required). Visual arts including photography, plus music, literary and performance categories. Up to four winners receive grants that have ranged from $1,000 to $5,000 and present their work at the SJSU Hammer Theatre Center on October 21. Applicants should show some professional achievement but not yet wide recognition.",
+      "url": "https://www.weimersawards.com/",
+      "instagram": "@weimersawards",
+      "location": "San Jose, CA, USA",
+      "prize": "Up to 4 grants of $1,000-$5,000",
+      "eligibility": [
+        "bay-area",
+        "18-plus",
+        "emerging"
+      ],
+      "jury": [
+        "Alyssarhaye Graciano, Visual Arts Curator, MACLA",
+        "Lisa Malette, Executive Artistic Director, City Lights Theater Company",
+        "James G. Leventhal, Executive Director, Institute of Contemporary Art San José",
+        "Shawna Lucey, General Director & CEO, Opera San José",
+        "Robert Massey, CEO & Artistic Director, Symphony San José",
+        "Charlie McCollum, San José Arts Commissioner"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17207",
+      "requirements": "Up to 20 images",
+      "resultsDate": "September 2026",
+      "ai": null,
+      "slug": "leigh-weimers-emerging-artists-awards-2026-rotary-club-of-san-jose",
+      "orgInTitle": false,
+      "summary": "Unrestricted grants up to $5,000 for emerging artists connected to Santa Clara County — photography explicitly included.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
+    },
+    {
+      "title": "Open Call: All Media 2026",
+      "org": "Studio Channel Islands",
+      "deadline": "2026-07-07",
+      "fee": "$55 ($35 members)",
+      "category": "exhibition",
+      "description": "International juried exhibition in Studio Channel Islands' 3,000-square-foot gallery in Camarillo, California, August 1 – September 12, 2026. All media and styles welcome — including photography — for 2D/3D, video, film, performance, sound and installation work completed in the last three years; the prospectus asks for 'breakthrough pieces' that mark a turning point in your practice. Juried by Patricia Sweetow of Patricia Sweetow Gallery (Los Angeles). Cash prizes of $1,000/$750/$500 plus three juror's awards; 60/40 split on sales.",
+      "url": "https://studiochannelislands.org/open26",
+      "instagram": "@sciartcenter",
+      "location": "Camarillo, CA, USA",
+      "prize": "$1,000 + $750 + $500",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Patricia Sweetow, Patricia Sweetow Gallery"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17502",
+      "requirements": "Up to 6 images",
+      "resultsDate": "July 18, 2026",
+      "ai": null,
+      "slug": "open-call-all-media-2026-studio-channel-islands",
+      "orgInTitle": false,
+      "summary": "International all-media juried show at Studio Channel Islands, juried by gallerist Patricia Sweetow. $1,000 top prize.",
+      "dateAdded": "2026-06-12T15:51:36.313Z"
     }
   ]
 }
