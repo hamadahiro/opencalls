@@ -84,7 +84,8 @@ const eligibilityLabel = {
   'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'native-american': 'Native American artists',
   'northern-california': 'Northern California only', 'tampa-bay': 'Tampa Bay only',
-  'new-mexico': 'New Mexico only', 'massachusetts-rhode-island': 'MA & RI only'
+  'new-mexico': 'New Mexico only', 'massachusetts-rhode-island': 'MA & RI only',
+  'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only'
 };
 
 // ---- Pure functions ----
