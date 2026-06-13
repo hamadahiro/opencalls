@@ -5694,7 +5694,8 @@
       "orgInTitle": false,
       "resultsDate": "June 27, 2026",
       "summary": "International themed open call exploring surrealism — dreams, the unconscious mind, and bizarre symbolic imagery.",
-      "dateAdded": "2026-05-31T15:04:44.920Z"
+      "dateAdded": "2026-05-31T15:04:44.920Z",
+      "submitUrl": "https://chateaugallery.com/call-for-entries/the-surreal-2026"
     },
     {
       "title": "The Art of Abandonment",
@@ -16118,8 +16119,7 @@
       "location": "Paris, France",
       "prize": "€30,000",
       "eligibility": [
-        "professional",
-        "france"
+        "professional"
       ],
       "submitVia": "Online platform",
       "submitUrl": "https://academiedesbeauxarts.wiin.io/fr/applications/prix-de-photographie-marc-ladreit-de-lacharriere-academie-des-beaux-arts-2026",
@@ -16135,7 +16135,8 @@
       "dateAdded": "2026-06-04T19:07:35.236Z",
       "jury": [
         "Académie des beaux-arts Photography Section"
-      ]
+      ],
+      "requirements": "Project proposal"
     },
     {
       "title": "Outdoor Photography Magazine — Creative Wildlife",
@@ -23800,7 +23801,8 @@
       "slug": "fineart-igualada-2027-open-call",
       "orgInTitle": true,
       "summary": "Propose an exhibition project for the 15th FineArt Igualada photography festival (Feb–Mar 2027, Catalonia).",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "requirements": "Exhibition proposal"
     },
     {
       "title": "Skyway 2027: A Contemporary Collaboration",
@@ -24591,7 +24593,8 @@
       "slug": "kometa-fellows-program-2026",
       "orgInTitle": true,
       "summary": "€10,000 fellowships for photographers, journalists and writers documenting war, censorship, and political tension. Free to apply.",
-      "dateAdded": "2026-06-12T11:51:23.164Z"
+      "dateAdded": "2026-06-12T11:51:23.164Z",
+      "requirements": "Project proposal"
     },
     {
       "title": "Betty Bowen Award 2026",
@@ -24684,9 +24687,7 @@
       "instagram": "@kinhouseart",
       "location": "Fort Wayne, IN, USA",
       "prize": "Exhibition + Catalog publication",
-      "eligibility": [
-        "united-states"
-      ],
+      "eligibility": [],
       "jury": [
         "Braydee Euliss, Curator, founder of COMPANION gallery"
       ],
@@ -24695,7 +24696,7 @@
       "requirements": "Up to 3 images",
       "slug": "kinhouse-exploring-kinship-and-the-spaces-we-inhabit",
       "orgInTitle": true,
-      "summary": "National juried show on kinship, caregiving and place at Fort Wayne's Kinhouse Gallery. Catalog publication; juror Braydee Euliss.",
+      "summary": "Juried show on kinship, caregiving and place at Fort Wayne's Kinhouse Gallery. Catalog publication; juror Braydee Euliss.",
       "dateAdded": "2026-06-12T11:51:23.164Z"
     },
     {
@@ -25152,7 +25153,7 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Website",
-      "submitUrl": "https://www.worldphoto.org/sony-world-photography-awards",
+      "submitUrl": "https://users.worldphoto.org/",
       "requirements": "1–10 images",
       "resultsDate": null,
       "ai": null,
