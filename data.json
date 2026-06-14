@@ -1402,9 +1402,7 @@
       "instagram": "@decagongallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [
-        "18-plus"
-      ],
+      "eligibility": [],
       "submitVia": "Website form",
       "submitUrl": "https://form.jotform.com/261309238425153",
       "requirements": "Up to 8 images",
@@ -16751,7 +16749,6 @@
       "orgInTitle": false,
       "slug": "atlas-of-ruins-vol-3-call-for-photos-reuse-italy",
       "dateAdded": "2026-03-22",
-      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
       "summary": "Photographs of architectural ruins from anywhere in the world for a printed book. Two registration tiers, prizes up to €1,200.",
       "ai": null,
       "jury": [],
@@ -25313,7 +25310,7 @@
       "submitUrl": "https://www.worldnaturephotographyawards.com/nature-photography-competition-enter-now",
       "requirements": "Up to 6 images",
       "resultsDate": null,
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "world-nature-photography-awards-2027",
       "orgInTitle": true,
       "summary": "7th edition international nature & wildlife awards — 14 categories, $1,000 + Photographer of the Year title. £30 for 6 images, worldwide 18+. Deadline Jun 30.",
