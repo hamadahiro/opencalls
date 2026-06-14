@@ -143,7 +143,15 @@
       "slug": "raccontarti-contemporary-photography-award-2026-castelfiorentino-prize-for-the-arts",
       "orgInTitle": false,
       "summary": "Free call on 'the image of absence' — €3,000 Open and €500 Student awards plus a fully produced group exhibition in Tuscany.",
-      "dateAdded": "2026-06-10T11:33:54.869Z"
+      "dateAdded": "2026-06-10T11:33:54.869Z",
+      "jury": [
+        "Vittore Buzzi, Photographer",
+        "Federica Sasso, Photographer",
+        "Giorgio Di Noto, Artist & Curator",
+        "Michele Palazzi, Photographer",
+        "Chiara Ruperti, Photographer",
+        "Serena Nocentini, Critic & Curator"
+      ]
     },
     {
       "title": "Liminal Magazine — Issue 2",
@@ -1471,7 +1479,7 @@
       "location": "Rome, Italy",
       "prize": "Exhibition",
       "submitVia": "Website form",
-      "submitUrl": "https://fabula-works.com/opencall001",
+      "submitUrl": null,
       "requirements": "10–25 images",
       "jury": [
         "Carolyn Mendelsohn, Photographer"
@@ -20309,7 +20317,7 @@
       "location": "London, United Kingdom",
       "prize": "£10,000 + mentorship",
       "eligibility": [
-        "under-30",
+        "under-25",
         "student"
       ],
       "submitVia": "Picter",

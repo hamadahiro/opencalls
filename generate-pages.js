@@ -948,6 +948,7 @@ const eligibilityGroups = {
   'europe': { short: 'Europe', title: 'Europe-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Europe. Exhibitions, grants, residencies, and competitions for European artists.' },
   'italy': { short: 'Italy', title: 'Italy-Only Open Calls', desc: 'Open calls restricted to photographers and artists based in Italy. Exhibitions, grants, residencies, and competitions for Italian artists.' },
   'emerging': { short: 'Emerging Artists', title: 'Open Calls for Emerging Artists', desc: 'Open calls, grants, and awards specifically for emerging, early-career, and student photographers and visual artists.' },
+  'under-25': { short: 'Under 25', title: 'Open Calls for Under 25', desc: 'Open calls with age restrictions for photographers and artists under 25. Grants, exhibitions, awards, and emerging talent opportunities.' },
   'under-30': { short: 'Under 30', title: 'Open Calls for Under 30', desc: 'Open calls with age restrictions for photographers and artists under 30. Grants, exhibitions, awards, and emerging talent opportunities.' },
   'under-35': { short: 'Under 35', title: 'Open Calls for Under 35', desc: 'Open calls with age restrictions for photographers and artists under 35. Grants, exhibitions, awards, and emerging talent opportunities.' },
   'under-40': { short: 'Under 40', title: 'Open Calls for Under 40', desc: 'Open calls with age restrictions for photographers and artists under 40. Grants, exhibitions, awards, and mid-career opportunities.' },
@@ -1098,7 +1099,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'native-american', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
+  { heading: 'Who Can Apply', tags: ['women', 'flinta', 'black', 'bipoc', 'native-american', 'lgbtq', 'neurodivergent-disabled', 'emerging', 'mid-career', 'student', 'professional', 'under-25', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18'] },
   { heading: 'Where', tags: ['united-states', 'new-york-state', 'alaska', 'arkansas', 'california', 'colorado', 'idaho', 'maryland', 'massachusetts-rhode-island', 'michigan', 'minnesota', 'new-mexico', 'oregon', 'texas', 'virginia', 'washington', 'bay-area', 'chicago-area', 'los-angeles', 'northern-california', 'tampa-bay', 'tri-state', 'great-lakes', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'southwest-us', 'canada', 'europe', 'australia', 'baltics-finland', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'kazakhstan', 'malta', 'morocco', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'north-east-england', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
