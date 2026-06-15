@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Les Amis de Jean Giono. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/jean-giono-photography-contest-2026/">Jean Giono Photography Contest 2026 &middot; Les Amis de Jean Giono</a></h3><p class="call-description">Free contest by Les Amis de Jean Giono and Regards Alpins. Photos inspired by Giono's Noé. Awards at Rencontres Giono, Manosque.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Les Amis de Jean Giono' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Les Amis de Jean Giono').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

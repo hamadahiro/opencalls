@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Photo Trouvée Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/photo-trouvee-magazine-issue-20-print-call/">Photo Trouvée Magazine Issue 20 — Print Call</a></h3><p class="call-description">Print Issue 20 for artists working with vintage found or family photographs. Any media. Free submission.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Photo Trouvée Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Photo Trouvée Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Black and White Photo Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/black-and-white-photo-awards-2026/">Black and White Photo Awards 2026</a></h3><p class="call-description">International B&amp;W competition — 6 categories incl. Architecture, Street, Landscape. €1,500 absolute winner + €200 per category.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Black and White Photo Awards' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Black and White Photo Awards').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
