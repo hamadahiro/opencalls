@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/road-trip-across-america-photography-exhibition-city-of-frisco/">Road Trip Across America Photography Exhibition &middot; City of Frisco Cultural Affairs</a></h3><p class="call-description">City of Frisco exhibition marking 250 years of American travel. Texas photographers 18+; free entry, Discovery Center show.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('texas') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('texas')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

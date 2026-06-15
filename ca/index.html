@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/pop-art-exhibition-sparks-gallery/">Pop Art Exhibition &middot; Sparks Gallery</a></h3><p class="call-description">Pop-culture-inspired works at Sparks Gallery, San Diego. US artists, original work for sale, from $20. Deadline June 15.</p></div>
 
     </section>
 
@@ -125,7 +124,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'CA' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'CA').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 

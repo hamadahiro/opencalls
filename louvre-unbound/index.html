@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Louvre Unbound. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/louvre-unbound-magazine-volumes-7-8-open-call/">Louvre Unbound Magazine — Volumes 7 &amp; 8 Open Call</a></h3><p class="call-description">International art magazine's call for Volumes 7 &amp; 8 across all visual media. Selected artists get print features and social promotion.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Louvre Unbound' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Louvre Unbound').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
