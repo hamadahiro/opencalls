@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Kult Books. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/100-book-award-2026-kult-books/">100 Book Award 2026 &middot; Kult Books</a></h3><p class="call-description">Free photobook open call from indie publisher Kult Books (Stockholm). Selected projects published in editions of 100 copies, fully designed.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Kult Books' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Kult Books').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

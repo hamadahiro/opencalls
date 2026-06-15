@@ -112,7 +112,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/across-america-2026-the-art-center/">Across America 2026 &middot; The Art Center</a></h3><p class="call-description">Photography celebrating America's diverse essence — landscapes, people, culture. Juried exhibition in Dover, NH, July–August.</p></div>
 
     </section>
 
@@ -130,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', NH,') || c.location.includes(', New Hampshire,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', NH,') || c.location.includes(', New Hampshire,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
