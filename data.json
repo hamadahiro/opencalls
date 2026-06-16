@@ -20482,7 +20482,7 @@
       "url": "https://www.ianparry.org/",
       "instagram": "@ianparryphoto",
       "location": "London, United Kingdom",
-      "prize": "£10,000 + mentorship",
+      "prize": "£10,000",
       "eligibility": [
         "under-25",
         "student"
@@ -23178,7 +23178,7 @@
       "url": "https://opendoors.gallery/od-photo-prize",
       "instagram": "@odtakeovers",
       "location": "London, United Kingdom",
-      "prize": "£2,000 + Exhibition + Mentorship",
+      "prize": "£2,000 + Exhibition",
       "eligibility": [
         "emerging"
       ],
@@ -23232,7 +23232,7 @@
       "url": "https://www.adex.asia/adex-dugong-photography-campaign-2027/",
       "instagram": "@asiadiveexpo",
       "location": "Singapore, Singapore",
-      "prize": "Hosted stay at ADEX Singapore + Exhibition",
+      "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Official website",
       "requirements": "Up to 3 images",
@@ -25503,13 +25503,26 @@
       "instagram": "@eurazeo_photo",
       "location": "Paris, France",
       "fee": "Free",
-      "prize": "€20,000 grant + Mentorship + Industry connections",
+      "prize": "€20,000",
+      "requirements": "Project proposal",
+      "jury": [
+        "Jean-François Camp, President, DuRev Gallery",
+        "Dimitri Beck, Director of Photography, Polka Magazine",
+        "Elisabeth Bret, Photographer",
+        "Olivier Roller, Photographer",
+        "Hélène David-Weill",
+        "Thierry Grillet, Creative Director, Bibliothèque nationale de France",
+        "Aurélie de Lanlay, Deputy Director, Les Rencontres d'Arles",
+        "Anne Lesage, Head of Images, Centre des Monuments Nationaux",
+        "William Kadouch-Chassaing, Co-CEO, Eurazeo",
+        "Coralie Savin, Director of Communications, Eurazeo"
+      ],
       "eligibility": [
         "professional",
         "18-plus"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://www.eurazeo.com/en/responsibility/eurazeo-photographer",
+      "submitUrl": null,
       "slug": "eurazeo-photo-prize-2026",
       "orgInTitle": true,
       "summary": "Eurazeo's relaunched photography grant: a €20,000 award plus mentorship and industry connections to develop an ambitious long-term project.",
