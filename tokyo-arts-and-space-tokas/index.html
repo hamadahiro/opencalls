@@ -105,8 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Tokyo Arts and Space (TOKAS). Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/tokas-international-creator-residency-program-2027/">TOKAS International Creator Residency Program 2027</a></h3><p class="call-description">Three-month Tokyo residency. Airfare, accommodation, 4,200 JPY/day per diem, 300,000 JPY creative fee. Free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/tokas-research-residency-program-2027/">TOKAS Research Residency Program 2027</a></h3><p class="call-description">Five 6–12 week research residencies in Tokyo between May 2027 and March 2028. Accommodation provided, free to apply.</p></div>
 
     </section>
 
@@ -124,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Tokyo Arts and Space (TOKAS)' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Tokyo Arts and Space (TOKAS)').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
