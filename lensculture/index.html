@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from LensCulture. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/lensculture-street-photography-awards-2026/">LensCulture Street Photography Awards 2026</a></h3><p class="call-description">LensCulture annual street photography awards. $10,000 in prizes, 9 international jurors, exhibition at Photo London 2027. Free single entry.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'LensCulture' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'LensCulture').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
