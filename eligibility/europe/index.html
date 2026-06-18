@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/gaze-the-queer-photo-award-2026/">Gaze – The Queer Photo Award 2026</a></h3><p class="call-description">Queer photo award (theme 'HOW TO / GATHER') for LGBTQIA+ artists in Germany, EU &amp; UK. Two €1,000 prizes plus a Berlin exhibition.</p></div>
 
     </section>
 
@@ -123,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('europe')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('europe') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
