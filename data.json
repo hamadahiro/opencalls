@@ -9527,7 +9527,7 @@
       "title": "Nes Artist Residency — Fall 2026",
       "org": "Nes Artist Residency",
       "deadline": "Continuous",
-      "fee": "€850/month",
+      "fee": "€900/month",
       "category": "residency",
       "description": "Residency in Skagaströnd, Iceland for Sept/Oct/Nov 2026. Private bedroom, shared studio and library. 1–6 month stays. Open to artists, musicians, writers, and researchers. Remote location with opportunities for artistic and cultural exchange.",
       "url": "https://neslist.is/apply",
@@ -24819,7 +24819,10 @@
       "location": "Stamford, CT, USA",
       "prize": "Up to $400 in awards + Exhibition",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Debapriya Sarkar, Associate Professor, University of Connecticut",
+        "Michael Bagley, VP of Programs, SoundWaters"
+      ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/stamfordartassociation/26th-annual-vivian-stanley-reed-marine-show/",
       "requirements": "Up to 9 works",
