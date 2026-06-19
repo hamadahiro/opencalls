@@ -477,7 +477,7 @@
       "title": "RBSA Prize 2026",
       "org": "Royal Birmingham Society of Artists",
       "deadline": "2026-08-11",
-      "fee": "£20–£48",
+      "fee": "£32–£48",
       "category": "exhibition",
       "description": "Open-media exhibition of contemporary work at the RBSA Gallery in central Birmingham, with all styles and media eligible including photography. Up to four works per artist, selected anonymously from digital images. Prizes of £1,000, £500 and £250 plus up to six highly commended awards; the exhibition runs October 1–31, 2026. Open to local, national and international artists.",
       "url": "https://rbsa.org.uk/call-for-entries/rbsa-prize-2026-open-contemporary/",
@@ -713,7 +713,10 @@
       "orgInTitle": true,
       "summary": "German photo magazine's open call for emerging talent. Winners published in ProfiFoto, WhiteWall print exhibition, €3,000 cash pool.",
       "dateAdded": "2026-06-09T23:39:14.396Z",
-      "ai": "Concept use only (labeled)"
+      "ai": "Concept use only (labeled)",
+      "jury": [
+        "Editors of ProfiFoto, brand partners & independent photo curators"
+      ]
     },
     {
       "title": "Street Photography Barcelona Contest 2026 — 2nd Edition",
@@ -25069,7 +25072,9 @@
       "instagram": "@kometafr",
       "location": "Online",
       "prize": "€10,000 grant",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [],
       "submitVia": "Website form",
       "submitUrl": "https://tally.so/r/J9XxMK",
