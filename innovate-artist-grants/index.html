@@ -105,8 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Innovate Artist Grants. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/innovate-grants-quarterly-grants/">Innovate Grants - Quarterly Grants</a></h3><p class="call-description">Quarterly grants: 2 x $1,800 (one photographer, one artist). 18 honorable mentions per cycle.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/innovate-grants-spring-1-800-grants/">Innovate Grants - Spring $1,800 Grants</a></h3><p class="call-description">Two $1,800 quarterly grants — one for a photographer, one for a visual artist. Eighteen honorable mentions.</p></div>
 
     </section>
 
@@ -124,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Innovate Artist Grants' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Innovate Artist Grants').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
