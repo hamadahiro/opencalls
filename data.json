@@ -55,7 +55,7 @@
       "requirements": "Up to 2 works",
       "slug": "legacy-ajanaku-gallery",
       "orgInTitle": false,
-      "summary": "Ajanaku Gallery's founding photo-and-text exhibition on Afro-Caribbean heritage and memory. Free; up to two works pairing image and text. Shown in Neuilly-Plaisance, France, December 2026.",
+      "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
       "dateAdded": "2026-06-19T01:49:26.373Z"
     },
     {
@@ -4970,7 +4970,7 @@
       "slug": "yaddo-residency-summer-2026-cycle",
       "orgInTitle": true,
       "summary": "2-week to 2-month residency in Saratoga Springs, NY. Photography eligible. Founded 1900. Encourages underrepresented backgrounds.",
-      "ai": "Accepted",
+      "ai": null,
       "jury": [],
       "dateAdded": "2026-04-30T07:15:34.963Z",
       "prose": [
@@ -22956,22 +22956,22 @@
       "deadline": "2026-08-01",
       "fee": "Free",
       "category": "exhibition",
-      "description": "International juried photography exhibition at the Robert A. Peck Gallery, a 6,000-square-foot teaching gallery at Central Wyoming College in Riverton. The call seeks images shot in Wyoming that capture unexpected aspects of the state with innovation, aesthetic finesse, and thought-provoking narrative — explicitly avoiding typical visitor-guide imagery. Open to artists worldwide; all photographic formats accepted. There is no entry fee and the gallery takes no commission on sales, fully insuring exhibited work. Juried by Lonnie Slack, Nita Kehoe, and George Kahrl. $10,000 in awards. Exhibition September 11 – October 16, 2026.",
+      "description": "International juried photography exhibition at the Robert A. Peck Gallery, a 6,000-square-foot teaching gallery at Central Wyoming College in Riverton. The call seeks images shot in Wyoming, North Dakota, South Dakota, or Montana that capture unexpected aspects of the region with innovation, aesthetic finesse, and thought-provoking narrative — explicitly avoiding typical visitor-guide imagery. Open to artists worldwide; all photographic formats accepted. There is no entry fee and the gallery takes no commission on sales, fully insuring exhibited work. Juried by Lonnie Slack, Nita Kehoe, and George Kahrl. $10,000 in awards. Exhibition September 11 – October 16, 2026.",
       "url": "https://www.cwc.edu/artscentergallery/",
       "location": "Riverton, WY, USA",
       "prize": "$10,000 in awards + exhibition",
       "eligibility": [],
       "jury": [
-        "Lonnie Slack",
-        "Nita Kehoe",
-        "George Kahrl"
+        "Lonnie Slack, Professor of Photography",
+        "Nita Kehoe, Professor of Art & Gallery Director",
+        "George Kahrl, Rancher & Photographer"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17659",
       "requirements": "1–8 images",
       "slug": "photography-of-place-robert-a-peck-gallery",
       "orgInTitle": false,
-      "summary": "Free juried show at CWC's Robert A. Peck Gallery — images shot in Wyoming. $10,000 in awards, no entry fee or commission.",
+      "summary": "Free juried show at CWC's Robert A. Peck Gallery — images shot in Wyoming, the Dakotas, or Montana. $10,000 in awards, no entry fee or commission.",
       "ai": "Not accepted",
       "dateAdded": "2026-06-06T19:09:43Z",
       "instagram": "@cwc_rustlers"
@@ -23114,7 +23114,7 @@
       "ai": "Must disclose",
       "slug": "traveller-s-art-fair-2026-golden-duck-gallery",
       "orgInTitle": true,
-      "summary": "Affordable-art exhibition in Budapest, open topic and all media. €500 prize fund; three curator's picks exhibit free.",
+      "summary": "Affordable-art exhibition in Budapest, open topic and all media. €600 prize fund; three curator's picks exhibit free.",
       "dateAdded": "2026-06-10T07:44:39.248Z"
     },
     {
@@ -23611,7 +23611,7 @@
       "orgInTitle": false,
       "summary": "Swope Art Museum's 82-year-old juried annual for six-state region artists; $10,000+ in awards, juror Mark Pascale.",
       "jury": [
-        "Mark Pascale"
+        "Mark Pascale, Curator, Art Institute of Chicago"
       ],
       "dateAdded": "2026-06-11T03:33:39.730Z"
     },
