@@ -13678,7 +13678,7 @@
       "deadline": "2026-06-26",
       "fee": "$30–$35",
       "category": "photography",
-      "description": "Leading international award honoring black-and-white photography. 21st edition. Open to professional and amateur photographers. 235+ title awards. Judged by Steve McCurry among others. Winners announced at live Photoshow November 2026.",
+      "description": "Leading international award honoring black-and-white photography. 21st edition. Open to professional and amateur photographers. 235+ title awards. Judged by an international panel of curators and gallerists. Winners announced at live Photoshow November 2026.",
       "url": "https://www.thespiderawards.com/how-to-enter.php",
       "instagram": "@spiderawards",
       "location": "Online",
@@ -13698,7 +13698,7 @@
       "resultsDate": "November 7, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.thespiderawards.com/register.php",
-      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Judged by Steve McCurry and others.",
+      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Jury from Bonhams, Tate Modern & VMFA.",
       "prose": [
         "The Black & White Spider Awards is an annual international award restricted by process: black-and-white photography only. The 2026 edition is the award's 21st cycle.",
         "The structure runs 235+ title awards across categories — winners are announced not only as overall prizes but as title-holders within sub-genres. Winners are announced at a live Photoshow in November 2026.",
@@ -22844,7 +22844,7 @@
       "slug": "aap-magazine-59-shapes-all-about-photo",
       "orgInTitle": false,
       "summary": "Shapes-themed issue of AAP Magazine. $500/$300/$200 cash prizes + publication. Up to 40 images, min 3 as a cohesive series.",
-      "ai": "Not accepted",
+      "ai": null,
       "jury": [
         "Sandrine Hermand-Grisel, Founder & Editor, All About Photo"
       ],
@@ -25611,11 +25611,11 @@
       "deadline": "2026-09-28",
       "fee": "€25 (free under-18)",
       "category": "photography",
-      "description": "Fourth edition of the DESEA Foundation's international nature and conservation photography competition (Madrid, Spain). Fifteen awarded categories: four conservation photojournalism categories (Series, Single Image, Spain, and 'Conservation Told by Women'), two WildWatchingSpain special categories, six thematic categories (Mammals, Birds, Oceans, Other Animals, Landscape, Creative), plus Young, Child and People's Choice awards. Around €17,000 in total prizes including €10,000 in cash plus camera gear from Sony and OM System. Open to amateur and professional photographers of any nationality; up to 30 images, JPG minimum 3000px on the longest side. FONAMAD members pay €15; under-18s enter free.",
+      "description": "Fourth edition of the DESEA Foundation's international nature and conservation photography competition (Madrid, Spain). Fifteen awarded categories: four conservation photojournalism categories (Series, Single Image, Spain, and 'Conservation Told by Women'), two WildWatchingSpain special categories, six thematic categories (Mammals, Birds, Oceans, Other Animals, Landscape, Creative), plus Young, Child and People's Choice awards. Around €17,000 in total prizes including cash awards plus camera gear from Sony and OM System. Open to amateur and professional photographers of any nationality; up to 30 images, JPG minimum 3000px on the longest side. FONAMAD members pay €15; under-18s enter free.",
       "url": "https://natureandhumans.com/en/home/",
       "instagram": "@natureandhumansphoto",
       "location": "Madrid, Spain",
-      "prize": "€10,000 cash + camera gear + catalogue",
+      "prize": "€17,000 prize pool",
       "eligibility": [],
       "jury": [],
       "submitVia": "Website",
@@ -25625,7 +25625,7 @@
       "ai": null,
       "slug": "nature-and-humans-photo-competition-2026-desea-foundation",
       "orgInTitle": false,
-      "summary": "Spanish foundation's international nature & conservation photo competition — 15 categories, ~€17,000 in prizes (€10,000 cash). €25 entry, open worldwide.",
+      "summary": "Spanish foundation's international nature & conservation photo competition — 15 categories, €17,000 in prizes. €25 entry, open worldwide.",
       "dateAdded": "2026-06-13T14:26:19.537Z"
     },
     {
