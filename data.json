@@ -31,7 +31,7 @@
     {
       "title": "Night Vision",
       "org": "Artlink Contemporary Gallery",
-      "deadline": "2026-07-26",
+      "deadline": "2026-07-27",
       "fee": "$12 + $12 media fee",
       "category": "exhibition",
       "description": "Juried exhibition at Artlink Contemporary Gallery in Fort Wayne, Indiana celebrating those who are drawn to the vivid colors of the dark and the possibilities of the night. Open to artists working in all media — painting, drawing, photography, sculpture, ceramic, video, installation, collage, printmaking, jewelry, mixed media, and beyond. Up to 10 work samples; open to US artists 18 and over. Exhibition runs September 3–27, 2026 at Artlink in Fort Wayne.",
@@ -1785,7 +1785,7 @@
       "location": "Rome, Italy",
       "prize": "Exhibition",
       "submitVia": "Website form",
-      "submitUrl": null,
+      "submitUrl": "https://fabula-works.com/opencall001",
       "requirements": "10–25 images",
       "jury": [
         "Carolyn Mendelsohn, Nikon Europe Ambassador"
@@ -23550,7 +23550,9 @@
       "slug": "2027-solo-and-group-exhibition-proposals-rehoboth-art-league",
       "orgInTitle": false,
       "summary": "Propose a 2027 solo or group show at Rehoboth Art League, Delaware. Any media including photography; 5–10 works.",
-      "jury": [],
+      "jury": [
+        "Rehoboth Art League Exhibitions Committee"
+      ],
       "dateAdded": "2026-06-10T23:47:50.955Z"
     },
     {
