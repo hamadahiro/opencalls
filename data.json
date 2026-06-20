@@ -2,6 +2,27 @@
   "lastUpdated": "2026-06-10",
   "calls": [
     {
+      "title": "Momentum",
+      "org": "GearBox Gallery",
+      "deadline": "2026-06-21",
+      "fee": "$35",
+      "category": "exhibition",
+      "description": "Annual juried show at GearBox Gallery in Oakland celebrating the impetus and driving force of the evolving Northern California art scene, across all genres and media including photography. Juror: Demetri Broxton, executive director of Root Division, San Francisco. Two artists are selected for future shows — a two-person exhibition in the Main Gallery and a solo exhibition in the Inner Room Gallery. Open to Northern California artists (Fresno and north), 21 and over; work made within the last four years. Exhibition runs August 20 – September 19, 2026.",
+      "url": "https://gearboxgallery.com/2026-juried-show-momentum",
+      "location": "Oakland, CA, USA",
+      "prize": "Two-person exhibition + Solo exhibition",
+      "eligibility": [
+        "21-plus",
+        "northern-california"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17313",
+      "slug": "momentum-gearbox-gallery",
+      "orgInTitle": false,
+      "summary": "Annual juried show at Oakland's GearBox Gallery — all media incl. photography. Two artists win future two-person and solo shows.",
+      "dateAdded": "2026-06-20T15:10:37.437Z"
+    },
+    {
       "title": "Night Vision",
       "org": "Artlink Contemporary Gallery",
       "deadline": "2026-07-26",
