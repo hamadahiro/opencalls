@@ -20,7 +20,13 @@
       "slug": "momentum-gearbox-gallery",
       "orgInTitle": false,
       "summary": "Annual juried show at Oakland's GearBox Gallery — all media incl. photography. Two artists win future two-person and solo shows.",
-      "dateAdded": "2026-06-20T15:10:37.437Z"
+      "dateAdded": "2026-06-20T15:10:37.437Z",
+      "jury": [
+        "Demetri Broxton, Executive Director, Root Division"
+      ],
+      "instagram": "@gearboxgallery",
+      "resultsDate": "July 15, 2026",
+      "requirements": "Up to 3 works"
     },
     {
       "title": "Night Vision",
@@ -1956,7 +1962,8 @@
         "Entry is $35 for up to three photo or mixed-media works, or $20 for two videos, with a maximum of three works total. Because it is an all-ages event, work containing nudity is not accepted, and submissions addressing religious or political themes are excluded. The deadline to submit is June 27, 2026."
       ],
       "ai": null,
-      "dateAdded": "2026-06-03T19:12:43.729Z"
+      "dateAdded": "2026-06-03T19:12:43.729Z",
+      "resultsDate": "June 29, 2026"
     },
     {
       "title": "New South, Volume III",
@@ -15802,7 +15809,9 @@
       "instagram": "@nyartcompetitions",
       "location": "New York, NY, USA",
       "prize": "$500",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "slug": "8th-chelsea-international-photography-competition-agora-gallery",
       "orgInTitle": false,
@@ -25662,7 +25671,14 @@
       "location": "Madrid, Spain",
       "prize": "€17,000 prize pool",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Javier Herranz, Nature & Travel Photographer",
+        "Tito García, OM SYSTEM Ambassador",
+        "Alfonso Lario, Photographer & Ornithologist",
+        "Luis Robles, Co-founder, WildWatching Spain",
+        "Adriana Claudia Sanz, Portfolio Natural",
+        "Arturo de Frías, Founder, ADF Foundation"
+      ],
       "submitVia": "Website",
       "submitUrl": "https://2026.natureandhumans.com/",
       "requirements": "Up to 30 images",
@@ -25723,7 +25739,7 @@
       "title": "World Nature Photography Awards 2027",
       "org": "World Nature Photography Awards",
       "deadline": "2026-06-30",
-      "fee": "£30 (up to 6 images)",
+      "fee": "£30",
       "category": "photography",
       "description": "The seventh edition of the World Nature Photography Awards (WNPA), an international nature and wildlife photography competition. Fourteen categories spanning Animals in their habitat, Animal portraits, behaviour categories (Bird, Mammal, Amphibian/Reptile, Invertebrate), Plants and fungi, Urban wildlife, Landscapes, Underwater, Black and white, Nature art, Photojournalism and People and nature. Gold, silver and bronze winners in every category; the top-scoring gold image wins the World Nature Photographer of the Year title plus $1,000. Open to amateur and professional photographers worldwide aged 18+; images of captive or restrained animals are not permitted. Standard entry is £30 for up to six images, with no limit on the number of entries. Submissions accepted online only as JPEGs (1,000–3,000px, under 3MB). Deadline midnight GMT, 30 June 2026.",
       "url": "https://www.worldnaturephotographyawards.com/",
@@ -25736,7 +25752,7 @@
       "jury": [],
       "submitVia": "Website",
       "submitUrl": "https://www.worldnaturephotographyawards.com/nature-photography-competition-enter-now",
-      "requirements": "Up to 6 images",
+      "requirements": "Unlimited images",
       "resultsDate": null,
       "ai": "Not accepted",
       "slug": "world-nature-photography-awards-2027",
