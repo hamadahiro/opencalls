@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from FiiLTHY GLO. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/fiilthy-glo-issue-5-sonder/">FiiLTHY GLO Issue 5 — SONDER</a></h3><p class="call-description">Indie zine for the strange and unusual. Issue 5 theme: SONDER. Photography accepted. Free, worldwide.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'FiiLTHY GLO' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'FiiLTHY GLO').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
