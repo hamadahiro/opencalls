@@ -112,7 +112,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/44th-rock-island-art-guild-fine-arts-exhibition/">44th Rock Island Art Guild Fine Arts Exhibition</a></h3><p class="call-description">All-media juried show at the Figge Art Museum for artists within 200 miles of Davenport. $1,500 top prize; on view into 2027.</p></div>
 
     </section>
 
@@ -130,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', IA,') || c.location.includes(', Iowa,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', IA,') || c.location.includes(', Iowa,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
