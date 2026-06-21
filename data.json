@@ -94,7 +94,7 @@
       "fee": "Free",
       "category": "exhibition",
       "description": "Founding exhibition of Ajanaku Gallery — a photo-and-text show exploring Afro-Caribbean heritage, transmission, and memory, built on the idea of 'what our ancestors left us, and what we will leave to the world.' Open internationally to photographers, writers, and poets: works pair images (portraits, symbolic scenes, ritual objects, revisited traditional garments) with integrated texts such as original poems, African and Caribbean proverbs, letter fragments, and meditative writing. Free to enter through the gallery's online form; submit up to two works as high-resolution JPG, PNG, or PDF (max 10MB each, no zip files). Selected artists become part of the gallery's founding narrative, with their work shown in the exhibition and an accompanying publication. The exhibition runs 16–23 December 2026 in Neuilly-Plaisance, France.",
-      "url": "https://forms.ajanakugallery.com/r/A740zz",
+      "url": "https://www.dropbox.com/scl/fi/donxqertipxq0ecd7tywg/LEGACY-eng.pdf?rlkey=al7gs7k3pbcokegk6ln5dal5s&dl=0",
       "instagram": "@ajanakugallery",
       "location": "Neuilly-Plaisance, France",
       "prize": "Exhibition + Publication",
@@ -358,7 +358,9 @@
       "instagram": "@lightboxphotographicgallery",
       "location": "Astoria, OR, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "analog-photography"
+      ],
       "jury": [
         "Michael Kirchoff, Editor-in-Chief, Analog Forever Magazine"
       ],
@@ -24428,10 +24430,10 @@
       "deadline": "2026-08-31",
       "fee": "Free",
       "category": "photography",
-      "description": "Free national art competition from Willet Studios, the storied American stained glass studio founded in 1898. The 2026 theme, 'Quest for Gold,' invites work exploring movement, strength, determination, and the human pursuit of excellence in sport. Any medium is accepted and all experience levels are welcome — entries are judged on creativity, theme interpretation, composition, emotional impact, and suitability for translation into glass. Prizes of $7,000, $2,000, and $1,000 from a $10,000 total pool; winning designs may be developed into stained glass pieces with per-sale commissions to the artist for up to three years. One original work per artist, not previously exhibited. Open to US residents 18+; winners announced October 2026.",
+      "description": "Free national art competition from Willet Studios, the storied American stained glass studio founded in 1898. The 2026 theme, 'Quest for Gold,' invites work exploring movement, strength, determination, and the human pursuit of excellence in sport. Any medium is accepted and all experience levels are welcome — entries are judged on creativity, theme interpretation, composition, emotional impact, and suitability for translation into glass. Prizes of $10,000, $7,000, and $2,000 plus a $1,000 award from a $20,000 total pool; winning designs may be developed into stained glass pieces with per-sale commissions to the artist for up to three years. One original work per artist, not previously exhibited. Open to US residents 18+; winners announced October 2026.",
       "url": "https://willet-studios.com/willet-art-prize/",
       "location": "Online",
-      "prize": "$7,000 / $2,000 / $1,000",
+      "prize": "$10,000 / $7,000 / $2,000",
       "eligibility": [
         "18-plus",
         "united-states"
@@ -24443,7 +24445,7 @@
       "resultsDate": "October 2026",
       "slug": "willet-art-prize-2026",
       "orgInTitle": true,
-      "summary": "Free national art prize from the 1898 stained glass studio — $7,000 top prize for work on the theme Quest for Gold, any medium.",
+      "summary": "Free national art prize from the 1898 stained glass studio — $10,000 top prize for work on the theme Quest for Gold, any medium.",
       "dateAdded": "2026-06-11T15:19:24Z",
       "instagram": "@willet_studios"
     },
