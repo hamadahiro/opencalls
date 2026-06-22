@@ -23034,7 +23034,7 @@
       "orgInTitle": false,
       "summary": "Intl juried show of small photographic works at Denver's Robert Anderson Gallery. $500 Best in Show; jurors Schneider & Landucci.",
       "instagram": "@robertandersongallery4",
-      "ai": "Not solely AI-generated",
+      "ai": "Accepted",
       "resultsDate": "August 15, 2026",
       "dateAdded": "2026-06-06T19:09:43Z"
     },
@@ -23061,7 +23061,7 @@
       "orgInTitle": false,
       "summary": "CPAC's biennial student photo show, juried by LensCulture's Laura Sackett. Best in Show wins a LensCulture feature article.",
       "instagram": "@cpacphoto",
-      "ai": "Accepted (must disclose)",
+      "ai": "Accepted",
       "resultsDate": "September 30, 2026",
       "dateAdded": "2026-06-06T19:09:43Z"
     },
@@ -23508,7 +23508,16 @@
       "slug": "od-photo-prize-2026-open-doors-gallery",
       "orgInTitle": false,
       "summary": "Open-themed prize for emerging photographers. £2,000, London group show, mentorship, InCadaqués solo presentation. 6–15 images.",
-      "jury": [],
+      "jury": [
+        "Paul Cupido, Artist",
+        "Jennifer Latour, OD Artist",
+        "Elisa Medde, Editor, Writer & Curator",
+        "Olivia & Valmont, Directors, InCadaqués Photo Festival",
+        "Tom Page, Founder, Open Doors Gallery",
+        "Karlijn Bozon & Nadine Van Asbeck, Founders, Homecoming Gallery",
+        "Wesley Verhoeve, Photographer, Curator & Writer",
+        "Robert Morat, Owner & Director, Robert Morat Gallery"
+      ],
       "dateAdded": "2026-06-10T23:47:50.955Z"
     },
     {
@@ -23560,7 +23569,8 @@
       "orgInTitle": true,
       "summary": "Free dugong-conservation photo campaign. Winner hosted at ADEX 2027 Singapore; shortlist exhibited at the expo.",
       "jury": [],
-      "dateAdded": "2026-06-10T23:47:50.955Z"
+      "dateAdded": "2026-06-10T23:47:50.955Z",
+      "submitUrl": "https://www.adex.asia/adex-dugong-photography-campaign-2027/"
     },
     {
       "title": "12th Regional Juried Photography Exhibition",
@@ -24465,7 +24475,7 @@
       "url": "https://www.bba-prizes.com/360",
       "instagram": "@bba.prizes",
       "location": "Berlin, Germany",
-      "prize": "Cash prize + Exhibition + Artsy profile",
+      "prize": "Cash prize + Exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -24508,14 +24518,14 @@
     {
       "title": "EPF 2026 Photobook Exhibition",
       "org": "Ephemere",
-      "deadline": "2026-06-30",
+      "deadline": "2026-07-15",
       "fee": "Free ($25 if selected)",
       "category": "zine",
       "description": "Open call for a dedicated photobook exhibition at the Ephemere Photo Fest 2026 in Tokyo (October 17–27), following the 118-title showcase Ephemere staged during KG+ in Kyoto. Seeking complete, bound photobooks — self-published or publisher-released, A4 or smaller — with bold visual narratives, intentional sequencing, and strong physical presence; theme is open. Two-phase system: the initial digital review is free (submit a PDF, flip-through video, or sequenced JPEGs of the book), then artists selected in July pay a $25 exhibition fee and ship one copy to Japan. Exhibited books are not returned — they join Ephemere's permanent traveling photo library and may be shown again at future international pop-ups.",
       "url": "https://ephemere.tokyo/photo-fest-2026",
       "instagram": "@ephemere.tokyo",
       "location": "Tokyo, Japan",
-      "prize": "Exhibition in Tokyo + Traveling archive",
+      "prize": "Exhibition in Tokyo",
       "eligibility": [],
       "jury": [],
       "submitVia": "Google Form",
@@ -24602,7 +24612,7 @@
       "url": "https://lanesboroarts.org/artist-opportunities/exhibition-gallery/",
       "instagram": "@lanesboroarts",
       "location": "Lanesboro, MN",
-      "prize": "8-week solo exhibition",
+      "prize": "Solo exhibition",
       "eligibility": [
         "midwest-us"
       ],
@@ -25788,7 +25798,7 @@
       "submitVia": "Website",
       "submitUrl": "https://www.mobilephotoawards.com/enter",
       "requirements": "1–25 images",
-      "resultsDate": null,
+      "resultsDate": "March 2027",
       "ai": null,
       "slug": "mobile-photography-awards-2026",
       "orgInTitle": true,
@@ -25813,7 +25823,7 @@
       "submitVia": "Website",
       "submitUrl": "https://www.worldnaturephotographyawards.com/nature-photography-competition-enter-now",
       "requirements": "Unlimited images",
-      "resultsDate": null,
+      "resultsDate": "February 2027",
       "ai": "Not accepted",
       "slug": "world-nature-photography-awards-2027",
       "orgInTitle": true,
@@ -25950,7 +25960,8 @@
       "slug": "hcp-annual-fellowship-awards-2026-houston-center-for-photography",
       "orgInTitle": false,
       "summary": "HCP's annual fellowship: two photographers worldwide each win $3,000 plus a solo show. 2026 juror Natasha Egan (MoCP Chicago).",
-      "dateAdded": "2026-06-22T15:29:44.463Z"
+      "dateAdded": "2026-06-22T15:29:44.463Z",
+      "ai": "Accepted"
     },
     {
       "title": "Bath Open Art Prize 2026",
@@ -25974,7 +25985,8 @@
       "slug": "bath-open-art-prize-2026-fringe-arts-bath",
       "orgInTitle": false,
       "summary": "Fringe Arts Bath's 14th international open art prize at 44AD artspace. All media incl. photography; £750 + solo show.",
-      "dateAdded": "2026-06-22T15:29:44.463Z"
+      "dateAdded": "2026-06-22T15:29:44.463Z",
+      "resultsDate": "September 27, 2026"
     }
   ]
 }
