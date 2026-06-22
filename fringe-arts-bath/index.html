@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Fringe Arts Bath. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/bath-open-art-prize-2026-fringe-arts-bath/">Bath Open Art Prize 2026 &middot; Fringe Arts Bath</a></h3><p class="call-description">Fringe Arts Bath's 14th international open art prize at 44AD artspace. All media incl. photography; £750 + solo show.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Fringe Arts Bath').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Fringe Arts Bath' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
