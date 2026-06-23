@@ -112,7 +112,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/abandoned-a-photographer-s-place/">Abandoned &middot; A Photographer's Place</a></h3><p class="call-description">Themed exhibition on abandonment — decay, absence, what remains. Juror Marty Evans. Optional in-gallery printing. Raleigh, NC.</p></div>
 
     </section>
 
@@ -130,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', NC,') || c.location.includes(', North Carolina,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', NC,') || c.location.includes(', North Carolina,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
