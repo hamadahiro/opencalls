@@ -26,7 +26,8 @@
       "orgInTitle": true,
       "summary": "Inaugural nature award with one rule: every image shot within 100 km of home. $1,000 Photographer of the Year; AI banned.",
       "submitUrl": "https://rawpoty.com/entry-form",
-      "dateAdded": "2026-06-22T11:16:54.020Z"
+      "dateAdded": "2026-06-22T11:16:54.020Z",
+      "instagram": "@rawpoty"
     },
     {
       "title": "Momentum",
@@ -244,7 +245,9 @@
       "slug": "are-men-ok-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Free Fotografiska Stockholm × MÄN call on masculinity in Sweden today; selected emerging work shown in a group exhibition.",
-      "dateAdded": "2026-06-17T11:15:46.803Z"
+      "dateAdded": "2026-06-17T11:15:46.803Z",
+      "ai": "Accepted",
+      "requirements": "3+ images"
     },
     {
       "title": "The Curated Fridge — Summer 2026 Show",
@@ -418,7 +421,12 @@
       "ai": "Not accepted",
       "dateAdded": "2026-06-10T11:33:54.869Z",
       "instagram": "@comune_di_sirmione",
-      "submitUrl": "https://sirmionefotografia.it/en/ds/challenge-en"
+      "submitUrl": "https://sirmionefotografia.it/en/ds/challenge-en",
+      "jury": [
+        "Roberto Bellini, Photographer",
+        "Luigi Brozzi, Photographer",
+        "Antonello Perin, Photographer"
+      ]
     },
     {
       "title": "1839 Awards Photographer of the Year Contest",
@@ -478,7 +486,8 @@
         "Michele Palazzi, Photographer",
         "Chiara Ruperti, Photographer",
         "Serena Nocentini, Critic & Curator"
-      ]
+      ],
+      "resultsDate": "November 28, 2026"
     },
     {
       "title": "Liminal Magazine — Issue 2",
@@ -22621,7 +22630,7 @@
       "url": "https://duskphotogallery.com/red/",
       "instagram": "@dusk.photogallery",
       "location": "Santa Fe, NM, USA",
-      "prize": "Exhibition + free printing/framing",
+      "prize": "Exhibition",
       "eligibility": [],
       "jury": [
         "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
@@ -22826,7 +22835,7 @@
       "url": "https://www.urbanphotoawards.com/en/",
       "instagram": "@urbanphotoawards",
       "location": "Trieste, Italy",
-      "prize": "€10,000 in vouchers + Exhibition",
+      "prize": "€2,000 voucher + Camera + Exhibition",
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://my.dotlogic.net/",
@@ -22996,7 +23005,7 @@
       "description": "International juried photography exhibition at the Global Village Museum of Arts and Cultures in Fort Collins, Colorado, inviting photographers to explore identity through self-portraiture and photographic imagery — asking how we see ourselves and what it means to be seen. The brief connects contemporary photographic practice with the medium's technical and cultural history, including the legacy of Kodak in Northern Colorado. Open to photographers 18+ worldwide; work must have been created between 2016 and 2026. Selected works are exhibited and professionally printed at 16×20 inches. Exhibition runs October 2, 2026 – January 22, 2027.",
       "url": "https://globalvillagemuseum.org",
       "location": "Fort Collins, CO, USA",
-      "prize": "Museum exhibition + professional printing",
+      "prize": "Museum exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -23925,7 +23934,7 @@
       "url": "https://thepeale.org/life-in-baltimore/",
       "instagram": "@thepealebaltimore",
       "location": "Baltimore, MD, USA",
-      "prize": "Exhibition",
+      "prize": "Exhibition + Cash awards",
       "eligibility": [
         "18-plus",
         "maryland"
@@ -24018,13 +24027,13 @@
       "title": "Budapest International Foto Awards 2026",
       "org": "Budapest International Foto Awards",
       "deadline": "2026-07-08",
-      "fee": "Varies",
+      "fee": "€15–€50",
       "category": "photography",
       "description": "Annual international photography award promoting professional, amateur, and student photographers to Budapest's growing art community, from the team behind the Lucie Awards and IPA. Categories include Advertising, Analog/Film, Architecture, Book, Editorial, Fine Art, Nature, People, Portfolio, and Special, with single images and series of 2–11 photographs accepted. Top titles are Photographer of the Year and Discovery of the Year, with cash prizes, the BIFA trophy, and a winners' exhibition — historically at the House of Lucie Budapest. Jury includes Hossein Farmani and BBC Wildlife's Sheena Harvey. Extended deadline July 8, 2026.",
       "url": "https://budapestfotoawards.com/",
       "instagram": "@budapestfotoawards",
       "location": "Budapest, Hungary",
-      "prize": "Cash prizes + BIFA Trophy + Exhibition",
+      "prize": "€3,000 + €2,000 + Exhibition",
       "eligibility": [],
       "jury": [
         "Hossein Farmani, The Lucie Awards / IPA",
