@@ -105,6 +105,8 @@
       <h2 class="subtitle">Open calls and submission opportunities from Griffin Museum of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/solstitium-incandescent-griffin-museum-of-photography/">Solstitium: Incandescent — Summer Solstice Exhibition &middot; Griffin Museum of Photography</a></h3><p class="call-description">Free global online exhibition for the summer solstice — light as the subject. Juror: Crista Dix, Griffin Museum.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/dog-days-of-summer-griffin-museum-of-photography/">Dog Days of Summer &middot; Griffin Museum of Photography</a></h3><p class="call-description">Free global online exhibition on the human–dog bond. Juror: Crista Dix, Griffin Museum of Photography.</p></div>
 
     </section>
 
@@ -122,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Griffin Museum of Photography').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Griffin Museum of Photography' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
