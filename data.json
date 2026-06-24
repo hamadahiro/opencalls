@@ -21,6 +21,7 @@
       "submitVia": "ArtCall",
       "submitUrl": "https://nhaacallforentry-2026jacobiexhibit.artcall.org",
       "requirements": "1–3 works",
+      "resultsDate": "July 13, 2026",
       "slug": "lotte-jacobi-juried-photography-show-new-hampshire-art-association",
       "orgInTitle": false,
       "summary": "Annual juried photography show from the New Hampshire Art Association at its Portsmouth gallery. Open to New England photographers.",
@@ -414,7 +415,7 @@
     {
       "title": "The EcoTheo Review — 2026 Visual Art Call",
       "org": "The EcoTheo Review",
-      "deadline": "2026-10-20",
+      "deadline": "Continuous",
       "fee": "$10",
       "category": "zine",
       "description": "Open call for visual art — including photography — for The EcoTheo Review, the quarterly print magazine of EcoTheo Collective, a 501(c)3 nonprofit that celebrates wonder and explores the intersection of ecology, spirituality, and art across all traditions. Work is reviewed on a rolling basis; selected pieces run across the four annual print issues plus the website and social channels, sometimes paired with essays, statements, or interviews. International, open to all forms of original visual art suitable for high-quality print reproduction. Submit 1–10 works for a $10 fee.",
@@ -23621,7 +23622,7 @@
     {
       "title": "2026 Regional Fine Art and Photography Show",
       "org": "Lincoln Gallery",
-      "deadline": "2026-07-08",
+      "deadline": "2026-07-15",
       "fee": "$45 (2 entries), $10 each additional",
       "category": "exhibition",
       "description": "Annual juried regional show by the Thompson Valley Art League at its Lincoln Gallery in downtown Loveland, Colorado, running September 11 – October 1, 2026, with photography as a dedicated category alongside fine art media. Open to artists living in AK, AZ, CA, CO, HI, ID, KS, MT, ND, NE, NM, NV, OR, SD, TX, UT, WA and WY. Cash awards for Best of Show plus first and second place in each category. Enter via CaFE by July 8, 2026, 11:59 pm MDT.",
@@ -23665,7 +23666,9 @@
       "orgInTitle": false,
       "summary": "Candid London street photography for a one-night show at Photobook Cafe plus zine. Free entry; images shot in London 2020–2026.",
       "dateAdded": "2026-06-10T15:42:41.320Z",
-      "jury": []
+      "jury": [
+        "Mark Luke Grant, Curator"
+      ]
     },
     {
       "title": "OD Photo Prize 2026",
@@ -24347,12 +24350,13 @@
       "deadline": "2026-07-12",
       "fee": "$20",
       "category": "residency",
-      "description": "Four-week residency living in the historic Grotto House in the main canyon of Zion National Park, Utah, run by the National Park Service with the Zion Forever Project. Three sessions are available across 2027. Includes rent-free furnished housing, waived park entrance fees, and a $500 stipend on completion of residency requirements. Open to artists 18+ in all mediums and skill levels; residents present two public programs, spend about 20 hours weekly on public engagement, and donate an original artwork to the park. Travel, meals, and supplies are self-funded; international applicants must be eligible for J-1 visa status.",
+      "description": "Four-week residency living in the historic Grotto House in the main canyon of Zion National Park, Utah, run by the National Park Service with the Zion Forever Project. Three sessions are available across 2027. Includes rent-free furnished housing, waived park entrance fees, and a $500 stipend on completion of residency requirements. Open to artists 18+ in all mediums and skill levels; residents present two public programs, spend about 20 hours weekly on public engagement, and donate an original artwork to the park. Travel, meals, and supplies are self-funded; international applicants are not currently accepted.",
       "url": "https://www.nps.gov/zion/getinvolved/supportyourpark/artist-in-residence.htm",
       "location": "Zion National Park, UT, USA",
       "prize": "4-week residency + $500 stipend",
       "eligibility": [
-        "18-plus"
+        "18-plus",
+        "united-states"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17588",
