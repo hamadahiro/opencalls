@@ -14118,12 +14118,7 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "jury": [
-        "Kelly Sidley, Head of Photographs, Bonhams",
-        "Jessica Baxter, Assistant Curator, Tate Modern",
-        "Sarah Kennel, Curator of Photography, VMFA",
-        "Sara Rizzo, Curator of Photography, MUDEC Milan"
-      ],
+      "jury": [],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
       "ai": "Not accepted",
@@ -14132,7 +14127,7 @@
       "resultsDate": "November 7, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.thespiderawards.com/register.php",
-      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Jury from Bonhams, Tate Modern & VMFA.",
+      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Jury announced annually.",
       "prose": [
         "The Black & White Spider Awards is an annual international award restricted by process: black-and-white photography only. The 2026 edition is the award's 21st cycle.",
         "The structure runs 235+ title awards across categories — winners are announced not only as overall prizes but as title-holders within sub-genres. Winners are announced at a live Photoshow in November 2026.",
@@ -25708,10 +25703,10 @@
     {
       "title": "Transformation",
       "org": "Art Works Downtown",
-      "deadline": "2026-07-08",
+      "deadline": "2026-06-25",
       "fee": "$40 (3 works)",
       "category": "exhibition",
-      "description": "Juried exhibition at Art Works Downtown's 1337 Gallery in San Rafael, California, on the theme of transformation, juried by PJ Gubatina Policarpio, Curator at Root Division. Open to San Francisco Bay Area artists living within 100 miles of San Rafael; all visual media accepted, including photography. No giclées or reproductions. Exhibition August 7 – September 18, 2026.",
+      "description": "CANCELLED: Art Works Downtown cancelled this exhibit due to an unexpected organizational shift; applicants receive full refunds of their application fees through CaFÉ. Originally a juried exhibition at the 1337 Gallery in San Rafael, California, on the theme of transformation, juried by PJ Gubatina Policarpio, Curator at Root Division, for San Francisco Bay Area artists living within 100 miles of San Rafael.",
       "url": "https://artworksdowntown.org/apply-to-exhibit",
       "instagram": "@artworksdowntownmarin",
       "location": "San Rafael, CA, USA",
@@ -25727,7 +25722,7 @@
       "requirements": "Up to 3 works",
       "slug": "transformation-art-works-downtown",
       "orgInTitle": false,
-      "summary": "Bay Area juried show at San Rafael's Art Works Downtown, juried by Root Division curator PJ Gubatina Policarpio. Up to 3 works.",
+      "summary": "Cancelled by the organizer (an unexpected organizational shift); applicants refunded via CaFÉ. Was a Bay Area juried show at San Rafael’s Art Works Downtown.",
       "dateAdded": "2026-06-12T11:51:23.164Z",
       "resultsDate": "July 16–17, 2026"
     },
