@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -117,14 +117,13 @@
       <p class="call-detail-description">Selected works are shown at The Brownhoist (4403 St. Clair Ave, Cleveland), with an opening on Saturday, July 11 from 6–9 PM that includes a live immersive audio-visual installation by Ryan Kinney and Jim Szudy. The show runs July 11–31, 2026 and is free to the public.</p>
       <p class="call-detail-description">Entry is $35 for up to three photo or mixed-media works, or $20 for two videos, with a maximum of three works total. Because it is an all-ages event, work containing nudity is not accepted, and submissions addressing religious or political themes are excluded. The deadline to submit is June 27, 2026.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/june-2026/" title="June 27, 2026">June 27, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">June 29, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (3 works) / $20 (2 videos)"><span class="tag-front">$35 (3 works) / $20</span> <span class="tag-back">(2 videos)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/ohio/" title="Cleveland, OH">Cleveland, OH</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://drive.google.com/drive/folders/1b71_-uuo49MrKC3vKjNEcRCQn-mou8fY" target="_blank" rel="nofollow noopener">Google Drive</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/june-2026/" title="June 27, 2026">June 27, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">June 29, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (3 works) / $20 (2 videos)"><span class="tag-front">$35 (3 works) / $20</span> <span class="tag-back">(2 videos)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/ohio/" title="Cleveland, OH">Cleveland, OH</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Google Drive</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/photo-cleveland/">Photo Cleveland</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://photocleveland.org/intentional-unconventional-experimental-photography-and-video/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on June 27, 2026</span></div>
     </section>
@@ -142,23 +141,7 @@
   <script>
     const CURRENT_SLUG = 'intentional-unconventional-photo-cleveland';
     const CURRENT_CALL = {"title":"Intentional Unconventional — Experimental Photography & Video","category":"exhibition","org":"Photo Cleveland","location":"Cleveland, OH, USA","fee":"$35 (3 works) / $20 (2 videos)","deadline":"2026-06-27","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-06-27'.replace(/-/g, '');
-      var nd = new Date('2026-06-27T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Intentional Unconventional — Experimental Photography & Video';
-      var u = 'https://photocleveland.org/intentional-unconventional-experimental-photography-and-video/';
-      var o = 'Photo Cleveland';
-      var dl = new Date('2026-06-27T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Group exhibition at The Brownhoist') + '\\nEntry fee: ' + icsE('$35 (3 works) / $20 (2 videos)');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
