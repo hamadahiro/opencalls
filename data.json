@@ -2,6 +2,35 @@
   "lastUpdated": "2026-06-10",
   "calls": [
     {
+      "title": "10th Singapore Young Photographer Award",
+      "org": "DECK Photography Art Centre",
+      "deadline": "2026-06-30",
+      "fee": "Free",
+      "category": "photography",
+      "description": "The 10th edition of the Singapore Young Photographer Award (SYPA), organised by DECK Photography Art Centre, the non-profit behind the Singapore International Photography Festival. This year's theme, \"Echoes of Home\", asks young photographers to reflect on what defines home — exploring the stories, history and heritage of place and the relationships between people, their environments, and their origins. Two age categories: Junior (13–18) submit a portfolio of 5–7 images drawn from at least three of five subjects (architecture, nature, landscape, portrait, still life); Youth (19–25) submit a connected photo series of 7–10 images. Over $8,000 in total prizes across categories, including cash awards, Nikon cameras, rental vouchers and certificates. Finalists' work is exhibited during the Singapore International Photography Festival in October 2026. Free to enter; open to photographers aged 13–25 based in Singapore.",
+      "url": "https://deck.sg/happening/open-call-10th-singapore-young-photographer-award/",
+      "instagram": "@deck_sg",
+      "location": "Singapore, Singapore",
+      "prize": "$8,000+ pool + Nikon cameras + SIPF exhibition",
+      "eligibility": [
+        "singapore",
+        "13-25"
+      ],
+      "submitVia": "Judgify",
+      "submitUrl": "https://awards.judgify.me/sypa26",
+      "requirements": "5–10 images",
+      "slug": "10th-singapore-young-photographer-award",
+      "orgInTitle": false,
+      "summary": "SYPA award for Singapore-based photographers aged 13–25 on the theme 'Echoes of Home'. Free, $8,000+ in prizes, festival exhibition.",
+      "resultsDate": "September 2026",
+      "prose": [
+        "The Singapore Young Photographer Award (SYPA) is an annual award organised by DECK Photography Art Centre, a registered Singapore charity and the organiser of the Singapore International Photography Festival. Now in its 10th edition, the award nurtures the next generation of Singapore-based image-makers aged 13 to 25.",
+        "The 2026 theme, \"Echoes of Home\", invites entrants to reflect on what home means to them and to those around them — the stories, history and heritage of place, and the interrelationships between people, their environments, and their origins. Submissions are made in two age categories: Junior (13–18), a portfolio of 5–7 images drawn from at least three of five subjects (architecture, nature, landscape, portrait, still life); and Youth (19–25), a connected photo series of 7–10 images.",
+        "Over $8,000 in prizes is awarded across the categories, including cash, Nikon cameras, rental vouchers and certificates. Finalists are announced in August 2026, winners in September, and the finalist works are exhibited at an awards ceremony during the Singapore International Photography Festival in October 2026. Entry is free, with submissions made through Judgify."
+      ],
+      "dateAdded": "2026-06-27T15:11:23.310Z"
+    },
+    {
       "title": "2026 Lucie Photo Book Prize",
       "org": "Lucie Foundation",
       "deadline": "2026-09-15",
@@ -1352,7 +1381,7 @@
       "fee": "$35 ($25 members)",
       "category": "exhibition",
       "description": "National juried photography exhibition at the Delaplaine Arts Center in downtown Frederick, Maryland, on view November 7–29, 2026. Open nationally; work must be original in design and personal execution and created within the past two years. Awards are a $1,000 grand prize, $500 second place, $250 third place, and a $125 honorable mention.",
-      "url": "https://www.delaplaine.org/exhibitions/opportunities/",
+      "url": "https://delaplaine.org/exhibitions/opportunities/focus-national-juried-photography-exhibition/",
       "instagram": "@thedelaplaine",
       "location": "Frederick, MD, USA",
       "prize": "$1,000 + $500 + $250 + $125 + Exhibition",
@@ -2187,6 +2216,7 @@
       "submitUrl": "https://app.entrythingy.com/viewpointgallery.org/",
       "requirements": "20 images",
       "eligibility": [],
+      "resultsDate": "October 1, 2026",
       "slug": "viewpoint-photographic-art-center-2027-call-for-exhibit-proposals",
       "orgInTitle": true,
       "summary": "Proposals for solo/group photography exhibitions in 2027 at Sacramento's Viewpoint center. Submit 20 images + statement.",
@@ -15020,10 +15050,10 @@
       "eligibility": [],
       "submitVia": "Website form",
       "requirements": "5–10 images",
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "milano-photo-awards-2026-thestreetsoup",
       "orgInTitle": false,
-      "resultsDate": "August 25, 2026",
+      "resultsDate": null,
       "dateAdded": "2026-03-18",
       "submitUrl": "https://milanophotoawards.com/checkout/",
       "summary": "Exhibition and contest in Milan. Street, portraits, reportage, nature. Lead judge Estevan Oriol; Nikon Italia.",
@@ -16756,7 +16786,7 @@
       "slug": "electric-tenderness-where-chaos-meets-care-bushwick-gallery",
       "orgInTitle": false,
       "requirements": "1–10 images",
-      "resultsDate": "September 17, 2026",
+      "resultsDate": null,
       "submitUrl": "https://bushwickgallery.com/open-call-september-2026-electric-tenderness-where-chaos-meets-care/",
       "summary": "Group show at Bushwick Gallery on intensity in all its forms — bold palettes, raw textures, emotionally charged work. All mediums.",
       "prose": [
@@ -16782,7 +16812,7 @@
       "slug": "confirm-humanity-what-makes-us-real-bushwick-gallery",
       "orgInTitle": false,
       "requirements": "1–10 images",
-      "resultsDate": "October 22, 2026",
+      "resultsDate": null,
       "submitUrl": "https://bushwickgallery.com/open-call-october-2026-confirm-humanity-what-makes-us-real/",
       "summary": "Group show at Bushwick Gallery on the line between artificial and authentic — what makes us real in a digitized world. All mediums.",
       "prose": [
@@ -16808,7 +16838,7 @@
       "slug": "the-company-we-keep-creatures-beside-us-bushwick-gallery",
       "orgInTitle": false,
       "requirements": "1–10 images",
-      "resultsDate": "November 5, 2026",
+      "resultsDate": null,
       "submitUrl": "https://bushwickgallery.com/open-call-november-2026-the-company-we-keep-creatures-beside-us/",
       "summary": "Group show at Bushwick Gallery on animals as confidants, muses, and mirrors — through humor, tenderness, intimacy, and allegory.",
       "prose": [
@@ -16915,7 +16945,9 @@
       "instagram": "@effe4.0_streetphotography",
       "location": "Rome, Italy",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
       "slug": "roma-e-festival-street-photography-awards-2026-effe4-0-street-photography",
       "orgInTitle": false,
@@ -16934,7 +16966,7 @@
         "Sonia Simbolo, Photographer",
         "Gianluca De Dominici, Writer & Photography Editor"
       ],
-      "resultsDate": "October 16, 2026",
+      "resultsDate": "September 13, 2026",
       "submitUrl": "https://romaefestival.com/pass-multi-category/",
       "summary": "Five categories including Smartphone and AI-Generated. Finalists exhibited in Rome. Ricoh GR & partner prizes.",
       "prose": [
@@ -17478,7 +17510,7 @@
       "url": "https://monoawards.com/page/how-to-enter/",
       "instagram": "@monoawards",
       "location": "Online",
-      "prize": "$3,000",
+      "prize": "$2,000 (Pro) + $1,000 (Amateur)",
       "eligibility": [
         "18-plus"
       ],
@@ -17770,7 +17802,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt Shopify storefront STILL unavailable on 2026-06-21 (~5 weeks; \"This store is unavailable\", /pages/calls now 404s; down since 2026-05-18; rechecked via curl). IG @loosenart still up. Homo Technologicus (Jul 22) unverifiable — call status uncertain.",
+      "verifyNote": "LoosenArt Shopify storefront STILL unavailable on 2026-06-27 (~6 weeks; curl returns HTTP 404 \"This store is unavailable\"; down since 2026-05-18). IG @loosenart still up. Homo Technologicus (Jul 22) unverifiable — call status uncertain; effectively dead if store stays down past deadline.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
@@ -25287,7 +25319,9 @@
       "instagram": "@fotografiska.emerging",
       "location": "Online",
       "prize": "Signed Corbijn photobook + B&W headphones",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [],
       "submitVia": "Fotografiska Emerging",
       "requirements": "1 image",
@@ -25316,6 +25350,7 @@
         "Volkswagen R Design, IFA & Fotografiska representatives"
       ],
       "submitVia": "Fotografiska Emerging",
+      "requirements": "1 image or video",
       "resultsDate": "August 3, 2026",
       "ai": "Accepted",
       "slug": "art-shapes-the-future-fotografiska-emerging",
