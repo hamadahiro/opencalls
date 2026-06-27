@@ -70,7 +70,7 @@ const eligibilityLabel = {
   'canada': 'Canada only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only',
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only',
   'baltics-finland': 'Baltics & Finland', 'commonwealth': 'Commonwealth only',
-  '10-18': 'Ages 10–18', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
+  '10-18': 'Ages 10–18', '13-25': 'Ages 13–25', 'singapore': 'Singapore only', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
   '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '45-plus': '45+', '65-plus': '65+',
