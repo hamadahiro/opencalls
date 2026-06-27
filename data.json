@@ -23,6 +23,14 @@
       "orgInTitle": false,
       "summary": "SYPA award for Singapore-based photographers aged 13–25 on the theme 'Echoes of Home'. Free, $8,000+ in prizes, festival exhibition.",
       "resultsDate": "September 2026",
+      "jury": [
+        "Quinn Lum, Visual Artist",
+        "Lawrence Pang, Photographer",
+        "Aik Beng Chia, Artist",
+        "Marvin Tang, Artist",
+        "Andrew JK Tan, Photographer & Mentor",
+        "Lavender Chang, Visual Artist"
+      ],
       "prose": [
         "The Singapore Young Photographer Award (SYPA) is an annual award organised by DECK Photography Art Centre, a registered Singapore charity and the organiser of the Singapore International Photography Festival. Now in its 10th edition, the award nurtures the next generation of Singapore-based image-makers aged 13 to 25.",
         "The 2026 theme, \"Echoes of Home\", invites entrants to reflect on what home means to them and to those around them — the stories, history and heritage of place, and the interrelationships between people, their environments, and their origins. Submissions are made in two age categories: Junior (13–18), a portfolio of 5–7 images drawn from at least three of five subjects (architecture, nature, landscape, portrait, still life); and Youth (19–25), a connected photo series of 7–10 images.",
@@ -3046,7 +3054,8 @@
       "location": "Prague, Czech Republic",
       "prize": "Residency (€5,000 grant)",
       "eligibility": [
-        "italy"
+        "italy",
+        "18-plus"
       ],
       "submitVia": "Email",
       "ai": null,
@@ -4525,6 +4534,7 @@
       "slug": "critical-mass-2026-photolucida",
       "orgInTitle": false,
       "summary": "Photolucida's annual review by 200 photography pros. Top 50 designation, book awards, exhibition opportunities. AI not accepted.",
+      "resultsDate": "Late September 2026",
       "dateAdded": "2026-05-07T19:15:37.713Z",
       "prose": [
         "Critical Mass is Photolucida's flagship annual program, structured as a two-stage portfolio review by an unusually large jury. Photographers submit a 10-image portfolio; approximately 200 are advanced to a finalist round, where they are reviewed by up to 200 photography professionals from around the world — curators, gallerists, publishers, editors, educators, and journalists. The wide-jury format means each finalist's portfolio reaches roughly 200 industry-side viewers regardless of whether they place in the top 50.",
