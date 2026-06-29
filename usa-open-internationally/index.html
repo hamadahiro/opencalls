@@ -7,27 +7,27 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Japan 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Japan. Browse and apply today.">
-  <link rel="canonical" href="https://opencalls.monographica.com/japan/">
+  <title>Open Calls for Artists in USA (open internationally) 2026 - Monographica</title>
+  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in USA (open internationally). Browse and apply today.">
+  <link rel="canonical" href="https://opencalls.monographica.com/usa-open-internationally/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Japan 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Japan. Browse and apply today.">
+  <meta property="og:title" content="Open Calls for Artists in USA (open internationally) 2026 - Monographica">
+  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in USA (open internationally). Browse and apply today.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/japan/">
+  <meta property="og:url" content="https://opencalls.monographica.com/usa-open-internationally/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Japan 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Japan. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/japan/",
+  "name": "Open Calls for Artists in USA (open internationally) 2026",
+  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in USA (open internationally). Browse and apply today.",
+  "url": "https://opencalls.monographica.com/usa-open-internationally/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -55,8 +55,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Japan",
-      "item": "https://opencalls.monographica.com/japan/"
+      "name": "USA (open internationally)",
+      "item": "https://opencalls.monographica.com/usa-open-internationally/"
     }
   ]
 }
@@ -101,16 +101,12 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
-      <h1>Open Calls for Artists in Japan</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Japan. Browse and apply today.</h2>
+      <h1>Open Calls for Artists in USA (open internationally)</h1>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in USA (open internationally). Browse and apply today.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/ephemere-triptychs-publication-exhibition/">Ephemere Triptychs — Publication &amp; Exhibition</a></h3><p class="call-description">Submit photographic triptychs for Ephemere Photo Fest 2026 in Tokyo — selected work published in a group photobook and exhibited.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/hariban-award-2026-benrido/">Hariban Award 2026 &middot; Benrido</a></h3><p class="call-description">International collotype competition. Grand Prize: two-week residency in Kyoto with master collotype printers.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/epf-2026-photobook-exhibition-ephemere/">EPF 2026 Photobook Exhibition &middot; Ephemere</a></h3><p class="call-description">Bound photobooks for a dedicated exhibition at Ephemere Photo Fest in Tokyo — free digital review; selected books join the archive.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/kyoto-retreat-2026/">Kyoto Retreat 2026</a></h3><p class="call-description">Fully-funded four-week November retreat in Kyoto for artists, curators and writers — airfare, private accommodation and an $800 stipend.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/tokyo-international-foto-award-2026/">Tokyo International Foto Award 2026</a></h3><p class="call-description">International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/liu-shiming-artist-grants-2026/">Liu Shiming Artist Grants 2026</a></h3><p class="call-description">Foundation grants of $5,000 to five early-career visual artists (2–10 years) for projects bridging tradition and contemporary practice.</p></div>
 
     </section>
 
@@ -129,7 +125,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Japan' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'USA (open internationally)' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 

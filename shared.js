@@ -187,6 +187,14 @@ function shortenFee(fee) {
     var rest = s.replace(/^free/i, '');
     return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
   }
+  // CHF (Swiss franc) is a multi-letter currency code, not in the symbol class
+  // below; condense it explicitly so "CHF 65 (…discounts…)" → "CHF 65+".
+  var chf = s.match(/^CHF\s?(\d[\d.,]*)/i);
+  if (chf) {
+    var chfAmount = 'CHF ' + strip(chf[1]);
+    var chfBare = /^CHF\s?\d[\d.,]*( fee)?$/i.test(s);
+    return chfBare ? chfAmount : chfAmount + '+';
+  }
   var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
   if (range) return range[1] + strip(range[2]) + '–' + (range[3] || range[1]) + strip(range[4]);
   // R is a currency (Rand) ONLY before a digit — otherwise a capital-R word
