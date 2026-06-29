@@ -1257,7 +1257,7 @@
       "category": "photography",
       "description": "Second edition of the Street Photography Barcelona Contest (SPBC), run by the team behind Ibizacinefest under the theme 'The Street Is Art'. Open worldwide to photographers 18+, with 1, 3 or 5 single images (€10/€25/€40) of spontaneous street photography taken in public spaces within the last two years — no AI or manipulated work, no journalistic photos or artificially lit portraits. Twenty-five finalists are exhibited at Galerie Art Nomade in Barcelona's Born district, November 6–9, 2026, with printing, framing and installation fully covered, and screened at Ibizacinefest in March 2027. Cash prizes of €500 (overall winner, including a flight and hotel to present in Ibiza) and two €250 special mentions are paid before the festival. Jury led by Xavi Herrero and Olivier Verdier.",
       "url": "https://www.streetphotographybarcelona.com/",
-      "instagram": "@streetphotographybarcelona",
+      "instagram": "@streetphotography.barcelona",
       "location": "Barcelona, Spain",
       "prize": "€500 / €250 / €250 + Exhibition",
       "eligibility": [
@@ -1268,7 +1268,7 @@
         "Olivier Verdier, Galerie Art Nomade"
       ],
       "submitVia": "Picter",
-      "submitUrl": "https://site.picter.com/street-photography-barcelona-2026-pt2",
+      "submitUrl": "https://app.picter.com/contests/b64d4103-9e08-4c7e-85b6-8cd1cc84b843/start",
       "requirements": "1-5 images",
       "resultsDate": "October 20, 2026",
       "ai": "Not accepted",
@@ -1413,7 +1413,7 @@
       "category": "exhibition",
       "description": "National juried photography exhibition at the Delaplaine Arts Center in downtown Frederick, Maryland, on view November 7–29, 2026. Open nationally; work must be original in design and personal execution and created within the past two years. Awards are a $1,000 grand prize, $500 second place, $250 third place, and a $125 honorable mention.",
       "url": "https://delaplaine.org/exhibitions/opportunities/focus-national-juried-photography-exhibition/",
-      "instagram": "@thedelaplaine",
+      "instagram": "@delaplaine",
       "location": "Frederick, MD, USA",
       "prize": "$1,000 + $500 + $250 + $125 + Exhibition",
       "eligibility": [
@@ -1429,8 +1429,7 @@
       "jury": [
         "E. Brady Robinson, Photographer & Creative Director"
       ],
-      "resultsDate": "October 8, 2026",
-      "ai": "AI editing OK, fully generated not accepted"
+      "resultsDate": "October 8, 2026"
     },
     {
       "title": "TSHOW PHOTO.1",
@@ -1522,7 +1521,7 @@
       "description": "Texas Photographic Society juried exhibition celebrating large-format photography, on view at the Arlington Museum of Art from August 7 to November 1, 2026. Juror Dornith Doherty, 2012 Guggenheim Fellow, selects work that holds a monumental wall — monumentality, intimacy through detail, excess, immersion and presence. All accepted works are professionally printed at around 40 inches wide at no cost to the artist, sponsored by Fort Worth Camera, the Print Refinery and Red River Paper. Open internationally to photographers 18 and over; submit up to 12 images. Works previously exhibited in a TPS show are not eligible.",
       "url": "https://texasphoto.org/big-picture",
       "location": "Arlington, TX, USA",
-      "prize": "Museum exhibition + Free large-format printing",
+      "prize": "Exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -1597,7 +1596,7 @@
       "description": "Colorado Photographic Arts Center juried online exhibition celebrating downtowns across Colorado — historic landmarks, civic spaces, contemporary developments and architectural details, with interpretations of 'downtown' intentionally open. Open to Colorado photographers 18 and over; film, digital, mobile and screen-capture work are all accepted. Thirty images are selected by juror Darrin Alfred, Curator of Architecture and Design at the Denver Art Museum, for an online exhibition on CPAC's website from August 21 to December 31, 2026. Best in Show and honorable mentions receive CPAC memberships.",
       "url": "https://cpacphoto.org/call-for-entry/",
       "location": "Online",
-      "prize": "Online exhibition + CPAC membership",
+      "prize": "Exhibition",
       "eligibility": [
         "colorado",
         "18-plus"
@@ -1608,7 +1607,7 @@
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17467",
       "requirements": "1–3 images",
-      "ai": "Must disclose",
+      "ai": "Accepted (must disclose)",
       "slug": "celebrate-colorado-show-us-your-downtown-colorado-photographic-arts-center",
       "orgInTitle": false,
       "summary": "CPAC juried online show of Colorado downtowns, selected by Denver Art Museum curator Darrin Alfred. Colorado artists 18+.",
@@ -1759,7 +1758,7 @@
       "prize": "Samsung SSD (£330) + Publication",
       "eligibility": [],
       "submitVia": "Website form",
-      "submitUrl": "https://www.outdoorphotographymagazine.co.uk/submissions/one-thing-this-month/",
+      "submitUrl": "https://forms.gle/FXr9ochroak7pabW9",
       "requirements": "Up to 5 images",
       "slug": "outdoor-photography-magazine-bird-portraits",
       "orgInTitle": true,
@@ -4556,7 +4555,7 @@
     {
       "title": "Critical Mass 2026",
       "org": "Photolucida",
-      "deadline": "2026-07-01",
+      "deadline": "2026-07-07",
       "fee": "$75; +$200 if Top 200 finalist",
       "category": "photography",
       "description": "Photolucida's annual program connecting photographers with the international photography community. Submit 10 images for pre-screening; approximately 200 finalists are then reviewed by up to 200 photography professionals worldwide — curators, gallerists, publishers, editors, educators, and media. The Top 50 are announced each year, alongside book awards and exhibition opportunities. Past finalists have gained acquisitions, exhibitions, and publication features. Open to photographers at any career stage. AI-generated imagery is not accepted for the 2026 cycle.",
@@ -4567,7 +4566,7 @@
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://www.photolucida.org/critical-mass/contest-signup/",
-      "requirements": "10 images",
+      "requirements": "7–10 images",
       "ai": "Not accepted",
       "jury": [
         "Alexa Becker, Photography Coach & Publishing Consultant, DGPh",
@@ -5121,7 +5120,7 @@
       "url": "https://www.ucrossfoundation.org/residency-program.html",
       "instagram": "@ucrossfoundation",
       "location": "Ucross, WY, USA",
-      "prize": "2–6 week residency",
+      "prize": "Residency",
       "eligibility": [
         "professional"
       ],
@@ -5238,7 +5237,8 @@
         "Miha Colner, Curator, Galerija Božidar Jakac",
         "Wiktoria Michałkiewicz, Founder, REZO agency",
         "Sabina Salamon, Curator, Museum of Modern and Contemporary Art Rijeka",
-        "Laura Ettel, Visual Artist & Curator",
+        "Reiner Riedler, Photographer & Filmmaker",
+        "István Virágvölgyi, Artistic Director, Robert Capa Contemporary Photography Center",
         "Florence Drouhet, Artistic Director, Photo Festival LaGacilly-Baden"
       ],
       "dateAdded": "2026-05-02T23:22:18.080Z",
@@ -20179,7 +20179,7 @@
       "category": "residency",
       "description": "Two-week fully-funded residency at Mt. San Angelo in Amherst, Virginia for US citizens or permanent residents. Supported by the Phillip and Edith Leonian Foundation, established in 2009 to support photographic education and documentary photography. Includes private bedroom with en-suite bath, individual studio space plus darkroom access, and three meals daily in a cross-disciplinary community. Residency dates available May 1 – August 31, 2027. Applications open June 1, 2026. Fee waivers available on request by September 10, 2026. Apply via SlideRoom.",
       "url": "https://www.vcca.com/apply/fully-funded-fellowships/phillip-and-edith-leonian-foundation-fellowship-in-photography/",
-      "instagram": "@vccaarts",
+      "instagram": "@vacenterforthecreativearts",
       "location": "Amherst, VA, USA",
       "prize": "2-week funded residency",
       "eligibility": [
@@ -21326,7 +21326,7 @@
       "category": "grant",
       "description": "Photojournalism grant honoring Ian Parry, who died at 24 covering the Romanian Revolution in 1989 for The Sunday Times. Open to photographers aged 24 or under, or any age with proof of full-time enrollment in a photographic course. Winner receives £10,000, a year-long mentorship with photojournalist Giles Duley, Canon equipment loans for one year, publication in The Guardian, inclusion in the Hamburg Portfolio Review, and potential safety equipment/hostile environment training via the Gentex Corp award. Partners include Canon, The Guardian, and Legacy of War Foundation. Patron: Sir Don McCullin. Founded over four decades ago.",
       "url": "https://www.ianparry.org/",
-      "instagram": "@ianparryphoto",
+      "instagram": "@ianparrygrant",
       "location": "London, United Kingdom",
       "prize": "£10,000",
       "eligibility": [
@@ -22357,7 +22357,8 @@
         "The 2026–2027 lab takes place in Crete, with fieldwork across diverse Cretan locations exploring climate, landscape, and deep time alongside the scientific teams resident on the island. The selected artist commits to one week on site (autumn 2026) plus 24 months of online engagement with the EASE network. No academic background, entrepreneurship experience, or prior interdisciplinary practice is required — Photoworks explicitly invites applicants without an EASE-style track record.",
         "The selected artist receives a £1,000 stipend for the week on site. All travel, accommodation, and meals are covered. The artist gets access to scientific teams, fellow artists in the EASE cohort, and Photoworks' venture-building support, with potential features on Photoworks' digital and editorial platforms.",
         "Eligibility is restricted to UK-based artists, per the UKRI funding requirement. Application is via online form with either a 5-page PDF (expression of interest, bio, project examples, available lab dates) or a 3-minute audio or video recording. The deadline is June 29, 2026 at 23:59 BST."
-      ]
+      ],
+      "submitUrl": "https://forms.office.com/Pages/ResponsePage.aspx?id=0UdfPWg72kSq7r8nKxXfATmVz5OEB-1Khuhz_a3th_JURE5ZUUFLTkFXOTBMVVJRVDY4WDFaSzc0MS4u"
     },
     {
       "title": "Portal: At the Edge of Becoming",
@@ -22532,7 +22533,7 @@
       "url": "https://dergreif.org/article/i-am-because-of-you-mother-earth-zanele-muholi-s-call-for-images-and-texts",
       "instagram": "@der_greif",
       "location": "Munich, Germany",
-      "prize": "Publication",
+      "prize": "Publication + 2× €1,000",
       "eligibility": [],
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/21b0af77-ed6e-4cc9-9fb2-f5108a19ff62/start",
@@ -22741,7 +22742,7 @@
       "url": "https://sites.google.com/view/men-asleep/home",
       "instagram": "@memory.version",
       "location": "Online",
-      "prize": "Book and exhibition inclusion",
+      "prize": "Publication + Exhibition",
       "eligibility": [],
       "submitVia": "Email",
       "requirements": "1 photo",
@@ -22767,7 +22768,7 @@
       "category": "exhibition",
       "description": "Online juried exhibit celebrating pure abstraction — shape, color, line, texture, and the rhythm of form. Open to all fine art mediums including photography. Artists receive 100% of sale price with no commission.",
       "url": "https://art-fluent.com/calls-for-art/pure-abstraction-prospectus/",
-      "instagram": "@art_fluent",
+      "instagram": "@art__fluent",
       "location": "Online",
       "prize": "$1,250",
       "eligibility": [],
@@ -25974,7 +25975,7 @@
       "url": "https://www.artlinkfw.org/call-for-exhibition-proposals",
       "instagram": "@artlinkfw",
       "location": "Fort Wayne, IN, USA",
-      "prize": "Gallery exhibition",
+      "prize": "Exhibition",
       "eligibility": [],
       "jury": [
         "Artlink Artist Panel"
@@ -26373,10 +26374,10 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Website",
-      "submitUrl": "https://users.worldphoto.org/",
+      "submitUrl": "https://users.worldphoto.org/competition/",
       "requirements": "1–10 images",
       "resultsDate": "Spring 2027",
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "sony-world-photography-awards-2027",
       "orgInTitle": true,
       "summary": "Free-to-enter global awards from the World Photography Organisation — Series ($25k + solo show, Jan 12) and Single Image ($5k, Jan 5) competitions plus Student & Youth.",
@@ -26738,10 +26739,10 @@
       "description": "Annual open call from Photoforum Pasquart, a leading Swiss photography institution in Biel/Bienne. The jury selects between 10 and 15 photographers and artists working in photographic media to present their work in a group exhibition at Photoforum Pasquart in December 2026. All photographic practices are welcome, including documentary photography, experimental processes, installation, video and digital media. There is no set theme — applicants explore the possibilities of the photographic medium and demonstrate a distinctive approach to their practice, and submitted work must have been created within the last two years. One participant receives the Prix Photoforum of CHF 5,000, and all selected participants receive CHF 500 toward production and transport costs.",
       "url": "https://photoforumpasquart.ch/en/open-call-2026",
       "location": "Biel/Bienne, Switzerland",
-      "prize": "CHF 5,000 main prize; CHF 500 production/transport contribution to each selected participant; group exhibition (Dec 2026)",
+      "prize": "CHF 5,000",
       "submitVia": "Official website",
-      "submitUrl": "https://photoforumpasquart.ch/en/open-call-2026",
-      "requirements": "Portfolio of up to 15 images, project description, installation proposal, CV, proof of payment (dossier max 10 MB); work created within the last two years",
+      "submitUrl": "https://photoforumpasquart.ch/en/formular-open-call",
+      "requirements": "Up to 15 images",
       "jury": [
         "Olivia Fahmy",
         "Margherita Guerra",
@@ -26753,7 +26754,10 @@
       "slug": "prix-photoforum-2026-photoforum-pasquart",
       "orgInTitle": false,
       "summary": "Swiss photography institution's annual juried group show in Biel; CHF 5,000 prize plus CHF 500 production grants for 10–15 selected artists.",
-      "dateAdded": "2026-06-29T15:07:48Z"
+      "dateAdded": "2026-06-29T15:07:48Z",
+      "ai": "Accepted",
+      "resultsDate": "September 30, 2026",
+      "instagram": "@photoforumpasquart"
     },
     {
       "title": "Kyoto Retreat 2026",
@@ -26764,10 +26768,10 @@
       "description": "A fully-funded four-week retreat in Kyoto, Japan, conceived as a time for rest, research and reflection rather than production. Open to visual artists, curators and writers aged 21+ at all career stages and working in any discipline, including photography, moving image and the written word. Selected participants receive round-trip airfare to Kansai/Osaka, private accommodation in a shared house for the duration, and an $800 USD stipend for meals and local transportation. The 2026 retreat runs November 1–30, 2026.",
       "url": "https://www.kyotoretreat.com",
       "location": "Kyoto, Japan",
-      "prize": "Round-trip airfare, private accommodation (4 weeks) and an $800 USD stipend",
+      "prize": "$800 stipend",
       "submitVia": "SlideRoom",
-      "submitUrl": "https://www.kyotoretreat.com",
-      "requirements": "CV/resume, statement of creative interests, plan for the time in Kyoto, and up to 10 work samples (jpegs, PDFs, audio or video; audio/video max 10 minutes)",
+      "submitUrl": "https://kyotoretreat.slideroom.com",
+      "requirements": "Up to 10 work samples",
       "resultsDate": "2026-09-01",
       "eligibility": [
         "21-plus"
@@ -26775,7 +26779,8 @@
       "slug": "kyoto-retreat-2026",
       "orgInTitle": true,
       "summary": "Fully-funded four-week November retreat in Kyoto for artists, curators and writers — airfare, private accommodation and an $800 stipend.",
-      "dateAdded": "2026-06-29T15:07:48Z"
+      "dateAdded": "2026-06-29T15:07:48Z",
+      "instagram": "@kyotoretreat"
     },
     {
       "title": "Liu Shiming Artist Grants 2026",
@@ -26789,7 +26794,7 @@
       "prize": "Up to five grants of $5,000 each",
       "submitVia": "Official website",
       "submitUrl": "https://www.lsmartfund.org/artistgrants2026",
-      "requirements": "Proposal for a current or new project; visual artists working at least 2 but not more than 10 years; materials in English",
+      "requirements": "Project proposal",
       "resultsDate": "2026-12-02",
       "eligibility": [
         "emerging"
@@ -26797,7 +26802,8 @@
       "slug": "liu-shiming-artist-grants-2026",
       "orgInTitle": true,
       "summary": "Foundation grants of $5,000 to five early-career visual artists (2–10 years) for projects bridging tradition and contemporary practice.",
-      "dateAdded": "2026-06-29T15:07:48Z"
+      "dateAdded": "2026-06-29T15:07:48Z",
+      "instagram": "@lsmartfund"
     },
     {
       "title": "PhMuseum 2026 Women Photographers Grant",
@@ -26808,10 +26814,10 @@
       "description": "Now in its 10th edition, the PhMuseum Women Photographers Grant supports the work and careers of female and non-binary photographers of all ages and from all countries, working across documentary, fine art and conceptual photography. The open call awards a total of $11,000 in cash prizes plus €5,000 in MPB gear vouchers: $5,500 (1st), $2,200 (2nd), $1,100 (3rd), a $2,200 New Generation prize for entrants aged 30 or under, and two MPB Special Mentions of €2,500 in vouchers each. Selected work is shown in a solo exhibition at PhMuseum Lab, screened at the PhotoVogue Festival, and featured via a Vogue Italia interview; every entrant also receives a 30-minute portfolio review with a PhMuseum Education mentor. The grant promotes stories told from a female and non-binary perspective and advances gender equality across the photography industry.",
       "url": "https://phmuseum.com/grants/2026-women-photographers-grant",
       "location": "Online / Bologna, Italy",
-      "prize": "$11,000 cash (1st $5,500; 2nd $2,200; 3rd $1,100; New Generation $2,200) + 2× €2,500 MPB vouchers + solo exhibition at PhMuseum Lab",
+      "prize": "$11,000 + vouchers + Exhibition",
       "submitVia": "PhMuseum",
       "submitUrl": "https://phmuseum.com/grants/2026-women-photographers-grant",
-      "requirements": "One or more projects, each 5–20 photos (JPG/PNG, max 5MB per file, min 1000px shortest side); project statement",
+      "requirements": "5–20 images per project",
       "resultsDate": "2026-12",
       "jury": [
         "Elisa Medde",
@@ -26823,7 +26829,8 @@
       "slug": "phmuseum-2026-women-photographers-grant",
       "orgInTitle": true,
       "summary": "10th-edition grant for women and non-binary photographers: $11,000 cash, MPB vouchers, solo show at PhMuseum Lab and PhotoVogue screening.",
-      "dateAdded": "2026-06-29T15:07:48Z"
+      "dateAdded": "2026-06-29T15:07:48Z",
+      "instagram": "@phmuseum"
     }
   ]
 }
