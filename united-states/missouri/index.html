@@ -112,7 +112,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/the-open-road-endless-horizons-international-photography-hall-of-fame/">The Open Road: Endless Horizons &middot; International Photography Hall of Fame</a></h3><p class="call-description">IPHF international competition marking Route 66's centennial — the spirit of the open road. Online exhibition + cash prizes.</p></div>
 
     </section>
 
@@ -130,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', MO,') || c.location.includes(', Missouri,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', MO,') || c.location.includes(', Missouri,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

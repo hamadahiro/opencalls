@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from URBAN Photo Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/urban-photo-awards-2026/">URBAN Photo Awards 2026</a></h3><p class="call-description">Trieste Photo Days' 17th urban photo contest. Mark Power &amp; Christopher Morris jury. Single image free; project €40. Festival exhibition.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'URBAN Photo Awards' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'URBAN Photo Awards').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
