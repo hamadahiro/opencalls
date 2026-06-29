@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from BEERS London. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/beers-london-group-exhibition-2026/">BEERS London Group Exhibition 2026</a></h3><p class="call-description">Group exhibition of ~8–10 artists at contemporary London gallery. All media including photography. Show Aug 20–29, 2026.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'BEERS London' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'BEERS London').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

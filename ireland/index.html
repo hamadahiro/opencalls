@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/hunt-museum-open-submission-exhibition-2026/">Hunt Museum Open Submission Exhibition 2026</a></h3><p class="call-description">Second annual juried open submission at The Hunt Museum, Limerick. Photography eligible; €15/artwork. Show Dec 2026 – Feb 2027.</p></div>
 
     </section>
 
@@ -124,7 +125,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Ireland').map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Ireland' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
