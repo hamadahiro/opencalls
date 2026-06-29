@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -117,7 +117,7 @@
       <p class="call-detail-description">The application is structured to allow combining tracks: the group exhibition application alone is £10, and the combined residency-plus-exhibition application is £25 (£5 less than applying separately). Selection is by the BEERS London team alongside guest curators. Eligibility is open globally to artists at any career stage.</p>
       <p class="call-detail-description">Inclusion in the group exhibition does not guarantee gallery representation or sales — the format is closer to a curated open submission than to a representation pitch. Selected artists are notified approximately two months before the exhibition opening. The deadline has been extended to August 1, 2026.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/june-2026/" title="June 29, 2026">June 29, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">June 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£10">£10</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="London, UK">London, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 5 artworks">Up to 5 artworks</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://opencall.beerslondon.com/application-type/" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/june-2026/" title="June 29, 2026">June 29, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">June 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£10">£10</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="London, UK">London, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 5 artworks">Up to 5 artworks</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: BEERS London team &amp; guest curators</p>
@@ -127,8 +127,7 @@
         <p class="call-detail-description">Organized by <a href="/beers-london/">BEERS London</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://opencall.beerslondon.com/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on June 29, 2026</span></div>
     </section>
@@ -146,23 +145,7 @@
   <script>
     const CURRENT_SLUG = 'beers-london-group-exhibition-2026';
     const CURRENT_CALL = {"title":"BEERS London Group Exhibition 2026","category":"exhibition","org":"BEERS London","location":"London, United Kingdom","fee":"£10","deadline":"2026-06-29","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-06-29'.replace(/-/g, '');
-      var nd = new Date('2026-06-29T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'BEERS London Group Exhibition 2026';
-      var u = 'https://opencall.beerslondon.com/';
-      var o = 'BEERS London';
-      var dl = new Date('2026-06-29T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Group exhibition at BEERS London') + '\\nEntry fee: ' + icsE('£10');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
