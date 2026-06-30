@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from World Nature Photography Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/world-nature-photography-awards-2027/">World Nature Photography Awards 2027</a></h3><p class="call-description">7th edition international nature &amp; wildlife awards — 14 categories, $1,000 + Photographer of the Year title. £30 for 6 images, worldwide 18+. Deadline Jun 30.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'World Nature Photography Awards' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'World Nature Photography Awards').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

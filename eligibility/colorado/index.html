@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/celebrate-colorado-show-us-your-downtown-colorado-photographic-arts-center/">Celebrate Colorado: Show Us Your Downtown &middot; Colorado Photographic Arts Center</a></h3><p class="call-description">CPAC juried online show of Colorado downtowns, selected by Denver Art Museum curator Darrin Alfred. Colorado artists 18+.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('colorado') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('colorado')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
