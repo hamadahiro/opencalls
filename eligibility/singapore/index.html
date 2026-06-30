@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/10th-singapore-young-photographer-award/">10th Singapore Young Photographer Award &middot; DECK Photography Art Centre</a></h3><p class="call-description">SYPA award for Singapore-based photographers aged 13–25 on the theme 'Echoes of Home'. Free, $8,000+ in prizes, festival exhibition.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('singapore') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('singapore')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

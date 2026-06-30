@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from FotoDoc Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/fotodoc-photo-contest-2026/">FotoDoc Photo Contest 2026</a></h3><p class="call-description">International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'FotoDoc Festival' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'FotoDoc Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

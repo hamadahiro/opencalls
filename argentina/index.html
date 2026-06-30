@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/the-shape-of-a-moment-exposure-photo-gallery/">The Shape of a Moment &middot; Exposure Photo Gallery</a></h3><p class="call-description">Capturing fleeting moments. Gold Award winner receives solo exhibition. Juror: Gary Hershorn (Reuters).</p></div>
 
     </section>
 
@@ -125,7 +124,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Argentina' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Argentina').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 

@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Benrido. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/hariban-award-2026-benrido/">Hariban Award 2026 &middot; Benrido</a></h3><p class="call-description">International collotype competition. Grand Prize: two-week residency in Kyoto with master collotype printers.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Benrido' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Benrido').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
