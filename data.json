@@ -12,10 +12,12 @@
       "instagram": "@griffinmuseum",
       "location": "Winchester, MA, USA",
       "prize": "$3,000 + solo exhibition at the Griffin Museum",
-      "eligibility": [],
+      "eligibility": [
+        "emerging"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=15937",
-      "requirements": "10 images + bio/CV + statements",
+      "requirements": "10 images",
       "slug": "john-chervinsky-emerging-photographer-scholarship-2026",
       "orgInTitle": false,
       "summary": "Annual Griffin Museum scholarship for emerging photographers without solo shows — $3,000, a solo exhibition and a book. Free to enter.",
@@ -2988,7 +2990,7 @@
       "fee": "€10",
       "category": "photography",
       "description": "Annual themed open call from Preus Museum, the National Museum of Photography in Norway, presented with the Oslo Negativ photo festival. The 2026 theme is \"Passion.\" Open to all artists worldwide, professional or amateur, individually or as a collective. Submit single images or a series of up to 15 photographs exploring the theme, with a project description explaining how the work relates to it. One winner receives NOK 20,000, acquisition into the Preus Museum collection, and an exhibition at Oslo Negativ 2026, with production and travel costs covered by the museum. Entry fee €10; free for students and Norwegian photographers via voucher (email opencall@preusmuseum.no).",
-      "url": "https://preusmuseum.no/en/preus-museum-open-call",
+      "url": "https://site.picter.com/preus-museum-open-call-26",
       "instagram": "@preusmuseum",
       "location": "Horten, Norway",
       "prize": "NOK 20,000 + Exhibition",
@@ -25527,9 +25529,7 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [
-        "Skip Marsh"
-      ],
+      "jury": [],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/artscentereast/vehicles-voyages/",
       "requirements": "Up to 5 works",
