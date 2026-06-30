@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls for Artists in Ohio 2026 - Monographica</title>
-  <meta name="description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today.">
-  <link rel="canonical" href="https://opencalls.monographica.com/united-states/ohio/">
+  <title>Cincinnati Area Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists based in the greater Cincinnati area, including southwest Ohio, northern Kentucky, and southeast Indiana.">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/cincinnati-area/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls for Artists in Ohio 2026 - Monographica">
-  <meta property="og:description" content="Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today.">
+  <meta property="og:title" content="Cincinnati Area Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists based in the greater Cincinnati area, including southwest Ohio, northern Kentucky, and southeast Indiana.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/united-states/ohio/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/cincinnati-area/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls for Artists in Ohio 2026",
-  "description": "Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today.",
-  "url": "https://opencalls.monographica.com/united-states/ohio/",
+  "name": "Cincinnati Area Open Calls 2026",
+  "description": "Open calls restricted to photographers and artists based in the greater Cincinnati area, including southwest Ohio, northern Kentucky, and southeast Indiana.",
+  "url": "https://opencalls.monographica.com/eligibility/cincinnati-area/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -49,20 +49,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Locations",
-      "item": "https://opencalls.monographica.com/locations/"
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "United States",
-      "item": "https://opencalls.monographica.com/united-states/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "OH",
-      "item": "https://opencalls.monographica.com/united-states/ohio/"
+      "name": "Cincinnati Area Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/cincinnati-area/"
     }
   ]
 }
@@ -106,9 +100,9 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
-      <h1>Open Calls for Artists in Ohio</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Cincinnati Area Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists based in the greater Cincinnati area, including southwest Ohio, northern Kentucky, and southeast Indiana.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -130,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', OH,') || c.location.includes(', Ohio,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('cincinnati-area') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
