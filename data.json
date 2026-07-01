@@ -15,13 +15,14 @@
         "18-plus"
       ],
       "submitVia": "Website form",
-      "requirements": "Up to 3 images; min 1200px on the longest side; JPEG",
+      "requirements": "Up to 3 images",
       "slug": "elemental-earth-air-fire-water-tcg-gallery",
       "orgInTitle": false,
       "summary": "Juried online show on the four elements — earth, air, fire, water — at TCG Gallery. All photographic media; AI not accepted.",
       "dateAdded": "2026-07-01T15:08:08Z",
       "resultsDate": "2026-09-25",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "instagram": "@chateau_gallery"
     },
     {
       "title": "Out of Time / Out of Place",
@@ -36,7 +37,7 @@
       "eligibility": [],
       "submitVia": "Smarter Entry",
       "submitUrl": "https://client.smarterentry.com/aphotographersplace/Login",
-      "requirements": "Up to 5 images; JPEG, min 3000px on the longest side",
+      "requirements": "Up to 5 images",
       "slug": "out-of-time-out-of-place-a-photographer-s-place",
       "orgInTitle": false,
       "summary": "Juried show on dislocation, anachronism and surreal juxtapositions at A Photographer's Place, Raleigh. Juror Dawn Willis.",
@@ -55,12 +56,12 @@
       "description": "An open-themed juried exhibition selected by Rebecca Morse, Curator in the Wallis Annenberg Photography Department at the Los Angeles County Museum of Art (LACMA), who has organized major exhibitions of work by Ed Ruscha, Barbara Kruger and Thomas Joshua Cooper. Selected work is shown at the APG Gallery in Atlanta (August 25 – September 25, 2026), with a reception on August 27.",
       "url": "https://atlantaphotographygroup.org/events/call-for-entry-rebecca-morse-selects-2026/",
       "location": "Atlanta, GA, USA",
-      "prize": "APG / Museum of Fine Arts, Houston Purchase Award ($3,000)",
+      "prize": "$3,000 Purchase Award",
       "eligibility": [
         "membership-required"
       ],
       "submitVia": "Official website",
-      "requirements": "Images resized to 2100px on the longest side; artist statement (max 500 words) and bio (max 250 words)",
+      "requirements": "Up to 8 images",
       "slug": "rebecca-morse-selects-2026-atlanta-photography-group",
       "orgInTitle": false,
       "summary": "APG members' juried show selected by LACMA curator Rebecca Morse. $3,000 MFA Houston Purchase Award; Atlanta exhibition.",
@@ -68,7 +69,8 @@
       "jury": [
         "Rebecca Morse, Curator, Wallis Annenberg Photography Department, LACMA"
       ],
-      "resultsDate": "2026-07-25"
+      "resultsDate": "2026-07-25",
+      "instagram": "@atlantaphotographygroup"
     },
     {
       "title": "MONOCHROME",
@@ -79,11 +81,11 @@
       "description": "NYC4PA's international juried call MONOCHROME celebrates the special nature of the monochrome print — black and white, sepia, or shades of a single color — where emotion, texture and beauty are expressed in gradations from light to dark. All photographic processes and approaches are welcome. Selected images appear in an online gallery and catalog, and winning work is shown in the NYC4PA exhibition. Judging is blind. Submissions open July 5, 2026.",
       "url": "https://www.nyc4pa.com/monochrome",
       "location": "Online",
-      "prize": "Grand Prize $1,100; plus First, Second and Third prizes and Juror Selections",
+      "prize": "$1,100 Grand Prize",
       "eligibility": [],
       "submitVia": "SmarterEntry",
       "submitUrl": "https://client.smarterentry.com/nyc4pa",
-      "requirements": "JPG files approx. 1MB; no signatures, watermarks or artist names in image titles",
+      "requirements": "1+ images",
       "slug": "monochrome-new-york-center-for-photographic-arts",
       "orgInTitle": false,
       "summary": "NYC4PA international juried call on the monochrome print — B&W, sepia or single-color. $1,100 Grand Prize; juror Ann Jastrab.",
@@ -102,12 +104,12 @@
       "description": "A five-week faculty-led thematic visual-arts residency (January 25 – February 26, 2027) exploring speculative futures, science fiction, myth-making and world-building, using futurity as an anti-oppressive, restorative and decolonizing force. Artists receive individual studio space, faculty mentorship and studio visits, weekly talks and workshops, open studios, and access to specialized production facilities and the Paul D. Fleck Library and Archives. Eligible mediums explicitly include photography and digital media. All participants receive the Banff Centre Arts Scholarship (100% tuition plus 25% of meals and accommodation).",
       "url": "https://www.banffcentre.ca/programs/visual-arts/visual-arts-thematic-future-figurations-residency",
       "location": "Banff, Alberta, Canada",
-      "prize": "Banff Centre Arts Scholarship (100% tuition + 25% of meals & accommodation)",
+      "prize": "Residency",
       "eligibility": [
         "18-plus"
       ],
       "submitVia": "Official website",
-      "requirements": "CV, 250-word artist statement, 500-word project proposal, and a portfolio of 6–10 samples via SlideRoom",
+      "requirements": "6–10 images",
       "slug": "future-figurations-residency-banff-centre",
       "orgInTitle": false,
       "summary": "Five-week Banff Centre visual-arts residency on speculative futures & world-building; photography eligible. Tuition-covered scholarship.",
@@ -122,14 +124,16 @@
       "description": "An eight- to ten-week residency for artists to produce a limited-edition book work (edition of 50–100), printing and binding their own books in WSW's studios with technical support. The grant includes a weekly stipend of $350, up to $1,000 for materials, up to $250 for US travel, free on-site housing and 24/7 studio access. Completed books enter collections at over 450 institutions worldwide, including the Library of Congress. Applications open August 1, 2026; the residency takes place the following September–June. Relevant to photographers working with the photobook and artist-book form.",
       "url": "https://wsworkshop.org/residencies/artists-book-residency-grant/",
       "location": "Rosendale, NY, USA",
-      "prize": "$350/week stipend, up to $1,000 materials, $250 travel, free housing",
+      "prize": "$350/week stipend",
       "eligibility": [],
       "submitVia": "Official website",
-      "requirements": "Resume, 200-word project description, materials budget, up to 10 images and an image script, plus a mailed physical book mock-up",
+      "requirements": "Up to 10 images",
       "slug": "womens-studio-workshop-artists-book-residency-grant",
       "orgInTitle": true,
       "summary": "WSW residency to print & bind a limited-edition artist book; stipend, materials, travel & housing. For photobook & book artists.",
-      "dateAdded": "2026-07-01T15:08:08Z"
+      "dateAdded": "2026-07-01T15:08:08Z",
+      "resultsDate": "March 2027",
+      "instagram": "@wsworkshop"
     },
     {
       "title": "Black and White: 2026",
@@ -670,7 +674,7 @@
       "prize": "Publication in printed photobook",
       "eligibility": [],
       "submitVia": "Shutter Hub website",
-      "submitUrl": "https://shutterhub.org.uk/opportunity/the-colour-library-yellow-a-shutter-hub-editions-publication/",
+      "submitUrl": "https://shutterhub.org.uk/opportunity/the-colour-library-yellow-a-shutter-hub-editions-publication/#callout_apply",
       "requirements": "Up to 10 images",
       "slug": "the-colour-library-yellow-shutter-hub-editions",
       "orgInTitle": true,
@@ -917,7 +921,7 @@
       "summary": "Free global online exhibition on the human–dog bond. Juror: Crista Dix, Griffin Museum of Photography.",
       "resultsDate": "August 1, 2026",
       "dateAdded": "2026-06-23T23:19:41.894Z",
-      "submitUrl": "https://griffinmuseum.org/calls-for-entry/"
+      "submitUrl": null
     },
     {
       "title": "strands of silver",
@@ -2233,7 +2237,7 @@
     {
       "title": "Ephemere Triptychs — Publication & Exhibition",
       "org": "Ephemere",
-      "deadline": "2026-07-15",
+      "deadline": "2026-06-30",
       "fee": "$60 (1–3 triptychs)",
       "category": "zine",
       "description": "Open call for the Ephemere Photo Fest 2026 in Tokyo (October 17–27), themed 'Triplicities.' Submit photographic triptychs — three horizontal images forming a deliberate narrative, conceptual, or aesthetic sequence. Selected triptychs are featured in a curated group photobook and shown in a dedicated exhibition at the festival (Three Space Tokyo, Asakusabashi). Three 'Best Triptychs' are additionally featured in the Ephemere Photo Journal Volume 2, printed in newspaper format with Kyoto Shimbun, and receive complimentary copies. Curated on a rolling basis by Ephemere founder Anne Murayama with Sarah Mae Bombay and Alfred Ong. Color or black-and-white; digital, film, or alternative process welcome. The $60 flat fee covers 1–3 triptychs (up to 9 images) and funds curation, design, printing, and the gallery installation; all contributors receive a 25% shop discount.",
@@ -2568,7 +2572,7 @@
     {
       "title": "In The Practice of Seeing — National Juried Photography Exhibition",
       "org": "Jacksonville State University",
-      "deadline": "2026-07-13",
+      "deadline": "2026-07-06",
       "fee": "$20",
       "category": "exhibition",
       "description": "National juried photography exhibition at Jacksonville State University's Hammond Gallery in Alabama, open to photographers working in all photographic processes — digital, film, alternative processes, mixed media incorporating photography, and photographic installations. The brief frames photography as an active process of perception rather than mere representation. Selected works are shown in the Manners Gallery, August 27–September 24, 2026. Juried by Jim Reiman, Assistant Professor of Photography and Graphic Design at Valdosta State University. Cash awards: $500 first, $300 second, $100 third.",
@@ -2589,7 +2593,7 @@
       "summary": "JSU national juried photography show in all processes — digital, film, alternative, installation. Cash prizes + gallery exhibition.",
       "instagram": "@jaxstategalleries",
       "ai": "AI editing OK, fully generated not accepted",
-      "resultsDate": "July 20, 2026",
+      "resultsDate": "July 17, 2026",
       "dateAdded": "2026-06-05T19:11:51.696Z"
     },
     {
@@ -6145,7 +6149,7 @@
       "slug": "yaddo-residency-summer-2026-cycle",
       "orgInTitle": true,
       "summary": "2-week to 2-month residency in Saratoga Springs, NY. Photography eligible. Founded 1900. Encourages underrepresented backgrounds.",
-      "ai": "Not accepted",
+      "ai": "Accepted",
       "jury": [
         "Independent Admissions Committee"
       ],
@@ -6859,7 +6863,7 @@
       "prize": "Publication",
       "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": "https://www.welcometothedocks.org/concorso-loltre-2026/",
+      "submitUrl": null,
       "slug": "l-oltre-2026-the-docks",
       "orgInTitle": false,
       "summary": "Photobook call exploring visions beyond conventional reality. Winner published in limited edition by The Docks Publishing.",
@@ -24222,7 +24226,7 @@
       "ai": "Not accepted",
       "resultsDate": "August 7, 2026",
       "dateAdded": "2026-06-06T19:09:43Z",
-      "instagram": "@cwc_rustlers"
+      "instagram": "@photographyofplace"
     },
     {
       "title": "2026 Honeywell Photography Competition",
@@ -24337,7 +24341,7 @@
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLScX2-sPTtGNcHWdVPiOOq8w_EfNeNsaD-q_dS_RxGoqIgU4nw/viewform",
       "requirements": "Up to 5 images",
       "resultsDate": "July 31, 2026",
-      "ai": "Must disclose",
+      "ai": "Accepted (must disclose)",
       "slug": "rock-paper-scissors-golden-duck-gallery",
       "orgInTitle": true,
       "summary": "Pop art and mixed media show at Golden Duck Gallery Budapest, photography welcome. €500 prize fund; ages 14–25 exhibit free.",
@@ -24368,7 +24372,7 @@
     {
       "title": "Arty Rat Magazine Open Call — July 2026",
       "org": "Arty Rat",
-      "deadline": "2026-07-01",
+      "deadline": "2026-08-01",
       "fee": "Free (€35–€100 if accepted)",
       "category": "zine",
       "description": "Summer open call from the Vienna-based independent art magazine for bold contemporary visual work worldwide — art, illustration and photography. Free to submit up to 6 works by online form or email; if selected, publishing options range from €35 (magazine publication) to €65 (magazine plus artist website page) and €100 (curatorial review or Vienna exhibition). Two artists are chosen for cover features, and one artist receives free participation in The Names Gallery group exhibition in Vienna. Selected artists get a digital magazine copy, printed page photos and an Instagram feature.",
@@ -27397,7 +27401,7 @@
       "location": "Online / Bologna, Italy",
       "prize": "$11,000 + vouchers + Exhibition",
       "submitVia": "PhMuseum",
-      "submitUrl": "https://phmuseum.com/grants/2026-women-photographers-grant",
+      "submitUrl": null,
       "requirements": "5–20 images per project",
       "resultsDate": "2026-12",
       "jury": [
