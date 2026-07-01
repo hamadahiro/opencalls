@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/skyway-2027-a-contemporary-collaboration/">Skyway 2027: A Contemporary Collaboration</a></h3><p class="call-description">Five Tampa Bay museums co-curate the Skyway 2027 triennial. Free entry for artists of the five-county region; catalog published.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('tampa-bay') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('tampa-bay')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

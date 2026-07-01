@@ -79,6 +79,7 @@ const eligibilityLabel = {
   'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'cincinnati-area': 'Cincinnati Area only', 'los-angeles': 'LA only',
   'new-york-state': 'NY State only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
+  'japan': 'Japan only', 'southeast-us': 'Southeast US only',
   'north-east-england': 'North East England only',
   'california': 'California only', 'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only',
   'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'southwest-us': 'Southwest US only',
