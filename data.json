@@ -1,6 +1,47 @@
 {
-  "lastUpdated": "2026-07-01T15:08:08Z",
+  "lastUpdated": "2026-07-01T19:06:34Z",
   "calls": [
+    {
+      "title": "The Fridge Show",
+      "org": "Blue Sky Gallery",
+      "deadline": "2026-07-17",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "A free online exhibition honoring Blue Sky Gallery's 1990 exhibition 'The Refrigerator Show,' inviting photographers to submit images of refrigerator interiors — organized or chaotic, from tidy shelves to whatever is really chilling in the back. Part of the gallery's 50th Anniversary online exhibition series. Accepted work is shown online only and is not for sale; the exhibition opens August 6, 2026.",
+      "url": "https://www.blueskygallery.org/news/the-fridge-show-open-call",
+      "location": "Online",
+      "prize": "Online exhibition",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "requirements": "Up to 3 images",
+      "slug": "the-fridge-show-blue-sky-gallery",
+      "orgInTitle": false,
+      "summary": "Free online show of refrigerator-interior photographs — Blue Sky Gallery's 50th-anniversary series honoring its 1990 Refrigerator Show.",
+      "dateAdded": "2026-07-01T19:06:34Z",
+      "instagram": "@blueskygallery"
+    },
+    {
+      "title": "BBA One Shot Award - Autumn 2026",
+      "org": "BBA Gallery",
+      "deadline": "2026-08-03",
+      "fee": "€19",
+      "category": "photography",
+      "description": "Single-image photography prize. 20 selected images are professionally printed and exhibited at BBA Gallery in Berlin, with 50 additional images shown on a large digital display. First prize: €300 cash plus the exhibition, an Artsy profile, and social media and newsletter promotion. BBA covers all production and shipping costs for selected work.",
+      "url": "https://bba-prizes.com/one-shot-award",
+      "instagram": "@bba.prizes",
+      "location": "Berlin, Germany",
+      "prize": "€300",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Website",
+      "submitUrl": "https://app.bba-prizes.com/?productId=one-shot-award-2026-autumn",
+      "requirements": "1 image",
+      "slug": "bba-one-shot-award-autumn-2026",
+      "orgInTitle": true,
+      "summary": "Single-image photo prize; 20 images exhibited at BBA Gallery Berlin. €300 + Artsy listing; production costs covered.",
+      "dateAdded": "2026-07-01T19:06:34Z"
+    },
     {
       "title": "Elemental: Earth, Air, Fire, Water",
       "org": "TCG Gallery",
