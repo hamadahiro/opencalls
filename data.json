@@ -1,6 +1,108 @@
 {
-  "lastUpdated": "2026-07-01",
+  "lastUpdated": "2026-07-01T03:05:58Z",
   "calls": [
+    {
+      "title": "ECHOES — Cambridge Photography Gallery",
+      "org": "Cambridge Photography Gallery",
+      "deadline": "2026-07-05",
+      "fee": "Free (£15 if accepted)",
+      "category": "exhibition",
+      "description": "Open call on the idea that every photograph is an echo — of the past, of visited spaces, lived experiences and fleeting encounters, and perhaps even of things that never happened: untold stories, imagined narratives, distant futures. Both single images and series are welcome, with no single correct approach to the theme. Selected work is shown in an online exhibition July 15–30, 2026, with priority consideration for the gallery's physical Cambridge exhibition in October.",
+      "url": "https://www.cambridgephotographygallery.com/open-call",
+      "instagram": "@cambridgephotogallery",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Email",
+      "slug": "echoes-cambridge-photography-gallery",
+      "orgInTitle": true,
+      "summary": "Every photograph as an echo — of the past, of lived spaces, even of what never happened. Online show + a physical Cambridge exhibition.",
+      "dateAdded": "2026-07-01T03:05:58Z"
+    },
+    {
+      "title": "On Film — Carlotta Gallery",
+      "org": "Carlotta Gallery",
+      "deadline": "2026-08-10",
+      "fee": "Free (£20–£35 if accepted)",
+      "category": "exhibition",
+      "description": "Carlotta Gallery's themed virtual exhibition celebrating film and analogue photography — work made accepting time as irreversible and every exposure as a point of no return. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with a PDF catalogue, permanent Collections-page listing, and Certificate of Recognition.",
+      "url": "https://www.carlottagallery.co.uk/opencalls",
+      "instagram": "@carlottagallery",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "requirements": "Up to 3 images",
+      "submitVia": "Email",
+      "slug": "on-film-carlotta-gallery",
+      "orgInTitle": true,
+      "summary": "Celebrating film and analogue photography — every exposure a point of no return. Free to apply; virtual exhibition.",
+      "dateAdded": "2026-07-01T03:05:58Z"
+    },
+    {
+      "title": "Central & South America — Carlotta Gallery",
+      "org": "Carlotta Gallery",
+      "deadline": "2026-08-20",
+      "fee": "Free (£20–£35 if accepted)",
+      "category": "exhibition",
+      "description": "Carlotta Gallery's themed virtual exhibition inviting photographers to respond to the Central and South American region through brief, specific observations rather than a comprehensive overview — building a layered archive where meaning emerges from the accumulation of individual perspectives on diverse environments, cultures and conditions. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with catalogue, permanent Collections-page listing, and certificate.",
+      "url": "https://www.carlottagallery.co.uk/opencalls",
+      "instagram": "@carlottagallery",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "requirements": "Up to 3 images",
+      "submitVia": "Email",
+      "slug": "central-south-america-carlotta-gallery",
+      "orgInTitle": true,
+      "summary": "Respond to the region through brief, specific observations — a layered archive of diverse cultures and conditions. Virtual exhibition.",
+      "dateAdded": "2026-07-01T03:05:58Z"
+    },
+    {
+      "title": "People — Carlotta Gallery",
+      "org": "Carlotta Gallery",
+      "deadline": "2026-09-10",
+      "fee": "Free (£20–£35 if accepted)",
+      "category": "exhibition",
+      "description": "Carlotta Gallery's themed virtual exhibition focused on people in everyday life, captured without staging — individuals within larger moments, human presence registered as traces rather than conclusions, balancing personal and collective experience. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with catalogue, permanent Collections-page listing, and certificate.",
+      "url": "https://www.carlottagallery.co.uk/opencalls",
+      "instagram": "@carlottagallery",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "requirements": "Up to 3 images",
+      "submitVia": "Email",
+      "slug": "people-carlotta-gallery",
+      "orgInTitle": true,
+      "summary": "People in everyday life, captured without staging — human presence as traces rather than conclusions. Free to apply; virtual exhibition.",
+      "dateAdded": "2026-07-01T03:05:58Z"
+    },
+    {
+      "title": "Red — Carlotta Gallery",
+      "org": "Carlotta Gallery",
+      "deadline": "2026-09-20",
+      "fee": "Free (£20–£35 if accepted)",
+      "category": "exhibition",
+      "description": "Carlotta Gallery's themed virtual exhibition exploring red as a force within the image rather than simply a colour — its emotional weight, symbolic charge and intensity across landscapes, bodies, objects and memory. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with catalogue, permanent Collections-page listing, and certificate.",
+      "url": "https://www.carlottagallery.co.uk/opencalls",
+      "instagram": "@carlottagallery",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "requirements": "Up to 3 images",
+      "submitVia": "Email",
+      "slug": "red-carlotta-gallery",
+      "orgInTitle": true,
+      "summary": "Red as a force within the image, not just a colour — its weight and intensity across bodies, objects and memory. Virtual exhibition.",
+      "dateAdded": "2026-07-01T03:05:58Z"
+    },
     {
       "title": "JRNL Magazine Open Call 2026",
       "org": "FotoFilmic",
