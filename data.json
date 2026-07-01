@@ -50,7 +50,7 @@
       ],
       "submitVia": "Exposure One Awards",
       "submitUrl": "https://exposureoneawards.com/contests/photographer-of-the-year",
-      "requirements": "Single image or series of 2–5",
+      "requirements": "1–5 images",
       "ai": "Not accepted",
       "slug": "exposure-one-awards-photographer-of-the-year-2026",
       "orgInTitle": true,
@@ -77,7 +77,8 @@
       "slug": "blank-wall-gallery-summer",
       "orgInTitle": true,
       "summary": "Themed open call on 'Summer' — light, heat, stillness, travel. Free to submit; selected work exhibited at Blank Wall Gallery, Athens.",
-      "dateAdded": "2026-06-30T23:28:58Z"
+      "dateAdded": "2026-06-30T23:28:58Z",
+      "resultsDate": "August 18, 2026"
     },
     {
       "title": "Color Space: Contemporary Photography 2026",
@@ -13974,7 +13975,7 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-15",
       "submitVia": "Instagram DM",
-      "submitUrl": "https://instagram.com/opendoors.gallery",
+      "submitUrl": "https://instagram.com/odtakeovers",
       "summary": "Discovery account featuring artist takeovers. Connected to UNSEEN art fair and Approche.",
       "ai": null,
       "jury": [],
@@ -15342,13 +15343,13 @@
       "prize": "€30,000",
       "eligibility": [],
       "submitVia": "Website form",
-      "requirements": "5–10 images",
+      "requirements": "2–10 images",
       "ai": "Not accepted",
       "slug": "milano-photo-awards-2026-thestreetsoup",
       "orgInTitle": false,
       "resultsDate": null,
       "dateAdded": "2026-03-18",
-      "submitUrl": "https://milanophotoawards.com/checkout/",
+      "submitUrl": "https://milanophotoawards.com/en/checkout/",
       "summary": "Exhibition and contest in Milan. Street, portraits, reportage, nature. Lead judge Estevan Oriol; Nikon Italia.",
       "jury": [
         "Estevan Oriol, Lead Judge, The Oriol Vision Award"
@@ -16077,7 +16078,7 @@
       "ai": "Not accepted",
       "dateAdded": "2026-03-18",
       "requirements": "1 image",
-      "resultsDate": "September 2026",
+      "resultsDate": "September 15, 2026",
       "submitUrl": "https://beautifulbizarreartprize.art/enter-beautiful-bizarre-art-prize/entry-photography/",
       "jury": [
         "Franz Szony, Photographer"
@@ -27109,14 +27110,15 @@
       "eligibility": [
         "18-plus"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Picter",
       "requirements": "Up to 40 images",
       "ai": "Not accepted",
       "slug": "w-eugene-smith-grant-in-humanistic-photography-2026",
       "orgInTitle": true,
       "summary": "46th annual humanistic photography grant. $30,000 to the winner plus two $10,000 finalist grants. Up to 40 images; AI not accepted.",
       "dateAdded": "2026-06-29T23:15:05Z",
-      "resultsDate": "December 2026"
+      "resultsDate": "December 15, 2026",
+      "submitUrl": "https://site.picter.com/w-eugene-smith-fund-grant-2026"
     },
     {
       "title": "Through the Lens: Presence and Absence",
@@ -27159,7 +27161,8 @@
       "orgInTitle": true,
       "summary": "Four-week fall residency at KinoSaito arts center in Verplanck, NY. $1,500 stipend, studio + housing. All media incl. photography.",
       "dateAdded": "2026-06-29T23:15:05Z",
-      "resultsDate": "August 30, 2026"
+      "resultsDate": "August 30, 2026",
+      "instagram": "@kinosaito"
     },
     {
       "title": "Pioneer Works Visual Arts Residency 2027",
@@ -27198,7 +27201,12 @@
       "orgInTitle": true,
       "summary": "Two winners each get a 4-week residency in Australia's Blue Mountains plus A$5,000. Photography & film eligible. Entry A$40.",
       "dateAdded": "2026-06-29T23:15:05Z",
-      "resultsDate": "August 22, 2026"
+      "resultsDate": "August 22, 2026",
+      "jury": [
+        "Lea Kannar-Lichtenberger, Environmental Artist & Researcher",
+        "Brian Wallace, Founder, Red Gate Gallery",
+        "Dan Gottlieb, Artist & Museum Designer"
+      ]
     },
     {
       "title": "Catskill Art Space Call for Submissions 2026",
@@ -27241,7 +27249,8 @@
       "orgInTitle": true,
       "summary": "Second annual juried open submission at The Hunt Museum, Limerick. Photography eligible; €15/artwork. Show Dec 2026 – Feb 2027.",
       "dateAdded": "2026-06-29T23:15:05Z",
-      "instagram": "@huntmuseum"
+      "instagram": "@huntmuseum",
+      "resultsDate": "October 17, 2026"
     },
     {
       "title": "Reflections Through Time: 2026 Evendale Juried Photography Exhibition",
