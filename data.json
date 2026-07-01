@@ -11,14 +11,18 @@
       "url": "https://blackboxgallery.com/Black%20and%20White-2026-CFE.html",
       "instagram": "@blackboxgallerypdx",
       "location": "Portland, OR, USA",
-      "prize": "Free professional printing, matting & framing; inclusion in printed catalog; 50/50 sales split",
+      "prize": "Exhibition + catalog",
       "eligibility": [],
       "submitVia": "Email",
-      "requirements": "Email up to 5 JPEGs (1200px longest side, 72 PPI, max 5MB) with PayPal fee",
+      "requirements": "Up to 5 images",
       "slug": "black-and-white-2026-black-box-gallery",
       "orgInTitle": false,
       "summary": "Juried black & white photography show at Black Box Gallery, Portland. Juror Todd Johnson; free printing & framing for selected works.",
-      "dateAdded": "2026-07-01T11:11:41Z"
+      "dateAdded": "2026-07-01T11:11:41Z",
+      "jury": [
+        "Todd Johnson, Founder & Director, Black Box Gallery"
+      ],
+      "resultsDate": "Mid-September 2026"
     },
     {
       "title": "One in Eight",
@@ -30,12 +34,12 @@
       "url": "https://emerging.fotografiska.com/missions/one-in-eight",
       "instagram": "@fotografiska.emerging",
       "location": "Berlin, Germany",
-      "prize": "€1,500 per selected artist + exhibition at Fotografiska Berlin & Stockholm",
+      "prize": "€1,500 + Exhibition",
       "eligibility": [
         "emerging"
       ],
       "submitVia": "Fotografiska Emerging",
-      "submitUrl": "https://emerging.fotografiska.com/missions/one-in-eight",
+      "submitUrl": null,
       "slug": "one-in-eight-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Fotografiska Emerging × Estée Lauder call: emerging image-makers on the breast-cancer experience. €1,500 + exhibition in Berlin & Stockholm.",
@@ -50,16 +54,17 @@
       "description": "A 30-day funded residency (October 2026) in the Ribeira Sacra, Galicia, explicitly welcoming photography alongside video, installation and land art within hybrid visual practices. Residents stay in on-site geodesic domes and receive a travel allowance, daily stipend, meals and mentorship, with accessibility support available on request.",
       "url": "https://ocastroartvillage.com/open-call-visual-artist-residency-o-castro-art-village/",
       "location": "Ribeira Sacra, Galicia, Spain",
-      "prize": "Accommodation + €400–€800 travel allowance + €30/day stipend + mentorship (30 days)",
+      "prize": "Funded residency + €30/day stipend",
       "eligibility": [
         "europe"
       ],
       "submitVia": "Email",
-      "requirements": "Letter of interest (max 400 words), portfolio/documentation, CV, proof of European residency",
+      "requirements": "Portfolio",
       "slug": "visual-mixed-media-artist-residency-o-castro-art-village",
       "orgInTitle": false,
       "summary": "Funded 30-day October residency in Galicia's Ribeira Sacra, welcoming photography. Domes, travel allowance, €30/day stipend and mentorship.",
-      "dateAdded": "2026-07-01T11:11:41Z"
+      "dateAdded": "2026-07-01T11:11:41Z",
+      "instagram": "@ocastrovillage"
     },
     {
       "title": "Myoju Artist Residency 2026",
@@ -70,13 +75,15 @@
       "description": "A fully-sponsored month-long residency (September 1–28, 2026) in Omihachiman, Shiga, Japan — about 35 minutes from Kyoto — open to visual arts, media/digital arts, literary arts and curatorial practice. Residents receive a private bedroom and studio plus shared communal facilities; artists cover their own travel and meals.",
       "url": "https://myoju.com/pages/air",
       "location": "Omihachiman, Shiga, Japan",
-      "prize": "Sponsored residency: private bedroom + private studio + shared facilities",
+      "prize": "Sponsored residency",
       "eligibility": [],
       "submitVia": "Official website",
       "slug": "myoju-artist-residency-2026",
       "orgInTitle": true,
       "summary": "Fully-sponsored month-long residency near Kyoto, Japan, open to visual & media artists. Private bedroom and studio; artist covers travel.",
-      "dateAdded": "2026-07-01T11:11:41Z"
+      "dateAdded": "2026-07-01T11:11:41Z",
+      "instagram": "@myojujapan",
+      "submitUrl": "https://forms.gle/CGtywf41QvkeDi5F7"
     },
     {
       "title": "ECHOES — Cambridge Photography Gallery",
@@ -300,7 +307,8 @@
       "slug": "the-autumn-national-2026-cape-cod-art-center",
       "orgInTitle": false,
       "summary": "Open juried all-media national at Cape Cod Art Center, photography included, with cash awards. Entries via Smarter Entry.",
-      "dateAdded": "2026-06-30T15:10:10Z"
+      "dateAdded": "2026-06-30T15:10:10Z",
+      "resultsDate": "October 2, 2026"
     },
     {
       "title": "Photography+ Open Call: Multiplication",
@@ -409,7 +417,19 @@
       "orgInTitle": true,
       "summary": "Award for photography of the Greater Maghreb & Mediterranean — $2,000 in prizes plus exhibition at Essaouira and Tunisia festivals.",
       "dateAdded": "2026-06-29T19:06:49Z",
-      "resultsDate": "August 20, 2026"
+      "resultsDate": "August 20, 2026",
+      "jury": [
+        "Wassyla Tamzali, Founder, Villa Abdellatif (Algiers)",
+        "Outmane Hibat Allah (Othman Chic), Founder, Essaouira Fashion Week",
+        "Hajer Azzouz, Founder, La Maison de la Plage",
+        "Amina Tazi, Gallery Manager, Galerie Abla Ababou",
+        "Zola Massela, Founder, Libres Couleur Gallery",
+        "Lamia Ben Ayed, Founder, Musk & Amber",
+        "Palmyre Tramini, Curator",
+        "Souhayl A, Photographer & Artistic Director",
+        "Luisa Corcione, Artist & Curator",
+        "Malaïka Umara, Artist & Curator"
+      ]
     },
     {
       "title": "Susan McLaughlin Risograph Photobook Award 2026",
@@ -2380,7 +2400,7 @@
       ],
       "submitVia": "JotForm",
       "submitUrl": "https://form.jotform.com/261543266403150",
-      "requirements": "Up to 10 images",
+      "requirements": "4+ images",
       "slug": "overcoming-decagon-gallery",
       "orgInTitle": false,
       "summary": "Online photography show on resilience and endurance after hardship. Juror Douglas Beasley. $1,000 total cash awards.",
@@ -22171,7 +22191,7 @@
         "18-plus"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://www.eurostarshotels.com/eurostars-grand-marina/premio-de-fotografia.html",
+      "submitUrl": null,
       "requirements": "Up to 3 triptychs",
       "slug": "xxiv-eurostars-grand-marina-photography-award-josep-juanpere-2026",
       "orgInTitle": true,
@@ -27001,7 +27021,7 @@
       "orgInTitle": false,
       "summary": "HCP's annual fellowship: two photographers worldwide each win $3,000 plus a solo show. 2026 juror Natasha Egan (MoCP Chicago).",
       "dateAdded": "2026-06-22T15:29:44.463Z",
-      "ai": "Accepted"
+      "ai": "Accepted (must disclose)"
     },
     {
       "title": "Bath Open Art Prize 2026",
