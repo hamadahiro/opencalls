@@ -17,7 +17,8 @@
       "slug": "echoes-cambridge-photography-gallery",
       "orgInTitle": true,
       "summary": "Every photograph as an echo — of the past, of lived spaces, even of what never happened. Online show + a physical Cambridge exhibition.",
-      "dateAdded": "2026-07-01T03:05:58Z"
+      "dateAdded": "2026-07-01T03:05:58Z",
+      "ai": "Not accepted"
     },
     {
       "title": "On Film — Carlotta Gallery",
@@ -264,7 +265,8 @@
       "slug": "john-chervinsky-emerging-photographer-scholarship-2026",
       "orgInTitle": false,
       "summary": "Annual Griffin Museum scholarship for emerging photographers without solo shows — $3,000, a solo exhibition and a book. Free to enter.",
-      "dateAdded": "2026-06-30T07:08:30Z"
+      "dateAdded": "2026-06-30T07:08:30Z",
+      "resultsDate": "By January 2027"
     },
     {
       "title": "SE Center for Photography — The Abandoned Landscape",
@@ -951,7 +953,10 @@
         "Submissions are made by email to festival@fondazionecapri.org as a single PDF inside a .zip folder no larger than 10MB, containing the project images, a brief descriptive text, and the author's biography. The open call opened 30 March 2026 and closes 5 July 2026 at 23:59.",
         "A jury formed by the Directorate of Museums and Archaeological Parks of Capri together with Fondazione Capri selects one winning project, announced 13 July 2026, which is exhibited at the Certosa di San Giacomo as part of the festival programme alongside the invited photographers."
       ],
-      "dateAdded": "2026-06-18T15:18:12.399Z"
+      "dateAdded": "2026-06-18T15:18:12.399Z",
+      "jury": [
+        "Musei e Parchi Archeologici di Capri & Fondazione Capri"
+      ]
     },
     {
       "title": "Gaze – The Queer Photo Award 2026",
@@ -3011,7 +3016,7 @@
       "prize": "$4,000",
       "eligibility": [],
       "jury": [
-        "Darren Ching, Klompching Gallery"
+        "Darren Ching, Co-Owner, Klompching Gallery"
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Unlimited images",
@@ -3242,7 +3247,7 @@
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/879bef46-a716-4bf9-b6f5-7933e6d3b60d/start",
       "requirements": "1–15 images",
-      "ai": null,
+      "ai": "Accepted",
       "slug": "preus-museum-open-call-2026-passion",
       "orgInTitle": true,
       "summary": "Preus Museum's themed open call with Oslo Negativ. Theme: Passion. Winner gets NOK 20,000, exhibition, and collection acquisition.",
@@ -3291,7 +3296,7 @@
       "url": "https://roundhousefoundation.org/pine-meadow-ranch/residencies/",
       "instagram": "@pinemeadowranch",
       "location": "Sisters, OR, USA",
-      "prize": "2–4 week residency + $200/week stipend",
+      "prize": "2- or 4-week residency + $200/week stipend",
       "eligibility": [
         "united-states"
       ],
@@ -3307,7 +3312,10 @@
         "The 2027 cycle is themed \"Process and Material\" and welcomes a wide range of disciplines, with photography (digital) explicitly listed as eligible. Applications are submitted through SlideRoom and evaluated by panels of external reviewers established in fields associated with PMRCAA's mission. The deadline is July 6, 2026 at midnight PST; finalist interviews take place in mid-August and residency decisions are announced in September 2026."
       ],
       "dateAdded": "2026-05-31T19:08:46.701Z",
-      "requirements": "Portfolio"
+      "requirements": "Portfolio",
+      "jury": [
+        "Panels of external reviewers"
+      ]
     },
     {
       "title": "Put a Pin(hole) In It",
@@ -24750,9 +24758,7 @@
       "instagram": "@dusk.photogallery",
       "location": "Santa Fe, NM, USA",
       "prize": "Exhibition",
-      "eligibility": [
-        "southwest-us"
-      ],
+      "eligibility": [],
       "jury": [
         "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
       ],
@@ -24820,15 +24826,14 @@
       "fee": "$25 + $10 media fee",
       "category": "exhibition",
       "description": "Open call from The Peale, Baltimore's community museum, for work portraying life in Baltimore. Open to artists 18+ residing in Baltimore City and surrounding counties. All media welcome — painting, drawing, photography, printmaking, sculpture, assemblage — as physical 2D and 3D works (digital work must be presented as physical output; no screen-based media). Work must be original, created within the past three years, and not previously exhibited at The Peale. Exhibition October 2026 at The Peale; works are available for purchase with artists receiving 60% of the sale price. $25 entry plus $10 media fee.",
-      "url": "https://thepeale.org/life-in-baltimore/",
+      "url": "https://thepeale.org/call-for-artists-life-in-baltimore/",
       "instagram": "@thepealebaltimore",
       "location": "Baltimore, MD, USA",
       "prize": "Exhibition + Cash awards",
-      "eligibility": [
-        "18-plus",
-        "maryland"
+      "eligibility": [],
+      "jury": [
+        "Curators from Baltimore, Maryland, Delaware & DC art museums and institutions"
       ],
-      "jury": [],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16810",
       "requirements": "Up to 3 images",
@@ -24909,7 +24914,7 @@
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfbJg0tvohVDJSFpeyGeQdCWAoHBzBUrjYEnlGqX8kK1tfe6g/viewform",
       "slug": "lacawac-artists-residency-2026",
       "orgInTitle": false,
-      "summary": "Week-long nature residency at a 550-acre Pocono lake sanctuary. $300/week with room and studio; rolling applications.",
+      "summary": "Week-long nature residency at a 550-acre Pocono lake sanctuary; $300/week (self-funded) covers room and Carriage House studio. Rolling applications.",
       "dateAdded": "2026-06-11T07:35:55Z"
     },
     {
@@ -25137,7 +25142,10 @@
       "orgInTitle": false,
       "summary": "Three-month live-in residency at a Michigan art park with house, studios, and $500 stipends. Open internationally.",
       "dateAdded": "2026-06-11T11:28:58Z",
-      "instagram": "@cityofnovi"
+      "instagram": "@cityofnovi",
+      "jury": [
+        "Panel led by a rotating guest juror"
+      ]
     },
     {
       "title": "sƛ̓x̣etkʷ Artist-in-Residence Program — Round 3",
