@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Catskill Art Space. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/catskill-art-space-call-for-submissions-2026/">Catskill Art Space Call for Submissions 2026</a></h3><p class="call-description">Solo-presentation open call at Catskill Art Space, NY. $1,000 honorarium, free to apply. All media incl. photography; due July 1.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Catskill Art Space' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Catskill Art Space').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

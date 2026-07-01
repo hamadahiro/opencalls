@@ -105,8 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Light Work. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/2027-artist-in-residence-program-light-work/">2027 Artist-in-Residence Program &middot; Light Work</a></h3><p class="call-description">One-month residency in Syracuse for photographers. $7,500 stipend, apartment, 24-hour darkroom/digital access. Published in Contact Sheet.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/light-work-artist-in-residence-2027/">Light Work Artist-in-Residence 2027</a></h3><p class="call-description">One-month residency with $7,500 stipend and furnished apartment. Published in Contact Sheet. Open worldwide.</p></div>
 
     </section>
 
@@ -124,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Light Work' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Light Work').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
