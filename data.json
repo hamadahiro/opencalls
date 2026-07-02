@@ -22,7 +22,8 @@
       "slug": "tokas-emerging-2027",
       "orgInTitle": true,
       "summary": "Four artists 35 or younger based in Japan get solo shows at TOKAS Hongo plus ¥150,000 production support. Free; application in Japanese.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "September 2026"
     },
     {
       "title": "Dek Unu Magazine — October 2026 Issue",
@@ -48,7 +49,7 @@
     {
       "title": "Photo Trouvée Virtual Artist Residency — Fall 2026",
       "org": "Photo Trouvée Magazine",
-      "deadline": "2026-08-20",
+      "deadline": "2026-09-04",
       "fee": "$650",
       "category": "residency",
       "description": "10-week virtual residency (September 4 – November 6, 2026) for artists who work with or are inspired by found/family photographs. Weekly Zoom calls, bio/statement workshops, artist talks, group feedback, and accountability groups in a cohort of 6–9 artists. Open worldwide to artists at any career stage and in any medium, as long as found or family photography informs the work; participants commit to attending at least 80% of weekly calls. Partial scholarships available.",
@@ -108,7 +109,8 @@
       "slug": "new-visionary-magazine-issue-18",
       "orgInTitle": false,
       "summary": "Two-page print spread with Q&A in New Visionary Magazine, curated by Michelle Brandt. Open worldwide, all mediums incl. photography.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "September 2026"
     },
     {
       "title": "Source Writing Prize 2026",
@@ -122,7 +124,9 @@
       "location": "Belfast, Northern Ireland",
       "prize": "£500 + publication",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Richard West, Editor, Source"
+      ],
       "submitVia": "Google Form",
       "submitUrl": "https://forms.gle/bwjHFAtLm6ztYMePA",
       "resultsDate": "By September 20, 2026",
@@ -208,9 +212,13 @@
       "eligibility": [
         "california"
       ],
-      "jury": [],
+      "jury": [
+        "Denis Callet",
+        "Althea Edwards",
+        "Neal Parekh"
+      ],
       "submitVia": "Official website",
-      "requirements": "Up to 14 images (2 per category)",
+      "requirements": "Up to 14 images",
       "ai": "Not accepted",
       "resultsDate": "September 2026",
       "slug": "afc-nature-photography-contest-2026",
@@ -291,19 +299,22 @@
       "url": "https://d-artcenter.org/exhibitions/",
       "instagram": "@dartcenternfk",
       "location": "Norfolk, VA, USA",
-      "prize": "Exhibition",
+      "prize": "$300 + Exhibition",
       "eligibility": [
         "united-states",
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Amanda Bradley, Gallery Director, d'Art Center"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17620",
       "requirements": "3–10 images",
       "slug": "tiny-but-mighty-dart-center",
       "orgInTitle": true,
       "summary": "National juried show of artworks under 8 inches at Norfolk's d'Art Center — all mediums and styles; exhibition Aug 22–Sep 19.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "By July 13, 2026"
     },
     {
       "title": "2026 CWA National Open Juried Exhibition",
@@ -331,7 +342,8 @@
       "slug": "2026-cwa-national-open-juried-exhibition",
       "orgInTitle": true,
       "summary": "National juried show from one of the oldest US women's art organizations — $2,100 in awards at ECSU's Akus Gallery; photography accepted.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "instagram": "@ctwomenartists"
     },
     {
       "title": "Sixth LaGrange Southeast Regional",
@@ -371,14 +383,17 @@
         "united-states",
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Wendell Poindexter, Professor of Art, Frederick Community College"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17690",
       "requirements": "1–3 images",
       "slug": "unscripted-artspiration-frederick",
       "orgInTitle": false,
       "summary": "Open-themed juried show at Frederick's nonprofit community art center — artwork free from prescribed narratives; photography welcome.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "Week of July 17, 2026"
     },
     {
       "title": "Summer Open Juried Exhibition",
@@ -390,9 +405,10 @@
       "url": "https://www.westportalgallery.com/",
       "instagram": "@westportalgallery",
       "location": "San Francisco, CA, USA",
-      "prize": "Exhibition",
+      "prize": "$500 in awards + Exhibition",
       "eligibility": [
-        "bay-area"
+        "bay-area",
+        "18-plus"
       ],
       "jury": [],
       "submitVia": "CaFE",
@@ -401,7 +417,8 @@
       "slug": "summer-open-juried-exhibition-west-portal-gallery",
       "orgInTitle": false,
       "summary": "Bay Area open juried summer show at San Francisco's West Portal Gallery — all media including photography; show runs Aug 28–Oct 1.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "July 24, 2026"
     },
     {
       "title": "2026 Great Northern Art Explosion",
@@ -424,7 +441,8 @@
       "slug": "2026-great-northern-art-explosion",
       "orgInTitle": false,
       "summary": "$8,000 in awards with a $2,500 grand prize at Grayling, Michigan's annual juried competition — photography among accepted media.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "July 31, 2026"
     },
     {
       "title": "2026 Members Exhibition — Hunterdon Art Museum",
@@ -436,7 +454,7 @@
       "url": "https://www.hunterdonartmuseum.org/2026-members-exhibition-call-for-entries/",
       "instagram": "@hunterdonartmuseum",
       "location": "Clinton, NJ, USA",
-      "prize": "Solo exhibition",
+      "prize": "Solo exhibition + $100",
       "eligibility": [
         "membership-required"
       ],
@@ -472,7 +490,9 @@
       "slug": "call-of-the-wild-virtual-exhibition-2026",
       "orgInTitle": false,
       "summary": "Flora-and-fauna virtual show from SFVACC — Best of Show wins $800 plus a solo exhibition; open worldwide to artists and photographers.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "resultsDate": "By August 19, 2026",
+      "requirements": "Up to 6 images"
     },
     {
       "title": "18th Annual Juried Show — Riverviews Artspace",
@@ -484,7 +504,10 @@
       "url": "https://riverviews.net/",
       "location": "Lynchburg, VA, USA",
       "prize": "$750 + portfolio review",
-      "eligibility": [],
+      "eligibility": [
+        "united-states",
+        "18-plus"
+      ],
       "jury": [
         "Amy Calandra Davis, Founder & Curator, Findings Art Gallery"
       ],
@@ -494,7 +517,8 @@
       "slug": "18th-annual-juried-show-riverviews-artspace",
       "orgInTitle": true,
       "summary": "Reinterpret a pre-1935 artwork for Lynchburg's Craddock-Terry Gallery — $750 grand prize plus portfolio review; all media considered.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "ai": "Not accepted"
     },
     {
       "title": "The Fridge Show",
@@ -24673,7 +24697,7 @@
       "category": "zine",
       "description": "Shapes-themed issue of AAP Magazine. Open to photographers 18+; submit a cohesive series of at least 3 images (up to 40) exploring geometric and organic forms across any genre — architecture, portrait, landscape, street or experimental. 25 winners published in AAP Magazine Volume 59 with online gallery placement and a free copy. Cash prizes: $500 (1st), $300 (2nd), $200 (3rd). Early-bird fee ($30 for first 3 images, $5 each additional) ends June 19, 2026; regular fee $35 thereafter.",
       "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=227",
-      "instagram": "@allaboutphoto",
+      "instagram": "@allaboutphotocom",
       "location": "Online",
       "prize": "$500/$300/$200 + Publication",
       "eligibility": [
