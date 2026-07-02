@@ -715,7 +715,10 @@
       "slug": "one-in-eight-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Fotografiska Emerging × Estée Lauder call: emerging image-makers on the breast-cancer experience. €1,500 + exhibition in Berlin & Stockholm.",
-      "dateAdded": "2026-07-01T11:11:41Z"
+      "dateAdded": "2026-07-01T11:11:41Z",
+      "requirements": "1 image",
+      "resultsDate": "Mid-August 2026",
+      "ai": "Not accepted"
     },
     {
       "title": "Visual / Mixed-Media Artist Residency",
@@ -723,7 +726,7 @@
       "deadline": "2026-07-05",
       "fee": "Free (funded)",
       "category": "residency",
-      "description": "A 30-day funded residency (October 2026) in the Ribeira Sacra, Galicia, explicitly welcoming photography alongside video, installation and land art within hybrid visual practices. Residents stay in on-site geodesic domes and receive a travel allowance, daily stipend, meals and mentorship, with accessibility support available on request.",
+      "description": "A 30-day funded residency (October 2026) in the Ribeira Sacra, Galicia, explicitly welcoming photography alongside video, installation and land art within hybrid visual practices. Residents stay in on-site geodesic domes and receive a travel allowance, daily stipend, meals and mentorship, with accessibility support available on request. Open to legal residents of European countries other than Spain (proof of residency required).",
       "url": "https://ocastroartvillage.com/open-call-visual-artist-residency-o-castro-art-village/",
       "location": "Ribeira Sacra, Galicia, Spain",
       "prize": "Funded residency + €30/day stipend",
@@ -734,7 +737,7 @@
       "requirements": "Portfolio",
       "slug": "visual-mixed-media-artist-residency-o-castro-art-village",
       "orgInTitle": false,
-      "summary": "Funded 30-day October residency in Galicia's Ribeira Sacra, welcoming photography. Domes, travel allowance, €30/day stipend and mentorship.",
+      "summary": "Funded 30-day October residency in Galicia's Ribeira Sacra for European residents outside Spain, welcoming photography. Domes, travel allowance, €30/day stipend and mentorship.",
       "dateAdded": "2026-07-01T11:11:41Z",
       "instagram": "@ocastrovillage"
     },
@@ -985,7 +988,7 @@
     {
       "title": "Photography+ Open Call: Multiplication",
       "org": "Photoworks",
-      "deadline": "2026-09-25",
+      "deadline": "2024-09-25",
       "fee": "Free",
       "category": "photography",
       "description": "Open call for the next issue of Photography+, Photoworks' online magazine, on the theme 'Multiplication' — exploring how images are reproduced and replicated in photography, with a focus on digital networks and emerging technologies. Submit a single image responding to the theme; one selected work receives an £80 artist fee and is featured in the next issue of Photography+, launching alongside the Photoworks Annual 'Multi Multi'. Open to anyone, anywhere in the world, with no professional experience required.",
@@ -1000,7 +1003,8 @@
       "orgInTitle": false,
       "summary": "Photoworks seeks a single image on the theme Multiplication for its Photography+ magazine. Selected artist gets £80. Free to enter.",
       "dateAdded": "2026-06-30T15:10:10Z",
-      "submitUrl": "https://forms.office.com/e/r4ydk2NAQF"
+      "submitUrl": "https://forms.office.com/e/r4ydk2NAQF",
+      "verifyNote": "STALE 2024 CALL, confirmed 2026-07-02: page says only \"Deadline to apply, 25 September\" (no year); JSON-LD datePublished 2024-09-02 / dateModified 2024-09-25; absent from photoworks.org.uk/opportunities (current open call: THE DRAFT). Deadline corrected 2026-09-25 → 2024-09-25; treat as closed. Do not restore a 2026 date without new evidence."
     },
     {
       "title": "John Chervinsky Emerging Photographer Scholarship 2026",
@@ -2376,8 +2380,8 @@
         "Olivier Verdier, Galerie Art Nomade"
       ],
       "submitVia": "Picter",
-      "submitUrl": "https://app.picter.com/contests/b64d4103-9e08-4c7e-85b6-8cd1cc84b843/start",
-      "requirements": "1-5 images",
+      "submitUrl": "https://site.picter.com/street-photography-barcelona-2026-pt2",
+      "requirements": "1, 3 or 5 images",
       "resultsDate": "October 20, 2026",
       "ai": "Not accepted",
       "slug": "street-photography-barcelona-contest-2026-2nd-edition",
@@ -2435,7 +2439,32 @@
       "slug": "photovogue-mena-panorama-2026",
       "orgInTitle": true,
       "summary": "Free Condé Nast call for MENA artists and diaspora. $8,000 in grants, 2027 PhotoVogue Festival feature, regional Vogue publication.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "jury": [
+        "Alessia Glaviano, Head of Global PhotoVogue",
+        "Afef Jnifen, Model & Cultural Commentator",
+        "Aidan Imanova, AD Middle East",
+        "Amine Jreissati, GQ Middle East",
+        "Azu Nwagbogu, African Artists' Foundation / LagosPhoto",
+        "Carla Sertin, WIRED Middle East",
+        "Doğukan Nesanir, Fashion Editor & Stylist",
+        "Elyanna, Artist",
+        "Haifaa al-Mansour, Filmmaker",
+        "Hoor Al Qasimi, Sharjah Art Foundation",
+        "Keanoush Zargham, Senior Fashion Editor",
+        "Khalifa Al Obaidly, Tasweer",
+        "Manuel Arnaut, Vogue Arabia",
+        "Meriem Bennani, Artist",
+        "Mohamad Abdouni, Artist & Founder, Cold Cuts",
+        "Mohamed Somji, Gulf Photo Plus",
+        "Newsha Tavakolian, Artist & Educator",
+        "Nora Attal, Model",
+        "Reem Fadda, Curator & Art Historian",
+        "Samira Larouci, Editor & Writer",
+        "Selina Denman, CN Traveller Middle East",
+        "Shadi Ghadirian, Artist",
+        "Thomas Khoury, Condé Nast Middle East"
+      ]
     },
     {
       "title": "Road Trip Across America Photography Exhibition",
@@ -2540,7 +2569,7 @@
     {
       "title": "TSHOW PHOTO.1",
       "org": "Tyler Art Lift",
-      "deadline": "2026-09-17",
+      "deadline": "2026-09-07",
       "fee": "$45 (+$5 each addl)",
       "category": "exhibition",
       "description": "First photography-dedicated edition of TSHOW, the international juried exhibition from Texas nonprofit Tyler Art Lift, created to highlight the diversity of contemporary photographic practice — traditional, experimental, documentary, conceptual, film and digital. Juried by Latvian fine art and fashion photographer Kristine Madjare, whose work has appeared in The New York Times, The Wall Street Journal and Financial Times. Exhibition at Gallery Main Street in Tyler, Texas, October 15–24, 2026, with cash prizes of $1,000 Best in Show, $500 runner-up and a $500 People's Choice chosen at the opening. Open internationally to artists 18+; $45 for the first entry, $5 each additional; 30% sales commission supports the show.",
@@ -5675,7 +5704,7 @@
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://www.photolucida.org/critical-mass/contest-signup/",
-      "requirements": "10 images",
+      "requirements": "7–10 images",
       "ai": "Not accepted",
       "jury": [
         "Alexa Becker, Photography Coach & Publishing Consultant, DGPh",
@@ -6543,9 +6572,7 @@
       "url": "https://aperture.org/calls-for-entry/photobook-awards/",
       "location": "Paris, France",
       "prize": "$10,000 (First PhotoBook) + Paris Photo exhibition",
-      "eligibility": [
-        "18-plus"
-      ],
+      "eligibility": [],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/2026-paris-photo-aperture-photobook-awards",
       "instagram": "@aperturefnd",
@@ -18976,7 +19003,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt Shopify storefront STILL unavailable on 2026-06-27 (~6 weeks; curl returns HTTP 404 \"This store is unavailable\"; down since 2026-05-18). IG @loosenart still up. Homo Technologicus (Jul 22) unverifiable — call status uncertain; effectively dead if store stays down past deadline.",
+      "verifyNote": "LoosenArt storefront STILL down on 2026-07-02, now worse: SSL cert expired + Cloudflare 403 with -k (was 404 \"store unavailable\"; down since 2026-05-18). IG @loosenart still up. Homo Technologicus (Jul 22) unverifiable; effectively dead if store stays down past deadline.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
@@ -25684,7 +25711,7 @@
       "title": "Lacawac Artists' Residency 2026",
       "org": "Lacawac Sanctuary",
       "deadline": "Continuous",
-      "fee": "$10 application",
+      "fee": "Free to apply; $300/week",
       "category": "residency",
       "description": "Week-long residencies at Lacawac Sanctuary, a 550-acre nature preserve and biological field station in Pennsylvania's Pocono Mountains, for artists and writers whose work shows the influence of nature or the science behind it. Residents get a private bedroom in the historic Watres Lodge or Ice House, studio space in the Carriage House, and access to 9+ miles of trails and Lake Lacawac. Remaining 2026 sessions run July 5–10 and October 10–15; applications are rolling, recommended at least two weeks before a session. The residency costs $300 for the week, due at registration; participants provide their own meals and transport.",
       "url": "https://lacawac.org/our-impact/education/adult-programs/lacawac-artists-residency/",
@@ -25700,7 +25727,8 @@
       "slug": "lacawac-artists-residency-2026",
       "orgInTitle": false,
       "summary": "Week-long nature residency at a 550-acre Pocono lake sanctuary; $300/week (self-funded) covers room and Carriage House studio. Rolling applications.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "requirements": "Up to 5 work samples"
     },
     {
       "title": "Budapest International Foto Awards 2026",
@@ -25721,6 +25749,11 @@
         "Richard W. Gadd, Weston Gallery",
         "Domagoj Sever, Freelancer",
         "Lili Farkas-Zentai, Journalist & Editor",
+        "Milan Racmolnar, Budapesti Metropolitan University",
+        "Nora Kovats, Dobossy Auction House",
+        "Martin Krystynek, APFSR",
+        "Jesper Thomsen, Mews42 Gallery",
+        "Rohit Vohra, APF",
         "Susan Baraz, AtEdge",
         "Sherrie Berger, Photography Consultant"
       ],
@@ -25731,7 +25764,8 @@
       "orgInTitle": true,
       "summary": "International award with a winners' exhibition in Budapest. Ten categories incl. Analog/Film; extended to Jul 8, 2026.",
       "dateAdded": "2026-06-11T07:35:55Z",
-      "resultsDate": "August 2026"
+      "resultsDate": "August 2026",
+      "ai": "Accepted (separate category)"
     },
     {
       "title": "Paralaje Magazine — Issue Nº1",
@@ -25865,8 +25899,7 @@
       "location": "Zion National Park, UT, USA",
       "prize": "4-week residency",
       "eligibility": [
-        "18-plus",
-        "united-states"
+        "18-plus"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17588",
@@ -25879,7 +25912,8 @@
       "resultsDate": "January 2027",
       "jury": [
         "Zion Forever Project, NPS staff & Zion Arts and Humanities Council"
-      ]
+      ],
+      "verifyNote": "CaFE prospectus 17588 explicitly allows international applicants (\"must be eligible to receive a J-1 visa\") — no united-states tag, even though the NPS overview page says international applicants are not accepted; the live 2027 prospectus governs. Verified 2026-07-02."
     },
     {
       "title": "2027 Grand Canyon Artist in Residence",
@@ -25929,7 +25963,7 @@
       "dateAdded": "2026-06-11T11:28:58Z",
       "instagram": "@cityofnovi",
       "jury": [
-        "Panel led by a rotating guest juror"
+        "Panel of jurors"
       ]
     },
     {
@@ -26272,7 +26306,7 @@
       "jury": [],
       "submitVia": "Email",
       "requirements": "5 images",
-      "ai": "Accepted",
+      "ai": "Accepted (hybrid only)",
       "slug": "tusis-altered-states-annual-contest-2026-dek-unu-magazine",
       "orgInTitle": true,
       "summary": "Dek Unu's annual contest for experimental, alt-process, light-and-lens photography. $250 top prize plus August magazine publication.",
@@ -26349,7 +26383,8 @@
       "slug": "lanesboro-exhibition-gallery-2028",
       "orgInTitle": true,
       "summary": "Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "verifyNote": "As of 2026-07-02 the online application form is NOT on the page (\"updating currently but will add soon\"); working route is video application to gallery@lanesboroarts.org. Page also contains a stale \"2027\" sentence amid 2028-cycle copy. Recheck for the form."
     },
     {
       "title": "Lanesboro Early Career Artists Show 2027",
@@ -26372,7 +26407,8 @@
       "slug": "lanesboro-early-career-artists-show-2027",
       "orgInTitle": true,
       "summary": "Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.",
-      "dateAdded": "2026-06-11T19:43:58.718Z"
+      "dateAdded": "2026-06-11T19:43:58.718Z",
+      "verifyNote": "As of 2026-07-02 no online form on the page despite \"available below\" text; video application via gallery@lanesboroarts.org works. Recheck for the form."
     },
     {
       "title": "Her Art, Her Voice — 2027 Biennial Juried Exhibition",
@@ -26444,7 +26480,7 @@
         "18-plus"
       ],
       "jury": [
-        "Andrae Green, Assistant Professor, University of Hartford"
+        "Andrae Green, Assistant Professor of Painting and Drawing, University of Hartford"
       ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/artscentereast/space-negative-outer-living/",
@@ -26568,7 +26604,9 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Skip Marsh"
+      ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/artscentereast/vehicles-voyages/",
       "requirements": "Up to 5 works",
@@ -26753,7 +26791,7 @@
         "alternative-process"
       ],
       "jury": [
-        "Sam Wang, Professor Emeritus, Clemson University"
+        "Sam Wang, Alumni Distinguished Professor, Clemson University"
       ],
       "submitVia": "Website form",
       "submitUrl": "https://submit.photoplacegallery.com/landing/default",
