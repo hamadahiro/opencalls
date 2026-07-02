@@ -87,7 +87,7 @@ const eligibilityLabel = {
   'northern-california': 'Northern California only', 'tampa-bay': 'Tampa Bay only',
   'new-mexico': 'New Mexico only', 'massachusetts-rhode-island': 'MA & RI only', 'new-england': 'New England only',
   'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only',
-  'michigan': 'Michigan only'
+  'michigan': 'Michigan only', 'florida': 'Florida only', 'ark-la-tex': 'AR/LA/OK/TX only'
 };
 
 // ---- Pure functions ----

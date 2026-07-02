@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from reFocus Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/refocus-awards-world-photo-annual-2026/">reFocus Awards - World Photo Annual 2026</a></h3><p class="call-description">reFocus flagship annual across 22 categories — $5,000+ in cash, NYT/FT/Condé Nast jury, Photographer of the Year title.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'reFocus Awards').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'reFocus Awards' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
