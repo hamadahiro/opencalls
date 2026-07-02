@@ -895,7 +895,7 @@
       "title": "Exposure One Awards - Photographer of the Year 2026",
       "org": "Exposure One",
       "deadline": "2026-09-02",
-      "fee": "$22–$50",
+      "fee": "$22–$60",
       "category": "photography",
       "description": "Annual international photography contest from Exposure One Awards honouring outstanding photographers across 20 categories — including Abstract, Architecture, Conceptual, Fine Art, Landscapes, Portrait, Street, Travel and Wildlife. Entries are accepted as single images or series of 2–5 images from film, digital or mobile devices. Over $4,000 in cash prizes, plus an artist profile, winner's gallery feature, press release and interview. Judged by an international panel drawn from SFMOMA, Aperture, Vogue, the Art Gallery of Alberta and Leica Gallery LA.",
       "url": "https://exposureoneawards.com/contests/photographer-of-the-year",
@@ -1974,7 +1974,7 @@
       "title": "1839 Awards Photographer of the Year Contest",
       "org": "1839 Awards",
       "deadline": "2026-09-16",
-      "fee": "$27–$50",
+      "fee": "$29–$60",
       "category": "photography",
       "description": "Flagship open-genre cycle of the 1839 Awards, recognizing creators working with the camera as an art form across 22 categories — from Abstract, Aerial and Architecture to Film/Analog, Photojournalism, Street and Wildlife. Over $4,000 in cash prizes plus international media exposure, a profile in the 1839 Artist Directory, published interviews in 1839 Magazine, online exhibition space, and entry into the People's Vote Awards. Open worldwide to professional and non-professional photographers; single images or series of 2–5. Early bird pricing through July 22, regular deadline August 19, extended final deadline September 16; winners announced October 28, 2026.",
       "url": "https://1839awards.com/contests/photographer-of-the-year",
@@ -24306,7 +24306,7 @@
     {
       "title": "Bay Area Photography Open Exhibition 2026",
       "org": "The Image Flow",
-      "deadline": "2026-07-05",
+      "deadline": "2026-07-12",
       "fee": "$40 (up to 3 images)",
       "category": "exhibition",
       "description": "Second annual juried exhibition by The Image Flow (Mill Valley, CA) showcasing photographic artists in the extended San Francisco Bay Area. Open theme — all subject matter and media explorations eligible including digital, alternative processes, and analog. AI-generated images excluded. Restricted to photographers in nine Bay Area counties: Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma. Jurors: Ann Jastrab, Nelson Chan, and Nathan Lomas. Selected work shown in a group exhibition with reception at The Image Flow gallery; online showcasing; softcover catalog produced.",
@@ -24824,7 +24824,7 @@
     {
       "title": "2026 Honeywell Photography Competition",
       "org": "Honeywell Arts & Entertainment",
-      "deadline": "2026-07-17",
+      "deadline": "2026-07-11",
       "fee": "$25",
       "category": "exhibition",
       "description": "Juried photography competition and exhibition at the Clark Gallery in the Honeywell Center, Wabash, Indiana. Open to U.S. residents of all ages — amateurs, professionals, and students — in three categories: Color, Black & White (including sepia), and Altered Images. Artwork must be original and completed within five years of the deadline, and ready to hang. Jurors are not announced in advance to protect the integrity of the show. Awards include Best of Show plus first, second, and third place in each category and ten honorable mentions. Exhibition August 18 – September 23, 2026.",
@@ -26747,7 +26747,7 @@
       "fee": "$30",
       "category": "exhibition",
       "description": "Eleventh juried exhibition at the Stover Mill Gallery in Erwinna — Bucks County's longest continually running art gallery, now in its 66th season, owned and maintained by the nonprofit Tinicum Civic Association. Open to all media including photography (no giclée reproductions); one work per artist, maximum 36 inches framed. More than $3,000 in prize money awarded through a blind jury process judging artistic excellence and aesthetic vision. Shown over four weekends October 17 – November 8, 2026, with a reception October 18; accepted artists may also offer two unframed portfolio pieces for sale. All works must be for sale; 30% commission supports the gallery.",
-      "url": "https://tinicumcivicassociation.org/stovermillgallery/",
+      "url": "https://tinicumcivicassociation.org/juried_art_show-2026/",
       "location": "Erwinna, PA",
       "prize": "Over $3,000 in prizes",
       "eligibility": [],
@@ -28014,7 +28014,8 @@
         "Myriam Boulos"
       ],
       "eligibility": [
-        "women"
+        "women",
+        "non-binary"
       ],
       "slug": "phmuseum-2026-women-photographers-grant",
       "orgInTitle": true,

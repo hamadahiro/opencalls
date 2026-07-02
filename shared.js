@@ -59,7 +59,7 @@ const stateNameToAbbr = {};
 Object.keys(usStateNames).forEach(abbr => { stateNameToAbbr[usStateNames[abbr]] = abbr; });
 
 const eligibilityLabel = {
-  'women': 'Women', 'united-states': 'US only', 'europe': 'Europe only', 'italy': 'Italy only',
+  'women': 'Women', 'non-binary': 'Non-binary', 'united-states': 'US only', 'europe': 'Europe only', 'italy': 'Italy only',
   'emerging': 'Emerging artists', 'under-25': 'Under 25', 'under-30': 'Under 30', 'under-35': 'Under 35', 'under-40': 'Under 40',
   'lgbtq': 'LGBTQ+', 'analog-photography': 'Analog only', 'alternative-process': 'Alternative process',
   'professional': 'Professional only', 'membership-required': 'Membership required',
