@@ -532,6 +532,7 @@
       "prize": "Online exhibition",
       "eligibility": [],
       "submitVia": "Official website",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLScBqpeCNnxOJT7cvyWDKNZcwVPxGPzMBdzArwnLfvJMxA-IBQ/viewform",
       "requirements": "Up to 3 images",
       "slug": "the-fridge-show-blue-sky-gallery",
       "orgInTitle": false,
@@ -3532,7 +3533,11 @@
         "Sue Bishop, Flower Photographer",
         "Tracy Calder, Co-Founder, CUPOTY",
         "Viktoria Haack, Photographer",
-        "Wim van Egmond, Photomicrographer"
+        "Wim van Egmond, Photomicrographer",
+        "Alex Noriega, Nature Photographer & Educator",
+        "Chien C. Lee, Wildlife Photographer",
+        "Jaime Culebras, Nature Photographer",
+        "Keith Wilson, Editor & Photojournalist"
       ],
       "ai": "Not accepted",
       "slug": "close-up-photographer-of-the-year-2026-cupoty-8",
@@ -7348,7 +7353,7 @@
       "url": "https://www.luciefoundation.org/programs/scholarship/",
       "instagram": "@luciefoundation",
       "location": "Los Angeles, CA, USA",
-      "prize": "$8,000",
+      "prize": "$8,000 across 4 grants + Sony gear",
       "eligibility": [
         "18-plus"
       ],
@@ -7500,7 +7505,7 @@
     {
       "title": "Joan Wakelin Bursary 2026",
       "org": "Royal Photographic Society",
-      "deadline": "2026-07-06",
+      "deadline": "2026-07-14",
       "fee": "Free",
       "category": "grant",
       "description": "Annual £2,000 bursary for the production of a photographic essay on an overseas social documentary issue. Administered by the Royal Photographic Society in partnership with The Guardian. Winner also receives portfolio printing by Metro Imaging (up to 12 C-types at 16×12\") and a portfolio review with Creative Director Prof Steve Macleod. Established in 2005 in memory of documentary photographer Joan Wakelin (d. 2003). Funds new original projects only; does not support ongoing projects or travel to/within war zones. Awarded to individuals, not groups. Open to all photographers worldwide.",
@@ -7523,7 +7528,7 @@
         "The Joan Wakelin Bursary is a £2,000 grant for the production of a photographic essay on an overseas social documentary subject, administered by the Royal Photographic Society (RPS) in partnership with The Guardian. The bursary was established in 2005 in memory of documentary photographer Joan Wakelin, who died in 2003.",
         "Beyond the cash, the winner receives portfolio printing by Metro Imaging — up to 12 C-type prints at 16×12 inches — and a portfolio review with Creative Director Professor Steve Macleod. The combination is designed to fund production of the work and prepare it for editorial placement.",
         "The bursary funds only new original projects; ongoing work is not eligible. Travel to or within war zones is excluded. The award is given to individuals rather than groups or collectives.",
-        "There is no application fee, and the bursary is open to photographers worldwide. The 2026 deadline is July 6. Applications go through RPS's awards platform; applicants submit a project proposal rather than completed images."
+        "There is no application fee, and the bursary is open to photographers worldwide. The 2026 deadline is July 14. Applications go through RPS's awards platform; applicants submit a project proposal rather than completed images."
       ]
     },
     {
@@ -22532,7 +22537,7 @@
       "slug": "ian-parry-photojournalism-grant-2026",
       "orgInTitle": true,
       "summary": "£10,000 + Giles Duley mentorship for photojournalists 24 or under (or full-time photo students). Patron: Sir Don McCullin.",
-      "ai": "Not accepted",
+      "ai": null,
       "jury": [],
       "dateAdded": "2026-04-30T11:20:18.768Z",
       "prose": [
@@ -23498,7 +23503,7 @@
       ],
       "jury": [
         "Emma Lambert, Silvergrass Press",
-        "Matt Johnston, Photobooks &"
+        "Matt Johnston, Coventry University"
       ],
       "submitVia": "Post",
       "requirements": "1 photobook",
@@ -27171,7 +27176,7 @@
       "location": "Syracuse, NY, USA",
       "prize": "Museum solo exhibition",
       "eligibility": [
-        "new-york-state"
+        "central-new-york"
       ],
       "jury": [
         "Everson Museum curators"

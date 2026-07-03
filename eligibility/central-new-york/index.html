@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>New York State Open Calls 2026 - Monographica</title>
-  <meta name="description" content="Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.">
-  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/new-york-state/">
+  <title>Central New York Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists living and working within 75 miles of Syracuse, in Central New York.">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/central-new-york/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="New York State Open Calls 2026 - Monographica">
-  <meta property="og:description" content="Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.">
+  <meta property="og:title" content="Central New York Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists living and working within 75 miles of Syracuse, in Central New York.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/new-york-state/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/central-new-york/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "New York State Open Calls 2026",
-  "description": "Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.",
-  "url": "https://opencalls.monographica.com/eligibility/new-york-state/",
+  "name": "Central New York Open Calls 2026",
+  "description": "Open calls restricted to photographers and artists living and working within 75 miles of Syracuse, in Central New York.",
+  "url": "https://opencalls.monographica.com/eligibility/central-new-york/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -55,8 +55,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "New York State Open Calls",
-      "item": "https://opencalls.monographica.com/eligibility/new-york-state/"
+      "name": "Central New York Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/central-new-york/"
     }
   ]
 }
@@ -101,11 +101,12 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
-      <h1>New York State Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.</h2>
+      <h1>Central New York Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists living and working within 75 miles of Syracuse, in Central New York.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/cny-artist-initiative-2027-everson-museum-of-art/">CNY Artist Initiative 2027 &middot; Everson Museum of Art</a></h3><p class="call-description">Solo exhibitions at Syracuse's Everson Museum for artists within 75 miles. Curator-selected from 20-image applications.</p></div>
 
     </section>
 
@@ -123,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('new-york-state')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('central-new-york') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
