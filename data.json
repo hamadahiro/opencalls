@@ -665,12 +665,14 @@
       "category": "residency",
       "description": "A five-week faculty-led thematic visual-arts residency (January 25 – February 26, 2027) exploring speculative futures, science fiction, myth-making and world-building, using futurity as an anti-oppressive, restorative and decolonizing force. Artists receive individual studio space, faculty mentorship and studio visits, weekly talks and workshops, open studios, and access to specialized production facilities and the Paul D. Fleck Library and Archives. Eligible mediums explicitly include photography and digital media. All participants receive the Banff Centre Arts Scholarship (100% tuition plus 25% of meals and accommodation).",
       "url": "https://www.banffcentre.ca/programs/visual-arts/visual-arts-thematic-future-figurations-residency",
+      "instagram": "@banffcentre",
       "location": "Banff, Alberta, Canada",
       "prize": "Residency",
       "eligibility": [
         "18-plus"
       ],
       "submitVia": "Official website",
+      "submitUrl": "https://banffcentre.slideroom.com/#/Login/program/88341",
       "requirements": "6–10 images",
       "slug": "future-figurations-residency-banff-centre",
       "orgInTitle": false,
@@ -1246,7 +1248,7 @@
       "orgInTitle": true,
       "summary": "Shutter Hub Editions photobook celebrating the colour yellow. 100 images selected; pay-what-you-can, worldwide.",
       "resultsDate": "Within 12 weeks of deadline",
-      "ai": "Accepted",
+      "ai": "Accepted (must disclose)",
       "prose": [
         "The Colour Library is a series from Shutter Hub Editions, each volume a visual exploration of one colour — its presence, symbolism, and emotional range across different photographic styles. Following earlier volumes, this edition turns to yellow.",
         "The editors are looking for photographs in which yellow is present, dominant, or symbolically charged. One hundred images are selected for a perfect-bound, portrait-format printed book produced by Shutter Hub Editions and held in national archives worldwide, including the British Library and the V&A.",
@@ -2980,7 +2982,7 @@
     {
       "title": "Create! Magazine Issue #59",
       "org": "Create! Magazine",
-      "deadline": "2026-07-31",
+      "deadline": "2026-07-30",
       "fee": "$35 / 3 images",
       "category": "zine",
       "description": "Open call for Issue No. 59 of Create! Magazine, a print and digital publication for contemporary art reaching a global curator, collector, and gallerist audience. Open theme — all subjects and media welcome, with photography alongside painting, sculpture, installation, and other forms. Juried by Indira Cesarine, multidisciplinary artist and founder of The Untitled Space gallery in Tribeca, New York. Selected artists receive a four-page professional spread in the print and digital editions, website and social media features, and a complimentary digital issue. Submit up to 10 works (cohesive bodies encouraged) with a 300-word bio and artist statement. Open to all artists worldwide, no formal education or gallery representation required.",
@@ -26654,9 +26656,7 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [
-        "Skip Marsh"
-      ],
+      "jury": [],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/artscentereast/vehicles-voyages/",
       "requirements": "Up to 5 works",
