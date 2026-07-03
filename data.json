@@ -1391,7 +1391,10 @@
       "slug": "through-the-lens-photography-2026-the-joe-center-for-the-arts",
       "orgInTitle": false,
       "summary": "Juried photography show at a Florida community art center, Aug–Sep 2026. Open to all; $200 top award plus cash prizes.",
-      "dateAdded": "2026-06-25T07:07:12Z"
+      "dateAdded": "2026-06-25T07:07:12Z",
+      "jury": [
+        "Frank Jackowiak, Photographer"
+      ]
     },
     {
       "title": "19th Fòrum Fotogràfic Can Basté",
@@ -1765,7 +1768,7 @@
       "url": "https://queer-gaze.de/",
       "instagram": "@gaze.photoaward",
       "location": "Berlin, Germany",
-      "prize": "2× €1,000 + €500 + Exhibition",
+      "prize": "2× €1,000 + €500 MPB vouchers + Exhibition",
       "eligibility": [
         "18-plus",
         "lgbtq",
@@ -1778,7 +1781,7 @@
       "ai": "Not accepted",
       "slug": "gaze-the-queer-photo-award-2026",
       "orgInTitle": true,
-      "summary": "Queer photo award (theme 'HOW TO / GATHER') for LGBTQIA+ artists in Germany, EU & UK. Two €1,000 prizes plus a Berlin exhibition.",
+      "summary": "Queer photo award (theme 'HOW TO / GATHER') for LGBTQIA+ artists in Germany, EU & UK. Two €1,000 MPB vouchers plus a Berlin exhibition.",
       "prose": [
         "GAZE – the queer Photo-Award is an activist cultural project with a nationwide presence in Germany and international reach, created by and for the LGBTQIA+ community. It is run by Nadja Brendel, Judith Weber and Han Vogel under the agency Vielformat, hosted by Brendel, Vogel & Weber GbR as a non-profit project, with MPB — Europe's leading used-camera reseller — as its 2026 sponsor.",
         "The 2026 theme, 'HOW TO / GATHER – Queer Communities in Photography', focuses on queer spaces as places of gathering where identities can unfold freely. It asks what friendship, romantic love and family mean beyond heteronormative-patriarchal norms, and what happens when queer communities are threatened and access to queer spaces is denied.",
@@ -2257,7 +2260,10 @@
         "Teona Gogichaishvili, Curator & Co-founder, KOLGA TBILISI PHOTO",
         "Thibaut Wychowanok, Editor-in-Chief, Numéro Art",
         "Tom Page, Director, Open Doors Gallery",
-        "Valentina Sinis, Open Call 2025 Winner"
+        "Valentina Sinis, Open Call 2025 Winner",
+        "Valérie Prot, Photographer & Galerist",
+        "Valmont Achalme, Co-Founder, InCadaqués",
+        "Wilfrid Esteve, Head of Studio Hans Lucas"
       ],
       "submitUrl": "https://site.picter.com/incadaques-open-call-2026"
     },
@@ -4090,7 +4096,6 @@
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/879bef46-a716-4bf9-b6f5-7933e6d3b60d/start",
       "requirements": "1–15 images",
-      "ai": "Accepted",
       "slug": "preus-museum-open-call-2026-passion",
       "orgInTitle": true,
       "summary": "Preus Museum's themed open call with Oslo Negativ. Theme: Passion. Winner gets NOK 20,000, exhibition, and collection acquisition.",
@@ -28109,7 +28114,9 @@
       "instagram": "@workshop_13_",
       "location": "Ware, MA, USA",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/workshop13.org/",
       "requirements": "Up to 3 images",
@@ -28117,7 +28124,10 @@
       "slug": "through-the-lens-presence-and-absence-workshop13",
       "orgInTitle": false,
       "summary": "Workshop13's third photography exhibition in Ware, MA. Theme: presence and absence — what's missing in an image. AI not accepted.",
-      "dateAdded": "2026-06-29T23:15:05Z"
+      "dateAdded": "2026-06-29T23:15:05Z",
+      "jury": [
+        "James Gehrt, Juror"
+      ]
     },
     {
       "title": "KinoSaito Artist-in-Residence 2026",
