@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-02T03:35:00Z",
+  "lastUpdated": "2026-07-03T05:18:45.895Z",
   "calls": [
     {
       "title": "TOKAS-Emerging 2027",
@@ -18786,7 +18786,7 @@
       "dateAdded": "2026-03-21",
       "resultsDate": "January 3, 2027",
       "submitUrl": "https://monoawards.com/",
-      "summary": "International B&W competition with 14 categories. Professional and amateur divisions. Annual book.",
+      "summary": "International B&W competition with 13 categories. Professional and amateur divisions. Annual book.",
       "ai": null,
       "prose": [
         "Monochrome Photography Awards is a competition exclusively for black-and-white photography, founded in 2014 and run annually. Entries are split between two main category groups — Professional and Amateur — with subcategories under each (Architecture, Fine Art, Photojournalism, Portrait, and others). Winners receive the titles \"Monochrome Photographer of the Year\" (Professional) and \"Monochrome Discovery of the Year\" (Amateur).",
@@ -21367,9 +21367,7 @@
       "instagram": "@vacenterforthecreativearts",
       "location": "Amherst, VA, USA",
       "prize": "2-week funded residency",
-      "eligibility": [
-        "united-states"
-      ],
+      "eligibility": [],
       "submitVia": "SlideRoom",
       "requirements": "Up to 10 images",
       "slug": "vcca-phillip-and-edith-leonian-foundation-fellowship-in-photography",
@@ -25664,7 +25662,7 @@
       "description": "Swimming pools as subject matter — Key West's Jag Gallery invites work in any medium, including photography, that dives into pool culture, pool light, and poolside life. Open internationally to artists 18+; up to 5 entries, maximum 40 inches in any dimension, no AI-generated work. Exhibition August 5–30, 2026 at the gallery with an opening reception August 8 and a simultaneous online gallery. Judge's Choice, three honorable mentions, and People's Choice awards; winners are invited to a dedicated 2027 group show. Sales split 50/50.",
       "url": "https://www.jaggallery.art/upcoming-exhibits",
       "location": "Key West, FL, USA",
-      "prize": "Exhibition + 2027 group show invite",
+      "prize": "Exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -25691,7 +25689,10 @@
       "instagram": "@thepealebaltimore",
       "location": "Baltimore, MD, USA",
       "prize": "Exhibition + Cash awards",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus",
+        "baltimore-region"
+      ],
       "jury": [
         "Curators from Baltimore, Maryland, Delaware & DC art museums and institutions"
       ],
@@ -25760,7 +25761,7 @@
       "title": "Lacawac Artists' Residency 2026",
       "org": "Lacawac Sanctuary",
       "deadline": "Continuous",
-      "fee": "Free to apply; $300/week",
+      "fee": "$10 to apply; $300/week",
       "category": "residency",
       "description": "Week-long residencies at Lacawac Sanctuary, a 550-acre nature preserve and biological field station in Pennsylvania's Pocono Mountains, for artists and writers whose work shows the influence of nature or the science behind it. Residents get a private bedroom in the historic Watres Lodge or Ice House, studio space in the Carriage House, and access to 9+ miles of trails and Lake Lacawac. Remaining 2026 sessions run July 5–10 and October 10–15; applications are rolling, recommended at least two weeks before a session. The residency costs $300 for the week, due at registration; participants provide their own meals and transport.",
       "url": "https://lacawac.org/our-impact/education/adult-programs/lacawac-artists-residency/",
@@ -26005,7 +26006,7 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17359",
-      "requirements": "6–10 images",
+      "requirements": "Up to 10 images",
       "slug": "villa-barr-art-park-residency-2027",
       "orgInTitle": false,
       "summary": "Three-month live-in residency at a Michigan art park with house, studios, and $500 stipends. Open internationally.",
@@ -28276,7 +28277,7 @@
       "url": "https://www.eurostarshotels.co.uk/eurostars-madrid-tower/photography-prize.html",
       "instagram": "@eurostarshotels",
       "location": "Madrid, Spain",
-      "prize": "€5,000",
+      "prize": "€5,000 + €3,000 runner-up",
       "eligibility": [
         "18-plus"
       ],
@@ -28287,7 +28288,8 @@
       "orgInTitle": true,
       "summary": "€5,000 for photographs of Madrid's facades — free entry, up to 3 photos, from the Eurostars hotel group's award series.",
       "dateAdded": "2026-07-02T03:10:11Z",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "submitUrl": "https://www.eurostarshotels.co.uk/eurostars-madrid-tower/photography-prize.html"
     },
     {
       "title": "Flowing & Flying: A National Exhibit of Waterbirds and Waterscapes",
@@ -28313,7 +28315,8 @@
       "slug": "flowing-and-flying-dart-center",
       "orgInTitle": false,
       "summary": "National juried show of waterbirds and waterscapes at Norfolk's d'Art Center — all mediums, $950 in awards, show Aug 22–Sep 19.",
-      "dateAdded": "2026-07-02T03:10:11Z"
+      "dateAdded": "2026-07-02T03:10:11Z",
+      "resultsDate": "July 13, 2026"
     },
     {
       "title": "reFocus Awards - World Photo Annual 2026",
@@ -28409,7 +28412,9 @@
       "slug": "101-art-book-pattern-edition-arts-to-hearts-project",
       "orgInTitle": false,
       "summary": "101 artists chosen for a globally distributed hardcover book on the theme Pattern. $500 top prize; photography included.",
-      "dateAdded": "2026-07-02T03:14:20Z"
+      "dateAdded": "2026-07-02T03:14:20Z",
+      "requirements": "1–20 images",
+      "ai": "Accepted (must disclose)"
     },
     {
       "title": "Arts to Hearts Magazine Issue 14 — The Summer We Remember",
@@ -28431,7 +28436,8 @@
       "slug": "arts-to-hearts-magazine-issue-14-the-summer-we-remember",
       "orgInTitle": true,
       "summary": "Summer-memory themed issue of Arts to Hearts Magazine — $500 cash prize and feature spreads; all disciplines incl. photography.",
-      "dateAdded": "2026-07-02T03:14:20Z"
+      "dateAdded": "2026-07-02T03:14:20Z",
+      "requirements": "1–20 images"
     },
     {
       "title": "Rauschenberg Medical Emergency Grants — Cycle 37",
@@ -28454,7 +28460,8 @@
       "slug": "rauschenberg-medical-emergency-grants-cycle-37",
       "orgInTitle": false,
       "summary": "Up to $5,000 in emergency relief for US artists (photography included) facing unexpected medical costs. Free; closes July 14.",
-      "dateAdded": "2026-07-02T03:14:20Z"
+      "dateAdded": "2026-07-02T03:14:20Z",
+      "resultsDate": "September 4, 2026"
     },
     {
       "title": "Royal Society Publishing Photography Competition 2026",
@@ -28468,7 +28475,9 @@
       "location": "Online",
       "prize": "£1,000",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Panel of four judges"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://portal.royalsociety.org/photo-competition/",
       "requirements": "Up to 20 images",
@@ -28476,7 +28485,8 @@
       "slug": "royal-society-publishing-photography-competition-2026",
       "orgInTitle": true,
       "summary": "£1,000 top prize for photography by working scientists — free entry, five science categories, open at graduate level and above.",
-      "dateAdded": "2026-07-02T03:18:56Z"
+      "dateAdded": "2026-07-02T03:18:56Z",
+      "resultsDate": "December 2, 2026"
     },
     {
       "title": "The Nature Photography Contest 2026",
@@ -28491,14 +28501,19 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Luke Stackpoole",
+        "Cynthia Bandurek",
+        "Mario Cea"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://2026.thenaturephotocontest.com/",
       "ai": "Not accepted",
       "slug": "the-nature-photography-contest-2026",
       "orgInTitle": false,
       "summary": "Ten-category nature competition — €1,000 top prize, a tree planted per entrant, originals verified. Open worldwide, 18+.",
-      "dateAdded": "2026-07-02T03:18:56Z"
+      "dateAdded": "2026-07-02T03:18:56Z",
+      "resultsDate": "March 2027"
     },
     {
       "title": "12th International Phone-ography Competition",
@@ -28524,7 +28539,8 @@
       "slug": "12th-international-phone-ography-competition-fotofoto-gallery",
       "orgInTitle": false,
       "summary": "Phone-camera images only: ~30 works exhibited at this Long Island cooperative photo gallery, with $600 in cash awards.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "August 21, 2026"
     },
     {
       "title": "63rd Stockton Art League Juried Exhibition",
@@ -28549,7 +28565,8 @@
       "slug": "63rd-stockton-art-league-juried-exhibition",
       "orgInTitle": true,
       "summary": "National juried show at the Haggin Museum, juried by a Crocker Art Museum curator — $1,000 Best of Show; photography eligible.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "August 3, 2026"
     },
     {
       "title": "47th Annual National Juried Art Show",
@@ -28575,7 +28592,8 @@
       "slug": "47th-annual-national-juried-art-show-arts-council-of-wayne-county",
       "orgInTitle": false,
       "summary": "47-year national juried show in Goldsboro, NC — $1,950 in awards, NC Museum of Art-affiliated juror; photography eligible.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "August 26, 2026"
     },
     {
       "title": "Ghosts & Things Regional Exhibition",
@@ -28599,7 +28617,8 @@
       "slug": "ghosts-and-things-regional-exhibition-trahc",
       "orgInTitle": false,
       "summary": "Supernatural-themed juried show in Texarkana — $15 flat entry, $1,000 in awards, for AR/LA/OK/TX artists; photography eligible.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "August 19, 2026"
     },
     {
       "title": "SCA Open 2026",
@@ -28628,7 +28647,8 @@
       "slug": "sca-open-2026-sausalito-center-for-the-arts",
       "orgInTitle": true,
       "summary": "Statewide California open juried show with an SFMOMA curator on the jury — photography eligible; show Oct 30–Dec 6.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "Week of September 14, 2026"
     },
     {
       "title": "Point of Hue",
@@ -28653,7 +28673,8 @@
       "slug": "point-of-hue-ashton-gallery",
       "orgInTitle": false,
       "summary": "Color-themed national juried show at San Diego's Art on 30th — $1,000 in awards plus catalog; photography explicitly eligible.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "September 28, 2026"
     },
     {
       "title": "36th Annual All Florida Juried Art Show",
@@ -28679,7 +28700,8 @@
       "slug": "36th-annual-all-florida-juried-art-show-martinarts",
       "orgInTitle": false,
       "summary": "Statewide Florida juried survey, 36th year, at Stuart's Court House Cultural Center — $1,000 in awards; photography editions allowed.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "November 1, 2026"
     },
     {
       "title": "SMALL WORKS 2026",
@@ -28703,7 +28725,8 @@
       "slug": "small-works-2026-jag-gallery",
       "orgInTitle": false,
       "summary": "Key West holiday small-works show (max 10 inches) at Jag Gallery — photography eligible; winners get a 2027 group show.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "November 2, 2026"
     },
     {
       "title": "60th National Mother Lode Art Exhibition",
@@ -28727,7 +28750,8 @@
       "slug": "60th-national-mother-lode-art-exhibition-placerville-arts-association",
       "orgInTitle": false,
       "summary": "60th edition of this national juried exhibition near Sacramento — $4,250+ in awards, $700 Best of Show; photography eligible.",
-      "dateAdded": "2026-07-02T03:24:00Z"
+      "dateAdded": "2026-07-02T03:24:00Z",
+      "resultsDate": "Week of October 4, 2026"
     }
   ]
 }
