@@ -2184,7 +2184,7 @@
       "url": "https://numeromagazine.ch/plus/",
       "instagram": "@numeroswitzerland",
       "location": "Online",
-      "prize": "Publication + Cover feature",
+      "prize": "Publication",
       "eligibility": [
         "18-plus"
       ],
@@ -2236,7 +2236,8 @@
       "location": "Barcelona, Spain",
       "prize": "Barcelona exhibition",
       "eligibility": [
-        "women"
+        "women",
+        "non-binary"
       ],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/wsp-barcelona-exhibition-2026",
@@ -2249,7 +2250,7 @@
         "Sarah Leen, former Director of Photography, National Geographic",
         "Gulnara Lyabib Samoilova, Founder, Women Street Photographers"
       ],
-      "resultsDate": "August 2026"
+      "resultsDate": "August 17, 2026"
     },
     {
       "title": "InCadaqués Photo Festival Open Call 2026",
@@ -2387,7 +2388,8 @@
       "orgInTitle": true,
       "summary": "Free climate-art prize for creatives 14–30 with GEF and Re:wild. Eight finalists win $10K, $5K or $2K; jury incl. Hans Ulrich Obrist.",
       "dateAdded": "2026-06-09T23:39:14.396Z",
-      "ai": "Accepted"
+      "ai": "Accepted (must disclose)",
+      "resultsDate": "November 25, 2026"
     },
     {
       "title": "ProfiFoto New Talent Award 26/2",
@@ -2408,10 +2410,11 @@
       "orgInTitle": true,
       "summary": "German photo magazine's open call for emerging talent. Winners published in ProfiFoto, WhiteWall print exhibition, €3,000 cash pool.",
       "dateAdded": "2026-06-09T23:39:14.396Z",
-      "ai": "Accepted",
+      "ai": "Accepted (must disclose)",
       "jury": [
         "Editors of ProfiFoto, brand partners & independent photo curators"
-      ]
+      ],
+      "resultsDate": "August 20, 2026"
     },
     {
       "title": "Street Photography Barcelona Contest 2026 — 2nd Edition",
@@ -4079,7 +4082,7 @@
       "title": "Guest Room: Sunyoung Kim & Shinwook Kim",
       "org": "Der Greif",
       "deadline": "2026-07-13",
-      "fee": "Free (optional €10 donation)",
+      "fee": "Free (optional €5–€10 donation)",
       "category": "photography",
       "description": "Open call curated by Sunyoung Kim (Senior Curator, Hanmi Museum) and artist Shinwook Kim, on the theme \"Hyperobjects: Archipelagic Memories\" — exploring how photographs circulate across digital and material networks, fragmenting and reshaping personal and collective histories. Selected work is featured on Der Greif's platform, and selected artists receive a face-to-face feedback session with the curators. One artist receives a €250 Guest Room scholarship. Open globally; works previously selected in past Der Greif opportunities are not eligible.",
       "url": "https://dergreif.org/guest-room",
@@ -14861,7 +14864,7 @@
       "url": "https://www.alternativephotography.com/world-anthotype-day/",
       "instagram": "@alternativephotography_com",
       "location": "Online",
-      "prize": "Exhibition",
+      "prize": "Publication",
       "eligibility": [
         "alternative-process"
       ],
@@ -28985,7 +28988,12 @@
       "location": "Copenhagen, Denmark",
       "prize": "Solo exhibition + €537 artist fee",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Søren Pagter, Head of Photojournalism, Danish School of Media and Journalism",
+        "Patricia Breinholm Bertram, Curator, Martin Asbæk Gallery",
+        "Stinus Duch, Founder, Disko Bay Book",
+        "Maja Dyrehauge Gregersen, Managing Director, Copenhagen Photo Festival"
+      ],
       "submitVia": "Official website",
       "requirements": "10+ images",
       "slug": "copenhagen-photo-festival-call-for-solo-artists-2027",
