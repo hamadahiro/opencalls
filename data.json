@@ -243,6 +243,7 @@
       "instagram": "@internationalvaccineinstitute",
       "location": "Online",
       "prize": "$2,000",
+      "resultsDate": "Later in 2026",
       "eligibility": [
         "18-plus"
       ],
@@ -1284,7 +1285,7 @@
       "url": "https://www.decagongallery.com/something-like-joy-entry",
       "instagram": "@decagongallery",
       "location": "Online",
-      "prize": "$1,000 total",
+      "prize": "$1,000 + solo exhibition",
       "eligibility": [],
       "submitVia": "JotForm",
       "submitUrl": "https://form.jotform.com/261734082905155",
@@ -28923,7 +28924,9 @@
       "instagram": "@theindependentphoto",
       "location": "London, United Kingdom",
       "prize": "$2,700 pool",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Daniel Kordan, travel and landscape photographer"
       ],
