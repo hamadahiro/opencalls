@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/copenhagen-photo-festival-call-for-solo-artists-2027/">Copenhagen Photo Festival — Call for Solo Artists 2027</a></h3><p class="call-description">Solo-exhibition call for Copenhagen Photo Festival 2027 — theme 'Free Hands'. €537 fee, travel support, PR. Window July 8 – Sept 1.</p></div>
 
     </section>
 
@@ -124,7 +125,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Denmark').map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Denmark' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
