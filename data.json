@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-04T07:07:39Z",
+  "lastUpdated": "2026-07-04T09:15:00Z",
   "calls": [
     {
       "title": "TOKAS-Emerging 2027",
@@ -1999,7 +1999,7 @@
       "description": "Season-long photo contest from the Sirmione Award for Photography, inviting images of Sirmione and the wider Lake Garda basin. Two main themes — Sirmione and Lake Garda — each award €1,500 first prize, €500 second, and a two-night stay in Sirmione for third. Up to three photographs may be entered across the main themes (any shooting date), plus an optional fourth for the bonus tracks Margins (nature reclaiming abandoned spaces) or In the Heart of the Night (low-light work), which carry hospitality prizes; a special award honors the area's historical and archaeological heritage. Flat €10 registration regardless of the number of photographs; reflex, compact and phone cameras admitted.",
       "url": "https://sirmionefotografia.it/en/concorso/lake-garda-photo-challenge/",
       "location": "Sirmione, Italy",
-      "prize": "€1,500 + Sirmione stays",
+      "prize": "€1,500",
       "eligibility": [],
       "submitVia": "Official website",
       "requirements": "Up to 4 images",
@@ -2027,7 +2027,9 @@
       "instagram": "@1839awards",
       "location": "Online",
       "prize": "$4,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "1839 Awards",
       "submitUrl": "https://1839awards.com/auth/register",
       "requirements": "1–5 images",
@@ -3209,7 +3211,7 @@
     {
       "title": "In The Practice of Seeing — National Juried Photography Exhibition",
       "org": "Jacksonville State University",
-      "deadline": "2026-07-06",
+      "deadline": "2026-07-13",
       "fee": "$20",
       "category": "exhibition",
       "description": "National juried photography exhibition at Jacksonville State University's Hammond Gallery in Alabama, open to photographers working in all photographic processes — digital, film, alternative processes, mixed media incorporating photography, and photographic installations. The brief frames photography as an active process of perception rather than mere representation. Selected works are shown in the Manners Gallery, August 27–September 24, 2026. Juried by Jim Reiman, Assistant Professor of Photography and Graphic Design at Valdosta State University. Cash awards: $500 first, $300 second, $100 third.",
@@ -3230,7 +3232,7 @@
       "summary": "JSU national juried photography show in all processes — digital, film, alternative, installation. Cash prizes + gallery exhibition.",
       "instagram": "@jaxstategalleries",
       "ai": "AI editing OK, fully generated not accepted",
-      "resultsDate": "July 17, 2026",
+      "resultsDate": "No later than July 20, 2026",
       "dateAdded": "2026-06-05T19:11:51.696Z"
     },
     {
@@ -4811,7 +4813,7 @@
       "prize": "Group exhibition",
       "eligibility": [
         "women",
-        "lgbtq",
+        "non-binary",
         "65-plus"
       ],
       "submitVia": "EntryThingy",
@@ -4879,7 +4881,8 @@
       "location": "Bath, United Kingdom",
       "prize": "Camera equipment worth £750 + publication",
       "eligibility": [
-        "united-kingdom"
+        "united-kingdom",
+        "16-plus"
       ],
       "submitVia": "SurveyMonkey",
       "submitUrl": "https://www.surveymonkey.com/r/Adult_Photo_Comp_2026",
