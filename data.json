@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-03T05:18:45.895Z",
+  "lastUpdated": "2026-07-04T03:08:07Z",
   "calls": [
     {
       "title": "TOKAS-Emerging 2027",
@@ -28829,6 +28829,54 @@
         "Maren Lübbke-Tidow, Artistic Director",
         "Anna Voswinckel, Curator, Krakow Photomonth 2026"
       ]
+    },
+    {
+      "title": "UNPOSED Photography Exhibit",
+      "org": "Decode Gallery",
+      "deadline": "2026-08-21",
+      "fee": "$40",
+      "category": "exhibition",
+      "description": "Themed exhibition at Decode Gallery in Tucson seeking candid, unstaged photography — real life, unscripted, with no posing, staging, or performance, only genuine moments of human truth captured anywhere on earth. Open to all photographic styles and approaches. Twenty-six images are juried for the group exhibition by Decode founder Holly Hart, a conceptual fine art photographer. Selected artists receive complimentary professional printing and museum-quality framing; the artist supplies only the high-resolution JPEG. Exhibition runs October 3–31, 2026. Sales split 50/50 between gallery and artist. Open worldwide to amateur and professional photographers; entry is $40 for up to 5 images.",
+      "url": "https://decodegallery.com/unposed",
+      "location": "Tucson, AZ, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "submitUrl": "https://decodegallery.com/unposed-submission",
+      "requirements": "Up to 5 images",
+      "jury": [
+        "Holly Hart, Conceptual Fine Art Photographer & Decode Gallery Founder"
+      ],
+      "resultsDate": "Within 2 weeks of deadline",
+      "instagram": "@decode__gallery",
+      "slug": "unposed-photography-exhibit-decode-gallery",
+      "orgInTitle": false,
+      "summary": "Candid, unstaged photography exhibit in Tucson. 26 images juried by Holly Hart; pro printing and framing included.",
+      "dateAdded": "2026-07-04T03:08:07Z"
+    },
+    {
+      "title": "Three Artist Show",
+      "org": "Dusk Gallery",
+      "deadline": "2026-09-24",
+      "fee": "$40–$45",
+      "category": "exhibition",
+      "description": "Curated group exhibition at Dusk Gallery in Santa Fe celebrating the power of the series — three photographers are selected, each with a unified body of work connected through subject matter, tone, colour palette, or conceptual framework. Twenty-six images total are juried by Dusk founder Holly Hart. The gallery covers professional Luster-paper printing, matting, and 24×24 inch black museum-quality framing; artists supply only a high-resolution JPEG. Exhibition runs November 6–27, 2026 with an opening reception; post-exhibition sales split 50/50 and photographers retain full ownership and rights. Open worldwide to amateur and professional photographers. Entry is $40 for 5 images or $45 for up to 10.",
+      "url": "https://duskphotogallery.com/three-artist-show",
+      "location": "Santa Fe, NM, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "submitUrl": "https://duskphotogallery.com/three-artist-show-submission/",
+      "requirements": "5 or 10 images",
+      "jury": [
+        "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
+      ],
+      "resultsDate": "Within 2 weeks of deadline",
+      "instagram": "@dusk.photogallery",
+      "slug": "three-artist-show-dusk-gallery",
+      "orgInTitle": false,
+      "summary": "Curated three-photographer series show at Dusk Gallery (Santa Fe). Pro printing and framing covered; exhibition Nov 2026.",
+      "dateAdded": "2026-07-04T03:08:07Z"
     }
   ]
 }
