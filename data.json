@@ -4272,8 +4272,7 @@
         "Shortlisted artists are featured in Form Magazine, extending visibility beyond the fair. The theme is open, and both single images and series are accepted.",
         "Eligibility is global, open to photographers 18 and over. Submission is through Picter with 1–8 images and a €35 fee. The deadline is July 31, 2026."
       ],
-      "dateAdded": "2026-05-29T07:08:00.829Z",
-      "ai": "Not accepted"
+      "dateAdded": "2026-05-29T07:08:00.829Z"
     },
     {
       "title": "Metamorfosi Residency 2026",
@@ -5775,7 +5774,7 @@
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://www.photolucida.org/critical-mass/contest-signup/",
-      "requirements": "7–10 images",
+      "requirements": "10 images",
       "ai": "Not accepted",
       "jury": [
         "Alexa Becker, Photography Coach & Publishing Consultant, DGPh",
@@ -28191,7 +28190,8 @@
       "slug": "pioneer-works-visual-arts-residency-2027",
       "orgInTitle": true,
       "summary": "5-month Brooklyn residency at Pioneer Works. $5,000 award, free studio & darkroom access. Free to apply; photographers eligible.",
-      "dateAdded": "2026-06-29T23:15:05Z"
+      "dateAdded": "2026-06-29T23:15:05Z",
+      "resultsDate": "Late September 2026"
     },
     {
       "title": "BigCi Environmental Awards 2026",
@@ -28820,7 +28820,15 @@
       "orgInTitle": true,
       "summary": "Propose a photography exhibition for the 2027 EMOP Berlin festival programme. Free entry; requires a Berlin venue. Runs March–April 2027.",
       "dateAdded": "2026-07-03T23:10:08Z",
-      "resultsDate": "September 2026"
+      "resultsDate": "September 2026",
+      "instagram": "@emopberlin",
+      "jury": [
+        "Akinbode Akinbiyi, Artist",
+        "Kathrin Kohle, Exhibition Manager, Ostkreuz",
+        "Sara-Lena Maierhofer, Artist & Photography Professor",
+        "Maren Lübbke-Tidow, Artistic Director",
+        "Anna Voswinckel, Curator, Krakow Photomonth 2026"
+      ]
     }
   ]
 }
