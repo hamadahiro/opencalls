@@ -650,7 +650,8 @@
         "Rebecca Morse, Curator, Wallis Annenberg Photography Department, LACMA"
       ],
       "resultsDate": "2026-07-25",
-      "instagram": "@atlantaphotographygroup"
+      "instagram": "@atlantaphotographygroup",
+      "submitUrl": "https://atlantaphotographygroup.org/shop/call-for-entry-rebecca-morse-selects-2026/"
     },
     {
       "title": "MONOCHROME",
@@ -1487,7 +1488,8 @@
       "orgInTitle": false,
       "summary": "Free global online exhibition for the summer solstice — light as the subject. Juror: Crista Dix, Griffin Museum.",
       "resultsDate": "July 15, 2026",
-      "dateAdded": "2026-06-23T23:19:41.894Z"
+      "dateAdded": "2026-06-23T23:19:41.894Z",
+      "requirements": "1 image"
     },
     {
       "title": "Dog Days of Summer",
@@ -1504,13 +1506,14 @@
       "jury": [
         "Crista Dix, Executive Director, Griffin Museum of Photography"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Google Form",
       "slug": "dog-days-of-summer-griffin-museum-of-photography",
       "orgInTitle": false,
       "summary": "Free global online exhibition on the human–dog bond. Juror: Crista Dix, Griffin Museum of Photography.",
       "resultsDate": "August 1, 2026",
       "dateAdded": "2026-06-23T23:19:41.894Z",
-      "submitUrl": "https://forms.gle/wS4i9wat25RwNTVU6"
+      "submitUrl": "https://forms.gle/wS4i9wat25RwNTVU6",
+      "requirements": "1 image"
     },
     {
       "title": "strands of silver",
@@ -28994,7 +28997,7 @@
         "Stinus Duch, Founder, Disko Bay Book",
         "Maja Dyrehauge Gregersen, Managing Director, Copenhagen Photo Festival"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Picter",
       "requirements": "10+ images",
       "slug": "copenhagen-photo-festival-call-for-solo-artists-2027",
       "orgInTitle": true,
@@ -29006,7 +29009,8 @@
         "The submission window runs 8 July – 1 September 2026. Ten projects are shortlisted; from these, three to five are chosen for solo exhibitions staged in the festival's exhibition park in the heart of Copenhagen. Shortlisted artists take part in interviews in autumn 2026 before the final jury decision.",
         "Solo artists receive a €537 festival participation fee, up to €400 toward travel and accommodation for international photographers, and €134 toward food and local transport. The festival also provides the solo exhibition, targeted PR and marketing, a permanent website feature, and on-site programming including talks, workshops, and guided tours. The remaining shortlisted 'Selectees' receive a €200 fee and a digital screening of their project during the festival.",
         "Applicants submit a biography, CV, a project description of up to 3,000 characters, and a minimum of 10 images (1500px minimum, sRGB). Projects previously exhibited in Denmark, or shortlisted in previous years, are not eligible; artists selected as a solo artist within the last three years must wait a year to reapply. Applications are accepted in English or Danish, and the deadline is 1 September 2026."
-      ]
+      ],
+      "submitUrl": "https://site.picter.com/copenhagen-photo-festival-call-for-solo-artists-2027"
     }
   ]
 }
