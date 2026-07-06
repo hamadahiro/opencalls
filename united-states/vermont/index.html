@@ -112,7 +112,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/cyanotype-celebration-of-process-and-possibility-photoplace-gallery/">Cyanotype: A Celebration of Process and Possibility &middot; PhotoPlace Gallery</a></h3><p class="call-description">Cyanotype in all its forms — contact prints, photograms, toned and experimental — juried by Sam Wang for a Vermont gallery show.</p></div>
 
     </section>
 
@@ -130,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', VT,') || c.location.includes(', Vermont,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', VT,') || c.location.includes(', Vermont,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
