@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Cut+Paste Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/cut-paste-magazine-issue-18-timeless/">Cut+Paste Magazine Issue 18 — Timeless</a></h3><p class="call-description">Winter 'Timeless' issue — timeless winter landscapes and interiors in a neutral, blue palette. Pays $15+ if selected.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Cut+Paste Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Cut+Paste Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
