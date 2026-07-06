@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Visa pour l'Image. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/francoise-demulder-photography-grants-2026/">Françoise Demulder Photography Grants 2026 &middot; Visa pour l'Image</a></h3><p class="call-description">Two €8,000 production grants for women photojournalists, from France's Ministry of Culture &amp; Visa pour l'Image. Free.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Visa pour l\'Image').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Visa pour l\'Image' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
