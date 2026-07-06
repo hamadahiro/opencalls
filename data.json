@@ -23,7 +23,9 @@
       "orgInTitle": false,
       "summary": "Two €8,000 production grants for women photojournalists, from France's Ministry of Culture & Visa pour l'Image. Free.",
       "ai": "Not accepted",
-      "dateAdded": "2026-07-06T19:26:18.527Z"
+      "dateAdded": "2026-07-06T19:26:18.527Z",
+      "requirements": "10–20 images",
+      "resultsDate": "July 2026"
     },
     {
       "title": "Art Shapes the Future",
@@ -4961,8 +4963,7 @@
       "location": "Bath, United Kingdom",
       "prize": "Camera equipment worth £750 + publication",
       "eligibility": [
-        "united-kingdom",
-        "16-plus"
+        "united-kingdom"
       ],
       "submitVia": "SurveyMonkey",
       "submitUrl": "https://www.surveymonkey.com/r/Adult_Photo_Comp_2026",
@@ -5571,7 +5572,9 @@
       "instagram": "@muuscollection",
       "location": "New York area, NY, USA",
       "prize": "$20,000",
-      "eligibility": [],
+      "eligibility": [
+        "curators"
+      ],
       "jury": [
         "Nathalie Herschdorfer, Director, Photo Elysée",
         "Sarah Meister, Executive Director, Aperture",
@@ -25795,7 +25798,7 @@
       "url": "https://thepeale.org/call-for-artists-life-in-baltimore/",
       "instagram": "@thepealebaltimore",
       "location": "Baltimore, MD, USA",
-      "prize": "Exhibition + Cash awards",
+      "prize": "Exhibition",
       "eligibility": [
         "18-plus",
         "baltimore-region"
@@ -28175,7 +28178,7 @@
       ],
       "submitVia": "Website form",
       "requirements": "3–20 images",
-      "ai": "Not accepted",
+      "ai": null,
       "slug": "cpa-international-juried-exhibition-2026-center-for-photographic-art",
       "orgInTitle": false,
       "summary": "Annual CPA international juried show in Carmel. 45 photos selected, 8 cash awards over $6,000. Any subject; AI not accepted.",
@@ -28234,7 +28237,8 @@
       "dateAdded": "2026-06-29T23:15:05Z",
       "jury": [
         "James Gehrt, Juror"
-      ]
+      ],
+      "resultsDate": "July 10, 2026"
     },
     {
       "title": "KinoSaito Artist-in-Residence 2026",
@@ -28581,7 +28585,9 @@
       "instagram": "@royalsociety",
       "location": "Online",
       "prize": "£1,000",
-      "eligibility": [],
+      "eligibility": [
+        "scientists"
+      ],
       "jury": [
         "Panel of four judges"
       ],
@@ -28620,7 +28626,8 @@
       "orgInTitle": false,
       "summary": "Ten-category nature competition — €1,000 top prize, a tree planted per entrant, originals verified. Open worldwide, 18+.",
       "dateAdded": "2026-07-02T03:18:56Z",
-      "resultsDate": "March 2027"
+      "resultsDate": "March 2027",
+      "requirements": "No image limit"
     },
     {
       "title": "12th International Phone-ography Competition",
@@ -28902,8 +28909,8 @@
       "url": "https://emop-berlin.eu/en/open-call/",
       "location": "Berlin, Germany",
       "eligibility": [],
-      "submitVia": "Official website",
-      "submitUrl": "https://emop-berlin.eu/en/open-call/",
+      "submitVia": "Typeform",
+      "submitUrl": "https://kulturprojekteberlin.typeform.com/to/hiZdsuQ6",
       "slug": "european-month-of-photography-berlin-2027",
       "orgInTitle": true,
       "summary": "Propose a photography exhibition for the 2027 EMOP Berlin festival programme. Free entry; requires a Berlin venue. Runs March–April 2027.",

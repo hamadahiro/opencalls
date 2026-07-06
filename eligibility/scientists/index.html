@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls Requiring 16+ 2026 - Monographica</title>
-  <meta name="description" content="Open calls restricted to photographers and artists aged 16 or older. Exhibitions, grants, competitions, and awards with a 16+ age requirement.">
-  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/16-plus/">
+  <title>Open Calls for Scientists 2026 - Monographica</title>
+  <meta name="description" content="Photography competitions and open calls for working scientists and researchers at graduate level and above.">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/scientists/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls Requiring 16+ 2026 - Monographica">
-  <meta property="og:description" content="Open calls restricted to photographers and artists aged 16 or older. Exhibitions, grants, competitions, and awards with a 16+ age requirement.">
+  <meta property="og:title" content="Open Calls for Scientists 2026 - Monographica">
+  <meta property="og:description" content="Photography competitions and open calls for working scientists and researchers at graduate level and above.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/16-plus/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/scientists/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls Requiring 16+ 2026",
-  "description": "Open calls restricted to photographers and artists aged 16 or older. Exhibitions, grants, competitions, and awards with a 16+ age requirement.",
-  "url": "https://opencalls.monographica.com/eligibility/16-plus/",
+  "name": "Open Calls for Scientists 2026",
+  "description": "Photography competitions and open calls for working scientists and researchers at graduate level and above.",
+  "url": "https://opencalls.monographica.com/eligibility/scientists/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -55,8 +55,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Open Calls Requiring 16+",
-      "item": "https://opencalls.monographica.com/eligibility/16-plus/"
+      "name": "Open Calls for Scientists",
+      "item": "https://opencalls.monographica.com/eligibility/scientists/"
     }
   ]
 }
@@ -101,12 +101,12 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
-      <h1>Open Calls Requiring 16+</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists aged 16 or older. Exhibitions, grants, competitions, and awards with a 16+ age requirement.</h2>
+      <h1>Open Calls for Scientists</h1>
+      <h2 class="subtitle">Photography competitions and open calls for working scientists and researchers at graduate level and above.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/arts-of-the-terrace-2026-mountlake-terrace/">46th Arts of the Terrace Juried Art Show &middot; Mountlake Terrace Friends of the Arts</a></h3><p class="call-description">46th annual juried show near Seattle with a dedicated photography category; $6,000+ in awards. On view Sep 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/royal-society-publishing-photography-competition-2026/">Royal Society Publishing Photography Competition 2026</a></h3><p class="call-description">£1,000 top prize for photography by working scientists — free entry, five science categories, open at graduate level and above.</p></div>
 
     </section>
 
@@ -124,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('16-plus') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('scientists') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
