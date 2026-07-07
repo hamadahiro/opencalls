@@ -33,8 +33,11 @@
       "description": "An international photography competition from the Fundación Antonio Gaudí, marking the centenary of Antoni Gaudí's death in 1926 — the year Barcelona holds the title of world capital of architecture. Photographers are invited to reflect, in up to three original images (individually or as a series), the inspiration that nature gave Gaudí's architectural work. A first prize of €5,000 — the 'Ángeles Omedas Millán' Award, named after one of the Foundation's benefactors — is joined by two second prizes of €500 each. The call is open to photographers, architects and the general public, with entries judged on originality and creativity, emotional impact, and narrative storytelling.",
       "url": "https://fundacionantoniogaudi.org/concurso-fotografico-la-naturaleza-en-gaudi-2/",
       "location": "Barcelona, Spain",
-      "prize": "€5,000 + €500",
-      "eligibility": [],
+      "instagram": "@fundacionantoniogaudi",
+      "prize": "€5,000 + 2×€500",
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/nature-in-gaudi-2026",
@@ -42,6 +45,7 @@
       "orgInTitle": false,
       "summary": "Antonio Gaudí Foundation's centenary contest on nature in Gaudí's architecture. €5,000 top prize, free, open to all.",
       "requirements": "1–3 images",
+      "resultsDate": "October 15, 2026",
       "dateAdded": "2026-07-06T23:14:57Z"
     },
     {
@@ -58,7 +62,7 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Official website",
-      "submitUrl": "https://www.actioncontrelafaim.org/en/headline/grant-for-a-new-humanitarian-perspective/",
+      "submitUrl": "https://www.actioncontrelafaim.org/en/candidater-a-la-bourse/",
       "slug": "grant-for-a-new-humanitarian-perspective-2026",
       "orgInTitle": false,
       "summary": "One €5,000 grant for photographers & content creators documenting food systems and nutrition. Free, international entry.",
@@ -530,7 +534,7 @@
       "location": "Frederick, MD, USA",
       "prize": "Exhibition",
       "eligibility": [
-        "mid-atlantic-us",
+        "united-states",
         "18-plus"
       ],
       "jury": [
@@ -1427,6 +1431,9 @@
       "location": "Online",
       "prize": "$1,000 + solo exhibition",
       "eligibility": [],
+      "jury": [
+        "Aline Smithson, Founder, Lenscratch"
+      ],
       "submitVia": "JotForm",
       "submitUrl": "https://form.jotform.com/261734082905155",
       "requirements": "Up to 4 images",
