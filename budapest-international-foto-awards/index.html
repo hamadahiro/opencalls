@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Budapest International Foto Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/budapest-international-foto-awards-2026/">Budapest International Foto Awards 2026</a></h3><p class="call-description">International award with a winners' exhibition in Budapest. Ten categories incl. Analog/Film; extended to Jul 8, 2026.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Budapest International Foto Awards' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Budapest International Foto Awards').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

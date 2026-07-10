@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Studio Channel Islands. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/open-call-all-media-2026-studio-channel-islands/">Open Call: All Media 2026 &middot; Studio Channel Islands</a></h3><p class="call-description">International all-media juried show at Studio Channel Islands, juried by gallerist Patricia Sweetow. $1,000 top prize.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Studio Channel Islands' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Studio Channel Islands').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

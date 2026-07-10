@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Photoforum Pasquart. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/prix-photoforum-2026-photoforum-pasquart/">Prix Photoforum 2026 &middot; Photoforum Pasquart</a></h3><p class="call-description">Swiss photography institution's annual juried group show in Biel; CHF 5,000 prize plus CHF 500 production grants for 10–15 selected artists.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Photoforum Pasquart' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Photoforum Pasquart').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
