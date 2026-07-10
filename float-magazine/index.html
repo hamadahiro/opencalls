@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from FLOAT Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/float-magazine-outta-here/">FLOAT Magazine — Let's Get the F@!#k Outta Here</a></h3><p class="call-description">FLOAT Magazine's print issue on looking beyond Earth — Mars, UFOs, space, escape. Lens-based work, 1–10 images, $9 entry.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'FLOAT Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'FLOAT Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
