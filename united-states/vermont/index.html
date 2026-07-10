@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/composed-texas-photographic-society/">Composed &middot; Texas Photographic Society</a></h3><p class="call-description">TPS × PhotoPlace juried show on composition — exhibited in Middlebury, VT and online. Juror Brian Finke; $500 top award.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', VT,') || c.location.includes(', Vermont,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', VT,') || c.location.includes(', Vermont,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
