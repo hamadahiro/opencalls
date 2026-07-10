@@ -22,6 +22,7 @@
       "orgInTitle": true,
       "summary": "MPF's annual 'Street Fashion' open call, judged by Niall McDiarmid. Win a Martin Parr print & exhibition. £10 inc. membership.",
       "requirements": "Up to 3 images",
+      "resultsDate": "September 25, 2026",
       "dateAdded": "2026-07-06T23:14:57Z"
     },
     {
@@ -38,7 +39,11 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Aitor Ortiz, Photographer",
+        "David Frutos, Photographer",
+        "Jesús Granada, Photographer"
+      ],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/nature-in-gaudi-2026",
       "slug": "nature-in-gaudi-angeles-omedas-millan-prize-2026",
@@ -135,13 +140,17 @@
         "21-plus",
         "tri-state"
       ],
-      "jury": [],
+      "jury": [
+        "Alex Ferrone, Alex Ferrone Gallery"
+      ],
+      "ai": "Not accepted",
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17762",
       "requirements": "Up to 5 images",
       "slug": "46th-annual-juried-photography-show-long-island-arts-council-at-freeport",
       "orgInTitle": true,
       "summary": "One of the tri-state area's longest-running juried photo shows, at Freeport Memorial Library. Cash awards; age 21+, up to 5 images.",
+      "resultsDate": "October 5, 2026",
       "dateAdded": "2026-07-06T19:26:18.527Z"
     },
     {
@@ -277,6 +286,7 @@
       "submitVia": "Google Form",
       "submitUrl": "https://forms.gle/bwjHFAtLm6ztYMePA",
       "resultsDate": "By September 20, 2026",
+      "requirements": "700-word article",
       "slug": "source-writing-prize-2026",
       "orgInTitle": true,
       "summary": "£500 + publication in Source for a 700-word piece of new writing on photography. Free; open to anyone who hasn't written for Source.",
@@ -332,20 +342,33 @@
       "title": "Revela'T Portfolio Review 2026",
       "org": "Revela'T Festival",
       "deadline": "2026-07-30",
-      "fee": "Free (selected pay €15–25)",
+      "fee": "€25 (€15 Revela'T Friends)",
       "category": "education",
-      "description": "Portfolio review open call for Revela'T, the contemporary analog photography festival in Vilassar de Dalt near Barcelona (October 1–18, 2026, main weekend October 16–18). Eighteen photographers are selected for 20-minute one-to-one sessions with each of 11 reviewers — three hours of feedback — plus a full festival pass; one participant additionally wins production and exhibition of their project at Revela'T 2027. Open to photographers of any nationality or residence working in chemical or digital photography; selection favors projection, originality, and a compelling concept. Free to apply — only selected participants pay €15 (Revela'T Friends) or €25.",
+      "description": "Portfolio review open call for Revela'T, the contemporary analog photography festival in Vilassar de Dalt near Barcelona (October 1–18, 2026, main weekend October 16–18). Eighteen photographers are selected for 20-minute one-to-one sessions with each of 11 reviewers — three hours of feedback — plus a full festival pass; one participant additionally wins production and exhibition of their project at Revela'T 2027. Open to photographers of any nationality or residence working in chemical or digital photography; selection favors projection, originality, and a compelling concept. A €25 application fee applies to all entrants (€15 for Revela'T Friends).",
       "url": "https://revela-t.cat/en/",
       "instagram": "@revelatfestival",
       "location": "Vilassar de Dalt, Spain",
       "prize": "Portfolio reviews + exhibition at Revela'T 2027",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Daniel Belinchón",
+        "Roser Cambray",
+        "Fernando Castro",
+        "Isabel Hernández",
+        "Frederic Montornés",
+        "Juan Naranjo",
+        "Silvia Omedes",
+        "Benito Padilla",
+        "Rebeca Pardo",
+        "Arianna Rinaldo",
+        "Rocío Santacruz"
+      ],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/revelat-portfolio-review-2026",
       "slug": "revelat-portfolio-review-2026",
       "orgInTitle": true,
       "summary": "18 photographers get 3 hours of one-to-ones with 11 reviewers plus a festival pass; one wins an exhibition at Revela'T 2027.",
+      "resultsDate": "August 31, 2026",
       "dateAdded": "2026-07-01T23:31:31Z"
     },
     {
@@ -500,7 +523,7 @@
     {
       "title": "Sixth LaGrange Southeast Regional",
       "org": "LaGrange Art Museum",
-      "deadline": "2026-07-10",
+      "deadline": "2026-07-25",
       "fee": "$45 (up to 4 works)",
       "category": "exhibition",
       "description": "Juried regional at the LaGrange Art Museum in Georgia, continuing the lineage of the LaGrange National begun in 1964. Open to artists 18+ residing in Alabama, Arkansas, Florida, Georgia, Kentucky, Louisiana, Mississippi, North Carolina, South Carolina, Tennessee, Virginia, and West Virginia, with original work from the last two years in drawing, painting, printmaking, sculpture, photography, ceramics, or mixed media. Purchase Awards add works to permanent collections, alongside juror-selected Merit Awards; no commission on sales. Exhibition September 19, 2026 – January 9, 2027.",
@@ -519,7 +542,7 @@
       "slug": "sixth-lagrange-southeast-regional",
       "orgInTitle": true,
       "summary": "Southeastern regional at the LaGrange Art Museum — Purchase Awards enter the permanent collection; photography accepted, no commission.",
-      "resultsDate": "July 18, 2026",
+      "resultsDate": "August 9, 2026",
       "dateAdded": "2026-07-01T23:31:31Z"
     },
     {
@@ -552,7 +575,7 @@
     {
       "title": "Summer Open Juried Exhibition",
       "org": "West Portal Gallery",
-      "deadline": "2026-07-17",
+      "deadline": "2026-07-24",
       "fee": "$40 (up to 3), $10 each additional",
       "category": "exhibition",
       "description": "Summer open juried show at West Portal Gallery, a community art space in San Francisco's West Portal neighborhood. Open to artists of the greater Bay Area — San Francisco, Alameda, Contra Costa, Marin, Napa, San Mateo, Santa Clara, Solano, and Sonoma counties, plus Sacramento, Yolo, San Joaquin, Monterey, San Benito, and Santa Cruz. All media and styles welcome, including photography, painting, drawing, mixed media, printmaking, fiber, and digital art; 3–10 images. Exhibition August 28 – October 1, 2026, with an opening reception September 11.",
@@ -574,7 +597,7 @@
       "orgInTitle": false,
       "summary": "Bay Area open juried summer show at San Francisco's West Portal Gallery — all media including photography; show runs Aug 28–Oct 1.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "resultsDate": "July 24, 2026"
+      "resultsDate": "July 31, 2026"
     },
     {
       "title": "2026 Great Northern Art Explosion",
@@ -737,6 +760,7 @@
         "18-plus"
       ],
       "submitVia": "Website form",
+      "submitUrl": "https://form.jotform.com/261707653230150",
       "requirements": "Up to 3 images",
       "slug": "elemental-earth-air-fire-water-tcg-gallery",
       "orgInTitle": false,
@@ -851,7 +875,10 @@
       "url": "https://wsworkshop.org/residencies/artists-book-residency-grant/",
       "location": "Rosendale, NY, USA",
       "prize": "$350/week stipend",
-      "eligibility": [],
+      "eligibility": [
+        "flinta",
+        "women"
+      ],
       "submitVia": "Official website",
       "requirements": "Up to 10 images",
       "slug": "womens-studio-workshop-artists-book-residency-grant",
@@ -1453,7 +1480,7 @@
       "url": "https://www.praxisphotocenter.org/x2-sub-2-8",
       "instagram": "@praxis_gallery",
       "location": "Minneapolis, MN, USA",
-      "prize": "Exhibition",
+      "prize": "Exhibition + catalog",
       "eligibility": [
         "18-plus"
       ],
@@ -1513,6 +1540,7 @@
       "slug": "format27-open-call-play",
       "orgInTitle": true,
       "summary": "Derby's FORMAT biennale open call, theme PLAY. Worldwide; exhibit March 2027 plus £1,000 artist fee and awards.",
+      "resultsDate": "December 2026",
       "dateAdded": "2026-06-25T07:07:12Z"
     },
     {
@@ -1541,15 +1569,15 @@
     {
       "title": "Through the Lens Photography 2026",
       "org": "The Joe Center for the Arts",
-      "deadline": "2026-07-12",
-      "fee": "$50 ($35 members)",
+      "deadline": "2026-07-19",
+      "fee": "Free",
       "category": "exhibition",
-      "description": "Juried photography exhibition at The Joe Center for the Arts, a community non-profit art center in Port St. Joe, Florida, on view August 7 – September 11, 2026. Open to all photographers; all photo-based works are eligible with no limit on subject matter or technique. Submit up to 5 pieces, all priced for sale (the gallery takes a 40% commission). Cash awards include Best of Show ($200), First ($150), Second ($100), Third ($75), Honorable Mentions, and a $75 People's Choice. Accepted work must be delivered or shipped framed and ready to hang.",
+      "description": "Free juried DIGITAL exhibition ('Photography Without Walls') from The Joe Center for the Arts, a community non-profit art center in Port St. Joe, Florida, held online while the physical building undergoes renovations. Open to all photographers; all photo-based works are eligible with no limit on subject matter or technique (no AI-generated work). Submit up to 5 pieces. As a no-fee digital show, monetary awards are not given, but award certificates (Best of Show, First, Second, Third, Honorable Mentions) are mailed, and all accepted entries are featured in the online gallery and on social media. On view August 7 – September 11, 2026.",
       "url": "https://thejoecenterforthearts41.wildapricot.org/Call-for-Entries",
       "instagram": "@thejoearts",
       "location": "Port St. Joe, FL, USA",
-      "prize": "$200 / $150 / $100 / $75 + Exhibition",
-      "resultsDate": "July 15, 2026",
+      "prize": "Exhibition",
+      "resultsDate": "July 24, 2026",
       "eligibility": [],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/thejoecenter/through-the-lens-photography/",
@@ -1557,7 +1585,7 @@
       "ai": "Not accepted",
       "slug": "through-the-lens-photography-2026-the-joe-center-for-the-arts",
       "orgInTitle": false,
-      "summary": "Juried photography show at a Florida community art center, Aug–Sep 2026. Open to all; $200 top award plus cash prizes.",
+      "summary": "Free juried digital photography show from a Florida community art center, Aug–Sep 2026. Open to all; certificate awards, online exhibition.",
       "dateAdded": "2026-06-25T07:07:12Z",
       "jury": [
         "Frank Jackowiak, Photographer"
