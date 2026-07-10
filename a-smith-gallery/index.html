@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from A Smith Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/perspective-a-smith-gallery/">perspective &middot; A Smith Gallery</a></h3><p class="call-description">A Smith Gallery's juried show on 'perspective', juror Debra Klomp Ching. Up to 47 selected; solo-exhibition award + 'The 27' book.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'A Smith Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'A Smith Gallery' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
