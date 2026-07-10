@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/future-figurations-residency-banff-centre/">Future Figurations Residency &middot; Banff Centre for Arts and Creativity</a></h3><p class="call-description">Five-week Banff Centre visual-arts residency on speculative futures &amp; world-building; photography eligible. Tuition-covered scholarship.</p></div>
 
     </section>
 
@@ -125,7 +124,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Canada' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Canada').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
