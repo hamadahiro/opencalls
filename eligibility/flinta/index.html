@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/womens-studio-workshop-artists-book-residency-grant/">Women's Studio Workshop — Artist's Book Residency Grant</a></h3><p class="call-description">WSW residency to print &amp; bind a limited-edition artist book; stipend, materials, travel &amp; housing. For photobook &amp; book artists.</p></div>
 
     </section>
 
@@ -123,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('flinta')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('flinta') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
