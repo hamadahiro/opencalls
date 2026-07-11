@@ -139,7 +139,7 @@ function splitPrizeParts(prize) {
 
 function derivePrizeCategory(text) {
   const p = text.toLowerCase();
-  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|zar\b|\br\s?\d|stipend|budget|gear|payment|voucher/.test(p)) return 'cash';
+  if (/[$€£¥]|chf\b|sek\b|aud\b|twd\b|rub\b|nok\b|aed\b|zar\b|\br\s?\d|stipend|budget|gear|camera|equipment|payment|voucher/.test(p)) return 'cash';
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
