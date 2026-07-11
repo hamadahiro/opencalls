@@ -14,7 +14,8 @@
       "prize": "Sony camera + Mentorship",
       "eligibility": [
         "emerging",
-        "under-30"
+        "under-30",
+        "bulgaria"
       ],
       "ai": "Not accepted",
       "submitVia": "Picter",
@@ -25377,7 +25378,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://biennalelarnaca.com/apply-here/",
       "requirements": "3 images per work",
-      "resultsDate": "October 2027",
+      "resultsDate": "May 2027",
       "slug": "larnaca-biennale-2027-open-call",
       "orgInTitle": true,
       "summary": "Fifth Larnaca Biennale under the theme Metatopies: Geographies in Motion. Photography eligible; 13 awards including the Grand Prix.",
@@ -26236,7 +26237,7 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17588",
-      "requirements": "Up to 5 images",
+      "requirements": "3–5 images",
       "slug": "zion-national-park-artist-in-residence-2027",
       "orgInTitle": true,
       "summary": "Four-week residency in Zion's historic Grotto House with free park housing and a $500 stipend. All mediums welcome.",
@@ -26395,7 +26396,7 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17508",
-      "requirements": "5–10 images",
+      "requirements": "Up to 10 images",
       "slug": "scg-artist-in-residence-2027-national-blue-line-arts",
       "orgInTitle": false,
       "summary": "$10,000 three-week teaching residency at Blue Line Arts (CA) with housing and travel covered. US artists nationwide.",
@@ -26573,7 +26574,7 @@
       "jury": [],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/calls/public/14047/",
-      "requirements": "1 work",
+      "requirements": "Up to 5 works",
       "resultsDate": "October 2026",
       "slug": "willet-art-prize-2026",
       "orgInTitle": true,
@@ -27277,7 +27278,16 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Augustin Trapenard",
+        "Maylis de Kerangal",
+        "Rima Abdul Malak",
+        "Andreï Kourkov",
+        "Giovanni di Mauro",
+        "Rithy Panh",
+        "Kinga Wyrzykowska",
+        "Clémentine de Beaupuy"
+      ],
       "submitVia": "Website form",
       "submitUrl": "https://tally.so/r/J9XxMK",
       "slug": "kometa-fellows-program-2026",
