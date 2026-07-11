@@ -2,6 +2,31 @@
   "lastUpdated": "2026-07-11T01:24:44Z",
   "calls": [
     {
+      "title": "Talent of the Year 2026 — Tsvetan Tomchev Award",
+      "org": "NOISE Foundation",
+      "deadline": "2026-08-22",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Emerging-talent award for young Bulgarian photographers (up to 26, citizens or diaspora), named after photojournalist Tsvetan Tomchev and run by NOISE Foundation in Sofia with Sony Bulgaria as partner. Submit one visual story of 5–12 photographs from 2025–2026 in photojournalism, documentary or visual storytelling, together with a short bio, motivation letter and project description. The winner receives a Sony camera and lens plus free access to NOISE Education's mentorship program; four finalists get 40% off academy courses. Finalists are announced September 10, with the award ceremony on September 24 in Sofia.",
+      "url": "https://noiseducation.com/talant-na-godinata/",
+      "instagram": "@noise.education",
+      "location": "Sofia, Bulgaria",
+      "prize": "Sony camera + Mentorship",
+      "eligibility": [
+        "emerging",
+        "under-30"
+      ],
+      "ai": "Not accepted",
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/talent-of-the-year-2026-named-after-tsvetan-tomchev",
+      "requirements": "5–12 images",
+      "slug": "talent-of-the-year-2026-tsvetan-tomchev",
+      "orgInTitle": false,
+      "summary": "Award for young Bulgarian photographers (up to 26) in documentary and visual storytelling. Winner gets a Sony camera and NOISE mentorship.",
+      "resultsDate": "September 10, 2026",
+      "dateAdded": "2026-07-11T13:54:27Z"
+    },
+    {
       "title": "Martin Parr Foundation Awards 2026",
       "org": "Martin Parr Foundation",
       "deadline": "2026-09-13",
@@ -25435,7 +25460,7 @@
       "deadline": "2026-08-31",
       "category": "residency",
       "description": "Residency fellowships at the Künstler*dorf (artists' village) in Schöppingen, Münsterland, Germany. Applications for the 2027 fellowships are open June 27 – August 31, 2026. Fellows live and work on site for two to six months, arranged by agreement and availability. Individual fellows receive €1,500 per month (minus roughly €100–200 for rent and operating costs); collectives — accepted since 2023 — receive €1,000 per person up to €3,000 total. Open worldwide to professional visual artists, authors, and composers with no restrictions on nationality or age. Juries assess the quality of previous work, the feasibility of the proposed project in Schöppingen, and contributions to the residency community. Not a production fellowship: there are no presentation obligations, though fellows may use the exhibition spaces.",
-      "url": "https://www.stiftung-kuenstlerdorf.de/en/apply",
+      "url": "https://www.stiftung-kuenstlerdorf.de/en/application_process",
       "instagram": "@stiftungkuenstlerdorf",
       "location": "Schöppingen, Germany",
       "prize": "€1,500/month stipend + 2–6 month residency",
@@ -25946,7 +25971,7 @@
       "url": "https://thepeale.org/call-for-artists-life-in-baltimore/",
       "instagram": "@thepealebaltimore",
       "location": "Baltimore, MD, USA",
-      "prize": "Exhibition",
+      "prize": "Cash awards + Exhibition",
       "eligibility": [
         "18-plus",
         "baltimore-region"
@@ -26211,7 +26236,7 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17588",
-      "requirements": "3–5 images",
+      "requirements": "Up to 5 images",
       "slug": "zion-national-park-artist-in-residence-2027",
       "orgInTitle": true,
       "summary": "Four-week residency in Zion's historic Grotto House with free park housing and a $500 stipend. All mediums welcome.",
@@ -26886,7 +26911,9 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Skip Marsh"
+      ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/artscentereast/vehicles-voyages/",
       "requirements": "Up to 5 works",
