@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Artspiration Frederick. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/unscripted-artspiration-frederick/">Unscripted &middot; Artspiration Frederick</a></h3><p class="call-description">Open-themed juried show at Frederick's nonprofit community art center — artwork free from prescribed narratives; photography welcome.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Artspiration Frederick' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Artspiration Frederick').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
