@@ -34,7 +34,7 @@
       "fee": "£10",
       "category": "photography",
       "description": "The Martin Parr Foundation's annual open call, themed 'Street Fashion' — street style captured outdoors or in public spaces, freely interpreted, with commercial fashion projects excluded. Applicants submit up to three images made over the summer, judged by photographer Niall McDiarmid together with the MPF team. The winner receives a 20×24\" print from Martin Parr's iconic series The Last Resort and has their image exhibited in the Foundation's gallery window, on its website and on Instagram; runners-up receive Parr merchandise and photobook bundles. Entry includes a year's digital MPF membership, and is free for full members.",
-      "url": "https://www.martinparrfoundation.org/about/opportunities/",
+      "url": "https://www.martinparrfoundation.org/events/members-2026-photo-awards/",
       "instagram": "@martinparrfdn",
       "location": "Bristol, United Kingdom",
       "prize": "Martin Parr print + Exhibition",
@@ -77,7 +77,8 @@
       "summary": "Antonio Gaudí Foundation's centenary contest on nature in Gaudí's architecture. €5,000 top prize, free, open to all.",
       "requirements": "1–3 images",
       "resultsDate": "October 15, 2026",
-      "dateAdded": "2026-07-06T23:14:57Z"
+      "dateAdded": "2026-07-06T23:14:57Z",
+      "ai": "Not accepted"
     },
     {
       "title": "Grant for a New Humanitarian Perspective 2026",
@@ -205,7 +206,8 @@
       "orgInTitle": true,
       "summary": "Four artists 35 or younger based in Japan get solo shows at TOKAS Hongo plus ¥150,000 production support. Free; application in Japanese.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "resultsDate": "September 2026"
+      "resultsDate": "September 2026",
+      "requirements": "Exhibition proposal"
     },
     {
       "title": "Dek Unu Magazine — October 2026 Issue",
@@ -395,7 +397,8 @@
       "orgInTitle": true,
       "summary": "18 photographers get 3 hours of one-to-ones with 11 reviewers plus a festival pass; one wins an exhibition at Revela'T 2027.",
       "resultsDate": "August 31, 2026",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "requirements": "10–15 images"
     },
     {
       "title": "AFC Nature Photography Contest 2026",
@@ -407,7 +410,7 @@
       "url": "https://arroyosfoothills.org/get-involved/nature-photography-contest/",
       "instagram": "@arroyosfoothills",
       "location": "Pasadena, CA, USA",
-      "prize": "Exhibition + professional prints",
+      "prize": "Exhibition",
       "eligibility": [],
       "jury": [
         "Denis Callet",
@@ -468,7 +471,9 @@
       "slug": "eurostars-valladolid-photography-award-2026",
       "orgInTitle": true,
       "summary": "€1,500 for images that unveil the city of Valladolid — free entry, up to 3 photos, from the Eurostars hotel group's award series.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "ai": "Not accepted",
+      "submitUrl": "https://www.eurostarshotels.co.uk/photography-award-valladolid.html"
     },
     {
       "title": "PERSPA 2026 — Prix de la Perspective Architecturale",
@@ -488,7 +493,8 @@
       "orgInTitle": true,
       "summary": "Architectural photography prize — €1,000 grand prize, physical exhibition in France, and annual publication. €25 per entry.",
       "resultsDate": "October 2026",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "submitUrl": "https://perspa.fr/submit-entry/"
     },
     {
       "title": "Tiny But Mighty: d'Art's Annual National Exhibit of Small Artworks",
@@ -27887,7 +27893,7 @@
       "submitUrl": "https://www.mobilephotoawards.com/enter",
       "requirements": "1–25 images",
       "resultsDate": "March 2027",
-      "ai": null,
+      "ai": "Accepted",
       "slug": "mobile-photography-awards-2026",
       "orgInTitle": true,
       "summary": "15th annual awards for photos shot & edited on mobile devices — $3,000 grand prize, $10,000+ pool, 12 categories + Photo Essay. From $15. Deadline Dec 18.",
@@ -28268,7 +28274,10 @@
       "orgInTitle": true,
       "summary": "Fully-funded four-week November retreat in Kyoto for artists, curators and writers — airfare, private accommodation and an $800 stipend.",
       "dateAdded": "2026-06-29T15:07:48Z",
-      "instagram": "@kyotoretreat"
+      "instagram": "@kyotoretreat",
+      "jury": [
+        "Dexter Wimberly, Founder & Director"
+      ]
     },
     {
       "title": "Liu Shiming Artist Grants 2026",
@@ -28309,7 +28318,9 @@
       "resultsDate": "2026-12",
       "jury": [
         "Elisa Medde",
-        "Myriam Boulos"
+        "Mariela Sancari",
+        "Myriam Boulos",
+        "Yagazie Emezi"
       ],
       "eligibility": [
         "women",
@@ -28458,7 +28469,9 @@
       "instagram": "@pioneerworks",
       "location": "Brooklyn, NY, USA",
       "prize": "$5,000 + 5-month studio residency",
-      "eligibility": [],
+      "eligibility": [
+        "emerging"
+      ],
       "submitVia": "Website form",
       "submitUrl": "https://pioneerworks.org/residency",
       "slug": "pioneer-works-visual-arts-residency-2027",
@@ -28490,7 +28503,8 @@
         "Lea Kannar-Lichtenberger, Environmental Artist & Researcher",
         "Brian Wallace, Founder, Red Gate Gallery",
         "Dan Gottlieb, Artist & Museum Designer"
-      ]
+      ],
+      "requirements": "Up to 10 images"
     },
     {
       "title": "Catskill Art Space Call for Submissions 2026",
@@ -28522,7 +28536,7 @@
       "fee": "€15 per artwork (up to 3)",
       "category": "exhibition",
       "description": "The second annual juried open submission exhibition at The Hunt Museum, a museum in Limerick, Ireland housed in the historic Custom House. It accepts painting, photography, sculpture, printmaking, drawing and mixed media (made in the past five years) from artists in Ireland and worldwide, fostering dialogue between contemporary practice and the historic collection. Selected works are exhibited 6 December 2026 – 21 February 2027 and are expected to be for sale (the museum takes 25% commission). Selection notified 17 October 2026.",
-      "url": "https://www.huntmuseum.com/whats-on/hunt-museum-open-submission-exhibition/",
+      "url": "https://www.huntmuseum.com/whats-on/hunt-museum-open-submission-exhibition-2026/",
       "location": "Limerick, Ireland",
       "prize": "Exhibition",
       "eligibility": [],
@@ -28709,7 +28723,8 @@
       "summary": "101 artists chosen for a globally distributed hardcover book on the theme Pattern. $500 top prize; photography included.",
       "dateAdded": "2026-07-02T03:14:20Z",
       "requirements": "1–20 images",
-      "ai": "Accepted (must disclose)"
+      "ai": "Accepted (must disclose)",
+      "resultsDate": "Early August 2026"
     },
     {
       "title": "Arts to Hearts Magazine Issue 14 — The Summer We Remember",
@@ -28811,7 +28826,7 @@
       "summary": "Ten-category nature competition — €1,000 top prize, a tree planted per entrant, originals verified. Open worldwide, 18+.",
       "dateAdded": "2026-07-02T03:18:56Z",
       "resultsDate": "March 2027",
-      "requirements": "No image limit"
+      "requirements": "Unlimited images"
     },
     {
       "title": "12th International Phone-ography Competition",
@@ -29107,7 +29122,8 @@
         "Sara-Lena Maierhofer, Artist & Photography Professor",
         "Maren Lübbke-Tidow, Artistic Director",
         "Anna Voswinckel, Curator, Krakow Photomonth 2026"
-      ]
+      ],
+      "requirements": "Exhibition proposal"
     },
     {
       "title": "UNPOSED Photography Exhibit",
