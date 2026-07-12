@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-12T07:35:41Z",
+  "lastUpdated": "2026-07-12T15:33:47Z",
   "calls": [
     {
       "title": "Talent of the Year 2026 — Tsvetan Tomchev Award",
@@ -233,7 +233,7 @@
     {
       "title": "Photo Trouvée Virtual Artist Residency — Fall 2026",
       "org": "Photo Trouvée Magazine",
-      "deadline": "2026-09-04",
+      "deadline": "2026-08-20",
       "fee": "$650",
       "category": "residency",
       "description": "10-week virtual residency (September 4 – November 6, 2026) for artists who work with or are inspired by found/family photographs. Weekly Zoom calls, bio/statement workshops, artist talks, group feedback, and accountability groups in a cohort of 6–9 artists. Open worldwide to artists at any career stage and in any medium, as long as found or family photography informs the work; participants commit to attending at least 80% of weekly calls. Partial scholarships available.",
@@ -23124,7 +23124,7 @@
     {
       "title": "Lens Work: Trees and Water",
       "org": "Black Box Gallery",
-      "deadline": "2026-07-10",
+      "deadline": "2026-07-14",
       "fee": "$40",
       "category": "exhibition",
       "description": "Juried group exhibition exploring trees and water as subjects in contemporary photography — dynamic and diverse imagery, including 'magical and poetic pictures' celebrating visual composition and contemporary photographic technique. Selected work shown in physical gallery and online annex; included in printed catalog. Free printing, matting, and framing for accepted artists. 50/50 sales commission. Exhibition August 1–25, 2026 in Portland, OR. Juror: Todd Johnson, Black Box Gallery founder. Open worldwide to amateur and professional photographers.",
@@ -29587,6 +29587,56 @@
       "resultsDate": "September 30, 2026",
       "dateAdded": "2026-07-12T07:35:41Z",
       "instagram": "@umstamps"
+    },
+    {
+      "title": "HOME: States of Belonging",
+      "org": "Arvada Center for the Arts and Humanities",
+      "deadline": "2026-10-12",
+      "fee": "$35 for 3 works",
+      "category": "exhibition",
+      "description": "Juried Main Gallery exhibition of contemporary photo-based work at the Arvada Center (January 14 – March 28, 2027), presented in partnership with the Colorado Photographic Arts Center and Denver's Month of Photography. The show explores home as something shaped by identity, memory, movement, family, work and community, and welcomes photography, video, collage, installation, archival and alternative image-making processes. Open to Colorado residents 18+; entries accepted July 17 – October 12, 2026 via CaFÉ, with fee scholarships available for BIPOC and LGBTQIA+ artists and those experiencing hardship. Jurors: Samantha Johnston (CPAC) and Collin Parson (Arvada Center). Artists receive 60% of sales.",
+      "url": "https://artist.callforentry.org/festivals_unique_info.php?ID=17829",
+      "instagram": "@arvadacenter",
+      "location": "Arvada, CO, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "colorado",
+        "18-plus"
+      ],
+      "jury": [
+        "Samantha Johnston, Executive Director & Curator, Colorado Photographic Arts Center",
+        "Collin Parson, Director of Galleries & Curator, Arvada Center"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17829",
+      "requirements": "Up to 3 images",
+      "resultsDate": "October 30, 2026",
+      "slug": "home-states-of-belonging-arvada-center",
+      "orgInTitle": false,
+      "summary": "Colorado photo-based artists juried into the Arvada Center's Main Gallery with CPAC and Month of Photography. Fee scholarships offered.",
+      "dateAdded": "2026-07-12T15:33:47Z"
+    },
+    {
+      "title": "Ucross Native American Fellowships — Spring 2027",
+      "org": "Ucross Foundation",
+      "deadline": "2026-07-15",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Four-week fellowship residency at the Ucross Foundation's 20,000-acre ranch in northeastern Wyoming for contemporary Native American visual artists and writers, during the spring 2027 session (January through early June). Fellows receive a $2,000 award plus stipend, private studio, living accommodations, chef-prepared meals and uninterrupted work time, along with a public presentation of their work — a featured exhibition in the Ucross Art Gallery for visual artists, a reading or talk for writers. Launched in 2018 with Andy Warhol Foundation support and expanded with NEA funding; typically two fellows per discipline, and all applicants are also considered for standard Ucross residencies. No application fee.",
+      "url": "https://www.ucrossfoundation.org/native-american-fellowships.html",
+      "instagram": "@ucrossfoundation",
+      "location": "Ucross, WY, USA",
+      "prize": "$2,000 + exhibition",
+      "eligibility": [
+        "native-american"
+      ],
+      "jury": [],
+      "submitVia": "Submittable",
+      "submitUrl": "https://ucrossfoundation.submittable.com/submit",
+      "slug": "ucross-native-american-fellowships-spring-2027",
+      "orgInTitle": true,
+      "summary": "Free four-week Wyoming residency for Native American artists with a $2,000 award and a featured Ucross Art Gallery show.",
+      "dateAdded": "2026-07-12T15:33:47Z"
     }
   ]
 }
