@@ -15,12 +15,29 @@
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://www.tpoty.com/tpoty-online-entry/",
-      "requirements": "Single image or 4-image portfolio",
+      "requirements": "1 or 4 images",
       "resultsDate": "January 17, 2027",
       "slug": "travel-photographer-of-the-year-2026",
       "orgInTitle": true,
       "summary": "Established international travel photography award. Four-image portfolios or One Shot single frames; cash prizes + free youth categories.",
-      "dateAdded": "2026-07-12T23:17:58.989Z"
+      "dateAdded": "2026-07-12T23:17:58.989Z",
+      "jury": [
+        "Linda Barberic, Producer & Art Director",
+        "Keith Berr, Photographer",
+        "Daria Bonera, Photographers’ Agent & Picture Editor",
+        "Cheryl Brophy Chan, Former Picture Editor, Corbis",
+        "Krystal Chryssomallis, Fine Art Photographer",
+        "Chris Coe, TPOTY Founder",
+        "Richard Dunwoody, Photographer",
+        "Jason Edwards, National Geographic Photographer",
+        "Colin Finlay, Stock Photography Expert",
+        "Simon Hill, RPS President (HonFRPS)",
+        "Jeremy Hoare, Photographer",
+        "Frank Meo, Photographer’s Agent",
+        "Angela Nicholson, Editor & SheClicks Founder",
+        "Ellie Rothnie, Wildlife Photographer",
+        "Manfred Zollner, Former Editor-in-Chief, Fotomagazin"
+      ]
     },
     {
       "title": "Talent of the Year 2026 — Tsvetan Tomchev Award",
@@ -1178,7 +1195,8 @@
       "location": "Richmond, VA, USA",
       "prize": "$25,000",
       "eligibility": [
-        "united-states"
+        "united-states",
+        "18-plus"
       ],
       "jury": [],
       "ai": "Accepted (must disclose)",
@@ -1220,7 +1238,7 @@
       "title": "Exposure One Awards - Photographer of the Year 2026",
       "org": "Exposure One",
       "deadline": "2026-09-02",
-      "fee": "$22–$60",
+      "fee": "$27–$50",
       "category": "photography",
       "description": "Annual international photography contest from Exposure One Awards honouring outstanding photographers across 20 categories — including Abstract, Architecture, Conceptual, Fine Art, Landscapes, Portrait, Street, Travel and Wildlife. Entries are accepted as single images or series of 2–5 images from film, digital or mobile devices. Over $4,000 in cash prizes, plus an artist profile, winner's gallery feature, press release and interview. Judged by an international panel drawn from SFMOMA, Aperture, Vogue, the Art Gallery of Alberta and Leica Gallery LA.",
       "url": "https://exposureoneawards.com/contests/photographer-of-the-year",
@@ -2620,7 +2638,7 @@
       "url": "https://apanational.org/awards/apa-awards-2026-call-for-entries/",
       "instagram": "@apanational",
       "location": "Online",
-      "prize": "Printed awards book + Sony & Adobe prizes",
+      "prize": "Publication",
       "eligibility": [],
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/76677f52-8967-45d2-85d1-bee6b3233845/start",
