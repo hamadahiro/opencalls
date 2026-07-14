@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-07-13T21:10:00Z",
+  "lastUpdated": "2026-07-14T05:10:00Z",
   "calls": [
     {
       "title": "Create! Magazine Tenth Anniversary Art Prize 2026",
       "org": "Create! Magazine",
-      "deadline": "2026-07-30",
+      "deadline": "2026-07-31",
       "fee": "$35 / 3 images",
       "category": "photography",
       "description": "Create! Magazine's flagship annual juried art prize, marking the publication's tenth anniversary. Open worldwide across four categories — Photography and Digital Art (film, digital photography and new media, AI excluded), Painting and Two-Dimensional Media, Sculpture and Three-Dimensional Design, and Fiber and Textile Art. The grand-prize winner receives $1,000, a six-page editorial spread and interview in the print magazine, a podcast guest appearance, a spot in the Philadelphia pop-up exhibition (October 2026) and a social feature to an audience of 200,000+. First-place winners in each category receive a one-year Create! Collective membership ($390 value), a two-page feature, exhibition participation and a blog interview. Enter three images for $35; a limited number of fee-waiver scholarships are available on request.",
@@ -13,7 +13,11 @@
       "location": "Online",
       "prize": "$1,000 + Publication + Exhibition",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Ekaterina Popova, Founder, Create! Magazine",
+        "Alicia Puig, CEO, PxP Contemporary",
+        "Christina Nafziger, Lead Editor"
+      ],
       "submitVia": "Submittable",
       "submitUrl": "https://createmagazine.submittable.com/submit",
       "requirements": "3 images",
@@ -34,7 +38,7 @@
       "url": "https://www.bluelinearts.org/ck-2027-call",
       "instagram": "@bluelinearts",
       "location": "Roseville, CA, USA",
-      "prize": "$2,000 / $1,500 / $1,000 / $750 / $250 + Exhibition",
+      "prize": "$2,000 + Exhibition",
       "eligibility": [
         "18-plus",
         "united-states"
@@ -48,7 +52,8 @@
       "slug": "crocker-kingsley-2027-blue-line-arts",
       "orgInTitle": false,
       "summary": "National juried competition at Blue Line Arts, juried by Naz Cuguoğlu. All media incl. photography; $2,000 top + travel to the Crocker Art Museum.",
-      "dateAdded": "2026-07-14T03:06:03Z"
+      "dateAdded": "2026-07-14T03:06:03Z",
+      "resultsDate": "November 27, 2026"
     },
     {
       "title": "VMFA Visual Arts Fellowship 2027–28",
@@ -62,7 +67,7 @@
       "location": "Richmond, VA, USA",
       "prize": "$4,000–$8,000 Fellowship",
       "eligibility": [
-        "united-states"
+        "virginia"
       ],
       "jury": [],
       "submitVia": "Formstack",
@@ -160,7 +165,8 @@
         "Angela Nicholson, Editor & SheClicks Founder",
         "Ellie Rothnie, Wildlife Photographer",
         "Manfred Zollner, Former Editor-in-Chief, Fotomagazin"
-      ]
+      ],
+      "ai": "Not accepted"
     },
     {
       "title": "Talent of the Year 2026 — Tsvetan Tomchev Award",
@@ -1725,7 +1731,7 @@
     {
       "title": "Motion > Blur",
       "org": "Praxis Photo Arts Center",
-      "deadline": "2026-07-19",
+      "deadline": "2026-07-26",
       "fee": "$35 (5 images) + $5 each additional",
       "category": "exhibition",
       "description": "Juried exhibition at Praxis Gallery in Minneapolis exploring how blur conveys velocity, gesture, and emotional tone — capturing movement within still photography to introduce surreal, kinetic qualities. All genres and processes welcome. Up to 38 images are selected for the physical gallery show (August 22 – September 12, 2026). Awards include Directors' Choice (free entry into two future calls) and five honorable mentions featured in the exhibition, printed catalog, and online gallery. Images shown at Praxis within the past year are ineligible; Praxis members get 10 images for the price of 5.",
@@ -1742,7 +1748,7 @@
       "slug": "motion-blur-praxis-photo-arts-center",
       "orgInTitle": false,
       "summary": "Praxis Gallery (Minneapolis) on motion and blur in still photography. Physical show Aug–Sep 2026; printed catalog.",
-      "resultsDate": "July 24, 2026",
+      "resultsDate": "July 31, 2026",
       "dateAdded": "2026-06-26T07:15:20.395Z"
     },
     {
@@ -2217,7 +2223,7 @@
       "url": "https://queer-gaze.de/",
       "instagram": "@gaze.photoaward",
       "location": "Berlin, Germany",
-      "prize": "2× €1,000 + €500 MPB vouchers + Exhibition",
+      "prize": "Exhibition",
       "eligibility": [
         "18-plus",
         "lgbtq",
@@ -28588,7 +28594,7 @@
       "description": "Now in its 10th edition, the PhMuseum Women Photographers Grant supports the work and careers of female and non-binary photographers of all ages and from all countries, working across documentary, fine art and conceptual photography. The open call awards a total of $11,000 in cash prizes plus €5,000 in MPB gear vouchers: $5,500 (1st), $2,200 (2nd), $1,100 (3rd), a $2,200 New Generation prize for entrants aged 30 or under, and two MPB Special Mentions of €2,500 in vouchers each. Selected work is shown in a solo exhibition at PhMuseum Lab, screened at the PhotoVogue Festival, and featured via a Vogue Italia interview; every entrant also receives a 30-minute portfolio review with a PhMuseum Education mentor. The grant promotes stories told from a female and non-binary perspective and advances gender equality across the photography industry.",
       "url": "https://phmuseum.com/grants/2026-women-photographers-grant",
       "location": "Online / Bologna, Italy",
-      "prize": "$11,000 + vouchers + Exhibition",
+      "prize": "$11,000 + Exhibition",
       "submitVia": "PhMuseum",
       "submitUrl": null,
       "requirements": "5–20 images per project",
@@ -28767,7 +28773,7 @@
       "url": "https://bigci.org/awards/",
       "instagram": "@bigciaustralia",
       "location": "Bilpin, NSW, Australia",
-      "prize": "4-week residency + A$5,000 (×2 winners)",
+      "prize": "A$5,000 ×2",
       "eligibility": [],
       "submitVia": "Online form",
       "submitUrl": "https://bigci.wufoo.com/forms/mhcqz210xg9d35/",
