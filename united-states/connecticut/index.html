@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/world-culture-ferguson-library-stamford-art-association/">World Culture: Art at The Ferguson Library &middot; Stamford Art Association</a></h3><p class="call-description">Multimedia juried show on world culture at Stamford's Ferguson Library — photography and any medium welcome, up to $400 in awards.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', CT,') || c.location.includes(', Connecticut,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', CT,') || c.location.includes(', Connecticut,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
