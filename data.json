@@ -73,7 +73,14 @@
    "eligibility": [],
    "submitVia": "Google Form",
    "submitUrl": "https://forms.gle/KZXeLeE5JMctsKs39",
-   "requirements": "One photobook dummy or zine",
+   "jury": [
+    "Franek Ammer, Fotofestiwal",
+    "Jakub Dziewit, unContemporary",
+    "Magdalena Guzik, Museum of Photography in Kraków",
+    "Aneta Kowalczyk, Blow Up Press",
+    "Katarzyna Łata, Zamek Sielecki"
+   ],
+   "requirements": "1 photobook dummy or zine",
    "resultsDate": "September 2026",
    "slug": "paper-photo-dummy-award-2026-paper-photo-festival",
    "orgInTitle": false,
@@ -990,7 +997,7 @@
    "url": "https://www.sfvacc.org/events/call-of-the-wild-open-call-2026",
    "instagram": "@sfvacc",
    "location": "Online",
-   "prize": "$800 + solo exhibition",
+   "prize": "$800 + Exhibition",
    "eligibility": [],
    "jury": [
     "Dale Youngman, Curator"
@@ -1000,7 +1007,7 @@
    "ai": "Not accepted",
    "slug": "call-of-the-wild-virtual-exhibition-2026",
    "orgInTitle": false,
-   "summary": "Flora-and-fauna virtual show from SFVACC — Best of Show wins $800 plus a solo exhibition; open worldwide to artists and photographers.",
+   "summary": "Flora-and-fauna virtual show from SFVACC — Best of Show wins $800; open worldwide to artists and photographers in a virtual exhibition.",
    "dateAdded": "2026-07-01T23:31:31Z",
    "resultsDate": "By August 19, 2026",
    "requirements": "Up to 6 images"
@@ -25061,7 +25068,7 @@
   {
    "title": "The Abstract Vision",
    "org": "Southeast Center for Photography",
-   "deadline": "2026-07-15",
+   "deadline": "2026-07-18",
    "fee": "$35/5 images ($28 members)",
    "category": "exhibition",
    "description": "Virtual juried exhibition by SEC4P seeking non-representational photography — work that doesn't attempt to represent external reality but engages with shape, form, color, and texture. Source material may be nature, man-made, or figurative, but the resulting image must read as abstract. Black-and-white or color, analog, digital, and antique processes all welcome. Juror: Catherine Fairchild (Houston-based fine art photographer specializing in abstract work). 35–40 images selected for the virtual gallery; one-month online exhibition with social media promotion, archived slideshow, and video walkthrough. 0% commission — artists retain 100% of sale proceeds and copyrights. Open globally to photographers regardless of location, age, or skill level.",
@@ -26390,7 +26397,7 @@
    "url": "https://thepeale.org/call-for-artists-life-in-baltimore/",
    "instagram": "@thepealebaltimore",
    "location": "Baltimore, MD, USA",
-   "prize": "Cash awards + Exhibition",
+   "prize": "Exhibition",
    "eligibility": [
     "18-plus",
     "baltimore-region"
@@ -29717,7 +29724,9 @@
    "instagram": "@texasphotosociety",
    "location": "Middlebury, VT, USA",
    "prize": "$500 / $300 + Exhibition",
-   "eligibility": [],
+   "eligibility": [
+    "18-plus"
+   ],
    "jury": [
     "Brian Finke"
    ],
@@ -29891,7 +29900,7 @@
    "prize": "Workshop fellowship",
    "eligibility": [],
    "submitVia": "Picter",
-   "submitUrl": "https://site.picter.com/wacken-workshop-2026",
+   "submitUrl": "https://app.picter.com/contests/b1447f4a-ba08-4591-9cb4-8a30e5038db0/start",
    "slug": "wacken-rock-n-roll-photography-workshop-2026-pep-bonet",
    "orgInTitle": false,
    "summary": "Six free places in Pep Bonet's photo masterclass at Wacken Open Air 2026 — tuition, hosting, catering and passes included.",
