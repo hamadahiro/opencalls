@@ -112,7 +112,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/21c-artadia-award-2026-northwest-arkansas/">21c Artadia Award 2026 — Northwest Arkansas</a></h3><p class="call-description">Unrestricted $15,000 for one visual artist in Bentonville/Washington Counties, AR — Artadia × 21c Museum Hotels. Free.</p></div>
 
     </section>
 
@@ -130,7 +129,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', AR,') || c.location.includes(', Arkansas,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', AR,') || c.location.includes(', Arkansas,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

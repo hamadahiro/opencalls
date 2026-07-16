@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Loghaven. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/loghaven-artist-residency-2027/">Loghaven Artist Residency 2027</a></h3><p class="call-description">2–6 week residency on 90 forested acres. $850/week stipend plus travel subsidy. Visual arts, writing, and more.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Loghaven' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Loghaven').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
