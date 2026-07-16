@@ -76,7 +76,7 @@ const eligibilityLabel = {
   '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '45-plus': '45+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
   'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only',
-  'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'cincinnati-area': 'Cincinnati Area only', 'los-angeles': 'LA only',
+  'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'cincinnati-area': 'Cincinnati Area only', 'los-angeles': 'LA only', 'portland-area': 'Portland Area only',
   'new-york-state': 'NY State only', 'central-new-york': 'Central NY only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'japan': 'Japan only', 'southeast-us': 'Southeast US only',
