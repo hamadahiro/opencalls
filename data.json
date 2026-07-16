@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-07-16T15:28:23Z",
+ "lastUpdated": "2026-07-16T21:27:27Z",
  "calls": [
   {
    "title": "Eyeshot Open Call 2026",
@@ -180,7 +180,7 @@
    ],
    "submitVia": "CaFE",
    "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17597",
-   "requirements": "Up to 11 images",
+   "requirements": "Up to 10 images",
    "slug": "crocker-kingsley-2027-blue-line-arts",
    "orgInTitle": false,
    "summary": "National juried competition at Blue Line Arts, juried by Naz Cuguoğlu. All media incl. photography; $2,000 top + travel to the Crocker Art Museum.",
@@ -1527,7 +1527,7 @@
    "ai": "Not accepted",
    "slug": "exposure-one-awards-photographer-of-the-year-2026",
    "orgInTitle": true,
-   "summary": "Exposure One's annual contest across 20 categories. Single images or 2–5 series; $4,000+ in prizes. International, AI not accepted.",
+   "summary": "Exposure One's annual black & white contest across 20 categories. Single images or 2–5 series; $4,000+ in prizes. AI not accepted.",
    "dateAdded": "2026-06-30T23:28:58Z",
    "resultsDate": "October 14, 2026"
   },
@@ -2232,7 +2232,7 @@
    ],
    "submitVia": "CaFE",
    "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17749",
-   "requirements": "1 work",
+   "requirements": "Up to 10 works",
    "resultsDate": "After August 1, 2026",
    "slug": "night-vision-artlink",
    "orgInTitle": false,
@@ -2295,7 +2295,7 @@
    "orgInTitle": false,
    "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
    "dateAdded": "2026-06-19T01:49:26.373Z",
-   "verifyNote": "2026-07-15: submission form (A740zz) confirmed dead (404); site now shows only an RSVP-to-attend form (ZjeZk5). Submissions appear closed/retired — candidate to hide."
+   "verifyNote": "2026-07-16: re-confirmed A740zz submission form 404; only RSVP-to-attend form (ZjeZk5) live on site; submissions retired — candidate to hide."
   },
   {
    "title": "The City Series: London — Shutter Hub Editions Publication",
@@ -25807,16 +25807,13 @@
    ],
    "submitVia": "Official website",
    "submitUrl": "https://biennalelarnaca.com/apply-here/",
-   "requirements": "3 images per work",
-   "resultsDate": "May 2027",
+   "requirements": "Up to 3 images per work",
+   "resultsDate": "By May 15, 2027",
    "slug": "larnaca-biennale-2027-open-call",
    "orgInTitle": true,
    "summary": "Fifth Larnaca Biennale under the theme Metatopies: Geographies in Motion. Photography eligible; 13 awards including the Grand Prix.",
    "dateAdded": "2026-06-10T07:44:39.248Z",
-   "jury": [
-    "Niki Papaspirou, Art Historian & Curator",
-    "Marios Fournaris, Visual Artist & Art Historian"
-   ]
+   "jury": []
   },
   {
    "title": "PRC Artist-in-Residence 2026",
@@ -26041,7 +26038,7 @@
    "prize": "Exhibition",
    "eligibility": [],
    "submitVia": "Official website",
-   "requirements": "Up to 3 images",
+   "requirements": "1 image per entry",
    "resultsDate": "April 2027",
    "slug": "adex-dugong-photo-of-the-year-2027",
    "orgInTitle": true,
@@ -26250,7 +26247,7 @@
   {
    "title": "The Shadow Aspect",
    "org": "Praxis Photo Arts Center",
-   "deadline": "2026-07-12",
+   "deadline": "2026-07-19",
    "fee": "$35 (5 images) + $5 each additional",
    "category": "exhibition",
    "description": "Open-theme exhibition at Praxis Gallery in Minneapolis examining shadow as pure visual form and as psychological and cultural symbol — from formal studies of cast light to conceptual and metaphoric readings of the shadow self. All genres and processes welcome, traditional and non-traditional, analog and digital. Juried by Ann Jastrab, Executive Director of the Center for Photographic Art. Awards include Juror's Choice (free entry into three future calls), Directors' Choice, and eight honorable mentions shown in the exhibition and online gallery. Images exhibited at Praxis within the past year are ineligible. Exhibition August 22 – September 12, 2026; Praxis members get 10 images for the price of 5.",
@@ -26267,7 +26264,7 @@
    "submitVia": "SmarterEntry",
    "submitUrl": "https://client.smarterentry.com/praxis",
    "requirements": "Up to 10 images",
-   "resultsDate": "July 24, 2026",
+   "resultsDate": "August 2, 2026",
    "slug": "the-shadow-aspect-praxis-photo-arts-center",
    "orgInTitle": false,
    "summary": "Praxis Gallery (Minneapolis) explores shadow as form, symbol, and psyche. Juried by Ann Jastrab; exhibition Aug–Sep 2026.",
@@ -26431,7 +26428,6 @@
    "location": "Northport, NY, USA",
    "prize": "$200 + $100 + $50",
    "eligibility": [
-    "18-plus",
     "united-states"
    ],
    "jury": [
@@ -26696,7 +26692,7 @@
    "submitVia": "CaFE",
    "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17401",
    "requirements": "5–15 images",
-   "resultsDate": "November 1, 2026",
+   "resultsDate": null,
    "slug": "grand-canyon-artist-in-residence-2027",
    "orgInTitle": false,
    "summary": "4–8 week South Rim residency with $800/week stipend, housing, and travel subsidy. Three artists chosen for 2027.",
@@ -27150,7 +27146,7 @@
    "orgInTitle": true,
    "summary": "Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.",
    "dateAdded": "2026-06-11T19:43:58.718Z",
-   "verifyNote": "As of 2026-07-12 (rechecked) the online application form is NOT on the page (\"updating currently but will add soon\"); working route is video application to gallery@lanesboroarts.org. Page also contains a stale \"2027\" sentence amid 2028-cycle copy. Recheck for the form."
+   "verifyNote": "As of 2026-07-16 (rechecked) the online application form is NOT on the page (\"updating currently but will add soon\"); working route is video application to gallery@lanesboroarts.org. Page also contains a stale \"2027\" sentence amid 2028-cycle copy. Recheck for the form."
   },
   {
    "title": "Lanesboro Early Career Artists Show 2027",
@@ -27174,7 +27170,7 @@
    "orgInTitle": true,
    "summary": "Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.",
    "dateAdded": "2026-06-11T19:43:58.718Z",
-   "verifyNote": "As of 2026-07-12 (rechecked) no online form on the page despite \"available below\" text; video application via gallery@lanesboroarts.org works. Recheck for the form."
+   "verifyNote": "As of 2026-07-16 (rechecked) no online form on the page despite \"available below\" text; video application via gallery@lanesboroarts.org works. Recheck for the form."
   },
   {
    "title": "Her Art, Her Voice — 2027 Biennial Juried Exhibition",
@@ -29765,9 +29761,7 @@
    "instagram": "@texasphotosociety",
    "location": "Middlebury, VT, USA",
    "prize": "$500 / $300 + Exhibition",
-   "eligibility": [
-    "18-plus"
-   ],
+   "eligibility": [],
    "jury": [
     "Brian Finke"
    ],
@@ -29874,14 +29868,14 @@
    "slug": "hyperview-manifest-gallery",
    "summary": "Works about vastness and scale for a Cincinnati gallery show. Every exhibitor gets a $50 honorarium; $1,000 Grand Jury Award.",
    "org": "Manifest Gallery",
-   "fee": "$45 (3 images)",
+   "fee": "$45 (3 images) + $5 each",
    "category": "exhibition",
    "instagram": "@manifestgallery",
    "location": "Cincinnati, OH, USA",
    "prize": "$1,000",
    "eligibility": [],
    "submitVia": "Website form",
-   "requirements": "Up to 3 images",
+   "requirements": "Unlimited images",
    "orgInTitle": false,
    "resultsDate": "September 28, 2026",
    "dateAdded": "2026-07-12T07:35:41Z"
@@ -29895,14 +29889,14 @@
    "slug": "counterform-manifest-gallery",
    "summary": "Works about reactions and the aftermath of change at Manifest Gallery in Cincinnati. $50 honorarium; $1,000 Grand Jury Award.",
    "org": "Manifest Gallery",
-   "fee": "$45 (3 images)",
+   "fee": "$45 (3 images) + $5 each",
    "category": "exhibition",
    "instagram": "@manifestgallery",
    "location": "Cincinnati, OH, USA",
    "prize": "$1,000",
    "eligibility": [],
    "submitVia": "Website form",
-   "requirements": "Up to 3 images",
+   "requirements": "Unlimited images",
    "orgInTitle": false,
    "resultsDate": "September 28, 2026",
    "dateAdded": "2026-07-12T07:35:41Z"
@@ -29916,14 +29910,14 @@
    "slug": "visage-manifest-gallery",
    "summary": "International portraiture call at Manifest Gallery in Cincinnati. Every exhibitor gets a $50 honorarium; $1,000 Grand Jury Award.",
    "org": "Manifest Gallery",
-   "fee": "$45 (3 images)",
+   "fee": "$45 (3 images) + $5 each",
    "category": "exhibition",
    "instagram": "@manifestgallery",
    "location": "Cincinnati, OH, USA",
    "prize": "$1,000",
    "eligibility": [],
    "submitVia": "Website form",
-   "requirements": "Up to 3 images",
+   "requirements": "Unlimited images",
    "orgInTitle": false,
    "resultsDate": "September 28, 2026",
    "dateAdded": "2026-07-12T07:35:41Z"
@@ -29948,7 +29942,8 @@
    "dateAdded": "2026-07-12T07:35:41Z",
    "jury": [
     "Pep Bonet, Photographer & Mentor"
-   ]
+   ],
+   "requirements": "Portfolio"
   },
   {
    "title": "Kominek Editions I — Golden Hour / Blue Hour",
@@ -30302,6 +30297,153 @@
    "orgInTitle": true,
    "summary": "Juried group show at Hoxton Arches, London (Nov 26–29). Selected work printed and exhibited; partner prizes incl. Hahnemühle print.",
    "dateAdded": "2026-07-16T15:28:23Z"
+  },
+  {
+   "title": "Art That Matters to the Planet: Dark Skies",
+   "org": "Roger Tory Peterson Institute",
+   "deadline": "2026-11-07",
+   "fee": "$20 + $10/extra work",
+   "category": "exhibition",
+   "description": "Sixth annual juried exhibition at the Roger Tory Peterson Institute in Jamestown, NY (January 29 – May 30, 2027), themed on the night skies after Peterson's A Field Guide to the Stars and Planets — nocturnal creatures, constellations, light pollution and space junk. All media welcome, including photography; recent works (since 2020) preferred. Guest juror Jon Lomberg, Carl Sagan's principal artistic collaborator and Design Director of NASA's Voyager Golden Record. For the first time RTPI awards cash prizes of $1,000, $500 and $250, announced at the opening reception. International; up to 4 works. Entries open August 1 and close November 7, 2026 via CaFÉ.",
+   "url": "https://rtpi.org/exhibitions/art-that-matters-to-the-planet-dark-skies-open-call/",
+   "instagram": "@rtpinstitute",
+   "location": "Jamestown, NY, USA",
+   "prize": "$1,000 + Exhibition",
+   "eligibility": [],
+   "jury": [
+    "Jon Lomberg, astronomical artist and Design Director of NASA's Voyager Golden Record"
+   ],
+   "submitVia": "CaFE",
+   "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17683",
+   "requirements": "Up to 4 works",
+   "resultsDate": "December 11, 2026",
+   "slug": "art-that-matters-to-the-planet-dark-skies-roger-tory-peterson-institute",
+   "orgInTitle": false,
+   "summary": "Night-sky nature art juried by Voyager Golden Record designer Jon Lomberg at RTPI, Jamestown NY. $1,000 top prize; show Jan–May 2027.",
+   "dateAdded": "2026-07-16T19:15:45Z"
+  },
+  {
+   "title": "Tracks & Trails: Marks Left Behind",
+   "org": "View Arts Center",
+   "deadline": "2026-10-30",
+   "fee": "$35 + $10/extra work",
+   "category": "exhibition",
+   "description": "Winter juried exhibition in the largest galleries of View Arts Center in Old Forge, NY, in the Adirondacks (December 11, 2026 – March 6, 2027). The theme investigates stories written upon the land — animal tracks, footprints, ski and snowshoe trails, railroads, bridges and winter logging — the marks that become part of the landscape's memory. All media welcome, including photography. Open to US artists; work must be original, created within the past 3 years and not previously shown at View. Up to 3 works ($35 first, $10 each additional) via CaFÉ; artists receive 65% of sales.",
+   "url": "https://www.viewarts.org/experience/experiences/tracks/",
+   "instagram": "@viewartscenter",
+   "location": "Old Forge, NY, USA",
+   "prize": "Exhibition",
+   "eligibility": [
+    "united-states"
+   ],
+   "submitVia": "CaFE",
+   "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17718",
+   "requirements": "Up to 3 works",
+   "resultsDate": "November 6, 2026",
+   "slug": "tracks-and-trails-marks-left-behind-view-arts-center",
+   "orgInTitle": false,
+   "summary": "Adirondack winter show on marks left upon the land — tracks, trails, railroads. All media incl. photography; Dec 2026–Mar 2027.",
+   "dateAdded": "2026-07-16T19:15:45Z"
+  },
+  {
+   "title": "Künstler*dorf Schöppingen Residency Fellowships 2027",
+   "org": "Stiftung Künstlerdorf Schöppingen",
+   "deadline": "2026-08-31",
+   "fee": "Free",
+   "category": "residency",
+   "description": "Around 40 residency fellowships per year at the artists' village in Schöppingen, North Rhine-Westphalia, for professional visual artists (including photographers), authors and composers. Residencies of 2–6 months during 2027, with a stipend of €1,500 per month (minus roughly €100–200 for rent and operating costs); collectives receive €1,000 per person up to €3,000. Open to all nationalities and ages; partners, family or assistance can be accommodated by arrangement. Not a production fellowship — no obligation to present results, though exhibition and presentation facilities are available. Expert juries select on quality of previous work, the Schöppingen project and community contributions. Apply June 27 – August 31, 2026 via the online portal.",
+   "url": "https://stiftung-kuenstlerdorf.de/en/application_process",
+   "instagram": "@stiftungkuenstlerdorf",
+   "location": "Schöppingen, Germany",
+   "prize": "Residency + €1,500/month stipend",
+   "eligibility": [
+    "professional"
+   ],
+   "submitVia": "Official website",
+   "submitUrl": "https://stiftung-kuenstlerdorf.de/en/apply",
+   "requirements": "Portfolio (max 15 pages)",
+   "slug": "kuenstlerdorf-schoeppingen-residency-fellowships-2027",
+   "orgInTitle": true,
+   "summary": "2–6 month funded residencies in a German artists' village — €1,500/month stipend, ~40 fellows a year, open worldwide, free to apply.",
+   "dateAdded": "2026-07-16T19:15:45Z"
+  },
+  {
+   "title": "Small Works on Paper 2027",
+   "org": "Arkansas Arts Council",
+   "deadline": "2026-08-23",
+   "fee": "$15 for 1, $25 for 3",
+   "category": "exhibition",
+   "description": "Annual juried exhibition of the Arkansas Arts Council, touring up to ten venues across the state for a full year starting January 2027 at the South Arkansas Arts Center in El Dorado. Open to Arkansas residents 18+ working on paper — painting, photography, drawing, printmaking, mixed media and collage; work must be from the past two years and fit an 18×18 or 18×24 inch frame; no AI. Juror Kathy Liao (Joan Mitchell Foundation Fellow, 21c Artadia awardee) selects a maximum of 40 works, with up to $2,000 available in purchase awards for the SWOP permanent collection. Selected artists join the council's Juried Artist Directory. Entries July 15 – August 23, 2026 via CaFÉ.",
+   "url": "https://www.arkansasheritage.com/arkansas-art-council/aac-programs/small-works-on-paper",
+   "instagram": "@arkartscouncil",
+   "location": "Little Rock, AR, USA",
+   "prize": "$2,000 purchase awards + Exhibition",
+   "eligibility": [
+    "arkansas",
+    "18-plus"
+   ],
+   "jury": [
+    "Kathy Liao, artist, Joan Mitchell Foundation Fellow and 21c Artadia awardee"
+   ],
+   "submitVia": "CaFE",
+   "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17826",
+   "requirements": "Up to 3 works",
+   "ai": "Not accepted",
+   "slug": "small-works-on-paper-2027-arkansas-arts-council",
+   "orgInTitle": false,
+   "summary": "Arkansas Arts Council's year-long touring juried show of works on paper incl. photography. Up to $2,000 purchase awards; AR artists.",
+   "dateAdded": "2026-07-16T19:31:01Z",
+   "resultsDate": "October 2026"
+  },
+  {
+   "title": "Artist in Residence Program — Palm Springs Preferred Small Hotels",
+   "org": "Palm Springs Preferred Small Hotels",
+   "deadline": "2026-08-15",
+   "fee": "$25",
+   "category": "residency",
+   "description": "Inaugural juried photography residency from the Palm Springs boutique-hotel collective, creating the first coordinated visual archive of the city's small-hotel legacy. Up to 12 photographers are hosted for 1–2 weeks across roughly 18 properties in three sessions (November 8–21 and December 6–19, 2026; January 18–30, 2027), receiving complimentary lodging, a $250 weekly stipend, transportation support, attraction passes and mentorship from photographer Terry Hastings. Architectural, documentary, fine art, experimental, multimedia and AI-assisted practices welcome; the first call focuses on Southern California photographers. The season concludes with a curated exhibition and sales showcase at the Palm Springs Cultural Center. Apply with 3–10 images via CaFÉ.",
+   "url": "https://palmspringspreferredsmallhotels.com/news/pspsh-launches-artist-in-residence-program/",
+   "instagram": "@palmspringspreferredsmallhotel",
+   "location": "Palm Springs, CA, USA",
+   "prize": "Residency + $250/week stipend + Exhibition",
+   "eligibility": [
+    "southern-california",
+    "18-plus"
+   ],
+   "submitVia": "CaFE",
+   "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17482",
+   "requirements": "3–10 images",
+   "ai": "Accepted",
+   "slug": "artist-in-residence-program-palm-springs-preferred-small-hotels",
+   "orgInTitle": true,
+   "summary": "Photography residency in Palm Springs boutique hotels — free lodging, $250/week stipend, mentorship, Cultural Center show. SoCal photographers.",
+   "dateAdded": "2026-07-16T19:31:01Z",
+   "jury": [
+    "Terry Hastings, Artistic Director & Photographer",
+    "Michael Green, Executive Director, Palm Springs Cultural Center",
+    "Gary Armstrong, Chair, Palm Springs Public Arts Commission"
+   ]
+  },
+  {
+   "title": "Photobook Dummy Exhibition — 16th Lisbon Photobook Fair",
+   "org": "Lisbon Photobook Fair",
+   "deadline": "2026-10-12",
+   "fee": "Free",
+   "category": "zine",
+   "description": "Open call for the photobook dummy exhibition of the 16th Feira do Livro de Fotografia de Lisboa, held November 27–29, 2026 at the Arquivo Municipal de Lisboa – Fotográfico. Dummies are displayed for consultation throughout the fair, where past editions (72 projects by 65 authors in 2026) have drawn the attention of attending publishers and booksellers — a real chance to move a book project forward. Pre-register with up to 6 photographs of the dummy (72 dpi, max 2 MB each) via the Google Form by October 12, 21:00 GMT; confirmations October 23, dummies delivered by November 16. Participation is free. The fair also runs parallel calls for self-publisher/small-press tables and presentations of authorial projects.",
+   "url": "https://www.lisbonphotobookfair.com/",
+   "instagram": "@lisbonphotobookfair",
+   "location": "Lisbon, Portugal",
+   "prize": "Exhibition",
+   "eligibility": [],
+   "submitVia": "Google Form",
+   "submitUrl": "https://forms.gle/R3N34YJ2ktBtiEAc7",
+   "requirements": "Up to 6 images",
+   "resultsDate": "October 23, 2026",
+   "slug": "photobook-dummy-exhibition-16th-lisbon-photobook-fair",
+   "orgInTitle": true,
+   "summary": "Show your photobook dummy at Lisbon's photobook fair (Nov 27–29) — free, publishers browse the exhibition; pre-register by Oct 12.",
+   "dateAdded": "2026-07-16T19:42:48Z"
   }
  ]
 }
