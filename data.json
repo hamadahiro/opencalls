@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-07-16T13:08:15Z",
+ "lastUpdated": "2026-07-16T15:28:23Z",
  "calls": [
   {
    "title": "Eyeshot Open Call 2026",
@@ -30218,6 +30218,88 @@
     "Diana Bokje, Photographer and mentor"
    ],
    "dateAdded": "2026-07-16T13:08:15Z"
+  },
+  {
+   "title": "Queer Spirit",
+   "org": "Blackfish Gallery",
+   "deadline": "2026-09-15",
+   "fee": "Free",
+   "category": "exhibition",
+   "description": "Open call from Blackfish Gallery, the artist-run cooperative gallery founded in 1979 in Portland's Pearl District, for Queer Spirit, a group exhibition running January 6–30, 2027. The gallery invites greater Portland-based artists whose work engages with queer identity, community, and imagination — across all backgrounds — for a celebration of resilience, belonging, and radical imagination. Submissions may directly address queer identity, explore the broader possibilities of queerness, or reflect the perspectives of queer artists; work across all media is welcome, with particular interest in experimental, thought-provoking, and installation-based practices. Free to enter via EntryThingy.",
+   "url": "https://www.blackfish.com/",
+   "instagram": "@blackfish_gallery",
+   "location": "Portland, OR, USA",
+   "prize": "Exhibition",
+   "eligibility": [
+    "portland-area"
+   ],
+   "submitVia": "EntryThingy",
+   "submitUrl": "https://app.entrythingy.com/blackfish/queer-spirit/",
+   "slug": "queer-spirit-blackfish-gallery",
+   "orgInTitle": false,
+   "summary": "Free group show at Portland's artist-run Blackfish Gallery celebrating queer identity, community and imagination. Jan 2027.",
+   "dateAdded": "2026-07-16T15:28:23Z"
+  },
+  {
+   "title": "Cantua Editions Open Call for Submissions",
+   "org": "Cantua Editions",
+   "deadline": "2026-09-01",
+   "fee": "Free",
+   "category": "zine",
+   "description": "Annual submissions call from Cantua Editions, an independent artist-run publishing house in New Jersey producing limited-edition hand-bound photobooks and ephemera, with publications held by MIT's Rotch Library and Harvard's Fine Arts Library. Seeking primarily photo-based projects exploring how landscapes, environments, and communities shape one another; artists working with archives and historical documentation are also welcome, as are themes of memory, ecology, and preservation. Send a short artist bio, a project statement (max 500 words), and 20–30 images as a single PDF to cantuaeditions@gmail.com with the subject line 'Submission – [Your Name]'. Chosen artists are invited to a preliminary meeting toward a publication.",
+   "url": "https://cantuaeditions.com/",
+   "instagram": "@cantuaeditions",
+   "location": "Online",
+   "prize": "Publication",
+   "eligibility": [],
+   "submitVia": "Email",
+   "requirements": "20–30 images",
+   "slug": "cantua-editions-open-call-2026",
+   "orgInTitle": true,
+   "summary": "Indie hand-bound photobook publisher seeks photo-based projects on landscapes, environments & communities. Free, email PDF.",
+   "dateAdded": "2026-07-16T15:28:23Z"
+  },
+  {
+   "title": "UNSTAGED — How Are Things?",
+   "org": "UNSTAGED",
+   "deadline": "2026-09-15",
+   "fee": "Free",
+   "category": "zine",
+   "description": "Open call from UNSTAGED, the independent photography journal of narrative-led inquiries into comforting and discomforting authenticity, initiated with the How Are Things Collective founded by Professor Amanda Crawley Jackson (University of the Arts London). The call explores how creative practice — photography in particular — can hold space for urgent dialogue and reflection in a time of polycrisis: projects examining our entanglement with human, non-human and more-than-human entities, bodies, and structures, through material & affective, political & (infra)structural, or speculative lenses. Submit 5–10 photographs as JPGs (long edge 2000px, 300 DPI) with a project description (max 500 words) via a public Google Drive link emailed to opencall@un-staged.com — email attachments are not considered. Free entry with no contribution fee; selected work is curated for print.",
+   "url": "https://un-staged.com/open-calls/",
+   "instagram": "@unstaged.lab",
+   "location": "Online",
+   "prize": "Publication (print)",
+   "eligibility": [],
+   "jury": [
+    "Amanda Crawley Jackson (@occursus1), How Are Things Collective founder"
+   ],
+   "submitVia": "Google Drive link via email",
+   "requirements": "5–10 images",
+   "slug": "unstaged-how-are-things",
+   "orgInTitle": true,
+   "summary": "Free call from indie journal UNSTAGED w/ How Are Things Collective: witnessing entanglement in polycrisis. Curated for print.",
+   "dateAdded": "2026-07-16T15:28:23Z"
+  },
+  {
+   "title": "The Salon — London Photo Show November 2026",
+   "org": "London Photo Show",
+   "deadline": "2026-11-19",
+   "fee": "£35–£125",
+   "category": "exhibition",
+   "description": "Open call for The Salon, a juried group exhibition at Hoxton Arches in London, November 26–29, 2026. Selected images are professionally printed (10×8 inches with a white border) and displayed with the photographer's name in the gallery. Open to photographers at all experience levels, whether or not they have exhibited before. Standout entries receive partner prizes from Think Tank, 36exp and Point 101, including a large-format archival Hahnemühle print and future exhibition space. Submit 1, 3 or 5 images (£35 / £90 / £125) via the entry form; upload instructions follow by email.",
+   "url": "https://www.londonphotoshow.org/the-salon-london-photo-show/",
+   "instagram": "@thelondonphotoshow",
+   "location": "London, United Kingdom",
+   "prize": "Exhibition",
+   "eligibility": [],
+   "submitVia": "Official website",
+   "submitUrl": "https://londonphotoshow.org/enter/",
+   "requirements": "1, 3 or 5 images",
+   "slug": "the-salon-london-photo-show-november-2026",
+   "orgInTitle": true,
+   "summary": "Juried group show at Hoxton Arches, London (Nov 26–29). Selected work printed and exhibited; partner prizes incl. Hahnemühle print.",
+   "dateAdded": "2026-07-16T15:28:23Z"
   }
  ]
 }

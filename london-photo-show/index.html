@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from London Photo Show. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/the-salon-london-photo-show-november-2026/">The Salon — London Photo Show November 2026</a></h3><p class="call-description">Juried group show at Hoxton Arches, London (Nov 26–29). Selected work printed and exhibited; partner prizes incl. Hahnemühle print.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'London Photo Show').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'London Photo Show' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
