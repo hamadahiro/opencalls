@@ -220,7 +220,9 @@
    "instagram": "@photoplacegallery",
    "location": "Middlebury, VT, USA",
    "prize": "$500 / $300 / $100 + Exhibition + Catalog",
-   "eligibility": [],
+   "eligibility": [
+    "18-plus"
+   ],
    "jury": [
     "Brian Finke, Documentary Photographer"
    ],
@@ -5436,7 +5438,7 @@
     "The deadline is August 12, 2026. WMG has presented more than 475 exhibitions across three decades; In Full View sits squarely within their mission of putting underrepresented artists into a space where their work is genuinely seen."
    ],
    "dateAdded": "2026-05-22T11:11:12.006Z",
-   "ai": "Not as primary medium",
+   "ai": "Not accepted",
    "jury": [
     "Jerri Zbiral, Juror"
    ],
@@ -29332,7 +29334,7 @@
    "orgInTitle": false,
    "summary": "47-year national juried show in Goldsboro, NC — $1,950 in awards, NC Museum of Art-affiliated juror; photography eligible.",
    "dateAdded": "2026-07-02T03:24:00Z",
-   "resultsDate": "August 26, 2026"
+   "resultsDate": null
   },
   {
    "title": "Ghosts & Things Regional Exhibition",
@@ -29508,7 +29510,7 @@
    "eligibility": [],
    "jury": [
     "Rina Castelnuovo, Press Photographer",
-    "Alex Rif, Poet & CEO, One Million Lobby",
+    "Avishay Cahana, Artistic Director, Tel Aviv Cinematheque",
     "Yair Barak, Photographer & Curator, Artspace Tel Aviv",
     "Itamar Weizman, Founder, Radical Publishing",
     "Dr. Moti Gigi, Sociologist & Senior Lecturer, Sapir Academic College",
