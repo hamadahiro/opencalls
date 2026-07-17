@@ -106,8 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/space-negative-outer-living-arts-center-east/">Space: Negative, Outer, Living &middot; Arts Center East</a></h3><p class="call-description">Themed juried show on negative, outer, and living space at Arts Center East, CT. All media, from $35. On view Aug 8 – Sep 12, 2026.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/vehicles-voyages-arts-center-east/">Vehicles &amp; Voyages &middot; Arts Center East</a></h3><p class="call-description">Transportation-themed juried show at Arts Center East, CT — vehicles and journeys in all media. From $35, Aug 8 – Sep 12.</p></div>
 
     </section>
 
@@ -126,7 +124,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'CT' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'CT').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
