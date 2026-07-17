@@ -25776,7 +25776,10 @@
       "orgInTitle": true,
       "summary": "Fifth Larnaca Biennale under the theme Metatopies: Geographies in Motion. Photography eligible; 13 awards including the Grand Prix.",
       "dateAdded": "2026-06-10T07:44:39.248Z",
-      "jury": []
+      "jury": [
+        "Niki Papaspirou, Art Historian & Curator",
+        "Marios Fournaris, Visual Artist"
+      ]
     },
     {
       "title": "PRC Artist-in-Residence 2026",
@@ -25856,7 +25859,9 @@
       "instagram": "@stiftungkuenstlerdorf",
       "location": "Schöppingen, Germany",
       "prize": "€1,500/month stipend + 2–6 month residency",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.stiftung-kuenstlerdorf.de/en/apply",
       "requirements": "Portfolio",
@@ -25956,7 +25961,7 @@
         "Robert Morat, Owner & Director, Robert Morat Gallery"
       ],
       "dateAdded": "2026-06-10T23:47:50.955Z",
-      "ai": "Not accepted"
+      "ai": "Accepted (must disclose)"
     },
     {
       "title": "Underwater Awards Australasia 2026",
@@ -26781,7 +26786,7 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17509",
-      "requirements": "5–10 images",
+      "requirements": "1–10 images",
       "slug": "scg-artist-in-residence-2027-regional-blue-line-arts",
       "orgInTitle": false,
       "summary": "$10,000 three-week teaching residency at Blue Line Arts for Northern California artists (six-county region).",
@@ -29747,7 +29752,9 @@
       "instagram": "@texasphotosociety",
       "location": "Middlebury, VT, USA",
       "prize": "$500 / $300 / $100 + Exhibition + Catalog",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Brian Finke"
       ],
@@ -30294,7 +30301,7 @@
       "url": "https://rtpi.org/exhibitions/art-that-matters-to-the-planet-dark-skies-open-call/",
       "instagram": "@rtpinstitute",
       "location": "Jamestown, NY, USA",
-      "prize": "$1,000 + Exhibition",
+      "prize": "$1,000 / $500 / $250 + Exhibition",
       "eligibility": [],
       "jury": [
         "Jon Lomberg, astronomical artist and Design Director of NASA's Voyager Golden Record"
@@ -30351,7 +30358,13 @@
       "slug": "kuenstlerdorf-schoeppingen-residency-fellowships-2027",
       "orgInTitle": true,
       "summary": "2–6 month funded residencies in a German artists' village — €1,500/month stipend, ~40 fellows a year, open worldwide, free to apply.",
-      "dateAdded": "2026-07-16T19:15:45Z"
+      "dateAdded": "2026-07-16T19:15:45Z",
+      "jury": [
+        "Georg Imdahl, Art Critic & Professor, Kunstakademie Münster",
+        "Meike Behm, Director, Kunsthalle Lingen",
+        "Paloma Nana",
+        "Sam Hopkins, Artist, Academy of Media Arts Cologne"
+      ]
     },
     {
       "title": "Small Works on Paper 2027",
