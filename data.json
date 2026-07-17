@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T07:20:23Z",
+  "lastUpdated": "2026-07-17T11:12:05Z",
   "calls": [
     {
       "title": "Eyeshot Open Call 2026",
@@ -30456,6 +30456,60 @@
       "orgInTitle": false,
       "summary": "Quarterly grant for Black women photographers worldwide. $2,500 cash + Nikon Z6III kit. Q3 2026 cycle closes Aug 16.",
       "dateAdded": "2026-07-17T07:20:23Z"
+    },
+    {
+      "title": "ABSURIA — International Abstract & Surrealist Photography Contest 2027",
+      "org": "ABSURIA Festival",
+      "deadline": "2027-04-30",
+      "fee": "€20–€50",
+      "category": "photography",
+      "description": "Second edition of the international festival dedicated exclusively to abstract and surrealist photography. Open to amateur and professional photographers worldwide. 100 photographs selected for physical exhibition across multiple venues in Tours, Loire Valley, France from May to September 2027, with all nominees also shown in 3D online galleries on the festival website. Fourteen winners honoured at the awards ceremony in Tours in early May 2027. Categories: Abstract Photography and Surrealist Photography, each with Professional and Amateur divisions plus a Young Hopefuls award; winners receive the ABSURIA Trophy, a gold statuette created for the contest. Fee tiered by number of works: amateur €20–€40, professional €25–€50, up to 6 works per registration with unlimited registrations. Images created solely with generative AI are excluded.",
+      "url": "https://absuria.fr/en/enter-the-competition/",
+      "location": "Tours, France",
+      "prize": "Exhibition + trophy",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Caroline Gasch, Photographer",
+        "Marie-Pierre Cherrier, Photographer & Teacher",
+        "Bob Jeudy, Collector & Patron"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://absuria.fr/en/participate/2",
+      "requirements": "1–6 images",
+      "resultsDate": "Early May 2027",
+      "slug": "absuria-international-abstract-surrealist-photography-contest-2027",
+      "ai": "Not accepted",
+      "instagram": "@absuria.festival",
+      "orgInTitle": true,
+      "summary": "2027 edition of the abstract & surrealist photography festival. 100 works exhibited across Tours, France. Trophy + 3D online gallery.",
+      "dateAdded": "2026-07-17T11:12:05Z"
+    },
+    {
+      "title": "Booooooom x Format Creative Development Program",
+      "org": "Booooooom",
+      "deadline": "2026-09-02",
+      "fee": "Free",
+      "category": "education",
+      "description": "A free mentorship and portfolio development program from art platform Booooooom and portfolio-builder Format, aimed at visual artists, illustrators and photographers who are ready to grow rather than those with the most polished work. The grand prize recipient receives a lifetime Format subscription, personal mentorship with Booooooom editor-in-chief Jeff Hamada, and featured coverage on both platforms; two runners-up each receive a one-year Format plan and a portfolio review with Format's Stanzie Tooth. To apply, sign up for a free 60-day Format trial (no credit card required), build a portfolio of original work, and submit two short written statements — one describing the work, one on where you are in your practice and what support you're looking for. Open worldwide to artists 18+. Applications close September 2, 2026, 11:59pm PT.",
+      "url": "https://www.booooooom.com/2026/07/14/booooooom-x-format-creative-development-program/",
+      "location": "Online",
+      "prize": "Mentorship + Format subscription",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [],
+      "submitVia": "Format",
+      "submitUrl": "https://www.format.com/booooooom",
+      "requirements": "Portfolio + 2 statements",
+      "resultsDate": null,
+      "slug": "booooooom-x-format-creative-development-program",
+      "ai": "Not accepted",
+      "instagram": "@booooooom",
+      "orgInTitle": true,
+      "summary": "Free development program from Booooooom + Format. Mentorship with Jeff Hamada, portfolio reviews, Format subscriptions. Closes Sep 2.",
+      "dateAdded": "2026-07-17T11:12:05Z"
     }
   ]
 }
