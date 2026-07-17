@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from ABSURIA Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/absuria-international-abstract-surrealist-photography-contest-2027/">ABSURIA — International Abstract &amp; Surrealist Photography Contest 2027</a></h3><p class="call-description">2027 edition of the abstract &amp; surrealist photography festival. 100 works exhibited across Tours, France. Trophy + 3D online gallery.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'ABSURIA Festival').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'ABSURIA Festival' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
