@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/bourse-transverse-2026-freelens-adagp/">Bourse Transverse 2026 &middot; Freelens / ADAGP</a></h3><p class="call-description">Freelens × ADAGP duo grant — €7,000 for a photographer + visual artist co-creation, plus €5,000 for the book edition. French scene.</p></div>
 
     </section>
 
@@ -123,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('france')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('france') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
