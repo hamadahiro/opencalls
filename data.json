@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T11:12:05Z",
+  "lastUpdated": "2026-07-17T15:18:30Z",
   "calls": [
     {
       "title": "Eyeshot Open Call 2026",
@@ -30510,6 +30510,50 @@
       "orgInTitle": true,
       "summary": "Free development program from Booooooom + Format. Mentorship with Jeff Hamada, portfolio reviews, Format subscriptions. Closes Sep 2.",
       "dateAdded": "2026-07-17T11:12:05Z"
+    },
+    {
+      "title": "Prix LNP 2026 — Les Nuits Photo",
+      "org": "Les Nuits Photo / Freelens",
+      "deadline": "2026-09-15",
+      "fee": "Free",
+      "category": "photography",
+      "description": "The annual call for photographic films from Les Nuits Photo, the Paris festival devoted to the photo-film form, organised by the photographers' association Freelens in partnership with SAIF. Open internationally to all authors — established, emerging, students and amateurs alike, whether photographers, directors, editors, artists or journalists. The Grand Prix LNP carries a €1,000 award from SAIF plus diffusion on Fisheye Magazine and 9 Lives Magazine and screenings at partner festivals; the Prix LNP Diapéro, chosen by the Diapéro team, adds €500 and paid distribution on Mediapart. Submissions run 20 June – 15 September 2026 via Google Form; prizes are presented at the festival in Paris in November.",
+      "url": "https://www.freelens.fr/les-nuits-photo/2026",
+      "instagram": "@association_freelens",
+      "location": "Online",
+      "prize": "€1,000 + Publication",
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/1B2VDFNRpvts1kkv8",
+      "requirements": "1 photo film",
+      "resultsDate": "November 2026",
+      "slug": "prix-lnp-2026-les-nuits-photo",
+      "orgInTitle": true,
+      "summary": "Les Nuits Photo's photographic-film prize — €1,000 Grand Prix via SAIF, Fisheye/9 Lives diffusion; free, open to all, awarded in Paris.",
+      "dateAdded": "2026-07-17T15:18:30Z"
+    },
+    {
+      "title": "Bourse Transverse 2026",
+      "org": "Freelens / ADAGP",
+      "deadline": "2026-09-03",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Joint grant from photographers' association Freelens and ADAGP, the French visual-arts authors' society, supporting a duo — a photographer and an artist from another visual discipline — in creating a work together and publishing it as a book. €12,000 in total: €7,000 to the winning duo and €5,000 towards the book's edition, with the work made within a year and the book published within two. Open to duos from the French scene (working or residing in France for at least five years, or French nationals living abroad) with professional track records of exhibitions or publications; a publisher may already be attached. Applications in French via the ADAGP candidature portal by 3 September 2026, 2pm; the winning duo is announced at Salon Polycopies in Paris on 12 November 2026.",
+      "url": "https://www.freelens.fr/bourse-transverse/2026",
+      "instagram": "@association_freelens",
+      "location": "Paris, France",
+      "prize": "€7,000 + Publication",
+      "eligibility": [
+        "france",
+        "professional"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://candidatures.adagp.fr/en/?option=com_emundus&view=programme&cid=180&Itemid=1531",
+      "resultsDate": "2026-11-12",
+      "slug": "bourse-transverse-2026-freelens-adagp",
+      "orgInTitle": false,
+      "summary": "Freelens × ADAGP duo grant — €7,000 for a photographer + visual artist co-creation, plus €5,000 for the book edition. French scene.",
+      "dateAdded": "2026-07-17T15:18:30Z"
     }
   ]
 }
