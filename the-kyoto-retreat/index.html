@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from The Kyoto Retreat. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/kyoto-retreat-2026/">Kyoto Retreat 2026</a></h3><p class="call-description">Fully-funded four-week November retreat in Kyoto for artists, curators and writers — airfare, private accommodation and an $800 stipend.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'The Kyoto Retreat' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'The Kyoto Retreat').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

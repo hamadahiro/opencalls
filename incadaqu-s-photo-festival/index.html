@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from InCadaqués Photo Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/incadaques-photo-festival-open-call-2026/">InCadaqués Photo Festival Open Call 2026</a></h3><p class="call-description">20 projects exhibited at the festival's 10th edition. €1,000 grand prize plus Women Photography and New Realities awards.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'InCadaqués Photo Festival' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'InCadaqués Photo Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
