@@ -12,7 +12,8 @@
       "location": "Escondido, CA, USA",
       "prize": "Exhibition + Catalog",
       "eligibility": [
-        "18-plus"
+        "18-plus",
+        "alternative-process"
       ],
       "jury": [
         "Ann M. Jastrab, Center for Photographic Art"
@@ -23,7 +24,9 @@
       "slug": "slight-of-hand-2026-the-photographers-eye-collective",
       "orgInTitle": false,
       "summary": "Escondido gallery's juried alt-process show — albumen to ziatype, handmade work; juried by Ann Jastrab of the Center for Photographic Art.",
-      "dateAdded": "2026-07-18T03:12:11Z"
+      "dateAdded": "2026-07-18T03:12:11Z",
+      "instagram": "@thephotographerseyecollective",
+      "resultsDate": "August 15–16, 2026"
     },
     {
       "title": "Animals 2026",
@@ -16966,7 +16969,7 @@
       "slug": "tokyo-international-foto-award-2026",
       "orgInTitle": true,
       "dateAdded": "2026-03-18",
-      "requirements": "1–10 images",
+      "requirements": "1–9 images",
       "submitUrl": "https://www.tokyofotoawards.jp/submit/register.php",
       "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.",
       "resultsDate": "September 2026",
@@ -18751,7 +18754,7 @@
       "submitVia": "Website form",
       "slug": "confirm-humanity-what-makes-us-real-bushwick-gallery",
       "orgInTitle": false,
-      "requirements": "1–3 images",
+      "requirements": "1–10 images",
       "resultsDate": "October 22, 2026",
       "submitUrl": "https://bushwickgallery.com/open-call-october-2026-confirm-humanity-what-makes-us-real/",
       "summary": "Group show at Bushwick Gallery on the line between artificial and authentic — what makes us real in a digitized world. All mediums.",
@@ -18777,7 +18780,7 @@
       "submitVia": "Website form",
       "slug": "the-company-we-keep-creatures-beside-us-bushwick-gallery",
       "orgInTitle": false,
-      "requirements": "1–3 images",
+      "requirements": "1–10 images",
       "resultsDate": "November 5, 2026",
       "submitUrl": "https://bushwickgallery.com/open-call-november-2026-the-company-we-keep-creatures-beside-us/",
       "summary": "Group show at Bushwick Gallery on animals as confidants, muses, and mirrors — through humor, tenderness, intimacy, and allegory.",
@@ -19270,7 +19273,7 @@
       "requirements": "Up to 20 images",
       "ai": null,
       "jury": [],
-      "resultsDate": "Within 1–2 weeks",
+      "resultsDate": "Within a week",
       "proseSkipped": "submit page is just a navigation/footer template with no submission detail; need to find an alternate source URL before drafting"
     },
     {
@@ -26518,7 +26521,9 @@
       "instagram": "@budapestfotoawards",
       "location": "Budapest, Hungary",
       "prize": "€3,000 + €2,000 + Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Hossein Farmani, The Lucie Awards / IPA",
         "Sheena Harvey, BBC Wildlife",
@@ -30509,7 +30514,7 @@
       ],
       "jury": [],
       "submitVia": "Official website",
-      "submitUrl": null,
+      "submitUrl": "https://blackwomenphotographers.com/grant-fund",
       "requirements": "Portfolio + proposal",
       "resultsDate": null,
       "slug": "bwp-x-nikon-grant-fund-2026-q3-black-women-photographers",
