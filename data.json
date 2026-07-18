@@ -1694,18 +1694,16 @@
       "title": "Maghreb Photography Awards 2026",
       "org": "Maghreb Photography Awards",
       "deadline": "2026-07-20",
-      "fee": "€15 single / €34–41 series (+€5 per extra category)",
+      "fee": "€15 single / €34–41 series; Africa-based free",
       "category": "photography",
       "description": "International photography award spotlighting contemporary work from the 'Greater Maghreb' and the wider Mediterranean basin — a region underrepresented in most awards. Entrants submit a single image or a series of 5–15 across themed categories, with one category reserved for photographers of Maghreb origin or residence and another for African projects. A $2,000 prize pool is shared across category winners, and selected work is exhibited at partner festivals including the Rendez-Vous de la photo d'Essaouira (Morocco) and events in Tunisia in autumn 2026, with press promotion. Early-bird fees (before 8 June) start at €12 for a single image; standard fees €15 single, €34–41 for a series.",
       "url": "https://maghrebphotographyawards.com/",
       "instagram": "@maghrebphotographyawards",
       "location": "New York, NY, USA",
       "prize": "$2,000 prize pool + festival exhibitions",
-      "eligibility": [
-        "18-plus"
-      ],
+      "eligibility": [],
       "submitVia": "Official website",
-      "submitUrl": "https://maghrebphotographyawards.com/site/fees-deadlines",
+      "submitUrl": "https://maghrebphotographyawards.com/user/register",
       "requirements": "1–15 images",
       "slug": "maghreb-photography-awards-2026",
       "orgInTitle": true,
@@ -8383,7 +8381,7 @@
       "requirements": "1 or 2–5 images",
       "slug": "fine-art-photography-awards-2026-2027",
       "orgInTitle": true,
-      "summary": "13th edition — 20 categories from landscape to street. $3K professional / $2K amateur grand prizes. 15 international jurors.",
+      "summary": "13th edition — 20 categories from landscape to street. $3K professional / $2K amateur grand prizes. 14 international jurors.",
       "instagram": "@fineartphotoawards",
       "resultsDate": "April 11, 2027",
       "jury": [
@@ -30588,7 +30586,8 @@
       "slug": "head-on-photo-awards-2026",
       "orgInTitle": true,
       "summary": "Sydney's blind-judged festival awards — AUD 80,000 pool across Portrait, Landscape and Exposure; finalists exhibited in November.",
-      "dateAdded": "2026-07-17T23:19:00Z"
+      "dateAdded": "2026-07-17T23:19:00Z",
+      "requirements": "Unlimited images"
     }
   ]
 }
