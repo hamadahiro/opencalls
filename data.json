@@ -2,6 +2,52 @@
   "lastUpdated": "2026-07-18T03:12:11Z",
   "calls": [
     {
+      "title": "Call for Proposals for Solo Exhibitions",
+      "org": "CSU Spur",
+      "deadline": "2026-11-01",
+      "fee": "$20",
+      "category": "exhibition",
+      "description": "CSU Spur, the Colorado State University System's public-facing campus at Denver's National Western Center, invites solo exhibition proposals for 2026–2027 celebrating the intersection of community, sustainability and innovation. Work exploring environmental stewardship, scientific curiosity and local storytelling is sought, with proposals around food, water and health especially encouraged. Open to artists of all experience levels working in any medium including photography; the galleries are public campus spaces. Submissions are reviewed quarterly on a rolling basis until the call closes November 1, 2026, with exhibition dates set in collaboration with campus staff.",
+      "url": "https://csuspur.org/art/",
+      "instagram": "@csuspur",
+      "location": "Denver, CO, USA",
+      "prize": "Solo exhibition",
+      "eligibility": [
+        "united-states"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=16450",
+      "requirements": "5–10 images",
+      "slug": "solo-exhibitions-2026-2027-csu-spur",
+      "orgInTitle": false,
+      "summary": "Denver's CSU Spur campus seeks solo exhibition proposals on community, sustainability and innovation. Any medium incl. photography, $20.",
+      "dateAdded": "2026-07-18T19:17:09Z"
+    },
+    {
+      "title": "Solo/Group Show 2027",
+      "org": "Gallery 40",
+      "deadline": "2026-08-30",
+      "fee": "$40 (up to 10 images)",
+      "category": "exhibition",
+      "description": "Gallery 40, the contemporary gallery at 40 Cannon Street in Poughkeepsie, is selecting artists for its 2027 solo and small-group exhibition program. Chosen artists — solo or in curated groups of up to four — receive a six-week show from February 6 to March 14, 2027 with an opening reception, and may be considered for artist talks, panel discussions or recorded interviews. All 2-dimensional work is considered, explicitly including photography; work must be for sale (40% commission), no larger than 48 x 48 inches framed, ready to hang, and not previously exhibited at the gallery. Open to US artists 18 and over; submissions are evaluated by the gallery's curators.",
+      "url": "https://www.gallery40pok.com/artist-opportunity",
+      "instagram": "@gallery40pok",
+      "location": "Poughkeepsie, NY, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/gallery40pok/sologroup-show-2027/",
+      "requirements": "1–10 images",
+      "resultsDate": "September 11, 2026",
+      "slug": "solo-group-show-2027-gallery-40",
+      "orgInTitle": false,
+      "summary": "Poughkeepsie's Gallery 40 selects artists for its 2027 solo/small-group program — six-week show, 2D incl. photography, $40.",
+      "dateAdded": "2026-07-18T19:17:09Z"
+    },
+    {
       "title": "IN SERIES",
       "org": "Art Fluent",
       "deadline": "2026-10-09",
