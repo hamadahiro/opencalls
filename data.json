@@ -1711,6 +1711,9 @@
       "submitVia": "Smarter Entry",
       "submitUrl": "https://client.smarterentry.com/SEC4P",
       "requirements": "Up to 15 images",
+      "jury": [
+        "Michael Pannier, Photographer"
+      ],
       "slug": "se-center-for-photography-the-abandoned-landscape",
       "orgInTitle": true,
       "summary": "Virtual SE Center show on the abandoned landscape — decaying rural and urban places. 35–40 images; worldwide entry, $35/5.",
@@ -24063,7 +24066,7 @@
       "slug": "f-262-photography-awards-2026",
       "orgInTitle": true,
       "summary": "Single-image awards from the inaugural F/262 Festival in Caldas da Rainha, Portugal. Public outdoor installations + 2028 solo show.",
-      "ai": null,
+      "ai": "Not accepted",
       "prose": [
         "F/262 is the inaugural international photography festival of Caldas da Rainha, a UNESCO Creative City in Portugal — the festival's name combines the photographic 'F' (Focus, F-Stop, Family, Fun, Friendship, Freedom) with the city's area code, 262. The 2026 edition runs May 16 – September 13, with the year's curatorial focus on Water as ecological, cultural, and symbolic element. The festival is produced by Associação F/SOS – Fotografia, Solidariedade e Obras Sociais.",
         "The Photography Awards run as a single-image competition across four parallel tracks. The main F/262 Photography Award gives Gold, Silver, and Bronze. The ZÉ Award is a Creative Award for unconventional approaches. The NextGen Award is reserved for emerging photographers. The Thematic Award 'Moldar as Margens / Shaping Shores' ties to the 2026 Water focus.",
@@ -30197,9 +30200,9 @@
       "title": "Quiet Hours: Nighttime and Grief",
       "org": "Der Greif",
       "deadline": "2026-08-08",
-      "fee": "€10 (hardship vouchers available)",
+      "fee": "Free (optional €5–€10 donation)",
       "category": "photography",
-      "description": "Open call from Der Greif inviting lens-based artists to examine nighttime's emotional landscape — how darkness changes the way we see the world and how we feel. Timed around National Grief Awareness Day, the call centres on grief in its many manifestations: bereavement, relationship loss, displacement, or life transitions, and asks how darkness and light can convey narratives of memory and healing. Selected work is featured in an online exhibition on Der Greif's Pulse platform, with facilitated peer critique sessions and exposure within Der Greif's international network, plus potential invitations to submit portfolios for sales and commission opportunities. Entry is €10, with 50–100% discount vouchers available for artists facing financial barriers.",
+      "description": "Open call from Der Greif inviting lens-based artists to examine nighttime's emotional landscape — how darkness changes the way we see the world and how we feel. Timed around National Grief Awareness Day, the call centres on grief in its many manifestations: bereavement, relationship loss, displacement, or life transitions, and asks how darkness and light can convey narratives of memory and healing. Selected work is featured in an online exhibition on Der Greif's Pulse platform, with facilitated peer critique sessions and exposure within Der Greif's international network, plus potential invitations to submit portfolios for sales and commission opportunities. Entry is free with an optional €5–€10 donation, and 50–100% discount vouchers are available for artists facing financial barriers.",
       "url": "https://dergreif.org/open-call",
       "location": "Online",
       "instagram": "@der_greif",
@@ -30210,6 +30213,7 @@
       "slug": "quiet-hours-nighttime-and-grief-der-greif",
       "orgInTitle": false,
       "summary": "Der Greif call on nighttime and grief — how darkness and light carry memory and healing. Online exhibition on the Pulse platform.",
+      "requirements": "Up to 10 images",
       "dateAdded": "2026-07-16T13:08:15Z"
     },
     {
@@ -30263,7 +30267,7 @@
     {
       "title": "Queer Spirit",
       "org": "Blackfish Gallery",
-      "deadline": "2026-09-15",
+      "deadline": "2026-09-16",
       "fee": "Free",
       "category": "exhibition",
       "description": "Open call from Blackfish Gallery, the artist-run cooperative gallery founded in 1979 in Portland's Pearl District, for Queer Spirit, a group exhibition running January 6–30, 2027. The gallery invites greater Portland-based artists whose work engages with queer identity, community, and imagination — across all backgrounds — for a celebration of resilience, belonging, and radical imagination. Submissions may directly address queer identity, explore the broader possibilities of queerness, or reflect the perspectives of queer artists; work across all media is welcome, with particular interest in experimental, thought-provoking, and installation-based practices. Free to enter via EntryThingy.",
@@ -30276,7 +30280,7 @@
       ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/blackfish/queer-spirit/",
-      "requirements": "2–10 works",
+      "requirements": "2–5 images",
       "resultsDate": "Late October–early November 2026",
       "slug": "queer-spirit-blackfish-gallery",
       "orgInTitle": false,
