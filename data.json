@@ -49,7 +49,8 @@
       "slug": "mythus-dart-center",
       "orgInTitle": true,
       "summary": "Folklore-inspired national juried show at Norfolk's d'Art Center — all mediums including photography; exhibition Sep 26–Oct 24.",
-      "dateAdded": "2026-07-19T03:07:24Z"
+      "dateAdded": "2026-07-19T03:07:24Z",
+      "resultsDate": "August 17, 2026"
     },
     {
       "title": "New Emergence Art Prize 2026",
@@ -4152,7 +4153,7 @@
       "orgInTitle": false,
       "summary": "Curated Barcelona group show on photography as expressive fine art. Jurors Bátori & Jász. Student rates. AI accepted if labelled.",
       "resultsDate": "August 2026",
-      "ai": "Accepted",
+      "ai": "Accepted (must disclose)",
       "dateAdded": "2026-06-05T08:04:15.324Z"
     },
     {
@@ -4977,7 +4978,7 @@
       "dateAdded": "2026-06-01T07:08:20.133Z",
       "jury": [],
       "requirements": "Up to 10 images",
-      "resultsDate": "October–November 2026"
+      "resultsDate": "December 2026"
     },
     {
       "title": "Pine Meadow Ranch 2027 Artist Residency",
@@ -5652,8 +5653,7 @@
       "ai": "Not accepted",
       "jury": [
         "Jerri Zbiral, Juror"
-      ],
-      "resultsDate": "August 29, 2026"
+      ]
     },
     {
       "title": "Feminism 250 — Woman Made America",
@@ -28963,7 +28963,7 @@
       ],
       "submitVia": "CaFE",
       "requirements": "3–20 images",
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "cpa-international-juried-exhibition-2026-center-for-photographic-art",
       "orgInTitle": false,
       "summary": "Annual CPA international juried show in Carmel. 45 photos selected, 8 cash awards over $6,000. Any subject.",
