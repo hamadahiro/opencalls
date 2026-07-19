@@ -74,33 +74,6 @@
       "resultsDate": "September 25, 2026"
     },
     {
-      "title": "AAP Magazine #60 Nature",
-      "org": "All About Photo",
-      "deadline": "2026-08-18",
-      "fee": "$30–$35",
-      "category": "zine",
-      "description": "Nature-themed issue of AAP Magazine. Open to photographers 18+; submit a cohesive series of at least 3 images (up to 40) capturing landscapes, wildlife, flora and fauna across any genre. 25 winners are published in AAP Magazine Volume 60 with online gallery placement and a free copy. Cash prizes: $500 (1st), $300 (2nd), $200 (3rd). Early-bird fee ($30 for first 3 images, $5 each additional) ends July 31, 2026; regular fee $35 thereafter.",
-      "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=235",
-      "instagram": "@allaboutphotocom",
-      "location": "Online",
-      "prize": "$500/$300/$200 + Publication",
-      "eligibility": [
-        "18-plus"
-      ],
-      "submitVia": "Website form",
-      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=235",
-      "requirements": "Up to 40 images (min 3)",
-      "slug": "aap-magazine-60-nature-all-about-photo",
-      "orgInTitle": false,
-      "summary": "Nature-themed issue of AAP Magazine. $500/$300/$200 cash prizes + publication. Up to 40 images, min 3 as a cohesive series.",
-      "ai": null,
-      "jury": [
-        "Sandrine Hermand-Grisel, Founder & Editor, All About Photo"
-      ],
-      "resultsDate": "October 2026",
-      "dateAdded": "2026-07-19T03:07:24Z"
-    },
-    {
       "title": "Mythus: A National Exhibit of Folklore Inspired Artworks",
       "org": "d'Art Center",
       "deadline": "2026-08-09",
@@ -471,7 +444,7 @@
       "url": "https://www.vmfa.museum/visual-arts-fellowships",
       "instagram": "@vmfamuseum",
       "location": "Richmond, VA, USA",
-      "prize": "$4,000–$8,000 Fellowship",
+      "prize": "$2,000–$8,000 Fellowship",
       "eligibility": [
         "virginia"
       ],
@@ -1908,7 +1881,7 @@
       "eligibility": [
         "emerging"
       ],
-      "ai": "Accepted",
+      "ai": null,
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=15937",
       "requirements": "10 images",
@@ -2080,7 +2053,7 @@
         "Yumi Goto, Independent Curator/Editor/Educator",
         "Lele Saveri, Photographer & Community Organizer"
       ],
-      "resultsDate": "Mid-September 2026",
+      "resultsDate": "Fall 2026",
       "submitVia": "Website form",
       "submitUrl": "https://submit.luciefoundation.org/login.php",
       "requirements": "Full book as a single PDF",
@@ -2199,7 +2172,7 @@
       "url": "https://formatfestival.com/news/2026/06/format-international-photography-festival-announces-open-call-for-march-2027-biennale-that-explores-the-theme-of-play/",
       "instagram": "@formatfestival",
       "location": "Derby, United Kingdom",
-      "prize": "£1,000 artist fee + Exhibition + £2,500 grant",
+      "prize": "£1,000 artist fee + Exhibition",
       "eligibility": [],
       "jury": [
         "Jean-Christophe Godet (Guernsey/France)",
@@ -11544,13 +11517,13 @@
       "title": "Analog Sparks — International Film Photography Awards 2026",
       "org": "Analog Sparks",
       "deadline": "2026-07-31",
-      "fee": "$10–$25",
+      "fee": "€10–€25",
       "category": "photography",
       "description": "International awards discovering and promoting analog photographers worldwide. Categories: Architecture, Fine Art, Human, Lifestyle, Nature, Photo Journalism, Technique, Zines & Photo Books. Accepts color/B&W film, instant film, collodion, alternative techniques, and hybrid analog-digital (no purely digital). Winners exhibited at House of Lucie in Athens and Ostuni.",
       "url": "https://www.analogsparksawards.com/submission-guidelines/",
       "instagram": "@analog_sparks",
       "location": "Athens, Greece",
-      "prize": "$1,000",
+      "prize": "€1,000",
       "eligibility": [
         "analog-photography",
         "18-plus"
@@ -12196,7 +12169,7 @@
       "requirements": "PDF of complete book",
       "slug": "lucie-foundation-photo-book-prize-2026",
       "orgInTitle": true,
-      "resultsDate": "Mid-September 2026",
+      "resultsDate": "Fall 2026",
       "dateAdded": "2026-03-16",
       "submitUrl": "https://submit.luciefoundation.org/login.php",
       "summary": "Celebrating innovative photographic books. Three categories. $3,000 Book of the Year. Open worldwide.",
@@ -19970,7 +19943,7 @@
       "submitUrl": "https://www.loosenart.com/pages/submit-calls",
       "summary": "Exploring humans and technology — social, environmental, and emotional transformations. Exhibition in Rome.",
       "jury": [],
-      "verifyNote": "LoosenArt store STILL down on 2026-07-17 (/pages/calls 404, down since 2026-05-18). IG @loosenart up. Deadline Jul 22 is 5 days away — call effectively dead unless the store returns; flagged to user.",
+      "verifyNote": "LoosenArt store STILL down on 2026-07-19 (/pages/calls hard 404, down since 2026-05-18). IG @loosenart up. Deadline Jul 22 is 3 days away — call effectively dead unless the store returns; flagged to user.",
       "proseSkipped": "official LoosenArt page returned 404 via WebFetch; data.json description is brief and would require padding to reach length"
     },
     {
