@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Stockton Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/63rd-stockton-art-league-juried-exhibition/">63rd Stockton Art League Juried Exhibition</a></h3><p class="call-description">National juried show at the Haggin Museum, juried by a Crocker Art Museum curator — $1,000 Best of Show; photography eligible.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Stockton Art League' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Stockton Art League').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
