@@ -2,6 +2,56 @@
   "lastUpdated": "2026-07-18T03:12:11Z",
   "calls": [
     {
+      "title": "AAP Magazine #60 Nature",
+      "org": "All About Photo",
+      "deadline": "2026-08-18",
+      "fee": "$30–$35",
+      "category": "zine",
+      "description": "Nature-themed issue of AAP Magazine. Open to photographers 18+; submit a cohesive series of at least 3 images (up to 40) capturing landscapes, wildlife, flora and fauna across any genre. 25 winners are published in AAP Magazine Volume 60 with online gallery placement and a free copy. Cash prizes: $500 (1st), $300 (2nd), $200 (3rd). Early-bird fee ($30 for first 3 images, $5 each additional) ends July 31, 2026; regular fee $35 thereafter.",
+      "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=235",
+      "instagram": "@allaboutphotocom",
+      "location": "Online",
+      "prize": "$500/$300/$200 + Publication",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=235",
+      "requirements": "Up to 40 images (min 3)",
+      "slug": "aap-magazine-60-nature-all-about-photo",
+      "orgInTitle": false,
+      "summary": "Nature-themed issue of AAP Magazine. $500/$300/$200 cash prizes + publication. Up to 40 images, min 3 as a cohesive series.",
+      "ai": null,
+      "jury": [
+        "Sandrine Hermand-Grisel, Founder & Editor, All About Photo"
+      ],
+      "resultsDate": "October 2026",
+      "dateAdded": "2026-07-19T03:07:24Z"
+    },
+    {
+      "title": "Mythus: A National Exhibit of Folklore Inspired Artworks",
+      "org": "d'Art Center",
+      "deadline": "2026-08-09",
+      "fee": "$30 (3 works), $5 each additional",
+      "category": "exhibition",
+      "description": "National juried exhibition at d'Art Center, the nonprofit art center in Norfolk, Virginia's NEON District (est. 1986), for artworks inspired by folklore — the stories, legends, myths, fairy tales, folktales, rituals and traditions of cultures from around the world. All mediums welcome, including photography, 2D or 3D; 3 to 10 works. Exhibition in the gallery September 26 – October 24, 2026.",
+      "url": "https://d-artcenter.org/exhibitions/",
+      "instagram": "@dartcenternfk",
+      "location": "Norfolk, VA, USA",
+      "prize": "$300 + Exhibition",
+      "eligibility": [
+        "united-states",
+        "18-plus"
+      ],
+      "submitVia": "We Are Creative West",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17860/CAFE",
+      "requirements": "3–10 images",
+      "slug": "mythus-dart-center",
+      "orgInTitle": true,
+      "summary": "Folklore-inspired national juried show at Norfolk's d'Art Center — all mediums including photography; exhibition Sep 26–Oct 24.",
+      "dateAdded": "2026-07-19T03:07:24Z"
+    },
+    {
       "title": "New Emergence Art Prize 2026",
       "org": "New Emergence Art",
       "deadline": "2026-08-03",
