@@ -14,12 +14,16 @@
       "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "Website form",
-      "submitUrl": "https://duskphotogallery.com/creatures/",
+      "submitUrl": "https://duskphotogallery.com/creatures-submission/",
       "requirements": "Up to 10 images",
       "slug": "creatures-photography-exhibit-dusk-photo-gallery",
       "orgInTitle": false,
       "summary": "Animal-themed photography show in Santa Fe. 26 images juried; pro Luster printing and 24×24 museum framing included, 50/50 sales.",
-      "dateAdded": "2026-07-19T07:09:27Z"
+      "dateAdded": "2026-07-19T07:09:27Z",
+      "jury": [
+        "Holly Hart, Fine Art Photographer & Founder, Dusk Photo Gallery"
+      ],
+      "resultsDate": "Within 2 weeks of deadline"
     },
     {
       "title": "Memory: What Remains",
@@ -32,14 +36,18 @@
       "instagram": "@chateau_gallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
-      "submitUrl": "https://chateaugallery.com/call-for-entries/memory-what-remains",
+      "submitUrl": "https://form.jotform.com/261506933716157",
       "requirements": "Up to 3 images",
       "slug": "memory-what-remains-the-chateau-gallery",
       "orgInTitle": false,
       "summary": "Online curated show on memory — traces, archives, absence, inheritance — from NYC's Chateau Gallery. Up to 3 images, $15.",
-      "dateAdded": "2026-07-19T07:09:27Z"
+      "dateAdded": "2026-07-19T07:09:27Z",
+      "ai": "Not accepted",
+      "resultsDate": "August 25, 2026"
     },
     {
       "title": "Elemental: Earth, Air, Fire, Water",
@@ -52,14 +60,18 @@
       "instagram": "@chateau_gallery",
       "location": "Online",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Website form",
-      "submitUrl": "https://chateaugallery.com/call-for-entries/elemental-earth-air-fire-water",
+      "submitUrl": "https://form.jotform.com/261707653230150",
       "requirements": "Up to 3 images",
       "slug": "elemental-earth-air-fire-water-the-chateau-gallery",
       "orgInTitle": false,
       "summary": "Online curated show on earth, air, fire, and water as forces and symbols, from NYC's Chateau Gallery. Up to 3 images, $15.",
-      "dateAdded": "2026-07-19T07:09:27Z"
+      "dateAdded": "2026-07-19T07:09:27Z",
+      "ai": "Not accepted",
+      "resultsDate": "September 25, 2026"
     },
     {
       "title": "AAP Magazine #60 Nature",
@@ -253,7 +265,7 @@
       ],
       "jury": [],
       "submitVia": "Website form",
-      "submitUrl": "https://gridphotogallery.com/contest/animals-2026/",
+      "submitUrl": "https://animals2026.gridphotogallery.com/",
       "requirements": "Unlimited, fee per image",
       "resultsDate": "September 1, 2026",
       "slug": "animals-2026-grid-photo-gallery",
@@ -1491,7 +1503,8 @@
       "summary": "WSW residency to print & bind a limited-edition artist book; stipend, materials, travel & housing. For photobook & book artists.",
       "dateAdded": "2026-07-01T15:08:08Z",
       "resultsDate": "March 2027",
-      "instagram": "@wsworkshop"
+      "instagram": "@wsworkshop",
+      "submitUrl": "https://womensstudioworkshop.submittable.com/submit/201255/artists-book-residency-grant"
     },
     {
       "title": "Black and White: 2026",
@@ -8569,11 +8582,11 @@
       "deadline": "2026-08-21",
       "fee": "Free",
       "category": "exhibition",
-      "description": "Annual graduate showcase for recently graduated UK-based photographers (graduated 2023–2026). Free to submit. Gallery covers all printing and installation costs, with work printed on Fujifilm photographic paper and framed in gallery frames. Submit up to 8 images along with a brief statement about your work, graduation details, and why you'd like to participate. Exhibition late 2026 at Glasgow Gallery of Photography (dates to be confirmed).",
-      "url": "https://www.glasgowgalleryofphotography.com/exhibition",
+      "description": "Annual graduate showcase for recently graduated UK-based photographers (graduated 2023–2026). Free to submit. Gallery covers all printing and installation costs, with work printed on Fujifilm photographic paper and framed in gallery frames, plus an accompanying zine. Submit 10–12 images along with a brief statement about your work, graduation details, and why you'd like to participate. Exhibition late 2026 at Glasgow Gallery of Photography (dates to be confirmed).",
+      "url": "https://www.glasgowgalleryofphotography.com/exhibition/the-emergence-project-2026",
       "instagram": "@theglasgowgalleryofphotography",
       "location": "Glasgow, United Kingdom",
-      "prize": "Exhibition",
+      "prize": "Exhibition + Publication",
       "eligibility": [
         "united-kingdom",
         "student"
@@ -8582,7 +8595,7 @@
       "requirements": "10–12 images",
       "slug": "the-emergence-project-2026-glasgow-gallery-of-photography",
       "orgInTitle": false,
-      "summary": "Free graduate showcase for UK photography grads (2023–2026). Gallery covers printing and framing. Glasgow exhibition, July.",
+      "summary": "Free graduate showcase for UK photography grads (2023–2026); GGoP covers printing, framing and a zine. Glasgow exhibition, late 2026.",
       "dateAdded": "2026-04-16T03:17:47.994Z",
       "ai": null,
       "jury": [],
@@ -29442,11 +29455,11 @@
       "deadline": "2026-08-02",
       "fee": "$21–$100 (tiered, 1–20 images)",
       "category": "zine",
-      "description": "Themed issue of Arts to Hearts Magazine inviting work on 'The Summer We Remember' — memories, moments and metaphors of summer. Open to artists 18+ worldwide across painting, drawing, photography, sculpture, printmaking, digital art, collage, textile, mixed media, installation and illustration. The winner receives a USD 500 cash prize, a 4-page spread and a glass trophy; two runners-up get 4-page spreads and trophies, and all selected artists receive a 2-page spread in the internationally distributed magazine.",
+      "description": "Themed issue of Arts to Hearts Magazine inviting work on 'The Summer We Remember' — memories, moments and metaphors of summer. Open to artists 18+ worldwide across painting, drawing, photography, sculpture, printmaking, digital art, collage, textile, mixed media, installation and illustration. The winner receives a USD 500 cash prize, a 4-page spread and a glass trophy; the first and second runners-up receive USD 300 and USD 200 plus 4-page spreads and trophies, and all selected artists receive a 2-page spread in the internationally distributed magazine.",
       "url": "https://apply.artstoheartsproject.com/open-call/arts-to-hearts-magazine-issue-14",
       "instagram": "@artstoheartsproject",
       "location": "Online",
-      "prize": "$500",
+      "prize": "$500 / $300 / $200",
       "eligibility": [
         "18-plus"
       ],
@@ -29455,7 +29468,7 @@
       "submitUrl": "https://apply.artstoheartsproject.com/open-call/arts-to-hearts-magazine-issue-14",
       "slug": "arts-to-hearts-magazine-issue-14-the-summer-we-remember",
       "orgInTitle": true,
-      "summary": "Summer-memory themed issue of Arts to Hearts Magazine — $500 cash prize and feature spreads; all disciplines incl. photography.",
+      "summary": "Summer-memory themed issue of Arts to Hearts Magazine — $500/$300/$200 cash prizes and feature spreads; all disciplines incl. photography.",
       "dateAdded": "2026-07-02T03:14:20Z",
       "requirements": "1–20 images"
     },
@@ -30845,7 +30858,9 @@
       "instagram": "@headonphotofest",
       "location": "Sydney, Australia",
       "prize": "AUD 80,000 + Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://submit.headon.org.au/PhotoAwards-2026",
       "resultsDate": "November 2026",
@@ -30853,7 +30868,8 @@
       "orgInTitle": true,
       "summary": "Sydney's blind-judged festival awards — AUD 80,000 pool across Portrait, Landscape and Exposure; finalists exhibited in November.",
       "dateAdded": "2026-07-17T23:19:00Z",
-      "requirements": "Unlimited images"
+      "requirements": "Unlimited images",
+      "ai": "Not accepted"
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
