@@ -65,7 +65,7 @@ const eligibilityLabel = {
   'professional': 'Professional only', 'membership-required': 'Membership required',
   'puerto-rico': 'Puerto Rico focus', 'latin-america': 'Latin America', 'asian-american': 'Asian American focus',
   'south-asian': 'South Asian focus', 'african-diaspora': 'African diaspora focus', 'black': 'Black artists',
-  'neurodivergent-disabled': 'Neurodivergent & disabled', 'portugal': 'Portugal only', 'taiwan': 'Taiwan only',
+  'neurodivergent-disabled': 'Neurodivergent & disabled', 'immigrant': 'Immigrant artists', 'portugal': 'Portugal only', 'taiwan': 'Taiwan only',
   'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only',
   'canada': 'Canada only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only',
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only', 'bulgaria': 'Bulgaria only',
