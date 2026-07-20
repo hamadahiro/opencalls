@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/open-call-for-exhibitions-prospekto-and-vilnius-photography-galleries/">Open Call for Exhibitions — Prospekto and Vilnius Photography Galleries</a></h3><p class="call-description">Year-round call for solo, group or curatorial photography shows at Vilnius's Prospekto and Vilnius Photography galleries. Free.</p></div>
 
     </section>
 
@@ -124,7 +125,7 @@
       const res = await fetch('/data.json');
       const data = await res.json();
 
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Lithuania').map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Lithuania' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
 
