@@ -109,7 +109,7 @@
         "united-states",
         "18-plus"
       ],
-      "submitVia": "We Are Creative West",
+      "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17860/CAFE",
       "requirements": "3–10 images",
       "slug": "mythus-dart-center",
@@ -1971,7 +1971,9 @@
       "instagram": "@maghrebphotographyawards",
       "location": "New York, NY, USA",
       "prize": "$2,000 prize pool + festival exhibitions",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://maghrebphotographyawards.com/user/register",
       "requirements": "1–15 images",
@@ -4057,7 +4059,7 @@
       ],
       "submitVia": "JotForm",
       "submitUrl": "https://form.jotform.com/261543266403150",
-      "requirements": "4+ images",
+      "requirements": "Unlimited images",
       "slug": "overcoming-decagon-gallery",
       "orgInTitle": false,
       "summary": "Online photography show on resilience and endurance after hardship. Juror Douglas Beasley. $1,000 total cash awards.",
@@ -5768,7 +5770,7 @@
       "url": "https://www.yachtingmonthly.com/news/3000-prizes-for-stories-and-photos-of-inspiring-encounters-at-sea-104632",
       "instagram": "@yachtingmonthlymag",
       "location": "Bath, United Kingdom",
-      "prize": "Camera equipment worth £750 + publication",
+      "prize": "Camera equipment worth £750",
       "eligibility": [
         "united-kingdom"
       ],
@@ -30697,11 +30699,7 @@
       "orgInTitle": true,
       "summary": "Photography residency in Palm Springs boutique hotels — free lodging, $250/week stipend, mentorship, Cultural Center show. SoCal photographers.",
       "dateAdded": "2026-07-16T19:31:01Z",
-      "jury": [
-        "Terry Hastings, Artistic Director & Photographer",
-        "Michael Green, Executive Director, Palm Springs Cultural Center",
-        "Gary Armstrong, Chair, Palm Springs Public Arts Commission"
-      ]
+      "jury": []
     },
     {
       "title": "Photobook Dummy Exhibition — 16th Lisbon Photobook Fair",
@@ -30842,7 +30840,7 @@
       ],
       "submitVia": "Website form",
       "submitUrl": "https://candidatures.adagp.fr/en/?option=com_emundus&view=programme&cid=180&Itemid=1531",
-      "resultsDate": "2026-11-12",
+      "resultsDate": "November 12, 2026",
       "requirements": "Portfolio (max 10 pages)",
       "slug": "bourse-transverse-2026-freelens-adagp",
       "orgInTitle": false,
@@ -31012,7 +31010,7 @@
         "Ilaria Di Biagio, Photographer"
       ],
       "submitVia": "Official website",
-      "submitUrl": "https://quotidianocompromesso.com/en/home-en/",
+      "submitUrl": "https://quotidianocompromesso.com/en/home-en/#subscribe",
       "requirements": "1–3 images",
       "slug": "the-proximity-of-harm-fondazione-ippocrate",
       "orgInTitle": false,
@@ -31055,8 +31053,7 @@
       "prize": "Exhibition",
       "eligibility": [
         "18-plus",
-        "united-states",
-        "emerging"
+        "united-states"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17723/CAFE",
@@ -31083,7 +31080,7 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17768/CAFE",
-      "requirements": "Up to 10 images",
+      "requirements": "3–10 images",
       "resultsDate": "September 13, 2026",
       "orgInTitle": false,
       "summary": "Cosmic and inner space at Rhode Island's 1974 artist-run Hera Gallery, juried by MASS MoCA's Lydia Jasper. Sliding-scale fee.",
@@ -31134,7 +31131,8 @@
       "orgInTitle": false,
       "summary": "Tearing as material and metaphor at Jersey City's Drawing Rooms — photography of what the act leaves behind welcome.",
       "slug": "torn-drawing-rooms",
-      "dateAdded": "2026-07-20T06:22:05Z"
+      "dateAdded": "2026-07-20T06:22:05Z",
+      "resultsDate": "August 16, 2026"
     },
     {
       "title": "2027 Galleries in City of Auburn",
@@ -31146,9 +31144,7 @@
       "url": "https://www.auburnwa.gov/city_hall/parks_arts_recreation/arts_and_entertainment/calls_to_artists_and_opportunities",
       "location": "Auburn, WA, USA",
       "prize": "Exhibition",
-      "eligibility": [
-        "emerging"
-      ],
+      "eligibility": [],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17527/CAFE",
       "requirements": "3–10 images",
@@ -31170,7 +31166,8 @@
       "prize": "Exhibition",
       "eligibility": [
         "18-plus",
-        "united-states"
+        "united-states",
+        "immigrant"
       ],
       "jury": [
         "F. Lennox Campello, artist, curator and critic"
@@ -31181,7 +31178,8 @@
       "orgInTitle": false,
       "summary": "Juried show for immigrant artists in the US, curated by F. Lennox Campello at a Frederick, MD nonprofit gallery.",
       "slug": "many-countries-in-one-artspiration-frederick",
-      "dateAdded": "2026-07-20T06:22:05Z"
+      "dateAdded": "2026-07-20T06:22:05Z",
+      "resultsDate": "December 18, 2026"
     },
     {
       "title": "Winter 2027 'Vintage' Issue",
