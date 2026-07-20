@@ -2528,7 +2528,9 @@ const REDIRECTS = {
   'after-dark-night-sky-and-shadow': 'after-dark-night-sky-and-shadow-photoplace-gallery',
   'fundacion-enaire-photography-prize-2026': 'xix-premio-de-fotograf-a-fundaci-n-enaire-2026',
   'remedy-photo-festival-2026-open-call': 'remedy-photo-festival-open-call-2026',
-  'photoed-magazine-home-vs-away-issue-76': 'photoed-magazine-home-vs-away-issue-77'
+  'photoed-magazine-home-vs-away-issue-76': 'photoed-magazine-home-vs-away-issue-77',
+  'creatures-photography-exhibit-dusk-photo-gallery': 'creatures-dusk-gallery',
+  'elemental-earth-air-fire-water-the-chateau-gallery': 'elemental-earth-air-fire-water-tcg-gallery'
 };
 Object.entries(REDIRECTS).forEach(([from, to]) => {
   if (slugMap[from]) { console.error(`ERROR: redirect source "${from}" collides with a live page — remove it from REDIRECTS.`); process.exit(1); }
