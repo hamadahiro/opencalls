@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/beyond-the-surface-exploring-above-and-below-hera-gallery/">Beyond The Surface: Exploring Above and Below &middot; Hera Gallery</a></h3><p class="call-description">Cosmic and inner space at Rhode Island's 1974 artist-run Hera Gallery, juried by MASS MoCA's Lydia Jasper. Sliding-scale fee.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', Rhode Island,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', Rhode Island,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
