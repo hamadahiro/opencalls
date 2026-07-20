@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-20T06:22:05Z",
+  "lastUpdated": "2026-07-20T15:50:42Z",
   "calls": [
     {
       "title": "TWISTED 2026",
@@ -31333,6 +31333,59 @@
       "summary": "Der Greif's monthly guest-curated call — photography's materiality and spatial possibilities. Free, with a portfolio review.",
       "slug": "guest-room-whitney-hubbs-jermaine-francis-der-greif",
       "dateAdded": "2026-07-20T10:06:02Z"
+    },
+    {
+      "title": "Spotlight Awards 2026",
+      "org": "Production Paradise",
+      "deadline": "2026-07-31",
+      "fee": "€35 first entry, €25 each additional",
+      "category": "photography",
+      "description": "Production Paradise's annual commercial and advertising photography awards, now in their ninth edition. The real draw is the jury: more than fifty picture editors, art buyers, creative directors and brand leads from IKEA, The Economist, Volvo Cars, Unilever, Louis Vuitton, Cartier, Ogilvy, Droga5, UNICEF, The Guardian and Mattel. Entrants opt in to having their work shown to every judge, and the organisers pitch it as a hiring channel as much as a competition — winner or not. Fifteen categories, one of them for AI-developed imagery. Each submission is a single image, commissioned or personal work, open to photographers in all countries over 18. The Grand Prize winner takes $1,000 cash plus a portfolio review ticket and strategy sessions; category winners receive sponsor packages, with a total prize pool over $40,000. Shortlists are announced from 1 September, winners on 22 September 2026.",
+      "url": "https://www.productionparadise.com/spotlight-awards/",
+      "instagram": "@productionparadise",
+      "location": "Online",
+      "prize": "$1,000 + Portfolio review",
+      "eligibility": [
+        "18-plus",
+        "professional"
+      ],
+      "jury": [
+        "Joanne Banks, Photo Editor, The Economist",
+        "Luke Li, Creative Lead, IKEA Sweden",
+        "Janique Helson, Head of Creative/Content, Volvo Cars US",
+        "Ines Homma, Photo Producer, Cartier",
+        "Michele Manca, Art Buyer & Producer, Louis Vuitton",
+        "Elena Goodinson, Freelance Picture Editor, The Guardian"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.productionparadise.com/spotlight-awards/",
+      "requirements": "Single images",
+      "ai": "Accepted (separate category)",
+      "resultsDate": "September 22, 2026",
+      "orgInTitle": true,
+      "summary": "Commercial photography awards judged by 50+ art buyers and picture editors from IKEA, The Economist, Volvo and Cartier.",
+      "slug": "spotlight-awards-2026-production-paradise",
+      "dateAdded": "2026-07-20T15:50:42Z"
+    },
+    {
+      "title": "Global Reporting Grants",
+      "org": "Pulitzer Center",
+      "deadline": "Continuous",
+      "fee": "Free",
+      "category": "grant",
+      "description": "The Pulitzer Center's open, catch-all reporting grant — no restriction on topic or region — funding in-depth journalism on systemic issues that get too little coverage. Photographers are explicitly eligible alongside reporters, audio and video journalists and documentary filmmakers; staff and freelancers of any nationality can apply. Grants cover reporting costs against a reasonable, detailed budget; most awards for international travel fall between $5,000 and $10,000. It does not fund staff salaries, equipment purchases, books, feature-length films, routine breaking news or data projects aimed solely at academic research. Applications are reviewed on a rolling basis with no deadline; half the grant is paid once paperwork is complete and the remainder on submission of the finished work. Grantees join the Center's reporting network and its education and outreach programs.",
+      "url": "https://pulitzercenter.org/grants-fellowships/opportunities-journalists/global-reporting-grants",
+      "instagram": "@pulitzercenter",
+      "location": "Online",
+      "prize": "$5,000–$10,000",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://pulitzercenter.org/grant-application",
+      "requirements": "Project proposal",
+      "orgInTitle": true,
+      "summary": "Rolling, no-deadline reporting grants of $5,000–$10,000 for photojournalists — travel and hard costs for a specific story.",
+      "slug": "global-reporting-grants-pulitzer-center",
+      "dateAdded": "2026-07-20T15:50:42Z"
     }
   ]
 }
