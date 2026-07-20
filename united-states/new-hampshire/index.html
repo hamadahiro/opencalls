@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/this-land-is-your-land-library-arts-center/">This Land Is Your Land &middot; Library Arts Center</a></h3><p class="call-description">Community photo exhibit for America's 250th at a New Hampshire arts centre. NH/VT photographers, all levels; $5, free for members.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', NH,') || c.location.includes(', New Hampshire,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', NH,') || c.location.includes(', New Hampshire,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-18T03:12:11Z",
+  "lastUpdated": "2026-07-20T03:21:12Z",
   "calls": [
     {
       "title": "TWISTED 2026",
@@ -30906,6 +30906,111 @@
       "summary": "Online juried show on lives beyond their milestones — portraits, gestures, quiet moments. Worldwide; catalog and $1,000 total cash awards.",
       "resultsDate": "October 20, 2026",
       "dateAdded": "2026-07-19T19:08:54Z"
+    },
+    {
+      "title": "ALT",
+      "org": "Photo Opp",
+      "deadline": "2026-08-10",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Juried show at Photo Opp, a nonprofit community darkroom and visual workspace housed in the former Moses Montefiore Synagogue in downtown Appleton, Wisconsin. ALT celebrates photography as a medium without limits and asks what happens when artists step outside the expected: cyanotypes and salt prints, film soup, unconventional printing surfaces, digital manipulation, sculptural photography, emulsion lifting, collage and anything that challenges convention or expands the definition of a photograph. The brief prizes curiosity over perfection, process over predictability, risk over routine. Open to Wisconsin residents (work may have been made anywhere, anytime); up to three pieces per artist, free to enter. Selected work hangs in the Community Gallery from October 2026, with an opening reception and awards announcement on October 16, and is featured in a promotional zine sold as a fundraiser. The gallery takes no commission on sales.",
+      "url": "https://www.thephotoopp.org/gallery",
+      "instagram": "@the.photo_opp",
+      "location": "Appleton, WI, USA",
+      "prize": "Exhibition + Zine publication",
+      "eligibility": [
+        "wisconsin",
+        "alternative-process"
+      ],
+      "jury": [],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://altaphotooppgallery.artcall.org/",
+      "requirements": "Up to 3 works",
+      "slug": "alt-photo-opp",
+      "orgInTitle": false,
+      "summary": "Free alt-process juried show at Appleton's community darkroom — cyanotypes, film soup, collage. Wisconsin artists; gallery show + zine.",
+      "dateAdded": "2026-07-20T03:21:12Z"
+    },
+    {
+      "title": "This Land Is Your Land",
+      "org": "Library Arts Center",
+      "deadline": "2026-07-23",
+      "fee": "$5 (free for members)",
+      "category": "exhibition",
+      "description": "Community photography exhibit at the Library Arts Center gallery in Newport, New Hampshire, marking America's 250th anniversary. The call asks photographers to share images of the places, faces, traditions and stories that make up the fabric of America — sweeping landscapes and quiet hometown streets, everyday moments and the people who shape communities, natural beauty alongside resilience and heritage. Open to photographers of all experience levels who live in New Hampshire or Vermont, or who have a distinct connection to the area; up to two pieces per photographer. Entry is free for Library Arts Center members and $5 otherwise. Accepted artists are notified by July 28 and deliver framed, ready-to-hang work to the gallery on August 5–6. The exhibit runs August 15 – October 9, 2026, with an opening reception on August 14.",
+      "url": "https://libraryartscenter.org/exhibits/call-for-entries/",
+      "instagram": "@libraryartscenter",
+      "location": "Newport, NH, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "new-hampshire-vermont"
+      ],
+      "jury": [],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/libraryartscenter/this-land-is-your-land-photography-exhibit-2026/",
+      "requirements": "Up to 2 images",
+      "slug": "this-land-is-your-land-library-arts-center",
+      "orgInTitle": false,
+      "summary": "Community photo exhibit for America's 250th at a New Hampshire arts centre. NH/VT photographers, all levels; $5, free for members.",
+      "resultsDate": "July 28, 2026",
+      "dateAdded": "2026-07-20T03:21:12Z"
+    },
+    {
+      "title": "Current Works 2026",
+      "org": "Kansas City Society for Contemporary Photography",
+      "deadline": "2026-08-31",
+      "fee": "$50 (up to 5 images; 20% off for members)",
+      "category": "exhibition",
+      "description": "The annual juried exhibition of the Kansas City Society for Contemporary Photography, a long-running nonprofit devoted to contemporary photographic practice in the Midwest. Current Works sets out to show what photographic artists are doing now, and the call explicitly welcomes a broad range of styles and processes — digital, film, alternative process, black and white or colour — representing the diversity of photographic excellence in the region. Open to residents of Missouri, Kansas, Iowa, Nebraska, Arkansas, Oklahoma and Texas; work must have been produced between 2024 and 2026 and be built on the entrant's own original photography, with no AI-generated imagery. KCSCP members receive 20% off the entry fee, and students can request a discount code. The 2026 juror is John W. Hans, a Kansas City photographer of nearly fifty years and Director of Production at Dolphin Archival Printing inside Haw Contemporary, whose own abstract, landscape-rooted work is held in the H&R Block and Kansas City International Airport collections. Selected work is exhibited November 12 – December 31, 2026.",
+      "url": "https://www.kcscp.org/currentworks2026",
+      "instagram": "@kcscp",
+      "location": "Kansas City, MO, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "central-us"
+      ],
+      "jury": [
+        "John W. Hans, Photographer & Director of Production, Dolphin Archival Printing"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/kcscp/current-works-2026/",
+      "requirements": "Up to 5 images",
+      "slug": "current-works-2026-kansas-city-society-for-contemporary-photography",
+      "orgInTitle": false,
+      "summary": "KCSCP's annual juried show of contemporary photography, juried by John W. Hans. All processes; work made 2024–2026.",
+      "resultsDate": "September 14, 2026",
+      "ai": "Not accepted",
+      "dateAdded": "2026-07-20T03:21:12Z"
+    },
+    {
+      "title": "The Proximity of Harm — Visions of a Compromised Everyday Life",
+      "org": "Fondazione Ippocrate",
+      "deadline": "2026-08-15",
+      "fee": "€10",
+      "category": "photography",
+      "description": "First edition of an international photography competition run by the Ippocrate Foundation, an independent Italian organisation working on health, environment and social transformation, as part of a cultural research project into contemporary forms of harm. The brief treats harm in an extended, layered sense — not only environmental damage but a diffuse condition running through relationships, social systems and the construction of individual and collective identity, and equally emotional and perceptual. The project positions photography as a tool of critical observation, looking for personal ways of seeing what is close and everyday yet stays invisible; the aim is not to document harm didactically but to offer an authentic, contemporary perspective. Open to photographers, artists and authors of any nationality aged 18 or over; one to three images, as single pictures or a coherent series, no AI-generated work. The jury is chaired by World Press Photo winner Pablo Ernesto Piovano and includes photographers Pierpaolo Mittica, Ilaria Di Biagio and Ilenia Baldina, and director Silvia Chiodin. Selected photographs are screened on September 18 at Palazzetto Widmann during the Ippocrate Convention in Bagnoli di Sopra, and the three winners are invited to a masterclass with Piovano at the Teatro Carlo Goldoni on September 19 (travel and accommodation at the participant's own expense).",
+      "url": "https://quotidianocompromesso.com/en/home-en/",
+      "location": "Bagnoli di Sopra, Italy",
+      "prize": "Exhibition screening & masterclass with Piovano",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Pablo Ernesto Piovano, Photojournalist (Jury President)",
+        "Silvia Chiodin, Director & Author",
+        "Ilenia Baldina, Photographer",
+        "Pierpaolo Mittica, Photographer & Filmmaker",
+        "Ilaria Di Biagio, Photographer"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://quotidianocompromesso.com/en/home-en/",
+      "requirements": "1–3 images",
+      "slug": "the-proximity-of-harm-fondazione-ippocrate",
+      "orgInTitle": false,
+      "summary": "Foundation-run research competition on harm as a diffuse everyday condition. Worldwide, 1–3 images, €10; jury chaired by Pablo Piovano.",
+      "resultsDate": "August 31, 2026",
+      "ai": "Not accepted",
+      "dateAdded": "2026-07-20T03:21:12Z"
     }
   ]
 }
