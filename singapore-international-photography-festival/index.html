@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Singapore International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/10th-sipf-photo-market-2026-call-for-exhibitors/">10th SIPF Photo Market 2026 — Call for Exhibitors</a></h3><p class="call-description">Sell photobooks, zines and prints at the 10th SIPF's photo market in Singapore — reduced booth rate for young creatives.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Singapore International Photography Festival').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Singapore International Photography Festival' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
