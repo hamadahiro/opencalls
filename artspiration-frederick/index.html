@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Artspiration Frederick. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/many-countries-in-one-artspiration-frederick/">Many Countries in One &middot; Artspiration Frederick</a></h3><p class="call-description">Juried show for immigrant artists in the US, curated by F. Lennox Campello at a Frederick, MD nonprofit gallery.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Artspiration Frederick').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Artspiration Frederick' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
