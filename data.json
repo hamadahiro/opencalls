@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-20T15:50:42Z",
+  "lastUpdated": "2026-07-20T22:51:39Z",
   "calls": [
     {
       "title": "TWISTED 2026",
@@ -31359,6 +31359,46 @@
       "summary": "Year-round call for solo, group or curatorial photography shows at Vilnius's Prospekto and Vilnius Photography galleries. Free.",
       "slug": "open-call-for-exhibitions-prospekto-and-vilnius-photography-galleries",
       "dateAdded": "2026-07-20T18:09:10Z"
+    },
+    {
+      "title": "Monochrome",
+      "org": "Aurea Photogallery",
+      "deadline": "2026-08-12",
+      "fee": "Free (€30 if accepted)",
+      "category": "photography",
+      "description": "Aurea Photogallery's black-and-white open call, asking photographers to leave colour behind and work with light, shadow, shape and texture alone. Portraits, landscapes, quiet street work and abstract shadows are all welcome, with an emphasis on strong contrast and raw emotion. Selected work runs in a one-month online exhibition (18 August – 14 September 2026) with a PDF and print-on-demand catalogue, a dedicated artist page and permanent inclusion in the gallery's archive. Submissions are reviewed on a rolling basis.",
+      "url": "https://aureaphotogallery.com/open-calls/monochrome/",
+      "instagram": "@aurea.photogallery",
+      "location": "Online",
+      "prize": "Exhibition + Catalog",
+      "eligibility": [],
+      "submitVia": "Website form",
+      "submitUrl": "https://aureaphotogallery.com/free-submission/",
+      "requirements": "Up to 3 images",
+      "slug": "monochrome-aurea-photogallery",
+      "orgInTitle": false,
+      "summary": "Black-and-white open call — light, shadow, shape and texture without colour. One-month online exhibition with catalogue.",
+      "dateAdded": "2026-07-20T22:51:39Z"
+    },
+    {
+      "title": "2027 Small Stones Festival of the Arts",
+      "org": "Small Stones Festival of the Arts",
+      "deadline": "2026-10-01",
+      "fee": "$10/entry",
+      "category": "exhibition",
+      "description": "Eighth edition of the juried festival run jointly by the Worcester County Camera Club and the Blackstone Valley Art Association, held in a restored barn outside Worcester. Fine art photography is judged as its own category — film, digital, infrared and alternative processes all eligible — with its own jurors and prizes, alongside fine art painting. 144 works are selected for the in-person exhibition and printed in a hardbound catalogue; all entries appear in the online Web Gallery. Work must be hand-delivered, and framed pieces are capped at 26 inches on the longest edge. The art call opens 1 September 2026.",
+      "url": "https://smallstonesfestival.org/year-2027/",
+      "instagram": "@smallstonesfestival",
+      "location": "North Grafton, MA, USA",
+      "prize": "Exhibition + Cash awards + Catalog",
+      "eligibility": [],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://smallstones2027.artcall.org/",
+      "requirements": "Up to 5 images",
+      "slug": "2027-small-stones-festival-of-the-arts",
+      "orgInTitle": true,
+      "summary": "Juried barn-gallery festival near Worcester with a full fine art photography category, jurors and hardbound catalogue.",
+      "dateAdded": "2026-07-20T22:51:39Z"
     }
   ]
 }
