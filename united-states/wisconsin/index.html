@@ -112,6 +112,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/alt-photo-opp/">ALT &middot; Photo Opp</a></h3><p class="call-description">Free alt-process juried show at Appleton's community darkroom — cyanotypes, film soup, collage. Wisconsin artists; gallery show + zine.</p></div>
 
     </section>
 
@@ -129,7 +130,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', WI,') || c.location.includes(', Wisconsin,'))).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', WI,') || c.location.includes(', Wisconsin,')) && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
