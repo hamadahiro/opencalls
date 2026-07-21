@@ -50,6 +50,40 @@ const countrySlugs = {
   'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates'
 };
 
+// Canonical set of accepted values for the country slot (the last comma part of
+// a location). The build validates every location's country against this set, so
+// a typo ("Germny") or a US state left in the country slot ("Lanesboro, MN") can
+// never silently mint a junk single-segment page. Spellings follow site
+// convention: 'USA' (not "United States"), 'United Kingdom' (not "UK"),
+// 'United Arab Emirates', 'Czech Republic'. UK locations MUST use 'United
+// Kingdom' — England/Scotland/Wales are intentionally absent so calls don't
+// fragment across /scotland/ + /united-kingdom/. 'Northern Ireland' is
+// grandfathered (already in use). To add a genuinely new country, add it here.
+const validCountries = new Set([
+  'Afghanistan','Albania','Algeria','Andorra','Angola','Antigua and Barbuda','Argentina','Armenia',
+  'Australia','Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium',
+  'Belize','Benin','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Brazil','Brunei','Bulgaria',
+  'Burkina Faso','Burundi','Cambodia','Cameroon','Canada','Cape Verde','Central African Republic','Chad',
+  'Chile','China','Colombia','Comoros','Congo','Costa Rica','Croatia','Cuba','Cyprus','Czech Republic',
+  'Denmark','Djibouti','Dominica','Dominican Republic','Ecuador','Egypt','El Salvador','Equatorial Guinea',
+  'Eritrea','Estonia','Eswatini','Ethiopia','Fiji','Finland','France','Gabon','Gambia','Georgia','Germany',
+  'Ghana','Greece','Grenada','Guatemala','Guinea','Guinea-Bissau','Guyana','Haiti','Honduras','Hong Kong',
+  'Hungary','Iceland','India','Indonesia','Iran','Iraq','Ireland','Israel','Italy','Ivory Coast','Jamaica',
+  'Japan','Jordan','Kazakhstan','Kenya','Kiribati','Kosovo','Kuwait','Kyrgyzstan','Laos','Latvia','Lebanon',
+  'Lesotho','Liberia','Libya','Liechtenstein','Lithuania','Luxembourg','Macau','Madagascar','Malawi',
+  'Malaysia','Maldives','Mali','Malta','Marshall Islands','Mauritania','Mauritius','Mexico','Micronesia',
+  'Moldova','Monaco','Mongolia','Montenegro','Morocco','Mozambique','Myanmar','Namibia','Nauru','Nepal',
+  'Netherlands','New Zealand','Nicaragua','Niger','Nigeria','North Korea','North Macedonia','Northern Ireland',
+  'Norway','Oman','Pakistan','Palau','Palestine','Panama','Papua New Guinea','Paraguay','Peru','Philippines',
+  'Poland','Portugal','Puerto Rico','Qatar','Romania','Russia','Rwanda','Saint Kitts and Nevis','Saint Lucia',
+  'Saint Vincent and the Grenadines','Samoa','San Marino','Sao Tome and Principe','Saudi Arabia','Senegal',
+  'Serbia','Seychelles','Sierra Leone','Singapore','Slovakia','Slovenia','Solomon Islands','Somalia',
+  'South Africa','South Korea','South Sudan','Spain','Sri Lanka','Sudan','Suriname','Sweden','Switzerland',
+  'Syria','Taiwan','Tajikistan','Tanzania','Thailand','Timor-Leste','Togo','Tonga','Trinidad and Tobago',
+  'Tunisia','Turkey','Turkmenistan','Tuvalu','Uganda','Ukraine','United Arab Emirates','United Kingdom',
+  'Uruguay','USA','Uzbekistan','Vanuatu','Vatican City','Venezuela','Vietnam','Yemen','Zambia','Zimbabwe'
+]);
+
 // US state abbreviation → full name. ONE copy — consumed by generate-pages.js
 // (state pages + the country page's embedded state-index script) and any client
 // code, so the map can never drift between server and browser.
@@ -444,7 +478,7 @@ function submitViaIsPlatform(submitVia) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
-    usStateNames, stateNameToAbbr,
+    usStateNames, stateNameToAbbr, validCountries,
     PIN_SVG, PRIZE_SVG,
     isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,

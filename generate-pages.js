@@ -6,7 +6,7 @@ const path = require('path');
 const shared = require('./shared.js');
 const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
-  usStateNames, stateNameToAbbr,
+  usStateNames, stateNameToAbbr, validCountries,
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
@@ -172,12 +172,23 @@ data.calls.forEach((c, i) => {
       if (parts.length < 3) {
         err(`"${label}" has US location "${loc}" missing a state — must be "City, ST, USA" (e.g. "Chicago, IL, USA")`);
       } else {
-        // US locations must use 2-letter state abbreviations, not full state names
+        // US locations must use a real 2-letter state abbreviation — not a full
+        // state name, and not an invalid 2-letter code (e.g. "XX"), which would
+        // mint a junk /united-states/xx/ state page.
         const state = parts[parts.length - 2];
         if (state.length > 2) {
           err(`"${label}" uses full state name "${state}" — must use 2-letter abbreviation (e.g. NY, CA, TX)`);
+        } else if (!usStateNames[state.toUpperCase()]) {
+          err(`"${label}" uses unknown US state code "${state}" in "${loc}" — must be a valid 2-letter abbreviation (e.g. NY, CA, TX)`);
         }
       }
+    } else if (!validCountries.has(country)) {
+      // GUARD: the country slot must be a recognized country. Anything else — a
+      // typo ("Germny"), a region, a US state that slipped past the checks above —
+      // would mint a junk single-segment page mixed in among real countries.
+      // If this is a genuinely new, correctly-spelled country, add it to
+      // validCountries in shared.js; UK locations must use "United Kingdom".
+      err(`"${label}" has unrecognized country "${country}" in "${loc}" — not in validCountries (shared.js). Fix the spelling, or add it there if it's a real new country.`);
     }
   }
 
