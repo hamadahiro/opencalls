@@ -2558,7 +2558,9 @@ const REDIRECTS = {
   'remedy-photo-festival-2026-open-call': 'remedy-photo-festival-open-call-2026',
   'photoed-magazine-home-vs-away-issue-76': 'photoed-magazine-home-vs-away-issue-77',
   'creatures-photography-exhibit-dusk-photo-gallery': 'creatures-dusk-gallery',
-  'elemental-earth-air-fire-water-the-chateau-gallery': 'elemental-earth-air-fire-water-tcg-gallery'
+  'elemental-earth-air-fire-water-the-chateau-gallery': 'elemental-earth-air-fire-water-tcg-gallery',
+  'memory-what-remains-the-chateau-gallery': 'memory-what-remains-tcg-gallery',
+  'kuenstlerdorf-schoeppingen-residency-fellowships-2027': 'kuenstlerdorf-schoeppingen-fellowship-2027'
 };
 Object.entries(REDIRECTS).forEach(([from, to]) => {
   if (slugMap[from]) { console.error(`ERROR: redirect source "${from}" collides with a live page — remove it from REDIRECTS.`); process.exit(1); }
