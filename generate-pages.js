@@ -147,6 +147,23 @@ data.calls.forEach((c, i) => {
     if (COUNTRY_ALIASES[country]) {
       err(`"${label}" uses "${country}" — should be "${COUNTRY_ALIASES[country]}"`);
     }
+    // GUARD: a US state must NEVER sit in the country slot. If the trailing
+    // ", USA" is dropped (e.g. "Lanesboro, MN" or "Lanesboro, Minnesota"), the
+    // state name/abbr becomes the "country", spawning a bogus single-segment
+    // page (/mn/, /minnesota/) that mixes US states in among real countries.
+    // The correct home for a US location is /united-states/<state>/, so force
+    // the "City, ST, USA" shape here.
+    if (usStateNames[country]) {
+      err(`"${label}" has US state "${country}" in the country slot: "${loc}" — a US state is not a country. Append ", USA" → "${loc}, USA"`);
+    } else if (stateNameToAbbr[country]) {
+      err(`"${label}" has US state name "${country}" in the country slot: "${loc}" — a US state is not a country. Use "City, ${stateNameToAbbr[country]}, USA"`);
+    }
+    // GUARD: the country slot must be a bare country name — no parentheticals
+    // like "USA (open internationally)" or "Spain (international applicants)",
+    // which also mint junk country pages. Move such notes into eligibility.
+    if (/[()]/.test(country)) {
+      err(`"${label}" has a parenthetical in the country slot: "${country}" — the last location part must be a bare country (put notes in eligibility)`);
+    }
     // US locations MUST include a state: "City, ST, USA". A 2-part "City, USA"
     // renders a chip labeled with the city but links to the country page (the
     // US-states list), not the city's state — confusing, since there are no
