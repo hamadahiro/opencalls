@@ -85,6 +85,9 @@
         "united-states",
         "18-plus"
       ],
+      "jury": [
+        "Amanda Bradley, Gallery Director, d'Art Center"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17860/CAFE",
       "requirements": "3–10 images",
@@ -1039,7 +1042,9 @@
       "url": "https://perspa.fr/perspa-2026/",
       "location": "Bourges, France",
       "prize": "€1,000 + exhibition + publication",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [],
       "submitVia": "Official website",
       "requirements": "1 image per entry",
@@ -3805,7 +3810,7 @@
         "Nichola Rodgers, Editor"
       ],
       "submitVia": "CuratorSpace",
-      "requirements": "Up to 3 images",
+      "requirements": "Up to 5 images",
       "slug": "haus-a-rest-issue-74-eco-materials",
       "orgInTitle": true,
       "summary": "UK indie art/lit zine, theme 'Eco Materials'. Photography accepted alongside other media. Free, publication only.",
@@ -30765,7 +30770,10 @@
       "eligibility": [
         "18-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Jeff Hamada, Founder, Booooooom",
+        "Stanzie Tooth, Format"
+      ],
       "submitVia": "Format",
       "submitUrl": "https://www.format.com/booooooom",
       "requirements": "Portfolio + 2 statements",
