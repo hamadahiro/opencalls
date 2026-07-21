@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Art Moves Festival / Rusz Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/art-moves-2026-international-billboard-art-competition/">Art Moves 2026 — International Billboard Art Competition</a></h3><p class="call-description">Free billboard-art competition — 8 works shown in Toruń's public space during the festival, PLN 6,500 main award. Theme: fear or courage.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Art Moves Festival / Rusz Foundation' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Art Moves Festival / Rusz Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
