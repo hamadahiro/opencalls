@@ -1503,7 +1503,10 @@
       "dateAdded": "2026-07-01T11:11:41Z",
       "requirements": "1 image",
       "resultsDate": "Mid-August 2026",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "jury": [
+        "Fotografiska & Estée Lauder curatorial team"
+      ]
     },
     {
       "title": "Visual / Mixed-Media Artist Residency",
@@ -1700,7 +1703,7 @@
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/vmfa-aaron-siskind-2026",
       "requirements": "10–15 images",
-      "resultsDate": "Early November 2026",
+      "resultsDate": "November 10, 2026",
       "slug": "vmfa-aaron-siskind-award-for-photography-2026",
       "orgInTitle": true,
       "summary": "VMFA's contemporary photography award — two unrestricted $25,000 prizes for U.S. photographers. Free to enter; 10–15 image portfolio.",
@@ -28541,7 +28544,7 @@
       "ai": null,
       "slug": "mobile-photography-awards-2026",
       "orgInTitle": true,
-      "summary": "Annual awards for photos shot & edited on mobile devices — $3,000 grand prize, $10,000+ pool, 12 categories + Photo Essay. From $15. Deadline Dec 18.",
+      "summary": "Annual awards for photos shot & edited on mobile devices — $3,000 grand prize, $10,000+ pool, 12 categories incl. Photo Essay. From $15. Deadline Dec 18.",
       "dateAdded": "2026-06-13T14:40:40.866Z"
     },
     {
@@ -31422,7 +31425,8 @@
       "summary": "Print Issue 21 'Garden of Nostalgia' — found/family photographs meet florals, nature and roots. Any media. Free to submit.",
       "jury": [],
       "resultsDate": "Late October 2026",
-      "dateAdded": "2026-07-21T22:13:30Z"
+      "dateAdded": "2026-07-21T22:13:30Z",
+      "ai": "Not accepted"
     },
     {
       "title": "SlowExposures 2026 — Book Fair",
