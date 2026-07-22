@@ -1074,7 +1074,8 @@ const eligibilityGroups = {
   'kazakhstan': { short: 'Kazakhstan', title: 'Kazakhstan-Only Open Calls', desc: 'Open calls restricted to photographers and artists from Kazakhstan.' },
   'netherlands': { short: 'Netherlands', title: 'Netherlands-Only Open Calls', desc: 'Open calls restricted to photographers and artists who are Dutch or based in the Netherlands.' },
   'curators': { short: 'Curators & Academics', title: 'Open Calls for Curators & Academics', desc: 'Open calls, fellowships, and research grants for curators, academics, and researchers developing exhibitions or publications.' },
-  'scientists': { short: 'Scientists', title: 'Open Calls for Scientists', desc: 'Photography competitions and open calls for working scientists and researchers at graduate level and above.' }
+  'scientists': { short: 'Scientists', title: 'Open Calls for Scientists', desc: 'Photography competitions and open calls for working scientists and researchers at graduate level and above.' },
+  'military-community': { short: 'Military Community', title: 'Open Calls for the Military Community', desc: 'Photography open calls and exhibitions for active-duty service members, veterans, and their families.' }
 };
 
 // Collect which eligibility tags actually exist in data
@@ -1148,7 +1149,7 @@ ${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.incl
 
 // Eligibility index page
 const eligibilityOrder = [
-  { heading: 'Who Can Apply', tags: ['women', 'non-binary', 'flinta', 'black', 'bipoc', 'native-american', 'lgbtq', 'neurodivergent-disabled', 'immigrant', 'emerging', 'mid-career', 'student', 'professional', 'curators', 'scientists', 'under-25', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18', '13-25'] },
+  { heading: 'Who Can Apply', tags: ['women', 'non-binary', 'flinta', 'black', 'bipoc', 'native-american', 'lgbtq', 'neurodivergent-disabled', 'immigrant', 'emerging', 'mid-career', 'student', 'professional', 'curators', 'scientists', 'military-community', 'under-25', 'under-30', 'under-35', 'under-40', '16-plus', '18-plus', '21-plus', '25-plus', '45-plus', '65-plus', '10-18', '13-25'] },
   { heading: 'Where', tags: ['united-states', 'new-york-state', 'central-new-york', 'alaska', 'arkansas', 'california', 'colorado', 'florida', 'idaho', 'maryland', 'massachusetts-rhode-island', 'michigan', 'minnesota', 'new-hampshire-vermont', 'new-mexico', 'oregon', 'texas', 'virginia', 'washington', 'wisconsin', 'bay-area', 'chicago-area', 'cincinnati-area', 'los-angeles', 'portland-area', 'baltimore-region', 'northern-california', 'southern-california', 'tampa-bay', 'tri-state', 'ark-la-tex', 'central-us', 'new-england', 'great-lakes', 'gulf-coast', 'mid-atlantic-us', 'midwest-us', 'western-us', 'southwest-us', 'southeast-us', 'canada', 'europe', 'australia', 'baltics-finland', 'bulgaria', 'commonwealth', 'france', 'germany', 'india', 'ireland', 'italy', 'japan', 'kazakhstan', 'malta', 'morocco', 'netherlands', 'nordic', 'portugal', 'spain', 'switzerland', 'taiwan', 'ukraine', 'united-kingdom', 'north-east-england', 'singapore', 'non-european', 'wana'] },
   { heading: 'Medium', tags: ['analog-photography', 'alternative-process'] },
   { heading: 'Focus', tags: ['african-diaspora', 'asian-american', 'caribbean', 'global-south', 'latin-america', 'puerto-rico', 'south-asian'] },
