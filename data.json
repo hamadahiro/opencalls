@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-22T02:14:17Z",
+  "lastUpdated": "2026-07-22T06:12:47Z",
   "calls": [
     {
       "title": "In Community: LACP's Annual Members' Exhibition",
@@ -31477,6 +31477,51 @@
       "orgInTitle": true,
       "summary": "Show and sell your photobook at the SlowExposures festival in Concord, GA. Free — donate one book to the raffle; first 10 photographers.",
       "dateAdded": "2026-07-21T22:13:30Z"
+    },
+    {
+      "title": "Hand Fetish Projects — Issue #01: How to Survive in Southeast Asia",
+      "org": "Hand Fetish Projects",
+      "deadline": "2026-07-31",
+      "fee": "Free",
+      "category": "zine",
+      "description": "Founding print issue from independent arthouse Hand Fetish Projects, collecting images made from within Southeast Asia — humidity, density, informal architecture, urban exhaustion — alongside outside encounters with the region. Illustration, photography and mixed-media work is welcome, with experimental and analogue approaches encouraged; submit up to 3 works with a short artist statement. Selected artists receive the print-ready PDF edition free, physical copies at production cost, full copyright retained, and credit in the HFP archive. Publication expected September 2026.",
+      "url": "https://hfp.gallery/open-calls-for-artists/issue-01-open-call-for-artists/",
+      "instagram": "@hfp.gallery",
+      "location": "Online",
+      "prize": "Publication (print)",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Airtable",
+      "submitUrl": "https://airtable.com/appQs0x6cdQluj6Of/pagMIhWyYSB03v0Rx/form",
+      "requirements": "Up to 3 images",
+      "resultsDate": "August 30, 2026",
+      "ai": "Accepted (with intent)",
+      "slug": "hand-fetish-projects-issue-01-how-to-survive-in-southeast-asia",
+      "orgInTitle": true,
+      "summary": "Free founding print issue themed on surviving Southeast Asia. Photography welcome; selected artists receive the print edition PDF.",
+      "dateAdded": "2026-07-22T06:12:47Z"
+    },
+    {
+      "title": "Delfina Foundation — Mondriaan Fund Netherlands Residency 2027",
+      "org": "Delfina Foundation",
+      "deadline": "2026-08-27",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Three-month residency at Delfina Foundation in London (September 27 – December 17, 2027) for visual artists and curators who are Dutch or based in the Netherlands, organised in partnership with the Mondriaan Fund. Artists receive €9,188 and curators €7,232 toward travel, materials and living costs, with studio and accommodation paid directly to Delfina; residents contribute 10% personally. Apply in English via the Mondriaan Fund's digital application system. Deadline August 27, 2026, before 16:00 Dutch time.",
+      "url": "https://www.delfinafoundation.com/open-calls/current/open-call-with-the-mondriaan-fund/",
+      "instagram": "@delfinafdn",
+      "location": "London, United Kingdom",
+      "prize": "Residency",
+      "eligibility": [
+        "netherlands"
+      ],
+      "jury": [],
+      "submitVia": "Mondriaan Fund portal",
+      "submitUrl": "https://www.mondriaanfonds.nl/en/apply-for-a-grant/grants/residency/delfina-foundation-londen-uk/",
+      "slug": "delfina-foundation-mondriaan-fund-netherlands-residency-2027",
+      "orgInTitle": true,
+      "summary": "Funded 3-month London residency for Dutch or Netherlands-based artists and curators, backed by a Mondriaan Fund grant.",
+      "dateAdded": "2026-07-22T06:12:47Z"
     }
   ]
 }
