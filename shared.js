@@ -103,7 +103,7 @@ const eligibilityLabel = {
   'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only',
   'canada': 'Canada only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only', 'netherlands': 'Netherlands only',
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'malta': 'Malta only', 'bulgaria': 'Bulgaria only',
-  'baltics-finland': 'Baltics & Finland', 'commonwealth': 'Commonwealth only',
+  'baltics-finland': 'Baltics & Finland', 'commonwealth': 'Commonwealth only', 'qatar': 'Qatar only',
   '10-18': 'Ages 10–18', '13-25': 'Ages 13–25', 'singapore': 'Singapore only', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only',
