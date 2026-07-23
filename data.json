@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-23T06:17:19Z",
+  "lastUpdated": "2026-07-23T10:15:55Z",
   "calls": [
     {
       "title": "Tasweer Residency 2026–2027: As the Image Unfolds",
@@ -31624,6 +31624,52 @@
       "summary": "Cinema-logic still images at Fort Works Art (Fort Worth): 11-week show during the Lone Star Film Festival, cash prizes.",
       "verifyNote": "Prospectus (CaFE 17822, opened Jul 21 2026) is the only source — fortworksart.com does not list the call yet; juror TBD; prospectus 'January 9, 2026' exhibition end is a typo for 2027; deadline Sep 19 per application dates (machine closes Sep 20 UTC). Eligibility: structured CaFE facet says International; the 'open to national artists' line in media requirements is org boilerplate — keep eligibility [].",
       "dateAdded": "2026-07-23T02:14:40Z"
+    },
+    {
+      "title": "The Unexpected",
+      "org": "Ashton Gallery @ Art on 30th",
+      "deadline": "2026-08-14",
+      "fee": "$35 up to 2, $45 up to 4, $55 up to 6",
+      "category": "exhibition",
+      "description": "A regional juried show at Ashton Gallery inside San Diego's Art on 30th complex, on view August 22 – September 25, 2026, juried by Connect SD gallery owner Robert Plume. Sought: artwork that embraces unpredictability, accidents, transformation and unexpected outcomes. Photography is explicitly welcomed alongside 2D and pedestal-scale 3D work; no digital art, reproductions or AI-generated artwork (limited-edition photographic prints excepted). Enter digitally or drop off in person — jurors prefer in-person, and accepted online entries must be delivered to the gallery by Monday, August 17. All works must be for sale; the gallery takes 50% commission. Opening reception August 22.",
+      "url": "https://www.ashtonartgallery.com/",
+      "instagram": "@ashtonartgallery",
+      "location": "San Diego, CA, USA",
+      "eligibility": [
+        "southern-california"
+      ],
+      "jury": [
+        "Robert Plume"
+      ],
+      "submitVia": "Eventbrite",
+      "submitUrl": "https://arton30th.com/pages/call-for-artists",
+      "requirements": "Up to 6 images",
+      "ai": "Not accepted",
+      "resultsDate": "August 15, 2026",
+      "slug": "the-unexpected-ashton-gallery",
+      "orgInTitle": false,
+      "summary": "San Diego regional juried show at Ashton Gallery — art embracing the unplanned; photography welcome, juried by Robert Plume of Connect SD.",
+      "dateAdded": "2026-07-23T10:15:55Z"
+    },
+    {
+      "title": "South Florida Cultural Consortium Fellowship 2026",
+      "org": "South Florida Cultural Consortium",
+      "deadline": "2026-09-14",
+      "fee": "Free",
+      "category": "grant",
+      "description": "The arts councils of Broward, Martin, Miami-Dade, Monroe and Palm Beach counties jointly award grants of $7,500 or $15,000 to visual and media artists who have lived and worked in the five-county South Florida region for at least a year — among the largest regional artist awards in the US. Established in 1988, the consortium has granted over $4 million to more than 300 artists, with recipients' work presented in exhibitions. Photography and media work are eligible (samples from the past three years); degree-seeking students are not. Attendance at one of the remaining online workshops (August 4 or August 22) is required to apply. Funded in part by the National Endowment for the Arts and the State of Florida.",
+      "url": "https://www.miamidadearts.org/south-florida-cultural-consortium-sfcc",
+      "location": "Miami, FL, USA",
+      "prize": "$7,500–$15,000 grants",
+      "eligibility": [
+        "florida"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://artinpublicplaces.submittable.com/submit/348326/fy-26-27-sfcc-visual-and-media-artists-grant-south-florida-cultural-consortum",
+      "slug": "south-florida-cultural-consortium-fellowship-2026",
+      "orgInTitle": true,
+      "summary": "Five South Florida county arts councils award $7,500–$15,000 fellowships to visual and media artists; a free workshop is required to apply.",
+      "dateAdded": "2026-07-23T10:15:55Z"
     }
   ]
 }
