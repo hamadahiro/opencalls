@@ -16404,7 +16404,50 @@
       "location": "Online",
       "prize": "Exhibition",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Carys Lake Edwards, Photographs Specialist, Artnet",
+        "Kelly Sidley, Head of Photographs, Bonhams",
+        "Jessica Baxter, Assistant Curator of International Art, Tate Modern",
+        "Anabel Wold, Photographs Specialist, Sotheby's",
+        "Thomas Ruettimann, Director, Galerie Peter Kilchmann",
+        "Chris Bayley, Exhibitions Curator, Serpentine Galleries",
+        "Emma Duret, Director, Hales Gallery",
+        "Astrid Hamm, Senior Director, Galerie Eigen + Art",
+        "Isaure de Viel Castel, Director, Artcurial",
+        "Paul Meates, Executive Story Director, Howatson+Company",
+        "Diana Burroughs, Executive Director of Artist Residency, Project 14C",
+        "Hannah Brenchley, Picture Editor, Financial Times",
+        "Wes Phelan, Executive Creative Director, Ogilvy",
+        "Emily Edwards, Associate Curator, Dallas Contemporary",
+        "Henner Merle, Owner/Director, NUUD.Berlin Gallery",
+        "Elisabeth Ajtay, Photographs Specialist, Kunsthaus Lempertz",
+        "Sara Rizzo, Curator of Photography, MUDEC Milan",
+        "Sarah Kennel, Aaron Siskind Curator of Photography, Virginia Museum of Fine Arts",
+        "Lorenzo Ronchini, Founder/Director, Ronchini Gallery",
+        "Gemma Ben-Ary, Chairperson/Curator, Art on the Move",
+        "Kaz Tsuchikawa, Director, Taka Ishii Gallery",
+        "Nina Hama, Founder/Director, Hama Gallery",
+        "Lindsey Sharman, Curator, Art Gallery of Alberta",
+        "Stefan Andersson, Chairman/Owner, GSA Gallery",
+        "Julia Waite, Curator, Auckland Art Gallery",
+        "Olivier Waltman, Founder/Director, Galerie Olivier Waltman",
+        "Toru Fujii, Director, Toru Fujii Creative",
+        "David Hill, Founder/Director, David Hill Gallery",
+        "Clementine de La Feronniere, Founder/Director, Galerie Clémentine de la Féronnière",
+        "David Clarke, Curator & Fine Art Photography Specialist",
+        "Diane Ruggie, Creative Director, Writer & Editor",
+        "Conrad Hechter, Correspondent, Goldsmiths, University of London",
+        "Bernardino Castro, Director, Centro Português de Fotografia",
+        "Charlotte Smuda-Jescheck, Founder/Director, Smudajescheck Galerie",
+        "Paola Anselmi, Curator & Arts Writer, Paola Anselmi Contemporary Art",
+        "Calvin Hui, Co-Founder & Director, 3812 Gallery",
+        "Andy Ilwoo Huh, Associate Director, The Page Gallery",
+        "Silvan Faessler, Director, Silvan Faessler Fine Art",
+        "Chiara Badinella, Art Advisor & Appraiser",
+        "Claudia Cargnel, Founder, Galerie Bugada Cargnel",
+        "Giulia Biafore, Director, Galleria Studio G7",
+        "Alice Vaganay, Co-Director, Galerie Suzanne Tarasieve"
+      ],
       "submitVia": "Website form",
       "requirements": "Unlimited images",
       "ai": "Not accepted",
@@ -16413,7 +16456,7 @@
       "resultsDate": "November 7, 2026",
       "dateAdded": "2026-03-18",
       "submitUrl": "https://www.thespiderawards.com/register.php",
-      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Jury announced annually.",
+      "summary": "Leading international B&W photography award. 21st edition. 235+ title awards. Jury of 40+ international curators and gallerists.",
       "prose": [
         "The Black & White Spider Awards is an annual international award restricted by process: black-and-white photography only. The 2026 edition is the award's 21st cycle.",
         "The structure runs 235+ title awards across categories — winners are announced not only as overall prizes but as title-holders within sub-genres. Winners are announced at a live Photoshow in November 2026.",
@@ -30808,7 +30851,7 @@
       "title": "Head On Photo Awards 2026",
       "org": "Head On Foundation",
       "deadline": "2026-08-16",
-      "fee": "$30 AUD per image; under-25s $15",
+      "fee": "AUD$35 per image; under-25s $17.50",
       "category": "photography",
       "description": "The flagship international awards of Sydney's Head On Photo Festival, judged completely anonymously — jurors see the photograph, never the photographer's name, CV or following. Three categories: Portrait, Landscape and Exposure (anything that is not portrait or landscape), sharing an AUD 80,000 prize pool that includes AUD 5,000 cash for each category winner plus OM System camera kits. Around 40 finalists per category (20–30 for Exposure) are exhibited in print and online during the festival, 6–29 November 2026. Open internationally to photographers at every level, from phone snapshots to studio and documentary work. Entries are AUD 30 per image, half price for under-25s; final deadline 16 August 2026, 11:59pm Sydney time.",
       "url": "https://headon.org.au/awards",
@@ -30826,7 +30869,21 @@
       "summary": "Sydney's blind-judged festival awards — AUD 80,000 pool across Portrait, Landscape and Exposure; finalists exhibited in November.",
       "dateAdded": "2026-07-17T23:19:00Z",
       "requirements": "Unlimited images",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "jury": [
+        "Djon Mundine OAM, Curator, Writer & Activist",
+        "Heidi Erdmann, Art Historian & Curator",
+        "Melinda Blauvelt, Photographer & Educator",
+        "Toby Meagher, Partner, Michael Reid Galleries",
+        "Veronique Vial, Photographer",
+        "Moshe Rosenzveig OAM, Founder & Creative Director, Head On Photo Festival",
+        "Pablo Giori, Director, Experimental Photo Festival",
+        "Anouska Phizacklea, Director, Museum of Australian Photography",
+        "Julia de Bierre, Founder, Galerie Huit Arles",
+        "Danielle Smith, Photographic Editor, The Sydney Morning Herald",
+        "Valery Poshtarov, Photographer & Founder, PhotoAnthology Foundation",
+        "Lynsey Weatherspoon, Photojournalist & Portraitist"
+      ]
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
@@ -31406,7 +31463,8 @@
       "slug": "2027-small-stones-festival-of-the-arts",
       "orgInTitle": true,
       "summary": "Juried barn-gallery festival near Worcester with a full fine art photography category, jurors and hardbound catalogue.",
-      "dateAdded": "2026-07-20T22:51:39Z"
+      "dateAdded": "2026-07-20T22:51:39Z",
+      "resultsDate": "January 30, 2027"
     },
     {
       "title": "Dek Unu Magazine — November 2026 Issue",
@@ -31630,7 +31688,8 @@
       "slug": "south-florida-cultural-consortium-fellowship-2026",
       "orgInTitle": true,
       "summary": "Five South Florida county arts councils award $7,500–$15,000 fellowships to visual and media artists; a free workshop is required to apply.",
-      "dateAdded": "2026-07-23T10:15:55Z"
+      "dateAdded": "2026-07-23T10:15:55Z",
+      "instagram": "@miamidadearts"
     }
   ]
 }
