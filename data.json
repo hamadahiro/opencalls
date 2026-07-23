@@ -2522,6 +2522,9 @@
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17749",
       "requirements": "Up to 10 works",
       "resultsDate": "After August 1, 2026",
+      "jury": [
+        "Andrew Dubach, Multi-media Artist"
+      ],
       "slug": "night-vision-artlink",
       "orgInTitle": false,
       "summary": "Night-themed juried show at Fort Wayne's Artlink — all media incl. photography, drawn to the colors of the dark. US artists, $12 entry.",
@@ -2583,7 +2586,7 @@
       "orgInTitle": false,
       "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
       "dateAdded": "2026-06-19T01:49:26.373Z",
-      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead."
+      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead."
     },
     {
       "title": "The City Series: London — Shutter Hub Editions Publication",
@@ -9157,7 +9160,7 @@
       "submitUrl": "https://www.mwcponline.com/ten-x-ten-entry.html",
       "requirements": "5–14 images",
       "slug": "ten-x-ten-18th-annual-small-works",
-      "verifyNote": "MWCP site self-contradicts for the 18th edition (2026-07-16): prospectus page says deadline AUGUST 1, listing page says SEPTEMBER 1. Using earlier prospectus date to be safe. Recheck near Aug 1. Re-checked 2026-07-22: unchanged (prospectus still AUGUST 1, listing still SEPTEMBER 1) — keeping Aug 1.",
+      "verifyNote": "MWCP site self-contradicts for the 18th edition (2026-07-16): prospectus page says deadline AUGUST 1, listing page says SEPTEMBER 1. Using earlier prospectus date to be safe. Recheck near Aug 1. Re-checked 2026-07-22: unchanged (prospectus still AUGUST 1, listing still SEPTEMBER 1) — keeping Aug 1. Re-checked 2026-07-23: unchanged.",
       "orgInTitle": false,
       "summary": "Annual 10\"×10\" square-format exhibition at MWCP, Wichita. Affordable collectible works, MWCP prints at no cost.",
       "dateAdded": "2026-04-07T07:16:34.103Z",
@@ -31328,7 +31331,7 @@
       "summary": "Der Greif's monthly guest-curated call — photography's materiality and spatial possibilities. Free, with a portfolio review.",
       "slug": "guest-room-whitney-hubbs-jermaine-francis-der-greif",
       "dateAdded": "2026-07-20T10:06:02Z",
-      "resultsDate": "September 16, 2026"
+      "resultsDate": "September 14, 2026"
     },
     {
       "title": "Spotlight Awards 2026",
@@ -31355,7 +31358,7 @@
       ],
       "submitVia": "Official website",
       "submitUrl": "https://www.productionparadise.com/spotlight-awards/enter-now/",
-      "requirements": "Single images",
+      "requirements": "1 image per entry",
       "ai": "Accepted (must disclose)",
       "resultsDate": "September 22, 2026",
       "orgInTitle": true,
