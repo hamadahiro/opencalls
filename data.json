@@ -1,6 +1,35 @@
 {
-  "lastUpdated": "2026-07-23T10:15:55Z",
+  "lastUpdated": "2026-07-24T18:14:21Z",
   "calls": [
+    {
+      "title": "LSI 2026 Photography Grant",
+      "org": "Leica Society International",
+      "deadline": "2026-09-04",
+      "fee": "$35",
+      "category": "grant",
+      "description": "Tenth edition of the Leica Society International's annual project-based grant, supported by the LSI Philanthropy Fund and Leica North America. The 2026 theme is 'To Be Seen': photographers worldwide are invited to submit an in-progress personal project in still images that creates space for people, places, communities, histories, or issues to be witnessed with care, dignity, and intention. Applications include a project description, a portfolio of 10 JPEG images from the project, a bio, and a CV. Judging runs in two phases — each juror ranks ten candidates from the qualified pool, then the jury meets to agree on a single winner from the ten finalists. The recipient receives $7,500 USD, a Leica camera and lens, and a gallery showing in Paris. Using a Leica camera is not required and LSI membership is not required. Entries are capped at 200 applications; the call closes on 4 September or when the cap is reached, whichever comes first.",
+      "url": "https://leicasocietyinternational.org/blog/lsi-2026-lsi-photography-grant",
+      "instagram": "@leicasociety",
+      "location": "Online",
+      "prize": "$7,500 + Leica camera and lens",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Sandra Eisert",
+        "Michael Foley",
+        "Trish Lambe",
+        "Mary-Irene Marek",
+        "Tom Smith"
+      ],
+      "submitVia": "Picter",
+      "submitUrl": "https://app.picter.com/contests/01c7e584-2c98-459e-87a5-4565c79b3113/start",
+      "requirements": "10 images",
+      "slug": "lsi-2026-photography-grant",
+      "orgInTitle": false,
+      "summary": "Theme: To Be Seen. $7,500 plus a Leica camera and lens and a Paris gallery showing. Capped at the first 200 applicants.",
+      "dateAdded": "2026-07-24T18:14:21Z"
+    },
     {
       "title": "Tasweer Residency 2026–2027: As the Image Unfolds",
       "org": "Tasweer Photo Festival Qatar",
@@ -31832,6 +31861,7 @@
       "jury": [],
       "submitVia": "Official website",
       "submitUrl": "https://www.dgph.de/aktuelles/ausschreibung-der-dgph-preise-thinking-photography-writing-photography-2026",
+      "requirements": "Manuscript",
       "slug": "thinking-photography-writing-photography-2026",
       "orgInTitle": false,
       "summary": "DGPh + Deutsche Börse Photography Foundation biennial prizes for writing on photography — €3,000 research, €1,000 publicism. Free.",
@@ -31852,6 +31882,7 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Email",
+      "requirements": "1 PDF portfolio",
       "slug": "fotogalerie-wien-2027-annual-program",
       "orgInTitle": true,
       "summary": "Vienna's artist-run photography gallery reviews portfolios for its 2027 annual program. Free — PDF portfolio + CV by email.",
