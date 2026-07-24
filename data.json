@@ -553,7 +553,7 @@
       "eligibility": [],
       "submitVia": "Official website",
       "submitUrl": "https://www.tpoty.com/tpoty-online-entry/",
-      "requirements": "1 or 4 images",
+      "requirements": "1, 4 or 6 images",
       "resultsDate": "January 17, 2027",
       "slug": "travel-photographer-of-the-year-2026",
       "orgInTitle": true,
@@ -1623,7 +1623,7 @@
     {
       "title": "On Film — Carlotta Gallery",
       "org": "Carlotta Gallery",
-      "deadline": "2026-08-10",
+      "deadline": "2026-08-15",
       "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Carlotta Gallery's themed virtual exhibition celebrating film and analogue photography — work made accepting time as irreversible and every exposure as a point of no return. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with a PDF catalogue, permanent Collections-page listing, and Certificate of Recognition.",
@@ -1644,7 +1644,7 @@
     {
       "title": "Central & South America — Carlotta Gallery",
       "org": "Carlotta Gallery",
-      "deadline": "2026-08-20",
+      "deadline": "2026-08-25",
       "fee": "Free (£20–£35 if accepted)",
       "category": "exhibition",
       "description": "Carlotta Gallery's themed virtual exhibition inviting photographers to respond to the Central and South American region through brief, specific observations rather than a comprehensive overview — building a layered archive where meaning emerges from the accumulation of individual perspectives on diverse environments, cultures and conditions. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with catalogue, permanent Collections-page listing, and certificate.",
@@ -27486,7 +27486,7 @@
       "orgInTitle": false,
       "summary": "Women-identifying New Mexico artists (NMC-NMWA members) show at Canyon Road galleries in Santa Fe, March 2027. $50, up to 3 works.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "resultsDate": "November 10, 2026",
+      "resultsDate": "February 27, 2027",
       "instagram": "@newmexicowomeninthearts"
     },
     {
@@ -28592,9 +28592,9 @@
       "title": "Mobile Photography Awards 2026",
       "org": "Mobile Photography Awards",
       "deadline": "2026-12-18",
-      "fee": "$15–$149",
+      "fee": "$15–$100",
       "category": "photography",
-      "description": "The annual Mobile Photography Awards (MPA), the longest-running international competition dedicated to photographs shot and edited entirely on mobile phones and tablets. Twelve photo categories including a Photo Essay; each image may be entered in up to two categories. Over $10,000 in total prizes including a $3,000 Grand Prize, $250 per category winner and a $500 Photo Essay prize, with winners exhibited. Open worldwide to anyone shooting on a mobile device. Tiered entry fees from $15 for a single image up to $149 for 25 images ($29 for the Photo Essay category). Entries run through December 18, 2026.",
+      "description": "The annual Mobile Photography Awards (MPA), the longest-running international competition dedicated to photographs shot and edited entirely on mobile phones and tablets. Twelve photo categories including a Photo Essay; each image may be entered in up to two categories. Over $10,000 in total prizes including a $3,000 Grand Prize, $250 per category winner and a $500 Photo Essay prize, with winners exhibited. Open worldwide to anyone shooting on a mobile device. Tiered entry fees from $15 for a single image up to $100 for 15 images ($29 for the Photo Essay category). Entries run through December 18, 2026.",
       "url": "https://www.mobilephotoawards.com/",
       "instagram": "@mobilephotoawards",
       "location": "Online",
@@ -28603,7 +28603,7 @@
       "jury": [],
       "submitVia": "Website",
       "submitUrl": "https://www.mobilephotoawards.com/enter",
-      "requirements": "1–25 images",
+      "requirements": "1–15 images",
       "ai": null,
       "slug": "mobile-photography-awards-2026",
       "orgInTitle": true,
@@ -30172,7 +30172,10 @@
       "requirements": "Unlimited images",
       "orgInTitle": false,
       "resultsDate": "September 28, 2026",
-      "dateAdded": "2026-07-12T07:35:41Z"
+      "dateAdded": "2026-07-12T07:35:41Z",
+      "jury": [
+        "Anonymous panel of professional & academic advisors"
+      ]
     },
     {
       "title": "Counterform",
@@ -30193,7 +30196,10 @@
       "requirements": "Unlimited images",
       "orgInTitle": false,
       "resultsDate": "September 28, 2026",
-      "dateAdded": "2026-07-12T07:35:41Z"
+      "dateAdded": "2026-07-12T07:35:41Z",
+      "jury": [
+        "Anonymous panel of professional & academic advisors"
+      ]
     },
     {
       "title": "Visage",
@@ -30214,7 +30220,10 @@
       "requirements": "Unlimited images",
       "orgInTitle": false,
       "resultsDate": "September 28, 2026",
-      "dateAdded": "2026-07-12T07:35:41Z"
+      "dateAdded": "2026-07-12T07:35:41Z",
+      "jury": [
+        "Anonymous panel of professional & academic advisors"
+      ]
     },
     {
       "title": "Wacken Rock 'n Roll Photography Workshop 2026",
@@ -30443,15 +30452,16 @@
         "Kristen Lubben, Magnum Foundation",
         "Charlotte Schepke, The Large Glass"
       ],
-      "dateAdded": "2026-07-16T13:08:15Z"
+      "dateAdded": "2026-07-16T13:08:15Z",
+      "resultsDate": "October 4, 2026"
     },
     {
       "title": "Quiet Hours: Nighttime and Grief",
       "org": "Der Greif",
-      "deadline": "2026-08-08",
-      "fee": "Free (optional €10 donation)",
+      "deadline": "2026-08-09",
+      "fee": "Free (optional €5–€10 donation)",
       "category": "photography",
-      "description": "Open call from Der Greif inviting lens-based artists to examine nighttime's emotional landscape — how darkness changes the way we see the world and how we feel. Timed around National Grief Awareness Day, the call centres on grief in its many manifestations: bereavement, relationship loss, displacement, or life transitions, and asks how darkness and light can convey narratives of memory and healing. Selected work is featured in an online exhibition on Der Greif's Pulse platform, with facilitated peer critique sessions and exposure within Der Greif's international network, plus potential invitations to submit portfolios for sales and commission opportunities. Entry is free with a suggested optional €10 donation, and 50–100% discount vouchers are available for artists facing financial barriers.",
+      "description": "Open call from Der Greif inviting lens-based artists to examine nighttime's emotional landscape — how darkness changes the way we see the world and how we feel. Timed around National Grief Awareness Day, the call centres on grief in its many manifestations: bereavement, relationship loss, displacement, or life transitions, and asks how darkness and light can convey narratives of memory and healing. Selected work is featured in an online exhibition on Der Greif's Pulse platform, with facilitated peer critique sessions and exposure within Der Greif's international network, plus potential invitations to submit portfolios for sales and commission opportunities. Entry is free with a suggested optional €5 or €10 donation, and 50–100% discount vouchers are available for artists facing financial barriers.",
       "url": "https://dergreif.org/open-call",
       "location": "Online",
       "instagram": "@der_greif",
