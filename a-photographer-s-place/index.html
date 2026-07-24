@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from A Photographer's Place. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/out-of-time-out-of-place-a-photographer-s-place/">Out of Time / Out of Place &middot; A Photographer's Place</a></h3><p class="call-description">Juried show on dislocation, anachronism and surreal juxtapositions at A Photographer's Place, Raleigh. Juror Dawn Willis.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'A Photographer\'s Place' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'A Photographer\'s Place').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}

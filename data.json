@@ -23,7 +23,8 @@
       "slug": "tasweer-residency-2026-2027",
       "orgInTitle": true,
       "summary": "Five-month funded residency for Qatar-based photographers from Qatar Museums' Tasweer festival. 4,000 QAR/month stipend + 2027 exhibition.",
-      "dateAdded": "2026-07-22T14:15:13Z"
+      "dateAdded": "2026-07-22T14:15:13Z",
+      "resultsDate": "October 2026"
     },
     {
       "title": "In Community: LACP's Annual Members' Exhibition",
@@ -3883,7 +3884,8 @@
       "summary": "Issue #59 of the contemporary art print + digital magazine. Open theme, juried by Indira Cesarine. Photography welcome worldwide.",
       "dateAdded": "2026-06-08T23:07:53Z",
       "resultsDate": "August 30, 2026",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "verifyNote": "As of 2026-07-24 the org call-for-art page shows BOTH 'July 30' and 'July 31, 2026' deadlines; the Submittable portal (authoritative) says July 30 — keep Jul 30, don't flip to Jul 31."
     },
     {
       "title": "The Hand Magazine - Issue #54 Autumn 2026",
@@ -19420,7 +19422,7 @@
       "deadline": "Continuous",
       "fee": "Free",
       "category": "zine",
-      "description": "Photography magazine founded by David Alan Harvey (Magnum). Accepts photo essays, slideshows, and multimedia pieces on any subject. Submit as PDF. Images at 1080px shortest side. Features published on homepage with consideration for print.",
+      "description": "Photography magazine founded by David Alan Harvey. Accepts photo essays, slideshows, and multimedia pieces on any subject. Submit as PDF. Images at 1080px shortest side. Features published on homepage with consideration for print.",
       "url": "https://www.burnmagazine.org/submissions/",
       "instagram": "@burnmagazine",
       "location": "Online",
@@ -19431,10 +19433,10 @@
       "orgInTitle": true,
       "dateAdded": "2026-03-21",
       "requirements": "Photo essay",
-      "summary": "Photography magazine founded by David Alan Harvey (Magnum). Photo essays and multimedia on any subject.",
+      "summary": "Photography magazine founded by David Alan Harvey. Photo essays and multimedia on any subject.",
       "ai": null,
       "jury": [
-        "David Alan Harvey, Founder & Magnum Photographer"
+        "David Alan Harvey, Founder"
       ],
       "resultsDate": null,
       "prose": [
@@ -23453,7 +23455,7 @@
     {
       "title": "Ian Parry Photojournalism Grant 2026",
       "org": "Ian Parry Foundation",
-      "deadline": "2026-09-01",
+      "deadline": "2026-08-31",
       "fee": "Free",
       "category": "grant",
       "description": "Photojournalism grant honoring Ian Parry, who died at 24 covering the Romanian Revolution in 1989 for The Sunday Times. Open to photographers aged 24 or under, or any age with proof of full-time enrollment in a photographic course. Winner receives £10,000, a year-long mentorship with photojournalist Giles Duley, Canon equipment loans for one year, publication in The Guardian, inclusion in the Hamburg Portfolio Review, and potential safety equipment/hostile environment training via the Gentex Corp award. Partners include Canon, The Guardian, and Legacy of War Foundation. Patron: Sir Don McCullin. Founded over four decades ago.",
@@ -31574,7 +31576,8 @@
       "slug": "delfina-foundation-mondriaan-fund-netherlands-residency-2027",
       "orgInTitle": true,
       "summary": "Funded 3-month London residency for Dutch or Netherlands-based artists and curators, backed by a Mondriaan Fund grant.",
-      "dateAdded": "2026-07-22T06:12:47Z"
+      "dateAdded": "2026-07-22T06:12:47Z",
+      "requirements": "1 PDF (max 20 pages)"
     },
     {
       "title": "The Soldier's Lens 2026",
@@ -31707,7 +31710,8 @@
       "slug": "nancy-ingersoll-foster-artist-residency-2026-oliver-art-center",
       "orgInTitle": false,
       "summary": "Two-week endowment-funded September retreat at a nonprofit art center on Lake Michigan; any visual media, free to apply.",
-      "dateAdded": "2026-07-23T22:35:39Z"
+      "dateAdded": "2026-07-23T22:35:39Z",
+      "requirements": "6–15 images"
     },
     {
       "title": "LACDA 2026 International Juried Competition",
@@ -31741,7 +31745,7 @@
       "description": "The 25th-anniversary edition of Sunnyview's exhibition of art and fine crafts by artists with disabilities. The show debuts at the Art for the View benefit evening at the Fenimore Gallery at Proctors Theatre in Schenectady on November 16, 2026, remains on display into December, and all work is for sale, with proceeds supporting the rehabilitation hospital's mission and the participating artists. Open to artists with physical, cognitive, visual and hearing disabilities; only work made after the onset of disability and completed within the last seven years is eligible. All media are welcome (no reproduction prints). Up to two pieces per artist; the application is short and free.",
       "url": "https://www.givetosunnyview.org/art-for-the-view/",
       "location": "Schenectady, NY, USA",
-      "prize": "Exhibition",
+      "prize": "$500 Best in Show + Exhibition",
       "eligibility": [
         "neurodivergent-disabled"
       ],
@@ -31751,7 +31755,9 @@
       "slug": "art-for-the-view-2026-sunnyview",
       "orgInTitle": false,
       "summary": "Free 25th-anniversary exhibition of work by artists with disabilities at Proctors' Fenimore Gallery in Schenectady; all media, for sale.",
-      "dateAdded": "2026-07-23T22:35:39Z"
+      "dateAdded": "2026-07-23T22:35:39Z",
+      "resultsDate": "By September 30, 2026",
+      "instagram": "@sunnyviewrehab"
     }
   ]
 }
