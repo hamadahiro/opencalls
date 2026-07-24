@@ -30909,12 +30909,13 @@
       "deadline": "2026-08-10",
       "fee": "Free",
       "category": "exhibition",
-      "description": "Juried show at Photo Opp, a nonprofit community darkroom and visual workspace housed in the former Moses Montefiore Synagogue in downtown Appleton, Wisconsin. ALT celebrates photography as a medium without limits and asks what happens when artists step outside the expected: cyanotypes and salt prints, film soup, unconventional printing surfaces, digital manipulation, sculptural photography, emulsion lifting, collage and anything that challenges convention or expands the definition of a photograph. The brief prizes curiosity over perfection, process over predictability, risk over routine. Open to all (work may have been made anywhere, anytime); up to three pieces per artist, free to enter. Selected work hangs in the Community Gallery from October 2026, with an opening reception and awards announcement on October 16, and is featured in a promotional zine sold as a fundraiser. The gallery takes no commission on sales.",
+      "description": "Juried show at Photo Opp, a nonprofit community darkroom and visual workspace housed in the former Moses Montefiore Synagogue in downtown Appleton, Wisconsin. ALT celebrates photography as a medium without limits and asks what happens when artists step outside the expected: cyanotypes and salt prints, film soup, unconventional printing surfaces, digital manipulation, sculptural photography, emulsion lifting, collage and anything that challenges convention or expands the definition of a photograph. The brief prizes curiosity over perfection, process over predictability, risk over routine. Open to Wisconsin residents (work may have been made anywhere, anytime); up to three pieces per artist, free to enter. Selected work hangs in the Community Gallery from October 2026, with an opening reception and awards announcement on October 16, and is featured in a promotional zine sold as a fundraiser. The gallery takes no commission on sales.",
       "url": "https://www.thephotoopp.org/gallery",
       "instagram": "@the.photo_opp",
       "location": "Appleton, WI, USA",
       "prize": "Exhibition + Zine publication",
       "eligibility": [
+        "wisconsin",
         "alternative-process"
       ],
       "jury": [],
@@ -30924,8 +30925,9 @@
       "resultsDate": "August 24, 2026",
       "slug": "alt-photo-opp",
       "orgInTitle": false,
-      "summary": "Free alt-process juried show at Appleton's community darkroom — cyanotypes, film soup, collage. Open worldwide; gallery show + zine.",
-      "dateAdded": "2026-07-20T03:21:12Z"
+      "summary": "Free alt-process juried show at Appleton's community darkroom — cyanotypes, film soup, collage. Wisconsin artists; gallery show + zine.",
+      "dateAdded": "2026-07-20T03:21:12Z",
+      "ai": "Not accepted"
     },
     {
       "title": "This Land Is Your Land",
@@ -31795,7 +31797,9 @@
       "instagram": "@dgph_ev",
       "location": "Berlin, Germany",
       "prize": "Exhibition",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/dgph-fotografiska-photo-slam-2026",
       "requirements": "10–20 images",
