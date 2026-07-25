@@ -16,11 +16,11 @@
         "18-plus"
       ],
       "jury": [
-        "Sandra Eisert",
-        "Michael Foley",
-        "Trish Lambe",
+        "Sandra Eisert, former Picture Editor, The Washington Post",
+        "Michael Foley, Gallery Director, Leica Gallery New York",
+        "Trish Lambe, Artistic Director/CEO, Photo Museum Ireland",
         "Mary-Irene Marek",
-        "Tom Smith"
+        "Tom Smith, former Director, Leica Akademie USA"
       ],
       "submitVia": "Picter",
       "submitUrl": "https://app.picter.com/contests/01c7e584-2c98-459e-87a5-4565c79b3113/start",
@@ -877,14 +877,16 @@
       "eligibility": [
         "midwest-us"
       ],
-      "jury": [],
+      "jury": [
+        "Panel of practicing artists & arts professionals"
+      ],
       "submitVia": "Official website",
       "resultsDate": "By February 26, 2027",
       "slug": "lanesboro-juried-sales-gallery-2027",
       "orgInTitle": true,
       "summary": "Year-round sales-gallery representation at Lanesboro Arts for Minnesota, Iowa, and Wisconsin artists — 60% consignment, free to apply.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "verifyNote": "As of 2026-07-24 the online form is STILL not on the page (“updating will add soon”); working route is video/hard-copy application via gallery@lanesboroarts.org. Recheck for the form."
+      "verifyNote": "As of 2026-07-25 the online form is STILL not on the page (“updating will add soon”); working route is video/hard-copy application via gallery@lanesboroarts.org. Recheck for the form."
     },
     {
       "title": "New Visionary Magazine Issue 18",
@@ -946,8 +948,7 @@
       "location": "London, United Kingdom",
       "prize": "Photobook publication + £5,000",
       "eligibility": [
-        "18-plus",
-        "professional"
+        "18-plus"
       ],
       "jury": [],
       "submitVia": "Picter",
@@ -1003,14 +1004,13 @@
         "Silvia Omedes",
         "Benito Padilla",
         "Rebeca Pardo",
-        "Arianna Rinaldo",
         "Rocío Santacruz"
       ],
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/revelat-portfolio-review-2026",
       "slug": "revelat-portfolio-review-2026",
       "orgInTitle": true,
-      "summary": "18 photographers get 3 hours of one-to-ones with 11 reviewers plus a festival pass; one wins an exhibition at Revela'T 2027.",
+      "summary": "18 photographers get 3 hours of one-to-ones with 10 reviewers plus a festival pass; one wins an exhibition at Revela’T 2027.",
       "resultsDate": "August 31, 2026",
       "dateAdded": "2026-07-01T23:31:31Z",
       "requirements": "10–15 images"
@@ -3660,7 +3660,7 @@
       "title": "Penland Winter Residency 2027",
       "org": "Penland School of Craft",
       "deadline": "2026-07-30",
-      "fee": "$30 application",
+      "fee": "$30 application; $500+ residency if accepted",
       "category": "residency",
       "description": "A self-directed project residency during Penland's quiet winter season, offering artists two- or four-week sessions of studio time and equipment access with no classes, assignments or critiques. Residents work independently in one of Penland's teaching studios — photography is among the available studios, alongside books, clay, drawing and painting, glass, iron, letterpress, metals, papermaking, printmaking, textiles and wood — with studio assistants on hand for orientation and equipment help. Sessions run January 3–15 and January 17–29, 2027; the residency fee is $500 for two weeks (more for flameworking and hot shop) plus housing, and limited fellowships cover the residency fee and partial housing, with preference given to first-time applicants and artists from underrepresented backgrounds. Open to artists at any career stage who are comfortable working independently.",
       "url": "https://penland.org/residencies/winter-residency/",
@@ -9613,7 +9613,7 @@
       "location": "Wichita, KS, USA",
       "eligibility": [],
       "submitVia": "Website form",
-      "requirements": "5–10 images",
+      "requirements": "5+ images",
       "slug": "traversing-terrain-midwest-center-for-photography",
       "orgInTitle": false,
       "summary": "International landscape and cityscape exhibition at MWCP, Wichita. Urban, suburban, and rural environments welcome.",
@@ -29668,7 +29668,7 @@
         "18-plus"
       ],
       "jury": [
-        "Karen Klinedinst"
+        "Karen Klinedinst, Fine Art Photographer"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17767",
@@ -29713,7 +29713,7 @@
       "fee": "$40 (up to 4 images)",
       "category": "exhibition",
       "description": "The Arts Council of Wayne County runs its 47th annual national juried show in downtown Goldsboro, North Carolina, October 2–30, 2026. Accepted media explicitly include photography alongside drawings, paintings, printmaking, graphics, sculpture, ceramics, textiles and mixed media. Juried by Sally Jacobs, Assistant Director of the Artist Innovation Mentorship Program at the North Carolina Museum of Art, with $1,950 in awards: $1,000 Best in Show, $500 second, $250 third, plus $100 each for Best in Wayne County and People's Choice. Open to US artists 18+; original work created within the last two years, for sale.",
-      "url": "https://www.artsinwayne.org/",
+      "url": "https://www.artsinwayne.org/call-for-artists",
       "instagram": "@artsinwayne",
       "location": "Goldsboro, NC, USA",
       "prize": "$1,950 in cash awards",
@@ -30158,11 +30158,11 @@
         "18-plus"
       ],
       "jury": [
-        "Chris Pichler",
-        "Gianluca Gamberini",
-        "Rachel Barker",
-        "Clint Woodside",
-        "Laura Sackett"
+        "Chris Pichler, Owner/Publisher, Nazraeli Press",
+        "Gianluca Gamberini, Co-founder & Publisher, L’Artiere",
+        "Rachel Barker, Co-Founder & Director, Stanley/Barker",
+        "Clint Woodside, Founder & Director, Deadbeat Club",
+        "Laura Sackett, Co-Founder & Creative Director, LensCulture"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://www.lensculture.com/enter/competition/photo-book-prize-2026/type/series",
@@ -30171,7 +30171,7 @@
       "summary": "LensCulture's photobook award — the winner gets a full Nazraeli Press monograph, an LA show and a feature. 20–30 images, no dummy required.",
       "requirements": "20–30 images",
       "resultsDate": "October 1, 2026",
-      "ai": "Accepted (must disclose)",
+      "ai": "AI editing OK, fully generated not accepted",
       "dateAdded": "2026-07-10T23:12:06Z"
     },
     {
@@ -30469,8 +30469,10 @@
       "instagram": "@rmets_",
       "jury": [
         "Professor Liz Bentley, Chief Executive, Royal Meteorological Society",
-        "ITV Weather",
-        "Dennis Oswald",
+        "Laura Tobin, Weather Presenter, ITV Good Morning Britain",
+        "Alex Beresford, Weather Presenter, ITV",
+        "Dennis Oswald, Meteorologist & Storm Photographer",
+        "Angela Nicholson, Founder, SheClicks",
         "Tom Prater"
       ],
       "summary": "Free global weather-photography competition from the Royal Meteorological Society — £1,500 top prize, plus Mobile and Climate awards.",
@@ -31403,7 +31405,7 @@
       "title": "A Show of Heads 2026",
       "org": "Limner Gallery",
       "deadline": "2026-07-31",
-      "fee": "$35",
+      "fee": "$35 (up to 4 works), $5 each additional",
       "category": "exhibition",
       "description": "SlowArt Productions' long-running annual exhibition at Limner Gallery in Hudson, New York, devoted to every reading of the human head — traditional portraiture, abstraction, caricature, the conceptual and the surreal. Photography sits alongside painting, drawing, sculpture, graphics, digital work, video and installation, with wall pieces up to 72 by 120 inches. Four works are covered by the entry fee and further works cost $5 each. Accepted artists pay nothing further: the show runs October 8–31, 2026 in the gallery and online, with a 35% commission on sales at prices the artist sets.",
       "url": "https://www.slowart.com/prospectus/head.htm",
@@ -31624,7 +31626,8 @@
       "slug": "slowexposures-2026-book-fair",
       "orgInTitle": true,
       "summary": "Show and sell your photobook at the SlowExposures festival in Concord, GA. Free — donate one book to the raffle; first 10 photographers.",
-      "dateAdded": "2026-07-21T22:13:30Z"
+      "dateAdded": "2026-07-21T22:13:30Z",
+      "verifyNote": "As of 2026-07-25 the org page publishes NO application deadline for the Book Fair — it is \"open to the first 10 photographers who register\". The stored 2026-09-19 is the fair date itself (Strickland Building, Concord GA, 1–3PM). Don’t flag as a deadline error."
     },
     {
       "title": "Hand Fetish Projects — Issue #01: How to Survive in Southeast Asia",
@@ -31955,7 +31958,7 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Official website",
-      "submitUrl": "https://www.dgph.de/aktuelles/ausschreibung-der-dgph-preise-thinking-photography-writing-photography-2026",
+      "submitUrl": "https://preise.dgph.de/",
       "requirements": "Manuscript",
       "slug": "thinking-photography-writing-photography-2026",
       "orgInTitle": false,
@@ -32047,12 +32050,13 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Official website",
-      "submitUrl": "https://www.broad.community/dreams",
+      "submitUrl": "https://www.broad.community/dreams-submissions",
       "slug": "broad-magazine-dreams-issue",
       "orgInTitle": true,
       "summary": "Indie visual-culture magazine seeks photographic interpretations of Dreams for its next print issue. $30 CAD membership, unlimited entries.",
       "resultsDate": "~August 24, 2026",
-      "dateAdded": "2026-07-24T14:29:19Z"
+      "dateAdded": "2026-07-24T14:29:19Z",
+      "requirements": "Unlimited submissions"
     },
     {
       "title": "Bibin Photography Magazine #6 — The Other",
@@ -32352,7 +32356,7 @@
         "western-us"
       ],
       "jury": [
-        "Karlo Henry Velazquez Fernandez, Juror"
+        "Karlo Henry Velazquez Fernandez, Founder, The Art Hunger & Arts Director, Viva Downtown Redding"
       ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://www.entrythingy.com/d=turtlebay.org?start=list",
@@ -32382,7 +32386,8 @@
       "slug": "artist-grant-november-2026-cycle",
       "orgInTitle": true,
       "summary": "Unrestricted $1,200 grant for one visual artist, awarded three times a year. No proposal — just images and a bio.",
-      "dateAdded": "2026-07-25T14:17:39Z"
+      "dateAdded": "2026-07-25T14:17:39Z",
+      "resultsDate": "~January 2027"
     },
     {
       "title": "Reverie Magazine — Issue VI",
@@ -32401,7 +32406,8 @@
       "slug": "reverie-magazine-issue-vi",
       "orgInTitle": true,
       "summary": "Free open call for Issue VI of an indie international literary and arts magazine — contemporary photography welcome.",
-      "dateAdded": "2026-07-25T14:17:39Z"
+      "dateAdded": "2026-07-25T14:17:39Z",
+      "resultsDate": "~September 2026"
     }
   ]
 }
