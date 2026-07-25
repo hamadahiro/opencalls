@@ -25044,7 +25044,7 @@
     {
       "title": "Charta Award 2026",
       "org": "Charta Festival",
-      "deadline": "2026-07-25",
+      "deadline": "2026-08-06",
       "fee": "€25",
       "category": "zine",
       "description": "International photobook award from Charta, the Lugano-based photobook festival run by Yogurt Editions in collaboration with Artphilein. Open to artists worldwide with unpublished original photographic projects suitable for book form (self-published works accepted only if fewer than 15 copies exist without ISBN). The winning project is published by Yogurt Editions in an edition of 500 copies; the artist receives 30 free copies and 10% royalties on sales with a six-monthly report. One shortlisted artist is additionally selected by Artphilein for a solo exhibition in their Lugano space between April and May 2027. Submission includes at least 30 images from the same project, a PDF with title/name/email/synopsis, a signed publishing contract, and the payment receipt. An edited PDF clarifying the work is welcome but optional. Early-bird entry €15 (until April 30, 2026); regular entry €25.",
@@ -25186,7 +25186,7 @@
       "submitVia": "Official website",
       "submitUrl": "https://lanesboroarts.org/bipoc-artist-residency/application/",
       "requirements": "Work samples",
-      "resultsDate": "2026-08-14",
+      "resultsDate": "August 14, 2026",
       "slug": "lanesboro-bipoc-artist-residency-2026-27",
       "orgInTitle": true,
       "summary": "1–2 week residency in rural Minnesota for MN-based BIPOC artists. $1,250/week + $500 supplies + housing. Lottery-based, free.",
@@ -30030,7 +30030,7 @@
       "deadline": "2026-08-31",
       "fee": "$15–$45",
       "category": "photography",
-      "description": "The Independent Photographer's monthly themed competition cycle, this round dedicated to travel photography — images that capture the true essence of a place: the spirit of its people, the richness of its traditions, and the rhythm of daily life, from bustling markets to serene vistas. Total prize pool $2,700: 1st prize $1,000, 2nd $600, 3rd $400, plus seven $100 finalist prizes. Judge: Daniel Kordan, the travel and landscape photographer. Winners are exhibited in London and featured to the platform's 970k+ Instagram following. All entrants receive a free online portfolio. Submissions are tiered: $15 for 1 image, $30 for 3, $45 for 6, with an early-bird 50% discount before the early deadline. AI-generated work not accepted; photography-based submissions only (film, digital, smartphone, tintype, and camera-less photography). JPEG or PNG, minimum 1200px longest side, maximum 10MB.",
+      "description": "The Independent Photographer's monthly themed competition cycle, this round dedicated to travel photography — images that capture the true essence of a place: the spirit of its people, the richness of its traditions, and the rhythm of daily life, from bustling markets to serene vistas. Total prize pool $2,700: 1st prize $1,000, 2nd $600, 3rd $400, plus seven $100 finalist prizes. Judge: Daniel Kordan, the travel and landscape photographer. Winners are exhibited in London and featured to the platform's 1.2M+ Instagram following. All entrants receive a free online portfolio. Submissions are tiered: $15 for 1 image, $30 for 3, $45 for 6, with an early-bird 50% discount before the early deadline. AI-generated work not accepted; photography-based submissions only (film, digital, smartphone, tintype, and camera-less photography). JPEG or PNG, minimum 1200px longest side, maximum 10MB.",
       "url": "https://independent-photo.com/awards/",
       "instagram": "@theindependentphoto",
       "location": "London, United Kingdom",
@@ -30047,7 +30047,7 @@
       "ai": "Not accepted",
       "slug": "2026-travel-award-the-independent-photographer",
       "orgInTitle": false,
-      "summary": "Travel photography competition. $2,700 prize pool, London exhibition and feature to 970k+ followers. Tiered $15–$45 entry.",
+      "summary": "Travel photography competition. $2,700 prize pool, London exhibition and feature to 1.2M+ followers. Tiered $15–$45 entry.",
       "dateAdded": "2026-07-04T11:11:55Z",
       "prose": [
         "The Independent Photographer (TIP) is a London-based online photography platform that runs themed monthly competitions and publishes editorial work, interviews, and book reviews. The 2026 Travel Award is the platform's travel-themed cycle, open to work that captures the essence of a place — its people, traditions, and the rhythm of daily life, from bustling markets to serene vistas.",
@@ -31561,7 +31561,12 @@
       "orgInTitle": true,
       "summary": "Juried barn-gallery festival near Worcester with a full fine art photography category, jurors and hardbound catalogue.",
       "dateAdded": "2026-07-20T22:51:39Z",
-      "resultsDate": "January 30, 2027"
+      "resultsDate": "January 30, 2027",
+      "jury": [
+        "Jessica Roscio",
+        "Rebecca Skinner",
+        "Al Weems"
+      ]
     },
     {
       "title": "Dek Unu Magazine — November 2026 Issue",
@@ -31783,7 +31788,8 @@
       "location": "Miami, FL, USA",
       "prize": "$7,500–$15,000 grants",
       "eligibility": [
-        "florida"
+        "florida",
+        "professional"
       ],
       "submitVia": "Submittable",
       "submitUrl": "https://artinpublicplaces.submittable.com/submit/348326/fy-26-27-sfcc-visual-and-media-artists-grant-south-florida-cultural-consortum",
@@ -31791,7 +31797,8 @@
       "orgInTitle": true,
       "summary": "Five South Florida county arts councils award $7,500–$15,000 fellowships to visual and media artists; a free workshop is required to apply.",
       "dateAdded": "2026-07-23T10:15:55Z",
-      "instagram": "@miamidadearts"
+      "instagram": "@miamidadearts",
+      "resultsDate": "Spring 2027"
     },
     {
       "title": "Nancy Ingersoll Foster Artist Residency 2026",
@@ -32421,7 +32428,7 @@
       "prize": "$575 stipend + Exhibition",
       "eligibility": [
         "women",
-        "united-states"
+        "arizona"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17897/CAFE",
@@ -32429,7 +32436,9 @@
       "slug": "she-speaks-tolleson-art-gallery",
       "orgInTitle": false,
       "summary": "Free juried show for Arizona women artists at a public-library gallery — $100 stipend to exhibit, $575 with a public program.",
-      "dateAdded": "2026-07-25T18:23:31Z"
+      "dateAdded": "2026-07-25T18:23:31Z",
+      "instagram": "@tollesonpubliclibrary",
+      "verifyNote": "CaFE 17897 enforces imagesMax=5 while the org prospectus says \"up to six (6) works\" — keep \"Up to 5 images\" (portal-enforced). Juror not named; no notification date published."
     },
     {
       "title": "Open Call: Main Gallery 2027/2028",
@@ -32497,7 +32506,13 @@
       "slug": "echoes-of-valor-artspiration-frederick",
       "orgInTitle": false,
       "summary": "First veteran art exhibition at a Frederick, MD non-profit gallery — open to veterans, military families and service-themed work.",
-      "dateAdded": "2026-07-25T18:23:31Z"
+      "dateAdded": "2026-07-25T18:23:31Z",
+      "jury": [
+        "Cynthia Scott-Johnson, Veteran & Artist",
+        "Russ Hodge"
+      ],
+      "resultsDate": "Week of October 19, 2026",
+      "verifyNote": "CaFE 17254 applicationDeadline = 2026-10-03T03:59:59Z (Oct 2 23:59 EDT) but the org-authored prospectus body says \"October 11, 2026\". Keep 2026-10-02 (portal-enforced, safer error). Do not re-flip to Oct 11."
     },
     {
       "title": "35 Under 35 — 2nd Annual Juried Exhibition",
@@ -32524,7 +32539,9 @@
       "slug": "35-under-35-2nd-annual-juried-exhibition-blacksburg-regional-art-association",
       "orgInTitle": false,
       "summary": "Virginia artists under 35 juried into the Center for the Arts at Virginia Tech by a Taubman Museum curator. $5 entry.",
-      "dateAdded": "2026-07-25T18:23:31Z"
+      "dateAdded": "2026-07-25T18:23:31Z",
+      "resultsDate": "September 30, 2026",
+      "verifyNote": "BRAA (blacksburgart.org) publishes no page for this call and CaFE’s providerWebsite (blacksburgart.com) does not resolve, so url = the CaFE listing by necessity. No verifiable Instagram handle."
     }
   ]
 }
