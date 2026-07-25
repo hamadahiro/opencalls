@@ -2676,7 +2676,7 @@
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/gaze-der-queere-photoaward-2026",
       "requirements": "1–5 images",
-      "resultsDate": "Winter 2026",
+      "resultsDate": "September 2026",
       "ai": "Not accepted",
       "slug": "gaze-the-queer-photo-award-2026",
       "orgInTitle": true,
@@ -17288,7 +17288,7 @@
       "prize": "Up to €2,000 cash + Exhibition",
       "eligibility": [],
       "submitVia": "Website form",
-      "requirements": "2–10 images",
+      "requirements": "5–10 images",
       "ai": "Not accepted",
       "slug": "milano-photo-awards-2026-thestreetsoup",
       "orgInTitle": false,
@@ -17299,7 +17299,7 @@
       "jury": [
         "Estevan Oriol, Lead Judge"
       ],
-      "verifyNote": "As of 2026-07-22 /en/the-contest/ bills Estevan Oriol as 'Special Guest, Main Exhibitor, and Lead Judge' (Oriol Room) — supersedes the 07-16 removal. Rest of jury still unpublished until 15 days before selection; don't remove Oriol, don't add others without a live source.",
+      "verifyNote": "As of 2026-07-22 /en/the-contest/ bills Estevan Oriol as 'Special Guest, Main Exhibitor, and Lead Judge' (Oriol Room) — supersedes the 07-16 removal. Rest of jury still unpublished until 15 days before selection; don't remove Oriol, don't add others without a live source. 2026-07-25: /en/program/ confirms Final Deadline Aug 15 + winners announced Aug 25 (the /en/regulation/ page still carries a stale \"February 10th, 2026\" deadline — ignore it). The Exhibition OPEN tier is SOLD OUT/closed; Exhibition Room 1 (5 photos, €39), Room 2 (8–10 photos, €69) and The Oriol Vision (5 photos, €39) remain open — hence requirements 5–10 images, not 2–10.",
       "prose": [
         "Milano Photo Awards is an Italian photography contest and exhibition run by TheStreetSoup, with Nikon Italia as official sponsor. The 2026 edition runs September 25–27 at Via Maurizio Gonzaga 7 in Milan, scheduled to coincide with Milano Fashion Week. The exhibition format is a 4×3 meter Samsung LED wall for digital display of selected work, with the top three winners in each category also receiving printed and framed prints. The 2026 edition includes a tribute to Sebastião Salgado.",
         "The total prize pool is €30,000 in cash plus Nikon hardware. There are eight competition categories: Street Photography, Portrait & Identity, Wildlife & Nature, Movement & Sport, Human Landscape, Documentary & Social Vision, Conceptual & Fine Art, and Fashion & Style. AI-generated work is not accepted.",
@@ -17325,7 +17325,7 @@
         "Sarah Coulson, Senior Curator, Yorkshire Sculpture Park",
         "Jason Bruges, Artist, Jason Bruges Studio",
         "Poppy Bowers, Senior Curator, The Whitworth",
-        "Dr James Finch, Senior Curator, Royal Academy of Arts",
+        "Dr James Finch, Curator and Art Historian, Royal Academy of Arts",
         "Nephertiti Oboshie Schandorf, Producer & Commissioner",
         "Farah Dailami, Assistant Curator, The Hepworth Wakefield"
       ],
@@ -29392,7 +29392,8 @@
       "summary": "Evendale Cultural Arts Center juried photo show for the FotoFocus Biennial. Outdoor panels, $1,000+ prizes; Cincinnati-area photographers.",
       "dateAdded": "2026-06-30T19:13:04Z",
       "resultsDate": "August 24, 2026",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "verifyNote": "resultsDate Aug 24 comes from the ShowSubmit prospectus (\"Acceptance Notification By Monday, August 24, 2026\"); evendaleohio.org says Aug 22. The platform wins — do not flip to Aug 22. AI clause (\"No AI-generated imagery\") is on ShowSubmit only. Village site has no Instagram."
     },
     {
       "title": "13th Eurostars Madrid Tower Photography Award — Madrid's Facades",
@@ -29504,7 +29505,7 @@
       "deadline": "2026-08-18",
       "fee": "Free",
       "category": "zine",
-      "description": "Submit fashion and editorial photography for publication in Issue 73 of Solstice Magazine, a London-based fashion publication. First-round deadline July 18; second-round August 18 if space remains. Issue release August 21, 2026. Editorials must be unpublished, with a minimum of 5 outfit changes (or 5 hair/make-up looks for beauty) and at least 3 retouched photos per look. Send via PDF, Dropbox, or WeTransfer.",
+      "description": "Submit fashion and editorial photography for publication in Issue 73 of Solstice Magazine, a London-based fashion publication. First-round deadline July 31; second-round August 18 if space remains. Issue release August 21, 2026. Editorials must be unpublished, with a minimum of 5 outfit changes (or 5 hair/make-up looks for beauty) and at least 3 retouched photos per look. Send via PDF, Dropbox, or WeTransfer.",
       "url": "https://www.solsticemagazine.co.uk/submissions",
       "instagram": "@solstice_mag",
       "location": "London, United Kingdom",
@@ -29516,8 +29517,9 @@
       "resultsDate": "August 21, 2026",
       "slug": "solstice-magazine-issue-73-editorial-submissions",
       "orgInTitle": true,
-      "summary": "Fashion and editorial photography for Issue 73 of this London fashion magazine. Issue releases August 21, 2026.",
-      "dateAdded": "2026-07-02T03:14:20Z"
+      "summary": "Fashion and editorial photography for Issue 73 of this London fashion magazine. First round closes July 31; second round Aug 18 if space.",
+      "dateAdded": "2026-07-02T03:14:20Z",
+      "verifyNote": "Stored deadline is the SECOND-round close (Aug 18, conditional on space); the first round closes 11:59pm EDT 31 July. solsticemagazine.co.uk/submissions states both. Do not flip to Jul 31 — Aug 18 is the outer bound. \"Min 15 images\" is derived (min 5 outfit changes × 3 photos per look); the page states no literal image minimum."
     },
     {
       "title": "101 Art Book: Pattern Edition",
@@ -31130,7 +31132,7 @@
       "title": "Preserving the Spirit",
       "org": "artCentral",
       "deadline": "2026-09-05",
-      "fee": "$35",
+      "fee": "$35 + $5 each addl",
       "category": "exhibition",
       "description": "A juried photography exhibition marking the 100th anniversary of Route 66, presented by artCentral in Carthage, Missouri — itself a Route 66 town. The call invites photographers to capture the highway in all its forms: neon-lit motels, vintage gas stations, vast landscapes, small-town main streets and the people who embody the road's enduring character. Creative edits are allowed, but work must be photographic, Route 66 inspired, framed and wired for hanging, and available for sale. Open to photographers 18 and over nationwide; up to three works may be submitted for jury consideration. The exhibition runs September 25 – October 30, 2026.",
       "url": "https://www.artcentralcarthage.org/exhibitions/",
@@ -31152,7 +31154,7 @@
       "title": "The Space Between Is What Remains",
       "org": "Rolo Gallery",
       "deadline": "2026-07-30",
-      "fee": "$25",
+      "fee": "$25 + $10 each addl",
       "category": "exhibition",
       "description": "A national juried exhibition at Rolo Gallery, a contemporary space that opened in May 2026 on Denver's Art District on Santa Fe. The call asks for work that holds something — a mark, a quality of light, a feeling that doesn't leave — and is deliberately loose about interpretation: abstract, figurative or anywhere between, with no requirement that work announce its connection to the theme. Photography is welcome alongside painting, drawing, printmaking, sculpture, mixed media, fibre, ceramics, works on paper and book arts. Open to US-based artists 18 and over at all career stages, with no exhibition history required. The show runs September 3 – October 11, 2026, spanning two First Friday art walks and a Third Friday reception on September 19.",
       "url": "https://rologallery.art",
@@ -32136,7 +32138,7 @@
       "url": "https://thephotographersgallery.org.uk/whats-on/open-call-cite-past-sight-stars",
       "instagram": "@thephotographersgallery",
       "location": "Derbyshire, United Kingdom",
-      "prize": "£2,000 stipend + £1,000 production budget + Two-month residency",
+      "prize": "£2,000 stipend + £1,000 production budget",
       "eligibility": [
         "united-kingdom",
         "18-plus"
@@ -32152,8 +32154,9 @@
       "slug": "cite-the-past-sight-the-stars-the-photographers-gallery",
       "orgInTitle": false,
       "summary": "Fully funded two-month Derbyshire residency for expanded photography and digital practices. £2,000 stipend + production budget. Free.",
-      "resultsDate": "September 2026",
-      "dateAdded": "2026-07-25T10:19:50Z"
+      "resultsDate": "September 30, 2026",
+      "dateAdded": "2026-07-25T10:19:50Z",
+      "requirements": "Project proposal"
     },
     {
       "title": "Brooklyn Darkroom Artist in Residence 2027",
@@ -32172,7 +32175,7 @@
       "jury": [],
       "submitVia": "SlideRoom",
       "submitUrl": "https://brooklyndarkroom.slideroom.com/#/login/program/89490",
-      "requirements": "Portfolio",
+      "requirements": "Up to 20 images",
       "slug": "brooklyn-darkroom-artist-in-residence-2027",
       "orgInTitle": true,
       "summary": "Analog photographers get a month in a fully equipped camper van, a $4,000 stipend and Brooklyn darkroom access.",
@@ -32188,7 +32191,7 @@
       "url": "https://www.libertyspecialtymarkets.com/art-award",
       "instagram": "@artxlsm",
       "location": "London, United Kingdom",
-      "prize": "£1,000 participation fee + £7,500 in prizes + Two-year exhibition",
+      "prize": "£7,500 in prizes + £1,000 participation fee",
       "eligibility": [
         "united-kingdom",
         "emerging"
@@ -32253,7 +32256,8 @@
       "orgInTitle": false,
       "summary": "Free national juried photography show for 13–17 year olds at Jacksonville State University, all processes welcome.",
       "resultsDate": "No later than August 10, 2026",
-      "dateAdded": "2026-07-25T10:19:50Z"
+      "dateAdded": "2026-07-25T10:19:50Z",
+      "verifyNote": "Deadline Aug 6 2026 per the CaFE 17370 prospectus (\"Call Closes: August 6, 2026 / Acceptance Announcements: No later than August 10, 2026\"); its applicationDeadline field carries a 2027 year typo. jsu.edu/art/hammond-gallery.html still shows the older Jul 6 close / Jul 17 notification — the CaFE prospectus is authoritative, do not flip back."
     },
     {
       "title": "Eyes & Hands: Celebrating Frederick's Deaf heART",
