@@ -106,6 +106,7 @@
     </section>
 
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/west-coast-biennial-2027-turtle-bay-exploration-park/">West Coast Biennial 2027 &middot; Turtle Bay Exploration Park</a></h3><p class="call-description">Turtle Bay's ninth juried biennial in Redding, CA. Photography included; $3,000 Best of Show. CA, OR, WA and AK artists.</p></div>
 
     </section>
 
@@ -123,7 +124,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('western-us')).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('western-us') && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
