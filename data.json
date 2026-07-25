@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-25T18:23:31Z",
+  "lastUpdated": "2026-07-25T22:13:05Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -32542,6 +32542,55 @@
       "dateAdded": "2026-07-25T18:23:31Z",
       "resultsDate": "September 30, 2026",
       "verifyNote": "BRAA (blacksburgart.org) publishes no page for this call and CaFE’s providerWebsite (blacksburgart.com) does not resolve, so url = the CaFE listing by necessity. No verifiable Instagram handle."
+    },
+    {
+      "title": "51st Juried Annual Exhibition",
+      "org": "Miller Art Museum",
+      "deadline": "2026-08-21",
+      "fee": "$30",
+      "category": "exhibition",
+      "description": "The Miller Art Museum in Sturgeon Bay opens its 51st Juried Annual, the Door County institution’s long-running survey of two-dimensional work by artists living in Wisconsin. It is open to artists 18 and over at every career stage, from emerging to established professional, and accepts original hangable 2D work in any media made within the past two years — photography very much included; the 2026 prospectus cover pairs Nika McKagen’s silver gelatin print with an oil painting. A panel of jurors reviews projected digital entries, and $1,950 in cash awards is presented at the opening reception on September 18: the Gerhard Miller Award of Excellence ($500), three Special Merit Awards ($250 each), three Juror’s Choice Awards ($200 each) and the Bonnie Hartmann Award for Outstanding Creativity ($100). Work may not exceed 48 x 48 x 5 inches including framing, must be a single unit (no diptychs or triptychs) and cannot have been shown previously in Door County; giclée and other reproductions are not eligible, nor is work made under a teacher’s direction in a class or workshop. The exhibition runs September 18 to November 7, 2026. Work may or may not be offered for sale; the museum retains a 40% commission on sales.",
+      "url": "https://millerartmuseum.org/juried-annual-submissions",
+      "instagram": "@millerartmuseum",
+      "location": "Sturgeon Bay, WI, USA",
+      "prize": "$500 + Exhibition",
+      "eligibility": [
+        "wisconsin",
+        "18-plus"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://51stjuriedannual.artcall.org/",
+      "requirements": "Up to 2 images",
+      "slug": "51st-juried-annual-exhibition-miller-art-museum",
+      "orgInTitle": false,
+      "summary": "Wisconsin artists at any career stage juried into a Door County museum’s 51st annual. $1,950 in awards, $30 for two works.",
+      "dateAdded": "2026-07-25T22:13:05Z",
+      "resultsDate": "September 2, 2026"
+    },
+    {
+      "title": "Día de Muertos 2026 — Remembering Is Resistance",
+      "org": "Firehouse Art Center",
+      "deadline": "2026-08-10",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "For its 2026 Día de Muertos exhibition, Recordar es Resistir / Remembering Is Resistance, Longmont’s Firehouse Art Center pairs artists with community members affected by US immigration policy so that each work carries a real story, told safely and anonymously. Selected artists meet their partner between August 24 and October 1 and translate that person’s words and experience into a piece for the Main Gallery, where the show sits as both reflection and provocation. Accepted mediums include photography, digital art, painting, drawing, collage, mixed media, text-based work, sculpture, installation, fibre and touchable or interactive work. The centre asks for practices that confront, reflect on or challenge political realities, global or deeply personal, and states plainly that credentials matter less than passion and messaging. Applicants send a single PDF holding a 200-word bio, a 200-word statement and five images. There is no entry fee. The call is addressed to artists in the Longmont area aged 18 and over, and work is hand-delivered on October 5 and 6. Community members need no paperwork and are compensated for their time; translators are provided for anyone who prefers to apply or work in another language. The Firehouse waives its commission entirely and splits any sale equally between artist and community member. The exhibition runs October 9 to November 1, 2026, opening with a reception on October 9.",
+      "url": "https://firehouseart.org/artists/opportunities/",
+      "instagram": "@firehouseartcenter",
+      "location": "Longmont, CO, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "colorado",
+        "18-plus"
+      ],
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/vvzTzkDc6Lp9BJCH7",
+      "requirements": "5 images",
+      "slug": "dia-de-muertos-2026-remembering-is-resistance-firehouse-art-center",
+      "orgInTitle": false,
+      "summary": "Longmont art centre pairs artists with community members affected by immigration policy. Free to enter, sales split 50/50.",
+      "dateAdded": "2026-07-25T22:13:05Z",
+      "resultsDate": "August 24, 2026",
+      "verifyNote": "The call text (site and Google Form) says “The call welcomes all artists in the Longmont area above the age of 18”, while the Eligibility Criteria bullet below it says only “Open to all artists 18 and older”. Kept the colorado facet: the prose is explicit and work must be hand-delivered to Longmont on October 5–6 with in-person partner meetings. Don’t flip to open-international."
     }
   ]
 }
