@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-25T10:19:50Z",
+  "lastUpdated": "2026-07-25T14:17:39Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -32308,6 +32308,100 @@
       "summary": "Great Lakes juried show at Crooked Tree Arts Center on the many meanings of Americana — photography welcome.",
       "resultsDate": "August 7, 2026",
       "dateAdded": "2026-07-25T10:19:50Z"
+    },
+    {
+      "title": "The Unexpected Portrait",
+      "org": "Workshop13",
+      "deadline": "2026-08-20",
+      "fee": "$25 (1 work) / $35 (up to 3)",
+      "category": "exhibition",
+      "description": "Juried exhibition at ArtWorks Gallery, run by Workshop13, a nonprofit cultural arts and learning centre in Ware, Massachusetts. Artists are asked to deviate from formal posing and realistic representation, focusing instead on emotion, identity, memory, action or unconventional subject matter through modern techniques, stylised depiction or abstract interpretation of the sitter. Open to most physical media, photography included — electronic media cannot be accommodated, and AI-generated work, work created under instruction and work previously juried into an ArtWorks Gallery show are ineligible. Up to three original pieces per artist; the gallery may cap acceptances at two per artist depending on space. Juried by printmaker and teaching artist Julie Lapping Rivera. Accepted 2-D work must be framed and wired, hand-delivered or shipped with a prepaid return label. Exhibition runs 19 September – 17 October 2026, with an opening reception on 19 September. The gallery takes 30% commission on sales.",
+      "url": "https://workshop13.org/exhibitions/the-unexpected-portrait/",
+      "instagram": "@workshop_13_",
+      "location": "Ware, MA, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "northeast-us",
+        "18-plus"
+      ],
+      "jury": [
+        "Julie Lapping Rivera, Juror"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/workshop13/the-unexpected-portrait/",
+      "requirements": "Up to 3 works",
+      "ai": "Not accepted",
+      "slug": "the-unexpected-portrait-workshop13",
+      "orgInTitle": false,
+      "summary": "Workshop13's juried portrait show in Ware, MA — emotion, memory and abstraction over formal posing. Photography welcome.",
+      "resultsDate": "August 25, 2026",
+      "dateAdded": "2026-07-25T14:17:39Z"
+    },
+    {
+      "title": "West Coast Biennial 2027",
+      "org": "Turtle Bay Exploration Park",
+      "deadline": "2026-11-06",
+      "fee": "$40",
+      "category": "exhibition",
+      "description": "Ninth edition of Turtle Bay Exploration Park's juried West Coast Biennial, held in the museum galleries in Redding, California. Juror Karlo Henry Velazquez Fernandez — artist, curator, founder of The Art Hunger and Arts Director for Viva Downtown Redding — will select between 30 and 50 works for the exhibition. Painting, printmaking, drawing, photography, sculpture and mixed media are all accepted. Open to artists living in California, Oregon, Washington and Alaska, who may enter up to three works made within three years of the deadline. Cash awards are presented at the opening: Best of Show $3,000, First Prize $1,750, Second $900, Third $650, plus Honorable Mention and People's Choice awards of $325 each. The exhibition runs 29 January – 18 April 2027, opening with an artists' reception and juror talk.",
+      "url": "https://www.turtlebay.org/biennial-submissions",
+      "instagram": "@turtlebay_redding",
+      "location": "Redding, CA, USA",
+      "prize": "$3,000 + exhibition",
+      "eligibility": [
+        "western-us"
+      ],
+      "jury": [
+        "Karlo Henry Velazquez Fernandez, Juror"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://www.entrythingy.com/d=turtlebay.org?start=list",
+      "requirements": "Up to 3 works",
+      "slug": "west-coast-biennial-2027-turtle-bay-exploration-park",
+      "orgInTitle": false,
+      "summary": "Turtle Bay's ninth juried biennial in Redding, CA. Photography included; $3,000 Best of Show. CA, OR, WA and AK artists.",
+      "resultsDate": "December 18, 2026",
+      "dateAdded": "2026-07-25T14:17:39Z"
+    },
+    {
+      "title": "Artist Grant — November 2026 Cycle",
+      "org": "Artist Grant",
+      "deadline": "2026-11-15",
+      "fee": "$30",
+      "category": "grant",
+      "description": "An unrestricted $1,200 USD grant awarded to one visual artist three times a year, running since 2017. There is no proposal to write: applicants email a link to their website or three to five images of recent work along with a CV, resume or short bio. Open to visual artists aged 18 and over anywhere in the world working in painting, drawing, sculpture, ceramics, printmaking, photography, mixed media, installation and new or alternative visual art forms; film, video, music, theatre and dance are excluded, and past winners may not reapply. Grantees are featured on the Artist Grant website and social channels. Results are sent within six to eight weeks of the deadline.",
+      "url": "https://artistgrant.org/apply",
+      "instagram": "@artistgrantorg",
+      "location": "Online",
+      "prize": "$1,200",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Email",
+      "requirements": "3–5 images",
+      "slug": "artist-grant-november-2026-cycle",
+      "orgInTitle": true,
+      "summary": "Unrestricted $1,200 grant for one visual artist, awarded three times a year. No proposal — just images and a bio.",
+      "dateAdded": "2026-07-25T14:17:39Z"
+    },
+    {
+      "title": "Reverie Magazine — Issue VI",
+      "org": "Reverie",
+      "deadline": "2026-08-01",
+      "fee": "Free",
+      "category": "zine",
+      "description": "Open submissions for the sixth issue of Reverie, an international independent literary and arts magazine whose stated mission is to promote education and amplify the voices of marginalised communities through literature and fine arts. Alongside poetry, prose and short fiction, the magazine reads visual art in all forms — contemporary photography, digital illustration, scans of painting and documentation of physical craft. Artists may send up to five high-resolution pieces as PNG, PDF or JPG to the editors by email, with a 50-word bio in the body of the message. Submissions are free and open worldwide. Previously published work is accepted if the prior publication is credited, and simultaneous submissions are welcome. Reverie asks for first publishing and archival rights; all rights revert to the maker on publication. Editors respond in about a month.",
+      "url": "https://www.reveriemag.org/submit",
+      "instagram": "@reveriemag_",
+      "location": "Online",
+      "prize": "Publication",
+      "eligibility": [],
+      "submitVia": "Email",
+      "requirements": "Up to 5 images",
+      "slug": "reverie-magazine-issue-vi",
+      "orgInTitle": true,
+      "summary": "Free open call for Issue VI of an indie international literary and arts magazine — contemporary photography welcome.",
+      "dateAdded": "2026-07-25T14:17:39Z"
     }
   ]
 }
