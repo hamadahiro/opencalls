@@ -490,7 +490,8 @@
       "orgInTitle": false,
       "summary": "National juried competition at Blue Line Arts, juried by Naz Cuguoğlu. All media incl. photography; $2,000 top + travel to the Crocker Art Museum.",
       "dateAdded": "2026-07-14T03:06:03Z",
-      "resultsDate": "November 27, 2026"
+      "resultsDate": "November 27, 2026",
+      "ai": null
     },
     {
       "title": "VMFA Visual Arts Fellowship 2027–28",
@@ -504,6 +505,7 @@
       "location": "Richmond, VA, USA",
       "prize": "$2,000–$8,000 Fellowship",
       "eligibility": [
+        "united-states",
         "virginia"
       ],
       "jury": [],
@@ -514,7 +516,8 @@
       "orgInTitle": true,
       "summary": "VMFA's fellowship for Virginia visual artists and students — photography an explicit discipline. Up to $8,000, no fee. Virginia residents only.",
       "resultsDate": "February 2027",
-      "dateAdded": "2026-07-14T03:06:03Z"
+      "dateAdded": "2026-07-14T03:06:03Z",
+      "ai": null
     },
     {
       "title": "Composed",
@@ -1666,7 +1669,10 @@
       "slug": "on-film-carlotta-gallery",
       "orgInTitle": true,
       "summary": "Celebrating film and analogue photography — every exposure a point of no return. Free to apply; virtual exhibition.",
-      "dateAdded": "2026-07-01T03:05:58Z"
+      "dateAdded": "2026-07-01T03:05:58Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Central & South America — Carlotta Gallery",
@@ -1687,7 +1693,10 @@
       "slug": "central-south-america-carlotta-gallery",
       "orgInTitle": true,
       "summary": "Respond to the region through brief, specific observations — a layered archive of diverse cultures and conditions. Virtual exhibition.",
-      "dateAdded": "2026-07-01T03:05:58Z"
+      "dateAdded": "2026-07-01T03:05:58Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "People — Carlotta Gallery",
@@ -1708,7 +1717,10 @@
       "slug": "people-carlotta-gallery",
       "orgInTitle": true,
       "summary": "People in everyday life, captured without staging — human presence as traces rather than conclusions. Free to apply; virtual exhibition.",
-      "dateAdded": "2026-07-01T03:05:58Z"
+      "dateAdded": "2026-07-01T03:05:58Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Red — Carlotta Gallery",
@@ -1729,7 +1741,10 @@
       "slug": "red-carlotta-gallery",
       "orgInTitle": true,
       "summary": "Red as a force within the image, not just a colour — its weight and intensity across bodies, objects and memory. Virtual exhibition.",
-      "dateAdded": "2026-07-01T03:05:58Z"
+      "dateAdded": "2026-07-01T03:05:58Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "JRNL Magazine Open Call 2026",
@@ -1783,7 +1798,7 @@
       "submitVia": "Picter",
       "submitUrl": "https://site.picter.com/vmfa-aaron-siskind-2026",
       "requirements": "10–15 images",
-      "resultsDate": "November 10, 2026",
+      "resultsDate": "First week of November 2026",
       "slug": "vmfa-aaron-siskind-award-for-photography-2026",
       "orgInTitle": true,
       "summary": "VMFA's contemporary photography award — two unrestricted $25,000 prizes for U.S. photographers. Free to enter; 10–15 image portfolio.",
@@ -1863,7 +1878,9 @@
       "orgInTitle": true,
       "summary": "Themed open call on 'Summer' — light, heat, stillness, travel. Free to submit; selected work exhibited at Blank Wall Gallery, Athens.",
       "dateAdded": "2026-06-30T23:28:58Z",
-      "resultsDate": "August 18, 2026"
+      "resultsDate": "August 18, 2026",
+      "jury": [],
+      "ai": null
     },
     {
       "title": "Color Space: Contemporary Photography 2026",
@@ -1886,7 +1903,8 @@
       "orgInTitle": false,
       "summary": "Black Box Gallery Portland juried show of contemporary color photography. 26 prints exhibited + 50 online + Blurb catalog.",
       "dateAdded": "2026-06-30T15:10:10Z",
-      "resultsDate": "Mid-August 2026"
+      "resultsDate": "Mid-August 2026",
+      "ai": null
     },
     {
       "title": "The Autumn National 2026",
@@ -1895,7 +1913,7 @@
       "fee": "$30/piece ($25 members)",
       "category": "exhibition",
       "description": "Open juried national all-media exhibition at Cape Cod Art Center in Barnstable, Massachusetts, with photography included among the accepted media. Selected work is shown in the center's galleries, with cash awards presented across categories as in the center's other National exhibitions. Open to all artists; entries submitted via Smarter Entry.",
-      "url": "https://capecodartcenter.org/exhibit-schedule/",
+      "url": "https://capecodartcenter.org/exhibits/exhibit-schedule/",
       "instagram": "@capecodartcenter",
       "location": "Barnstable, MA, USA",
       "prize": "Cash awards + Exhibition",
@@ -1906,7 +1924,10 @@
       "orgInTitle": false,
       "summary": "Open juried all-media national at Cape Cod Art Center, photography included, with cash awards. Entries via Smarter Entry.",
       "dateAdded": "2026-06-30T15:10:10Z",
-      "resultsDate": "October 2, 2026"
+      "resultsDate": "October 2, 2026",
+      "jury": [],
+      "ai": null,
+      "requirements": null
     },
     {
       "title": "Photography+ Open Call: Multiplication",
@@ -26428,7 +26449,8 @@
       "jury": [
         "Nancy Floyd"
       ],
-      "dateAdded": "2026-06-11T03:33:39.730Z"
+      "dateAdded": "2026-06-11T03:33:39.730Z",
+      "ai": null
     },
     {
       "title": "FL3TCH3R Exhibit 2026 — Socially & Politically Engaged Art",
@@ -26680,7 +26702,9 @@
       "slug": "life-in-baltimore-the-peale",
       "orgInTitle": false,
       "summary": "The Peale's juried Baltimore-region show, all media incl. photography. Top 5 win cash prizes; exhibit Oct 2026, 60% on sales.",
-      "dateAdded": "2026-06-11T07:35:55Z"
+      "dateAdded": "2026-06-11T07:35:55Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Abandoned Haunts & Curious Trappings",
@@ -26732,7 +26756,9 @@
       "summary": "Propose a 2027 solo or group show at Kahilu Theatre's galleries on Hawaiʻi Island. Three slots; up to six proposals chosen.",
       "dateAdded": "2026-06-11T07:35:55Z",
       "requirements": "10–20 images",
-      "instagram": "@kahilutheatre"
+      "instagram": "@kahilutheatre",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Lacawac Artists' Residency 2026",
@@ -26755,7 +26781,9 @@
       "orgInTitle": false,
       "summary": "Week-long nature residency at a 550-acre Pocono lake sanctuary; $300/week (self-funded) covers room and Carriage House studio. Rolling applications.",
       "dateAdded": "2026-06-11T07:35:55Z",
-      "requirements": "Up to 5 work samples"
+      "requirements": "Up to 5 work samples",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Budapest International Foto Awards 2026",
@@ -26836,7 +26864,10 @@
       "slug": "outdoor-photography-magazine-minimalist-landscapes",
       "orgInTitle": true,
       "summary": "Submit minimalist landscape images for Outdoor Photography Magazine (UK). Winner receives Nikon Action Zoom binoculars.",
-      "dateAdded": "2026-06-11T11:28:58Z"
+      "dateAdded": "2026-06-11T11:28:58Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Outdoor Photography Magazine — Summer Woodland",
@@ -26856,7 +26887,10 @@
       "slug": "outdoor-photography-magazine-summer-woodland",
       "orgInTitle": true,
       "summary": "Submit summer woodland images for Outdoor Photography Magazine (UK). Winner receives a Vanguard VEO 3 tripod (£250).",
-      "dateAdded": "2026-07-16T23:08:15Z"
+      "dateAdded": "2026-07-16T23:08:15Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Living Space — Artdoc Magazine Open Call",
@@ -26879,7 +26913,9 @@
       "orgInTitle": false,
       "summary": "Artdoc's themed call on the spaces of everyday life — interiors, cityscapes, the built environment. Publication and online exhibition.",
       "dateAdded": "2026-06-11T11:28:58Z",
-      "jury": []
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "46th Arts of the Terrace Juried Art Show",
@@ -26935,7 +26971,8 @@
       "summary": "Statewide juried annual for Virginia artists at Hampton's Charles H. Taylor Visual Arts Center; $2,750 in awards.",
       "dateAdded": "2026-06-11T11:28:58Z",
       "instagram": "@ctvisualarts",
-      "resultsDate": "August 7, 2026"
+      "resultsDate": "August 7, 2026",
+      "ai": null
     },
     {
       "title": "Zion National Park Artist-in-Residence 2027",
@@ -27013,7 +27050,9 @@
       "instagram": "@cityofnovi",
       "jury": [
         "Panel of jurors"
-      ]
+      ],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "sƛ̓x̣etkʷ Artist-in-Residence Program — Round 3",
@@ -27040,7 +27079,8 @@
       "resultsDate": "By November 10, 2026",
       "jury": [
         "SFCC faculty, students & regional Tribal community committee"
-      ]
+      ],
+      "ai": null
     },
     {
       "title": "Lucid Art Residency 2027",
@@ -27068,7 +27108,8 @@
       "instagram": "@lucidartfoundation",
       "jury": [
         "5-member jury of artists, educators & scholars"
-      ]
+      ],
+      "ai": null
     },
     {
       "title": "SCG Artist in Residence & Teaching Program 2027 — Regional",
@@ -27093,7 +27134,10 @@
       "dateAdded": "2026-06-11T11:28:58Z",
       "instagram": "@bluelinearts",
       "resultsDate": "November 6, 2026",
-      "jury": []
+      "jury": [
+        "Blue Line Arts Selection Committee"
+      ],
+      "ai": null
     },
     {
       "title": "SCG Artist in Residence & Teaching Program 2027 — National",
@@ -27118,7 +27162,10 @@
       "dateAdded": "2026-06-11T11:28:58Z",
       "instagram": "@bluelinearts",
       "resultsDate": "February 5, 2027",
-      "jury": []
+      "jury": [
+        "Blue Line Arts Selection Committee"
+      ],
+      "ai": null
     },
     {
       "title": "Max Thelen Studio Residency",
@@ -27271,7 +27318,9 @@
       "orgInTitle": true,
       "summary": "All-media call from Berlin's BBA Gallery: 15 shortlisted artists join a group show with Artsy profiles; winner exhibits in Berlin.",
       "dateAdded": "2026-06-11T15:19:24Z",
-      "submitUrl": "https://app.bba-prizes.com/?productId=bba-360-2026"
+      "submitUrl": "https://app.bba-prizes.com/?productId=bba-360-2026",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Willet Art Prize 2026",
@@ -27287,7 +27336,9 @@
         "18-plus",
         "united-states"
       ],
-      "jury": [],
+      "jury": [
+        "Panel of artists, curators & stained glass craftspeople"
+      ],
       "submitVia": "EntryThingy",
       "submitUrl": "https://app.entrythingy.com/calls/public/14047/",
       "requirements": "1 work",
@@ -27296,7 +27347,8 @@
       "orgInTitle": true,
       "summary": "Free national art prize from the 1898 stained glass studio — $10,000 top prize ($20,000 pool) for work on the theme Quest for Gold, any medium.",
       "dateAdded": "2026-06-11T15:19:24Z",
-      "instagram": "@willet_studios"
+      "instagram": "@willet_studios",
+      "ai": null
     },
     {
       "title": "EPF 2026 Photobook Exhibition",
@@ -27427,14 +27479,18 @@
       "eligibility": [
         "midwest-us"
       ],
-      "jury": [],
+      "jury": [
+        "Practicing artists & regional arts professionals"
+      ],
       "submitVia": "Official website",
       "resultsDate": "By February 26, 2027",
       "slug": "lanesboro-exhibition-gallery-2028",
       "orgInTitle": true,
       "summary": "Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "verifyNote": "As of 2026-07-16 (rechecked) the online application form is NOT on the page (\"updating currently but will add soon\"); working route is video application to gallery@lanesboroarts.org. Page also contains a stale \"2027\" sentence amid 2028-cycle copy. Recheck for the form."
+      "verifyNote": "As of 2026-07-16 (rechecked) the online application form is NOT on the page (\"updating currently but will add soon\"); working route is video application to gallery@lanesboroarts.org. Page also contains a stale \"2027\" sentence amid 2028-cycle copy. Recheck for the form.",
+      "ai": null,
+      "requirements": null
     },
     {
       "title": "Lanesboro Early Career Artists Show 2027",
@@ -27458,7 +27514,9 @@
       "orgInTitle": true,
       "summary": "Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "verifyNote": "As of 2026-07-16 (rechecked) no online form on the page despite \"available below\" text; video application via gallery@lanesboroarts.org works. Recheck for the form."
+      "verifyNote": "As of 2026-07-16 (rechecked) no online form on the page despite \"available below\" text; video application via gallery@lanesboroarts.org works. Recheck for the form.",
+      "ai": null,
+      "requirements": null
     },
     {
       "title": "Her Art, Her Voice — 2027 Biennial Juried Exhibition",
@@ -27486,8 +27544,9 @@
       "orgInTitle": false,
       "summary": "Women-identifying New Mexico artists (NMC-NMWA members) show at Canyon Road galleries in Santa Fe, March 2027. $50, up to 3 works.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "resultsDate": "February 27, 2027",
-      "instagram": "@newmexicowomeninthearts"
+      "resultsDate": "November 10, 2026",
+      "instagram": "@newmexicowomeninthearts",
+      "ai": null
     },
     {
       "title": "agriCultural: A Biennial Exhibition",
@@ -27692,7 +27751,8 @@
       "instagram": "@tylerartlift",
       "dateAdded": "2026-06-11T23:35:01.835Z",
       "resultsDate": "September 9, 2026",
-      "requirements": "Up to 20 works"
+      "requirements": "Up to 20 works",
+      "ai": null
     },
     {
       "title": "Chew on This",
@@ -27716,7 +27776,8 @@
       "orgInTitle": false,
       "summary": "Food-themed juried show at the Ludington Area Center for the Arts, MI. All media welcome, $30 for 2 works, on view Oct 2–31.",
       "instagram": "@lacaarts",
-      "dateAdded": "2026-06-11T23:35:01.835Z"
+      "dateAdded": "2026-06-11T23:35:01.835Z",
+      "ai": null
     },
     {
       "title": "The Keller Prize 2026",
@@ -27742,7 +27803,8 @@
       "orgInTitle": true,
       "summary": "International all-media prize juried by Aspen gallerist Mia Valley — $9,000 in cash awards, photography welcome. $55 for 5 images.",
       "instagram": "@thekellerprize",
-      "dateAdded": "2026-06-11T23:35:01.835Z"
+      "dateAdded": "2026-06-11T23:35:01.835Z",
+      "ai": null
     },
     {
       "title": "Eleventh Juried Art Show",
@@ -27766,7 +27828,8 @@
       "slug": "eleventh-juried-art-show-stover-mill-gallery",
       "orgInTitle": false,
       "summary": "Blind-juried show over four fall weekends at Bucks County's longest-running gallery. Over $3,000 in prizes; $30 for one work.",
-      "dateAdded": "2026-06-11T23:35:01.835Z"
+      "dateAdded": "2026-06-11T23:35:01.835Z",
+      "ai": null
     },
     {
       "title": "The Essence of a Woman 2026",
@@ -27845,7 +27908,9 @@
       "slug": "black-white-images-photobook-soft-publishing",
       "orgInTitle": false,
       "summary": "Soft Publishing seeks black-and-white images of any subject for a limited-edition photobook — up to 10 photos, free entry.",
-      "dateAdded": "2026-06-12T08:00:25.703Z"
+      "dateAdded": "2026-06-12T08:00:25.703Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "The Black & White Show",
@@ -28039,7 +28104,9 @@
       "slug": "betty-bowen-award-2026-seattle-art-museum",
       "orgInTitle": false,
       "summary": "Seattle Art Museum's annual award for WA/OR/ID artists: $20,000 plus a solo show at SAM, with five further cash awards. $10 entry.",
-      "dateAdded": "2026-06-12T11:51:23.164Z"
+      "dateAdded": "2026-06-12T11:51:23.164Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Echoes: Revisiting Memory",
@@ -28092,7 +28159,8 @@
       "orgInTitle": false,
       "summary": "Site:Brooklyn online juried show on seriality and sequence, juried by Hyperallergic contributor Matt Stromberg. 3–12 images.",
       "dateAdded": "2026-06-12T11:51:23.164Z",
-      "resultsDate": "August 5, 2026"
+      "resultsDate": "August 5, 2026",
+      "ai": null
     },
     {
       "title": "Kinhouse: Exploring Kinship and the Spaces We Inhabit",
@@ -28190,7 +28258,9 @@
       "slug": "call-for-exhibition-proposals-artlink-contemporary-gallery",
       "orgInTitle": false,
       "summary": "Artlink reviews solo, group and curated exhibition proposals annually each March for its Fort Wayne gallery schedule. $25.",
-      "dateAdded": "2026-06-12T11:51:23.164Z"
+      "dateAdded": "2026-06-12T11:51:23.164Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "59th Annual Newport Beach Art Exhibition",
@@ -28471,11 +28541,11 @@
     {
       "title": "Inspired by Cape Cod",
       "org": "Cape Cod Art Center",
-      "deadline": "2026-07-26",
+      "deadline": "2026-08-02",
       "fee": "$15/piece",
       "category": "exhibition",
-      "description": "Summer online all-media exhibit from Cape Cod Art Center inviting photographers and studio artists to submit work inspired by Cape Cod — its light, landscapes, and life. Up to 5 entries per artist at $15 per piece, with a maximum of 2 works accepted. Cash awards for Best of Show/First Place, Second Place, and Honorable Mention. The online exhibition goes live August 10, 2026.",
-      "url": "https://capecodartcenter.org/exhibit-schedule/",
+      "description": "Summer online all-media exhibit from Cape Cod Art Center inviting photographers and studio artists to submit work inspired by Cape Cod — its light, landscapes, and life. Up to 5 entries per artist at $15 per piece, with a maximum of 2 works accepted. Cash awards for Best of Show/First Place, Second Place, and Honorable Mention. Deadline extended to August 2; notification August 11 and the online exhibition goes live August 17, 2026.",
+      "url": "https://capecodartcenter.org/exhibits/exhibit-schedule/",
       "instagram": "@capecodartcenter",
       "location": "Online",
       "prize": "Cash awards + Online exhibition",
@@ -28484,7 +28554,7 @@
       "submitVia": "Smarter Entry",
       "submitUrl": "https://client.smarterentry.com/CapeCodArt",
       "requirements": "Up to 5 images",
-      "resultsDate": "August 7, 2026",
+      "resultsDate": "August 11, 2026",
       "ai": "AI editing OK, fully generated not accepted",
       "slug": "inspired-by-cape-cod-cape-cod-art-center",
       "orgInTitle": false,
@@ -28592,23 +28662,26 @@
       "title": "Mobile Photography Awards 2026",
       "org": "Mobile Photography Awards",
       "deadline": "2026-12-18",
-      "fee": "$15–$100",
+      "fee": "$15–$149",
       "category": "photography",
-      "description": "The annual Mobile Photography Awards (MPA), the longest-running international competition dedicated to photographs shot and edited entirely on mobile phones and tablets. Twelve photo categories including a Photo Essay; each image may be entered in up to two categories. Over $10,000 in total prizes including a $3,000 Grand Prize, $250 per category winner and a $500 Photo Essay prize, with winners exhibited. Open worldwide to anyone shooting on a mobile device. Tiered entry fees from $15 for a single image up to $100 for 15 images ($29 for the Photo Essay category). Entries run through December 18, 2026.",
+      "description": "The annual Mobile Photography Awards (MPA), the longest-running international competition dedicated to photographs shot and edited entirely on mobile phones and tablets. Twelve photo categories including a Photo Essay; each image may be entered in up to two categories. Over $10,000 in total prizes including a $3,000 Grand Prize, $250 per category winner and a $500 Photo Essay prize, with winners exhibited. Open worldwide to anyone shooting on a mobile device. Tiered entry fees from $15 for a single image up to $149 for 25 images ($29 for the Photo Essay category). Entries run through December 18, 2026.",
       "url": "https://www.mobilephotoawards.com/",
       "instagram": "@mobilephotoawards",
       "location": "Online",
       "prize": "$3,000 grand prize + $10,000 pool",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Jury of photographic professionals"
+      ],
       "submitVia": "Website",
       "submitUrl": "https://www.mobilephotoawards.com/enter",
-      "requirements": "1–15 images",
+      "requirements": "1–25 images",
       "ai": null,
       "slug": "mobile-photography-awards-2026",
       "orgInTitle": true,
       "summary": "Annual awards for photos shot & edited on mobile devices — $3,000 grand prize, $10,000+ pool, 12 categories incl. Photo Essay. From $15. Deadline Dec 18.",
-      "dateAdded": "2026-06-13T14:40:40.866Z"
+      "dateAdded": "2026-06-13T14:40:40.866Z",
+      "resultsDate": null
     },
     {
       "title": "World Nature Photography Awards 2027",
@@ -30914,7 +30987,10 @@
       "slug": "photography-plus-un-stable-photoworks",
       "orgInTitle": false,
       "summary": "Photoworks seeks a single image on the theme Un/Stable for its Photography+ magazine. Selected artist gets £80. Free to enter.",
-      "dateAdded": "2026-07-18T11:09:43Z"
+      "dateAdded": "2026-07-18T11:09:43Z",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "The Shape of a Life",
@@ -30935,7 +31011,9 @@
       "orgInTitle": false,
       "summary": "Online juried show on lives beyond their milestones — portraits, gestures, quiet moments. Worldwide; catalog and $1,000 total cash awards.",
       "resultsDate": "October 20, 2026",
-      "dateAdded": "2026-07-19T19:08:54Z"
+      "dateAdded": "2026-07-19T19:08:54Z",
+      "submitUrl": "https://www.decagongallery.com/the-shape-of-a-life-entry",
+      "ai": null
     },
     {
       "title": "ALT",
@@ -31795,7 +31873,9 @@
       "slug": "shots-magazine-173-plant-life",
       "orgInTitle": true,
       "summary": "B&W photography quarterly since 1986. Issue #173 themed Plant Life. Up to 8 grayscale images. Free for subscribers.",
-      "dateAdded": "2026-07-24T02:16:03Z"
+      "dateAdded": "2026-07-24T02:16:03Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Crowded Table",
@@ -31820,7 +31900,9 @@
       "slug": "crowded-table-overlap-art-space",
       "orgInTitle": false,
       "summary": "Food-and-community juried show at Newport's OVERLAP Art Space; jurors from RISD and Newport Art Museum. Show Nov 14–Dec 19.",
-      "dateAdded": "2026-07-24T02:16:03Z"
+      "dateAdded": "2026-07-24T02:16:03Z",
+      "ai": null,
+      "resultsDate": null
     },
     {
       "title": "Tomorrow Will Be Yesterday",
@@ -32035,7 +32117,10 @@
       "slug": "leela-mukherjee-artist-educator-grant-2026",
       "orgInTitle": false,
       "summary": "Three Rs. 1 lakh grants for India-based visual artists running art education projects with children aged 5–18. Free to apply.",
-      "dateAdded": "2026-07-25T02:10:32Z"
+      "dateAdded": "2026-07-25T02:10:32Z",
+      "ai": null,
+      "resultsDate": null,
+      "requirements": null
     }
   ]
 }
