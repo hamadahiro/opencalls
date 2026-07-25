@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Miller Art Museum. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/51st-juried-annual-exhibition-miller-art-museum/">51st Juried Annual Exhibition &middot; Miller Art Museum</a></h3><p class="call-description">Wisconsin artists at any career stage juried into a Door County museum’s 51st annual. $1,950 in awards, $30 for two works.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Miller Art Museum').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Miller Art Museum' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
