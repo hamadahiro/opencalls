@@ -117,7 +117,7 @@
       <p class="call-detail-description">Selected artists' work is physically printed and framed by MWCP for gallery display — the gallery absorbs production costs rather than passing them to the photographer.</p>
       <p class="call-detail-description">Eligibility is open internationally. Submission is by email with 5–10 images. Fee is $50 for 5 images. The 2026 deadline is August 1.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 1, 2026">August 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$50/5 images">$50/5 images</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/kansas/" title="Wichita, KS">Wichita, KS</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="5+ images">5+ images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.mwcponline.com/traversing-terrain-entry.html" target="_blank" rel="nofollow noopener" title="Website form">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 1, 2026">August 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$50/5 images + $10 each addl"><span class="tag-front">$50/5 images + $10</span> <span class="tag-back">each addl</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/kansas/" title="Wichita, KS">Wichita, KS</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="5+ images">5+ images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.mwcponline.com/traversing-terrain-entry.html" target="_blank" rel="nofollow noopener" title="Website form">Website</a></span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/midwest-center-for-photography/">Midwest Center for Photography</a></p>
@@ -141,7 +141,7 @@
 
   <script>
     const CURRENT_SLUG = 'traversing-terrain-midwest-center-for-photography';
-    const CURRENT_CALL = {"title":"Traversing Terrain","category":"exhibition","org":"Midwest Center for Photography","location":"Wichita, KS, USA","fee":"$50/5 images","deadline":"2026-08-01","eligibility":[]};
+    const CURRENT_CALL = {"title":"Traversing Terrain","category":"exhibition","org":"Midwest Center for Photography","location":"Wichita, KS, USA","fee":"$50/5 images + $10 each addl","deadline":"2026-08-01","eligibility":[]};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -151,7 +151,7 @@
       var u = 'https://www.mwcponline.com/call-for-entries.html';
       var o = 'Midwest Center for Photography';
       var dl = new Date('2026-08-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$50/5 images');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$50/5 images + $10 each addl');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
