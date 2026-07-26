@@ -8845,7 +8845,7 @@
       "title": "Flatland Feature — Issue 2",
       "org": "Midwest Center for Photography",
       "deadline": "2026-07-31",
-      "fee": "$100/10 images",
+      "fee": "$100/10 images, $150/15, $200/20",
       "category": "exhibition",
       "description": "Online photography feature showcasing photographers' work in a series format as a virtual gallery experience. Selected photographers' work featured for six months on the MWCP website (August 2026 – January 2027). Each feature consists of 10–20 images with an accompanying artist statement and biography. Visitors can view and purchase photographs online (50% commission). Open internationally, all subject matter and genres accepted.",
       "url": "https://www.mwcponline.com/call-for-entries.html",
@@ -26012,7 +26012,7 @@
       "deadline": "2026-08-15",
       "fee": "Free ($39–$239 if accepted)",
       "category": "zine",
-      "description": "International contemporary art magazine seeking visual artists worldwide for Volumes 8 and 9 — painting, photography, sculpture, digital art, mixed media and more. Submit up to 6 artworks via Google Form for free; participation fees apply only on acceptance, with discounted tiers for these volumes: $39 (full page), $69 (double page), $89 (solo portfolio spotlight) and $239 (exclusive interview). Selected artists are featured in the print-on-demand edition (physical copies shipped internationally) plus digital download, and promoted across the magazine's social media channels, with distribution to 83+ countries.",
+      "description": "International contemporary art magazine seeking visual artists worldwide for Volumes 8 and 9 — painting, photography, sculpture, digital art, mixed media and more. Submit up to 4 artworks via Google Form for free; participation fees apply only on acceptance, with discounted tiers for these volumes: $39 (full page), $69 (double page), $89 (solo portfolio spotlight) and $239 (exclusive interview). Selected artists are featured in the print-on-demand edition (physical copies shipped internationally) plus digital download, and promoted across the magazine's social media channels, with distribution to 83+ countries.",
       "url": "https://louvreunbound.com/art-submission",
       "instagram": "@louvreunbound",
       "location": "Online",
@@ -26022,7 +26022,7 @@
       ],
       "submitVia": "Google Form",
       "submitUrl": "https://forms.gle/EWk7dRE23uVD6HUJA",
-      "requirements": "Up to 6 images",
+      "requirements": "Up to 4 images",
       "slug": "louvre-unbound-magazine-volumes-7-8-open-call",
       "orgInTitle": true,
       "summary": "International art magazine's call for Volumes 8 & 9 across all visual media. Print-on-demand plus digital to 83+ countries, with features and promotion.",
@@ -26392,7 +26392,7 @@
       "title": "Portfolio Platform 2026/2027",
       "org": "Midwest Center for Photography",
       "deadline": "2026-09-01",
-      "fee": "$100/10 images",
+      "fee": "$100/10 images, $150/15, $200/20",
       "category": "exhibition",
       "description": "The Midwest Center for Photography's online series-portfolio program: selected photographers receive a six-month feature on the MWCP website from October 2026 through March 2027, presenting a thematic body of 10–20 images with an artist statement and biography as a virtual gallery experience. Work is evaluated on the strength of the series rather than individual images. Open internationally to all photographers; visitors can view and purchase photographs through the feature page (50% commission).",
       "url": "https://www.mwcponline.com/call-for-entries.html",
@@ -31806,7 +31806,8 @@
       "summary": "Five South Florida county arts councils award $7,500–$15,000 fellowships to visual and media artists; a free workshop is required to apply.",
       "dateAdded": "2026-07-23T10:15:55Z",
       "instagram": "@miamidadearts",
-      "resultsDate": "Spring 2027"
+      "resultsDate": "Spring 2027",
+      "requirements": "Work samples"
     },
     {
       "title": "Nancy Ingersoll Foster Artist Residency 2026",
@@ -32469,7 +32470,10 @@
       "slug": "open-call-main-gallery-2027-2028-firehouse-art-center",
       "orgInTitle": true,
       "summary": "Solo, group and curatorial proposals for a Colorado contemporary art centre's 2027/28 season — all media, continental US.",
-      "dateAdded": "2026-07-25T18:23:31Z"
+      "dateAdded": "2026-07-25T18:23:31Z",
+      "jury": [
+        "Firehouse Art Center Exhibitions Committee"
+      ]
     },
     {
       "title": "2027 Call for Exhibit Proposals",
@@ -32492,7 +32496,8 @@
       "slug": "2027-call-for-exhibit-proposals-museum-of-northern-california-art",
       "orgInTitle": false,
       "summary": "Solo or small group show at a Chico museum's Phillips Gallery — four 2027 slots for Northern California artists.",
-      "dateAdded": "2026-07-25T18:23:31Z"
+      "dateAdded": "2026-07-25T18:23:31Z",
+      "resultsDate": "October 3, 2026"
     },
     {
       "title": "Echoes of Valor",
