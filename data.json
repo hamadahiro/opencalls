@@ -30487,7 +30487,7 @@
       "title": "Annual Exhibition 2027 — Royal Scottish Academy Building",
       "org": "Visual Arts Scotland",
       "deadline": "2026-08-28",
-      "fee": "£15 per work (members free)",
+      "fee": "£15 per work (members free) + £15 if selected",
       "category": "exhibition",
       "description": "Visual Arts Scotland's flagship annual open exhibition returns to the Upper Galleries of the Royal Scottish Academy Building on Princes Street, Edinburgh, in January 2027, in partnership with ESSA. Open globally to members and non-members across all visual arts and contemporary craft, including fine-art photography. Submit up to 5 works completed within the last three years and not previously shown at the RSA or with VAS in the past five years. Non-members pay £15 per work; VAS members submit their first three works free. Selected artists pay a one-time £15 installation fee, and sales carry a 40% commission (35% for Professional Members). Selection results announced September 17, 2026.",
       "url": "https://www.visualartsscotland.org/opportunity/open-call-annual-exhibition-at-royal-scottish-academy-building-edinburgh-2027/",
@@ -30611,7 +30611,7 @@
     {
       "title": "Queer Spirit",
       "org": "Blackfish Gallery",
-      "deadline": "2026-09-16",
+      "deadline": "2026-09-15",
       "fee": "Free",
       "category": "exhibition",
       "description": "Open call from Blackfish Gallery, the artist-run cooperative gallery founded in 1979 in Portland's Pearl District, for Queer Spirit, a group exhibition running January 6–30, 2027. The gallery invites greater Portland-based artists whose work engages with queer identity, community, and imagination — across all backgrounds — for a celebration of resilience, belonging, and radical imagination. Submissions may directly address queer identity, explore the broader possibilities of queerness, or reflect the perspectives of queer artists; work across all media is welcome, with particular interest in experimental, thought-provoking, and installation-based practices. Free to enter via EntryThingy.",
@@ -30626,6 +30626,7 @@
       "submitUrl": "https://app.entrythingy.com/blackfish/queer-spirit/",
       "requirements": "2–5 images",
       "resultsDate": "Late October–early November 2026",
+      "verifyNote": "Deadline is Sep 15, not Sep 16. The EntryThingy listing states \"Submission Deadline: September 15, 2026\" twice in prose; the calendar header's \"Sep 16, 2026 · 6:59 AM\" is the UTC-rendered cutoff of Sep 15 23:59 Portland time (same known artifact as Library Arts / Stamford). Supersedes the 2026-07-18 org email that said Sep 16 — that referenced the calendar widget. Re-confirmed 2026-07-26. Requirements 2–5 images remain org-confirmed; do not re-flip to 2–10.",
       "slug": "queer-spirit-blackfish-gallery",
       "orgInTitle": false,
       "summary": "Free group show at Portland's artist-run Blackfish Gallery celebrating queer identity, community and imagination. Jan 2027.",
@@ -32753,6 +32754,7 @@
       "description": "Fall juried show in the light-filled second-floor galleries of Falkirk Cultural Center, an 1888 Queen Anne estate on eleven acres in San Rafael, listed on the National Historic Register and run by the City of San Rafael since 1974. Lines guide the eye and define form; layers add depth, texture and history — artists are invited to explore either or the relationship between the two, from patterns in nature to bold geometric composition and richly textured surfaces. Photography is welcome alongside drawing, painting, printmaking, sculpture, ceramics, fiber and mixed media. Open to artists living in the nine Bay Area counties, with up to three works made in the past two years and not previously shown at Falkirk. The exhibition runs September 11 – October 23, 2026, opening during San Rafael's Art Walk.",
       "url": "https://www.cityofsanrafael.org/falkirk-art-galleries/",
       "location": "San Rafael, CA, USA",
+      "instagram": "@falkirkculturalcenter",
       "prize": "$100 / $75 / $50",
       "eligibility": [
         "bay-area"
