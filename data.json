@@ -271,8 +271,8 @@
       "jury": [
         "Ann M. Jastrab, Executive Director, Center for Photographic Art"
       ],
-      "submitVia": "Official website",
-      "submitUrl": "https://www.thephotographerseyecollective.com/slight-of-hand-2026_juried-exhibition",
+      "submitVia": "Email",
+      "submitUrl": null,
       "requirements": "Up to 10 images",
       "slug": "slight-of-hand-2026-the-photographers-eye-collective",
       "orgInTitle": false,
@@ -385,7 +385,7 @@
         "Aneta Kowalczyk, Blow Up Press",
         "Katarzyna Łata, Zamek Sielecki"
       ],
-      "requirements": "Up to 2 photobook dummies",
+      "requirements": "Photobook dummy",
       "resultsDate": "September 18–20, 2026",
       "slug": "paper-photo-dummy-award-2026-paper-photo-festival",
       "orgInTitle": false,
@@ -5799,7 +5799,8 @@
       "location": "Bath, United Kingdom",
       "prize": "Camera equipment worth £750",
       "eligibility": [
-        "united-kingdom"
+        "united-kingdom",
+        "18-plus"
       ],
       "submitVia": "SurveyMonkey",
       "submitUrl": "https://www.surveymonkey.com/r/Adult_Photo_Comp_2026",
@@ -32909,7 +32910,7 @@
       "url": "https://www.womenunitedartmovement.com/artprize2026",
       "instagram": "@womenunited_art_movement",
       "location": "Online",
-      "prize": "$500 per category + publication + solo online exhibition",
+      "prize": "$500 + Publication + Exhibition",
       "eligibility": [
         "women"
       ],
@@ -32963,7 +32964,7 @@
       "eligibility": [],
       "jury": [],
       "submitVia": "Email",
-      "submitUrl": "https://maledettocane-books.com/pages/open-call",
+      "submitUrl": null,
       "requirements": "40+ images",
       "slug": "maledetto-cane-next-photobook-open-call",
       "orgInTitle": true,
@@ -32986,12 +32987,13 @@
         "Todd Johnson, Founder & Director, Black Box Gallery"
       ],
       "submitVia": "Email",
-      "submitUrl": "https://blackboxgallery.com/Landscape-2026-CFE.html",
+      "submitUrl": null,
       "requirements": "5–10 images",
       "slug": "the-book-project-landscape-2026-black-box-gallery",
       "orgInTitle": false,
       "summary": "Hardbound landscape photobook from Black Box Gallery. Ten photographers selected, five photographs each.",
-      "dateAdded": "2026-07-26T14:15:03Z"
+      "dateAdded": "2026-07-26T14:15:03Z",
+      "resultsDate": "Early November 2026"
     },
     {
       "title": "Emerging Berlin",
@@ -33014,7 +33016,9 @@
       "slug": "emerging-berlin-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Rolling Fotografiska open call for image-makers whose practice shapes a part of Berlin. Free, leads to museum exhibitions.",
-      "dateAdded": "2026-07-26T14:15:03Z"
+      "dateAdded": "2026-07-26T14:15:03Z",
+      "requirements": "1 PDF (10–20 images)",
+      "resultsDate": "Reviewed every 6 months"
     },
     {
       "title": "Emerging Stockholm",
@@ -33038,7 +33042,9 @@
       "slug": "emerging-stockholm-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Rolling Fotografiska open call for emerging image-makers based in Sweden. Free, leads to Fotografiska Stockholm exhibitions.",
-      "dateAdded": "2026-07-26T14:15:03Z"
+      "dateAdded": "2026-07-26T14:15:03Z",
+      "requirements": "1 PDF portfolio",
+      "resultsDate": "Reviewed every 6 months"
     }
   ]
 }
