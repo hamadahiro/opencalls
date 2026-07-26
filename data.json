@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-26T06:19:02Z",
+  "lastUpdated": "2026-07-26T10:22:45Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -32819,6 +32819,82 @@
       "summary": "Colorado juried show with its own photography category, at Aurora Central Library November 6 – December 4.",
       "dateAdded": "2026-07-26T06:19:02Z",
       "resultsDate": "September 30, 2026"
+    },
+    {
+      "title": "Quinn Emanuel Silicon Valley Artist-in-Residence 2026",
+      "org": "Quinn Emanuel",
+      "deadline": "2026-08-14",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Four-month studio residency at Quinn Emanuel's Silicon Valley office in Redwood Shores for emerging and mid-career artists working in any medium, including photography. Two artists are selected per cycle and each receives $5,000 per month for four months ($20,000 total) plus a materials allowance of up to $1,500. The residency begins November 2026; a one-month exhibition follows, mounted with curator Alexis Hyde in a venue agreed with the artists, and work may be offered for sale. The studio is an office inside the Silicon Valley location, in a 24/7 keycard-access building with parking if needed. Open only to artists living in the greater Bay Area, as regular in-person studio use is expected; international artists may apply but must secure their own visas. Preference goes to underrepresented artists in the early or middle stages of their career. No education requirement, and the firm will make accommodations for disabled artists. Apply by email with a 500-word proposal, a CV and an 8–10 image portfolio as a single PDF under 20MB.",
+      "url": "https://www.quinnemanuel.com/artists-in-residence/our-participating-offices/silicon-valley-ca/",
+      "instagram": "@qeartistresidency",
+      "location": "Redwood Shores, CA, USA",
+      "prize": "$20,000 stipend + $1,500 materials + Exhibition",
+      "eligibility": [
+        "bay-area",
+        "emerging",
+        "mid-career"
+      ],
+      "jury": [
+        "Alexis Hyde, Curator",
+        "John Quinn, Founding Partner, Quinn Emanuel"
+      ],
+      "submitVia": "Email",
+      "requirements": "8–10 images",
+      "resultsDate": "October 2026",
+      "slug": "quinn-emanuel-silicon-valley-artist-in-residence-2026",
+      "orgInTitle": true,
+      "summary": "$20,000 + $1,500 materials for a 4-month studio residency at Quinn Emanuel's Silicon Valley office. Bay Area artists only.",
+      "dateAdded": "2026-07-26T10:22:45Z"
+    },
+    {
+      "title": "Opulent Mobility 2026",
+      "org": "Opulent Mobility",
+      "deadline": "2026-08-31",
+      "fee": "$20 (up to 10 works), waived on request",
+      "category": "exhibition",
+      "description": "Opulent Mobility is an international annual exhibit that asks artists to re-imagine disability as opulent and powerful rather than merely functional. The 2026 focus is disabled joy — as the call puts it, at a time when rights are being dismantled and images erased, deliberate acts of joy are powerful and essential. Curated by founder A. Laura Brody with disability arts activist and photographer Anthony Tusler, and supported by the Numotion Foundation. Two-dimensional and sculptural work, music files and performances on digital media are all accepted; photographers may submit digital files rather than shipping prints, which makes the show genuinely open to international entrants. A flat $20 fee covers gallery rental and insurance for up to ten works, and is waived on request if it causes hardship. The exhibit runs December 6–20, 2026 in person in Los Angeles and online; the gallery takes 30% of any sale. Accessibility is built in: artwork descriptions in text and audio, and ASL interpreters at the opening and the online artist talk.",
+      "url": "https://www.opulentmobility.com/submit-artwork.html",
+      "instagram": "@opulentmobility",
+      "location": "Los Angeles, CA, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [
+        "A. Laura Brody, Founder & Curator",
+        "Anthony Tusler, Disability Arts Activist & Photographer"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/opulentmobility/opulent-mobility-2026/",
+      "requirements": "Up to 10 works",
+      "slug": "opulent-mobility-2026",
+      "orgInTitle": true,
+      "summary": "Disabled joy: international exhibit re-imagining disability as opulent. $20 for 10 works, waived on request; digital files welcome.",
+      "dateAdded": "2026-07-26T10:22:45Z"
+    },
+    {
+      "title": "Solo Exhibition September 2026",
+      "org": "All About Photo",
+      "deadline": "2026-08-11",
+      "fee": "$45",
+      "category": "exhibition",
+      "description": "Monthly featured photographer showcase. Winner receives a full month online solo exhibition (September 1–30, 2026), permanent gallery presence, exclusive interview, social media promotion, newsletter feature, international press coverage, and commission-free sales. Submit a cohesive project or portfolio of 6–14 images.",
+      "url": "https://www.all-about-photo.com/all-about-photo-contest.php?cid=239",
+      "instagram": "@allaboutphotocom",
+      "location": "Online",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [
+        "Sandrine Hermand-Grisel, Photographer & Founder, All About Photo"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.all-about-photo.com/all-about-photo-contest-registration.php?cid=239",
+      "requirements": "6–14 images",
+      "resultsDate": "September 1, 2026",
+      "slug": "solo-exhibition-september-2026-all-about-photo",
+      "orgInTitle": false,
+      "summary": "Monthly featured photographer showcase. Full month online solo exhibition, interview, and press coverage.",
+      "dateAdded": "2026-07-26T10:22:45Z"
     }
   ]
 }

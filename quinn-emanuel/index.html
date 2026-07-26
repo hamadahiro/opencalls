@@ -105,6 +105,7 @@
       <h2 class="subtitle">Open calls and submission opportunities from Quinn Emanuel. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/quinn-emanuel-silicon-valley-artist-in-residence-2026/">Quinn Emanuel Silicon Valley Artist-in-Residence 2026</a></h3><p class="call-description">$20,000 + $1,500 materials for a 4-month studio residency at Quinn Emanuel's Silicon Valley office. Bay Area artists only.</p></div>
 
     </section>
 
@@ -122,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Quinn Emanuel').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Quinn Emanuel' && isCallOpen(c.deadline)).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
