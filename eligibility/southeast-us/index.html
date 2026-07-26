@@ -106,7 +106,6 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/sixth-lagrange-southeast-regional/">Sixth LaGrange Southeast Regional</a></h3><p class="call-description">Southeastern regional at the LaGrange Art Museum — Purchase Awards enter the permanent collection; photography accepted, no commission.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('southeast-us') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('southeast-us')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
