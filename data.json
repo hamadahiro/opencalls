@@ -1972,7 +1972,8 @@
       "orgInTitle": false,
       "summary": "Annual Griffin Museum scholarship for emerging photographers without solo shows — $3,000, a solo exhibition and a book. Free to enter.",
       "dateAdded": "2026-06-30T07:08:30Z",
-      "resultsDate": "By January 2027"
+      "resultsDate": "By January 2027",
+      "verifyNote": "2026-07-26: Griffin page confirms submission period opens October 1, 2026 and closes November 22, 2026 11:59PM MT; awardee announced by January 2027; free entry; 10 photographs; no age limit / no residency requirement. The CaFE record (ID 15937) returns null in the Creative West API until the call reopens Oct 1 — that is expected, not a dead link."
     },
     {
       "title": "SE Center for Photography — The Abandoned Landscape",
@@ -2596,7 +2597,7 @@
       "orgInTitle": false,
       "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
       "dateAdded": "2026-06-19T01:49:26.373Z",
-      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead."
+      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead."
     },
     {
       "title": "The City Series: London — Shutter Hub Editions Publication",
@@ -6423,7 +6424,7 @@
       "orgInTitle": true,
       "summary": "$20,000 grant for a curator or academic to develop an exhibition or publication using MUUS Collection's archives. Travel covered.",
       "ai": null,
-      "resultsDate": "November 2026",
+      "resultsDate": "October 2026",
       "prose": [
         "The MUUS Collection is an American 20th-century photography collection based just outside Manhattan, holding nearly half a million images and supporting ephemera — contact sheets, personal papers, manuscripts, and publications. The current archives include the work of André de Dienes, Larry Fink, Fred W. McDarrah (the downtown New York scene, Dylan, Ginsberg, Warhol, and the Stonewall Uprising), Rosalind Fox Solomon, Deborah Turbeville, and Alfred Wertheimer.",
         "The Research Fellowship is the Collection's inaugural grant program, launched in 2026. One $20,000 grant is awarded to a curator or academic for time in the physical archives and on the new MUUSEUM Research Portal, with the goal of producing an exhibition or publication concept drawn from the holdings. The grant covers travel to the archive in full, separately from the cash award.",
@@ -28560,7 +28561,8 @@
       "slug": "inspired-by-cape-cod-cape-cod-art-center",
       "orgInTitle": false,
       "summary": "Summer online all-media exhibit from Cape Cod Art Center — work inspired by the Cape, cash awards, $15 per piece.",
-      "dateAdded": "2026-06-12T19:36:39.998Z"
+      "dateAdded": "2026-06-12T19:36:39.998Z",
+      "verifyNote": "2026-07-26: the org exhibit-schedule page still shows the ORIGINAL dates (JPEGs due Sunday July 26 / notification Aug 7) — it was never updated. The Smarter Entry portal (smarterentry.com/CallsForEntry/CapeCodArt), which is the actual submission platform, reads: \"Submissions are due by August 2, 2026 by midnight (deadline extended). Artist notification by email on August 11, 2026.\" Keep Aug 2 / Aug 11 — do NOT flip back to the schedule page dates. Online exhibit goes live Aug 17. Cash awards: Best of Show/First, Second, Honorable Mention."
     },
     {
       "title": "The Summer National 2026",
@@ -31013,14 +31015,14 @@
       "prize": "$1,000 + Exhibition",
       "eligibility": [],
       "jury": [],
-      "submitVia": "Website form",
+      "submitVia": "JotForm",
       "requirements": "Up to 4 images",
       "slug": "the-shape-of-a-life-decagon-gallery",
       "orgInTitle": false,
       "summary": "Online juried show on lives beyond their milestones — portraits, gestures, quiet moments. Worldwide; catalog and $1,000 total cash awards.",
       "resultsDate": "October 20, 2026",
       "dateAdded": "2026-07-19T19:08:54Z",
-      "submitUrl": "https://www.decagongallery.com/the-shape-of-a-life-entry",
+      "submitUrl": "https://form.jotform.com/262054972447160",
       "ai": null
     },
     {
@@ -32670,7 +32672,8 @@
       "slug": "small-works-members-show-woman-made-gallery",
       "orgInTitle": false,
       "summary": "Chicago's Woman Made Gallery holiday small-works show — free for members, three works submitted, one guaranteed inclusion.",
-      "dateAdded": "2026-07-26T02:14:52Z"
+      "dateAdded": "2026-07-26T02:14:52Z",
+      "ai": "Not accepted"
     }
   ]
 }
