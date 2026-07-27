@@ -1538,7 +1538,7 @@
         "flinta",
         "women"
       ],
-      "submitVia": "Official website",
+      "submitVia": "Submittable",
       "requirements": "Up to 10 images",
       "slug": "womens-studio-workshop-artists-book-residency-grant",
       "orgInTitle": true,
@@ -1546,7 +1546,7 @@
       "dateAdded": "2026-07-01T15:08:08Z",
       "resultsDate": "March 2027",
       "instagram": "@wsworkshop",
-      "submitUrl": null
+      "submitUrl": "https://womensstudioworkshop.submittable.com/submit"
     },
     {
       "title": "Black and White: 2026",
@@ -4405,7 +4405,7 @@
     {
       "title": "Fabula Works — Cycle(s)",
       "org": "Fabula Works",
-      "deadline": "2026-07-31",
+      "deadline": "2026-08-08",
       "fee": "€25",
       "category": "exhibition",
       "description": "Second open call from Rome curatorial platform Fabula Works, themed Cycle(s). Two photographers are selected for a fall exhibition at Millepiani in Rome (November 6 – December 22, 2026), with printing and exhibition promotion fully covered. All genres welcome; the jury seeks work that moves beyond familiar aesthetics with a distinct perspective. Guest juror is photographer Carolyn Mendelsohn (Nikon Europe Ambassador). Submit 10–25 photographs as a portfolio with biography and artist statement.",
@@ -4833,7 +4833,7 @@
       "prize": "$4,000",
       "eligibility": [],
       "jury": [
-        "Darren Ching, Co-Owner, Klompching Gallery"
+        "Darren Ching, Founder, Klompching Gallery"
       ],
       "submitVia": "SmarterEntry",
       "requirements": "Unlimited images",
@@ -31106,7 +31106,6 @@
       "location": "Appleton, WI, USA",
       "prize": "Exhibition + Zine publication",
       "eligibility": [
-        "wisconsin",
         "alternative-process"
       ],
       "jury": [],
@@ -31116,7 +31115,7 @@
       "resultsDate": "August 24, 2026",
       "slug": "alt-photo-opp",
       "orgInTitle": false,
-      "summary": "Free alt-process juried show at Appleton's community darkroom — cyanotypes, film soup, collage. Wisconsin artists; gallery show + zine.",
+      "summary": "Free alt-process juried show at Appleton's community darkroom — cyanotypes, film soup, collage. Open to anyone; gallery show + zine.",
       "dateAdded": "2026-07-20T03:21:12Z",
       "ai": "Not accepted"
     },
@@ -31209,6 +31208,7 @@
       "category": "exhibition",
       "description": "A juried photography exhibition marking the 100th anniversary of Route 66, presented by artCentral in Carthage, Missouri — itself a Route 66 town. The call invites photographers to capture the highway in all its forms: neon-lit motels, vintage gas stations, vast landscapes, small-town main streets and the people who embody the road's enduring character. Creative edits are allowed, but work must be photographic, Route 66 inspired, framed and wired for hanging, and available for sale. Open to photographers 18 and over nationwide; up to three works may be submitted for jury consideration. The exhibition runs September 25 – October 30, 2026.",
       "url": "https://www.artcentralcarthage.org/exhibitions/",
+      "instagram": "@artcentralcarthage",
       "location": "Carthage, MO, USA",
       "prize": "Exhibition",
       "eligibility": [
@@ -31218,9 +31218,9 @@
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17735/CAFE",
       "requirements": "Up to 3 images",
+      "slug": "preserving-the-spirit-artcentral",
       "orgInTitle": false,
       "summary": "Juried Route 66 photography show marking the highway's centenary, at artCentral in Carthage, Missouri — itself a Route 66 town.",
-      "slug": "preserving-the-spirit-artcentral",
       "dateAdded": "2026-07-20T06:22:05Z"
     },
     {
@@ -31324,15 +31324,16 @@
       "category": "exhibition",
       "description": "The City of Auburn, Washington is seeking artists and artist groups working in two-dimensional or small three-dimensional media for eight-week exhibitions in its city-operated gallery spaces during 2027, including the Cheryl Sallee Gallery at the Auburn Senior Activity Center — fitted with an Arakawa hanging system and professional gallery lighting — and the Community & Event Center. Photography is explicitly among the media invited, alongside printmaking, painting, drawing, mixed media, textiles, mosaic, glass, collage, fibre art, ceramics and metal sculpture. Shows run roughly 5–12 works. There is no entry fee and no location restriction, but selected artists must deliver and collect work in person in Auburn.",
       "url": "https://www.auburnwa.gov/city_hall/parks_arts_recreation/arts_and_entertainment/calls_to_artists_and_opportunities",
+      "instagram": "@auburnparks_rec",
       "location": "Auburn, WA, USA",
       "prize": "Exhibition",
       "eligibility": [],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17527/CAFE",
       "requirements": "3–10 images",
+      "slug": "2027-galleries-in-city-of-auburn",
       "orgInTitle": true,
       "summary": "Free call for 8-week shows in Auburn's city galleries in 2027; photography explicitly invited. Work delivered in person.",
-      "slug": "2027-galleries-in-city-of-auburn",
       "dateAdded": "2026-07-20T06:22:05Z"
     },
     {
@@ -31480,19 +31481,20 @@
       "category": "exhibition",
       "description": "SlowArt Productions' long-running annual exhibition at Limner Gallery in Hudson, New York, devoted to every reading of the human head — traditional portraiture, abstraction, caricature, the conceptual and the surreal. Photography sits alongside painting, drawing, sculpture, graphics, digital work, video and installation, with wall pieces up to 72 by 120 inches. Four works are covered by the entry fee and further works cost $5 each. Accepted artists pay nothing further: the show runs October 8–31, 2026 in the gallery and online, with a 35% commission on sales at prices the artist sets.",
       "url": "https://www.slowart.com/prospectus/head.htm",
+      "instagram": "@thelimner",
       "location": "Hudson, NY, USA",
       "prize": "Exhibition",
       "eligibility": [
         "18-plus"
       ],
       "submitVia": "Email",
+      "submitUrl": "https://www.slowart.com/prospectus/hedeml.htm",
       "requirements": "Up to 4 images",
+      "resultsDate": "August 31, 2026",
+      "slug": "a-show-of-heads-2026-limner-gallery",
       "orgInTitle": false,
       "summary": "The human head in every reading — portraiture to the conceptual — at Limner Gallery, Hudson NY. No fees for accepted artists.",
-      "slug": "a-show-of-heads-2026-limner-gallery",
-      "dateAdded": "2026-07-20T10:06:02Z",
-      "resultsDate": "August 31, 2026",
-      "submitUrl": "https://www.slowart.com/prospectus/hedeml.htm"
+      "dateAdded": "2026-07-20T10:06:02Z"
     },
     {
       "title": "Guest Room: Whitney Hubbs & Jermaine Francis",
@@ -33656,6 +33658,7 @@
       "submitVia": "Google Form",
       "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfvKrHpx1aK6ZRZm-XLog2msclT3e1uqgtJkfP4chM0XMb29A/viewform",
       "requirements": "1 photobook",
+      "resultsDate": "November 2026",
       "slug": "photobook-open-call-zum-ims-2026",
       "orgInTitle": true,
       "summary": "Free photobook call from ZUM and Instituto Moreira Salles — R$2,000 each to three winners, shown at Festival ZUM in São Paulo.",
@@ -33665,7 +33668,7 @@
       "title": "Duets: A Collab Show",
       "org": "Avondale Arts Alliance",
       "deadline": "2026-08-21",
-      "fee": "$15 for 3 works",
+      "fee": "$15 for 3 works, $30 for 6",
       "category": "exhibition",
       "description": "Collaboration-only show at the Avondale Arts Center, the volunteer-run gallery of the Avondale Arts Alliance just east of Atlanta. Every work in the September–October exhibition must be made by exactly two artists together; entrants can submit up to six pieces and may pair with a different collaborator on each one. Work that does not meet the two-artist rule is disqualified. Only one of the two collaborators submits the entry. Entry is $15 for up to three pieces and $30 for up to six, paid by Square link; artists 18 and under enter free with a voucher code, and the alliance asks anyone facing financial hardship to get in touch. Open to Atlanta and surrounding artists, and work must be hand delivered on 5–6 September — no shipping. Status emails by 29 August; exhibition runs 12 September – 24 October 2026 with a closing reception. All work must be for sale and the alliance retains 30%.",
       "url": "https://www.avondaleartsalliance.com/art-calls",
