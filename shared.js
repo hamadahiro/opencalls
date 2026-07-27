@@ -125,6 +125,7 @@ const eligibilityLabel = {
   'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only',
   'wisconsin': 'Wisconsin only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only',
   'michigan': 'Michigan only', 'florida': 'Florida only', 'ark-la-tex': 'AR/LA/OK/TX only',
+  'south-central-us': 'AR/LA/NM/OK/TX only',
   'curators': 'Curators & academics', 'scientists': 'Scientists', 'military-community': 'Military community'
 };
 
