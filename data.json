@@ -2620,12 +2620,12 @@
       "orgInTitle": false,
       "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
       "dateAdded": "2026-06-19T01:49:26.373Z",
-      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead. 2026-07-27: 8th check — ajanakugallery.com HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404, no open call on the site. Call remains dead."
+      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead. 2026-07-27: 8th check — ajanakugallery.com HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404, no open call on the site. Call remains dead. 2026-07-27 (22:00): 9th check — ajanakugallery.com HTTP 200, homepage lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition \"Opening Spring 2027\" built around African/diaspora sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead despite the stored 2026-09-02 deadline."
     },
     {
       "title": "The City Series: London — Shutter Hub Editions Publication",
       "org": "Shutter Hub",
-      "deadline": "2026-11-12",
+      "deadline": "2026-09-24",
       "fee": "£15+",
       "category": "zine",
       "description": "Open call for The City Series: London, the next volume in Shutter Hub Editions’ ongoing series of photobooks exploring the people, places, and cultures that shape cities worldwide. Rather than documenting a location as a fixed subject, the series invites photographers to respond to a city as an idea — something experienced, observed, imagined, and interpreted through the photographic eye. Selected images are featured in a printed 100-image photobook, sold through shutterhub.org.uk and selected stockists, with a launch event in London on 20 November 2026. Pay-what-you-can entry with a £15 minimum; free submissions available on request for photographers with limited income. Open worldwide, up to 10 images per submission.",
@@ -2651,7 +2651,7 @@
         "Submission is through the Shutter Hub website. The deadline is 12 November 2026 at 5pm UK time; selections are communicated within 12 weeks of the deadline."
       ],
       "dateAdded": "2026-06-18T19:43:23.716Z",
-      "verifyNote": "2026-07-27: shutterhub.org.uk confirms \"12 November 2026 (5pm UK time)\", \"Pay what you can, minimum fee of L15\" with free places for photographers on limited income, \"10 images can be entered per photographer\", and outcome \"within 12 weeks of the deadline\". No eligibility restriction and no named selectors. AI stays Accepted with disclosure: entrants must \"explain in as much detail as possible how AI has been used\". Contact info@shutterhub.org.uk."
+      "verifyNote": "2026-07-27: shutterhub.org.uk confirms \"12 November 2026 (5pm UK time)\", \"Pay what you can, minimum fee of L15\" with free places for photographers on limited income, \"10 images can be entered per photographer\", and outcome \"within 12 weeks of the deadline\". No eligibility restriction and no named selectors. AI stays Accepted with disclosure: entrants must \"explain in as much detail as possible how AI has been used\". Contact info@shutterhub.org.uk. CONTRADICTION 2026-07-27: the page BODY (both the Info and Rules tabs) says \"Deadline: 12 November 2026 (5pm UK time)\", but Shutter Hub's own CMS \"Closes:\" field says 24/09/2026 5:00 pm — on the opportunity page header AND on the /opportunities/ listing. The Closes field is what gates the Apply form, so 2026-09-24 is stored (portal-enforced, safer error). Do NOT flip back to Nov 12 without checking whether the Apply form is still live after Sep 24."
     },
     {
       "title": "Festival di Fotografia a Capri 2026 — Viaggi e Miraggi",
@@ -9557,7 +9557,7 @@
       "title": "EMERGE 2026",
       "org": "Midwest Center for Photography",
       "deadline": "2026-08-01",
-      "fee": "$50/5 images",
+      "fee": "$50/5 images + $20 framing",
       "category": "exhibition",
       "description": "Annual fellowship for emerging photographers. Open to all emerging photographers worldwide working in any photographic medium. Twenty photographers selected for group exhibition at the Midwest Center for Photography in Wichita, Kansas (October 2–26, 2026). One photographer receives the $200 EMERGE Fellowship Award plus one year of online representation by MWCP.",
       "url": "https://www.mwcponline.com/call-for-entries.html",
@@ -9583,7 +9583,7 @@
         "Eligibility is open to emerging photographers worldwide working in any photographic medium — the program does not specify a fixed years-since-graduation cutoff but emphasizes early-career work.",
         "Submissions require 5 to 14 images plus a brief artist statement. Entry fee is $50 for up to 5 images. Submissions are made by email through the MWCP entry page. The 2026 deadline is August 1."
       ],
-      "verifyNote": "2026-07-27: prospectus confirms ENTRY DEADLINE AUGUST 1 (exhibition Oct 2-26 2026), fee ladder 5 images $50 rising $5/image to 14 images $95, \"Open to all emerging photographers worldwide\", 20 photographers exhibited and one $200 EMERGE Fellowship Award + one year of online representation. MWCP names no jurors, publishes no notification date and has no AI policy."
+      "verifyNote": "2026-07-27: prospectus confirms ENTRY DEADLINE AUGUST 1 (exhibition Oct 2-26 2026), fee ladder 5 images $50 rising $5/image to 14 images $95, \"Open to all emerging photographers worldwide\", 20 photographers exhibited and one $200 EMERGE Fellowship Award + one year of online representation. MWCP names no jurors, publishes no notification date and has no AI policy. NB the EMERGE frame rental is $20 per frame, NOT the $30 charged on Ten x Ten / White / Developed Work / the MWCP Juried Exhibition — confirmed on mwcponline.com/emerge-entry.html 2026-07-27 (\"standard size rental frames will be used for the exhibition charged to exhibiting artists at a $20 per frame fee\"). Do not normalise it to $30."
     },
     {
       "title": "Human Depiction",
@@ -29963,7 +29963,7 @@
     {
       "title": "CITIZENS — PHOTO IS:RAEL Open Call 2026",
       "org": "PHOTO IS:RAEL",
-      "deadline": "2026-07-28",
+      "deadline": "2026-08-06",
       "fee": "$22",
       "category": "exhibition",
       "description": "Open call for the 13th International Photography Festival in Tel Aviv (October 2026), themed around citizenship and photography as active civic practice — grassroots perspectives, democratic engagement, and belonging beyond legal status. Open to artists worldwide at all career stages, with existing or new projects. Photography, film, video, performance documentation, animation, and hybrid/digital forms are accepted; up to 12 images per submission. Selected artists are shown in the festival's Main Exhibition, included in the 2026 catalog, and featured on the festival website.",
@@ -29984,11 +29984,12 @@
       "submitVia": "Official website",
       "submitUrl": "https://opencall.photoisrael.org/login/?action=register",
       "requirements": "Up to 12 images",
+      "verifyNote": "2026-07-27: opencall.photoisrael.org now reads \"Submission deadline extended to August 6, 2026\" and its own timeline block gives 02.07.2026 registration, 06.08.2026 submission deadline, 25.08.2026 selected artists notified. Deadline moved Jul 28 -> Aug 6 and resultsDate Aug 18 -> Aug 25. Fee stays $22, up to 12 images. No AI policy and no eligibility restriction (\"We welcome submissions from artists worldwide, at all stages of their careers\").",
       "slug": "citizens-photo-is-rael-open-call-2026",
       "orgInTitle": true,
       "summary": "Open call for the 13th Tel Aviv photography festival on citizenship & civic engagement; selected work shown in the main show + catalog.",
       "dateAdded": "2026-07-03T19:12:11Z",
-      "resultsDate": "August 18, 2026"
+      "resultsDate": "August 25, 2026"
     },
     {
       "title": "European Month of Photography Berlin 2027",
@@ -31838,7 +31839,7 @@
       "fee": "$35 up to 2, $45 up to 4, $55 up to 6",
       "category": "exhibition",
       "description": "A regional juried show at Ashton Gallery inside San Diego's Art on 30th complex, on view August 22 – September 25, 2026, juried by Connect SD gallery owner Robert Plume. Sought: artwork that embraces unpredictability, accidents, transformation and unexpected outcomes. Photography is explicitly welcomed alongside 2D and pedestal-scale 3D work; no digital art, reproductions or AI-generated artwork (limited-edition photographic prints excepted). Enter digitally or drop off in person — jurors prefer in-person, and accepted online entries must be delivered to the gallery by Monday, August 17. All works must be for sale; the gallery takes 50% commission. Opening reception August 22.",
-      "url": "https://www.ashtonartgallery.com/",
+      "url": "https://arton30th.com/pages/call-for-artists",
       "instagram": "@ashtonartgallery",
       "location": "San Diego, CA, USA",
       "eligibility": [
@@ -31848,10 +31849,11 @@
         "Robert Plume"
       ],
       "submitVia": "Eventbrite",
-      "submitUrl": "https://arton30th.com/pages/call-for-artists",
+      "submitUrl": "https://www.eventbrite.com/e/call-for-art-the-unexpected-juried-gallery-show-for-san-diego-artists-registration-1994610709325",
       "requirements": "Up to 6 images",
       "ai": "Not accepted",
       "resultsDate": "August 15, 2026",
+      "verifyNote": "2026-07-27: url re-pointed from ashtonartgallery.com (the homepage never carried this call — it shows the current \"Block Party\" show) to arton30th.com/pages/call-for-artists, which is where Art on 30th publishes the prospectus; submitUrl now the embedded Eventbrite registration. Confirmed there: deadline Friday August 14 by 4pm, $35 up to 2 / $45 up to 4 / $55 up to 6 pieces, juror Robert Plume, acceptance notifications Saturday August 15. The page header's \"Exhibit Dates: August 14 - September 25\" is the org's own typo — its Important Dates block says August 22nd - September 25th.",
       "slug": "the-unexpected-ashton-gallery",
       "orgInTitle": false,
       "summary": "San Diego regional juried show at Ashton Gallery — art embracing the unplanned; photography welcome, juried by Robert Plume of Connect SD.",
@@ -32530,12 +32532,13 @@
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17897/CAFE",
       "requirements": "Up to 5 images",
+      "ai": "Not accepted",
       "slug": "she-speaks-tolleson-art-gallery",
       "orgInTitle": false,
       "summary": "Free juried show for Arizona women artists at a public-library gallery — $100 stipend to exhibit, $575 with a public program.",
       "dateAdded": "2026-07-25T18:23:31Z",
       "instagram": "@tollesonpubliclibrary",
-      "verifyNote": "CaFE 17897 enforces imagesMax=5 while the org prospectus says \"up to six (6) works\" — keep \"Up to 5 images\" (portal-enforced). Juror not named; no notification date published."
+      "verifyNote": "CaFE 17897 enforces imagesMax=5 while the org prospectus says \"up to six (6) works\" — keep \"Up to 5 images\" (portal-enforced). Juror not named; no notification date published. AI ban 2026-07-27: \"artwork generated primarily through artificial intelligence does not align with our exhibition criteria at this time\". It is NOT in the CaFE GraphQL description / eligibilityDescription / requirementDescription fields — only in the rendered opportunity page at opportunities.wearecreativewest.org/opportunity/17897/CAFE. CaFE also returns no juryResults date, so resultsDate stays null."
     },
     {
       "title": "Open Call: Main Gallery 2027/2028",
@@ -32580,6 +32583,9 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17734/CAFE",
       "requirements": "8-12 images",
       "ai": "Not accepted",
+      "jury": [
+        "monca Exhibition Committee"
+      ],
       "slug": "2027-call-for-exhibit-proposals-museum-of-northern-california-art",
       "orgInTitle": false,
       "summary": "Solo or small group show at a Chico museum's Phillips Gallery — four 2027 slots for Northern California artists.",
@@ -32623,8 +32629,9 @@
       "category": "exhibition",
       "description": "Second annual 35 Under 35 exhibition from the Blacksburg Regional Art Association, a 150-member group founded in 1950, in collaboration with community galleries and the Center for the Arts at Virginia Tech. The show exists to put emerging artists on the walls of established gallery and museum spaces and to help them find their way into the wider art community of curators, gallery owners and collectors. Thirty-five works are selected and shown November 2 to 20, 2026 at the Center for the Arts on the Virginia Tech campus, with an artist and awards reception on November 20. Juror Laura K. Higgins, Curator of the Permanent Collection and Special Projects Officer at the Taubman Museum of Art — previously at Tanya Bonakdar Gallery, Gladstone Gallery and Petzel in New York — presents Best in Show ($300), 2nd Place ($200), 3rd Place ($100) and honourable mentions at her discretion. Open to artists living in Virginia who have not turned 35 by November 2, 2026; any medium except AI-generated work. The $5 fee covers up to three works. Two-dimensional work must not exceed 40 inches in either direction.",
       "url": "https://opportunities.wearecreativewest.org/opportunity/17858/CAFE",
+      "instagram": "@blacksburgartassn",
       "location": "Blacksburg, VA, USA",
-      "prize": "$300 + Exhibition",
+      "prize": "$600 in awards + Exhibition",
       "eligibility": [
         "virginia",
         "under-35",
@@ -32642,7 +32649,7 @@
       "summary": "Virginia artists under 35 juried into the Center for the Arts at Virginia Tech by a Taubman Museum curator. $5 entry.",
       "dateAdded": "2026-07-25T18:23:31Z",
       "resultsDate": "September 30, 2026",
-      "verifyNote": "BRAA (blacksburgart.org) publishes no page for this call and CaFE’s providerWebsite (blacksburgart.com) does not resolve, so url = the CaFE listing by necessity. No verifiable Instagram handle."
+      "verifyNote": "2026-07-27: Instagram found at blacksburgart.ORG (the .org resolves, the .com in CaFE's providerWebsite does not) -> @blacksburgartassn. The .org site still publishes no page for this call, so url stays the CaFE listing. CaFE 17858 awards are Best in Show $300 / 2nd $200 / 3rd $100 = $600 total, plus honorable mentions at the juror's discretion — prize widened from \"$300\"."
     },
     {
       "title": "51st Juried Annual Exhibition",
@@ -33283,7 +33290,9 @@
       "eligibility": [
         "21-plus"
       ],
-      "jury": [],
+      "jury": [
+        "Three-member jury of photography professionals"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17724/CAFE",
       "requirements": "10–20 images",
