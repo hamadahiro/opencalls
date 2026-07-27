@@ -33434,6 +33434,50 @@
       "dateAdded": "2026-07-26T22:17:52Z",
       "resultsDate": "September 30, 2026",
       "verifyNote": "2026-07-27: Picter GraphQL resultsAnnouncementDate = 2026-09-30 (organiser-entered) - this IS a published date, not an inference from the Oct 26 Shenzhen exhibition, so resultsDate is now filled. The microsite has a Jury section header but names no jurors; \"Each submission should be between one and 10 photos\"; open worldwide; no AI policy. China Daily Asia publishes no Instagram handle - the null is correct."
+    },
+    {
+      "title": "The In Between",
+      "org": "Ninety-Seven Modern",
+      "deadline": "2026-08-15",
+      "fee": "$5",
+      "category": "exhibition",
+      "description": "Detroit-rooted online gallery Ninety-Seven Modern invites emerging artists to submit black-and-white work exploring the transient nature of the in between — the dual realities most of us live in at any given moment: recollection and the present, anger and love, stagnation and momentum. Black and white is framed as a reminder that both can exist together, with or without a fight for dominance. All mediums are welcome. Entry is a flat $5 for up to three works, submitted by email with a third-person bio; the gallery does not accept AI-generated imagery. Ninety-Seven Modern also lists selected artists' original works for sale through its shop.",
+      "url": "https://www.ninetysevenmodern.com/currentexhibition/upcoming",
+      "instagram": "@ninetysevenmodern",
+      "location": "Detroit, MI, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "emerging"
+      ],
+      "submitVia": "Email",
+      "requirements": "Up to 3 works",
+      "ai": "Not accepted",
+      "slug": "the-in-between-ninety-seven-modern",
+      "orgInTitle": false,
+      "summary": "Black-and-white work on dual realities and the space between them. $5 entry, up to 3 works, emerging artists, all mediums.",
+      "dateAdded": "2026-07-27T02:18:13Z"
+    },
+    {
+      "title": "The Quiet Image II",
+      "org": "The Ace Project",
+      "deadline": "2026-08-16",
+      "fee": "Free (contribution fee if selected)",
+      "category": "exhibition",
+      "description": "Second edition of The Quiet Image at The Ace Project, a contemporary photography space on Zaagmolendrift in Rotterdam. The call asks photographers based in the Netherlands and Belgium for work exploring the relationship between nature and the human body. Up to five works may be submitted by email for review; submission is free. Selected photographers are invited for a personal conversation at the gallery, and their work must be professionally printed and framed at their own cost — participation also carries a contribution fee towards exhibition costs, which the gallery does not publish in advance. The exhibition runs 25 September to 18 October 2026.",
+      "url": "https://www.instagram.com/theaceproject.world/p/DbGRV_Iozx7/",
+      "instagram": "@theaceproject.world",
+      "location": "Rotterdam, Netherlands",
+      "prize": "Exhibition",
+      "eligibility": [
+        "netherlands",
+        "belgium"
+      ],
+      "submitVia": "Email",
+      "requirements": "Up to 5 works",
+      "slug": "the-quiet-image-ii-the-ace-project",
+      "orgInTitle": false,
+      "summary": "Nature and the human body, for photographers in the Netherlands and Belgium. Free to submit; Rotterdam show 25 Sep–18 Oct.",
+      "dateAdded": "2026-07-27T02:18:13Z"
     }
   ]
 }
