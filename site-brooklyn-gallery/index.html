@@ -105,7 +105,6 @@
       <h2 class="subtitle">Open calls and submission opportunities from Site:Brooklyn Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/series-one-thing-after-another-site-brooklyn-gallery/">Series: One Thing After Another &middot; Site:Brooklyn Gallery</a></h3><p class="call-description">Site:Brooklyn online juried show on seriality and sequence, juried by Hyperallergic contributor Matt Stromberg. 3–12 images.</p></div>
 
     </section>
 
@@ -123,7 +122,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Site:Brooklyn Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Site:Brooklyn Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'));
     } catch (e) {}
