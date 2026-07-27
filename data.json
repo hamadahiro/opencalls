@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-27T06:14:44Z",
+  "lastUpdated": "2026-07-27T08:15:34Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -19124,7 +19124,7 @@
       "slug": "the-company-we-keep-creatures-beside-us-bushwick-gallery",
       "orgInTitle": false,
       "requirements": "1–10 images",
-      "resultsDate": "November 5, 2026",
+      "resultsDate": null,
       "submitUrl": "https://bushwickgallery.com/open-call-november-2026-the-company-we-keep-creatures-beside-us/",
       "summary": "Group show at Bushwick Gallery on animals as confidants, muses, and mirrors — through humor, tenderness, intimacy, and allegory.",
       "prose": [
@@ -29740,7 +29740,7 @@
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17767",
       "requirements": "5–15 images",
-      "ai": "Not accepted",
+      "ai": null,
       "slug": "12th-international-phone-ography-competition-fotofoto-gallery",
       "orgInTitle": false,
       "summary": "Phone-camera images only: ~30 works exhibited at this Long Island cooperative photo gallery, with $600 in cash awards.",
@@ -30246,7 +30246,7 @@
       "title": "Vincent van Gogh Photo Award 2027",
       "org": "Vincent van Gogh Photo Award",
       "deadline": "2027-03-30",
-      "fee": "€18–€42",
+      "fee": "€18–€42 (€10–€20 students)",
       "category": "photography",
       "description": "An international photography competition run by the Rotary Club Nuenen charity in the Dutch village where Vincent van Gogh lived and worked. The 2027 edition's theme is 'Spirit of Light' — inviting photographers to interpret light through van Gogh's eyes. Entrants may submit up to three images, with a separate Student Award running in parallel. Winners share cash prizes of €1,000, €500 and €250 (with a matching student tier) and are exhibited in Nuenen. The winner is announced on 3 September 2027.",
       "url": "https://vincentvangoghphotoaward.com/",
@@ -30599,7 +30599,8 @@
         "Charlotte Schepke, The Large Glass"
       ],
       "dateAdded": "2026-07-16T13:08:15Z",
-      "resultsDate": "October 4, 2026"
+      "resultsDate": "October 4, 2026",
+      "verifyNote": "Deadline stays 2026-09-14: deardavemagazine.com/fellowships states \"DUE DATE: September 14, 2026\". The Picter portal (contest c7f41f27…, submissionEndDate 2026-09-16T03:59Z = Sep 15 23:59 ET) stays open one extra day — we publish the organiser's stated date. Results Oct 4 2026 is organiser-entered in the Picter API, not inferred. Re-confirmed 2026-07-27."
     },
     {
       "title": "Quiet Hours: Nighttime and Grief",
@@ -32911,7 +32912,8 @@
       "orgInTitle": false,
       "summary": "Colorado juried show with its own photography category, at Aurora Central Library November 6 – December 4.",
       "dateAdded": "2026-07-26T06:19:02Z",
-      "resultsDate": "September 30, 2026"
+      "resultsDate": "September 30, 2026",
+      "ai": "Not accepted"
     },
     {
       "title": "Quinn Emanuel Silicon Valley Artist-in-Residence 2026",
@@ -33525,7 +33527,8 @@
       "slug": "confluence-of-art-annual-2026-pablo-center",
       "orgInTitle": false,
       "summary": "Free juried annual at Pablo Center's Hansen Gallery, Eau Claire WI. ~50 works in all media, cash prizes for four, show Sep 28–Nov 22.",
-      "dateAdded": "2026-07-27T06:14:44Z"
+      "dateAdded": "2026-07-27T06:14:44Z",
+      "instagram": "@pablocenter"
     },
     {
       "title": "14th Annual Eastern West Virginia Juried Exhibition",
