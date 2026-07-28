@@ -6096,7 +6096,7 @@
     {
       "title": "The Illume Awards 2026",
       "org": "The Illume",
-      "deadline": "2026-07-31",
+      "deadline": "2026-08-03",
       "fee": "Free",
       "category": "photography",
       "description": "Adventure and action sports photography awards, formerly Red Bull Illume, now operating as an independent contest with environmental NGO partners (Leave No Trace, World Bicycle Relief). Sixteen categories — eight sports (Adventure, Aerial, Bike, Climb, Skate, Snow, Surf, Trail) and eight themes (Close-Up, Emerging, Innovation, Lifestyle, Masterpiece, Playground, RAW, Spirit). Sixty international judges; 160 finalists are featured in the physical Illume Photobook and may be selected for the Illume Exhibit Tour. The overall winner is announced at a global awards ceremony in December 2026. Prizes from media partners include premium camera and storage gear (including Angelbird). Free to enter; open to all levels from amateur to professional. Since 2006 the contest has received nearly 250,000 submissions.",
@@ -6128,7 +6128,8 @@
         "160 finalists are featured in the physical Illume Photobook and may be selected for the Illume Exhibit Tour, which travels internationally. Prizes from media partners include premium camera and storage gear (including Angelbird). The overall winner is announced at a global awards ceremony in December 2026.",
         "Submission is via the contest's website and is free. The competition is open globally to all levels, from amateur to professional. Since the first edition in 2006, the contest has received nearly 250,000 submissions. The deadline is July 31, 2026; semifinals and finalists are announced in fall 2026."
       ],
-      "dateAdded": "2026-05-18T23:16:31.234Z"
+      "dateAdded": "2026-05-18T23:16:31.234Z",
+      "verifyNote": "Each sports category closes on its own date per the Rules page (Latest Update June 6 2026): Jul 31 Adventure & Aerial, Aug 1 Bike & Climb, Aug 2 Skate & Snow, Aug 3 Surf & Trail. Stored deadline is the FINAL close (Aug 3) per house convention — do not flip back to the Jul 31 first-category date. Free entry, 18+, worldwide; AI tools banned (rules: 'use of AI tools (e.g. Midjourney or ChatGPT) is not allowed'). No public email on the site — nav 'Mail' is a newsletter signup."
     },
     {
       "title": "Read Against the Machine — Arles 2026",
@@ -19982,7 +19983,8 @@
         "Cash prizes: 1st place €1,200, 2nd €500, 3rd €300. Country mentions go to the best photo from each represented nation, and all participants receive an ebook copy of the published volume regardless of selection. Selected work appears in the printed Atlas of Ruins — Vol.3 with critical texts from international scholars.",
         "Entry fees follow a tiered structure: early registration (until July 9, 2026) costs €13 for one photo or €25 for 2–10; regular registration (until October 1, 2026) costs €16 for one or €30 for 2–10. VAT is added separately. Submissions are JPEG, minimum 1200 pixels on the longest side, under 5MB, with no logos or watermarks. Higher-resolution files and location data are requested after selection."
       ],
-      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/"
+      "submitUrl": "https://www.reuseitaly.com/competitions/atlas-of-ruins-call-for-photos/",
+      "verifyNote": "Registration form is EMBEDDED on the call page (country dropdown + fee tiers in the same HTML), so submitUrl == url is correct here — there is no separate portal. Registration 'Until October 1st'; 1 photo €16 / 2-10 photos €30 (VAT excl.); prizes €1,200/€500/€300 + country mentions. No jury, no results date and no AI policy published anywhere on the page."
     },
     {
       "title": "SVĚTOVA 1 Artist Residency 2026",
@@ -30859,7 +30861,7 @@
       "url": "https://palmspringspreferredsmallhotels.com/news/pspsh-launches-artist-in-residence-program/",
       "instagram": "@palmspringsstay",
       "location": "Palm Springs, CA, USA",
-      "prize": "Residency + $250/week stipend + Exhibition",
+      "prize": "Residency + $250/week stipend + $500 award + Exhibition",
       "eligibility": [
         "southern-california",
         "18-plus"
@@ -30872,7 +30874,8 @@
       "orgInTitle": true,
       "summary": "Photography residency in Palm Springs boutique hotels — free lodging, $250/week stipend, mentorship, Cultural Center show. SoCal photographers.",
       "dateAdded": "2026-07-16T19:31:01Z",
-      "jury": []
+      "jury": [],
+      "verifyNote": "CaFE 17482 description: 'One photographer will receive a seasonal \"Best of Residency\" award and a $500 honorarium' — that $500 is a real cash award on top of the $250/week stipend, keep it in prize. Jury is unnamed (quoted officials are not jurors); no notification date published; ai=Accepted because 'Digital and AI-assisted visual practices' is listed under Who Should Apply."
     },
     {
       "title": "Photobook Dummy Exhibition — 16th Lisbon Photobook Fair",
@@ -32405,7 +32408,8 @@
       "slug": "eyes-and-hands-celebrating-fredericks-deaf-heart-artspiration-frederick",
       "orgInTitle": false,
       "summary": "Juried show for Deaf, Hard of Hearing and CODA artists at Frederick's community art centre, marking Deaf Awareness Month.",
-      "dateAdded": "2026-07-25T10:19:50Z"
+      "dateAdded": "2026-07-25T10:19:50Z",
+      "verifyNote": "CaFE 17710 contradicts itself on region: eligibilityDescription says 'Artists residing in the continental US', requirementDescription says 'residing in Mid Atlantic region'. Keeping the broader united-states tag deliberately — do not narrow to mid-atlantic-us without the org confirming. No juror named, no notification date, no AI policy."
     },
     {
       "title": "Americana",
