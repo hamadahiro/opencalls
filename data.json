@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-28T03:25:11Z",
+  "lastUpdated": "2026-07-28T07:13:05Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -34483,6 +34483,50 @@
       "orgInTitle": false,
       "summary": "Juried show for central Texas art educators showing the work they make outside the classroom. All media, up to three pieces.",
       "dateAdded": "2026-07-28T03:25:11Z"
+    },
+    {
+      "title": "Aurora 2026 Members Juried Exhibition",
+      "org": "Aurora PhotoCenter",
+      "deadline": "2026-08-31",
+      "fee": "Free for members",
+      "category": "exhibition",
+      "description": "Aurora PhotoCenter, the artist-run photography centre in Indianapolis, opens its main gallery to its own membership for a juried show that treats photography as broadly as possible — all work that incorporates photography, in any subject, style or working method, will be considered. Barbara Tannenbaum, Chair of Prints, Drawings and Photographs and Curator of Photography at the Cleveland Museum of Art, is the juror; she organised over 80 exhibitions across 26 years at the Akron Art Museum before joining Cleveland in 2011, where her shows include Ilse Bing: Queen of the Leica and DIY: Photographers & Books, the first museum exhibition of print-on-demand photobooks. Any member current as of 31 August may send up to five images, noting print size, framing, capture method (35mm, 120, 4x5, DSLR, phone or other) and date. Submitting costs nothing beyond membership, and artists living outside Indiana can join through Aurora's $35 Distance membership. Aurora makes all decisions about printing, matting, framing, layout and pricing, and prints and prepares accepted work for the wall from existing frame stock free of charge. Work is priced at no more than $300; artists keep 70% of any sale or can donate the proceeds to Aurora. The show runs 4 December 2026 to 15 January 2027 with an opening reception on 4 December.",
+      "url": "https://www.auroraphoto.org/aurora-2026-members-juried-exhibition",
+      "instagram": "@auroraphotocenter",
+      "location": "Indianapolis, IN, USA",
+      "prize": "Group exhibition",
+      "eligibility": [
+        "membership-required"
+      ],
+      "submitVia": "Email",
+      "requirements": "Up to 5 images",
+      "resultsDate": "September 2026",
+      "slug": "aurora-2026-members-juried-exhibition",
+      "orgInTitle": true,
+      "summary": "Aurora's members show in Indianapolis, juried by the Cleveland Museum of Art's Barbara Tannenbaum. Free to enter, Aurora prints and frames.",
+      "dateAdded": "2026-07-28T07:13:05Z",
+      "jury": [
+        "Barbara Tannenbaum"
+      ]
+    },
+    {
+      "title": "periscope:project:space Open Call 2027",
+      "org": "periscope:project:space",
+      "deadline": "2026-07-30",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "periscope is an artist-run project space in Salzburg that has been programming exhibitions, performances and site-specific work since 2014, and it is assembling its 2027 season through an open call to Austrian and international visual artists. Three lines of interest are named: solo presentations of an artist's own practice shown as premieres, projects that respond to the space or the site itself, and performance as part of an artistic practice. Depending on the project, periscope covers production costs, pays expenses for transport, travel and accommodation, and pays an exhibition fee — an unusually concrete offer for a small independent space. Submissions are digital only and consist of documentation of the work, a proposal or sketches of up to 400 words, and a CV. There is no entry fee and no theme beyond the three interest areas; past programmes have included lens-based and photographic projects alongside installation and sound work.",
+      "url": "https://www.periscope.at/ausschreibungen/",
+      "instagram": "@periscope_salzburg",
+      "location": "Salzburg, Austria",
+      "prize": "Solo exhibition + Artist fee",
+      "eligibility": [],
+      "submitVia": "Email",
+      "requirements": "Portfolio",
+      "slug": "periscope-project-space-open-call-2027",
+      "orgInTitle": true,
+      "summary": "Salzburg project space picks its 2027 season: solo shows and site-specific projects, with production costs, travel and artist fee covered.",
+      "dateAdded": "2026-07-28T07:13:05Z"
     }
   ]
 }
