@@ -2624,7 +2624,7 @@
       "orgInTitle": false,
       "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
       "dateAdded": "2026-06-19T01:49:26.373Z",
-      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead. 2026-07-27: 8th check — ajanakugallery.com HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404, no open call on the site. Call remains dead. 2026-07-27 (22:00): 9th check — ajanakugallery.com HTTP 200, homepage lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition \"Opening Spring 2027\" built around African/diaspora sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead despite the stored 2026-09-02 deadline."
+      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead. 2026-07-27: 8th check — ajanakugallery.com HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404, no open call on the site. Call remains dead. 2026-07-27 (22:00): 9th check — ajanakugallery.com HTTP 200, homepage lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition \"Opening Spring 2027\" built around African/diaspora sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead despite the stored 2026-09-02 deadline. 2026-07-28: 10th check - ajanakugallery.com still HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404. Call remains dead."
     },
     {
       "title": "The City Series: London — Shutter Hub Editions Publication",
@@ -2655,7 +2655,7 @@
         "Submission is through the Shutter Hub website. The deadline is 12 November 2026 at 5pm UK time; selections are communicated within 12 weeks of the deadline."
       ],
       "dateAdded": "2026-06-18T19:43:23.716Z",
-      "verifyNote": "2026-07-27: shutterhub.org.uk confirms \"12 November 2026 (5pm UK time)\", \"Pay what you can, minimum fee of L15\" with free places for photographers on limited income, \"10 images can be entered per photographer\", and outcome \"within 12 weeks of the deadline\". No eligibility restriction and no named selectors. AI stays Accepted with disclosure: entrants must \"explain in as much detail as possible how AI has been used\". Contact info@shutterhub.org.uk. CONTRADICTION 2026-07-27: the page BODY (both the Info and Rules tabs) says \"Deadline: 12 November 2026 (5pm UK time)\", but Shutter Hub's own CMS \"Closes:\" field says 24/09/2026 5:00 pm — on the opportunity page header AND on the /opportunities/ listing. The Closes field is what gates the Apply form, so 2026-09-24 is stored (portal-enforced, safer error). Do NOT flip back to Nov 12 without checking whether the Apply form is still live after Sep 24."
+      "verifyNote": "2026-07-27: shutterhub.org.uk confirms \"12 November 2026 (5pm UK time)\", \"Pay what you can, minimum fee of L15\" with free places for photographers on limited income, \"10 images can be entered per photographer\", and outcome \"within 12 weeks of the deadline\". No eligibility restriction and no named selectors. AI stays Accepted with disclosure: entrants must \"explain in as much detail as possible how AI has been used\". Contact info@shutterhub.org.uk. CONTRADICTION 2026-07-27: the page BODY (both the Info and Rules tabs) says \"Deadline: 12 November 2026 (5pm UK time)\", but Shutter Hub's own CMS \"Closes:\" field says 24/09/2026 5:00 pm — on the opportunity page header AND on the /opportunities/ listing. The Closes field is what gates the Apply form, so 2026-09-24 is stored (portal-enforced, safer error). Do NOT flip back to Nov 12 without checking whether the Apply form is still live after Sep 24. 2026-07-28: contradiction UNCHANGED - header \"Closes: 24/09/2026 5:00 pm\" vs body \"Deadline: 12 November 2026 (5pm UK time)\". Keeping the portal-enforced 24 Sep."
     },
     {
       "title": "Festival di Fotografia a Capri 2026 — Viaggi e Miraggi",
@@ -10242,7 +10242,7 @@
       "requirements": "Up to 10 images",
       "resultsDate": "Late September 2026",
       "slug": "square-photography-exhibit-decode-gallery",
-      "verifyNote": "SQUARE pages restored as of 2026-07-17 (were 404 on 07-16): /square-call-for-entry/ live, /square-submission/ HTTP 200. $40 = up to 10 photos confirmed on page. 2026-07-27: page confirms Sept 10 2026 deadline, $40 per entry of up to 10 photos, 12 images selected, juror Holly Hart, notified by email \"within two weeks after the submission deadline\", open to all photographers worldwide. No AI policy.",
+      "verifyNote": "SQUARE pages restored as of 2026-07-17 (were 404 on 07-16): /square-call-for-entry/ live, /square-submission/ HTTP 200. $40 = up to 10 photos confirmed on page. 2026-07-27: page confirms Sept 10 2026 deadline, $40 per entry of up to 10 photos, 12 images selected, juror Holly Hart, notified by email \"within two weeks after the submission deadline\", open to all photographers worldwide. No AI policy. 2026-07-28: re-confirmed verbatim - \"Submission Deadline: September 10th, 2026\", \"ENTRY FEE: $40 USD per entry (an entry includes up to 10 photos)\", \"12 images will be selected by the juror\". The page's \"Exhibition Dates: November 7th, 2026-January 30th, 2026\" is the gallery's own typo for January 30th 2027 - do not read it as a closed show.",
       "orgInTitle": false,
       "summary": "Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.",
       "dateAdded": "2026-03-28T12:13:36.505Z",
@@ -26844,7 +26844,7 @@
       "requirements": "Up to 5 work samples",
       "ai": null,
       "resultsDate": null,
-      "verifyNote": "2026-07-27: the Google Form is the only source for terms - \"There is a non-refundable $10 application fee\", \"The cost of the residency is $300 for one week\", \"You must be 18 years or older\", and \"up to five links to web pages where we can see... samples of your completed work\". 2026 sessions are May 4-9, Jul 5-10 and Oct 10-15, so only Fall remains. No jury names, no notification timeline, no AI policy. Contact craig.lukatch@lacawac.org."
+      "verifyNote": "2026-07-27: the Google Form is the only source for terms - \"There is a non-refundable $10 application fee\", \"The cost of the residency is $300 for one week\", \"You must be 18 years or older\", and \"up to five links to web pages where we can see... samples of your completed work\". 2026 sessions are May 4-9, Jul 5-10 and Oct 10-15, so only Fall remains. No jury names, no notification timeline, no AI policy. Contact craig.lukatch@lacawac.org. 2026-07-28: re-confirmed verbatim from the form ($300/week, $10 non-refundable application fee, 18+, up to five portfolio links, Fall session Oct 10-15 the only one left). Read it by curling the resolved docs.google.com/forms/d/e/<id>/viewform URL - the forms.gle short link answers 401 to curl."
     },
     {
       "title": "Budapest International Foto Awards 2026",
@@ -26980,7 +26980,7 @@
       "jury": [],
       "ai": null,
       "resultsDate": null,
-      "verifyNote": "2026-07-27 CONTRADICTION: artdoc.photo/submit still lists Living Space as the CURRENT open call with an August 3 2026 deadline, while the call page artdoc.photo/open-call/living-space simultaneously prints \"This Open Call is Now Closed\" twice above the same Aug 3 date. Kept open on the hub page's authority - recheck before Aug 3. Free for members; no jury, results date or AI policy published."
+      "verifyNote": "2026-07-27 CONTRADICTION: artdoc.photo/submit still lists Living Space as the CURRENT open call with an August 3 2026 deadline, while the call page artdoc.photo/open-call/living-space simultaneously prints \"This Open Call is Now Closed\" twice above the same Aug 3 date. Kept open on the hub page's authority - recheck before Aug 3. Free for members; no jury, results date or AI policy published. 2026-07-28: contradiction UNCHANGED - artdoc.photo/submit still lists Living Space as the current open call with the Aug 3 2026 deadline, while artdoc.photo/open-call/living-space prints \"This Open Call is Now Closed\" twice above that same date and still shows a \"Get started\" button. Held open on the hub page's authority; it closes Aug 3 anyway."
     },
     {
       "title": "46th Arts of the Terrace Juried Art Show",
@@ -29976,7 +29976,8 @@
       "summary": "60th edition of this national juried exhibition near Sacramento — $4,250+ in awards, $700 Best of Show; photography eligible.",
       "dateAdded": "2026-07-02T03:24:00Z",
       "resultsDate": "Week of October 4, 2026",
-      "instagram": "@placervilleartsassociation"
+      "instagram": "@placervilleartsassociation",
+      "verifyNote": "2026-07-28: CaFE 16897 confirms the 16 September 2026 deadline and the fee rows \"Entry fee for first piece of art $25\" + \"Pieces #2 - #10 are $15 each\", up to 10 works, US national entry. juryResults is null - Placerville publishes no structured notification date beyond \"week of October 4\" - and there is no AI policy."
     },
     {
       "title": "CITIZENS — PHOTO IS:RAEL Open Call 2026",
@@ -30034,7 +30035,8 @@
         "Maren Lübbke-Tidow, Artistic Director",
         "Anna Voswinckel, Curator, Krakow Photomonth 2026"
       ],
-      "requirements": "Exhibition proposal"
+      "requirements": "Exhibition proposal",
+      "verifyNote": "2026-07-28: emop-berlin.eu/en/open-call confirms the 16 August 2026 midnight deadline, \"In 2027, EMOP Berlin will not charge fees to its partners\", jury decisions in September 2026, the full artist list due 18 October 2026, and the five-name jury as stored. \"One precondition for participation is cooperation with an exhibition space in Berlin\" - a venue requirement, not an eligibility facet, so eligibility stays empty. There is deliberately NO prize or funding: \"EMOP Berlin is unable to contribute to the costs you will incur in realizing your exhibition project\" - the absent prize field is correct, do not invent one. No AI policy."
     },
     {
       "title": "UNPOSED Photography Exhibit",
@@ -30058,7 +30060,8 @@
       "slug": "unposed-photography-exhibit-decode-gallery",
       "orgInTitle": false,
       "summary": "Candid, unstaged photography exhibit in Tucson. 26 images juried by Holly Hart; pro printing and framing included.",
-      "dateAdded": "2026-07-04T03:08:07Z"
+      "dateAdded": "2026-07-04T03:08:07Z",
+      "verifyNote": "2026-07-28: decodegallery.com/unposed confirms \"August 21st, 2026\", \"$40 USD per entry (an entry includes up to 5 photos)\", \"26 images will be selected by the juror\", juror Holly Hart, exhibition 3-31 October 2026, \"open to all photographers world wide, both amateur and professional\" (eligibility correctly empty), and notification \"within two weeks of the submission deadline\". No AI policy. decodegallery.com answers PLAIN curl (no UA) but its call text is easiest to read via WebFetch; a UA-curl 403s."
     },
     {
       "title": "Three Artist Show",
@@ -30082,7 +30085,8 @@
       "slug": "three-artist-show-dusk-gallery",
       "orgInTitle": false,
       "summary": "Curated three-photographer series show at Dusk Gallery (Santa Fe). Pro printing and framing covered; exhibition Nov 2026.",
-      "dateAdded": "2026-07-04T03:08:07Z"
+      "dateAdded": "2026-07-04T03:08:07Z",
+      "verifyNote": "2026-07-28: duskphotogallery.com/three-artist-show confirms \"submission deadline: september 24th, 2026\", exhibition 6-27 November 2026, \"$40 USD for an entry of 5 images. $45 USD for an entry of up to 10 images\", juror Holly Hart, \"open to photographers worldwide, both amateur and professional\" (eligibility correctly empty), and \"Acceptance Notifications: Emailed within two weeks of the submission deadline\". Selected artists get 6, 8 or 12 images of wall space with printing, matting and framing covered. No AI policy. Contact hello@duskphotogallery.com (on /contact/). NB the page carries copy-paste leakage from sister gallery Decode - a \"26 images will be selected\" line and a \"Decode Gallery operates on a 50% commission\" line - ignore both, they are not this show's terms."
     },
     {
       "title": "Solo Exhibition in Barcelona — Autumn 2026",
@@ -30104,11 +30108,12 @@
       ],
       "submitVia": "Email",
       "requirements": "15–35 images",
-      "resultsDate": "September 2026",
+      "resultsDate": "Within 10–15 days of deadline",
       "slug": "solo-exhibition-in-barcelona-autumn-2026-ph21-gallery",
       "orgInTitle": false,
       "summary": "Solo show at PH21 Gallery Barcelona — printing/install covered, €4,500 package. Jurors Bátori & Jász. Portfolio of 15–35 images.",
-      "dateAdded": "2026-07-04T07:07:39Z"
+      "dateAdded": "2026-07-04T07:07:39Z",
+      "verifyNote": "2026-07-28: ph21gallery.com confirms early-bird 10 August / final 17 August 2026, fees EUR 40 regular / EUR 25 concession early and EUR 45 / EUR 30 after, a 15-35 image portfolio, \"All photographers 18 years or older worldwide\", curators Zsolt Batori and Borbala Jasz, and the EUR 4,500 package (solo show 17 Oct - 10 Nov 2026, printing and installation covered). resultsDate changed from \"September 2026\" because the page says \"All entrants will be notified 10-15 days after the deadline\" - that lands in late August. Up to 10 further entrants are invited into the Photographic Visions group show. No AI policy. Contact ph21.gallery@ph21gallery.com."
     },
     {
       "title": "2026 Travel Award",
@@ -30168,7 +30173,8 @@
         "Eighteen honorable mentions are also featured on the Innovate platform alongside the two main grantees — nine in art and nine in photo. Winners and honorable mentions receive feature profiles, interview pages, and promotion on the Innovate Instagram account.",
         "The application is deliberately minimal: name, email, grant category, 3 to 10 images of recent work, and the application fee. No artist statement, project proposal, or letters of recommendation are required.",
         "Eligibility is open globally to visual artists and photographers aged 18 or over; all media and genres are accepted. Fee is $35. The Summer 2026 deadline is September 17 at 11:59 PM PT."
-      ]
+      ],
+      "verifyNote": "2026-07-28: innovateartistgrants.org and /apply confirm the Summer 2026 cycle is open with \"1 x $1,800.00 Grant to Visual Artist, 1 x $1,800.00 Grant to Photographer, 18 x Honorable Mentions\" and eligibility \"18 years or older\", worldwide. Innovate publishes NO deadline date, NO fee amount and NO announcement date anywhere on the public site (both sit behind the JS application widget), and names no judges - the stored 2026-09-17 deadline and $35 fee could not be re-confirmed from the site today. No AI policy; no contact email published."
     },
     {
       "title": "Copenhagen Photo Festival — Call for Solo Artists 2027",
@@ -31034,7 +31040,7 @@
       "title": "Head On Photo Awards 2026",
       "org": "Head On Foundation",
       "deadline": "2026-08-16",
-      "fee": "AUD$35 per image; under-25s $17.50",
+      "fee": "AUD$30 per image; under-25s $15",
       "category": "photography",
       "description": "The flagship international awards of Sydney's Head On Photo Festival, judged completely anonymously — jurors see the photograph, never the photographer's name, CV or following. Three categories: Portrait, Landscape and Exposure (anything that is not portrait or landscape), sharing an AUD 80,000 prize pool that includes AUD 5,000 cash for each category winner plus OM System camera kits. Around 40 finalists per category (20–30 for Exposure) are exhibited in print and online during the festival, 6–29 November 2026. Open internationally to photographers at every level, from phone snapshots to studio and documentary work. Entries are AUD 30 per image, half price for under-25s; final deadline 16 August 2026, 11:59pm Sydney time.",
       "url": "https://headon.org.au/awards",
@@ -31066,7 +31072,8 @@
         "Danielle Smith, Photographic Editor, The Sydney Morning Herald",
         "Valery Poshtarov, Photographer & Founder, PhotoAnthology Foundation",
         "Lynsey Weatherspoon, Photojournalist & Portraitist"
-      ]
+      ],
+      "verifyNote": "2026-07-28: headon.org.au blocks curl/WebFetch and the Chrome extension was down, but the LIVE submission portal submit.headon.org.au/PhotoAwards-2026 (HTTP 200) states \"This year, we proudly offer an $80,000 prize pool\" and \"Full-price entry fees are AUD$30 per image. To support younger artists (under 25), we offer a 50% discount\" - so the fee is AUD$30 / AUD$15, NOT the $35 / $17.50 previously stored. The org page snapshot (web.archive.org 2026-06-07) independently lists three tiers: General AUD$30, Festival Friends AUD$25, Under-25 AUD$15 per photo. Entries are unlimited across Portrait / Landscape / Exposure; judging is blind; \"Finalists are notified about a month after entries close\" and winners are announced at the festival launch in early November. The 2026-08-16 deadline could NOT be re-confirmed today (org page unreachable, only one Wayback snapshot exists) - recheck when Chrome is back."
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
@@ -31612,7 +31619,8 @@
       "summary": "Year-round call for solo, group or curatorial photography shows at Vilnius's Prospekto and Vilnius Photography galleries. Free.",
       "slug": "open-call-for-exhibitions-prospekto-and-vilnius-photography-galleries",
       "dateAdded": "2026-07-20T18:09:10Z",
-      "resultsDate": "August 2026"
+      "resultsDate": "August 2026",
+      "verifyNote": "2026-07-28: photography.lt confirms \"Applications are accepted year-round with no fixed deadlines (selections take place once a year, in August)\" - the Continuous deadline and \"August 2026\" resultsDate are both correct. Free; submit a proposal up to 500 words, a 100-word bio and a portfolio, max 5 MB total, to info@photography.lt. Open to \"Artists and curators\" with no age or nationality limit, no named selection committee and no AI policy."
     },
     {
       "title": "Monochrome",
@@ -31633,7 +31641,8 @@
       "orgInTitle": false,
       "summary": "Black-and-white open call — light, shadow, shape and texture without colour. One-month online exhibition with catalogue.",
       "dateAdded": "2026-07-20T22:51:39Z",
-      "resultsDate": "Within 72 hours"
+      "resultsDate": "Within 72 hours",
+      "verifyNote": "2026-07-28: aureaphotogallery.com/open-calls/monochrome confirms \"Deadline: 12/08/2026\", exhibition 18 August - 14 September 2026, \"Free to Submit\" with \"A one-time EUR 30 curation and exhibition fee applies only if your work is selected\" (an EUR 25 early-bird applied only to selections confirmed before 26 July), \"Upload up to 3 images\", \"Receive our response within 72 hours\", and a global open call \"for photographers of all levels\" - eligibility correctly empty. CONTRADICTION: the same page carries a boilerplate line \"This exhibition is fully booked. New submissions will open soon.\" directly under the Apply button, but /free-submission/ is live and still headed \"Join our next Online Exhibition Monochrome\" - kept open on the live form's authority. Aurea publishes NO email anywhere (contact is a web form; the gallery is operated by Vervid Group, Sao Paulo), so the email gap is genuinely unfillable. No jury names and no AI policy."
     },
     {
       "title": "2027 Small Stones Festival of the Arts",
@@ -33858,7 +33867,8 @@
       "orgInTitle": false,
       "summary": "Figurative work — bodies, identity, technology — juried into LHUCA's Lubbock galleries. $300/$200/$100 prizes.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
-      "instagram": "@lhucalubbock"
+      "instagram": "@lhucalubbock",
+      "verifyNote": "2026-07-28: CaFE 17904 confirms the 6 September 2026 11:59pm CST deadline, $25 entry, 1-2 works, \"Artists must be at least 18 years of age and living in the United States\", notification 11 September 2026, exhibition 2 Oct - 28 Nov 2026, and prizes 1st $300 / 2nd $200 / 3rd $100 plus one $50 honourable mention. No juror is named and there is no AI policy. The call is NOT listed on lhuca.org/submissions (which carries only the 2027 proposals call) - CaFE is the source."
     },
     {
       "title": "Call for Proposals 2027",
@@ -33878,7 +33888,8 @@
       "summary": "Proposals for two-month solo or group shows across LHUCA's four Lubbock galleries. Free, with travel stipend.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@lhucalubbock",
-      "resultsDate": "Mid-October 2026"
+      "resultsDate": "Mid-October 2026",
+      "verifyNote": "2026-07-28: lhuca.org/submissions confirms the 13 September 2026 deadline, no entry fee, a \"Digital portfolio of 5-10 images with a corresponding image list\" plus a 500-word proposal submitted as a single PDF, and notification in mid-October 2026. The only eligibility rule is that artists who have exhibited at LHUCA can reapply only every five years - no age or residency limit, so eligibility stays empty. No jury is named and there is no AI policy. Contact exhibits@lhuca.org."
     },
     {
       "title": "Chaos: An Exploration of Disorder, Meaning, and Possibility",
@@ -33905,7 +33916,8 @@
       "orgInTitle": false,
       "summary": "Denver gallery show on chaos as system, state of mind or world. 2D wall work, photography welcome. Colorado only.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
-      "instagram": "@bitfactorygallery"
+      "instagram": "@bitfactorygallery",
+      "verifyNote": "2026-07-28: CaFE 17906 confirms deadline 9 August 2026, \"$25.00 Entry Fee\" + \"$5.00 Additional Media\", 3-10 images, juror W. Max Thomason (owner/curator, Bitfactory Gallery), artist notification 10 August 2026, drop-off 15 August, exhibition 21 Aug - 12 Sep 2026, and \"a local Call for Entry open to Colorado residents age 18 and older\". 2D wall work only; no giclee or open-edition prints. No AI policy anywhere in the CaFE text or on the rendered page."
     },
     {
       "title": "2026 Juried Exhibition",
@@ -33930,7 +33942,8 @@
       "summary": "All-media juried show at a Virginia museum founded in 1958. $1,000 in prizes; hand delivery only, no shipping.",
       "ai": "Not accepted",
       "dateAdded": "2026-07-27T15:35:30.428Z",
-      "instagram": "@rawls_arts"
+      "instagram": "@rawls_arts",
+      "verifyNote": "2026-07-28: CaFE 17719 confirms the call ran \"Monday, June 15th - Friday, July 31\" 2026, \"$35.00 nonrefundable flat fee for up to 3 works\", juror Allen TenBusschen (Assistant Professor of Art, University of Lynchburg) co-curating with RMA staff, exhibition 19 Sep - 23 Oct 2026, and the AI ban: \"Artificial Intelligence (AI) art or works derived in whole or part from AI technology are not eligible for entry\". No age or residency restriction is stated - hand delivery is a logistics rule, not an eligibility one - so eligibility correctly stays empty."
     },
     {
       "title": "Common Ground in the Heartland: Reflecting on America at 250",
@@ -33951,7 +33964,8 @@
       "orgInTitle": false,
       "summary": "Free juried show at Sioux Falls' Washington Pavilion on the Midwest at America's 250th. All media, up to 5 works.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
-      "instagram": "@washpav"
+      "instagram": "@washpav",
+      "verifyNote": "2026-07-28: CaFE 17820 confirms deadline 31 July 2026, \"No Entry Fee\", 1-5 works, artists notified 5 August 2026, exhibition 28 Aug 2026 - 21 Feb 2027, 70% to the artist on sales. Eligibility stays empty on purpose: the prospectus only says \"Artists from the Midwest or with a connection to the Midwest are encouraged to apply\" - encouraged, not required - and \"Artists of all career stages\". No juror is named and there is no AI policy. NB washingtonpavilion.org's Visual Arts Center page does not carry the call at all; CaFE is the only full prospectus."
     },
     {
       "title": "REBUILDING: Art as Renewal, Possibility, and Purpose",
@@ -33979,13 +33993,14 @@
       "orgInTitle": false,
       "summary": "Pawtucket juried show on repair and renewal, juried by Kerry Phillips and Meaghan Kent. $500 top award.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
-      "instagram": "@artleagueri"
+      "instagram": "@artleagueri",
+      "verifyNote": "2026-07-28: CaFE 17865 confirms the 11 October 2026 deadline, \"$35.00 Entry Fee\" + \"$10.00 Additional Media Fee\", 1-5 images, and the AI ban verbatim: \"Works conceived or created through generative artificial intelligence (AI) are not eligible for submission. Reprints are not permitted.\" Jurors Kerry Phillips and Meaghan Kent and the 4 November 2026 notification stand."
     },
     {
       "title": "Fresh Squeezed 2026 Annual Juried Show",
       "org": "Suffolk Art League",
       "deadline": "2026-09-16",
-      "fee": "$30 members, $55 non-members, +$5 each extra",
+      "fee": "$55 non-members ($30 members), +$5 each extra",
       "category": "exhibition",
       "description": "The Suffolk Art League's annual juried exhibition at the Suffolk Art Gallery in Suffolk, Virginia, marking the league's 50th anniversary and asking for artists' latest, never-before-seen work. Open to artists over 18 in all mediums: the gallery's own listing rules out only video and audio, though the CaFÉ entry also excludes digital, so anyone printing digitally is worth checking with first. Work must not have been previously exhibited at the gallery and must have been completed within the last two years. Members submit up to three works for $30; non-members pay $55 and full-time student non-members $50, both of which include an individual membership. First place is $500 plus the opportunity to present a one-person show at the Suffolk Art Gallery in 2027, with $300 second and $200 third. 2D work must be framed, wired or gallery-wrapped — no sawtooth hangers — and 3D work is displayed on pedestals provided by the gallery. Notifications by 25 September; exhibition runs 24 October – 4 December 2026. The league retains a 30% consignment on works sold.",
       "url": "https://www.suffolkartleague.com/open-calls.html",
@@ -34001,7 +34016,9 @@
       "slug": "fresh-squeezed-2026-annual-juried-show-suffolk-art-league",
       "orgInTitle": false,
       "summary": "Suffolk Art League's annual juried show. First place wins $500 and a 2027 one-person show at the gallery.",
-      "dateAdded": "2026-07-27T15:35:30.428Z"
+      "dateAdded": "2026-07-27T15:35:30.428Z",
+      "instagram": "@suffolkartleague",
+      "verifyNote": "2026-07-28: CaFE 17864 confirms the Sept 16 deadline, the fee rows (Member Entry Fee $30, Non-Member Entry Fee $55, Additional Media $5) and notification \"by Fri., Sept. 25\"; prizes are $500 first place plus a 2027 one-person show, $300 second, $200 third. Fee re-ordered to put the NON-member price first per house style. Instagram is @suffolkartleague (linked from suffolkartleague.com's footer; it is on no CaFE field). The org email suffolkartleague76@gmail.com is Cloudflare-obfuscated on /contact.html - decode data-cfemail, a plain grep for '@' finds nothing. No juror is named and there is no AI policy. NB CaFE's eligibility line reads \"all mediums except video, audio, or digital\" while the body text says \"no video or audio\" - photography is explicitly welcome either way."
     },
     {
       "title": "Summertime: Long Days, Lazy Days, Gentle Breezes",
