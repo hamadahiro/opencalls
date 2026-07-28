@@ -29237,7 +29237,10 @@
       "summary": "46th annual humanistic photography grant. $30,000 to the winner plus two $10,000 finalist grants. Up to 40 images; AI not accepted.",
       "dateAdded": "2026-06-29T23:15:05Z",
       "resultsDate": "December 15, 2026",
-      "submitUrl": "https://site.picter.com/w-eugene-smith-fund-grant-2026"
+      "submitUrl": "https://site.picter.com/w-eugene-smith-fund-grant-2026",
+      "jury": [
+        "Three-member international jury"
+      ]
     },
     {
       "title": "W. Eugene Smith Grant for Student Photographers 2026",
@@ -29262,7 +29265,10 @@
       "summary": "The Smith Fund's grant for student photographers — two $5,000 grants for humanistic, concerned projects. Up to 40 images; AI not accepted.",
       "dateAdded": "2026-07-11T03:13:33Z",
       "resultsDate": "December 15, 2026",
-      "submitUrl": "https://site.picter.com/w-eugene-smith-fund-student-grant-2026"
+      "submitUrl": "https://site.picter.com/w-eugene-smith-fund-student-grant-2026",
+      "jury": [
+        "Three-member international jury"
+      ]
     },
     {
       "title": "Through the Lens: Presence and Absence",
@@ -29747,7 +29753,7 @@
       "submitVia": "CaFE",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17767",
       "requirements": "5–15 images",
-      "ai": null,
+      "ai": "Not accepted",
       "slug": "12th-international-phone-ography-competition-fotofoto-gallery",
       "orgInTitle": false,
       "summary": "Phone-camera images only: ~30 works exhibited at this Long Island cooperative photo gallery, with $600 in cash awards.",
@@ -34243,7 +34249,8 @@
       "slug": "local-testimony-2026-edut-mekomit",
       "orgInTitle": false,
       "summary": "Israel's annual press and documentary photography exhibition at MUZA Tel Aviv. Free to enter, 30,000 NIS in grants across three top prizes.",
-      "dateAdded": "2026-07-28T03:25:11Z"
+      "dateAdded": "2026-07-28T03:25:11Z",
+      "resultsDate": "December 3, 2026"
     },
     {
       "title": "MonoVisions Black & White Photography Awards 2027",
@@ -34256,7 +34263,9 @@
       "instagram": "@monovisions",
       "location": "Online",
       "prize": "$5,000",
-      "eligibility": [],
+      "eligibility": [
+        "18-plus"
+      ],
       "jury": [
         "Cyrille Druart, Photographer",
         "Vera Saldivar de Lira, Photographer",
@@ -34394,7 +34403,10 @@
       "slug": "cca-call-for-exhibition-proposals-2026",
       "orgInTitle": true,
       "summary": "Rolling call for exhibition proposals at a 4,000 sq ft northern Arizona gallery. $10 to apply, interdisciplinary work encouraged.",
-      "dateAdded": "2026-07-28T03:25:11Z"
+      "dateAdded": "2026-07-28T03:25:11Z",
+      "jury": [
+        "CCA Exhibitions Selection Committee"
+      ]
     },
     {
       "title": "Rosewood Arts Center 2027 Exhibition Proposals",
@@ -34418,7 +34430,10 @@
       "slug": "rosewood-arts-center-2027-exhibition-proposals",
       "orgInTitle": true,
       "summary": "Six to eight solo shows a year at a city-run Ohio gallery, each with a $300 honorarium. Any media, ten images to propose.",
-      "dateAdded": "2026-07-28T03:25:11Z"
+      "dateAdded": "2026-07-28T03:25:11Z",
+      "jury": [
+        "Selection committee of three regional art professionals"
+      ]
     },
     {
       "title": "Showcase 2027",
