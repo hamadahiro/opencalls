@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Oregon</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Oregon. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Oregon. Browse and apply today. 15 calls, 4 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -116,6 +116,18 @@
       <div class="call-card"><h3 class="call-title"><a href="/black-and-white-2026-black-box-gallery/">Black and White: 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Juried black &amp; white photography show at Black Box Gallery, Portland. Juror Todd Johnson; free printing &amp; framing for selected works.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/queer-spirit-blackfish-gallery/">Queer Spirit &middot; Blackfish Gallery</a></h3><p class="call-description">Free group show at Portland's artist-run Blackfish Gallery celebrating queer identity, community and imagination. Jan 2027.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/the-book-project-landscape-2026-black-box-gallery/">The Book Project: Landscape 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Hardbound landscape photobook from Black Box Gallery. Ten photographers selected, five photographs each.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/lens-work-trees-and-water-black-box-gallery/">Lens Work: Trees and Water &middot; Black Box Gallery</a></h3><p class="call-description">Black Box Gallery juried exhibition exploring trees and water. Free printing/framing. Portland, OR. Juror: Todd Johnson.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/critical-mass-2026-photolucida/">Critical Mass 2026 &middot; Photolucida</a></h3><p class="call-description">Photolucida's annual review by 200 photography pros. Top 50 designation, book awards, exhibition opportunities. AI not accepted.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/pine-meadow-ranch-2027-artist-residency/">Pine Meadow Ranch 2027 Artist Residency</a></h3><p class="call-description">Funded 2–4 week multidisciplinary residency on a high-desert Oregon ranch. Photography eligible. $200/week stipend, no fee.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-analog-forever-exhibit-2026-lightbox-photographic-gallery/">The Analog Forever Exhibit 2026 &middot; LightBox Photographic Gallery</a></h3><p class="call-description">Analog-process show with Analog Forever Magazine at LightBox in Astoria, Oregon. Any style worldwide — one analog element required.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/playa-art-sci-awarded-residency-2027/">PLAYA Art/Sci Awarded Residency 2027</a></h3><p class="call-description">Jury-selected residency on high desert in Oregon. Free cabin housing, studio access, weekly group meal. Open globally.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photo-shoot-2026-black-box-gallery/">Photo Shoot 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Black Box Gallery Portland open theme show. 26 prints exhibited + 50 online + Blurb catalog. Free framing.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/put-a-pinhole-in-it-blue-moon-camera/">Put a Pin(hole) In It &middot; Blue Moon Camera &amp; Machine</a></h3><p class="call-description">Free pinhole photography group show at Blue Moon Camera &amp; Machine, Portland OR. Up to 5 images; opens August 1, 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-book-project-street-photography-black-box-gallery/">The Book Project - Street Photography &middot; Black Box Gallery</a></h3><p class="call-description">Hardbound books each featuring 10 photographers. Sixth call focusing on street photography. Portland, OR.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/camera-work-shadow-and-light-2026-black-box-gallery/">Camera Work: Shadow and Light 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Portland gallery juried photography show exploring shadow and light. Free printing, matting, and framing for the 26 accepted works.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/camera-work-shadow-and-light-black-box-gallery/">Camera Work: Shadow and Light &middot; Black Box Gallery</a></h3><p class="call-description">Juried group show exploring shadow and light. 26 prints exhibited in Portland, OR, 50 more online. Free framing.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/framed-black-and-white-black-box-gallery/">Framed: Black and White &middot; Black Box Gallery</a></h3><p class="call-description">Juried black and white group show. Classic, nostalgic, and dynamic monochrome with diverse contemporary voices. Portland, OR.</p></div>
 
     </section>
 
@@ -133,9 +145,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', OR,') || c.location.includes(', Oregon,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', OR,') || c.location.includes(', Oregon,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,22 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Glasgow Gallery of Photography</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Glasgow Gallery of Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 12 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/the-emergence-project-2026-glasgow-gallery-of-photography/">The Emergence Project 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Free graduate showcase for UK photography grads (2023–2026); GGoP covers printing, framing and a zine. Glasgow exhibition, late 2026.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/glasgow-photography-zine/">Glasgow Photography Zine &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Free open call for a Glasgow-celebrating photography zine; submit up to 5 images of the city. Worldwide submissions welcome.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/landscape-2026-glasgow-gallery-of-photography/">Landscape 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Photography exhibition on the theme of landscape. Glasgow gallery exhibition Nov 2026, plus online gallery and catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/stories-2026-glasgow-gallery-of-photography/">Stories 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Photography exhibition on the theme of stories — documentary, reportage and street narratives. Glasgow exhibition Nov 2026, plus catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/open-2026-glasgow-gallery-of-photography/">Open 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Open-themed photography exhibition — any genre. Glasgow gallery exhibition Oct 2026, plus online gallery and catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/time-2026-glasgow-gallery-of-photography/">Time 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Photography exhibition on the theme of time — the captured moment and the passage of time. Glasgow exhibition Oct 2026, plus catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/urban-2026-glasgow-gallery-of-photography/">Urban 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Urban-themed photography exhibition — street, cityscape, architecture. Glasgow gallery exhibition Sep 2026, online gallery, catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/pink-2026-glasgow-gallery-of-photography/">Pink 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Photography exhibition exploring the colour pink across any genre. Glasgow gallery exhibition Sep 2026, online gallery, catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/abstract-2026-glasgow-gallery-of-photography/">Abstract 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Abstract photography in any style. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/portrait-2026-glasgow-gallery-of-photography/">Portrait 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Portrait photography, open to all. Month-long Glasgow gallery exhibition plus online gallery. Fujifilm printing, copyright retained.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/nature-2026-glasgow-gallery-of-photography/">Nature 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Exploring how we interact with nature — beauty, power, cruelty, and influence on daily life. Glasgow gallery exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/future-days-2026-glasgow-gallery-of-photography/">Future Days 2026 &middot; Glasgow Gallery of Photography</a></h3><p class="call-description">Open theme asking photographers to represent their vision of the future, hopeful or fearful. Glasgow gallery exhibition.</p></div>
 
     </section>
 
@@ -123,9 +135,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Glasgow Gallery of Photography' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Glasgow Gallery of Photography').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

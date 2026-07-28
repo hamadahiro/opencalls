@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Singapore International Photography Festival</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Singapore International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Singapore International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/10th-sipf-photo-market-2026-call-for-exhibitors/">10th SIPF Photo Market 2026 — Call for Exhibitors</a></h3><p class="call-description">Sell photobooks, zines and prints at the 10th SIPF's photo market in Singapore — reduced booth rate for young creatives.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/10th-singapore-international-photography-festival-2026-open-call/">10th Singapore International Photography Festival 2026 Open Call</a></h3><p class="call-description">10th biennial SIPF Open Call. Portfolio + photobook categories. 3× SGD $2,000 prizes. Showcase in Singapore Oct–Nov 2026.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Singapore International Photography Festival' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Singapore International Photography Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

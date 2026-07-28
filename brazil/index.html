@@ -102,12 +102,17 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Open Calls for Artists in Brazil</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Brazil. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Brazil. Browse and apply today. 6 calls, 2 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/photobook-open-call-zum-ims-2026/">Photobook Open Call ZUM/IMS 2026</a></h3><p class="call-description">Free photobook call from ZUM and Instituto Moreira Salles — R$2,000 each to three winners, shown at Festival ZUM in São Paulo.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/photo-trouvee-magazine-issue-21-garden-of-nostalgia/">Photo Trouvée Magazine Issue 21 — Garden of Nostalgia</a></h3><p class="call-description">Print Issue 21 'Garden of Nostalgia' — found/family photographs meet florals, nature and roots. Any media. Free to submit.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/fotodoc-photo-contest-2026/">FotoDoc Photo Contest 2026</a></h3><p class="call-description">International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photo-trouvee-magazine-issue-20-print-call/">Photo Trouvée Magazine Issue 20 — Print Call</a></h3><p class="call-description">Print Issue 20 for artists working with vintage found or family photographs. Any media. Free submission.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/e-co-26-about-time-vist-foundation/">E·CO/26 — About Time &middot; VIST Foundation</a></h3><p class="call-description">€5,000 production grant for 12 collectives from Latin America and Africa. Theme: time, memory, ancestral knowledge. Free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ffsp-2026-italian-photographers-open-call/">FFSP 2026 — Italian Photographers Open Call &middot; Italian Cultural Institute of São Paulo</a></h3><p class="call-description">Free exhibition in São Paulo for Italian photographers in Brazil/Italy. Winner receives round-trip airfare.</p></div>
 
     </section>
 
@@ -125,11 +130,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Brazil' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Brazil').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

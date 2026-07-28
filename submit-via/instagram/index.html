@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit via Instagram</h1>
-      <h2 class="subtitle">Open calls you enter through Instagram — by tagging, posting, or direct message.</h2>
+      <h2 class="subtitle">Open calls you enter through Instagram — by tagging, posting, or direct message. 1 call, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -124,9 +124,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === "Instagram" && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === "Instagram").map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

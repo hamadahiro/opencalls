@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Skyway Tampa Bay</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Skyway Tampa Bay. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Skyway Tampa Bay. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/skyway-2027-a-contemporary-collaboration/">Skyway 2027: A Contemporary Collaboration</a></h3><p class="call-description">Five Tampa Bay museums co-curate the Skyway 2027 triennial. Free entry for artists of the five-county region; catalog published.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Skyway Tampa Bay').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

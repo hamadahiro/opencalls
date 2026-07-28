@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>F-Stop Magazine</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from F-Stop Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from F-Stop Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/f-stop-magazine-issue-139-food/">F-Stop Magazine Issue #139 — Food 2026</a></h3><p class="call-description">Food-themed issue of the long-running online photo magazine. Free, up to 12 images; publishes October 1, 2026.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/f-stop-magazine-issue-138-documentary/">F-Stop Magazine Issue #138 — Documentary 2026</a></h3><p class="call-description">Documentary photography issue. Longer-term focus than photojournalism. Up to 12 images with project statement.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/f-stop-magazine-issue-137-open-theme/">F-Stop Magazine Issue #137 — Open Theme</a></h3><p class="call-description">No theme — all fine art and documentary photography welcome. Published since 2004.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'F-Stop Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'F-Stop Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

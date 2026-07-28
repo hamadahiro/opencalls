@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Jentel Artist Residency</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Jentel Artist Residency. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Jentel Artist Residency. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/jentel-artist-residency-winter-spring-2027/">Jentel Artist Residency — Winter/Spring 2027</a></h3><p class="call-description">Wyoming ranch residency for visual artists, writers and composers, Jan–May 2027 session. Private studio, $300 stipend; US-based, 25+.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Jentel Artist Residency' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Jentel Artist Residency').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

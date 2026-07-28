@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Washington-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Washington State.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Washington State. 2 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/betty-bowen-award-2026-seattle-art-museum/">Betty Bowen Award 2026 &middot; Seattle Art Museum</a></h3><p class="call-description">Seattle Art Museum's annual award for WA/OR/ID artists: $20,000 plus a solo show at SAM, with five further cash awards. $10 entry.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/kenmore-art-show-2026-togetherness/">Kenmore Art Show 2026: Togetherness</a></h3><p class="call-description">Community juried show near Seattle with a dedicated photography category, $300 Best in Show and per-category cash awards.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('washington') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('washington')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

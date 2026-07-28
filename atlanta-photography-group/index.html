@@ -102,9 +102,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Atlanta Photography Group</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Atlanta Photography Group. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Atlanta Photography Group. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 5 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/rebecca-morse-selects-2026-atlanta-photography-group/">Rebecca Morse Selects 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">APG members' juried show selected by LACMA curator Rebecca Morse. $3,000 MFA Houston Purchase Award; Atlanta exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/focus-2026-atlanta-photography-group/">Focus 2026 — Atlanta Photography Group</a></h3><p class="call-description">APG's open-themed juried show. $1,000 MOCA GA purchase award + permanent collection. Members-only, Georgia artists.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/joy-and-the-everyday-2026-atlanta-photography-group/">Joy and the Everyday 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">Themed exhibition on everyday joy. 24 prints selected for APG Maloof Gallery, Atlanta. Juried by CCP curator.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/filmisnotdead-2026-atlanta-photography-group/">#filmisnotdead 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">Analog photography exhibition, open subject. 30 prints selected for APG Main Gallery, Atlanta. Juried by Analog Forever Magazine.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/portfolio-2026-atlanta-photography-group/">Portfolio 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">Juried exhibition for cohesive bodies of work. Juror: Natasha Egan (MoCP). Winner eligible for $4,000 purchase award.</p></div>
 
     </section>
 
@@ -124,7 +131,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Atlanta Photography Group').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Caribbean Focus</h1>
-      <h2 class="subtitle">Open calls for Caribbean artists or projects connected to the Caribbean. Exhibitions, grants, and awards for Caribbean photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls for Caribbean artists or projects connected to the Caribbean. Exhibitions, grants, and awards for Caribbean photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/cci-fellowships-2026-perez-art-museum-miami/">CCI Fellowships 2026 &middot; Pérez Art Museum Miami</a></h3><p class="call-description">Three CCI fellowships at Pérez Art Museum Miami. WOPHA photography track for women &amp; nonbinary Caribbean photographers.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/cci-wopha-fellowship-2026-perez-art-museum-miami/">CCI + WOPHA Fellowship 2026 &middot; Pérez Art Museum Miami</a></h3><p class="call-description">Fellowship for women &amp; non-binary photographers from Caribbean and diaspora. Miami residency at El Espacio 23 + production funds.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/delfina-foundation-latin-america-caribbean-residency-2026/">Delfina Foundation — Latin America &amp; Caribbean Residency 2026</a></h3><p class="call-description">Fully funded 12-week residency in London for Latin American/Caribbean artists. Excludes Chile, Peru, Ecuador, Brazil, Argentina.</p></div>
 
     </section>
 
@@ -125,7 +130,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('caribbean')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

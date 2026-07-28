@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Massachusetts &amp; Rhode Island Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Massachusetts or Rhode Island.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Massachusetts or Rhode Island. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/agricultural-biennial-exhibition-new-bedford-art-museum/">agriCultural: A Biennial Exhibition &middot; New Bedford Art Museum</a></h3><p class="call-description">Juried biennial on agriculture and the land at New Bedford Art Museum, Sep–Nov 2026. MA/RI artists, $25 for up to 3 works.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('massachusetts-rhode-island')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

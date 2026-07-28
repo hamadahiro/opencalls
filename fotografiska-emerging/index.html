@@ -102,13 +102,17 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Fotografiska Emerging</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Fotografiska Emerging. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Fotografiska Emerging. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 7 calls, 4 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/one-in-eight-fotografiska-emerging/">One in Eight &middot; Fotografiska Emerging</a></h3><p class="call-description">Fotografiska Emerging × Estée Lauder call: emerging image-makers on the breast-cancer experience. €1,500 + exhibition in Berlin &amp; Stockholm.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/are-men-ok-fotografiska-emerging/">Are Men OK? &middot; Fotografiska Emerging</a></h3><p class="call-description">Free Fotografiska Stockholm × MÄN call on masculinity in Sweden today; selected emerging work shown in a group exhibition.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/emerging-berlin-fotografiska-emerging/">Emerging Berlin &middot; Fotografiska Emerging</a></h3><p class="call-description">Rolling Fotografiska open call for image-makers whose practice shapes a part of Berlin. Free, leads to museum exhibitions.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/emerging-stockholm-fotografiska-emerging/">Emerging Stockholm &middot; Fotografiska Emerging</a></h3><p class="call-description">Rolling Fotografiska open call for emerging image-makers based in Sweden. Free, leads to Fotografiska Stockholm exhibitions.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/art-shapes-the-future-fotografiska-emerging/">Art Shapes the Future &middot; Fotografiska Emerging</a></h3><p class="call-description">Fotografiska Emerging × IFA Berlin × Volkswagen R call on the future. €1,500 each to 3 artists + IFA Berlin show. Free; video/AI eligible.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/artist-in-focus-fotografiska-emerging/">Artist in Focus &middot; Fotografiska Emerging</a></h3><p class="call-description">Corbijn-inspired call for a single cover-worthy portrait of a creative voice. Free; three winners get books, headphones, features.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fotografiska-emerging-portfolio-review-2026/">Fotografiska Emerging Portfolio Review 2026</a></h3><p class="call-description">Free one-on-one online portfolio review with two senior Fotografiska curators. Apply by June 15; review day July 3, 2026.</p></div>
 
     </section>
 
@@ -126,9 +130,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Fotografiska Emerging' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Fotografiska Emerging').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

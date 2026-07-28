@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Lucie Foundation</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Lucie Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Lucie Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/lucie-foundation-photo-book-prize-2026/">Lucie Foundation Photo Book Prize 2026</a></h3><p class="call-description">Celebrating innovative photographic books. Three categories. $3,000 Book of the Year. Open worldwide.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/lucie-foundation-scholarship-program-2026/">Lucie Foundation Scholarship Program 2026</a></h3><p class="call-description">Four cash grants for Fine Art and Documentary photographers (pro and emerging). Winners tour House of Lucie galleries worldwide.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/on-the-block-street-urban-photography-lucie-foundation/">On the Block - Street &amp; Urban Photography &middot; Lucie Foundation</a></h3><p class="call-description">Celebrating unposed, unfiltered street moments revealing quiet truths and vivid stories of urban life.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Lucie Foundation' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Lucie Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

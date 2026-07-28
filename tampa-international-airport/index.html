@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Tampa International Airport</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Tampa International Airport. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Tampa International Airport. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/call-for-artists-2026-tampa-international-airport/">Call for Artists 2026 &middot; Tampa International Airport</a></h3><p class="call-description">Building internationally acclaimed collection at Tampa International Airport. Eight new locations available.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Tampa International Airport').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

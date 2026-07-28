@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Castelfiorentino Prize for the Arts</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Castelfiorentino Prize for the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Castelfiorentino Prize for the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/raccontarti-contemporary-photography-award-2026-castelfiorentino-prize-for-the-arts/">Raccont'Arti: Contemporary Photography Award 2026 &middot; Castelfiorentino Prize for the Arts</a></h3><p class="call-description">Free call on 'the image of absence' — €3,000 Open and €500 Student awards plus a fully produced group exhibition in Tuscany.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Castelfiorentino Prize for the Arts' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Castelfiorentino Prize for the Arts').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

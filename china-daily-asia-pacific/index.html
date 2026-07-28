@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>China Daily Asia Pacific</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from China Daily Asia Pacific. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from China Daily Asia Pacific. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/changing-asia-2026-china-daily/">Changing Asia 2026 &middot; China Daily Asia Pacific</a></h3><p class="call-description">Free worldwide call from China Daily and the Asia News Network on connection across the Asia-Pacific. Exhibition plus a photo book.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'China Daily Asia Pacific' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'China Daily Asia Pacific').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

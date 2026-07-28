@@ -102,10 +102,20 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Praxis Photo Arts Center</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Praxis Photo Arts Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Praxis Photo Arts Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 10 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/frames-within-frames-praxis-photo-arts-center/">Frames Within Frames &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) seeks frames within the frame — windows, mirrors, doorways. Physical show Sep–Oct 2026; printed catalog.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/motion-blur-praxis-photo-arts-center/">Motion &gt; Blur &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) on motion and blur in still photography. Physical show Aug–Sep 2026; printed catalog.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-shadow-aspect-praxis-photo-arts-center/">The Shadow Aspect &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) explores shadow as form, symbol, and psyche. Juried by Ann Jastrab; exhibition Aug–Sep 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/water-sky-praxis-photo-arts-center/">Water ~ Sky &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) landscape photo exhibition on water and sky. Up to 74 images selected, July–August 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/making-strange-praxis-photo-arts-center/">Making Strange &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) juried photography exhibition on the everyday made strange. Up to 38 images selected, July–August 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-life-of-color-praxis-photo-arts-center/">The Life of Color &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Color as signal — amplifying, unifying, destabilizing. Up to 38 works selected. Praxis Gallery Minneapolis.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/black-and-white-praxis-photo-arts-center/">BLACK &amp; WHITE &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Monochrome juried exhibition at Praxis Gallery Minneapolis. Up to 74 works selected. Open internationally.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/animal-life-praxis-photo-arts-center/">ANIMAL LIFE &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Exploring animal subjects with curiosity, empathy, and imagination. All lens-based work welcome. Minneapolis.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-portrait-praxis-photo-arts-center/">THE PORTRAIT &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Exploring depth and complexity of the human subject. All lens-based practices welcome. Minneapolis, MN.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/multi-exposed-praxis-photo-arts-center/">Multi-Exposed &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Exploring time overlaps and memory through photography. Exhibition in Minneapolis, MN.</p></div>
 
     </section>
 
@@ -123,9 +133,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Praxis Photo Arts Center' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Praxis Photo Arts Center').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

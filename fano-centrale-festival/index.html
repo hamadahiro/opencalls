@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Fano Centrale Festival</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Fano Centrale Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Fano Centrale Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/centrale-festival-open-call-2026/">Centrale Festival Open Call 2026</a></h3><p class="call-description">Seeking 16 artists under 30 in photography and video art. Exhibition in Fano, Italy, June 2026.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Fano Centrale Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

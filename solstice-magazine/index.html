@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Solstice Magazine</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Solstice Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Solstice Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/solstice-magazine-issue-73-editorial-submissions/">Solstice Magazine Issue 73 — Editorial Submissions</a></h3><p class="call-description">Fashion and editorial photography for Issue 73 of this London fashion magazine. First round closes July 31; second round Aug 18 if space.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/solstice-magazine-issue-72-editorial-submissions/">Solstice Magazine Issue 72 — Editorial Submissions</a></h3><p class="call-description">Fashion and editorial photography for Issue 72 of this London fashion magazine. Issue releases June 21, 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/solstice-magazine-issue-71-editorial-submissions/">Solstice Magazine Issue 71 — Editorial Submissions</a></h3><p class="call-description">Fashion and editorial photography for publication in Issue 71 of this London-based fashion magazine.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Solstice Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Solstice Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

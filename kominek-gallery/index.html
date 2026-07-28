@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Kominek Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Kominek Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Kominek Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/kominek-editions-i-golden-hour-blue-hour/">Kominek Editions I — Golden Hour / Blue Hour</a></h3><p class="call-description">Berlin's Kominek Gallery picks 100 photographers for its Golden Hour / Blue Hour group show opening September 10. Free entry.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Kominek Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Kominek Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

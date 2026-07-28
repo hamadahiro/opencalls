@@ -108,11 +108,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Kentucky</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Kentucky. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Kentucky. Browse and apply today. 2 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/group-show-ii-hypam-editions/">Group Show II — Guest Curator Jesse Lenz &middot; Hypam Editions</a></h3><p class="call-description">Open-theme group show in Louisville curated by Jesse Lenz (Charcoal Press). Up to 10 images; opens October 17.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/art-through-the-lens-2026-yeiser-art-center/">Art Through The Lens 2026 &middot; Yeiser Art Center</a></h3><p class="call-description">Yeiser Art Center's annual international juried photography show in Paducah, KY. $1,000 in cash awards; juror Ginny Harris.</p></div>
 
     </section>
 
@@ -130,9 +132,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', KY,') || c.location.includes(', Kentucky,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', KY,') || c.location.includes(', Kentucky,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

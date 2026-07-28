@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Spokane Falls Community College</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Spokane Falls Community College. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Spokane Falls Community College. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/spokane-falls-artist-in-residence-round-3/">sƛ̓x̣etkʷ Artist-in-Residence Program — Round 3 &middot; Spokane Falls Community College</a></h3><p class="call-description">Funded 3-month residency at Spokane Falls CC for emerging Native American artists: $9,000 stipend, housing, studios.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Spokane Falls Community College' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Spokane Falls Community College').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

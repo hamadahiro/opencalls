@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>L.A. Photo Curator</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from L.A. Photo Curator. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from L.A. Photo Curator. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/the-shape-of-a-father-l-a-photo-curator/">The Shape of a Father &middot; L.A. Photo Curator</a></h3><p class="call-description">Juried by Laurie Freitag. Submit 3 or 6 images on fatherhood. Solo online exhibition for the winner, group show for all selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/from-your-archive-l-a-photo-curator/">From Your Archive &middot; L.A. Photo Curator</a></h3><p class="call-description">Juried by Laurie Freitag. Submit 3 or 6 images from your archive. Solo online exhibition for winner, group show for all selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/contemporary-trends-in-beauty-alternative-processes-l-a-photo-curator/">Contemporary Trends in Beauty &middot; L.A. Photo Curator</a></h3><p class="call-description">Handcrafted prints using alternative photographic processes. Final print must be handmade. No AI-generated images.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'L.A. Photo Curator').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>La Chambre</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from La Chambre. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from La Chambre. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/archifoto-2026-architecture-landscape/">Archifoto 2026 — Architecture &amp; Landscape &middot; La Chambre</a></h3><p class="call-description">European architectural photography award, 8th edition. Theme: Architecture &amp; Landscape. €500 per nominee + exhibition in Strasbourg.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'La Chambre').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Penumbra Foundation</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Penumbra Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Penumbra Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/susan-mclaughlin-risograph-photobook-award-2026/">Susan McLaughlin Risograph Photobook Award 2026 &middot; Penumbra Foundation</a></h3><p class="call-description">Penumbra Foundation's $5,000 award for risograph photobooks made worldwide in 2024–2026. Free to enter; mail one physical copy.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/penumbra-foundation-workspace-residency-2026/">Penumbra Foundation Workspace Residency 2026</a></h3><p class="call-description">6–8 week NYC residency with $7,000 honorarium. Darkrooms, digital labs, and studio space at Penumbra Foundation.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/penumbra-foundation-risograph-publication-residency/">Penumbra Foundation Risograph Publication Residency</a></h3><p class="call-description">Residency to produce a small edition risograph photobook at Penumbra's NYC facilities. No prior experience required.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Penumbra Foundation' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Penumbra Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

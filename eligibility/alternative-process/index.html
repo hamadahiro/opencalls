@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Alternative Process Open Calls</h1>
-      <h2 class="subtitle">Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more.</h2>
+      <h2 class="subtitle">Open calls for alternative and historic photographic processes — cyanotype, anthotype, wet plate, and more. 11 calls, 5 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -111,6 +111,13 @@
       <div class="call-card"><h3 class="call-title"><a href="/backwards-forwards-light-art-space/">Backwards/Forwards &middot; Light Art Space</a></h3><p class="call-description">Handmade prints as a record of time — cyanotype to letterpress — juried by Terran J. Last Gun at New Mexico’s alt-process gallery.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/world-cyanotype-day-alternativephotography-com/">World Cyanotype Day &middot; AlternativePhotography.com</a></h3><p class="call-description">Annual international celebration of the cyanotype process. 2026 theme: Global Blueprint — People, Place, and Environment.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/world-anthotype-day-alternativephotography-com/">World Anthotype Day &middot; AlternativePhotography.com</a></h3><p class="call-description">Annual celebration of plant-based photographic printing processes. Entries open August through October.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/cyanotype-celebration-of-process-and-possibility-photoplace-gallery/">Cyanotype: A Celebration of Process and Possibility &middot; PhotoPlace Gallery</a></h3><p class="call-description">Cyanotype in all its forms — contact prints, photograms, toned and experimental — juried by Sam Wang for a Vermont gallery show.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/denis-roussel-award-2026-rfotofolio/">Denis Roussel Award 2026 &middot; Rfotofolio</a></h3><p class="call-description">For historical and alternative photographic processes including silver gelatin. $2,000 main award.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/lt5-alternative-photography-show-kaleid-gallery/">LT5 Alternative Photography Show &middot; KALEID Gallery</a></h3><p class="call-description">Toy cameras, Polaroid, pinhole, photograms, and alternative processes. Exhibition at KALEID Gallery, San Jose, CA.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/colour-calendar-event-alternativephotography-com/">Colour Calendar Event &middot; AlternativePhotography.com</a></h3><p class="call-description">Annual event inviting artists to introduce colour into monochrome alternative processes — cyanotype, chemigram, anthotype.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/outside-the-box-cameraless-photography-photosynthesis/">Outside the Box: Cameraless Photography &middot; PhotoSynthesis</a></h3><p class="call-description">Photograms, chemigrams, lumen prints, cyanotypes, and composites blending camera and non-camera methods.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/contemporary-trends-in-beauty-alternative-processes-l-a-photo-curator/">Contemporary Trends in Beauty &middot; L.A. Photo Curator</a></h3><p class="call-description">Handcrafted prints using alternative photographic processes. Final print must be handmade. No AI-generated images.</p></div>
 
     </section>
 
@@ -128,9 +135,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('alternative-process') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('alternative-process')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

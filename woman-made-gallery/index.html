@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Woman Made Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Woman Made Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Woman Made Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/in-full-view-woman-made-gallery/">In Full View — Woman Made Gallery</a></h3><p class="call-description">Woman Made Gallery (Chicago) open call for women/nonbinary artists 65+. Juried by Jerri Zbiral. All media including photography.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/small-works-members-show-woman-made-gallery/">Small Works Members Show &middot; Woman Made Gallery</a></h3><p class="call-description">Chicago's Woman Made Gallery holiday small-works show — free for members, three works submitted, one guaranteed inclusion.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/feminism-250-woman-made-america/">Feminism 250 — Woman Made America</a></h3><p class="call-description">Woman Made Gallery (Chicago) feminist group show marking the US 250th anniversary. Women/nb artists, all media including photography.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Woman Made Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Woman Made Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

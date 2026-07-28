@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Open Calls for Students</h1>
-      <h2 class="subtitle">Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme.</h2>
+      <h2 class="subtitle">Open calls, prizes, and awards specifically for student photographers currently enrolled in a degree programme. 13 calls, 8 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -114,6 +114,12 @@
       <div class="call-card"><h3 class="call-title"><a href="/2026-emerging-vision-cpac-biennial-student-show-colorado-photographic-arts-center/">2026 Emerging Vision: CPAC Biennial Student Show &middot; Colorado Photographic Arts Center</a></h3><p class="call-description">CPAC's biennial student photo show, juried by LensCulture's Laura Sackett. Best in Show wins a LensCulture feature article.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/w-eugene-smith-grant-for-student-photographers-2026/">W. Eugene Smith Grant for Student Photographers 2026</a></h3><p class="call-description">The Smith Fund's grant for student photographers — two $5,000 grants for humanistic, concerned projects. Up to 40 images; AI not accepted.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/pretty-ugly-student-photography-competition-2026-27-ilford-photo/">Pretty Ugly — Student Photography Competition 2026/27 &middot; ILFORD Photo</a></h3><p class="call-description">Free worldwide student darkroom competition on beauty in the overlooked. ILFORD/Kentmere film and paper, prints posted in.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/photography-plus-emerging-talent-2026-photoworks/">Photography+ Emerging Talent 2026 &middot; Photoworks</a></h3><p class="call-description">10 awardees featured in Photography+ magazine and Kranj Foto Fest projection. BA/MA grads or first 5 years of practice.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/paris-photo-students-prize-2026/">Paris Photo Students Prize 2026</a></h3><p class="call-description">Prize for European photography students — four laureates exhibit at Paris Photo (Grand Palais) and Gare de Lyon, with a support program.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/lenscratch-student-prize-2026/">Lenscratch Student Prize 2026</a></h3><p class="call-description">Annual prize for student photographers. $2,000 first prize plus mentorship with Aline Smithson.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/alt-plus-1000-9th-edition-open-call-emerging-scene/">Alt+1000 9th Edition Open Call — Emerging Scene</a></h3><p class="call-description">Outdoor photography festival in the Swiss Alps. 4 emerging Swiss photographers selected. CHF 800 + production. Theme: play and landscape.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/source-graduate-photography-online-2026-ba/">Source Graduate Photography Online 2026 — BA</a></h3><p class="call-description">BA graduate showcase from Source magazine for UK/Ireland 2026 grads. 8 images. Featured online + in printed supplement.</p></div>
 
     </section>
 
@@ -131,9 +137,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('student') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('student')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

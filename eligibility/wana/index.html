@@ -102,11 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>WANA Region Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in the Western Asia and North Africa (WANA) region. 3 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/photovogue-mena-panorama-2026/">PhotoVogue Regional Open Call — MENA Panorama</a></h3><p class="call-description">Free Condé Nast call for MENA artists and diaspora. $8,000 in grants, 2027 PhotoVogue Festival feature, regional Vogue publication.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/tasweer-2026-project-award/">Tasweer 2026 Project Award</a></h3><p class="call-description">Qatar Museums grant for photographers in WANA region. 30,000 QAR to develop a photographic project. Exhibition at Tasweer Photo Festival.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/tasweer-2026-single-image-award/">Tasweer 2026 Single Image Award</a></h3><p class="call-description">Single image award from Qatar Museums for WANA region photographers. 2,000 QAR prize plus online exhibition at Tasweer Photo Festival.</p></div>
 
     </section>
 
@@ -124,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('wana') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('wana')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

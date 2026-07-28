@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Great Lakes Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists living in the Great Lakes region — Michigan, Illinois, Indiana, Minnesota, New York, Ohio, Pennsylvania, Wisconsin, and Ontario, Canada.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists living in the Great Lakes region — Michigan, Illinois, Indiana, Minnesota, New York, Ohio, Pennsylvania, Wisconsin, and Ontario, Canada. 2 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/americana-crooked-tree-arts-center/">Americana &middot; Crooked Tree Arts Center</a></h3><p class="call-description">Great Lakes juried show at Crooked Tree Arts Center on the many meanings of Americana — photography welcome.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/echoes-revisiting-memory-crooked-tree-arts-center/">Echoes: Revisiting Memory &middot; Crooked Tree Arts Center</a></h3><p class="call-description">Great Lakes regional juried show at Crooked Tree Arts Center, juried by photography professor Paige Young. $1,000 in cash awards.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('great-lakes') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('great-lakes')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

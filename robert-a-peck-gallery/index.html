@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Robert A. Peck Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Robert A. Peck Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Robert A. Peck Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/photography-of-place-robert-a-peck-gallery/">Photography of Place &middot; Robert A. Peck Gallery</a></h3><p class="call-description">Free juried show at CWC's Robert A. Peck Gallery — images shot in Wyoming, the Dakotas, or Montana. $10,000 in awards, no entry fee or commission.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Robert A. Peck Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Robert A. Peck Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

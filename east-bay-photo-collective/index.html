@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>East Bay Photo Collective</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from East Bay Photo Collective. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from East Bay Photo Collective. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/no-theme-open-call-2026-east-bay-photo-collective/">No Theme Open Call 2026 &middot; East Bay Photo Collective</a></h3><p class="call-description">Open-theme show at Oakland Photo Workshop. 30–45 in-person + 10–20 online. Bay Area artists. Opening Aug 7, 2026.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'East Bay Photo Collective').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

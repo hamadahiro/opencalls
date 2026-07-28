@@ -467,6 +467,15 @@ function scoreSimilarity(current, other) {
   return score;
 }
 
+// ---- Listing-page contract ----
+// Every listing page (org, country, state, category, fee, eligibility, prize,
+// requirements, submit-via, deadline month) shows EVERY call it covers: the
+// open ones first, then the rest under a "Past" header. That way the number
+// printed next to a page in any index equals the number of calls on the page —
+// they can never disagree. When a page has nothing open, this notice sits above
+// the Past section so the archive can't be mistaken for live listings.
+const NO_OPEN_CALLS_NOTICE = 'No open calls right now — past calls below.';
+
 // ---- Data validators (shared by the build's hard gates AND verify-batch.js, so
 //      the verifier flags exactly what the build would reject — no drift) ----
 function isValidEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s || '').trim()); }
@@ -482,7 +491,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
     usStateNames, stateNameToAbbr, validCountries,
-    PIN_SVG, PRIZE_SVG,
+    PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
     isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,

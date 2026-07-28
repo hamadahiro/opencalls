@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>PhMuseum</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from PhMuseum. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from PhMuseum. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/phmuseum-2026-women-photographers-grant/">PhMuseum 2026 Women Photographers Grant</a></h3><p class="call-description">10th-edition grant for women and non-binary photographers: $11,000 cash, MPB vouchers, solo show at PhMuseum Lab. Entries open 8 September.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/masterclasses-program-2026-2027-phmuseum/">Masterclasses Program 2026/2027 &middot; PhMuseum</a></h3><p class="call-description">Online masterclasses by Aaron Schuman, Charlie Engman, Erik Kessels, Salvatore Vitale, and Vasantha Yoganathan.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/phmuseum-days-2026-open-call/">PhMuseum Days 2026 Open Call</a></h3><p class="call-description">International festival competition. 4 solo exhibitions plus additional opportunities. All approaches welcome.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'PhMuseum' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'PhMuseum').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

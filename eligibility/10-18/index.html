@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Open Calls for Ages 10–18</h1>
-      <h2 class="subtitle">Open calls for young photographers ages 10 to 18. Photography competitions, exhibitions, and awards for young and teen artists.</h2>
+      <h2 class="subtitle">Open calls for young photographers ages 10 to 18. Photography competitions, exhibitions, and awards for young and teen artists. 2 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/in-the-practice-of-seeing-high-school-section-jacksonville-state-university/">In The Practice of Seeing — High School Section &middot; Jacksonville State University</a></h3><p class="call-description">Free national juried photography show for 13–17 year olds at Jacksonville State University, all processes welcome.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/jugend-fotografiert-deutschland-2025-laif-foundation/">Jugend fotografiert Deutschland 2025 &middot; laif foundation</a></h3><p class="call-description">German youth contest ages 10-18. Documentary photo stories. &quot;Be you. Be seen. Be heard.&quot; Teams welcome.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('10-18') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('10-18')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

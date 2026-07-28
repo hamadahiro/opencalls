@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Photo Artfolio</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Photo Artfolio. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Photo Artfolio. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/wild-photo-artfolio/">Wild &middot; Photo Artfolio</a></h3><p class="call-description">Photo Artfolio's nature cycle — wildlife to experimental. $1,000 in cash prizes across three awards; online exhibit; no AI.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/the-human-portrait-photo-artfolio/">The Human Portrait &middot; Photo Artfolio</a></h3><p class="call-description">Global online exhibit honoring portraiture in all forms — documentary, fine art, street, conceptual, and experimental.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Photo Artfolio' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Photo Artfolio').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

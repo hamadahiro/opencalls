@@ -108,11 +108,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Louisiana</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Louisiana. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Louisiana. Browse and apply today. 5 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/2nd-annual-kit-gilbert-juried-showcase/">2nd Annual Kit Gilbert Juried Showcase &middot; Ross Lynn Charitable Foundation</a></h3><p class="call-description">Themeless juried showcase in Ruston, Louisiana honouring painter Kit Gilbert. Photography welcome, $12 an entry, $1,250 in cash awards.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/hit-me-with-your-best-shot-bird-photography-2026-gallery-by-the-lake/">Hit Me With Your Best Shot! Bird Photography 2026 &middot; Gallery by the Lake</a></h3><p class="call-description">Bird photography show at Lake Charles' Historic City Hall Arts &amp; Cultural Center. $1,325 in awards, $450 Best in Show.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/light-on-cut-paper-photography-collage-new-orleans-photo-alliance/">Light on Cut Paper: Photography &amp; Collage &middot; New Orleans Photo Alliance</a></h3><p class="call-description">Third in a NOPA series at the intersection of photography and collage. Photomontage, darkroom collage, hybrid composition. New Orleans.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/michael-p-smith-fund-for-documentary-photography-2025-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2025 &middot; New Orleans Photo Alliance</a></h3><p class="call-description">Annual grant for Gulf Coast photographers. $3,000 winner prize, PhotoNOLA Portfolio Review, and exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/michael-p-smith-fund-for-documentary-photography-2026-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2026 &middot; New Orleans Photo Alliance</a></h3><p class="call-description">Annual grant for Gulf Coast photographers combining artistic excellence with sustained cultural documentary work.</p></div>
 
     </section>
 
@@ -130,9 +135,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', LA,') || c.location.includes(', Louisiana,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', LA,') || c.location.includes(', Louisiana,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Artdoc Photography Magazine</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Artdoc Photography Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Artdoc Photography Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/living-space-artdoc-photography-magazine/">Living Space — Artdoc Magazine Open Call &middot; Artdoc Photography Magazine</a></h3><p class="call-description">Artdoc's themed call on the spaces of everyday life — interiors, cityscapes, the built environment. Publication and online exhibition.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/being-human-artdoc-photography-magazine/">Being Human — Artdoc Magazine Open Call &middot; Artdoc Photography Magazine</a></h3><p class="call-description">Documentary photography open call exploring human presence across cultural contexts. Magazine publication and online exhibitions.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/abstract-visions-artdoc-photography-magazine/">Abstract Visions &middot; Artdoc Photography Magazine</a></h3><p class="call-description">Abstraction as a way of seeing, sensing, and surviving. Projects communicating through atmosphere, rhythm, and form.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Artdoc Photography Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Artdoc Photography Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

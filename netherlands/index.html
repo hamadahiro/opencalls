@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Open Calls for Artists in the Netherlands</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the Netherlands. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in the Netherlands. Browse and apply today. 9 calls, 4 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -110,6 +110,12 @@
       <div class="call-card"><h3 class="call-title"><a href="/the-quiet-image-ii-the-ace-project/">The Quiet Image II &middot; The Ace Project</a></h3><p class="call-description">Nature and the human body, for photographers in the Netherlands and Belgium. Free to submit; Rotterdam show 25 Sep–18 Oct.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/form-photo-award-x-unseen/">Form Photo Award x UNSEEN</a></h3><p class="call-description">Open-theme award from Paris-based Form. Selected photographers present their projects at the UNSEEN 2027 photography fair.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/vincent-van-gogh-photo-award-2027/">Vincent van Gogh Photo Award 2027</a></h3><p class="call-description">International themed award ('Spirit of Light') in van Gogh's Dutch village. Up to 3 images; €1,000 top prize, student tier &amp; Nuenen show.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/queer-nature-photography-awards-2026-narwhal-rainbow-alliance/">Queer Nature Photography Awards 2026 &middot; Narwhal Rainbow Alliance</a></h3><p class="call-description">Free-entry award celebrating LGBTQ+ diversity through nature photography. Prizes include exhibitions.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/nature-photographer-of-the-year-2026/">Nature Photographer of the Year 2026</a></h3><p class="call-description">International nature competition with 12 categories plus young photographers and portfolio awards.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/esc-2036-0-1-gallery-open-call/">ESC 2036 — 0—1 Gallery Open Call &middot; 0—1 Gallery</a></h3><p class="call-description">Free open call from The Hague gallery. Theme: nature, tech &amp; humanity ten years ahead. Curated group exhibition 2026–2027.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fresh-eyes-x-hungry-eye-vol-2/">Fresh Eyes x Hungry Eye vol. 2</a></h3><p class="call-description">Softcover publication + group exhibition at Hungry Eye Fair Amsterdam. Emerging photographers worldwide. Jury by GUP editors.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/i-can-buy-myself-flowers-haze-gallery/">I Can Buy Myself Flowers &middot; Haze Gallery</a></h3><p class="call-description">Pop-up exhibition in Amsterdam exploring autonomy, intimacy turned inward, and self-directed desire. With PURPLEHAZE.</p></div>
 
     </section>
 
@@ -127,11 +133,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Netherlands' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Netherlands').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Open Calls Requiring 21+</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists aged 21 or older. Exhibitions, grants, competitions, and awards with a 21+ age requirement.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists aged 21 or older. Exhibitions, grants, competitions, and awards with a 21+ age requirement. 9 calls, 4 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -110,6 +110,12 @@
       <div class="call-card"><h3 class="call-title"><a href="/tasweer-residency-2026-2027/">Tasweer Residency 2026–2027: As the Image Unfolds</a></h3><p class="call-description">Five-month funded residency for Qatar-based photographers from Qatar Museums' Tasweer festival. 4,000 QAR/month stipend + 2027 exhibition.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/46th-annual-juried-photography-show-long-island-arts-council-at-freeport/">46th Annual Juried Photography Show</a></h3><p class="call-description">One of the tri-state area's longest-running juried photo shows, at Freeport Memorial Library. Cash awards; age 21+, up to 5 images.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/james-balog-earth-vision-awards-denver-art-museum/">James Balog Earth Vision Awards &middot; Denver Art Museum</a></h3><p class="call-description">$40,000 biennial award from the Denver Art Museum for photographers responding to environmental issues. Opens September 1.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/kyoto-retreat-2026/">Kyoto Retreat 2026</a></h3><p class="call-description">Fully-funded four-week November retreat in Kyoto for artists, curators and writers — airfare, private accommodation and an $800 stipend.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/loghaven-artist-residency-2027/">Loghaven Artist Residency 2027</a></h3><p class="call-description">2–6 week residency on 90 forested acres. $850/week stipend plus travel subsidy. Visual arts, writing, and more.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/rauschenberg-medical-emergency-grants-cycle-37/">Rauschenberg Medical Emergency Grants — Cycle 37 &middot; New York Foundation for the Arts</a></h3><p class="call-description">Up to $5,000 in emergency relief for US artists (photography included) facing unexpected medical costs. Free; closes July 14.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/momentum-gearbox-gallery/">Momentum &middot; GearBox Gallery</a></h3><p class="call-description">Annual juried show at Oakland's GearBox Gallery — all media incl. photography. Two artists win future two-person and solo shows.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/bethany-arts-community-fall-multidisciplinary-residency-2026/">Bethany Arts Community — Fall Multidisciplinary Residency 2026</a></h3><p class="call-description">Two-week residency in Ossining, NY. $450 stipend, private studio, room and board. 12 artists across all disciplines.</p></div>
 
     </section>
 
@@ -127,9 +133,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('21-plus') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('21-plus')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

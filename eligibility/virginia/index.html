@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Virginia-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists living or working in Virginia.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists living or working in Virginia. 3 calls, 3 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -126,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('virginia') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('virginia')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

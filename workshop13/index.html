@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Workshop13</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Workshop13. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Workshop13. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/the-unexpected-portrait-workshop13/">The Unexpected Portrait &middot; Workshop13</a></h3><p class="call-description">Workshop13's juried portrait show in Ware, MA — emotion, memory and abstraction over formal posing. Photography welcome.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/through-the-lens-presence-and-absence-workshop13/">Through the Lens: Presence and Absence &middot; Workshop13</a></h3><p class="call-description">Workshop13's third photography exhibition in Ware, MA. Theme: presence and absence — what's missing in an image. AI not accepted.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Workshop13' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Workshop13').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

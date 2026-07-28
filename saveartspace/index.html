@@ -102,10 +102,18 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>SaveArtSpace</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from SaveArtSpace. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from SaveArtSpace. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 8 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/dignity-not-for-sale-saveartspace-bus-shelter-exhibition/">Dignity Not For Sale — SaveArtSpace Bus Shelter Exhibition</a></h3><p class="call-description">Miami bus shelter show curated by Lizzie Suarez celebrating the dignity and resilience of the city's working class. Open to all mediums.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/looking-in-saveartspace-billboard-exhibition/">Looking In — SaveArtSpace Billboard Exhibition</a></h3><p class="call-description">NYC billboard show curated by Jessica Alazraki. Theme: observing from a distance — windows, thresholds, belonging. Open to all mediums.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/abundance-saveartspace-billboard-exhibition/">Abundance — SaveArtSpace Billboard Exhibition</a></h3><p class="call-description">NYC billboard show curated by Lauren Hirshfield. Theme: abundance and the cycles of care, giving, and receiving. Open to all mediums.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/space-to-feel-saveartspace-bus-shelter-exhibition/">Space to Feel — SaveArtSpace Bus Shelter Exhibition</a></h3><p class="call-description">Miami bus-shelter public art show curated by art therapist Leah Guzman. Theme: vulnerability, healing, mental health.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ode-to-womanhood-saveartspace-billboard-exhibition/">Ode to Womanhood — SaveArtSpace Billboard Exhibition</a></h3><p class="call-description">NYC billboard &amp; bus-shelter show curated by photographer Ceres. Theme: womanhood and counterculture perspectives.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-extravagance-of-the-quotidian-saveartspace-bus-shelter-exhibition/">The Extravagance of the Quotidian — SaveArtSpace Bus Shelter Exhibition</a></h3><p class="call-description">Miami bus-shelter public art show curated by Hermes Berrío. Theme: the beauty and weight of everyday life.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/home-is-where-i-make-it-saveartspace-billboard-exhibition/">Home Is Where I Make It — SaveArtSpace Billboard Exhibition</a></h3><p class="call-description">NYC billboard public art show on immigrant experience — making home in unfamiliar places and building new community.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/wild-and-free-saveartspace-billboard-exhibition/">Wild &amp; Free — SaveArtSpace Billboard Exhibition</a></h3><p class="call-description">NYC public art billboard exhibition curated by Gigi Chen. Theme: nature, mythology, and civilization. Opens June 26, 2026.</p></div>
 
     </section>
 
@@ -123,9 +131,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'SaveArtSpace' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'SaveArtSpace').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

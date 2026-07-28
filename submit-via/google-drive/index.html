@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <link rel="stylesheet" href="/style.css?v=20260608k">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -21,6 +20,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit via Google Drive</h1>
-      <h2 class="subtitle">Open calls that collect files through a shared Google Drive folder or link.</h2>
+      <h2 class="subtitle">Open calls that collect files through a shared Google Drive folder or link. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
       <div class="call-card"><h3 class="call-title"><a href="/intentional-unconventional-photo-cleveland/">Intentional Unconventional — Experimental Photography &amp; Video &middot; Photo Cleveland</a></h3><p class="call-description">Photo Cleveland's experimental photo &amp; video show — abstraction and unconventional technique. Physical Cleveland exhibition.</p></div>
 
     </section>
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === "Google Drive" && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === "Google Drive").map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

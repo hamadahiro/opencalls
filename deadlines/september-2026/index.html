@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>
       <h1>September 2026</h1>
-      <h2 class="subtitle">104 calls with deadlines in September 2026.</h2>
+      <h2 class="subtitle">Deadlines in September 2026. 104 calls, 104 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -227,10 +227,10 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-09') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-09')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+      renderCallList(calls, document.getElementById('callsList'), { skipSections: true, noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

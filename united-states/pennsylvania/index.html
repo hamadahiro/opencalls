@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Pennsylvania</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Pennsylvania. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Pennsylvania. Browse and apply today. 14 calls, 7 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -119,6 +119,14 @@
       <div class="call-card"><h3 class="call-title"><a href="/eleventh-juried-art-show-stover-mill-gallery/">Eleventh Juried Art Show &middot; Stover Mill Gallery</a></h3><p class="call-description">Blind-juried show over four fall weekends at Bucks County's longest-running gallery. Over $3,000 in prizes; $30 for one work.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/winter-2027-vintage-issue-penn-journal-of-arts-and-sciences/">Winter 2027 'Vintage' Issue &middot; Penn Journal of Arts and Sciences</a></h3><p class="call-description">Indie Philadelphia arts journal's Winter 2027 'Vintage' issue — print and online publication, open internationally.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/lacawac-artists-residency-2026/">Lacawac Artists' Residency 2026 &middot; Lacawac Sanctuary</a></h3><p class="call-description">Week-long nature residency at a 550-acre Pocono lake sanctuary; $300/week (self-funded) covers room and Carriage House studio. Rolling applications.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/print-center-101st-annual/">The Print Center 101st ANNUAL International Competition</a></h3><p class="call-description">Annual international competition for photography and printmaking. Solo exhibitions + museum acquisitions (PMA, WVU) + cash awards.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photography-your-vision-mva-gallery/">Photography — Your Vision &middot; MVA Gallery</a></h3><p class="call-description">All-genre photography show at MVA Gallery in historic Bethlehem, PA. $200 Director's Choice and an NYC exhibition grand prize.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-essence-of-a-woman-2026-mva-gallery/">The Essence of a Woman 2026 &middot; MVA Gallery</a></h3><p class="call-description">All-media national call on the essence of a woman — portraits of strength and vulnerability. Gallery show in Bethlehem, PA.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/transforming-landscapes-20-20-photo-festival-2026/">Transforming Landscapes — 20/20 Photo Festival 2026</a></h3><p class="call-description">Analog-only juried festival exhibition exploring 250 years of American landscapes. Cherry Street Pier, Philadelphia. Juror: Andrew Piccone.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-photo-review-41st-annual-international-photography-competition/">The Photo Review 41st Annual International Photography Competition</a></h3><p class="call-description">41st edition. Juried by Dr. Sarah Kennel (VMFA). Exhibition at Woodmere Art Museum, Philadelphia. $1,000 purchase prize.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/sharing-and-caring-cities-portraits-of-collective-urban-life-penn-institute-for-urban-research/">Sharing and Caring Cities: Portraits of Collective Urban Life &middot; Penn Institute for Urban Research</a></h3><p class="call-description">10th annual contest exploring shared urban spaces addressing inequality and climate change.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/artist-in-residence-program-2026-tilt-institute/">Artist in Residence Program 2026 &middot; TILT Institute</a></h3><p class="call-description">Four-week residency advancing contemporary photography. $3,000 honorarium plus ink/paper credit and travel support.</p></div>
 
     </section>
 
@@ -136,9 +144,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', PA,') || c.location.includes(', Pennsylvania,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', PA,') || c.location.includes(', Pennsylvania,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

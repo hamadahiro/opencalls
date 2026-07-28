@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>ABSURIA Festival</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from ABSURIA Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from ABSURIA Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/absuria-international-abstract-surrealist-photography-contest-2027/">ABSURIA — International Abstract &amp; Surrealist Photography Contest 2027</a></h3><p class="call-description">2027 edition of the abstract &amp; surrealist photography festival. 100 works exhibited across Tours, France. Trophy + 3D online gallery.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/absuria-international-abstract-surrealist-photography-contest-2026/">ABSURIA — International Abstract &amp; Surrealist Photography Contest 2026</a></h3><p class="call-description">First international festival for abstract &amp; surrealist photography. Physical exhibition in Tours, France. Trophy + online 3D gallery.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'ABSURIA Festival' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'ABSURIA Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

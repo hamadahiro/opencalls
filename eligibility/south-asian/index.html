@@ -125,7 +125,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('south-asian')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

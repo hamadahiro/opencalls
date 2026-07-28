@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Viewpoint Photographic Art Center</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Viewpoint Photographic Art Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Viewpoint Photographic Art Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/viewpoint-photographic-art-center-2027-call-for-exhibit-proposals/">Viewpoint Photographic Art Center — 2027 Call for Exhibit Proposals</a></h3><p class="call-description">Proposals for solo/group photography exhibitions in 2027 at Sacramento's Viewpoint center. Submit 20 images + statement.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/seeing-america-viewpoint-photographic-art-center/">Seeing America &middot; Viewpoint Photographic Art Center</a></h3><p class="call-description">Celebrating 250th Anniversary of the Declaration of Independence. Exhibition during Photography Month Sacramento.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Viewpoint Photographic Art Center').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

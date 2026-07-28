@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Grenze Arsenali Fotografici</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Grenze Arsenali Fotografici. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Grenze Arsenali Fotografici. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/grenze-off-circuit-2026-nachleben/">Grenze OFF Circuit 2026 — Nachleben</a></h3><p class="call-description">Free open call for the OFF circuit of Grenze's Nachleben festival in Verona — selected projects shown open-air, September 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/grenze-arsenali-fotografici-2026-open-call/">Grenze Arsenali Fotografici 2026 Open Call</a></h3><p class="call-description">International photography festival in Verona. Theme: Nachleben. Three artists exhibited. Strong international jury.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/nachleben-2026/">Nachleben 2026 &middot; Grenze Arsenali Fotografici</a></h3><p class="call-description">Three photographers exhibited at September festival in Verona. €300 travel + €1,000 print budget + accommodation.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Grenze Arsenali Fotografici').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

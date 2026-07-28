@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Ucross Foundation</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Ucross Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Ucross Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/ucross-spring-2027-residency/">Ucross Spring 2027 Residency</a></h3><p class="call-description">2–6 week residency on a 20,000-acre Wyoming ranch. Photography eligible. Lodging + meals + work space; international applicants welcome.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ucross-foundation-spring-2027-residency/">Ucross Foundation Spring 2027 Residency</a></h3><p class="call-description">2–6 week residency on a 20,000-acre Wyoming ranch. Studio, meals, and a $1,500 stipend. Photography eligible. Portal opens May 1.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ucross-native-american-fellowships-spring-2027/">Ucross Native American Fellowships — Spring 2027</a></h3><p class="call-description">Free four-week Wyoming residency for Native American artists with a $2,000 award and a featured Ucross Art Gallery show.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Ucross Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

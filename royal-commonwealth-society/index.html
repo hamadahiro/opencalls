@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Royal Commonwealth Society</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Royal Commonwealth Society. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Royal Commonwealth Society. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/commonwealth-youth-photography-competition-2026-royal-commonwealth-society/">Commonwealth Youth Photography Competition 2026 &middot; Royal Commonwealth Society</a></h3><p class="call-description">Free competition for photographers 18–30 in Commonwealth nations. Theme 'Waves of Change'. £1,000 top prize + CHOGM exhibition.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Royal Commonwealth Society').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

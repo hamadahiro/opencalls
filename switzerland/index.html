@@ -102,11 +102,20 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Open Calls for Artists in Switzerland</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Switzerland. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Switzerland. Browse and apply today. 9 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/charta-award-2026/">Charta Award 2026</a></h3><p class="call-description">International photobook award. Yogurt Editions publishes winner in 500 copies; one shortlisted artist gets Artphilein solo show in Lugano.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/prix-photoforum-2026-photoforum-pasquart/">Prix Photoforum 2026 &middot; Photoforum Pasquart</a></h3><p class="call-description">Swiss photography institution's annual juried group show in Biel; CHF 5,000 prize plus CHF 500 production grants for 10–15 selected artists.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/verzasca-foto-festival-2027-open-call/">Verzasca Foto Festival 2027 — Exhibition Open Call</a></h3><p class="call-description">Free call for Verzasca Foto's 2027 biennial in Ticino. Photography of peripheral and rural places. Fee + production covered for selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/near-prize-2026/">Near. Prize 2026</a></h3><p class="call-description">Swiss prize from Near. + Galerie Stephan Witschi. CHF 1,000 + solo show + festival exhibition at Fotofestival Lenzburg. Near. members only.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/alt-plus-1000-9th-edition-open-call-emerging-scene/">Alt+1000 9th Edition Open Call — Emerging Scene</a></h3><p class="call-description">Outdoor photography festival in the Swiss Alps. 4 emerging Swiss photographers selected. CHF 800 + production. Theme: play and landscape.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/siyu-award-2026/">SIYU Award 2026</a></h3><p class="call-description">Award for young Swiss photographers. Ten finalists exhibited at Photobastei Zurich with catalogue. Free theme.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/artphilein-open-call-2026/">Artphilein Open Call 2026</a></h3><p class="call-description">Exploring adolescence — digital culture, identity, contemporary pressures. Solo exhibition and CHF 1,000 award.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/form-photo-award-2026/">Form Photo Award 2026</a></h3><p class="call-description">Annual prize for contemporary image-making. Top 5 exhibit at photo basel during Art Basel Week, June 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/cpg-mentorship-programme-2026-centre-de-la-photographie-gen-ve/">CPG Mentorship Programme 2026 &middot; Centre de la Photographie Genève</a></h3><p class="call-description">1:1 mentoring with established photographers and curators over six months. CHF 500 project support included.</p></div>
 
     </section>
 
@@ -124,11 +133,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Switzerland' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Switzerland').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

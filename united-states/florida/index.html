@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Florida</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Florida. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Florida. Browse and apply today. 20 calls, 7 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -119,6 +119,20 @@
       <div class="call-card"><h3 class="call-title"><a href="/36th-annual-all-florida-juried-art-show-martinarts/">36th Annual All Florida Juried Art Show &middot; MartinArts</a></h3><p class="call-description">Statewide Florida juried survey, 36th year, at Stuart's Court House Cultural Center — $1,000 in awards; photography editions allowed.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/thats-absurd-alliance-for-the-arts/">That's Absurd. &middot; Alliance for the Arts</a></h3><p class="call-description">Absurdist juried show at Fort Myers' Alliance for the Arts — photography welcome, $200 Absurdest in Show. On view Nov 6–28.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/small-works-2026-jag-gallery/">SMALL WORKS 2026 &middot; Jag Gallery</a></h3><p class="call-description">Key West holiday small-works show (max 10 inches) at Jag Gallery — photography eligible; winners get a 2027 group show.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/through-the-lens-photography-2026-the-joe-center-for-the-arts/">Through the Lens Photography 2026 &middot; The Joe Center for the Arts</a></h3><p class="call-description">Free juried digital photography show from a Florida community art center, Aug–Sep 2026. Open to all; certificate awards, online exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/poolside-2026-jag-gallery/">POOLSIDE 2026 &middot; Jag Gallery</a></h3><p class="call-description">Key West's Jag Gallery wants pools — any medium incl. photography. Show Aug 2026 with reception; winners get a 2027 group show.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/embracing-our-differences-2027-outdoor-exhibition/">Embracing Our Differences 2027 Outdoor Exhibition</a></h3><p class="call-description">50 artworks displayed as billboard-sized panels in Florida parks. Themes: diversity, inclusion, kindness.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/skyway-2027-a-contemporary-collaboration/">Skyway 2027: A Contemporary Collaboration</a></h3><p class="call-description">Five Tampa Bay museums co-curate the Skyway 2027 triennial. Free entry for artists of the five-county region; catalog published.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/space-to-feel-saveartspace-bus-shelter-exhibition/">Space to Feel — SaveArtSpace Bus Shelter Exhibition</a></h3><p class="call-description">Miami bus-shelter public art show curated by art therapist Leah Guzman. Theme: vulnerability, healing, mental health.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-extravagance-of-the-quotidian-saveartspace-bus-shelter-exhibition/">The Extravagance of the Quotidian — SaveArtSpace Bus Shelter Exhibition</a></h3><p class="call-description">Miami bus-shelter public art show curated by Hermes Berrío. Theme: the beauty and weight of everyday life.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/cci-fellowships-2026-perez-art-museum-miami/">CCI Fellowships 2026 &middot; Pérez Art Museum Miami</a></h3><p class="call-description">Three CCI fellowships at Pérez Art Museum Miami. WOPHA photography track for women &amp; nonbinary Caribbean photographers.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/cci-wopha-fellowship-2026-perez-art-museum-miami/">CCI + WOPHA Fellowship 2026 &middot; Pérez Art Museum Miami</a></h3><p class="call-description">Fellowship for women &amp; non-binary photographers from Caribbean and diaspora. Miami residency at El Espacio 23 + production funds.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/peyton-evans-artist-residency-2026-2027-studios-of-key-west/">Peyton Evans Artist Residency (PEAR) 2026–2027 &middot; The Studios of Key West</a></h3><p class="call-description">One-month live/work residency on Key West. PEAR House accommodation, bike, and shared kitchen. No residency fee once accepted.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fmopa-2026-international-photography-competition/">FMoPA 2026 International Photography Competition</a></h3><p class="call-description">International photography competition. $1,000 grand prize and exhibition at FMoPA Tampa. 7 categories.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts/">FMoPA International Photography Competition 2026 &middot; Florida Museum of Photographic Arts</a></h3><p class="call-description">International jury selection. Winning entries printed and exhibited at Ybor City, Tampa, June-August 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/call-for-artists-2026-tampa-international-airport/">Call for Artists 2026 &middot; Tampa International Airport</a></h3><p class="call-description">Building internationally acclaimed collection at Tampa International Airport. Eight new locations available.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photo-laureate-2026-saint-petersburg-month-of-photography/">Photo Laureate 2026 &middot; Saint Petersburg Month of Photography</a></h3><p class="call-description">One photographer selected to document Tampa Bay for one year. Solo exhibition at Florida Museum of Photographic Arts.</p></div>
 
     </section>
 
@@ -136,9 +150,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', FL,') || c.location.includes(', Florida,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', FL,') || c.location.includes(', Florida,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

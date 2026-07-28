@@ -102,11 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>California-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in California.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in California. 3 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/sca-open-2026-sausalito-center-for-the-arts/">SCA Open 2026</a></h3><p class="call-description">Statewide California open juried show with an SFMOMA curator on the jury — photography eligible; show Oct 30–Dec 6.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/light-shadow-fig-tree-gallery/">Light/Shadow &middot; Fig Tree Gallery</a></h3><p class="call-description">Fig Tree Gallery's all-media take on light and shadow — open to California artists, with photo and digital work printed on permanent media.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/59th-annual-newport-beach-art-exhibition/">59th Annual Newport Beach Art Exhibition</a></h3><p class="call-description">One-day juried show and sale at the Newport Beach Civic Center with a dedicated photography category and $300 top prize.</p></div>
 
     </section>
 
@@ -124,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('california') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('california')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

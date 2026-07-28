@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>reFocus Awards</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from reFocus Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from reFocus Awards. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/refocus-awards-world-photo-annual-2026/">reFocus Awards - World Photo Annual 2026</a></h3><p class="call-description">reFocus flagship annual across 22 categories — $5,000+ in cash, NYT/FT/Condé Nast jury, Photographer of the Year title.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/refocus-awards-color-photography-contest/">reFocus Awards - Color Photography Contest</a></h3><p class="call-description">Celebrating color photography. Cash prizes and digital gallery placement.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/refocus-awards-black-and-white-photo-contest/">reFocus Awards - Black and White Photo Contest</a></h3><p class="call-description">Black and white photography contest with $4,000 in prizes. Trophy, press coverage, artist directory. 19 categories.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'reFocus Awards' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'reFocus Awards').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

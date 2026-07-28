@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Golden Duck Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Golden Duck Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Golden Duck Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/rock-paper-scissors-golden-duck-gallery/">Rock, Paper, Scissors — Golden Duck Gallery</a></h3><p class="call-description">Pop art and mixed media show at Golden Duck Gallery Budapest, photography welcome. €500 prize fund; ages 14–25 exhibit free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/traveller-s-art-fair-2026-golden-duck-gallery/">Traveller's Art Fair 2026 — Golden Duck Gallery</a></h3><p class="call-description">Affordable-art exhibition in Budapest, open topic and all media. €600 prize fund; three curator's picks exhibit free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/inspired-by-classics-golden-duck-gallery/">Inspired by Classics — Golden Duck Gallery</a></h3><p class="call-description">Contemporary art engaging with classical art traditions. Physical exhibition in Budapest, online in Vienna and New York.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Golden Duck Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

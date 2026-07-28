@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Los Angeles Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists based in the greater Los Angeles area.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists based in the greater Los Angeles area. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/quinn-emanuel-los-angeles-artist-in-residence-2026/">Quinn Emanuel Los Angeles Artist-in-Residence 2026</a></h3><p class="call-description">$20,000 + $1,500 materials. 4-month studio residency at Quinn Emanuel LA office. Open to all media including photography. Greater LA only.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('los-angeles')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

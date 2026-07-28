@@ -102,12 +102,20 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Decagon Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Decagon Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Decagon Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 10 calls, 3 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/overcoming-decagon-gallery/">Overcoming &middot; Decagon Gallery</a></h3><p class="call-description">Online photography show on resilience and endurance after hardship. Juror Douglas Beasley. $1,000 total cash awards.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/something-like-joy-decagon-gallery/">Something Like Joy &middot; Decagon Gallery</a></h3><p class="call-description">Online photography exhibition on unguarded, everyday joy. Worldwide; printed catalog and $1,000 total cash awards.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/the-shape-of-a-life-decagon-gallery/">The Shape of a Life &middot; Decagon Gallery</a></h3><p class="call-description">Online juried show on lives beyond their milestones — portraits, gestures, quiet moments. Worldwide; catalog and $1,000 total cash awards.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/the-space-between-us-decagon-gallery/">The Space Between Us &middot; Decagon Gallery</a></h3><p class="call-description">Free online photography exhibition on the emotional residue of human connection. Catalog plus individual curatorial reflections.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/seen-unseen-decagon-gallery/">Seen / Unseen &middot; Decagon Gallery</a></h3><p class="call-description">Online photography exhibition on the visible and the implied. Juror Ann M. Jastrab. $1,000 total awards.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/that-one-photograph-decagon-gallery/">THAT ONE PHOTOGRAPH &middot; Decagon Gallery</a></h3><p class="call-description">Single-image call on memory, intimacy, longing. $1,000 awards. Online exhibition + catalog from Decagon Gallery.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/portal-decagon-gallery/">PORTAL &middot; Decagon Gallery</a></h3><p class="call-description">Transition &amp; becoming — figures, spaces, suspended moments. Juried by Douglas Stockdale (PhotoBook Journal founder).</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/portal-at-the-edge-of-becoming-decagon-gallery/">Portal: At the Edge of Becoming &middot; Decagon Gallery</a></h3><p class="call-description">Online photography exhibition on tension and threshold. Juror Douglas Stockdale. $1,000 total + solo webpage.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/this-is-a-person-decagon-gallery/">This Is a Person &middot; Decagon Gallery</a></h3><p class="call-description">Portrait photography exploring interior life over surface identity. ~10-12% acceptance rate.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/night-works-decagon-gallery/">Night Works &middot; Decagon Gallery</a></h3><p class="call-description">Seeking images made after dark where night is not simply a setting but an active collaborator.</p></div>
 
     </section>
 
@@ -125,9 +133,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Decagon Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Decagon Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

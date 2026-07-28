@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Maryland</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Maryland. Browse and apply today. 8 calls, 5 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -117,6 +117,10 @@
       <div class="call-card"><h3 class="call-title"><a href="/2026-national-juried-photography-exhibition-delaplaine/">National Juried Photography Exhibition 2026 &middot; The Delaplaine Arts Center</a></h3><p class="call-description">The Delaplaine's national juried show in Frederick, MD — Nov 7–29. $1,000 grand prize; work made in the past two years.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/echoes-of-valor-artspiration-frederick/">Echoes of Valor &middot; Artspiration Frederick</a></h3><p class="call-description">First veteran art exhibition at a Frederick, MD non-profit gallery — open to veterans, military families and service-themed work.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/many-countries-in-one-artspiration-frederick/">Many Countries in One &middot; Artspiration Frederick</a></h3><p class="call-description">Juried show for immigrant artists in the US, curated by F. Lennox Campello at a Frederick, MD nonprofit gallery.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/unscripted-artspiration-frederick/">Unscripted &middot; Artspiration Frederick</a></h3><p class="call-description">Open-themed juried show at Frederick's nonprofit community art center — artwork free from prescribed narratives; photography welcome.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/cumberland-valley-photographers-2026-washington-county-museum-of-fine-arts/">Cumberland Valley Photographers 2026 &middot; Washington County Museum of Fine Arts</a></h3><p class="call-description">Juried museum exhibition on America's 250th anniversary themes. Open to MD, VA, WV, PA, DC photographers. $3K+ in cash prizes.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/appalachian-nature-art-photography-competition-exhibition-arcadian-gallery/">Appalachian Nature Art &amp; Photography Competition &amp; Exhibition &middot; Arcadian Gallery</a></h3><p class="call-description">Appalachian nature photography. $500 Best of Show plus landscape and wildlife awards. MD, PA, VA, WV, DC residents.</p></div>
 
     </section>
 
@@ -134,9 +138,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', MD,') || c.location.includes(', Maryland,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', MD,') || c.location.includes(', Maryland,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

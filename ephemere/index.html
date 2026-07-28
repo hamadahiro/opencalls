@@ -102,9 +102,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Ephemere</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Ephemere. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Ephemere. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 4 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/epf-2026-photobook-exhibition-ephemere/">EPF 2026 Photobook Exhibition &middot; Ephemere</a></h3><p class="call-description">Bound photobooks for a dedicated exhibition at Ephemere Photo Fest in Tokyo — free digital review; selected books join the archive.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ephemere-triptychs-publication-exhibition/">Ephemere Triptychs — Publication &amp; Exhibition</a></h3><p class="call-description">Submit photographic triptychs for Ephemere Photo Fest 2026 in Tokyo — selected work published in a group photobook and exhibited.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ephemere-photobook-grant-2026/">Ephemere Photobook Grant 2026</a></h3><p class="call-description">100% production coverage for an eco-conscious monograph published in Japan. Airfare to Tokyo for launch included.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ephemere-photo-journal-vol-2-triplicities/">Ephemere Photo Journal Vol. 2 — Triplicities</a></h3><p class="call-description">Text-driven photo features exploring 'The Magic of Three.' Printed in a collectible large-format newsprint journal.</p></div>
 
     </section>
 
@@ -124,7 +130,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Ephemere').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

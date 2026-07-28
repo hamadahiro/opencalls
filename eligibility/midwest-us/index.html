@@ -102,13 +102,17 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Midwest US Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists living or working in the US Midwest — Iowa, Illinois, Indiana, Kansas, Kentucky, Michigan, Minnesota, Missouri, North Dakota, Nebraska, Ohio, South Dakota, and Wisconsin.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists living or working in the US Midwest — Iowa, Illinois, Indiana, Kansas, Kentucky, Michigan, Minnesota, Missouri, North Dakota, Nebraska, Ohio, South Dakota, and Wisconsin. 6 calls, 3 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/lanesboro-early-career-artists-show-2027/">Lanesboro Early Career Artists Show 2027</a></h3><p class="call-description">Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/lanesboro-juried-sales-gallery-2027/">Lanesboro Juried Sales Gallery 2027</a></h3><p class="call-description">Year-round sales-gallery representation at Lanesboro Arts for Minnesota, Iowa, and Wisconsin artists — 60% consignment, free to apply.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/lanesboro-exhibition-gallery-2028/">Lanesboro Exhibition Gallery 2028</a></h3><p class="call-description">Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/82nd-wabash-valley-exhibition-swope-art-museum/">82nd Wabash Valley Exhibition &middot; Swope Art Museum</a></h3><p class="call-description">Swope Art Museum's 82-year-old juried annual for six-state region artists; $10,000+ in awards, juror Mark Pascale.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photomidwest-biennial-exhibition-2026/">PhotoMidwest Biennial Exhibition 2026</a></h3><p class="call-description">Juried biennial for photographers in 13 Midwest states — $1,000 Best of Show, juried by MoCP chief curator Karen Irvine.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/44th-rock-island-art-guild-fine-arts-exhibition/">44th Rock Island Art Guild Fine Arts Exhibition</a></h3><p class="call-description">All-media juried show at the Figge Art Museum for artists within 200 miles of Davenport. $1,500 top prize; on view into 2027.</p></div>
 
     </section>
 
@@ -126,9 +130,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('midwest-us') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('midwest-us')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

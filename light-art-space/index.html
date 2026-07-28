@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Light Art Space</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Light Art Space. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Light Art Space. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/backwards-forwards-light-art-space/">Backwards/Forwards &middot; Light Art Space</a></h3><p class="call-description">Handmade prints as a record of time — cyanotype to letterpress — juried by Terran J. Last Gun at New Mexico’s alt-process gallery.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/light-dreams/">Light Dreams &middot; Light Art Space</a></h3><p class="call-description">Alt-process juried show in New Mexico. Cyanotype, platinum, wet-plate &amp; more. Open worldwide, student rate $20.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Light Art Space' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Light Art Space').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,12 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Bushwick Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Bushwick Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Bushwick Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 4 calls, 3 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/electric-tenderness-where-chaos-meets-care-bushwick-gallery/">Electric Tenderness: Where Chaos Meets Care &middot; Bushwick Gallery</a></h3><p class="call-description">Group show at Bushwick Gallery on intensity in all its forms — bold palettes, raw textures, emotionally charged work. All mediums.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/confirm-humanity-what-makes-us-real-bushwick-gallery/">Confirm Humanity: What Makes Us Real &middot; Bushwick Gallery</a></h3><p class="call-description">Group show at Bushwick Gallery on the line between artificial and authentic — what makes us real in a digitized world. All mediums.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/the-company-we-keep-creatures-beside-us-bushwick-gallery/">The Company We Keep: Creatures Beside Us &middot; Bushwick Gallery</a></h3><p class="call-description">Group show at Bushwick Gallery on animals as confidants, muses, and mirrors — through humor, tenderness, intimacy, and allegory.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/solo-statement-doesn-t-play-well-with-others-bushwick-gallery/">Solo Statement — Doesn't Play Well with Others &middot; Bushwick Gallery</a></h3><p class="call-description">One-night solo takeover of Bushwick Gallery in Brooklyn. Full transformation of the space by a single artist.</p></div>
 
     </section>
 
@@ -125,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Bushwick Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Bushwick Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

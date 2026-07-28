@@ -108,10 +108,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Utah</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Utah. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Utah. Browse and apply today. 2 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/zion-national-park-artist-in-residence-2027/">Zion National Park Artist-in-Residence 2027</a></h3><p class="call-description">Four-week residency in Zion's historic Grotto House with free park housing and a $500 stipend. All mediums welcome.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/blm-canyon-country-district-artist-in-residence-2026/">BLM Canyon Country District Artist in Residence 2026</a></h3><p class="call-description">2–4 week residency in Moab, UT, hosted by the BLM. Photography eligible. Free; $125/week stipend + campsite.</p></div>
 
     </section>
 
@@ -131,7 +135,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', UT,') || c.location.includes(', Utah,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Blank Wall Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Blank Wall Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Blank Wall Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 5 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/blank-wall-gallery-summer/">Blank Wall Gallery — Summer</a></h3><p class="call-description">Themed open call on 'Summer' — light, heat, stillness, travel. Free to submit; selected work exhibited at Blank Wall Gallery, Athens.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/blank-wall-gallery-best-portfolio-2026/">Blank Wall Gallery — Best Portfolio 2026</a></h3><p class="call-description">One photographer wins a two-week solo exhibition with 40 prints and international promotion. Valued at €2,200+.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/blank-wall-gallery-red/">Blank Wall Gallery — Red</a></h3><p class="call-description">Photos featuring red as the dominant color — passion, emotion, vibrant details. Free to submit. Athens.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/9th-chania-international-photo-festival-blank-wall-gallery/">9th Chania International Photo Festival &middot; Blank Wall Gallery</a></h3><p class="call-description">International exhibition in Chania's historic Grand Arsenali. Selected photos printed and framed by the festival.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/blank-wall-gallery-street-photography/">Blank Wall Gallery — Street Photography</a></h3><p class="call-description">Candid, spontaneous street photography capturing city life. Free to submit. Exhibition in Athens.</p></div>
 
     </section>
 
@@ -123,9 +128,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Blank Wall Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Blank Wall Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

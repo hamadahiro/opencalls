@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Dodho Magazine</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Dodho Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Dodho Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/monochromatic-awards-2026-dodho-magazine/">Monochromatic Awards 2026 &middot; Dodho Magazine</a></h3><p class="call-description">5th edition. All interpretations of monochromatic photography. Finalists in a 30×30 cm annual printed book.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/dodho-magazine-37/">Dodho Magazine #37</a></h3><p class="call-description">Print edition #37. 20 full pages per selected photographer. Distributed to galleries, festivals, and institutions worldwide.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/portrait-awards-2026-dodho-magazine/">Portrait Awards 2026 &middot; Dodho Magazine</a></h3><p class="call-description">Fourth edition celebrating portrait as a space of presence and authorship amidst visual saturation. Barcelona.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Dodho Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

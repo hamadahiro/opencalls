@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Massachusetts</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Massachusetts. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Massachusetts. Browse and apply today. 17 calls, 7 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -119,6 +119,17 @@
       <div class="call-card"><h3 class="call-title"><a href="/the-autumn-national-2026-cape-cod-art-center/">The Autumn National 2026 &middot; Cape Cod Art Center</a></h3><p class="call-description">Open juried all-media national at Cape Cod Art Center, photography included, with cash awards. Entries via Smarter Entry.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/2027-small-stones-festival-of-the-arts/">2027 Small Stones Festival of the Arts</a></h3><p class="call-description">Juried barn-gallery festival near Worcester with a full fine art photography category, jurors and hardbound catalogue.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/john-chervinsky-emerging-photographer-scholarship-2026/">John Chervinsky Emerging Photographer Scholarship 2026 &middot; Griffin Museum of Photography</a></h3><p class="call-description">Annual Griffin Museum scholarship for emerging photographers without solo shows — $3,000, a solo exhibition and a book. Free to enter.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/through-the-lens-presence-and-absence-workshop13/">Through the Lens: Presence and Absence &middot; Workshop13</a></h3><p class="call-description">Workshop13's third photography exhibition in Ware, MA. Theme: presence and absence — what's missing in an image. AI not accepted.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-curated-fridge-summer-2026-show/">The Curated Fridge — Summer 2026 Show</a></h3><p class="call-description">Free, no-theme show from The Curated Fridge — selected prints exhibited on its iconic refrigerator. Juror: Rachel Vogel. Mail prints.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/agricultural-biennial-exhibition-new-bedford-art-museum/">agriCultural: A Biennial Exhibition &middot; New Bedford Art Museum</a></h3><p class="call-description">Juried biennial on agriculture and the land at New Bedford Art Museum, Sep–Nov 2026. MA/RI artists, $25 for up to 3 works.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/exposure-2026-photographic-resource-center/">EXPOSURE 2026 — 30th Annual Members' Juried Exhibition</a></h3><p class="call-description">PRC Boston's 30th annual members' juried show. 12 photographers × 3 works. Juried by Audrey Lee Sands of Harvard Art Museums.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-summer-national-2026-cape-cod-art-center/">The Summer National 2026 &middot; Cape Cod Art Center</a></h3><p class="call-description">Open juried all-media national at Cape Cod Art Center with cash awards including a Best Landscape prize. Show July 13 – August 14.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ciar-fall-artists-residency-2026-cuttyhunk-island-artists-residency/">CIAR Fall Artists' Residency 2026 &middot; Cuttyhunk Island Artists' Residency</a></h3><p class="call-description">8-day visual arts residency on Cuttyhunk Island, MA. Photography accepted. Fellowships cover full cost for artists of color, parent artists, and others.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/vision-ary-2026-raising-our-voices-griffin-museum-of-photography/">Vision(ary) 2026: Raising Our Voices &middot; Griffin Museum of Photography</a></h3><p class="call-description">Outdoor public art exhibition in Winchester, MA. Theme: advocacy and social justice. Juror: Elizabeth Krist (Nat Geo).</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/somewhere-i-have-never-travelled-group-exhibition-art-everywhere-behind-va-shadows/">Somewhere I Have Never Travelled — Group Exhibition &middot; Art + Everywhere / Behind VA Shadows</a></h3><p class="call-description">Exploring place as memory and memory as place. All mediums welcome. Exhibition in Harvard Square, Cambridge, MA.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/griffin-museum-self-published-photobook-exhibition-2026/">Griffin Museum — Self Published Photobook Exhibition 2026</a></h3><p class="call-description">16th annual exhibition showcasing up to 50 self-published photobooks at the Griffin Gallery, summer 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/griffin-museum-handmade-photobook-exhibition-2026/">Griffin Museum — Handmade Photobook Exhibition 2026</a></h3><p class="call-description">Exhibition for handcrafted photobooks where the artist's hand shapes the object itself.</p></div>
 
     </section>
 
@@ -136,9 +147,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', MA,') || c.location.includes(', Massachusetts,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', MA,') || c.location.includes(', Massachusetts,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

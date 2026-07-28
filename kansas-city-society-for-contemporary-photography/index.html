@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Kansas City Society for Contemporary Photography</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Kansas City Society for Contemporary Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Kansas City Society for Contemporary Photography. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/current-works-2026-kansas-city-society-for-contemporary-photography/">Current Works 2026 &middot; Kansas City Society for Contemporary Photography</a></h3><p class="call-description">KCSCP's annual juried show of contemporary photography, juried by John W. Hans. All processes; work made 2024–2026.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Kansas City Society for Contemporary Photography' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Kansas City Society for Contemporary Photography').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

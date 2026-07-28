@@ -102,13 +102,23 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Photography Workshops & Education</h1>
-      <h2 class="subtitle">Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide.</h2>
+      <h2 class="subtitle">Workshops, masterclasses, mentoring programs, and educational opportunities for photographers and visual artists worldwide. 12 calls, 3 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/revelat-portfolio-review-2026/">Revela'T Portfolio Review 2026</a></h3><p class="call-description">18 photographers get 3 hours of one-to-ones with 10 reviewers plus a festival pass; one wins an exhibition at Revela’T 2027.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/phest-portfolio-reviews-2026/">PhEST Portfolio Reviews 2026</a></h3><p class="call-description">Free 20-minute reviews at PhEST in Monopoli with editors from FT Weekend, Il Manifesto, Trolley Books and Łódź Fotofestiwal.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/booooooom-x-format-creative-development-program/">Booooooom x Format Creative Development Program</a></h3><p class="call-description">Free development program from Booooooom + Format. Mentorship with Jeff Hamada, portfolio reviews, Format subscriptions. Closes Sep 2.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/wacken-rock-n-roll-photography-workshop-2026-pep-bonet/">Wacken Rock 'n Roll Photography Workshop 2026 &middot; Pep Bonet</a></h3><p class="call-description">Six free places in Pep Bonet's photo masterclass at Wacken Open Air 2026 — tuition, hosting, catering and passes included.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/art-of-experimentation-alternative-photography-symposium/">The Art of Experimentation — Symposium on Alternative Photography &middot; Women Alternative Photography Group</a></h3><p class="call-description">Symposium speaker call for women/nonbinary/trans alt-process photographers. Bristol, Aug 1, 2026. Free apply, revenue share.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fotografiska-emerging-portfolio-review-2026/">Fotografiska Emerging Portfolio Review 2026</a></h3><p class="call-description">Free one-on-one online portfolio review with two senior Fotografiska curators. Apply by June 15; review day July 3, 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/queer-art-mentorship-2027-queer-art/">Queer|Art|Mentorship 2027 &middot; Queer|Art</a></h3><p class="call-description">Year-long mentorship pairing LGBTQ+ photographers and artists 1:1 with an established queer mentor. $2,500 stipend, US-based, free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/masterclasses-program-2026-2027-phmuseum/">Masterclasses Program 2026/2027 &middot; PhMuseum</a></h3><p class="call-description">Online masterclasses by Aaron Schuman, Charlie Engman, Erik Kessels, Salvatore Vitale, and Vasantha Yoganathan.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/eddie-adams-workshop-2026/">Eddie Adams Workshop 2026</a></h3><p class="call-description">Legendary 4-day photojournalism seminar. 100 selected from emerging photographers. Free once accepted.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/lodz-photo-match-2026-portfolio-review-fotofestiwal/">Łódź Photo-Match 2026 Portfolio Review &middot; Fotofestiwal</a></h3><p class="call-description">Free two-day portfolio review at Fotofestiwal Łódź. Twenty photographers meet 20 European curators.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/odesa-workshop-environmental-consequences-of-war/">Odesa Workshop — Environmental Consequences of War in Ukraine &middot; Inland</a></h3><p class="call-description">Free 7-month hybrid workshop for Ukrainian photographers on war's environmental impact. €1,500 production grant.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/cpg-mentorship-programme-2026-centre-de-la-photographie-gen-ve/">CPG Mentorship Programme 2026 &middot; Centre de la Photographie Genève</a></h3><p class="call-description">1:1 mentoring with established photographers and curators over six months. CHF 500 project support included.</p></div>
 
     </section>
 
@@ -126,9 +136,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.category === 'education' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.category === 'education').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

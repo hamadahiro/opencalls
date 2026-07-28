@@ -12,7 +12,8 @@ const {
   deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
   isFree, getState, scoreSimilarity,
-  isValidEmail, isValidHttpUrl, submitViaIsPlatform
+  isValidEmail, isValidHttpUrl, submitViaIsPlatform,
+  NO_OPEN_CALLS_NOTICE
 } = shared;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -413,10 +414,14 @@ function collectionPageLd(name, description, url) {
 
 // Client-side hydration for a listing page: fetch data.json, filter to this
 // facet's calls, and re-render the list. filterExpr is the arrow passed to
-// Array.filter (e.g. `c => c.category === 'photography' && isCallOpen(...)`).
+// Array.filter (e.g. `c => c.category === 'photography'`).
 // Used by the simple facet pages (category/fees/eligibility/requirements/
 // submit-via/locations/state). Pages that need extra steps (prize's comment,
 // country's USA state index, deadlines' sort) keep their own inline script.
+//
+// The filter is the FACET ONLY — never an open/closed filter. Splitting open
+// from past is renderCallList's job (see LISTING RULE below), so the JS list
+// and the pre-rendered HTML can't diverge the way they used to.
 function facetListScript(filterExpr) {
   return `<script>
     async function loadFiltered() {
@@ -425,11 +430,69 @@ function facetListScript(filterExpr) {
       const data = await res.json();
       const calls = data.calls.filter(${filterExpr}).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();
   </script>`;
+}
+
+// === LISTING RULE (one rule, every listing page) ===
+// 1. A listing page shows EVERY call it covers — open ones first (soonest
+//    deadline first), then the rest under a "Past" header.
+// 2. The number shown next to that page in ANY index is calls.length — the
+//    same calls the page lists. List and page can never disagree.
+// 3. Robots/sitemap decisions still use the OPEN count only (a page of dead
+//    calls is not a search landing page). Content ≠ indexability.
+// listStats() is the single place those three numbers come from.
+function listStats(calls) {
+  const open = calls.filter(isOpen).length;
+  return { total: calls.length, open, past: calls.length - open };
+}
+
+// The one-line count that every listing page prints under its title, so a
+// visitor arriving from an index sees the same number they clicked plus the
+// split. Deliberately uniform — no special-casing that could drift.
+function statLine({ total, open }) {
+  if (!total) return '';
+  return `${total} call${total !== 1 ? 's' : ''}, ${open} open.`;
+}
+
+// Hero subtitle for a listing page: the page's prose (also its meta
+// description) followed by the count line.
+function listSubtitle(desc, stats) {
+  const line = statLine(stats);
+  return line ? `${escapeHtml(desc)} ${line}` : escapeHtml(desc);
+}
+
+// === INDEX RULE (one rule, every index page) ===
+// Entries whose page still has an open call are listed first; entries with
+// nothing open drop into a labelled archive section at the bottom. Nothing is
+// hidden and nothing is deleted — a page with only past calls is still
+// reachable, it just can't sit in the live list pretending otherwise.
+// The count is always entry.total: exactly what that page lists.
+const ARCHIVE_HEADING = 'No open calls';
+
+function indexItem(href, labelHtml, count) {
+  return `      <a href="${href}" class="index-item"><span class="index-item-name">${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+}
+
+// entries: [{ href, label, total, open }] — `total` is what the page lists,
+// `open` only decides which section the entry lands in.
+function buildIndexItems(entries, opts = {}) {
+  const fmt = opts.labelHtml || (l => escapeHtml(l));
+  const byCount = (a, b) => b.total - a.total || a.label.localeCompare(b.label);
+  const byLabel = (a, b) => a.label.localeCompare(b.label);
+  const sort = opts.sort === 'label' ? byLabel : byCount;
+  const live = entries.filter(e => e.open > 0).sort(sort);
+  const archived = entries.filter(e => !e.open).sort(sort);
+  let html = '';
+  live.forEach(e => { html += indexItem(e.href, fmt(e.label), e.total); });
+  if (archived.length) {
+    html += `      <h3 class="section-header">${ARCHIVE_HEADING}</h3>\n`;
+    archived.forEach(e => { html += indexItem(e.href, fmt(e.label), e.total); });
+  }
+  return html;
 }
 
 // Track generated files for cleanup at the end
@@ -465,28 +528,40 @@ function metaDescription(call) {
   return escapeHtml(trimmed + ' ' + deadline);
 }
 
-// Pre-render static call list for SEO (Google sees content without JS)
+// Pre-render static call list for SEO (Google sees content without JS).
+// Follows the LISTING RULE: open first (soonest deadline first, Continuous
+// last), then every past call under a "Past" header, newest-closed first.
+// Same split, same order, same notice as renderCallList() in cards.js — so the
+// pre-hydration paint and the hydrated list show the same calls.
 function buildStaticCallList(calls) {
   if (!calls.length) return '';
-  const sorted = calls.slice().sort((a, b) => {
-    const aOpen = isOpen(a), bOpen = isOpen(b);
-    if (aOpen !== bOpen) return aOpen ? -1 : 1;
+  const open = calls.filter(isOpen).sort((a, b) => {
+    if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
     if (a.deadline === 'Continuous') return 1;
     if (b.deadline === 'Continuous') return -1;
     return a.deadline.localeCompare(b.deadline);
   });
+  const past = calls.filter(c => !isOpen(c)).sort((a, b) => b.deadline.localeCompare(a.deadline));
+
   // Use the real card classes (.call-card / .call-title / .call-description) so
   // the first paint is fully styled by the design system. cards.js later swaps
   // in the interactive cards (with meta pills + sections); this keeps the
   // pre-hydration list looking like a proper card list instead of unstyled
   // default text. Mirrors renderCard() in cards.js (sans the meta-pill row).
-  let html = '';
-  sorted.forEach(c => {
+  const card = c => {
     const slug = c.slug || slugify(c.title);
     const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
     const desc = escapeHtml(c.summary || c.description);
-    html += `      <div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>\n`;
-  });
+    return `      <div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>\n`;
+  };
+
+  let html = '';
+  if (!open.length && past.length) html += `      <p class="empty-state">${escapeHtml(NO_OPEN_CALLS_NOTICE)}</p>\n`;
+  open.forEach(c => { html += card(c); });
+  if (past.length) {
+    html += `      <h3 class="section-header">Past</h3>\n`;
+    past.forEach(c => { html += card(c); });
+  }
   return html;
 }
 
@@ -830,10 +905,11 @@ const categories = {
 Object.entries(categories).forEach(([cat, info]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
   const slug = catSlug;
-  // Only list open calls on landing pages so internal links flow to indexable URLs.
-  const catCalls = data.calls.filter(c => c.category === cat && isCallOpen(c.deadline));
-  const count = catCalls.length;
-  const indexable = shouldIndexCategoryPage(count);
+  // LISTING RULE: every call in this category — open first, past below.
+  const catCalls = data.calls.filter(c => c.category === cat);
+  const stats = listStats(catCalls);
+  // Indexability still keys off OPEN calls only — an archive is not a landing page.
+  const indexable = shouldIndexCategoryPage(stats.open);
   const robotsDirective = robotsFor(indexable);
 
   const html = `<!DOCTYPE html>
@@ -846,7 +922,7 @@ Object.entries(categories).forEach(([cat, info]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Categories', '/categories'), info.title, escapeHtml(info.desc))}
+    ${buildHero(buildBreadcrumbs('Categories', '/categories'), info.title, listSubtitle(info.desc, stats))}
 
     <section class="calls-list" id="callsList">
 ${buildStaticCallList(catCalls)}
@@ -856,14 +932,14 @@ ${buildStaticCallList(catCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.category === '${cat}' && isCallOpen(c.deadline)`)}
+  ${facetListScript(`c => c.category === '${cat}'`)}
 
 </body>
 </html>`;
 
   writeGenerated(`${slug}/index.html`, html);
   if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
-  console.log(`  Category page: ${slug} (${count} calls, ${robotsDirective})`);
+  console.log(`  Category page: ${slug} (${stats.total} calls, ${stats.open} open, ${robotsDirective})`);
 });
 
 // === Special filter pages (Free, Prize) ===
@@ -892,10 +968,10 @@ const feeFilters = {
 };
 
 filterPages.forEach(fp => {
-  // Only list open calls on fee landing pages.
-  const fpCalls = data.calls.filter(c => feeFilters[fp.feeKey](c) && isCallOpen(c.deadline));
-  const count = fpCalls.length;
-  const indexable = shouldIndexFeePage(fp.slug, count);
+  // LISTING RULE: every call with this fee type — open first, past below.
+  const fpCalls = data.calls.filter(c => feeFilters[fp.feeKey](c));
+  const stats = listStats(fpCalls);
+  const indexable = shouldIndexFeePage(fp.slug, stats.open);
   const robotsDirective = robotsFor(indexable);
 
   const html = `<!DOCTYPE html>
@@ -908,7 +984,7 @@ filterPages.forEach(fp => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees/">Fees</a></nav>', fp.title, escapeHtml(fp.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees/">Fees</a></nav>', fp.title, listSubtitle(fp.desc, stats))}
 
     <section class="calls-list" id="callsList">
 ${buildStaticCallList(fpCalls)}
@@ -918,19 +994,22 @@ ${buildStaticCallList(fpCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => (${fp.filterJs}) && isCallOpen(c.deadline)`)}
+  ${facetListScript(`c => ${fp.filterJs}`)}
 
 </body>
 </html>`;
 
   writeGenerated(`${fp.slug}/index.html`, html);
   if (indexable) sitemapEntries.push(`${SITE}/${fp.slug}`);
-  console.log(`  Filter page: ${fp.slug} (${count} calls, ${robotsDirective})`);
+  console.log(`  Filter page: ${fp.slug} (${stats.total} calls, ${stats.open} open, ${robotsDirective})`);
 });
 
 // === Fees index page ===
-const freeCount = openCalls.filter(feeFilters['free']).length;
-const paidCount = openCalls.filter(feeFilters['entry-fee']).length;
+// INDEX RULE: the count is what the page lists (all calls), not just the open ones.
+const feeIndexItems = buildIndexItems([
+  { href: '/fees/free/', label: 'Free to Enter', ...listStats(data.calls.filter(feeFilters['free'])) },
+  { href: '/fees/entry-fee/', label: 'Entry Fee', ...listStats(data.calls.filter(feeFilters['entry-fee'])) }
+]);
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -944,17 +1023,7 @@ const feesIndexHtml = `<!DOCTYPE html>
     ${buildHero('', 'Fees', 'Browse open calls by entry fee. Find free submissions or paid competitions.')}
 
     <section class="index-list" id="indexList">
-      <a href="/fees/free/" class="index-item">
-        <span class="index-item-name">Free to Enter</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${freeCount}</span>
-      </a>
-      <a href="/fees/entry-fee/" class="index-item">
-        <span class="index-item-name">Entry Fee</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${paidCount}</span>
-      </a>
-    </section>
+${feeIndexItems}    </section>
 
     <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
 
@@ -1118,8 +1187,8 @@ if (hasErrors) { console.error('Fix errors above before generating.'); process.e
 
 const eligibilityPageSlugs = [];
 Object.entries(eligibilityGroups).forEach(([tag, info]) => {
-  const count = eligibilityTags[tag] || 0;
-  const openCount = openEligibilityTags[tag] || 0;
+  const tagCalls = data.calls.filter(c => c.eligibility && c.eligibility.includes(tag));
+  const stats = listStats(tagCalls);
   const slug = `eligibility/${tag}`;
   // Facet pages stay useful for users but are intentionally not standalone
   // search landing pages during the product-reset test.
@@ -1135,24 +1204,24 @@ Object.entries(eligibilityGroups).forEach(([tag, info]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>', escapeHtml(info.title), listSubtitle(info.desc, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.eligibility && c.eligibility.includes(tag) && isCallOpen(c.deadline)))}
+${buildStaticCallList(tagCalls)}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.eligibility && c.eligibility.includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
+  ${facetListScript(`c => c.eligibility && c.eligibility.includes('${tag}')`)}
 
 </body>
 </html>`;
 
   eligibilityPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  console.log(`  Eligibility page: ${tag} (${count} calls, ${openCount} open)`);
+  console.log(`  Eligibility page: ${tag} (${stats.total} calls, ${stats.open} open)`);
 });
 
 // Eligibility index page
@@ -1174,24 +1243,29 @@ Object.keys(eligibilityTags).forEach(tag => {
 });
 
 function buildEligibilityIndexItems() {
+  // INDEX RULE, group-aware version: a tag with an open call stays in its
+  // heading group; a tag whose calls have all closed collects into one archive
+  // section at the bottom. Counts are total calls — what each page lists.
   let html = '';
+  const archived = [];
+  const byCount = (a, b) => (eligibilityTags[b] || 0) - (eligibilityTags[a] || 0) ||
+    eligibilityGroups[a].short.localeCompare(eligibilityGroups[b].short);
+  const item = tag => indexItem(`/eligibility/${tag}/`, escapeHtml(eligibilityGroups[tag].short), eligibilityTags[tag] || 0);
+
   eligibilityOrder.forEach(group => {
-    // Only list eligibility tags with open calls — zero-open pages are noindex
-    // and stay reachable via search.
-    const activeTags = group.tags.filter(t => (openEligibilityTags[t] || 0) > 0);
-    if (!activeTags.length) return;
-    activeTags.sort((a, b) => (openEligibilityTags[b] || 0) - (openEligibilityTags[a] || 0));
+    const present = group.tags.filter(t => eligibilityTags[t]);
+    const live = present.filter(t => (openEligibilityTags[t] || 0) > 0).sort(byCount);
+    present.filter(t => !(openEligibilityTags[t] || 0)).forEach(t => archived.push(t));
+    if (!live.length) return;
     html += `<h3 class="section-header">${escapeHtml(group.heading)}</h3>\n`;
-    activeTags.forEach(tag => {
-      const info = eligibilityGroups[tag];
-      const count = openEligibilityTags[tag] || 0;
-      html += `      <a href="/eligibility/${tag}/" class="index-item">
-          <span class="index-item-name">${escapeHtml(info.short)}</span>
-          <span class="dots"></span>
-          <span class="index-item-count">${count}</span>
-        </a>\n`;
-    });
+    live.forEach(tag => { html += item(tag); });
   });
+
+  if (archived.length) {
+    archived.sort(byCount);
+    html += `<h3 class="section-header">${ARCHIVE_HEADING}</h3>\n`;
+    archived.forEach(tag => { html += item(tag); });
+  }
   return html;
 }
 
@@ -1249,10 +1323,11 @@ openCalls.forEach(c => {
 });
 
 const prizeCatPageSlugs = [];
-Object.entries(prizeCatTags).forEach(([tag, count]) => {
+Object.entries(prizeCatTags).forEach(([tag]) => {
   const info = prizeGroups[tag];
   if (!info) return;
-  const openCount = openPrizeCatTags[tag] || 0;
+  const tagCalls = data.calls.filter(c => derivePrizeCategories(c.prize).includes(tag));
+  const stats = listStats(tagCalls);
   const slug = `prize/${tag}`;
   const robotsDirective = 'noindex, follow';
 
@@ -1266,10 +1341,10 @@ Object.entries(prizeCatTags).forEach(([tag, count]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>', escapeHtml(info.title), listSubtitle(info.desc, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).includes(tag) && isCallOpen(c.deadline)))}
+${buildStaticCallList(tagCalls)}
     </section>
 
     ${FOOTER}
@@ -1283,9 +1358,9 @@ ${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).incl
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCategories(c.prize).includes('${tag}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
+      const calls = data.calls.filter(c => derivePrizeCategories(c.prize).includes('${tag}')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();
@@ -1296,23 +1371,19 @@ ${buildStaticCallList(data.calls.filter(c => derivePrizeCategories(c.prize).incl
 
   prizeCatPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  console.log(`  Prize page: ${tag} (${count} calls, ${openCount} open)`);
+  console.log(`  Prize page: ${tag} (${stats.total} calls, ${stats.open} open)`);
 });
 
 // Prize index page
 const prizeOrder = ['cash', 'exhibition', 'publication', 'residency', 'fellowship'];
 
 function buildPrizeIndexItems() {
-  let html = '';
-  prizeOrder.filter(t => openPrizeCatTags[t]).forEach(tag => {
-    const info = prizeGroups[tag];
-    html += `      <a href="/prize/${tag}/" class="index-item">
-        <span class="index-item-name">${escapeHtml(info.short)}</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${openPrizeCatTags[tag]}</span>
-      </a>\n`;
-  });
-  return html;
+  return buildIndexItems(prizeOrder.filter(t => prizeCatTags[t]).map(tag => ({
+    href: `/prize/${tag}/`,
+    label: prizeGroups[tag].short,
+    total: prizeCatTags[tag] || 0,
+    open: openPrizeCatTags[tag] || 0
+  })));
 }
 
 if (prizeCatPageSlugs.length) {
@@ -1372,8 +1443,8 @@ data.calls.forEach(c => {
 const requirementPageSlugs = [];
 requirementOrder.filter(tag => requirementTags[tag]).forEach(tag => {
   const info = requirementGroups[tag];
-  const count = requirementTags[tag] || 0;
-  const openCount = openRequirementTags[tag] || 0;
+  const tagCalls = data.calls.filter(c => deriveRequirementBucket(c.requirements) === tag);
+  const stats = listStats(tagCalls);
   const slug = `requirements/${tag}`;
   const robotsDirective = 'noindex, follow';
 
@@ -1387,38 +1458,34 @@ requirementOrder.filter(tag => requirementTags[tag]).forEach(tag => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/requirements/">Requirements</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/requirements/">Requirements</a></nav>', escapeHtml(info.title), listSubtitle(info.desc, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => deriveRequirementBucket(c.requirements) === tag && isCallOpen(c.deadline)))}
+${buildStaticCallList(tagCalls)}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => deriveRequirementBucket(c.requirements) === '${tag}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
+  ${facetListScript(`c => deriveRequirementBucket(c.requirements) === '${tag}'`)}
 
 </body>
 </html>`;
 
   requirementPageSlugs.push(tag);
   writeGenerated(`${slug}/index.html`, html);
-  console.log(`  Requirements page: ${tag} (${count} calls, ${openCount} open)`);
+  console.log(`  Requirements page: ${tag} (${stats.total} calls, ${stats.open} open)`);
 });
 
 // Requirements index page
 function buildRequirementIndexItems() {
-  let html = '';
-  requirementOrder.filter(t => requirementTags[t]).forEach(tag => {
-    const info = requirementGroups[tag];
-    html += `      <a href="/requirements/${tag}/" class="index-item">
-        <span class="index-item-name">${escapeHtml(info.short)}</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${openRequirementTags[tag] || 0}</span>
-      </a>\n`;
-  });
-  return html;
+  return buildIndexItems(requirementOrder.filter(t => requirementTags[t]).map(tag => ({
+    href: `/requirements/${tag}/`,
+    label: requirementGroups[tag].short,
+    total: requirementTags[tag] || 0,
+    open: openRequirementTags[tag] || 0
+  })));
 }
 
 if (requirementPageSlugs.length) {
@@ -1479,13 +1546,14 @@ data.calls.forEach(c => {
   if (isCallOpen(c.deadline)) openSubmitViaTags[slug] = (openSubmitViaTags[slug] || 0) + 1;
 });
 
-// Build a sub-page only when the method has at least one OPEN call (avoids stale
-// empty pages). Future calls re-introduce a method automatically on the next run.
+// Build a sub-page for every method that has at least one call, open or past —
+// the page lists its past calls under "Past", so it's never an empty page, and
+// the submit-via index can link every method it counts.
 const submitViaPageSlugs = [];
-submitViaOrder.filter(slug => openSubmitViaTags[slug]).forEach(slug => {
+submitViaOrder.filter(slug => submitViaTags[slug]).forEach(slug => {
   const info = submitViaGroups[slug];
-  const count = submitViaTags[slug] || 0;
-  const openCount = openSubmitViaTags[slug] || 0;
+  const methodCalls = data.calls.filter(c => submitViaSlugByLabel[submitViaLabel(c.submitVia)] === slug);
+  const stats = listStats(methodCalls);
   const pageSlug = `submit-via/${slug}`;
 
   const html = `<!DOCTYPE html>
@@ -1498,38 +1566,34 @@ submitViaOrder.filter(slug => openSubmitViaTags[slug]).forEach(slug => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>', escapeHtml(info.title), escapeHtml(info.desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>', escapeHtml(info.title), listSubtitle(info.desc, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => submitViaSlugByLabel[submitViaLabel(c.submitVia)] === slug && isCallOpen(c.deadline)))}
+${buildStaticCallList(methodCalls)}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => submitViaLabel(c.submitVia) === ${JSON.stringify(info.label)} && isCallOpen(c.deadline)`)}
+  ${facetListScript(`c => submitViaLabel(c.submitVia) === ${JSON.stringify(info.label)}`)}
 
 </body>
 </html>`;
 
   submitViaPageSlugs.push(slug);
   writeGenerated(`${pageSlug}/index.html`, html);
-  console.log(`  Submit-via page: ${slug} (${count} calls, ${openCount} open)`);
+  console.log(`  Submit-via page: ${slug} (${stats.total} calls, ${stats.open} open)`);
 });
 
 // Submit-via index (hub) page — the target of the "Submit via" detail-page label.
 function buildSubmitViaIndexItems() {
-  let html = '';
-  submitViaOrder.filter(slug => openSubmitViaTags[slug]).forEach(slug => {
-    const info = submitViaGroups[slug];
-    html += `      <a href="/submit-via/${slug}/" class="index-item">
-        <span class="index-item-name">${escapeHtml(info.short)}</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${openSubmitViaTags[slug] || 0}</span>
-      </a>\n`;
-  });
-  return html;
+  return buildIndexItems(submitViaPageSlugs.map(slug => ({
+    href: `/submit-via/${slug}/`,
+    label: submitViaGroups[slug].short,
+    total: submitViaTags[slug] || 0,
+    open: openSubmitViaTags[slug] || 0
+  })));
 }
 
 if (submitViaPageSlugs.length) {
@@ -1564,18 +1628,50 @@ if (submitViaPageSlugs.length) {
   console.log(`  Submit-via index page (${submitViaPageSlugs.length} methods)`);
 }
 
+// === US state tallies ===
+// usStateNames + stateNameToAbbr come from shared.js (single source of truth).
+// Counted before the country pages because /united-states/ lists STATES rather
+// than calls, and that index has to follow the same INDEX RULE as every other.
+const stateCounts = {};
+const openStateCounts = {};
+data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+  const parts = c.location.split(',');
+  let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+  // Normalize full state names to abbreviations to prevent duplicate pages
+  if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
+  if (state) {
+    stateCounts[state] = (stateCounts[state] || 0) + 1;
+    if (isCallOpen(c.deadline)) {
+      openStateCounts[state] = (openStateCounts[state] || 0) + 1;
+    }
+  }
+});
+
+// The state list shown ON /united-states/ (that page indexes states, not calls).
+const usStateIndexItems = buildIndexItems(Object.keys(stateCounts).map(state => {
+  const fullName = usStateNames[state] || state;
+  return {
+    href: `/united-states/${slugify(fullName)}/`,
+    label: fullName,
+    total: stateCounts[state] || 0,
+    open: openStateCounts[state] || 0
+  };
+}));
+
 // === Country landing pages ===
 const countryNames = {
   'USA': 'the United States', 'UK': 'the United Kingdom', 'UAE': 'the United Arab Emirates', 'Netherlands': 'the Netherlands'
 };
 
 Object.entries(countryCounts)
-  .forEach(([country, count]) => {
+  .forEach(([country]) => {
     const fullName = countryNames[country] || country;
     const countrySlug = countrySlugs[country] || slugify(country);
     const slug = countrySlug;
     const isOnline = country === 'Online';
-    const openCount = openCountryCounts[country] || 0;
+    const countryCalls = data.calls.filter(c => getCountry(c.location) === country);
+    const stats = listStats(countryCalls);
+    const openCount = stats.open;
     const indexable = shouldIndexCountryPage(country, openCount);
     const robotsDirective = robotsFor(indexable);
     const title = isOnline ? 'Online Open Calls for Artists' : `Open Calls for Artists in ${fullName}`;
@@ -1593,57 +1689,19 @@ Object.entries(countryCounts)
   ${buildHeader()}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Locations', '/locations'), escapeHtml(title), escapeHtml(desc))}
+    ${buildHero(buildBreadcrumbs('Locations', '/locations'), escapeHtml(title), listSubtitle(desc, stats))}
 
-    <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => getCountry(c.location) === country && isCallOpen(c.deadline)))}
+    <section class="${country === 'USA' ? 'index-list' : 'calls-list'}" id="callsList">
+${country === 'USA' ? usStateIndexItems : buildStaticCallList(countryCalls)}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-${country === 'USA' ? `
-      // State index for USA — usStateNames + stateNameToAbbr are the shared.js
-      // globals (loaded above), so this never drifts from the server map.
-      const _n = new Date(); const today = _n.getFullYear() + '-' + String(_n.getMonth()+1).padStart(2,'0') + '-' + String(_n.getDate()).padStart(2,'0');
-      const counts = {};
-      data.calls.filter(c => c.location && c.location.endsWith('USA') && (c.deadline === 'Continuous' || c.deadline >= today)).forEach(c => {
-        const parts = c.location.split(',');
-        let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-        if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
-        if (state) counts[state] = (counts[state] || 0) + 1;
-      });
-      const sorted = Object.entries(counts).sort((a, b) => {
-        const nameA = (usStateNames[a[0]] || a[0]).toLowerCase();
-        const nameB = (usStateNames[b[0]] || b[0]).toLowerCase();
-        return nameA.localeCompare(nameB);
-      });
-      const container = document.getElementById('callsList');
-      container.className = 'index-list';
-      let html = '';
-      sorted.forEach(([state, count]) => {
-        const fullName = usStateNames[state] || state;
-        html += '<a href="/united-states/' + slugify(fullName) + '/" class="index-item">' +
-          '<span class="index-item-name">' + esc(fullName) + '</span>' +
-          '<span class="dots"></span>' +
-          '<span class="index-item-count">' + count + '</span></a>';
-      });
-      container.innerHTML = html;
-` : `
-      const calls = data.calls.filter(c => getCountry(c.location) === '${country.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-`}
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+${country === 'USA' ? `  <!-- /united-states/ lists STATES, not calls. The list is build-time data,
+       so it ships fully rendered and needs no hydration — nothing to drift. -->`
+    : `  ${facetListScript(`c => getCountry(c.location) === '${country.replace(/'/g, "\\'")}'`)}`}
 
 </body>
 </html>`;
@@ -1655,33 +1713,17 @@ ${country === 'USA' ? `
     linkedCountrySlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
     if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
-    console.log(`  Country page: ${slug} (${count} calls, ${openCount} open)`);
+    console.log(`  Country page: ${slug} (${stats.total} calls, ${stats.open} open)`);
   });
 
 // === US State landing pages ===
-// usStateNames + stateNameToAbbr come from shared.js (single source of truth).
-
-const stateCounts = {};
-const openStateCounts = {};
-data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
-  const parts = c.location.split(',');
-  let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-  // Normalize full state names to abbreviations to prevent duplicate pages
-  if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
-  if (state) {
-    stateCounts[state] = (stateCounts[state] || 0) + 1;
-    if (isCallOpen(c.deadline)) {
-      openStateCounts[state] = (openStateCounts[state] || 0) + 1;
-    }
-  }
-});
-
-Object.entries(stateCounts).forEach(([state, count]) => {
+Object.entries(stateCounts).forEach(([state]) => {
   const fullStateName = usStateNames[state] || state;
   const stateSlug = slugify(fullStateName);
   const slug = `united-states/${stateSlug}`;
-  const openCount = openStateCounts[state] || 0;
-  const indexable = shouldIndexStatePage(openCount);
+  const stateCalls = data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + fullStateName + ',')));
+  const stats = listStats(stateCalls);
+  const indexable = shouldIndexStatePage(stats.open);
   const robotsDirective = robotsFor(indexable);
   const title = `Open Calls for Artists in ${fullStateName}`;
   const desc = `Find open calls, exhibitions, grants, and residencies for photographers and visual artists in ${fullStateName}. Browse and apply today.`;
@@ -1696,17 +1738,17 @@ Object.entries(stateCounts).forEach(([state, count]) => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>', escapeHtml(title), escapeHtml(desc))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>', escapeHtml(title), listSubtitle(desc, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + fullStateName + ',')) && isCallOpen(c.deadline)))}
+${buildStaticCallList(stateCalls)}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${fullStateName},'))${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
+  ${facetListScript(`c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${fullStateName},'))`)}
 
 </body>
 </html>`;
@@ -1714,15 +1756,16 @@ ${buildStaticCallList(data.calls.filter(c => c.location && (c.location.includes(
   slugMap[slug] = `state: ${fullStateName}`;
   writeGenerated(`${slug}/index.html`, html);
   if (indexable) sitemapEntries.push(`${SITE}/${slug}`);
-  console.log(`  State page: ${slug} (${count} calls, ${openCount} open)`);
+  console.log(`  State page: ${slug} (${stats.total} calls, ${stats.open} open)`);
 });
 
 // === Org landing pages ===
 Object.entries(orgCounts)
-  .forEach(([org, count]) => {
+  .forEach(([org]) => {
     const orgSlug = slugify(org);
     const slug = orgSlug;
-    const openCount = openOrgCounts[org] || 0;
+    const orgCalls = data.calls.filter(c => c.org === org);
+    const stats = listStats(orgCalls);
     const robotsDirective = 'noindex, follow';
     const title = `${org} - Open Calls`;
     const desc = `Open calls and submission opportunities from ${org}. Browse exhibitions, grants, residencies, and more for photographers and visual artists.`;
@@ -1749,16 +1792,16 @@ Object.entries(orgCounts)
   ${buildHeader()}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), escapeHtml(desc))}
+    ${buildHero(buildBreadcrumbs('Organizations', '/organizations'), escapeHtml(org), listSubtitle(desc, stats))}
     <section class="calls-list" id="callsList">
-${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadline)))}
+${buildStaticCallList(orgCalls)}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.org === '${org.replace(/'/g, "\\'")}'${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}`)}
+  ${facetListScript(`c => c.org === '${org.replace(/'/g, "\\'")}'`)}
 
 </body>
 </html>`;
@@ -1766,7 +1809,7 @@ ${buildStaticCallList(data.calls.filter(c => c.org === org && isCallOpen(c.deadl
     slugMap[slug] = `org: ${org}`;
     createdOrgSlugs.push(slug);
     writeGenerated(`${slug}/index.html`, html);
-    console.log(`  Org page: ${slug} (${count} calls, ${openCount} open)`);
+    console.log(`  Org page: ${slug} (${stats.total} calls, ${stats.open} open)`);
   });
 
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
@@ -1793,11 +1836,11 @@ const sortedMonths = Object.keys(monthGroups).sort((a, b) => {
 sortedMonths.forEach(key => {
   const g = monthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
-  const count = g.calls.length;
-  const openCount = g.calls.filter(isOpen).length;
+  const stats = listStats(g.calls);
+  const count = stats.total;
+  const openCount = stats.open;
   // Past-month pages where every call has closed → noindex + drop from sitemap.
   const robotsDirective = openCount > 0 ? 'index, follow' : 'noindex, follow';
-  const visibleCalls = openCount > 0 ? g.calls.filter(isOpen) : g.calls;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1809,10 +1852,10 @@ sortedMonths.forEach(key => {
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, `${count} call${count !== 1 ? 's' : ''} with deadlines in ${label}${openCount > 0 && openCount < count ? ` — ${openCount} still open` : openCount === 0 ? ' — all closed' : ''}.`)}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, listSubtitle(`Deadlines in ${label}.`, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(visibleCalls)}
+${buildStaticCallList(g.calls)}
     </section>
 
     ${FOOTER}
@@ -1824,10 +1867,10 @@ ${buildStaticCallList(visibleCalls)}
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')${openCount > 0 ? ' && isCallOpen(c.deadline)' : ''}).map(processCall);
+      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+      renderCallList(calls, document.getElementById('callsList'), { skipSections: true, noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();
@@ -1855,15 +1898,11 @@ const pastMonths = sortedMonths.filter(k => {
   return (g.year < currentYear) || (g.year === currentYear && g.month < currentMonth);
 }).reverse();
 
-function deadlineItem(key, sectionLabel) {
+// INDEX RULE: the count is the number of calls the month page lists. Months are
+// already grouped by Upcoming / Past below, so no extra archive section here.
+function deadlineItem(key) {
   const g = monthGroups[key];
-  const label = `${MONTH_LABELS[g.month]} ${g.year}`;
-  const openCount = g.calls.filter(isOpen).length;
-  return `      <a href="/deadlines/${key}/" class="index-item">
-        <span class="index-item-name">${label}</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${openCount > 0 ? openCount : g.calls.length}</span>
-      </a>`;
+  return indexItem(`/deadlines/${key}/`, `${MONTH_LABELS[g.month]} ${g.year}`, g.calls.length).trimEnd();
 }
 
 const deadlinesIndexItems = [
@@ -2073,20 +2112,18 @@ function midTruncateHtml(str, minLen) {
   return `<span class="tag-front">${escapeHtml(front)}</span><span class="tag-back">${escapeHtml(back)}</span>`;
 }
 
+// /browse/ is the shortcut hub, not an exhaustive index: it lists only
+// destinations that have something open right now (the full lists, archive
+// sections included, live on /organizations/, /locations/, /eligibility/…).
+// The count is still the page's total, so it matches the page you land on.
 function buildBrowseSection(heading, items, headingLink) {
-  // Only surface destinations that actually have open calls. Zero-count pages
-  // are noindex anyway and just bloat the page; they stay reachable via search.
-  const live = items.filter(i => i.count > 0);
+  const live = items.filter(i => i.open > 0);
   if (!live.length) return '';
   const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
   let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
-  const sorted = [...live].sort((a, b) => b.count - a.count);
-  sorted.forEach(({ label, href, count }) => {
-    html += `      <a href="${href}" class="index-item">
-        <span class="index-item-name">${midTruncateHtml(label)}</span>
-        <span class="dots"></span>
-        <span class="index-item-count">${count}</span>
-      </a>\n`;
+  const sorted = [...live].sort((a, b) => b.open - a.open || a.label.localeCompare(b.label));
+  sorted.forEach(({ label, href, total }) => {
+    html += indexItem(href, midTruncateHtml(label), total);
   });
   return html;
 }
@@ -2097,55 +2134,42 @@ const browseCategoryLabels = {
 };
 const browseCategories = Object.entries(categories).map(([cat]) => {
   const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
-  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}/`, count: openCalls.filter(c => c.category === cat).length };
-}).sort((a, b) => b.count - a.count);
+  return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}/`, ...listStats(data.calls.filter(c => c.category === cat)) };
+});
 
 const browseFees = [
-  { label: 'Free to Enter', href: '/fees/free/', count: openCalls.filter(feeFilters['free']).length },
-  { label: 'Entry Fee', href: '/fees/entry-fee/', count: openCalls.filter(feeFilters['entry-fee']).length }
+  { label: 'Free to Enter', href: '/fees/free/', ...listStats(data.calls.filter(feeFilters['free'])) },
+  { label: 'Entry Fee', href: '/fees/entry-fee/', ...listStats(data.calls.filter(feeFilters['entry-fee'])) }
 ];
-const browsePrizes = [];
-prizeOrder.filter(t => prizeCatTags[t]).forEach(tag => {
-  browsePrizes.push({ label: prizeGroups[tag].short, href: `/prize/${tag}/`, count: openPrizeCatTags[tag] || 0 });
+const browsePrizes = prizeOrder.filter(t => prizeCatTags[t]).map(tag => ({
+  label: prizeGroups[tag].short, href: `/prize/${tag}/`, total: prizeCatTags[tag] || 0, open: openPrizeCatTags[tag] || 0
+}));
+
+const browseRequirements = requirementOrder.filter(t => requirementTags[t]).map(tag => ({
+  label: requirementGroups[tag].short, href: `/requirements/${tag}/`, total: requirementTags[tag] || 0, open: openRequirementTags[tag] || 0
+}));
+
+const browseCountries = Object.entries(countryCounts).map(([country, total]) => {
+  const countrySlug = countrySlugs[country] || slugify(country);
+  const label = countryNames[country] ? countryNames[country].replace(/^the /, '') : country;
+  return { label, href: `/${countrySlug}/`, total, open: openCountryCounts[country] || 0 };
 });
 
-const browseRequirements = [];
-requirementOrder.filter(t => requirementTags[t]).forEach(tag => {
-  browseRequirements.push({ label: requirementGroups[tag].short, href: `/requirements/${tag}/`, count: openRequirementTags[tag] || 0 });
+const browseStates = Object.entries(stateCounts).map(([state, total]) => {
+  const fullName = usStateNames[state] || state;
+  return { label: fullName, href: `/united-states/${slugify(fullName)}/`, total, open: openStateCounts[state] || 0 };
 });
-
-const browseCountries = Object.entries(countryCounts)
-  .map(([country]) => {
-    const countrySlug = countrySlugs[country] || slugify(country);
-    const label = countryNames[country] ? countryNames[country].replace(/^the /, '') : country;
-    return { label, href: `/${countrySlug}/`, count: openCountryCounts[country] || 0 };
-  })
-  .sort((a, b) => a.label.localeCompare(b.label));
-
-const browseStates = Object.entries(stateCounts)
-  .sort((a, b) => {
-    const nameA = (usStateNames[a[0]] || a[0]).toLowerCase();
-    const nameB = (usStateNames[b[0]] || b[0]).toLowerCase();
-    return nameA.localeCompare(nameB);
-  })
-  .map(([state]) => {
-    const fullName = usStateNames[state] || state;
-    return { label: fullName, href: `/united-states/${slugify(fullName)}/`, count: openStateCounts[state] || 0 };
-  });
 
 const browseEligibility = [];
 eligibilityOrder.forEach(group => {
   group.tags.filter(t => eligibilityTags[t]).forEach(tag => {
-    const info = eligibilityGroups[tag];
-    browseEligibility.push({ label: info.short, href: `/eligibility/${tag}/`, count: openEligibilityTags[tag] || 0 });
+    browseEligibility.push({ label: eligibilityGroups[tag].short, href: `/eligibility/${tag}/`, total: eligibilityTags[tag], open: openEligibilityTags[tag] || 0 });
   });
 });
-browseEligibility.sort((a, b) => b.count - a.count);
 
 const browseOrgs = Object.entries(orgCounts)
   .filter(([org]) => createdOrgSlugs.includes(slugify(org)))
-  .sort((a, b) => a[0].localeCompare(b[0]))
-  .map(([org]) => ({ label: org, href: `/${slugify(org)}/`, count: openOrgCounts[org] || 0 }));
+  .map(([org, total]) => ({ label: org, href: `/${slugify(org)}/`, total, open: openOrgCounts[org] || 0 }));
 
 const browseHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -2167,7 +2191,7 @@ ${buildBrowseSection('Requirements', browseRequirements, '/requirements/')}
 ${buildBrowseSection('Locations', browseCountries, '/locations/')}
 ${buildBrowseSection('US States', browseStates, '/united-states/')}
 ${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/')}
-${buildBrowseSection('Deadlines', sortedMonths.filter(k => monthGroups[k].calls.some(isOpen)).map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}/`, count: g.calls.filter(isOpen).length }; }), '/deadlines/')}
+${buildBrowseSection('Deadlines', sortedMonths.map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}/`, ...listStats(g.calls) }; }), '/deadlines/')}
 ${buildBrowseSection('Organizations', browseOrgs, '/organizations/')}
     </section>
 
@@ -2495,11 +2519,9 @@ manualFiles.forEach(file => {
 {
   const catSlugs = { photography: 'photography', exhibition: 'exhibitions', grant: 'grants', zine: 'zines', residency: 'residencies', education: 'education' };
   const catLabels = { photography: 'Photography', exhibition: 'Exhibitions', grant: 'Grants', zine: 'Zines & Books', residency: 'Residencies', education: 'Education' };
-  let items = '';
-  Object.entries(catSlugs).forEach(([cat, slug]) => {
-    const count = openCalls.filter(c => c.category === cat).length;
-    items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${catLabels[cat]}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
-  });
+  const items = buildIndexItems(Object.entries(catSlugs).map(([cat, slug]) => ({
+    href: `/${slug}/`, label: catLabels[cat], ...listStats(data.calls.filter(c => c.category === cat))
+  })));
   let html = fs.readFileSync('categories/index.html', 'utf8');
   html = setRobotsMeta(html, 'index, follow');
   html = html.replace(
@@ -2512,20 +2534,14 @@ manualFiles.forEach(file => {
 
 // 3. LOCATIONS INDEX — inject country links with open-call counts
 {
-  const countryCountsOpen = {};
   const countrySlugMap = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
   const countryDisplayNames = { 'USA': 'United States', 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates' };
-  openCalls.forEach(c => {
-    const country = getCountry(c.location);
-    if (country) countryCountsOpen[country] = (countryCountsOpen[country] || 0) + 1;
-  });
-  const sorted = Object.entries(countryCountsOpen).sort((a, b) => b[1] - a[1]);
-  let items = '';
-  sorted.forEach(([country, count]) => {
-    const slug = countrySlugMap[country] || slugify(country);
-    const display = countryDisplayNames[country] || country;
-    items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${escapeHtml(display)}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
-  });
+  const items = buildIndexItems(Object.entries(countryCounts).map(([country, total]) => ({
+    href: `/${countrySlugMap[country] || slugify(country)}/`,
+    label: countryDisplayNames[country] || country,
+    total,
+    open: openCountryCounts[country] || 0
+  })));
   let html = fs.readFileSync('locations/index.html', 'utf8');
   html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
@@ -2533,19 +2549,19 @@ manualFiles.forEach(file => {
     `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
   );
   fs.writeFileSync('locations/index.html', html);
-  console.log(`  Locations page: injected ${sorted.length} country links`);
+  console.log(`  Locations page: injected ${Object.keys(countryCounts).length} country links`);
 }
 
-// 4. ORGANIZATIONS INDEX — inject org links with total call counts
+// 4. ORGANIZATIONS INDEX — orgs with open calls first, the rest under "No open calls"
 {
-  const orgCountsAll = {};
-  data.calls.forEach(c => { orgCountsAll[c.org] = (orgCountsAll[c.org] || 0) + 1; });
-  const sorted = Object.entries(orgCountsAll).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  let items = '';
-  sorted.forEach(([org, count]) => {
-    const slug = slugify(org);
-    items += `      <a href="/${slug}/" class="index-item"><span class="index-item-name">${escapeHtml(org)}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
-  });
+  const items = buildIndexItems(Object.entries(orgCounts)
+    .filter(([org]) => createdOrgSlugs.includes(slugify(org)))
+    .map(([org, total]) => ({
+      href: `/${slugify(org)}/`,
+      label: org,
+      total,
+      open: openOrgCounts[org] || 0
+    })));
   let html = fs.readFileSync('organizations/index.html', 'utf8');
   html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
@@ -2553,7 +2569,7 @@ manualFiles.forEach(file => {
     `<!-- STATIC-INDEX-START -->\n${items}      <!-- STATIC-INDEX-END -->`
   );
   fs.writeFileSync('organizations/index.html', html);
-  console.log(`  Organizations page: injected ${sorted.length} org links`);
+  console.log(`  Organizations page: injected ${createdOrgSlugs.length} org links`);
 }
 
 // === Redirect stubs for renamed calls (old slug → current slug) ===
@@ -2640,6 +2656,58 @@ if (staleFiles.length) {
   console.warn(`\n⚠️  ${staleFiles.length} HTML file(s) not generated this run (NOT deleted — review manually):`);
   staleFiles.forEach(f => console.warn(`   ${f}`));
   console.warn('');
+}
+
+// === HARD GATE: every count must equal what the page it points to lists ===
+// The invariant the whole listing/index system exists to keep:
+//   index row count  ==  target page's hero total  ==  cards rendered on it
+// Checked against the HTML actually written to disk, so no code path can quietly
+// go back to counting one set of calls and listing another.
+{
+  const errs = [];
+  const listings = new Map(); // '/slug/' -> total calls the page covers
+
+  // Pass 1 — every listing page: hero total vs cards actually on the page.
+  for (const file of generatedFiles) {
+    if (!file.endsWith('index.html')) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    const hero = html.match(/class="subtitle">([\s\S]*?)<\/h2>/);
+    if (!hero) continue;
+    const stat = hero[1].trim().match(/(\d+) calls?, (\d+) open\.$/);
+    if (!stat) continue; // not a listing page (detail pages carry prose subtitles)
+    const url = '/' + file.replace(/index\.html$/, '');
+    const total = Number(stat[1]);
+    listings.set(url, total);
+    // /united-states/ lists STATES, not cards — its own rows are checked below.
+    if (/<section class="calls-list" id="callsList">/.test(html)) {
+      const cards = (html.match(/class="call-card"/g) || []).length;
+      if (cards !== total) errs.push(`${url} says "${total} calls" but renders ${cards} cards`);
+    }
+  }
+
+  // Pass 2 — every index row: printed count vs the target page's own total.
+  let rowsChecked = 0;
+  for (const file of generatedFiles) {
+    if (!file.endsWith('index.html')) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    const rows = html.matchAll(/<a href="([^"]+)" class="index-item">[\s\S]*?<span class="index-item-count">(\d+)<\/span>/g);
+    for (const [, href, printed] of rows) {
+      if (!listings.has(href)) continue; // link to a hub page, not a listing
+      rowsChecked++;
+      const total = listings.get(href);
+      if (Number(printed) !== total) {
+        errs.push(`/${file.replace(/index\.html$/, '')} shows ${printed} for ${href}, but that page lists ${total}`);
+      }
+    }
+  }
+
+  if (errs.length) {
+    console.error('\nFATAL: listing/index count mismatch — a number promises calls its page does not list:');
+    errs.slice(0, 20).forEach(e => console.error(`  - ${e}`));
+    if (errs.length > 20) console.error(`  …and ${errs.length - 20} more`);
+    process.exit(1);
+  }
+  console.log(`  Count gate: ${listings.size} listing pages, ${rowsChecked} index rows — all counts match`);
 }
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);

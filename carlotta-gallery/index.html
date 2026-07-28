@@ -102,13 +102,21 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Carlotta Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Carlotta Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Carlotta Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 11 calls, 4 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/on-film-carlotta-gallery/">On Film — Carlotta Gallery</a></h3><p class="call-description">Celebrating film and analogue photography — every exposure a point of no return. Free to apply; virtual exhibition.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/central-south-america-carlotta-gallery/">Central &amp; South America — Carlotta Gallery</a></h3><p class="call-description">Respond to the region through brief, specific observations — a layered archive of diverse cultures and conditions. Virtual exhibition.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/people-carlotta-gallery/">People — Carlotta Gallery</a></h3><p class="call-description">People in everyday life, captured without staging — human presence as traces rather than conclusions. Free to apply; virtual exhibition.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/red-carlotta-gallery/">Red — Carlotta Gallery</a></h3><p class="call-description">Red as a force within the image, not just a colour — its weight and intensity across bodies, objects and memory. Virtual exhibition.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/colours-iii-carlotta-gallery/">Colours III — Carlotta Gallery</a></h3><p class="call-description">Third edition celebrating colour — from saturated compositions to subtle tonal variation. Free to apply.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/self-carlotta-gallery/">Self — Carlotta Gallery</a></h3><p class="call-description">Self-portraiture virtual exhibition — how one appears and is held by the camera. Free to apply, pay if selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/summer-carlotta-gallery/">Summer — Carlotta Gallery</a></h3><p class="call-description">Summer experienced differently across the world — intensity, brightness, stillness. Virtual exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/candid-carlotta-gallery/">Candid — Carlotta Gallery</a></h3><p class="call-description">The art of attention — rooted in presence, patience, and trust in the unfolding moment. Virtual exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/europe-carlotta-gallery/">Europe — Carlotta Gallery</a></h3><p class="call-description">Exploring Europe as a negotiation between tradition and innovation, memory and experimentation. Virtual exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/flora-carlotta-gallery/">Flora — Carlotta Gallery</a></h3><p class="call-description">Nature photography exploring the quiet intensity of plant life. Virtual exhibition with catalogue.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/dark-frames-iii-carlotta-gallery/">Dark Frames III — Carlotta Gallery</a></h3><p class="call-description">Black and white photography virtual exhibition. Absence of colour as a space for deeper perception.</p></div>
 
     </section>
 
@@ -126,9 +134,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Carlotta Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Carlotta Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

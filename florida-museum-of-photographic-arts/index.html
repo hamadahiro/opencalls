@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Florida Museum of Photographic Arts</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Florida Museum of Photographic Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Florida Museum of Photographic Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/soldiers-lens-2026-fmopa/">The Soldier's Lens 2026 &middot; Florida Museum of Photographic Arts</a></h3><p class="call-description">Free FMoPA call for active-duty service members, veterans, and family. Museum show in Tampa, Nov 2026, timed with Veterans Day.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/fmopa-2026-international-photography-competition/">FMoPA 2026 International Photography Competition</a></h3><p class="call-description">International photography competition. $1,000 grand prize and exhibition at FMoPA Tampa. 7 categories.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts/">FMoPA International Photography Competition 2026 &middot; Florida Museum of Photographic Arts</a></h3><p class="call-description">International jury selection. Winning entries printed and exhibited at Ybor City, Tampa, June-August 2026.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Florida Museum of Photographic Arts' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Florida Museum of Photographic Arts').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

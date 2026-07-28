@@ -102,10 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>New York State Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in New York State (outside New York City). Grants, exhibitions, and awards for NYS-based artists. 2 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/jgs-fellowship-for-photography-2026/">JGS Fellowship for Photography 2026 &middot; New York Foundation for the Arts</a></h3><p class="call-description">$8,000 fellowship for 5 NY State photographers (outside NYC). Supports traditional, experimental, and alternative process photography.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/jgs-fellowship-for-photography-2026-new-york-foundation-for-the-arts/">JGS Fellowship for Photography 2026 &middot; New York Foundation for the Arts</a></h3><p class="call-description">Five $8,000 unrestricted grants for photographers in NY State outside NYC. Traditional and experimental photography.</p></div>
 
     </section>
 
@@ -125,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('new-york-state')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,14 +102,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>
       <h1>February 2026</h1>
-      <h2 class="subtitle">4 calls with deadlines in February 2026 — all closed.</h2>
+      <h2 class="subtitle">Deadlines in February 2026. 4 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/michael-p-smith-fund-for-documentary-photography-2026-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2026 &middot; New Orleans Photo Alliance</a></h3><p class="call-description">Annual grant for Gulf Coast photographers combining artistic excellence with sustained cultural documentary work.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-cortona-on-the-move-bartur-grant/">The Cortona on The Move / BarTur Grant</a></h3><p class="call-description">Supporting photographers with ongoing projects and clear authorship. Winners exhibited at Cortona On The Move festival.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/photobook-open-call-2026-photometria-international-photography-festival/">Photobook Open Call 2026 &middot; Photometria International Photography Festival</a></h3><p class="call-description">Artist books, self-published photobooks, limited editions, zines, and DIY publications for the 18th Photometria Festival.</p></div>
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
       <div class="call-card"><h3 class="call-title"><a href="/fotofilmic-open-2026/">FOTOFILMIC OPEN 2026</a></h3><p class="call-description">Exhibition featuring contemporary film-based photography. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photobook-open-call-2026-photometria-international-photography-festival/">Photobook Open Call 2026 &middot; Photometria International Photography Festival</a></h3><p class="call-description">Artist books, self-published photobooks, limited editions, zines, and DIY publications for the 18th Photometria Festival.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-cortona-on-the-move-bartur-grant/">The Cortona on The Move / BarTur Grant</a></h3><p class="call-description">Supporting photographers with ongoing projects and clear authorship. Winners exhibited at Cortona On The Move festival.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/michael-p-smith-fund-for-documentary-photography-2026-new-orleans-photo-alliance/">Michael P. Smith Fund for Documentary Photography 2026 &middot; New Orleans Photo Alliance</a></h3><p class="call-description">Annual grant for Gulf Coast photographers combining artistic excellence with sustained cultural documentary work.</p></div>
 
     </section>
 
@@ -130,7 +132,7 @@
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-02')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+      renderCallList(calls, document.getElementById('callsList'), { skipSections: true, noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

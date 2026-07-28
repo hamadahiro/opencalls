@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Arty Rat</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Arty Rat. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Arty Rat. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/arty-rat-magazine-open-call-july-2026/">Arty Rat Magazine Open Call — July 2026</a></h3><p class="call-description">Vienna indie art magazine's summer call for contemporary visual work. Two cover features; one artist joins a Vienna group show free.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/arty-rat-magazine-open-call/">Arty Rat Magazine Open Call</a></h3><p class="call-description">Independent art magazine for contemporary visual work. Two cover features and one free group exhibition in Vienna.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Arty Rat' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Arty Rat').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();
