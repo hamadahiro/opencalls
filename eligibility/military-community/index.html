@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Open Calls for the Military Community</h1>
-      <h2 class="subtitle">Photography open calls and exhibitions for active-duty service members, veterans, and their families.</h2>
+      <h2 class="subtitle">Photography open calls and exhibitions for active-duty service members, veterans, and their families. 2 calls, 2 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -125,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('military-community') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('military-community')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>SlowExposures</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from SlowExposures. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from SlowExposures. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/slowexposures-2026-book-fair/">SlowExposures 2026 — Book Fair</a></h3><p class="call-description">Show and sell your photobook at the SlowExposures festival in Concord, GA. Free — donate one book to the raffle; first 10 photographers.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/slowexposures-2026-pop-up-tour/">SlowExposures 2026 — Pop-Up Tour</a></h3><p class="call-description">Pop-Up Tour at the SlowExposures festival — photography of the American South shown across venues in Zebulon, GA. Juror Jerry Atnip.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/slowexposures-2026-photography-rural-south/">SlowExposures 2026 — Photography of the Rural South</a></h3><p class="call-description">20th SlowExposures festival's Main Exhibition. Photography made in 16 Southern US states. Concord, GA. Up to 6 images.</p></div>
 
     </section>
 
@@ -123,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'SlowExposures' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'SlowExposures').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

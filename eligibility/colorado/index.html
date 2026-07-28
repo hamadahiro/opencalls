@@ -102,12 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Colorado-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Colorado.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Colorado. 3 calls, 2 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/chaos-an-exploration-of-disorder-meaning-and-possibility-bitfactory-gallery/">Chaos: An Exploration of Disorder, Meaning, and Possibility &middot; Bitfactory Gallery</a></h3><p class="call-description">Denver gallery show on chaos as system, state of mind or world. 2D wall work, photography welcome. Colorado only.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/dia-de-muertos-2026-remembering-is-resistance-firehouse-art-center/">Día de Muertos 2026 — Remembering Is Resistance &middot; Firehouse Art Center</a></h3><p class="call-description">Longmont art centre pairs artists with community members affected by immigration policy. Free to enter, sales split 50/50.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/celebrate-colorado-show-us-your-downtown-colorado-photographic-arts-center/">Celebrate Colorado: Show Us Your Downtown &middot; Colorado Photographic Arts Center</a></h3><p class="call-description">CPAC juried online show of Colorado downtowns, selected by Denver Art Museum curator Darrin Alfred. Colorado artists 18+.</p></div>
 
     </section>
 
@@ -125,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('colorado') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('colorado')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

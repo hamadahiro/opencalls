@@ -102,12 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Open Calls for Mid-Career Artists</h1>
-      <h2 class="subtitle">Open calls restricted to mid-career photographers and artists with significant professional experience and exhibition history.</h2>
+      <h2 class="subtitle">Open calls restricted to mid-career photographers and artists with significant professional experience and exhibition history. 3 calls, 2 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/envision-the-michigan-artist-initiative-2027-stamps-gallery/">Envision: The Michigan Artist Initiative 2027 &middot; Stamps Gallery, University of Michigan</a></h3><p class="call-description">Michigan artists compete for a Stamps Gallery show with $2,000 finalist stipends and a $5,000 top prize. Free to enter.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/quinn-emanuel-silicon-valley-artist-in-residence-2026/">Quinn Emanuel Silicon Valley Artist-in-Residence 2026</a></h3><p class="call-description">$20,000 + $1,500 materials for a 4-month studio residency at Quinn Emanuel's Silicon Valley office. Bay Area artists only.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/barbara-spohr-memorial-award-for-photography-2027/">Barbara Spohr Memorial Award for Photography 2027 &middot; Banff Centre for Arts and Creativity</a></h3><p class="call-description">Fully funded month-long photography residency at Banff Centre. $1,000 materials + travel bursary. For mid-career Canadian photographers.</p></div>
 
     </section>
 
@@ -125,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('mid-career') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('mid-career')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

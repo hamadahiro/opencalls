@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Washington</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Washington. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Washington. Browse and apply today. 8 calls, 6 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -118,6 +118,9 @@
       <div class="call-card"><h3 class="call-title"><a href="/2027-galleries-in-city-of-auburn/">2027 Galleries in City of Auburn</a></h3><p class="call-description">Free call for 8-week shows in Auburn's city galleries in 2027; photography explicitly invited. Work delivered in person.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/24th-national-fine-art-show-peninsula-art-league/">24th National Fine Art Show &middot; Peninsula Art League</a></h3><p class="call-description">National juried show in a vintage aircraft hangar. Photography judged alongside 2D and 3D, $8,500 in cash, two museum curators jurying.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/spokane-falls-artist-in-residence-round-3/">sƛ̓x̣etkʷ Artist-in-Residence Program — Round 3 &middot; Spokane Falls Community College</a></h3><p class="call-description">Funded 3-month residency at Spokane Falls CC for emerging Native American artists: $9,000 stipend, housing, studios.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/kenmore-art-show-2026-togetherness/">Kenmore Art Show 2026: Togetherness</a></h3><p class="call-description">Community juried show near Seattle with a dedicated photography category, $300 Best in Show and per-category cash awards.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/america-250-gallery-one/">America 250 — Photography Exhibition</a></h3><p class="call-description">National juried photography show on US 250th anniversary. $800 in awards. Gallery One in Ellensburg, WA.</p></div>
 
     </section>
 
@@ -135,9 +138,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', WA,') || c.location.includes(', Washington,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', WA,') || c.location.includes(', Washington,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

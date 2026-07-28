@@ -102,10 +102,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Women's Studio Workshop</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Women's Studio Workshop. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Women's Studio Workshop. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 5 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/womens-studio-workshop-artists-book-residency-grant/">Women's Studio Workshop — Artist's Book Residency Grant</a></h3><p class="call-description">WSW residency to print &amp; bind a limited-edition artist book; stipend, materials, travel &amp; housing. For photobook &amp; book artists.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/womens-studio-workshop-art-in-ed-workspace-residency-2026/">Women's Studio Workshop — Art-in-Ed Workspace Residency 2026</a></h3><p class="call-description">Teaching-artist residency combining printmaking/photo instruction with personal studio work. Daily teaching stipend plus free housing.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/womens-studio-workshop-studio-residency-grant-2026/">Women's Studio Workshop — Studio Residency Grant 2026</a></h3><p class="call-description">Fully funded darkroom residency with weekly stipend, materials budget, travel assistance, and onsite housing in Rosendale, NY.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/womens-studio-workshop-anita-wetzel-residency-grant-2026/">Women's Studio Workshop — Anita Wetzel Residency Grant 2026</a></h3><p class="call-description">Fully funded darkroom residency with stipend and housing, dedicated to mature artists aged 45+. Rosendale, NY.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/womens-studio-workshop-studio-workspace-residency/">Women's Studio Workshop — Studio Workspace Residency</a></h3><p class="call-description">4–6 week residency with free housing and studio. Darkroom, letterpress, intaglio, screenprint, or papermaking.</p></div>
 
     </section>
 
@@ -123,9 +128,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Women\'s Studio Workshop' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Women\'s Studio Workshop').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

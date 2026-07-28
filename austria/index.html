@@ -102,12 +102,19 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Open Calls for Artists in Austria</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Austria. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Austria. Browse and apply today. 8 calls, 2 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/fotogalerie-wien-2027-annual-program/">FOTOGALERIE WIEN — 2027 Annual Program</a></h3><p class="call-description">Vienna's artist-run photography gallery reviews portfolios for its 2027 annual program. Free — PDF portfolio + CV by email.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/arty-rat-magazine-open-call-july-2026/">Arty Rat Magazine Open Call — July 2026</a></h3><p class="call-description">Vienna indie art magazine's summer call for contemporary visual work. Two cover features; one artist joins a Vienna group show free.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/rotlicht-festival-2026-anthropocene-hybrid-realities/">Rotlicht Festival 2026 — Anthropocene: Hybrid Realities</a></h3><p class="call-description">Open call for analog photography festival in Vienna. Theme: Anthropocene. 20 winners exhibited; €250 honorarium + €150 travel.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/minimalist-photography-awards-2026/">Minimalist Photography Awards 2026</a></h3><p class="call-description">International award for minimalist photography. €2,000 grand prize, book publication, and exhibition. 12 categories.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/global-peace-photo-award-2026/">Global Peace Photo Award 2026 &middot; Global Peace Photo Award</a></h3><p class="call-description">Free award for photos of peaceful coexistence. €11,000 in prizes, Alfred Fried Peace Medal, Vienna ceremony.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/graz-residency-grip-2026-camera-austria/">Graz Residency for International Photographers (GRIP) 2026 &middot; Camera Austria</a></h3><p class="call-description">One-month residency in Graz for early-career photographers. €1,000 stipend.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fotohof-calling/">FOTOHOF&gt;CALLING</a></h3><p class="call-description">Biennial call for contemporary photo projects. 25 selected for publication, 10 finalists present in Salzburg. Open to European artists.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/arty-rat-magazine-open-call/">Arty Rat Magazine Open Call</a></h3><p class="call-description">Independent art magazine for contemporary visual work. Two cover features and one free group exhibition in Vienna.</p></div>
 
     </section>
 
@@ -125,11 +132,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Austria' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Austria').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

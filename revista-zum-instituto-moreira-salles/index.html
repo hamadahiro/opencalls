@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Revista ZUM / Instituto Moreira Salles</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Revista ZUM / Instituto Moreira Salles. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Revista ZUM / Instituto Moreira Salles. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/photobook-open-call-zum-ims-2026/">Photobook Open Call ZUM/IMS 2026</a></h3><p class="call-description">Free photobook call from ZUM and Instituto Moreira Salles — R$2,000 each to three winners, shown at Festival ZUM in São Paulo.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Revista ZUM / Instituto Moreira Salles' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Revista ZUM / Instituto Moreira Salles').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

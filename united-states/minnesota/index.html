@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Minnesota</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Minnesota. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Minnesota. Browse and apply today. 16 calls, 5 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -117,6 +117,18 @@
       <div class="call-card"><h3 class="call-title"><a href="/lanesboro-early-career-artists-show-2027/">Lanesboro Early Career Artists Show 2027</a></h3><p class="call-description">Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/lanesboro-juried-sales-gallery-2027/">Lanesboro Juried Sales Gallery 2027</a></h3><p class="call-description">Year-round sales-gallery representation at Lanesboro Arts for Minnesota, Iowa, and Wisconsin artists — 60% consignment, free to apply.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/lanesboro-exhibition-gallery-2028/">Lanesboro Exhibition Gallery 2028</a></h3><p class="call-description">Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/motion-blur-praxis-photo-arts-center/">Motion &gt; Blur &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) on motion and blur in still photography. Physical show Aug–Sep 2026; printed catalog.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-shadow-aspect-praxis-photo-arts-center/">The Shadow Aspect &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) explores shadow as form, symbol, and psyche. Juried by Ann Jastrab; exhibition Aug–Sep 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/water-sky-praxis-photo-arts-center/">Water ~ Sky &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) landscape photo exhibition on water and sky. Up to 74 images selected, July–August 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/making-strange-praxis-photo-arts-center/">Making Strange &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Praxis Gallery (Minneapolis) juried photography exhibition on the everyday made strange. Up to 38 images selected, July–August 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/lanesboro-early-career-artist-residency-2027/">Lanesboro Early Career Artist Residency 2027</a></h3><p class="call-description">Place-based residency in rural Minnesota. $1,000/week + housing/studio. MN or NYC residents only, 2–10 years of practice. Free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-life-of-color-praxis-photo-arts-center/">The Life of Color &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Color as signal — amplifying, unifying, destabilizing. Up to 38 works selected. Praxis Gallery Minneapolis.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/black-and-white-praxis-photo-arts-center/">BLACK &amp; WHITE &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Monochrome juried exhibition at Praxis Gallery Minneapolis. Up to 74 works selected. Open internationally.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/animal-life-praxis-photo-arts-center/">ANIMAL LIFE &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Exploring animal subjects with curiosity, empathy, and imagination. All lens-based work welcome. Minneapolis.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/wider-skies-magazine-issue-1/">Wider Skies Magazine — Issue 1</a></h3><p class="call-description">New magazine exploring speculative futurism through film photography. Free Kodak film available for those who need it.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-portrait-praxis-photo-arts-center/">THE PORTRAIT &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Exploring depth and complexity of the human subject. All lens-based practices welcome. Minneapolis, MN.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/multi-exposed-praxis-photo-arts-center/">Multi-Exposed &middot; Praxis Photo Arts Center</a></h3><p class="call-description">Exploring time overlaps and memory through photography. Exhibition in Minneapolis, MN.</p></div>
 
     </section>
 
@@ -134,9 +146,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', MN,') || c.location.includes(', Minnesota,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', MN,') || c.location.includes(', Minnesota,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Encontros da Imagem</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Encontros da Imagem. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Encontros da Imagem. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/encontros-da-imagem-portfolio-reviews-2026/">Encontros da Imagem Portfolio Reviews 2026</a></h3><p class="call-description">Two-stage portfolio review at Braga's Encontros da Imagem festival. €3,000 + solo 2027 show + KATALOG publication for the winner.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/encontros-da-imagem-photobook-award-2026/">Encontros da Imagem Photobook Award 2026 &middot; Encontros da Imagem</a></h3><p class="call-description">Two photobook awards (Best Published and Best Dummy) at 36th Encontros da Imagem. €1,000 each + group exhibition. Theme: Territory and Identity.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/encontros-da-imagem-award-2026/">Encontros Da Imagem Award 2026 &middot; Encontros da Imagem</a></h3><p class="call-description">Major European photo festival (36th edition). €2,000 prize + solo exhibition. Theme: Territory And Identity. Open worldwide.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Encontros da Imagem').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,9 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Rhode Island Center for Photographic Arts</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Rhode Island Center for Photographic Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Rhode Island Center for Photographic Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/7th-annual-spotlight-member-exhibition-rhode-island-center-for-photographic-arts/">7th Annual Spotlight Member Exhibition &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">Juried members' show at the Rhode Island Center for Photographic Arts. Five-image sets; one member wins a 2026 solo show.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/12th-annual-international-open-call-rhode-island-center-for-photographic-arts/">12th Annual International Open Call &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">International open call — no theme. Juried by Crista Dix (Griffin Museum). Exhibition in Providence, RI. Cash prizes.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/hiding-in-plain-sight-rhode-island-center-for-photographic-arts/">Hiding in Plain Sight &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">Exploring the unseen and forgotten. Challenging myths and revaluing overlooked subjects. Providence, RI.</p></div>
 
     </section>
 
@@ -124,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Rhode Island Center for Photographic Arts').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

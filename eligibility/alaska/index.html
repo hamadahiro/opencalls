@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Alaska-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Alaska.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists residing in Alaska. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/rarefied-light-2026-alaska-photographic-center/">Rarefied Light 2026 &middot; Alaska Photographic Center</a></h3><p class="call-description">Statewide juried exhibition with Nevada Wier (Nat Geo). Travels to four Alaska galleries from October 2026.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('alaska')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

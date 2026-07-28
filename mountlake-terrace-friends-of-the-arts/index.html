@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Mountlake Terrace Friends of the Arts</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Mountlake Terrace Friends of the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Mountlake Terrace Friends of the Arts. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/arts-of-the-terrace-2026-mountlake-terrace/">46th Arts of the Terrace Juried Art Show &middot; Mountlake Terrace Friends of the Arts</a></h3><p class="call-description">46th annual juried show near Seattle with a dedicated photography category; $6,000+ in awards. On view Sep 2026.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Mountlake Terrace Friends of the Arts' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Mountlake Terrace Friends of the Arts').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

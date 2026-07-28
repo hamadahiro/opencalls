@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Arizona Photography Alliance</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Arizona Photography Alliance. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Arizona Photography Alliance. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/summertime-long-days-lazy-days-gentle-breezes-arizona-photography-alliance/">Summertime: Long Days, Lazy Days, Gentle Breezes &middot; Arizona Photography Alliance</a></h3><p class="call-description">Broad summer theme, any process. Juror Claire A. Warden picks a $100 first place; every entrant appears in the online gallery.</p></div>
@@ -124,9 +124,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Arizona Photography Alliance' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Arizona Photography Alliance').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

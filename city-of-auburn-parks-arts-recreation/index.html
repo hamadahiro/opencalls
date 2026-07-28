@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>City of Auburn Parks, Arts &amp; Recreation</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from City of Auburn Parks, Arts &amp; Recreation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from City of Auburn Parks, Arts &amp; Recreation. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/2027-galleries-in-city-of-auburn/">2027 Galleries in City of Auburn</a></h3><p class="call-description">Free call for 8-week shows in Auburn's city galleries in 2027; photography explicitly invited. Work delivered in person.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'City of Auburn Parks, Arts & Recreation' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'City of Auburn Parks, Arts & Recreation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

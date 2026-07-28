@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Berkeley Arts Council</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Berkeley Arts Council. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Berkeley Arts Council. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/14th-annual-eastern-west-virginia-juried-exhibition-berkeley-arts-council/">14th Annual Eastern West Virginia Juried Exhibition &middot; Berkeley Arts Council</a></h3><p class="call-description">Open-theme juried show at Berkeley Art Works, Martinsburg, for artists in eight eastern West Virginia counties. Juror Sonya Evanisko.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Berkeley Arts Council' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Berkeley Arts Council').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

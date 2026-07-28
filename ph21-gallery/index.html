@@ -102,11 +102,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>PH21 Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from PH21 Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 6 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/solo-exhibition-in-barcelona-autumn-2026-ph21-gallery/">Solo Exhibition in Barcelona — Autumn 2026 &middot; PH21 Gallery</a></h3><p class="call-description">Solo show at PH21 Gallery Barcelona — printing/install covered, €4,500 package. Jurors Bátori &amp; Jász. Portfolio of 15–35 images.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/monochrome-ph21-gallery/">Monochrome &middot; PH21 Gallery</a></h3><p class="call-description">Curated Barcelona group show of black-and-white, sepia and single-colour photography. Student and low-income rates.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/vision-expression-the-art-of-photography-ph21-gallery/">Vision &amp; Expression: The Art of Photography &middot; PH21 Gallery</a></h3><p class="call-description">Curated Barcelona group show on photography as expressive fine art. Jurors Bátori &amp; Jász. Student rates. AI accepted if labelled.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/personality-the-face-and-its-absence-ph21-gallery/">Personality: The Face and Its Absence &middot; PH21 Gallery</a></h3><p class="call-description">Curated group show on personality and portraiture beyond the face. Exhibition in Barcelona's Gothic Quarter, Aug–Sep. Student rates.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/stories-narrative-photography-ph21-gallery/">Stories: Narrative Photography &middot; PH21 Gallery</a></h3><p class="call-description">Curated group show on narrative and storytelling. Physical exhibition in Barcelona's Gothic Quarter, July–August. Student rates available.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/motion-ph21-gallery/">Motion &middot; PH21 Gallery</a></h3><p class="call-description">Curated group show on motion in photography. Physical exhibition in Barcelona's Gothic Quarter. Student rates available.</p></div>
 
     </section>
 
@@ -124,9 +129,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'PH21 Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'PH21 Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

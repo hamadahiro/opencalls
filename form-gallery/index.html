@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Form Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Form Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Form Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/form-photo-award-scope-miami-2026/">Form Photo Award / SCOPE Miami 2026</a></h3><p class="call-description">Contemporary photo prize; top 4 winners exhibit at SCOPE Art Fair Miami during Art Week, Dec 2026, plus a Form Magazine feature.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/form-photo-award-x-unseen/">Form Photo Award x UNSEEN</a></h3><p class="call-description">Open-theme award from Paris-based Form. Selected photographers present their projects at the UNSEEN 2027 photography fair.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/form-photo-award-2026/">Form Photo Award 2026</a></h3><p class="call-description">Annual prize for contemporary image-making. Top 5 exhibit at photo basel during Art Basel Week, June 2026.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Form Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Form Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

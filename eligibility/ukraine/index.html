@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Ukraine-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to Ukrainian or Ukraine-based photographers and artists. Exhibitions, grants, workshops, and awards for Ukrainian artists.</h2>
+      <h2 class="subtitle">Open calls restricted to Ukrainian or Ukraine-based photographers and artists. Exhibitions, grants, workshops, and awards for Ukrainian artists. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/odesa-workshop-environmental-consequences-of-war/">Odesa Workshop — Environmental Consequences of War in Ukraine &middot; Inland</a></h3><p class="call-description">Free 7-month hybrid workshop for Ukrainian photographers on war's environmental impact. €1,500 production grant.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('ukraine')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

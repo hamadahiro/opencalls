@@ -102,10 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Switzerland-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists with Swiss citizenship or based in Switzerland.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists with Swiss citizenship or based in Switzerland. 2 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/near-prize-2026/">Near. Prize 2026</a></h3><p class="call-description">Swiss prize from Near. + Galerie Stephan Witschi. CHF 1,000 + solo show + festival exhibition at Fotofestival Lenzburg. Near. members only.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/siyu-award-2026/">SIYU Award 2026</a></h3><p class="call-description">Award for young Swiss photographers. Ten finalists exhibited at Photobastei Zurich with catalogue. Free theme.</p></div>
 
     </section>
 
@@ -125,7 +129,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('switzerland')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

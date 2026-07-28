@@ -102,10 +102,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Italy-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists based in Italy. Exhibitions, grants, residencies, and competitions for Italian artists.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists based in Italy. Exhibitions, grants, residencies, and competitions for Italian artists. 4 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/metamorfosi-residency-2026/">Metamorfosi Residency 2026 &middot; Italian Cultural Institute Prague</a></h3><p class="call-description">Prague residency for Italian artists from IIC Prague &amp; MUNAF. €5,000 grant covering travel, subsistence, and production. 3–4 weeks.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/ffsp-2026-italian-photographers-open-call/">FFSP 2026 — Italian Photographers Open Call &middot; Italian Cultural Institute of São Paulo</a></h3><p class="call-description">Free exhibition in São Paulo for Italian photographers in Brazil/Italy. Winner receives round-trip airfare.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/hidden-narratives-residency-2026-photoworks/">Hidden Narratives Residency 2026 &middot; Photoworks</a></h3><p class="call-description">Year-long residency with Royal Geographical Society's 1M+ photo archive (1845–1945). Three UK visits, Summit Photo exhibition. Italian artists only.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/premio-mila-2026-malerba-fund/">Premio Mila 2026 &middot; Malerba Fund</a></h3><p class="call-description">Supporting Italian or Italy-based artists under 40. Winner receives €3,000 acquisition prize for permanent collection.</p></div>
 
     </section>
 
@@ -125,7 +131,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('italy')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

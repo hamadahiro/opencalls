@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Doug Pensinger Photography Fund</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Doug Pensinger Photography Fund. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Doug Pensinger Photography Fund. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/dppf-2026-sports-photography-grants/">DPPF 2026 Sports Photography Grants</a></h3><p class="call-description">Seven $5,000 grants for emerging sports photographers plus mentorship. Up to 3 additional $2,500 grants.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/doug-pensinger-photography-fund-2026/">Doug Pensinger Photography Fund 2026</a></h3><p class="call-description">Seven $5,000 grants plus mentorships for emerging sports photographers. Only nonprofit dedicated to sports photography careers.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Doug Pensinger Photography Fund').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

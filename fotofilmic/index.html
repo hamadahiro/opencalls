@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>FotoFilmic</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from FotoFilmic. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from FotoFilmic. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/jrnl-magazine-open-call-2026/">JRNL Magazine Open Call 2026 &middot; FotoFilmic</a></h3><p class="call-description">FotoFilmic's JRNL magazine open call — up to 25 images from one series, all lens-based processes. 10 spreads + print copy; Paris launch.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fotofilmic-open-2026/">FOTOFILMIC OPEN 2026</a></h3><p class="call-description">Exhibition featuring contemporary film-based photography. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'FotoFilmic').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

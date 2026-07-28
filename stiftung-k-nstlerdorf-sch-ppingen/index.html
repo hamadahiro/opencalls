@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Stiftung Künstlerdorf Schöppingen</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Stiftung Künstlerdorf Schöppingen. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Stiftung Künstlerdorf Schöppingen. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/kuenstlerdorf-schoeppingen-fellowship-2027/">Künstler*dorf Schöppingen Fellowship 2027</a></h3><p class="call-description">2–6 month funded residencies at the Münsterland artists' village. €1,500/month; applications for 2027 open June 27 – August 31.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Stiftung Künstlerdorf Schöppingen' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Stiftung Künstlerdorf Schöppingen').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Arizona</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Arizona. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Arizona. Browse and apply today. 16 calls, 6 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -118,6 +118,17 @@
       <div class="call-card"><h3 class="call-title"><a href="/seen-unseen-at-eric-fischl-gallery-arizona-photography-alliance/">Seen/Unseen at Eric Fischl Gallery &middot; Arizona Photography Alliance</a></h3><p class="call-description">Portfolio call juried by Phoenix Art Museum / CCP curator Emilia Mickevicius for a gallery show at Phoenix College.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/she-speaks-tolleson-art-gallery/">She Speaks &middot; Tolleson Art Gallery</a></h3><p class="call-description">Free juried show for Arizona women artists at a public-library gallery — $100 stipend to exhibit, $575 with a public program.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/square-photography-exhibit-decode-gallery/">SQUARE Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/endless-summer-photography-exhibit-decode-gallery/">ENDLESS SUMMER Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Summer-themed photography exhibit in Tucson. 26 images juried by Holly Hart. Pro printing and 22×22 museum framing included.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/grand-canyon-artist-in-residence-2027/">2027 Grand Canyon Artist in Residence &middot; Grand Canyon Conservancy</a></h3><p class="call-description">4–8 week South Rim residency with $800/week stipend, housing, and travel subsidy. Three artists chosen for 2027.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/dog-days-of-summer-wham-art-association/">Dog Days of Summer &middot; WHAM Art Association</a></h3><p class="call-description">Summer-at-its-peak themed show at WHAM Art Center, AZ — heat, stillness, nostalgia in any medium. $40 for 5 entries, Aug 4–29.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/collection-2026-decode-gallery/">Collection 2026 - Decode Gallery</a></h3><p class="call-description">Open-theme show — no themes, no limits. 26+ selected. Free pro printing on Epson + museum framing. Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/vision-250-america-in-harmony-wham-art-association/">Vision 250: America in Harmony &middot; WHAM Art Association</a></h3><p class="call-description">Themed show for America's 250th at WHAM Art Center, AZ — imagining a unified, harmonious America. $40 for 5 entries, Jul 2–30.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/black-and-white-decode-gallery/">Black and White &middot; Decode Gallery</a></h3><p class="call-description">B&amp;W photography — all genres. Pro printing on Ilford Pearl paper and museum framing included. Exhibition in Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/home-decode-gallery/">HOME &middot; Decode Gallery</a></h3><p class="call-description">Exploring the multifaceted nature of home — feeling, memory, sanctuary, heritage. Pro printing and museum framing in Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/home-photography-exhibit-decode-gallery/">HOME Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Home as feeling, memory, sanctuary. Exploring domesticity, heritage, shelter, and identity. Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/rancho-linda-vista-summer-artist-residency-2026/">Rancho Linda Vista — Summer Artist Residency 2026</a></h3><p class="call-description">One-month summer residency with $1,000 stipend, house, and studio on 100+ acres of Arizona wilderness.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/color-photography-exhibit-decode-gallery/">COLOR Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Exploring color as one of the most powerful storytelling tools. Bold, subtle, vibrant, or muted. Tucson, AZ.</p></div>
 
     </section>
 
@@ -135,9 +146,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', AZ,') || c.location.includes(', Arizona,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', AZ,') || c.location.includes(', Arizona,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

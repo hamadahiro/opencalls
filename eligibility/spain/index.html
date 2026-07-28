@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Spain-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists born or based in Spain.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists born or based in Spain. 2 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/19th-forum-fotografic-can-baste/">19th Fòrum Fotogràfic Can Basté</a></h3><p class="call-description">Barcelona's Can Basté forum: free grants — 3 × €2,000 exhibition production plus a €3,000 photobook. For Spain-based emerging artists.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/la-embajada-2026-el-local/">La Embajada 2026 &middot; El Local</a></h3><p class="call-description">Six Spanish photographers exhibit at Rencontres d'Arles opening week. €1,400 each. Free, supported by Ministry of Culture.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('spain') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('spain')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

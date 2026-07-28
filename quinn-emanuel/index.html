@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Quinn Emanuel</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Quinn Emanuel. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Quinn Emanuel. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/quinn-emanuel-silicon-valley-artist-in-residence-2026/">Quinn Emanuel Silicon Valley Artist-in-Residence 2026</a></h3><p class="call-description">$20,000 + $1,500 materials for a 4-month studio residency at Quinn Emanuel's Silicon Valley office. Bay Area artists only.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/quinn-emanuel-los-angeles-artist-in-residence-2026/">Quinn Emanuel Los Angeles Artist-in-Residence 2026</a></h3><p class="call-description">$20,000 + $1,500 materials. 4-month studio residency at Quinn Emanuel LA office. Open to all media including photography. Greater LA only.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Quinn Emanuel' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Quinn Emanuel').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

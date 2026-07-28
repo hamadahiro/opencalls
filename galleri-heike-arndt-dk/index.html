@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Galleri Heike Arndt DK</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Galleri Heike Arndt DK. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Galleri Heike Arndt DK. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/mini-maxi-print-2026-galleri-heike-arndt-dk/">Mini Maxi Print 2026 &middot; Galleri Heike Arndt DK</a></h3><p class="call-description">Print-edition open call at Heike Arndt DK Berlin — etching to photogravure. Free entry, €40 if selected; show opens Oct/Nov.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fresh-legs-2026-galleri-heike-arndt-dk/">Fresh Legs 2026 &middot; Galleri Heike Arndt DK</a></h3><p class="call-description">Annual group exhibition since 2013. Painting, sculpture, photography, film, and more. Two Berlin venues.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Galleri Heike Arndt DK').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

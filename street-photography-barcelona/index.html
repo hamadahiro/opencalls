@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Street Photography Barcelona</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Street Photography Barcelona. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Street Photography Barcelona. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/street-photography-barcelona-contest-2026-2nd-edition/">Street Photography Barcelona Contest 2026 — 2nd Edition</a></h3><p class="call-description">25 finalists exhibited at Galerie Art Nomade with production covered. €1,000 in cash prizes; screenings at Ibizacinefest 2027.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/street-photography-barcelona-contest-2026/">Street Photography Barcelona Contest 2026</a></h3><p class="call-description">Authentic images of urban life. Three categories: Local, National, International. Exhibited at Galerie Art Nomade.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Street Photography Barcelona' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Street Photography Barcelona').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

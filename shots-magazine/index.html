@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>SHOTS Magazine</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from SHOTS Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from SHOTS Magazine. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/shots-magazine-173-plant-life/">SHOTS Magazine #173 — Plant Life</a></h3><p class="call-description">B&amp;W photography quarterly since 1986. Issue #173 themed Plant Life. Up to 8 grayscale images. Free for subscribers.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/shots-magazine-172-the-human-figure/">SHOTS Magazine #172 — The Human Figure</a></h3><p class="call-description">B&amp;W photography quarterly since 1986. Issue #172 themed The Human Figure. Up to 8 grayscale images. Free for subscribers.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'SHOTS Magazine' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'SHOTS Magazine').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

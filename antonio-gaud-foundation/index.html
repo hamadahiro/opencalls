@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Antonio Gaudí Foundation</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Antonio Gaudí Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Antonio Gaudí Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/nature-in-gaudi-angeles-omedas-millan-prize-2026/">Nature in Gaudí — Ángeles Omedas Millán Prize 2026 &middot; Antonio Gaudí Foundation</a></h3><p class="call-description">Antonio Gaudí Foundation's centenary contest on nature in Gaudí's architecture. €5,000 top prize, free, open to all.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Antonio Gaudí Foundation' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Antonio Gaudí Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

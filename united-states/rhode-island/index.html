@@ -108,13 +108,17 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Rhode Island</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Rhode Island. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Rhode Island. Browse and apply today. 6 calls, 3 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/beyond-the-surface-exploring-above-and-below-hera-gallery/">Beyond The Surface: Exploring Above and Below &middot; Hera Gallery</a></h3><p class="call-description">Cosmic and inner space at Rhode Island's 1974 artist-run Hera Gallery, juried by MASS MoCA's Lydia Jasper. Sliding-scale fee.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/crowded-table-overlap-art-space/">Crowded Table &middot; OVERLAP Art Space</a></h3><p class="call-description">Food-and-community juried show at Newport's OVERLAP Art Space; jurors from RISD and Newport Art Museum. Show Nov 14–Dec 19.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/rebuilding-art-as-renewal-possibility-and-purpose-art-league-rhode-island/">REBUILDING: Art as Renewal, Possibility, and Purpose &middot; Art League Rhode Island</a></h3><p class="call-description">Pawtucket juried show on repair and renewal, juried by Kerry Phillips and Meaghan Kent. $500 top award.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/7th-annual-spotlight-member-exhibition-rhode-island-center-for-photographic-arts/">7th Annual Spotlight Member Exhibition &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">Juried members' show at the Rhode Island Center for Photographic Arts. Five-image sets; one member wins a 2026 solo show.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/12th-annual-international-open-call-rhode-island-center-for-photographic-arts/">12th Annual International Open Call &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">International open call — no theme. Juried by Crista Dix (Griffin Museum). Exhibition in Providence, RI. Cash prizes.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/hiding-in-plain-sight-rhode-island-center-for-photographic-arts/">Hiding in Plain Sight &middot; Rhode Island Center for Photographic Arts</a></h3><p class="call-description">Exploring the unseen and forgotten. Challenging myths and revaluing overlooked subjects. Providence, RI.</p></div>
 
     </section>
 
@@ -132,9 +136,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', Rhode Island,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', RI,') || c.location.includes(', Rhode Island,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Georgia</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Georgia. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Georgia. Browse and apply today. 14 calls, 4 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -116,6 +116,17 @@
       <div class="call-card"><h3 class="call-title"><a href="/hambidge-center-residency-spring-2027/">Hambidge Center Residency — Spring 2027</a></h3><p class="call-description">2–8 week residencies in the north Georgia mountains for photographers and other makers; fellowships cover fees plus a $700 stipend.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/slowexposures-2026-book-fair/">SlowExposures 2026 — Book Fair</a></h3><p class="call-description">Show and sell your photobook at the SlowExposures festival in Concord, GA. Free — donate one book to the raffle; first 10 photographers.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-atlanta/">Artadia Awards 2026 — Atlanta</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in Greater Atlanta. Two-round jury with studio visits.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/sixth-lagrange-southeast-regional/">Sixth LaGrange Southeast Regional</a></h3><p class="call-description">Southeastern regional at the LaGrange Art Museum — Purchase Awards enter the permanent collection; photography accepted, no commission.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/rebecca-morse-selects-2026-atlanta-photography-group/">Rebecca Morse Selects 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">APG members' juried show selected by LACMA curator Rebecca Morse. $3,000 MFA Houston Purchase Award; Atlanta exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/slowexposures-2026-pop-up-tour/">SlowExposures 2026 — Pop-Up Tour</a></h3><p class="call-description">Pop-Up Tour at the SlowExposures festival — photography of the American South shown across venues in Zebulon, GA. Juror Jerry Atnip.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/new-south-volume-iii-atlanta-center-for-photography/">New South, Volume III &middot; Atlanta Center for Photography</a></h3><p class="call-description">ACP's self-published group photo book on the American South. 1–5 images; emerging &amp; established photographers welcome.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/focus-2026-atlanta-photography-group/">Focus 2026 — Atlanta Photography Group</a></h3><p class="call-description">APG's open-themed juried show. $1,000 MOCA GA purchase award + permanent collection. Members-only, Georgia artists.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/slowexposures-2026-photography-rural-south/">SlowExposures 2026 — Photography of the Rural South</a></h3><p class="call-description">20th SlowExposures festival's Main Exhibition. Photography made in 16 Southern US states. Concord, GA. Up to 6 images.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/slow-exposures-2026-main-exhibition/">Slow Exposures 2026 — Main Exhibition</a></h3><p class="call-description">Annual exhibition celebrating photography of the rural American South. 23rd edition. Two-venue show in Pike County, Georgia.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/joy-and-the-everyday-2026-atlanta-photography-group/">Joy and the Everyday 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">Themed exhibition on everyday joy. 24 prints selected for APG Maloof Gallery, Atlanta. Juried by CCP curator.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/filmisnotdead-2026-atlanta-photography-group/">#filmisnotdead 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">Analog photography exhibition, open subject. 30 prints selected for APG Main Gallery, Atlanta. Juried by Analog Forever Magazine.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/portfolio-2026-atlanta-photography-group/">Portfolio 2026 &middot; Atlanta Photography Group</a></h3><p class="call-description">Juried exhibition for cohesive bodies of work. Juror: Natasha Egan (MoCP). Winner eligible for $4,000 purchase award.</p></div>
 
     </section>
 
@@ -133,9 +144,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', GA,') || c.location.includes(', Georgia,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', GA,') || c.location.includes(', Georgia,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

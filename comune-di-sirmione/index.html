@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Comune di Sirmione</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Comune di Sirmione. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Comune di Sirmione. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/lake-garda-photo-challenge-comune-di-sirmione/">Lake Garda Photo Challenge &middot; Comune di Sirmione</a></h3><p class="call-description">Photograph Sirmione and Lake Garda — €1,500 top prizes per theme plus hospitality awards. €10 flat fee, open until October 31.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/sirmione-photo-residency-2026-comune-di-sirmione/">Sirmione Photo Residency 2026 &middot; Comune di Sirmione</a></h3><p class="call-description">Two-week residency at Lake Garda. Mentorship from Andrea Holzherr and Ludovica Pellegatta (Magnum Photos).</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Comune di Sirmione' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Comune di Sirmione').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Penn Journal of Arts and Sciences</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Penn Journal of Arts and Sciences. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Penn Journal of Arts and Sciences. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/winter-2027-vintage-issue-penn-journal-of-arts-and-sciences/">Winter 2027 'Vintage' Issue &middot; Penn Journal of Arts and Sciences</a></h3><p class="call-description">Indie Philadelphia arts journal's Winter 2027 'Vintage' issue — print and online publication, open internationally.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Penn Journal of Arts and Sciences' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Penn Journal of Arts and Sciences').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

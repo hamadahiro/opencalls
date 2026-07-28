@@ -102,11 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>AlternativePhotography.com</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from AlternativePhotography.com. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from AlternativePhotography.com. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/world-cyanotype-day-alternativephotography-com/">World Cyanotype Day &middot; AlternativePhotography.com</a></h3><p class="call-description">Annual international celebration of the cyanotype process. 2026 theme: Global Blueprint — People, Place, and Environment.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/world-anthotype-day-alternativephotography-com/">World Anthotype Day &middot; AlternativePhotography.com</a></h3><p class="call-description">Annual celebration of plant-based photographic printing processes. Entries open August through October.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/colour-calendar-event-alternativephotography-com/">Colour Calendar Event &middot; AlternativePhotography.com</a></h3><p class="call-description">Annual event inviting artists to introduce colour into monochrome alternative processes — cyanotype, chemigram, anthotype.</p></div>
 
     </section>
 
@@ -124,9 +126,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'AlternativePhotography.com' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'AlternativePhotography.com').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

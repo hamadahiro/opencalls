@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>F/262 International Photography Festival</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from F/262 International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from F/262 International Photography Festival. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/f-262-photography-awards-2026/">F/262 Photography Awards 2026</a></h3><p class="call-description">Single-image awards from the inaugural F/262 Festival in Caldas da Rainha, Portugal. Public outdoor installations + 2028 solo show.</p></div>
@@ -124,9 +124,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'F/262 International Photography Festival' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'F/262 International Photography Festival').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

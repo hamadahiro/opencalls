@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Rehoboth Art League</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Rehoboth Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Rehoboth Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/12th-regional-juried-photography-exhibition-rehoboth-art-league/">12th Regional Juried Photography Exhibition &middot; Rehoboth Art League</a></h3><p class="call-description">Juried photography show at Rehoboth Art League, Jan–Feb 2027. Open to mid-Atlantic photographers; $500 top award.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/2027-solo-and-group-exhibition-proposals-rehoboth-art-league/">2027 Solo and Group Exhibition Proposals &middot; Rehoboth Art League</a></h3><p class="call-description">Propose a 2027 solo or group show at Rehoboth Art League, Delaware. Any media including photography; 5–10 works.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Rehoboth Art League' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Rehoboth Art League').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

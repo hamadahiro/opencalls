@@ -102,12 +102,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Cape Cod Art Center</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Cape Cod Art Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Cape Cod Art Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 5 calls, 3 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/inspired-by-cape-cod-cape-cod-art-center/">Inspired by Cape Cod &middot; Cape Cod Art Center</a></h3><p class="call-description">Summer online all-media exhibit from Cape Cod Art Center — work inspired by the Cape, cash awards, $15 per piece.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/the-autumn-national-2026-cape-cod-art-center/">The Autumn National 2026 &middot; Cape Cod Art Center</a></h3><p class="call-description">Open juried all-media national at Cape Cod Art Center, photography included, with cash awards. Entries via Smarter Entry.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/twisted-2026-cape-cod-art-center/">TWISTED 2026 &middot; Cape Cod Art Center</a></h3><p class="call-description">Cape Cod Art Center's autumn online digital-art exhibit — digital photography, composites, and manipulated imagery welcome.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/the-summer-national-2026-cape-cod-art-center/">The Summer National 2026 &middot; Cape Cod Art Center</a></h3><p class="call-description">Open juried all-media national at Cape Cod Art Center with cash awards including a Best Landscape prize. Show July 13 – August 14.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/shadow-play-2026-cape-cod-art-center/">SHADOW PLAY 2026 &middot; Cape Cod Art Center</a></h3><p class="call-description">Online photography exhibit exploring shadow and light. Any interpretation. Cash prizes.</p></div>
 
     </section>
 
@@ -125,9 +128,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Cape Cod Art Center' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Cape Cod Art Center').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

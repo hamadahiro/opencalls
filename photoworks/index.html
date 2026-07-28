@@ -102,10 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Photoworks</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Photoworks. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Photoworks. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 4 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/photography-plus-un-stable-photoworks/">Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams &middot; Photoworks</a></h3><p class="call-description">Photoworks seeks a single image on the theme Un/Stable for its Photography+ magazine. Selected artist gets £80. Free to enter.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/photography-plus-emerging-talent-2026-photoworks/">Photography+ Emerging Talent 2026 &middot; Photoworks</a></h3><p class="call-description">10 awardees featured in Photography+ magazine and Kranj Foto Fest projection. BA/MA grads or first 5 years of practice.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/hidden-narratives-residency-2026-photoworks/">Hidden Narratives Residency 2026 &middot; Photoworks</a></h3><p class="call-description">Year-long residency with Royal Geographical Society's 1M+ photo archive (1845–1945). Three UK visits, Summit Photo exhibition. Italian artists only.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photography-plus-multiplication-photoworks/">Photography+ Open Call: Multiplication &middot; Photoworks</a></h3><p class="call-description">Photoworks seeks a single image on the theme Multiplication for its Photography+ magazine. Selected artist gets £80. Free to enter.</p></div>
 
     </section>
 
@@ -123,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Photoworks' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Photoworks').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

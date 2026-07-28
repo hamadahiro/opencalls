@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Photography 4 Humanity</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Photography 4 Humanity. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Photography 4 Humanity. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/photography-4-humanity-fotografiska-global-prize-2026/">Photography 4 Humanity / Fotografiska Global Prize 2026</a></h3><p class="call-description">Theme: HOME. Selected work exhibited at UN Headquarters NYC, curated by James Nachtwey. Free entry.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/home-photography-4-humanity/">Home &middot; Photography 4 Humanity</a></h3><p class="call-description">Exploring home — safety, belonging, dignity. Selected works exhibited at the United Nations HQ in New York.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Photography 4 Humanity').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

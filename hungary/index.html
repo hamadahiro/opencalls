@@ -102,12 +102,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Open Calls for Artists in Hungary</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Hungary. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Hungary. Browse and apply today. 5 calls, 2 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/budapest-international-foto-awards-2026/">Budapest International Foto Awards 2026</a></h3><p class="call-description">International award with a winners' exhibition in Budapest. Ten categories incl. Analog/Film; final deadline Aug 5, 2026.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/eidolon-grant-2026/">Eidolon Grant 2026</a></h3><p class="call-description">€25,000 grant pool for research and projects on vernacular and everyday photography. Two categories: contemporary and historical.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/rock-paper-scissors-golden-duck-gallery/">Rock, Paper, Scissors — Golden Duck Gallery</a></h3><p class="call-description">Pop art and mixed media show at Golden Duck Gallery Budapest, photography welcome. €500 prize fund; ages 14–25 exhibit free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/traveller-s-art-fair-2026-golden-duck-gallery/">Traveller's Art Fair 2026 — Golden Duck Gallery</a></h3><p class="call-description">Affordable-art exhibition in Budapest, open topic and all media. €600 prize fund; three curator's picks exhibit free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/inspired-by-classics-golden-duck-gallery/">Inspired by Classics — Golden Duck Gallery</a></h3><p class="call-description">Contemporary art engaging with classical art traditions. Physical exhibition in Budapest, online in Vienna and New York.</p></div>
 
     </section>
 
@@ -125,11 +129,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Hungary' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Hungary').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

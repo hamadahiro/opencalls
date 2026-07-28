@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Long Island Arts Council at Freeport</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Long Island Arts Council at Freeport. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Long Island Arts Council at Freeport. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/46th-annual-juried-photography-show-long-island-arts-council-at-freeport/">46th Annual Juried Photography Show</a></h3><p class="call-description">One of the tri-state area's longest-running juried photo shows, at Freeport Memorial Library. Cash awards; age 21+, up to 5 images.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Long Island Arts Council at Freeport' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Long Island Arts Council at Freeport').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

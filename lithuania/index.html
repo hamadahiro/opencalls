@@ -102,11 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Open Calls for Artists in Lithuania</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Lithuania. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Lithuania. Browse and apply today. 3 calls, 1 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/open-call-for-exhibitions-prospekto-and-vilnius-photography-galleries/">Open Call for Exhibitions — Prospekto and Vilnius Photography Galleries</a></h3><p class="call-description">Year-round call for solo, group or curatorial photography shows at Vilnius's Prospekto and Vilnius Photography galleries. Free.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/photoartdoc-2026-open-call-state-of-transition/">PhotoArtDoc 2026 Open Call — State of Transition</a></h3><p class="call-description">Photography festival at the intersection of documentary and art. Theme: TRANSFORMATION. Free entry, Vilnius exhibition + zine.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/restart2026/">RESTART2026 &middot; Lithuanian Photographers' Association</a></h3><p class="call-description">For photographers starting careers or reconsidering direction. 10-20 new photographs. Top 3 win solo exhibition in Vilnius.</p></div>
 
     </section>
 
@@ -124,11 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Lithuania' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => getCountry(c.location) === 'Lithuania').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
-
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

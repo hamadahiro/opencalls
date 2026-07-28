@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Ohio</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Ohio. Browse and apply today. 11 calls, 5 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -117,6 +117,13 @@
       <div class="call-card"><h3 class="call-title"><a href="/visage-manifest-gallery/">Visage &middot; Manifest Gallery</a></h3><p class="call-description">International portraiture call at Manifest Gallery in Cincinnati. Every exhibitor gets a $50 honorarium; $1,000 Grand Jury Award.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/reflections-through-time-2026-evendale-juried-photography-exhibition/">Reflections Through Time: 2026 Evendale Juried Photography Exhibition</a></h3><p class="call-description">Evendale Cultural Arts Center juried photo show for the FotoFocus Biennial. Outdoor panels, $1,000+ prizes; Cincinnati-area photographers.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/art-comes-alive-2026-adc-fine-art/">Art Comes Alive 2026 &middot; ADC Fine Art</a></h3><p class="call-description">Cincinnati's 17th annual exhibition and awards gala — ten gallery representation contracts, two solo shows and purchase awards.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/the-sweep-of-time-beyond-the-horizon-manifest-gallery/">The Sweep of Time: Beyond the Horizon</a></h3><p class="call-description">Lens-based work on time, memory, and the horizon — a 2026 FotoFocus Biennial venue project. Cincinnati gallery exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/intentional-unconventional-photo-cleveland/">Intentional Unconventional — Experimental Photography &amp; Video &middot; Photo Cleveland</a></h3><p class="call-description">Photo Cleveland's experimental photo &amp; video show — abstraction and unconventional technique. Physical Cleveland exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photo-solo-exhibition-proposals-season-23-manifest-gallery/">Photo-Solo Exhibition Proposals — Season 23 &middot; Manifest Gallery</a></h3><p class="call-description">Propose a photography solo show at Manifest (Cincinnati) for the 2026 FotoFocus Biennial period. $100 honorarium.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/manifest-season-23-photo-solo-exhibit-proposals/">Manifest Season 23 Photo-Solo Exhibit Proposals</a></h3><p class="call-description">Solo lens-based exhibition proposals at Manifest Gallery during the 2026/27 FotoFocus Biennial. $1,000 Grand Jury Award.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/18th-annual-nude-manifest-gallery/">18th Annual NUDE — Manifest Gallery</a></h3><p class="call-description">18-year annual themed exhibition on the human form. Open to photography. $50 honorarium + $1,000 Grand Jury Award. Cincinnati.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/sub-scape-manifest-gallery-season-22/">SUB(SCAPE) — Manifest Gallery Season 22</a></h3><p class="call-description">Themed exhibition exploring what lies beneath the visible — structural, psychological, or social systems. Cincinnati.</p></div>
 
     </section>
 
@@ -134,9 +141,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', OH,') || c.location.includes(', Ohio,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', OH,') || c.location.includes(', Ohio,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

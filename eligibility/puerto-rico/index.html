@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Puerto Rico Focus</h1>
-      <h2 class="subtitle">Open calls for projects related to Puerto Rico and its diaspora. Exhibitions, grants, and awards celebrating Puerto Rican art and culture.</h2>
+      <h2 class="subtitle">Open calls for projects related to Puerto Rico and its diaspora. Exhibitions, grants, and awards celebrating Puerto Rican art and culture. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/counter-histories-puerto-rico-magnum-foundation/">Counter Histories Puerto Rico &middot; Magnum Foundation</a></h3><p class="call-description">Fellowship for photographers engaging with Puerto Rico and its diaspora. 8-month virtual fellowship, up to 8 recipients.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('puerto-rico')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Morocco-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists based in Morocco. Exhibitions, grants, and residencies for Moroccan artists.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists based in Morocco. Exhibitions, grants, and residencies for Moroccan artists. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/prix-mustaqbal-2026-momentum-fondation-tgcc/">Prix Mustaqbal 2026 — Momentum &middot; Fondation TGCC</a></h3><p class="call-description">Emerging artists 18-35, Moroccan or foreign residents in Morocco. Winner receives Jardin Rouge residency.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('morocco')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

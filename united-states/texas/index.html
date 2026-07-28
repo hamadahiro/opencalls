@@ -108,7 +108,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in Texas</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Texas. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in Texas. Browse and apply today. 21 calls, 10 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -122,6 +122,18 @@
       <div class="call-card"><h3 class="call-title"><a href="/26th-annual-juried-fine-art-show-and-sale-rockwall-art-league/">26th Annual Juried Fine Art Show &amp; Sale &middot; Rockwall Art League</a></h3><p class="call-description">26th-year North Texas juried show, photography one of eight judged categories with a share of $6,600 in cash prizes. Five-state region.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/the-silent-cut-fort-works-art/">The Silent Cut: Moments in Motion &middot; Fort Works Art</a></h3><p class="call-description">Cinema-logic still images at Fort Works Art (Fort Worth): 11-week show during the Lone Star Film Festival.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-houston/">Artadia Awards 2026 — Houston</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in Harris County, TX. Two-round jury with studio visits.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/hcp-annual-fellowship-awards-2026-houston-center-for-photography/">HCP Annual Fellowship Awards 2026 &middot; Houston Center for Photography</a></h3><p class="call-description">HCP's annual fellowship: two photographers worldwide each win $3,000 plus a solo show. 2026 juror Natasha Egan (MoCP Chicago).</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/forgotten-a-smith-gallery/">forgotten &middot; A Smith Gallery</a></h3><p class="call-description">Themed online juried show on the forgotten — lost, buried, neglected, vanished. Juror Ann Mitchell. 47 images selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/the-big-picture-texas-photographic-society/">The Big Picture &middot; Texas Photographic Society</a></h3><p class="call-description">TPS juried show at the Arlington Museum of Art — accepted works printed ~40 inches wide at no cost. Juror Dornith Doherty.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/road-trip-across-america-photography-exhibition-city-of-frisco/">Road Trip Across America Photography Exhibition &middot; City of Frisco Cultural Affairs</a></h3><p class="call-description">City of Frisco exhibition marking 250 years of American travel. Texas photographers 18+; free entry, Discovery Center show.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/watershed-texas-photographic-society/">Watershed</a></h3><p class="call-description">Themed juried photo exhibition on water. Juried by Luther Smith (TCU). Exhibition at Pool Gallery, Fort Worth. $400 first prize.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/southern-survey-biennial-iii-project-row-houses/">Southern Survey Biennial III &middot; Project Row Houses</a></h3><p class="call-description">Biennial survey for visual artists in 13 Southern U.S. states. Installation in shotgun-house gallery, $5K stipend + $25K prize.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/imagined-a-smith-gallery/">imagined &middot; A Smith Gallery</a></h3><p class="call-description">Visionary, poetic, fanciful, dreamlike, fictional. Juror Susan Burnstine. 47 images selected for online exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photographic-performance-2026-a-smith-gallery/">Photographic Performance 2026 &middot; A Smith Gallery</a></h3><p class="call-description">Sixth year. Seeking solo/cooperative exhibitions with conceptual narrative. Photography-based or mixed media. Texas.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/43rd-center-annual-houston-center-for-photography/">43rd Center Annual &middot; Houston Center for Photography</a></h3><p class="call-description">Houston Center for Photography's annual group exhibition. Juried by Asha Iman Veal. $5,000 MFAH purchase award.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/light-a-smith-gallery/">light &middot; A Smith Gallery</a></h3><p class="call-description">Exploring light as key element. 47 images selected. Juror: Elizabeth Avedon. Exhibition in Johnson City, TX.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fall-2026-spring-2027-solo-exhibitions-sro-photo-gallery-texas-tech-university/">Fall 2026 - Spring 2027 Solo Exhibitions &middot; SRO Photo Gallery, Texas Tech University</a></h3><p class="call-description">Six to eight solo exhibitions plus four moving image exhibitions. All styles welcome. Lubbock, Texas.</p></div>
 
     </section>
 
@@ -139,9 +151,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', TX,') || c.location.includes(', Texas,')) && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.location && (c.location.includes(', TX,') || c.location.includes(', Texas,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

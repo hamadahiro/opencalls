@@ -102,10 +102,14 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>The Independent Photographer</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from The Independent Photographer. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from The Independent Photographer. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 4 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/2026-travel-award-the-independent-photographer/">2026 Travel Award &middot; The Independent Photographer</a></h3><p class="call-description">Travel photography competition. $2,700 prize pool, London exhibition and feature to 1.2M+ followers. Tiered $15–$45 entry.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/2026-portrait-award-the-independent-photographer/">2026 Portrait Award &middot; The Independent Photographer</a></h3><p class="call-description">Portrait photography competition. $2,700 prize pool, London exhibition and feature to 970k+ followers. Judge: Luisa Dörr.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/2026-black-and-white-award-the-independent-photographer/">2026 Black &amp; White Award &middot; The Independent Photographer</a></h3><p class="call-description">Black &amp; white photography competition. $2,700 prize pool, PBC Gallery London exhibition. Judge: Monica Denevan.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/2026-street-photo-award-the-independent-photographer/">2026 Street Photo Award &middot; The Independent Photographer</a></h3><p class="call-description">Monthly street photography competition. $1,000 winner prize, PBC Gallery London exhibition. $2,700 total pool.</p></div>
 
     </section>
 
@@ -123,9 +127,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'The Independent Photographer' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'The Independent Photographer').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -108,10 +108,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a> / <a href="/united-states/">United States</a></nav>
       <h1>Open Calls for Artists in New Hampshire</h1>
-      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Hampshire. Browse and apply today.</h2>
+      <h2 class="subtitle">Find open calls, exhibitions, grants, and residencies for photographers and visual artists in New Hampshire. Browse and apply today. 3 calls, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/this-land-is-your-land-library-arts-center/">This Land Is Your Land &middot; Library Arts Center</a></h3><p class="call-description">Community photo exhibit for America's 250th at a New Hampshire arts centre. NH/VT photographers, all levels; $5, free for members.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/lotte-jacobi-juried-photography-show-new-hampshire-art-association/">Lotte Jacobi Juried Photography Show &middot; New Hampshire Art Association</a></h3><p class="call-description">Annual juried photography show from the New Hampshire Art Association at its Portsmouth gallery. Open to New England photographers.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/across-america-2026-the-art-center/">Across America 2026 &middot; The Art Center</a></h3><p class="call-description">Photography celebrating America's diverse essence — landscapes, people, culture. Juried exhibition in Dover, NH, July–August.</p></div>
 
     </section>
 
@@ -131,7 +136,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.location && (c.location.includes(', NH,') || c.location.includes(', New Hampshire,'))).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Bay Area Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists based in the San Francisco Bay Area.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists based in the San Francisco Bay Area. 11 calls, 4 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -110,6 +110,14 @@
       <div class="call-card"><h3 class="call-title"><a href="/quinn-emanuel-silicon-valley-artist-in-residence-2026/">Quinn Emanuel Silicon Valley Artist-in-Residence 2026</a></h3><p class="call-description">$20,000 + $1,500 materials for a 4-month studio residency at Quinn Emanuel's Silicon Valley office. Bay Area artists only.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/recology-san-francisco-artist-in-residence-program-2027/">Recology San Francisco Artist-in-Residence Program 2027</a></h3><p class="call-description">Four-month residency at SF's recycling center — artists make work from discarded materials. Monthly stipend, studio access. Bay Area only.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/america-the-bountiful-coastal-arts-league/">America the Bountiful — Photography Show 2026 &middot; Coastal Arts League</a></h3><p class="call-description">Bay Area juried photo show at Half Moon Bay's Coastal Arts League gallery, October 1 – November 2; $300 in merit awards.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/summer-open-juried-exhibition-west-portal-gallery/">Summer Open Juried Exhibition &middot; West Portal Gallery</a></h3><p class="call-description">Bay Area open juried summer show at San Francisco's West Portal Gallery — all media including photography; show runs Aug 28–Oct 1.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/bay-area-photography-open-exhibition-2026-image-flow/">Bay Area Photography Open Exhibition 2026 &middot; The Image Flow</a></h3><p class="call-description">The Image Flow (Mill Valley) 2nd annual juried exhibition for 9-county SF Bay Area photographers. Jurors: Ann Jastrab, Nelson Chan, and Image Flow staff.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/leigh-weimers-emerging-artists-awards-2026-rotary-club-of-san-jose/">Leigh Weimers Emerging Artists Awards 2026 &middot; Rotary Club of San Jose</a></h3><p class="call-description">Unrestricted grants up to $5,000 for emerging artists connected to Santa Clara County — photography explicitly included.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/max-thelen-studio-residency-art-works-downtown/">Max Thelen Studio Residency &middot; Art Works Downtown</a></h3><p class="call-description">Free 12-month studio plus solo show at Art Works Downtown, San Rafael, for an emerging Bay Area visual artist.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/transformation-art-works-downtown/">Transformation &middot; Art Works Downtown</a></h3><p class="call-description">Cancelled by the organizer (an unexpected organizational shift); applicants refunded via CaFÉ. Was a Bay Area juried show at San Rafael’s Art Works Downtown.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-san-francisco-bay-area/">Artadia Awards 2026 — San Francisco Bay Area</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in SF Bay Area. Two-round jury with studio visits.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/no-theme-open-call-2026-east-bay-photo-collective/">No Theme Open Call 2026 &middot; East Bay Photo Collective</a></h3><p class="call-description">Open-theme show at Oakland Photo Workshop. 30–45 in-person + 10–20 online. Bay Area artists. Opening Aug 7, 2026.</p></div>
 
     </section>
 
@@ -127,9 +135,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('bay-area') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('bay-area')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

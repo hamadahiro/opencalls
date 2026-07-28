@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Roger Tory Peterson Institute</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Roger Tory Peterson Institute. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Roger Tory Peterson Institute. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/art-that-matters-to-the-planet-dark-skies-roger-tory-peterson-institute/">Art That Matters to the Planet: Dark Skies &middot; Roger Tory Peterson Institute</a></h3><p class="call-description">Night-sky nature art juried by Voyager Golden Record designer Jon Lomberg at RTPI, Jamestown NY. $1,000 top prize; show Jan–May 2027.</p></div>
@@ -123,9 +123,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Roger Tory Peterson Institute' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Roger Tory Peterson Institute').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

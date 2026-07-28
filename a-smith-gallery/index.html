@@ -102,10 +102,15 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>A Smith Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from A Smith Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from A Smith Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 5 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/perspective-a-smith-gallery/">perspective &middot; A Smith Gallery</a></h3><p class="call-description">A Smith Gallery's juried show on 'perspective', juror Debra Klomp Ching. Up to 47 selected; solo-exhibition award + 'The 27' book.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/forgotten-a-smith-gallery/">forgotten &middot; A Smith Gallery</a></h3><p class="call-description">Themed online juried show on the forgotten — lost, buried, neglected, vanished. Juror Ann Mitchell. 47 images selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/imagined-a-smith-gallery/">imagined &middot; A Smith Gallery</a></h3><p class="call-description">Visionary, poetic, fanciful, dreamlike, fictional. Juror Susan Burnstine. 47 images selected for online exhibition.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/photographic-performance-2026-a-smith-gallery/">Photographic Performance 2026 &middot; A Smith Gallery</a></h3><p class="call-description">Sixth year. Seeking solo/cooperative exhibitions with conceptual narrative. Photography-based or mixed media. Texas.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/light-a-smith-gallery/">light &middot; A Smith Gallery</a></h3><p class="call-description">Exploring light as key element. 47 images selected. Juror: Elizabeth Avedon. Exhibition in Johnson City, TX.</p></div>
 
     </section>
 
@@ -123,9 +128,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'A Smith Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'A Smith Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

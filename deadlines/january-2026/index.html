@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>
       <h1>January 2026</h1>
-      <h2 class="subtitle">1 call with deadlines in January 2026 — all closed.</h2>
+      <h2 class="subtitle">Deadlines in January 2026. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
       <div class="call-card"><h3 class="call-title"><a href="/insight-foto-festival-insight-out-2026/">Insight Foto Festival — Insight Out 2026</a></h3><p class="call-description">Independent photography exhibitions and projects exploring the theme ABITO. Sixth edition in Varese, Italy.</p></div>
 
     </section>
@@ -127,7 +129,7 @@
       const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('2026-01')).map(processCall);
       calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true });
+      renderCallList(calls, document.getElementById('callsList'), { skipSections: true, noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

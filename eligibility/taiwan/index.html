@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Taiwan-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists who are Taiwanese nationals or residents of Taiwan. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/new-wave-photography-award-2026-lightbox-photo-library/">New Wave Photography Award 2026 &middot; Lightbox Photo Library</a></h3><p class="call-description">Biennial award for emerging photographers. Judged by 16 curators from Taiwan, Japan, South Korea, and Singapore.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('taiwan')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

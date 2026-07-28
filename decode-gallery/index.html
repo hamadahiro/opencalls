@@ -102,11 +102,18 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Decode Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Decode Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Decode Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 8 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/unposed-photography-exhibit-decode-gallery/">UNPOSED Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Candid, unstaged photography exhibit in Tucson. 26 images juried by Holly Hart; pro printing and framing included.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/square-photography-exhibit-decode-gallery/">SQUARE Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Square format photography — all genres. Pro printing and museum framing included. Three-month exhibition in Tucson, AZ.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/endless-summer-photography-exhibit-decode-gallery/">ENDLESS SUMMER Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Summer-themed photography exhibit in Tucson. 26 images juried by Holly Hart. Pro printing and 22×22 museum framing included.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/collection-2026-decode-gallery/">Collection 2026 - Decode Gallery</a></h3><p class="call-description">Open-theme show — no themes, no limits. 26+ selected. Free pro printing on Epson + museum framing. Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/black-and-white-decode-gallery/">Black and White &middot; Decode Gallery</a></h3><p class="call-description">B&amp;W photography — all genres. Pro printing on Ilford Pearl paper and museum framing included. Exhibition in Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/home-decode-gallery/">HOME &middot; Decode Gallery</a></h3><p class="call-description">Exploring the multifaceted nature of home — feeling, memory, sanctuary, heritage. Pro printing and museum framing in Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/home-photography-exhibit-decode-gallery/">HOME Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Home as feeling, memory, sanctuary. Exploring domesticity, heritage, shelter, and identity. Tucson, AZ.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/color-photography-exhibit-decode-gallery/">COLOR Photography Exhibit &middot; Decode Gallery</a></h3><p class="call-description">Exploring color as one of the most powerful storytelling tools. Bold, subtle, vibrant, or muted. Tucson, AZ.</p></div>
 
     </section>
 
@@ -124,9 +131,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Decode Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Decode Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

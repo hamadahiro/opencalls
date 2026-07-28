@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Magnum Foundation</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Magnum Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Magnum Foundation. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/inge-morath-award-2026/">Inge Morath Award 2026 &middot; Magnum Foundation</a></h3><p class="call-description">$7,500 grant for women/nonbinary photographers under 30. Long-term documentary project. 25th year. Selected by Magnum Photos membership.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/counter-histories-puerto-rico-magnum-foundation/">Counter Histories Puerto Rico &middot; Magnum Foundation</a></h3><p class="call-description">Fellowship for photographers engaging with Puerto Rico and its diaspora. 8-month virtual fellowship, up to 8 recipients.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'Magnum Foundation').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

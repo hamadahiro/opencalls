@@ -102,9 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>DivePhotoGuide / Underwater Australasia</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from DivePhotoGuide / Underwater Australasia. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from DivePhotoGuide / Underwater Australasia. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/underwater-awards-australasia-2026/">Underwater Awards Australasia 2026</a></h3><p class="call-description">Underwater imaging competition with ~AU$70,000 in prizes across 9 categories, for images shot in Australasia. Winners shown at Go Diving Show ANZ, Sydney.</p></div>
 
     </section>
 
@@ -124,7 +127,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'DivePhotoGuide / Underwater Australasia').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

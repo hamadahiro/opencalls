@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Nordic-Only Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to citizens or residents of Nordic countries (Denmark, Finland, Iceland, Norway, Sweden).</h2>
+      <h2 class="subtitle">Open calls restricted to citizens or residents of Nordic countries (Denmark, Finland, Iceland, Norway, Sweden). 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/hasselblad-foundation-nature-photography-grant-2026/">Hasselblad Foundation Nature Photography Grant 2026</a></h3><p class="call-description">Grant for photographic explorations of nature, landscape, and environment. Nordic citizens/residents. 1-3 year projects.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('nordic')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,10 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Central New York Open Calls</h1>
-      <h2 class="subtitle">Open calls restricted to photographers and artists living and working within 75 miles of Syracuse, in Central New York.</h2>
+      <h2 class="subtitle">Open calls restricted to photographers and artists living and working within 75 miles of Syracuse, in Central New York. 1 call, 0 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/cny-artist-initiative-2027-everson-museum-of-art/">CNY Artist Initiative 2027 &middot; Everson Museum of Art</a></h3><p class="call-description">Solo exhibitions at Syracuse's Everson Museum for artists within 75 miles. Curator-selected from 20-image applications.</p></div>
 
     </section>
 
@@ -125,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('central-new-york')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

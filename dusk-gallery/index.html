@@ -102,11 +102,19 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Dusk Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Dusk Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Dusk Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 9 calls, 2 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/creatures-dusk-gallery/">Creatures &middot; Dusk Gallery</a></h3><p class="call-description">Dusk Gallery (Santa Fe) show on animals in their element. Pro printing and framing covered; exhibition Oct 2026.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/three-artist-show-dusk-gallery/">Three Artist Show &middot; Dusk Gallery</a></h3><p class="call-description">Curated three-photographer series show at Dusk Gallery (Santa Fe). Pro printing and framing covered; exhibition Nov 2026.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/southwest-artist-dusk-gallery/">Southwest Artist &middot; Dusk Gallery</a></h3><p class="call-description">Dusk Gallery (Santa Fe) show on the American Southwest. Pro printing and framing covered; exhibition Sep 2026.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/red-dusk-gallery/">RED &middot; Dusk Gallery</a></h3><p class="call-description">Themed show on bold uses of red at Santa Fe's Dusk Gallery. Pro printing and 24×24 museum framing included. Juried by Holly Hart.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/red-photography-exhibit-dusk-photo-gallery/">RED Photography Exhibit &middot; Dusk Gallery</a></h3><p class="call-description">Red in any style — documentary, fine art, abstract, experimental. Free pro printing &amp; framing. Santa Fe, NM.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/red-photography-exhibit-dusk-gallery/">RED Photography Exhibit &middot; Dusk Gallery</a></h3><p class="call-description">Dusk Gallery (Santa Fe) photography exhibition on red commanding the frame. Gallery covers printing &amp; framing. 26 images selected.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/abandoned-photography-exhibit-dusk-photo-gallery/">ABANDONED Photography Exhibit &middot; Dusk Gallery</a></h3><p class="call-description">Traces of human presence and absence — forgotten structures and personal relics. Free pro printing &amp; framing. Santa Fe, NM.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/city-photography-exhibit-dusk-photo-gallery/">CITY Photography Exhibit &middot; Dusk Gallery</a></h3><p class="call-description">Capturing personal urban experience from quiet moments to bustling energy. Santa Fe, NM.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/botanical-photography-exhibit-dusk-photo-gallery/">BOTANICAL Photography Exhibit &middot; Dusk Gallery</a></h3><p class="call-description">Beyond documentation — seeking character in a leaf, architecture in a seedpod. All styles welcome. Santa Fe, NM.</p></div>
 
     </section>
 
@@ -124,9 +132,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Dusk Gallery' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Dusk Gallery').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

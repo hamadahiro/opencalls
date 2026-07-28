@@ -102,9 +102,13 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>MACK</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from MACK. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from MACK. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
+      <p class="empty-state">No open calls right now — past calls below.</p>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/mack-photography-submissions-june-2026/">MACK — Photography Submissions</a></h3><p class="call-description">MACK's annual photography window. Prioritizes underrepresented voices in the photobook landscape.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/mack-debut-photography-book-submissions-may-2026/">MACK — Debut Photography Book Submissions</a></h3><p class="call-description">MACK's window for first-time photobook authors. One of the world's most prestigious photography publishers.</p></div>
 
     </section>
 
@@ -124,7 +128,7 @@
       const data = await res.json();
       const calls = data.calls.filter(c => c.org === 'MACK').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

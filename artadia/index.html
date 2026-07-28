@@ -102,12 +102,16 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Artadia</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Artadia. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Artadia. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 6 calls, 3 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-boston/">Artadia Awards 2026 — Boston</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in Greater Boston. Two-round jury with studio visits.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-atlanta/">Artadia Awards 2026 — Atlanta</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in Greater Atlanta. Two-round jury with studio visits.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-houston/">Artadia Awards 2026 — Houston</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in Harris County, TX. Two-round jury with studio visits.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/21c-artadia-award-2026-northwest-arkansas/">21c Artadia Award 2026 — Northwest Arkansas</a></h3><p class="call-description">Unrestricted $15,000 for one visual artist in Bentonville/Washington Counties, AR — Artadia × 21c Museum Hotels. Free.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-san-francisco-bay-area/">Artadia Awards 2026 — San Francisco Bay Area</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in SF Bay Area. Two-round jury with studio visits.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/artadia-awards-2026-new-york-city/">Artadia Awards 2026 — New York City</a></h3><p class="call-description">Unrestricted $15,000 grants for contemporary visual artists in NYC. Two-round jury process with studio visits.</p></div>
 
     </section>
 
@@ -125,9 +129,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Artadia' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Artadia').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

@@ -102,7 +102,7 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
       <h1>Analog &amp; Film Photography Open Calls</h1>
-      <h2 class="subtitle">Open calls exclusively for analog, film, and non-digital photography. Exhibitions, awards, and publications for film and darkroom photographers.</h2>
+      <h2 class="subtitle">Open calls exclusively for analog, film, and non-digital photography. Exhibitions, awards, and publications for film and darkroom photographers. 20 calls, 8 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -114,6 +114,19 @@
       <div class="call-card"><h3 class="call-title"><a href="/brooklyn-darkroom-artist-in-residence-2027/">Brooklyn Darkroom Artist in Residence 2027</a></h3><p class="call-description">Analog photographers get a month in a fully equipped camper van, a $4,000 stipend and Brooklyn darkroom access.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/roots-fototeka/">ROOTS &middot; Fototeka</a></h3><p class="call-description">Film-only open call for Fototeka's second collective printed volume on origin, belonging and memory. ~€10.</p></div>
       <div class="call-card"><h3 class="call-title"><a href="/pretty-ugly-student-photography-competition-2026-27-ilford-photo/">Pretty Ugly — Student Photography Competition 2026/27 &middot; ILFORD Photo</a></h3><p class="call-description">Free worldwide student darkroom competition on beauty in the overlooked. ILFORD/Kentmere film and paper, prints posted in.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/the-analog-forever-exhibit-2026-lightbox-photographic-gallery/">The Analog Forever Exhibit 2026 &middot; LightBox Photographic Gallery</a></h3><p class="call-description">Analog-process show with Analog Forever Magazine at LightBox in Astoria, Oregon. Any style worldwide — one analog element required.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/rotlicht-festival-2026-anthropocene-hybrid-realities/">Rotlicht Festival 2026 — Anthropocene: Hybrid Realities</a></h3><p class="call-description">Open call for analog photography festival in Vienna. Theme: Anthropocene. 20 winners exhibited; €250 honorarium + €150 travel.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/transforming-landscapes-20-20-photo-festival-2026/">Transforming Landscapes — 20/20 Photo Festival 2026</a></h3><p class="call-description">Analog-only juried festival exhibition exploring 250 years of American landscapes. Cherry Street Pier, Philadelphia. Juror: Andrew Piccone.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/pamplemousse-magazine-issue-13/">Pamplemousse Magazine Issue 13</a></h3><p class="call-description">Film photography print magazine. Issue 13 invites work responding to curated vernacular photos. Analog only, no AI.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/remnants-spring-2026-analog-forever-magazine/">Remnants — Spring 2026 Online Exhibition &middot; Analog Forever Magazine</a></h3><p class="call-description">Online exhibition on loss and absence — film/analog photographers. Curated by Michael Behlen. Exhibition launches May 29.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/zrno-festival-2026-open-call/">ZRNO Festival 2026 — Open Call</a></h3><p class="call-description">International festival of alternative photography. Analog and noble processes. Theme: Unfocus to see.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/wider-skies-magazine-issue-1/">Wider Skies Magazine — Issue 1</a></h3><p class="call-description">New magazine exploring speculative futurism through film photography. Free Kodak film available for those who need it.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/x-roid-bonn-2026-the-stage-gallery/">X ROID Bonn 2026 &middot; The Stage Gallery</a></h3><p class="call-description">7th edition of the international instant art expo for Polaroid and Fuji Instax. Three-day exhibition in Bonn.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fast-forward-analog-photography-as-a-third-space-los-angeles-center-for-photography/">Fast Forward: Analog Photography as a Third Space &middot; Los Angeles Center for Photography</a></h3><p class="call-description">Analog-only submissions exploring how photography creates space for camaraderie and interaction.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/incandescent-zine-color-film-photography/">Incandescent Zine — Color Film Photography</a></h3><p class="call-description">Bi-annual zine exclusively for color film photography. No digital. Published by Pine Island Press, Portland, Oregon.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/fotofilmic-open-2026/">FOTOFILMIC OPEN 2026</a></h3><p class="call-description">Exhibition featuring contemporary film-based photography. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/helsinki-analog-festival-2026-analog-practice-exhibition/">Helsinki Analog Festival 2026 - Analog Practice Exhibition</a></h3><p class="call-description">International open call for artists using analog processes. Celebrating materiality and craftsmanship.</p></div>
 
     </section>
 
@@ -131,9 +144,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('analog-photography') && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('analog-photography')).map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();

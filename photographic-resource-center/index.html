@@ -102,10 +102,12 @@
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
       <h1>Photographic Resource Center</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Photographic Resource Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.</h2>
+      <h2 class="subtitle">Open calls and submission opportunities from Photographic Resource Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/prc-artist-in-residence-2026/">PRC Artist-in-Residence 2026</a></h3><p class="call-description">Four-week studio residency inside the PRC gallery with darkroom and alt-process lab access, $500 stipend, and a closing dual show.</p></div>
+      <h3 class="section-header">Past</h3>
+      <div class="call-card"><h3 class="call-title"><a href="/exposure-2026-photographic-resource-center/">EXPOSURE 2026 — 30th Annual Members' Juried Exhibition</a></h3><p class="call-description">PRC Boston's 30th annual members' juried show. 12 photographers × 3 works. Juried by Audrey Lee Sands of Harvard Art Museums.</p></div>
 
     </section>
 
@@ -123,9 +125,9 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Photographic Resource Center' && isCallOpen(c.deadline)).map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Photographic Resource Center').map(processCall);
       document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'));
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
     }
     loadFiltered();
