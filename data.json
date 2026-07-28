@@ -618,7 +618,8 @@
         "Ellie Rothnie, Wildlife Photographer",
         "Manfred Zollner, Former Editor-in-Chief, Fotomagazin"
       ],
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "verifyNote": "Rules page (2026-07-28): the four Portfolio + four One Shot categories require entrants \"aged 19 years and over\", but the Young Travel Photographer categories are for under-19s, so overall eligibility stays [] — do not add an age facet. AI generated images ineligible; winners announced 17 Jan 2027."
     },
     {
       "title": "Talent of the Year 2026 — Tsvetan Tomchev Award",
@@ -26060,9 +26061,9 @@
       "title": "Louvre Unbound Magazine — Volumes 8 & 9 Open Call",
       "org": "Louvre Unbound",
       "deadline": "2026-08-15",
-      "fee": "Free ($39–$275 if accepted)",
+      "fee": "Free ($39–$239 if accepted)",
       "category": "zine",
-      "description": "International contemporary art magazine seeking visual artists worldwide for Volumes 8 and 9 — painting, photography, sculpture, digital art, mixed media and more. Submit up to 4 artworks via Google Form for free; participation fees apply only on acceptance, with discounted tiers for these volumes: $39 (full page), $69 (double page), $89 (solo portfolio spotlight) and $239–$275 (exclusive interview). Selected artists are featured in the print-on-demand edition (physical copies shipped internationally) plus digital download, and promoted across the magazine's social media channels, with distribution to 83+ countries.",
+      "description": "International contemporary art magazine seeking visual artists worldwide for Volumes 8 and 9 — painting, photography, sculpture, digital art, mixed media and more. Submit up to 4 artworks via Google Form for free; participation fees apply only on acceptance, with discounted tiers for these volumes: $39 (full page), $69 (double page), $89 (solo portfolio spotlight) and $239 (exclusive interview, $275 full price). Selected artists are featured in the print-on-demand edition (physical copies shipped internationally) plus digital download, and promoted across the magazine's social media channels, with distribution to 83+ countries.",
       "url": "https://louvreunbound.com/art-submission",
       "instagram": "@louvreunbound",
       "location": "Online",
@@ -26210,7 +26211,9 @@
       "instagram": "@hambidgecenter",
       "location": "Rabun Gap, GA, USA",
       "prize": "Residency + Fellowship options",
-      "eligibility": [],
+      "eligibility": [
+        "professional"
+      ],
       "submitVia": "SlideRoom",
       "requirements": "Up to 10 images",
       "slug": "hambidge-center-residency-spring-2027",
@@ -33717,7 +33720,7 @@
       "title": "Wild & Domestic 2026",
       "org": "Medford Arts Center",
       "deadline": "2026-08-03",
-      "fee": "$30 for 1 work ($20 members)",
+      "fee": "$30 first work ($20 members), $10 each extra",
       "category": "exhibition",
       "description": "All-media juried exhibition about animals — wild and domestic — at the Medford Arts Center, a 501(c)(3) community arts centre on North Main Street in Medford, New Jersey, funded in part by the New Jersey State Council on the Arts. Juror of awards is Terri Amig; chairs are Diane Emerson and Susan Barnes. Open to artists 18 and over, up to three original pieces each, none previously shown at MAC. Entry is $20/$30/$40 for members and $30/$40/$50 for non-members for one, two or three works. The show runs online and in the gallery from 7 August to 3 September 2026, with in-gallery display limited to accepted work that can be hand delivered; awards reception 7 August. Cash awards for first, second and third place plus three honourable mentions. All work must be for sale and the centre takes 30% commission.",
       "url": "https://www.medfordartsboutique.com/collections/225674",
