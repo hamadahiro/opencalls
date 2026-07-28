@@ -128,7 +128,8 @@
       "orgInTitle": false,
       "summary": "Cape Cod Art Center's autumn online digital-art exhibit — digital photography, composites, and manipulated imagery welcome.",
       "dateAdded": "2026-07-19T23:14:10Z",
-      "resultsDate": "November 6, 2026"
+      "resultsDate": "November 6, 2026",
+      "verifyNote": "2026-07-28: capecodartcenter.org/exhibit-schedule confirms TWISTED - Autumn Online Exhibit, \"JPEG’s Due By: Sunday, October 25 // Notification: Friday, November 6 // CCAC Website live on: Mon., Nov. 9\" and \"$15/per piece (You may enter up to 5 pieces, but the most that will be accepted is two)\". TWISTED is NOT yet listed on the Smarter Entry portal, so the CCAC AI rule seen there (\"You cannot add digital scans, stock images, clip art or AI generated imagery to your pictures\") cannot be attributed to this call yet - ai stays null. No juror named, no eligibility restriction."
     },
     {
       "title": "Mythus: A National Exhibit of Folklore Inspired Artworks",
@@ -167,7 +168,7 @@
       "url": "https://www.newemergenceart.com/",
       "instagram": "@newemergenceart",
       "location": "Online",
-      "prize": "£1,000 + Residency + Mentoring",
+      "prize": "£1,000 + Residency",
       "eligibility": [
         "emerging"
       ],
@@ -183,7 +184,8 @@
         "Judy Clarkson, Figurative painter",
         "Addi Aegisdottir, Creative Director, Mall Galleries",
         "Yeside Linney, Artist"
-      ]
+      ],
+      "verifyNote": "2026-07-28: newemergenceart.com confirms \"Deadline for entries: 3 August 2026\", a prize fund worth over £5,000 and the £1,000 Grand Prize plus the NG Art Creative Residency (2-week, Provence). Prize trimmed from \"£1,000 + Residency + Mentoring\" — the Art Ladder mentoring programme is a programme feature, not a prize category. No AI policy; contact info@newemergenceart.com."
     },
     {
       "title": "Call for Proposals for Solo Exhibitions",
@@ -869,7 +871,8 @@
       "requirements": "1–3 images",
       "orgInTitle": true,
       "summary": "10-week virtual residency for artists working with found/family photographs. Weekly Zoom calls, small cohort, partial scholarships.",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "verifyNote": "2026-07-28: phototrouveemagazine.com confirms the Fall 2026 cohort runs Sept 4 - Nov 6 2026 (ten weekly Friday calls), $650 one-off or 2 x $330, 6-9 slots, partial scholarships, and \"Artists and creatives from anywhere in the world and at any stage of their career are welcome\" (so eligibility stays []). The JotForm asks for \"1-3 images of your current work\". CAUTION: the page states NO fixed deadline - \"we are accepting applications for the Fall 2026 Virtual Residency until all spots are filled\" - so the stored 2026-08-20 could not be reconfirmed; it is a pre-start cut-off, not a published date. No results date and no AI policy anywhere on the page."
     },
     {
       "title": "Lanesboro Juried Sales Gallery 2027",
@@ -2789,7 +2792,8 @@
         "Submissions are reviewed on a rolling basis through the October 20, 2026 deadline; the $10 fee covers 1–10 work samples alongside a short artist statement and bio. The Review features roughly 15–20 visual artists a year across four print issues plus its website and social channels, sometimes paired with essays, statements, or interviews. Work created with the assistance of AI tools is not eligible."
       ],
       "ai": "Not accepted",
-      "dateAdded": "2026-06-15T07:10:09.829Z"
+      "dateAdded": "2026-06-15T07:10:09.829Z",
+      "verifyNote": "2026-07-28: ecotheo.org/submit confirms \"Reviews and Visual Arts are curated on a rolling basis via Submittable and, for the latter, Call for Entry (CaFE)\" - hence deadline stays \"Continuous\". Note the CaFE listing 16257 carries an administrative close of 2026-10-20; do NOT flip the deadline to that date, the org states rolling. AI ban confirmed verbatim: \"Work that has been created, in any part, with the assistance of AI tools is not eligible for submission or publication.\" $10, 1-10 works, no eligibility restriction, editors unnamed, \"allow us at least three months\" instead of a results date."
     },
     {
       "title": "FLOAT Magazine — Let's Get the F@!#k Outta Here",
@@ -16614,7 +16618,8 @@
         "The total awards pool tops $10,000: the professional Photographer of the Year wins $3,500 cash and the non-professional Discovery of the Year $2,400, alongside $400–$500 category-winner prizes. Selected work is featured on the ND Awards platform and promoted through ND Magazine's channels.",
         "The 2026 jury is large — over 25 photographers, photojournalists, professors, and interdisciplinary artists from multiple countries. Notable jurors include Lydia Panas, Mahe Elipe, Valery Poshtarov, Oded Wagenstein, and photojournalist Rui Caria.",
         "Eligibility is open globally to photographers 18+, professional and non-professional. Submission is through the ND Awards website with 1–5 images per entry. Fee is tiered $24–$34 by submission scale, plus $10 per additional category. The 2026 final deadline is September 20; results announced November 22, 2026."
-      ]
+      ],
+      "verifyNote": "2026-07-28: ndawards.net confirms \"Final Deadline 20 September 2026\", Non-Professional $24 single / $29 series (2-5 images), Professional $29 single / $34 series, and a $3,500 grand prize ($3,000 + $500 category win) with the title ND Photographer of the Year. The site publishes no results date (the stored November 22 2026 is unconfirmed) and no AI policy."
     },
     {
       "title": "International Photography Awards 2026",
@@ -17325,7 +17330,7 @@
       "title": "Milano Photo Awards 2026",
       "org": "TheStreetSoup",
       "deadline": "2026-08-15",
-      "fee": "€39–€80",
+      "fee": "€39–€69",
       "category": "photography",
       "description": "International photography exhibition and contest in Milan. Categories include street, portraits, reportage, and nature. Special guest Estevan Oriol (The Oriol Vision category); jury announced 15 days before selection. Event September 25–27, 2026, during Milano Fashion Week. Official sponsor: Nikon Italia.",
       "url": "https://milanophotoawards.com/en/the-contest/",
@@ -17345,7 +17350,7 @@
       "jury": [
         "Estevan Oriol, Lead Judge"
       ],
-      "verifyNote": "As of 2026-07-22 /en/the-contest/ bills Estevan Oriol as 'Special Guest, Main Exhibitor, and Lead Judge' (Oriol Room) — supersedes the 07-16 removal. Rest of jury still unpublished until 15 days before selection; don't remove Oriol, don't add others without a live source. 2026-07-25: /en/program/ confirms Final Deadline Aug 15 + winners announced Aug 25 (the /en/regulation/ page still carries a stale \"February 10th, 2026\" deadline — ignore it). The Exhibition OPEN tier is SOLD OUT/closed; Exhibition Room 1 (5 photos, €39), Room 2 (8–10 photos, €69) and The Oriol Vision (5 photos, €39) remain open — hence requirements 5–10 images, not 2–10.",
+      "verifyNote": "As of 2026-07-22 /en/the-contest/ bills Estevan Oriol as \"Special Guest, Main Exhibitor, and Lead Judge\" (Oriol Room) — supersedes the 07-16 removal. Rest of jury still unpublished until 15 days before selection; do NOT remove Oriol, do NOT add others without a live source. 2026-07-25: /en/program/ confirms Final Deadline Aug 15 + winners announced Aug 25 (the /en/regulation/ page still carries a stale \"February 10th, 2026\" deadline — ignore it). 2026-07-28: fee corrected to €39–€69. The Exhibition OPEN tier is still SOLD OUT, and the three live tiers now price at Exhibition Room 1 €39 (5 photos, was €50), The Oriol Vision €39 (5 photos, was €50) and Exhibition Room 2 €69 (8–10 photos, was €80) — the €80 was the struck-through pre-promotion price, never the payable one. Prize €2,000 confirmed: \"OVERALL WINNER – ABSOLUTE WINNER ACROSS ALL 8 CATEGORIES €2.000 in cash\".",
       "prose": [
         "Milano Photo Awards is an Italian photography contest and exhibition run by TheStreetSoup, with Nikon Italia as official sponsor. The 2026 edition runs September 25–27 at Via Maurizio Gonzaga 7 in Milan, scheduled to coincide with Milano Fashion Week. The exhibition format is a 4×3 meter Samsung LED wall for digital display of selected work, with the top three winners in each category also receiving printed and framed prints. The 2026 edition includes a tribute to Sebastião Salgado.",
         "The total prize pool is €30,000 in cash plus Nikon hardware. There are eight competition categories: Street Photography, Portrait & Identity, Wildlife & Nature, Movement & Sport, Human Landscape, Documentary & Social Vision, Conceptual & Fine Art, and Fashion & Style. AI-generated work is not accepted.",
@@ -18629,7 +18634,8 @@
       ],
       "submitUrl": "https://nyartcompetitions.com/photography/entries/register/",
       "summary": "Exhibition at Agora Gallery in Chelsea, New York. 30 photographers. Five $500 cash prizes.",
-      "proseSkipped": "official site (nyartcompetitions.com) and gallery site (agora-gallery.com) both blocked WebFetch — revisit when reachable; data.json has substantial detail to use later"
+      "proseSkipped": "official site (nyartcompetitions.com) and gallery site (agora-gallery.com) both blocked WebFetch — revisit when reachable; data.json has substantial detail to use later",
+      "verifyNote": "2026-07-28: nyartcompetitions.com/photography confirms $45/5 images (Amateur) and $55/5 images (Professional) with $5 per additional image, 30 photographers exhibited in Chelsea, five $500 cash awards, and the three stored jurors. GENUINELY UNPUBLISHED: the site states NO submission deadline and NO results date anywhere (only \"Competition is Now Open\"), so the stored 2026-11-03 / December 1 2026 could not be reconfirmed. Contact photo@nyartcompetitions.com."
     },
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
@@ -27552,7 +27558,7 @@
       "orgInTitle": true,
       "summary": "Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "verifyNote": "As of 2026-07-26 (rechecked) the online application form is still NOT on the page (\"updating currently but will add soon\"); working route is a video or hard-copy application to gallery@lanesboroarts.org. Recheck for the form. 2026-07-27 (recheck): form still absent from the page HTML (\"updating currently but will add soon\"); no image count and no AI policy stated. Deadline Thu Dec 31 2026 and notification by Fri Feb 26 2027 confirmed.",
+      "verifyNote": "2026-07-28 (recheck): the online application form is STILL absent — the page reads \"please fill out the form below (updating currently but will add soon)\"; working route is a video or hard-copy application to gallery@lanesboroarts.org. Confirmed: \"Artists featured in the 2028 Exhibition Gallery Series must reside in Minnesota, Wisconsin, and Iowa\", \"The Application deadline is Thursday, December 31st 2026. All artists will be notified by Friday, February 26, 2027\", ~8-week exhibitions. NOTE the page also carries a stale line \"The current application window is for exhibitions taking place in 2027\" — the 2028 series line and the Dec 2026/Feb 2027 dates are the current ones. No image count, no AI policy.",
       "ai": null,
       "requirements": null
     },
@@ -27578,7 +27584,7 @@
       "orgInTitle": true,
       "summary": "Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "verifyNote": "As of 2026-07-26 (rechecked) no online form on the page despite \"available below\" text; video/file application via gallery@lanesboroarts.org works. Recheck for the form. 2026-07-27 (4th recheck): still no online form anywhere in the page HTML; route remains Google Drive/Dropbox images or a video application to gallery@lanesboroarts.org. The page states NO image count, no jury and no AI policy — those gaps are genuinely unfillable. Deadline Dec 7 2026 12pm noon, notified by Dec 23 confirmed.",
+      "verifyNote": "2026-07-28 (5th recheck): lanesboroarts.org still has NO online form in the page HTML despite the \"online application available below\" text; route remains images via Google Drive/Dropbox or a video application to gallery@lanesboroarts.org. Confirmed verbatim: \"Applications are due December 7, 2026 at 12 pm noon. Accepted artists will be contacted by December 23.\" MN/IA/WI, early-career, \"Artists may be any age\" (so no age facet). The page states NO image count, no jury and no AI policy — those gaps are genuinely unfillable.",
       "ai": null,
       "requirements": null
     },
@@ -28325,7 +28331,8 @@
       "summary": "Artlink reviews solo, group and curated exhibition proposals annually each March for its Fort Wayne gallery schedule. $25.",
       "dateAdded": "2026-06-12T11:51:23.164Z",
       "ai": null,
-      "resultsDate": null
+      "resultsDate": null,
+      "verifyNote": "2026-07-28: artlinkfw.org confirms the $25 fee per proposal, \"10 - 20 Images with artwork info\" (3-10 images each for group proposals), review by the Artlink Artist Panel and Exhibitions Coordinator, and that proposals are emailed as a PDF to ellen@artlinkfw.org. GENUINELY UNPUBLISHED: the page gives NO date - only \"reviewed ... once a year for consideration in our exhibition schedule for the following year\" - so the stored 2027-03-01 is not confirmable on the page. No AI policy, no results date."
     },
     {
       "title": "59th Annual Newport Beach Art Exhibition",
@@ -28625,7 +28632,7 @@
       "orgInTitle": false,
       "summary": "Summer online all-media exhibit from Cape Cod Art Center — work inspired by the Cape, cash awards, $15 per piece.",
       "dateAdded": "2026-06-12T19:36:39.998Z",
-      "verifyNote": "2026-07-26: the org exhibit-schedule page still shows the ORIGINAL dates (JPEGs due Sunday July 26 / notification Aug 7) — it was never updated. The Smarter Entry portal (smarterentry.com/CallsForEntry/CapeCodArt), which is the actual submission platform, reads: \"Submissions are due by August 2, 2026 by midnight (deadline extended). Artist notification by email on August 11, 2026.\" Keep Aug 2 / Aug 11 — do NOT flip back to the schedule page dates. Online exhibit goes live Aug 17. Cash awards: Best of Show/First, Second, Honorable Mention."
+      "verifyNote": "2026-07-26: the org exhibit-schedule page still shows the ORIGINAL dates (JPEGs due Sunday July 26 / notification Aug 7) — it was never updated. The Smarter Entry portal (smarterentry.com/CallsForEntry/CapeCodArt), which is the actual submission platform, reads: \"Submissions are due by August 2, 2026 by midnight (deadline extended). Artist notification by email on August 11, 2026.\" Keep Aug 2 / Aug 11 — do NOT flip back to the schedule page dates. Online exhibit goes live Aug 17. Cash awards: Best of Show/First, Second, Honorable Mention. 2026-07-28 recheck: portal STILL shows \"End Date: 8/2/2026 11:59:00 PM (PT)\", $15.00 per entry and $15.00 per additional entry, and the schedule page STILL shows the stale July 26 / Aug 7 dates. AI rule confirmed on the portal."
     },
     {
       "title": "The Summer National 2026",
@@ -31779,7 +31786,7 @@
       "slug": "soldiers-lens-2026-fmopa",
       "orgInTitle": false,
       "summary": "Free FMoPA call for active-duty service members, veterans, and family. Museum show in Tampa, Nov 2026, timed with Veterans Day.",
-      "verifyNote": "Deadline Aug 30 per org-authored EntryThingy prospectus (machine closes Aug 31 UTC, usual +1 gotcha); fmopa.org/soldiers-lens/ timeline says Aug 29 beside a stale 'November 5, 2025' typo — don't flip without org confirmation. 2026-07-27 recheck: fmopa.org/soldiers-lens/ now reads \"August 29, 2026\" and still carries the stale \"November 5, 2025 - January 10, 2026\" exhibition line; deadline stays Aug 30 per the org-authored EntryThingy prospectus. Results listed only as \"To be announced\"; no AI policy on the FMoPA page.",
+      "verifyNote": "Deadline Aug 30 per org-authored EntryThingy prospectus (machine closes Aug 31 UTC, usual +1 gotcha); fmopa.org/soldiers-lens/ timeline says Aug 29 — do NOT flip without org confirmation. 2026-07-28: the EntryThingy prospectus reads \"Submissions must be received by August 30, 2026 at 11:59 PM (EST)\" and its Show opens / Show closes fields are Nov 5 2026 - Jan 10 2027, which proves the \"November 5, 2025\" on fmopa.org is a YEAR TYPO for 2026, not a stale past show. Results listed only as \"To be announced\". AI confirmed not accepted (\"AI-generated images are not eligible\"); eligibility active-duty/veterans/immediate family, all ages.",
       "dateAdded": "2026-07-22T10:15:05Z",
       "jury": [
         "Panel of judges knowledgeable in art and military service"
