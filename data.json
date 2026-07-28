@@ -31040,7 +31040,7 @@
       "title": "Head On Photo Awards 2026",
       "org": "Head On Foundation",
       "deadline": "2026-08-16",
-      "fee": "AUD$30 per image; under-25s $15",
+      "fee": "AUD$35 per image; under-25s $17.50",
       "category": "photography",
       "description": "The flagship international awards of Sydney's Head On Photo Festival, judged completely anonymously — jurors see the photograph, never the photographer's name, CV or following. Three categories: Portrait, Landscape and Exposure (anything that is not portrait or landscape), sharing an AUD 80,000 prize pool that includes AUD 5,000 cash for each category winner plus OM System camera kits. Around 40 finalists per category (20–30 for Exposure) are exhibited in print and online during the festival, 6–29 November 2026. Open internationally to photographers at every level, from phone snapshots to studio and documentary work. Entries are AUD 30 per image, half price for under-25s; final deadline 16 August 2026, 11:59pm Sydney time.",
       "url": "https://headon.org.au/awards",
@@ -31073,7 +31073,7 @@
         "Valery Poshtarov, Photographer & Founder, PhotoAnthology Foundation",
         "Lynsey Weatherspoon, Photojournalist & Portraitist"
       ],
-      "verifyNote": "2026-07-28: headon.org.au blocks curl/WebFetch and the Chrome extension was down, but the LIVE submission portal submit.headon.org.au/PhotoAwards-2026 (HTTP 200) states \"This year, we proudly offer an $80,000 prize pool\" and \"Full-price entry fees are AUD$30 per image. To support younger artists (under 25), we offer a 50% discount\" - so the fee is AUD$30 / AUD$15, NOT the $35 / $17.50 previously stored. The org page snapshot (web.archive.org 2026-06-07) independently lists three tiers: General AUD$30, Festival Friends AUD$25, Under-25 AUD$15 per photo. Entries are unlimited across Portrait / Landscape / Exposure; judging is blind; \"Finalists are notified about a month after entries close\" and winners are announced at the festival launch in early November. The 2026-08-16 deadline could NOT be re-confirmed today (org page unreachable, only one Wayback snapshot exists) - recheck when Chrome is back."
+      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-28: attempted re-verification with Chrome down. Both curl-reachable sources are STALE and both say $30: the submit.headon.org.au/PhotoAwards-2026 welcome blurb (\"Full-price entry fees are AUD$30 per image... 50% discount\" for under-25s) and the only Wayback snapshot of /awards (2026-06-07, which shows General $30 / Festival Friends $25 / Under-25 $15 and reads \"Entries closed\" - i.e. the pre-opening 2025 schedule). The fee was briefly changed to $30/$15 on this run and reverted the same session. headon.org.au still 403s plain curl, curl+UA and WebFetch; only one Wayback capture exists for /awards. The 2026-08-16 deadline and the AUD 80,000 pool were NOT independently re-confirmed today - the $80,000 figure does appear on the live submit portal."
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
