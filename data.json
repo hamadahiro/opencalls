@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-28T23:26:13Z",
+  "lastUpdated": "2026-07-29T11:20:42Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -35129,6 +35129,30 @@
       "summary": "49th Lubbock Arts Festival's juried gallery, all media including photography. Up to $1,000 in cash prizes.",
       "verifyNote": "2026-07-29 skip run: CaFE 17609, org-authored prospectus — \"Open to all artists in all media\", \"$30 per entry\", \"Monday, March 1, 2027 All submissions must be received\", \"Monday, March 8, 2027 Selection notification\", festival April 10-11 2027, juror Rob Weingart (WTAMU), \"AWARDS UP TO $1,000 IN CASH PRIZES AWARDED AT THE JUROR'S DISCRETION\", 33 1/3% commission, hand delivery only, Texas sales tax number required. applicationDeadline 2027-03-02T05:59:59Z = Mar 1 CST. lubbockartsfestival.org is a genuine org site (page-sitemap.xml checked: Booth Artists, Demonstrating Artists, Emerging Artist, Young Artist Competition) but carries NO juried-gallery page, so url is the homepage. Practical constraints (hand delivery to Lubbock + TX sales tax number) make this de facto regional; no residency rule is stated, hence empty eligibility. 2026-07-29 editor: APPROVED, no changes. CaFE 17609's description tail confirms the two claims that were cut off mid-sentence in the finder's read: Weingart's full bio (10 years teaching Foundations/2D/3D at West Texas A&M, earlier gallery and museum work in New York, Chicago and London, BFA University of North Texas, MFA School of the Art Institute of Chicago) and \"UP TO $1,000 IN CASH PRIZES AWARDED AT THE JUROR'S DISCRETION\" plus the 33 1/3% commission. Also confirms \"Each artist may have no more than three works represented in the show, but the number of entries is limited to ten\". url stays the homepage: page-sitemap.xml has no juried-gallery page, /artists/ and /faqs/ say nothing about it, and lubbockarts.org carries no call links either — but the homepage does describe the Juried Gallery as part of the festival. Note the homepage still fronts the 48th festival (April 18-19, 2026); this entry is the 49th (April 10-11, 2027), per CaFE. 41 other CaFE entries already use a bare org homepage as url, so this follows convention.",
       "dateAdded": "2026-07-29T07:34:41.746Z"
+    },
+    {
+      "title": "Marco Pesaresi Award for Contemporary Photography 2026",
+      "org": "SI FEST",
+      "deadline": "2026-08-17",
+      "fee": "Free",
+      "category": "grant",
+      "description": "25th edition of the Premio Marco Pesaresi, promoted by the Municipality of Savignano sul Rubicone in partnership with the Municipality of Rimini and organized with Savignano Immagini APS, the association behind SI FEST. Honoring Rimini-born photographer Marco Pesaresi, the award supports photo-reportage marked by research, intentionality and innovation in contemporary photography and visual culture. Photographers of any age and nationality submit a portfolio of up to 20 images, preferably on a single theme, proposing a project they intend to complete with the €5,000 prize; work that has already had a definitive exhibition or book form is not eligible, and early-stage ideas may be entered in project form accompanied by an earlier portfolio. The prize money, paid in two installments, must be used for project expenses such as travel, production, permits and collaborations, and the completed project is exhibited at the following edition of SI FEST in 2027. AI-generated imagery is admitted only if its use is explicitly declared. The winner is notified privately by September 4 and proclaimed during the opening weekend of SI FEST's 35th edition (September 11–13, 2026), then joins the jury that selects the next edition's winner.",
+      "url": "https://www.sifest.it/it/si-fest/premio-marco-pesaresi-2026.html",
+      "instagram": "@sifest",
+      "location": "Savignano sul Rubicone, Italy",
+      "prize": "€5,000 project grant + Exhibition at SI FEST 2027",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Google Forms",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLScuzzk3Zq44hZn8xyojd3k7YF-beuT1i0jSlOPKjNHacR20Tw/viewform",
+      "requirements": "Up to 20 images",
+      "resultsDate": "September 11–13, 2026",
+      "slug": "marco-pesaresi-award-for-contemporary-photography-2026",
+      "orgInTitle": false,
+      "summary": "€5,000 to complete a photo-reportage project, exhibited at SI FEST 2027. Free, open to all ages and nationalities.",
+      "ai": "Accepted (must disclose)",
+      "verifyNote": "2026-07-29 add: verified on sifest.it 2026 page + regolamento Google Doc (id 1-1x2u3Yw7hXlsJXzYwrdUARf-g1kW1VyseIiyPu1oos, linked from the entry form): free, any age/nationality, €5,000 gross paid in two tranches and earmarked for project costs, max 20 images (.jpeg, 20–30 cm long side, 300 dpi, ≤5 MB) sent as a WeTransfer/Drive link through the Google Form, deadline Mon Aug 17 2026 23:59 CET (secretariat reserves the right to extend), winner notified privately by Sep 4 and proclaimed at SI FEST 35 opening weekend Sep 11–13 2026, winning project exhibited at SI FEST 2027, winner sits on next year's jury. Jury is unnamed ('giuria qualificata') so jury [] is correct — don't hunt names. AI explicitly admitted if declared. Award contact submission@savignanoimmagini.it; org contact info@savignanoimmagini.it. 2026-07-29 editor: APPROVED. Re-confirmed on sifest.it (free, any age/nationality, €5.000, deadline lunedì 17 agosto 2026 23:59 CET) and in the regolamento Google Doc export (AI 'non è preclusa... purché esplicitamente dichiarato'; prize 'corrisposto in due fasi', end-2026 and end of SI FEST 2027; max 20 immagini; winner notified privately by 4 settembre). Removed the finder's manually-set dateAdded so generate-pages.js auto-fills it.",
+      "dateAdded": "2026-07-29T11:25:17.169Z"
     }
   ]
 }
