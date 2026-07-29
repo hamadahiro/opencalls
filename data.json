@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-29T11:20:42Z",
+  "lastUpdated": "2026-07-29T23:16:00Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -20655,7 +20655,7 @@
     {
       "title": "Photobook Feature — In Focus",
       "org": "Der Greif",
-      "deadline": "2026-06-30",
+      "deadline": "2026-11-30",
       "fee": "PWYC",
       "category": "zine",
       "description": "Open call for recently published photobooks and artist books to be featured in Der Greif's Articles section with a dedicated editorial write-up. No fixed theme. Seeks photobooks demonstrating strong conceptual thinking, thoughtful sequencing, and an engaged relationship to the medium of the book. Accepts self-published photobooks, artist books, zines, experimental publications, and small-edition press titles. Books in dummy or mock-up stage are not eligible — only finished, produced publications.",
@@ -20668,8 +20668,8 @@
       "slug": "photobook-feature-in-focus-der-greif",
       "orgInTitle": false,
       "dateAdded": "2026-03-25T00:45:00Z",
-      "submitVia": "Picter",
-      "submitUrl": "https://app.picter.com/contests/27d4a085-026b-4a9f-a1ad-7764269dba9e/start",
+      "submitVia": "Official website",
+      "submitUrl": "https://dergreif.org/open-call/",
       "jury": [
         "Caroline von Courten, Artistic Director, Der Greif",
         "Francesca Hummler, Community Manager & Program Curator, Der Greif",
@@ -20681,8 +20681,9 @@
         "Photobook Feature — In Focus is Der Greif's open call for photobooks to be featured in the platform's Articles section. The selected book receives a dedicated editorial write-up rather than just inclusion in a list — the prize is sustained editorial attention.",
         "There is no fixed theme. Selection is based on the book itself: strong conceptual thinking, thoughtful sequencing, and an engaged relationship to the medium of the book. The selection is interested in books that think about being books, not just collections of photographs.",
         "The call is broad in publishing context: self-published photobooks, artist books, zines, experimental publications, and small-edition press titles all eligible. Books currently in dummy or mock-up stage are not eligible — Der Greif requires finished, produced publications.",
-        "Submission requires photographs of the physical book plus a vertical flip-through video (max 2 minutes, 1080×1920 MP4). Submission is through Picter. Fee is voluntary (PWYC) — €10 suggested, hardship vouchers available by emailing voucher-special@dergreif.org. Eligibility is open globally. The deadline is June 30, 2026 at 11:59 PM CET."
-      ]
+        "Submission requires photographs of the physical book plus a vertical flip-through video (max 2 minutes, 1080×1920 MP4). Submission is through Picter once the round opens; Der Greif's open-call page currently offers a notify-at-launch signup instead of an upload form. The fee is voluntary (PWYC) — the last round asked for nothing or an optional €5 or €10 donation. Eligibility is open globally. The deadline is November 30, 2026 at 11:59 PM CET."
+      ],
+      "verifyNote": "2026-07-30: dergreif.org/open-call/ states \"Open Call: In Focus – Photobook Features ... Deadline: November 30, 2026 at 11:59 PM CET\" (previous round closed 30 June). The page currently shows a \"Notify me at launch\" button (a Brevo/sibforms signup) rather than Submit, so the next round is announced but not yet accepting uploads. EDITOR 2026-07-30: the stored Picter submitUrl was the CLOSED previous edition — api.picter.com call(id:\"27d4a085-026b-4a9f-a1ad-7764269dba9e\") returns slug der-greif-photobook-feature with submissionStartDate 2026-01-08 / submissionEndDate 2026-06-30T21:59Z, the microsite site.picter.com/der-greif-photobook-feature renders CLOSED, and the id is absent from the filter{entryStatus:OPEN} list (only Quiet Hours, Guest Room Hubbs/Francis and Fondament are open for Der Greif). Picter contests are per-edition, so the November round will get a NEW id: submitVia/submitUrl re-pointed to the org's open-call page for now, and must be flipped back to Picter when the new contest appears in the open list. Prose deadline line also still said June 30 — corrected. Fee stays PWYC (Picter callInfo costs for the closed round: \"Submit for free or pay a voluntary donation of 5€ or 10€\")."
     },
     {
       "title": "Jugend fotografiert Deutschland 2025",
@@ -33998,7 +33999,7 @@
       "fee": "$35 for 1 image, $20 each additional",
       "category": "exhibition",
       "description": "Tenth edition of the Center for Contemporary Arts' national juried competition in downtown Abilene, Texas. Over $7,000 is awarded annually across 11 media categories — including a dedicated 2D Photography (Film & Digital) category, each with a $500 first prize — plus a $750 juror's award and a $1,000 best of show. Juror Carlyn Ray is a Dallas-based glass artist known for large-scale installations. Open to artists 18 and over; work must be original, made within the last three years, and the image submitted must be the piece delivered. Wall-mounted 2D work is capped at 48 inches framed on its longest dimension, wall-mounted 3D at 36 by 36 inches and freestanding 3D at 36 inches in any dimension, with a 50 lb weight limit. No video or mural work. Entry is $35 for one image and $20 for each additional, limit three. Notifications 1 September; exhibition runs 10 October – 21 November 2026, with the opening reception and awards on 10 October.",
-      "url": "https://www.center-arts.com/exhibits",
+      "url": "https://www.center-arts.com/exhibits-calendar/ccan-2026-call-for-entry",
       "location": "Abilene, TX, USA",
       "prize": "$7,000 in cash awards",
       "eligibility": [
@@ -35394,6 +35395,60 @@
       "summary": "New Jersey non-profit's show on American democratic life, juried by Jeremy Moss. All mediums, cash awards, free for members.",
       "verifyNote": "2026-07-29 editor approve, but this closes in TWO DAYS — deadline Jul 31 2026 (CaFÉ 17834 applicationDeadline 2026-08-01T03:59:59Z = Jul 31 11:59PM EDT, and requirementDescription's IMPORTANT DATES block says 'Entry Deadline: July 31, 2026' outright). studiomontclair.org/artist-opportunities/ renders its opportunity list via JS, so the curled page shows only 'Loading…' — every field here came from CaFÉ, and the org page is still the right `url` because it's the call's permanent home. fees{} carries TWO APPLICATION rows, $42 non-member and $0.00 member, which is where 'free for members' comes from. Notification 'week starting August 14'; exhibition Sep 18 – Oct 23 2026 at the Leach Gallery. Added the two selection-side costs the prospectus buries in requirementDescription: 30% donation retained on all sales, and mandatory gallery sitting (2hrs) for exhibiting artists within 25 miles, or a $40 non-sitter fee. Left the fee chip as the entry fee — sitting has a free option (do the shift), so this is not a fee-free-if-selected case. prize stays 'Cash awards + exhibition': amounts genuinely unpublished, nothing in description/eligibilityDescription/requirementDescription. ai left unset — no AI clause anywhere in the API fields, and a grep of the rendered opportunity page finds none either. Legitimate org, funded in part by the New Jersey State Council on the Arts. IG @studiomontclair.",
       "dateAdded": "2026-07-29T19:24:43.844Z"
+    },
+    {
+      "title": "Women's Work: Women Artists Making Their Mark 2026",
+      "org": "O'Hanlon Center for the Arts",
+      "deadline": "2026-08-03",
+      "fee": "$30 ($25 members)",
+      "category": "exhibition",
+      "description": "The 18th year of O'Hanlon Center for the Arts' annual online show devoted to women artists, part of the Mill Valley non-profit's commitment to gender equity in the art world. Open worldwide to artists who identify as female, aged 16 and over, in any medium except video — the work does not need to reference women or women's issues, though it may. Two jurors, gallerist Donna Seager and artist Irene Bee Kain, each independently select the same maximum number of works and every selection by either juror is included, so the exhibition reflects two distinct curatorial eyes rather than a consensus. Selected work is presented in a curated online show running 17 August – 31 October 2026, promoted through social media, print media and email outreach, with a printable catalogue and permanent archive access after the show closes. A Zoom roundtable with both jurors takes place on 18 August. Work previously shown at O'Hanlon, in the gallery or online, is not eligible.",
+      "url": "https://www.ohanloncenter.org/2026/07/call-for-entries-women-artists-making-their-mark-2026-online-show/",
+      "instagram": "@ohanloncenter",
+      "location": "Online",
+      "prize": "Online exhibition",
+      "eligibility": [
+        "women",
+        "16-plus"
+      ],
+      "jury": [
+        "Donna Seager",
+        "Irene Bee Kain"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17808/CAFE",
+      "requirements": "Up to 3 images",
+      "resultsDate": "August 11, 2026",
+      "slug": "womens-work-women-artists-making-their-mark-2026-ohanlon-center-for-the-arts",
+      "orgInTitle": false,
+      "summary": "18th year of O'Hanlon's online show for women artists. Two jurors select independently; every pick is included.",
+      "verifyNote": "2026-07-30 editor approve. Verified on BOTH the org's own call post (ohanloncenter.org/2026/07/call-for-entries-women-artists-making-their-mark-2026-online-show/) and CaFÉ 17808 — they agree on deadline (Monday Aug 3, 11 PM Pacific; API applicationDeadline 2026-08-04T05:59:59Z = Aug 3 local), jurors, media rules and dates. Editor fixes to the finder's draft: fee was bare '$30' but the post's ENTRY FEE block lists $30 non-member / $25 member with coupon OH25 (a NEW $140 Artist membership also includes one free submission); description said 'any medium' but the post says 'except video'; url re-pointed from /call-for-entries/ (which 301s to /exhibits/call-for-entries/ and shows only a teaser) to the dated post carrying the full prospectus; added resultsDate 'August 11, 2026' (notification by 5 pm Tue Aug 11) and IG @ohanloncenter (CaFÉ instagramUrl is null — the handle is only in the org page's follow links). SELECTION-SIDE COST not in the fee chip: OHCA asks a 30% donation on any sale made in the first 60 days of the exhibition — not a fee to exhibit, so the chip stays the entry fee. Prior-exhibition rule CONFLICTS between sources: CaFÉ requirementDescription says works shown 'in-house or online' are ineligible, the org's Online Exhibits policy says only works shown online are — description follows the stricter CaFÉ prospectus, don't flip it on the org page alone. ai unset: no AI clause in description/eligibilityDescription/requirementDescription, and grep of both org pages finds none. Note the post's header still reads 'Aug 17 – Oct 31, 2025' — a stale-year typo; CaFÉ and the Jul 1 2026 post date confirm 2026. Legitimate non-profit, 616 Throckmorton Ave, Mill Valley CA.",
+      "dateAdded": "2026-07-29T23:21:35.862Z"
+    },
+    {
+      "title": "Flowers — Carlotta Gallery",
+      "org": "Carlotta Gallery",
+      "deadline": "2026-10-10",
+      "fee": "Free (£20–£35 if accepted)",
+      "category": "exhibition",
+      "description": "Carlotta Gallery's themed virtual exhibition on floral life — fleeting, fragile and fierce — from the harsh elegance of a single blooming stem to petals fading to dust. The gallery is after the raw, the romantic and the forgotten: high fashion studio setups, wild overgrown fields, deep macro textures or moody analog decay. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with a free PDF catalogue, permanent Collections-page listing, Instagram feature and certificate of recognition.",
+      "url": "https://www.carlottagallery.co.uk/opencalls",
+      "instagram": "@carlottagallery",
+      "location": "Online",
+      "prize": "Online exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "requirements": "Up to 3 images",
+      "submitVia": "Email",
+      "slug": "flowers-carlotta-gallery",
+      "orgInTitle": true,
+      "summary": "Floral life, raw and romantic — studio setups, overgrown fields, macro textures, analog decay. Virtual exhibition.",
+      "jury": [],
+      "ai": null,
+      "resultsDate": null,
+      "verifyNote": "2026-07-30 editor approve. carlottagallery.co.uk/opencalls lists FLOWERS as the fifth open theme (after On Film, Central & South America, PEOPLE, RED) with 'Submission Deadline: October 10, 2026'; theme text, the free-to-apply / £20 one work / £30 two / £35 three participation ladder, worldwide 18+ eligibility, up to 3 JPGs to photography.carlotta@gmail.com, and the 6–12 month virtual exhibition with PDF catalogue, permanent Collections listing, IG feature and certificate all match the page verbatim. Fifth concurrent call from this gallery and consistent with the eleven siblings already listed, so kept on the same shared /opencalls url (the gallery publishes no per-call pages).",
+      "dateAdded": "2026-07-29T23:21:35.862Z"
     }
   ]
 }
