@@ -35282,6 +35282,118 @@
       "summary": "Praxis Gallery (Minneapolis) on the nude — figure studies to conceptual bodywork. Physical show Sep–Oct 2026; printed catalog.",
       "verifyNote": "2026-07-29 editor approve: praxisphotocenter.org/calls-for-entry read via curl+UA. NUDE GEOGRAPHIES block gives deadline Aug 23 11:59PM CT, notification Aug 28 2026 4PM CT, exhibition Sep 19 – Oct 10 2026, up to 38 photographs selected. url == /calls-for-entry is CORRECT and matches the existing Frames Within Frames entry: the /xN-sub-N-N subpages hold only PAST calls (x1-sub-3-9 = Numbers Symbols & Letters, x1-sub-4-10 = Composed, x2-sub-3-9 = Diptych, all closed Feb/Mar), current and upcoming calls exist ONLY on the landing page — don't 'fix' this to a subpage. Awards for this call are Directors' Choice + FIVE honorable mentions; unlike Frames Within Frames it has NO Juror's Choice and NO named juror, so jury [] is right. The $37 Praxis printing service is an ALTERNATIVE to shipping your own unframed print (Praxis mats and frames either way), not a mandatory selection cost, so fee stays the entry fee. Members get 10 images for the price of 5; hardship waivers via info@praxisgallery.com.",
       "dateAdded": "2026-07-29T15:25:11.286Z"
+    },
+    {
+      "title": "WSP Artist Residency 2027",
+      "org": "Women Street Photographers",
+      "deadline": "2026-08-10",
+      "fee": "$50 per series",
+      "category": "residency",
+      "description": "Two-week fully funded residency in New York City for a woman street photographer, March 29 – April 12, 2027. The package (valued at about $8,000) covers a studio apartment at El Barrio's Artspace PS109 in East Harlem, a round-trip ticket from anywhere in the world, visa fee, subway pass and SIM card, and a $50 daily stipend, plus daily reviews and mentorship with Nina Welch-Kling. The resident produces a solo exhibition shown during the annual Women Street Photographers group exhibition and takes part in the WSP Festival in NYC (April 9–11, 2027), a panel discussion and an Instagram Live interview. Submit a cohesive series of up to 10 images with an artist statement explaining the project and why the residency matters to you — statement and images are weighted equally. Street photography is preferred; other genres are considered if the statement connects to street work. Up to three series per photographer, each on its own form. Photographers who cannot afford the fee, or who live in countries affected by US sanctions, can request one free entry form by email.",
+      "url": "https://www.womenstreetphotographers.com/artist-residency-info",
+      "instagram": "@womenstreetphotographers",
+      "location": "New York, NY, USA",
+      "prize": "NYC residency + solo exhibition",
+      "eligibility": [
+        "women"
+      ],
+      "jury": [
+        "Nina Welch-Kling, WSP Artist Residency Mentor",
+        "Gulnara Lyabib, WSP funder",
+        "Hiroko Hirota, 2026 residency winner"
+      ],
+      "submitVia": "Wufoo",
+      "submitUrl": "https://womenstreetphotographers.wufoo.com/forms/wsp-artist-residency-2027-entry-form",
+      "requirements": "Up to 10 images",
+      "resultsDate": "September 8, 2026",
+      "ai": "Not accepted",
+      "slug": "wsp-artist-residency-2027",
+      "orgInTitle": true,
+      "summary": "Fully funded two-week NYC residency for a woman street photographer, with $50/day stipend, mentorship and a solo exhibition.",
+      "verifyNote": "2026-07-29 editor approve: womenstreetphotographers.com/artist-residency-info curls fine with a UA. The org page carries the $8,000 package, the $50/day stipend, $50 per entry/per series, max 10 photos per series, up to 3 series, the free-entry route for photographers who can't afford it or live under US sanctions, results 'around September 8', and the four judges (Nina Welch-Kling, Hiroko Hirota 2026 winner, Gulnara Lyabib, plus an anonymous patron we don't list). It does NOT carry a deadline — that lives in the Wufoo form's Terms & Rules block, which plain-curls: 'Submission Deadline: August 10, 2026'. Same block is the only source for ai=Not accepted ('The following are not permitted: AI-generated images, Composites, Watermarks...'), so don't null it from the org page alone. Org page contradicts itself on the festival: the benefits list says WSP Festival April 9-11 2027, a stray line below says April 10-12 2026 — the 2027 dates are the ones tied to this residency cycle. Distinct from the existing women-street-photographers-exhibition-call-2026 entry (that was the traveling group show, closed Jul 13).",
+      "dateAdded": "2026-07-29T19:24:43.844Z"
+    },
+    {
+      "title": "Small Matters",
+      "org": "Carter Burden Gallery",
+      "deadline": "2026-08-19",
+      "fee": "$45 (up to 5 works)",
+      "category": "exhibition",
+      "description": "Blind-juried open call for work at an intimate scale, shown at Carter Burden Gallery in Chelsea, New York (548 West 28th Street) from November 19 to December 16, 2026. Two-dimensional work including the frame must measure at least 5 inches and no more than 15 inches in any direction; three-dimensional pedestal pieces must stay under 10 inches and 50 lbs. Jurors are artist-curator Beth Barry and reportage artist Veronica Lawlor. The gallery is part of the Carter Burden Network and particularly encourages artists over the age of 60, though the call is open to all US visual artists over 18. Works on paper must be framed under plexiglass, white or natural wood frames preferred. The gallery takes no commission on sales.",
+      "url": "https://www.carterburdengallery.org/juried-show",
+      "instagram": "@carter_burden_gallery",
+      "location": "New York, NY, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "jury": [
+        "Beth Barry, artist and curator",
+        "Veronica Lawlor, artist"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17867",
+      "requirements": "Up to 5 works",
+      "resultsDate": "September 26, 2026",
+      "ai": "Not accepted",
+      "slug": "small-matters-carter-burden-gallery",
+      "orgInTitle": false,
+      "summary": "Chelsea gallery show of work under 15 inches, jurors Beth Barry and Veronica Lawlor. Artists over 60 especially encouraged.",
+      "verifyNote": "2026-07-29 editor approve: carterburdengallery.org/juried-show and CaFÉ 17867 agree on every field. Org page Dates block: entry deadline Wed Aug 19 2026 11:59 EST, artist notification Sat Sep 26 2026, exhibition Nov 19 – Dec 16 2026 — CaFÉ applicationDeadline 2026-08-20T03:59:59Z is the same date in UTC, don't shift it to Aug 20. fees{} is APPLICATION $45 + MEDIA $0.00, i.e. flat $45 for up to 5 works with no per-image charge. ai=Not accepted comes from requirementDescription ('AI generated work will not be considered and should not be submitted'), not from the org page. Added the 5-inch MINIMUM for 2D — the size rule is a band (5–15in), not just a cap, and the org page's prose only states the cap. prize stays 'Exhibition': there are no cash awards, and the gallery takes NO commission on sales. Not a vanity space — Carter Burden Gallery is the arts program of the Carter Burden Network, a NYC non-profit serving older adults, which is why artists over 60 are specially encouraged (the call is still open to all US artists 18+). IG @carter_burden_gallery confirmed from the page's own links.",
+      "dateAdded": "2026-07-29T19:24:43.844Z"
+    },
+    {
+      "title": "The Schwa Show 2026",
+      "org": "Emerge Gallery & Art Center",
+      "deadline": "2026-08-15",
+      "fee": "$20 (3 entries) + $5 each additional",
+      "category": "exhibition",
+      "description": "National juried competition marking the 25th anniversary of Emerge Gallery & Art Center, the Pitt County Arts Council's home in downtown Greenville, North Carolina. Open to any medium and subject, including photography and video, for work made in the past three years and not previously shown at Emerge. The exhibition runs October 2–31, 2026, opening reception October 2. Juror Holly Garriott is Emerge's founding executive director and an associate teaching professor at East Carolina University. Cash awards total $2,300: Best of Show $1,000, Best of 2D $500, Best of 3D $500 and three Honorable Mentions of $100. Accepted work is insured during the exhibition and sales are split 70/30 in the artist's favour.",
+      "url": "https://www.emergegallery.com/artists/artist-opportunities/the-schwa-show",
+      "instagram": "@pittcountyarts",
+      "location": "Greenville, NC, USA",
+      "prize": "$1,000 Best of Show + exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Holly Garriott, Executive Director, Emerge Gallery & Art Center"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17578",
+      "requirements": "3–5 entries",
+      "resultsDate": "August 31, 2026",
+      "slug": "the-schwa-show-2026-emerge-gallery-art-center",
+      "orgInTitle": false,
+      "summary": "25th-anniversary national juried show in Greenville, NC. Any medium, $2,300 in cash awards, October gallery exhibition.",
+      "verifyNote": "2026-07-29 editor approve: emergegallery.com/artists/artist-opportunities/the-schwa-show and CaFÉ 17578 agree. Deadline Aug 15 2026 11:59PM MDT (CaFÉ 2026-08-16T05:59:59Z is the same instant — don't roll it to Aug 16). Fee structure is 3 entries for $20 with 2 optional extras at $5 each, capped at 5 — fees{} confirms APPLICATION $20 + MEDIA $5 'Additional Submissions', so the minimum buy-in is 3 entries, not 1; requirements reads '3–5 entries' for that reason. Awards $1,000 / $500 / $500 / 3x$100 = $2,300 confirmed on both. Notification Aug 31 2026. Commission 30%, insurance covers accepted work during exhibition dates only. Photography is in scope — 'open to artists in any media and subject matter', and video is explicitly accepted if the artist supplies the equipment. ai left unset deliberately: no AI clause in description, eligibilityDescription or requirementDescription, and a grep of the rendered opportunities.wearecreativewest.org/opportunity/17578/CAFE page for 'artificial intelligence|AI-gener' returns nothing. Legitimate org — Emerge is the Pitt County Arts Council, the NC Arts Council's designated Local Arts Agency since 2009. IG @pittcountyarts.",
+      "dateAdded": "2026-07-29T19:24:43.844Z"
+    },
+    {
+      "title": "We the People",
+      "org": "Studio Montclair",
+      "deadline": "2026-07-31",
+      "fee": "$42 (free for members)",
+      "category": "exhibition",
+      "description": "Open call from Studio Montclair, a nationwide non-profit of exhibiting artists in New Jersey, for work that shows fellow citizens living their lives inside the 250-year-old experiment in democracy that is the United States — read through the Preamble's goals of a more perfect union, justice, tranquility, common defense, general welfare and liberty. Artists are encouraged to interpret those goals unconventionally. All mediums are accepted, including video and installation. The exhibition runs September 18 – October 23, 2026 at the Leach Gallery, 641 Bloomfield Avenue, Montclair. Juror Jeremy Moss trained as a photographer in the UK, shot New York Fashion Week and campaigns for McGraw-Hill and the New York Times, and has curated the Iris Gallery at the South Orange Performing Arts Center for a decade. Cash awards will be presented. Studio Montclair retains 30% on sales, and exhibiting artists who live within 25 miles of the Leach Gallery must sit the gallery for at least two hours during the run or pay a $40 fee towards a sitter.",
+      "url": "https://studiomontclair.org/artist-opportunities/",
+      "instagram": "@studiomontclair",
+      "location": "Montclair, NJ, USA",
+      "prize": "Cash awards + exhibition",
+      "eligibility": [],
+      "jury": [
+        "Jeremy Moss, curator and artist"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17834",
+      "requirements": "Up to 3 images",
+      "resultsDate": "Week of August 14, 2026",
+      "slug": "we-the-people-studio-montclair",
+      "orgInTitle": false,
+      "summary": "New Jersey non-profit's show on American democratic life, juried by Jeremy Moss. All mediums, cash awards, free for members.",
+      "verifyNote": "2026-07-29 editor approve, but this closes in TWO DAYS — deadline Jul 31 2026 (CaFÉ 17834 applicationDeadline 2026-08-01T03:59:59Z = Jul 31 11:59PM EDT, and requirementDescription's IMPORTANT DATES block says 'Entry Deadline: July 31, 2026' outright). studiomontclair.org/artist-opportunities/ renders its opportunity list via JS, so the curled page shows only 'Loading…' — every field here came from CaFÉ, and the org page is still the right `url` because it's the call's permanent home. fees{} carries TWO APPLICATION rows, $42 non-member and $0.00 member, which is where 'free for members' comes from. Notification 'week starting August 14'; exhibition Sep 18 – Oct 23 2026 at the Leach Gallery. Added the two selection-side costs the prospectus buries in requirementDescription: 30% donation retained on all sales, and mandatory gallery sitting (2hrs) for exhibiting artists within 25 miles, or a $40 non-sitter fee. Left the fee chip as the entry fee — sitting has a free option (do the shift), so this is not a fee-free-if-selected case. prize stays 'Cash awards + exhibition': amounts genuinely unpublished, nothing in description/eligibilityDescription/requirementDescription. ai left unset — no AI clause anywhere in the API fields, and a grep of the rendered opportunity page finds none either. Legitimate org, funded in part by the New Jersey State Council on the Arts. IG @studiomontclair.",
+      "dateAdded": "2026-07-29T19:24:43.844Z"
     }
   ]
 }
