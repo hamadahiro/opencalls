@@ -910,7 +910,7 @@
       "orgInTitle": true,
       "summary": "Year-round sales-gallery representation at Lanesboro Arts for Minnesota, Iowa, and Wisconsin artists — 60% consignment, free to apply.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "verifyNote": "As of 2026-07-25 the online form is STILL not on the page (“updating will add soon”); working route is video/hard-copy application via gallery@lanesboroarts.org. Recheck for the form."
+      "verifyNote": "As of 2026-07-29 the online form is STILL not on the page — lanesboroarts.org/artist-opportunities/juried-sales-gallery/ reads verbatim \"To apply, please fill out the form below (updating will add soon)\". Working route remains a video or hard-copy application to gallery@lanesboroarts.org with subject \"Gallery Application\", so submitUrl stays null and the per-artist image count is unpublished. Deadline Thursday 31 Dec 2026 and \"All artists will be notified by Friday, February 26th, 2027\" both reconfirmed. Recheck for the form."
     },
     {
       "title": "New Visionary Magazine Issue 18",
@@ -2973,7 +2973,8 @@
         "Hilary Greenbaum, Director of Graphic Design, Whitney Museum",
         "Kelly Sidley, Head of Photographs, Bonhams",
         "Maia Murphy, Senior Editor, Phaidon Press"
-      ]
+      ],
+      "verifyNote": "2026-07-29: the fee range \"$18–$50\" is CORRECT and must not be tightened. The pay-per-entry table spans two live periods (Regular Jul 22–Aug 19 at 10% off, Extended Aug 19–Sep 16) x three levels: Single Image $35/$31 pro, $27/$24 non-pro, $20/$18 student; Series $50/$45, $40/$36, $30/$27. Floor = student regular $18, ceiling = professional extended series $50. The banner \"Deadline: August 19\" is the REGULAR-period cutoff; the Extended deadline Sep 16 is the real final close. Winners Announcement October 28, 2026."
     },
     {
       "title": "Raccont'Arti: Contemporary Photography Award 2026",
@@ -3315,7 +3316,8 @@
       "summary": "Free climate-art prize for creatives 14–30 with GEF and Re:wild. Eight finalists win $10K, $5K or $2K; jury incl. Hans Ulrich Obrist.",
       "dateAdded": "2026-06-09T23:39:14.396Z",
       "ai": "Accepted (must disclose)",
-      "resultsDate": "November 25, 2026"
+      "resultsDate": "November 25, 2026",
+      "verifyNote": "2026-07-29: prizes are USD. The Picter callInfo whatToWin string mixes currencies (\"cash prizes of $10k, £5k and £2k\") — that is an organiser typo; earthpartner.com/earth-partner-prize/ reads \"Eight finalists will be awarded cash prizes of $10K, $5K or $2K\". Do not convert the 2nd/3rd prizes to GBP. Deadline 7 Oct 2026 23:59 CEST, winner announcement 25 Nov 2026 (Picter timeline), free, ages 14–30."
     },
     {
       "title": "ProfiFoto New Talent Award 26/2",
@@ -9686,7 +9688,8 @@
         "The brief covers natural and man-made landscapes — urban, suburban, and rural environments. Photographs that describe or document terrain in any photographic medium are welcome, including documentary work, fine art landscape, and constructed approaches.",
         "Selected artists' work is physically printed and framed by MWCP for gallery display — the gallery absorbs production costs rather than passing them to the photographer.",
         "Eligibility is open internationally. Submission is by email with 5–10 images. Fee is $50 for 5 images. The 2026 deadline is August 1."
-      ]
+      ],
+      "verifyNote": "2026-07-29: mwcponline.com/traversing-terrain-entry.html confirms \"ENTRY DEADLINE - AUGUST 1\", \"$50 ENTRY FEE - SUBMIT 5 IMAGES FOR $50 - $10 FOR EACH ADDITIONAL IMAGE\", exhibition Sep 4–21 2026, and \"Open to all photographers internationally\". MWCP publishes NO notification date — selections are simply \"posted online at www.mwcponline.com\" and emailed to their list — so resultsDate is genuinely absent, and no juror is named. Note MWCP runs several concurrent calls on one page (Portfolio Platform Sep 1, White Oct 1, EMERGE Aug 1, TEN X TEN Sep 1, Flatland Jul 31) — read the Traversing Terrain block, not a sibling."
     },
     {
       "title": "Midwest Center for Photography Juried Exhibition 2027",
@@ -29294,7 +29297,8 @@
       "submitUrl": "https://site.picter.com/w-eugene-smith-fund-grant-2026",
       "jury": [
         "Three-member international jury"
-      ]
+      ],
+      "verifyNote": "2026-07-29: keep eligibility [\"18-plus\"] — the Picter quickInfo line \"There are no age limitations or regional restrictions\" refers to no UPPER age limit and no geography, while smithfund.org states twice \"You must be 18 years of age or older to apply for this grant.\" Deadline 12 Oct 2026 11:59pm EDT, recipients announced 15 Dec 2026, $50 fee with waivers, up to 40 images, \"No AI generated imagery is allowed\" — all reconfirmed."
     },
     {
       "title": "W. Eugene Smith Grant for Student Photographers 2026",
@@ -29322,7 +29326,8 @@
       "submitUrl": "https://site.picter.com/w-eugene-smith-fund-student-grant-2026",
       "jury": [
         "Three-member international jury"
-      ]
+      ],
+      "verifyNote": "2026-07-29: same as the main grant — Picter says \"no age limitations or regional restrictions\" but smithfund.org states \"You must be 18 years of age or older\", so [\"18-plus\",\"student\"] stays. $10 fee with waivers, up to 40 images plus a Student ID JPG, deadline 12 Oct 2026, recipients announced 15 Dec 2026, no AI imagery."
     },
     {
       "title": "Through the Lens: Presence and Absence",
@@ -29500,7 +29505,8 @@
       "summary": "Second annual juried open submission at The Hunt Museum, Limerick. Photography eligible; €15/artwork. Show Dec 2026 – Feb 2027.",
       "dateAdded": "2026-06-29T23:15:05Z",
       "instagram": "@huntmuseum",
-      "resultsDate": "October 17, 2026"
+      "resultsDate": "October 17, 2026",
+      "verifyNote": "2026-07-29: huntmuseum.com 403s both curl and WebFetch (Chrome-only), but the OESS portal huntmuseum.oess1.uk lists the call as \"Open for Entry\" with Entry Deadline 07/09/2026 12pm, Selection Deadline 6 Oct, Selection Notification 17 Oct 2026, exhibition 5 Dec 2026 – 21 Feb 2027, photography explicitly among the accepted media, contact opensubmission@huntmuseum.com. Use the portal when the museum domain blocks you."
     },
     {
       "title": "Reflections Through Time: 2026 Evendale Juried Photography Exhibition",
@@ -29812,7 +29818,8 @@
       "orgInTitle": false,
       "summary": "Phone-camera images only: ~30 works exhibited at this Long Island cooperative photo gallery, with $600 in cash awards.",
       "dateAdded": "2026-07-02T03:24:00Z",
-      "resultsDate": "August 21, 2026"
+      "resultsDate": "August 21, 2026",
+      "verifyNote": "2026-07-29: fotofotogallery.org shows \"All submissions due: August 14, 2026, midnight (standard mountain time)\" for THIS call. A second, nearer \"July 25th Submission Deadline\" on the same homepage belongs to the separate non-juried \"Summer Jam\" open call — do NOT flip the deadline to July 25. CaFE 17767 agrees (2026-08-15T05:59:59Z = Aug 14 MT), 5–15 images, $40 + $5 each, 18+, prizes $300/$200/$100 = $600, \"No images created using Artificial Intelligence will be accepted.\""
     },
     {
       "title": "63rd Stockton Art League Juried Exhibition",
@@ -30358,7 +30365,9 @@
       "location": "Online",
       "prize": "€500 + Magazine feature",
       "eligibility": [],
-      "jury": [],
+      "jury": [
+        "Panel of independent judges"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.anthologyawards.com/form-photography-competition",
       "slug": "anthology-photography-award-2026",
@@ -30368,7 +30377,8 @@
       "resultsDate": null,
       "ai": "Not accepted",
       "dateAdded": "2026-07-10T23:16:18Z",
-      "instagram": "@anthologymagazine"
+      "instagram": "@anthologymagazine",
+      "verifyNote": "2026-07-29: anthology-magazine.com/awards/photo-competition/ (403 to curl, readable via WebFetch) confirms the May 1 – Nov 30 2026 window, EUR18 standard fee, EUR500 + editorial coverage, one image per entry with unlimited entries, \"The use of Generative AI is not permitted\", and no age/nationality limits. Judges are described only as \"a panel of independent judges\" — no names published, and no winner-announcement date is given (resultsDate genuinely absent)."
     },
     {
       "title": "Hyperview",
@@ -30486,7 +30496,8 @@
       "orgInTitle": true,
       "summary": "Berlin's Kominek Gallery picks 100 photographers for its Golden Hour / Blue Hour group show opening September 10. Free entry.",
       "resultsDate": "August 10, 2026",
-      "dateAdded": "2026-07-12T07:35:41Z"
+      "dateAdded": "2026-07-12T07:35:41Z",
+      "verifyNote": "2026-07-29: UNVERIFIABLE this run — the Golden Hour / Blue Hour call is no longer on kominekominekominek.com (homepage now shows only current exhibitions; /open-call and /kominek-editions both 404) and the Chrome extension was down, so the Jul 31 deadline could not be re-confirmed on the org site. Gallery contact is info@kominek-gallery.com. Re-check with a browser before assuming it is still live."
     },
     {
       "title": "FLARE Journal Vol. 2 — Connection X Isolation",
@@ -33414,7 +33425,10 @@
       "orgInTitle": false,
       "summary": "Abstract art show at MVA Gallery in historic Bethlehem, PA — photography welcome. $200 Director's Choice and an NYC exhibition grand prize.",
       "dateAdded": "2026-07-26T22:17:52Z",
-      "verifyNote": "2026-07-27: CaFE 17872 confirms $35 for 3 images + $5 each additional, 3-9 images, \"Artists must be 18 years of age or older and current residents of the United States\", $200 Director's Choice Award, and \"Notification to Artists: On or about October 27, 2026\". The prospectus states \"The Jurors for this exhibit have requested anonymity\" - the jury is deliberately unpublished, stop re-hunting it. No AI policy."
+      "verifyNote": "2026-07-27: CaFE 17872 confirms $35 for 3 images + $5 each additional, 3-9 images, \"Artists must be 18 years of age or older and current residents of the United States\", $200 Director's Choice Award, and \"Notification to Artists: On or about October 27, 2026\". The prospectus states \"The Jurors for this exhibit have requested anonymity\" - the jury is deliberately unpublished, stop re-hunting it. No AI policy. 2026-07-29: the CaFE prospectus JURYING PROCESS section reads \"A small committee of rotating Jurors of exceptional artists, gallerists, art reviewers, publishers, curators, and academics will review the art\" — the jury field now records that description. Individual names are deliberately unpublished (jurors requested anonymity); stop re-hunting them.",
+      "jury": [
+        "Anonymous rotating committee of artists, gallerists, curators & academics"
+      ]
     },
     {
       "title": "Variations of Yellow 2026",
@@ -33439,7 +33453,10 @@
       "orgInTitle": false,
       "summary": "A whole show built on one colour at MVA Gallery in Bethlehem, PA. Photography welcome; $200 Director's Choice, NYC exhibition prize.",
       "dateAdded": "2026-07-26T22:17:52Z",
-      "verifyNote": "2026-07-27: CaFE 17873 confirms $35 for 3 images + $5 each additional, 3-9 images, US residents 18+, $200 Director's Choice Award, and \"Notification to Artists: On or about October 14, 2026\". The prospectus states \"Jurors for this exhibit have requested anonymity\" - deliberately unpublished, stop re-hunting. No AI policy."
+      "verifyNote": "2026-07-27: CaFE 17873 confirms $35 for 3 images + $5 each additional, 3-9 images, US residents 18+, $200 Director's Choice Award, and \"Notification to Artists: On or about October 14, 2026\". The prospectus states \"Jurors for this exhibit have requested anonymity\" - deliberately unpublished, stop re-hunting. No AI policy. 2026-07-29: the CaFE prospectus JURYING PROCESS section reads \"A small committee of rotating Jurors of exceptional artists, gallerists, art reviewers, publishers, curators, and academics will review the art\" — the jury field now records that description. Individual names are deliberately unpublished (jurors requested anonymity); stop re-hunting them.",
+      "jury": [
+        "Anonymous rotating committee of artists, gallerists, curators & academics"
+      ]
     },
     {
       "title": "Changing Seasons",
@@ -33464,7 +33481,10 @@
       "orgInTitle": false,
       "summary": "Seasonal change across nature, human activity and mood, at MVA Gallery in Bethlehem, PA. Photography welcome; $200 Director's Choice.",
       "dateAdded": "2026-07-26T22:17:52Z",
-      "verifyNote": "2026-07-27: CaFE 17874 confirms $35 for 3 images + $5 each additional, 3-9 images, US residents 18+, $200 Director's Choice Award, and \"Notification to Artists: On or about October 21, 2026\". The prospectus states \"The Jurors for this exhibit have requested anonymity\" - deliberately unpublished, stop re-hunting. No AI policy."
+      "verifyNote": "2026-07-27: CaFE 17874 confirms $35 for 3 images + $5 each additional, 3-9 images, US residents 18+, $200 Director's Choice Award, and \"Notification to Artists: On or about October 21, 2026\". The prospectus states \"The Jurors for this exhibit have requested anonymity\" - deliberately unpublished, stop re-hunting. No AI policy. 2026-07-29: the CaFE prospectus JURYING PROCESS section reads \"A small committee of rotating Jurors of exceptional artists, gallerists, art reviewers, publishers, curators, and academics will review the art\" — the jury field now records that description. Individual names are deliberately unpublished (jurors requested anonymity); stop re-hunting them.",
+      "jury": [
+        "Anonymous rotating committee of artists, gallerists, curators & academics"
+      ]
     },
     {
       "title": "Unbound 2: Anything Goes",
@@ -34297,13 +34317,14 @@
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17878/CAFE",
-      "requirements": "Up to 2 works",
+      "requirements": "Up to 5 works",
       "resultsDate": "September 26, 2026",
       "ai": "Not accepted",
       "slug": "26th-annual-juried-fine-art-show-and-sale-rockwall-art-league",
       "orgInTitle": false,
       "summary": "26th-year North Texas juried show, photography one of eight judged categories with a share of $6,600 in cash prizes. Five-state region.",
-      "dateAdded": "2026-07-27T23:14:15Z"
+      "dateAdded": "2026-07-27T23:14:15Z",
+      "verifyNote": "2026-07-29: CaFE 17878 imagesMin 2 / imagesMax 5 and the fee ladder (\"$45 for up to 2 entries + $5 each additional\") mean the cap is FIVE works, not two — requirements corrected. Prospectus reconfirms Sep 15 close 11:59pm MT, Sep 26 notifications, \"Up to $6,600 in cash prizes\" (Best in Show $1,000, 1st $500 / 2nd $200 per category across 8 categories incl. photography), and \"Artwork generated in whole or in part by artificial intelligence (AI) is not eligible.\""
     },
     {
       "title": "Local Testimony 2026",
@@ -34767,7 +34788,9 @@
       "instagram": "@kinhouseart",
       "location": "Fort Wayne, IN, USA",
       "prize": "Exhibition + Catalog publication",
-      "eligibility": [],
+      "eligibility": [
+        "us-canada"
+      ],
       "jury": [],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17838/CAFE",
@@ -34777,7 +34800,7 @@
       "orgInTitle": false,
       "summary": "Quilt-inspired juried show at Fort Wayne's Kinhouse Gallery — any medium engaging pattern and piecing. Exhibition + catalog.",
       "dateAdded": "2026-07-28T23:26:13Z",
-      "verifyNote": "2026-07-29: kinhouseart.com/patchwork states \"Call Ends: August 23rd, 2026 11:59pm ET\", $12 per entry, notified by Aug 31, exhibition Oct 2-30 2026, $20 shipping stipend, Patchwork Catalog, all mediums accepted. CaFE 17838 confirms fee/deadline (UTC 2026-08-24T03:59 = Aug 23 ET) and 1-3 images per entry. No juror named, no AI policy published."
+      "verifyNote": "2026-07-29: kinhouseart.com/patchwork states \"Call Ends: August 23rd, 2026 11:59pm ET\", $12 per entry, notified by Aug 31, exhibition Oct 2-30 2026, $20 shipping stipend, Patchwork Catalog, all mediums accepted. CaFE 17838 confirms fee/deadline (UTC 2026-08-24T03:59 = Aug 23 ET) and 1-3 images per entry. No juror named, no AI policy published. 2026-07-29 recheck: kinhouseart.com/patchwork carries a dedicated \"US and Canada only:\" section — \"Because of recent global shipping issues, we have made the decision to make this call open to artists shipping to/from the United States and Canada only.\" The CaFE 17838 eligibilityDescription (\"from any location are welcome to apply\") is boilerplate about gender/ability and is CONTRADICTED by the org page — the org page governs, do not strip the us-canada tag."
     }
   ]
 }
