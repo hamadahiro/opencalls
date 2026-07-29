@@ -30549,7 +30549,8 @@
       "summary": "Michigan artists compete for a Stamps Gallery show with $2,000 finalist stipends and a $5,000 top prize. Free to enter.",
       "resultsDate": "September 30, 2026",
       "dateAdded": "2026-07-12T07:35:41Z",
-      "instagram": "@umstamps"
+      "instagram": "@umstamps",
+      "verifyNote": "2026-07-29: stamps.umich.edu 403s BOTH curl+UA and WebFetch, but the Wayback snapshot (web.archive.org/web/2026/https://stamps.umich.edu/events/envision-2027) serves the org's own page and confirms everything: call for work \"February 23 - August 2, 2026\", \"September 30, 2026: Finalists announced\", free, jurors Rehema Barber (Kalamazoo Institute of Art), Laura Mott (Cranbrook Art Museum) and 2025 winner Sara Nickleson, finalists get \"an artist fee and stipend of $2,000 to produce new work\" plus a $5,000 cash prize to the winner, and eligibility \"must live and work in Michigan\", \"at least 21 years old and not enrolled in a University program\", emerging and mid-career. No AI policy is published (ai stays null). The 7-14 image count lives only inside SlideRoom and was not re-checked."
     },
     {
       "title": "HOME: States of Belonging",
