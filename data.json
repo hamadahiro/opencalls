@@ -34802,6 +34802,82 @@
       "summary": "Quilt-inspired juried show at Fort Wayne's Kinhouse Gallery — any medium engaging pattern and piecing. Exhibition + catalog.",
       "dateAdded": "2026-07-28T23:26:13Z",
       "verifyNote": "2026-07-29: kinhouseart.com/patchwork states \"Call Ends: August 23rd, 2026 11:59pm ET\", $12 per entry, notified by Aug 31, exhibition Oct 2-30 2026, $20 shipping stipend, Patchwork Catalog, all mediums accepted. CaFE 17838 confirms fee/deadline (UTC 2026-08-24T03:59 = Aug 23 ET) and 1-3 images per entry. No juror named, no AI policy published. 2026-07-29 recheck: kinhouseart.com/patchwork carries a dedicated \"US and Canada only:\" section — \"Because of recent global shipping issues, we have made the decision to make this call open to artists shipping to/from the United States and Canada only.\" The CaFE 17838 eligibilityDescription (\"from any location are welcome to apply\") is boilerplate about gender/ability and is CONTRADICTED by the org page — the org page governs, do not strip the us-canada tag."
+    },
+    {
+      "title": "GLEAN 2026/27",
+      "org": "GLEAN",
+      "deadline": "2026-09-13",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Juried program giving five Portland-area artists five months of access to the Metro Central transfer station — the dump — to glean discarded materials and make work from them. Selected artists receive a $3,000 stipend, studio visits, marketing support and group critiques with GLEAN artists and partners, culminating in a group exhibition. Gleaning runs November 2026 to March 2027, with on-site safety training and orientation on November 2, 2026 and the exhibition in April/May 2027. Each artist must produce at least eight pieces for sale at the exhibition, with 95% of each piece made from gleaned materials, and keeps 80% commission on sales; Recology and Metro each retain one unpurchased piece, and studio space is not provided. For a third year, one of the five places goes to an artist selected for exceptional craft, supported by the Rainmaker Craft Initiative. One residency position is reserved for a student currently enrolled in an art program at a local college or university, considered separately from other applications, and artists working in a variety of media are encouraged to apply. GLEAN is a partnership between Recology Oregon Recovery, Metro — the regional government that manages the Portland area's garbage and recycling system — and the environmental arts nonprofit ReClaim It, and has run since 2010.",
+      "url": "https://www.gleanportland.com",
+      "instagram": "@gleanportland",
+      "location": "Portland, OR, USA",
+      "prize": "$3,000 stipend + Exhibition",
+      "eligibility": [
+        "portland-area"
+      ],
+      "jury": [
+        "Jury of arts and environmental professionals"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17892/CAFE",
+      "requirements": "4–6 images",
+      "slug": "glean-2026-27",
+      "orgInTitle": true,
+      "summary": "Five Portland artists get five months of access to the dump, a $3,000 stipend and a group show. Free to apply.",
+      "dateAdded": "2026-07-29T03:15:06Z",
+      "verifyNote": "2026-07-29 editor: CaFE 17892 (opportunities-api GraphQL) is LIVE — applicationDeadline 2026-09-14T06:59:59Z = Sep 13 11:59 PM PDT, lowestFee 0, imagesMin 4 / imagesMax 6, providerWebsite gleanportland.com, $3,000 stipend, 2026/7 program calendar in `description`. DON'T RE-FLIP on the org page: gleanportland.com's Apply block still reads \"APPLICATIONS ARE CURRENTLY CLOSED\" while the org-authored CaFE listing carries the full new cycle — the portal governs here. Jury is unnamed (org page: \"a jury of arts and environmental professionals\"); no AI policy published."
+    },
+    {
+      "title": "Hotel Willa Artist-in-Residence 2027",
+      "org": "The Paseo Project",
+      "deadline": "2026-09-30",
+      "fee": "$25",
+      "category": "residency",
+      "description": "Four-week self-directed residency at Hotel Willa in Taos, New Mexico, activated by The Paseo Project, for the months of February, March, April, July, August, October, November and December 2027. The hotel — a 1940s motel reimagined as an art-forward destination in the historic district, five minutes' walk from Taos Plaza — hosts one artist at a time. Residents get a private one-bedroom suite with kitchenette, a private on-site studio outfitted with work surfaces, easel, sink, desk lamp, rolling cart and cutting mat, a bicycle for the duration, and restaurant discounts and vouchers. There is no stipend: artists cover travel, materials and meals, and a car is recommended. Artists are invited to give an artist talk and open studio on the third Thursday of their stay. Open to artists, makers, writers and creatives in all disciplines who live or work in the Four Corners region or within a 300-mile radius of Taos; Taos County residents are not eligible, and the program cannot accommodate couples or families.",
+      "url": "https://paseoproject.org/residencies",
+      "instagram": "@paseoproject",
+      "location": "Taos, NM, USA",
+      "prize": "4-week residency",
+      "eligibility": [
+        "southwest-us"
+      ],
+      "jury": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17877/CAFE",
+      "requirements": "3–5 images",
+      "slug": "hotel-willa-artist-in-residence-2027",
+      "orgInTitle": false,
+      "summary": "Four weeks in Taos with a private suite, studio and bike at Hotel Willa, for artists within 300 miles of town.",
+      "dateAdded": "2026-07-29T03:15:06Z",
+      "verifyNote": "2026-07-29 editor: CaFE 17877 \"The Paseo Project's 2027 Hotel Willa Artist-in-Residence\" is LIVE — applicationDeadline 2026-10-01T05:59:59Z = Sep 30 MDT, entry fee $25, imagesMin 3 / imagesMax 5, provider \"The Paseo Project & Hotel Willa\". Eligibility verbatim: \"Four Corners region or within a 300-mile radius of Taos, New Mexico. Not applicable for Taos County residents.\" No stipend — \"There is no financial support offered at this time.\" DON'T RE-FLIP on the org page: paseoproject.org/residencies still describes the Hotel Willa AIR as the \"2025 residency\" and lists no dates; it is the only org page for the program and the CaFE listing is the live 2027 call. Note the org runs a SECOND, different residency (Paseo Project AIR Fellowship, stipended, community-engagement) — not this call."
+    },
+    {
+      "title": "Delfina Foundation — Central & West Africa Curators Residency 2027",
+      "org": "Delfina Foundation",
+      "deadline": "2026-08-30",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Six- or twelve-week residency in London during Delfina Foundation's winter 2027 'open' season (5 January – 28 March 2027), for curators based in Central and West Africa, supported by Delfina's Network of Patrons for Africa. Support covers a return economy flight, UK airport transfers, reimbursement of visa fees, a £40 per day living allowance, a £70 per week materials and research allowance, a London travel pass, and a single bedroom with desk in Delfina's house, which hosts up to eight residents around a shared kitchen, library and dining room. The programme includes guided visits to museums, galleries, non-profits and artist-run spaces, trips to institutions outside London, organised presentations and studio visits, portfolio reviews and mentoring. Applicants must hold nationality of and be based in one of 26 listed countries, have at least five years of professional curatorial practice — independent, institutional or academic — and be proficient in English, as the interview is conducted in English. Curators with an artistic background are welcome, but the residency is not open to applicants whose primary practice is as an artist.",
+      "url": "https://www.delfinafoundation.com/open-calls/current/open-call-for-curators-based-in-central-and-west-africa/",
+      "instagram": "@delfinafdn",
+      "location": "London, United Kingdom",
+      "prize": "Funded residency + £40/day living allowance",
+      "eligibility": [
+        "curators",
+        "central-west-africa"
+      ],
+      "jury": [],
+      "submitVia": "Cognito Forms",
+      "submitUrl": "https://www.cognitoforms.com/DelfinaFoundation/OPENCALLRESIDENCYFORCURATORSBASEDINCENTRALANDWESTAFRICA",
+      "requirements": "CV + portfolio",
+      "resultsDate": "Late September 2026",
+      "slug": "delfina-foundation-central-west-africa-curators-residency-2027",
+      "orgInTitle": true,
+      "summary": "Fully funded 6–12 week London residency for curators based in Central and West Africa, with flights and allowances.",
+      "dateAdded": "2026-07-29T03:15:06Z",
+      "verifyNote": "2026-07-29 editor: page live, \"Application deadline: Sunday, 30 August 2026, 23:59 BST\", Cognito form linked. Allowances, results date and the English requirement are ONLY in the Guidance Notes PDF (/wp-content/uploads/media/2026_Guidance_Notes_Delfina_Foundation_Central_And_West_Africa.pdf, curls with a Referer): return economy flight, UK airport transfers, visa fee reimbursement, £40/day living, £70/week materials/research, London travel pass, single bedroom in the 8-resident house; \"notified ... by late September 2026\". PDF FAQ: five years need not be continuous; artist-curators may apply only if their CURRENT primary practice is curatorial — \"not open to applicants whose primary practice is as an artist\". 26 eligible countries listed on the page. Distinct from the four other stored Delfina calls (different URL + region)."
     }
   ]
 }
