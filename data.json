@@ -129,7 +129,7 @@
       "summary": "Cape Cod Art Center's autumn online digital-art exhibit — digital photography, composites, and manipulated imagery welcome.",
       "dateAdded": "2026-07-19T23:14:10Z",
       "resultsDate": "November 6, 2026",
-      "verifyNote": "2026-07-28: capecodartcenter.org/exhibit-schedule confirms TWISTED - Autumn Online Exhibit, \"JPEG’s Due By: Sunday, October 25 // Notification: Friday, November 6 // CCAC Website live on: Mon., Nov. 9\" and \"$15/per piece (You may enter up to 5 pieces, but the most that will be accepted is two)\". TWISTED is NOT yet listed on the Smarter Entry portal, so the CCAC AI rule seen there (\"You cannot add digital scans, stock images, clip art or AI generated imagery to your pictures\") cannot be attributed to this call yet - ai stays null. No juror named, no eligibility restriction."
+      "verifyNote": "2026-07-29 recheck: capecodartcenter.org/exhibit-schedule re-confirms \"JPEG’s Due By: Sunday, October 25 // Notification: Friday, November 6\" and \"$15/per piece (You may enter up to 5 pieces, but the most that will be accepted is two)\". TWISTED is STILL absent from the Smarter Entry portal (which currently lists Inspired by Cape Cod, The Summer National and Shadow Play), so the CCAC AI rule seen there cannot yet be attributed to this call - ai stays null. Unchanged."
     },
     {
       "title": "Mythus: A National Exhibit of Folklore Inspired Artworks",
@@ -346,7 +346,7 @@
       "orgInTitle": true,
       "summary": "Eyeshot's annual street & documentary open call — €1,000 top prize plus a fully funded monograph contract; Magnum-led jury, students free.",
       "dateAdded": "2026-07-15T11:18:30Z",
-      "verifyNote": "2026-07-28: eyeshotstreetphotography.com confirms the timeline \"3 July Open Call opens / 6 September Submission deadline / 9 October Winners announced\", the GDP-indexed fee model (\"Your entry fee is automatically adjusted according to your country's GDP per capita\") with free-entry waivers, and prizes €1,000/€500/€250 plus \"a fully funded editorial contract with Eyeshot, representing an investment of over €20,000\". Seven-juror panel as stored. No age or nationality restriction is published - eligibility stays []."
+      "verifyNote": "2026-07-29 recheck: eyeshotstreetphotography.com reads with a PLAIN curl (curl+UA 403s) and re-confirms the timeline \"3 July Open Call opens / 6 September Submission deadline / 9 October Winners announced\" and the GDP-indexed fee model (\"Your entry fee is automatically adjusted according to your country’s GDP per capita\") with free entry for students and hardship waivers. No age or nationality restriction published - eligibility stays []. Unchanged."
     },
     {
       "title": "Paper Photo Award 2026",
@@ -426,7 +426,7 @@
       "orgInTitle": false,
       "summary": "Multimedia juried show on world culture at Stamford's Ferguson Library — photography and any medium welcome, up to $400 in awards.",
       "dateAdded": "2026-07-15T11:15:10Z",
-      "verifyNote": "2026-07-28: stamfordartassociation.org 403s to curl, but the EntryThingy call page (app.entrythingy.com/stamfordartassociation/world-culture-art-at-the-ferguson-library/) is plain-curl readable and confirms everything: \"Entry Deadline: Tuesday, August 13th at 11:59 PM\", \"$35 for first piece entry for Non-Members. $30 for SAA Members. $15 for each additional entry ... $10 each for SAA Members\", 1-5 pieces, \"Up to $400 in awards\", \"Artists will be notified via email by August 22, 2026\", show Sept 10 - Jan 7 2027 at The Ferguson Library. No juror is named and no AI policy is stated. Work must be hand delivered to Stamford CT, but no residency restriction is published - eligibility stays []."
+      "verifyNote": "2026-07-29 recheck: stamfordartassociation.org still 403s both plain curl and curl+UA; the EntryThingy call page re-confirms \"Entry Deadline: Tuesday, August 13th at 11:59 PM\", \"$35 for first piece entry for Non-Members. $30 for SAA Members. $15 for each additional entry ... $10 each for SAA Members\", \"Number of pieces: 1 - 5\", \"Up to $400 in awards\" and \"Artists will be notified via email by August 22, 2026\". Gallery takes 30% commission. Still no juror named, no AI policy. Unchanged."
     },
     {
       "title": "PhotoMonth 2026 Open Call — Unity and Community",
@@ -560,7 +560,7 @@
       "summary": "PhotoPlace × Texas Photographic Society juried show on the art of composition, juried by Brian Finke. Vermont gallery show + catalog.",
       "resultsDate": "August 18, 2026",
       "dateAdded": "2026-07-13T07:07:20Z",
-      "verifyNote": "2026-07-28: CaFÉ 17832 confirms applicationDeadline 2026-08-04T06:59:59Z = 3 August 2026 local and the full fee set - Member Entry Fee $30, Non-Member Entry Fee $40, Additional Media $5 - with imagesMin/Max 5-12. Dates verbatim: \"Submission Deadline: August 3, 2026 Juror Selections Announced: August 18, 2026 Print Deadline (Exhibition Gallery): September 18, 2026 Exhibition Dates: October 2-31, 2026\". Awards: \"Juror's Award $500 Director's Award $300 Honorable Mention $100 x2\". Juror Brian Finke selects up to 35 gallery + ~40 online images. No AI policy stated. Provider email cpireland@texasphoto.org."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17832 confirms 2026-08-04T06:59:59Z = 3 Aug local, Member $30 / Non-Member $40 / Additional Media $5, imagesMin/Max 5-12, and \"AWARDS: Juror’s Award $500 Director’s Award $300 Honorable Mention $100 x2\" with \"Juror Selections Announced: August 18, 2026\". Juror Brian Finke selects up to 35 gallery + ~40 online images. Unchanged."
     },
     {
       "title": "Through the Looking Glass",
@@ -654,7 +654,7 @@
       "summary": "Award for young Bulgarian photographers (up to 26) in documentary and visual storytelling. Winner gets a Sony camera and NOISE mentorship.",
       "resultsDate": "September 24, 2026",
       "dateAdded": "2026-07-11T13:54:27Z",
-      "verifyNote": "2026-07-28: noiseducation.com/talant-na-godinata (Bulgarian) confirms \"Крайният срок за кандидатстване е 22 август 2026 г. в 23:59 ч.\", free entry, \"5 до 12 фотографии\", eligibility \"Автори на възраст до 26 години\" of Bulgarian nationality wherever resident, and the AI ban \"Използването на изкуствен интелект ... не е разрешено\". Five finalists are announced 10 September 2026; the WINNER is revealed at the NOISE conference ceremony in Sofia on 24 September 2026 (= stored resultsDate). Jury is \"преподаватели и професионалисти\" - no names published."
+      "verifyNote": "2026-07-29 recheck: noiseducation.com/talant-na-godinata re-confirms \"Крайният срок за кандидатстване е 22 август 2026 г. в 23:59 ч.\" and the up-to-26 Bulgarian eligibility; Picter JSON adds submissionEndDate 2026-08-22T21:59Z, \"Participation is free of charge.\", \"Judging start 2026-08-28\", \"Shortlist announcment 2026-09-10\" and \"Award ceremony 2026-09-24\" (= stored resultsDate). Jury still unnamed. Unchanged."
     },
     {
       "title": "Martin Parr Foundation Awards 2026",
@@ -679,7 +679,7 @@
       "requirements": "Up to 3 images",
       "resultsDate": "September 25, 2026",
       "dateAdded": "2026-07-06T23:14:57Z",
-      "verifyNote": "2026-07-28: martinparrfoundation.org confirms \"COMPETITION DEADLINE / 13 SEPT\" (midnight) and the Niall McDiarmid-judged 'Street Fashion' brief; the Picter API adds the fee verbatim - \"£10 (GBP) for up to 3 images. Entry includes a year's digital membership to the MPF. Free entry for full members of the MPF\" - and \"Winner announcement 25 September 2026\". IMPORTANT: this is NOT members-only; Picter whoCanSubmit reads \"Anyone, anywhere\", so eligibility stays []. Contact jon@martinparrfoundation.org. No AI policy published."
+      "verifyNote": "2026-07-29 recheck: martinparrfoundation.org reads with a PLAIN curl (curl+UA 403s) and shows \"COMPETITION DEADLINE / 13 SEPT ... The deadline is midnight, 13 SEPT\" plus the Niall McDiarmid Zoom on 25 SEPT. Picter JSON re-confirms submissionEndDate 2026-09-13T22:59Z, costs \"£10 (GBP) for up to 3 images. Entry includes a year’s digital membership to the MPF ... Free entry for full members\", timeline \"Winner announcement 2026-09-25\" and whoCanSubmit \"Anyone, anywhere\" (so eligibility stays []). Unchanged."
     },
     {
       "title": "Nature in Gaudí — Ángeles Omedas Millán Prize 2026",
@@ -705,7 +705,7 @@
       "resultsDate": "October 15, 2026",
       "dateAdded": "2026-07-06T23:14:57Z",
       "ai": "Not accepted",
-      "verifyNote": "2026-07-28: fundacionantoniogaudi.org confirms \"Inicio de las inscripciones: 01 de Julio 2026 / Final de las inscripciones: 31 de Agosto 2026 / Anuncio de los ganadores: 15 de Octubre 2026\", \"inscripción gratuita\", €5,000 first prize, \"entre 1 y 3 imágenes\", and eligibility \"cualquier persona con edad legal, de todos los países del mundo\" (= 18-plus). The Picter timeline adds a shortlist announcement on 30 September 2026. Contact info@fundacionantoniogaudi.org. No jury names are published."
+      "verifyNote": "2026-07-29 recheck: fundacionantoniogaudi.org re-confirms \"inscripción gratuita\", \"un primer premio de 5.000 euros ... y dos segundos premios de 500 euros\", \"entre 1 y 3 imágenes\" and \"cualquier persona con edad legal, de todos los países del mundo\"; Picter JSON gives submissionEndDate 2026-08-31T21:59Z, \"Shortlist announcement 2026-09-30\" and \"Winner announcement 2026-10-15\" (= stored resultsDate). Unchanged."
     },
     {
       "title": "Grant for a New Humanitarian Perspective 2026",
@@ -811,7 +811,7 @@
       "summary": "One of the tri-state area's longest-running juried photo shows, at Freeport Memorial Library. Cash awards; age 21+, up to 5 images.",
       "resultsDate": "October 5, 2026",
       "dateAdded": "2026-07-06T19:26:18.527Z",
-      "verifyNote": "2026-07-28: CaFÉ 17762 confirms applicationDeadline 2026-09-15T03:59:59Z = 14 September 2026 local (EDT), a $35 Entry Fee and imagesMin/Max 1-5, with the show at the Freeport Memorial Library, juried by Alex Ferrone, cash awards and certificates. GENUINELY UNPUBLISHED: no AI policy in any CaFÉ text field, and CaFÉ carries no provider email for this org (liacf.org is the only contact route)."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17762 confirms 2026-09-15T03:59:59Z = 14 Sep local, $35 Entry Fee, imagesMin/Max 1-5, \"a juried competition with cash awards and certificates, a month-long exhibition at the Freeport Memorial Library\". juryResults null and no AI policy in any CaFÉ text field. Unchanged."
     },
     {
       "title": "TOKAS-Emerging 2027",
@@ -863,7 +863,7 @@
       "orgInTitle": true,
       "summary": "Not-for-profit journal publishing one artist per issue in print and online. October issue window August 1–20. Free, email entry.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "verifyNote": "2026-07-28: dekunumag.com/submit confirms the Submission Periods table - the OCTOBER issue window is \"August 1-20\", closed for jury from the 21st to the 1st of the next month, so deadline 2026-08-20 and results ~Sept 1 are right. \"Each issue contains 11 images\"; entry is a single email with 11 separate images + bio + project description to dekunumag (at) gmail (dot) com; free. NOTE August has no call (annual contest instead). No jury named, no AI policy, no eligibility restriction on the page."
+      "verifyNote": "2026-07-29 recheck: dekunumag.com/submit re-confirms the Issue←Window table - \"October | August 1-20\" - so deadline 2026-08-20 and results ~Sep 1 stand (\"Closed for jury: 21st to 1st of the next month\"). \"Each issue contains 11 images\"; free; 11 editions/year with \"August: No Call - Annual Contest and Special Edition\". No jury named, no AI policy, no eligibility restriction. Unchanged."
     },
     {
       "title": "Photo Trouvée Virtual Artist Residency — Fall 2026",
@@ -888,7 +888,7 @@
       "orgInTitle": true,
       "summary": "10-week virtual residency for artists working with found/family photographs. Weekly Zoom calls, small cohort, partial scholarships.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "verifyNote": "2026-07-28: phototrouveemagazine.com confirms the Fall 2026 cohort runs Sept 4 - Nov 6 2026 (ten weekly Friday calls), $650 one-off or 2 x $330, 6-9 slots, partial scholarships, and \"Artists and creatives from anywhere in the world and at any stage of their career are welcome\" (so eligibility stays []). The JotForm asks for \"1-3 images of your current work\". CAUTION: the page states NO fixed deadline - \"we are accepting applications for the Fall 2026 Virtual Residency until all spots are filled\" - so the stored 2026-08-20 could not be reconfirmed; it is a pre-start cut-off, not a published date. No results date and no AI policy anywhere on the page."
+      "verifyNote": "2026-07-29 recheck: phototrouveemagazine.com re-confirms the Fall 2026 cohort dates (Sept 4 - Nov 6 2026), \"$650 or 2 installments of $330\", 6-9 slots, partial scholarships and \"artists and creatives from anywhere in the world and at any stage of their career\" (eligibility stays []). CAUTION UNCHANGED: the page still publishes NO fixed deadline - \"we are accepting applications for the Fall 2026 Virtual Residency until all spots are filled\" - so the stored 2026-08-20 is a pre-start cut-off, not a published date. Contact phototrouveemagazine@gmail.com. Unchanged."
     },
     {
       "title": "Lanesboro Juried Sales Gallery 2027",
@@ -2738,7 +2738,7 @@
         "GAZE awards a National first prize and an International first prize of €1,000 each (as MPB vouchers), plus a €500 Audience Prize. Winning entries are presented in an exhibition in Berlin in winter 2026."
       ],
       "dateAdded": "2026-06-18T15:18:12.399Z",
-      "verifyNote": "2026-07-28: queer-gaze.de confirms \"Bis zum 31. August 2026\" and the €15 fee (the site devotes a section to why they charge it); the Picter API adds \"Winner announcement 30 September 2026\" (= stored September 2026) and the eligibility verbatim: \"All individuals residing in Germany, the EU & UK who are at least 18 years old at the time of entry and identify as part of the LGBTQIA+ community\". Contact hallo@queer-gaze.de. GENUINELY UNPUBLISHED: the jury is not named for the 2026 edition."
+      "verifyNote": "2026-07-29 recheck: queer-gaze.de confirms \"Bis zum 31. August 2026\" and the LGBTQIA+/DE-EU-UK/18+ wording; Picter JSON re-confirms submissionEndDate 2026-08-31T21:59Z, costs \"There is a submission fee of 15,- Euro per entry.\" and timeline \"Winner announcement 2026-09-30\". Jury still unnamed for the 2026 edition. Unchanged."
     },
     {
       "title": "Are Men OK?",
@@ -2817,7 +2817,7 @@
       ],
       "ai": "Not accepted",
       "dateAdded": "2026-06-15T07:10:09.829Z",
-      "verifyNote": "2026-07-28: ecotheo.org/submit confirms \"Reviews and Visual Arts are curated on a rolling basis via Submittable and, for the latter, Call for Entry (CaFE)\" - hence deadline stays \"Continuous\". Note the CaFE listing 16257 carries an administrative close of 2026-10-20; do NOT flip the deadline to that date, the org states rolling. AI ban confirmed verbatim: \"Work that has been created, in any part, with the assistance of AI tools is not eligible for submission or publication.\" $10, 1-10 works, no eligibility restriction, editors unnamed, \"allow us at least three months\" instead of a results date."
+      "verifyNote": "2026-07-29 recheck: ecotheo.org/submit re-confirms the rolling route and the AI ban \"Work that has been created, in any part, with the assistance of AI tools is not eligible for submission or publication.\"; CaFÉ 16257 shows applicationDeadline 2026-10-21T05:59:59Z (= 20 Oct), $10 Entry Fee, imagesMin/Max 1-10. Do NOT flip the deadline to that administrative close - the org states rolling. Unchanged."
     },
     {
       "title": "FLOAT Magazine — Let's Get the F@!#k Outta Here",
@@ -2950,7 +2950,7 @@
         "Luigi Brozzi, Photographer",
         "Antonello Perin, Photographer"
       ],
-      "verifyNote": "2026-07-28: sirmionefotografia.it confirms \"Submit your photos by 11:59 p.m. on October 31, 2026\" and \"Registration fee 10 € regardless of the number of photographs submitted\". Prize structure: the SIRMIONE and LAKE GARDA themes each pay €1,500 first / €500 second; the MARGINS and IN THE HEART OF THE NIGHT tracks and the heritage special award pay hospitality only - keep the €1,500 chip. Contact sirmioneaward@sirmionebs.it. GENUINELY UNPUBLISHED: no announcement date and no eligibility restriction on the page."
+      "verifyNote": "2026-07-29 recheck: sirmionefotografia.it re-confirms the award structure - the SIRMIONE and LAKE GARDA themes each pay \"FIRST PRIZE 1.500 € / Second prize 500 €\", with third prize a Sirmione stay - so the €1,500 chip stands and the hospitality tiers stay out per the no-perks rule. €10 flat fee, deadline 31 October 2026. Still no announcement date and no eligibility restriction published. Unchanged."
     },
     {
       "title": "1839 Awards Photographer of the Year Contest",
@@ -12815,7 +12815,7 @@
         "Selected winners are featured on Life Framer's site and are eligible for inclusion in the platform's annual physical exhibitions, which travel between partner galleries in New York, Tokyo, Milan, and Arles. Top prize is $2,000; total annual cash prizing across all monthly cycles is $24,000.",
         "AI-generated work is not accepted. Eligibility is open globally. Submission is through the Life Framer website with up to 10 images, film or digital, new or from the archive. Fee is tiered $20–$100 by submission scale. This Black & White deadline is September 30, 2026; results announced mid-October 2026."
       ],
-      "verifyNote": "2026-07-28: COULD NOT VERIFY - life-framer.com sits behind Cloudflare and returns 403 to both plain curl (with a browser UA) and WebFetch, and the Chrome extension was offline this run. Stored values (deadline Sept 30 2026, juror Andrea Modica, $2,000, no AI) are carried forward unverified; recheck when Chrome is available."
+      "verifyNote": "2026-07-29: life-framer.com still 403s plain curl, curl+UA AND WebFetch (Cloudflare) and Chrome was down again, but the deadline IS confirmable via the official site's Wayback capture (web.archive.org/web/20260625230710/https://www.life-framer.com/competitions/): the monthly themes each close on the last day of their month - \"STREET LIFE Deadline: 30 June 2026\", \"PLANET EARTH Deadline: 31 July 2026\", \"HUMANS Deadline: 31 August 2026\" - and the upcoming list reads \"BLACK & WHITE - September 2026\", so the stored 2026-09-30 is right. Prize re-confirmed there too: \"Monthly 1st Prize $2,000 monthly cash prize\" plus 18 other monthly winners and \"$24000 in cash prizes\" a year. Juror Andrea Modica is NOT in the snapshot (only the three then-current themes name judges) - stored value carried forward."
     },
     {
       "title": "Life Framer — Colors",
@@ -15797,7 +15797,7 @@
         "The main prize pool is €4,000. Selected work is exhibited at the Exhibition Space of the Archive of the Port Authority of Santander from September 11 through December 8, 2026. Entry fees range from €35 to €65 depending on the submission tier.",
         "The 2026 jury comprises three academics from European art universities: Carinna Parraman (Professor at the University of the West of England Bristol and director of the Centre for Print Research), Eugènia Agustí (visual artist and lecturer at the University of Barcelona), and Usama Habil (artist and Assistant Professor at the University of Salamanca). Submissions close July 31, 2026; jury deliberations conclude September 18."
       ],
-      "verifyNote": "2026-07-28: miniprintcantabria.es confirms \"Deadline for registration, payment of the fee and shipping of the pieces - July 31, 2026\", \"Jury meeting - September 18, 2026\" and the three jurors (Carinna Parraman, Eugènia Agustí, Usama Habil); exhibition Sept 11 - Dec 8 2026 at the Port Authority of Santander archive. Theme 'Open Sea', max 20x20 cm. No AI policy and no eligibility restriction are stated on the English page."
+      "verifyNote": "2026-07-29 recheck: miniprintcantabria.es confirms \"Deadline for registration, payment of the fee and shipping of the pieces July 31, 2026\" and \"Jury meeting September 18, 2026\" with the three stored jurors. The FEE AND PRIZES are only on /en/Rules (the 2026 rules PDF is a subset-font scan whose DIGITS do not extract - do not try to read amounts out of it): fees €55 residents-of-Spain with return / €35 no-return, €65 non-residents with return / €45 no-return; prizes 1st €4,000, 2nd €1,500, 3rd €500, plus a €500 Mar Cantábrico award reserved for Cantabrian artists. Unchanged."
     },
     {
       "title": "Photobook Open Call 2026",
@@ -15860,7 +15860,7 @@
         "Selected work is shown across AlternativePhotography.com's gallery, Facebook, Instagram, Pinterest, BlueSky, and YouTube channels. There is no cash prize.",
         "The event references Anna Atkins — the first woman to illustrate a photography book, using cyanotypes — as part of its lineage. AlternativePhotography.com is a non-profit, runs the event without sponsor backing, and maintains a substantial educational resource library on cyanotype chemistry, paper preparation, and exposure techniques."
       ],
-      "verifyNote": "2026-07-28: alternativephotography.com confirms the 2026 window in its own events list - \"World Cyanotype Day - open 26 Sep-2 Oct\" - and \"Entry fee: Free\", entries emailed to talk@alternativephotography.com with a confirmation reply in 1-4 days. Theme 'Global Blueprint'. GENUINELY UNPUBLISHED: no jury (it is a curated community showcase, not a competition) and no AI policy."
+      "verifyNote": "2026-07-29 recheck: alternativephotography.com reads with a PLAIN curl (curl+UA 403s) and states \"World cyanotype day Open: 26 September - 2 October 2026 Last call 2rd of October\", free, entries emailed to talk@alternativephotography.com, theme \"GLOBAL BLUEPRINT - People, Place, and Environment\" set by Shootapalooza. It is a curated community showcase, not a competition - no jury, no AI policy. Unchanged."
     },
     {
       "title": "World Anthotype Day",
@@ -15891,7 +15891,7 @@
         "Selected work is featured across AlternativePhotography.com (~85,000 monthly visitors), the site's Facebook (12,000+ followers), Instagram (14,000), and YouTube channels. Exceptional images are considered for inclusion in the Anthotype Emulsions book series. There is no cash prize — recognition is editorial.",
         "The event was originally held in August but moved to October after a participant survey: 99% of respondents preferred the later window for longer exposure times and access to ripe plant material. AlternativePhotography.com is a non-profit and runs the event without sponsor backing. The site's resource library lists 25+ commonly-used plants — beetroot, blackberry, butterfly pea, turmeric, walnut — and explicitly encourages experimentation with unusual emulsions."
       ],
-      "verifyNote": "2026-07-28: alternativephotography.com confirms \"World Anthotype Day - open 1 Aug-31 Oct\" (moved from August to October after an artist survey) and \"Free to enter - but if you can, please support us\"; entries emailed to talk@alternativephotography.com. GENUINELY UNPUBLISHED: no jury and no AI policy - it is a community database/showcase rather than a juried prize."
+      "verifyNote": "2026-07-29 recheck: alternativephotography.com (plain curl) re-confirms the October window - \"just make sure to submit your print by the new deadline: the last Saturday in October\", which is 31 October 2026 - after the move from August following an artist survey. Free to enter; entries emailed to talk@alternativephotography.com. Community database/showcase, so no jury and no AI policy. Unchanged."
     },
     {
       "title": "Innovate Grants - Quarterly Grants",
@@ -15978,7 +15978,7 @@
       "resultsDate": null,
       "requirements": null,
       "proseSkipped": "official site has no description of the Takeovers program; submissions go through Instagram DM, no public source material to draft from",
-      "verifyNote": "2026-07-28: opendoors.gallery is the gallery shop/exhibitions site and carries NO takeover prospectus - the only trace is the footer link to instagram.com/odtakeovers, which still resolves, so the continuous IG-DM route stands. The gallery page does separately promote the annual OD Photo Prize (a different call). No image count, jury, results date or AI policy is published anywhere; those gaps are unfillable without the IG account."
+      "verifyNote": "2026-07-29 recheck: opendoors.gallery is still the gallery shop/exhibitions site and carries NO takeover prospectus; the only trace is the footer link to instagram.com/odtakeovers, which still resolves, so the continuous IG-DM route stands. Image count, jury, results date and AI policy remain unpublished anywhere on the web - unfillable without the IG account. Unchanged."
     },
     {
       "title": "Tomorrow's Talent - Open Submissions",
@@ -16005,7 +16005,7 @@
       "jury": [],
       "resultsDate": null,
       "proseSkipped": "entry references 'Tomorrow's Talent book series' but current Booooooom site shows different submission programs (book/photo/illustration awards, blog feature) — entry needs verification before prose",
-      "verifyNote": "2026-07-28: booooooom.com/submit-your-work confirms submissions run through the paid membership - \"$10 USD / Month\" or \"$65 USD / Year\" - and that the route is rolling, not dated. GENUINELY UNPUBLISHED: no jury (the editors curate), no results date, no AI policy and no email address on the submit page. Do not confuse this rolling route with the separate annual Booooooom Photo Awards."
+      "verifyNote": "2026-07-29 recheck: booooooom.com/submit-your-work re-confirms the paid-membership route at \"$10 USD / Month\" or \"$65 USD / Year\" and that it is rolling. CAUTION: the same page carries a \"Booooooom Art & Photo Book Award | Closed for Submissions\" block - that is the separate annual award, NOT this rolling route; do not mark this entry closed on it. No jury, no results date, no AI policy, no email. Unchanged."
     },
     {
       "title": "PhMuseum Days 2026 Open Call",
@@ -16665,7 +16665,7 @@
         "The 2026 jury is large — over 25 photographers, photojournalists, professors, and interdisciplinary artists from multiple countries. Notable jurors include Lydia Panas, Mahe Elipe, Valery Poshtarov, Oded Wagenstein, and photojournalist Rui Caria.",
         "Eligibility is open globally to photographers 18+, professional and non-professional. Submission is through the ND Awards website with 1–5 images per entry. Fee is tiered $24–$34 by submission scale, plus $10 per additional category. The 2026 final deadline is September 20; results announced November 22, 2026."
       ],
-      "verifyNote": "2026-07-28: ndawards.net/page/about-competition/entry-fees-deadlines/ confirms \"Final Deadline 20 September 2026\", Non-Professional $24 single / $29 series (2-5 images), Professional $29 single / $34 series, $10 per additional category, and - correcting an earlier note - the results date IS published on that page: \"winners announcement 22 November 2026\". Stop re-flagging resultsDate. Grand prize $3,500 ($3,000 + $500 category win). The site publishes no AI policy."
+      "verifyNote": "2026-07-29 recheck: ndawards.net/page/about-competition/entry-fees-deadlines/ re-confirms \"Final Deadline 20 September 2026\", \"Non-Professional - Single image entry fee: $24 ... Series entry fee (from 2 to 5 images): $29 / Professional - Single image entry fee: $29 ... Series entry fee (from 2 to 5 images): $34\", \"$10 per category\" for extra categories, and \"winners announcement 22 November 2026\". Stop re-flagging resultsDate. No AI policy. Unchanged."
     },
     {
       "title": "International Photography Awards 2026",
@@ -17334,7 +17334,7 @@
         "The 2026 jury is unusually senior for a niche prize: Dominique de Font-Reaulx (Jury President), Aurélie Chauffert-Yvart (Artistic Director), Héloïse Conésa (Curator at the National Library of France), Marc Donnadieu (art critic and independent curator), Anne Lacoste (Director of the Institute for Photography of Hauts-de-France), Chantal Nedjib (communications consultant), Guillaume Piens (art historian and founder of Culture Squad Communication), Michel Poivert (Professor of Art History at Université Paris 1 Panthéon-Sorbonne), and Fabien Simode (art critic and director of Maisons-Alfort Media Libraries), alongside founder Joséphine de Bodinat Moreno.",
         "The 2026 deadline is midnight July 31; the jury meets during September 2026 to designate the winner. Applications are made through prixcameraclara.plateformecandidature.com."
       ],
-      "verifyNote": "2026-07-28: en.prixcameraclara.com/apply confirms \"Applications for the 2026 Camera Clara Photo Award are open until midnight on July 31, 2026\" and \"A sum of €8,000 will be awarded to the winner by Joséphine de Bodinat Moreno\"; free to enter, application forms downloaded from the platform. GENUINELY UNFILLABLE: the site publishes no email address (contact is a web form)."
+      "verifyNote": "2026-07-29 recheck: en.prixcameraclara.com/apply re-confirms \"Applications for the 2026 Camera Clara Photo Award are open until midnight on July 31, 2026\" and \"A sum of €8,000 will be awarded to the winner by Joséphine de Bodinat Moreno\"; free, forms downloaded from the platform. The site still publishes no email (web form only). Unchanged."
     },
     {
       "title": "Tokyo International Foto Award 2026",
@@ -17373,7 +17373,7 @@
         "Submissions are reviewed by a six-member jury that includes Hideko Kataoka (photo editor and curator), Mariama Attah (curator), Kenro Izu (photographer), Susan Baraz (Lucie Foundation Co-Chair), Professor William Snyder (Rochester Institute of Technology), and Alfie Goodrich (Japanorama).",
         "Entry fees are tiered between €15 and €50 depending on category and submission type. AI-generated work is accepted in a dedicated AI-Generated Images subcategory. The 2026 deadline is August 1, with results announced in September."
       ],
-      "verifyNote": "2026-07-28: tokyofotoawards.jp/submit/ renders only a login form to curl; the public homepage (via WebFetch) confirms \"THE TIFA 2026 IS OFFICIALLY OPEN\" and the \"Regular Deadline: August 1, 2026\". Fee ladder, prize amounts and the results date are behind the entry system and were not re-confirmable this run - stored values carried forward. No email address is published on the site."
+      "verifyNote": "2026-07-29 recheck: tokyofotoawards.jp/submit/ still renders only a login form to curl, but the public homepage confirms \"THE TIFA 2026 IS OFFICIALLY OPEN! Regular Deadline: August 1, 2026\". The fee ladder, prize amounts and results date remain behind the entry system - stored values carried forward. No email published on the site. Unchanged."
     },
     {
       "title": "Milano Photo Awards 2026",
@@ -17399,7 +17399,7 @@
       "jury": [
         "Estevan Oriol, Lead Judge"
       ],
-      "verifyNote": "As of 2026-07-22 /en/the-contest/ bills Estevan Oriol as \"Special Guest, Main Exhibitor, and Lead Judge\" (Oriol Room) — supersedes the 07-16 removal. Rest of jury still unpublished until 15 days before selection; do NOT remove Oriol, do NOT add others without a live source. 2026-07-25: /en/program/ confirms Final Deadline Aug 15 + winners announced Aug 25 (the /en/regulation/ page still carries a stale \"February 10th, 2026\" deadline — ignore it). 2026-07-28: fee corrected to €39–€69. The Exhibition OPEN tier is still SOLD OUT, and the three live tiers now price at Exhibition Room 1 €39 (5 photos, was €50), The Oriol Vision €39 (5 photos, was €50) and Exhibition Room 2 €69 (8–10 photos, was €80) — the €80 was the struck-through pre-promotion price, never the payable one. Prize €2,000 confirmed: \"OVERALL WINNER – ABSOLUTE WINNER ACROSS ALL 8 CATEGORIES €2.000 in cash\".",
+      "verifyNote": "2026-07-29 recheck: milanophotoawards.com/en/the-contest/ re-confirms the three live tiers - Exhibition Room 1 €39 (was €50, 5 photos), The Oriol Vision €39 (was €50, 5 photos), Exhibition Room 2 €69 (was €80, 8-10 photos) - with the Exhibition OPEN tier still SOLD OUT, and Estevan Oriol still billed as special guest/exhibitor/judge. Prize confirmed: the Room 2 track pays \"OVERALL WINNER - ABSOLUTE WINNER ACROSS ALL 8 CATEGORIES €2.000 in cash\" (the Room 1 track’s overall winner gets €1.500). The banner \"Total prize € 30.000 + Nikon cameras\" is the whole pool INCLUDING gear, printing, framing and exhibition - keep the €2,000 cash chip. Unchanged.",
       "prose": [
         "Milano Photo Awards is an Italian photography contest and exhibition run by TheStreetSoup, with Nikon Italia as official sponsor. The 2026 edition runs September 25–27 at Via Maurizio Gonzaga 7 in Milan, scheduled to coincide with Milano Fashion Week. The exhibition format is a 4×3 meter Samsung LED wall for digital display of selected work, with the top three winners in each category also receiving printed and framed prints. The 2026 edition includes a tribute to Sebastião Salgado.",
         "The total prize pool is €30,000 in cash plus Nikon hardware. There are eight competition categories: Street Photography, Portrait & Identity, Wildlife & Nature, Movement & Sport, Human Landscape, Documentary & Social Vision, Conceptual & Fine Art, and Fashion & Style. AI-generated work is not accepted.",
@@ -17444,7 +17444,7 @@
         "The 2026 jury draws from senior curators across major UK institutions: Carrie Chan (V&A), Charlotte Hale (V&A Dundee), Taous Dahmani (The Photographers' Gallery), Sarah Coulson (Yorkshire Sculpture Park), Poppy Bowers (The Whitworth), Dr James Finch (Royal Academy of Arts), Farah Dailami (The Hepworth Wakefield), artist Jason Bruges (Jason Bruges Studio), and producer Nephertiti Oboshie Schandorf.",
         "Entry fee is £25 (regular) or £35 (late entry from 12–18 October). The 2026 entry window runs December 1, 2025 to October 11, 2026, with late entries open October 12–18. Judging takes place winter 2026 and results are announced spring 2027. The prize accepts work from artists at any career stage, with no nationality restriction."
       ],
-      "verifyNote": "2026-07-28: aestheticamagazine.com 403s to plain curl; via WebFetch the /artprize/submit page confirms \"1 December 2025 - 11 October 2026\" for standard entries at £25 and a late window \"12 - 18 October 2026\" at £35, \"two works of art per entry\", £10,000 prize, and that the main prize is \"open to all practitioners working at any level, including students\" (no age or geographic restriction). Do NOT flip the deadline to Oct 18 - that is the late-entry cut-off. No AI policy is published."
+      "verifyNote": "2026-07-29 recheck: aestheticamagazine.com still 403s plain curl AND curl+UA; via WebFetch /artprize/submit re-confirms \"1 December 2025 - 11 October 2026\" at £25 with a late window \"12 - 18 October 2026\" at £35, \"two works of art per entry\", the £10,000 Main Prize (£1,000 Emerging Prize) and \"open to all practitioners working at any level, including students\". Do NOT flip the deadline to Oct 18 - that is the late-entry cut-off. No AI policy. Unchanged."
     },
     {
       "title": "MUSE Photography Awards 2026",
@@ -19139,7 +19139,7 @@
         "The show runs September 17–25, 2026, opening with a reception on the evening of September 17. Submission is through the gallery's website, with a $25 fee per image."
       ],
       "dateAdded": "2026-06-08T15:10:21.154Z",
-      "verifyNote": "2026-07-28: bushwickgallery.com confirms \"Submission Deadline: August 28, 2026\", \"Submission Fee: $25.00 per image submission\", exhibition Sept 17-25 2026. The application form (name/email/artwork uploads/Stripe) is EMBEDDED on this very page, so submitUrl == url is CORRECT - do not \"fix\" that warning. The form caps \"Number of Artworks to Submit\" at 3. GENUINELY UNPUBLISHED: no jury, no notification date, no AI policy and no eligibility restriction appear anywhere on the page."
+      "verifyNote": "2026-07-29 recheck: bushwickgallery.com re-confirms \"Submission Deadline: August 28, 2026\", \"Submission Fee: $25.00 per image submission\" and the embedded form whose \"Number of Artworks to Submit\" selector caps at 3 (so submitUrl == url is CORRECT - do not \"fix\" that warning). Exhibition Sep 17-25 2026. Still no jury, no notification date, no AI policy, no eligibility restriction anywhere on the page. Unchanged."
     },
     {
       "title": "Confirm Humanity: What Makes Us Real",
@@ -19166,7 +19166,7 @@
         "The show runs October 22–29, 2026. Submission is through the gallery's website, with a $25 fee per image."
       ],
       "dateAdded": "2026-06-08T15:10:21.154Z",
-      "verifyNote": "2026-07-28: bushwickgallery.com confirms \"Submission Deadline: October 2, 2026\", \"Submission Fee: $25.00 per image submission\", exhibition Oct 22-29 2026. The application form is EMBEDDED on this page (submitUrl == url is CORRECT) and its \"Number of Artworks to Submit\" selector goes 1-10. GENUINELY UNPUBLISHED: no jury, no notification date, no AI policy, no eligibility restriction."
+      "verifyNote": "2026-07-29 recheck: bushwickgallery.com re-confirms \"Submission Deadline: October 2, 2026\", \"Submission Fee: $25.00 per image submission\" and the embedded form’s 1-10 artwork selector (submitUrl == url is CORRECT). Exhibition Oct 22-29 2026. Still no jury, no notification date, no AI policy, no eligibility restriction. Unchanged."
     },
     {
       "title": "The Company We Keep: Creatures Beside Us",
@@ -27460,7 +27460,7 @@
       "submitUrl": "https://app.bba-prizes.com/?productId=bba-360-2026",
       "ai": null,
       "resultsDate": null,
-      "verifyNote": "2026-07-27: bba-prizes.com/360 confirms the 3 August 2026 deadline (midnight CEST), \"PARTICIPATION FEE: 29 EUR\", up to 5 works per entry, \"Anyone 18+ can apply, all gender identities and nationalities welcome\", and \"Juried and curated by BBA Gallery directors\" with no individual names. No results date and no AI policy."
+      "verifyNote": "2026-07-29 recheck: bba-prizes.com/360 re-confirms the 3rd edition and the deadline verbatim - \"LAST CALL SUMBIT BY 3 AUGUST ... Monday 03. August, (Midnight CEST)\" - with the €29 participation fee, up to 5 works, 18+ worldwide and \"Juried and curated by BBA Gallery directors\" (no individual names). BBA publishes no email anywhere. Unchanged."
     },
     {
       "title": "Willet Art Prize 2026",
@@ -27629,7 +27629,7 @@
       "orgInTitle": true,
       "summary": "Solo shows (~8 weeks) in Lanesboro Arts' 2028 gallery series. Open to Minnesota, Wisconsin, and Iowa artists in all visual media.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "verifyNote": "2026-07-28 (recheck): the online application form is STILL absent - the page reads \"please fill out the form below (updating currently but will add soon)\"; working route is a video or hard-copy application to gallery@lanesboroarts.org. Confirmed: \"Artists featured in the 2028 Exhibition Gallery Series must reside in Minnesota, Wisconsin, and Iowa\", \"The Application deadline is Thursday, December 31st 2026. All artists will be notified by Friday, February 26, 2027\", ~8-week exhibitions. NOTE the page also carries a stale line \"The current application window is for exhibitions taking place in 2027\" - the 2028 series line and the Dec 2026/Feb 2027 dates are the current ones. No image count, no AI policy.",
+      "verifyNote": "2026-07-29 (recheck): the online form is STILL absent - \"please fill out the form below (updating currently but will add soon)\"; route stays a video or hard-copy application to gallery@lanesboroarts.org. Re-confirmed: \"Artists featured in the 2028 Exhibition Gallery Series must reside in Minnesota, Wisconsin, and Iowa\", \"The Application deadline is Thursday, December 31st 2026. All artists will be notified by Friday, February 26, 2027\", ~8-week shows, 60% to the artist on sales. The stale \"current application window is for exhibitions taking place in 2027\" line is still on the page - ignore it. Unchanged.",
       "ai": null,
       "requirements": null
     },
@@ -27655,7 +27655,7 @@
       "orgInTitle": true,
       "summary": "Three or more early career MN/IA/WI artists exhibit at Lanesboro Arts, Feb 6 – Mar 20, 2027. All visual media. Apply by Dec 7.",
       "dateAdded": "2026-06-11T19:43:58.718Z",
-      "verifyNote": "2026-07-28 (6th recheck): lanesboroarts.org STILL has no online form in the page HTML despite the \"online application available below\" text; working route stays images via Google Drive/Dropbox or a video application to gallery@lanesboroarts.org. Confirmed verbatim: \"Applications are due December 7, 2026 at 12 pm noon. Accepted artists will be contacted by December 23.\" MN/IA/WI early-career, \"Artists may be any age\" (so no age facet), show runs Feb 6 - Mar 20 2027. NO image count, NO jury and NO AI policy on the page - genuinely unfillable.",
+      "verifyNote": "2026-07-29 (7th recheck): lanesboroarts.org STILL has no online form in the page HTML despite the \"online application available below\" text - the working route stays images via Google Drive/Dropbox or a video application to gallery@lanesboroarts.org. Re-confirmed verbatim: \"Applications are due December 7, 2026 at 12 pm noon. Accepted artists will be contacted by December 23.\", MN/IA/WI early-career, \"Artists may be any age\" (so no age facet), show Feb 6 - Mar 20 2027. No image count, no jury, no AI policy. Unchanged.",
       "ai": null,
       "requirements": null
     },
@@ -27688,7 +27688,7 @@
       "resultsDate": "November 10, 2026",
       "instagram": "@newmexicowomeninthearts",
       "ai": null,
-      "verifyNote": "2026-07-27: CaFE 17369 confirms the 30 September 2026 deadline, $50, up to three works, eligibility \"women-identifying artists, residents of New Mexico\" with an Artist Registry page applied for by 31 August 2026 and dues paid through 1 April 2027, and \"November 10, 2026 Selections Announced\". Artists represented by Turner Carroll or GF Contemporary are excluded. No AI policy. Contact exhibition@newmexicowomeninthearts.org."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17369 confirms 2026-10-01T05:59:59Z = 30 Sep local, \"$50 for up to three artworks\", imagesMin/Max 1-3, \"September 30, 2026 Submissions Close November 10, 2026 Selections Announced\", Artist Registry application due 31 August 2026. JURY NOTE: the prospectus reads \"Jurors will include Tonya Turner Carroll ... Deborah Fritz ... and two curators to be\" announced - the two stored names are the only ones published; do not pad the list. Unchanged."
     },
     {
       "title": "agriCultural: A Biennial Exhibition",
@@ -27895,7 +27895,7 @@
       "resultsDate": "September 9, 2026",
       "requirements": "Up to 20 works",
       "ai": null,
-      "verifyNote": "2026-07-28: CaFÉ 17625 confirms applicationDeadline 2026-08-18T05:59:59Z = 17 August 2026 local and the fee pair ($45 Entry Fee + $5 Additional submission), imagesMax 20. Prospectus verbatim: \"Entries Due: midnight, Monday, August 17th, 2026 Notifications: by Wednesday, September 9th, 2026, via e-mail ... CASH PRIZES? Best in show $3000 Runner up $1500 People's choice: $500\" at Gallery Main Street, Tyler TX. No AI policy is stated. Provider email tal@tylerartlift.org."
+      "verifyNote": "2026-07-29 recheck: artshowtyler.com is still JS-only (2.1KB of readable text, no dates); CaFÉ 17625 confirms 2026-08-18T05:59:59Z = 17 Aug local, $45 Entry Fee + $5 Additional submission, imagesMax 20, and verbatim \"Entries Due: midnight, Monday, August 17th, 2026 Notifications: by Wednesday, September 9th, 2026 ... CASH PRIZES? Best in show $3000 Runner up $1500 People’s choice: $500\". No AI policy. Unchanged."
     },
     {
       "title": "Chew on This",
@@ -27921,7 +27921,7 @@
       "instagram": "@lacaarts",
       "dateAdded": "2026-06-11T23:35:01.835Z",
       "ai": null,
-      "verifyNote": "2026-07-28: CaFÉ 17377 confirms applicationDeadline 2026-08-31T06:59:59Z = 30 August 2026 local, $30 Entry Fee, imagesMin/Max 1-2, and in the description: \"Exhibit dates are October 2 - October 31, 2026. Deadline for Submission of Entries is Sunday, August 30, 2026. Invitees will be notified by September 4, 2026.\" No juror is named and no AI policy appears in any of the three CaFÉ text fields. Provider email exhibits@ludingtonartscenter.org."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17377 confirms 2026-08-31T06:59:59Z, $30 Entry Fee, imagesMin/Max 1-2, and the prose \"Deadline for Submission of Entries is Sunday, August 30, 2026. Invitees will be notified by September 4, 2026.\" Still no juror, no AI policy. Unchanged."
     },
     {
       "title": "The Keller Prize 2026",
@@ -27949,7 +27949,7 @@
       "instagram": "@thekellerprize",
       "dateAdded": "2026-06-11T23:35:01.835Z",
       "ai": null,
-      "verifyNote": "2026-07-28: CaFÉ 17493 confirms applicationDeadline 2026-10-01T05:59:59Z = 30 September 2026 local, \"Entry Fee for 5 Images $55\" + \"Additional Image Fee $7\", and imagesMin/Max 5-15. Juror Mia Valley of Valley Fine Art. GENUINELY UNPUBLISHED: no AI policy in any of the three CaFÉ text fields. Provider email admin@thekellerprize.com."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17493 confirms 2026-10-01T05:59:59Z = 30 Sep local, \"$55 USD for first 5 images, $7 USD for additional image up to a total of 15 images\", imagesMin/Max 5-15. thekellerprize.com confirms \"Submissions open June 5 – September 30, 2026\"; the \"Submissions are now closed\" line on that page belongs to the 2025 block (\"Winners were announced in December, 2025\") - do NOT read it as closed. No AI policy. Unchanged."
     },
     {
       "title": "Eleventh Juried Art Show",
@@ -27975,7 +27975,7 @@
       "summary": "Blind-juried show over four fall weekends at Bucks County's longest-running gallery. Over $3,000 in prizes; $30 for one work.",
       "dateAdded": "2026-06-11T23:35:01.835Z",
       "ai": null,
-      "verifyNote": "2026-07-28: the Tinicum Civic Association page names the jurors (Laura Turner Igoe, Michener Art Museum; Robert Seufert) and \"Over $3,000 in Cash Prizes\", but the DATES AND FEE live on EntryThingy (app.entrythingy.com/stovermillgallery/...), which curls fine: \"Deadline: September 4, 2026\", \"$30 application fee\", \"Number of pieces: 1 - Only one entry per artist\", and \"Artists are to check back at EntryThingy after September 16, 2026\". Show runs four weekends from Oct 17 2026, awards reception Oct 18. GENUINELY UNFILLABLE: the Tinicum Civic Association links no Instagram account, publishes no email on the show page, and states no AI policy or eligibility restriction."
+      "verifyNote": "2026-07-29 recheck: the EntryThingy call page re-confirms \"Entry Deadline September 4, 2026\", \"The $30 application fee is non-refundable\", \"Number of pieces: 1 Only one entry per artist\", \"More than $3,000 in prize money will be awarded\", exhibition Oct 10 - Nov 8 2026, and the results wording \"The invited jurors will meet after September 6 ... Artists are to check back at EntryThingy after September 16, 2026\" (= stored resultsDate). Tinicum Civic Association still links no Instagram and publishes no email; no AI policy. Unchanged."
     },
     {
       "title": "The Essence of a Woman 2026",
@@ -28057,7 +28057,7 @@
       "dateAdded": "2026-06-12T08:00:25.703Z",
       "ai": null,
       "resultsDate": null,
-      "verifyNote": "2026-07-28: the Squarespace open-calls page confirms \"DEADLINE: August 31, 2026\", free entry, \"Artists are required to submit up to 10 images\" (min 2000px), no theme. Eligibility explicitly open - \"Artists from anywhere and of all ages are welcome to submit\" - so [] is right. GENUINELY UNPUBLISHED: no jury, no AI policy, and no results date (\"Artists whose work is selected will be contacted via email\"; the selected list goes up on the site and @soft_publisher). Contact softmagazineu@gmail.com."
+      "verifyNote": "2026-07-29 recheck: the Squarespace open-calls page re-confirms \"DEADLINE: August 31, 2026\", free entry, \"Artists from anywhere and of all ages are welcome to submit\", \"Artists are required to submit up to 10 images\" (min 2000px) and that submissions go through the Google Form at the foot of the page. No theme, no jury, no results date, no AI policy. Unchanged."
     },
     {
       "title": "The Black & White Show",
@@ -28225,7 +28225,7 @@
       "requirements": "Project proposal",
       "ai": "Not accepted",
       "resultsDate": "September 21, 2026",
-      "verifyNote": "2026-07-28: kometarevue.com/page/fellows confirms \"You have until 31 July 202[6] to apply\" (their own typo), \"Each Fellow receives €10,000\", twelve Fellows across two 2026 calls, and the jury as stored. Questions to fellows@kometarevue.com. No AI policy is stated on the page; the guidelines PDF is the only other source."
+      "verifyNote": "2026-07-29 recheck: kometarevue.com/page/fellows re-confirms \"You have until 31 July 202 to apply\" (their own truncated typo), \"Each Fellow receives €10,000 in funding\", twelve Fellows across two 2026 calls, and questions to fellows@kometarevue.com. Jury as stored. No AI policy on the page. Unchanged."
     },
     {
       "title": "Betty Bowen Award 2026",
@@ -28255,7 +28255,7 @@
       "dateAdded": "2026-06-12T11:51:23.164Z",
       "ai": null,
       "resultsDate": null,
-      "verifyNote": "2026-07-28: seattleartmuseum.org 403s to curl; CaFÉ 17664 carries the full prospectus and confirms \"11:59 PM PST on August 1, 2026\" (applicationDeadline 2026-08-02T06:59:59Z), $10 fee, exactly 6 images, and the prize structure: \"$20,000 and a solo exhibition at the Seattle Art Museum\" plus \"up to two Special Recognition Awards ($4,000 each) and three Special Commendation\" awards. Selection is a two-round process by the Betty Bowen Committee (members not individually listed). GENUINELY UNPUBLISHED: no notification date (juryResults null) and no AI policy."
+      "verifyNote": "2026-07-29 recheck: seattleartmuseum.org still 403s plain curl AND curl+UA; CaFÉ 17664 confirms 2026-08-02T06:59:59Z = 1 Aug local, $10 Entry Fee, exactly 6 images, juryResults null, and verbatim \"All applications must be completed and submitted on-line by 11:59 PM PST on August 1, 2026\" plus \"$20,000 and a solo exhibition at the Seattle Art Museum\", \"up to two Special Recognition Awards ($4,000 each) and three Special Commendation\" awards. Fee-hardship contact bettybowen@seattleartmuseum.org. Unchanged."
     },
     {
       "title": "Echoes: Revisiting Memory",
@@ -28687,7 +28687,7 @@
       "orgInTitle": false,
       "summary": "Cow-and-farm-life juried show at a Northport, NY co-op gallery — street photography of Cow Harbor Weekend especially welcome.",
       "dateAdded": "2026-06-12T19:36:39.998Z",
-      "verifyNote": "2026-07-28: CaFÉ 17385 confirms applicationDeadline 2026-08-06T03:59:59Z = 5 August 2026 local (EDT), $35 Entry Fee + $5 Additional Media Fee, imagesMax 4, and the AI ban verbatim: \"Entries must be original, human-created artworks. While digital artwork is eligible, AI-generated art is not, nor are works created in a workshop or class\". The gallery takes 35% commission. GENUINELY UNFILLABLE: selection is by the managing partners of The Firefly Artists - no individual juror is named. Provider email events@thefireflyartists.com."
+      "verifyNote": "2026-07-29 recheck: thefireflyartists.com now curls with a PLAIN curl (UA-curl 403s) and confirms \"Deadline: Weds, August 5, 2026\" plus \"AWARDS: First, Second, Third, and Honorable Mention\"; CaFÉ 17385 confirms 2026-08-06T03:59:59Z, $35 + $5 Additional Media, imagesMax 4, and the AI ban verbatim \"Entries must be original, human-created artworks. While digital artwork is eligible, AI-generated art is not\". Selection is by the managing partners - still no named juror. Unchanged."
     },
     {
       "title": "Inspired by Cape Cod",
@@ -28711,7 +28711,7 @@
       "orgInTitle": false,
       "summary": "Summer online all-media exhibit from Cape Cod Art Center — work inspired by the Cape, cash awards, $15 per piece.",
       "dateAdded": "2026-06-12T19:36:39.998Z",
-      "verifyNote": "2026-07-26: the org exhibit-schedule page still shows the ORIGINAL dates (JPEGs due Sunday July 26 / notification Aug 7) — it was never updated. The Smarter Entry portal (smarterentry.com/CallsForEntry/CapeCodArt), which is the actual submission platform, reads: \"Submissions are due by August 2, 2026 by midnight (deadline extended). Artist notification by email on August 11, 2026.\" Keep Aug 2 / Aug 11 — do NOT flip back to the schedule page dates. Online exhibit goes live Aug 17. Cash awards: Best of Show/First, Second, Honorable Mention. 2026-07-28 recheck: portal STILL shows \"End Date: 8/2/2026 11:59:00 PM (PT)\", $15.00 per entry and $15.00 per additional entry, and the schedule page STILL shows the stale July 26 / Aug 7 dates. AI rule confirmed on the portal."
+      "verifyNote": "2026-07-29 recheck: the Smarter Entry portal still reads \"INSPIRED BY CAPE COD ... End Date: 8/2/2026 11:59:00 PM (PT) | Fee: $15.00 USD per 1 | Additional Entries: $15.00 USD per 1\" and \"Submissions are due by August 2, 2026 by midnight (deadline extended). Artist notification by email on August 11, 2026.\" The org exhibit-schedule page STILL shows the stale original July 26 / Aug 7 dates - the portal wins. AI rule re-confirmed on the portal. Unchanged."
     },
     {
       "title": "The Summer National 2026",
@@ -28926,7 +28926,7 @@
       "summary": "Eurazeo's relaunched grant: €20,000 plus mentorship to create a body of work on 'Stories of Europe', partnered with the Rencontres d'Arles.",
       "resultsDate": "September 21, 2026",
       "dateAdded": "2026-06-16T03:12:56.459Z",
-      "verifyNote": "2026-07-28: the deadline and every hard number live in the official entry form PDF (eurazeo.com/sites/default/files/2026-05/EURAZEO-PHOTO-PRIZE-form-2026.pdf), not the web page. Confirmed there: \"To be addressed between May 26, 2026 and September 13 at 23h59 (Paris local time)\", submissions by WeTransfer to concoursphotos@eurazeo.com, \"a full report or a portfolio of 50 images\" (exactly 50, named 001-050 - requirements corrected from \"50+\"), \"funding by Eurazeo of a grant of €20,000\", \"Jury meetings: 18 and 21 September 2026 / Announcement of the winner: 21 September 2026\", and professional-only eligibility (AGESSA-affiliated photographers, professional journalists, or photographers under a contract recognising the profession). No AI policy."
+      "verifyNote": "2026-07-29 recheck: the official entry-form PDF (eurazeo.com/sites/default/files/2026-05/EURAZEO-PHOTO-PRIZE-form-2026.pdf) re-confirms \"Application deadline: 13 September 2026 (11:59pm, Paris time)\", \"Jury meetings: 18 and 21 September 2026\", \"Announcement of the winner: 21 September 2026\" and the 50-image naming rule (SURNAME_FIRSTNAME-NUMBER from 001 to 050). The eurazeo.com web page itself still carries none of these numbers - always read the PDF. Unchanged."
     },
     {
       "title": "Creatures",
@@ -29087,7 +29087,7 @@
       "orgInTitle": true,
       "summary": "Más Retina's 6th Barcelona festival on human-rights & justice photography. 15-image projects; €3,000 prize plus outdoor street exhibitions.",
       "dateAdded": "2026-06-22T19:16:32.928Z",
-      "verifyNote": "2026-07-28: bcndh.org/convocatoria confirms \"Cierre de las inscripciones/Convocatoria: 9 de octubre de 2026, 24:00 CET\" (a news block elsewhere on the same page still says \"10 de octubre de 2025\" - stale, ignore it), \"cuota de inscripción de 5€ por proyecto\", \"una serie de 15 de fotografías\", €3,000 winner + three €400 category prizes, and the AI ban \"No se permiten imágenes generadas o modificadas mediante inteligencia artificial\". Dates: the 10 selected are notified 30 October; \"10 de diciembre anuncio del ganador\" = stored resultsDate. IMPORTANT: bcndh.org/jurado/ is the V-EDITION jury (\"Este fue nuestro jurado de la V edición\") - do NOT copy those names into this VI-edition entry; the 2026 jury is not yet published. Contact masretinaphoto@gmail.com."
+      "verifyNote": "2026-07-29 recheck: bcndh.org/convocatoria re-confirms \"El mejor de los diez proyectos recibirá un premio de 3.000 euros. Hay otros tres premios de 400 euros cada uno\"; Picter JSON gives submissionEndDate 2026-10-09T21:59Z, costs \"5 EUR per submitted project\", whoCanSubmit \"Any person of legal age\" and timeline \"Winner announcement 2026-12-10\" (= stored resultsDate). The VI-edition jury is still unpublished - bcndh.org/jurado/ remains the V-edition panel, do not copy it. Unchanged."
     },
     {
       "title": "Lenscratch Still Life Exhibition",
@@ -29245,7 +29245,7 @@
       "summary": "Foundation grants of $5,000 to five early-career visual artists (2–10 years) for projects bridging tradition and contemporary practice.",
       "dateAdded": "2026-06-29T15:07:48Z",
       "instagram": "@lsmartfund",
-      "verifyNote": "2026-07-28: lsmartfund.org/artistgrants2026 (the /grants hub only links to it) confirms \"Applications must be completed and submitted by August 31, 2026\", free, \"Successful applicants will be notified via email by December 2, 2026\", and payment split $3,000 by Jan 15 2027 + $2,000 on completion. Eligibility is career-stage not geography: \"Artists from any country may apply\" but must have \"received a degree in studio arts between 2016 and 2024, or had\" equivalent practice (2-10 years). Jury is described only as \"a distinguished panel\" - no names. No AI policy."
+      "verifyNote": "2026-07-29 recheck: lsmartfund.org/artistgrants2026 (the /grants hub only links to it) re-confirms \"Applications must be completed and submitted by August 31, 2026\", free, \"Successful applicants will be notified via email by December 2, 2026\" and the split payment ($3,000 by Jan 15 2027 + $2,000 on completion). NOTE the career-stage window now reads \"debut show at a gallery or juried art exhibition between 2016 and 2026\" (the 2016-2024 degree window is the alternative route) - still career-stage, not geography: \"Artists from any country may apply\". Panel unnamed; no AI policy. Unchanged."
     },
     {
       "title": "PhMuseum 2026 Women Photographers Grant",
@@ -29304,7 +29304,7 @@
       ],
       "resultsDate": "October 21, 2026",
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17711",
-      "verifyNote": "2026-07-28: CaFÉ 17711 confirms applicationDeadline 2026-10-02T05:59:59Z = 1 October 2026 local (\"Final day for submissions: 10/01/26 11:59 PM MDT\"), \"Entry Fee $65\" + \"Additional Entries $10\" (early rates end 8/27/26; members pay less), imagesMin/Max 3-20, \"Artists notified via email: 10/21/26\", 45 photographs exhibited Dec 5 2026 - Jan 3 2027 in Carmel with over $6,000 in awards, juror Lisa Volpe (MFA Houston). Eligibility and AI in one line: \"open to all living photographers, worldwide, over the age of 18 ... No video. No AI.\" Provider email ann@photography.org."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17711 confirms 2026-10-02T05:59:59Z = 1 Oct local, \"Entry Fee $65\" + \"Additional Entries $10\" (early rates end 8/27/26, members pay less), imagesMin/Max 3-20, \"over $6,000 in awards\", \"Forty-five juror-selected photographs will be exhibited from December 5, 2026 through January 3, 2027\", juror Lisa Volpe (MFA Houston). Unchanged."
     },
     {
       "title": "W. Eugene Smith Grant in Humanistic Photography 2026",
@@ -30067,7 +30067,7 @@
       "dateAdded": "2026-07-02T03:24:00Z",
       "resultsDate": "Week of October 4, 2026",
       "instagram": "@placervilleartsassociation",
-      "verifyNote": "2026-07-28: CaFE 16897 confirms the 16 September 2026 deadline and the fee rows \"Entry fee for first piece of art $25\" + \"Pieces #2 - #10 are $15 each\", up to 10 works, US national entry. juryResults is null - Placerville publishes no structured notification date beyond \"week of October 4\" - and there is no AI policy."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 16897 confirms 2026-09-17T06:59:59Z = 16 Sep local, fee rows \"Entry fee for first piece of art $25\" + \"Pieces #2 - #10 are $15 each\", imagesMax 10, and \"This year’s awards total over $4250, including a $700 Best of Show\" with \"Juror and Judge - Debra Kreck-Harnish\". juryResults still null (no structured notification date). Unchanged."
     },
     {
       "title": "CITIZENS — PHOTO IS:RAEL Open Call 2026",
@@ -30151,7 +30151,7 @@
       "orgInTitle": false,
       "summary": "Candid, unstaged photography exhibit in Tucson. 26 images juried by Holly Hart; pro printing and framing included.",
       "dateAdded": "2026-07-04T03:08:07Z",
-      "verifyNote": "2026-07-28: decodegallery.com/unposed confirms \"August 21st, 2026\", \"$40 USD per entry (an entry includes up to 5 photos)\", \"26 images will be selected by the juror\", juror Holly Hart, exhibition 3-31 October 2026, \"open to all photographers world wide, both amateur and professional\" (eligibility correctly empty), and notification \"within two weeks of the submission deadline\". No AI policy. decodegallery.com answers PLAIN curl (no UA) but its call text is easiest to read via WebFetch; a UA-curl 403s."
+      "verifyNote": "2026-07-29 recheck: decodegallery.com reads with a PLAIN curl (curl+UA 403s, confirming the standing note) and re-confirms \"Submission Deadline: August 21st, 2026\", \"26 images will be selected by the juror\", juror Holly Hart, exhibition Oct 3-31 2026, \"open to all photographers world wide, both amateur and professional\" and \"notified by email of acceptance within two weeks of the submission deadline\". No AI policy. Unchanged."
     },
     {
       "title": "Three Artist Show",
@@ -30234,7 +30234,8 @@
         "The Independent Photographer (TIP) is a London-based online photography platform that runs themed monthly competitions and publishes editorial work, interviews, and book reviews. The 2026 Travel Award is the platform's travel-themed cycle, open to work that captures the essence of a place — its people, traditions, and the rhythm of daily life, from bustling markets to serene vistas.",
         "Total prize pool is $2,700: first place receives $1,000, second $600, third $400, and seven runners-up receive $100 each. Winners are exhibited in London and featured across The Independent Photographer's Instagram (970k+ followers). All entrants receive a free online portfolio on the platform.",
         "Eligibility is open globally. Submissions are tiered: $15 for one image, $30 for three, $45 for six, with an early-bird 50% discount available before the early deadline. JPEG or PNG, minimum 1200 pixels on one side, maximum 10MB per file. AI-generated work is not accepted — photography-based submissions only, with film, digital, smartphone, tintype, and camera-less photography all welcome. The final deadline is August 31, 2026."
-      ]
+      ],
+      "verifyNote": "2026-07-29 recheck: independent-photo.com re-confirms \"Final Deadline: August 31, 2026\" with a live countdown, \"$2,700 in Cash Prizes\" and judge Daniel Kordan; /submit/ carries the fee ladder (1 image $15 / 3 images $30 / 6 images $45 \"BEST VALUE\") and the prize split \"1st Prize $1000 2nd Prize $600 3rd Prize $400 All 7 finalists $100\" = $2,700. GENUINELY UNPUBLISHED: no announcement date anywhere on the site. Unchanged."
     },
     {
       "title": "Innovate Grants - Summer $1,800 Grants",
@@ -30264,7 +30265,7 @@
         "The application is deliberately minimal: name, email, grant category, 3 to 10 images of recent work, and the application fee. No artist statement, project proposal, or letters of recommendation are required.",
         "Eligibility is open globally to visual artists and photographers aged 18 or over; all media and genres are accepted. Fee is $35. The Summer 2026 deadline is September 17 at 11:59 PM PT."
       ],
-      "verifyNote": "2026-07-28: innovateartistgrants.org and /apply confirm the Summer 2026 cycle is open with \"1 x $1,800.00 Grant to Visual Artist, 1 x $1,800.00 Grant to Photographer, 18 x Honorable Mentions\" and eligibility \"18 years or older\", worldwide. Innovate publishes NO deadline date, NO fee amount and NO announcement date anywhere on the public site (both sit behind the JS application widget), and names no judges - the stored 2026-09-17 deadline and $35 fee could not be re-confirmed from the site today. No AI policy; no contact email published."
+      "verifyNote": "2026-07-29: DEADLINE RE-CONFIRMED on the org's own site - innovateartistgrants.org/about-us states verbatim \"The Summer 2026 Cycle deadline is Thursday, September 17, 2026, Submit by 11:59PM Pacific Standard Time\" in its FAQ, with a timezone conversion table. This supersedes the 2026-07-28 note that the date could not be re-confirmed: the homepage and /apply carry only \"Summer 2026 Cycle Now Open\", so ALWAYS check /about-us. Also confirmed there: two $1,800 grants per quarter (one visual artist, one photographer) plus 18 honorable mentions, \"3-10 Images of Work\" on the application form, 18+, worldwide. The FEE is still published nowhere on the public site (it sits behind the JS application widget) - the stored $35 is carried forward. No results date, no jury, no AI policy, no contact email (mailing list only)."
     },
     {
       "title": "Copenhagen Photo Festival — Call for Solo Artists 2027",
@@ -30298,7 +30299,7 @@
         "Applicants submit a biography, CV, a project description of up to 3,000 characters, and a minimum of 10 images (1500px minimum, sRGB). Projects previously exhibited in Denmark, or shortlisted in previous years, are not eligible; artists selected as a solo artist within the last three years must wait a year to reapply. Applications are accepted in English or Danish, and the deadline is 1 September 2026."
       ],
       "submitUrl": "https://site.picter.com/copenhagen-photo-festival-call-for-solo-artists-2027",
-      "verifyNote": "2026-07-27: copenhagenphotofestival.com confirms the call runs 8 July - 1 September 2026, DKK 215 / EUR 29, a minimum of 10 images at 1500px, the four-person programme committee as stored, and for solo artists a \"EUR 537 fee as a festival participant\" plus EUR 400 travel/accommodation and EUR 134 food/transport (Selectees get EUR 200). CPF encourages applicants of every background - no eligibility facet applies - and publishes no AI policy. NOTE the Picter timeline says \"Solo Artists will be announced 1 March 2027\" while the page says the ten shortlisted are interviewed in autumn 2026 as a final round; resultsDate stays \"Fall 2026\" (when applicants actually hear)."
+      "verifyNote": "2026-07-29 recheck: copenhagenphotofestival.com reads with a PLAIN curl (curl+UA 403s) and states \"The deadline for applying to the call for solo artists is 1 September 2026. The call for 2027 is open 8 july – 1 September 2026\"; Picter JSON re-confirms submissionEndDate 2026-09-01T21:59Z and costs \"DKK 215 / € 29\". The Picter timeline still says \"Solo Artists will be announced 2027-03-01\" while the org page has the autumn-2026 interview round - resultsDate stays \"Fall 2026\" (when applicants actually hear). Unchanged."
     },
     {
       "title": "Composed",
@@ -30614,7 +30615,7 @@
       "orgInTitle": false,
       "summary": "Photo-based artists juried into the Arvada Center’s Main Gallery with CPAC and Month of Photography. Fee scholarships offered.",
       "dateAdded": "2026-07-12T15:33:47Z",
-      "verifyNote": "2026-07-27: arvadacenter.org confirms the call runs 17 July - 12 October 2026 with the exhibition 14 January - 28 March 2027, and CaFE 17829 confirms the $35 fee for up to 3 pieces, \"Open to artists over age 18\", all lens-based media, and \"If work using AI is submitted, please be sure to note the use of AI\". Entry-fee scholarships for artists facing economic hardship, BIPOC and LGBTQIA+ artists are available by emailing galleries@arvadacenter.org."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17829 confirms 2026-10-13T05:59:59Z = 12 Oct local, \"$35 for up to 3 pieces\", imagesMax 3, \"Submission Deadline: Monday, October 12, 2026 11:59 p.m. Mountain Standard Time\" and \"Email notification by October 30, 2026\". AI clause re-confirmed verbatim: \"If work using AI is submitted, please be sure to note the use of AI.\" Fee scholarships via galleries@arvadacenter.org. Unchanged."
     },
     {
       "title": "Ucross Native American Fellowships — Spring 2027",
@@ -31014,10 +31015,10 @@
     {
       "title": "BWP x Nikon Grant Fund 2026 — Quarter 3",
       "org": "Black Women Photographers",
-      "deadline": "2026-08-16",
+      "deadline": "2026-08-21",
       "fee": "Free",
       "category": "grant",
-      "description": "Third-quarter 2026 cycle of the Black Women Photographers x Nikon $50K Grant Fund — a year-long program supporting Black women photographers globally through four quarterly grant opportunities. The Q3 recipient receives a $2,500 USD unrestricted cash grant plus a Nikon Z6III with 24-70mm f/4 lens kit. Funding can support photography projects, production, travel, equipment, or other professional needs. BWP is a global membership community founded in 2020 by Polly Irungu, with members across 60+ countries and 35 U.S. states. Applications for Q3 close August 16, 2026; a final Q4 cycle follows later in the year.",
+      "description": "Third-quarter 2026 cycle of the Black Women Photographers x Nikon $50K Grant Fund — a year-long program supporting Black women photographers globally through four quarterly grant opportunities. The Q3 recipient receives a $2,500 USD unrestricted cash grant plus a Nikon Z6III with 24-70mm f/4 lens kit. Funding can support photography projects, production, travel, equipment, or other professional needs. BWP is a global membership community founded in 2020 by Polly Irungu, with members across 60+ countries and 35 U.S. states. Applications for Q3 close August 21, 2026; a final Q4 cycle follows later in the year.",
       "url": "https://blackwomenphotographers.com/grant-fund",
       "instagram": "@blackwomenphotographers",
       "location": "Online",
@@ -31034,9 +31035,9 @@
       "slug": "bwp-x-nikon-grant-fund-2026-q3-black-women-photographers",
       "ai": null,
       "orgInTitle": false,
-      "summary": "Quarterly grant for Black women photographers worldwide. $2,500 cash + Nikon Z6III kit. Q3 2026 cycle closes Aug 16.",
+      "summary": "Quarterly grant for Black women photographers worldwide. $2,500 cash + Nikon Z6III kit. Q3 2026 cycle closes Aug 21.",
       "dateAdded": "2026-07-17T07:20:23Z",
-      "verifyNote": "2026-07-27: the application form is EMBEDDED on blackwomenphotographers.com/grant-fund (name/email/phone/country fields render inline once JS loads), so submitUrl == url is correct - do not \"fix\" it. Q3 confirmed: \"Applications for the third quarter grant are now open. Apply by August 16, 2026\", $2,500 cash + a Nikon Z6III 24-70mm f/4 kit. No jury names, results date or AI policy published."
+      "verifyNote": "2026-07-29: DEADLINE EXTENDED Aug 16 -> Aug 21. blackwomenphotographers.com/grant-fund now reads verbatim \"Applications for the third quarter grant are now open. Apply by August 21, 2026.\" (re-fetched twice, cache-busted). The application form is EMBEDDED on that page (name/email/phone/country fields render inline once JS loads), so submitUrl == url is correct - do not \"fix\" it. Prize unchanged: $2,500 cash + a Nikon Z6III 24-70mm f/4 kit. Q1/Q2 recipients are named on the page, Q3/Q4 \"To be announced\". No jury names, no notification date and no AI policy published."
     },
     {
       "title": "ABSURIA — International Abstract & Surrealist Photography Contest 2027",
@@ -31734,7 +31735,7 @@
       "slug": "open-call-for-exhibitions-prospekto-and-vilnius-photography-galleries",
       "dateAdded": "2026-07-20T18:09:10Z",
       "resultsDate": "August 2026",
-      "verifyNote": "2026-07-28: photography.lt confirms \"Applications are accepted year-round with no fixed deadlines (selections take place once a year, in August)\" - the Continuous deadline and \"August 2026\" resultsDate are both correct. Free; submit a proposal up to 500 words, a 100-word bio and a portfolio, max 5 MB total, to info@photography.lt. Open to \"Artists and curators\" with no age or nationality limit, no named selection committee and no AI policy."
+      "verifyNote": "2026-07-29 recheck: photography.lt re-confirms \"Applications are accepted year-round with no fixed deadlines (selections take place once a year, in August)\" - Continuous + \"August 2026\" both stand - plus the submission spec (proposal up to 500 words, additional visual materials, total under 5 MB) sent to info@photography.lt. No named selection committee, no AI policy, no eligibility restriction. Unchanged."
     },
     {
       "title": "Monochrome",
@@ -31756,7 +31757,7 @@
       "summary": "Black-and-white open call — light, shadow, shape and texture without colour. One-month online exhibition with catalogue.",
       "dateAdded": "2026-07-20T22:51:39Z",
       "resultsDate": "Within 72 hours",
-      "verifyNote": "2026-07-28: aureaphotogallery.com/open-calls/monochrome confirms \"Deadline: 12/08/2026\", exhibition 18 August - 14 September 2026, \"Free to Submit\" with \"A one-time EUR 30 curation and exhibition fee applies only if your work is selected\" (an EUR 25 early-bird applied only to selections confirmed before 26 July), \"Upload up to 3 images\", \"Receive our response within 72 hours\", and a global open call \"for photographers of all levels\" - eligibility correctly empty. CONTRADICTION: the same page carries a boilerplate line \"This exhibition is fully booked. New submissions will open soon.\" directly under the Apply button, but /free-submission/ is live and still headed \"Join our next Online Exhibition Monochrome\" - kept open on the live form's authority. Aurea publishes NO email anywhere (contact is a web form; the gallery is operated by Vervid Group, Sao Paulo), so the email gap is genuinely unfillable. No jury names and no AI policy."
+      "verifyNote": "2026-07-29 recheck: aureaphotogallery.com/open-calls/monochrome re-confirms \"Deadline: 12/08/2026\", \"Free to Submit\", \"A one-time EUR 30 curation and exhibition fee applies only if your work is selected\", \"Upload up to 3 images\", \"Receive our response within 72 hours\" and the global \"photographers of all levels\" wording. The EUR 25 early-bird expired on 26 July, so the stored \"Free (€30 if accepted)\" is now the only rate. Aurea still publishes NO email (web form only). Unchanged."
     },
     {
       "title": "2027 Small Stones Festival of the Arts",
@@ -31783,7 +31784,7 @@
         "Rebecca Skinner",
         "Al Weems"
       ],
-      "verifyNote": "2026-07-28: smallstonesfestival.org/year-2027 names the 2027 FINE ART PHOTOGRAPHY jurors (Jessica Roscio, Rebecca Skinner, Al Weems - the painting jurors Sarah Alexander/Tom Dunlay/Bill Lane are a separate panel, do not merge them) but publishes NO entry dates. Those are on the ArtCall portal (smallstones2027.artcall.org): \"Art Call will open September 1, 2026 and close on October 1, 2026\", \"a nonrefundable submission fee of $10 per entry\", \"Maximum of 5 entries per artist, of which up to two may be selected\". Awards ceremony Jan 30 2027; contact artists@smallstonesfestival.org. No AI policy, no eligibility restriction."
+      "verifyNote": "2026-07-29 recheck: smallstonesfestival.org/year-2027 still publishes NO entry dates - they live on the ArtCall portal (smallstones2027.artcall.org), which re-confirms \"Art Call will open September 1, 2026 and close on October 1, 2026\", the $10-per-entry fee, \"Maximum of 5 entries per artist, of which up to two may be selected\" and \"Awards Ceremony: Saturday, January 30, 2027\". The 2027 FINE ART PHOTOGRAPHY jurors stay Jessica Roscio / Rebecca Skinner / Al Weems - do not merge in the separate painting panel. Unchanged."
     },
     {
       "title": "Dek Unu Magazine — November 2026 Issue",
@@ -31875,7 +31876,7 @@
       "orgInTitle": true,
       "summary": "Free founding print issue themed on surviving Southeast Asia. Photography welcome; selected artists receive the print edition PDF.",
       "dateAdded": "2026-07-22T06:12:47Z",
-      "verifyNote": "2026-07-27: hfp.gallery confirms the July 31 2026 deadline, \"Submission is free - no application fee\", \"Max 3 works/images per artist\", and announcement August 30 2026. No eligibility restriction is stated (artists from inside or outside the region) and the selectors are not named. AI stays Accepted: \"AI-assisted works may be considered when employed with clear artistic intent and conceptual purpose.\""
+      "verifyNote": "2026-07-29 recheck: hfp.gallery re-confirms the timeline \"Open Call: June 15 - July 31, 2026 / Selection & Editorial Review: August 1 - August 15, 2026 / Announcement: 30 August, 2026\", \"Submission is free - no application fee\" and \"Max 3 works/images per artist\". AI stays Accepted: works may be considered when AI is \"employed with clear artistic intent and conceptual purpose\". Selectors unnamed, no eligibility restriction. Unchanged."
     },
     {
       "title": "Delfina Foundation — Mondriaan Fund Netherlands Residency 2027",
@@ -34040,7 +34041,7 @@
       "summary": "Figurative work — bodies, identity, technology — juried into LHUCA's Lubbock galleries. $300/$200/$100 prizes.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@lhucalubbock",
-      "verifyNote": "2026-07-28: CaFE 17904 confirms the 6 September 2026 11:59pm CST deadline, $25 entry, 1-2 works, \"Artists must be at least 18 years of age and living in the United States\", notification 11 September 2026, exhibition 2 Oct - 28 Nov 2026, and prizes 1st $300 / 2nd $200 / 3rd $100 plus one $50 honourable mention. No juror is named and there is no AI policy. The call is NOT listed on lhuca.org/submissions (which carries only the 2027 proposals call) - CaFE is the source."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17904 confirms 2026-09-07T05:59:59Z = 6 Sep local, $25 Entry Fee, imagesMin/Max 1-2, and the awards verbatim \"1st place: $300 2nd place: $200 3rd place: $100 1 Honorable Mention: $50\" with \"Notification date: September 11, 2026\". Still no juror named, no AI policy. Unchanged."
     },
     {
       "title": "Call for Proposals 2027",
@@ -34089,7 +34090,7 @@
       "summary": "Denver gallery show on chaos as system, state of mind or world. 2D wall work, photography welcome. Colorado only.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@bitfactorygallery",
-      "verifyNote": "2026-07-28: CaFE 17906 confirms deadline 9 August 2026, \"$25.00 Entry Fee\" + \"$5.00 Additional Media\", 3-10 images, juror W. Max Thomason (owner/curator, Bitfactory Gallery), artist notification 10 August 2026, drop-off 15 August, exhibition 21 Aug - 12 Sep 2026, and \"a local Call for Entry open to Colorado residents age 18 and older\". 2D wall work only; no giclee or open-edition prints. No AI policy anywhere in the CaFE text or on the rendered page."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17906 confirms 2026-08-10T05:59:59Z = 9 Aug local, $25 Entry Fee + $5 Additional Media, imagesMin/Max 3-10, and \"Deadline for entry – August 9, 2026 Artist Notification – August 10, 2026\", juror W. Max Thomason (owner/curator, Bitfactory). No AI policy in any of the three CaFÉ text fields. Unchanged."
     },
     {
       "title": "2026 Juried Exhibition",
@@ -34115,7 +34116,7 @@
       "ai": "Not accepted",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@rawls_arts",
-      "verifyNote": "2026-07-28: CaFE 17719 confirms the call ran \"Monday, June 15th - Friday, July 31\" 2026, \"$35.00 nonrefundable flat fee for up to 3 works\", juror Allen TenBusschen (Assistant Professor of Art, University of Lynchburg) co-curating with RMA staff, exhibition 19 Sep - 23 Oct 2026, and the AI ban: \"Artificial Intelligence (AI) art or works derived in whole or part from AI technology are not eligible for entry\". No age or residency restriction is stated - hand delivery is a logistics rule, not an eligibility one - so eligibility correctly stays empty."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17719 confirms 2026-08-01T03:59:59Z = 31 July local, \"$35.00 nonrefundable flat fee for up to for 3 works\", imagesMin/Max 1-3, \"$1,000 in total prize money\" (= the stored $500/$300/$200), juror Allen TenBusschen co-curating with RMA staff, and \"Notifications (by email): By 5pm, Saturday, August 15th, 2026\". Unchanged."
     },
     {
       "title": "Common Ground in the Heartland: Reflecting on America at 250",
@@ -34137,7 +34138,7 @@
       "summary": "Free juried show at Sioux Falls' Washington Pavilion on the Midwest at America's 250th. All media, up to 5 works.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@washpav",
-      "verifyNote": "2026-07-28: CaFE 17820 confirms deadline 31 July 2026, \"No Entry Fee\", 1-5 works, artists notified 5 August 2026, exhibition 28 Aug 2026 - 21 Feb 2027, 70% to the artist on sales. Eligibility stays empty on purpose: the prospectus only says \"Artists from the Midwest or with a connection to the Midwest are encouraged to apply\" - encouraged, not required - and \"Artists of all career stages\". No juror is named and there is no AI policy. NB washingtonpavilion.org's Visual Arts Center page does not carry the call at all; CaFE is the only full prospectus."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17820 GraphQL applicationDeadline 2026-08-01T04:59:59Z = 31 July local, \"No Entry Fee\" USD0.00, imagesMin/Max 1-5, juryResults null; description key-dates block confirms \"July 31, 2026 - Call for Art Closes / August 5, 2026 - Artwork selected and Artists notified\". Unchanged."
     },
     {
       "title": "REBUILDING: Art as Renewal, Possibility, and Purpose",
@@ -34166,7 +34167,7 @@
       "summary": "Pawtucket juried show on repair and renewal, juried by Kerry Phillips and Meaghan Kent. $500 top award.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@artleagueri",
-      "verifyNote": "2026-07-28: CaFE 17865 confirms the 11 October 2026 deadline, \"$35.00 Entry Fee\" + \"$10.00 Additional Media Fee\", 1-5 images, and the AI ban verbatim: \"Works conceived or created through generative artificial intelligence (AI) are not eligible for submission. Reprints are not permitted.\" Jurors Kerry Phillips and Meaghan Kent and the 4 November 2026 notification stand."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17865 confirms 2026-10-12T05:59:59Z = 11 Oct local, $35 Entry Fee + $10 Additional Media, imagesMin/Max 1-5, \"Awards: First Place: $500 Second Place: $300 Third Place: $150 Honorable Mention (2) People’s Choice (1)\", \"Notification of Acceptance: On or before November 4, 2026\", jurors Kerry Phillips and Meaghan Kent, and the AI ban \"Works conceived or created through generative artificial intelligence (AI) are not eligible for submission.\" Unchanged."
     },
     {
       "title": "Fresh Squeezed 2026 Annual Juried Show",
@@ -34190,7 +34191,7 @@
       "summary": "Suffolk Art League's annual juried show. First place wins $500 and a 2027 one-person show at the gallery.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@suffolkartleague",
-      "verifyNote": "2026-07-28: CaFE 17864 confirms the Sept 16 deadline, the fee rows (Member Entry Fee $30, Non-Member Entry Fee $55, Additional Media $5) and notification \"by Fri., Sept. 25\"; prizes are $500 first place plus a 2027 one-person show, $300 second, $200 third. Fee re-ordered to put the NON-member price first per house style. Instagram is @suffolkartleague (linked from suffolkartleague.com's footer; it is on no CaFE field). The org email suffolkartleague76@gmail.com is Cloudflare-obfuscated on /contact.html - decode data-cfemail, a plain grep for '@' finds nothing. No juror is named and there is no AI policy. NB CaFE's eligibility line reads \"all mediums except video, audio, or digital\" while the body text says \"no video or audio\" - photography is explicitly welcome either way."
+      "verifyNote": "2026-07-29 recheck: CaFÉ 17864 confirms 2026-09-17T03:59:59Z = 16 Sep local, fee rows Member $30 / Non-Member $55 / Additional Media $5, imagesMin/Max 1-3, and \"$500 First Place and the opportunity to present a one-person show at the Suffolk Art Gallery in 2027 $300 Second Place $200 Third Place\", notified \"by Fri., Sept. 25\". NB a third tier exists in the prose - \"$50 for full-time student non-members, which includes an individual membership\". Unchanged."
     },
     {
       "title": "Summertime: Long Days, Lazy Days, Gentle Breezes",
