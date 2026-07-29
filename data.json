@@ -35153,6 +35153,27 @@
       "ai": "Accepted (must disclose)",
       "verifyNote": "2026-07-29 add: verified on sifest.it 2026 page + regolamento Google Doc (id 1-1x2u3Yw7hXlsJXzYwrdUARf-g1kW1VyseIiyPu1oos, linked from the entry form): free, any age/nationality, €5,000 gross paid in two tranches and earmarked for project costs, max 20 images (.jpeg, 20–30 cm long side, 300 dpi, ≤5 MB) sent as a WeTransfer/Drive link through the Google Form, deadline Mon Aug 17 2026 23:59 CET (secretariat reserves the right to extend), winner notified privately by Sep 4 and proclaimed at SI FEST 35 opening weekend Sep 11–13 2026, winning project exhibited at SI FEST 2027, winner sits on next year's jury. Jury is unnamed ('giuria qualificata') so jury [] is correct — don't hunt names. AI explicitly admitted if declared. Award contact submission@savignanoimmagini.it; org contact info@savignanoimmagini.it. 2026-07-29 editor: APPROVED. Re-confirmed on sifest.it (free, any age/nationality, €5.000, deadline lunedì 17 agosto 2026 23:59 CET) and in the regolamento Google Doc export (AI 'non è preclusa... purché esplicitamente dichiarato'; prize 'corrisposto in due fasi', end-2026 and end of SI FEST 2027; max 20 immagini; winner notified privately by 4 settembre). Removed the finder's manually-set dateAdded so generate-pages.js auto-fills it.",
       "dateAdded": "2026-07-29T11:25:17.169Z"
+    },
+    {
+      "title": "Open Call for Film Photographers",
+      "org": "Analog.Cafe",
+      "deadline": "Continuous",
+      "fee": "Free",
+      "category": "zine",
+      "description": "Standing contributor call from Analog.Cafe, the film photography blog run since 2017 by Dmitri, who owns, designs, codes, and edits the site solo. Stories, photo essays, opinions, articles, and reviews built around analogue photography are all welcome. Work is written directly in the site's on-page editor (sign-in required) and goes through Dmitri's editorial process; published contributors get a prominent profile with a Magic Link to promote their own website, shop, or socials. Free, international, rolling — submissions are reviewed bi-annually, so new work may not be published until winter 2026/2027. Any AI-generated content must be disclosed.",
+      "url": "https://www.analog.cafe/open-call",
+      "instagram": "@analog_cafe",
+      "location": "Online",
+      "prize": "Publication",
+      "submitVia": "Website form",
+      "submitUrl": "https://www.analog.cafe/open-call",
+      "eligibility": [],
+      "slug": "open-call-for-film-photographers-analog-cafe",
+      "orgInTitle": false,
+      "summary": "Film photography stories, photo essays, and reviews published on the Analog.Cafe blog. Rolling, reviewed bi-annually. Free.",
+      "ai": "Must disclose",
+      "verifyNote": "2026-07-29 add: analog.cafe/open-call read via curl+UA (WebFetch 403s on this domain). This is Analog.Cafe's OWN standing contributor call — publication on the blog itself, NOT a relayed third-party call: the Submit button leads to the on-site /write/draft editor behind sign-in, and editorial + contributor profiles are handled by site owner Dmitri. (His News section relays other orgs' calls; those are separate.) Free, international, no image count published, so requirements omitted. Deadline Continuous: page states all new submissions are reviewed BI-ANNUALLY and may not publish until winter 2026/2027 — don't flip to a dated deadline. AI: 'if your submission includes any work generated with AI tools, you must disclose it.' submitUrl==url is correct (embedded on-page flow, no separate portal). IG @analog_cafe confirmed in site footer. Org contact d@analog.cafe (decoded from Cloudflare data-cfemail) stored in contacts.json. NOTE: press-kit/product announcements are NOT accepted via this flow — that goes through his News/Editorial email channel.",
+      "dateAdded": "2026-07-29T11:31:47.753Z"
     }
   ]
 }
