@@ -2963,7 +2963,7 @@
         "Luigi Brozzi, Photographer",
         "Antonello Perin, Photographer"
       ],
-      "verifyNote": "2026-07-29 recheck: sirmionefotografia.it re-confirms the award structure - the SIRMIONE and LAKE GARDA themes each pay \"FIRST PRIZE 1.500 € / Second prize 500 €\", with third prize a Sirmione stay - so the €1,500 chip stands and the hospitality tiers stay out per the no-perks rule. €10 flat fee, deadline 31 October 2026. Still no announcement date and no eligibility restriction published. Unchanged."
+      "verifyNote": "2026-07-29 recheck: sirmionefotografia.it re-confirms the award structure - the SIRMIONE and LAKE GARDA themes each pay \"FIRST PRIZE 1.500 € / Second prize 500 €\", with third prize a Sirmione stay - so the €1,500 chip stands and the hospitality tiers stay out per the no-perks rule. €10 flat fee, deadline 31 October 2026. Still no announcement date and no eligibility restriction published. Unchanged. 2026-07-30: the official rules PDF (sirmionefotografia.it/wp-content/uploads/2026/03/2026-LAKE-GARDA-PHOTO-CHALLENGE-ENG.pdf) IS machine-readable with pdftotext -layout — use it instead of WebFetch, which returns 'binary/unreadable'. It re-confirms Art.8 'delivered in digital format by 11.59pm on 31st October 2026', 'no more than three photographs for the two main themes... A fourth photograph may be added for the MARGINS theme' (= 'Up to 4 images'), Art.14 SIRMIONE and LAKE GARDA each 'First prize - € 1.500,00 / Second prize - € 500,00' with hospitality third prizes, and the AI ban verbatim 'Tools based on generative AI models that introduce new functions to enlarge, enhance, insert unrealistic elements into images are not allowed.' Art.12 names ONLY the three stored photographers (Roberto Bellini, Luigi Brozzi, Antonello Perin) beside the Mayor and Councillor — the rest of the panel is unnamed by design ('The definitive composition of the Jury will... be officially communicated'). The PDF publishes NO announcement date and NO age/nationality limit, so resultsDate null and eligibility [] are both correct — stop re-hunting them."
     },
     {
       "title": "1839 Awards Photographer of the Year Contest",
@@ -15994,7 +15994,7 @@
       "resultsDate": null,
       "requirements": null,
       "proseSkipped": "official site has no description of the Takeovers program; submissions go through Instagram DM, no public source material to draft from",
-      "verifyNote": "2026-07-29 recheck: opendoors.gallery is still the gallery shop/exhibitions site and carries NO takeover prospectus; the only trace is the footer link to instagram.com/odtakeovers, which still resolves, so the continuous IG-DM route stands. Image count, jury, results date and AI policy remain unpublished anywhere on the web - unfillable without the IG account. Unchanged."
+      "verifyNote": "2026-07-29 recheck: opendoors.gallery is still the gallery shop/exhibitions site and carries NO takeover prospectus; the only trace is the footer link to instagram.com/odtakeovers, which still resolves, so the continuous IG-DM route stands. Image count, jury, results date and AI policy remain unpublished anywhere on the web - unfillable without the IG account. Unchanged. 2026-07-30: opendoors.gallery still carries NO takeover prospectus and the footer link to instagram.com/odtakeovers still resolves, so the continuous IG-DM route stands. NEW ON THE HOMEPAGE: a hero block 'OD Photo Prize 2026 NOW OPEN — START YOUR SUBMISSION'. That is a SEPARATE call (a prize, not the takeover programme) — do not merge it into this entry or read it as this call reopening; it is a discovery lead for the sweep. Image count, jury, results date and AI policy for Takeovers remain unpublished anywhere on the web."
     },
     {
       "title": "Tomorrow's Talent - Open Submissions",
@@ -18703,7 +18703,7 @@
       "submitUrl": "https://nyartcompetitions.com/photography/entries/register/",
       "summary": "Exhibition at Agora Gallery in Chelsea, New York. 30 photographers. Five $500 cash prizes.",
       "proseSkipped": "official site (nyartcompetitions.com) and gallery site (agora-gallery.com) both blocked WebFetch — revisit when reachable; data.json has substantial detail to use later",
-      "verifyNote": "2026-07-28: nyartcompetitions.com/photography confirms $45/5 images (Amateur) and $55/5 images (Professional) with $5 per additional image, 30 photographers exhibited in Chelsea, five $500 cash awards, and the three stored jurors. GENUINELY UNPUBLISHED: the site states NO submission deadline and NO results date anywhere (only \"Competition is Now Open\"), so the stored 2026-11-03 / December 1 2026 could not be reconfirmed. Contact photo@nyartcompetitions.com."
+      "verifyNote": "2026-07-28: nyartcompetitions.com/photography confirms $45/5 images (Amateur) and $55/5 images (Professional) with $5 per additional image, 30 photographers exhibited in Chelsea, five $500 cash awards, and the three stored jurors. GENUINELY UNPUBLISHED: the site states NO submission deadline and NO results date anywhere (only \"Competition is Now Open\"), so the stored 2026-11-03 / December 1 2026 could not be reconfirmed. Contact photo@nyartcompetitions.com. 2026-07-30: nyartcompetitions.com/photography reads fine with curl+UA (WebFetch 403s). Re-confirmed '$45 for 5 images (Amateur) | $55 for 5 images (Professional)' with '$5 for each additional image', 'prizes valued at over $55,000', 'open to photographers worldwide at any stage of their careers' (eligibility [] correct) and the three stored jurors. STILL GENUINELY UNPUBLISHED, second run running: the site shows only 'COMPETITION IS OPEN' and states NO submission deadline and NO results date anywhere, so the stored 2026-11-03 / December 1 2026 cannot be reconfirmed on-source — carry them, don't flip them, and don't mark the call closed on their absence."
     },
     {
       "title": "Creatura Magazine Issue 02 — What We Call Home",
@@ -33351,7 +33351,7 @@
       "slug": "emerging-berlin-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Rolling Fotografiska open call for image-makers whose practice shapes a part of Berlin. Free, leads to museum exhibitions.",
-      "verifyNote": "2026-07-29: mission page live with no dated deadline (rolling confirmed); the dated deadlines visible on the platform root belong to OTHER missions (Estée Lauder etc.). The application flow is embedded in the mission page itself → submitUrl==url is CORRECT.",
+      "verifyNote": "2026-07-29: mission page live with no dated deadline (rolling confirmed); the dated deadlines visible on the platform root belong to OTHER missions (Estée Lauder etc.). The application flow is embedded in the mission page itself → submitUrl==url is CORRECT. 2026-07-30: Berlin's 'reviewed every 6 months' IS correct and is Berlin-specific — its mission payload has intervalN 25 (weeks) and the copy verbatim reads 'Applications are reviewed every 6 months; everyone who submitted will be notified after the submission period.' Do NOT harmonise it to Stockholm's rolling wording (Stockholm is intervalN 52 and only contacts advancing applicants). Requirements re-confirmed verbatim: 'one PDF that includes between 10 and 20 images from the project, a project statement, and your CV'; 'All submissions are carefully reviewed by the Curatorial Team' — no named jury; participants must be 18+; no AI clause on this mission (ai null is correct — the AI ban lives on other Fotografiska missions only).",
       "dateAdded": "2026-07-26T14:15:03Z",
       "requirements": "1 PDF (10–20 images)",
       "resultsDate": "Reviewed every 6 months"
@@ -33378,10 +33378,10 @@
       "slug": "emerging-stockholm-fotografiska-emerging",
       "orgInTitle": false,
       "summary": "Rolling Fotografiska open call for emerging image-makers based in Sweden. Free, leads to Fotografiska Stockholm exhibitions.",
-      "verifyNote": "2026-07-29: mission page live with no dated deadline (rolling confirmed); dated deadlines on the platform root belong to OTHER missions. Application flow embedded in the mission page → submitUrl==url is CORRECT.",
+      "verifyNote": "2026-07-29: mission page live with no dated deadline (rolling confirmed); dated deadlines on the platform root belong to OTHER missions. Application flow embedded in the mission page → submitUrl==url is CORRECT. 2026-07-30: resultsDate corrected — 'every 6 months' is BERLIN's wording, not Stockholm's. The Stockholm mission payload has scheduleKind interval / intervalUnit weekly / intervalN 52 (annual) where Berlin has intervalN 25 (~6 months), and its own copy reads 'Vi går igenom inkommande material löpande under året' (we review incoming material on a rolling basis throughout the year) plus 'Om ditt arbete går vidare i vår interna process kontaktar vi dig' — only advancing applicants are contacted, so Berlin's 'everyone will be notified after the submission period' does NOT apply here. ~3 artists invited per year. Requirements re-confirmed: one required PDF 'Project Overview' (maxFiles 1).",
       "dateAdded": "2026-07-26T14:15:03Z",
       "requirements": "1 PDF portfolio",
-      "resultsDate": "Reviewed every 6 months"
+      "resultsDate": "Reviewed on a rolling basis"
     },
     {
       "title": "Fire",
@@ -33854,7 +33854,7 @@
       "title": "Backwards/Forwards",
       "org": "Light Art Space",
       "deadline": "2026-09-13",
-      "fee": "$35 for 3 works",
+      "fee": "$35 for 3 works (+$10 each addl)",
       "category": "exhibition",
       "description": "Juried exhibition of handmade prints at Light Art Space in Silver City, New Mexico, staged as the juried show of the Southwest Print Fiesta. The brief asks artists to treat time as material — memory, pressure, inheritance, repetition, rupture and possibility — looking backward at the histories that shape us and forward at futures we imagine or fear. All work must be handmade prints made by the artist in the last five years using traditional printmaking and/or photographic processes: silver gelatin, photopolymer and copperplate gravure, cyanotype, vandyke, gum bichromate, palladium, platinum, carbon, salt, chemigram, lumen, argyrotype, oil print, chlorophyll, instant transfers and lifts, alongside etching, woodcut, lithography, screenprint and letterpress. 3D and experimental work encouraged. Digital processes are allowed only where meaningfully integrated with handmade methods; AI-generated and purely digital prints are ineligible. Juror Terran J. Last Gun, Piikani artist based in Santa Fe and an Art in America 2026 New Talent. Open worldwide to artists 18 and over. $35 for three works, $10 per additional piece up to ten, $20 for full-time students. Work must arrive ready to hang but framing is not required. Exhibition runs 8 October – 7 November 2026 with a reception and juror talk on 9 October; gallery takes 50% on sales and artists cover shipping both ways.",
       "url": "https://www.lightartspace.com",
@@ -33876,7 +33876,7 @@
       "orgInTitle": false,
       "summary": "Handmade prints as a record of time — cyanotype to letterpress — juried by Terran J. Last Gun at New Mexico’s alt-process gallery.",
       "ai": "Not accepted",
-      "verifyNote": "2026-07-29: CaFE 17855 confirms Sep 13 deadline (Sep 14 05:59Z), $35, 3-10 works.",
+      "verifyNote": "2026-07-29: CaFE 17855 confirms Sep 13 deadline (Sep 14 05:59Z), $35, 3-10 works. 2026-07-30: CaFÉ 17855 fees{} returns TWO charges — APPLICATION $35 'Entry fee for three pieces' AND MEDIA $10 'For each additional' — so the flat '$35 for 3 works' chip understated it; now '$35 for 3 works (+$10 each addl)'. Re-confirmed 2026-09-14T05:59:59Z = 13 Sep local, imagesMin/Max 3-10, prose 'September 13th, 2026, midnight Mountain Time - Submission Deadline / September 16th - Notification of accepted entries' and the AI ban 'AI-generated and purely digital prints are not eligible'.",
       "dateAdded": "2026-07-27T10:30:47Z"
     },
     {
@@ -33915,7 +33915,7 @@
       "fee": "Free",
       "category": "zine",
       "description": "Annual photobook call from ZUM magazine, the contemporary art department and the Photography Library of the Instituto Moreira Salles in São Paulo, running since 2017 to deepen the institute’s links with contemporary photography publishing. Open to publications released from October 2025 onwards, from any country, from publishers of any size or self-published — dummies and prototypes are not accepted. Entry is free and open to any nationality. Selected publications each receive R$300 towards costs, are presented during Festival ZUM in November 2026 and stay on display in the IMS Photography Library; a panel of external guests and IMS staff then awards the three best publications R$2,000 each. Enter through the online form and post or hand-deliver a copy to IMS Paulista — books must arrive by 26 September 2026. All submitted publications are accessioned into the IMS Photography Library and catalogued for public consultation unless the author asks for the copy back within 30 days of the shortlist.",
-      "url": "https://revistazum.com.br/festival-zum-2026-convocatoria-fotolivros-2026/",
+      "url": "https://revistazum.com.br/festival-zum-2026/convocatoria-fotolivros-2026/",
       "instagram": "@revistazum",
       "location": "São Paulo, Brazil",
       "prize": "R$2,000 + Exhibition",
@@ -33927,7 +33927,7 @@
       "slug": "photobook-open-call-zum-ims-2026",
       "orgInTitle": true,
       "summary": "Free photobook call from ZUM and Instituto Moreira Salles — R$2,000 each to three winners, shown at Festival ZUM in São Paulo.",
-      "verifyNote": "2026-07-29: page title reads 'Convocatória de Fotolivros ZUM/IMS 2026 – INSCRIÇÕES ABERTAS!' and the Google Form is live and accepting. The body text is JS/graphic so the Sep 26 date wasn't re-readable headless, but the call is confirmed OPEN; stored deadline stands (verified on page 07-27).",
+      "verifyNote": "2026-07-29: page title reads 'Convocatória de Fotolivros ZUM/IMS 2026 – INSCRIÇÕES ABERTAS!' and the Google Form is live and accepting. The body text is JS/graphic so the Sep 26 date wasn't re-readable headless, but the call is confirmed OPEN; stored deadline stands (verified on page 07-27). 2026-07-30: STORED URL WAS 404 — the path uses a SLASH not a hyphen after 'festival-zum-2026'. Corrected to revistazum.com.br/festival-zum-2026/convocatoria-fotolivros-2026/ (200, 'INSCRIÇÕES ABERTAS!', published 28 July 2026). Re-confirmed there: publications must ARRIVE by 26 de setembro de 2026, 'Não há taxa de inscrição/participação', 'abertas a participantes de qualquer nacionalidade' (eligibility [] correct), each selected book gets R$300 ajuda de custo and the 3 best get R$2.000 each, 'O resultado será divulgado em novembro'. Jury is 'uma comissão formada por convidados externos e integrantes do IMS' — unnamed, do not hunt names. Books must be published from October 2025 onward; prototypes/dummies not accepted.",
       "dateAdded": "2026-07-27T10:30:47Z"
     },
     {
@@ -34075,7 +34075,7 @@
       "slug": "ccan-2026-10th-annual-national-juried-art-competition-center-for-contemporary-arts",
       "orgInTitle": false,
       "summary": "Abilene's 10th national juried competition: $500 first prizes in 11 categories including 2D photography.",
-      "verifyNote": "2026-07-29: CaFE 17862 confirms Aug 22 deadline (Aug 23 04:59Z), $35 first image, 1-3 images.",
+      "verifyNote": "2026-07-29: CaFE 17862 confirms Aug 22 deadline (Aug 23 04:59Z), $35 first image, 1-3 images. 2026-07-30: DON'T RE-FLIP THE PRIZE. center-arts.com states 'Over $7,000 is awarded annually to artists in 11 media categories, one juror's award, and a best in show', while CaFÉ 17862 itemises 1st in each category $500 x 11 + Juror's Award $750 + Best in Show $1,000 = $7,250. The stored '$7,000 in cash awards' matches the org's own published figure; the $7,250 arithmetic is ours, not theirs, so do not swap it in. Re-confirmed: deadline 2026-08-23T04:59:59Z = 22 Aug local, fees APPLICATION $35 + MEDIA $20 (= '$35 for 1 image, $20 each additional'), imagesMin/Max 1-3, 'All entrants will be notified via email September 1, 2026', juror Carlyn Ray (Dallas-based glass artist), eligibility 'open to all artists 18 years of age and over'. No AI policy in description/eligibilityDescription/requirementDescription.",
       "dateAdded": "2026-07-27T15:35:30.428Z",
       "instagram": "@thecenterabilene"
     },
@@ -34869,7 +34869,7 @@
       "slug": "erbleichen-neu",
       "orgInTitle": false,
       "summary": "Winterthur artist-run space seeks work about decay, time loops and the great bleaching for a November group show. Free, all mediums.",
-      "verifyNote": "2026-07-29: neuneuneu.ch (home + /info + /doku) does NOT carry the Erbleichen call anywhere — the homepage lists BELTLOOP (Jun 2026) and past shows only. The call circulates via IG @neu_neu_neu_neu_neu_neu; IG unverifiable this run (Chrome down). Contact info(at)neuneuneu.ch on /info. Keep stored values; deadline Jul 31.",
+      "verifyNote": "2026-07-29: neuneuneu.ch (home + /info + /doku) does NOT carry the Erbleichen call anywhere — the homepage lists BELTLOOP (Jun 2026) and past shows only. The call circulates via IG @neu_neu_neu_neu_neu_neu; IG unverifiable this run (Chrome down). Contact info(at)neuneuneu.ch on /info. Keep stored values; deadline Jul 31. 2026-07-30: neuneuneu.ch homepage has changed to 'NEU! Summer break! See you soon in october :-)' above the past-shows list — Erbleichen is STILL absent from the site, as is any 2026 open call. The summer-break banner is NOT a closure notice for this call (a November show with a 31 July entry deadline is consistent with the space being shut over August–September). IG @neu_neu_neu_neu_neu_neu remains the only surface and was unverifiable again this run (Chrome extension not connected). Contact info(at)neuneuneu.ch on /info. Stored values stand.",
       "dateAdded": "2026-07-28T11:19:25.692Z"
     },
     {
