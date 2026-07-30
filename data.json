@@ -157,7 +157,8 @@
       "orgInTitle": true,
       "summary": "Folklore-inspired national juried show at Norfolk's d'Art Center — all mediums including photography; exhibition Sep 26–Oct 24.",
       "dateAdded": "2026-07-19T03:07:24Z",
-      "resultsDate": "August 17, 2026"
+      "resultsDate": "August 17, 2026",
+      "verifyNote": "2026-07-30: CaFÉ 17860 confirms 2026-08-10T03:59:59Z = 9 Aug local, $30 for up to 3 works + $5 per additional up to 10, imagesMin/Max 3-10, and the jury split verbatim: \"This is a juried exhibition, and it will be curated by d'Art's Gallery Director, Amanda Bradley. Award winners will be selected by a panel of d'Art Center's professional artists and staff members\" — so the stored single name is right and the award panel is deliberately unnamed. No AI policy in the CaFÉ text fields or on the rendered opportunity page, so ai stays null."
     },
     {
       "title": "New Emergence Art Prize 2026",
@@ -916,7 +917,7 @@
       "orgInTitle": true,
       "summary": "Year-round sales-gallery representation at Lanesboro Arts for Minnesota, Iowa, and Wisconsin artists — 60% consignment, free to apply.",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "verifyNote": "As of 2026-07-29 the online form is STILL not on the page — lanesboroarts.org/artist-opportunities/juried-sales-gallery/ reads verbatim \"To apply, please fill out the form below (updating will add soon)\". Working route remains a video or hard-copy application to gallery@lanesboroarts.org with subject \"Gallery Application\", so submitUrl stays null and the per-artist image count is unpublished. Deadline Thursday 31 Dec 2026 and \"All artists will be notified by Friday, February 26th, 2027\" both reconfirmed. Recheck for the form."
+      "verifyNote": "2026-07-30 (verify): still no form — lanesboroarts.org/artist-opportunities/juried-sales-gallery/ reads verbatim \"To apply, please fill out the form below (updating will add soon)\", so submitUrl stays null and `requirements` stays unpublished for a 5th check. \"The Application deadline is Thursday, December 31st 2026. All artists will be notified by Friday, February 26th, 2027\" both re-confirmed. Route remains a video or hard-copy application to gallery@lanesboroarts.org with subject \"Gallery Application\"."
     },
     {
       "title": "New Visionary Magazine Issue 18",
@@ -1016,7 +1017,7 @@
     {
       "title": "Revela'T Portfolio Review 2026",
       "org": "Revela'T Festival",
-      "deadline": "2026-07-30",
+      "deadline": "2026-09-06",
       "fee": "€25 (€15 Friends); winners pay €100",
       "category": "education",
       "description": "Portfolio review open call for Revela'T, the contemporary analog photography festival in Vilassar de Dalt near Barcelona (October 1–18, 2026, main weekend October 16–18). Eighteen photographers are selected for 20-minute one-to-one sessions with each of 11 reviewers — three hours of feedback — plus a full festival pass; one participant additionally wins production and exhibition of their project at Revela'T 2027. Open to photographers of any nationality or residence working in chemical or digital photography; selection favors projection, originality, and a compelling concept. A €25 application fee applies to all entrants (€15 for Revela'T Friends).",
@@ -1042,9 +1043,10 @@
       "slug": "revelat-portfolio-review-2026",
       "orgInTitle": true,
       "summary": "18 photographers get 3 hours of one-to-ones with 10 reviewers plus a festival pass; one wins an exhibition at Revela’T 2027.",
-      "resultsDate": "August 31, 2026",
+      "resultsDate": "September 2026",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "requirements": "10–15 images"
+      "requirements": "10–15 images",
+      "verifyNote": "2026-07-30: DEADLINE EXTENDED Jul 30 -> Sep 6 and resultsDate Aug 31 -> September 2026. revela-t.cat/en/portfolio-review-2026/ still prints the OLD calendar (\"Deadline: 30.07.2026\", announcement 31.08.2026, review 16.10.2026), but Picter — the platform that actually enforces the window — has been re-edited by the organiser: api.picter.com call(slug:\"revelat-portfolio-review-2026\") gives submissionStartDate 2026-06-17, submissionEndDate 2026-09-06T21:59Z, and a timeline row \"Selected projects announcement\" 2026-09-19 with showDay:false (hence month-only \"September 2026\"). The slug is ALSO present in filter{visibilityStatus:PUBLIC,entryStatus:OPEN}, so the call is live, not closed — the \"CLOSED\" strings in site.picter.com's HTML are i18n catalog entries, not this call's status. Do NOT re-flip to Jul 30 on the org page alone. Unchanged on both surfaces: fee 25€ / 15€ for Revela'T Amigxs plus a €100 participation fee for the 18 selected, 10–15 images, no age limit, any nationality, review day 16.10.2026."
     },
     {
       "title": "AFC Nature Photography Contest 2026",
@@ -1122,7 +1124,8 @@
       "summary": "€1,500 for images that unveil the city of Valladolid — free entry, up to 3 photos, from the Eurostars hotel group's award series.",
       "dateAdded": "2026-07-01T23:31:31Z",
       "ai": "Not accepted",
-      "submitUrl": "https://www.eurostarshotels.co.uk/photography-award-valladolid.html"
+      "submitUrl": "https://www.eurostarshotels.co.uk/photography-award-valladolid.html",
+      "verifyNote": "2026-07-30: the eurostarshotels.co.uk page body carries ONLY the theme and the prize (\"The First Prize will receive €1,500 and a trophy\" + trophies and 9 free stays for runners-up) — every rule lives in the linked PDF /CLIENTES/www.eurostarshotels.com/images/otros/2026/concursofotografia/Rules_Eurostars%20Hotel%20Company%20Valladolid%20Photography%20Award.pdf, which confirms \"12. The deadline to submit entries is 22nd September 2026\", up to 3 photographs, 18+, any nationality, and the AI ban verbatim \"Images made partly or entirely with the use of artificial intelligence (AI) are not allowed\". GENUINELY UNFILLABLE: the jury is only \"the panel\" (no names), and rule 13 says the decision is \"communicated personally to each of the winners\" with no announcement date — so jury [] and resultsDate null are both correct. submitUrl == url is correct: entry is the form embedded on that page."
     },
     {
       "title": "PERSPA 2026 — Prix de la Perspective Architecturale",
@@ -3121,7 +3124,8 @@
       "orgInTitle": false,
       "summary": "Open-media juried show at RBSA Gallery Birmingham, photography welcome. £1,000 top prize; exhibition October 1–31.",
       "requirements": "Up to 4 images",
-      "dateAdded": "2026-06-10T03:23:45.721Z"
+      "dateAdded": "2026-06-10T03:23:45.721Z",
+      "verifyNote": "2026-07-30: rbsa.org.uk re-confirms \"ENTRY DEADLINE: TUESDAY 11 AUGUST 4.00PM\" (fees payable by 5.00pm the same day), the ladder One £20 / Two £32 / Three £40 / Four £48, prizes £1,000 / £500 / £250, and \"Selected Works Announced: by Friday 4 September 5.00pm\". JURY IS GENUINELY UNFILLABLE — the page states \"The selection panel is TBC\" — stop re-hunting it. Eligibility stays []: \"open to artists based locally, nationally, and internationally\", both established and emerging. No AI policy. Not in the fee field but worth knowing: 50% off for artists under 35 (proof on delivery) and free entry for RBSA Honorary Members and Graduate Artists."
     },
     {
       "title": "Numéro+ Flux et Forma",
@@ -3597,7 +3601,7 @@
       "summary": "First photography edition of Tyler Art Lift's international TSHOW, juried by Kristine Madjare. $2,000 in cash prizes at Gallery Main Street.",
       "dateAdded": "2026-06-09T23:39:14.396Z",
       "instagram": "@tylerartlift",
-      "verifyNote": "2026-07-30: url re-pointed from the artshowtyler.com homepage (about-text only) to artshowtyler.com/tshow-photo-1/, which carries the whole prospectus: \"$1000 Best in Show $500 Runner Up $500 People's Choice Award\", \"It costs $45 to submit 1 artwork. Extra submission is $5. You can submit up to 20 pieces\", juror Kristine Madjare, \"Any entitity from planet Earth older than 18 years\", 30% sales commission, exhibition Oct 15–24 2026 with the opening Oct 17 at Gallery Main Street. The deadline lives only on CaFÉ 17624 (applicationDeadline 2026-09-08T05:59:59Z = Sep 7 local) — the org page states none. No AI policy on either source, so ai stays null."
+      "verifyNote": "2026-07-30: url re-pointed from the artshowtyler.com homepage (about-text only) to artshowtyler.com/tshow-photo-1/, which carries the whole prospectus: \"$1000 Best in Show $500 Runner Up $500 People's Choice Award\", \"It costs $45 to submit 1 artwork. Extra submission is $5. You can submit up to 20 pieces\", juror Kristine Madjare, \"Any entitity from planet Earth older than 18 years\", 30% sales commission, exhibition Oct 15–24 2026 with the opening Oct 17 at Gallery Main Street. The deadline lives only on CaFÉ 17624 (applicationDeadline 2026-09-08T05:59:59Z = Sep 7 local) — the org page states none. No AI policy on either source, so ai stays null. 2026-07-30 (verify): artshowtyler.com/tshow-photo-1/ NOW prints a headline \"TSHOW PHOTO.1 SUBMISSION DEADLINE SEP 17\" above its countdown — do NOT flip to Sep 17. The countdown's own data-end-timestamp is 1788800580 = 2026-09-07 17:03 UTC, and CaFÉ 17624 still returns 2026-09-08T05:59:59Z = Sep 7 local, so Sep 7 stands and the headline is the organiser's typo. CaFÉ also re-confirms $45 + $5 additional, imagesMax 20, and \"Notifications: by September 30th, 2026\"; still no AI policy on either surface."
     },
     {
       "title": "Hamburg Portfolio Review 2026",
@@ -3981,12 +3985,13 @@
       "summary": "Juried group show at the Wassaic Project, Hudson Valley NY. Open to all media incl. photography; accepted artists get a modest honorarium.",
       "dateAdded": "2026-06-08T23:07:53Z",
       "requirements": "1–10 images",
-      "resultsDate": "By November 2026"
+      "resultsDate": "By November 2026",
+      "verifyNote": "2026-07-30: wassaicproject.org/apply confirms the 2027 Summer Exhibition window \"June 1 to August 10, 2026\", the $25 application fee (waivable), up to 5MB jpgs, and the honorarium plus an Exhibitions Fellowship for site-specific work. resultsDate stays \"By November 2026\" from \"Notification of acceptance will occur within 90 days of the application due date\" — do NOT tighten it to the \"Notifications by November 1\" line in the Application Timelines box: that row belongs to the 2027 ARTIST RESIDENCY (the Haunted Barn row next to it says August 1). No AI policy, no eligibility restriction. Contact danielle@wassaicproject.org."
     },
     {
       "title": "Create! Magazine Issue #59",
       "org": "Create! Magazine",
-      "deadline": "2026-07-30",
+      "deadline": "2026-07-31",
       "fee": "$35 / 3 images",
       "category": "zine",
       "description": "Open call for Issue No. 59 of Create! Magazine, a print and digital publication for contemporary art reaching a global curator, collector, and gallerist audience. Open theme — all subjects and media welcome, with photography alongside painting, sculpture, installation, and other forms. Juried by Indira Cesarine, multidisciplinary artist and founder of The Untitled Space gallery in Tribeca, New York. Selected artists receive a four-page professional spread in the print and digital editions, website and social media features, and a complimentary digital issue. Submit up to 10 works (cohesive bodies encouraged) with a 300-word bio and artist statement. Open to all artists worldwide, no formal education or gallery representation required.",
@@ -4007,7 +4012,7 @@
       "dateAdded": "2026-06-08T23:07:53Z",
       "resultsDate": "August 30, 2026",
       "ai": "Not accepted",
-      "verifyNote": "As of 2026-07-24 the org call-for-art page shows BOTH 'July 30' and 'July 31, 2026' deadlines; the Submittable portal (authoritative) says July 30 — keep Jul 30, don't flip to Jul 31."
+      "verifyNote": "2026-07-30: deadline corrected Jul 30 -> Jul 31, SUPERSEDING the 2026-07-24 note. createmagazine.submittable.com/submit carries prose \"Submissions Deadline: July 30, 2026\" but its machine-readable close — data-render-react-date='2026-08-01 04:00:00Z' = 11:59pm EDT on July 31 — is the value Submittable actually enforces (same rule as the Jul 30 Submittable finding), and both open submissions on that portal carry it. The org page /call-for-art shows both dates too. Note the portal's listing TITLE still says \"Issue No. 58\" while its body says \"juried by Indira Cesarine for print issue #59\" — the body is right, keep #59. Winners announced August 30, 2026; \"open to all artists worldwide working in any medium except AI\" (= ai Not accepted)."
     },
     {
       "title": "The Hand Magazine - Issue #54 Autumn 2026",
@@ -19208,7 +19213,8 @@
         "The theme is explored through humor, tenderness, intimacy, and allegory, and the call is open across mediums including photography. Artists may submit up to ten artworks.",
         "The show runs November 5–12, 2026. Submission is through the gallery's website, with a $25 fee per image."
       ],
-      "dateAdded": "2026-06-08T15:10:21.154Z"
+      "dateAdded": "2026-06-08T15:10:21.154Z",
+      "verifyNote": "2026-07-30: bushwickgallery.com re-confirms \"Submission Deadline: October 16, 2026\", \"Submission Fee: $25.00 per image submission\", a 1–10 dropdown for \"Number of Artworks to Submit\", exhibition November 5–12 2026 with a Nov 5 reception, and that this is non-commercial programming (works are not for sale). The submitUrl == url WARNING IS A FALSE POSITIVE: the Gravity-style entry form (name/email/address/per-artwork title-year-medium-dimensions-upload rows + the $25 price field) is embedded on this very page, there is no separate portal — same case as ADEX/Eurostars. GENUINELY UNPUBLISHED: no juror, no notification date, no AI policy, and no eligibility rule — the form's US-state dropdown is an address field, not a restriction, so eligibility stays []."
     },
     {
       "title": "The Woman Artist Award — 6th Edition",
@@ -29634,7 +29640,8 @@
       "summary": "€5,000 for photographs of Madrid's facades — free entry, up to 3 photos, from the Eurostars hotel group's award series.",
       "dateAdded": "2026-07-02T03:10:11Z",
       "ai": "Not accepted",
-      "submitUrl": "https://www.eurostarshotels.co.uk/eurostars-madrid-tower/photography-prize.html"
+      "submitUrl": "https://www.eurostarshotels.co.uk/eurostars-madrid-tower/photography-prize.html",
+      "verifyNote": "2026-07-30: same structure as the Valladolid award — the page body gives only the prizes (\"The First Prize will receive €5,000 and a trophy. The runner-up will receive the Hotusa Group Prize, valued at €3,000\" + 8 free stays), and the dates live in the linked PDF Rules_13th_Eurostars_Madrid_Tower_Photography_Prize_2026.pdf, which states \"12. The deadline to submit entries is 25th January 2027\", \"participants must be 18 or older, of any nationality\" (no Hotusa employees) and \"no more than three photographs\". Jury unnamed and no announcement date published, so jury [] / resultsDate null are correct. submitUrl == url is correct: the entry form is embedded on that page."
     },
     {
       "title": "Flowing & Flying: A National Exhibit of Waterbirds and Waterscapes",
@@ -29869,7 +29876,7 @@
       "resultsDate": "March 2027",
       "requirements": "Unlimited images",
       "instagram": "@naturephcontest",
-      "verifyNote": "Org timeline (2026-07-22) lists BOTH 'Submission Deadline: November 15, 2026' and 'Extended Deadline: November 25, 2026'. Storing the final extended date per the BIFA/reFocus convention — don't re-flip to Nov 15."
+      "verifyNote": "Org timeline (2026-07-22) lists BOTH 'Submission Deadline: November 15, 2026' and 'Extended Deadline: November 25, 2026'. Storing the final extended date per the BIFA/reFocus convention — don't re-flip to Nov 15. 2026-07-30 (verify): thenaturephotocontest.com's visible copy now shows only \"Submission Deadline: November 15, 2026\", but \"Extended Deadline: November 25, 2026\" is still in the page's raw HTML — grep the HTML, not the rendered text, before re-flipping. Keep Nov 25. €10 per photograph and the €2,000 pool (€1,000 grand prize + €100 per category) also re-confirmed."
     },
     {
       "title": "12th International Phone-ography Competition",
@@ -31227,7 +31234,7 @@
         "Valery Poshtarov, Photographer & Founder, PhotoAnthology Foundation",
         "Lynsey Weatherspoon, Photojournalist & Portraitist"
       ],
-      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-28: attempted re-verification with Chrome down. Both curl-reachable sources are STALE and both say $30: the submit.headon.org.au/PhotoAwards-2026 welcome blurb (\"Full-price entry fees are AUD$30 per image... 50% discount\" for under-25s) and the only Wayback snapshot of /awards (2026-06-07, which shows General $30 / Festival Friends $25 / Under-25 $15 and reads \"Entries closed\" - i.e. the pre-opening 2025 schedule). The fee was briefly changed to $30/$15 on this run and reverted the same session. headon.org.au still 403s plain curl, curl+UA and WebFetch; only one Wayback capture exists for /awards. The 2026-08-16 deadline and the AUD 80,000 pool were NOT independently re-confirmed today - the $80,000 figure does appear on the live submit portal."
+      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-28: attempted re-verification with Chrome down. Both curl-reachable sources are STALE and both say $30: the submit.headon.org.au/PhotoAwards-2026 welcome blurb (\"Full-price entry fees are AUD$30 per image... 50% discount\" for under-25s) and the only Wayback snapshot of /awards (2026-06-07, which shows General $30 / Festival Friends $25 / Under-25 $15 and reads \"Entries closed\" - i.e. the pre-opening 2025 schedule). The fee was briefly changed to $30/$15 on this run and reverted the same session. headon.org.au still 403s plain curl, curl+UA and WebFetch; only one Wayback capture exists for /awards. The 2026-08-16 deadline and the AUD 80,000 pool were NOT independently re-confirmed today - the $80,000 figure does appear on the live submit portal. 2026-07-30 (verify): NOT re-verifiable today — headon.org.au/awards still 403s curl+UA AND WebFetch, and the Chrome extension was disconnected, so the standing fee rule holds: keep AUD$35 / $17.50 under-25 from the 2026-07-23 Chrome read. The submit portal submit.headon.org.au/PhotoAwards-2026 DOES curl (200) and still carries the stale \"Full-price entry fees are AUD$30 per image\" blurb — that line has now caused five re-flip attempts, ignore it. The portal does confirm the \"$80,000 prize pool, plus finalists' exhibitions per category\". The 2026-08-16 deadline could not be re-confirmed on any curl-reachable surface (the portal publishes no close date and Wayback has only the pre-opening 2026-06-07 capture of /awards)."
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
@@ -35320,7 +35327,7 @@
       "slug": "f-262-curated-open-call-2026",
       "orgInTitle": true,
       "summary": "Curated series call from the F/262 Festival in Portugal. Winner gets a solo show at CEF; production costs covered.",
-      "verifyNote": "2026-07-29 editor approve: festival262.com/f-262-curated-open-call-projects-series-exhibition/ read via curl+UA. KEY DATES block gives submissions open 7 April 2026, deadline 22 September 2026, final selection announced October 2026. Fee €35 per project; the FAQ states each additional project is a separate entry and a separate fee. NOT a dup of the two F/262 calls already listed — the page's own FAQ spells out the split: Photography Awards (deadline Aug 19) = SINGLE IMAGES, Photo Book Award (Sep 30) = dummies, this one = SERIES/projects, and entering both is allowed. Both 'SUBMIT YOUR PROJECT HERE' and the nav 'Awards Submission Form' resolve to the same /f-262-submission-form/. 'No limit to the number of projects selected', but only ONE gets the CEF solo show, so prize stays 'Solo exhibition'. No jury names published — reviewed by the F/262 curatorial team plus guest curators, international advisors and external reviewers from partner institutions — so jury []; do not graft the Photo Book Award's 4 names onto this call. Festival covers exhibition production costs; artists retain copyright.",
+      "verifyNote": "2026-07-29 editor approve: festival262.com/f-262-curated-open-call-projects-series-exhibition/ read via curl+UA. KEY DATES block gives submissions open 7 April 2026, deadline 22 September 2026, final selection announced October 2026. Fee €35 per project; the FAQ states each additional project is a separate entry and a separate fee. NOT a dup of the two F/262 calls already listed — the page's own FAQ spells out the split: Photography Awards (deadline Aug 19) = SINGLE IMAGES, Photo Book Award (Sep 30) = dummies, this one = SERIES/projects, and entering both is allowed. Both 'SUBMIT YOUR PROJECT HERE' and the nav 'Awards Submission Form' resolve to the same /f-262-submission-form/. 'No limit to the number of projects selected', but only ONE gets the CEF solo show, so prize stays 'Solo exhibition'. No jury names published — reviewed by the F/262 curatorial team plus guest curators, international advisors and external reviewers from partner institutions — so jury []; do not graft the Photo Book Award's 4 names onto this call. Festival covers exhibition production costs; artists retain copyright. 2026-07-30 (verify): COULD NOT RE-VERIFY — festival262.com is unreachable from curl (three attempts, HTTP/2 and HTTP/1.1, all exit 28 connection timeouts, not 403), WebFetch timed out at 60s, and the Chrome extension was disconnected. DNS resolves fine (193.58.105.239 / 77.37.50.249), so this reads as a host-side outage or IP block rather than a dead call. Wayback is no help: the newest snapshot of this URL is 2026-03-16 and it predates the schedule (\"Deadline: soon to be announced\") — do NOT read that snapshot as the current state or mark the call closed on it. Stored values stand on the 2026-07-29 live read.",
       "dateAdded": "2026-07-29T15:25:11.286Z"
     },
     {
@@ -35345,7 +35352,7 @@
       "slug": "nude-geographies-praxis-photo-arts-center",
       "orgInTitle": false,
       "summary": "Praxis Gallery (Minneapolis) on the nude — figure studies to conceptual bodywork. Physical show Sep–Oct 2026; printed catalog.",
-      "verifyNote": "2026-07-29 editor approve: praxisphotocenter.org/calls-for-entry read via curl+UA. NUDE GEOGRAPHIES block gives deadline Aug 23 11:59PM CT, notification Aug 28 2026 4PM CT, exhibition Sep 19 – Oct 10 2026, up to 38 photographs selected. url == /calls-for-entry is CORRECT and matches the existing Frames Within Frames entry: the /xN-sub-N-N subpages hold only PAST calls (x1-sub-3-9 = Numbers Symbols & Letters, x1-sub-4-10 = Composed, x2-sub-3-9 = Diptych, all closed Feb/Mar), current and upcoming calls exist ONLY on the landing page — don't 'fix' this to a subpage. Awards for this call are Directors' Choice + FIVE honorable mentions; unlike Frames Within Frames it has NO Juror's Choice and NO named juror, so jury [] is right. The $37 Praxis printing service is an ALTERNATIVE to shipping your own unframed print (Praxis mats and frames either way), not a mandatory selection cost, so fee stays the entry fee. Members get 10 images for the price of 5; hardship waivers via info@praxisgallery.com.",
+      "verifyNote": "2026-07-29 editor approve: praxisphotocenter.org/calls-for-entry read via curl+UA. NUDE GEOGRAPHIES block gives deadline Aug 23 11:59PM CT, notification Aug 28 2026 4PM CT, exhibition Sep 19 – Oct 10 2026, up to 38 photographs selected. url == /calls-for-entry is CORRECT and matches the existing Frames Within Frames entry: the /xN-sub-N-N subpages hold only PAST calls (x1-sub-3-9 = Numbers Symbols & Letters, x1-sub-4-10 = Composed, x2-sub-3-9 = Diptych, all closed Feb/Mar), current and upcoming calls exist ONLY on the landing page — don't 'fix' this to a subpage. Awards for this call are Directors' Choice + FIVE honorable mentions; unlike Frames Within Frames it has NO Juror's Choice and NO named juror, so jury [] is right. The $37 Praxis printing service is an ALTERNATIVE to shipping your own unframed print (Praxis mats and frames either way), not a mandatory selection cost, so fee stays the entry fee. Members get 10 images for the price of 5; hardship waivers via info@praxisgallery.com. 2026-07-30 (verify): re-read praxisphotocenter.org/calls-for-entry — the NUDE GEOGRAPHIES block still says \"Submission Deadline: Aug 23, 11:59PM CT / Notification: Aug 28, 2026 4PM CT / Exhibition Sept 19 – Oct 10 2026 / Up to 38 photographs\", and $35 for up to five images + $5 each additional, members 10 for the price of 5. WATCH THE SIBLING: the FRAMES WITHIN FRAMES block higher up the same page reads Aug 16 deadline / Aug 25 notification / up to 74 photographs — do not flip Nude Geographies onto those numbers.",
       "dateAdded": "2026-07-29T15:25:11.286Z"
     },
     {
