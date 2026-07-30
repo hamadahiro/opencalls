@@ -35496,6 +35496,59 @@
       ],
       "verifyNote": "2026-07-30 editor approve. inspectionpit.uk/residency confirms verbatim: application window open for the residency running 30 January – 27 February 2027, up to one month on site in free private accommodation, dedicated studio, bicycle for local use, £500 bursary at the start, possible solo exhibition ~6 months after, artist covers food/materials/travel/living costs, forms emailed to inspectionpit.uk@gmail.com, deadline 5 August 2026, interview shortlist by 21 Aug, interviews 1 Sep, resident notified by 4 Sep 2026 (= resultsDate). Application-form PDF (/s/IP_Artist-Residency-2027_Application-Form_INSERT-NAME-HERE.pdf, needs a Referer) gives the requirements: 150-word statement, portfolio of 6 images maximum, two character references; no fee named anywhere on page or form, so fee Free and eligibility [] are right. /about confirms not-for-profit, converted garage/threshing barn beside a working farm in the South Downs, three exhibitions a year with one slot for the resident. PHOTOGRAPHY SCOPE: the residency text says only 'artists' — do NOT re-word it as explicitly lens-based. Evidence instead: /exhibitions lists Danilo Zocatelli's solo VIADO 9–30 May 2026 and his /danilo-zocatelli page confirms MA Photography, Royal College of Art 2023-24, and the residency page lists him under Past residents 2025; SAHAR (Jan 2023) was a collaboration with Sirkhane Darkroom. Note Zocatelli's own bio misprints the residency as 'Cornwall' — the org is West Sussex, trust the org. Exhibition history (Marnie Weber, Jim Shaw, Tanoa Sasraku) is real and non-commercial; not a vanity space.",
       "dateAdded": "2026-07-30T03:21:50Z"
+    },
+    {
+      "title": "Luis Valtueña International Humanitarian Photography Award 2026",
+      "org": "Médicos del Mundo",
+      "deadline": "2026-10-11",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Médicos del Mundo Spain's 30th annual award for documentary and photojournalistic series on health, humanitarian action, international cooperation, emergencies, social exclusion, migration, refuge, armed conflict, inequality or human rights violations — with particular value given to stories that receive little public coverage. Entry is free and anonymous: photographers submit a series of 5 to 10 images, at least half of them made between 2025 and 2026, with no name in the captions, project text or file names, and the jury assesses the work without knowing who made it. The €12,000 prize fund is split €6,000 to the winner and €2,000 each to second, third and fourth place, plus a €1,500 special prize from the Donostia Human Rights Film Festival awarded to one photograph from the winning series, which becomes the festival's 2027 image. Every selected series enters a touring exhibition and printed catalogue produced by Médicos del Mundo, which commits to promoting the photographers for at least a year; winners receive travel and two nights' accommodation for the award ceremony and exhibition opening in Madrid in January 2027. Only single-frame photographs are accepted, digital work must stay within technical correction, and photographers keep the rights to their images.",
+      "url": "https://premioluisvaltuena.org/convocatoria/",
+      "instagram": "@premioluisvaltuena",
+      "location": "Madrid, Spain",
+      "prize": "€12,000 + Touring exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/luis-valtuena-international-humanitarian-photography-award-2026",
+      "requirements": "5–10 images",
+      "resultsDate": "November 30, 2026",
+      "slug": "luis-valtuena-international-humanitarian-photography-award-2026-medicos-del-mundo",
+      "orgInTitle": false,
+      "summary": "Médicos del Mundo's 30th humanitarian photography award — free to enter, €12,000 in prizes and a touring exhibition.",
+      "ai": "Not accepted",
+      "jury": [],
+      "verifyNote": "2026-07-30 editor approve. Three surfaces agree. (1) premioluisvaltuena.org/convocatoria: 30th edition, opens Thu 30 Jul 2026, closes Sun 11 Oct 2026 23:59 GMT+2 (= deadline, UTC 21:59), verification period Oct, jury decision 'noviembre de 2026', ceremony/exhibition/catalogue '2027', €12,000 split 6,000/2,000/2,000/2,000 + €1,500 Donostia Human Rights Film Festival special prize on one photograph from the winning series (becomes the festival's 2027 image), travel + two nights for the winners, promotion for at least a year, submission only via Picter, IG link premioluisvaltuena in the page HTML. (2) English bases PDF (/wp-content/uploads/2026/07/Bases-Convocatoria-2026-Premio-Luis-Vatuena_EN.pdf.pdf, needs a Referer): 'Entry to the competition is free of charge' (= fee Free), 'of legal age' (= 18-plus), theme list verbatim incl. 'emergencies' and 'inequalities' plus 'particular consideration ... stories that are rarely highlighted', 5–10 images with ≥50% made 2025–2026, anonymous judging (no name in description, captions or file names), 'Only single-frame photographs will be accepted', generative-AI images not accepted (= ai Not accepted), participants retain IP. (3) Picter GraphQL call(slug:\"luis-valtuena-international-humanitarian-photography-award-2026\"): costs 'Free registration', submissionEndDate 2026-10-11T21:59Z, and the two dates the org page does NOT state — timeline 'Winner announcement' 2026-11-30 (= resultsDate; the page only says 'November 2026') and 'exhibition opening 2027 in Madrid' 2027-01-28 (source of the Madrid/January line in the description). DON'T RE-FLIP resultsDate to bare 'November 2026' or strip Madrid/January on a page-only read — both come from the organiser-entered Picter timeline. Numeric API fee:0 is corroborated here by callInfo.costs and the bases, so Free is safe despite the usual fee:0 caveat. Jury [] is correct: bases describe an unnamed international panel. Not a mill — Médicos del Mundo is the Spanish MdM/Doctors of the World section, award named for staff murdered in Rwanda 1997 and Bosnia 1995, touring exhibition shown at the Asturias International Photojournalism Festival.",
+      "dateAdded": "2026-07-30T07:21:41.487Z"
+    },
+    {
+      "title": "Sirmione Photo Marathon 2026",
+      "org": "Comune di Sirmione",
+      "deadline": "2026-10-04",
+      "fee": "€12",
+      "category": "photography",
+      "description": "One-day photo marathon on Lake Garda, run by the Municipality of Sirmione as part of the 17th Sirmione Award for Photography. On Sunday 11 October 2026 a maximum of 250 registered photographers meet at 9am in Piazza Carducci and then have eight hours, from 10am to 6pm, to interpret four themes announced by the jury on the day — one photograph per theme, all of it shot inside the marathon window, delivered digitally by 18 October. Reflex, compact and phone cameras are all admitted, and the jury explicitly rewards spontaneity and a photographer's relationship with the place. First prize is €1,500, second €500, third a two-night stay for two in Sirmione, and the best image in each individual theme takes €250. Registration costs €12 and is online only — it closes on 4 October, cannot be done on the day, and places are limited; accompanied minors take part free. Images may be optimised to the author's taste but not distorted: adding or removing key elements, or using generative AI to enlarge, enhance or insert unreal elements, means exclusion, and originals can be requested.",
+      "url": "https://sirmionefotografia.it/en/concorso/sirmione-photo-marathon/",
+      "instagram": "@comune_di_sirmione",
+      "location": "Sirmione, Italy",
+      "prize": "€1,500",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://sirmionefotografia.it/en/ds/marathon-en",
+      "requirements": "Up to 4 images",
+      "slug": "sirmione-photo-marathon-2026-comune-di-sirmione",
+      "orgInTitle": false,
+      "summary": "Eight hours, four themes, 250 photographers on Lake Garda — €1,500 top prize, €12 entry, register by October 4.",
+      "ai": "Not accepted",
+      "jury": [
+        "Roberto Bellini, Photographer",
+        "Luigi Brozzi, Photographer",
+        "Antonello Perin, Photographer"
+      ],
+      "verifyNote": "2026-07-30 editor approve. Distinct call, not a dup of the two Sirmione entries already stored (lake-garda-photo-challenge = season-long, own url /concorso/lake-garda-photo-challenge/; sirmione-photo-residency = October residency) — this one has its own url, rules PDF and fee. sirmionefotografia.it/en/concorso/sirmione-photo-marathon/ shows status 'Open' and confirms: marathon Sunday 11 Oct 2026 10:00–18:00, registration 'by October 4th' (= deadline; not in the PDF, page only), shots delivered by 18 Oct, max 250 photographers, €12 online only, prizes €1,500 / €500 / two-night stay for two / €250 per single theme. English rules PDF (/wp-content/uploads/2026/02/SIRMIONE-PHOTO-MARATHON-2026-ENG.pdf) adds the rest verbatim: 17th Edition of the Sirmione Award for the Photography promoted by the Municipality, accreditation 9:00 am Piazza Carducci (Art. 5), 4 themes assigned by the jury — first two announced 10:00, the rest 14:00 (Art. 6) — one photograph per theme and fewer is allowed but then only the single-theme awards apply (Art. 8), images must be shot inside the marathon window under penalty of exclusion, reflex/compact/mobile admitted, open to everyone (= eligibility []), minors free when accompanied by a paying registrant, no registration on the day, Art. 7 allows optimisation to the author's taste but bars added/removed key elements and 'tools based on generative AI models that introduce new functions to enlarge, enhance, insert unrealistic elements' (= ai Not accepted) with originals requestable, Art. 13 'the Jury's evaluation will favor images characterized by spontaneity, evaluating the relationship with the places'. Jury filled from Art. 12 (same three professional photographers as the Lake Garda Challenge entry — one panel for the whole Award, chaired by the Mayor with municipal and tourist-board members added later). No resultsDate: no award-ceremony date is published. submitUrl /en/ds/marathon-en 301s to the trailing-slash URL and then to /en/ds/login/ — the registration area needs an account; same shape as the sibling's /en/ds/challenge-en, so not a dead link. PDF warns the competition date may be changed by the organisation.",
+      "dateAdded": "2026-07-30T07:21:41.487Z"
     }
   ]
 }
