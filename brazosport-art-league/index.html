@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls You Submit by Post 2026 - Monographica</title>
-  <meta name="description" content="Open calls that ask for physical prints, books, or materials sent by mail.">
-  <link rel="canonical" href="https://opencalls.monographica.com/submit-via/post/">
+  <title>Brazosport Art League - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Brazosport Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <link rel="canonical" href="https://opencalls.monographica.com/brazosport-art-league/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls You Submit by Post 2026 - Monographica">
-  <meta property="og:description" content="Open calls that ask for physical prints, books, or materials sent by mail.">
+  <meta property="og:title" content="Brazosport Art League - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Brazosport Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/submit-via/post/">
+  <meta property="og:url" content="https://opencalls.monographica.com/brazosport-art-league/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls You Submit by Post 2026",
-  "description": "Open calls that ask for physical prints, books, or materials sent by mail.",
-  "url": "https://opencalls.monographica.com/submit-via/post/",
+  "name": "Brazosport Art League - Open Calls",
+  "description": "Open calls and submission opportunities from Brazosport Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/brazosport-art-league/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -49,14 +49,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Submit via",
-      "item": "https://opencalls.monographica.com/submit-via/"
+      "name": "Organizations",
+      "item": "https://opencalls.monographica.com/organizations/"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Open Calls You Submit by Post",
-      "item": "https://opencalls.monographica.com/submit-via/post/"
+      "name": "Brazosport Art League",
+      "item": "https://opencalls.monographica.com/brazosport-art-league/"
     }
   ]
 }
@@ -100,18 +100,12 @@
 
   <main>
     <section class="hero">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
-      <h1>Open Calls You Submit by Post</h1>
-      <h2 class="subtitle">Open calls that ask for physical prints, books, or materials sent by mail. 5 calls, 3 open.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
+      <h1>Brazosport Art League</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Brazosport Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
-
     <section class="calls-list" id="callsList">
       <div class="call-card"><h3 class="call-title"><a href="/annual-open-juried-show-2026-brazosport-art-league/">Annual Open Juried Show 2026 &middot; Brazosport Art League</a></h3><p class="call-description">Texas Gulf Coast art league's annual juried show with two photography categories. In-person take-in on 1 August; $500 overall award.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/future-photobook-award-2026/">Future Photobook Award 2026 &middot; Coventry University MA Photography &amp; Fast Forward</a></h3><p class="call-description">Inaugural photobook award for HE students and recent grads. Open to any format including zines and handmade books. Free entry.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/pretty-ugly-student-photography-competition-2026-27-ilford-photo/">Pretty Ugly — Student Photography Competition 2026/27 &middot; ILFORD Photo</a></h3><p class="call-description">Free worldwide student darkroom competition on beauty in the overlooked. ILFORD/Kentmere film and paper, prints posted in.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/fotobus-library-award-2026/">Fotobus Library Award 2026</a></h3><p class="call-description">Recognizing the 10 best photobooks of the year. Winners exhibited at Arles and Polycopies festivals.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fundacion-botin-art-grants-2026-2027/">Fundación Botín Art Grants 2026/2027</a></h3><p class="call-description">Six €23,000 nine-month research grants for international visual artists, photography included. Postal application postmarked by May 8.</p></div>
 
     </section>
 
@@ -129,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => submitViaLabel(c.submitVia) === "Post").map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Brazosport Art League').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
