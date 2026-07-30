@@ -35728,6 +35728,115 @@
       "summary": "Texas Gulf Coast art league's annual juried show with two photography categories. In-person take-in on 1 August; $500 overall award.",
       "verifyNote": "2026-07-30 20:00 editor approve with three fixes. Verified against the PDF prospectus itself (curl with a Referer of the exhibit-schedule page; the `uploads/2019/09/` path is just WordPress's media folder, the file is the 2026 edition): take-in Saturday August 1, 12–3 PM at the Art League Studio with early entries accepted in the gallery vault, THREE pieces at $15 per piece for BAL members / $20 non-members, six categories including 'Photography wall hung printed on any medium' and a separate 'Digital created art and enhanced photography', awards Overall $500 / Blue $100 per category / Red $75 and White $50 only where a class draws 15 entries / green honourable mentions unlimited, juror Carl Dalio, show August 11 – September 13, pick-up after 2 PM September 13. FIX 1: the description had 'ready to hang with taut wire in the upper fourth of the frame — saw-tooth hangers are not accepted', which is the SIBLING call's rule (Los Vivos y Los Muertos on ArtCall says exactly that). This prospectus says the opposite: 'Saw tooth hangers are acceptable if frame cannot be wired.' Corrected. When two calls from the same venue are added in one batch, re-read each rule against its OWN source — the wording is close enough to cross-contaminate. FIX 2: submitVia was 'Official website' pointing at a PDF, which reads as an online submission; there is no online entry at all, so it is now 'Physical take-in' (submitViaLabel() buckets that to Post via the /physical/ branch, and the raw value shows in the link title). submitUrl stays on the prospectus because the entry form is the last page of that PDF. FIX 3: award structure and the awards presentation at the August 14 reception added to the description. Eligibility stays `[]`: the exhibit-schedule page says 'BAL members and area artists' but the prospectus, which is the governing document, says 'ELIGIBILITY AND REQUIREMENTS: OPEN to all Artists' — the practical limit is the physical take-in, which the description states. No resultsDate: the prospectus names no acceptance-notification date, only the awards reception. No AI policy anywhere in the prospectus, so no `ai` key. Instagram @brazosportcenter is correct at org level — BAL's own page on bcfas.org links no separate handle. Contact Harry Sargent, Exhibition Chair, harrysargent@peoplepc.com (from the prospectus), stored privately.",
       "dateAdded": "2026-07-30T19:16:04Z"
+    },
+    {
+      "title": "Fotograf Zone Festival — International Open Call",
+      "org": "Fotograf Zone",
+      "deadline": "2026-08-16",
+      "fee": "€35/project",
+      "category": "exhibition",
+      "description": "Open call for photographic projects to be exhibited on poster panels in the busy concourse of Můstek metro station at Wenceslas Square in central Prague, during the 16th Fotograf Zone Festival, running 1–11 October 2026 under the title Wild Kin. Four projects are selected; the festival covers all costs for production, printing, installation and photodocumentation of the exhibition. Work should relate loosely to the festival theme, which asks how we perceive others — both human and non-human — and where the boundaries between humans, animals, environments and technologies lie. The exhibition space consists of sixteen vitrines measuring 147 × 75 cm, four of which are given to the selected artists. Entry is by email with three PDFs: a CV and short bio of up to 500 characters, a portfolio of previous work up to 10 MB, and a project description of up to 1,500 characters with images, also up to 10 MB, each file labelled Surname_Name plus document type. There is no limit on how many projects one author may submit, but the participation fee applies per project, and it is paid by bank transfer to the organisers rather than by card. The international jury is Lucie Černá, a Czech curator, editor and founder of untitled, an independent publishing house and platform for photography and visual art; Karina Golisová, a Slovak photographer working in documentary practices who studied at AFAD Bratislava and FAMU; Lovro Japundžić, a Zagreb-based curator whose work explores the interplay between performance and visual art; and Amelie Rose Schüle, director of Photoforum Pasquart in Biel/Bienne since 2023. Fotograf Zone has connected photography communities from Prague outward since 2002 as a magazine, gallery and international festival.",
+      "url": "https://www.fotograf.zone/en/fotograf-zone-festival-international-open-call-1",
+      "instagram": "@fotograf.zone",
+      "location": "Prague, Czech Republic",
+      "prize": "Exhibition in Prague metro station",
+      "eligibility": [],
+      "jury": [
+        "Lucie Černá, curator, editor and founder, untitled",
+        "Karina Golisová, photographer",
+        "Lovro Japundžić, curator, Zagreb",
+        "Amelie Rose Schüle, Director, Photoforum Pasquart"
+      ],
+      "submitVia": "Email",
+      "requirements": "1 project PDF per entry",
+      "resultsDate": "September 7, 2026",
+      "slug": "fotograf-zone-festival-international-open-call",
+      "orgInTitle": true,
+      "summary": "Four photographic projects shown on poster panels in a Prague metro concourse during Fotograf Zone Festival. Production covered.",
+      "verifyNote": "2026-07-31 00:00 sweep, new add from the org rotation. Found by following the sibling links on fotograf.zone — the batch URL was the Fotograf Magazine open call (deadline extended to May 17, now closed), and its footer links a SEPARATE festival call we had never tracked. Verified entirely on the organiser's own page: 'Submission Deadline August 16, 2026' with an early-bird tier of July 15 that has already passed, so the live fee is the standard €35 per project (early bird was €28); four projects selected for sixteen 147 × 75 cm vitrines at Můstek metro station; 'The festival will cover all costs for production, printing, and installation of the exhibition and photodocumentation'; winners announced September 7, 2026. All four jurors are named on the same page with full bios. Festival dates 1–11 October 2026 and the Wild Kin title come from the org's own 'SAVE THE DATE' post, and the page's editorial timestamp is 30. 7. 2026, so this is current. Submission is by email with 'OPEN CALL FEST' in the subject; there is no web form, so submitVia is Email and no submitUrl, and the address is on the org page and in contacts.json. Fee is paid by bank transfer to Fotograf 07 z.s. — no card option, worth knowing before applying. eligibility stays [] : the call names no nationality or residence limit. No AI policy anywhere on the page, so no ai key. Instagram @fotograf.zone taken from the site's own footer and matches the existing Fotograf Magazine entry.",
+      "dateAdded": "2026-07-30T23:19:50Z"
+    },
+    {
+      "title": "For the Love of Art 2026",
+      "org": "ArtCentre of Plano",
+      "deadline": "2026-08-17",
+      "fee": "$35 for 1 work, $45 for 3",
+      "category": "exhibition",
+      "description": "Juried exhibition at the ArtCentre of Plano, housed in the historic Saigling House in Haggard Park — a Recorded Texas Historic Landmark on the National Register of Historic Places. Photography is named outright in the eligible-media list alongside painting, drawing, printmaking, mixed media, fiber, ceramics, glass and sculpture; video, performance, sound-based work, murals and site-specific installations are not eligible. Open to artists aged 18 and over who keep a primary residence in Texas, at all career stages. Up to three works may be entered and each is juried independently; 2D work is capped at 36 inches on the longest side including the frame, and all work must have been completed within the last five years. Work generated primarily through generative artificial intelligence is not eligible, and any use of generative AI in the process must be disclosed. The juror is Deborah Hartigan, a Dallas-based abstract expressionist, sculptor, gallerist and art advisor with more than forty years in practice, who founded DHV Artworks in 2016 and opened its 5,000 square foot Dallas Design District gallery in 2021; her clients include American Airlines, which commissioned her to curate its DFW Flagship Lounge. The exhibition is the centrepiece of the ArtCentre's month-long season-opening celebration and runs 24 October to 21 November 2026, with a VIP preview on 24 October and a ticketed gala on 30 October. Selected work appears in the exhibition, an online gallery and a printed catalogue. All work must be for sale, with a 50/50 split between artist and ArtCentre; artist cheques are issued 4 December 2026. Hand-delivered work is due 19 October, shipped work between 12 and 19 October.",
+      "url": "https://opportunities.wearecreativewest.org/opportunity/17961/CAFE",
+      "instagram": "@artcentre_plano",
+      "location": "Plano, TX, USA",
+      "prize": "$250 Best in Show + $250 People's Choice",
+      "eligibility": [
+        "texas",
+        "18-plus"
+      ],
+      "jury": [
+        "Deborah Hartigan, artist, gallerist and curator, DHV Artworks"
+      ],
+      "ai": "Not accepted",
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17961/CAFE",
+      "requirements": "Up to 3 works",
+      "resultsDate": "September 1, 2026",
+      "slug": "for-the-love-of-art-2026-artcentre-of-plano",
+      "orgInTitle": false,
+      "summary": "Juried show at the ArtCentre of Plano's historic Saigling House. Photography is an eligible medium; open to Texas artists 18+.",
+      "verifyNote": "2026-07-31 00:00 sweep, new add from the CaFÉ platform sweep (opportunity 17961). The org's own site does NOT yet carry this call — artcentreofplano.org/events-and-exhibitions still leads with Texas Sculpts V, whose deadline was February — so the org page is stale and the portal is the live surface. Confirmed the cycle is current from the rendered CaFÉ payload: the entry-START timestamp is 2026-07-31T05:00:00Z, matching the prospectus line '7/31/2026: Call opens' exactly, and the close is 2026-08-18T04:59:59Z = the prospectus's '8/17/2026: Application deadline at 11:59 PM Central Time'. Stored the local date, Aug 17, not the UTC one. Photography is explicit, not inferred: 'Original 2D and 3D visual artwork is eligible, including painting, drawing, printmaking, photography, mixed media, fiber, ceramics, glass, and sculpture.' Awards are only $250 Best in Show and $250 People's Choice — small for a $35 entry, but the catalogue, month-long run and named juror are real. ai is 'Not accepted' with a nuance the field cannot hold, so it is spelled out in the description: work made PRIMARILY by generative AI is ineligible, and any lesser use must be disclosed. 2026-07-31 00:26 editor approve with two fixes. FIX 1 (fee): the draft chip read '$35 (+$5 for images 2–3)' and the note claimed three works cost $40. The MEDIA row is PER IMAGE, and the prospectus spells it out — '$35 for the first artwork · $5 for the second artwork · $5 for the third artwork · Maximum of three artworks and a maximum total entry fee of $45'. Three works cost $45. Chip rewritten to the tier form, matching the Woodinville sibling in this batch. FIX 2 (url): the draft pointed url at artcentreofplano.org/events-and-exhibitions, which carries NO trace of this call — the org site still leads with Texas Sculpts V everywhere, and the only CaFÉ link anywhere on it is festivals_unique_info.php?ID=16771, that same sculpture show. This is not the ordinary stale-org-page case where the page describes last year's edition of the SAME call (cf. Woodinville and Metro Art Studios in this batch, whose url stays on the org page); a click-through would land on an unrelated sculpture exhibition. url moved to the CaFÉ opportunity page, so url == submitUrl, as with Blacksburg 35 Under 35 (17858). If the ArtCentre later publishes its own page for this call, move url back then. Provider contact from the CaFÉ record is in contacts.json, not here — data.json is a PUBLIC repo, so no addresses in verifyNote. Instagram @artcentre_plano confirmed on the org's own homepage.",
+      "dateAdded": "2026-07-30T23:19:50Z"
+    },
+    {
+      "title": "Sip & Stroll Artists' Exhibition 2026",
+      "org": "Woodinville Arts Alliance",
+      "deadline": "2026-10-16",
+      "fee": "$35 for 1 work, $45 for 3 (+$44 membership)",
+      "category": "exhibition",
+      "description": "Juried members' exhibition presented by the Woodinville Arts Alliance with The Winemakers Reserve, on display in Washington wine country on 13 and 14 November 2026. Photography is one of eleven named categories, alongside acrylic, ceramic, digital, mixed media, oil, pastel, pencil, watercolour, fibre/textile and 3-D. Judging takes place on 13 November, followed that evening by the Sip and Stroll event from 5 to 8 PM, where visitors meet the artists over wine and live music and the awards are presented; the show stays up for the weekend. Each artist may enter up to three pieces made within two years of the show date. Work generated with artificial intelligence is explicitly excluded, as are giclée prints, art prints and copies. Pieces must measure at least 144 square inches and no more than 2,304 square inches including framing, be wired to hang — no glass clips, easel backs or saw-tooth hangers — and any matted work must be covered with glass or plexiglass. All entries must be priced to sell and remain on display for the run; the Alliance retains 30 per cent commission on sales of original art and pays artists within two weeks of the event. Accepted work is hand-delivered to the venue between 10 and 11 AM on 13 November, or shipped with return postage enclosed, and collected on the Saturday afternoon; the Alliance states that artists must be present at the Friday evening event. Entry is open only to Woodinville Arts Alliance members, but membership can be bought to enter and costs $44 a year. The judge is visual artist Anna Macrae.",
+      "url": "https://woodinvilleartsalliance.com/sip-stroll/",
+      "instagram": "@woodinvilleartsalliance",
+      "location": "Woodinville, WA, USA",
+      "prize": "$250 first prize",
+      "eligibility": [
+        "membership-required"
+      ],
+      "jury": [
+        "Anna Macrae, visual artist"
+      ],
+      "ai": "Not accepted",
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17932/CAFE",
+      "requirements": "Up to 3 works",
+      "slug": "sip-stroll-artists-exhibition-2026-woodinville-arts-alliance",
+      "orgInTitle": false,
+      "summary": "Juried members' show at a Woodinville winery with photography as a named category. Cash awards; membership required to enter.",
+      "verifyNote": "2026-07-31 00:00 sweep, new add from the CaFÉ platform sweep (opportunity 17932). Classic stale-org-page case: woodinvilleartsalliance.com/sip-stroll/ still describes the 2025 edition at Sparkman Cellars on Oct 31 – Nov 1, 2025, and the homepage says 'Check back later this year for our call for art'. The CaFÉ listing is the live 2026 cycle and is org-authored — it carries the Alliance's own email address and phone number, both matching the org site — and the rendered payload's entry-START timestamp is 2026-07-30T06:00:00Z, i.e. the call opened yesterday. url stays on the org's own /sip-stroll/ page because that is the page for this recurring call; the 2026 details all come from the prospectus. Deadline: CaFÉ closes 2026-10-17T05:59:59Z, which is Oct 16 23:59 Pacific, and the prospectus itself says 'Due by October 16th, 2026' — stored Oct 16. Fee is tiered and the CaFÉ fee rows understate it: $35 for one entry, $40 for two, $45 for three, PLUS a compulsory $44 annual membership, so the real floor to enter is $79. That is why the chip carries both numbers and eligibility is membership-required. Awards $250 / $150 / $100, judge Anna Macrae. ai is 'Not accepted' — the prospectus says flatly 'NO Artificial Intelligence'. Note the separate exclusion of 'Giclee prints, art prints or copies': that targets reproductions of original artworks, not photographic prints, since Photography is its own accepted category. Venue moved from Sparkman Cellars (2025) to The Winemakers Reserve (2026) — do not re-flip the venue back off the org page. 2026-07-31 00:26 editor approve with one description fix: the prospectus's 'Your presence is REQUIRED!' at the Friday evening event, plus the 10–11 AM hand-delivery window, were missing and are material to anyone outside the Seattle area — both added. resultsDate is deliberately absent and must STAY absent: the prospectus says artists are notified 'On or before October 8th', which is EIGHT DAYS BEFORE its own October 16 deadline — a line carried over unedited from the 2025 cycle, not a real 2026 notification date. Do not add it. Org page re-checked at approval: woodinvilleartsalliance.com/sip-stroll/ still shows '2025 Sip & Stroll Art Walk … Sparkman Cellars … October 31 – November 1, 2025', confirming the stale-page read; url stays there because it is the standing page for this recurring call and the live application is on submitUrl. Instagram @woodinvilleartsalliance confirmed in the site footer. Org contact is in contacts.json, not here — data.json is a PUBLIC repo, so no addresses in verifyNote.",
+      "dateAdded": "2026-07-30T23:19:50Z"
+    },
+    {
+      "title": "2026 Call for Curators",
+      "org": "Metro Art Studios",
+      "deadline": "2026-09-02",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "Annual call for curatorial proposals for Crown Gallery at Metro Art Studios in Bridgeport, Connecticut, for an exhibition running 7 November 2026 to 2 January 2027. Open to curators working or residing in Connecticut, Rhode Island, Massachusetts, New York and New Jersey; all visual art mediums are considered, and the gallery is particularly suited to large installations and conceptual art as well as more traditional forms. The selected curator receives a $350 stipend. Proposals need a curatorial statement explaining the focus and concept, a minimum of three artists, and between ten and twenty images of the work planned for the show — examples of similar work are acceptable. All work in the exhibition must be for sale, and artwork by the proposing curator may not account for more than a third of the pieces shown. Special consideration goes to proposals reflecting a commitment to access, diversity, equity and inclusion. Crown Gallery is roughly 1,250 square feet — 25 by 50 feet with 11-foot ceilings — in a restored mill building; a floor plan is attached to the prospectus and a visit before applying is encouraged. Installation runs 31 October to 4 November, and the opening reception on Saturday 7 November coincides with a weekend-long city-wide open studio event that brings almost 2,000 visitors to Metro Art Studios. The curator handles wall labels, price list and other in-gallery material; the organisation covers neither shipping nor installation costs, though pedestals are available and all work is fully insured while on site in a building with 24-hour security. A 40 per cent commission is retained on sales. Metro Art Studios is a non-profit housing 39 loft studios in a three-storey former corset factory in Bridgeport's South End.",
+      "url": "https://www.metroartstudios.org/call-for-curator",
+      "instagram": "@metroartstudios",
+      "location": "Bridgeport, CT, USA",
+      "prize": "$350 curator stipend",
+      "eligibility": [
+        "curators",
+        "northeast-us"
+      ],
+      "jury": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17693/CAFE",
+      "requirements": "10–20 images",
+      "resultsDate": "September 6, 2026",
+      "slug": "2026-call-for-curators-metro-art-studios",
+      "orgInTitle": false,
+      "summary": "Curatorial proposals for a 1,250 sq ft gallery in a Bridgeport mill building. $350 stipend, open to curators in five Northeast states.",
+      "verifyNote": "2026-07-31 00:00 sweep, new add from the CaFÉ platform sweep (opportunity 17693). The org page metroartstudios.org/call-for-curator exists and describes this same annual call, but it is a year behind — re-read at approval, it says 'the deadline for proposal submissions is August 8, 2025', a '$300 stipend' and a show running November 8, 2025 to January 10, 2026. Every one of those three numbers has moved for 2026 (Sep 2, $350, Nov 7 – Jan 2), so take NOTHING from that page. The CaFÉ listing is the live 2026 cycle: rendered-payload entry START 2026-07-31T06:00:00Z, show dates 2026-11-07T07:00:00Z to 2027-01-03T06:59:59Z. url stays on the org's own page per the platform rule; every 2026 fact here comes from the CaFÉ prospectus. Deadline: the CaFÉ field is 2026-09-03T05:59:59Z but the prospectus states 'Submissions Due: September 2, 2026' in two places, so Sep 2 is stored. Notification September 6. Do not confuse this with the org's other call — metroartstudios.org/makeshift is Make/Shift, a craft-materials show that closed July 14 and is out of scope. jury stays [] : the prospectus names no selection panel, only Executive Director Jane Davila as the contact (address in contacts.json). eligibility 'northeast-us' covers the CT/RI/MA/NY/NJ list — 'tri-state' would have been too narrow. No AI policy in the prospectus, and the RENDERED CaFÉ page greps clean for 'artificial intelligence|generative ai' too, so the absent ai key is confirmed, not merely a GraphQL gap. Instagram @metroartstudios confirmed in the site footer. 2026-07-31 00:26 editor approve. Curator calls are in scope by precedent — MUUS Collection Research Fellowship and the Delfina Foundation Central & West Africa residency both carry the 'curators' slug — and a $25 fee against a $350 stipend, a 1,250 sq ft gallery and a two-month run is a real opportunity, not a pay-to-play. Org contact is in contacts.json, not here — data.json is a PUBLIC repo, so no addresses in verifyNote.",
+      "dateAdded": "2026-07-30T23:19:50Z"
     }
   ]
 }

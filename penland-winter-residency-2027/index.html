@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">A self-directed project residency during Penland's quiet winter season, offering artists two- or four-week sessions of studio time and equipment access with no classes, assignments or critiques. Residents work independently in one of Penland's teaching studios — photography is among the available studios, alongside books, clay, drawing and painting, glass, iron, letterpress, metals, papermaking, printmaking, textiles and wood — with studio assistants on hand for orientation and equipment help. Sessions run January 3–15 and January 17–29, 2027; the residency fee is $500 for two weeks (more for flameworking and hot shop) plus housing, and limited fellowships cover the residency fee and partial housing, with preference given to first-time applicants and artists from underrepresented backgrounds. Open to artists at any career stage who are comfortable working independently.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/july-2026/" title="July 30, 2026">July 30, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$30 application; $500+ residency if accepted"><span class="tag-front">$30 application; $500+ residency</span> <span class="tag-back">if accepted</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/north-carolina/" title="Penland, NC">Penland, NC</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="4 images">4 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://penland.slideroom.com/" target="_blank" rel="nofollow noopener" title="SlideRoom">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/july-2026/" title="July 30, 2026">July 30, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$30 application; $500+ residency if accepted"><span class="tag-front">$30 application; $500+ residency</span> <span class="tag-back">if accepted</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/north-carolina/" title="Penland, NC">Penland, NC</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="4 images">4 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: National panel of artist peers, curators &amp; Penland staff</p>
@@ -124,8 +124,7 @@
         <p class="call-detail-description">Organized by <a href="/penland-school-of-craft/">Penland School of Craft</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://penland.org/residencies/winter-residency/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on July 30, 2026</span></div>
     </section>
@@ -143,23 +142,7 @@
   <script>
     const CURRENT_SLUG = 'penland-winter-residency-2027';
     const CURRENT_CALL = {"title":"Penland Winter Residency 2027","category":"residency","org":"Penland School of Craft","location":"Penland, NC, USA","fee":"$30 application; $500+ residency if accepted","deadline":"2026-07-30","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-07-30'.replace(/-/g, '');
-      var nd = new Date('2026-07-30T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Penland Winter Residency 2027';
-      var u = 'https://penland.org/residencies/winter-residency/';
-      var o = 'Penland School of Craft';
-      var dl = new Date('2026-07-30T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('2–4 week residency') + '\\nEntry fee: ' + icsE('$30 application; $500+ residency if accepted');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
