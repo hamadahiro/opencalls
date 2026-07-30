@@ -112,7 +112,7 @@ const eligibilityLabel = {
   'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
   'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only', 'central-west-africa': 'Central & West Africa only',
   'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'cincinnati-area': 'Cincinnati Area only', 'los-angeles': 'LA only', 'portland-area': 'Portland Area only',
-  'atlanta-area': 'Atlanta Area only',
+  'atlanta-area': 'Atlanta Area only', 'houston-area': 'Houston Area only',
   'new-york-city': 'NYC only', 'new-york-state': 'NY State only', 'central-new-york': 'Central NY only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'japan': 'Japan only', 'southeast-us': 'Southeast US only',

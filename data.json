@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-30T03:21:50Z",
+  "lastUpdated": "2026-07-30T11:22:15Z",
   "calls": [
     {
       "title": "LSI 2026 Photography Grant",
@@ -35583,6 +35583,79 @@
       ],
       "verifyNote": "2026-07-30 editor approve. Distinct call, not a dup of the two Sirmione entries already stored (lake-garda-photo-challenge = season-long, own url /concorso/lake-garda-photo-challenge/; sirmione-photo-residency = October residency) — this one has its own url, rules PDF and fee. sirmionefotografia.it/en/concorso/sirmione-photo-marathon/ shows status 'Open' and confirms: marathon Sunday 11 Oct 2026 10:00–18:00, registration 'by October 4th' (= deadline; not in the PDF, page only), shots delivered by 18 Oct, max 250 photographers, €12 online only, prizes €1,500 / €500 / two-night stay for two / €250 per single theme. English rules PDF (/wp-content/uploads/2026/02/SIRMIONE-PHOTO-MARATHON-2026-ENG.pdf) adds the rest verbatim: 17th Edition of the Sirmione Award for the Photography promoted by the Municipality, accreditation 9:00 am Piazza Carducci (Art. 5), 4 themes assigned by the jury — first two announced 10:00, the rest 14:00 (Art. 6) — one photograph per theme and fewer is allowed but then only the single-theme awards apply (Art. 8), images must be shot inside the marathon window under penalty of exclusion, reflex/compact/mobile admitted, open to everyone (= eligibility []), minors free when accompanied by a paying registrant, no registration on the day, Art. 7 allows optimisation to the author's taste but bars added/removed key elements and 'tools based on generative AI models that introduce new functions to enlarge, enhance, insert unrealistic elements' (= ai Not accepted) with originals requestable, Art. 13 'the Jury's evaluation will favor images characterized by spontaneity, evaluating the relationship with the places'. Jury filled from Art. 12 (same three professional photographers as the Lake Garda Challenge entry — one panel for the whole Award, chaired by the Mayor with municipal and tourist-board members added later). No resultsDate: no award-ceremony date is published. submitUrl /en/ds/marathon-en 301s to the trailing-slash URL and then to /en/ds/login/ — the registration area needs an account; same shape as the sibling's /en/ds/challenge-en, so not a dead link. PDF warns the competition date may be changed by the organisation.",
       "dateAdded": "2026-07-30T07:21:41.487Z"
+    },
+    {
+      "title": "SALTPRINT Volume 01 — From Where You Stand",
+      "org": "SALTPRINT",
+      "deadline": "2026-09-13",
+      "fee": "Free",
+      "category": "zine",
+      "description": "First volume of SALTPRINT, an independent print photography zine and archive founded, edited and designed single-handedly by photographer and designer Petra Zegnal in Zagreb, and published every two months from open calls for photographs made across Europe. The theme From Where You Stand is about point of view — literal, emotional, political, personal or poetic: a window, a street, a daily walk, a workplace, a corner of Europe. The editor is looking for images that feel observed rather than forced, and states plainly that this is not about finding the most dramatic location. Submit one photograph, taken anywhere in Europe though you need not live there; digital or film, black and white or colour, street, documentary, landscape or portrait, shot on a camera or a phone. Selection is on connection to the theme, visual strength, atmosphere and originality rather than technical perfection, and beginners, students, self-taught and previously unpublished photographers are explicitly welcome. Three featured photographers per volume are also invited to a short written interview and receive a print copy; other selected photographers receive a digital copy. Free to enter, no payment for Volume 01, and photographers keep full copyright. Deadline 13 September 23:59 CET, selections by 30 September, publication October 2026.",
+      "url": "https://saltprint.eu/",
+      "instagram": "@saltprint_zine",
+      "location": "Zagreb, Croatia",
+      "prize": "Publication",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Google Form",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeUCI6eKkB_GoxedYQiJFHJ8KVOpWzu5aF-flN3w6mpMLzHFw/viewform",
+      "requirements": "1 image",
+      "ai": "Not accepted",
+      "resultsDate": "By September 30, 2026",
+      "slug": "saltprint-volume-01-from-where-you-stand",
+      "orgInTitle": true,
+      "summary": "One photograph taken anywhere in Europe for the first volume of a Zagreb-run indie print zine — free, beginners welcome.",
+      "verifyNote": "2026-07-30 add. All facts from saltprint.eu itself (single-page site; /submission, /volume, /faq are 404 anchors). Confirmed there: submissions opened 23 July, deadline 13 September 23:59 CET, selected contacted by 30 September 2026, Volume 01 published October 2026, free, 18+, one photograph only, AI-generated images not accepted, photographer keeps copyright. DON'T RE-FLIP the deadline to 2023 — a WebFetch summary of this page rendered \"September 13, 2023\"; the raw HTML says 13th September with a 2026 publication date. DON'T RE-FLIP to closed on the Google Form either. The page's own \"Submit here\" href is the form's /closedform path, and curl gets 401 on /viewform — neither proves closure. 2026-07-30 editor pass settled it with the redirect test, which is the only reliable signal: a CLOSED form 302s /viewform → /closedform (verified on the expired the-fridge-show-blue-sky-gallery form), and an OPEN form 302s /closedform → /viewform (verified on marco-pesaresi). SALTPRINT's /viewform 302s to accounts.google.com/ServiceLogin, i.e. sign-in-gated, NOT closed — byte-identical behaviour to the live 19th-forum-fotografic-can-baste form. So the site's /closedform link bounces a signed-in user to the live form; submitUrl points straight at /viewform to skip the detour.",
+      "dateAdded": "2026-07-30T11:33:35.133Z"
+    },
+    {
+      "title": "HOU @ HCP",
+      "org": "Houston Center for Photography",
+      "deadline": "Continuous",
+      "fee": "Free (HCP membership required)",
+      "category": "exhibition",
+      "description": "HCP dedicated its third gallery space in 2024 to photographers from Houston and its metro area, and considers submissions on a rolling basis for one of eight solo exhibition slots a year. The call opens each September and stays open until the end of August; work is reviewed as it arrives and applicants hear by the end of the following month. There are no themes and no limits on the type of work so long as it falls within the discipline of photography, and no experience level is required — Houston-based artists may also apply more than once a year with new work. HCP provides installation, lighting and insurance, and has a limited number of white metal frames, though it does not supply matting. There is no entry fee, but entrants must be HCP members at the time of submission; memberships are non-refundable and the membership number goes on the application. Submit up to 15 edited JPGs at 2000px on the longest side with a bio, statement and CV.",
+      "url": "https://www.edu.hcponline.org/hou",
+      "instagram": "@hcponline",
+      "location": "Houston, TX, USA",
+      "prize": "Solo exhibition",
+      "eligibility": [
+        "houston-area",
+        "membership-required"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://hcponline.submittable.com/submit/304147/hou-at-hcp-gallery-submissions",
+      "requirements": "Up to 15 images",
+      "slug": "hou-at-hcp-houston-center-for-photography",
+      "orgInTitle": false,
+      "summary": "Rolling call for one of eight solo slots in HCP's Houston-only gallery — no fee, no theme, membership required.",
+      "verifyNote": "2026-07-30 add. Third HCP call in data.json (43rd Center Annual, Fellowship Awards already stored) and a distinct one — its own page edu.hcponline.org/hou, its own Submittable form 304147 (verified 200). Facts from that page: \"ROLLING DEADLINE\", call opens September and stays open to end of August, eight solo slots/year, notification end of the following month, up to 15 JPGs at 2000px, HCP provides installation/lighting/insurance and limited white metal frames but no matting, Houston metro + HCP membership required, no entry fee \"per se\". deadline: Continuous follows the 15 stored rolling calls. Fee left as \"Free (HCP membership required)\" and NOT \"$35 membership\" like the sibling entries: the current Individual tier price is not in the join page HTML (it renders via a secure.lglforms.com JS widget); the only prices in the markup are Student $20 and a legacy note that the retired $35 single-entry membership became Individual level. Don't flip to a number without a rendered price. Also checked this run and NOT added: Learning Curve 18 (closed May 31), Interdisciplinary Craft + Photo Residency (real, HCP x Houston Center for Contemporary Craft, three months, stipend + housing + materials + printing credits, but the page says the next call \"will be announced in the near future\" — no deadline yet, revisit). 2026-07-30 editor approve: re-read edu.hcponline.org/hou and re-fetched the Submittable form, which renders the same call text and a live \"Continue\" button with no \"no longer accepting\" string and no data-render-react-date close attribute — consistent with rolling, so Continuous stands. Confirmed the fee call independently: /join is the live membership page (/membership and /become-a-member both 404) and the only prices in its markup are Student $20 and the legacy line that the retired $35 single-entry tier became Individual level; the Individual price itself renders through the LGL widget, so the sibling entry's \"$35 membership\" is the stale figure, not this one.",
+      "dateAdded": "2026-07-30T11:33:35.133Z"
+    },
+    {
+      "title": "Artist-in-Residence — January–June 2027",
+      "org": "Riverviews Artspace",
+      "deadline": "2026-11-01",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Six-month workspace residency at Riverviews Artspace in downtown Lynchburg, Virginia, sponsored by Bank of the James, for the January–June 2027 term. The resident gets free space within a shared artist studio, access to Riverviews' creative community, staff and professional network, individualised professional development including mentorship and portfolio feedback, and a final exhibition or public presentation of the work made during the residency. Monthly public engagement runs through First Fridays and open studios. In exchange the resident keeps regular studio hours, gives curatorial and installation help on every exhibition in the term, engages with visitors, and delivers at least one public artist talk, workshop or presentation. Open to emerging or mid-career artists comfortable in a shared studio, open to collaboration, interested in installation and curation, and able to keep a consistent presence in Lynchburg for six months. Free to apply, but note this is workspace only — no housing and no monetary compensation. Selection announced December 15, residency begins January 1, 2027.",
+      "url": "https://www.riverviews.org/artistinresidence",
+      "instagram": "@riverviews_artspace",
+      "location": "Lynchburg, VA, USA",
+      "prize": "6-month studio residency + exhibition",
+      "eligibility": [
+        "emerging",
+        "mid-career"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.riverviews.org/artistinresidence",
+      "requirements": "Up to 5 images",
+      "slug": "artist-in-residence-january-june-2027-riverviews-artspace",
+      "orgInTitle": false,
+      "summary": "Free six-month shared studio in downtown Lynchburg with mentorship and a final show — workspace only, no housing or stipend.",
+      "verifyNote": "2026-07-30 add. Second Riverviews entry and a distinct call — the stored 18th Annual Juried Show is a $40 CaFE exhibition at the Craddock-Terry Gallery; this is the free A.I.R. programme on its own page /artistinresidence with an on-page application form (hence submitUrl == url). Facts from that page: \"currently accepting applications for our 2027 residency periods\", two fixed windows (applications due May 1 for July-December, November 1 for January-June), selection announced December 15, term begins January 1 2027, free workspace in a shared studio, sponsored by Bank of the James, explicitly \"workspace residency only and does not include housing or monetary compensation\". The May 1 2026 deadline for the July-December 2026 term has passed — the live one is November 1 2026. All media (photographers eligible as visual artists); the org page names no medium restriction, so the description does not claim one. 2026-07-30 editor approve, two fixes: requirements filled in as \"Up to 5 images\" and submitVia changed from \"Official website\" to \"Website form\". The visible prose really does name no image count, but the Squarespace form block's own JSON config in the page source does — the \"Artwork Samples\" field carries \"numFiles\":5 with allowedFileTypes IMAGE/VIDEO, so five is the hard cap. Same config confirms the form is genuinely on-page (sqs-block-form, formSubmitButtonText \"Submit\", captchaEnabled) and lists the other required fields: bio, CV, 300-word residency proposal, preferred residency dates, two professional references, certification. When a Squarespace page says \"fill out the form below\", read the form-block JSON — the field specs are there even when the prose omits them.",
+      "dateAdded": "2026-07-30T11:33:35.133Z"
     }
   ]
 }
