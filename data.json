@@ -29,7 +29,8 @@
       "slug": "lsi-2026-photography-grant",
       "orgInTitle": false,
       "summary": "Theme: To Be Seen. $7,500 plus a Leica camera and lens and a Paris gallery showing. Capped at the first 200 applicants.",
-      "dateAdded": "2026-07-24T18:14:21Z"
+      "dateAdded": "2026-07-24T18:14:21Z",
+      "verifyNote": "2026-07-30: leicasocietyinternational.org confirms \"Friday, September 4, 2026\" (or earlier if the 200-application cap is reached), $7,500 + a Leica camera and lens + a Paris gallery showing, the five named jurors, and 18-plus with no Leica-ownership or membership requirement. Picter contest id 01c7e584-2c98-459e-87a5-4565c79b3113 is STILL the live one (slug 2026-lsi-grant, submissionEndDate 2026-09-05T04:59Z = Sep 4 local, customFeeDescription \"$35 non-refundable fee\") — submitUrl needs no re-point this cycle. resultsDate stays \"October 24, 2026\" from the timeline row title \"Winner Announcement in Detroit, Michigan - LSI Conference, October 24,2026\" (the row's date field says Oct 25 with showDay:false — the title is the organiser's real date). GENUINELY UNFILLABLE: ai — neither the org page nor Picter states any AI policy."
     },
     {
       "title": "Tasweer Residency 2026–2027: As the Image Unfolds",
@@ -986,7 +987,8 @@
       "orgInTitle": false,
       "summary": "GOST Books publishes the winning long-form documentary project as a hardback photobook, backed by a £5,000 grant. £50 entry.",
       "resultsDate": "November 2026",
-      "dateAdded": "2026-07-01T23:31:31Z"
+      "dateAdded": "2026-07-01T23:31:31Z",
+      "verifyNote": "2026-07-30: ianparry.org confirms deadline 30 Sep 2026, £50 entry, up to 40 images plus an optional design PDF, 18+, \"No AI generated imagery is allowed\", and the prize = a GOST Books photobook + £5,000 paid in two £2,500 installments + Guardian publication. Picter (ippg-tomstoddart-gost-photobook-grant-2026, submissionEndDate 2026-09-30T22:59Z) agrees and its timeline row \"Recipient announcement\" is 2026-11-30 with showDay:false — month-only, hence resultsDate \"November 2026\". GENUINELY UNFILLABLE: jury — no judges are named on the org page or in Picter (selection is by an unnamed \"industry panel\"); stop re-hunting. Email info@ianparry.org."
     },
     {
       "title": "Art Moves 2026 — International Billboard Art Competition",
@@ -1139,7 +1141,8 @@
       "summary": "Architectural photography prize — €1,000 grand prize, physical exhibition in France, and annual publication. €25 per entry.",
       "resultsDate": "October 2026",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "submitUrl": "https://perspa.fr/submit-entry/"
+      "submitUrl": "https://perspa.fr/submit-entry/",
+      "verifyNote": "2026-07-30: perspa.fr 403s WebFetch — use curl+UA. /rules confirms \"Regular Deadline 31 July 2026\", \"Regular EUR 25 / single image\" (the EUR 17 Early Bird window has closed; a complimentary France-category entry exists only \"when the offer is active\"), and the timeline \"September 2026 Jury review and verification / October 2026 Results and publication\" which is where resultsDate comes from. Prizes: €1,000 Grand Winner + Bourges exhibition + PERSPA publication; category winners get certificate + publication + the same physical show. GENUINELY UNFILLABLE: instagram — perspa.fr publishes NO social links at all (checked homepage, /perspa-2026, /rules, /faq, /contact: zero instagram/facebook/x hrefs); jury — no jurors are named, the rules only describe how the jury reviews work. Eligibility [] is correct: /faq says PERSPA \"welcomes professional, emerging, and independent photographers worldwide\" with no age or nationality limit. No AI policy anywhere. Email contact@perspa.fr is Cloudflare-obfuscated (data-cfemail) — decode it, don't record \"no email\"."
     },
     {
       "title": "Tiny But Mighty: d'Art's Annual National Exhibit of Small Artworks",
@@ -3379,7 +3382,8 @@
       "slug": "street-photography-barcelona-contest-2026-2nd-edition",
       "orgInTitle": true,
       "summary": "25 finalists exhibited at Galerie Art Nomade with production covered. €1,000 in cash prizes; screenings at Ibizacinefest 2027.",
-      "dateAdded": "2026-06-09T23:39:14.396Z"
+      "dateAdded": "2026-06-09T23:39:14.396Z",
+      "verifyNote": "2026-07-30: keep \"25 finalists\" in the summary. streetphotographybarcelona.com/rules (Spanish, curls fine) states \"se seleccionarán 25 artistas\" whose work is printed, framed and installed at Galerie Art Nomade at the organiser's cost — the Picter timeline row \"Announcement of the 20 Finalists\" (2026-10-20) is the organiser's own inconsistency; the org rules win on the count, the Picter date wins on resultsDate. Also reconfirmed there: fee ladder \"1 Fotografía: 10€ / 3: 25€ / 5: 40€\" (= the stored €10–€40 and \"1, 3 or 5 images\"), \"Abierto a fotógrafos de cualquier nacionalidad, mayores de 18 años\", AI ban verbatim \"No se aceptarán obras generadas con inteligencia artificial ni imágenes manipuladas digitalmente\", max 2-year-old images, and the Ibizacinefest screening. Picter submissionEndDate 2026-10-15T21:59Z = Oct 15 local."
     },
     {
       "title": "Form Photo Award x UNSEEN",
@@ -3565,7 +3569,7 @@
       "fee": "$45 (+$5 each addl)",
       "category": "exhibition",
       "description": "First photography-dedicated edition of TSHOW, the international juried exhibition from Texas nonprofit Tyler Art Lift, created to highlight the diversity of contemporary photographic practice — traditional, experimental, documentary, conceptual, film and digital. Juried by Latvian fine art and fashion photographer Kristine Madjare, whose work has appeared in The New York Times, The Wall Street Journal and Financial Times. Exhibition at Gallery Main Street in Tyler, Texas, October 15–24, 2026, with cash prizes of $1,000 Best in Show, $500 runner-up and a $500 People's Choice chosen at the opening. Open internationally to artists 18+; $45 for the first entry, $5 each additional; 30% sales commission supports the show.",
-      "url": "https://artshowtyler.com",
+      "url": "https://artshowtyler.com/tshow-photo-1/",
       "location": "Tyler, TX, USA",
       "prize": "$1,000 / $500 / $500",
       "eligibility": [
@@ -3582,7 +3586,8 @@
       "orgInTitle": false,
       "summary": "First photography edition of Tyler Art Lift's international TSHOW, juried by Kristine Madjare. $2,000 in cash prizes at Gallery Main Street.",
       "dateAdded": "2026-06-09T23:39:14.396Z",
-      "instagram": "@tylerartlift"
+      "instagram": "@tylerartlift",
+      "verifyNote": "2026-07-30: url re-pointed from the artshowtyler.com homepage (about-text only) to artshowtyler.com/tshow-photo-1/, which carries the whole prospectus: \"$1000 Best in Show $500 Runner Up $500 People's Choice Award\", \"It costs $45 to submit 1 artwork. Extra submission is $5. You can submit up to 20 pieces\", juror Kristine Madjare, \"Any entitity from planet Earth older than 18 years\", 30% sales commission, exhibition Oct 15–24 2026 with the opening Oct 17 at Gallery Main Street. The deadline lives only on CaFÉ 17624 (applicationDeadline 2026-09-08T05:59:59Z = Sep 7 local) — the org page states none. No AI policy on either source, so ai stays null."
     },
     {
       "title": "Hamburg Portfolio Review 2026",
@@ -3912,13 +3917,14 @@
         "Nichola Rodgers, Editor"
       ],
       "submitVia": "CuratorSpace",
-      "requirements": "Up to 5 images",
+      "requirements": "Up to 3 images",
       "slug": "haus-a-rest-issue-74-eco-materials",
       "orgInTitle": true,
       "summary": "UK indie art/lit zine, theme 'Eco Materials'. Photography accepted alongside other media. Free, publication only.",
       "resultsDate": "Mid September 2026",
       "dateAdded": "2026-07-13T03:14:56Z",
-      "submitUrl": "https://www.curatorspace.com/opportunities/detail/hausarest--free-open-call-for-artists--writers-issue---eco-materials/10873"
+      "submitUrl": "https://www.curatorspace.com/opportunities/detail/hausarest--free-open-call-for-artists--writers-issue---eco-materials/10873",
+      "verifyNote": "2026-07-30: CuratorSpace 10873 (the submission route) reads \"Deadline: 02/08/2026\" — UK DD/MM, i.e. 2 August 2026, NOT Feb 8 (WebFetch misreads it). IMAGE-COUNT CONFLICT: the CuratorSpace listing says \"Up to 3 artworks (JPEG format), or Up to 1,000 words of writing, or A combination\" while haus-a-rest.com/opportunities-contact-us still says \"Up to 5 artworks\" — stored 3 because that is the platform where the work is actually submitted (same portal-enforced-wins rule as She Speaks CaFÉ 17897). Don't re-flip to 5 on the org page alone. Free, publication only; editors Jenna Fox and Nichola Rodgers; open internationally to all career stages, so eligibility [] is right; an active Instagram account is required for promotion (a requirement, not an eligibility facet). No notification date and no AI policy on either page. Email genuinely unfillable — 4th check, the only address on the whole site is a contributor's."
     },
     {
       "title": "Outdoor Photography Magazine — Bird Portraits",
@@ -20683,7 +20689,7 @@
         "The call is broad in publishing context: self-published photobooks, artist books, zines, experimental publications, and small-edition press titles all eligible. Books currently in dummy or mock-up stage are not eligible — Der Greif requires finished, produced publications.",
         "Submission requires photographs of the physical book plus a vertical flip-through video (max 2 minutes, 1080×1920 MP4). Submission is through Picter once the round opens; Der Greif's open-call page currently offers a notify-at-launch signup instead of an upload form. The fee is voluntary (PWYC) — the last round asked for nothing or an optional €5 or €10 donation. Eligibility is open globally. The deadline is November 30, 2026 at 11:59 PM CET."
       ],
-      "verifyNote": "2026-07-30: dergreif.org/open-call/ states \"Open Call: In Focus – Photobook Features ... Deadline: November 30, 2026 at 11:59 PM CET\" (previous round closed 30 June). The page currently shows a \"Notify me at launch\" button (a Brevo/sibforms signup) rather than Submit, so the next round is announced but not yet accepting uploads. EDITOR 2026-07-30: the stored Picter submitUrl was the CLOSED previous edition — api.picter.com call(id:\"27d4a085-026b-4a9f-a1ad-7764269dba9e\") returns slug der-greif-photobook-feature with submissionStartDate 2026-01-08 / submissionEndDate 2026-06-30T21:59Z, the microsite site.picter.com/der-greif-photobook-feature renders CLOSED, and the id is absent from the filter{entryStatus:OPEN} list (only Quiet Hours, Guest Room Hubbs/Francis and Fondament are open for Der Greif). Picter contests are per-edition, so the November round will get a NEW id: submitVia/submitUrl re-pointed to the org's open-call page for now, and must be flipped back to Picter when the new contest appears in the open list. Prose deadline line also still said June 30 — corrected. Fee stays PWYC (Picter callInfo costs for the closed round: \"Submit for free or pay a voluntary donation of 5€ or 10€\")."
+      "verifyNote": "2026-07-30: dergreif.org/open-call/ states \"Open Call: In Focus – Photobook Features ... Deadline: November 30, 2026 at 11:59 PM CET\" (previous round closed 30 June). The page currently shows a \"Notify me at launch\" button (a Brevo/sibforms signup) rather than Submit, so the next round is announced but not yet accepting uploads. EDITOR 2026-07-30: the stored Picter submitUrl was the CLOSED previous edition — api.picter.com call(id:\"27d4a085-026b-4a9f-a1ad-7764269dba9e\") returns slug der-greif-photobook-feature with submissionStartDate 2026-01-08 / submissionEndDate 2026-06-30T21:59Z, the microsite site.picter.com/der-greif-photobook-feature renders CLOSED, and the id is absent from the filter{entryStatus:OPEN} list (only Quiet Hours, Guest Room Hubbs/Francis and Fondament are open for Der Greif). Picter contests are per-edition, so the November round will get a NEW id: submitVia/submitUrl re-pointed to the org's open-call page for now, and must be flipped back to Picter when the new contest appears in the open list. Prose deadline line also still said June 30 — corrected. Fee stays PWYC (Picter callInfo costs for the closed round: \"Submit for free or pay a voluntary donation of 5€ or 10€\"). 2026-07-30 (verify): re-checked the Picter open list — filter{visibilityStatus:PUBLIC,entryStatus:OPEN} returns 33 calls and Der Greif's only open ones are der-greif-quiet-hours (Aug 9), der-greif-guest-room-hubbs-francis (Aug 17) and der-greif-fondament-see-something-2026 (Sep 1). In Focus is still absent, and dergreif.org/open-call still shows \"Notify me at launch\" (a Brevo signup) rather than Submit, with \"Deadline: November 30, 2026 at 11:59 PM CET\". So submitVia \"Official website\" + the org-page submitUrl remain correct; flip back to Picter only once a NEW In Focus contest id appears in the open list."
     },
     {
       "title": "Jugend fotografiert Deutschland 2025",
@@ -29532,6 +29538,9 @@
       "location": "Limerick, Ireland",
       "prize": "Exhibition",
       "eligibility": [],
+      "jury": [
+        "Committee of five to eight invited artists"
+      ],
       "submitVia": "Online portal",
       "submitUrl": "https://huntmuseum.oess1.uk/",
       "requirements": "Up to 3 artworks",
@@ -29541,7 +29550,7 @@
       "dateAdded": "2026-06-29T23:15:05Z",
       "instagram": "@huntmuseum",
       "resultsDate": "October 17, 2026",
-      "verifyNote": "2026-07-29: huntmuseum.com 403s both curl and WebFetch (Chrome-only), but the OESS portal huntmuseum.oess1.uk lists the call as \"Open for Entry\" with Entry Deadline 07/09/2026 12pm, Selection Deadline 6 Oct, Selection Notification 17 Oct 2026, exhibition 5 Dec 2026 – 21 Feb 2027, photography explicitly among the accepted media, contact opensubmission@huntmuseum.com. Use the portal when the museum domain blocks you."
+      "verifyNote": "2026-07-30: huntmuseum.com still 403s curl and WebFetch (Chrome-only), so verify on the OESS portal huntmuseum.oess1.uk — it reconfirms Entry Deadline 07/09/2026 12pm, €15 per artwork up to 3, Selection Notification 17 Oct 2026, exhibition 5 Dec 2026 – 21 Feb 2027, photography among the accepted media, contact opensubmission@huntmuseum.com. Jury filled from the portal's own wording: \"The selection committee is made up of five to eight invited artists\" — no individual names are published. ai stays NULL: the only AI text on the portal is OESS's platform disclaimer (\"does not use Artificial Intelligence (AI), Machine Learning...\") which is about the platform's own operations, NOT a policy on AI-generated artwork. No age/nationality limit (the 5-year rule is about the work), so eligibility [] is right."
     },
     {
       "title": "Reflections Through Time: 2026 Evendale Juried Photography Exhibition",
@@ -29742,7 +29751,8 @@
       "orgInTitle": true,
       "summary": "Summer-memory themed issue of Arts to Hearts Magazine — $500 cash prize and feature spreads; all disciplines incl. photography.",
       "dateAdded": "2026-07-02T03:14:20Z",
-      "requirements": "1–20 images"
+      "requirements": "1–20 images",
+      "verifyNote": "2026-07-30: the apply.artstoheartsproject.com page is a Next.js App Router shell — static HTML is 157 chars of text and the RSC/__next_f payload carries only markup, so WebFetch reports a stale placeholder \"Submission Deadline: June 15, 2025\" and Chrome was down. READ IT VIA THE PUBLIC BACKEND API instead (no auth): GET https://backend.artstoheartsproject.com/api/users/events/ongoing/ lists the live calls, and GET .../api/users/events/public/ returns each event in full. The Issue 14 record confirms every stored value: submission_deadline 2026-08-02T23:45+05:30, status published, artwork_options 1 image $21 / 3 $35 / 5 $50 / 10 $62 / 20 $100, \"Winner • $500 USD cash prize • A 4-page editorial spread\" plus trophy and certificate, \"Open Worldwide • All Mediums\", photography among the categories. GENUINELY UNFILLABLE: jury is stored as a bare count (jury: 5) with no names; results are only \"shared via email within a few weeks following the submission deadline\" (result_announcement_date is null — event_date 2026-08-15 is NOT labelled a results date, don't promote it); no AI policy anywhere in the record. url == submitUrl is CORRECT here: artstoheartsproject.com/open-calls/ links to this same apply URL as the call's own page, there is no separate org landing page."
     },
     {
       "title": "Rauschenberg Medical Emergency Grants — Cycle 37",
@@ -30533,7 +30543,7 @@
       "summary": "Berlin's Kominek Gallery picks 100 photographers for its Golden Hour / Blue Hour group show opening September 10. Free entry.",
       "resultsDate": "August 10, 2026",
       "dateAdded": "2026-07-12T07:35:41Z",
-      "verifyNote": "2026-07-29: UNVERIFIABLE this run — the Golden Hour / Blue Hour call is no longer on kominekominekominek.com (homepage now shows only current exhibitions; /open-call and /kominek-editions both 404) and the Chrome extension was down, so the Jul 31 deadline could not be re-confirmed on the org site. Gallery contact is info@kominek-gallery.com. Re-check with a browser before assuming it is still live."
+      "verifyNote": "2026-07-30: STILL UNVERIFIABLE (2nd consecutive run) and the Chrome extension was down again. kominekominekominek.com curls fine (200, 275KB) but carries NO open call: nav is Artists / Works / Exhibitions / Workshops / Info / Bookshop, the homepage lists only current shows (Hrushchak, Schutmaat, Ribeira, KOMINEK x PARIS PHOTO), and /open-call and /kominek-editions both 404. The Wayback CDX index has never archived an /open-call or /kominek-editions URL for this domain either. So the Jul 31 2026 deadline and the 100-photographer Golden Hour / Blue Hour show cannot be reconfirmed on the org site. NOT marked closed — a call vanishing from a gallery site is not evidence it closed. Gallery contact info@kominek-gallery.com; the /info page confirms the Berlin address, Immanuelkirchstrasse 25. Re-check in a browser or on IG @kominekgallery when Chrome is back."
     },
     {
       "title": "FLARE Journal Vol. 2 — Connection X Isolation",
