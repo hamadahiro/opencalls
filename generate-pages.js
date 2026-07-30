@@ -400,8 +400,7 @@ function buildBreadcrumbs(section, sectionUrl) {
 
 function buildHero(breadcrumbs, title, subtitle) {
   return `<section class="hero">
-      ${breadcrumbs ? breadcrumbs + '\n      ' : ''}<h1>${title}</h1>
-      <h2 class="subtitle">${subtitle}</h2>
+      ${breadcrumbs ? breadcrumbs + '\n      ' : ''}<h1>${title}</h1>${subtitle ? `\n      <h2 class="subtitle">${subtitle}</h2>` : ''}
     </section>`;
 }
 
@@ -2076,7 +2075,7 @@ const aboutHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'About Open Calls', 'How Monographica curates and verifies opportunities for photographers and visual artists.')}
+    ${buildHero('', 'About Open Calls', '')}
 
     <section class="call-detail">
       <p class="call-detail-description">Monographica Open Calls is an editorial directory of submission opportunities for photographers and visual artists. The site focuses on exhibitions, grants, residencies, awards, publications, portfolio reviews, and education programs with clear deadlines or rolling application windows.</p>
