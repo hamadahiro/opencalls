@@ -6,6 +6,40 @@
   // site uses a separate property entirely.
   if (location.hostname !== 'opencalls.monographica.com') return;
 
+  // Automation guard. On 29-30 Jul 2026 a headless fleet out of Singapore
+  // logged 202 "users" (52% of that week) with 0s engagement, 860 programmatic
+  // scroll_depth fires and zero key events. Nothing was stolen — every field is
+  // already on 2,269 pre-rendered pages — but the numbers became unreadable.
+  //
+  // Two tiers, deliberately:
+  //   HARD  navigator.webdriver is set by the WebDriver/CDP spec itself, so
+  //         Puppeteer/Playwright/Selenium set it and real browsers do not.
+  //         False positives are near-zero, so bail before gtag ever loads —
+  //         no hit, no session, no pollution of the standard reports.
+  //   SOFT  Heuristics that a careful scraper can spoof and an unusual real
+  //         browser can trip. Never suppress on these; tag the hit instead so
+  //         the traffic stays visible and auditable in an Exploration.
+  //
+  // Deliberately NOT used: canvas/WebGL/font fingerprinting, IP, or any hashed
+  // device identifier. Detection must not become tracking.
+  if (navigator.webdriver === true) return;
+
+  var automationSuspected = (function() {
+    try {
+      var ua = navigator.userAgent || '';
+      // Headless builds still announce themselves in the UA string.
+      if (/HeadlessChrome|PhantomJS|Electron\//i.test(ua)) return true;
+      // A real browser always reports at least one preferred language.
+      if (navigator.languages && navigator.languages.length === 0) return true;
+      // Chrome UA without window.chrome means the UA is spoofed.
+      if (/Chrome\/\d/.test(ua) && !/Edg\/|OPR\//.test(ua) && !window.chrome) return true;
+      // Automation drivers commonly leave zero plugins on a desktop Chrome.
+      if (/Chrome\/\d/.test(ua) && navigator.plugins && navigator.plugins.length === 0
+          && !/Mobile|Android/i.test(ua)) return true;
+    } catch (e) {}
+    return false;
+  })();
+
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PGN8M3LZMZ';
@@ -14,6 +48,11 @@
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
   gtag('js', new Date());
+  // Set before config so the very first page_view already carries it. Strings,
+  // not booleans — GA4 user properties are string-typed in reports.
+  gtag('set', 'user_properties', {
+    automation_suspected: automationSuspected ? 'true' : 'false'
+  });
   gtag('config', 'G-PGN8M3LZMZ');
 
   // Helper: detect page type from URL
