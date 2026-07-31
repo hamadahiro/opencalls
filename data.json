@@ -1411,7 +1411,7 @@
       "resultsDate": "August 6, 2026"
     },
     {
-      "title": "BBA One Shot Award - Autumn 2026",
+      "title": "BBA One Shot Award - Summer 2026",
       "org": "BBA Gallery",
       "deadline": "2026-08-03",
       "fee": "€19",
@@ -1432,7 +1432,7 @@
       "summary": "Single-image photo prize; 20 images exhibited at BBA Gallery Berlin. €300 + Artsy listing; production costs covered.",
       "dateAdded": "2026-07-01T19:06:34Z",
       "resultsDate": "August–September 2026",
-      "verifyNote": "2026-07-29: page reconfirms \"Deadline: Monday 03. August 2026\", \"FEE: 19€\" covering one image (extra credits buyable in the BBA App) and the \"300€ Cash Prize\". The FAQ describes a \"digital jury selection phase\" but never names a juror, and there is no AI policy — both gaps are genuine. BBA has no public email (/contact is address + form + IG only)."
+      "verifyNote": "2026-07-29: page reconfirms \"Deadline: Monday 03. August 2026\", \"FEE: 19€\" covering one image (extra credits buyable in the BBA App) and the \"300€ Cash Prize\". The FAQ describes a \"digital jury selection phase\" but never names a juror, and there is no AI policy — both gaps are genuine. BBA has no public email (/contact is address + form + IG only). 2026-07-31 02:00 verify: TITLE FIXED Autumn -> Summer. bba-prizes.com/one-shot-award describes the live cycle verbatim as \"the 2026 Summer Edition\", and its PREVIOUS-EDITIONS list already contains Winter 2026 and Spring 2026 — so the Aug 3 call is Summer, not Autumn. submitUrl productId=one-shot-award-2026-summer independently agreed all along; the title was the only wrong field. Deadline \"Monday 03. August 2026\", \"FEE: 19€\" and the \"300€ Cash Prize\" all reconfirmed. Slug keeps the old \"autumn\" word — it is a public URL and must not be renamed."
     },
     {
       "title": "Elemental: Earth, Air, Fire, Water",
@@ -1577,7 +1577,8 @@
       "dateAdded": "2026-07-01T15:08:08Z",
       "resultsDate": "March 2027",
       "instagram": "@wsworkshop",
-      "submitUrl": "https://womensstudioworkshop.submittable.com/submit"
+      "submitUrl": "https://womensstudioworkshop.submittable.com/submit",
+      "verifyNote": "2026-07-31 02:00 verify: DO NOT MARK CLOSED on the banner. wsworkshop.org/residencies/artists-book-residency-grant/ currently prints \"We are not currently accepting applications for this opportunity\" — that is a PRE-OPEN state, not a closure: the Key details block on the same page reads \"Applications Open: August 1st, 2026 / Applications due: November 15, 11:59pm EST / Notification date: March, 2027\". The banner should flip tomorrow. Stipend reconfirmed \"$350/week, up to $1000 for materials, up to $250 for travel within the Continental US, free onsite housing\", and \"Up to ten images of recent work\"."
     },
     {
       "title": "Black and White: 2026",
@@ -24516,7 +24517,7 @@
         "Submission is through the festival website. Entry fee is €15 per image with no quantity limit; series are not accepted (each image is judged separately). Eligibility is open worldwide with no nationality, age, theme, or equipment restrictions; original work only, and images must not have previously received a major international award. Submissions close August 19, 2026 — World Photography Day."
       ],
       "dateAdded": "2026-05-08T23:14:22.745Z",
-      "verifyNote": "2026-07-29: awards page reconfirms \"Deadline: August 19 2026, world photography day\", \"Entry fee: €15 per image (no limit on images)\" and the 1–20 image submission spec. Eligibility confirmed OPEN verbatim: \"There are no restrictions on nationality, age, theme, or equipment\" — [] is correct, and \"Open to photographers worldwide\" appears twice more. Eleven-name jury confirmed. NOT the same call as the F/262 Photobook Award, whose four-name jury is stored separately. 2026-07-30: the prize string is confirmed part-by-part — the Gold Winner block reads \"Fujifilm X Half Camera / Solo Exhibition (F/262 2028 Edition) / Festival Exhibition of the award-winning work (2026) / Fine Art Print (50×70, Fuji paper – KOYLAB) / 500€ KOYLAB Voucher\", which is exactly \"Camera + 2028 solo show + vouchers\"; Silver and Bronze take 400€ and 300€ vouchers, and the sibling ZÉ Award adds a Sony A7C II. Awards page reconfirms \"Deadline: August 19 2026, world photography day\", \"Entry fee: €15 per image (no limit on images)\", the 1–20 image spec, and \"There are no restrictions on nationality, age, theme, or equipment\"."
+      "verifyNote": "2026-07-29: awards page reconfirms \"Deadline: August 19 2026, world photography day\", \"Entry fee: €15 per image (no limit on images)\" and the 1–20 image submission spec. Eligibility confirmed OPEN verbatim: \"There are no restrictions on nationality, age, theme, or equipment\" — [] is correct, and \"Open to photographers worldwide\" appears twice more. Eleven-name jury confirmed. NOT the same call as the F/262 Photobook Award, whose four-name jury is stored separately. 2026-07-30: the prize string is confirmed part-by-part — the Gold Winner block reads \"Fujifilm X Half Camera / Solo Exhibition (F/262 2028 Edition) / Festival Exhibition of the award-winning work (2026) / Fine Art Print (50×70, Fuji paper – KOYLAB) / 500€ KOYLAB Voucher\", which is exactly \"Camera + 2028 solo show + vouchers\"; Silver and Bronze take 400€ and 300€ vouchers, and the sibling ZÉ Award adds a Sony A7C II. Awards page reconfirms \"Deadline: August 19 2026, world photography day\", \"Entry fee: €15 per image (no limit on images)\", the 1–20 image spec, and \"There are no restrictions on nationality, age, theme, or equipment\". 2026-07-31 02:00 verify: UNVERIFIABLE this run — festival262.com is DOWN site-wide, not blocking us. DNS resolves (147.79.116.214, 193.58.105.103) but every request to the awards page AND to the domain root returns curl HTTP 000 (connection refused) across HTTP/1.1 and HTTP/2, and WebFetch times out at 60s. The only Wayback capture is 2026-04-18, older than our own Jul 29–30 reads, so it adds nothing. NOT closed — an unreachable host is not evidence a call ended. Stored values (Aug 19 deadline, €15/image, 1–20 images, eleven-name jury, [] eligibility) stand until the host is back."
     },
     {
       "title": "F/262 Photo Book Award 2026",
@@ -30382,7 +30383,7 @@
       "title": "LensCulture Photobook Prize 2026",
       "org": "LensCulture",
       "deadline": "2026-08-12",
-      "fee": "$45–$60",
+      "fee": "$60",
       "category": "zine",
       "description": "LensCulture's photobook award: submit a photo project of 20–30 images ready to become a book — no book dummy required. The winning project, selected by Nazraeli Press, is published as a full monograph valued at over $25,000, with a Los Angeles exhibition and a solo LensCulture feature. Five shortlisted photographers each receive a $500 grant, a solo feature article, a 30-minute portfolio consultation and inclusion in the LA exhibition; ten finalists share a group feature. Judged by a panel of publishers from Nazraeli Press, L'Artiere, Stanley/Barker and Deadbeat Club.",
       "url": "https://www.lensculture.com/photo-competitions/photobook",
@@ -30407,7 +30408,8 @@
       "requirements": "20–30 images",
       "resultsDate": "October 1, 2026",
       "ai": "AI editing OK, fully generated not accepted",
-      "dateAdded": "2026-07-10T23:12:06Z"
+      "dateAdded": "2026-07-10T23:12:06Z",
+      "verifyNote": "2026-07-31 02:00 verify: FEE $45–$60 -> $60. The page now renders a single \"Submit for $60\" button and its Deadline & Timeline block reads \"Call Open: July 8 – August 12, 2026 / Early Submission discount until: July 29, 2026 / Regular Deadline: Aug 12, 2026 / Winners Announced: Oct 1, 2026\" — the discount tier lapsed two days ago, so the range no longer describes a price anyone can pay. Same treatment as the Fotograf Zone early-bird. Deadline Aug 12, 20–30 images, Nazraeli publication valued over $25,000, five shortlisted at $500, and the five-name jury all reconfirmed."
     },
     {
       "title": "Vincent van Gogh Photo Award 2027",
@@ -30583,7 +30585,7 @@
       "summary": "Berlin's Kominek Gallery picks 100 photographers for its Golden Hour / Blue Hour group show opening September 10. Free entry.",
       "resultsDate": "August 10, 2026",
       "dateAdded": "2026-07-12T07:35:41Z",
-      "verifyNote": "2026-07-30: STILL UNVERIFIABLE (2nd consecutive run) and the Chrome extension was down again. kominekominekominek.com curls fine (200, 275KB) but carries NO open call: nav is Artists / Works / Exhibitions / Workshops / Info / Bookshop, the homepage lists only current shows (Hrushchak, Schutmaat, Ribeira, KOMINEK x PARIS PHOTO), and /open-call and /kominek-editions both 404. The Wayback CDX index has never archived an /open-call or /kominek-editions URL for this domain either. So the Jul 31 2026 deadline and the 100-photographer Golden Hour / Blue Hour show cannot be reconfirmed on the org site. NOT marked closed — a call vanishing from a gallery site is not evidence it closed. Gallery contact info@kominek-gallery.com; the /info page confirms the Berlin address, Immanuelkirchstrasse 25. Re-check in a browser or on IG @kominekgallery when Chrome is back."
+      "verifyNote": "2026-07-30: STILL UNVERIFIABLE (2nd consecutive run) and the Chrome extension was down again. kominekominekominek.com curls fine (200, 275KB) but carries NO open call: nav is Artists / Works / Exhibitions / Workshops / Info / Bookshop, the homepage lists only current shows (Hrushchak, Schutmaat, Ribeira, KOMINEK x PARIS PHOTO), and /open-call and /kominek-editions both 404. The Wayback CDX index has never archived an /open-call or /kominek-editions URL for this domain either. So the Jul 31 2026 deadline and the 100-photographer Golden Hour / Blue Hour show cannot be reconfirmed on the org site. NOT marked closed — a call vanishing from a gallery site is not evidence it closed. Gallery contact info@kominek-gallery.com; the /info page confirms the Berlin address, Immanuelkirchstrasse 25. Re-check in a browser or on IG @kominekgallery when Chrome is back. 2026-07-31 02:00 verify: 3rd consecutive unverifiable run; Chrome extension down again, so IG @kominekgallery still unchecked. kominekominekominek.com reads fine (200) and carries NO open call: nav is Artists / Works / Exhibitions / Workshops / Info / Bookshop and the homepage lists only Hrushchak, Schutmaat, Ribeira and KOMINEK x PARIS PHOTO. Stored deadline is TODAY (Jul 31) so this entry rolls to Past on its own after this run — no closure edit needed, and none is justified by a call simply being absent from a gallery site."
     },
     {
       "title": "FLARE Journal Vol. 2 — Connection X Isolation",
@@ -34285,7 +34287,7 @@
       "orgInTitle": false,
       "summary": "Broad summer theme, any process. Juror Claire A. Warden picks a $100 first place; every entrant appears in the online gallery.",
       "dateAdded": "2026-07-27T19:24:02.724Z",
-      "verifyNote": "2026-07-28: CaFÉ 17758 confirms applicationDeadline 2026-08-17T06:59:59Z = 16 August 2026 local, two fee rows (\"Member Entry Fee $25 / Non-Member Entry Fee $50\"), and in requirementDescription the key dates plus the AI ban: \"AI photography is NOT accepted. Key Dates Call Opens: August 1, 2026 Call Closes: August 16, 2026 Jurying Dates: August 17 - 23, 2026 Notifications: August 30, 2026 Exhibition Opens Online: September 1, 2026\". Juror Claire A. Warden picks one $100 first place plus two honourable mentions. Only AZPA Board members are barred, so eligibility stays []. Provider email communications@azphotoalliance.org."
+      "verifyNote": "2026-07-28: CaFÉ 17758 confirms applicationDeadline 2026-08-17T06:59:59Z = 16 August 2026 local, two fee rows (\"Member Entry Fee $25 / Non-Member Entry Fee $50\"), and in requirementDescription the key dates plus the AI ban: \"AI photography is NOT accepted. Key Dates Call Opens: August 1, 2026 Call Closes: August 16, 2026 Jurying Dates: August 17 - 23, 2026 Notifications: August 30, 2026 Exhibition Opens Online: September 1, 2026\". Juror Claire A. Warden picks one $100 first place plus two honourable mentions. Only AZPA Board members are barred, so eligibility stays []. Provider email communications@azphotoalliance.org. 2026-07-31 02:00 verify: azphotoalliance.org now Wordfence-blocks us — the call page returns HTTP 503 with the body \"Your access to this site has been limited by the site owner ... Access from your area has been temporarily limited for security reasons\" to curl AND to WebFetch (the SIBLING Seen/Unseen page still reads fine, so this is per-URL rate limiting, not a dead page). Verified instead on CaFÉ 17758: applicationDeadline 2026-08-17T06:59:59Z = Aug 16 local, fee rows \"Member Entry Fee $25\" + \"Non-Member Entry Fee $50\", imagesMin/Max 1–3 — every stored field holds."
     },
     {
       "title": "Seen/Unseen at Eric Fischl Gallery",
