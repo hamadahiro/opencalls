@@ -11,14 +11,19 @@
       "url": "https://rfotofolio.org/about-the-rfotofolio-call/",
       "instagram": "@rfotofolio",
       "location": "Online",
+      "prize": "Publication",
       "eligibility": [],
+      "jury": [
+        "Rfotofolio and an annual guest juror"
+      ],
       "requirements": "7 images",
       "ai": "Not accepted",
       "resultsDate": "December 14, 2026",
       "slug": "the-rfotofolio-call-2026",
       "orgInTitle": true,
       "summary": "Rfotofolio's annual portfolio call — seven images, a guest juror, pay-what-you-want. Features, interviews and the Photographers Index.",
-      "dateAdded": "2026-07-31T07:14:04Z"
+      "dateAdded": "2026-07-31T07:14:04Z",
+      "verifyNote": "2026-07-31 verify: rfotofolio.org/about-the-rfotofolio-call/ re-confirms \"Nov. 2, 2026 midnight CST is the deadline\" and \"Dec. 14, 2026 selections will be announced\", a portfolio of seven images, \"The fee is up to you and is a donation\", and \"No AI please\" (= ai Not accepted). jury FILLED as a descriptor: \"each year we ask our guest juror to select the work that speaks to them\" + \"Rfotofolio is always one of the jurors\" — the guest is never named in advance. prize ADDED: \"Artist whose work is selected will be featured on our site, in future interviews, and future publications. They will also be included in The Photographers Index.\" No eligibility limit is stated. NO PUBLIC EMAIL: /contact/ 404s and the page carries no mailto (only a share link) — treat the email gap as genuine. Note the page contradicts itself on the OPEN date (\"submissions will be accepted on Oct 5th\" vs the date list's \"Oct 4, 2026\"); the deadline is not affected."
     },
     {
       "title": "Under My Skin Issue #2 — Euphoria",
@@ -39,7 +44,8 @@
       "slug": "under-my-skin-issue-2-euphoria",
       "orgInTitle": false,
       "summary": "TGIN+ artists on how they experience euphoria. Print and digital magazine from a trans-led nonprofit; pseudonyms welcome.",
-      "dateAdded": "2026-07-31T07:14:04Z"
+      "dateAdded": "2026-07-31T07:14:04Z",
+      "verifyNote": "2026-07-31 verify: CuratorSpace 10764 confirms \"Deadline: 01/08/2026\" (CuratorSpace prints DD/MM, so 1 August) and forgenderdiversity.org/events carries the same call with \"Deadline: August 1, 2026\". FEE Free is sound by negative space — the detail page has no \"Submission fees\" block at all (see the CuratorSpace fee-block rule); the listing charges nothing. FOUR GAPS ARE GENUINE: the org states no image/format count anywhere (the call asks for \"poems, essays, articles, all forms of visual art\" with no cap, so requirements stays null), names no juror or curatorial body, gives no results date, and publishes no AI policy. The CuratorSpace poster name is the account holder, not a juror — do not promote it to `jury`."
     },
     {
       "title": "LSI 2026 Photography Grant",
@@ -2505,7 +2511,7 @@
       "orgInTitle": false,
       "summary": "All-media juried online exhibition on time, aging, and memory. Photography welcome. From midwest nice art, Sioux Falls.",
       "dateAdded": "2026-06-23T23:19:41.894Z",
-      "verifyNote": "2026-07-27: the Google Form is the ONLY place the terms appear - \"Submissions are due September 20\", $5 exhibition fee (paid via Square), up to 3 works. The /opencalls/silver page carries none of it. No eligibility limits, no named jurors, no results date and no AI policy. Contact midwestniceart@gmail.com. 2026-07-29: the Google Form is unreadable headless this run — forms.gle resolves through a proxy.link.app interstitial and the resolved docs.google viewform serves a 9KB consent shell to curl (with or without CONSENT cookie); Chrome down. /opencalls/silver page live but carries no terms (as known). Stored values stand from the 07-27 form read. 2026-07-30 14:00 verify: midwestnice.art/opencalls/silver live and still carries no terms (as known). The Google Form resolves to docs.google.com/forms/d/e/1FAIpQLSfe6bnu0OO_V0rZGyBTPHBOGS7dAfy_ltoRF6IYX3Oze8HIkQ/viewform and returns 401 to curl while Chrome is down, so the Sep 20 deadline, $5 fee and up-to-3-works terms stand from the 07-27 form read. A 401 on a Google Form is not closure."
+      "verifyNote": "2026-07-27: the Google Form is the ONLY place the terms appear - \"Submissions are due September 20\", $5 exhibition fee (paid via Square), up to 3 works. The /opencalls/silver page carries none of it. No eligibility limits, no named jurors, no results date and no AI policy. Contact midwestniceart@gmail.com. 2026-07-29: the Google Form is unreadable headless this run — forms.gle resolves through a proxy.link.app interstitial and the resolved docs.google viewform serves a 9KB consent shell to curl (with or without CONSENT cookie); Chrome down. /opencalls/silver page live but carries no terms (as known). Stored values stand from the 07-27 form read. 2026-07-30 14:00 verify: midwestnice.art/opencalls/silver live and still carries no terms (as known). The Google Form resolves to docs.google.com/forms/d/e/1FAIpQLSfe6bnu0OO_V0rZGyBTPHBOGS7dAfy_ltoRF6IYX3Oze8HIkQ/viewform and returns 401 to curl while Chrome is down, so the Sep 20 deadline, $5 fee and up-to-3-works terms stand from the 07-27 form read. A 401 on a Google Form is not closure. 2026-07-31 verify: midwestnice.art/opencalls/silver live and still carries no terms (as known). The resolved Google Form (docs.google.com/forms/d/e/1FAIpQLSfe6bnu0OO_V0rZGyBTPHBOGS7dAfy_ltoRF6IYX3Oze8HIkQ/viewform) still returns 401 to curl and Chrome is down, so the Sep 20 deadline, $5 fee and up-to-3-works terms continue to stand from the 07-27 form read. A 401 on a Google Form is not closure."
     },
     {
       "title": "Photo of the Season — You Can't Be Serious",
@@ -2570,7 +2576,7 @@
       "description": "Inaugural edition of RAW, a nature photography award built around a single rule: every image must be made within 100 km of the photographer's home — 'the wild is not far away.' Five categories: RAW Neighbors (no human elements), Coexistence (human presence), Connection (people and nature), Macro (the small world) and Perspective (the big scene). The Real And Wild Photographer of the Year receives $1,000, with $250 for each category winner; winning and shortlisted images are published in the online RAW Winners Gallery and a photo book, and promoted through a partnership with Atlantic Geographic. Blind judging by professionals. Open worldwide, with a free RAW Junior tier for under-18s. Fees: $10 for one image, $25 for five, $40 for ten. AI-generated or AI-composited images are not permitted.",
       "url": "https://rawpoty.com/",
       "location": "Online",
-      "prize": "$1,000 grand prize + $250 per category + Photobook",
+      "prize": "$1,000 grand prize + $250 per category + Publication",
       "eligibility": [],
       "submitVia": "Official website",
       "requirements": "Up to 10 images",
@@ -2588,7 +2594,7 @@
       "submitUrl": "https://rawpoty.com/entry-form",
       "dateAdded": "2026-06-22T11:16:54.020Z",
       "instagram": "@rawpoty",
-      "verifyNote": "2026-07-27: rawpoty.com confirms \"Entries close September 30, 2026\", fees $10 single / $25 for 5 / $40 for 10 with RAW Junior free for under-18s (so there is no 18+ restriction), $1,000 RAW Photographer of the Year plus $250 for each of the five categories, and /ai states \"AI-generated images are not permitted in Real And Wild Photography Awards\". The five stored judges match /judges. Judging is blind and no announcement date is published."
+      "verifyNote": "2026-07-27: rawpoty.com confirms \"Entries close September 30, 2026\", fees $10 single / $25 for 5 / $40 for 10 with RAW Junior free for under-18s (so there is no 18+ restriction), $1,000 RAW Photographer of the Year plus $250 for each of the five categories, and /ai states \"AI-generated images are not permitted in Real And Wild Photography Awards\". The five stored judges match /judges. Judging is blind and no announcement date is published. 2026-07-31 verify: prize chip \"Photobook\" -> \"Publication\". rawpoty.com/prizes lists only \"RAW Photographer of the Year $1,000\", \"$250\" for each of the five categories, a cash-TBD RAW Pet award and a medal-only RAW Junior award; the sole book line is \"These photographs will be featured in the RAW Winners Gallery and published on the RAW website. A book will be made available.\" — a book on offer, not a photobook awarded to the winner. /ai re-confirms \"AI Photography - No.\" and the homepage re-confirms \"Entries close September 30, 2026\" and the $10 / $25 (5 images) / $40 (10 images) ladder."
     },
     {
       "title": "Momentum",
@@ -2702,7 +2708,7 @@
       "orgInTitle": false,
       "summary": "Ajanaku Gallery's founding photo-and-text show on Afro-Caribbean heritage. Free; up to two works pairing image and text. Neuilly-Plaisance, France, Dec 2026.",
       "dateAdded": "2026-06-19T01:49:26.373Z",
-      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead. 2026-07-27: 8th check — ajanakugallery.com HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404, no open call on the site. Call remains dead. 2026-07-27 (22:00): 9th check — ajanakugallery.com HTTP 200, homepage lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition \"Opening Spring 2027\" built around African/diaspora sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead despite the stored 2026-09-02 deadline. 2026-07-28: 10th check - ajanakugallery.com still HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404. Call remains dead. 2026-07-29 (14:00): 11th check — ajanakugallery.com HTTP 200, LEGACY still listed only as a past event (Dec 15-23 2025), forms.ajanakugallery.com/r/A740zz still HTTP 404. Call remains dead. 2026-07-30 (14:00): 12th check — ajanakugallery.com HTTP 200, homepage still lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside the Founding Exhibition \"Opening Spring 2027\" built around West African sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead."
+      "verifyNote": "2026-07-19: re-confirmed A740zz submission form still 404; no open-call form on site (gallery states it operates by curator selection/invitation, only LEGACY exhibition + Patrons/RSVP); submissions retired — candidate to hide. Same finding 2026-07-18 & 2026-07-10. 2026-07-22: form still 404 (4th check); homepage now lists LEGACY as a PAST event (Dec 15–23, 2025, Neuilly-Plaisance) — call is dead. 2026-07-23: entire site (incl. homepage) now returns HTTP 500 — still dead. 2026-07-24: site back to HTTP 200 but LEGACY now shown as a PAST event (Dec 15-23, 2025, Neuilly-Plaisance); submission form A740zz still 404 (5th check); gallery relaunched around West African sculpture ('Opening Spring 2027'), no photography open call - call remains dead. 2026-07-25: 6th check — site HTTP 200, LEGACY still shown as a PAST event (December 15–23, 2025, Neuilly-Plaisance), gallery now positioned around African/diaspora art 'Opening Spring 2027'; submission form forms.ajanakugallery.com/r/A740zz still 404. Call remains dead. 2026-07-26: 7th check — site HTTP 200; homepage still lists LEGACY only as a past event (Dec 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition Spring 2027; forms.ajanakugallery.com/r/A740zz still HTTP 404. No open call anywhere on the site. Call remains dead. 2026-07-27: 8th check — ajanakugallery.com HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404, no open call on the site. Call remains dead. 2026-07-27 (22:00): 9th check — ajanakugallery.com HTTP 200, homepage lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside a Founding Exhibition \"Opening Spring 2027\" built around African/diaspora sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead despite the stored 2026-09-02 deadline. 2026-07-28: 10th check - ajanakugallery.com still HTTP 200, forms.ajanakugallery.com/r/A740zz still HTTP 404. Call remains dead. 2026-07-29 (14:00): 11th check — ajanakugallery.com HTTP 200, LEGACY still listed only as a past event (Dec 15-23 2025), forms.ajanakugallery.com/r/A740zz still HTTP 404. Call remains dead. 2026-07-30 (14:00): 12th check — ajanakugallery.com HTTP 200, homepage still lists LEGACY only as a PAST event (December 15-23, 2025, Neuilly-Plaisance) alongside the Founding Exhibition \"Opening Spring 2027\" built around West African sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead. 2026-07-31: 13th check - ajanakugallery.com HTTP 200, homepage still lists LEGACY only as a PAST event (December 15th - 23rd, 2025, Neuilly Plaisance) beside the Founding Exhibition \"Opening Spring 2027\" built around West African sculpture; forms.ajanakugallery.com/r/A740zz still HTTP 404. No photography open call anywhere on the site. Call remains dead."
     },
     {
       "title": "The City Series: London — Shutter Hub Editions Publication",
@@ -8766,7 +8772,7 @@
         "Submissions are limited to UK-based recent graduates. Submission is free of charge.",
         "Each photographer submits up to 8 images along with a brief statement about their work, their graduation details, and why they'd like to participate. Submissions are made by email via file transfer to submissions@glasgowgalleryofphotography.com. The 2026 deadline is August 21."
       ],
-      "verifyNote": "2026-07-27: deadline 21st August 2026, free - \"we at GGoP have decided to cover the costs of putting on this exhibition\" - 10 to 12 JPEGs printable at minimum 16\"x12\", open to \"Any UK based photography student who has graduated between 2023 - 2026\", submit to submissions@glasgowgalleryofphotography.com. The curation team is unnamed and selection is only \"soon after the deadline\", so jury and resultsDate stay empty. No AI policy."
+      "verifyNote": "2026-07-27: deadline 21st August 2026, free - \"we at GGoP have decided to cover the costs of putting on this exhibition\" - 10 to 12 JPEGs printable at minimum 16\"x12\", open to \"Any UK based photography student who has graduated between 2023 - 2026\", submit to submissions@glasgowgalleryofphotography.com. The curation team is unnamed and selection is only \"soon after the deadline\", so jury and resultsDate stay empty. No AI policy. 2026-07-31 verify: deadline 21st August 2026, free, 10-12 JPEGs and the 2023-2026 UK-graduate rule all re-confirmed. On the jury gap, note the page DOES carry a selector descriptor - \"after some discussion with the curation team, the images that will be displayed will be selected\" - but the 07-27 decision to keep `jury` empty is left standing here; it is a judgement call, not a missed fact. resultsDate stays empty for real: the only timing language is \"notified soon after the deadline\" plus an exhibition dated \"Late 2026 Exact date TBC\"."
     },
     {
       "title": "Across America 2026",
@@ -10251,7 +10257,7 @@
         "The call is interdisciplinary — photography, visual art, design, and fine craft are all eligible. Submissions go through the Co-Ex Collaborative website portal, with one image per applicant. There is no entry fee.",
         "Selected work is featured in a curated online collection on Co-Ex's site. Specific prize structure, jury composition, and historical context aren't published on the call page; the platform appears to operate as a curated online publication rather than a competition with cash awards. The deadline is September 12, 2026."
       ],
-      "verifyNote": "2026-07-27: coexcollaborative.com is JS-rendered and 403s WebFetch - read it in Chrome. The card reads \"Accepting Submissions / Closes: Sat, 12 Sep 2026 00:00:00 GMT\". Free; submissions now ONLY through the on-site portal (\"Submissions via email will no longer be accepted\") and must include an artist's statement linking the work to the call. No eligibility limits, no results date, no AI policy. 2026-07-29: unverifiable again — the React SPA is unreadable to curl/WebFetch (standing note) and Chrome is down (3rd consecutive run). Stored values stand from the 07-27 Chrome read. 2026-07-30 14:00 verify: unverifiable again (5th consecutive run). coexcollaborative.com serves the same 2.4KB empty SPA shell to curl on every path (with or without a browser UA) and the Chrome extension is not connected. Dug one level deeper this run: the site's data lives in a Supabase project (cjnqwdnacgrtxmqournt.supabase.co) referenced from /assets/index-*.js, but the only JWT in the bundle is not an anon key (REST root 401s) and the table names are minified away — so there is no headless read path, don't spend the time again. Stored values stand from the 07-27 Chrome read."
+      "verifyNote": "2026-07-27: coexcollaborative.com is JS-rendered and 403s WebFetch - read it in Chrome. The card reads \"Accepting Submissions / Closes: Sat, 12 Sep 2026 00:00:00 GMT\". Free; submissions now ONLY through the on-site portal (\"Submissions via email will no longer be accepted\") and must include an artist's statement linking the work to the call. No eligibility limits, no results date, no AI policy. 2026-07-29: unverifiable again — the React SPA is unreadable to curl/WebFetch (standing note) and Chrome is down (3rd consecutive run). Stored values stand from the 07-27 Chrome read. 2026-07-30 14:00 verify: unverifiable again (5th consecutive run). coexcollaborative.com serves the same 2.4KB empty SPA shell to curl on every path (with or without a browser UA) and the Chrome extension is not connected. Dug one level deeper this run: the site's data lives in a Supabase project (cjnqwdnacgrtxmqournt.supabase.co) referenced from /assets/index-*.js, but the only JWT in the bundle is not an anon key (REST root 401s) and the table names are minified away — so there is no headless read path, don't spend the time again. Stored values stand from the 07-27 Chrome read. 2026-07-31 verify: unverifiable again (6th consecutive run) - coexcollaborative.com still returns the same 2.4KB SPA shell to curl, WebFetch 403s, and the Chrome extension is not connected. Stored values stand from the 07-27 Chrome read."
     },
     {
       "title": "Epson International Pano Awards 2026",
@@ -31758,7 +31764,8 @@
       "slug": "a-show-of-heads-2026-limner-gallery",
       "orgInTitle": false,
       "summary": "The human head in every reading — portraiture to the conceptual — at Limner Gallery, Hudson NY. No fees for accepted artists.",
-      "dateAdded": "2026-07-20T10:06:02Z"
+      "dateAdded": "2026-07-20T10:06:02Z",
+      "verifyNote": "2026-07-31 verify: slowart.com/prospectus/head.htm confirms \"Entry Deadline: July 31, 2026\", \"a $35.00 entry fee for one to four artworks entered\" + \"a $5.00 fee for each additional artwork above four\", and \"Artists will be notified of acceptance or non-acceptance no later than August 31, 2026\" (exhibition Oct 8-31, 2026 at Limner Gallery). Eligibility 18-plus is verbatim: \"Entrants must be 18 years of age or older to apply\" — note the same paragraph opens \"open to all artists, national and international\", which is about geography, not age, so keep the tag. SlowArt names no juror and the prospectus contains no AI policy at all (bare \\bAI\\b grep: zero hits) — both gaps are genuine."
     },
     {
       "title": "Guest Room: Whitney Hubbs & Jermaine Francis",
@@ -31789,7 +31796,7 @@
     {
       "title": "Spotlight Awards 2026",
       "org": "Production Paradise",
-      "deadline": "2026-07-31",
+      "deadline": "2026-08-09",
       "fee": "€35 first entry, €25 each additional",
       "category": "photography",
       "description": "Production Paradise's annual commercial and advertising photography awards, now in their ninth edition. The real draw is the jury: more than fifty picture editors, art buyers, creative directors and brand leads from IKEA, The Economist, Volvo Cars, Unilever, Louis Vuitton, Cartier, Ogilvy, Droga5, UNICEF, The Guardian and Mattel. Entrants opt in to having their work shown to every judge, and the organisers pitch it as a hiring channel as much as a competition — winner or not. Fifteen categories, one of them for AI-developed imagery. Each submission is a single image, commissioned or personal work, open to photographers in all countries over 18. The Grand Prize winner takes $1,000 cash plus a portfolio review ticket and strategy sessions; category winners receive sponsor packages, with a total prize pool over $40,000. Shortlists are announced from 1 September, winners on 22 September 2026.",
@@ -31817,7 +31824,8 @@
       "orgInTitle": true,
       "summary": "Commercial photography awards judged by 50+ art buyers and picture editors from IKEA, The Economist, Volvo and Cartier.",
       "slug": "spotlight-awards-2026-production-paradise",
-      "dateAdded": "2026-07-20T15:50:42Z"
+      "dateAdded": "2026-07-20T15:50:42Z",
+      "verifyNote": "2026-07-31 verify: DEADLINE EXTENDED. productionparadise.com/spotlight-awards/rules-and-faqs/ reads verbatim \"Entry deadline: 1st of August 2026. Extended till 9th of August.\" — the stored Jul 31 was already a day early and is now superseded; do not flip back. Same page re-confirms \"Entry fees are EUR 35 for the first submission and EUR 25 for each subsequent entry\", \"Entrants must be over 18 years\", one image per submission (\"Each submission must be a single image\"), the AI-disclosure rule (AI post-production allowed but must be disclosed; fully AI-generated work belongs in its own category), and \"The Grand Prize Winner and the Category winners will be announced on 22nd of September 2026\". /prizes confirms $1,000 cash + a $1,500 Portfolio Review ticket. NB the deadline is published ONLY on /rules-and-faqs/ — the homepage, /prizes and /enter-now carry no date at all, and /spotlight-awards/rules/ and /terms-and-conditions/ silently serve the homepage."
     },
     {
       "title": "Global Reporting Grants",
@@ -32618,7 +32626,8 @@
       "slug": "the-peoples-garden-open-eye-gallery",
       "orgInTitle": false,
       "summary": "Free rolling call from Liverpool's Open Eye Gallery — garden photographs, family album or new, printed into a live exhibition.",
-      "dateAdded": "2026-07-25T10:19:50Z"
+      "dateAdded": "2026-07-25T10:19:50Z",
+      "verifyNote": "2026-07-31 verify: openeye.org.uk/open-call-gardens/ confirms the deadline is a rolling cut-off, verbatim \"Submissions are accepted on a rolling basis until Sunday 16 August\" — images are printed and added to the running exhibition as they arrive, which is why no notification date exists (resultsDate gap genuine). Free, \"up to three digital images (highest resolution possible, 30Mb maximum size, no AI or digitally-manipulated images)\" = ai Not accepted, and \"Open to anyone over the age of 18 and currently based in the UK\". No selector or curator is named anywhere on the page."
     },
     {
       "title": "In The Practice of Seeing — High School Section",
@@ -33105,7 +33114,9 @@
       "eligibility": [
         "analog-photography"
       ],
-      "jury": [],
+      "jury": [
+        "ShadowBoxX staff and guest jurors"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17764/CAFE",
       "requirements": "1–20 images",
@@ -33113,7 +33124,8 @@
       "orgInTitle": false,
       "summary": "Chicago-area gallery show on dark myth and folklore — analog media only; film and darkroom photography welcome, no digital or AI.",
       "dateAdded": "2026-07-26T06:19:02Z",
-      "ai": "Not accepted"
+      "ai": "Not accepted",
+      "verifyNote": "2026-07-31 verify: jury FILLED from CaFE 17764's own \"Jurors & Selection\" block — \"Curated by ShadowBoxX staff and guest jurors\" (a described-but-unnamed selector, no individual is named). Deadline Aug 22 re-confirmed (applicationDeadline 2026-08-23T04:59:59Z = Aug 22 CDT), $20 entry + $5 Additional Image Fee, imagesMin 1 / imagesMax 20, and the AI ban verbatim: \"Digital artwork, digital manipulation, and AI-generated work will not be considered.\" No notification date is published."
     },
     {
       "title": "America the Bountiful — Photography Show 2026",
@@ -33137,7 +33149,8 @@
       "slug": "america-the-bountiful-coastal-arts-league",
       "orgInTitle": false,
       "summary": "Bay Area juried photo show at Half Moon Bay's Coastal Arts League gallery, October 1 – November 2; $300 in merit awards.",
-      "dateAdded": "2026-07-26T06:19:02Z"
+      "dateAdded": "2026-07-26T06:19:02Z",
+      "verifyNote": "2026-07-31 verify: the OnlineJuriedShows prospectus (OJSID=58938) is the only full source — coastside-artists.com's gallery calendar carries just \"October 1 - Nov. 2: Juried Photo Show : Enter by September 1\". Prospectus verbatim: \"Enter by September 1, 2026\", \"Prizes: Three Merit Awards: $150, $100, $50\", \"Members: $45 for the first entry, plus $5 for each additional entry up to 3. Non-members: $55 for the first entry, plus $5 for each additional entry up to 3\", \"Open to regional artists, 18 years and older, living in the SF Bay Area\". JURY GAP IS GENUINE AND DELIBERATE: the prospectus line reads \"Jurors: TBA\" — do not fill it from the gallery's staff page. No notification date and no AI policy anywhere."
     },
     {
       "title": "Lines & Layers",
@@ -33793,7 +33806,7 @@
       "orgInTitle": false,
       "summary": "Black-and-white work on dual realities and the space between them. $5 entry, up to 3 works, emerging artists, all mediums.",
       "dateAdded": "2026-07-27T02:18:13Z",
-      "verifyNote": "2026-07-29: page reconfirms \"This call for entry closes on August 15th 2026, at 11:59 PM EST\", the $5 entry fee, \"up to three works\", and eligibility verbatim \"All artists of emerging status, of any age, race, denomination, and demographic\". AI stays Not accepted on the asterisked line \"Ninety-Seven does not recognize AI generated imagery as art\". The gallery names no juror and publishes no notification date — the page just says \"Wait for results of entry!\" — so both gaps are genuine."
+      "verifyNote": "2026-07-29: page reconfirms \"This call for entry closes on August 15th 2026, at 11:59 PM EST\", the $5 entry fee, \"up to three works\", and eligibility verbatim \"All artists of emerging status, of any age, race, denomination, and demographic\". AI stays Not accepted on the asterisked line \"Ninety-Seven does not recognize AI generated imagery as art\". The gallery names no juror and publishes no notification date — the page just says \"Wait for results of entry!\" — so both gaps are genuine. 2026-07-31 verify: deadline re-confirmed verbatim (\"This call for entry closes on August 15th 2026, at 11:59 PM EST\"), as is eligibility (\"All artists of emerging status, of any age, race, denomination, and demographic\") and ai Not accepted (\"Ninety-Seven does not recognize AI generated imagery as art\"). THE $5 FEE IS NOT ON THE CALL PAGE — it lives in the shop at ninetysevenmodern.com/entryfees as the line item \"Standard Entry Fee $5.00\" (the nav label is \"Entry Fees & Shop\"; /entry-fees with a hyphen 404s). Same page also lists a separate \"SOLO EXHIBITION - Application Fee $25.00\" for a different call — don't cross them. No juror named and no notification date published."
     },
     {
       "title": "The Quiet Image II",
@@ -34638,6 +34651,9 @@
       "location": "Los Angeles, CA, USA",
       "prize": "Billboard exhibition in LA",
       "eligibility": [],
+      "jury": [
+        "Curator selected by The Billboard Creative"
+      ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17606/CAFE",
       "requirements": "1-20 images",
@@ -34645,7 +34661,7 @@
       "orgInTitle": false,
       "summary": "Selected artists each get a Los Angeles billboard for four weeks, with production, installation and space covered. Photography welcome.",
       "dateAdded": "2026-07-28T03:25:11Z",
-      "verifyNote": "2026-07-30 verify: DON'T RE-FLIP the deadline to November 16. thebillboardcreative.org still carries a stale submit block reading \"Deadline: Sunday, November 16, 2025 — Midnight (Central Time)\" left over from the previous cycle (the same page describes the resulting show, Sightlines, as having opened April 6, 2026). The org-authored CaFE listing 17606 is the live 13th Annual call: applicationDeadline 2026-11-23T07:59:59Z = Nov 22 PST, fees APPLICATION $28 \"Entry Fee (1st Image)\" + MEDIA $10 \"Additional Media Fee (Each image 2-20)\", imagesMin 1 / imagesMax 20. Eligibility [] confirmed — \"open to artists working in all media\", blind selection, no age or location rule (only \"not accepting video or audio works\"). juryResults is null and no juror is named; no AI policy in description / eligibilityDescription / requirementDescription or on the rendered CaFE page."
+      "verifyNote": "2026-07-30 verify: DON'T RE-FLIP the deadline to November 16. thebillboardcreative.org still carries a stale submit block reading \"Deadline: Sunday, November 16, 2025 — Midnight (Central Time)\" left over from the previous cycle (the same page describes the resulting show, Sightlines, as having opened April 6, 2026). The org-authored CaFE listing 17606 is the live 13th Annual call: applicationDeadline 2026-11-23T07:59:59Z = Nov 22 PST, fees APPLICATION $28 \"Entry Fee (1st Image)\" + MEDIA $10 \"Additional Media Fee (Each image 2-20)\", imagesMin 1 / imagesMax 20. Eligibility [] confirmed — \"open to artists working in all media\", blind selection, no age or location rule (only \"not accepting video or audio works\"). juryResults is null and no juror is named; no AI policy in description / eligibilityDescription / requirementDescription or on the rendered CaFE page. 2026-07-31 verify: jury FILLED — CaFE 17606 states \"All entries will be reviewed by a curator selected by The Billboard Creative. The curator's decisions are final.\" No individual is named, so this stays a descriptor. Deadline 2026-11-23T07:59:59Z = Nov 22 PST, fees APPLICATION $28 + MEDIA $10 and imagesMin 1 / imagesMax 20 all re-confirmed; still no AI policy and no notification date on either the API fields or the rendered page."
     },
     {
       "title": "Sea to Shining Sea",
