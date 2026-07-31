@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-31T19:23:40Z",
+  "lastUpdated": "2026-07-31T21:17:13Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -1635,7 +1635,7 @@
       "resultsDate": "March 2027",
       "instagram": "@wsworkshop",
       "submitUrl": "https://womensstudioworkshop.submittable.com/submit",
-      "verifyNote": "2026-07-31 02:00 verify: DO NOT MARK CLOSED on the banner. wsworkshop.org/residencies/artists-book-residency-grant/ currently prints \"We are not currently accepting applications for this opportunity\" — that is a PRE-OPEN state, not a closure: the Key details block on the same page reads \"Applications Open: August 1st, 2026 / Applications due: November 15, 11:59pm EST / Notification date: March, 2027\". The banner should flip tomorrow. Stipend reconfirmed \"$350/week, up to $1000 for materials, up to $250 for travel within the Continental US, free onsite housing\", and \"Up to ten images of recent work\"."
+      "verifyNote": "2026-07-31 22:00 verify: DO NOT MARK CLOSED on the banner — and note it should lift TOMORROW. wsworkshop.org/residencies/artists-book-residency-grant/ still prints \"We are not currently accepting applications for this opportunity\", but the Key details block on the same page reads \"Applications Open: August 1st, 2026 / Applications due: November 15, 11:59pm EST / Notification date: March, 2027 / Residency length: 8-10 weeks\". That is a PRE-OPEN state; today is July 31. Stipend re-confirmed verbatim: \"$350/week, up to $1000 for materials, up to $250 for travel within the Continental US, free onsite housing\", plus \"Up to ten images of recent work\". Jury stays [] deliberately — the page says only \"An outside jury of artists and curators choose the grant recipients\" and names nobody. No AI policy."
     },
     {
       "title": "Black and White: 2026",
@@ -29341,6 +29341,12 @@
       "url": "https://www.lsmartfund.org/grants",
       "location": "New York, NY, USA",
       "prize": "Up to five grants of $5,000 each",
+      "jury": [
+        "Sharon Matt Atkins, Deputy Director for Art, Brooklyn Museum",
+        "Laura Hoptman, Executive Director, The Drawing Center",
+        "Aaron Levi Garvey, Director, Art Museum of West Virginia University",
+        "Qinghui Cao, Associate Professor, Central Academy of Fine Arts"
+      ],
       "submitVia": "Official website",
       "submitUrl": "https://www.lsmartfund.org/artistgrants2026",
       "requirements": "Project proposal",
@@ -29353,7 +29359,7 @@
       "summary": "Foundation grants of $5,000 to five early-career visual artists (2–10 years) for projects bridging tradition and contemporary practice.",
       "dateAdded": "2026-06-29T15:07:48Z",
       "instagram": "@lsmartfund",
-      "verifyNote": "2026-07-29 recheck: lsmartfund.org/artistgrants2026 (the /grants hub only links to it) re-confirms \"Applications must be completed and submitted by August 31, 2026\", free, \"Successful applicants will be notified via email by December 2, 2026\" and the split payment ($3,000 by Jan 15 2027 + $2,000 on completion). NOTE the career-stage window now reads \"debut show at a gallery or juried art exhibition between 2016 and 2026\" (the 2016-2024 degree window is the alternative route) - still career-stage, not geography: \"Artists from any country may apply\". Panel unnamed; no AI policy. Unchanged."
+      "verifyNote": "2026-07-31 22:00 verify: JURY FILLED. lsmartfund.org/artistgrants2026 publishes a \"2026 Selection Panel\" block below the APPLY NOW button — Sharon Matt Atkins (Deputy Director for Art, Brooklyn Museum), Laura Hoptman (Executive Director, The Drawing Center), Aaron Levi Garvey (Director, Art Museum of West Virginia University) and Qinghui Cao (Associate Professor, Central Academy of Fine Arts, Beijing), each with a full bio. Earlier passes logged \"Panel unnamed\" because they read the /grants hub, which only links onward — the names live ONLY on /artistgrants2026, PAST the fold, after the grant-disbursement paragraph. Everything else re-confirmed on the same read: \"Applications must be completed and submitted by August 31, 2026\", free, \"Successful applicants will be notified via email by December 2, 2026\", split payment $3,000 by Jan 15 2027 + $2,000 on completion, \"Artists from any country may apply\" (career-stage gate only: debut show 2016-2026 or degree 2016-2024). Still no AI policy."
     },
     {
       "title": "PhMuseum 2026 Women Photographers Grant",
@@ -29854,7 +29860,7 @@
       "summary": "Summer-memory themed issue of Arts to Hearts Magazine — $500 cash prize and feature spreads; all disciplines incl. photography.",
       "dateAdded": "2026-07-02T03:14:20Z",
       "requirements": "1–20 images",
-      "verifyNote": "2026-07-30: the apply.artstoheartsproject.com page is a Next.js App Router shell — static HTML is 157 chars of text and the RSC/__next_f payload carries only markup, so WebFetch reports a stale placeholder \"Submission Deadline: June 15, 2025\" and Chrome was down. READ IT VIA THE PUBLIC BACKEND API instead (no auth): GET https://backend.artstoheartsproject.com/api/users/events/ongoing/ lists the live calls, and GET .../api/users/events/public/ returns each event in full. The Issue 14 record confirms every stored value: submission_deadline 2026-08-02T23:45+05:30, status published, artwork_options 1 image $21 / 3 $35 / 5 $50 / 10 $62 / 20 $100, \"Winner • $500 USD cash prize • A 4-page editorial spread\" plus trophy and certificate, \"Open Worldwide • All Mediums\", photography among the categories. GENUINELY UNFILLABLE: jury is stored as a bare count (jury: 5) with no names; results are only \"shared via email within a few weeks following the submission deadline\" (result_announcement_date is null — event_date 2026-08-15 is NOT labelled a results date, don't promote it); no AI policy anywhere in the record. url == submitUrl is CORRECT here: artstoheartsproject.com/open-calls/ links to this same apply URL as the call's own page, there is no separate org landing page."
+      "verifyNote": "2026-07-30: the apply.artstoheartsproject.com page is a Next.js App Router shell — static HTML is 157 chars of text and the RSC/__next_f payload carries only markup, so WebFetch reports a stale placeholder \"Submission Deadline: June 15, 2025\". READ IT VIA THE PUBLIC BACKEND API instead (no auth): GET https://backend.artstoheartsproject.com/api/users/events/ongoing/ lists the live calls, and GET .../api/users/events/public/ returns each event in full — note the public endpoint is PAGINATED (data.count/next/results), so parse data.results, not data. 2026-07-31 22:00 verify: re-read both endpoints, all values stand. ongoing/ returns exactly two live calls and Issue 14 is one of them, submission_deadline 2026-08-02T23:45:00+05:30, status published. The full record re-confirms artwork_options 1 image $21 / 3 $35 / 5 $50 / 10 $62 / 20 $100, the award line \"Cash Award 500 USD, 4 Page Spread, Customized Trophy, Certificate\", and photography among the categories list. GENUINELY UNFILLABLE: jury is a bare count (jury: \"5\"), result_announcement_date is null and result_announcement is false (event_date 2026-08-15 is NOT a results date — do not promote it), and there is no AI policy in the record. url == submitUrl is CORRECT: artstoheartsproject.com/open-calls/ links to this same apply URL, there is no separate org landing page. Do NOT read the public endpoint casually — it also returns applicant review objects containing private email addresses; take only the event fields."
     },
     {
       "title": "Rauschenberg Medical Emergency Grants — Cycle 37",
@@ -29890,7 +29896,7 @@
       "url": "https://royalsociety.org/journals/publishing-activities/photo-competition/",
       "instagram": "@royalsociety",
       "location": "Online",
-      "prize": "£1,000",
+      "prize": "£1,000 + £500 per category",
       "eligibility": [
         "scientists"
       ],
@@ -29908,7 +29914,8 @@
       "orgInTitle": true,
       "summary": "£1,000 top prize for photography by working scientists — free entry, five science categories, open at graduate level and above.",
       "dateAdded": "2026-07-02T03:18:56Z",
-      "resultsDate": "December 2, 2026"
+      "resultsDate": "December 2, 2026",
+      "verifyNote": "2026-07-31 22:00 verify: PRIZE CORRECTED — the stored £1,000 was only the overall award. royalsociety.org/journals/publishing-activities/photo-competition/how-to-enter/ states \"The overall winner receives a prize of £1,000 (or currency equivalent) and winners of the categories not chosen as the overall winner receive £500 (or currency equivalent)\", so five category winners are paid too. The prize block lives on /how-to-enter/, NOT on the /photo-competition/ landing page, which carries only the dates. Landing page re-confirms \"opens 01 June 2026 / closes 14 August 2026 / winners announced 02 December 2026\" and \"Anyone studying or working in science at graduate level or above can enter\" (= the scientists tag). Overall winner also gets a journal cover and a full APC waiver; category winners get RPS certificates and a 1-year RPS membership."
     },
     {
       "title": "The Nature Photography Contest 2026",
@@ -30412,7 +30419,7 @@
         "Applicants submit a biography, CV, a project description of up to 3,000 characters, and a minimum of 10 images (1500px minimum, sRGB). Projects previously exhibited in Denmark, or shortlisted in previous years, are not eligible; artists selected as a solo artist within the last three years must wait a year to reapply. Applications are accepted in English or Danish, and the deadline is 1 September 2026."
       ],
       "submitUrl": "https://site.picter.com/copenhagen-photo-festival-call-for-solo-artists-2027",
-      "verifyNote": "2026-07-29 recheck: copenhagenphotofestival.com reads with a PLAIN curl (curl+UA 403s) and states \"The deadline for applying to the call for solo artists is 1 September 2026. The call for 2027 is open 8 july – 1 September 2026\"; Picter JSON re-confirms submissionEndDate 2026-09-01T21:59Z and costs \"DKK 215 / € 29\". The Picter timeline still says \"Solo Artists will be announced 2027-03-01\" while the org page has the autumn-2026 interview round - resultsDate stays \"Fall 2026\" (when applicants actually hear). Unchanged."
+      "verifyNote": "2026-07-31 22:00 verify: unchanged, plus a NAME TRAP. copenhagenphotofestival.com reads with a PLAIN curl (curl+UA 403s) and re-confirms \"The deadline for applying to the call for solo artists is 1 September 2026. The call for 2027 is open 8 july - 1 September 2026\"; the Picter API gives submissionEndDate 2026-09-01T21:59Z and costs \"DKK 215 / EUR 29\". THE PICTER JURY TAB MISSPELLS A JUROR: site.picter.com/<slug>/jury serves \"Patricia Breinhom Bertram\", while the organiser-s own page spells it \"Patricia Breinholm Bertram, Curator & Head of Communication at Martin Asbaek Gallery\" — keep the org spelling, do not sync it to Picter. The other three (Soren Pagter, Stinus Duch, Maja Dyrehauge Gregersen) match on both surfaces. hasJury is true here, which is why /jury has anything at all; most Picter calls in this batch return hasJury:false. resultsDate stays \"Fall 2026\" (when applicants actually hear) — the Picter timeline-s 2027-03-01 is the public announcement, not the notification."
     },
     {
       "title": "Composed",
@@ -31303,7 +31310,7 @@
         "Valery Poshtarov, Photographer & Founder, PhotoAnthology Foundation",
         "Lynsey Weatherspoon, Photojournalist & Portraitist"
       ],
-      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-28: attempted re-verification with Chrome down. Both curl-reachable sources are STALE and both say $30: the submit.headon.org.au/PhotoAwards-2026 welcome blurb (\"Full-price entry fees are AUD$30 per image... 50% discount\" for under-25s) and the only Wayback snapshot of /awards (2026-06-07, which shows General $30 / Festival Friends $25 / Under-25 $15 and reads \"Entries closed\" - i.e. the pre-opening 2025 schedule). The fee was briefly changed to $30/$15 on this run and reverted the same session. headon.org.au still 403s plain curl, curl+UA and WebFetch; only one Wayback capture exists for /awards. The 2026-08-16 deadline and the AUD 80,000 pool were NOT independently re-confirmed today - the $80,000 figure does appear on the live submit portal. 2026-07-30 (verify): NOT re-verifiable today — headon.org.au/awards still 403s curl+UA AND WebFetch, and the Chrome extension was disconnected, so the standing fee rule holds: keep AUD$35 / $17.50 under-25 from the 2026-07-23 Chrome read. The submit portal submit.headon.org.au/PhotoAwards-2026 DOES curl (200) and still carries the stale \"Full-price entry fees are AUD$30 per image\" blurb — that line has now caused five re-flip attempts, ignore it. The portal does confirm the \"$80,000 prize pool, plus finalists' exhibitions per category\". The 2026-08-16 deadline could not be re-confirmed on any curl-reachable surface (the portal publishes no close date and Wayback has only the pre-opening 2026-06-07 capture of /awards)."
+      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-31 22:00 verify: STILL NOT RE-VERIFIABLE. headon.org.au/awards returns 403 to curl+UA (5,763-byte block page) and the Chrome extension is disconnected again, so the standing rule holds — keep AUD$35 / $17.50. The submit portal submit.headon.org.au/PhotoAwards-2026 DOES curl (200) and STILL carries the stale line \"Full-price entry fees are AUD$30 per image. To support younger artists (under 25), we offer a 50% discount\" — that sentence has now triggered SIX re-flip attempts across separate runs; it is last cycle-s copy, ignore it permanently. The portal does re-confirm the prize: \"we proudly offer an $80,000 prize pool, plus finalists- exhibitions per category (printed and online)\" across Portrait, Landscape and Exposure, and \"You can enter as many images as you want\" (= unlimited). The 2026-08-16 deadline is published on NO curl-reachable surface (the portal states no close date) and Wayback still has only the pre-opening 2026-06-07 capture — carried forward from the 2026-07-23 Chrome read."
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
@@ -35416,7 +35423,7 @@
       "slug": "f-262-curated-open-call-2026",
       "orgInTitle": true,
       "summary": "Curated series call from the F/262 Festival in Portugal. Winner gets a solo show at CEF; production costs covered.",
-      "verifyNote": "2026-07-29 editor approve: festival262.com/f-262-curated-open-call-projects-series-exhibition/ read via curl+UA. KEY DATES block gives submissions open 7 April 2026, deadline 22 September 2026, final selection announced October 2026. Fee €35 per project; the FAQ states each additional project is a separate entry and a separate fee. NOT a dup of the two F/262 calls already listed — the page's own FAQ spells out the split: Photography Awards (deadline Aug 19) = SINGLE IMAGES, Photo Book Award (Sep 30) = dummies, this one = SERIES/projects, and entering both is allowed. Both 'SUBMIT YOUR PROJECT HERE' and the nav 'Awards Submission Form' resolve to the same /f-262-submission-form/. 'No limit to the number of projects selected', but only ONE gets the CEF solo show, so prize stays 'Solo exhibition'. No jury names published — reviewed by the F/262 curatorial team plus guest curators, international advisors and external reviewers from partner institutions — so jury []; do not graft the Photo Book Award's 4 names onto this call. Festival covers exhibition production costs; artists retain copyright. 2026-07-30 (verify): COULD NOT RE-VERIFY — festival262.com is unreachable from curl (three attempts, HTTP/2 and HTTP/1.1, all exit 28 connection timeouts, not 403), WebFetch timed out at 60s, and the Chrome extension was disconnected. DNS resolves fine (193.58.105.239 / 77.37.50.249), so this reads as a host-side outage or IP block rather than a dead call. Wayback is no help: the newest snapshot of this URL is 2026-03-16 and it predates the schedule (\"Deadline: soon to be announced\") — do NOT read that snapshot as the current state or mark the call closed on it. Stored values stand on the 2026-07-29 live read.",
+      "verifyNote": "2026-07-31 22:00 verify: SITE IS BACK — festival262.com now curls fine (200, curl+UA), so the 2026-07-30 \"three connection timeouts, host-side outage\" note is resolved; it was an outage, not a dead call, exactly as read at the time. Everything re-confirmed live on /f-262-curated-open-call-projects-series-exhibition/: KEY DATES \"Submissions Open: 7 April 2026 / Deadline: 22 September 2026 / Final Selection Announced: October 2026\", \"SUBMISSION FEE €35 per project\", and \"One selected project will be awarded a dedicated solo exhibition at the CEF - Centro de Experimentacao Fotografica in Caldas da Rainha\" (so prize stays the single solo show even though there is no cap on selections). Submissions via /f-262-submission-form/, single PDF. Still NOT a dup of the other two F/262 calls — this one is SERIES/projects, the Photography Awards are single images, the Photo Book Award is dummies. No jury names (curatorial team + guest curators), no age or nationality gate, no AI policy.",
       "dateAdded": "2026-07-29T15:25:11.286Z"
     },
     {
@@ -36268,10 +36275,12 @@
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17976/CAFE",
       "requirements": "3–12 images",
+      "resultsDate": "September 18, 2026",
       "slug": "the-modern-portrait-site-brooklyn-gallery",
       "orgInTitle": false,
       "summary": "Site:Brooklyn online show on the contemporary portrait, juried by critic Theodora Walsh. International, 3–12 images.",
-      "dateAdded": "2026-07-31T19:23:40Z"
+      "dateAdded": "2026-07-31T19:23:40Z",
+      "verifyNote": "2026-07-31 22:00 verify: resultsDate FILLED. CaFE 17976 GraphQL description carries the full Dates block — \"Call Announcement: July 30, 2026 / Final Submission Deadline: September 9, 2026 11:59 PM PT / Notification Letter: September 18, 2026\". The structured juryResults field is null, which is why earlier passes recorded no results date: on Site:Brooklyn the notification date is only in the prose, never in the date fields. Deadline 2026-09-10T06:59:59Z = Sep 9 PT confirmed, fee rows $26 Entry + $10 Additional Media, imagesMin/Max 3-12, eligibility \"open to all artists 18 years of age or older\" (no geography, hence 18-plus only), juror Theodora Walsh confirmed. sitebrooklyn.com itself is a near-empty JS shell — read this call on CaFE."
     },
     {
       "title": "I'M SCARED 2026",
@@ -36415,11 +36424,13 @@
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17978/CAFE",
       "requirements": "7–10 images",
+      "resultsDate": "Early 2027",
       "slug": "2028-bear-gallery-exhibition-fairbanks-arts-association",
       "orgInTitle": false,
       "summary": "Alaska-resident portfolio call for solo, group or curated shows at the Bear Gallery. Blind panel review, 7–10 samples.",
       "ai": "Not accepted",
-      "dateAdded": "2026-07-31T19:23:40Z"
+      "dateAdded": "2026-07-31T19:23:40Z",
+      "verifyNote": "2026-07-31 22:00 verify: resultsDate FILLED. CaFE 17978 description states \"Applicants will be notified of their application status in early 2027\" — a window, not a date, so it is stored as \"Early 2027\"; juryResults is null and there is no calendar date anywhere. Jury stays [] on purpose: the same text describes a blind panel (\"Signatures and names visible in work samples should be blurred... to keep the jury process blind\", \"The review panel will...\") and names nobody. Also re-confirmed: deadline 2026-11-01T05:59:59Z = Oct 31 local, fee \"Current Fairbanks Arts Association Members at the Artist level or higher: $30.00 / Non-member: $35.00\", imagesMin/Max 7-10, Alaskan artists only, and the AI ban \"Artworks in the exhibition must not include AI-generated imagery.\" Note fairbanksarts.org/call-for-art/ still advertises the 2027 cycle — CaFE is the live surface."
     },
     {
       "title": "In the Realm of the Mystic",
