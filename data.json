@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-30T11:22:15Z",
+  "lastUpdated": "2026-07-31T11:18:37Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -35938,6 +35938,218 @@
       "summary": "£5,000 commission (£3,500 fee + £1,500 production) for new work on health and care, shown at REMEDY Photo Festival 2027. Free to enter.",
       "verifyNote": "2026-07-31 04:20 editor pass on the 04:00 sweep add. NOT a dup of remedy-photo-festival-open-call-2026 even though both carry the SAME url: the org REPURPOSED the /open-call-2026/ page. It no longer holds the free 6–10 image exhibition open call that closed 2026-04-25 (that entry is Past and keeps the url) — the live page body is now 'Photography Commission: New perspectives on health, wellbeing and identity', a distinct £5,000 commission for REMEDY 2027. Confirmed by curl of the rendered page, not an aggregator. SUBMITURL WAS WRONG AS DRAFTED and is the trap on this page: it carries TWO different forms.gle links and the finder took the top 'Entry Form' button (forms.gle/Q3WoAUynw3hcT3Wz6). That one resolves to form 1FAIpQLSdnO0jozGI, whose <title> is 'REMEDY Photo Festival 2026 – Open Call' and which SERVES /closedform — last cycle's leftover button the org never repointed. The real route is the bottom 'Click here to submit' link, forms.gle/xrVQHftypSMwu1qu8 → form 1FAIpQLSfqFiCpuw, stored here. It answers 401 and its /closedform bounces to accounts.google.com/ServiceLogin rather than rendering, i.e. sign-in required — expected, the page says 'Entry is by Google Form with an upload link' and Google forces sign-in on file-upload forms. Per the standing rule a 401 is NOT closure; a /viewform→/closedform redirect is, and only the STALE form does that. Note the past 2026 entry stores a THIRD form (1FAIpQLSeDIGEni), so never assume a REMEDY form id carries over. Resolving forms.gle needs curl's DEFAULT UA: a browser UA returns the proxy.link.app Firebase shell with the target nowhere in the body, while the default UA gets a clean 302 to docs.google.com. Fee Free — the page names no entry cost, every £ on it is the award. Deadline '30th September 2026', notification 'Ocotber 2026' [sic] → resultsDate October 2026. prize gains '+ exhibition': 'Exhibition as part of REMEDY Photo Festival 2027' is a listed benefit and the corpus precedent is Photo Museum Ireland's '€15,000 commission + exhibition + publication'. jury [] : the page lists assessment criteria only, no named panel. ai absent is confirmed, not a gap — the rendered page greps clean for bare 'AI', 'artificial intelligence', 'generative' and 'machine learning'. eligibility [] : no residency, age or nationality restriction stated anywhere; the Nov 2026 – May 2027 R&D period and Lincolnshire venue imply UK-based in practice but the org publishes no limit, so do not invent one.",
       "dateAdded": "2026-07-31T03:19:11Z"
+    },
+    {
+      "title": "16th Arbella International Photography Contest",
+      "org": "Arbella International Photography Contest",
+      "deadline": "2026-09-06",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Long-running free international contest, now in its sixteenth year, run by Arbella Pasta (Durum Gıda) as a social-responsibility and arts project bringing Turkish and international photographers together. The 2026 edition marks the 200th anniversary of the invention of photography and runs two categories: the themed \"Beauty of Imperfection\", which looks for the aesthetics, emotion and story carried by marks, breakages, wear, irregularities and unexpected detail that fall outside the perception of perfection, and \"Open\", with no subject restriction at all. A separate Future Viewfinder award is applied automatically to entrants aged 18–24 and comes with physical workshop programmes in Istanbul. Entrants may submit up to five photographs per category and may win at most one award per category; work must have been taken on or after 1 January 2021. Collage, HDR, artificial bokeh, and the addition or removal of objects are all disallowed, and images generated from text prompts by AI tools are strictly not accepted. Up to 26 photographs across both categories are selected for an exhibition. Copyright stays with the photographer; awarded, honourable-mention and exhibited work may be used credited for contest promotion and archiving.",
+      "url": "https://arbellaphotocontest.com/",
+      "instagram": "@arbellaphotographycontest",
+      "location": "Istanbul, Turkey",
+      "prize": "$2,500 grand prize + $1,500 per category + Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://arbellaphotocontest.com/request",
+      "requirements": "Up to 5 images per category",
+      "jury": [
+        "Barbara Di Maio, co-founder, Women in Street Italy",
+        "Coşkun Aral, war correspondent, documentary and TV producer",
+        "Ercan Arslan, journalist and photojournalist",
+        "İlkay Öztürk, founder, FoodArtStudio",
+        "Sumru Gözaydın, Marketing Communications Manager, Arbella"
+      ],
+      "ai": "Not accepted",
+      "resultsDate": "September 25, 2026",
+      "slug": "16th-arbella-international-photography-contest",
+      "orgInTitle": true,
+      "summary": "Free 16th-year international contest on the beauty of imperfection. $10,500 in prizes, an exhibition, and a separate award for ages 18–24.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "The Arbella International Photography Contest has run for sixteen years, organised by Durum Gıda Sanayi ve Ticaret A.Ş. — the company behind Arbella Pasta — as a social-responsibility and arts programme intended to build a platform where Turkish and international photographers meet. It is free to enter and carries a total prize pool of $10,500.",
+        "The 2026 edition is framed around the 200th anniversary of the invention of photography and is divided into two categories. \"Beauty of Imperfection\", the main category, asks for images in which traces, breakages, wear, irregularity, accident and unexpected detail are treated as aesthetic parts of character, reality and sincerity rather than as flaws. The \"Open\" category carries no subject restriction — people, nature, city, street, portrait, documentary, conceptual or architectural work all qualify.",
+        "New for this edition is Future Viewfinder, an award applied automatically to entrants aged 18–24 in each category. It is not a separate application route, and the organisers say it will extend beyond prize money into physical workshop programmes held in Istanbul for selected younger participants.",
+        "Entrants may submit up to five photographs per category, with no repetition of content between them, and may receive at most one award per category. Work must have been taken on or after 1 January 2021, and previous exhibition or publication elsewhere is not a barrier. The technical rules are strict: collage, HDR, artificial background blur, and the cloning, moving or addition of objects are all disallowed, with only sensor dust-spot cleaning permitted; EXIF data must be intact; and images generated from text prompts using AI tools such as Midjourney or DALL·E are strictly not accepted.",
+        "The selection committee is Barbara Di Maio, Coşkun Aral, Ercan Arslan, İlkay Öztürk and Sumru Gözaydın. Jury evaluation takes place on 12 September 2026 and results are announced on 25 September 2026. A maximum of 26 photographs across both categories are launched as an exhibition, with the award ceremony and opening announced separately. Copyright remains with the photographer; awarded, honourable-mention and exhibited images may be used with credit by the organiser for promotion, communication and archiving, and may not be sold or transferred commercially."
+      ]
+    },
+    {
+      "title": "Howard Chapnick Grant 2026",
+      "org": "W. Eugene Smith Memorial Fund",
+      "deadline": "2026-10-12",
+      "fee": "Free ($25 donation optional)",
+      "category": "grant",
+      "description": "Grant from the W. Eugene Smith Memorial Fund that recognises programs rather than individuals — initiatives making a significant contribution to the field of documentary photography through education. Funding may support research, direct learning, online resources, publication, archives, exhibition or dissemination through social media; it explicitly does not fund the creation or production of photographs. Applicants must be based anywhere in the world and must have been operating for at least one year. The 2026 award is $7,500, paid as $6,000 on award and $1,500 on submission of the final report. Applications are made by email directly to the Smith Fund with a one-page description of no more than 500 words covering the program's activities, its constituency and its contribution to the community, plus at least three reference links for verification. Entries open 1 July 2026 and recipients are announced 15 December 2026. A $25 donation is invited but voluntary — the Board of Trustees notes that some programs can afford to donate and others cannot.",
+      "url": "https://www.smithfund.org/howard-chapnick-grant",
+      "instagram": "@eugenesmithfund",
+      "location": "New York, NY, USA",
+      "prize": "$7,500",
+      "eligibility": [],
+      "submitVia": "Email",
+      "jury": [
+        "Three-member international jury"
+      ],
+      "resultsDate": "December 15, 2026",
+      "slug": "howard-chapnick-grant-2026",
+      "orgInTitle": false,
+      "summary": "$7,500 from the Smith Fund for programs advancing documentary photography through education. Free to apply, by email, worldwide.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "The Howard Chapnick Grant sits alongside the W. Eugene Smith Grant in Humanistic Photography and the Smith Student Grant, but it works differently from both: it recognises programs, not individuals. The Fund is looking for initiatives that make a significant contribution to the field of documentary photography through education, and applicants must have been operating for at least one year. There is no geographic restriction.",
+        "For 2026 the award is $7,500, dispersed as $6,000 on receipt of the grant and $1,500 on submission of a final report. Funding may go toward research, direct learning, online resources, publication, archives, exhibition, or dissemination through social media. It explicitly does not fund the making or production of photographs — this is money for the educational infrastructure around documentary photography rather than for a shooting project.",
+        "Unlike the Fund's other grants, applications do not go through Picter. Entries are accepted by the Smith Fund directly by email, with \"Chapnick Grant\" in the subject line, and consist of a description of no more than 500 words on one page covering the program's activities, its constituency and its contribution to its community, together with at least three reference links so the Fund can verify the work.",
+        "A $25 donation accompanies the application, but it is explicitly voluntary: the Board of Trustees states that it understands some programs can afford to donate while others cannot. Entries opened on 1 July 2026, the deadline is 12 October 2026 at 11:59pm EDT, and recipients are announced on 15 December 2026."
+      ]
+    },
+    {
+      "title": "Hodder Fellowship 2027-28",
+      "org": "Princeton University",
+      "deadline": "2026-09-08",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Ten-month visiting fellowship at Princeton University awarding $93,000 to artists and writers of exceptional promise, selected — in the terms of the fellowship — more for promise than for performance. The award is intended to give recipients \"studious leisure\" to pursue an independent project and undertake significant new work, and carries no formal teaching obligation. The 2027-28 cycle accepts applications from the Program in Dance, the Program in Theater and Music Theater, the Program in Visual Arts and the Department of Music, so photographers and other visual artists are eligible this round. Applications ask for a résumé, a project proposal of 500 words and work samples such as images, writing excerpts or performance video. US citizenship is not required. Previous recipients of the Princeton Arts Fellowship may not apply, and an applicant may apply for the Hodder at most twice in a lifetime.",
+      "url": "https://arts.princeton.edu/about/opportunities/hodder-fellowship/",
+      "instagram": null,
+      "location": "Princeton, NJ, USA",
+      "prize": "$93,000",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://apply.interfolio.com/184993",
+      "slug": "hodder-fellowship-2027-28",
+      "orgInTitle": false,
+      "summary": "$93,000 for ten months of independent work at Princeton, no teaching required. Visual artists are eligible this cycle; free to apply.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "The Hodder Fellowship is awarded by Princeton University's Lewis Center for the Arts to artists and writers of exceptional promise — composers, choreographers, performance artists, visual artists, writers, translators and humanists with, in the fellowship's own phrase, \"much more than ordinary intellectual and literary gifts\". Candidates are chosen more for promise than for performance, which makes it one of the rare major fellowships explicitly aimed at where a practice is going rather than what it has already accumulated.",
+        "The award is a ten-month appointment carrying a stipend of $93,000. Its stated purpose is to give recipients \"studious leisure\" — time to pursue an independent project and undertake significant new work. There is no formal teaching requirement, distinguishing it from the Princeton Arts Fellowship, which asks fellows to teach a course each semester.",
+        "Eligibility rotates by discipline. For this cycle Princeton is accepting applications from the Program in Dance, the Program in Theater and Music Theater, the Program in Visual Arts, and the Department of Music — so photographers and other lens-based artists working under the Visual Arts umbrella can apply this round. US citizenship is not required.",
+        "Applications consist of a résumé, a 500-word project proposal and work samples, which may be images, writing excerpts or performance video depending on the discipline. Previous Princeton Arts Fellowship recipients are not eligible, and an applicant may apply for the Hodder no more than twice in a lifetime. The deadline is 8 September 2026 at 11:59pm EDT, and there is no application fee."
+      ]
+    },
+    {
+      "title": "SPIE International Day of Light Photo Contest 2026",
+      "org": "SPIE",
+      "deadline": "2026-09-16",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Free annual contest from SPIE, the international society for optics and photonics, run in support of the International Day of Light and open to amateur and professional photographers aged 18 and over worldwide. The contest looks for images showing the transformative impact of light on lives, communities and the planet: the properties of light and how it interacts with the atmosphere, nature and materials; light technology such as lasers and LEDs; images made with telescopes, microscopes and other optical instruments; people interacting with light; and light in the betterment of the human condition. Entrants may submit a maximum of two photographs, each on its own entry form and accompanied by a title and an artist statement covering subject, location, date, equipment and any adjustments made. Images must be at least 3,000 pixels on the longest side at 300dpi, in TIF or JPEG, and must have been taken after 16 May 2024. Only limited optimisation is allowed — no watermarks, and AI may not be used to generate images or composites. Winning photographs are published in SPIE publications and displayed at SPIE conferences and exhibitions with credit. Prize money cannot be paid to entrants in countries under US sanctions, though they may still enter and compete for recognition.",
+      "url": "https://spie.org/community-support/international-day-of-light/idl-photo-contest",
+      "instagram": "@spiephotonics",
+      "location": "Online",
+      "prize": "$2,500 + $1,000 Best of Science + Publication",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://spie.org/community-support/international-day-of-light/idl-photo-contest/idl-photo-contest-general-entry",
+      "requirements": "Up to 2 images",
+      "ai": "Not accepted",
+      "resultsDate": "October 30, 2026",
+      "slug": "spie-international-day-of-light-photo-contest-2026",
+      "orgInTitle": true,
+      "summary": "Free contest on the impact of light, from the optics and photonics society. $5,000 in prizes; winners published and shown at SPIE events.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "SPIE — the international society for optics and photonics, based in Bellingham, Washington — runs this contest each year in support of the International Day of Light, with the stated aim of raising public awareness of the role light and light-based technology play in daily life. It is free to enter and open to amateur and professional photographers alike, aged 18 and over, anywhere in the world.",
+        "The theme is broad within its subject: images that depict the properties of light and how it interacts with the atmosphere, nature and materials; light technology such as lasers and LEDs; pictures created with optical instruments like telescopes and microscopes; people interacting with light or light technology; and light in the betterment of the human condition. Judging weighs content, scientific interest, creativity and artistry, execution of photographic technique, and overall appeal for the International Day of Light — a mix that rewards work which is scientifically engaged and visually resolved at once.",
+        "Each person may submit a maximum of two entries, one photo per form. Every entry needs a title and an artist statement giving the subject, the location and date, the equipment used, any adjustments made and how the image ties to the theme. Files must be TIF or JPEG, 300dpi or more, at least 3,000 pixels on the longest side and between 5MB and 20MB. New for 2026, photographs must have been taken within the past two years, after 16 May 2024, and re-submissions are not considered.",
+        "Only limited enhancement for brightness, contrast and minor cosmetic flaws is allowed; black and white is fine; watermarks are not acceptable; and artificial intelligence may not be used to generate images or create composites, with judges disqualifying anything that appears to have used AI beyond simple adjustments.",
+        "Prizes are $2,500 for first place, $1,000 for second, $500 for third, and a $1,000 Judges' Choice for Best of Science. Winning photographs are also published across SPIE publications, online and in print, and displayed at SPIE conferences and exhibitions, with credit to the photographer. One prize per participant. Entries close 16 September 2026 at 11:59pm PST; winners are notified 16 October and announced 30 October 2026. Note that prize money cannot be awarded to individuals located in countries under US sanctions, though entrants from those countries are welcome to compete for recognition."
+      ]
+    },
+    {
+      "title": "BIPOC Deaf Arts Grant 2026",
+      "org": "Deaf Spotlight",
+      "deadline": "2026-08-28",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Annual unrestricted grant from Deaf Spotlight providing financial support to emerging and established artists who are both from an underrepresented racial background and Deaf, DeafBlind, DeafDisabled or Hard of Hearing. Photography is explicitly named among the eligible disciplines, which are grouped into five categories — Literary, Media, Performing, Tactile and Visual, the last covering photography, printmaking, painting, drawing and sculpture among others. Five recipients each receive $1,000 in 2026, taken either as a single payment or as two instalments of $500. At least one recipient will live in the Pacific Northwest (Washington, Oregon or Idaho), at least one in California, and at least one will be a national selection from outside the Pacific Northwest. Applicants must live in the United States or a US territory, though US citizenship is not required, and must be at least 18 by the deadline. Applications are judged on three equally weighted factors: vision for the grant, experience and potential, and artistic growth demonstrated over time. Past recipients and those involved with Deaf Spotlight or Urban Jazz Dance Company as board, committee or staff members during 2026 are not eligible.",
+      "url": "https://www.deafspotlight.org/grants/bipoc",
+      "instagram": "@deafspotlight",
+      "location": "Seattle, WA, USA",
+      "prize": "$1,000",
+      "eligibility": [
+        "bipoc",
+        "neurodivergent-disabled",
+        "united-states",
+        "18-plus"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://urbanjazzdance.submittable.com/submit/357332/bipoc-deaf-arts-grant-2026",
+      "resultsDate": "October 2026",
+      "slug": "bipoc-deaf-arts-grant-2026",
+      "orgInTitle": false,
+      "summary": "Unrestricted $1,000 grants for BIPOC Deaf, DeafBlind, DeafDisabled and Hard of Hearing artists. Photography eligible; free to apply.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "Deaf Spotlight, the Seattle organisation working to advance Deaf arts, runs the BIPOC Deaf Arts Grant annually to provide financial support to artists sitting at an intersection that most open calls never address: artists who are both from an underrepresented racial background and Deaf, DeafBlind, DeafDisabled or Hard of Hearing.",
+        "Photography is explicitly eligible. The grant accepts work across five discipline categories — Literary, Media, Performing, Tactile and Visual — with photography named under Visual Arts alongside printmaking, painting, drawing and sculpture. The award is unrestricted, and applications are evaluated on three equally weighted factors: the applicant's vision for the grant, their experience and potential, and the artistic growth they have demonstrated over time.",
+        "For 2026, five recipients each receive $1,000, which can be taken as a single payment or as two instalments of $500. The geographic spread is deliberate: at least one recipient will reside in the Pacific Northwest (Washington, Oregon or Idaho), at least one in California, and at least one will be a national selection from outside the Pacific Northwest region.",
+        "To apply you must identify as BIPOC, identify as Deaf, DeafBlind, DeafDisabled or Hard of Hearing, live in the United States or a US territory — citizenship is not required — and be at least 18 by the deadline. Past recipients of the grant are not eligible, nor is anyone serving Deaf Spotlight or Urban Jazz Dance Company as a board member, grant judging or planning committee member, or staff member during 2026.",
+        "Applications opened 1 June 2026 and close Friday 28 August 2026 at 11:59pm PST, submitted through Submittable. There is no application fee, and notification is sent by email in October 2026. Deaf Spotlight invites applicants to get in touch about any accommodations the organisation can provide."
+      ]
+    },
+    {
+      "title": "Anderson Center Artist Residency 2027",
+      "org": "Anderson Center at Tower View",
+      "deadline": "2027-01-12",
+      "fee": "$30",
+      "category": "residency",
+      "description": "Two- to four-week residencies on the historic Tower View estate in rural Red Wing, Minnesota, running May through October 2027 for artists, writers, musicians and performers of exceptional promise and demonstrated accomplishment. The Anderson Center uses \"artist\" broadly to mean those working in visual, literary and performing arts, including work that does not fit neatly into categories, and hosts roughly five residents at a time and 35–40 a year. There is no charge for the residency itself and all food is provided: each resident has a room in the Tower View residence with weekly housekeeping, and a chef prepares dinner on weeknights with all groceries supplied. Visual artists are given a 15' x 26' studio, and shared facilities on site include a darkroom, a printmaking studio with an etching press, and an open-air forge. No stipend is attached to the general program and residents arrange their own travel. Since 1995 more than 900 residents from 46 states and over 40 countries have worked there. There is one application deadline for the season, and selected artists, the wait-list and runners-up are notified by 2 March 2027.",
+      "url": "https://www.andersoncenter.org/residency-program/",
+      "instagram": "@andersoncntr",
+      "location": "Red Wing, MN, USA",
+      "prize": "2–4 week residency",
+      "eligibility": [],
+      "submitVia": "Submittable",
+      "submitUrl": "https://theandersoncenter.submittable.com/submit/362590/2027-anderson-center-residency",
+      "resultsDate": "March 2, 2027",
+      "slug": "anderson-center-artist-residency-2027",
+      "orgInTitle": true,
+      "summary": "Free 2–4 week residency in rural Minnesota with a darkroom on site, private room and chef-prepared meals. $30 to apply; open worldwide.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "The Anderson Center at Tower View, founded in 1995 on a historic estate in rural Red Wing, Minnesota, offers residencies of two to four weeks' duration from May through October each year. It hosts around five residents at a time and 35–40 a year, and since its founding more than 900 residents have come from 46 states and over 40 countries. Work made there has gone on to receive Guggenheim Fellowships and NEA funding.",
+        "For photographers the practical detail worth knowing is the facilities. Visual artists are provided a 15' x 26' studio, and the shared workspaces on site include a darkroom, a printmaking studio with a Charles Brand-like etching press, and an open-air forge — a rarer combination than most residencies of this scale offer.",
+        "There is no charge for the residency and all food is provided. Each resident gets a room in the historic Tower View residence with a desk, a large closet and either a private or shared bathroom, with linens and weekly housekeeping. A residency chef cooks dinner for the cohort at 6pm on weeknights using the commercial kitchen on site, and all groceries are supplied. Outside the Early Career Artist, Deaf Artists and Public Artist programs no additional funding is available, and residents arrange their own transport to the center, to Minneapolis–St. Paul Airport or to the train station in Red Wing.",
+        "The Anderson Center uses the word \"artist\" broadly, meaning those working in visual, literary and performing arts including those whose work doesn't fit neatly into categories and genres, and states that the program supports artists from around the world across a wide range of cultures, races, sexual orientations and genders. The cohort model is central — the organisation's stated belief is that exchange across disciplines is generative.",
+        "Applications for the 2027 season are open now, with a $30 application fee. There is only one deadline: 12 p.m. noon Central Standard Time on 12 January 2027. Jury review takes place in late January and February, and the selected artists, wait-list and runners-up are notified by 2 March 2027."
+      ]
+    },
+    {
+      "title": "Anderson Center Early Career Artist Residency 2027",
+      "org": "Anderson Center at Tower View",
+      "deadline": "2027-01-12",
+      "fee": "Free",
+      "category": "residency",
+      "description": "Month-long funded residency for a cohort of five early-career artists at the Anderson Center's Tower View estate in Red Wing, Minnesota, supported by the Jerome Foundation. Selected artists each receive a $625 per week stipend, a travel honorarium, a documentation budget, art-making resources, lodging and studio space, and chef-prepared communal dinners. The program is interdisciplinary and open to all disciplines; visual artists are given a studio, and the site's shared facilities include a darkroom and a printmaking studio. Applicants must be legal residents of Minnesota or of the five boroughs of New York City, must not be enrolled in a degree-granting program from application through the residency, must self-identify as early career with two to ten years of generative experience beyond any formal training, and must have an artistic practice centred on creating entirely new work. Artists with more than ten years of experience are generally ineligible, though exceptions are made for those who took time away for caregiving, illness or education. There is no fee to apply, and selected artists, the wait-list and runners-up are notified by 2 March 2027.",
+      "url": "https://www.andersoncenter.org/residency-program/early-career/",
+      "instagram": "@andersoncntr",
+      "location": "Red Wing, MN, USA",
+      "prize": "$625/week stipend",
+      "eligibility": [
+        "minnesota",
+        "new-york-city",
+        "emerging"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://theandersoncenter.submittable.com/submit/362567/2027-early-career-residency-for-nyc-and-minnesota-artists",
+      "resultsDate": "March 2, 2027",
+      "slug": "anderson-center-early-career-artist-residency-2027",
+      "orgInTitle": true,
+      "summary": "Funded month-long Minnesota residency for early-career artists — $625/week stipend, travel honorarium, darkroom on site. Free to apply.",
+      "dateAdded": "2026-07-31T11:18:37Z",
+      "prose": [
+        "The Early Career Artist Residency is the funded strand of the Anderson Center's program, supported by the Jerome Foundation. A month-long cohort of five artists works together at the Tower View estate in Red Wing, Minnesota, in a program built specifically for artists early in their development who have not yet received substantial recognition.",
+        "Unlike the general residency, this one pays. Selected artists each receive a $625 per week stipend, a travel honorarium, a documentation budget covering services such as photography, video and audio, art-making resources, lodging and studio space, and chef-prepared communal dinners. There is no fee to apply.",
+        "The program is interdisciplinary and open to all disciplines, with the cohort model and cross-disciplinary exchange treated as central to what the residency offers. Visual artists are given a studio, and the shared facilities on the estate include a darkroom and a printmaking studio with an etching press — relevant if you work in analogue or alternative process.",
+        "Eligibility is tightly drawn. Applicants must be legal residents of Minnesota or of New York City's five boroughs; must not be enrolled in a degree-granting program from the time of application through the residency; must self-identify as early career, meaning roughly two to ten years of generative experience beyond formal training; and must have a practice centred on creating entirely new work. Artists with more than ten years of experience are generally ineligible, though the Anderson Center makes exceptions for those who stepped away for caregiving, illness or education.",
+        "The deadline is 12 p.m. noon Central Standard Time on 12 January 2027. Jury review takes place in late January and early February, and selected artists, the wait-list and runners-up are notified by 2 March 2027."
+      ]
     }
   ]
 }
