@@ -1048,7 +1048,7 @@
       "summary": "GOST Books publishes the winning long-form documentary project as a hardback photobook, backed by a £5,000 grant. £50 entry.",
       "resultsDate": "November 2026",
       "dateAdded": "2026-07-01T23:31:31Z",
-      "verifyNote": "2026-07-30: ianparry.org confirms deadline 30 Sep 2026, £50 entry, up to 40 images plus an optional design PDF, 18+, \"No AI generated imagery is allowed\", and the prize = a GOST Books photobook + £5,000 paid in two £2,500 installments + Guardian publication. Picter (ippg-tomstoddart-gost-photobook-grant-2026, submissionEndDate 2026-09-30T22:59Z) agrees and its timeline row \"Recipient announcement\" is 2026-11-30 with showDay:false — month-only, hence resultsDate \"November 2026\". GENUINELY UNFILLABLE: jury — no judges are named on the org page or in Picter (selection is by an unnamed \"industry panel\"); stop re-hunting. Email [email in contacts.json]."
+      "verifyNote": "2026-07-30: ianparry.org confirms deadline 30 Sep 2026, £50 entry, up to 40 images plus an optional design PDF, 18+, \"No AI generated imagery is allowed\", and the prize = a GOST Books photobook + £5,000 paid in two £2,500 installments + Guardian publication. Picter (ippg-tomstoddart-gost-photobook-grant-2026, submissionEndDate 2026-09-30T22:59Z) agrees and its timeline row \"Recipient announcement\" is 2026-11-30 with showDay:false — month-only, hence resultsDate \"November 2026\". GENUINELY UNFILLABLE: jury — no judges are named on the org page or in Picter (selection is by an unnamed \"industry panel\"); stop re-hunting. Email [email in contacts.json]. 2026-07-31 recheck: Sep 30 deadline, £50 and the AI ban all re-confirmed (call still in Picter filter{entryStatus:OPEN}). Jury settled by the new /jury-tab method: site.picter.com/ippg-tomstoddart-gost-photobook-grant-2026 carries \"hasJury\":false in __NEXT_DATA__, so there is no hidden jury tab to fetch — jury [] is correct, stop re-hunting it."
     },
     {
       "title": "Art Moves 2026 — International Billboard Art Competition",
@@ -1187,7 +1187,7 @@
     {
       "title": "PERSPA 2026 — Prix de la Perspective Architecturale",
       "org": "PERSPA",
-      "deadline": "2026-07-31",
+      "deadline": "2026-08-07",
       "fee": "€25 per entry",
       "category": "photography",
       "description": "International architectural photography prize run by PERSPA, a French association based in Bourges. Categories span Fine Art, Aerial, Black & White, Cityscape, Minimalism, Night & Low Light, Geometry, Stairs, Historic & Heritage, Human & Architecture, and more; entries are single images. Grand prize €1,000; winning and selected works are shown in a physical exhibition in France and considered for the PERSPA annual publication. Open worldwide to professional, emerging, and independent photographers who own the rights to their work; one complimentary single-image entry for photographs taken in France.",
@@ -1204,7 +1204,7 @@
       "resultsDate": "October 2026",
       "dateAdded": "2026-07-01T23:31:31Z",
       "submitUrl": "https://perspa.fr/submit-entry/",
-      "verifyNote": "2026-07-30: perspa.fr 403s WebFetch — use curl+UA. /rules confirms \"Regular Deadline 31 July 2026\", \"Regular EUR 25 / single image\" (the EUR 17 Early Bird window has closed; a complimentary France-category entry exists only \"when the offer is active\"), and the timeline \"September 2026 Jury review and verification / October 2026 Results and publication\" which is where resultsDate comes from. Prizes: €1,000 Grand Winner + Bourges exhibition + PERSPA publication; category winners get certificate + publication + the same physical show. GENUINELY UNFILLABLE: instagram — perspa.fr publishes NO social links at all (checked homepage, /perspa-2026, /rules, /faq, /contact: zero instagram/facebook/x hrefs); jury — no jurors are named, the rules only describe how the jury reviews work. Eligibility [] is correct: /faq says PERSPA \"welcomes professional, emerging, and independent photographers worldwide\" with no age or nationality limit. No AI policy anywhere. Email [email in contacts.json] is Cloudflare-obfuscated (data-cfemail) — decode it, don't record \"no email\"."
+      "verifyNote": "2026-07-30: perspa.fr 403s WebFetch — use curl+UA. /rules confirms \"Regular Deadline 31 July 2026\", \"Regular EUR 25 / single image\" (the EUR 17 Early Bird window has closed; a complimentary France-category entry exists only \"when the offer is active\"), and the timeline \"September 2026 Jury review and verification / October 2026 Results and publication\" which is where resultsDate comes from. Prizes: €1,000 Grand Winner + Bourges exhibition + PERSPA publication; category winners get certificate + publication + the same physical show. GENUINELY UNFILLABLE: instagram — perspa.fr publishes NO social links at all (checked homepage, /perspa-2026, /rules, /faq, /contact: zero instagram/facebook/x hrefs); jury — no jurors are named, the rules only describe how the jury reviews work. Eligibility [] is correct: /faq says PERSPA \"welcomes professional, emerging, and independent photographers worldwide\" with no age or nationality limit. No AI policy anywhere. Email [email in contacts.json] is Cloudflare-obfuscated (data-cfemail) — decode it, don't record \"no email\". 2026-07-31: DEADLINE EXTENDED Jul 31 -> Aug 7. A site-wide banner now reads \"FINAL DEADLINE — EXTENDED TO 7 AUGUST 2026\" on the homepage, /perspa-2026 and /rules; the /rules body still prints the OLD \"Regular Deadline 31 July 2026\" and its season-timeline row \"1 Jun - 31 Jul Regular submission window\" — the banner is the newer value, do NOT re-flip to Jul 31 on the rules body alone. Fee UNCHANGED: the fee table still lists only Complimentary EUR 0 / Early Bird EUR 17 / Regular EUR 25 per single image, i.e. no late tier was added for the extra week. Timeline (Sept jury review, October results) and the worldwide, no-age-limit eligibility also unchanged."
     },
     {
       "title": "Tiny But Mighty: d'Art's Annual National Exhibit of Small Artworks",
@@ -32466,7 +32466,7 @@
       "deadline": "2026-07-31",
       "fee": "Free",
       "category": "zine",
-      "description": "Quarterly contemporary photography magazine from Afghanistan. For Issue 6, psychology researcher Fatemeh Azizi interprets the selected photographs through an interdisciplinary approach, examining the relationship between the human and the Other — anything through which one experiences oneself in an encounter, from society and nature to objects and absence — via psychological and phenomenological readings of the image. Submit one photograph per entry (JPEG or PNG, max 3 MB, no logos, watermarks, or frames); no recognizable portraits, borrowed artwork, or merged frames. Multiple submissions welcome.",
+      "description": "Quarterly contemporary photography magazine from Afghanistan. For Issue 6, psychology researcher Fatemeh Azizi interprets the selected photographs through an interdisciplinary approach, examining the relationship between the human and the Other — anything through which one experiences oneself in an encounter, from society and nature to objects and absence — via psychological and phenomenological readings of the image. Submit 3 to 15 photographs per entry (JPEG or PNG, max 3 MB each, no logos, watermarks, or frames); no recognizable portraits, borrowed artwork, or merged frames.",
       "url": "https://bibinmagazine.com/submissions",
       "instagram": "@bibinmagazine",
       "location": "Online",
@@ -32477,11 +32477,11 @@
       ],
       "submitVia": "Fillout",
       "submitUrl": "https://bibinmagazine.fillout.com/t/jM3yJuiQVHus",
-      "requirements": "1 image",
+      "requirements": "3–15 images",
       "slug": "bibin-photography-magazine-6-the-other",
       "orgInTitle": true,
-      "summary": "Quarterly Afghan photo magazine. Issue #6 reads the human and the Other through psychology and phenomenology. One photo per entry, free.",
-      "verifyNote": "2026-07-29: UNVERIFIABLE headless — bibinmagazine.com is client-rendered Next.js (submissions content absent from served HTML, /_next/data route 404s), the Fillout form API is login-gated (server.fillout.com 403), no Wayback snapshot, Chrome down. Stored values stand.",
+      "summary": "Quarterly Afghan photo magazine. Issue #6 reads the human and the Other through psychology and phenomenology. 3–15 photos, free.",
+      "verifyNote": "2026-07-31: bibinmagazine.com is still unreadable headless (static Next export, empty pageProps, content loaded client-side; no RSC payload, no API host in the bundles; WebFetch 403s and Chrome extension is not connected) — but the FILLOUT FORM now serves to plain curl+UA and IS the submission route. Its \"Upload Photos\" field enforces minFiles 3 / maxFiles 15, so requirements corrected \"1 image\" -> \"3–15 images\" (the field caption still reads \"the photo\" in the singular — the enforced min/max wins). No fee field anywhere in the form, so Free stands. The form's thank-you text reads \"As we are preparing multiple issues in parallel, your submission may be considered for any of the upcoming issues\", i.e. entries are pooled across issues — treat the stored Jul 31 issue-#6 deadline as unconfirmed rather than proven, and do NOT flip it to Continuous without the org page. Jury, eligibility and AI policy remain unreadable; Instagram serves only a login wall.",
       "dateAdded": "2026-07-24T14:29:19Z"
     },
     {
@@ -34044,7 +34044,7 @@
       "slug": "duets-a-collab-show-avondale-arts-alliance",
       "orgInTitle": false,
       "summary": "Atlanta-area show where every piece must be made by two artists together. Up to six collaborations, hand delivery only.",
-      "verifyNote": "2026-07-29: EntryThingy confirms Aug 21 deadline (machine Aug 22 06:59Z = UTC artifact), $15 for 3 pieces / $30 for 6, every piece a 2-artist collaboration, exhibition Sep 12 - Oct 24 2026. No juror named, no AI policy.",
+      "verifyNote": "2026-07-29: EntryThingy confirms Aug 21 deadline (machine Aug 22 06:59Z = UTC artifact), $15 for 3 pieces / $30 for 6, every piece a 2-artist collaboration, exhibition Sep 12 - Oct 24 2026. No juror named, no AI policy. 2026-07-31 recheck: Aug 21 deadline, 1-6 pieces and the Sep 12 - Oct 24 run all unchanged. TRAP: the EntryThingy listing header prints \"Entry Fee: Free Entry\" for this call while its own prospectus body says \"Submission fee is now $15 for 3 pieces. You can submit up to 6 pieces ($30)\" — the header field is org-entered metadata, not the enforced price, so do NOT flip the fee to Free on it. (Under-18 entrants are free by voucher code, which is likely why the header was set that way.)",
       "dateAdded": "2026-07-27T10:30:47Z"
     },
     {
