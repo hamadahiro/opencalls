@@ -305,6 +305,7 @@
       "resultsDate": "November 6, 2026",
       "orgInTitle": false,
       "slug": "in-series-art-fluent",
+      "verifyNote": "2026-08-01 22:00 verify: both surfaces agree. art-fluent.com/calls-for-art/in-series-prospectus/ reads \"JPEGs due by Friday, October 9, 2026 at midnight MST\", \"Notification of acceptance and online gallery opening by Friday, November 6, 2026\", \"cash prize of $250 each\", \"ENTRY FEE $35\", \"submit exactly five pieces\" and \"AI will not be accepted\"; CaFE 17849 matches (2026-10-10T05:59:59Z, one $35 APPLICATION row, imagesMax 5). ELIGIBILITY [] IS CONFIRMED, NOT MERELY UNSTATED: \"This call is open to artists worldwide, both amateur and professional\" — stop flagging it. The only unnamed part of the jury is deliberate: \"curated and juried by Creative Director, Amy Matteson Neill along with an anonymous committee of jurors.\"",
       "jury": [
         "Amy Matteson Neill, Creative Director, Art Fluent"
       ],
@@ -552,6 +553,7 @@
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17597",
       "requirements": "Up to 10 images",
       "slug": "crocker-kingsley-2027-blue-line-arts",
+      "verifyNote": "2026-08-01 22:00 verify: bluelinearts.org/ck-2027-call and CaFE 17597 agree on everything. Deadline November 6th 2026 5:00pm PST (CaFE 2026-11-07T07:59:59Z), \"$45 fee for all applicants. Up to 10 additional images can be submitted for an extra $5/image\", imagesMin/Max 1-10, juror Naz Cuguoglu of the Asian Art Museum, and \"Results will be sent by 5pm PST on November 27th, 2026\". FULL PRIZE LADDER (only the $2,000 top is in the chip): 1st $2,000 / 2nd $1,500 / 3rd $1,000 / 4th $750 / 5th $250, plus a Crocker Art Museum curatorial selection of ~6 works. No AI policy on either surface — the org page and all three CaFE text fields grep clean.",
       "orgInTitle": false,
       "summary": "National juried competition at Blue Line Arts, juried by Naz Cuguoğlu. All media incl. photography; $2,000 top + travel to the Crocker Art Museum.",
       "dateAdded": "2026-07-14T03:06:03Z",
@@ -1849,7 +1851,7 @@
       "jury": [],
       "ai": null,
       "resultsDate": null,
-      "verifyNote": "2026-07-30 verify: carlottagallery.co.uk/opencalls lists RED with deadline September 20, 2026; free to apply with a £20-£35 participation fee only on selection (scaled by number of artworks), up to 3 images, worldwide entrants 18+. The gallery runs several themed calls off this one page and publishes NO juror names, NO notification date and NO AI policy for any of them — those three gaps are genuine on all four Carlotta entries, don't re-hunt them per call."
+      "verifyNote": "2026-07-30 verify: carlottagallery.co.uk/opencalls lists RED with deadline September 20, 2026; free to apply with a £20-£35 participation fee only on selection (scaled by number of artworks), up to 3 images, worldwide entrants 18+. The gallery runs several themed calls off this one page and publishes NO juror names, NO notification date and NO AI policy for any of them — those three gaps are genuine on all four Carlotta entries, don't re-hunt them per call. 2026-08-01 22:00 verify: all four stored Carlotta deadlines reconfirmed off the same page in one read (On Film Aug 15 / Central & South America Aug 25 / PEOPLE Sep 10 / RED Sep 20), along with the fee ladder verbatim (\"£20 for one showcased artwork. £30 for two showcased artworks. £35 for three showcased artworks\", application itself free) and \"Open to photographers worldwide. Participants must be 18 years of age or older.\" LEAD FOR THE NEXT SWEEP: the page now carries a FIFTH call we do not track — \"FLOWERS\", deadline October 10, 2026, same terms — the call titles are all listed together in the nav strip at the top (ON FILM · CENTRAL & SOUTH AMERICA · PEOPLE · RED · FLOWERS), which is the cheapest place to spot a new one."
     },
     {
       "title": "JRNL Magazine Open Call 2026",
@@ -24253,7 +24255,7 @@
         "Entry fees are tiered between $20 and $100 depending on the number of images submitted (up to 10 maximum per applicant). AI-generated work is not accepted. Eligibility is open to photographers worldwide aged 18 or over. The Humans theme deadline is August 31, 2026, with results announced in mid-September. Other Life Framer themes follow on a rolling monthly schedule, each with a different jury and slightly different focus."
       ],
       "dateAdded": "2026-06-13T19:15:12.733Z",
-      "verifyNote": "2026-07-30 recheck: life-framer.com is STILL BLOCKED to every method — /competitions/ returns HTTP 403 to curl across UA/Referer combinations and WebFetch gets the same 403; the Chrome extension was not connected this run, so no third route was available. This is the standing block already logged, not a dead call: do not mark it closed and do not flip any field on a 403 alone. Stored values (Aug 31 deadline, $20–$100, $2,000, juror GMB Akash, mid-September results) stand until the site is readable again. 2026-08-01 verify: STILL UNREADABLE, STILL NOT CLOSED. life-framer.com returns HTTP 403 to plain curl with a browser UA on /competitions/, /enter/ and the bare domain, WebFetch gets the same 403, and the Chrome extension was not connected this run — the third route was unavailable for the second run running. Corroborated instead on the Wayback capture of 2026-06-25 (web.archive.org/web/20260625230710/), which carries the HUMANS card verbatim: \"HUMANS Judge: GMB Akash Deadline: 31 August 2026\", i.e. the stored deadline and juror are right. That snapshot predates our own Jul 29–30 reads, so it adds confirmation but not freshness — the $20–$100 fee ladder and mid-September results date remain unre-read since the block began. Do not mark closed and do not flip any field on a 403."
+      "verifyNote": "2026-07-30 recheck: life-framer.com is STILL BLOCKED to every method — /competitions/ returns HTTP 403 to curl across UA/Referer combinations and WebFetch gets the same 403; the Chrome extension was not connected this run, so no third route was available. This is the standing block already logged, not a dead call: do not mark it closed and do not flip any field on a 403 alone. Stored values (Aug 31 deadline, $20–$100, $2,000, juror GMB Akash, mid-September results) stand until the site is readable again. 2026-08-01 verify: STILL UNREADABLE, STILL NOT CLOSED. life-framer.com returns HTTP 403 to plain curl with a browser UA on /competitions/, /enter/ and the bare domain, WebFetch gets the same 403, and the Chrome extension was not connected this run — the third route was unavailable for the second run running. Corroborated instead on the Wayback capture of 2026-06-25 (web.archive.org/web/20260625230710/), which carries the HUMANS card verbatim: \"HUMANS Judge: GMB Akash Deadline: 31 August 2026\", i.e. the stored deadline and juror are right. That snapshot predates our own Jul 29–30 reads, so it adds confirmation but not freshness — the $20–$100 fee ladder and mid-September results date remain unre-read since the block began. Do not mark closed and do not flip any field on a 403. 2026-08-01 22:00 verify: THE BLOCK IS BEATEN — `r.jina.ai/https://www.life-framer.com/competitions/` and `/enter/` both return the live pages while direct curl still 403s, so this call no longer needs Chrome or Wayback. Everything re-read fresh: the HUMANS card reads \"HUMANS Judge: GMB Akash Deadline: 31 August 2026\", /enter/ prints the ladder \"One Image $20 · three images $30 · six images $40 · membership $100\" followed by \"All prices in USD\" (so $20–$100 is right and the currency is confirmed, unlike the sibling Independent Photographer ladder), and the prize table gives \"$2,000 monthly cash prize\". Only resultsDate \"Mid-September 2026\" is still unstated on either page. Use r.jina.ai for this domain from now on."
     },
     {
       "title": "Wassaic Project 2027 Artist Residency",
@@ -25177,6 +25179,7 @@
       "ai": "Not accepted",
       "orgInTitle": false,
       "slug": "pure-abstraction-art-fluent",
+      "verifyNote": "2026-08-01 22:00 verify: both surfaces agree. art-fluent.com/calls-for-art/pure-abstraction-prospectus/ reads \"JPEGs due by Friday, August 28, 2026, at midnight MST\", \"Notification ... by Friday, September 25, 2026\", \"ENTRY FEE $25 for first entry/$10 for each additional entry. You may enter up to 20 total\" and \"AI will not be accepted\"; CaFE 17411 matches (2026-08-29T05:59:59Z, APPLICATION $25 + MEDIA $10, imagesMax 20). THE PRIZE SUMS: Best of Show $750 + two Director's Choice at $250 each = the stored $1,250. ELIGIBILITY [] IS CONFIRMED, NOT MERELY UNSTATED: \"This call is open to artists worldwide, both amateur and professional.\"",
       "resultsDate": "September 25, 2026",
       "jury": [
         "Amy Matteson Neill, Creative Director, Art Fluent"
@@ -25969,6 +25972,7 @@
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17438",
       "requirements": "Up to 5 images",
       "slug": "exposure-identity-and-the-evolving-image-global-village-museum-of-arts-and-cultures",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17438 reconfirms deadline 2026-08-29T05:59:59Z = Aug 28 local, flat $25 entry fee, imagesMax 5, eligibility \"International Ages 18+ Work dates: Created 2016-2026\" (international, hence 18-plus only, no country facet), and \"Artist notification: September 11, 2026\" with the run Oct 2 2026 - Jan 22 2027. No juror is named and no AI policy appears in any CaFE text field or on the rendered page. Instagram @globalvillagemuseum verified from the org site's own href.",
       "orgInTitle": false,
       "summary": "Museum show on identity & self-portraiture at the Global Village Museum, Fort Collins. Selected works exhibited and pro-printed 16×20.",
       "instagram": "@globalvillagemuseum",
@@ -30066,6 +30070,7 @@
       "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17708",
       "requirements": "Up to 3 images",
       "slug": "ghosts-and-things-regional-exhibition-trahc",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17708 reconfirms deadline 2026-08-17T05:59:59Z = Aug 16 local, \"A $15 flat fee for up to three entries\" (one APPLICATION row, no media fee), imagesMax 3, \"Eligibility: Regional (AR, LA, OK, TX)\", and \"Results of the first phase of judging will be emailed by August 19, 2026\". THE PRIZE STRING CHECKS OUT AGAINST ITS ITEMS: 1st $500 + 2nd $300 + 3rd $150 + Honorable Mention $50 = exactly the $1,000 advertised. No juror named, no AI policy anywhere. Instagram @trahc_org verified from trahc.org's own href.",
       "orgInTitle": false,
       "summary": "Supernatural-themed juried show in Texarkana — $15 flat entry, $1,000 in awards, for AR/LA/OK/TX artists; photography eligible.",
       "dateAdded": "2026-07-02T03:24:00Z",
@@ -30096,6 +30101,7 @@
       "requirements": "1–3 images",
       "ai": "Not accepted",
       "slug": "sca-open-2026-sausalito-center-for-the-arts",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17739 reconfirms deadline 2026-08-24T06:59:59Z = Aug 23 local, \"$35 to submit first piece of art. Additional pieces may be submitted for $10 per piece\", imagesMin/Max 1-3, \"open to all artists 18 years and older, residing in California\", the three-name jury led by Nancy Lim of SFMOMA, and the AI ban verbatim \"No AI-generated art will be accepted at this time.\" Instagram @sausalito_center_for_the_arts verified from the org site's own href.",
       "orgInTitle": true,
       "summary": "Statewide California open juried show with an SFMOMA curator on the jury — photography eligible; show Oct 30–Dec 6.",
       "dateAdded": "2026-07-02T03:24:00Z",
@@ -30122,6 +30128,7 @@
       "requirements": "Up to 6 images",
       "ai": "Not accepted",
       "slug": "point-of-hue-ashton-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17796 reconfirms deadline 2026-09-12T06:59:59Z = Sep 11 local, the fee ladder verbatim (\"$40 is for the first entry and $5 for each additional image (1 work = $40 ... 6 works = $65)\"), imagesMin/Max 1-6, \"We will be awarding $1,000 in cash prizes\" across Best in Show / First Place / Juror's Choice plus two honorable mentions, juror Daniel Foster, and \"Notification ... by end of day on Friday, September 28, 2026\". AI stays Not accepted on \"This exhibit does not accept jewelry, video, film, performance art, installations, digital art, reproductions, or AI art.\" NOTE the url: ashtonartgallery.com is a near-empty page and arton30th.com/pages/call-for-artists currently carries only the sibling call The Unexpected — Point of Hue is not on either org surface yet, so CaFE is the only live source; don't re-point the url on that basis.",
       "orgInTitle": false,
       "summary": "Color-themed national juried show at San Diego's Art on 30th — $1,000 in awards plus catalog; photography explicitly eligible.",
       "dateAdded": "2026-07-02T03:24:00Z",
@@ -30349,9 +30356,9 @@
       "title": "2026 Travel Award",
       "org": "The Independent Photographer",
       "deadline": "2026-08-31",
-      "fee": "$15–$45",
+      "fee": "€15–€45",
       "category": "photography",
-      "description": "The Independent Photographer's monthly themed competition cycle, this round dedicated to travel photography — images that capture the true essence of a place: the spirit of its people, the richness of its traditions, and the rhythm of daily life, from bustling markets to serene vistas. Total prize pool $2,700: 1st prize $1,000, 2nd $600, 3rd $400, plus seven $100 finalist prizes. Judge: Daniel Kordan, the travel and landscape photographer. Winners are exhibited in London and featured to the platform's 1.2M+ Instagram following. All entrants receive a free online portfolio. Submissions are tiered: $15 for 1 image, $30 for 3, $45 for 6, with an early-bird 50% discount before the early deadline. AI-generated work not accepted; photography-based submissions only (film, digital, smartphone, tintype, and camera-less photography). JPEG or PNG, minimum 1200px longest side, maximum 10MB.",
+      "description": "The Independent Photographer's monthly themed competition cycle, this round dedicated to travel photography — images that capture the true essence of a place: the spirit of its people, the richness of its traditions, and the rhythm of daily life, from bustling markets to serene vistas. Total prize pool $2,700: 1st prize $1,000, 2nd $600, 3rd $400, plus seven $100 finalist prizes. Judge: Daniel Kordan, the travel and landscape photographer. Winners are exhibited in London and featured to the platform's 1.2M+ Instagram following. All entrants receive a free online portfolio. Submissions are tiered: €15 for 1 image, €30 for 3, €45 for 6, with an early-bird 50% discount before the early deadline. AI-generated work not accepted; photography-based submissions only (film, digital, smartphone, tintype, and camera-less photography). JPEG or PNG, minimum 1200px longest side, maximum 10MB.",
       "url": "https://independent-photo.com/awards/",
       "instagram": "@theindependentphoto",
       "location": "London, United Kingdom",
@@ -30368,14 +30375,14 @@
       "ai": "Not accepted",
       "slug": "2026-travel-award-the-independent-photographer",
       "orgInTitle": false,
-      "summary": "Travel photography competition. $2,700 prize pool, London exhibition and feature to 1.2M+ followers. Tiered $15–$45 entry.",
+      "summary": "Travel photography competition. $2,700 prize pool, London exhibition and feature to 1.2M+ followers. Tiered €15–€45 entry.",
       "dateAdded": "2026-07-04T11:11:55Z",
       "prose": [
         "The Independent Photographer (TIP) is a London-based online photography platform that runs themed monthly competitions and publishes editorial work, interviews, and book reviews. The 2026 Travel Award is the platform's travel-themed cycle, open to work that captures the essence of a place — its people, traditions, and the rhythm of daily life, from bustling markets to serene vistas.",
         "Total prize pool is $2,700: first place receives $1,000, second $600, third $400, and seven runners-up receive $100 each. Winners are exhibited in London and featured across The Independent Photographer's Instagram (970k+ followers). All entrants receive a free online portfolio on the platform.",
-        "Eligibility is open globally. Submissions are tiered: $15 for one image, $30 for three, $45 for six, with an early-bird 50% discount available before the early deadline. JPEG or PNG, minimum 1200 pixels on one side, maximum 10MB per file. AI-generated work is not accepted — photography-based submissions only, with film, digital, smartphone, tintype, and camera-less photography all welcome. The final deadline is August 31, 2026."
+        "Eligibility is open globally. Submissions are tiered: €15 for one image, €30 for three, €45 for six, with an early-bird 50% discount available before the early deadline. JPEG or PNG, minimum 1200 pixels on one side, maximum 10MB per file. AI-generated work is not accepted — photography-based submissions only, with film, digital, smartphone, tintype, and camera-less photography all welcome. The final deadline is August 31, 2026."
       ],
-      "verifyNote": "2026-07-29 recheck: independent-photo.com re-confirms \"Final Deadline: August 31, 2026\" with a live countdown, \"$2,700 in Cash Prizes\" and judge Daniel Kordan; /submit/ carries the fee ladder (1 image $15 / 3 images $30 / 6 images $45 \"BEST VALUE\") and the prize split \"1st Prize $1000 2nd Prize $600 3rd Prize $400 All 7 finalists $100\" = $2,700. GENUINELY UNPUBLISHED: no announcement date anywhere on the site. Unchanged."
+      "verifyNote": "2026-07-29 recheck: independent-photo.com re-confirms \"Final Deadline: August 31, 2026\" with a live countdown, \"$2,700 in Cash Prizes\" and judge Daniel Kordan; the prize split is \"1st Prize $1000 2nd Prize $600 3rd Prize $400 All 7 finalists $100\" = $2,700. GENUINELY UNPUBLISHED: no announcement date anywhere on the site. 2026-08-01 22:00 verify: FEE CURRENCY FIXED $15–$45 -> €15–€45. THE PRIZES ARE USD BUT THE ENTRY FEES ARE EUROS — the two currencies sit on the same page and the earlier passes carried the dollar sign across. /submit/'s price radios are hard-coded in the server HTML, not localized JS: `data-info=\"1 IMAGE - €15\"`, `\"3 IMAGES - €30\"`, `\"6 IMAGES - €45\"`, with no USD variant of those three numbers anywhere in the markup (the only $ figures are the prize amounts $1000/$600/$400/$100 and the $2,700/$200,000 totals). Read the raw HTML of /submit/, not the rendered text, before touching this fee again. NOTE the sibling entry 2026-black-and-white-award-the-independent-photographer runs off the same ladder and may still carry the dollar sign — check it on its own verification pass. Deadline Aug 31, judge Daniel Kordan and the $2,700 pool all reconfirmed today."
     },
     {
       "title": "Innovate Grants - Summer $1,800 Grants",
@@ -30462,6 +30469,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17832/CAFE",
       "requirements": "5–12 images",
       "slug": "composed-texas-photographic-society",
+      "verifyNote": "2026-08-01 22:00 verify: texasphoto.org/composed2026 and CaFE 17832 agree. Deadline Aug 3 2026 (CaFE 2026-08-04T06:59:59Z), \"entry fee for current TPS Members is $30 for 5 images, plus $5 for each additional image. The Non-Member entry fee is $40 for 5 images\", imagesMin/Max 5-12, \"open to artists internationally, of all levels, who are at least 18 years old\", juror Brian Finke, \"Juror Selections Announced: August 18, 2026\", and the awards Juror's $500 / Director's $300 / two Honorable Mentions at $100. Ignore the ADMIN rows in CaFE's fee list — the $30-$96 lines are TPS memberships, not entry costs. No AI policy on either surface. DEADLINE IS IN TWO DAYS.",
       "orgInTitle": false,
       "summary": "TPS × PhotoPlace juried show on composition — exhibited in Middlebury, VT and online. Juror Brian Finke; $500 top award.",
       "resultsDate": "August 18, 2026",
@@ -30729,7 +30737,7 @@
       "resultsDate": "September 30, 2026",
       "dateAdded": "2026-07-12T07:35:41Z",
       "instagram": "@umstamps",
-      "verifyNote": "2026-07-29: stamps.umich.edu 403s BOTH curl+UA and WebFetch, but the Wayback snapshot (web.archive.org/web/2026/https://stamps.umich.edu/events/envision-2027) serves the org's own page and confirms everything: call for work \"February 23 - August 2, 2026\", \"September 30, 2026: Finalists announced\", free, jurors Rehema Barber (Kalamazoo Institute of Art), Laura Mott (Cranbrook Art Museum) and 2025 winner Sara Nickleson, finalists get \"an artist fee and stipend of $2,000 to produce new work\" plus a $5,000 cash prize to the winner, and eligibility \"must live and work in Michigan\", \"at least 21 years old and not enrolled in a University program\", emerging and mid-career. No AI policy is published (ai stays null). The 7-14 image count lives only inside SlideRoom and was not re-checked."
+      "verifyNote": "2026-07-29: stamps.umich.edu 403s BOTH curl+UA and WebFetch, but the Wayback snapshot (web.archive.org/web/2026/https://stamps.umich.edu/events/envision-2027) serves the org's own page and confirms everything: call for work \"February 23 - August 2, 2026\", \"September 30, 2026: Finalists announced\", free, jurors Rehema Barber (Kalamazoo Institute of Art), Laura Mott (Cranbrook Art Museum) and 2025 winner Sara Nickleson, finalists get \"an artist fee and stipend of $2,000 to produce new work\" plus a $5,000 cash prize to the winner, and eligibility \"must live and work in Michigan\", \"at least 21 years old and not enrolled in a University program\", emerging and mid-career. No AI policy is published (ai stays null). The 7-14 image count lives only inside SlideRoom and was not re-checked. 2026-08-01 22:00 verify: NO LONGER WAYBACK-ONLY — `r.jina.ai/https://stamps.umich.edu/events/envision-2027` serves the live org page while direct curl+UA still returns the 403 block, and it confirms every stored value on the CURRENT page rather than a snapshot: \"February 23-August 2, 2026: Call for work\", \"September 30, 2026: Finalists announced\", the $2,000 artist fee and stipend, the $5,000 cash prize to the winner announced at the June 10 2027 opening, and eligibility \"Artists must live and work in Michigan / at least 21 years old and not be enrolled in a University program\". DEADLINE IS TOMORROW (Aug 2) — expect this to roll to Past on the next run. Use r.jina.ai for stamps.umich.edu."
     },
     {
       "title": "HOME: States of Belonging",
@@ -30806,14 +30814,14 @@
         "Alex Beresford, Weather Presenter, ITV",
         "Dennis Oswald, Meteorologist & Storm Photographer",
         "Angela Nicholson, Founder, SheClicks",
-        "Tom Prater"
+        "Tom Prater, Visuals Editor, Carbon Brief"
       ],
       "summary": "Free global weather-photography competition from the Royal Meteorological Society — £1,500 top prize, plus Mobile and Climate awards.",
       "resultsDate": "2026-11-17",
       "dateAdded": "2026-07-13T11:07:55Z",
       "ai": "Not accepted",
       "requirements": "Up to 5 images",
-      "verifyNote": "2026-07-29: competition page reconfirms the £1,500 main prize, £500 Mobile and £500 Climate awards, \"The competition is free to enter and open to individuals of all abilities\" (so eligibility [] is correct), and \"a maximum of five images per category\". AI stays Not accepted on \"Images created in whole or in part by AI generation software are strictly prohibited.\" The judges block ends with \"More judges to be announced soon!\" — the stored six are complete as published; recheck for additions rather than treating the list as final. 2026-07-30: the DATES ARE NOT ON /competition — they are on the parent page rmets.org/weather-photographer-of-the-year, whose Timeline block reads \"11 June – 20 August: Submissions open / 21 August – 2 October: Judging period / 22 October – 5 November: Public vote / 17 November: Winners announced\", which is exactly the stored Aug 20 deadline and Nov 17 resultsDate. Check that page, not the competition page, when the deadline needs re-confirming. /competition still carries the £1,500 main / £500 Mobile / £500 Climate prizes, \"free to enter and open to individuals of all abilities\", the five-year recency rule, and \"More judges to be announced soon!\"."
+      "verifyNote": "2026-07-29: competition page reconfirms the £1,500 main prize, £500 Mobile and £500 Climate awards, \"The competition is free to enter and open to individuals of all abilities\" (so eligibility [] is correct), and \"a maximum of five images per category\". AI stays Not accepted on \"Images created in whole or in part by AI generation software are strictly prohibited.\" The judges block ends with \"More judges to be announced soon!\" — the stored six are complete as published; recheck for additions rather than treating the list as final. 2026-07-30: the DATES ARE NOT ON /competition — they are on the parent page rmets.org/weather-photographer-of-the-year, whose Timeline block reads \"11 June – 20 August: Submissions open / 21 August – 2 October: Judging period / 22 October – 5 November: Public vote / 17 November: Winners announced\", which is exactly the stored Aug 20 deadline and Nov 17 resultsDate. Check that page, not the competition page, when the deadline needs re-confirming. /competition still carries the £1,500 main / £500 Mobile / £500 Climate prizes, \"free to enter and open to individuals of all abilities\", the five-year recency rule, and \"More judges to be announced soon!\". 2026-08-01 22:00 verify: the panel is STILL the same six — \"More judges to be announced soon!\" is still the last line above the bios, so no additions. Tom Prater's row gained a published title on the org page (\"Visuals editor at Carbon Brief\") and it is now stored; the other five titles are unchanged. Parent-page Timeline reconfirms 20 August close and 17 November winners; /competition reconfirms free entry, £1,500/£500/£500 and the five-image-per-category cap."
     },
     {
       "title": "Annual Exhibition 2027 — Royal Scottish Academy Building",
@@ -31337,7 +31345,7 @@
         "Valery Poshtarov, Photographer & Founder, PhotoAnthology Foundation",
         "Lynsey Weatherspoon, Photojournalist & Portraitist"
       ],
-      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-31 22:00 verify: STILL NOT RE-VERIFIABLE. headon.org.au/awards returns 403 to curl+UA (5,763-byte block page) and the Chrome extension is disconnected again, so the standing rule holds — keep AUD$35 / $17.50. The submit portal submit.headon.org.au/PhotoAwards-2026 DOES curl (200) and STILL carries the stale line \"Full-price entry fees are AUD$30 per image. To support younger artists (under 25), we offer a 50% discount\" — that sentence has now triggered SIX re-flip attempts across separate runs; it is last cycle-s copy, ignore it permanently. The portal does re-confirm the prize: \"we proudly offer an $80,000 prize pool, plus finalists- exhibitions per category (printed and online)\" across Portrait, Landscape and Exposure, and \"You can enter as many images as you want\" (= unlimited). The 2026-08-16 deadline is published on NO curl-reachable surface (the portal states no close date) and Wayback still has only the pre-opening 2026-06-07 capture — carried forward from the 2026-07-23 Chrome read."
+      "verifyNote": "2026-07-23 (Chrome check of headon.org.au/awards): real 2026 fees are AUD$35 general / $25 Festival Friends / $17.50 under-25, per image, with a separate portal contest per tier (PhotoAwards-2026 / -2026-Friend / -2026-U25). DO NOT flip the fee down to $30/$15 without another Chrome check of /awards. 2026-07-31 22:00 verify: STILL NOT RE-VERIFIABLE. headon.org.au/awards returns 403 to curl+UA (5,763-byte block page) and the Chrome extension is disconnected again, so the standing rule holds — keep AUD$35 / $17.50. The submit portal submit.headon.org.au/PhotoAwards-2026 DOES curl (200) and STILL carries the stale line \"Full-price entry fees are AUD$30 per image. To support younger artists (under 25), we offer a 50% discount\" — that sentence has now triggered SIX re-flip attempts across separate runs; it is last cycle-s copy, ignore it permanently. The portal does re-confirm the prize: \"we proudly offer an $80,000 prize pool, plus finalists- exhibitions per category (printed and online)\" across Portrait, Landscape and Exposure, and \"You can enter as many images as you want\" (= unlimited). The 2026-08-16 deadline is published on NO curl-reachable surface (the portal states no close date) and Wayback still has only the pre-opening 2026-06-07 capture — carried forward from the 2026-07-23 Chrome read. 2026-08-01 22:00 verify: RE-VERIFIED AT LAST, AND THE STANDING \"NEEDS CHROME\" RULE IS OBSOLETE — `r.jina.ai/https://headon.org.au/awards` returns the organiser's own page in full while direct curl+UA still 403s with the same 5,763-byte block. That one route settles every field the 403 had frozen: \"Entries close: 16 August, 11:59 pm (Sydney time)\" (first non-Chrome source for the stored deadline, nine days out), the fee tier block verbatim — \"General entry AUD$35 · Festival Friends AUD$25 · Under 25 AUD$17.50\" — and \"AUD$80,000 prize pool – cash and high-end product\" with \"100% Anonymous Judging\". So the portal's \"$30 per image\" line is confirmed stale for a SEVENTH time; ignore it permanently and use r.jina.ai, not Chrome, when this page needs re-reading."
     },
     {
       "title": "Photography+ Open Call: Un/Stable — Lands, Anxieties, Dreams",
@@ -36245,6 +36253,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17392/CAFE",
       "requirements": "1–2 works",
       "slug": "seance-memento-mori-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17392 reconfirms deadline 2026-08-09T05:59:59Z = Aug 8 local, fees APPLICATION $25 \"Entry Fee\" + MEDIA $25 \"2nd Submission\" (so $25 PER PIECE, not $25 for two), imagesMin/Max 1-2, and \"Elgibility: National\" (the org's own typo) = united-states. ALL FOUR REMAINING GAPS ARE GENUINE ON ALL THREE MEMENTO MORI CALLS: description + eligibilityDescription + requirementDescription name no juror, publish no notification date, and mention no AI policy, and the rendered page opportunities.wearecreativewest.org/opportunity/17392/CAFE greps clean for 'artificial intelligence' and 'AI-gener' too. mementomorigallery.co/events lists the show but carries no dates or terms. Don't re-hunt these per call.",
       "orgInTitle": false,
       "summary": "Haunted group show at a Denver-area lowbrow gallery — rituals, apparitions, the uncanny. Framed prints welcome, up to two pieces.",
       "dateAdded": "2026-07-31T19:23:40Z"
@@ -36267,6 +36276,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17660/CAFE",
       "requirements": "1–2 works",
       "slug": "skull-and-bones-v-memento-mori-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17660 reconfirms deadline 2026-09-06T05:59:59Z = Sep 5 local, $30 per piece (APPLICATION $30 + MEDIA $30 '2nd Submission'), imagesMin/Max 1-2, eligibility National. Juror, notification date and AI policy are all genuinely unpublished — same as the other two Memento Mori calls, see the Séance note. The org's own events page lists the show without terms.",
       "orgInTitle": false,
       "summary": "Fifth annual all-things-skeletal group show at a Denver-area lowbrow gallery. Framed photographs welcome, up to two pieces.",
       "dateAdded": "2026-07-31T19:23:40Z"
@@ -36289,6 +36299,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17852/CAFE",
       "requirements": "1–2 works",
       "slug": "krampusnacht-ix-memento-mori-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17852 reconfirms deadline 2026-11-08T06:59:59Z = Nov 7 local (MST), $25 per piece (APPLICATION $25 + MEDIA $25 '2nd Submission'), imagesMin/Max 1-2, eligibility National. Juror, notification date and AI policy genuinely unpublished — see the Séance note. Not yet listed on mementomorigallery.co/events (the gallery posts each show closer to its date); CaFE is the live surface.",
       "orgInTitle": false,
       "summary": "Ninth annual Krampus show at a Denver-area lowbrow gallery — Alpine folklore, eerie and beautifully bizarre. Framed prints welcome.",
       "dateAdded": "2026-07-31T19:23:40Z"
@@ -36299,7 +36310,7 @@
       "deadline": "2026-09-09",
       "fee": "$26 (3 images) + $10 each additional",
       "category": "exhibition",
-      "description": "A new online juried exhibition from Site:Brooklyn tracing portraiture from cave painting through Holbein's construction of the sitter, Picabia's deconstruction of the body, Klee's abstractions and into the photographic worlds of Man Ray and August Sander. The gallery is looking for contemporary work that engages the portrait as subject or concept, material or metaphor — what the best portraiture attains, it argues, is a fusion of inner life and outer world. Juried by Theodora Walsh, whose writing and criticism have appeared in the Los Angeles Review of Books, Artforum, BOMB, Art Papers and SFMOMA's Open Space, and who runs the San Francisco curatorial project In Concert with Gabriel Garza. Open internationally to artists 18 and over working in all media. Submit 3–12 images; all work must be priced for sale and remain available for the run, with artists retaining a 60% commission. Exhibition online 2 October – 2 November 2026.",
+      "description": "A new online juried exhibition from Site:Brooklyn tracing portraiture from cave painting through Holbein's construction of the sitter, Picabia's deconstruction of the body, Klee's abstractions and into the photographic worlds of Man Ray and August Sander. The gallery is looking for contemporary work that engages the portrait as subject or concept, material or metaphor — what the best portraiture attains, it argues, is a fusion of inner life and outer world. Juried by Theadora Walsh, whose writing and criticism have appeared in the Los Angeles Review of Books, Artforum, BOMB, Art Papers and SFMOMA's Open Space, and who runs the San Francisco curatorial project In Concert with Gabriel Garza. Open internationally to artists 18 and over working in all media. Submit 3–12 images; all work must be priced for sale and remain available for the run, with artists retaining a 60% commission. Exhibition online 2 October – 2 November 2026.",
       "url": "https://www.sitebrooklyn.com/",
       "instagram": "@sitebrooklyn",
       "location": "Online",
@@ -36308,7 +36319,7 @@
         "18-plus"
       ],
       "jury": [
-        "Theodora Walsh, Writer and Curator"
+        "Theadora Walsh, Art Critic & Poet"
       ],
       "submitVia": "CaFE",
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17976/CAFE",
@@ -36316,9 +36327,9 @@
       "resultsDate": "September 18, 2026",
       "slug": "the-modern-portrait-site-brooklyn-gallery",
       "orgInTitle": false,
-      "summary": "Site:Brooklyn online show on the contemporary portrait, juried by critic Theodora Walsh. International, 3–12 images.",
+      "summary": "Site:Brooklyn online show on the contemporary portrait, juried by critic Theadora Walsh. International, 3–12 images.",
       "dateAdded": "2026-07-31T19:23:40Z",
-      "verifyNote": "2026-07-31 22:00 verify: resultsDate FILLED. CaFE 17976 GraphQL description carries the full Dates block — \"Call Announcement: July 30, 2026 / Final Submission Deadline: September 9, 2026 11:59 PM PT / Notification Letter: September 18, 2026\". The structured juryResults field is null, which is why earlier passes recorded no results date: on Site:Brooklyn the notification date is only in the prose, never in the date fields. Deadline 2026-09-10T06:59:59Z = Sep 9 PT confirmed, fee rows $26 Entry + $10 Additional Media, imagesMin/Max 3-12, eligibility \"open to all artists 18 years of age or older\" (no geography, hence 18-plus only), juror Theodora Walsh confirmed. sitebrooklyn.com itself is a near-empty JS shell — read this call on CaFE."
+      "verifyNote": "2026-07-31 22:00 verify: resultsDate FILLED. CaFE 17976 GraphQL description carries the full Dates block — \"Call Announcement: July 30, 2026 / Final Submission Deadline: September 9, 2026 11:59 PM PT / Notification Letter: September 18, 2026\". The structured juryResults field is null, which is why earlier passes recorded no results date: on Site:Brooklyn the notification date is only in the prose, never in the date fields. Deadline 2026-09-10T06:59:59Z = Sep 9 PT confirmed, fee rows $26 Entry + $10 Additional Media, imagesMin/Max 3-12, eligibility \"open to all artists 18 years of age or older\" (no geography, hence 18-plus only), juror confirmed. sitebrooklyn.com itself is a near-empty JS shell — read this call on CaFE. 2026-08-01 22:00 verify: JUROR NAME CORRECTED Theodora -> THEADORA Walsh, and the title changed to match the source bio. CaFE 17976 spells it \"About the Juror: Theadora Walsh is an art critic and poet living in New York\", and that spelling is the person's own: her contributor pages at Frieze, Artforum and The Brooklyn Rail all read Theadora. \"Theodora\" was our own transposition, not the gallery's — do not flip it back. Deadline, fee rows, imagesMin/Max 3-12 and the Sep 18 notification all reconfirmed on CaFE; the rendered page greps clean for AI."
     },
     {
       "title": "I'M SCARED 2026",
@@ -36340,7 +36351,8 @@
       "orgInTitle": false,
       "summary": "Free-to-enter horror-themed group show at a Hudson Valley arts centre. 2D, 3D, sound and film; hand delivery required.",
       "resultsDate": "September 4, 2026",
-      "dateAdded": "2026-07-31T19:23:40Z"
+      "dateAdded": "2026-07-31T19:23:40Z",
+      "verifyNote": "2026-08-01 22:00 verify: unchanged, and the requirements gap is GENUINE — no work or image count is published on either surface. bethanyarts.org/calendar/callimscared2026/ and the Submittable listing bethanyarts.submittable.com/submit carry the SAME guidelines text word for word, and its \"Work Restrictions/Guidelines\" block caps only the media (\"Music/Sound and 3D Work 360º/Film (Video) submissions must be under 5 minutes\", \"3D Work shall not be over 6.5′ in height\") and never a number of pieces; the count exists only inside the login-walled form. Leave requirements null rather than inventing one. Reconfirmed on both surfaces: \"Submission Deadline: Thursday, August 13, 2026 at 11:59PM\", \"Notifications: September 4, 2026\", 18+ with mandatory hand delivery to Ossining NY, 20% BAC commission on sales, and no entry fee anywhere in the Submittable flow (an empty fee line on a Submittable listing = free). No jury named and no AI policy."
     },
     {
       "title": "Mystery, Magic & the Macabre",
@@ -36367,7 +36379,8 @@
       "summary": "Kansas cultural centre's juried show of the magical, mystical and macabre. Photography named; $900 in awards, no AI.",
       "ai": "Not accepted",
       "resultsDate": "September 19, 2026",
-      "dateAdded": "2026-07-31T19:23:40Z"
+      "dateAdded": "2026-07-31T19:23:40Z",
+      "verifyNote": "2026-08-01 22:00 verify: unchanged, and THE INSTAGRAM GAP IS GENUINE — Deines Cultural Center has no Instagram to find. deinesculturalcenter.org/art.html and the site root both contain zero instagram.com (and zero facebook.com) hrefs, and CaFE 17825's own instagramUrl field is null. Note the root 406s to a bare UA — request /index.html with a browser UA. Stop re-hunting this handle. Everything else reconfirmed on CaFE 17825: deadline 2026-09-11T05:59:59Z = Sep 10 local, flat $25 APPLICATION fee with no media row, imagesMin/Max 1-3, \"Artists will be notified of their acceptance on September 19th, 2026\", awards \"1st Place - $500 2nd Place - $250 3rd Place - $150\" (= the $900 in the summary), \"open to artists 18 years or older living in the United States\", juror David Barnes, and the AI ban verbatim \"No artificial intelligence (AI) works\"."
     },
     {
       "title": "SHIFT",
@@ -36390,6 +36403,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17733/CAFE",
       "requirements": "1–3 images",
       "slug": "shift-nkollectiv",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17733 reconfirms deadline 2026-09-03T05:59:59Z = Sep 2 local, a flat $38 entry fee (single APPLICATION row), imagesMin/Max 1-3, \"Open to all Colorado artists working in 2D and 3D media\", juror Liz Graham, and \"Artist notification on Friday, September 18, 2026\". No AI policy in any CaFE text field or on the rendered page, so ai stays null. Instagram @nkollectiv verified from nkollectiv.com's own href.",
       "orgInTitle": false,
       "summary": "Colorado-only show on turning points at an Englewood gallery. Photography named; juried by Liz Graham, award at reception.",
       "resultsDate": "September 18, 2026",
@@ -36414,6 +36428,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17966/CAFE",
       "requirements": "Up to 10 images",
       "slug": "compact-small-works-artlink-contemporary-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17966 reconfirms deadline 2026-09-08T03:59:59Z = Sep 7 local, fees APPLICATION $12 + MEDIA $12 (so $12 PER ENTRY), imagesMax 10, and \"Artists must be 18+ years of age and reside in the United States.\" artlinkfw.org/calls-for-entry independently lists \"COMPACT Deadline: Sept 7, 2026\". THE SIZE CONFLICT IS STILL LIVE and is already in our description: CaFE says \"Size limit: 8\" in any direction\", the org page says \"no larger than 10 inches in any dimension\" — neither surface has moved, so keep the caveat rather than picking one. No juror named for COMPACT (unlike its sibling Wavelength), no notification date, and no AI policy in any CaFE text field or on the rendered page.",
       "orgInTitle": false,
       "summary": "Artlink's small-works show — intimate scale, all media, $12 an entry at a nonprofit Fort Wayne gallery.",
       "dateAdded": "2026-07-31T19:23:40Z"
@@ -36440,6 +36455,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17967/CAFE",
       "requirements": "Up to 10 images",
       "slug": "wavelength-yellow-artlink-contemporary-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17967 reconfirms deadline 2026-09-08T03:59:59Z = Sep 7 local, $12 per entry (APPLICATION $12 + MEDIA $12), imagesMax 10, and \"Artworks must have a strong presence of yellow. Artists must be 18+ and reside in the United States.\" Juror Ellen Mensch confirmed in the About the Juror block. resultsDate genuinely absent — Artlink publishes no notification date for either of its two open calls, and the rendered CaFE page greps clean for AI.",
       "orgInTitle": false,
       "summary": "One colour, one show: Artlink's spectrum series turns to yellow. Photography named, $12 an entry, juried by Ellen Mensch.",
       "dateAdded": "2026-07-31T19:23:40Z"
@@ -36468,7 +36484,7 @@
       "summary": "Alaska-resident portfolio call for solo, group or curated shows at the Bear Gallery. Blind panel review, 7–10 samples.",
       "ai": "Not accepted",
       "dateAdded": "2026-07-31T19:23:40Z",
-      "verifyNote": "2026-07-31 22:00 verify: resultsDate FILLED. CaFE 17978 description states \"Applicants will be notified of their application status in early 2027\" — a window, not a date, so it is stored as \"Early 2027\"; juryResults is null and there is no calendar date anywhere. Jury stays [] on purpose: the same text describes a blind panel (\"Signatures and names visible in work samples should be blurred... to keep the jury process blind\", \"The review panel will...\") and names nobody. Also re-confirmed: deadline 2026-11-01T05:59:59Z = Oct 31 local, fee \"Current Fairbanks Arts Association Members at the Artist level or higher: $30.00 / Non-member: $35.00\", imagesMin/Max 7-10, Alaskan artists only, and the AI ban \"Artworks in the exhibition must not include AI-generated imagery.\" Note fairbanksarts.org/call-for-art/ still advertises the 2027 cycle — CaFE is the live surface."
+      "verifyNote": "2026-07-31 22:00 verify: resultsDate FILLED. CaFE 17978 description states \"Applicants will be notified of their application status in early 2027\" — a window, not a date, so it is stored as \"Early 2027\"; juryResults is null and there is no calendar date anywhere. Jury stays [] on purpose: the same text describes a blind panel (\"Signatures and names visible in work samples should be blurred... to keep the jury process blind\", \"The review panel will...\") and names nobody. Also re-confirmed: deadline 2026-11-01T05:59:59Z = Oct 31 local, fee \"Current Fairbanks Arts Association Members at the Artist level or higher: $30.00 / Non-member: $35.00\", imagesMin/Max 7-10, Alaskan artists only, and the AI ban \"Artworks in the exhibition must not include AI-generated imagery.\" Note fairbanksarts.org/call-for-art/ still advertises the 2027 cycle — CaFE is the live surface. 2026-08-01 22:00 verify: THAT LAG IS OVER — fairbanksarts.org/call-for-art/ has caught up and now runs the 2028 cycle itself (\"submit work for consideration for solo, group, or curated exhibitions in the Bear Gallery during the 2028 season (February–November)\", \"Applications must be submitted through CaFE no later than Saturday, October 31st, 2026, by 9:59 p.m. AKDT\", \"Alaska residents (living in-state at least 6 months of the year) ages 18+\", and the once-every-4-years rule). Org page and CaFE 17978 now agree on every stored field, so this is no longer a portal-beats-org case."
     },
     {
       "title": "In the Realm of the Mystic",
@@ -36488,6 +36504,7 @@
       "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17769/CAFE",
       "requirements": "2–5 images",
       "slug": "in-the-realm-of-the-mystic-verum-ultimum-art-gallery",
+      "verifyNote": "2026-08-01 22:00 verify: CaFE 17769 reconfirms deadline 2026-08-07T05:59:59Z = Aug 6 local, fees APPLICATION $25 \"Entry Fee\" + MEDIA $5 \"Each additional entry\", imagesMin/Max 2-5, \"Artists 18 years of age or older\", and the resultsDate: \"NOTIFICATION (by email) of accepted work by September 15, 2026\". The gallery's own post verumultimumartgallery.com/single-post/new-call-for-art-in-the-realm-of-the-mystic carries only the theme, \"Deadline AUGUST 6, 2026\" and \"This exhibition will be ONLINE ONLY\" — no juror, no AI policy on either surface, so both gaps are genuine.",
       "orgInTitle": false,
       "summary": "Portland gallery's online-only call on myth, bestiaries and the mystic — read as loosely as you like. From $25.",
       "resultsDate": "September 15, 2026",
@@ -36926,6 +36943,7 @@
       "category": "exhibition",
       "description": "Artspiration Frederick invites original work inspired by barns, farms, rural landscapes and the passage of time in Frederick County, Maryland — from weathered wood and rusted metal to atmospheric fired ceramics that embrace the elements. All media are accepted and photography is named explicitly alongside 2D, 3D, ceramics, sculpture and mixed media. Artists may submit up to three pieces and up to three may be selected; all work must be original, exhibition-ready and for sale, with 2D work properly framed and wired (no sawtooth hangers). The exhibition runs 2 October to 1 November 2026 with an artists' reception on 10 October, in a gallery that is free to enter, open to the public and wheelchair accessible. Accepted work is dropped off 29–30 September, or shipped to arrive by 29 September at the artist's cost with a prepaid return label. Jurors are potter Tony Clennell, a Royal Canadian Academy of Arts member with an MFA from Utah State who has taught across four continents, and Kimberly Yourick, founder of Lockhouse Gallery in Brunswick, Maryland and an oil painter specialising in plein air landscapes. Notification is emailed the week of 21 September.",
       "url": "https://artspirationfred.com/exhibitions",
+      "instagram": "@artspirationfrederick",
       "location": "Frederick, MD, USA",
       "prize": "Exhibition",
       "eligibility": [
@@ -36943,7 +36961,7 @@
       "orgInTitle": false,
       "summary": "Barns, farms and rural Frederick County, Maryland. All media with photography named; gallery show Oct–Nov 2026.",
       "resultsDate": "Week of September 21, 2026",
-      "verifyNote": "2026-08-01 20:00 sweep: CaFE 17251 read in full. Deadline stored as 2026-09-11 from the prospectus body (\"Deadline for entries: September 11, 2026\" / \"by 11:59 EST on September 11, 2026\"); the CaFE applicationDeadline field is 2026-09-12T03:59:59Z, the same instant in UTC (the usual UTC+1d offset). Eligibility from requirementDescription verbatim: \"Open to visual artists 18 years and older residing in the continental US.\" Photography is named in eligibilityDescription: \"All media accepted (2D, 3D, ceramics, sculpture, photography, mixed media, etc.)\" — but the two named jurors cover ceramics and plein air only, so no photography juror is published. No cash awards are listed, hence prize \"Exhibition\". url follows the convention set by our other Artspiration entries (org exhibitions page; the org site publishes no per-call page). No AI policy on the prospectus.",
+      "verifyNote": "2026-08-01 20:00 sweep: CaFE 17251 read in full. Deadline stored as 2026-09-11 from the prospectus body (\"Deadline for entries: September 11, 2026\" / \"by 11:59 EST on September 11, 2026\"); the CaFE applicationDeadline field is 2026-09-12T03:59:59Z, the same instant in UTC (the usual UTC+1d offset). Eligibility from requirementDescription verbatim: \"Open to visual artists 18 years and older residing in the continental US.\" Photography is named in eligibilityDescription: \"All media accepted (2D, 3D, ceramics, sculpture, photography, mixed media, etc.)\" — but the two named jurors cover ceramics and plein air only, so no photography juror is published. No cash awards are listed, hence prize \"Exhibition\". url follows the convention set by our other Artspiration entries (org exhibitions page; the org site publishes no per-call page). No AI policy on the prospectus. 2026-08-01 22:00 verify: INSTAGRAM GAP FILLED null -> @artspirationfrederick, from the org's own exhibitions page: \"Follow us on Instagram @artspirationfrederick or check back for upcoming exhibitions.\" The handle appears as PLAIN TEXT ONLY — there is no instagram.com href anywhere in artspirationfred.com's HTML, so a link-scraper finds nothing and the gap reads as genuine; grep the stripped text for '@' as well as for hrefs. Everything else reconfirmed on CaFE 17251 (deadline 2026-09-12T03:59:59Z = Sep 11 local, $35 single APPLICATION fee with no media row, imagesMin/Max 1-3, both jurors, \"Juror's Notification emailed the week of: September 21, 2026\"), and the rendered CaFE page greps clean for AI.",
       "dateAdded": "2026-08-01T19:23:25Z"
     }
   ]
