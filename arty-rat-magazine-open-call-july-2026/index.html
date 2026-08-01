@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">Summer open call from the Vienna-based independent art magazine for bold contemporary visual work worldwide — art, illustration and photography. Free to submit up to 6 works by online form or email; if selected, publishing options range from €35 (magazine publication) to €65 (magazine plus artist website page) and €100 (curatorial review or Vienna exhibition). Two artists are chosen for cover features, and one artist receives free participation in The Names Gallery group exhibition in Vienna. Selected artists get a digital magazine copy, printed page photos and an Instagram feature.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 1, 2026">August 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (€35–€100 if accepted)"><span class="tag-front">Free (€35–€100 if</span> <span class="tag-back">accepted)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/austria/" title="Vienna, Austria">Vienna, Austria</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 6 images">Up to 6 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="mailto:artyratjournal@gmail.com" rel="nofollow noopener">Email</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 1, 2026">August 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (€35–€100 if accepted)"><span class="tag-front">Free (€35–€100 if</span> <span class="tag-back">accepted)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/austria/" title="Vienna, Austria">Vienna, Austria</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 6 images">Up to 6 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Email</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Oleksandr Dyvnich, Curator, Arty Rat</p>
@@ -124,8 +124,7 @@
         <p class="call-detail-description">Organized by <a href="/arty-rat/">Arty Rat</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://artyrat.com/opencall/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on August 1, 2026</span></div>
     </section>
@@ -143,23 +142,7 @@
   <script>
     const CURRENT_SLUG = 'arty-rat-magazine-open-call-july-2026';
     const CURRENT_CALL = {"title":"Arty Rat Magazine Open Call — July 2026","category":"zine","org":"Arty Rat","location":"Vienna, Austria","fee":"Free (€35–€100 if accepted)","deadline":"2026-08-01","eligibility":["18-plus"]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-08-01'.replace(/-/g, '');
-      var nd = new Date('2026-08-01T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Arty Rat Magazine Open Call — July 2026';
-      var u = 'https://artyrat.com/opencall/';
-      var o = 'Arty Rat';
-      var dl = new Date('2026-08-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Publication') + '\\nEntry fee: ' + icsE('Free (€35–€100 if accepted)');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
