@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-01T15:15:43Z",
+  "lastUpdated": "2026-08-01T19:23:25Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -36895,6 +36895,56 @@
         "All media are welcome and photography is listed explicitly, alongside painting, sculpture, ceramics, mixed media, fibre art, printmaking, glass, wood and installation, traditional or experimental. Artists may submit up to 20 works, and everything entered must be for sale.",
         "Selected artists appear in the in-person exhibition and are also given access to the gallery's online marketplace, where they can list additional work as part of an online version of the show. Entry is $25 plus $5 per additional image. Submissions close Sunday 2 August 2026, the show runs 22 August to 26 September, and the opening party is on 22 August from 5 to 9pm."
       ]
+    },
+    {
+      "title": "Zari Art Prize 2026",
+      "org": "Zari Gallery",
+      "deadline": "2026-08-22",
+      "fee": "£20 (1 entry) – £87.50 (10 entries)",
+      "category": "exhibition",
+      "description": "The Zari Art Prize returns for 2026 from Zari Gallery, a Fitzrovia gallery in London's West End founded in 2016 to show new and established artists united by mixed cultural heritage. The prize is awarded across three categories — painting, sculpture and photography — from a £4,000 prize pool, with Photography taking £550 and Photography Runner-up £350 alongside a £1,000 Best in Show and a £300 People's Choice. There is no set theme. Artists worldwide may submit up to ten works; entry is £20 for a single work, rising on a sliding scale to £87.50 for ten. Judges select an online shortlist between 23 and 31 August, a public vote opens 2 September, and the shortlist is announced 9 September, with shortlisted work delivered 11–17 September for the gallery exhibition in central London. Photographs must arrive framed and fitted with hanging hardware; images are submitted as JPEGs under 10 MB, ideally 300 dpi and at least 1600 pixels wide. Work is offered for sale to the gallery's collector audience.",
+      "url": "https://zarigallery.co.uk/zari-art-prize/",
+      "instagram": "@zarigallerylondon",
+      "location": "London, United Kingdom",
+      "prize": "£1,000 Best in Show + Exhibition",
+      "eligibility": [],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://zariartprize2026.artcall.org/",
+      "requirements": "Up to 10 works",
+      "slug": "zari-art-prize-2026-zari-gallery",
+      "orgInTitle": false,
+      "summary": "London West End gallery prize with a dedicated photography category — £550 plus £350 runner-up from a £4,000 pool, and a Fitzrovia show.",
+      "resultsDate": "September 9, 2026",
+      "verifyNote": "2026-08-01 20:00 sweep: verified on the organiser's own page zarigallery.co.uk/zari-art-prize/ (deadline 22nd August 2026, the full £20–£87.50 fee ladder, and the prize table listing Photography £550 / Photography Runner-up £350 alongside Best in Show £1,000, Painting, Sculpture and People's Choice £300). The same page's key-dates block is internally inconsistent — it gives \"Awards Night and Private View: 23rd November 2026\" but \"Exhibition Closes: 1st October 2026\" — so no exhibition run dates are stored; only the shortlist date is. Discovered via ArtCall.org. The gallery's separate Zari Photo Prize page is the 2025 edition and is closed — do not confuse the two.",
+      "dateAdded": "2026-08-01T19:23:25Z"
+    },
+    {
+      "title": "Weathered & Fired: Barnstormers and Atmospheric Fired Ceramics",
+      "org": "Artspiration Frederick",
+      "deadline": "2026-09-11",
+      "fee": "$35",
+      "category": "exhibition",
+      "description": "Artspiration Frederick invites original work inspired by barns, farms, rural landscapes and the passage of time in Frederick County, Maryland — from weathered wood and rusted metal to atmospheric fired ceramics that embrace the elements. All media are accepted and photography is named explicitly alongside 2D, 3D, ceramics, sculpture and mixed media. Artists may submit up to three pieces and up to three may be selected; all work must be original, exhibition-ready and for sale, with 2D work properly framed and wired (no sawtooth hangers). The exhibition runs 2 October to 1 November 2026 with an artists' reception on 10 October, in a gallery that is free to enter, open to the public and wheelchair accessible. Accepted work is dropped off 29–30 September, or shipped to arrive by 29 September at the artist's cost with a prepaid return label. Jurors are potter Tony Clennell, a Royal Canadian Academy of Arts member with an MFA from Utah State who has taught across four continents, and Kimberly Yourick, founder of Lockhouse Gallery in Brunswick, Maryland and an oil painter specialising in plein air landscapes. Notification is emailed the week of 21 September.",
+      "url": "https://artspirationfred.com/exhibitions",
+      "location": "Frederick, MD, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "jury": [
+        "Tony Clennell, Potter, Royal Canadian Academy of Arts",
+        "Kimberly Yourick, Founder, Lockhouse Gallery"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17251/CAFE",
+      "requirements": "Up to 3 works",
+      "slug": "weathered-and-fired-artspiration-frederick",
+      "orgInTitle": false,
+      "summary": "Barns, farms and rural Frederick County, Maryland. All media with photography named; gallery show Oct–Nov 2026.",
+      "resultsDate": "Week of September 21, 2026",
+      "verifyNote": "2026-08-01 20:00 sweep: CaFE 17251 read in full. Deadline stored as 2026-09-11 from the prospectus body (\"Deadline for entries: September 11, 2026\" / \"by 11:59 EST on September 11, 2026\"); the CaFE applicationDeadline field is 2026-09-12T03:59:59Z, the same instant in UTC (the usual UTC+1d offset). Eligibility from requirementDescription verbatim: \"Open to visual artists 18 years and older residing in the continental US.\" Photography is named in eligibilityDescription: \"All media accepted (2D, 3D, ceramics, sculpture, photography, mixed media, etc.)\" — but the two named jurors cover ceramics and plein air only, so no photography juror is published. No cash awards are listed, hence prize \"Exhibition\". url follows the convention set by our other Artspiration entries (org exhibitions page; the org site publishes no per-call page). No AI policy on the prospectus.",
+      "dateAdded": "2026-08-01T19:23:25Z"
     }
   ]
 }
