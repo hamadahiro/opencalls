@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-01T03:13:25Z",
+  "lastUpdated": "2026-08-01T07:20:01Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -30546,7 +30546,7 @@
     },
     {
       "title": "Hyperview",
-      "deadline": "2026-07-31",
+      "deadline": "2026-08-23",
       "description": "An international call for works about vastness and scale at Manifest Gallery in Cincinnati, open to all traditional and non-traditional genres and media. Selected works are exhibited November 6 – December 4, 2026, in the gallery's 23rd season. Every exhibiting artist receives a $50 cash honorarium, one work from each exhibition period wins the $1,000 Grand Jury Award, and artists receive 70% on sales. Submit up to 3 entries for $45, $5 per additional entry; open internationally. Notifications by September 28.",
       "url": "https://www.manifestgallery.org/season23/hyperview/index.html",
       "submitUrl": "https://www.manifestgallery.org/season23/hyperview/entry/index.html",
@@ -30566,7 +30566,8 @@
       "dateAdded": "2026-07-12T07:35:41Z",
       "jury": [
         "Anonymous panel of professional & academic advisors"
-      ]
+      ],
+      "verifyNote": "2026-08-01 sweep: manifestgallery.org/season23/hyperview/index.html now reads \"DEADLINE TO SUBMIT IS EXTENDED TO AUGUST 23, 2026\" (was Jul 31); same extension shown on /about/submit.html for HYPERVIEW, COUNTERFORM and VISAGE. Fee $45 for up to three entries + $5 each additional; exhibition Nov 6 – Dec 4, 2026."
     },
     {
       "title": "Counterform",
@@ -36528,6 +36529,176 @@
       "resultsDate": "September 8, 2026",
       "dateAdded": "2026-08-01T03:13:25Z",
       "verifyNote": "2026-08-01 verify: CaFÉ 17980 confirms applicationDeadline 2026-08-29T03:59:59Z = Aug 28 EDT (\"Deadline to Apply: Friday, August 28th, 2026\"), APPLICATION fee $25.00 with no media fee, imagesMin 1 / imagesMax 3 (\"A total of THREE (3) works of art may be submitted per artist\") and \"Notifications Sent: Tuesday, September 8th, 2026\". JURY GAP IS DELIBERATE AND WILL STAY OPEN A WHILE: the prospectus says twice that the juror is unappointed — \"Review and acceptance of the artist field will be performed by a juror, to be announced\" and \"The juror for the New Works 2026 Exhibition is currently being finalized and will be announced soon\" — so do not invent a name or promote a staff member. Prize is the four-part award block First $200 / Second $150 / Third $100 / People's Choice $50 = the $500 in the summary. ELIGIBILITY IS A RADIUS, NOT A STATE: \"Open to artists 18+ living within a 150-mile radius of the Floyd Center for the Arts\" (eligibilityRegion REGIONAL), which reaches into NC, WV and TN; `virginia` is the closest existing facet and is kept deliberately, so read the summary's \"Blue Ridge regional\" as the real rule. 40% gallery commission; exhibition Oct 3 – Nov 21 2026 in the Hayloft Gallery. Neither the CaFÉ fields nor the rendered page mentions AI."
+    },
+    {
+      "title": "Fotosalongen 2027",
+      "org": "Hasselblad Foundation",
+      "deadline": "2026-10-18",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Sweden's largest photography salon returns for its second edition at the Hasselblad Center in Gothenburg, and the open call is deliberately wide: amateur and professional photographers working across every genre are invited to submit, with no set theme. The foundation welcomes documentary photography and photojournalism alongside nature, family, street, science, politics and art photography, and says the salon is built to create unexpected encounters between established artists, emerging talents and photographers whose work has never been shown publicly. The jury looks for compelling images and photographic narratives with depth, originality and a diversity of expression, so that the selected works together offer a broad snapshot of photography today. Submissions are still photography only — no video — as up to five single images, or an installation without electronic equipment; one project per person or group, and groups may apply jointly. Entry is free. Selected photographers exhibit at the Hasselblad Center, receive compensation of SEK 3,200, appear in the exhibition catalogue and may sell work; participants cover transport of works to and from the Center. The jury is chaired by the foundation's chief curator Dragana Vujanović Östlind and includes Alexandra Ellis of the Sune Jonsson Centre for Documentary Photography at Västerbottens museum, film director Tarik Saleh and photographer Elisabeth Toll. Applications run from 1 August to 18 October 2026 via Picter; the exhibition itself runs 23 April to 26 September 2027, in a venue that draws around 70,000 visitors. Open to anyone who turns 18 during the application year or is older, and who is either a Swedish citizen or has a residential address in Sweden.",
+      "url": "https://www.hasselbladfoundation.org/en/portfolio_page/440875/",
+      "instagram": "@hasselbladfoundation",
+      "location": "Gothenburg, Sweden",
+      "prize": "SEK 3,200 + Exhibition",
+      "eligibility": [
+        "18-plus",
+        "sweden"
+      ],
+      "jury": [
+        "Dragana Vujanović Östlind, Chief Curator, Hasselblad Foundation (Chair)",
+        "Alexandra Ellis, Curator, Sune Jonsson Centre for Documentary Photography",
+        "Tarik Saleh, film director",
+        "Elisabeth Toll, photographer"
+      ],
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/hasselblad-foundation-fotosalongen-2027",
+      "requirements": "Up to 5 images",
+      "slug": "fotosalongen-2027-hasselblad-foundation",
+      "orgInTitle": false,
+      "summary": "Sweden's largest photo salon, themeless and free to enter. Hasselblad Center exhibition, catalogue and SEK 3,200 compensation.",
+      "dateAdded": "2026-08-01T07:20:01Z"
+    },
+    {
+      "title": "The Cat Show",
+      "org": "Blue Sky Gallery",
+      "deadline": "2026-08-28",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "The twelfth and final show in Blue Sky's year of 50th-anniversary online exhibitions, and a direct answer to the gallery's 1976 group show The Dog Show. Exhibitions Director C. Meier — a self-described cat enthusiast — juries the call, looking for the most clever, curious and chaotic feline companions: humorous snapshots and thoughtful fine art are equally welcome, and every photographic approach is in scope. The pitch is that photographers and cats have at least one thing in common, a love of light, whether that means a favourite sun spot or an iconic pose. Entry is free and Blue Sky membership is not required. Artists may submit up to three images as JPGs no larger than 1500 pixels on the longest side, named lastname_firstname_title.jpg and accompanied by title and year; submissions are accepted only through the gallery's Google Form. Accepted work is shown online only and is not for sale. Images that violate Blue Sky's anti-discrimination policy or are otherwise deemed offensive will be disqualified, as will submissions that ignore the file requirements. Accepted artists are notified by email; because of the volume of entries, unsuccessful submissions do not receive a reply. The deadline is Friday 28 August 2026 at 11:59pm Pacific, and the exhibition launches Friday 25 September 2026.",
+      "url": "https://www.blueskygallery.org/news/the-cat-show-open-call",
+      "instagram": "@blueskygallerypdx",
+      "location": "Online",
+      "prize": "Online exhibition",
+      "eligibility": [],
+      "jury": [
+        "C. Meier, Exhibitions Director, Blue Sky Gallery"
+      ],
+      "submitVia": "Google Form",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdfgINV0ZmwZb__jVTt_bCS6kMRmR9WJ6YVakwvmMdvwBaKcg/viewform?usp=dialog",
+      "requirements": "Up to 3 images",
+      "slug": "the-cat-show-blue-sky-gallery",
+      "orgInTitle": false,
+      "summary": "Free feline open call closing Blue Sky's 50th-anniversary series — a 2026 answer to the gallery's 1976 Dog Show.",
+      "dateAdded": "2026-08-01T07:20:01Z"
+    },
+    {
+      "title": "Overshoot",
+      "org": "DOTLOGIC",
+      "deadline": "2026-08-31",
+      "fee": "€20",
+      "category": "exhibition",
+      "description": "The first open call from DOTLOGIC, the Trieste social cooperative behind URBAN Photo Awards, Exhibit Around, dotART and Trieste Photo Days, asking photographers worldwide for their own account of climate change. The title refers to the crossing of the 1.5°C threshold: 2024 was the first full year above it, and the call takes that as the beginning of what science calls an overshoot, where every fraction of a degree brings consequences that are more severe and less reversible. Submissions can approach the theme through landscapes in transformation — coasts, mountains, farmland, cities — or through people: those who work, adapt or resist in the face of climate effects, the everyday gestures a changing climate transforms, and more conceptual readings of the distance between what the numbers say and what bodies feel. Any genre is welcome, from reportage and documentary to street, landscape and fine art, but only single photographs are admitted; no projects or portfolios. AI-generated or AI-manipulated images are strictly prohibited, as are watermarks and signatures. Files must be JPG, RGB/sRGB, at least 2000 pixels on the short side and under 10MB. Twenty selected photographs are exhibited at Magazzino 26 in Porto Vecchio, Trieste from 23 October to 8 November 2026 alongside work by Mark Power and Christopher Morris, the international guest artists of Trieste Photo Days 2026, with full production — printing and setup — covered by the organisers. Selected authors are published in the official Magazzino 26 catalogue, receive a limited-edition commemorative coin, and may be considered for future Exhibit Around exhibitions. Authors keep moral and intellectual property rights; the organisers take non-exclusive promotional rights with author credit. The entry fee is €20, and the number of photographs you may submit depends on your Exhibit Around membership tier, from one image for non-members up to twenty-five at the top level. The call runs 1 to 31 August 2026 and responds to Goal 13 of the UN 2030 Agenda.",
+      "url": "https://www.exhibitaround.com/en/open-calls/overshoot/",
+      "location": "Trieste, Italy",
+      "prize": "Exhibition + Catalogue",
+      "eligibility": [],
+      "submitVia": "Official website",
+      "submitUrl": "https://my.dotlogic.net/",
+      "requirements": "1 image (more for members)",
+      "ai": "Not accepted",
+      "slug": "overshoot-dotlogic",
+      "orgInTitle": false,
+      "summary": "Climate-change single-image call from Trieste Photo Days. Twenty prints at Magazzino 26 beside Mark Power and Christopher Morris.",
+      "dateAdded": "2026-08-01T07:20:01Z"
+    },
+    {
+      "title": "Art Solano 2026",
+      "org": "Arts Benicia",
+      "deadline": "2026-08-02",
+      "fee": "$45 ($35 members) + $5/additional entry",
+      "category": "exhibition",
+      "description": "Arts Benicia's county-wide survey of the artists of Solano County, open to any subject and to all 2D and 3D visual media plus video — photography included. Eligibility runs to artists living in Solano County or whose main studio is there, which covers Benicia, Dixon, Fairfield, Suisun City, Rio Vista, Vacaville, Vallejo and the communities of Allendale, Hartley and Green Valley. The juror is Glen Helfand, a writer, critic, curator and professor in the Graduate Fine Arts Program at California College of the Arts, whose writing on art, culture and design has appeared in Artforum, Aperture, The Guardian, Photograph, SFMOMA Open Space and W, and who has organised exhibitions for the de Young Museum, the San Jose Museum of Art, the San Francisco Art Institute, the Mills College Art Museum, Art Toronto and the San Francisco Main Library. Two-dimensional work may not exceed 36 inches wide or 72 inches high including the frame, and 3D work is capped at a 36 by 36 inch footprint; staff should be contacted about installations or unusual sizes. Work previously shown at Arts Benicia is not eligible. Wall works must be wired rather than hung from sawtooth hangers, there is a 35-pound weight limit on hanging work, and the prospectus states that giclées are not accepted, so check with the gallery before submitting inkjet prints. Arts Benicia handles all sales and artists receive 60%. Entries close 2 August 2026 at 11:59pm Pacific, jurying runs 4–15 August and artists are notified 18 August. Hand delivery is 1–2 October and shipped work must arrive by 2 October. The exhibition opens with a members' and artists' preview on 22 October and a public reception on 24 October, and runs to 20 December 2026 at the gallery on Commandant's Lane. The show is supported by a grant from the Solano County Arts Council.",
+      "url": "https://artsbenicia.org/exhibitions/call-for-entries/",
+      "instagram": "@artsbenicia",
+      "location": "Benicia, CA, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "bay-area"
+      ],
+      "jury": [
+        "Glen Helfand, writer, critic and curator, California College of the Arts"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17657/CAFE",
+      "requirements": "Up to 6 images",
+      "resultsDate": "August 18, 2026",
+      "slug": "art-solano-2026-arts-benicia",
+      "orgInTitle": false,
+      "summary": "Solano County survey in all 2D, 3D and video media, juried by critic and curator Glen Helfand for a two-month Benicia show.",
+      "dateAdded": "2026-08-01T07:20:01Z"
+    },
+    {
+      "title": "6 by Exhibit 2026",
+      "org": "Cape Fear Studios",
+      "deadline": "2026-08-10",
+      "fee": "$30 + $15/additional entry",
+      "category": "exhibition",
+      "description": "A small-works call with one governing rule: one dimension of each piece must measure six inches, before framing. Cape Fear Studios in downtown Fayetteville opens it to visual artists in any medium, photography included, with up to three original works per artist — no prints or mass-produced work — and a minimum age of 18. The juror is Silvana Foti, previously executive director of the David McCune International Art Gallery at Methodist University, where she was instrumental in the gallery's opening and the founding of its advisory board. She holds an MFA in printmaking and ceramic sculpture from the Art Institute of Chicago and the University of Notre Dame and a BFA from St Mary's College, and has curated regional, national and international exhibitions including Warhol, Chagall, The Story of the Exodus; Picasso: 25 Years of Edition Ceramics; Rodin: Portraits of a Lifetime; and Impressionism to Modernism: Masterworks of Early Photography, all meeting American Alliance of Museums standards. She taught at college level for more than twenty years and chaired Methodist University's Department of Art. Awards are First Place $450, Second $200, Third $100 and two Honorable Mentions of $50 each. Entries close 10 August 2026 through CaFÉ and the exhibition runs 25 September to 24 November 2026 in the main gallery.",
+      "url": "https://www.capefearstudios.com/call-for-art",
+      "instagram": "@capefearstudios",
+      "location": "Fayetteville, NC, USA",
+      "prize": "$450 / $200 / $100 + Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Silvana Foti, former Executive Director, David McCune International Art Gallery"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17559/CAFE",
+      "requirements": "1–3 images",
+      "slug": "6-by-exhibit-2026-cape-fear-studios",
+      "orgInTitle": false,
+      "summary": "Small-works show where one dimension must measure exactly six inches. Any medium, $850 in awards, juried by Silvana Foti.",
+      "dateAdded": "2026-08-01T07:20:01Z"
+    },
+    {
+      "title": "Le Salon des Artistes 2026: Represent Your Culture",
+      "org": "Denison Arts Council",
+      "deadline": "2026-08-13",
+      "fee": "$40",
+      "category": "exhibition",
+      "description": "The Denison Arts Council's second annual Salon des Artistes, a juried show in downtown Denison, Texas modelled on the historic Salon de Paris that began in 1667 — the original platform where creative expression, public support and institutional recognition met, and which shaped European art for centuries. This year's theme, inspired by the council's annual Día de los Muertos festival, is 'represent your culture': artists are asked to show how they connect with the people and places they descend from, through beloved recipes, cultural dress, family traditions or anything else that celebrates where they come from. The theme is open to interpretation and every work is considered with nuance, all media judged equally for prizes without regard to category — photography included. The juror is Jose Vargas, an independent exhibition curator and visual artist known for his work with the arts across the Dallas–Fort Worth metroplex and founder of the El Corazón and La Virgen de Guadalupe exhibitions in Dallas. The council advertises awards totalling $1,500, itemised in the prospectus as Best in Show $600, Second Place $400, Third Place $250, an Honorable Mention of $100 and a People's Choice of $100 decided by open voting from all guests and announced at the close of the show. Applications close 13 August 2026, electronic acceptance notifications go out 21 August, accepted work is dropped off in Denison on 6 September, and the exhibition opens to the public with an artists' night reception and award presentation on 12 September, with a midway reception on 10 October and a close on 7 November 2026. Note that the council cannot receive or return artwork by mail: accepted artists must arrange drop-off in person and collect work on 8 November. Photography is explicitly listed among the accepted media, wired and ready to hang, and the council retains 20% commission on works sold during the show.",
+      "url": "https://denisonartscouncil.org/le-salon-des-artistes-represent-your-culture/",
+      "instagram": "@denisonartscouncil",
+      "location": "Denison, TX, USA",
+      "prize": "$600 / $400 / $250 + Exhibition",
+      "eligibility": [],
+      "jury": [
+        "Jose Vargas, independent curator and visual artist"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/17721/CAFE",
+      "requirements": "1–5 images",
+      "resultsDate": "August 21, 2026",
+      "slug": "le-salon-des-artistes-2026-denison-arts-council",
+      "orgInTitle": false,
+      "summary": "Salon de Paris-inspired juried show on cultural heritage, any medium. $1,500 in awards plus a two-month Texas exhibition.",
+      "dateAdded": "2026-08-01T07:20:01Z"
+    },
+    {
+      "title": "30x30 2026",
+      "org": "Blue Line Arts",
+      "deadline": "2026-09-04",
+      "fee": "$25 (free for members)",
+      "category": "exhibition",
+      "description": "Blue Line Arts' annual challenge asks selected artists to make thirty original artworks in thirty days — a deliberate push to refine a practice, test an unfamiliar direction or simply work faster than deliberation allows. Every finished piece must measure precisely 6 by 6 inches, must hang securely on the wall (no pedestals, and no command strips or temporary hardware for 3D work), and 3D work may not extend more than 6 inches from the wall. Applicants do not submit the thirty pieces up front: the application takes 3–10 samples of existing work reflecting the direction intended for the challenge, and the gallery explicitly asks artists not to make the thirty artworks before being notified. Open to artists everywhere aged 18 and over, in any medium including photography; work must be original, completed within the last two years and never previously exhibited at Blue Line Arts. All pieces must be individually for sale, with the gallery handling sales — non-members receive 50% of gallery sales and members 60%. Entry is free for current Blue Line Arts Artist Members at the $75 level or above with a discount code from the gallery coordinator, and $25 for non-members covering 3 to 10 images. Applications close 4 September 2026 at 5pm Pacific, notifications go out 18 September, and the exhibition runs 24 November to 19 December 2026 in Roseville, with a reception on 19 December.",
+      "url": "https://www.bluelinearts.org/30x30-2026",
+      "instagram": "@bluelinearts",
+      "location": "Roseville, CA, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/16887/CAFE",
+      "requirements": "3–10 images",
+      "resultsDate": "September 18, 2026",
+      "slug": "30x30-2026-blue-line-arts",
+      "orgInTitle": false,
+      "summary": "Make thirty 6x6-inch works in thirty days. Any medium incl. photography, free for members, December show in Roseville.",
+      "dateAdded": "2026-08-01T07:20:01Z"
     }
   ]
 }
