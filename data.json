@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-02T15:16:38Z",
+  "lastUpdated": "2026-08-02T19:17:22Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -37356,6 +37356,54 @@
       "summary": "Manchester collective's 4th-anniversary show on cycles, renewal and return. All media, $10 per piece, 75/25 split for artists.",
       "dateAdded": "2026-08-02T15:16:38Z",
       "verifyNote": "2026-08-02 16:00 sweep: listed on the collective's own site (mosaicartcollective.com/calls-for-art, 'Deadline: August 28, 2026 at 11:59 PM ET') and read in full on the org-authored Crafted Call page: entry fee $10 first + $10 each additional (1/$10, 2/$20, 3/$30, 4/$40), up to 4 entries, exhibition 7 September 11AM – 28 September 8PM, acceptance notification 30 August, opening reception 12 September 5-7PM, venue Mosaic Art Collective 410 Chestnut Street, 75% artist / 25% gallery on sales, $5 wiring fee at drop-off if work is not wired, $10/day storage after the pick-up window. 'We welcome work in all media that speaks to renewal, growth, connection, and the ongoing nature of change. Excluding reproductions and AI generated work.' Eligibility criteria on the call read 'Career Stage: Emerging, Mid-Career, Established / Additional Notes: Everyone' — no geographic restriction is stated, though work is hand-delivered. Photography is not enumerated on the call; the collective's own exhibition pages describe shows 'spanning photography, painting, sculpture, video, installation, and mixed media'. 2026-08-02 16:24 editor: KEPT unchanged. Re-read the page and confirmed the tiered fee schedule (1/$10, 2/$20, 3/$30, 4/$40), 'Deadline 27 days left / Aug 28, 2026 11:59 PM EDT', exhibition Sep 7 11AM – Sep 28 8PM, acceptance notification Sunday 30 August, reception Sep 12 5-7PM, venue 410 Chestnut Street, and the 75/25 split. Note this call lists NO artwork drop-off dates in its Important Dates block (the sibling Reflections call does) — that is an omission by the organiser, not a gap in our record, and nothing about drop-off is asserted here beyond the wiring requirement. Eligibility 'Career Stage: Emerging, Mid-Career, Established / Additional Notes: Everyone' re-confirmed; unlike Reflections it omits Student, but with 'Everyone' stated the empty eligibility array is still correct. Instagram re-verified: mosaicartcollective.com links instagram.com/mosaicartcollective."
+    },
+    {
+      "title": "Human",
+      "org": "Dusk Gallery",
+      "deadline": "2026-10-22",
+      "fee": "$40/5 images, $45/10",
+      "category": "exhibition",
+      "description": "Themed exhibition at Dusk Gallery in Santa Fe looking for photographs that get at what it means to be human — not just faces, but the quiet and unguarded moments behind them, the tired eyes at the end of a long day, the burst of laughter that comes out of nowhere, the way we hold each other and hold ourselves together when no one is watching. Portraits and candid work are equally welcome; posed or unposed does not matter, only whether it feels real. Open worldwide to amateur and professional photographers and juried by Dusk founder Holly Hart, who selects 26 images for the gallery walls. The gallery covers professional Luster-paper printing, matting and 24×24 inch black museum-quality framing; artists supply only a high-resolution JPEG (500KB–5MB, 4500px on the longest side). Exhibition runs 4–26 December 2026 with an opening reception on 4 December; prints are archived in the gallery's flat files for six months afterwards, photographers retain all rights, and sales split 50/50. Entry is $40 for 5 images or $45 for up to 10.",
+      "url": "https://duskphotogallery.com/human/",
+      "instagram": "@dusk.photogallery",
+      "location": "Santa Fe, NM, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [
+        "Holly Hart, Fine Art Photographer & Founder, Dusk Gallery"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://duskphotogallery.com/human-submission/",
+      "requirements": "5 or 10 images",
+      "resultsDate": "Within 2 weeks of deadline",
+      "slug": "human-dusk-gallery",
+      "orgInTitle": false,
+      "summary": "Dusk Gallery (Santa Fe) show on what it means to be human. Printing and framing covered; exhibition Dec 2026.",
+      "dateAdded": "2026-08-02T19:17:22Z",
+      "verifyNote": "2026-08-02 20:00 sweep: duskphotogallery.com/human confirms \"submission deadline: october 22nd, 2026\", \"exhibition dates: december 4th-26th\", \"$40 USD for an entry of 5 images / $45 USD for an entry of up to 10 images\", \"open to photographers worldwide, both amateur and professional\" (eligibility correctly empty), juror Holly Hart, printing/matting/24x24 black framing covered by the gallery, prints archived six months, \"Photographers retain all rights to their image\", and \"Acceptance Notifications: Emailed within two weeks of the submission deadline\". No AI policy stated. NB the page repeats the sister-gallery copy-paste leakage flagged on Three Artist Show - the commission line reads \"Decode Gallery operates on a 50% commission model\" on a Dusk page; the 50/50 split is recorded without attributing it to Decode. 2026-08-02 20:20 editor: KEPT unchanged. Re-read duskphotogallery.com/human/ in full: \"submission deadline: october 22nd, 2026\", \"exhibition dates: december 4th-26th\", \"Opening Reception: December 4th\", \"26 images will be selected by our juror\", \"$40 USD for an entry of 5 images / $45 USD for an entry of up to 10 images\", \"open to photographers worldwide, both amateur and professional\", juror bio for Holly Hart (fine art photographer and founder of Dusk Gallery), gallery-covered Luster print + precut white mat + 24\"x24\" black museum-quality frame, file spec 500KB-5MB and 4,500px on the longest side, \"Acceptance Notifications: Emailed within two weeks of the submission deadline\", high-res JPGs due within two days of acceptance, six-month flat-file archive, and \"Photographers retain all rights to their image\". The SUBMIT HERE href on the page resolves to duskphotogallery.com/human-submission/ (200), matching submitUrl. Decode Gallery leakage re-confirmed verbatim - \"Decode Gallery operates on a 50% commission model for any sales, with the remaining 50% going directly to the photographer\" - so the 50/50 split is recorded without attributing it to Decode, as the sweep did. Still no AI policy anywhere on the page, so ai stays null. Fourth live Dusk call we carry; org vetted as INCLUDE, no dup (url and slug both unique)."
+    },
+    {
+      "title": "Holiday Art Competition 2026",
+      "org": "The Delaplaine Arts Center",
+      "deadline": "2026-11-01",
+      "fee": "$20 per work",
+      "category": "exhibition",
+      "description": "Juried competition and exhibition presented by the Delaplaine Arts Center with the Holiday Committee of Celebrate Frederick, on a secular theme of \"The Holidays in Historic Frederick\" — winter, downtown, snow and light, built around recognisable Frederick landmarks such as the Carillon, Schifferstadt, the Clustered Spires, Carroll Creek Linear Park and the streets around Market and Patrick. All two-dimensional work in any medium is accepted and photography is named outright alongside painting, drawing, hand-pulled prints, etchings, collage and digital painting; work must be original, unpublished commercially, and able to reproduce in black and white. Judging runs in two rounds — remote review of digital entries, then in-person judging after installation — and accepted work is announced 7 November. The Judges' Choice award is $1,000, with a Barbara Maghan People's Choice certificate voted at the reception and an optional Judges' Special Award. The reception is 2 December 2026, 5:30–7pm, and selected work stays on view in the Community Outreach Gallery 5–27 December. Entrants should note that the Holiday Committee retains exclusive commercial rights to the winning artwork for two years for poster production and five years for other promotional pieces. Accepted work is hand-delivered or shipped to Frederick, framed and wired ready to hang. Entry is $20 per piece.",
+      "url": "https://delaplaine.org/exhibitions/opportunities/holiday-art-competition/",
+      "instagram": "@delaplaine",
+      "location": "Frederick, MD, USA",
+      "prize": "$1,000 + Exhibition",
+      "eligibility": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://artist.callforentry.org/festivals_unique_info.php?ID=17534",
+      "requirements": "1 image per work",
+      "resultsDate": "November 7, 2026",
+      "ai": "AI-assisted only, must disclose",
+      "slug": "holiday-art-competition-2026-delaplaine",
+      "orgInTitle": false,
+      "summary": "Delaplaine + Celebrate Frederick juried show on the holidays in historic Frederick, MD. $1,000 Judges' Choice; photography named.",
+      "dateAdded": "2026-08-02T19:17:22Z",
+      "verifyNote": "2026-08-02 20:00 sweep: delaplaine.org/exhibitions/opportunities/holiday-art-competition/ carries the full prospectus - \"Deadline for Entries: Nov 1, 2026\" with payment by 11:59 PM on November 1, \"A non-refundable entry fee of $20 per piece of work\", \"Judges' Choice: A prize of $1,000\", notification Nov 7, reception Wed Dec 2 5:30-7pm, Community Outreach Gallery display Dec 5-27, and the media line \"All two-dimensional works in any medium are acceptable, including paintings, drawings, hand-pulled prints, etchings, collage, photography, digital paintings, etc.\" CaFE 17534 agrees (applicationDeadline 2026-11-02T06:59:59Z = Nov 1 local, lowestFee 20, 1 work sample). No residency restriction is stated anywhere, so eligibility is left empty. The rights clause - \"exclusive commercial rights for two years for the production of posters... and for five years for any other promotional pieces\" - binds the winning artwork only and is carried in the description. AI policy is the Delaplaine's site-wide exhibition rule on the opportunities page: solely AI-generated work is not considered, AI-assisted work may be with the artist's input dominant and full disclosure required. 2026-08-02 20:20 editor: KEPT unchanged. Org page re-read end to end and every stored field matches: \"Deadline for Entries: Nov 1, 2026\" (entries \"with payment by 11:59 PM Mountain Time on November 1\" - the sweep note omitted the timezone, the stored date is unaffected), notification Nov 7, delivery Nov 16-17, reception Wed Dec 2 5:30-7pm, Community Outreach Gallery Dec 5-27, \"A non-refundable entry fee of $20 per piece of work\", \"Judges' Choice: A prize of $1,000\", Barbara Maghan People's Choice certificate by popular vote, optional Judges' Special Award, photography named outright in \"All two-dimensional works in any medium are acceptable, including paintings, drawings, hand-pulled prints, etchings, collage, photography, digital paintings, etc.\", and the 2-year poster / 5-year promo exclusive commercial rights on the WINNING artwork only. The ai field was verified at its actual source rather than inferred: the opportunities-page FAQ \"What about AI-generated or AI-assisted artwork?\" states the Delaplaine will not consider work that is \"solely AI-generated\", may consider AI-assisted work \"provided that the artist's input clearly dominates\", and requires full disclosure of the processes and tools used - \"AI-assisted only, must disclose\" is exact. CaFE 17534 re-read as HTML (not just GraphQL): \"2026 Holiday Art Competition\", \"Entry Fee : $20\", \"Submission Limit : 1\", \"Images | Min: 1 , Max: 1\" (so requirements \"1 image per work\" is right) and \"Eligibility Type : Unspecified\" (empty eligibility right). Two facts confirmed but deliberately left out of the fields: sales split is 80/20 for Delaplaine members and 70/30 for non-members, and work featuring specific religious symbols or business endorsements is not refused from display but is barred from the grand prize. Kept on the sweep's reasoning - photography enumerated, real $1,000 prize, real Dec 5-27 exhibition at an org we already list, rights grab disclosed up front and binding only the winner."
     }
   ]
 }
