@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-02T07:21:25Z",
+  "lastUpdated": "2026-08-02T11:17:33Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -37148,6 +37148,137 @@
       "dateAdded": "2026-08-02T07:21:25Z",
       "resultsDate": "December 1, 2026",
       "verifyNote": "2026-08-02 08:00 sweep: found via artcall.org/calls. Three organisers — Dedham Art Association (dedhamartassociation.com), Wellesley Society of Artists (wellesleysocietyofartists.org) and the Charles River Watershed Association — all real and confirmed on their own domains; DAA is recorded as the org because it is named first on the prospectus. Facts come from the organiser-authored ArtCall prospectus: entry window Apr 30 – Nov 1 2026, selection announced Dec 1, drop-off Jan 9/12 2027, shipped work by Jan 15, reception Jan 28, exhibit Jan 22 – Mar 12 2027, 80 works, over $2,500 in cash awards, one 2D work per artist. 2026-08-02 08:24 editor: URL RE-POINTED. The sweep recorded that neither organiser's site carries the call and fell back to DAA's exhibits page — wrong, and that page never mentions the call. Wellesley Society of Artists has a dedicated dated event page, wellesleysocietyofartists.org/event/art-call-for-a-charles-river-journey/, carrying the full call text, the Apr 30 – Nov 1 window and a Cost field; `url` now points there. DAA stays as `org` because the ArtCall prospectus names it first; DAA's site has Facebook only and no Instagram, and @WSArtists belongs to WSA, not DAA, so instagram stays empty. FEE SETTLED at $30–$40, no longer a guess: WSA's event page states \"Cost: $30.00\" and Mass Cultural Council's ArtSake opportunities roundup states \"Entry Fee: $40.00\" for the same call — two organiser-facing sources at the two ends of the ArtCall row's 30.00–40.00 spread, which confirms a two-tier (almost certainly member/non-member) price rather than per-file pricing. DON'T-RE-FLIP — PHOTOGRAPHY: the WSA page's media list reads \"painting, drawing, mixed media/collage, and printmaking\" with NO photography, while the ArtCall prospectus reads \"painting, drawing, mixed media/collage, photography and printmaking\". The ArtCall prospectus wins and the entry stays: it is the operative document artists agree to at entry, and it is demonstrably the later revision — the same paragraph also moves the registration open date from Apr 20 to Apr 30 and the announce date from Nov 16 to Dec 1, i.e. the WSA page is an earlier draft that was superseded on every point of difference. resultsDate follows the prospectus (Dec 1), not WSA's Nov 16. Do not remove this call on the strength of the WSA media list alone; if it is ever to be removed, get the organisers to confirm."
+    },
+    {
+      "title": "78th Regional Exhibition",
+      "org": "Arnot Art Museum",
+      "deadline": "2026-08-17",
+      "fee": "$30–$50",
+      "category": "exhibition",
+      "description": "For over seventy-five years the Arnot Art Museum's Regional Exhibition has gathered artists from across the Northeast and Eastern Canada into a museum setting, and the 78th edition is open now. Photography is named outright in the museum's own media list alongside painting and drawing, sculpture, graphics, clay, textiles, jewelry, wood and metal work, and mixed media. The Museum keeps a primary focus on representational art but explicitly welcomes non-objective work for the Regionals, so the door is open to conceptual and abstract lens-based practice too. Up to $10,000 in cash awards is distributed among the juror selections, and selected artists receive two complimentary tickets to the Gala Reception and Awards Ceremony on 19 December. Work is shown in the Museum's West Wing Galleries from 29 September to 19 December 2026. Entry is open to artists 18 and over living in Connecticut, Delaware, Maine, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania, Rhode Island or Vermont, or in Ontario, Canada; work must be no more than five years old and not previously shown at the Museum. Maximum two entries per artist, nothing over 96 inches or 150 pounds, and a 40% commission applies to sales made during the exhibition.",
+      "url": "https://arnotartmuseum.org/",
+      "instagram": "@arnotartmuseum",
+      "location": "Elmira, NY, USA",
+      "prize": "$10,000 + exhibition",
+      "eligibility": [
+        "18-plus",
+        "northeast-us",
+        "mid-atlantic-us",
+        "ontario"
+      ],
+      "jury": [
+        "Alisha Sickler Brunelli, artist and lecturer, Department of Art & Design, Binghamton University",
+        "Dana Carlisle Kletchka, PhD, Associate Professor of Arts Administration, Education, and Policy, The Ohio State University",
+        "Bekah Mertus, Associate Curator, Arnot Art Museum"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://78thregionalexhibition.artcall.org",
+      "requirements": "1–2 works",
+      "resultsDate": "August 31, 2026",
+      "slug": "78th-regional-exhibition-arnot-art-museum",
+      "orgInTitle": false,
+      "summary": "Elmira museum's 78th Regional, open to Northeast US and Ontario artists. Photography named, $10,000 in awards, museum show through December.",
+      "dateAdded": "2026-08-02T11:17:33Z",
+      "verifyNote": "2026-08-02 12:00 sweep: found via artcall.org/calls (new subdomain diff). Arnot Art Museum confirmed on its own domain — arnotartmuseum.org carries the line 'To submit your work for consideration in the 78th Regional Exhibition, click here' linking to the ArtCall site, and the museum's Look page documents the 1913 founding bequest. Facts from the organiser-authored ArtCall prospectus: CALENDAR gives 17 August 2026 11:59pm submission deadline, 31 August selections announced, 12 September delivery, 29 September – 19 December exhibition, 19 December 5:30pm closing reception and awards. MEDIA line names photography explicitly. Fee is $50 for one or two entries, $30 for Museum members. $10,000 in cash awards; 40% commission. NOTE: the ArtCall listing row and the prospectus CALENDAR agree on 17 August — an earlier skim of the wrapped text misread '31 August' (the selections date) as the deadline. 2026-08-02 12:20 editor: KEPT, every fact re-checked line by line against the prospectus and all confirmed — ENTRY block '$50 for one or two entries ($30 for Museum members)', deadline '17 August 2026 at 11:59 PM', 40% commission, AWARDS block '$10,000 in cash awards' plus '2 complimentary ceremony tickets for the Gala Reception and Awards Ceremony to be held on 19 December, 2026', JURORS block giving all three names and titles as stored, CALENDAR giving 31 August selections and 'Exhibition on View, West Wing Galleries' for 29 September – 19 December, MEDIA naming photography. The museum's own site is mid-rebuild ('new website is currently under construction') but the placeholder still carries 'To submit your work for consideration in the 78th Regional Exhibition, click here', which confirms both the org and the call, so url stays on the homepage. Instagram @arnotartmuseum confirmed from a link on that page. Summary trimmed from 145 to 140 chars. Added mid-atlantic-us to eligibility: the state list runs Delaware, New Jersey and Pennsylvania alongside the New England states, so northeast-us alone under-serves the facet. NOTE for any future check: the DELIVERY paragraph says works are delivered '8-12 September' while the CALENDAR says '12 September 2026, 10am-3pm' — both are on the page and neither is the deadline, so this entry deliberately states no delivery date."
+    },
+    {
+      "title": "We Are the Ones",
+      "org": "Willow Street Gallery",
+      "deadline": "2026-08-16",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "Willow Street Gallery, the exhibition project of DC Arts Studios in the Takoma neighbourhood, is looking for work about community — what it means to hold and be held by other people, and to build something better together. The theme takes its title from the closing line of June Jordan's Poem for South African Women, and the gallery is explicit that it is a starting point rather than a literal brief: the call frames healing as a communal endeavour and resilience as something rooted in giving of yourself and receiving the care of others. Photography is named directly in the accepted media, alongside painting, drawing, mixed media and textile art; the gallery can take 2D work in any physical medium but cannot accommodate video or other digital media this round. Open to artists 18 and over living and working in the greater Washington DC region — DC, Maryland and Virginia. Two cash prizes are awarded, $200 for best in show and $100 for the runner-up, and the show runs 12 September to 2 October 2026 with an opening reception on 12 September. DC Arts Studios has served the DMV since 1979 and keeps its gallery commission at 20% rather than the usual half.",
+      "url": "https://www.dcartsstudios.org/gallery.html",
+      "instagram": "@dcartsstudios",
+      "location": "Washington, DC, USA",
+      "prize": "$200 / $100 + exhibition",
+      "eligibility": [
+        "18-plus",
+        "mid-atlantic-us"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://wearetheones.artcall.org",
+      "requirements": "1–2 works",
+      "slug": "we-are-the-ones-willow-street-gallery",
+      "orgInTitle": false,
+      "summary": "DC-area juried show on community and mutual care. Photography named, $25 for two entries, $200 best in show, Takoma gallery.",
+      "dateAdded": "2026-08-02T11:17:33Z",
+      "verifyNote": "2026-08-02 12:00 sweep: found via artcall.org/calls. Organiser confirmed on its own domain — dcartsstudios.org/gallery.html states 'Willow Street Gallery is a project of DC Arts Studios', gives the 6925 Willow Street NW address and names Outreach Director Kaeti Hinck; willowstreetgallery.org does not resolve, so the DC Arts Studios gallery page is the organiser page. The call itself is not posted on their site (their homepage currently promotes the HIGH CHROMA closing), so url points at the gallery page per the org-domain rule. Facts from the organiser-authored ArtCall prospectus: photography named in the accepted 2D media, no video/digital media, 18+, DC/MD/VA, $25 for up to two entries, submissions opened 9 July and close 16 August 11:59pm ET, exhibition 12 Sept – 2 Oct, reception 12 Sept 6-8pm, $200 best in show and $100 runner-up, 20% commission. 2026-08-02 12:20 editor: KEPT unchanged, all facts re-confirmed on both the prospectus and the org page. CORRECTION to the sweep note above: dcartsstudios.org/gallery.html DOES carry the call, not just the org identity — under the HIGH CHROMA notice it runs 'Open call for entries for DMV artists' with the same 18+ DC/MD/VA line, the same '2D art of any physical medium (e.g., painting, photography, drawing, mixed media, textile art)', the same video/digital exclusion and the same $25 fee. So url is the call page proper and photography is named on the ORGANISER's own domain, not only on ArtCall — the strongest form of the media test. Prospectus FAQ independently confirms the $200/$100 prizes and the 20% commission rationale. Instagram @dcartsstudios confirmed from a link on that page."
+    },
+    {
+      "title": "Reel Pride 2026 Art Show",
+      "org": "Reel Pride",
+      "deadline": "2026-09-04",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "The Reel Pride Art Show is the gallery arm of Winnipeg's Reel Pride International Film Festival — a space for 2SLGBTQI+ artists to show work alongside the festival at The Gas Station Arts Centre. The organisers welcome work in all forms and mediums and are open about what they are after: personal expression, a statement, or a celebration, and the many ways queer and Two-Spirit people experience and build community. There is no entry fee. If work sells the artist keeps the full sale price — the festival takes no commission — and artists retain full copyright, with images used only to promote Reel Pride and its events. Submissions run entirely through the call site, and accepted work is dropped off in Winnipeg during the week of 7–11 September. The show runs 15 to 20 September 2026 alongside the festival.",
+      "url": "https://www.reelpride.ca/art-show",
+      "instagram": "@reelpridewpg",
+      "location": "Winnipeg, MB, Canada",
+      "prize": "Exhibition",
+      "eligibility": [
+        "lgbtq"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://reelpride2026artshowcallforentry.artcall.org",
+      "slug": "reel-pride-2026-art-show",
+      "orgInTitle": true,
+      "summary": "Free 2SLGBTQI+ art show alongside Winnipeg's Reel Pride film festival. No commission, artists keep full sale price.",
+      "dateAdded": "2026-08-02T11:17:33Z",
+      "verifyNote": "2026-08-02 12:00 sweep: found via artcall.org/calls. Organiser confirmed on its own domain — reelpride.ca/art-show carries 'Exhibit your work at the Art Show / Registration closes September 4, 2026 / All Artists are welcome!'. DEADLINE CONFLICT RESOLVED: the ArtCall listing row shows 12 September, but both the organiser-authored prospectus and reelpride.ca itself say 4 September 2026 11:59pm — org page wins. Facts from the prospectus: no entry fee, no commission, artist keeps full sale price and copyright, drop-off week of 7–11 September, show 15–20 September at The Gas Station Arts Centre, contact art@reelpride.ca. Media: 'We welcome work in all forms and mediums' — no medium enumeration published, and no exclusions; the org page's 'All Artists are welcome' is the same claim. No prize is offered. 2026-08-02 12:20 editor: KEPT. DON'T-RE-FLIP — 'CALL SITE EXPIRED' IS A FALSE ALARM: reelpride2026artshowcallforentry.artcall.org/pages/participating-artists renders 'Call Site Expired! This call has expired. Contact call administrator to re-activate.' above four artist names. That banner belongs to ArtCall's optional Participating Artists gallery MODULE, not to the call. Three independent checks say the call is live: the call homepage itself carries zero expiry markers and still shows the 4 September deadline; /users/register returns a working password form byte-for-byte the same shape as the two confirmed-live ArtCall calls added in this same batch; and reelpride.ca/art-show still runs a 'Register Here!' button whose href is this exact subdomain. Arnot has no participating-artists page at all (404), so the module is opt-in. Do not close this call on the strength of that page. MEDIA: still no enumeration anywhere — 'We welcome work in all forms and mediums' with no exclusions is the whole of it. Kept on the judgement that a free, zero-commission, physical 2SLGBTQI+ gallery show attached to a real long-running film festival serves our audience directly; this is NOT the all-media-virtual pattern that gets skipped."
+    },
+    {
+      "title": "Artist-in-Residence Program: Winter and Spring 2027",
+      "org": "Mosesian Center for the Arts",
+      "deadline": "2026-09-08",
+      "fee": "$20",
+      "category": "residency",
+      "description": "The Mosesian Center for the Arts in Watertown runs its second Artist-in-Residence Program with a straightforward proposition: free studio space and professional development support, no fee to participate beyond a refundable key deposit. Photography is named directly in the list of eligible visual-art disciplines, alongside painting, sculpture, printmaking and mixed media, and the programme also takes performing, literary, interdisciplinary and socially engaged artists. Residents get a private or shared 11 by 22 foot studio with 24-hour access for three months, a welcome reception, and $45 an hour (minimum 1.5 hours) for any workshops or classes they teach during the residency. Two to three General Artist Residencies are offered free of charge. One Ignite Artist Fellowship is selected from this cycle, carrying the same free studio space and professional development support for an emerging artist from the global majority or a historically marginalised community, plus a $1,000 stipend towards materials, transport or project costs. The programme is aimed at emerging and mid-career local and regional artists looking for time and space to experiment. Housing, per diem and materials are not otherwise included, and residents are expected to share their work through at least one public-facing event — an open studio, artist talk, workshop or performance. Winter residency runs January to March 2027, spring runs April to June, and selected artists are announced 15 October 2026. Applications ask for eight images or files, a CV, an artist statement and a short bio.",
+      "url": "https://www.mosesianarts.org/artist-in-residence-program",
+      "instagram": "@mosesianarts",
+      "location": "Watertown, MA, USA",
+      "prize": "Residency",
+      "eligibility": [
+        "emerging",
+        "mid-career"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://mca-residenceprogram-winter-spring-2027.artcall.org",
+      "requirements": "8 images",
+      "resultsDate": "October 15, 2026",
+      "slug": "artist-in-residence-program-winter-and-spring-2027-mosesian-center-for-the-arts",
+      "orgInTitle": false,
+      "summary": "Free three-month studio residency outside Boston. Photography named, Ignite Fellowship for global-majority artists carries a $1,000 stipend.",
+      "dateAdded": "2026-08-02T11:17:33Z",
+      "verifyNote": "2026-08-02 12:00 sweep: found via artcall.org/calls. Confirmed on the organiser's own domain — mosesianarts.org/artist-in-residence-program carries the programme page, the 8 September 2026 deadline and the submission requirements, and links out to the ArtCall site; mosesianarts.org/exhibitions/opportunities lists it under Call for Art. Facts from the org page and the organiser-authored prospectus: photography named among 'Visual artists (painting, sculpture, printmaking, photography, mixed media)', $20 submission fee, selections announced 15 October 2026, winter residency Jan–Mar 2027 and spring Apr–Jun 2027, 11x22ft studio, 24-hour access, $45/hr teaching stipend, no housing/per diem/materials, refundable key deposit the only artist cost. CAUTION: the prospectus contains one line about a shuttle 'to and from the Alexandria Campus' that appears to be copied from another organisation's template — the ArtCall Location tab and mosesianarts.org both give 321 Arsenal Street, Watertown MA 02472, so the Alexandria reference is not repeated here. 2026-08-02 12:20 editor: KEPT with TWO ACCURACY FIXES to the description. (1) The sweep missed a cash component: the prospectus states 'Each artist also receives a $1,000 stipend to support materials, transportation, or project-related expenses during their residency' for Ignite Fellows. Added. (2) The sweep wrote 'Ignite Artist Fellowships' plural, implying several; the prospectus says 'one fellow will be selected from this application cycle'. Corrected to one. Prize field deliberately stays 'Residency' and NOT 'Residency + $1,000': the stipend reaches only the single Ignite Fellow, while the 2-3 General Artist Residents get studio space and no cash, so a $1,000 chip would overstate what most selectees receive. Also added the public-facing-event obligation (open studio, artist talk, workshop or performance), which is a real condition of accepting. Re-confirmed: 'Submission Fee: $20 per application', deadline 8 September 2026, selections 15 October, 8 images or files plus CV, statement and short bio, 11x22ft studio, 24-hour access, $45/hr min 1.5hrs teaching, housing/per diem/materials excluded, and photography named in 'Visual artists (painting, sculpture, printmaking, photography, mixed media)'. Instagram @mosesianarts confirmed from a link on the org page. Summary trimmed from 142 to 140 chars."
+    },
+    {
+      "title": "The New Masters 4: Women Artists of Northeast Ohio",
+      "org": "Florence O'Donnell Wasmer Gallery",
+      "deadline": "2026-09-06",
+      "fee": "$10 per work",
+      "category": "exhibition",
+      "description": "The Wasmer Gallery on the Ursuline College campus hosts the fourth edition of its juried exhibition for women artists living and working in Northeast Ohio. The gallery enumerates photography explicitly among the accepted media — traditional, digital and computer-enhanced — alongside painting, works on paper, mixed media, sculpture, glass, fiber and jewelry, and giclée reproductions are barred except for signed and numbered limited editions or photography. Open only to women artists 18 and over, emerging and professional, currently residing in the eighteen counties of Northeast Ohio: Ashland, Ashtabula, Columbiana, Cuyahoga, Erie, Geauga, Huron, Lake, Lorain, Mahoning, Medina, Portage, Richland, Stark, Summit, Trumbull, Tuscarawas and Wayne. The guaranteed minimum prize pool is $500, rising with the number of entries, and is split across Best in Show, an Award of Excellence for first prize and an Award of Distinction for second; final amounts are announced on 12 September with acceptance notifications, and cheques are issued by Ursuline College. Up to three works per artist at $10 each, capped at $30. Work must be original, made in the last five years, not made under instruction in a class or workshop, and not previously shown at the Wasmer Gallery. 2D work including mat and frame must be no larger than 30 by 40 inches.",
+      "url": "https://www.ursuline.edu/wasmer-gallery",
+      "instagram": "@ursulinecollege",
+      "location": "Pepper Pike, OH, USA",
+      "prize": "Cash awards + Exhibition",
+      "eligibility": [
+        "women",
+        "18-plus"
+      ],
+      "jury": [
+        "Yana Mikho-Misho, artist, arts advocate and Curator, Museum of Creative Human Art (MoCHA), Cleveland"
+      ],
+      "submitVia": "ArtCall",
+      "submitUrl": "https://thenewmasters4-womenartistsofnortheastohio.artcall.org",
+      "requirements": "1–3 works",
+      "resultsDate": "September 12, 2026",
+      "slug": "the-new-masters-4-women-artists-of-northeast-ohio-florence-o-donnell-wasmer-gallery",
+      "orgInTitle": false,
+      "summary": "Juried show for women artists in eighteen Northeast Ohio counties. Photography enumerated, $10 per work, $500+ prize pool.",
+      "dateAdded": "2026-08-02T11:17:33Z",
+      "verifyNote": "2026-08-02 12:00 sweep: found via artcall.org/calls. Gallery confirmed on its own domain — ursuline.edu/wasmer-gallery documents the Florence O'Donnell Wasmer Gallery and the New Masters 3 edition (Nov 2023 – Jan 2024). Facts from the organiser-authored ArtCall prospectus: End Date 09/06/2026 11:59pm, juror Yana Mikho-Misho, guaranteed minimum $500 prize pool with final amounts announced 12 September alongside acceptance notifications, $10 per artwork to a maximum of $30 for three, eighteen named Northeast Ohio counties, women artists 18+. The SIZE/WEIGHT/MEDIA block enumerates 'Photography: traditional, digital, computer-enhanced' — this settles photography eligibility; the overview alone says only 'diverse media'. Venue is listed as the Ursuline College campus of Gannon University. 2026-08-02 12:20 editor: KEPT unchanged. Re-read the full prospectus and confirmed every stored fact — End Date 09/06/2026 11:59 PM, juror line verbatim as stored, 'Guaranteed minimum prize pool: $500' rising with entry count with 'final amounts will be announced on September 12 with acceptance notifications', the three award tiers, '$10 per artwork, maximum of 3 artworks per artist. Maximum artist fee $30', all eighteen counties, 'Open only to women artists 18 years of age and older, emerging and professional', 'completed within the last 5 years', the class/workshop and prior-Wasmer exclusions, the giclée ban with its 'signed & numbered limited edition prints or photography' exception, 30x40 inches including mat and frame, and 'Checks issued by Ursuline College'. The MEDIA line reads exactly '- Photography: traditional, digital, computer-enhanced'. NOTE ON URL: ursuline.edu/wasmer-gallery does NOT carry the New Masters 4 call — it documents the gallery and the New Masters 3 and 2 editions only. That is expected and it stays as url under the org-domain rule, since the call itself lives entirely on ArtCall; do not treat the absence as evidence against the call. ArtCall adds a platform processing fee at checkout on top of the $10 per work."
     }
   ]
 }
