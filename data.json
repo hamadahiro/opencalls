@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-02T11:17:33Z",
+  "lastUpdated": "2026-08-02T15:16:38Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -37287,6 +37287,75 @@
       "summary": "Juried show for women artists in eighteen Northeast Ohio counties. Photography enumerated, $10 per work, $500+ prize pool.",
       "dateAdded": "2026-08-02T11:17:33Z",
       "verifyNote": "2026-08-02 12:00 sweep: found via artcall.org/calls. Gallery confirmed on its own domain — ursuline.edu/wasmer-gallery documents the Florence O'Donnell Wasmer Gallery and the New Masters 3 edition (Nov 2023 – Jan 2024). Facts from the organiser-authored ArtCall prospectus: End Date 09/06/2026 11:59pm, juror Yana Mikho-Misho, guaranteed minimum $500 prize pool with final amounts announced 12 September alongside acceptance notifications, $10 per artwork to a maximum of $30 for three, eighteen named Northeast Ohio counties, women artists 18+. The SIZE/WEIGHT/MEDIA block enumerates 'Photography: traditional, digital, computer-enhanced' — this settles photography eligibility; the overview alone says only 'diverse media'. Venue is listed as the Ursuline College campus of Gannon University. 2026-08-02 12:20 editor: KEPT unchanged. Re-read the full prospectus and confirmed every stored fact — End Date 09/06/2026 11:59 PM, juror line verbatim as stored, 'Guaranteed minimum prize pool: $500' rising with entry count with 'final amounts will be announced on September 12 with acceptance notifications', the three award tiers, '$10 per artwork, maximum of 3 artworks per artist. Maximum artist fee $30', all eighteen counties, 'Open only to women artists 18 years of age and older, emerging and professional', 'completed within the last 5 years', the class/workshop and prior-Wasmer exclusions, the giclée ban with its 'signed & numbered limited edition prints or photography' exception, 30x40 inches including mat and frame, and 'Checks issued by Ursuline College'. The MEDIA line reads exactly '- Photography: traditional, digital, computer-enhanced'. NOTE ON URL: ursuline.edu/wasmer-gallery does NOT carry the New Masters 4 call — it documents the gallery and the New Masters 3 and 2 editions only. That is expected and it stays as url under the org-domain rule, since the call itself lives entirely on ArtCall; do not treat the absence as evidence against the call. ArtCall adds a platform processing fee at checkout on top of the $10 per work."
+    },
+    {
+      "title": "Nostalgia",
+      "org": "New Hampshire Art Association",
+      "deadline": "2026-08-25",
+      "fee": "$12–$22",
+      "category": "exhibition",
+      "description": "Member show at the New Hampshire Art Association's Portsmouth gallery built around memory and the act of looking back — personal histories, shared experiences, places once known, cherished objects, cultural touchstones, and moments that continue to resonate as they pass on. NHAA welcomes artwork in any medium and names photography outright in its list alongside painting, drawing, printmaking, mixed media, sculpture, installation, fibre arts and digital work, provided it engages with the theme. This is not a juried show: all member entries are accepted, though the association notes it may have to limit accepted works by size if response outstrips available wall space. Entry is $12 for the first piece and $10 for a second, and NHAA membership is required — artists can join when applying. The exhibition runs 2–27 September 2026 at 136 State Street with an opening reception on 4 September, 5–8pm; work is dropped off 30–31 August and collected 27–28 September. Sales split 60/40 in the artist's favour.",
+      "url": "https://www.nhartassociation.org/calls-for-art",
+      "instagram": "@nhartassociation",
+      "location": "Portsmouth, NH, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "membership-required"
+      ],
+      "submitVia": "Crafted Call",
+      "submitUrl": "https://nhaa.craftedcall.com/calls/nostalgia",
+      "requirements": "1–2 works",
+      "slug": "nostalgia-new-hampshire-art-association",
+      "orgInTitle": false,
+      "summary": "Non-juried NHAA member show on memory at the Portsmouth gallery. Any medium, photography named. Every member entry accepted.",
+      "dateAdded": "2026-08-02T15:16:38Z",
+      "verifyNote": "2026-08-02 16:00 sweep: NHAA's own site (nhartassociation.org/calls-for-art) lists 'Nostalgia | NHAA Member Show, Deadline: August 25' with the theme text and the 'Open to NHAA members. This is not a juried show; all pieces are accepted' clause, and links to the org-authored call page on its own Crafted Call subdomain (nhaa.craftedcall.com/calls/nostalgia), which supplies the rest: $12 first entry + $10 each additional (1 entry $12, 2 entries $22), up to 2 entries, exhibition 2 September 11AM – 27 September 4PM, drop-off 30 August 4-6PM and 31 August 9AM-6PM, opening reception 4 September 5-8PM, pick-up 27 September 4-6PM and 28 September 9AM-6PM, 60% artist / 40% NHAA commission, and the medium list 'any medium including painting, drawing, printmaking, mixed media, photography, sculpture, installation, fiber arts, and digital works'. NHAA has moved its submissions from ArtCall (our Lotte Jacobi entry) to Crafted Call. No results date recorded: the show is not juried. Instagram handle confirmed from a link on nhartassociation.org. 2026-08-02 16:24 editor: KEPT unchanged. Re-read both pages and confirmed every stored fact — 'Deadline 24 days left / Aug 25, 2026 11:59 PM EDT', 'Entry fee $12–$22 / 1 entry: $12 total · 2 entries: $22 total', 'Submissions Up to 2 entries', the exhibition/drop-off/reception/pick-up dates verbatim, '60% artist / 40% NHAA', the medium list naming photography, and 'Membership Required / NHAA membership required'. The Crafted Call page renders 'Loading call details...' but the full prospectus is server-rendered underneath, so a plain curl reads it — no browser needed. No dup: our other NHAA entry is the Lotte Jacobi show (ArtCall, deadline passed 30 June). Instagram re-verified: nhartassociation.org homepage links instagram.com/nhartassociation."
+    },
+    {
+      "title": "Reflections 180 Years of Manchester NH",
+      "org": "Mosaic Art Collective",
+      "deadline": "2026-08-21",
+      "fee": "$10",
+      "category": "exhibition",
+      "description": "Manchester, New Hampshire has spent 180 years becoming itself, and Mosaic Art Collective is asking artists to look closely at it — the mills along the Merrimack, the neighbourhoods, industries and people who have reshaped the city again and again, and the city as it exists today. Work can be documentary or interpretive as long as it speaks to reflection on Manchester's history and present; all media are welcome except reproductions and AI-generated work. This is a lightly juried call. The exhibition runs 12 September – 26 October 2026 at Mosaic Studios, 66 Hanover Street, with an opening reception on 12 September, 5–7pm; acceptance notices go out 24 August and accepted work is dropped off 26–28 August. Entry is $10 for up to four works and sales split 75/25 in the artist's favour. Work must arrive ready to hang with d-rings and picture wire, or a $5 wiring fee applies at drop-off.",
+      "url": "https://www.mosaicartcollective.com/calls-for-art",
+      "instagram": "@mosaicartcollective",
+      "location": "Manchester, NH, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Crafted Call",
+      "submitUrl": "https://www.craftedcall.com/org/mosaic-art-collective/calls/off-the-wall-the-art-of-fashion-copy",
+      "requirements": "Up to 4 works",
+      "resultsDate": "August 24, 2026",
+      "ai": "Not accepted",
+      "slug": "reflections-180-years-of-manchester-nh-mosaic-art-collective",
+      "orgInTitle": false,
+      "summary": "Manchester's 180th, read through its mills, neighbourhoods and present. Documentary work welcome; $10 covers four pieces.",
+      "dateAdded": "2026-08-02T15:16:38Z",
+      "verifyNote": "2026-08-02 16:00 sweep: found via craftedcall.com/calls (the platform behind NHAA's new submissions) and confirmed on the collective's own domain — mosaicartcollective.com/calls-for-art lists 'Reflections 180 Years of Manchester NH, Deadline: August 21, 2026 at 11:59 PM ET' with the theme line. Full prospectus read on the org-authored Crafted Call page: $10 entry, up to 4 entries, exhibition 12 September – 26 October, acceptance notification 24 August, drop-off 26/27/28 August 4-6PM, opening reception 12 September 5-7PM, pick-up 28/29/30 October, venue Mosaic Studios 66 Hanover Street Suite 201, 75/25 sales split in the artist's favour, $5 wiring fee at drop-off if work is not wired, $10/day storage fee after the pick-up window. 'Work can be documentary or interpretive'; 'All media are welcome, excluding reproductions and AI generated work'. TRAP: the Crafted Call slug for this call is 'off-the-wall-the-art-of-fashion-copy' — the record was duplicated from a previous fashion show and kept the old slug; the guessed slug 'reflections-180-years-of-manchester-nh' returns 'Call Not Found'. The description continues past 'a lightly juried call with two guest' behind a client-side Read more, so the number and role of the guests is deliberately not asserted here. Photography is not enumerated on the call itself; the collective's own exhibition pages describe shows 'spanning photography, painting, sculpture, video, installation, and mixed media', which is the basis for listing it. 2026-08-02 16:24 editor: KEPT unchanged. The stale-slug trap is confirmed independently — '/org/mosaic-art-collective/calls/off-the-wall-the-art-of-fashion-copy' is one of exactly two Mosaic hrefs on craftedcall.com/calls, and the page it serves carries the title 'Reflections 180 Years of Manchester NH | Mosaic Art Collective'. The origin of the copy is visible on the org's own site: 'Off The Wall - The Art of Fashion' is a PAST Mosaic exhibition (2026, 45 works). Do not 'fix' this submitUrl. Fee re-checked and it genuinely differs from the sibling Full Circle call: the At-a-glance block reads a flat 'Entry fee $10' with 'Submissions Up to 4 entries' and carries NO tiered Entry Fee Schedule, whereas Full Circle lists 1/$10 through 4/$40 — so $10 really does cover four works here. Eligibility block reads 'Career Stage: Student, Emerging, Mid-Career, Established / Additional Notes: everyone', no geographic limit, so the empty eligibility array is right. Both Mosaic shows share an opening reception on 12 September 5-7PM at two different addresses; that is what both pages say and is not an error."
+    },
+    {
+      "title": "Full Circle — New Beginnings 2026",
+      "org": "Mosaic Art Collective",
+      "deadline": "2026-08-28",
+      "fee": "$10–$40",
+      "category": "exhibition",
+      "description": "Mosaic Art Collective marks its fourth anniversary and its move to a new street-level gallery in Manchester, New Hampshire with a show about cycles: the seasons we move through, the relationships that anchor us, the personal transformations that bring us back to ourselves in new form. A return to an old practice, a fresh start after loss, the quiet repetition of daily rituals — the collective wants to see how artists interpret what it means to come full circle. All media are welcome except reproductions and AI-generated work. Entry is $10 for the first work and $10 for each additional, up to four. The exhibition runs 7–28 September 2026 at the collective's gallery on Chestnut Street with an opening reception on 12 September, 5–7pm, and acceptance notices on 30 August. Sales split 75/25 in the artist's favour, and work must arrive ready to hang with d-rings and picture wire or a $5 wiring fee applies at drop-off.",
+      "url": "https://www.mosaicartcollective.com/calls-for-art",
+      "instagram": "@mosaicartcollective",
+      "location": "Manchester, NH, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "submitVia": "Crafted Call",
+      "submitUrl": "https://www.craftedcall.com/org/mosaic-art-collective/calls/full-circle-new-beginnings-2026",
+      "requirements": "Up to 4 works",
+      "resultsDate": "August 30, 2026",
+      "ai": "Not accepted",
+      "slug": "full-circle-new-beginnings-2026-mosaic-art-collective",
+      "orgInTitle": false,
+      "summary": "Manchester collective's 4th-anniversary show on cycles, renewal and return. All media, $10 per piece, 75/25 split for artists.",
+      "dateAdded": "2026-08-02T15:16:38Z",
+      "verifyNote": "2026-08-02 16:00 sweep: listed on the collective's own site (mosaicartcollective.com/calls-for-art, 'Deadline: August 28, 2026 at 11:59 PM ET') and read in full on the org-authored Crafted Call page: entry fee $10 first + $10 each additional (1/$10, 2/$20, 3/$30, 4/$40), up to 4 entries, exhibition 7 September 11AM – 28 September 8PM, acceptance notification 30 August, opening reception 12 September 5-7PM, venue Mosaic Art Collective 410 Chestnut Street, 75% artist / 25% gallery on sales, $5 wiring fee at drop-off if work is not wired, $10/day storage after the pick-up window. 'We welcome work in all media that speaks to renewal, growth, connection, and the ongoing nature of change. Excluding reproductions and AI generated work.' Eligibility criteria on the call read 'Career Stage: Emerging, Mid-Career, Established / Additional Notes: Everyone' — no geographic restriction is stated, though work is hand-delivered. Photography is not enumerated on the call; the collective's own exhibition pages describe shows 'spanning photography, painting, sculpture, video, installation, and mixed media'. 2026-08-02 16:24 editor: KEPT unchanged. Re-read the page and confirmed the tiered fee schedule (1/$10, 2/$20, 3/$30, 4/$40), 'Deadline 27 days left / Aug 28, 2026 11:59 PM EDT', exhibition Sep 7 11AM – Sep 28 8PM, acceptance notification Sunday 30 August, reception Sep 12 5-7PM, venue 410 Chestnut Street, and the 75/25 split. Note this call lists NO artwork drop-off dates in its Important Dates block (the sibling Reflections call does) — that is an omission by the organiser, not a gap in our record, and nothing about drop-off is asserted here beyond the wiring requirement. Eligibility 'Career Stage: Emerging, Mid-Career, Established / Additional Notes: Everyone' re-confirmed; unlike Reflections it omits Student, but with 'Everyone' stated the empty eligibility array is still correct. Instagram re-verified: mosaicartcollective.com links instagram.com/mosaicartcollective."
     }
   ]
 }
