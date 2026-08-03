@@ -123,6 +123,7 @@ const eligibilityLabel = {
   'virginia': 'Virginia only', 'arizona': 'Arizona only', 'native-american': 'Native American artists',
   'northern-california': 'Northern California only', 'southern-california': 'Southern California only', 'tampa-bay': 'Tampa Bay only',
   'new-mexico': 'New Mexico only', 'massachusetts-rhode-island': 'MA & RI only', 'new-england': 'New England only',
+  'berkshires': 'Berkshires area only',
   'northeast-us': 'Northeast US only',
   'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only',
   'wisconsin': 'Wisconsin only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only',
@@ -183,7 +184,7 @@ function derivePrizeCategory(text) {
   if (/fellowship/.test(p)) return 'fellowship';
   if (/residency|accommodation|apartment|housing|studio/.test(p)) return 'residency';
   if (/publication|photobook|catalog|print edition|contributor|book/.test(p)) return 'publication';
-  if (/exhibition/.test(p)) return 'exhibition';
+  if (/exhibition|representation/.test(p)) return 'exhibition';
   return null;
 }
 
