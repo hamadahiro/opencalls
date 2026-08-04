@@ -108,6 +108,7 @@ const eligibilityLabel = {
   'hong-kong-macau': 'Hong Kong & Macau only',
   'hawaii-island': 'Hawaiʻi Island only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists', 'ontario': 'Ontario only',
+  'indiana': 'Indiana only', '18-26': 'Ages 18–26',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'israel': 'Israel only',
   '16-plus': '16+', '18-plus': '18+', '21-plus': '21+', '25-plus': '25+', '45-plus': '45+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
