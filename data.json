@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-06T13:05:00Z",
+  "lastUpdated": "2026-08-06T15:30:27Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -39007,6 +39007,179 @@
         "Eligibility is open to all photographers internationally, with no restriction on subject matter, genre or photographic medium. Selection is based on the thematic series submitted rather than on individual images, and a brief artist statement and bio are required. The fee is $100 for 10 images, $150 for 15 and $200 for 20. The Issue 3 deadline is October 1, 2026."
       ],
       "verifyNote": "2026-08-06 12:00 sweep: added from the organiser's own two surfaces, mwcponline.com/call-for-entries.html and the submission page mwcponline.com/flatland-feature-submission.html (both UA-curl, HTTP 200). The calls page heading reads \"FLATLAND FEATURE - ISSUE 3 / ENTRY DEADLINE - OCTOBER 1 / FEATURE DATES - JANUARY - JUNE, 2027\" and the submission page repeats \"FLATLAND FEATURE - ISSUE 3 - FLATLAND FEATURE DATES: JANUARY - JUNE, 2027\". Fee ladder verbatim on the submission page: \"$100 ENTRY FEE - SUBMIT10 IMAGES FOR $100\", \"$50 ADDITIONAL TO SUBMIT UP TO 15 IMAGES\", \"$100 ADDITIONAL TO SUBMIT UP TO 20 IMAGES\" - i.e. $100/$150/$200, unchanged from Issue 2. \"Open to all photographers internationally\" = eligibility []. \"Each portfolio consists of 10 - 20 images\"; \"There is a 50% gallery commission for work sold\"; \"No shipping is necessary for the Flatland Feature\". NOT A DUP OF ISSUE 2: Issue 2 is a separate stored entry (deadline 2026-07-31, feature window August 2026 - January 2027) and has now dropped off the calls page; this is the next cycle with a new deadline and a new, non-overlapping feature window. Follow the Issue 2 note's warning - the calls page carries six calls at once and the sibling deadlines around this one (EMERGE Sep 1, TEN X TEN Sep 1, White Oct 1, MWCP Juried Exhibition Dec 1, Developed Work Dec 31) are easy to grab by mistake; match on the FLATLAND heading, not on the nearest date. Note White - Absence of Color also closes October 1, so the Oct 1 date alone does not identify this call. MWCP names no juror and publishes no notification date for the Flatland Feature (\"Selected photographers will be posted online at www.mwcponline.com\"), and has no AI policy on either surface; all three gaps are genuine, as recorded for Issue 2. 2026-08-06 12:34 editor: KEPT with 3 fixes. Both surfaces re-read independently (UA-curl, HTTP 200 - calls page 32 KB, submission page 15 KB) and every stored value holds verbatim: \"FLATLAND FEATURE - ISSUE 3 ENTRY DEADLINE - OCTOBER 1 FEATURE DATES - JANUARY - JUNE, 2027\", \"$100 for 10 images, $150 for 15 images, $200 for 20 images\", \"Each portfolio consists of 10 - 20 images\", \"Open to all photographers internationally\", \"There is a 50% gallery commission for work sold\", \"No shipping is necessary for the Flatland Feature\". FIX 1 resultsDate: null ADDED - the key was ABSENT (= never checked) while Issue 2 stores it as null (= verified absent); the check is real, the submission page's NOTIFICATION section says only \"Selected photographers will be posted online at www.mwcponline.com\" with no date. FIX 2 prose ADDED - 8 of the 11 MWCP entries carry it, including Issue 2, this call's direct predecessor; written in Issue 2's four-paragraph shape with Issue 3's window and fee. FIX 3 description: \"the Midwestern flatlands\" -> \"the central plains region\", which is the wording the CALLS page actually uses (\"the best of the best photographers from the central plains region and beyond\"); the submission page says \"midwest region\" instead, so the two surfaces differ slightly and the calls page is the url we store. NOT A DUP re-checked against Issue 2 on the standing signal set: different slug, different submitUrl anchor text, different deadline (2026-07-31 vs 2026-10-01) and a non-overlapping feature window (Aug 2026-Jan 2027 vs Jan-Jun 2027); Issue 2 is gone from the live calls page. ONLINE-ONLY BUT NOT A WALL-RENT: MWCP is a real gallery with a physical Wichita space and 10 other entries here, and this is the same $100/$150/$200 ladder already stored for Issue 2 and for the Portfolio Platform - listing it is consistent with those, not a new precedent. 2026-08-06 14:00 verify: Both MWCP surfaces re-read (UA-curl, HTTP 200 - calls page 32 KB, submission page 15 KB) and every stored value holds: \"FLATLAND FEATURE - ISSUE 3 ENTRY DEADLINE - OCTOBER 1 FEATURE DATES - JANUARY - JUNE, 2027\", \"Open to all photographers internationally\" (= eligibility []), \"$100 ENTRY FEE - SUBMIT10 IMAGES FOR $100\" with the \"$50 ADDITIONAL\"/\"$100 ADDITIONAL\" rungs, and \"Each portfolio consists of 10 - 20 images\". NEW SIBLING TRAP FOR THE NEXT RUN: the PORTFOLIO PLATFORM block sitting directly above this one on the same calls page ALSO reads \"Each portfolio consists of 10 - 20 images\" and carries its own \"ENTRY DEADLINE - SEPTEMBER 1\" - the image band no longer distinguishes the two calls, so match on the FLATLAND heading, not on the 10-20 figure. No juror, no notification date and no AI policy on either surface; all three gaps genuine."
+    },
+    {
+      "title": "AUTO PHOTO Awards 2026",
+      "org": "Shutter Hub",
+      "deadline": "2026-10-15",
+      "fee": "£25+",
+      "category": "photography",
+      "description": "The AUTO PHOTO Awards celebrate 100 global winners in automotive photography, with the Top 100 images printed in the annual AUTO PHOTO photobook published by Shutter Hub Editions. Past editions are held in international archives and collections including the British Library, Cambridge University and Motorsport UK HQ, and sold through selected stockists. There are no categories — entries are open to all photographers whatever their level of experience, with suggested prompts covering cars as art, motorsport, scenes and styling, innovation, and auto portraiture. Alongside the Top 100 there are eight named judges' awards, and a Creative Impact Award whose winner joins the judging panel. Pay-what-you-can entry from £25, 10 images per entry and unlimited entries; free submissions are offered on request to photographers experiencing homelessness, displacement, poverty or social injustice.",
+      "url": "https://shutterhub.org.uk/opportunity/auto-photo-awards-2026/",
+      "instagram": "@shutter_hub",
+      "location": "Online",
+      "prize": "Publication in printed photobook",
+      "eligibility": [],
+      "ai": "Accepted (must disclose)",
+      "submitVia": "Shutter Hub website",
+      "submitUrl": "https://shutterhub.org.uk/opportunity/auto-photo-awards-2026/#callout_apply",
+      "requirements": "10 images per entry",
+      "jury": [
+        "Charlie Roughton, Co-Founder and Director, The Maze Group",
+        "Charles Gordon-Lennox, Founder, Goodwood Revival and Festival of Speed",
+        "Łukasz Dawczyk, Head of Technology & Media, Ultrace and Co-Founder, Driven Stories",
+        "Justina Williams, Team Owner, EXCELR8 Motorsport",
+        "Mai Ikuzawa, Team Principal, Team Ikuzawa and Creative Director, Bentley Motors",
+        "Hugh Chambers, CEO, Motorsport UK",
+        "Nicolas Hamilton, racing driver"
+      ],
+      "resultsDate": "End of November 2026",
+      "slug": "auto-photo-awards-2026-shutter-hub",
+      "orgInTitle": false,
+      "summary": "Shutter Hub's automotive photography awards — Top 100 printed in the annual photobook, eight judges' awards. Pay what you can from £25.",
+      "prose": [
+        "AUTO PHOTO is Shutter Hub's automotive photography award, and the book is the point of it. The Top 100 images are printed in the annual AUTO PHOTO photobook published by Shutter Hub Editions, and past editions sit in international archives and collections including the British Library, Cambridge University and Motorsport UK HQ. Shutter Hub describes the book as a promotional tool as much as a collection — a portfolio circulated to the people who buy and commission photography across the automotive and creative industries.",
+        "The 2026 edition drops formal categories entirely. Shutter Hub still suggests themes as prompts rather than gates: cars as art, motorsport, scenes and styling, innovation, and auto portraiture — the last of these aimed at the people in the automotive scene rather than the machines. Entries are open to photographers at any level of experience.",
+        "Beyond the Top 100 there are eight named judges' awards — seven of them chosen by an individual from the motorsport or automotive world, the WXVE Award by that production team — plus a Creative Impact Award recognising someone who has made a significant impact in the automotive community and creative industries; that winner is invited to join the judging panel. Every winning photographer also receives a digital certificate and social promotion.",
+        "Entry is pay-what-you-can with a £25 minimum (the form offers £25, £35 and £45), 10 images per entry, and photographers may enter as many times as they like. Shutter Hub receives no external grants or funding but offers a number of free image submissions to photographers experiencing difficult circumstances including homelessness, displacement, poverty and social injustice — email before entering to be considered.",
+        "The submission form asks whether AI was used in the production of each image, so AI-assisted work is accepted with disclosure. The deadline is 15 October 2026 at 5pm UK time, and Shutter Hub says every photographer who entered will be contacted by the end of November 2026."
+      ],
+      "dateAdded": "2026-08-06T15:30:27Z",
+      "verifyNote": "2026-08-06 16:34 editor: KEPT with 3 fixes. Verified on the organiser's own page shutterhub.org.uk/opportunity/auto-photo-awards-2026/ (UA-curl, HTTP 200, 96 KB — all three tabs Info/Rules/Apply are in the one document). Held verbatim: \"Closes: 15/10/2026 5:00 pm\"; \"The AUTO PHOTO Top 100 images will be printed in the annual AUTO PHOTO photobook, published by Shutter Hub Editions\"; \"housed in international archives and collections, including the British Library, Cambridge University, and Motorsport UK HQ\"; \"'pay what you can', with a minimum donation of £25\"; \"Each photographer can submit 10 images in their entry, and enter as many times as they'd like\"; \"We're asking for entries from all photographers, whatever their level of experience\" (= eligibility []); the free-submission offer for photographers \"experiencing difficult situations including homelessness, displacement, poverty and social injustices\". FIX 1 resultsDate: null -> \"End of November 2026\" — the Rules tab states \"All photographers will be contacted by the end of November 2026\", so this was never a genuine gap; sentence added to the closing prose paragraph too. FIX 2+3 award count: the page lists EIGHT named judges' awards (Adrian Flux, Duke of Richmond, Driven Stories, EXCELR8 Motorsport, Mai Ikuzawa, Motorsport UK, Nicolas Hamilton, WXVE) plus the Creative Impact Award, which names no selector — the entry said \"nine named judges' awards\" in description, summary and prose; corrected to eight in all three. COUNT TRAP FOR NEXT RUN: nine AWARD blocks ≠ nine JUDGES' awards, and the stored jury of 7 is right because the WXVE Award is selected by a production team, not a named person, and Creative Impact by nobody named. The Apply tab confirms the fee ladder as radio options \"£25 / £35 / £45\" and carries a required per-image field \"Was AI used in the production of this image? Yes / No\", which is what \"Accepted (must disclose)\" rests on — same as the stored City Series London sibling. NOT A DUP of the six stored Shutter Hub Editions calls: different opportunity slug, different product (annual awards + Top 100 book, not a themed Editions publication), £25 floor rather than £15."
+    },
+    {
+      "title": "Life Framer — Series Award Edition XII",
+      "org": "Life Framer",
+      "deadline": "2026-12-31",
+      "fee": "$45",
+      "category": "photography",
+      "description": "Life Framer's annual series award, running alongside its twelve monthly themed competitions and asking instead for a cohesive body of work — any topic, any genre, any format. Submissions are a series of 5 to 20 photographs with a shared theme or aesthetic rather than a broad portfolio; images may be new or from the archive, and may have been previously published or exhibited. Edition XII is judged by Lisa Woodward and Mia Dalglish, co-curators at Pictura Gallery in Bloomington, Indiana. Three finalists are shortlisted and each receives an online portfolio review session with the curators before the first prize is chosen. The winner receives a three-month, fully funded solo show at Pictura Gallery in summer 2027, curated by Woodward and Dalglish, with printing, framing and curatorial costs covered by Life Framer and Pictura Gallery. Second and third prizes receive the review session plus write-ups on the Life Framer Journal and Pictura Gallery's Curious Photo Blog. Open worldwide to photographers 18 and over.",
+      "url": "https://www.life-framer.com/series-award/",
+      "instagram": "@life_framer",
+      "location": "Online",
+      "prize": "Funded solo exhibition at Pictura Gallery",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Lisa Woodward, co-curator, Pictura Gallery",
+        "Mia Dalglish, co-curator, Pictura Gallery"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.life-framer.com/enter/",
+      "requirements": "5–20 images",
+      "resultsDate": "Early March 2027",
+      "ai": "Not accepted",
+      "slug": "life-framer-series-award-edition-xii",
+      "orgInTitle": true,
+      "summary": "Annual series award for a cohesive body of work. Winner gets a three-month funded solo show at Pictura Gallery, Bloomington IN.",
+      "prose": [
+        "The Series Award is Life Framer's annual counterweight to its twelve monthly single-image competitions. Where the monthly rounds ask for individual photographs against a theme, this one asks for a body of work: a series of 5 to 20 photographs held together by a cohesive subject, narrative or aesthetic. There is no theme and no category — any topic, any genre, any format, with images new or drawn from the archive, and previously published or exhibited work allowed.",
+        "Edition XII is judged by Lisa Woodward and Mia Dalglish, co-curators at Pictura Gallery in Bloomington, Indiana. The two have worked together as jurors, guest critics and portfolio reviewers for thirteen years, at festivals including FotoFest, Photolucida, Filter Photo and Les Rencontres d'Arles.",
+        "The judging has an unusual step built in: three finalists are shortlisted and each gets an online portfolio review session with Woodward and Dalglish before the first prize is decided. Shortlisted finalists must be available for that session on a weekday in February 2027. All three prizes therefore include the review; second and third also receive write-ups on the Life Framer Journal and Pictura Gallery's Curious Photo Blog.",
+        "First prize is a three-month, fully funded solo show at Pictura Gallery, curated by Woodward and Dalglish in collaboration with the photographer and held in summer 2027. Pictura, established in 2008, is hosted within the FAR Center for Contemporary Art, a building on the National Register of Historic Places. Life Framer and Pictura cover printing, framing and related curatorial and exhibition costs; travel and accommodation are not included.",
+        "Entry is $45 for a series of 5 to 20 images, open worldwide to photographers aged 18 or over. Life Framer's rules state that AI-generated imagery is not accepted. The deadline is 31 December 2026 at 23:59 PST, with winners announced publicly in early March 2027."
+      ],
+      "dateAdded": "2026-08-06T15:30:27Z",
+      "verifyNote": "2026-08-06 16:34 editor: KEPT unchanged, every field re-read on three Life Framer surfaces. ACCESS: life-framer.com 403s to curl with or without a UA — r.jina.ai served all three pages HTTP 200 on this run (probe it again next time, jina rot is per-host). /series-award/ gives the pitch and prizes; /series-award-details/ is where the load-bearing detail lives and is NOT linked from the site nav, only from an inline \"review further details and requirements here\"; /legal/#rules carries the AI clause. Verbatim from the details page: \"Our Edition XII Series Award is open to all types of photographer aged 18 years and over ... from all over the world\" (= eligibility 18-plus, and it is the only surface that names EDITION XII, which the title depends on); \"The deadline for submissions is 31 December 2026, 23:59 PST timezone\"; \"3 finalists will be shortlisted and each have an online portfolio review session with Mia and Lisa before the 1st Prize is selected\"; \"shortlisted finalists must be available to schedule this online session on a weekday in February 2027\"; \"The 1st, 2nd and 3rd Prize photographers will be announced to the public in early March 2027\" (= resultsDate); \"The exhibition will be held in summer 2027\"; \"Budget covers printing, framing and other related curatorial and exhibition costs. It does not include accommodation or travel expenses to the gallery.\" Fee \"$45\" and \"a series of 5 to 20 photos\" are on /series-award/. AI: the details page is silent and defers to the main rules, where /legal/ reads \"We do not accept artificial intelligence or AI-generated imagery\" — do not null this field on the strength of the call page alone. NOT A DUP of the seven stored Life Framer monthly competitions: those are single-image themed rounds at $20–$100 sharing url /competitions/ and a $2,000 cash prize; this is the annual body-of-work award at a flat $45 with an exhibition prize and its own url. The /enter/ submitUrl is shared with the monthlies by design — Life Framer runs one entry portal."
+    },
+    {
+      "title": "Solo Artist Exhibition Fall 2027",
+      "org": "Hill Center Galleries",
+      "deadline": "2026-09-03",
+      "fee": "$45",
+      "category": "exhibition",
+      "description": "Open call for artists from Washington DC, Maryland and Virginia to propose a solo exhibition at Hill Center at the Old Naval Hospital on Capitol Hill. Hill Center Galleries runs a yearly Solo Artist Exhibition in which roughly six artists each get a solo show installed concurrently in one of the galleries, sharing a joint opening reception, an artist panel talk and a holiday reception during the run. The Fall 2027 installation runs August 29, 2027 through January 9, 2028. Open to any 2D medium, including photography, that can hang on the Arakawa cable-and-hook system without extending more than six inches from the wall; there are no pedestals, tables or display cases. Applicants may submit existing work or propose a new body of work to be made for the show — submitted images are read as examples of the artist's practice. Work included must have been made in the last three years and not previously shown at Hill Center. All artwork must be available for sale. Open to artists 18 and over; the Galleries Director makes final determinations with input from jurors and colleagues.",
+      "url": "https://www.hillcenterdc.org/call-for-entries-solo-artist-fall-2027/",
+      "instagram": "@hillcenterdc",
+      "location": "Washington, DC, USA",
+      "prize": "Solo exhibition",
+      "eligibility": [
+        "mid-atlantic-us",
+        "18-plus"
+      ],
+      "jury": [],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/hillcenterdc/hill-center-galleries-fall-2027-solo-artist-exhibition/",
+      "requirements": "Up to 10 images",
+      "resultsDate": "Late September 2026",
+      "ai": null,
+      "slug": "solo-artist-exhibition-fall-2027-hill-center-galleries",
+      "orgInTitle": false,
+      "summary": "Propose a solo show at Hill Center on Capitol Hill — six concurrent solo exhibitions, any 2D medium. DC, MD and VA artists.",
+      "prose": [
+        "Hill Center Galleries occupies the Old Naval Hospital on Capitol Hill, a historic building whose three public floors have been divided into gallery spaces spread through the corridors and rooms where community activity runs all day. It is a nontraditional venue by design, and the call is explicit about what that means practically: work has to hang on the walls using the Arakawa cable-and-hook system, cannot project more than six inches out, and there are no pedestals, tables or display cases available.",
+        "The Solo Artist Exhibition is an annual programme in which approximately six artists each receive a solo show, all installed at the same time across the galleries. Participating artists share a joint opening reception, an artist panel talk, and a holiday reception during the run. The Fall 2027 installation is on view from August 29, 2027 to January 9, 2028.",
+        "Applications are open to artists from Washington DC, Maryland and Virginia, aged 18 and over, working in any 2D medium — photography included. Applicants may submit work already made or propose to create a new body of work for the exhibition; in either case the submitted images are treated as a representation of the kind of work that would be shown. Anything included in the final exhibition must have been made in the last three years and must not have been shown at Hill Center before, and all artwork must be available for sale.",
+        "The entry fee is $45 and up to ten images may be submitted. Selection is made by the Hill Center Galleries Director with input from jurors and colleagues, based on the information and images in the application. Selected artists sign a consignment agreement and Hill Center takes a 30% commission on sales; artists arrange and insure transport of their own work.",
+        "Submissions opened July 30, 2026 and close September 3, 2026, with artists notified in late September 2026. Drop-off and installation take place August 29–31, 2027, and de-installation on January 9, 2028."
+      ],
+      "dateAdded": "2026-08-06T15:30:27Z",
+      "verifyNote": "2026-08-06 16:34 editor: KEPT with 1 addition. Both surfaces read in full — hillcenterdc.org/call-for-entries-solo-artist-fall-2027/ (UA-curl, HTTP 200, 249 KB) and the EntryThingy prospectus app.entrythingy.com/hillcenterdc/hill-center-galleries-fall-2027-solo-artist-exhibition/ (PLAIN curl, HTTP 200 — the /galleries directory route still works, no Chrome needed). Held verbatim on both: \"This open call is for artists from Washington, DC, Maryland, and Virginia\"; \"Open to artists 18 years and older\"; \"The non-refundable entry fee is $45\"; \"approximately 6 artists who will each have a solo show installed in one of our galleries concurrently\"; \"any 2D medium that will work to hang on our walls using our cable and hook Arakawa Hanging System\"; \"will not extend out from the wall more than 6 inches\"; \"There are no pedestals, tables, or display cases available\"; \"Submission Closes: September 3, 2026\"; \"Artists will be notified: Late September 2026\". ADDITION: the 30% sales commission and artist-borne transport, both under TERMS OF ENTRY, added to the fee paragraph — material because \"All artwork must be available for sale\" is compulsory here. requirements CONFIRMED, not inferred: the org page's \"Each gallery space can display approximately 10 pieces of artwork\" is DISPLAY capacity and would be the wrong source; the application cap is EntryThingy's \"Number of pieces: 1 - 10\". PHOTOGRAPHY: the call enumerates no media at all, only \"any 2D medium\" — settled by Hill Center Galleries running its own Photography 2025 Juried Show (juror Philip Kennicott), found via the site search. ai stays null: neither surface mentions AI. SUBMIT-LINK TRAP: the \"Submit Entry\" button on the org page resolves to app.entrythingy.com/calls/public/13799/, which is the CLOSED Hill Center/CHAL 2026 juried show, not this call — the stored submitUrl is the correct one. EntryThingy's own banner reads \"Entry deadline Sep 4, 2026 · 6:59 AM\" (UTC stamp for the end of Sep 3); the organiser's date governs."
+    },
+    {
+      "title": "Beyond Borders II: Global Voices",
+      "org": "The Art Center",
+      "deadline": "2026-08-14",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "Juried exhibition at The Art Center in Johns Creek, Georgia exploring the complexity, nuance and lived experience of cultures around the world through deeply personal and authentic artistic perspectives. The call asks for work that reflects a global viewpoint not as a generalised or stereotypical concept but as something specific, individual and deeply felt — moving past simplified narratives and superficial multiculturalism toward the richness, tension, overlap and individuality within and between communities. Suggested themes include cultural heritage and identity, migration and diaspora, tradition and transformation, intersectionality and hybridity, cultural contrast and exchange, and personal narratives in a global context; entries may be celebratory, critical, bold or contemplative. Photography is among the eligible media, alongside mixed media, ceramics, drawing, fibre art, printmaking, painting, collage, digital art and sculpture. Juried by the curatorial staff of The Art Center. Up to three works for a $25 entry fee. On view September 11 – October 17, 2026, with an awards reception on the closing night.",
+      "url": "https://www.itstheartcenter.org/call-for-participation",
+      "instagram": "@itstheartcenter",
+      "location": "Johns Creek, GA, USA",
+      "prize": "$500 First Place",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/johnscreekarts/beyond-borders-ii-global-voices/",
+      "requirements": "Up to 3 works",
+      "resultsDate": "August 21, 2026",
+      "ai": "Not accepted",
+      "slug": "beyond-borders-ii-global-voices-the-art-center",
+      "orgInTitle": false,
+      "summary": "Juried show on world cultures told through specific, personal perspectives. Photography eligible, $500 first place, $25 for 3 works.",
+      "prose": [
+        "Beyond Borders II: Global Voices is the second edition of The Art Center's exhibition about world cultures, and the brief is unusually clear about what it does not want. It asks for a global viewpoint \"not as a generalized or stereotypical concept, but as something specific, individual, and deeply felt\", and states that the show aims to move past simplified narratives and superficial notions of multiculturalism toward the richness, tension, overlap and individuality that exist within and between communities.",
+        "Suggested themes include cultural heritage and identity, migration and diaspora, tradition and transformation, intersectionality and hybridity, cultural contrast and exchange, and personal narratives within a global context. Entries may be celebratory or critical, bold and expressive or quiet and contemplative — what the curators say they value above all is authenticity and specificity of voice.",
+        "Eligible media are enumerated and include photography, alongside mixed media, ceramics, drawing, fibre art, printmaking, painting, collage, digital art and sculpture. 2D work is capped at 48 × 48 inches framed and 20 lbs, works on paper must be framed with acrylic or plexiglas, and pieces must arrive dry and wired ready to hang. AI-generated work will not be considered.",
+        "Each artist may submit up to three works for a non-refundable $25 entry fee. First Place receives a $500 cash award, with additional cash prizes and recognitions presented as part of the exhibition. The show is juried and judged by the curatorial staff of The Art Center.",
+        "The deadline is August 14, 2026, with notification on August 21 and drop-off from August 31 to September 2. The exhibition runs September 11 – October 17, 2026, with the awards reception on October 17 from 6 to 7:30pm. Artists keep 75% of sales, with a 25% commission to The Art Center, which is a nonprofit in Johns Creek, Georgia."
+      ],
+      "dateAdded": "2026-08-06T15:30:27Z",
+      "verifyNote": "2026-08-06 16:34 editor: KEPT with 1 fix. Read on both surfaces — itstheartcenter.org/call-for-participation (UA-curl, HTTP 200; a 1.1 MB Wix page that strips to 18 KB of text, and the Beyond Borders block sits BELOW the Upcycled block, so read the whole strip rather than the first section) and the EntryThingy prospectus app.entrythingy.com/johnscreekarts/beyond-borders-ii-global-voices/ (plain curl, HTTP 200). Identical wording on both for: \"Each artist may submit up to three works for a non-refundable entry fee of $25. First Place will receive a $500 cash award\"; \"All artwork must be an original creation of the submitting artist, AI work will not be considered\" (= ai Not accepted); \"Eligible media includes mixed media, ceramics, drawings, fiber art, printmaking, painting, collage, digital art, photography, and sculpture\"; \"juried and judged by the curatorial staff of The Art Center\" (= jury []); \"Submission Deadline: August 14, 2026\"; \"Notification of Acceptance: August 21, 2026\"; \"Awards & Reception: October 17, 2026 6p-7:30p\". FIX eligibility: [\"18-plus\"] -> [] — NEITHER surface states an age gate for THIS call. Its siblings on the same page do (\"Open to artists 18 and older\" on Upcycled, \"Open to artists 18 +\" on Summer Serendipity), which is exactly how the false gate got here; the shared org page makes sibling wording look like house policy when it is per call. Do not re-add without a published line under Beyond Borders II itself. MEDIA CONFLICT, prose governs: EntryThingy's own \"Accepted Media\" chip list (Painting, Mixed Media, Drawing, Ceramics, Fiber, Digital, Jewelry, Printmaking, Metalwork, woodworking) OMITS photography, while the organiser's instruction text on both surfaces enumerates it explicitly — the chips are platform metadata and are wrong here. NEW ORG for the site, checked against the standing skip list: real 30-year-old nonprofit community art center with a physical building at 6290 Abbotts Bridge Road, published financials and bylaws, $500 cash first place and a 25% commission — not a mill, not wall-rent."
+    },
+    {
+      "title": "Art of Abstraction",
+      "org": "Arts Center East",
+      "deadline": "2026-09-04",
+      "fee": "$35–$55",
+      "category": "exhibition",
+      "description": "Juried exhibition at Arts Center East in Vernon, Connecticut inviting artists to explore the power of colour, shape, texture and movement beyond literal representation — from bold, expressive compositions to subtle, thought-provoking works, celebrating the many ways abstract art evokes emotion and invites personal interpretation. Photography is among the accepted media, alongside painting, mixed media, ceramics, sculpture, textiles, metal and illustration. Open to artists 18 and over; each artist may submit up to five pieces, and work must not have appeared in a previous ACE juried exhibit. No copies, no kits, no work made in a class and no AI-generated art. Entry is $35 for one piece ($30 for ACE members), rising per additional piece up to five. Shown in the Eureka Gallery, September 26 – October 31, 2026, with a reception and awards.",
+      "url": "https://artscentereast.org/exhibits/",
+      "instagram": "@artscentereastct",
+      "location": "Vernon, CT, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/artscentereast/art-of-abstraction/",
+      "requirements": "Up to 5 works",
+      "resultsDate": "September 11, 2026",
+      "ai": "Not accepted",
+      "slug": "art-of-abstraction-arts-center-east",
+      "orgInTitle": false,
+      "summary": "Abstraction beyond literal representation at Arts Center East, CT. Photography accepted, up to 5 works, from $35.",
+      "prose": [
+        "Art of Abstraction is one of the juried shows Arts Center East runs through its year in Vernon, Connecticut. The call invites artists and viewers to explore the power of colour, shape, texture and movement beyond literal representation, and spans the range from bold, expressive compositions to subtle, thought-provoking works — the framing is about how abstract art evokes emotion and leaves room for personal interpretation rather than about any single style.",
+        "Photography is explicitly among the accepted media, listed alongside painting, mixed media, ceramics, sculpture, textiles, metal and illustration. This matters for photographers working non-representationally, who are often left guessing at all-media abstraction shows.",
+        "The show is open to artists 18 and over. Each artist may submit up to five pieces, and no work may have been included in a previous ACE juried exhibit. The rules are firm on originality: no copies, no kits, no work made in a class, and no AI-generated art. Wall-hung work must be wired with two loops and professional picture wire — sawtooth hangers and frames with triangular tabs are refused on arrival.",
+        "Entry is $35 for one piece, or $30 for ACE members, rising by $5 per additional piece up to five. Artists shipping work must include a paid return shipping label.",
+        "The submission deadline is September 4, 2026, with notification on September 11. The exhibition is shown in ACE's Eureka Gallery from September 26 to October 31, 2026, with a reception and awards during the run. Gallery hours are Thursday to Saturday, 1–5pm."
+      ],
+      "dateAdded": "2026-08-06T15:30:27Z",
+      "verifyNote": "2026-08-06 16:34 editor: KEPT unchanged. THE STORED URL DOES NOT CARRY THIS CALL — artscentereast.org/exhibits/ (UA-curl, HTTP 200) still shows the two July 17 deadlines and its 2026 schedule lists Rooted in Fiber (Marmer, Sept 26-Oct 31) and Small Works, Big Joy (Eureka, Nov 12) with NOTHING in the Eureka Sept 26-Oct 31 slot; the string \"Abstraction\" appears on that page only inside a 2020 image filename. Kept anyway, for two reasons: the call is confirmed live on the organiser's own EntryThingy account — app.entrythingy.com/artscentereast/ lists it under \"Current Open Calls\" as \"Art of Abstraction · Deadline Sep 4, 2026 · Show date Sep 26, 2026 · Entry limit 5 per person · Categories Painting, Photography, Mixed …\" — and /exhibits/ is where the rules that govern it actually live, in the \"For Juried Exhibits\" block: \"Juried exhibits are open to artists 18 years of age and older\", \"Each artist may submit up to five (5) pieces\", \"All artwork must NOT have been included in previous ACE juried exhibits\", \"no kits, no AI generated art\", \"$35/$30 for ACE Members for one piece, $40/$35 ... for two pieces\" (= the stored $35–$55 ladder, five rungs, same as both stored ACE siblings). Same url and same field shapes as space-negative-outer-living and vehicles-voyages; kept for consistency, and the org normally adds the blurb later. Prospectus app.entrythingy.com/artscentereast/art-of-abstraction/ (plain curl, HTTP 200) confirms deadline September 4, jury decision September 11, Eureka Gallery, Sept 26-Oct 31, \"Accepted Media: Painting, Photography, Mixed Media, Ceramics, Sculpture, Textiles, Metal, Illustration\". jury [] is correct and is NOT a gap of the same kind as the siblings' named jurors: ACE names Eva Polizzi on the concurrent Rooted in Fiber call and nobody on this one. CLONE ARTEFACT, ignore it: the prospectus Terms block still reads \"Accepted Artists Drop-off: March 27 and 28\" from whatever call it was copied from — the Instructions block above it carries the real Sept 18-19 drop-off."
     }
   ]
 }
