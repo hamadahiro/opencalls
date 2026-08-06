@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>
+      Studio Montclair, Inc. | Art Gallery
+    </title>
+    
+    
+    
+    
+  <meta name="description" content="Studio Montclair, Inc. - View current calls for artists and exhibitions. Submit your artwork today.">
+  <link rel="canonical" href="https://app.entrythingy.com/studiomontclair.org/">
+
+    
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="EntryThingy">
+  <meta property="og:title" content="Studio Montclair, Inc. | Art Gallery">
+  <meta property="og:description" content="Studio Montclair, Inc. - View current calls for artists and exhibitions. Submit your artwork today.">
+  <meta property="og:url" content="https://app.entrythingy.com/studiomontclair.org/">
+  <meta property="og:type" content="business.business">
+  <meta property="og:image" content="https://app.entrythingy.com/static/og-images/entrythingy-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Studio Montclair, Inc. | Art Gallery">
+  <meta name="twitter:description" content="Studio Montclair, Inc. - View current calls for artists and exhibitions. Submit your artwork today.">
+  <meta name="twitter:image" content="https://app.entrythingy.com/static/og-images/entrythingy-og.png">
+
+    <!-- Vite-built Tailwind CSS -->
+    
+    <link  rel="stylesheet" href="/static/dist/main-Vz4dDvzU.4ed2f0630ab0.css" />
+<script type="module" crossorigin="" src="/static/dist/main-BE2xdMQk.b64f024518b0.js"></script>
+<link href="/static/dist/preload-helper-rHbNTjoB.a276350f8a9d.js" type="text/javascript" crossorigin="anonymous" rel="modulepreload" as="script" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/static/images/favicon.822fbbd425c6.png">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.5c782e65adf1.png">
+    
+  <!-- Schema.org Structured Data (JSON-LD) -->
+  <!-- Note: Using extra_css block for head section content. Consider adding extra_head block to base.html -->
+  <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "ArtGallery", "name": "Studio Montclair, Inc.", "@id": "https://entrythingy.com/studiomontclair.org/", "url": "https://entrythingy.com/studiomontclair.org/"}
+  </script>
+  
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.entrythingy.com"}, {"@type": "ListItem", "position": 2, "name": "Galleries", "item": "https://app.entrythingy.com/galleries/"}, {"@type": "ListItem", "position": 3, "name": "Studio Montclair, Inc."}]}</script>
+  
+
+    
+    
+  <script>
+    (function() {
+      // 1. SILENCE TRACKING ERRORS GLOBALLY
+      // This prevents ad-blocker/tracking-prevention fetch failures from reaching Sentry
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason && (
+          event.reason.message === 'Failed to fetch' ||
+          event.reason.stack?.includes('seline') ||
+          event.reason.stack?.includes('ahrefs')
+        )) {
+          event.preventDefault(); // Stop the error from bubbling up to Sentry
+          console.warn('Analytics request blocked or failed (ignored)');
+        }
+        // DuckDuckGo's content-scope-scripts framework triggers "feature named hover
+        // was not found" errors via unhandledrejection. These have no stacktrace and
+        // are not caused by EntryThingy code. (Sentry ENTRYTHINGY-DJANGO-2JH)
+        if (event.reason && typeof event.reason.message === 'string' &&
+          event.reason.message.indexOf('feature named') !== -1 &&
+          event.reason.message.indexOf('was not found') !== -1) {
+            event.preventDefault();
+          }
+        // DuckDuckGo Mobile on iOS throws "invalid origin" via its WebKit messaging
+        // bridge (content-scope-scripts). No stacktrace, 100% DuckDuckGo Mobile/iOS.
+        // Not caused by EntryThingy code. (Sentry ENTRYTHINGY-DJANGO-C7)
+        if (event.reason && typeof event.reason.message === 'string' &&
+          event.reason.message === 'invalid origin') {
+            event.preventDefault();
+          }
+        // PayPal's zoid/post-robot cross-domain library triggers "Object Not Found
+        // Matching Id" rejections when their iframe loses sync with the parent.
+        // Not caused by EntryThingy code.
+        var reasonStr = String(event.reason || '');
+        if (reasonStr.indexOf('Object Not Found Matching Id') !== -1) {
+          event.preventDefault();
+        }
+      });
+
+      // 2. CONFIGURE SENTRY TO DROP ANALYTICS NOISE
+      // Sentry's fetch instrumentation captures rejections before unhandledrejection fires,
+      // so we also need to filter at the Sentry level via beforeSend.
+      window.sentryOnLoad = function() {
+        Sentry.init({
+          ignoreErrors: [
+            // Generic cross-origin script errors with no actionable context.
+            // Safari/iOS suppress details for scripts without crossorigin headers.
+            'Script error.',
+            // DuckDuckGo's content-scope-scripts framework (ENTRYTHINGY-DJANGO-2JH)
+            /feature named .* was not found/,
+            // DuckDuckGo Mobile iOS WebKit messaging bridge (ENTRYTHINGY-DJANGO-C7)
+            'invalid origin',
+            // PayPal zoid/post-robot iframe communication errors
+            /Object Not Found Matching Id/,
+            // Browser extensions (password managers) bundle Axios and attempt
+            // auto-login. Failed credentials produce unhandled AxiosError 401s
+            // that are not from EntryThingy code. (ENTRYTHINGY-DJANGO-22S)
+            /AxiosError/,
+            // Cross-origin iframe access errors from embed/breakout code (ET-4581)
+            /Blocked a frame with origin .* from accessing a cross-origin frame/,
+            // Facebook/Instagram in-app browsers access window.webkit.messageHandlers
+            // which doesn't exist in their WebView context. Not EntryThingy code.
+            /window\.webkit\.messageHandlers/,
+            // Cross-origin iframe access to document.cookie from embed/breakout
+            // code or third-party scripts running in a sandboxed iframe. No
+            // `.at(` calls exist anywhere in our source (checked); this is a
+            // third-party polyfill/extension wrapping arrays/NodeLists without
+            // `.at()`. (ET-5661, ET-5662, ET-5669, ET-5675)
+            /Failed to read the 'cookie' property from 'Document'/,
+            /\.at is not a function/,
+            // Browser extensions (ad blockers, translators) intercept XHR and
+            // pass malformed/relative URLs to `.open()`. Not EntryThingy code. (ET-5674)
+            "Failed to execute 'open' on 'XMLHttpRequest': Invalid URL",
+            // Android WebView in-app browsers (Facebook/Instagram/LinkedIn) use a
+            // Java bridge for postMessage that throws when the native side isn't
+            // wired up, or when the bridge object is torn down mid-navigation
+            // (e.g. Instagram's iabjs navigation_performance_logger sending a
+            // beforeunload message after the WebView's Java-side object is
+            // already gone). Not EntryThingy code. (ET-5673, ET-5452)
+            /Error invoking postMessage: Java (exception was raised|object is gone)/,
+          ],
+          denyUrls: [
+            /seline\.com/,
+            /ahrefs\.com/,
+          ],
+          beforeSend: function(event, hint) {
+            // Drop PayPal/Microsoft "Object Not Found Matching Id" non-Error rejections.
+            // ignoreErrors only matches Error.message; non-Error rejections get wrapped
+            // differently by the SDK, so we catch them here as a fallback.
+            // Also check hint.originalException for string rejections (password managers,
+            // PayPal zoid) that arrive as plain strings rather than Error objects —
+            // these produce "Script error." in Safari/iOS without crossorigin headers.
+            var hintMsg = (hint && hint.originalException)
+              ? (hint.originalException.message || hint.originalException)
+              : '';
+            if (typeof hintMsg === 'string' && hintMsg.indexOf('Object Not Found Matching Id') !== -1) {
+              return null;
+            }
+            var values = event.exception?.values || [];
+            for (var k = 0; k < values.length; k++) {
+              if ((values[k].value || '').indexOf('Object Not Found Matching Id') !== -1) {
+                return null;
+              }
+            }
+            // Drop "RangeError: Maximum call stack size exceeded" from iOS in-app browsers
+            // (Google app, Chrome Mobile iOS). These have a single stacktrace frame at
+            // "undefined:28:210" — injected browser JS that iOS WebKit strips source info
+            // from. 100% iOS, cross-page, not from EntryThingy code. (ENTRYTHINGY-DJANGO-18T)
+            for (var v = 0; v < values.length; v++) {
+              if (values[v].type === 'RangeError' &&
+                (values[v].value || '').indexOf('call stack') !== -1) {
+                  var stFrames = values[v].stacktrace?.frames || [];
+                  var allUndefined = stFrames.length > 0;
+                  for (var f = 0; f < stFrames.length; f++) {
+                    var fn = stFrames[f].filename || stFrames[f].abs_path || '';
+                    if (fn !== 'undefined' && fn !== '') {
+                      allUndefined = false;
+                      break;
+                    }
+                  }
+                  if (allUndefined || stFrames.length === 0) {
+                    return null;
+                  }
+                }
+            }
+            // Drop "Failed to fetch" errors originating from third-party analytics scripts
+            var dominated = ['seline', 'ahrefs', 'analytics'];
+            var frames = values[0]?.stacktrace?.frames || [];
+            for (var i = 0; i < frames.length; i++) {
+              var abs = (frames[i].abs_path || frames[i].filename || '').toLowerCase();
+              for (var j = 0; j < dominated.length; j++) {
+                if (abs.indexOf(dominated[j]) !== -1) {
+                  return null; // Drop the event
+                }
+              }
+            }
+            return event;
+          },
+        });
+      };
+
+      function loadAnalytics() {
+        if (['https:', 'http:'].includes(window.location.protocol)) {
+          var scripts = [
+            { src: 'https://js.sentry-cdn.com/360bd2580b0c202f300aa20736755d95.min.js', crossOrigin: 'anonymous' },
+            {
+              // Do NOT add crossOrigin: 'anonymous' — cdn.seline.com does not
+              // serve Access-Control-Allow-Origin, so the browser blocks the
+              // script. Seline errors are already filtered from Sentry via
+              // denyUrls + 'Script error.' ignoreErrors above. (See #1857, #3203.)
+              src: 'https://cdn.seline.com/seline.js',
+              async: true,
+              'data-token': '39672c174240bc1',
+              // Seline mask-patterns: JSON array of glob patterns. The `*` is the
+              // only wildcard. IDs at the matched segment are replaced with `*` in
+              // tracked URLs (e.g. /calls/123 → /calls/*). Routes not listed here
+              // are tracked verbatim. https://seline.com/docs/install-seline
+              'data-mask-patterns': '["/calls/public/*","/calls/*","/calls/*/entries","/calls/*/pieces","/calls/*/stats","/calls/*/edit","/calls/*/jury","/calls/*/entries/*","/calls/*/entries/*/edit","/applications/*/review","/applications/*/upload","/applications/*/preview","/applications/*/view","/applications/*/submit","/applications/*/details","/apply/*","/artist/applications/*","/artist/applications/*/view","/artist/applications/*/upload","/artist/applications/*/details","/artist/applications/*/submit"]'
+            },
+            { src: 'https://analytics.ahrefs.com/analytics.js', async: true, 'data-key': '5HAGKL5kbWg09FiWM1J/Qw', crossOrigin: 'anonymous' }
+          ];
+
+          scripts.forEach(function(s) {
+            var el = document.createElement('script');
+            Object.keys(s).forEach(function(key) { el[key] = s[key]; });
+            // If using data- attributes, use setAttribute
+            if (s['data-token']) el.setAttribute('data-token', s['data-token']);
+            if (s['data-mask-patterns']) el.setAttribute('data-mask-patterns', s['data-mask-patterns']);
+            if (s['data-key']) el.setAttribute('data-key', s['data-key']);
+            document.head.appendChild(el);
+          });
+        }
+      }
+
+      // Wait for the page to fully load before scheduling analytics injection.
+      // Starting the idle timer from <head> meant the 3s timeout could fire
+      // while the page was still rendering, causing Sentry SDK initialization
+      // to create a >2s long animation frame (LoAF) on simple pages like /login/.
+      function scheduleAnalytics() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadAnalytics, { timeout: 8000 });
+        } else {
+          setTimeout(loadAnalytics, 3000);
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        scheduleAnalytics();
+      } else {
+        window.addEventListener('load', scheduleAnalytics);
+      }
+    })();
+  </script>
+
+  
+
+
+    <!-- Schema.org structured data for organization and search -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "EntryThingy",
+        "url": "https://www.entrythingy.com",
+        "logo": "https://www.entrythingy.com/static/og-images/entrythingy-og.ecebd77357fa.png",
+        "description": "The largest free database of calls for artists, aggregating opportunities from CaFE, Zapplication, ArtCall, ShowSubmit, and independent galleries.",
+        "sameAs": [
+          "https://twitter.com/entrythingy"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "EntryThingy",
+        "url": "https://www.entrythingy.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.entrythingy.com/calls_list/?search={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body class="flex h-screen flex-col font-sans bg-white antialiased">
+    
+      <script>
+        // Break out of iframes by default. Only the public call detail page
+        // is designed to be embedded — it overrides this block.
+        if (window.top !== window.self) {
+          try {
+            window.top.location = window.location.href;
+          } catch (e) {
+            // Cannot break out of iframe — cross-origin context or restricted browser
+            // (e.g., Facebook in-app browser on iOS raises InvalidAccessError here)
+          }
+        }
+      </script>
+    
+    <!-- Token Warning Banner -->
+    
+    
+    
+    <!-- Top Navigation Bar -->
+    <header class="relative z-40 bg-white border-b border-gray-200">
+      <div class="px-6 flex items-center justify-between h-16">
+        <!-- Left Section: Platform Name + Navigation -->
+        <div class="flex items-center space-x-8">
+          <div class="flex flex-nowrap items-center gap-3">
+            
+            
+            
+            
+              <a href="/" class="flex items-center">
+                <img src="/static/images/entrythingy-logo.ddaf48f22b07.svg" alt="EntryThingy" class="h-7" />
+              </a>
+            
+          </div>
+          
+        </div>
+        <!-- Right Section: User Menu -->
+        <div class="flex items-center space-x-4">
+          
+            <!-- Logged Out Actions -->
+            <div class="hidden lg:flex items-center space-x-3">
+              <a href="/login/?next=/studiomontclair.org/"
+                 class="px-4 py-2 text-sm font-medium rounded-md transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-50">
+                Sign In
+              </a>
+              <a href="/signup/?next=/studiomontclair.org/"
+                 class="px-4 py-2 text-sm font-medium rounded-md bg-gray-900 text-white hover:bg-gray-800 transition-colors">
+                Sign Up
+              </a>
+            </div>
+            <!-- Mobile Menu Toggle (Logged Out) -->
+            <button onclick="window.toggleMobileMenu?.()"
+                    class="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+</svg>
+            </button>
+          
+        </div>
+      </div>
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu-overlay"
+           class="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 hidden lg:hidden"
+           onclick="window.closeMobileMenu?.()"></div>
+      <!-- Mobile Slide-out Menu -->
+      <div id="mobile-menu"
+           class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl transform translate-x-full transition-transform duration-200 ease-in-out z-50 lg:hidden overflow-y-auto">
+        <div class="p-4 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+            <button onclick="window.closeMobileMenu?.()"
+                    class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
+            </button>
+          </div>
+        </div>
+        
+          <!-- Mobile Navigation (Logged Out) -->
+          <nav class="p-4 space-y-1">
+            <a href="/login/?next=/studiomontclair.org/"
+               class="block px-3 py-2 text-sm font-medium rounded-md transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-50">
+              Sign In
+            </a>
+            <a href="/signup/?next=/studiomontclair.org/"
+               class="block px-3 py-2 text-sm font-medium rounded-md transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-50">
+              Sign Up
+            </a>
+          </nav>
+        
+      </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col">
+      <!-- Content Area -->
+      <div class="flex-1">
+        <div class="max-w-full mx-auto flex flex-col">
+          
+          <div class="bg-white h-full">
+            
+  <div class="min-h-screen bg-gray-50/50">
+    
+
+
+
+<div class="mx-auto py-8 max-w-7xl px-4 sm:px-6">
+  
+      
+<nav class="text-sm text-gray-500 mb-8 flex items-center space-x-2" aria-label="Breadcrumb">
+  
+    
+      <a href="https://entrythingy.com" class="hover:text-gray-900 transition-colors">Home</a>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+</svg>
+    
+  
+    
+      <a href="/galleries/" class="hover:text-gray-900 transition-colors">Galleries</a>
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+</svg>
+    
+  
+    
+      <span class="text-gray-900 font-medium">Studio Montclair, Inc.</span>
+    
+  
+</nav>
+
+
+        <!-- Header Section -->
+      <div class="mb-8">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <div class="flex gap-8">
+            <!-- Left section: Logo and Info -->
+            <div class="flex items-start space-x-6 flex-1">
+              <!-- Gallery Logo -->
+              <div class="flex-shrink-0">
+                <img src="/static/images/entrythingy-icon.0e90d99d2295.svg"
+                     alt="EntryThingy"
+                     class="w-24 h-24 rounded-lg shadow-md object-contain bg-white">
+              </div>
+
+              <div class="flex-1">
+                <h1 class="h1-standard">Studio Montclair, Inc.</h1>
+
+                
+
+                
+                  <p class="text-lg text-gray-600 mt-2 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"></path>
+</svg>
+                    <a href="https://studiomontclair.org" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700">
+                      studiomontclair.org
+                    </a>
+                  </p>
+                
+              </div>
+            </div>
+
+            <!-- Right section: Map -->
+            
+          </div>
+        </div>
+      </div>
+
+        <!-- Stats Bar -->
+      <div class="mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center">
+            <div class="text-2xl font-bold text-gray-900">0</div>
+            <div class="text-sm text-gray-600 mt-1">EntryThingy Calls in the Last Year</div>
+          </div>
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center">
+            <div class="text-2xl font-bold text-green-600">0</div>
+            <div class="text-sm text-gray-600 mt-1">Active Calls on EntryThingy</div>
+          </div>
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 text-center">
+            <div class="text-2xl font-bold text-gray-900">12+</div>
+            <div class="text-sm text-gray-600 mt-1">Years Active on EntryThingy</div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Active Calls Section -->
+      
+        <div class="mb-8">
+          
+
+
+
+
+  <div class="">
+
+<div class="rounded-lg border p-4
+            
+            
+            bg-yellow-50 border-yellow-200
+            ">
+  <div class="flex">
+    <div class="flex-shrink-0">
+      
+        
+          <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+</svg>
+        
+      
+    </div>
+    <div class="ml-3 flex-1">
+      
+        <p class="text-sm
+                  
+                  
+                  text-yellow-800
+                  ">
+          
+            No active calls at this time. Check back soon or view past exhibitions below.
+          
+        </p>
+      
+    </div>
+    
+  </div>
+</div>
+</div>
+
+        </div>
+      
+
+        <!-- About Section -->
+      
+
+        <!-- Previous Calls -->
+      
+        <div class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4 text-center">Previous Calls</h2>
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div class="grid gap-6 md:grid-cols-2">
+              
+                <div class="border-l-4 border-gray-300 pl-4 py-2">
+                  <a href="/calls/public/12572/?ref=gallery-profile">
+                    <p class="hover:text-blue-700 font-medium">ViewPoints 2025</p>
+                  </a>
+                  <p class="text-sm text-gray-600">
+                    Studio Montclair seeks entries for its Annual Open Juried Exhibition “ViewPoints 2025” at the Leach Gallery, Studio Montclair’s nonprofit gallery located in Montclair, from April …
+                  </p>
+                  <p class="text-sm text-gray-600 mt-2">
+                    April 2025, Montclair, NJ
+                  </p>
+                  
+                    <p class="text-xs text-gray-500 italic mt-1">
+                      
+                        15 months ago
+                      
+                    </p>
+                  
+
+                  <!-- Artwork Samples -->
+                  
+                </div>
+              
+                <div class="border-l-4 border-gray-300 pl-4 py-2">
+                  <a href="/calls/public/12596/?ref=gallery-profile">
+                    <p class="hover:text-blue-700 font-medium">Strength and Resilience</p>
+                  </a>
+                  <p class="text-sm text-gray-600">
+                    Studio Montclair seeks entries for Strength and Resilience — an exhibition in celebration of Black History Month and Women&#x27;s History Month at the Studio Montclair&#x27;s …
+                  </p>
+                  <p class="text-sm text-gray-600 mt-2">
+                    January 2025, Montclair, NJ
+                  </p>
+                  
+                    <p class="text-xs text-gray-500 italic mt-1">
+                      
+                        18 months ago
+                      
+                    </p>
+                  
+
+                  <!-- Artwork Samples -->
+                  
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      
+
+    
+</div>
+
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- DO NOT ADD INLINE SCRIPTS! -->
+    
+      
+        <!-- HelpScout Beacon Chat Widget - loads immediately so the default floating launcher icon is visible on page load -->
+<script type="text/javascript">
+  (function() {
+    var beaconLoaded = false;
+
+    // Lightweight stub: queues commands until the real script loads
+    window.Beacon = function(method, options, data) {
+      window.Beacon.readyQueue.push({method: method, options: options, data: data});
+    };
+    window.Beacon.readyQueue = [];
+
+    // Queue init + identify so they replay when the script loads
+    window.Beacon('init', '01c6f76b-db99-487c-be40-758cdbdaef77');
+    window.Beacon('identify', {
+      name: ' '.trim() || 'User',
+      email: ''
+    });
+
+    function loadHelpScout() {
+      if (beaconLoaded) return;
+      beaconLoaded = true;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://beacon-v2.helpscout.net';
+      document.head.appendChild(script);
+    }
+
+    // No `display: { style: 'manual' }` config is set here (unlike
+    // helpscout_beacon_manual.html), so HelpScout's default behavior applies:
+    // the real script renders its floating launcher icon automatically once
+    // loaded. It does NOT open the chat panel - `Beacon('open')`/`Beacon('toggle')`
+    // remain available below for existing explicit "Ask for help" links.
+    loadHelpScout();
+  })();
+</script>
+
+      
+    
+    
+      
+        
+
+
+<div class="fixed bottom-32 right-4 z-50">
+  <button type="button"
+          id="product-feedback-toggle"
+          aria-label="Give feedback"
+          class="rounded-full bg-gray-900 text-white text-sm font-medium px-4 py-2 shadow-lg hover:bg-gray-800">
+    Feedback
+  </button>
+  <div id="product-feedback-panel"
+       class="hidden absolute bottom-14 right-0 w-80 bg-white rounded-lg shadow-xl border border-gray-200 p-4">
+    <div class="flex items-start justify-between mb-2">
+      <p class="text-sm font-semibold text-gray-900">Share feedback</p>
+      <button type="button"
+              id="product-feedback-close"
+              aria-label="Close"
+              class="text-gray-400 hover:text-gray-600 text-sm leading-none">&times;</button>
+    </div>
+    <form id="product-feedback-form">
+      <input type="hidden" name="csrfmiddlewaretoken" value="ZsPDbgHDxsavnOTptLdo6H3aiUBU63wH0A7emHjR09HG5Lo9cdN6t0RvKHIV5YDR">
+      <label for="product-feedback-body" class="block text-base font-medium text-slate-700 mb-2">
+  
+        What's on your mind?
+      <span class="text-base text-slate-600 ml-1">(optional)</span>
+</label>
+      <textarea id="product-feedback-body"
+                name="body"
+                maxlength="2000"
+                rows="4"
+                placeholder="A bug, an idea, anything at all..."
+                class="w-full rounded-md border border-gray-300 text-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      <div class="flex items-center justify-end mt-3">
+        
+
+
+
+
+  <button type="submit"
+          
+          
+          id="product-feedback-submit"
+          class="inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+           >
+    
+    Send
+    
+  </button>
+
+
+      </div>
+      <p id="product-feedback-status" class="text-sm mt-2" role="status"></p>
+    </form>
+  </div>
+</div>
+<script type="module">
+  import { initProductFeedbackWidget } from '/static/js/modules/product-feedback-widget.b3a9682123fa.js';
+  document.addEventListener('DOMContentLoaded', initProductFeedbackWidget);
+</script>
+
+      
+    
+    
+    
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a26f001bb9f24842',t:'MTc4NjAyOTM2Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
