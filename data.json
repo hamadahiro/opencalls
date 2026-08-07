@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T11:31:52Z",
+  "lastUpdated": "2026-08-07T15:29:46Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -39613,6 +39613,108 @@
       "summary": "Indie art-and-literature journal reads photography for Issue 04; free to enter, with a $100 Editor's Spotlight award.",
       "dateAdded": "2026-08-07T11:24:27Z",
       "verifyNote": "2026-08-07 12:27 editor: KEPT, unchanged. Both sources read (UA-curl, 200). rawheadjournal.org/submit-to-rawhead/ confirms the framing verbatim — \"Rawhead is an online journal that publishes poetry, fiction, nonfiction, and visual art. We are not a horror publication, though we are interested in work that unsettles through emotional depth, sharp craft, and surprising clarity\" — and the Visual Art spec \"Submit 3 to 10 pieces in any medium—illustration, photography, digital collage, mixed media, painting, sculpture. Upload high-quality images (min 1500px, .jpg/.png/.tiff)\". The art editor's statement is real and signed (Caressa Layne): \"art that explores the delicate threshold between fear and beauty. I am not looking for horror or gore\", citing Louise Bourgeois, Francis Bacon, Man Ray, Joseba Eskubi, Anna Weyant and Jinyoung Yu. Editor's Spotlight = \"$100 award\" per issue to one artist and one writer, every accepted piece considered. AI: \"We do not accept AI-generated content. Submissions must be original, human-made, and free of AI assistance.\" DEADLINE comes only from Submittable — the org page publishes no date. rawhead.submittable.com/submit lists four rows; the Issue 04 row carries data-render-react-date='2026-08-16 04:00:00Z' with data-adjust-midnight = midnight Eastern, so 15 Aug is the last day. (Do not read the other rows across: Point Blank ends 2026-09-01 and the two Editorial Feedback rows also end 2026-08-16.) FEE IS GENUINELY FREE, checked because the org sells services: the Issue 04 row has an empty fee column and the page says \"fully committed to always offering free submissions\". The paid options are all optional and none is a condition of entry or of selection — expedited response $5/$10, priority $15, and separate Editorial Feedback products at $50-$350 that are a distinct Submittable category, not a submission route ('Purchasing feedback does not increase the likelihood of publication'). So bare `Free` is right here, not `Free (X if selected)`. Note for a future pass: Rawhead ACCEPTS previously published work if rights reverted and 6+ months have passed — unusual, and the opposite of most zines on the site. Instagram @rawheadjournal confirmed from the instagram.com href in the portal HTML. Editor-in-chief John T. Leonard is also managing editor of 42 Miles Press and The Glacier (Rawhead's sister journal), which is what clears the legitimacy test for a journal on only its fourth issue. Location \"Online\" — the journal is digital; Leonard is based in Elkhart, Indiana. No jury and no notification date published (\"3-6 months\"), genuine gaps. NOT A DUP: only Rawhead row in data.json. 2026-08-07 14:00 verify: First verify pass since the Aug 7 add. rawhead.submittable.com/submit re-read (UA-curl, 200): the Issue 04 row still carries data-render-react-date='2026-08-16 04:00:00Z' with data-adjust-midnight = midnight Eastern, so 15 Aug is the last day, and its fee column is EMPTY - bare `Free` holds. Do not read the sibling rows across: Point Blank still ends 2026-09-01. The deadline exists ONLY on Submittable; the org page publishes no date. No jury and no notification date published (\"3-6 months\"), both genuine gaps."
+    },
+    {
+      "title": "Windows on the World",
+      "org": "Click! Photography Festival",
+      "deadline": "2026-08-24",
+      "fee": "$45/5 images",
+      "category": "exhibition",
+      "description": "Click! Photography Festival turns downtown Raleigh into a month-long photography city every October, spreading exhibitions, talks and screenings across Raleigh, Durham and Chapel Hill. Windows on the World is its storefront show: selected photographs are printed by the festival and installed in and around the shop windows of City Market, the historic brick market district in downtown Raleigh, so the work is met by people walking past rather than by gallery visitors. The theme is JOY, and the call asks what joy looks like to you — a fleeting smile, a quiet landscape, a family celebration, an unexpected encounter, a moment of personal triumph. All genres are welcome, from documentary and street photography to portraits, landscapes, abstract and experimental imagery, and all photographic processes are accepted: alternative, film or digital. The call is open to photographers of all levels, from emerging talents to seasoned professionals, and international submissions are accepted. Entry is $45 for up to five images. Artists do not ship work: everything selected is printed and displayed by the festival, with the possibility of a projection event on First Friday. The exhibition runs 1–31 October 2026 with an opening reception on Friday 2 October, and images not selected for the outdoor Plein Air exhibition are eligible for a travelling slide show presented around the Triangle through October. AI-generated images are not eligible.",
+      "url": "https://www.clickphotofest.org/calls-for-work",
+      "instagram": "@clickphotofest",
+      "location": "Raleigh, NC, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Smarter Entry",
+      "submitUrl": "https://client.smarterentry.com/ClickPhotography",
+      "requirements": "Up to 5 images",
+      "resultsDate": "August 28, 2026",
+      "ai": "Not accepted",
+      "slug": "windows-on-the-world-click-photography-festival",
+      "orgInTitle": false,
+      "summary": "Click! Festival prints and installs selected photographs in City Market shop windows, Raleigh. Theme: JOY. $45 for five images.",
+      "dateAdded": "2026-08-07T15:29:46Z",
+      "verifyNote": "2026-08-07 16:35 editor: KEPT, unchanged. clickphotofest.org/calls-for-work read in full (Chrome-UA curl, 200) and every field is verbatim from the org's own Windows on the World block: theme JOY, \"Up to 5 high-resolution image files (JPEG Only)\", \"$45 for up to 5 images\", \"Submission Deadline: August 24, 2026\", \"Jury selections made by: August 28, 2026\", City Market downtown Raleigh, exhibition 1-31 October 2026, opening First Friday 2 October (2 Oct 2026 IS a Friday). AI: \"All photographic techniques and processes are welcome; however, AI-generated images are not eligible for submission\" -> `Not accepted`. Juror listed as \"TBA\" so `jury: []` is a real gap, not an omission. NO SHIPPING is the distinguishing feature and it is the org's words: \"Artists do not need to ship accepted artworks. All selected entries will be printed and displayed in storefront windows along with the possibility of a projection event on First Friday.\" CONFIRMED INDEPENDENTLY on the portal (client.smarterentry.com/ClickPhotography, plain curl, 200, server-rendered): \"Windows on the World / Closes Aug 24\" and the exact ladder \"1 Entries: $45.00 USD Each 1 Additional Entries: $0.00 USD - (Maximum of 5)\", i.e. $45 buys all five, no per-image surcharge. Do not read the sibling row across: Click! Plein Air closes Sep 1. @clickphotofest taken from the instagram.com href on the org page. NOT A DUP: the only two Click! rows in data.json are this and Plein Air, different titles, deadlines and venues."
+    },
+    {
+      "title": "Click! Plein Air",
+      "org": "Click! Photography Festival",
+      "deadline": "2026-09-01",
+      "fee": "$45/5 images",
+      "category": "exhibition",
+      "description": "Click! Plein Air is the flagship outdoor exhibition of the Click! Photography Festival, the month-long October festival spread across Raleigh, Durham and Chapel Hill in North Carolina. For 2026 it moves from Moore Square, where the 2025 edition showed 35 photographers, to Dix Park — the 300-acre former state hospital campus that is now Raleigh's largest public park — where photographs are shown in the open air rather than on gallery walls. There is no set theme: photographers submit into open categories, and the festival is looking for striking, engaging work that holds up in front of a broad public audience outdoors. The festival's own page lists seven — abstract, documentary, landscape, people, creatures, street photography and still life — while the Smarter Entry form shows six, with portrait in place of people and creatures, so check the list when you upload. The call is open to photographers of all levels and to all photographic processes, alternative, film or digital, with international submissions accepted. Entry is $45 for up to five images, each of which must be titled. The juror is Jerome De Perlinghi. Jury selections are made by 6 September, the exhibition runs 1–31 October 2026, and the opening reception is on First Friday, 2 October. Images not selected for the outdoor exhibition remain eligible for a travelling slide show presented at venues throughout the Triangle during October.",
+      "url": "https://www.clickphotofest.org/calls-for-work",
+      "instagram": "@clickphotofest",
+      "location": "Raleigh, NC, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [
+        "Jerome De Perlinghi"
+      ],
+      "submitVia": "Smarter Entry",
+      "submitUrl": "https://client.smarterentry.com/ClickPhotography",
+      "requirements": "Up to 5 images",
+      "resultsDate": "September 6, 2026",
+      "slug": "click-plein-air",
+      "orgInTitle": true,
+      "summary": "Open-air photography exhibition at Dix Park, Raleigh, juried by Jerome De Perlinghi. No set theme, open categories, $45 for five images.",
+      "dateAdded": "2026-08-07T15:29:46Z",
+      "verifyNote": "2026-08-07 16:35 editor: KEPT, description and summary FIXED. Org page (Chrome-UA curl, 200) confirms deadline \"September 1, 2026\", \"Jury selections made by: September 6, 2026\", \"$45 for up to 5 images\", \"Location: Dix Park, Downtown Raleigh, NC\", exhibition 1-31 October 2026, opening First Friday 2 October, and \"Juror: Jerome De Perlinghi\". Portal corroborates: \"Click! Plein Air / Closes Sep 1\" with the same $45/max-5 ladder. FIX 1 - CATEGORY LIST CONFLICT, both sources live right now: the org page lists SEVEN (abstract, documentary, landscape, people, creatures, street photography, still life) while the Smarter Entry form lists SIX, substituting portrait for people and creatures. Unresolvable from outside (the portal's \"Check out our prospectus\" has no href in the served HTML - login-gated), so the description no longer asserts a bare count of seven; it now gives the org list AND names the form's difference. FIX 2 - the \"moves to Dix Park\" claim was unsourced at add time; now VERIFIED: clickphotofest.org/events-calendar/click-plein-air-exhibition is the 2025 event page and reads \"Click! Plein Air returns to Moore Square in Raleigh this year from October 1-30... 35 artists from the Triangle and around the world\" at 226 East Martin Street. So 2025 = Moore Square, 2026 = Dix Park, and the description now names both. NOTE the org's own section heading on the calls page still reads \"2025 Click! Plein Air\" above the 2026 call - a stale heading, not a stale call; the body carries 2026 dates throughout. No `ai` key: the Plein Air block is silent on AI (only the Windows on the World block bans it), so the null is a genuine gap and must not be back-filled from the sibling call."
+    },
+    {
+      "title": "SELF PORTRAITS 2026",
+      "org": "Matt Ford Studio",
+      "deadline": "2026-10-26",
+      "fee": "£13 for 1 image, £6 each additional (£20 per print if selected)",
+      "category": "exhibition",
+      "description": "Matt Ford Studio is a photographer-run gallery and studio in Hackney Downs Studios, east London, whose programme leans toward sexuality, gender, identity and fashion. SELF PORTRAITS 2026 is its winter open call, exhibition and photo book, put together by Matt Ford after he began making self-portraits as a way of working through his own fears about AI, politics and the future of an artistic career, and became interested in self-portraiture itself — as vanity, as creativity, as self-expression, or simply as a record of where you are in your life. The call invites photographers worldwide to reflect on what it means to be human in the second quarter of the 21st century. Anyone 18 or over from any country may enter, at any level of skill, and both digital and analogue work is welcome — disposable cameras, phones and high-end DSLRs alike — along with collage and experimental work that still involves some element of self-portrait. Digitally enhanced images are accepted; AI-generated images are not. Judging for finalists and winners is done by the editors of ZERO.NINE Magazine. The winner receives £500 cash, the cover of the SELF PORTRAITS photo book, an 'On The Radar' feature in ZERO.NINE and a feature about their work; all semi-finalists appear in the photo book at no extra cost, and finalists are shown in the exhibition at the studio. Entry is £13 for the first photograph and £6 for each one after; if you reach the exhibition a further £20 per photograph shown covers printing (arranged with theprintspace) and exhibition admin, or you may send your own print at your own postage cost. Semi-finalists are announced 9 November, the book launch, private view and winners announcement is 10 December, and the exhibition is open to the public 11–14 December 2026. Work is for sale during the show, with 75% to the artist.",
+      "url": "https://www.mattfordstudio.com/self-portraits-2026",
+      "instagram": "@mattfordstudio",
+      "location": "London, United Kingdom",
+      "prize": "£500 + Exhibition + Photobook",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Editors of ZERO.NINE Magazine"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.mattfordstudio.com/self-portraits-submission-form",
+      "requirements": "No limit",
+      "resultsDate": "November 9, 2026",
+      "ai": "Not accepted",
+      "slug": "self-portraits-2026-matt-ford-studio",
+      "orgInTitle": false,
+      "summary": "Photographer-run east London gallery's self-portrait show and photo book, judged by ZERO.NINE Magazine. £500 to the winner.",
+      "dateAdded": "2026-08-07T15:29:46Z",
+      "verifyNote": "2026-08-07 16:35 editor: KEPT, unchanged. mattfordstudio.com/self-portraits-2026 read in full (Chrome-UA curl, 200); every field is on the page. Dates: \"AUG 3RD: EXHIBITION OPEN TO ENTER / 26TH OCT: DEADLINE TO SUBMIT / 9TH NOV: SEMI FINALISTS ANOUNCED / 10TH DEC: BOOK LAUNCH + EXHIBITION PRIVATE VIEW + WINNERS ANOUNCED / 11TH - 14TH DEC: EXHIBITION OPEN TO PUBLIC\" (press preview 10 Dec) - `resultsDate` is the 9 Nov semi-finalist announcement, the first notification an entrant gets; winners are not named until 10 Dec. Judges: \"THE JUDGING FOR THE FINALISTS AND WINNERS WILL BE DONE BY THE EDITORS OF ZERO.NINE MAGAZINE\" (zeroninemagazine.com linked from the page). Eligibility: \"YOU MUST BE 18 0R OVER TO ENTER / ANYBODY CAN ENTER FROM ANY COUNTY IN THE WORLD\" -> `18-plus`, no country limit. AI: \"DIGITALLY ENHANCED IMAGES WILL BE ACCEPTED. WE ARE NOT ACCEPTING AI GENERATED IMAGES\" -> `Not accepted`. Prize split verified per line: PS500 cash winner only, cover winner only, ZERO.NINE 'On The Radar' + feature winner only, exhibition finalists only, photo book ALL SEMI FINALISTS, and \"THERE IS NO EXTRA FEE TO BE PART OF THE SELF PORTRAITS PHOTO BOOK\"; 1st/2nd/3rd exist with \"More prized TBA\" for 2nd and 3rd. FEE CHECKED AGAINST THE PAY-TO-HANG TEST AND PASSES: PS13 first photo + PS6 each additional secures the online judging round; only IF you reach the exhibition is \"A FURTHER PS20 FOR EVERY PHOTO SHOWN\" due, it covers printing at theprintspace.com, and you may send your own print instead at your own postage. That is a real juried call with PS500 cash and named judges, not wall rent - and it matches 67 existing entries that carry an if-selected print fee (Carlotta PS20-35, PhotoMonth PS20, four Ballarat-shaped calls at PS48). The (PS20 per print if selected) qualifier in `fee` is what keeps it honest. Sales 75% artist / 25% studio, artist sets the price, studio covers UK P&P. `requirements: No limit` is correct - the org publishes no maximum, the fee simply scales per image. submitUrl /self-portraits-submission-form is the page's own \"SUBMIT YOUR SELF PORTRAITS HERE\" href and returns 200. @mattfordstudio from the instagram.com href. NOT A DUP: only Matt Ford row in data.json."
+    },
+    {
+      "title": "Liquida Winter Edition 2026 — Single Photo",
+      "org": "Liquida Photofestival",
+      "deadline": "2026-09-06",
+      "fee": "€25",
+      "category": "exhibition",
+      "description": "Liquida Photofestival is the photography strand of Paratissima, the independent contemporary art event that has run in Turin since 2005 and is now one of the anchors of Turin Art Week. Its Winter Edition is the autumn spin-off of the main April festival, curated by Liquida's artistic director Laura Tota — an independent curator who has worked on Paratissima's photography programme since 2017 and is Exhibition Coordinator at PhEST, Photolux and Cortona On The Move. Single Photo is a new section for 2026: rather than a project, it asks for individual frames. Each entrant may submit between one and five photographs, which need not belong to the same body of work or even to the same line of research, and there is no set theme — the point is to leave photographers the widest possible margin of expression. Ten winning shots are chosen and shown as a collective exhibition inside the Liquida Winter Edition section, with each selected image coming from a different artist. The €25 participation fee is the only cost: Paratissima covers production, transport, shipping, installation and de-installation of the selected works, and the fee also includes the exhibition layout, wall captions, inclusion in the official ISBN catalogue, an artist badge and support for online and on-site sales. The catalogue itself is optional at €20 a copy. The festival runs 30 October – 1 November 2026 at the Real Collegio Carlo Alberto in Moncalieri, just outside Turin; the 2025 edition drew more than 20,000 visitors. Results are announced 12 September. Note that Liquida's separate Exhibition call, for full projects, works on a paid-wall-space model and is not this call.",
+      "url": "https://www.paratissima.it/open-call-liquida-2026",
+      "instagram": "@liquidaphotofestival",
+      "location": "Moncalieri, Italy",
+      "prize": "Exhibition + Catalogue",
+      "eligibility": [],
+      "jury": [
+        "Laura Tota, Artistic Director, Liquida Photofestival"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://subscribe.paratissima.it/a/form/2026/liquida-single-photo",
+      "requirements": "1–5 images",
+      "resultsDate": "September 12, 2026",
+      "slug": "liquida-winter-edition-2026-single-photo",
+      "orgInTitle": true,
+      "summary": "Ten single photographs picked for a group show at Paratissima during Turin Art Week. €25 all-in; production and install covered.",
+      "dateAdded": "2026-08-07T15:29:46Z",
+      "verifyNote": "2026-08-07 16:35 editor: KEPT, unchanged. Two sources read. paratissima.it/open-call-liquida-2026 (Chrome-UA curl, 200) confirms \"DEADLINE 06/09/2026\", the Single Photo section (\"verranno premiati 10 scatti singoli... attraverso un'esposizione collettiva\", \"da un minimo di 1 scatto fino a un massimo di 5 scatti\", \"ogni autore potra essere selezionato con un solo scatto\", \"Nessun tema\"), \"Quota di partecipazione unica: 25EUR\", and Laura Tota's bio (independent curator, Paratissima photography since 2017, Exhibition Coordinator at PhEST/Photolux/Cortona). The submitUrl is the page's exact CANDIDATI href, subscribe.paratissima.it/a/form/2026/liquida-single-photo - NOT the Exhibition sibling's form, which sits one line above it. Regolamento_SINGLE-PHOTO PDF (pdftotext -layout) supplies what the web page omits and confirms every remaining field: Paratissima 2026 runs \"dal 30 Ottobre all'1 Novembre 2026 presso il Real Collegio Carlo Alberto di Moncalieri (TO)\", XXII edition, \"Dopo l'edizione del 2025 - con oltre 20.000 visitatori, 500 artiste e 3.000 opere esposte\"; calendar \"Esito selezione (negativo o positivo) 12/9\" -> resultsDate; \"La produzione, l'allestimento e il disallestimento delle opere saranno a carico di Paratissima\", restated in the FAQ (\"I COSTI DI PRODUZIONE SONO A CARICO DELL'ARTISTA? No\"); COSA E COMPRESO lists exhibition layout, install by the organisation, wall captions, official ISBN catalogue entry, artist badge, online + fair sales support. Catalogue is 20EUR a copy with \"Nessuna copia omaggio\" - optional, correctly outside `fee`. So EUR25 all-in HOLDS. THE SIBLING CALL STAYS OUT: Liquida Exhibition is EUR10 entry then EUR300/350/400 for 1.5/3/4.5m of linear wall plus EUR120-230 install - pay-to-hang, and the split is visible only in the PDFs. Two more terms worth knowing but not fee-bearing: Paratissima takes 20% of any sale, and the artist owes 30 days' sales exclusivity through Paratissima's channels after the fair; the EUR25 is non-refundable if not selected. @liquidaphotofestival VERIFIED via headless CDP (paratissima.it links only @paratissima, so the org-site grep alone could not settle it): the account is real - 5,508 followers, 641 posts, bio \"OPEN CALL NOW / Real Collegio Carlo Alberto (Moncalieri) / Curated by @latota / Powered by @paratissima\", which independently corroborates both the venue and that the call is live. liquidaphotofestival.com does not resolve, so paratissima.it is correctly the org url. NOT A DUP: only Liquida/Paratissima row in data.json."
     }
   ]
 }
