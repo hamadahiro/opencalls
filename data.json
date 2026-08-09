@@ -40257,6 +40257,175 @@
       "summary": "Present your photobook project to visitors at Lisbon's 16th photobook fair — free 25-minute slot, projector available.",
       "dateAdded": "2026-08-09T03:22:13Z",
       "verifyNote": "2026-08-09 04:25 editor: KEPT with 1 fix. Added requirements 'Up to 6 images' — the form's image item is IDENTICAL to both sibling calls ('Envio ate 6 imagens (resolucao: 72 dpi) ... remetidas via WeTransfer para general@lisbonphotobookfair.com'), and the finder dropped the field. NOT A DUP of the other two Lisbon calls: the three forms.gle links resolve to three DISTINCT form ids (vUUdUjgaLbMCQXPi6 -> 1FAIpQLSczgcySZsNLcUSuAbHt2eceIi3ol-lWVKeNIXTu1h4gI3zgVA, dummy -> 1FAIpQLSeU8JWdmxPPNlpY_2BYKHImqJa4fcLAoV8AWAsvqsABGO8PrQ, self-publishing -> 1FAIpQLSc1JepP3DDA6tH2VaCTctUBSwJGlFMvlh6J1hEZNZpGrKQssw), and THIS form's own body cross-links the other two, proving they are siblings and not copies. The org's Facebook poster (post of July 20) independently lists EXACTLY THREE open calls under one 'DEADLINE: 12.10.2026' header — Exposicao de Maquetas / Espaco dos Autores e Pequenos Editores / Apresentacoes de Projetos Autorais — so the directory now holds the complete set. Every field verified against the live form (title '16a FLFL | 16th LPBF:::Open Call | Apresentacoes de Projetos Autorais / Presentations of Authorial Projects'): max 25 minutes, projector, Fri 27 Nov 17h30-19h30, Sat 28 + Sun 29 Nov 11h00-12h30 and 14h00-19h30, close 12 October 2026 at 21h, organisation confirms by 6 November. FEE IS FREE BY ABSENCE AND THAT IS CORRECT — the full 17-item form payload contains no payment step, no IBAN/MBWay, no euro figure; contrast the sibling Espaco dos Autores form which states EUR 10/20 plainly. The two 'gratuita' hits in this form are about the recording being published free of charge, NOT the entry. Do not re-flip to a fee. url stays the Facebook page: the org has no website, both siblings use the same surface, and the calls poster lives there. Plain curl of facebook.com returns a login shell with zero call text — read it through r.jina.ai instead, which surfaces the poster alt-text and the post date. 2026-08-09 06:00 verify: Unchanged, first verify pass since the 08-09 04:25 editor add, and the requirements fix it made is confirmed at source. forms.gle/vUUdUjgaLbMCQXPi6 resolves (curl DEFAULT UA) to form 1FAIpQLSczgcySZsNLcUSuAbHt2eceIi3ol-lWVKeNIXTu1h4gI3zgVA and, with ?usp=send_form appended, returns 200 and the full bilingual payload. It re-confirms the image item verbatim - \"Send up to 6 images (resolution: 72 dpi) related to the presentation, approximately 2MB each\" / \"Envio ate 6 imagens\", delivered via WeTransfer - plus the October 12 2026 close and the November 6 confirmation. FEE IS FREE BY ABSENCE and that is still correct: the whole form payload carries no payment step, no IBAN/MBWay and no euro figure, unlike the sibling Espaco dos Autores form. The Facebook url stays: the org has no website and both siblings use the same surface."
+    },
+    {
+      "title": "Haus-a-rest — Issue 75: Clay Every Which Way",
+      "org": "Haus-a-rest",
+      "deadline": "2026-09-03",
+      "fee": "Free",
+      "category": "zine",
+      "description": "The 75th issue of the UK independent art zine Haus-a-rest, edited by Jenna Fox and Nichola Rodgers, takes clay as its subject — but explicitly not clay as pottery. The editors want work that goes beyond the pot, beyond tradition and beyond expectation: clay as unfired material, slip, earth pigment, digital simulation, or as a metaphor for transformation, identity, labour, geology, archaeology, ritual, play, memory and the body. Photography is named among the accepted media alongside sculpture, installation, painting, drawing, printmaking, textiles incorporating clay, mixed media, land art, performance documentation, video (YouTube links only) and digital works, and the call runs in parallel for writers submitting poetry, essays, short fiction, creative non-fiction and experimental texts. Conceptual responses are welcomed as warmly as material ones — the editors ask what it means to shape something with your hands, how clay remembers touch, and whether a material can carry history, culture or politics. Submit up to three artworks as JPEGs, or up to 1,000 words of writing, or a combination, together with titles, a statement of no more than 200 words explaining how the work fits the theme, and a biography of up to 150 words. An Instagram handle is required: selected contributors are asked to collaborate on sharing the posts. There is no submission fee, the call is open internationally to artists and writers at every career stage, and selected work is published in the online zine and gallery and promoted across the zine's social channels. Entry closes 3 September 2026 through CuratorSpace.",
+      "url": "https://www.haus-a-rest.com/opportunities-contact-us",
+      "instagram": "@haus_a_rest",
+      "location": "Online",
+      "prize": "Publication",
+      "eligibility": [],
+      "jury": [
+        "Jenna Fox, Editor",
+        "Nichola Rodgers, Editor"
+      ],
+      "submitVia": "CuratorSpace",
+      "submitUrl": "https://www.curatorspace.com/opportunities/detail/open-call-for-artists--writers--hausarest-zine-theme-clay-every-which-way-issue/10990",
+      "requirements": "Up to 3 images",
+      "slug": "haus-a-rest-issue-75-clay-every-which-way",
+      "orgInTitle": true,
+      "summary": "UK indie art/lit zine, theme 'Clay Every Which Way'. Photography named among accepted media. Free, publication only.",
+      "verifyNote": "2026-08-09 sweep add. Deadline read from CuratorSpace 10990 as '03/09/2026' — CuratorSpace prints UK DD/MM, so 3 September 2026, not 9 March. Free confirmed twice: the CuratorSpace Terms block ('There is no submission fee') and the same text mirrored on haus-a-rest.com/opportunities-contact-us. Image count stored as 3 from the CuratorSpace listing ('Up to 3 artworks (JPEG format), or Up to 1,000 words of writing, or A combination') — the same portal-enforced-wins rule applied to Issue 74; do not re-flip to 5 on the org page alone. No notification date is published on either surface, so resultsDate is intentionally absent — the org page's 'September 2026 - Issue 75' line is the publication month, not a notification. No AI policy is stated on either surface. Eligibility [] is right: 'Open internationally. Open to artists and writers at every stage of their career.' An active Instagram handle is a submission requirement, not an eligibility facet. Shared url with Issues 73 and 74 is the org's single calls page, not a duplicate — identity differs on title, deadline and submitUrl.",
+      "dateAdded": "2026-08-09T07:19:15Z"
+    },
+    {
+      "title": "Forms and Fragments",
+      "org": "Atlantic Gallery",
+      "deadline": "2026-08-30",
+      "fee": "$30 (3 images), $10 for 5 more",
+      "category": "exhibition",
+      "description": "The first annual online juried competition from Atlantic Gallery, the artist-run cooperative that has operated in Chelsea since 1974. Forms and Fragments asks artists to explore the relationship between what is transformed, remembered, assembled or broken, and the shapes those experiences become — the beauty of what remains, what is reconstructed and what emerges. Work may investigate memory, identity, landscape, culture, architecture, the body or abstraction through literal or symbolic fragments and evolving forms, considering how the parts relate to the whole, and the gallery invites personal, political, material and conceptual readings alike. The juror is Patricia Miranda, an artist, curator and educator who founded The Crit Lab and MAPSpace and the Lace Archive, and who has held residencies at the Textile Art Center, Vermont Studio Center, I-Park and Weir Farm. Photography is listed among the accepted media, alongside oils, acrylics, watercolours, pastels, drawings, traditional printmaking, original digital art, fibre art, mixed media and sculpture in any medium; digital or giclée reproductions of original artwork and AI-generated work are excluded. Entry is open to all artists 18 and over, at $30 for up to three works plus $10 for up to five more submitted at the same time, with no piece larger than 32 inches in any direction. Selected work is shown in an online exhibition running 1 October to 12 November 2026 and reproduced in an online digital catalogue, and every accepted piece is featured on the gallery's social channels. The award is the significant part: prize winners are selected for inclusion in Atlantic Gallery's physical group show in its Chelsea space, 1–19 December 2026, with work delivered in person or by proxy. The gallery takes 40% commission on sales.",
+      "url": "https://atlanticgallery.org/forms-and-fragments-open-call/",
+      "location": "Online",
+      "prize": "Group exhibition in Chelsea, NYC",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Patricia Miranda, artist and curator"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/atlanticgallery/1st-annual-online-juried-competition-forms-and-fragments/",
+      "requirements": "1–8 images",
+      "ai": "Not accepted",
+      "resultsDate": "September 25, 2026",
+      "slug": "forms-and-fragments-atlantic-gallery",
+      "orgInTitle": false,
+      "summary": "Chelsea co-op's first online juried competition. Photography accepted; prize winners join the gallery's December group show.",
+      "verifyNote": "2026-08-09 sweep add. Deadline 30 August 2026 confirmed on the organiser's own page atlanticgallery.org/forms-and-fragments-open-call/ and on the org-authored EntryThingy prospectus. Fee ladder, media list, commission and awards come from the EntryThingy prospectus (the org page carries only theme, dates and juror bio): '$30.00 for up to 3 entries and $10.00 for up to 5 more entries. Multiple entries from the same artist must be submitted at the same time'; the Accepted Media block names photography explicitly. AI recorded as Not accepted from the CATEGORIES line, 'Traditional printmaking (no digital/giclee prints of original or AI generated artwork.)', repeated in the Accepted Media block. EXHIBITION-DATE CONFLICT, unresolved: the org page header says 'Exhibition Dates: October 1st, 2026 – November 11th, 2026' while the prospectus body says twice 'Exhibition closes November 12, 2026' and EntryThingy's structured Show closes field is Nov 12 — stored the 12th (two org-authored statements plus the structured field against one header line). resultsDate from EntryThingy's structured Jury Decision, September 25 2026; the prospectus prose separately says accepted artwork is posted 'week of September 21st', which contains the 25th. Note the show itself is ONLINE — the physical component is the prize (group show at the Chelsea gallery, Dec 1-19 2026), not the exhibition. No Instagram handle appears anywhere on atlanticgallery.org, so the field is intentionally absent. 2026-08-09 08:33 editor: KEPT with 1 fix. location changed from 'New York, NY, USA' to 'Online' — the exhibition itself is online and open to any artist 18+ worldwide, EntryThingy's own Location field reads 'Online', and the title is '1st Annual Online Juried Competition'. This matches how the directory already files the other 81 online exhibitions run by physical galleries (NY Center for Photographic Arts MONOCHROME, Cape Cod Art Center, Blue Sky Gallery, San Fernando Valley Arts & Cultural Center are all stored 'Online'). The Chelsea address is carried by prize and description, where it belongs — the physical December group show is the AWARD, not the exhibition. Re-verified at source this pass: the $30/3 + $10/5-more ladder, the 40% commission, 'Open to all artists at least 18 yrs. old', structured Submission Deadline August 30 2026 (the Aug 31 06:59 header chip is UTC), Jury Decision September 25 2026, Show closes November 12 2026, and the CATEGORIES line naming Photography. NO HIDDEN COST: the full prospectus carries no hanging fee, membership requirement or if-selected charge for the December show. ai 'Not accepted' KEPT — the clause is 'Traditional printmaking (no digital/giclee prints of original or AI generated artwork.)', mirrored in the Accepted Media 'prints' item; it is genuinely ambiguous whether the AI bar is scoped to reproductions or general, and the user-protective reading is the one stored. Do not re-flip without a clearer statement from the gallery. instagram intentionally absent: no instagram.com link exists on atlanticgallery.org's home page or the call page.",
+      "dateAdded": "2026-08-09T07:19:15Z"
+    },
+    {
+      "title": "Jazz Got Loose at The Gallery at the Attucks",
+      "org": "Norfolk Arts",
+      "deadline": "2026-09-10",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "Norfolk Arts, the City of Norfolk's public arts agency, is filling the next six-month rotation at The Gallery at the Attucks, inside the historic Attucks Theatre in downtown Norfolk, Virginia — a 1919 building financed, designed and built by African Americans and one of the oldest surviving theatres of its kind in the United States. Jazz Got Loose treats jazz not only as a musical form but as a cultural movement rooted in New Orleans' Black communities and defined by freedom, resistance, identity and transformation. The call seeks work exploring liberation, resilience, social change, individuality and the courage to push against convention; politically charged, narrative-driven and culturally critical work is welcome, and Black artists and artists whose work reflects the cultural legacy of the Attucks are especially encouraged to apply. Delegate Jackie Hope Glass will jury the exhibition and select up to 50 original works. Any 2-D or relief visual medium is eligible, so photography qualifies, provided pieces do not exceed 50 pounds and arrive exhibition-ready with secure hanging hardware; video and digital work must come with its own display equipment. Artists must be 18 or over with a connection to Hampton Roads, and submit up to three images with title, medium, dimensions, year and a brief description of each work, a bio of up to 250 words and a statement of up to 300 words. There is no entry fee. Work may be offered for sale or marked not for sale, sales enquiries go straight to the artist, and Norfolk Arts takes no commission. The exhibition runs 29 October 2026 to 10 April 2027; artists deliver and collect their own work.",
+      "url": "https://norfolkarts.net/call-for-artists-jazz-got-loose/",
+      "instagram": "@norfolk_arts",
+      "location": "Norfolk, VA, USA",
+      "prize": "Six-month exhibition at the Attucks Theatre",
+      "eligibility": [
+        "18-plus",
+        "virginia"
+      ],
+      "jury": [
+        "Delegate Jackie Hope Glass"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/calls/public/14193/",
+      "requirements": "Up to 3 images",
+      "slug": "jazz-got-loose-at-the-gallery-at-the-attucks-norfolk-arts",
+      "orgInTitle": false,
+      "summary": "Free call from Norfolk's city arts agency: up to 50 works on jazz and liberation, six months at the historic Attucks Theatre.",
+      "verifyNote": "2026-08-09 sweep add. Confirmed on the organiser's own site — norfolkarts.net/call-for-artists-jazz-got-loose/ states the juror (Delegate Jackie Hope Glass), the up-to-50-works selection, the 18+/Hampton Roads eligibility and 'submit up to 3 jpeg images by September 10, 2026'. Fee, media rule, commission and exhibition run come from the org-authored EntryThingy prospectus (call 14193): 'Entry Fee: Free Entry', 'Contemporary works in any 2D or relief visual medium not exceeding 50 lbs', 'No commission will be taken', Show opens Oct 29 2026 / closes Apr 10 2027. TWO INTERNAL ERRORS IN THE PROSPECTUS, do not inherit them: its body line reads 'Deadline to Apply: September 10, 2025' (the structured Submission Deadline field and the org post both say 2026), and its Calendar block says 'Notification of Acceptance: Early September 2026' — BEFORE the September 10 deadline. resultsDate is therefore intentionally absent rather than stored from a self-contradicting line. Eligibility virginia records the Hampton Roads connection, which the org states as a hard bar, not a preference. No AI policy stated on either surface.",
+      "dateAdded": "2026-08-09T07:19:15Z"
+    },
+    {
+      "title": "River Margin — Issue 1",
+      "org": "River Margin",
+      "deadline": "2026-11-01",
+      "fee": "Free",
+      "category": "zine",
+      "description": "River Margin is a new Australian and international literary journal founded in 2026 by the Melbourne-based visual artist, musician and writer Lana Eileen, and it is assembling its first issue. The focus is ecology, botany and wilderness: the journal was created as a space for overlooked aspects of the natural world — tiny wild-growing plants, threatened rivers, things hidden in the undergrowth. The name refers to the riparian zone, the natural border between water and land, and the editorial position follows from it: River Margin is a space where the liminal, the edge-dwelling, the peripheral and the unnoticed can find a voice. Photographers can submit up to seven images that relate in some way to ecology, botany, the environment, conservation or wilderness areas — rivers and bodies of water, insects, wildlife, fungi, plants, forests, mountains. Both digital and film photography are accepted; AI-generated work is not, and for visual art more broadly the journal excludes digital art as well. Files go by a file-sharing service such as WeTransfer to the journal's submissions address. Submissions are open worldwide and free, and the editors aim to respond within two weeks. The journal is candid that as a new publication compiling its first issue it is not in a position to pay contributors, so the return is publication in Issue 1 alongside poetry, essays, short fiction and creative non-fiction on the same themes. Submissions for the first issue close on 1 November 2026.",
+      "url": "https://river-margin.com/guidelines",
+      "instagram": "@river_margin",
+      "location": "Online",
+      "prize": "Publication in Issue 1",
+      "eligibility": [],
+      "submitVia": "Email via file transfer",
+      "requirements": "Up to 7 images",
+      "ai": "Not accepted",
+      "slug": "river-margin-issue-1",
+      "orgInTitle": true,
+      "summary": "New Australian ecology and botany journal seeking photography for its first issue. Free, worldwide, no AI, publication only.",
+      "verifyNote": "2026-08-09 sweep add, surfaced via #opencallforphotographers and verified on the journal's own site. river-margin.com/guidelines states the media list ('poetry, essays, creative non-fiction, short fiction, photography and visual art'), the photography brief ('Submit up to seven files via a file sharing service (eg. WeTransfer) sent to our email. Digital and film photography accepted'), the AI exclusion ('for visual art, we accept everything except digital art and AI-generated art'), international eligibility, the two-week response target, and 'Submissions close for our first issue on 1st November 2026'. Unpaid is the journal's own statement: 'At this time, as a new publication compiling our first issue, we are not in a position to pay contributors.' The homepage confirms the org is real and locates it: founded 2026 by Melbourne-based artist Lana Eileen. submitUrl intentionally absent — the only submission route is an email address, and org emails belong in contacts.json, never data.json. HOST NOTE: river-margin.com (hyphenated) is the live site and 200s; rivermargin.com does not resolve, even though the journal's own contact address uses that spelling.",
+      "dateAdded": "2026-08-09T07:19:15Z"
+    },
+    {
+      "title": "Explorations: How We See Things",
+      "org": "The Dellora A. Norris Cultural Arts Center",
+      "deadline": "2026-11-16",
+      "fee": "$35 (3 works)",
+      "category": "exhibition",
+      "description": "The Norris Gallery's 2027 juried winter exhibition at the Dellora A. Norris Cultural Arts Center in St. Charles, Illinois. Explorations has no fixed subject: entries should reflect what engages the artist and inspires their exploration — of subject matter, of art processes, of media, or of point of view. Artists may submit up to three original works in any 2D or 3D medium or art process, which places photography squarely within scope; the only medium bar is on reproductions, so no giclées, and no work previously exhibited in the Norris galleries. The entry fee is $35 and is non-refundable. Monetary awards and honourable mentions are presented at the artists' reception. Accepted work cannot be shipped: it must be delivered in person by the artist or a representative on 4 January 2027 and collected on 15 February, which in practice limits the show to artists within reach of the Fox Valley. All accepted work must be for sale and must remain on display for the full run, with the centre retaining 30% commission on anything sold; accepted work may also be posted on the Norris Galleries website as well as hung in the gallery. Entries close on Monday 16 November 2026, artists hear back by Friday 11 December, and the exhibition runs 9 January to 14 February 2027. The Norris is a long-running community arts centre near Chicago with a performance hall and a gallery programme, and it runs a second annual juried show, Watercolor, on a separate cycle.",
+      "url": "https://app.entrythingy.com/norrisculturalarts/explorations-how-we-see-things/",
+      "location": "St. Charles, IL, USA",
+      "prize": "Cash awards + Exhibition",
+      "eligibility": [
+        "chicago-area"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/norrisculturalarts/explorations-how-we-see-things/",
+      "requirements": "Up to 3 images",
+      "resultsDate": "December 11, 2026",
+      "slug": "explorations-how-we-see-things-norris-cultural-arts-center",
+      "orgInTitle": false,
+      "summary": "Norris Gallery's 2027 winter juried show, any 2D or 3D medium. $35 for three works, cash awards, six-week Illinois exhibition.",
+      "verifyNote": "2026-08-09 sweep add. Details from the org-authored EntryThingy prospectus: deadline November 16 2026, exhibition Jan 9 - Feb 14 2027, 'The $35.00 entry fee is non-refundable', 'up to 3 original artwork in any 2D or 3D medium or art process', 'Monetary and honorable mention awards will be presented during the artists reception', 'All work MUST be for sale. Norris Galleries will collect 30% commission'. MEDIA TEST: the call enumerates no medium list at all and bars only reproductions/giclees, so photography is in scope by the no-enumeration rule — this is NOT a case of photography being named, re-check if the org publishes a media list. AWARD AMOUNTS ARE NOT PUBLISHED: the prospectus says 'monetary' with no figure, so prize stays the unquantified 'Cash awards + Exhibition'. url points at norrisculturalarts.com/gallery/, the centre's own calls page — as of this run that page carries only the sibling call Vicinity 2026 (Sep 11, $30 cash-or-check paid in person at drop-off, physical delivery only, deliberately NOT listed) and the site's News feed is stale to 2025. Re-check whether the org page picks up Explorations before the deadline. No AI policy and no juror named. 2026-08-09 08:33 editor: KEPT with 3 fixes, all from a re-read of the same prospectus. (1) resultsDate ADDED, December 11 2026 — the finder left it absent but the Instructions block states 'Artists will be notified of the status of their entries by Friday, December 11', and December 11 2026 is a Friday, so the line is internally consistent and datable. (2) eligibility chicago-area ADDED: 'All work must be delivered in person by the artist or their representative. Work cannot be shipped.' No-shipping is categorical, so the call is effectively closed to anyone who cannot reach 1040 Dunham Rd, St. Charles IL on 4 January 2027. A proxy is allowed, so this is a delivery bar rather than a residency rule — the facet records reach, not address; same standard as the oregon facet on GALA Petite Creations. St. Charles sits in the Chicago metro, and the slug already exists (Perspective Gallery, Evanston). The description now carries the constraint too; it did not before, which was the material omission on a $35 call. (3) url MOVED from norrisculturalarts.com/gallery/ to the EntryThingy prospectus. The org page does NOT carry Explorations: as of this pass /gallery/ is given over entirely to 'Call for Art: Vicinity 2026' — a different show with a different fee ($30 cash or check at in-person drop-off), a different deadline (Sep 11) and different judges (Louise Grissinger, Fatima Figueiredo), and Vicinity is deliberately NOT listed here. Sending a reader there would show them the wrong call. RE-CHECK AFTER SEPTEMBER 11: once Vicinity closes the Norris will likely rotate Explorations onto /gallery/, and url should move back to the org domain. MEDIA TEST re-confirmed and it holds: the structured Accepted Media block reads 'Work is open to all 2D and 3D media and content', the call enumerates no medium list, and the only exclusion is reproductions/giclees — the sibling Vicinity page states the house rule outright as 'Artwork may be in ANY MEDIA'. Photography is in scope; a photographic print is an original, not a reproduction. Also re-confirmed: $35 for up to 3 pieces, 30% commission ('Artist will receive 70% of the sale price'), 'Monetary and honorable mention awards' with NO figure published, and the structured deadline November 16 2026 (the Nov 17 07:59 header chip is UTC).",
+      "dateAdded": "2026-08-09T07:19:15Z"
+    },
+    {
+      "title": "Building Blocks: What Are We Building With?",
+      "org": "St. Charles Arts Council",
+      "deadline": "2026-08-11",
+      "fee": "$35 ($20 members)",
+      "category": "exhibition",
+      "description": "A blind-juried open call from the St. Charles Arts Council for an exhibition at its gallery in historic downtown St. Charles, Illinois. The premise is elemental: every creation begins with a single component, whether a stroke of paint, a block of wood or a spark of imagination, and the council asks how the individual components an artist chooses dictate the meaning of the final structure — for the artwork, for a life, or for a community. All art mediums are accepted and three-dimensional and assemblage work is actively encouraged, which leaves photography fully eligible. Artists may enter one or two pieces; the fee is $35 for non-members and $20 for council members, chosen from a tiered drop-down at entry. Work must be original, created within the last seven years, and never previously shown in a St. Charles Arts Council exhibit, and all entries must be for sale. Awards are presented at the opening reception, timed so that every participating artist can arrive: $150 for Best in Show, $75 for second place, $50 for third and further honourable mentions at the judge's discretion. Entries close 11 August 2026; work is dropped off on 31 August, the exhibition runs from early September to 25 October 2026 with an opening reception on the evening of 10 September, and pick-up is 26 October. The council notes it has no storage space, so artists unable to attend drop-off or collection must send someone in their place.",
+      "url": "https://www.stcharlesartscouncil.org/gallery-2",
+      "instagram": "@stcharlesartscouncil",
+      "location": "St. Charles, IL, USA",
+      "prize": "$150 / $75 / $50 + Exhibition",
+      "eligibility": [
+        "chicago-area"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/stcharlesartscouncil/building-blocks/",
+      "requirements": "1–2 images",
+      "slug": "building-blocks-what-are-we-building-with-st-charles-arts-council",
+      "orgInTitle": false,
+      "summary": "Blind-juried all-media show in downtown St. Charles, IL. $150 Best in Show; $35 entry, $20 for council members.",
+      "verifyNote": "2026-08-09 sweep add — CLOSES IN TWO DAYS, verify before the next build. Every field comes from the org-authored EntryThingy prospectus (stcharlesartscouncil/building-blocks): 'All art mediums are excepted [sic], 3D art encouraged including assemblage art'; 'ENTRY FEES: $35 Non-Members & $20 SCAC Members'; 'AWARDS: Best in Show: $150, 2nd Place: $75, 3rd Place: $50, Honorable Mentions'; structured Submission Deadline August 11 2026, Show Sep 3 - Oct 25 2026. Jury intentionally absent: the prospectus says outright 'judge to be named at a later date' — re-read it rather than storing a TBA. url is the council homepage because stcharlesartscouncil.org does NOT carry this call anywhere: its Squarespace build shows only the Andria Burchett and 'Taste of Summer' exhibit posters, and a grep of the rendered page for 'building blocks' returns zero. The org is otherwise confirmed real on its own domain and Instagram. No AI policy stated. 2026-08-09 08:33 editor: KEPT with 2 fixes and one correction to this note. (1) url MOVED from the homepage to stcharlesartscouncil.org/gallery-2 — the finder's claim that the org site does not carry this call is WRONG. The site has a dedicated 'Calls for Art' page at /gallery-2 which carries Building Blocks in full ('Submissions Due: August 11th, midnight', drop-off August 31st 2pm-6pm, reception September 10th 5pm-7pm, pick-up October 26th 2pm-6pm) with an 'Apply Now' button through to EntryThingy; the homepage additionally carries the 'Building Blocks Call for Art' poster and lists the show in its 2026 gallery calendar. The earlier grep missed it because the nav label is 'Calls for Art' on a Squarespace path of /gallery-2, and the homepage hits span a newline. (2) eligibility chicago-area ADDED: the prospectus lists 'You must be able to attend pickup and dropoff dates as scheduled' under its own heading ELIGIBILITY REQUIREMENTS, and the org itself frames it that way. A proxy is allowed ('If you're unable to attend please make arrangements for someone to attend in your place'), so the facet records reach to downtown St. Charles IL, not an address bar. EXHIBITION RUN DATE IS CONTESTED ACROSS THREE ORG-AUTHORED SURFACES — EntryThingy structured says Sep 3, /gallery-2 says 'September 4th - October 25th', the homepage calendar says 'September 2, 2026, through October 26, 2026'. All three agree on the Oct 25/26 close, so the description now says 'early September to 25 October' rather than picking a start date; nothing date-bearing is stored in a field. Re-confirmed at source: deadline August 11 2026 midnight (the Aug 12 06:59 chip is UTC), $35 non-members / $20 SCAC members, awards $150/$75/$50 plus honourable mentions, 1-2 pieces, 'All art mediums are excepted [sic]' with no medium list so photography is in scope, and 'judge to be named at a later date' so jury stays absent. instagram @stcharlesartscouncil confirmed on the org domain.",
+      "dateAdded": "2026-08-09T07:19:15Z"
+    },
+    {
+      "title": "Petite Creations",
+      "org": "Gresham Area League for the Arts",
+      "deadline": "2026-10-28",
+      "fee": "$30 (3 works)",
+      "category": "exhibition",
+      "description": "The Gresham Area League for the Arts' winter exhibition, hung in the Gresham Council Chamber Visual Arts Gallery in Oregon over the peak holiday season and mirrored in GALA's online galleries. The brief is scale: two-dimensional work must measure no more than 9 by 9 inches including the frame and no less than 5 by 5, and three-dimensional work must fit inside a 9-inch cube. Within that constraint the league is open across media and names photography directly alongside painting, drawing, mixed media, digital art, sculpture, pottery, fibre art and other 3-D work. Artists may enter up to three pieces for a single $30 submission fee, and GALA retains 20% commission on sales. Preference goes to artists in the greater Gresham area, though the league may widen the pool depending on the number of submissions; in practice the binding constraint is that artists must live within 30 miles of Gresham, because accepted work has to be delivered to the gallery in person. Work featuring nudity or sexual content is not accepted. Entries close 28 October 2026 and the exhibition runs 23 November 2026 to 8 January 2027.",
+      "url": "https://galaarts.org/",
+      "instagram": "@gala.oregon",
+      "location": "Gresham, OR, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "oregon"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/galaarts/petite-creations/",
+      "requirements": "Up to 3 images",
+      "slug": "petite-creations-gresham-area-league-for-the-arts",
+      "orgInTitle": false,
+      "summary": "Small-format winter show in Gresham, Oregon. Photography named; $30 for three works, 9-inch maximum, local delivery required.",
+      "verifyNote": "2026-08-09 sweep add. All fields from the org-authored EntryThingy prospectus (galaarts/petite-creations): 'GALA is looking for submissions across all media painting, drawing, mixed media, photography, digital art, sculpture, pottery, fiber art, and 3-D works' — photography is NAMED, not inferred; 'a $30.00 submission fee allows for the entry of up to three original artworks'; 'GALA retains a 20% commission on all sales'; structured deadline October 28 2026, show Nov 23 2026 - Jan 8 2027. NO PRIZE IS PUBLISHED — the call names no award of any kind, so prize is the bare 'Exhibition'; do not upgrade it. eligibility oregon records the hard bar the prospectus states twice: 'artist must reside within 30 miles of Gresham, Oregon for in-person delivery of accepted works'. The separate 'Preference will be given to Greater Gresham Area artists of all ages' line is a softer preference layered on top of that delivery rule — the 30-mile radius is the one that actually excludes. No AI policy stated. galaarts.org confirms the league is real and supplied the Instagram handle; the call itself is not on the org site, so url is the homepage.",
+      "dateAdded": "2026-08-09T07:19:15Z"
     }
   ]
 }
