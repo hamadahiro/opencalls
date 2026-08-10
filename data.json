@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-10T06:00:00Z",
+  "lastUpdated": "2026-08-10T11:20:51Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -40805,6 +40805,56 @@
       "resultsDate": null,
       "verifyNote": "2026-08-10 08:00 sweep add. Discovered via Colossal's August 2026 round-up, verified on skogart.org's own post (published Jul 14). DEADLINE, verbatim: 'Timeline | Application deadline: 16 August 2026 | Notification of results: All applicants will be notified by email once the selection process is complete. | Selected exhibitions will take place at SKOG during 2027.' PHOTOGRAPHY IS NAMED BY THE ORGANISER, so this is not a generic all-media call: 'SKOG is a cross-disciplinary exhibition space dedicated to progressive contemporary art, photography, and collectible objects that push boundaries.' WHO CAN APPLY, verbatim: 'This open call welcomes artists from around the world at all career stages. We accept proposals for both solo and group exhibitions. Applications are free of charge.' plus 'Please note that many of our exhibitions are developed collaboratively through the curatorial process. Selected artists may therefore be invited to exhibit alongside other artists as part of a curated group exhibition.' FEE is Free on the organiser's own wording, twice: 'Applications are free of charge' and 'There is no fee to apply for SKOG Open Call... There is no application fee for the Open Call itself.' COSTS - checked specifically for a pay-to-exhibit tell and there is none; SKOG states 'SKOG is applying for grants to cover transport costs for the artists and artist fees. However, this is subject to support from external funds. SKOG is most likely not able to cover artists' travel or accommodation costs in Oslo. If artists are shortlisted for the open call exhibition, SKOG will contact the artists to align on costs before taking the final decision.' That is a disclosure that the gallery may not fund travel, not a charge for wall space, so this is not a [[reference_standing_skip_list]] wall-rent case; the description carries it verbatim in substance so the reader is not surprised. SUBMISSION: 'Submit your application through our application form' links to the Google Form stored in submitUrl; requirements are a portfolio, CV, project description, materials and dimensions - no image count is given, so `requirements` is omitted rather than invented ([[feedback_requirements_short]]). resultsDate null - the org gives no notification date, only 'once the selection process is complete'. jury [] - 'Applications are reviewed by SKOG's curatorial team', a descriptor with no names. ai null. Address for the location field from the page footer: 'SKOG Art Space Schweigaardsgate 94, 0656 Oslo'. Dup check clean: no data.json row matches SKOG on title, org or url. 2026-08-10 08:28 EDITOR PASS: KEPT, no changes. skogart.org post re-read in full (plain curl, 200). Deadline verbatim: 'Timeline Application deadline: 16 August 2026 | Notification of results: All applicants will be notified by email once the selection process is complete. | Selected exhibitions will take place at SKOG during 2027.' Six days out, so it stays. Photography is named by the organiser, not inferred: 'SKOG is a cross-disciplinary exhibition space dedicated to progressive contemporary art, photography, and collectible objects that push boundaries.' FEE re-confirmed free on the org's own wording twice - 'Applications are free of charge' and 'There is no fee to apply for SKOG Open Call' - and the pay-to-exhibit test was re-run specifically: the only cost language is 'SKOG is applying for grants to cover transport costs for the artists and artist fees. However, this is subject to support from external funds. SKOG is most likely not able to cover artists' travel or accommodation costs in Oslo. If artists are shortlisted for the open call exhibition, SKOG will contact the artists to align on costs before taking the final decision.' That discloses what the gallery may NOT fund; there is no wall rent, no hanging fee and no participation charge, so this is not a [[reference_standing_skip_list]] case, and the description carries the disclosure so the reader is not surprised. Legitimacy re-checked on the site itself: a real Oslo space with Exhibitions, Past Exhibitions, Team, Artists and Media Coverage sections and a street address in the footer, 'SKOG Art Space Schweigaardsgate 94, 0656 Oslo', matching the stored location. submitUrl points at the same Google Form id the page links ('...1FAIpQLSfNBtp7ui2ZAn1_jFF...'); it returns 401 to an anonymous curl, which is the normal Google Forms response and not a closure ([[reference_formsgle_firebase_proxy]]). jury stays [] - 'Applications are reviewed by SKOG's curatorial team', a descriptor with no names. resultsDate stays null - no date is published. Ceiling height '2750' re-confirmed on the page. 2026-08-10 10:00 verify: REQUIREMENTS GAP CLOSED as 'Portfolio (PDF or link)', and note the key was MISSING FROM THE ENTRY altogether rather than empty, so no value check could ever have seen it. Filled from the organiser's own What to Submit block, read verbatim this run: 'Portfolio - a selection of recent work (PDF or link) / CV ... / Project description ... / Material ... / Dimensions'. NO IMAGE COUNT EXISTS ANYWHERE on the page, so the value records the only spec SKOG publishes - the format - and buckets to /requirements/portfolio/, the same treatment Medium Gallery's 'Portfolio (1 PDF)' got on 08-09. Do not re-empty it and do not invent a number. Everything else re-read and unchanged: 'Application deadline: 16 August 2026' with 'Notification of results: All applicants will be notified by email once the selection process is complete', and free entry stated twice ('Applications are free of charge' / 'There is no fee to apply for SKOG Open Call'). SIX DAYS TO CLOSE. Org email harvested to the private contacts store.",
       "eligibility": []
+    },
+    {
+      "title": "(Not) Food Porn — From Feed to Culture",
+      "org": "Der Greif",
+      "deadline": "2026-08-31",
+      "fee": "€10 (waivers available)",
+      "category": "photography",
+      "description": "Open call from Der Greif, the Munich non-profit for contemporary photography, timed to the International Day of Awareness of Food Loss and Waste on 29 September. The brief asks lens-based artists to work critically at the intersection of food imagery, consumption and culture: highly stylised \"food porn\" has reshaped how we perceive, desire and celebrate what we eat, and opposing feeds lean into raw, unedited aesthetics, while behind both sits massive global food waste and a rapidly shifting relationship to sustenance. Submissions are one project of up to 10 images, cohesive and not previously featured by Der Greif. Selected work is presented in an online exhibition in Der Greif's Pulse section, and selected artists are invited into a small-group online roundtable critique facilitated by Der Greif staff as part of its Face-to-Face programme, with visibility across Der Greif's international community and a possible invitation to submit a portfolio to Der Greif Studio for sales and commissions. Selection is judged on artistic quality, conceptual clarity, openness to dialogue and process, and engagement with themes of identity and community. Der Greif describes this as a free submission with an optional €5 or €10 donation, but the Picter entry page carries a flat €10 fee; artists who cannot contribute financially can email the organiser for a 50% or 100% discount code. Open to photographers and videographers internationally, particularly emerging and mid-career artists, with no age or regional restriction.",
+      "url": "https://dergreif.org/open-call",
+      "location": "Online",
+      "instagram": "@der_greif",
+      "prize": "Online exhibition",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/der-greif-not-food-porn",
+      "requirements": "Up to 10 images",
+      "resultsDate": null,
+      "ai": null,
+      "slug": "not-food-porn-from-feed-to-culture-der-greif",
+      "orgInTitle": false,
+      "summary": "Der Greif call on food imagery, desire and waste, timed to the UN food-loss day. Online exhibition on Pulse plus a peer critique.",
+      "dateAdded": "2026-08-10T11:20:51Z"
+    },
+    {
+      "title": "34th Tewksbury Juried Art Show",
+      "org": "Tewksbury Historical Society",
+      "deadline": "2026-08-17",
+      "fee": "$35",
+      "category": "exhibition",
+      "description": "The Tewksbury Historical Society's juried art show returns for a 34th edition at the Zion Lutheran Christian Education Building in Oldwick, New Jersey, from 3 to 10 October 2026. Any two-dimensional media may be entered, photography explicitly included, with only giclees excluded; work on paper must be matted, framed, glazed and wired ready to hang. Each artist may enter up to five juried works, of which only one may reach 40 inches in any direction including frame. One $35 entry fee covers the juried entry and also opens the show's Small Works showcase (pieces up to 14 x 18 inches, priced at $500 or less) and its Portfolio showcase (up to ten works shown in a floor-standing print rack) at no extra charge. Six judging categories carry the awards: Animal Kingdom, Abstract/Non-Objective, Natural Environment, Figurative, Still Life/Florals and Built Environment. Show awards are $400 for Best in Show, $300 for Best of Tewksbury (a recognisable local building, site or scene) and the $200 Marion Katnack award for a Tewksbury landscape, with $125, $75 and $25 plus honourable mentions in each category. Artists are notified on 21 August, deliver work in person on 27 or 28 September, and collect unsold work on 10 October, with $25 a day charged on anything left unclaimed; the Society retains 30% commission on sales.",
+      "url": "https://www.tewksburyhistory.net/tewksbury-art-show-artist/",
+      "location": "Oldwick, NJ, USA",
+      "instagram": "@tewksburynjhistory",
+      "prize": "$400 Best in Show + category awards",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Helen Marie Farrant, artist and ceramic sculptor"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/tewksburyhistory/34th-tewksbury-juried-showcase-tewksbury-historical-society/",
+      "requirements": "Up to 5 works",
+      "resultsDate": "August 21, 2026",
+      "ai": null,
+      "slug": "34th-tewksbury-juried-art-show-tewksbury-historical-society",
+      "orgInTitle": false,
+      "summary": "A 34th-edition New Jersey juried show, photography a named medium. One $35 fee covers juried, small works and portfolio entries.",
+      "dateAdded": "2026-08-10T11:20:51Z"
     }
   ]
 }
