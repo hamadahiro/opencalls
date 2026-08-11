@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-11T11:28:29Z",
+  "lastUpdated": "2026-08-11T15:24:43Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -41229,6 +41229,70 @@
       "summary": "Free, no-theme call for the 23rd issue of an Estonian dark/surreal art zine. Up to 6 works by email, no AI.",
       "dateAdded": "2026-08-11T11:23:34Z",
       "verifyNote": "2026-08-11 12:28 editor: KEPT. semioculus.com/submissionguidelines/ sources every stored field itself — \"OPEN CALL : SEMIOCULUS XXIII / Submission deadline 16.08.2026\", \"We will only take work submitted via email into consideration\", submissions@semioculus.com, \"Please do not submit more than 6 pieces of visual art at a time\" (= requirements), FAQ \"Is there an application submission fee?\" -> \"It is totally free to apply!\" (= fee Free), \"we only accept submissions from artists aged 18 and up\" (= 18-plus), \"we do not accept AI-generated art or fan art of any kind\" (= ai Not accepted), \"NOT able to offer artists financial compensation\" (so prize is Publication, no cash), \"The original artist retains all the rights\", and selection contacted \"within a period of 1 - 2 weeks after the submission deadline\". Home page independently repeats \"[submissions open] Semioculus XXIII Deadline 16.08.2026\". TWO EDITOR FIXES: the description said the zine was founded \"by semioticians\" and that this edition has \"no theme\" — /about/ says only \"originally founded in Tartu, Estonia\" and \"grown from a hobby project started by a group of college course mates\" (semiotician is an inference from the name plus Tartu, not on any page), and NO page names a theme for XXIII, so the claim was rewritten as what the guidelines actually do (set no theme beyond the aesthetic). NOTE /about-us/ 404s; the live path is /about/. No theme is named anywhere, so a future issue gaining one will not read as drift here."
+    },
+    {
+      "title": "The Fifty: 50 Billboards 50 States",
+      "org": "VSCO",
+      "deadline": "2026-09-10",
+      "fee": "Free",
+      "category": "photography",
+      "description": "Nationwide open call selecting fifty US-based photographers — one from every state — to have their work printed on billboards across the country, licensed and paid for by VSCO. No entry fee. Open to photographers aged 18 and over residing in the United States. Entries are made by posting work to a VSCO account tagged #TheFifty plus the hashtag for the photographer's state (e.g. #OHIO), with a short caption about the image or series and the state added to the profile bio; 3–5 images from a cohesive series are recommended. VSCO's curation team reviews every submission and notifies selected photographers on a rolling basis, with announcements published on the VSCO journal. Selected work may also be carried into editorial features, curation and further licensing opportunities. Billboard formats vary by state, and selected work may instead be shown through alternative large-format displays, posters or public installations. Photographs including recognisable people require a model release, and selected photographers must supply a high-resolution file suitable for large-format printing.",
+      "url": "https://vsco.co/vsco/journal/open-call-50-billboards-50-states",
+      "location": "San Francisco, CA, USA",
+      "prize": "Billboard exhibition + paid licensing",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://vsco.co/vsco/journal/open-call-50-billboards-50-states",
+      "slug": "the-fifty-50-billboards-50-states-vsco",
+      "orgInTitle": false,
+      "requirements": "3–5 images recommended",
+      "summary": "Fifty US photographers, one per state, get their work on a billboard — licensed and paid by VSCO. Free to enter.",
+      "instagram": "@vsco",
+      "jury": [
+        "VSCO Curation Team"
+      ],
+      "prose": [
+        "The Fifty is VSCO's nationwide recognition programme for photographers working in the United States: one photographer from each of the fifty states is selected to have an image printed on a billboard in their home state. The framing is deliberately anti-metropolitan — the pitch is that you can build a photographic career where you already live, documenting your own community.",
+        "There is no entry fee and no separate application portal. Photographers submit by posting work to a VSCO account with the hashtag #TheFifty and the hashtag for their state, adding a short caption about the image or series and putting their state in their profile bio. VSCO recommends three to five images, particularly if they form a cohesive series. A free VSCO account is sufficient to enter.",
+        "Beyond the billboard, VSCO states that selected work may be carried into editorial features, curation and licensing opportunities, and that selected photographers are licensed and compensated for the use of their images. Anyone selected will be asked for a high-resolution file suitable for large-format printing, and images containing recognisable people require a model release. VSCO's fine print adds two qualifications: billboard formats vary by state, so selected work may instead appear as an alternative large-format display, poster or public installation, and submitting grants VSCO the right to review the work and, if selected, use it for the campaign and on social media, with a release or licence agreement possible on request.",
+        "The call is open to photographers aged 18 and over residing in the United States; VSCO says international opportunities are planned separately. The deadline is September 10, 2026. The curation team reviews every submission and notifies selected photographers on a rolling basis rather than on a single announcement date, with selections also published on the VSCO journal."
+      ],
+      "dateAdded": "2026-08-11T15:24:43Z",
+      "verifyNote": "2026-08-11 16:27 editor: KEPT. vsco.co/vsco/journal/open-call-50-billboards-50-states 403s to curl; jina reads it. The page sources every stored field itself — \"VSCO is selecting fifty photographers, one from every state, to have their work featured on billboards across the country, licensed, and compensated by VSCO\" (= prize), \"No fee to submit.\" (= fee Free), \"This call is open to photographers 18+ residing in the United States\" (= 18-plus + united-states; \"Based outside of the US? ... we'll have other opportunities\" confirms the bar), \"Deadline: September 10, 2026\", the #TheFifty + state-hashtag + bio mechanic, \"We recommend 3-5 images\" (= requirements), model release, high-res file on selection, and \"VSCO's Curation Team will review every submission and notify selected photographers on a rolling basis\" (= jury, and why there is no resultsDate). HIDDEN-COST CHECK PASSED: entry needs a VSCO account, and /subscribe/plans has a free STARTER tier whose own FAQ says it \"let's you explore the editor, build your profile, and find your place in the VSCO community\" — posting, i.e. entering, does not need a paid plan. TWO EDITOR FIXES from the page's own fine print, which the entry had skipped: \"Billboard formats may vary by state - selected photographers may be featured through alternative large-format displays, posters, or public installations\" (so \"printed on billboards\" alone overstated it), and \"By submitting your images, you grant us the right to review, and if selected, use the content for this campaign and social media\" plus a possible release/licence agreement — both now in description/prose. location San Francisco is VSCO's own careers page (\"Our San Francisco office serves as a shared hub\"), not an inference. No dup: \"vsco\"/\"fifty\" return only this row; the 8 other billboard calls are SaveArtSpace and The Billboard Creative."
+    },
+    {
+      "title": "Photographer in Residence 2027",
+      "org": "Worthless Studios",
+      "deadline": "2026-09-30",
+      "fee": "Free",
+      "category": "residency",
+      "description": "One-month analog photography residency inside a 1973 Airstream trailer converted into a fully equipped black-and-white darkroom, parked at partner sites across the five boroughs of New York City. Seven artists are selected for 2027, one per month from April to October, each receiving 24/7 access to the Airstream darkroom for four weeks, a $1,500 artist stipend, free film, paper and chemistry, two free workshops on scanning and digital printing with Brooklyn PrintWorks, press packet materials and the option to host a public program. Host partners include Alice Austen House, Inspiration Point, The Green-Wood Cemetery, The Center for Arts and Advocacy, The Lower Eastside Girls Club and NYC Parks; residents may also propose their own site. Applicants need prior independent darkroom experience, must commit a minimum of 20 hours a week in the Airstream, and cannot be enrolled in — or about to enter — an art-related degree program. Applications are free and made through SlideRoom.",
+      "url": "https://www.worthlessstudios.org/photographer-in-residence",
+      "location": "New York, NY, USA",
+      "prize": "$1,500 stipend + darkroom, film and materials",
+      "eligibility": [
+        "analog-photography",
+        "united-states"
+      ],
+      "submitVia": "SlideRoom",
+      "submitUrl": "https://worthlessstudios.slideroom.com/",
+      "slug": "photographer-in-residence-2027-worthless-studios",
+      "orgInTitle": false,
+      "summary": "One-month analog residency in an Airstream darkroom across NYC. $1,500 stipend, free film and chemistry. No fee.",
+      "instagram": "@worthlessstudios",
+      "resultsDate": "December 2026",
+      "prose": [
+        "Worthless Studios' Photographer in Residence programme is built around a single object: a 1973 Airstream trailer restored and converted into a professional-grade black-and-white darkroom. Because the darkroom is mobile, each resident is embedded in a specific community or site for a month and makes work there with the processing equipment on hand, rather than shooting in one place and printing in another.",
+        "For 2027 seven artists are selected, one per month from April through October, each for a four-week residency in one of the five boroughs of New York City. Partner sites include Alice Austen House on Staten Island, Inspiration Point in the Bronx, The Green-Wood Cemetery and The Center for Arts and Advocacy in Brooklyn, The Lower Eastside Girls Club in Manhattan, and NYC Parks across all five boroughs. Applicants may also propose their own site, provided they can resolve permission and parking for the trailer.",
+        "Residents receive 24/7 access to the Airstream darkroom, a $1,500 artist stipend, darkroom chemistry, film and photo paper, two free workshops on scanning and digital printing run by Brooklyn PrintWorks, press packet materials, and the option to host a public program. The darkroom holds two enlargers (a Beseler 23II and an Omega type D) and film carriers for 35mm, 6x6, 6x7, 6x9 and 4x5; it is set up for black-and-white and alternative processes only, with no colour processing or printing. In residence, artists produce twenty images: ten original photographs and ten documenting their time with the Airstream.",
+        "Eligibility is aimed at artists who lack darkroom access or want to work close to a particular community or site. Prior independent darkroom experience is expected, and residents commit a minimum of twenty hours per week in the trailer. Applicants cannot be enrolled in an art-related degree program, nor planning to start one in the coming year. Applicants need not be based in New York, but Worthless Studios does not cover housing, travel or visas, and non-US citizens need valid US work authorisation at the time of the residency. Collaborative duos may apply, though the stipend and materials are shared.",
+        "Applications are free and open August 10 to September 30, 2026 via SlideRoom. Finalists are notified in October 2026 and interviewed virtually, with residents confirmed in December 2026."
+      ],
+      "dateAdded": "2026-08-11T15:24:43Z",
+      "verifyNote": "2026-08-11 16:27 editor: KEPT. Verified across THREE surfaces. /photographer-in-residence sources the dates and the package — \"August 10, 2026 - September 30, 2026: Open Call is live\", \"December 2026: Photographers in Residence Confirmed\" (= resultsDate), \"seven artists will participate in a one-month residency from April to October\", \"$1,500 artist stipend\", darkroom chemistry/film/paper, 2 Brooklyn PrintWorks workshops, press packet, public program, 24/7 access, and the six partner sites verbatim. /pir-faq alone sources the rest of the prose: \"a minimum of 20 hours/week in the Airstream\", the 20 deliverable images (10 original + 10 documenting), \"Do you accept collectives? Yes ... resources (stipend, free chemicals, etc) would be shared\", the art-degree bar, \"If you want to propose a different site to park the Airstream ... you can do so in your application\", \"No\" to colour processing, and the equipment list (Beseler 23II + Omega type D, carriers for 35mm/6x6/6x7/6x9/4x5). FEE SOURCED ON THE PORTAL, NOT THE ORG PAGE: neither the PIR page nor the FAQ names a fee; worthlessstudios.slideroom.com lists \"Photographer In Residence Open Call 2027 - Deadline: September 30, 2026 Fee (USD): $0.00\" (and an EN ESPANOL twin at $0.00), so fee Free is real. eligibility united-states kept on the FAQ's \"If you are a non-US citizen, you will need a valid work visa or residency status at the time of the residency\" plus no visa help — same shape as Loghaven, already stored as united-states. Not a dup of Brooklyn Darkroom's 2027 residency (different org, different deadline)."
     }
   ]
 }
