@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-10T19:23:57Z",
+  "lastUpdated": "2026-08-11T03:17:25Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -17450,14 +17450,14 @@
     {
       "title": "Tokyo International Foto Award 2026",
       "org": "Tokyo International Foto Awards",
-      "deadline": "2026-08-01",
+      "deadline": "2026-09-01",
       "fee": "€15–€50",
       "category": "photography",
-      "description": "International photography competition introducing photographers to the creative community in Tokyo. Categories include Advertising, Architecture, Editorial, Fine Art, Nature, People, and Portfolio. Winners exhibited in Tokyo.",
-      "url": "https://www.tokyofotoawards.jp/submit/",
+      "description": "International photography competition introducing photographers to the creative community in Tokyo. Ten categories including Advertising, Analog/Film, Architecture, Book, Editorial, Fine Art, Nature, People, Portfolio and Special. Winners exhibited in Tokyo.",
+      "url": "https://www.tokyofotoawards.jp/prize/",
       "instagram": "@tokyofotoawards",
       "location": "Tokyo, Japan",
-      "prize": "€3,000",
+      "prize": "€3,000 + €2,000 + Exhibition",
       "eligibility": [
         "18-plus"
       ],
@@ -17476,15 +17476,15 @@
       "requirements": "1–10 images",
       "submitUrl": "https://www.tokyofotoawards.jp/submit/register.php",
       "summary": "International competition introducing photographers to Tokyo's creative community. Winners exhibited in Tokyo.",
-      "resultsDate": "September 2026",
+      "resultsDate": "October 2026",
       "ai": "Accepted (separate category)",
       "prose": [
-        "Tokyo International Foto Awards (TIFA) is an annual photography competition that culminates in a winners' exhibition in Tokyo. The 2026 cycle is open to photographers aged 18 and over worldwide, with seven submission categories: Advertising, Architecture, Editorial, Fine Art, Nature, People, and Portfolio. Series entries accept 2 to 10 images sharing a common theme.",
-        "The main prize is €3,000 in cash, with category winners and honorable mentions receiving recognition badges and inclusion in TIFA's annual archive. Selected work is exhibited in Tokyo as part of a winners' showcase; specific gala details are published after results.",
-        "Submissions are reviewed by a six-member jury that includes Hideko Kataoka (photo editor and curator), Mariama Attah (curator), Kenro Izu (photographer), Susan Baraz (Lucie Foundation Co-Chair), Professor William Snyder (Rochester Institute of Technology), and Alfie Goodrich (Japanorama).",
-        "Entry fees are tiered between €15 and €50 depending on category and submission type. AI-generated work is accepted in a dedicated AI-Generated Images subcategory. The 2026 deadline is August 1, with results announced in September."
+        "Tokyo International Foto Awards (TIFA) is an annual photography competition that culminates in a winners' exhibition in Tokyo. The 2026 cycle is open to photographers aged 18 and over worldwide, across ten main categories - Advertising, Analog/Film, Architecture, Book, Editorial, Fine Art, Nature, People, Portfolio and Special - each subdivided further. Series entries accept 2 to 10 images sharing a common theme, and all work must be no older than five years.",
+        "TIFA Photographer of the Year receives €3,000 and a TIFA trophy, New Talent of the Year €2,000 and a trophy, and first-place category winners in both the professional and non-professional streams receive €200 each. Winning work is exhibited in Tokyo and shown in an online gallery exhibition; the organisers state that all winners' services are covered by the entry fee, with no further charges.",
+        "Work is reviewed by a jury of international photo editors, curators, professors and gallerists that includes Hideko Kataoka (photo editor and curator), Mariama Attah (curator), Kenro Izu (photographer), Susan Baraz (Lucie Foundation Co-Chair), Professor William Snyder (Rochester Institute of Technology), and Alfie Goodrich (Japanorama).",
+        "Entry fees are tiered by experience: €30 per single image and €40 per series for professionals, €20 and €25 for non-professionals, €15 and €20 for students, and €50 for the Portfolio category, with 30% off each additional category the same entry is submitted to. AI-generated work is accepted in a dedicated AI-Generated Images subcategory under Special. The extended deadline is September 1, 2026, and winners are announced 30 to 45 days afterwards."
       ],
-      "verifyNote": "2026-07-29 recheck: tokyofotoawards.jp/submit/ still renders only a login form to curl, but the public homepage confirms \"THE TIFA 2026 IS OFFICIALLY OPEN! Regular Deadline: August 1, 2026\". The fee ladder, prize amounts and results date remain behind the entry system - stored values carried forward. No email published on the site. Unchanged. 2026-07-31 14:00 verify: the homepage publishes ONLY \"Regular Deadline: August 1, 2026\" — there is no Late/Final tier anywhere on the public site this cycle (grepped the raw HTML for every deadline string). /submit/ is still a login shell, so fees, prize amounts and the results date stay carried from the entry system. Do not infer a later date from prior years, and do not mark closed after Aug 1 without checking for a newly published extension."
+      "verifyNote": "2026-08-11 04:22 editor: the 04:00 sweep's deadline flip (2026-08-01 -> 2026-09-01) is CONFIRMED on two surfaces - the homepage reads \"THE TIFA 2026 IS OFFICIALLY OPEN! Extended Deadline: September 1, 2026\" and /prize/ prints the full ladder \"Early Bird Deadline (10% off): April 8, 2026 / Regular Deadline: August 1, 2026 / Extended Deadline: September 1, 2026\". DO NOT read the Aug 1 regular tier as a close date. /prize/ is PUBLIC as of this pass (it was a login shell on the 07-29 and 07-31 passes), so the prospectus is readable off-platform for the first time; /submit/ still 302s to /submit/login.php, so `url` was moved off it to /prize/ and submitUrl left at /submit/register.php. Applied the three corrections the sweep sourced but deferred: prize chip €3,000 -> \"€3,000 + €2,000 + Exhibition\" (/prize/: \"TIFA Photographer of the Year €3,000 cash prize and TIFA trophy / New Talent of the Year €2,000 ... / First Place Category Winners Pro and Non-Pro ... €200 cash prize each\"), matching sibling BIFA's chip; category list 7 -> 10, verified on /prize/categories/ as Advertising, Analog/Film, Architecture, Book, Editorial, Fine Art, Nature, People, Portfolio, Special. The sweep called resultsDate unsourced - it is not: /prize/ ends \"Winners will be announced 30-45 days after the final deadline\", which off a Sep 1 close lands Oct 1-16 entirely inside October, so resultsDate \"September 2026\" (impossible, it predated the deadline) -> \"October 2026\". CONFIRMED UNCHANGED, do not re-flip: fee ladder \"Professional €30 single / €40 series (2-9 images) ... Non-professional €20 / €25 ... Students €15 / €20 ... Portfolio €50\" (= stored €15-€50) plus \"30% off per additional category\"; eligibility \"open to anyone aged 18 and over, regardless of where you live\"; work \"no older than 5 years\"; ai = the AI-Generated Images subcategory, which sits under SPECIAL, not as a main category. Jury re-read on /jury/: all six stored names are still on the Current Jury (a 27-name panel; the stored six are a deliberate subset, the rest are on the page). Still no email published anywhere on the site. DUP CHECK: stored as \"Tokyo International Foto Award 2026\" (singular Award) while the org and every aggregator write \"Awards\" - a title-token match on \"TIFA\" hits only \"artifacts\"; match on the tokyofotoawards.jp host or the org name."
     },
     {
       "title": "Milano Photo Awards 2026",
