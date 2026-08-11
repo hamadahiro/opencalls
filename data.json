@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-11T03:17:25Z",
+  "lastUpdated": "2026-08-11T07:21:01Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -41038,6 +41038,61 @@
       "dateAdded": "2026-08-10T23:16:08Z",
       "ai": null,
       "verifyNote": "2026-08-11 00:19 editor: KEPT, no field changes. Re-read verbatim on beamarts.gr/international-artist-residency: \"Applications are now open for winter/spring 2027\", \"Apply before: 24 August 2026\", \"Confirmation: by 4 September 2026\" (= resultsDate), \"up to 5 artists from different disciplines to stay from 1 or 2 months\", \"Location: Thessaloniki, Greece\". COST confirmed as the artist's, not an entry fee: \"With accommodation: The cost for each month of residency is EUR1850... Without accommodation: The cost for each month of residency is EUR1000\", duo artists EUR250/EUR150 extra, \"Selected artists will be asked to pay a deposit to secure their place... The standard deposit is 50% of the total residence fee. A refund is possible if cancellation is made 30 days or more before the starting date.\" NO APPLICATION FEE EXISTS: the org page carries no fee-to-apply line and the /application-form page is a plain Wix form (name, email, DOB, statement, proposal, preferred period, duration, accommodation choice, funding plan, one PDF portfolio max 15MB) with no payment step - hence fee \"Free (EUR1,000-EUR1,850/month if selected)\" per the free-if-selected convention, same shape as the stored Nes residency. Open to \"artists working in any medium\", so eligibility stays []. requirements \"5-10 images\" is from \"CV & Portfolio (5 -10 images) include dimensions, technique, title and date\" (the form takes them as a single PDF). No AI policy: the only word-boundary \"AI\" hit in the raw HTML is Wix's own editor UI string \"field-context-menu.ai-assistant\":\"Ask AI\", a known false positive, so ai is verified-absent null. Instagram @beam_arts_gr confirmed - it is the only instagram.com handle linked anywhere in the page source. Org is real and artist-led per /about-us: co-founders Kostas Synodis and Sani Deligiorgi, curator Anna-Maria Theodoroglou, writing-residency coordinator Defne Cizakca, physical address Kosti Palama 6, Thessaloniki 54630, plus a named past-resident testimonial (Maxime Deria). MINOR, NOT STORED: the application form's period list prints MAR 2027 as 9 March - 4 April and APR as 13 April - 9 May, while the residency page prints 13 March - 4 April and 6 April - 9 May; the stored description says only that the 2027 periods run monthly January to July, which both surfaces agree on. 2026-08-11 02:00 verify: FIRST VERIFY PASS SINCE THE 08-11 00:19 EDITOR KEEP - every value re-read and held. beamarts.gr/international-artist-residency re-confirms \"Apply before: 24 August 2026\", \"Confirmation: by 4 September 2026\" (= resultsDate), the cost structure \"With accommodation: The cost for each month of residency is EUR1850 ... Without accommodation: The cost for each month of residency is EUR1000\" and the \"CV & Portfolio (5 -10 images)\" ask that sources requirements. NO APPLICATION FEE EXISTS, so fee stays the free-if-selected shape. Open to \"artists working in any medium\", so eligibility stays []. ai stays verified-absent null: the only word-boundary \"AI\" hit in the raw HTML is Wix's own editor string \"Ask AI\", a known false positive."
+    },
+    {
+      "title": "GO GREEN",
+      "org": "Art Fluent",
+      "deadline": "2026-11-20",
+      "fee": "$25 + $10 each additional",
+      "category": "exhibition",
+      "description": "Art Fluent's online juried exhibit on the colour green — which sits at the psychological midpoint of the spectrum and is processed by the eye with the least strain of any hue, tied to safety, stability and growth but just as able to tip into envy or unease. The organisers call that range one of the more emotionally loaded colours an artist can work with, and want your version of it. Open worldwide to amateur and professional artists in all fine art media, photography named explicitly among them; work previously selected for an Art Fluent exhibit is not eligible and AI will not be accepted. Curated and juried by Creative Director Amy Matteson Neill with an anonymous committee — there is no personal feedback from jurors. Best of Show takes $750 and two Director's Choice awards take $250 each; all accepted pieces are shown in the online gallery at art-fluent.com. JPEGs are due by midnight MST on November 20, 2026, with notification and the gallery opening by December 18. Entry is $25 for the first piece and $10 for each additional, up to twenty.",
+      "url": "https://art-fluent.com/calls-for-art/go-green-prospectus/",
+      "instagram": "@art__fluent",
+      "location": "Online",
+      "prize": "$1,250",
+      "eligibility": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18019/CAFE",
+      "requirements": "Up to 20 images",
+      "jury": [
+        "Amy Matteson Neill, Creative Director, Art Fluent"
+      ],
+      "resultsDate": "December 18, 2026",
+      "ai": "Not accepted",
+      "slug": "go-green-art-fluent",
+      "orgInTitle": false,
+      "summary": "Art Fluent's online show on the colour green — $750 Best of Show plus two $250 awards, photography named in the media list.",
+      "dateAdded": "2026-08-11T07:21:01Z",
+      "verifyNote": "2026-08-11 08:00 sweep: new add, the only genuinely new photography-eligible row in a 608-opportunity CaFE deadline-partitioned sweep. Both surfaces read and agreeing. art-fluent.com/calls-for-art/go-green-prospectus/ (the org's OWN prospectus page, reached from its /calls-for-art/ index which lists exactly three live calls — PURE ABSTRACTION, IN SERIES and GO GREEN, the first two already stored) reads verbatim \"JPEGs due by Friday, November 20, 2026, at midnight MST\" (= deadline), \"Notification of acceptance and online gallery opening by Friday, December 18, 2026\" (= resultsDate), \"Best of Show: $750 / Two Director's Choice awards: $250 each\" (= prize $1,250 total, matching the sibling PURE ABSTRACTION's stored shape), \"$25 for first entry/$10 for each additional entry. You may enter up to 20 total\", \"This call is open to artists worldwide, both amateur and professional\" (so eligibility [] IS CONFIRMED, not merely unstated) and \"Director's choice. Each show is curated and juried by Creative Director, Amy Matteson Neill along with an anonymous committee of jurors\" — the unnamed half is deliberate, same as every Art Fluent sibling. PHOTOGRAPHY IS ENUMERATED, not inferred: \"Open to ALL fine art mediums (oil, acrylic, watermedia, pastel, drawing, printmaking, mixed media, photography, sculpture, fiber, wood, ceramics, film/video, digital art). AI will not be accepted.\" CaFE 18019 agrees: status OPEN/OPEN, applicationDeadline 2026-11-21T06:59:59Z (= Nov 20 MST), fees {APPLICATION $25.00 \"First entry for GO GREEN\", MEDIA $10.00 \"Additional entries for GO GREEN\"}, imagesMax 20, applicationsAllowed 1, and the same award, calendar, eligibility and AI lines in description/eligibilityDescription/requirementDescription. Art Fluent, Inc. is a registered trademark at 1 Washington Mall #1218, Boston MA per the site footer; instagram @art__fluent is carried over from the stored siblings (the GO GREEN page itself links Instagram only through a JS widget, so no handle appears in its raw HTML)."
+    },
+    {
+      "title": "2026 National Juried Show",
+      "org": "Washington Art Association",
+      "deadline": "2026-08-17",
+      "fee": "$40 for up to 3 entries ($5 each additional)",
+      "category": "exhibition",
+      "description": "The Washington Art Association & Gallery's national juried show, open to artists across the United States and juried by the New York painter Barbara Grossman, who studied at Cooper Union and the Akademie der Künste in Munich and has taught at the Yale School of Art, the New York Studio School and Chautauqua. Original photography is named in the accepted media alongside painting, works on paper (drawing, watercolour, printmaking, collage) and sculpture; giclées and other reproductions are not accepted. Work must have been made in the last three years, must not have shown at the gallery before, may not exceed 40 inches in any direction including frame or base, and must be for sale for the run of the show, on which the gallery takes its standard 40% commission. Artists are responsible for shipping both ways and must include a prepaid return label. Up to six entries per artist at $40 for the first three and $5 for each additional. Notification August 24, work delivered September 8–12, and the exhibition runs September 19 – October 17, 2026, opening with a reception on September 19 at the gallery in Washington Depot, Connecticut.",
+      "url": "https://washingtonartassociation.org/artist-opportunities/",
+      "instagram": "@washingtonartassociation",
+      "location": "Washington Depot, CT, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "united-states",
+        "18-plus"
+      ],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/washingtonartassociation/2026-national-juried-show/",
+      "requirements": "Up to 6 images",
+      "jury": [
+        "Barbara Grossman"
+      ],
+      "resultsDate": "August 24, 2026",
+      "ai": null,
+      "slug": "2026-national-juried-show-washington-art-association",
+      "orgInTitle": false,
+      "summary": "National juried show in Washington Depot, CT, juried by painter Barbara Grossman — original photography is in the accepted media.",
+      "dateAdded": "2026-08-11T07:21:01Z",
+      "verifyNote": "2026-08-11 08:00 sweep: new add, found by crawling app.entrythingy.com/galleries/ (72 orgs with active calls) and confirmed on the ORGANISER'S OWN SITE FIRST. washingtonartassociation.org/artist-opportunities/ carries the call under \"Calls for Entry\" and states the governing facts itself: \"Artists ages 18 and older residing in the United States are invited to submit original artwork completed within the past three years in the following categories: Painting / Works on paper, including drawing, watercolor, printmaking, collage, and ORIGINAL PHOTOGRAPHY / Sculpture, including ceramic sculpture\" — that enumeration is what settles photography eligibility, and it is why eligibility is [\"united-states\",\"18-plus\"]. Same page: \"Entry deadline: August 17, 2026\", \"Up to 6 entries per artist\", \"$40 for up to 3 entries ($5 each additional entry)\", \"Accepted artwork will be exhibited at the Washington Art Association & Gallery from: September 19 – October 17, 2026 / Opening Reception: Saturday, September 19\", juror Barbara Grossman with her Benjamin Altman Prize, Connecticut Commission on the Arts Fellowship, Henry Ward Ranger Fund Purchase Award and Fulbright-Hayes Grant, and it links the EntryThingy call as the submission route (so submitUrl is a platform link and url is the org's own page, per convention). The ET prospectus supplies what the org page does not: \"Please do not submit giclées, or other reproductions of original artwork\", \"Artwork may not exceed 40 inches in any direction, including the frame, base, or pedestal\", \"Notification of Acceptance: August 24, 2026\" (= resultsDate), \"Delivery of Accepted Work: September 8–12, 2026\", and \"The Washington Art Association & Gallery retains its standard commission of 40% on all sales\". DEADLINE IS THE BODY'S LOCAL DATE, NOT THE HEADER CHIP: ET's chip reads \"Entry deadline Aug 18, 2026 · 6:59 AM\" (UTC) while both the ET body and the org page print August 17 — stored Aug 17 per the standing ET rule. The org page adds its own caveat, not stored as a date: \"The Washington Art Association & Gallery reserves the right to extend the entry deadline.\" ORG IS REAL: 501(c)(3), Memorial Plaza, 4 Bryan Hall Plaza, Washington Depot CT 06794, published gallery and studio hours, a full previous-exhibitions archive, and instagram.com/washingtonartassociation linked in the site header. NO PRIZE IS PUBLISHED on either surface — neither page mentions awards or cash, so prize is the exhibition itself. ai is verified-absent null: artificial intelligence|AI-gener|\\bAI\\b greps ZERO on both the org page and the ET prospectus."
     }
   ]
 }
