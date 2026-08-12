@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-12T11:27:07Z",
+  "lastUpdated": "2026-08-12T15:25:53Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -41766,6 +41766,110 @@
       "dateAdded": "2026-08-12T11:27:07Z",
       "instagram": "@myph.art",
       "verifyNote": "2026-08-12 12:00 sweep add. Discovered via the #photographyprize Instagram grid, verified on the organiser's own myphart.com/myph-prize (Ukrainian-only; the eng toggle is client-side and serves the same body). TIMELINE, verbatim from the site's own 'Терміни конкурсу' block: announcement and opening of submissions 10 серпня (August) 2026; 'дедлайн подачі заявок: 14 вересня 2026 23:59'; eight finalists announced 13 жовтня (October); exhibition and winners' ceremony 23 жовтня. FEE: the call describes itself as 'відкритий безкоштовний конкурс' (open free competition) and no price string appears anywhere on the page. SUBMIT: the forms.gle link resolves to /viewform (not /closedform), so the form is open; a 401 on that host is normal and is not a closure signal. JURY of twelve is published on the same page with bios; names are transliterated from the Ukrainian, and Thomas Dworzak (Magnum president 2017-2020) and Roman Pyatkovka appear under their established English spellings. ai null: no AI policy on the page — the eligibility text instead accepts 'all photographic techniques and forms of visual manipulation'. 2026-08-12 12:32 editor: KEPT, with two corrections - the prize table and the jury. Re-verified on myphart.com/myph-prize (HTTP 200). Re-matched verbatim: 'Vidkrytyi bezkoshtovnyi konkurs' / 'Відкритий безкоштовний конкурс' (free), 'дедлайн подачі заявок: 14 вересня 2026 23:59', 'оголошення 8 фіналісток / фіналістів: 13 жовтня 2026', 'виставка та церемонія оголошення переможниць / переможців: 23 жовтня 2026', 'серію або проєкт із 8-10 фотографій, створених впродовж останніх двох років (2025-2026)' and 'На момент подачі заявки автору/авторці має виповнитися 18 років'. The forms.gle link still resolves to /viewform, not /closedform (the 401 on that host is normal and is not a closure signal). CORRECTION 1 - SECOND AND THIRD PLACE ARE NOT CASH. The prize block reads 'Друге місце: Сертифікат на навчання в MYPH на суму 25 000 UAH' and 'Третє місце: Сертифікат на навчання в MYPH на суму 10 000 UAH' - MYPH tuition certificates at those values, the same instrument as the Grand Prix's 50,000 UAH certificate, not prize money. The only outright cash anywhere in the table is a partner award, '15 000 грн. на підтримку фотографок від Іванни Бертран. Буде обрано один проєкт.' prize, summary and description all rewritten to say so. CORRECTION 2 - THE JURY IS 26, NOT 12. The finder's list stopped at Борис Гриньов, which is exactly where the rendered slice ends: every juror card after the first carries class 'page__team-item none', so a text read of the page shows one card and the rest sit behind the carousel. In the raw HTML there is a SINGLE heading, 'Журі:', running unbroken to 'Організатори:' - 26 h3 name cards, no sub-heading and no past-editions divider - and the run dates itself from the inside, via Dmytro Kravchenko's bio: 'Fujifilm є технологічним партнером MYPH Photography Prize 2026 та надає камери переможцям Гран-прі'. The 14 dropped names include Roger Ballen, Steve Bisson, Darius Vaicekauskas and Tetyana Filevska. All 26 are now stored in page order; names are transliterated from the Ukrainian and the non-Ukrainian jurors are given under their established Latin spellings, each confirmed by its own bio on the page (Дворжак = Thomas Dworzak, 'кандидатом у Magnum у 2000 році... З 2017 по 2020 рік він був президентом Magnum'; Баллен = Roger Ballen, 'народився в Нью-Йорку. У 1982 році він переїхав до Йоганнесбурга')."
+    },
+    {
+      "title": "Fragments of the Everyday",
+      "org": "Exposure Photo Gallery",
+      "deadline": "2027-03-31",
+      "fee": "$10–$30",
+      "category": "exhibition",
+      "description": "Exposure Photo Gallery's third open call invites photographers to submit images that find meaning in the world around us — places, people, gestures, scenes and moments, from the extraordinary to the seemingly ordinary. There is no single way to interpret the everyday: it can be found on a street or in a remote landscape, in a face, a piece of architecture, an object, a spontaneous scene or a deliberate composition; what matters is the photographer's perspective. The juror is Steve McCurry, the American photographer whose Afghan Girl is among the most recognisable photographs in the world and who has spent more than five decades portraying cultures, people and scenes of everyday life. Selected work is shown in a group exhibition at the gallery in Río Tercero, Córdoba: a Gold, a Silver and a Bronze Award, ten Honorable Mentions whose prints hang in the physical show, thirty-seven Juror's Selections shown digitally, and special recognitions reserved for photographers from Córdoba Province. The Gold Award winner also takes US$500 and a solo exhibition at the gallery, on a date arranged with the artist. Selected and winning works appear in a print-on-demand exhibition book, and an Online Gallery Special Recognition marks roughly the top 7.5 per cent of entries. All awards are issued as digital diplomas. Fees are tiered by image count and there is no cap on how many photographs may be submitted. Entries close 31 March 2027 at 11:59 PM Pacific time; winners are announced 3 May 2027 and hi-res files are due 14 May.",
+      "url": "https://www.exposure.gallery/call-003.htm",
+      "instagram": "@exposurephotogallery",
+      "location": "Rio Tercero, Argentina",
+      "prize": "$500 + solo exhibition (Gold Award)",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Steve McCurry"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://www.exposure.gallery/participate.htm",
+      "requirements": "Unlimited images",
+      "resultsDate": "May 3, 2027",
+      "ai": "AI editing OK, fully generated not accepted",
+      "slug": "fragments-of-the-everyday-exposure-photo-gallery",
+      "orgInTitle": false,
+      "summary": "Steve McCurry jurors this Argentine gallery's open call. Gold Award takes $500 and a solo show; ten prints hang.",
+      "dateAdded": "2026-08-12T15:25:53Z",
+      "verifyNote": "Every field from the gallery's own call page (exposure.gallery/call-003.htm) and its rules page: deadline 31 Mar 2027 11:59 PM PST, winners 3 May 2027, tiered fees $10/1 image, $15/3, $20/6, $30/12, unlimited submissions, 18+ any nationality, AI-edited accepted but fully AI-generated not. Unlike the sibling call-002 (The Shape of a Moment) this edition names only the Rio Tercero venue — no Exposure Los Angeles group show — so that venue is deliberately not carried across. 2026-08-12 16:30 editor: KEPT, no corrections. call-003.htm re-read at HTTP 200 and every field re-matched verbatim: 'Entries Deadline: March 31, 2027 at 11:59 PM Pacific Standard Time', 'Winners Announcement: May 3, 2027', 'Hi-Res Files Due: May 14, 2027', 'Participants may submit as many photos as they wish', and the fee ladder 'Signature Portfolio (12 Images): US$ 30 / Essential Portfolio (6 Images): US$ 20 / Visual Statement (3 Images): US$ 15 / Single Vision (1 Image): US$ 10'. The awards block names only 'Group Exhibition in Exposure Photo Gallery, Rio Tercero, Argentina' and the Gold Award's solo show there - the sibling call-002's Los Angeles venue is genuinely absent, so leaving it off is right. Cash is real and singular: 'US Dollars 500: Awarded to the Gold Award winner'; the Silver, Bronze, ten Honorable Mentions and 37 Juror's Selections carry no money, which is why prize names only the Gold. The 18-plus facet and the AI line come from the rules page at exposure.gallery/rules.htm (the call page's 'this link' resolves to rules.htm, not the 404 contest-rules.htm): 'The contest is open to all individuals aged 18 or older of any nationality' and 'Images generated entirely by artificial intelligence will not be accepted', with AI limited to 'the editing or enhancement of images originally captured with a camera'."
+    },
+    {
+      "title": "Kirloskar Art Grant 2026",
+      "org": "S. L. Kirloskar CSR Foundation",
+      "deadline": "2026-08-31",
+      "fee": "Free",
+      "category": "grant",
+      "description": "The second edition of the S. L. Kirloskar CSR Foundation's annual grant for lens-based practitioners, supporting artists whose work interrogates contemporary relationships between people, environments and systems in an age of globalisation, digital saturation and cultural transformation. The Foundation frames photography and moving image not only as tools of representation but as instruments for questioning dominant narratives and creating new ones, and invites proposals engaging critically with sustainability and environment, science and innovation, biodiversity and nature, culture and heritage, or community and social change. Two recipients — one photographer and one moving-image artist — are selected by a jury, each receiving a production grant of INR 5 lakh, of which up to 35 per cent may be taken as an artist fee or honorarium, plus opportunities to show the completed project at Kirloskar Group premises and other venues across India. Applications are open to emerging practitioners working in documentary, conceptual, experimental or new media formats who reside in India and hold Indian citizenship; individuals and artist duos or collectives may apply. Submissions go by email and comprise a project proposal of up to 1,000 words, a 500-word artist statement, a portfolio of five to ten captioned images or videos as a PDF under 5 MB, a CV, a budget breakdown and a project timeline. Equipment purchases are not covered, though project-related consumables such as film, cards, ink and paper are. The project period runs 21 September 2026 to 21 March 2027, and copyright remains with the artist.",
+      "url": "https://www.kirloskarlimitless.com/kirloskar-art-grant",
+      "instagram": "@kirloskar_limitless",
+      "location": "Pune, India",
+      "prize": "INR 5 lakh cash grant each (2 awards)",
+      "eligibility": [
+        "india",
+        "emerging"
+      ],
+      "jury": [],
+      "submitVia": "Email",
+      "requirements": "5–10 images or videos",
+      "slug": "kirloskar-art-grant-2026",
+      "orgInTitle": false,
+      "summary": "Two INR 5 lakh production grants for India-based lens artists — one photographer, one moving-image artist. Free.",
+      "dateAdded": "2026-08-12T15:25:53Z",
+      "verifyNote": "All fields from the Foundation's own page on kirloskarlimitless.com: Aug 31 2026 deadline, two INR 5 lakh grants (one photographer, one moving-image artist), artist fee up to 35% of the grant, India residency plus Indian citizenship, project window 21 Sep 2026 – 21 Mar 2027. No entry fee is stated anywhere on the page and submission is by email, so fee is Free. The jury is described only as 'a distinguished jury' — no names published, so jury is left empty. ai null and resultsDate null are verified absences, not gaps: the Key Dates block lists only the Aug 31 deadline and the 21 Sep 2026 - 21 Mar 2027 project window (no announcement date), and no AI clause appears anywhere on the page. Location is the Foundation's registered office city (ROC Pune, CIN U74999PN2016NPL165023); the org site itself publishes no address. Instagram is the handle in the host site's own footer. 2026-08-12 16:30 editor: KEPT. Re-verified on the Foundation's own page (HTTP 200): 'Application Deadline: August 31, 2026', 'Project Start Date: September 21, 2026', 'Project Completion Deadline: March 21, 2027', 'awarding each of them INR 5 lakh', 'An artist fee/honorarium (up to 35% of the total production grant value)', 'Open to photographers and lens-based artists residing in India', 'Applicants must hold Indian citizenship', 'Portfolio (5-10 images/videos with captions and brief descriptions)'. No price string of any kind on the page - fee Free confirmed. Jury stays empty: the page says only 'selected through an open call by a distinguished jury'. Instagram confirmed as the footer link https://www.instagram.com/kirloskar_limitless/. The submission address (Cloudflare-obfuscated on the page, decoded from its data-cfemail attribute) has been filed in the private contacts store so the Email link resolves to the submission inbox instead of falling back to the website. NOTE: the page's own hero block is still unfinished Lorem ipsum with a dead 'Click here to enter' link; every field above comes from the finished body below it.",
+      "ai": null,
+      "resultsDate": null
+    },
+    {
+      "title": "Photographic Nights of Selma 2026",
+      "org": "Photographic Nights of Selma",
+      "deadline": "2026-09-15",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "The seventh edition of a festival founded by French photographer Stéphane Kossmann — who also founded Les Nuits Photographiques de Pierrevert — in partnership with Foot Soldier Park and Arts Revive in Selma, Alabama. Around thirty selected artist projects are shown each evening on a giant outdoor screen, with daytime given over to exhibitions across the Selma area, encounters between photographers and the public, portfolio readings and conferences. There is no set theme: the artistic committee asks only for a unique perspective and a clearly asserted point of view in a series of fifteen to thirty photographs, and is looking for a broad panorama of recent work of all kinds — reflections on society, landscape, fashion, portraiture, still life, explorations of intimacy, or proposals diverging from the current zeitgeist. Selected series are presented as photo-sound montages of no more than four minutes; the festival's video and sound editors can build the montage, or photographers may submit their own edit, and an original soundtrack may be supplied. Each selected photographer commits to attending the evening of their screening and the following day; photographers stay in local homes for the duration, limited to fifteen places, with lunches covered by the festival and travel at the photographer's own expense. Prizes are awarded at the end by a jury of figures from photography and the arts and by the public, and the Jury Prize carries an invitation with travel expenses covered to the Nuits Photographiques de Pierrevert in the south of France in the last week of July 2027. Applicants must declare any use of image-generation tools. The festival runs 6–7 November 2026 and access to exhibitions, screenings and conferences is free.",
+      "url": "https://photographicnightsofselma.com/call-for-application-photo-festival-selma-alabama/",
+      "instagram": "@photographicnightsofselma",
+      "location": "Selma, AL, USA",
+      "prize": "Exhibition screening + Pierrevert 2027 invite (travel paid)",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Website form",
+      "submitUrl": "https://photographicnightsofselma.com/call-for-entries/",
+      "requirements": "15–30 images",
+      "resultsDate": "September 30, 2026",
+      "ai": "Must disclose",
+      "slug": "photographic-nights-of-selma-2026",
+      "orgInTitle": true,
+      "summary": "Selma, Alabama's photo festival screens 30 series on a giant outdoor screen. Free, hosted stays, Pierrevert invite.",
+      "dateAdded": "2026-08-12T15:25:53Z",
+      "verifyNote": "Deadline, festival dates, series length, hosting and the Pierrevert jury prize all from the festival's own call page. The application form (/call-for-entries/) carries no fee field and no price string, and the call page states only that festival access is free — no entry fee is charged, hence fee Free. The form's AI question ('My serie don't uses AI / My series uses AI ... not photo-editing tools but image generation platforms') is the source for the disclosure policy. resultsDate uses the page's specific 'Selected projects will be announced on September 30, 2026' over its vaguer 'end of September'. Darrel Hunter is the 2026 guest of honour, not a juror; the selection committee is unnamed, so jury is empty. 2026-08-12 16:30 editor: KEPT, no corrections. Call page re-read at HTTP 200: 'You have until september 15th, 2026 to apply!', 'THE FESTIVAL WILL TAKE PLACE NOVEMBER 6th & 7th 2026', 'a series of 15 to 30 photographs', 'photographers will stay in local homes for the duration of the festival (limited to 15 places), with lunches covered by the festival', 'The jury prize includes an invitation, with travel expenses covered, to the Nuits Photographiques de Pierrevert festival in south of France, which will take place the last week of july 2027', and 'Selected projects will be announced on September 30, 2026'. Free re-confirmed the hard way: the WPForms application at /call-for-entries/ contains no payment field, no price string and no currency amount anywhere in its raw HTML - the only 'payment' hits are the WPForms library's own validation-string dictionary, not a field on this form. The AI line is the form's own required radio, 'Please specify if you used Artificial Intelligence to generate your images', with the clarifier 'We are not referring to photo-editing tools here, but to image generation platforms'. Instagram confirmed as the site's own link to instagram.com/photographicnightsofselma."
+    },
+    {
+      "title": "Santu Mofokeng Foundation Photography Prize 2026",
+      "org": "Santu Mofokeng Foundation",
+      "deadline": "2026-10-15",
+      "fee": "Free",
+      "category": "photography",
+      "description": "A new national award from the Santu Mofokeng Foundation, established in honour of one of South Africa's most influential photographers and dedicated to recognising and supporting outstanding emerging photographers working in the country. Through a national open call the Foundation seeks artists whose work shows a thoughtful and compelling engagement with the photographic medium, reflecting the depth, sensitivity and critical awareness that characterised Mofokeng's own practice, and aims to provide recognition, visibility and professional support at a pivotal stage in a career. The inaugural award carries a R100,000 cash prize together with editorial support, an artist profile and opportunities for future exhibition presentation through the programmes of Latitudes, the Foundation's promotional and platform partner. Entry is open to independent practitioners living and working in South Africa; the application form sets an age ceiling of 45 and asks for a cohesive body of ten to fifteen photographs made within the past five years, alongside a portrait image, a recent biography and statements describing the applicant's practice, the submitted body of work and why they would be a strong recipient. The Foundation was established in 2015, when Mofokeng donated his photographic work and copyright to it, and works to preserve, research and share his legacy while supporting contemporary photographic practice through exhibitions, publications and public programmes. Applications close on 15 October 2026.",
+      "url": "https://santumofokengfoundation.com/",
+      "instagram": null,
+      "location": "Johannesburg, South Africa",
+      "prize": "R100,000",
+      "eligibility": [
+        "emerging"
+      ],
+      "jury": [],
+      "submitVia": "JotForm",
+      "submitUrl": "https://form.jotform.com/261934150259054",
+      "requirements": "10–15 images",
+      "slug": "santu-mofokeng-foundation-photography-prize-2026",
+      "orgInTitle": true,
+      "summary": "Inaugural R100,000 prize for emerging photographers living and working in South Africa. Free to enter.",
+      "dateAdded": "2026-08-12T15:25:53Z",
+      "verifyNote": "The Foundation's own homepage carries the 'To ENTER click HERE' link to the JotForm application, which supplies the free entry, the 10–15 image catalogue, the five-year recency rule, the 'Are you South African?' question and the under-45 age ceiling (the form asks nationality; the 'living and working in South Africa' wording is Latitudes'). The R100,000 prize, the 15 Oct 2026 close and the Latitudes partnership come from the announcement on latitudes.online, the Foundation's stated promotional and platform partner. Location is the Foundation's own contact page (Johannesburg, South Africa). ai null and resultsDate null are verified absences: no announcement date and no AI clause appear on the homepage, the JotForm or the Latitudes announcement. No jury named. Instagram is explicitly null: neither the homepage, the About page nor the contact page links one. NOTE: the South Africa-only gate has no eligibility facet slug yet — 'emerging' alone is stored and the restriction is carried in the description. 2026-08-12 16:30 editor: KEPT. Re-verified end to end. Homepage (HTTP 200) carries 'Celebrating 10 Years!' and the 'To ENTER click HERE' link to form.jotform.com/261934150259054. The JotForm (HTTP 200) has no payment field and no price string - free confirmed - and states verbatim 'Please note that applicants must be under the age of 45', 'Are you South African?', and 'A cohesive body of 10-15 photographs is required to be eligible for review, and the work must be created within the past five years'. The Latitudes article, reached via the Shopify predictive-search API (the on-page search renders client-side and its results are invisible to curl), is at latitudes.online/blogs/articles/santu-mofokeng-foundation-photography-prize and reads 'The inaugural award includes a R100,000 cash prize, editorial support, an artist profile and opportunities for future exhibition presentation through Latitudes programmes', 'Applications are officially open and close on 15 October 2026', and 'Open to: Emerging photographers living and working in South Africa / Independent practitioners / Work produced within the last five years'. Johannesburg confirmed on /santu-mofokeng-contact ('for the Santu Mofokeng Foundation Johannesburg South Africa'). The 2015 founding and the copyright donation are confirmed verbatim on /about: 'The Santu Mofokeng Foundation was formalised by Santu Mofokeng in 2015, whereupon he donated his photographic work and copyright to the foundation.' Instagram stays null: the homepage, /about and /santu-mofokeng-contact link none.",
+      "ai": null,
+      "resultsDate": null
     }
   ]
 }
