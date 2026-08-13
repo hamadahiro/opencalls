@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Marion Cultural Alliance - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Marion Cultural Alliance. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <link rel="canonical" href="https://opencalls.monographica.com/marion-cultural-alliance/">
+  <title>Freezer Festival Internacional de Fotografía - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from Freezer Festival Internacional de Fotografía. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <link rel="canonical" href="https://opencalls.monographica.com/freezer-festival-internacional-de-fotograf-a/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Marion Cultural Alliance - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Marion Cultural Alliance. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="Freezer Festival Internacional de Fotografía - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from Freezer Festival Internacional de Fotografía. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/marion-cultural-alliance/">
+  <meta property="og:url" content="https://opencalls.monographica.com/freezer-festival-internacional-de-fotograf-a/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Marion Cultural Alliance - Open Calls",
-  "description": "Open calls and submission opportunities from Marion Cultural Alliance. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/marion-cultural-alliance/",
+  "name": "Freezer Festival Internacional de Fotografía - Open Calls",
+  "description": "Open calls and submission opportunities from Freezer Festival Internacional de Fotografía. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/freezer-festival-internacional-de-fotograf-a/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -55,8 +55,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Marion Cultural Alliance",
-      "item": "https://opencalls.monographica.com/marion-cultural-alliance/"
+      "name": "Freezer Festival Internacional de Fotografía",
+      "item": "https://opencalls.monographica.com/freezer-festival-internacional-de-fotograf-a/"
     }
   ]
 }
@@ -101,12 +101,11 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Marion Cultural Alliance</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Marion Cultural Alliance. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 2 open.</h2>
+      <h1>Freezer Festival Internacional de Fotografía</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from Freezer Festival Internacional de Fotografía. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/freedom-the-spirit-within-marion-cultural-alliance/">Freedom: The Spirit Within &middot; Marion Cultural Alliance</a></h3><p class="call-description">Lisa Russo curates and juries MCA's September show on freedom — photography included, cash and ribbon awards, $25 to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-power-of-the-arts-8th-annual-juried-exhibition-marion-cultural-alliance/">The Power of the ARTS — 8th Annual Juried Exhibition &middot; Marion Cultural Alliance</a></h3><p class="call-description">MCA's 25th-anniversary juried show on the arts themselves — all media, $250 Best of Show, at the Brick City Center for the Arts.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/freezer-festival-2026-open-call-lo-real/">Freezer Festival 2026 Open Call — Lo Real</a></h3><p class="call-description">Argentina's Freezer festival picks one solo show, ten single images and twenty audiovisual projects on the theme Lo real.</p></div>
 
     </section>
 
@@ -124,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Marion Cultural Alliance').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'Freezer Festival Internacional de Fotografía').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
