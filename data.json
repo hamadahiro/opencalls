@@ -42049,6 +42049,35 @@
       "summary": "A Smith Gallery's juried online show on animals, juried by Traer Scott. Exhibition 27 November 2026 to 7 January 2027.",
       "dateAdded": "2026-08-12T23:11:44Z",
       "verifyNote": "2026-08-13 sweep ADD: asmithgallery.com/upcoming-call-for-entry/ (the gallery's own Upcoming Calls for Entry page) lists verbatim: \"animalia\" / Online Gallery / \"Juror | Traer Scott\" / \"Entries Due | November 2, 2026\" / \"Exhibition Dates | November 27, 2026 to January 7, 2027\" / \"Reception | December 26 , 2026 3pmCST\". FEE IS DELIBERATELY EMPTY, NOT DROPPED: A Smith publishes a per-call prospectus only when the call opens, and /animalia-call-for-entry/ returns 404 today, so no fee is published for THIS call. The sibling live call \"perspective\" charges \"$40 for the first 5 images, $5 per each additional image\", but the fee test is PER CALL, so that figure was NOT copied across - fee stays \"\" until the prospectus goes live. Same reason for the absent submitVia/submitUrl (A Smith rotates /application-N/ form slots and no slot is assigned yet), the absent requirements, and the absent resultsDate. jury is the bare name the org published. The eligibility and all-photographic-mediums language in the description is A Smith's standing house rule, quoted from the current \"perspective\" prospectus, and is labelled as such - re-verify against this call's own prospectus when it publishes. REVISIT once /animalia-call-for-entry/ returns 200 and fill fee + submitUrl + requirements + ai."
+    },
+    {
+      "title": "Small Works 2026",
+      "org": "Winterville Cultural Center Gallery",
+      "deadline": "2026-08-30",
+      "fee": "$35 ($25 members)",
+      "category": "exhibition",
+      "description": "The Winterville Cultural Center Gallery, in the renovated 1950s high school just outside Athens, Georgia, invites artists across the United States to submit small-scale work for its National Juried Small Works Exhibition 2026. Photography is named in the accepted media alongside painting, drawing, printmaking, ceramics, sculpture, fiber and mixed media; no reproductions or giclees, and AI-generated artwork is not eligible. Work may not exceed 14 inches in any direction including the frame, and three-dimensional work may not exceed 14 inches in height, width or depth. Yu-Kai Lin, founder and director of Kai Lin Art in Atlanta, selects the exhibition and all three awards: Best in Show $500, Juror's Award $250 and a People's Choice Award of $100, $850 in cash in total. Up to three works may be entered for a single fee. Acceptances are sent September 12, shipped work is due September 23 and hand delivery runs September 24 to 26; the show opens to the public on October 7 with a reception on October 9 and closes December 15, 2026. All accepted work must be for sale for the run of the exhibition, with 65 percent of any sale to the artist and 35 percent to the gallery, and artists cover shipping both ways. Two-dimensional work must arrive framed and wired, with no sawtooth hangers. Entries are JPEG only, cropped to the artwork edges, 2 MB maximum.",
+      "url": "https://www.wintervillecenter.com/gallery",
+      "instagram": "@wintervillecentergallery",
+      "location": "Winterville, GA, USA",
+      "prize": "$850 in cash awards + Exhibition",
+      "eligibility": [
+        "united-states",
+        "18-plus"
+      ],
+      "jury": [
+        "Yu-Kai Lin, Founder & Director, Kai Lin Art, Atlanta"
+      ],
+      "submitVia": "JotForm",
+      "submitUrl": "https://form.jotform.com/262024584403148",
+      "requirements": "Up to 3 works",
+      "ai": "Not accepted",
+      "resultsDate": "September 12, 2026",
+      "slug": "small-works-2026-winterville-cultural-center-gallery",
+      "orgInTitle": false,
+      "summary": "National juried show of works 14 inches or under near Athens, Georgia. Photography named, $850 in cash awards, juried by Yu-Kai Lin of Kai Lin Art.",
+      "verifyNote": "2026-08-13 ADD (reader submission, verified at source): the org's own gallery page wintervillecenter.com/gallery carries a \"Call for entries Link\" pointing at form.jotform.com/262024584403148, and the form's own prospectus (docs.google.com/document/d/1zFGrqdlf8xATEisGkXBEnCTajAx4c6Fb, linked as \"VIEW FULL PROSPECTUS\" from the entry form) states verbatim: \"Submission Deadline: August 30, 2026\", \"Total Awards: $850 / Best in Show: $500 / Juror's Award: $250 / People's Choice Award: $100\", \"Members: $25 for up to three entries / Non-Members: $35 for up to three entries\", \"Open to artists 18 years of age or older residing in the United States\", \"Notification of Acceptance: September 12, 2026\", \"Exhibition Dates: October 7 - December 15, 2026\", \"Artwork may not exceed 14 inches in any direction, including frame\", \"Artist: 65% / Winterville Cultural Center Gallery: 35%\", \"AI-generated artwork is not eligible\" and \"No reproductions or giclees\". MEDIUM IS SETTLED AFFIRMATIVELY, NOT BY OMISSION: the prospectus prints an \"Accepted Media\" list that names photography outright (\"Painting, drawing, printmaking, photography, ceramics, sculpture, fiber, mixed media, and other original fine art media\"), so no programme test was needed - the JotForm alone would not have settled it, since it only offers a free-text \"Medium\" box and a 2D/3D category toggle. The juror's affiliation checks out on kailinart.com/about (\"Founded in 2008 by Yu-Kai Lin\", \"YU-KAI LIN, Gallery Director\"). INSTAGRAM CORRECTED FROM THE SUBMISSION: the reader gave \"@wintervilleccgallery\", which is the account's DISPLAY NAME, not its handle; the live account is instagram.com/wintervillecentergallery (bio \"Winterville Cultural Center Gallery... Located in Historic Winterville, Georgia\", linking wintervillecenter.com/gallery), and it has been posting this call's flyer since July 31. instagram.com/wintervillecenter is the parent centre, a different account. IG needed Chrome - curl and jina both hit the login wall, and that wall is NOT an existence oracle: a deliberately bogus handle returns the identical page. Fee stored non-member-first per house style; the fee is per entry batch, not per work, and covers up to three. Not a wall-rent call: the 35% is an ordinary sales commission on work the gallery hangs, there is no inclusion or hanging fee, and the $850 is cash. Submission inbox in contacts.json.",
+      "dateAdded": "2026-08-13T02:52:41.572Z"
     }
   ]
 }
