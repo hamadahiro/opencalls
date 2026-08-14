@@ -42511,6 +42511,63 @@
       "summary": "Shoot environmental wildlife for Outdoor Photography's OP 333 reader competition. Free entry; winner takes a £325 jacket.",
       "dateAdded": "2026-08-14T19:17:42Z",
       "verifyNote": "Added 2026-08-14 20:00 sweep. Seventh edition of this recurring monthly we have listed (Creative Wildlife, Spring Landscapes, Local Landscapes, Bird Portraits, Minimalist Landscapes, Summer Woodland all stored). SOURCE: both org surfaces agree. /submissions/ and /submissions/one-thing-this-month/ each carry \"Environmental wildlife, OP 333 Prize: Cumulus Moonrain Jacket RRP £325. Deadline: midnight 5 October 2026\", listed above the still-open OP 332 Summer woodland row (Vanguard VEO 3 303AB tripod, midnight 30 August 2026) which is already stored with that exact deadline — the two run concurrently, this is not a replacement. Rules from the one-thing-this-month page verbatim: \"submit between up to 5 images relating to a specific theme\", captions \"up to 75 words about where, why and how you took the image\", technical details ordered \"Camera model plus lens and what focal length the picture was shot at, ISO, shutter speed, aperture, tripod/handheld\". SUBMIT URL, READ BEFORE CHANGING: the page exposes TWO forms.gle links and they are NOT interchangeable — forms.gle/CyJGihQRXVjRjWAF8 sits under the OP 333 Environmental wildlife row and forms.gle/8gDHjy12Qw3Rv1km8 under OP 332 Summer woodland (positions 725 and 1383 in the section markup, each following its own theme heading at 517 and 1167). submitUrl is nonetheless the one-thing-this-month PAGE, matching the two most recently stored siblings, because the raw form requires a Google account login (\"All image uploads on this site are now done via Google Drive and you will need to login using your Google account\") and the page is the stable entry point that names the current theme. The per-competition form id is recorded here so a future pass does not have to re-derive it. Fee is Free — no entry fee appears anywhere on either surface. No results date is published: entrants are told \"if you have submitted to our One Thing This Month... and have not heard from us within 10 weeks then it is unlikely we will be using your work\", which is a silence window, not a notification date, hence resultsDate is absent rather than computed. AI: no policy stated on either surface, key absent. DUP: dupcheck.py on \"environmental wildlife\" returned 0 hits, on outdoorphotography 6 hits (all prior themes, all past deadlines except Summer Woodland), canary 0."
+    },
+    {
+      "title": "Create! Magazine Issue #60 — The Artist's World",
+      "org": "Create! Magazine",
+      "deadline": "2026-09-30",
+      "fee": "$35 / 3 images",
+      "category": "zine",
+      "description": "Open call for Issue No. 60 of Create! Magazine, an artist-led print and digital publication for contemporary art. The theme, The Artist's World, asks what it means to build a world as an artist — a universe made through the work, an independent practice that makes its own opportunities, or simply inhabiting the planet; the brief is open to all interpretations and all subjects and media are welcome, photography among them. Juried by Marina Granger, founder of the New York advisory The Artist Advisory, former guest curator of the magazine's 2024 Women's Print Issue and curator of Lunation at Warnes Contemporary and The Feminine Divine at Kaliner Gallery. Selected artists receive a four-page spread in the print and digital editions, website and social features, and a complimentary digital issue. Submit up to 10 works (cohesive bodies and series encouraged) with a 300-word bio and artist statement; $35 covers three images. Open to artists worldwide with no academic background required, and there are no further fees if published.",
+      "url": "https://www.createmagazine.co/call-for-art",
+      "instagram": "@createmagazine",
+      "location": "Online",
+      "prize": "Publication",
+      "eligibility": [],
+      "jury": [
+        "Marina Granger, founder of The Artist Advisory, New York"
+      ],
+      "submitVia": "Submittable",
+      "submitUrl": "https://createmagazine.submittable.com/submit",
+      "requirements": "Up to 10 images",
+      "slug": "create-magazine-issue-60-the-artists-world",
+      "orgInTitle": true,
+      "summary": "Issue #60 of the contemporary art print + digital magazine, juried by Marina Granger. Open theme, photography welcome worldwide.",
+      "resultsDate": "November 2026",
+      "dateAdded": "2026-08-14T23:21:43Z",
+      "verifyNote": "2026-08-15 sweep: NEW EDITION, added from the org's own page. createmagazine.co/call-for-art now carries \"Call for Art: The Artist's World — Open Call Juried by Marina Granger\" for print issue #60, with \"Deadline: September 30, 2026 at 11:59 PM EST\" and an Important Dates block reading \"Submission Deadline: September 30, 2026 / Jurying Phase Starts: October 2026 / Winners Announced: November 2026 / Publication Release: Winter 2026\". CONFIRMED AT THE ENFORCING SOURCE: createmagazine.submittable.com/submit renders data-render-react-date='2026-10-01 04:00:00Z' = 11:59pm EDT on September 30, under the listing title \"Call For Art: International Print Issue #60, The Artist's World, Juried by Marina Granger of The Artist Advisory\". Fee \"$35 for three images\" on both surfaces; \"Submit up to 10 works\". THE ai FIELD IS DELIBERATELY ABSENT, DO NOT RESTORE IT FROM THE SIBLINGS. Issues #58 and #59 stored ai:\"Not accepted\" on the strength of the sentence \"open to all artists worldwide working in any medium except AI\", which by 2026-08-06 survived only on the Submittable listing. For #60 that qualifier is gone from BOTH surfaces: each now reads \"Eligibility: Open to all artists worldwide working in any medium.\", and a grep of the Submittable listing for \"except AI\" returns ZERO. No AI policy is published for this call, so no ai value is stored. MINOR SURFACE DIFFERENCE, not a conflict: the org page says \"Publication Release: Winter 2026\" where the portal says \"December 2026\"; resultsDate takes the notification month (November 2026), which both surfaces agree on. The portal listing title correctly says #60 this cycle — the long-running \"title says #58 while body says #59\" trap on the previous entry does not apply here."
+    },
+    {
+      "title": "XIV «Galicia» Award of Contemporary Photography",
+      "org": "Outono Fotográfico",
+      "deadline": "2026-10-11",
+      "fee": "€22 per project",
+      "category": "photography",
+      "description": "The fourteenth edition of the Premio «Galicia» de Fotografía Contemporánea, founded in 2013 within the International Outono Fotográfico Festival and run by the Asociación OF. Outono Fotográfico with the Xunta de Galicia, the Deputación de Lugo and the University of Vigo's Ourense campus. It seeks complete photographic projects on a free theme, judged above all on how they sit within the discourse of contemporary photography, and is open to any author working with photography or the photographic regardless of nationality. Two awards are made from the same pool of entries. The Jury Prize produces an exhibition of the winning project with a curator appointed by the association, opening in Lugo and touring Galicia and Portugal for two years before the exhibition becomes the artist's property, plus a book in the \"Galicia Contemporary Photography Prize\" series from Difusora de Letras, Artes e Ideas, distributed in bookshops with a percentage of the print run to the author. The Organisation Prize produces a comparable exhibition at the Alterarte Gallery on the Ourense campus with an accompanying booklet. Projects must have been made between October 2016 and October 2026 and must not have been fully funded by another competition or published in full. Submit up to 15 images (minimum 3,000 px on the long side) with a synopsis of up to 2,500 characters and a 1,500-character biography. Entry costs €22 per project.",
+      "url": "https://www.outonofotografico.com/",
+      "location": "Ourense, Spain",
+      "prize": "Touring exhibition + book",
+      "eligibility": [],
+      "jury": [
+        "Alberto Ruiz de Samaniego, curator and Senior Lecturer in Aesthetics, University of Vigo",
+        "Vera Carmo, independent curator and lecturer, University of Porto",
+        "Roberto Villalón Vara, photographer and director of Clavoardiendo Magazine",
+        "Vítor Nieves, curator and co-founder of the award, Academic Director of IPCI",
+        "Xosé Lois Vázquez, photographer and president of the Asociación OF. Outono Fotográfico",
+        "Encarna Lago González, Director of the Provincial Museum Network of Lugo",
+        "Eva Torres, Technical Director of Exhibition Spaces and Museum Areas, Ourense City Council",
+        "Xavier Riomao, visual artist and director of the Alterarte gallery, University of Vigo",
+        "Pablo González Prieto, photographer, Secretary of the Jury"
+      ],
+      "submitVia": "Picter",
+      "submitUrl": "https://site.picter.com/premiogalicia-2026",
+      "requirements": "Up to 15 images",
+      "slug": "xiv-galicia-award-of-contemporary-photography",
+      "orgInTitle": false,
+      "summary": "Galicia's contemporary photography prize, 14th edition. Winning project tours Galicia and Portugal for two years and is published as a book.",
+      "resultsDate": "October 28, 2026",
+      "dateAdded": "2026-08-14T23:21:43Z",
+      "verifyNote": "2026-08-15 sweep: found in the Picter GraphQL sweep as the ONLY one of 37 open calls not already stored, and the only row carrying a non-site.picter.com organiser domain pattern worth chasing. VERIFIED AT THE ORGANISER: outonofotografico.com's front page carries \"Premio Galicia de Fotografía Contemporánea / «Galicia» Award of Contemporary Photography\" with \"INSCRICIÓN A PARTIR DO 15 DE AGOSTO / Registration from 15 August\", and lists winners of editions I (2013) through XII (2024), which makes 2026 the XIV edition as the call states. The org page carries no rules text of its own yet, so the terms come from the organiser-authored prospectus on site.picter.com/premiogalicia-2026 (\"FOURTH | Submission deadline and conditions: The period for submitting the works will be 15 August to 11 October 2026\"). API: submissionEndDate 2026-10-11T21:59:00Z, resultsAnnouncementDate 2026-10-28, callInfo costs \"22€ per project\", whoCanSubmit \"Open to everyone\", theme \"Free Theme\". FEE IS A FLAT €22, NOT \"Variable\" — the Picter header renders \"Variable\" because fee:0 with a single categories[].price:22; the org's own costs string says \"22€ per project\". JURY: the roster stored here is the nine-person Jury tab, NOT the four-plus-secretary list in clause SIXTH of the Terms tab. DO NOT RE-FLIP TO THE TERMS LIST. The Terms document is demonstrably recycled from an earlier cycle — it dates the Organisation Prize exhibition to \"November 2027 ... January 2028\" where the About tab says November 2026 to January 2027, says the winning exhibition will be ready \"after 20 December 2025\", and contradicts itself with \"The Jury will select five projects. These three will be the finalists.\" It also seats Aurelia Balseiro García as the Lugo museum representative where the Jury tab seats Encarna Lago González in the same institutional slot, i.e. a person swap in a recycled clause. The Jury tab entries are edition-specific and present-tense (three of them read \"serves on the jury of the Galicia Contemporary Photography Award as the representative of ...\"). RESULTS: clause SEVENTH publishes six names (five jury finalists plus the organisation's pick) on 28 October 2026 and the winner 48 hours later, i.e. 30 October; the stored resultsDate is the 28th, matching the API's structured resultsAnnouncementDate and the date on which every entrant learns their outcome. No AI policy is stated anywhere, so ai is absent by design. No age or nationality bar (\"Any author who works with photography and the photographic independently of their nationality may participate\"), so eligibility is []."
     }
   ]
 }
