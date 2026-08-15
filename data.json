@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14",
+  "lastUpdated": "2026-08-15T07:20:54Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -42568,6 +42568,154 @@
       "resultsDate": "October 28, 2026",
       "dateAdded": "2026-08-14T23:21:43Z",
       "verifyNote": "2026-08-15 sweep: found in the Picter GraphQL sweep as the ONLY one of 37 open calls not already stored, and the only row carrying a non-site.picter.com organiser domain pattern worth chasing. VERIFIED AT THE ORGANISER: outonofotografico.com's front page carries \"Premio Galicia de Fotografía Contemporánea / «Galicia» Award of Contemporary Photography\" with \"INSCRICIÓN A PARTIR DO 15 DE AGOSTO / Registration from 15 August\", and lists winners of editions I (2013) through XII (2024), which makes 2026 the XIV edition as the call states. The org page carries no rules text of its own yet, so the terms come from the organiser-authored prospectus on site.picter.com/premiogalicia-2026 (\"FOURTH | Submission deadline and conditions: The period for submitting the works will be 15 August to 11 October 2026\"). API: submissionEndDate 2026-10-11T21:59:00Z, resultsAnnouncementDate 2026-10-28, callInfo costs \"22€ per project\", whoCanSubmit \"Open to everyone\", theme \"Free Theme\". FEE IS A FLAT €22, NOT \"Variable\" — the Picter header renders \"Variable\" because fee:0 with a single categories[].price:22; the org's own costs string says \"22€ per project\". JURY: the roster stored here is the nine-person Jury tab, NOT the four-plus-secretary list in clause SIXTH of the Terms tab. DO NOT RE-FLIP TO THE TERMS LIST. The Terms document is demonstrably recycled from an earlier cycle — it dates the Organisation Prize exhibition to \"November 2027 ... January 2028\" where the About tab says November 2026 to January 2027, says the winning exhibition will be ready \"after 20 December 2025\", and contradicts itself with \"The Jury will select five projects. These three will be the finalists.\" It also seats Aurelia Balseiro García as the Lugo museum representative where the Jury tab seats Encarna Lago González in the same institutional slot, i.e. a person swap in a recycled clause. The Jury tab entries are edition-specific and present-tense (three of them read \"serves on the jury of the Galicia Contemporary Photography Award as the representative of ...\"). RESULTS: clause SEVENTH publishes six names (five jury finalists plus the organisation's pick) on 28 October 2026 and the winner 48 hours later, i.e. 30 October; the stored resultsDate is the 28th, matching the API's structured resultsAnnouncementDate and the date on which every entrant learns their outcome. No AI policy is stated anywhere, so ai is absent by design. No age or nationality bar (\"Any author who works with photography and the photographic independently of their nationality may participate\"), so eligibility is []."
+    },
+    {
+      "title": "Hornsby Art Prize 2026",
+      "org": "Hornsby Shire Council",
+      "deadline": "2026-08-20",
+      "fee": "AU$40 per entry",
+      "category": "exhibition",
+      "description": "Established in 2009 and run by Hornsby Shire Council with the Hornsby Art Society, this non-acquisitive prize celebrates Australian contemporary art across five categories — Painting, Drawing, Printmaking, Photography and Sculpture — each carrying its own $1,500 award, so photographers compete for a dedicated Photography Award as well as the $10,000 major prize. The overall pool is $23,000, which also covers a $5,000 Hornsby Shire Local Artist Award and a $500 People's Choice. There is no set theme. Artists may enter up to two works; 2D pieces are capped at 125cm in height and width including the frame, and nothing may exceed 15kg. Finalist works must not have appeared in any other art prize exhibition and must be for sale, with a 20% commission going to the Hornsby Art Society. Finalists are announced by 5pm on 1 September and the exhibition runs at Wallarobba Arts and Cultural Centre from 16 October to 1 November 2026, with the prize announced on opening day.",
+      "url": "https://www.hornsby.nsw.gov.au/Community/Arts-and-culture/Hornsby-Art-Prize-2026",
+      "location": "Hornsby, NSW, Australia",
+      "prize": "AU$10,000 + AU$1,500 Photography Award",
+      "eligibility": [
+        "australia",
+        "18-plus"
+      ],
+      "jury": [
+        "Guido Maestri",
+        "Mirra Whale"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://hornsbyprd-pwy-epw.cloud.infor.com/ePathway/Production/Web/Licensing/externalrequestbroker.aspx?module=ELCLODG&class=MISC&type=ART",
+      "requirements": "Up to 2 works",
+      "resultsDate": "September 1, 2026",
+      "slug": "hornsby-art-prize-2026",
+      "orgInTitle": false,
+      "summary": "Sydney council art prize with its own AU$1,500 Photography Award and an AU$10,000 major prize. AU$40 per entry.",
+      "dateAdded": "2026-08-15T07:20:54Z"
+    },
+    {
+      "title": "Kangaroo Valley Art Prize 2026",
+      "org": "Visual Arts in the Valley",
+      "deadline": "2026-08-21",
+      "fee": "AU$30 per work (AU$80 for three)",
+      "category": "exhibition",
+      "description": "The headline prize of the Visual Arts in the Valley festival, held in the Kangaroo Valley Hall and venues around the valley in the NSW Southern Highlands. The terms of entry are deliberately wide: any original work of visual art by an Australian artist or an artist residing in Australia is eligible, expressly including photographic art, digital art, new media and video alongside painting, drawing, printmaking, textiles and collage. Work must have been made within two years of the closing date and must not have been shown by Visual Arts in the Valley before; maximum hung size is 115cm wide by 180cm high including the frame. Alongside the $10,000 main prize there is a $3,000 Highly Commended, a $2,000 Commended, a $4,000 Young & Emerging Art Prize for artists aged 30 or under (with a $1,000 Commended), a $1,500 Salon of Local Artists Prize, a $1,000 People's Choice and a $500 Packing Room Prize. Judged by painter Steven Harvey, senior lecturer at the National Art School, with Olivia Welch of Ngununggula Regional Gallery curating. The exhibition runs 2–5 October 2026.",
+      "url": "https://www.artsinthevalley.net.au/visualarts2026",
+      "location": "Kangaroo Valley, NSW, Australia",
+      "prize": "AU$10,000 + AU$4,000 Young & Emerging",
+      "eligibility": [
+        "australia"
+      ],
+      "jury": [
+        "Steven Harvey, senior lecturer in painting, National Art School",
+        "Olivia Welch, Assistant Director, Ngununggula Regional Gallery"
+      ],
+      "submitVia": "JotForm",
+      "submitUrl": "https://pci.jotform.com/form/260697136964874",
+      "requirements": "Up to 3 works",
+      "slug": "kangaroo-valley-art-prize-2026",
+      "orgInTitle": false,
+      "summary": "AU$10,000 prize at the Visual Arts in the Valley festival; photographic and digital art expressly eligible. AU$30 per work.",
+      "dateAdded": "2026-08-15T07:20:54Z"
+    },
+    {
+      "title": "The Ingram Prize 2026",
+      "org": "The Ingram Collection",
+      "deadline": "2026-08-25",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "An annual purchase prize for artists within five years of graduating from a UK-based art school, run by The Ingram Collection — one of the largest publicly accessible collections of modern and contemporary British art. Entry is free, any medium is accepted, there is no size restriction, and artists may submit up to two works. Three artists receive the Ingram Prize and have their work acquired for the Collection; a fourth work is chosen personally by founder Chris Ingram for the Founder's Award; and one prizewinner is given a solo exhibition at Lightbox Gallery, Woking, in 2027. Shortlisted work is shown at Unit 1 Gallery | Workshop in London from 5 to 11 November 2026, with the winners announced at the opening event on 4 November. Eligible applicants are those aged 18 or over holding a practice-based visual arts qualification from a UK institution completed between 1 April 2021 and 31 October 2026.",
+      "url": "https://ingramcollection.com/2026-ingram-prize/",
+      "location": "London, United Kingdom",
+      "prize": "Acquisition + solo exhibition",
+      "eligibility": [
+        "united-kingdom",
+        "18-plus",
+        "emerging"
+      ],
+      "jury": [
+        "Jo Baring, Director, The Ingram Collection",
+        "Beth Greenacre, curator and art advisor",
+        "Hammad Nasar, Director of Programmes & Content, Ibraaz",
+        "Dorothy Price, Professor and Deputy Director, The Courtauld Institute of Art",
+        "Sarah Victoria Turner, Director, Paul Mellon Centre for Studies in British Art"
+      ],
+      "submitVia": "ArtOpps",
+      "submitUrl": "https://artopps.co.uk/opportunities/ingramprize-26",
+      "requirements": "Up to 2 works",
+      "resultsDate": "November 4, 2026",
+      "slug": "the-ingram-prize-2026",
+      "orgInTitle": false,
+      "summary": "Free UK purchase prize for recent graduates: work acquired for The Ingram Collection, plus a 2027 solo show at Lightbox.",
+      "dateAdded": "2026-08-15T07:20:54Z"
+    },
+    {
+      "title": "NEW WORK 2027 — We Come in Pieces",
+      "org": "Prospect Art",
+      "deadline": "2026-08-16",
+      "fee": "$10 (waiver on request)",
+      "category": "grant",
+      "description": "Prospect Art's annual NEW WORK commission is a $1,500 project grant funding a new, conceptually driven work made in response to a curatorial theme — for 2027, 'We Come in Pieces', developed by Curatorial Fellow Alma Sammel. The theme proposes the Alien not as an Other but as a method of estrangement, and asks for work that displaces the point of listening, seeing or sensing: speculative cosmologies, ecological systems, satellites and orbital debris, fungal networks, oceans, algorithmic intelligences. Research-based practice is especially encouraged. Photography is named among the welcomed media alongside moving image, installation, sculpture, performance, sound, digital media and social practice. A single application also puts artists in consideration for ONE WORK, an online series built around a single completed artwork, and BROADCAST, a curated programme of screenings and artist talks that pays a $125 speaking fee. Applications ask for a 250-word project description, a sketch or mock-up, three links to finished works, a 200-word statement on the theme, a bio and exhibition history, and a budget. The $10 administrative fee is waived on request by email, no explanation needed.",
+      "url": "https://www.prospectart.org/new-work-grant",
+      "location": "Los Angeles, CA, USA",
+      "prize": "$1,500 commission",
+      "eligibility": [
+        "professional"
+      ],
+      "jury": [
+        "Alma Sammel, 2026–27 Curatorial Fellow, Prospect Art"
+      ],
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/VJ2p7TKidi9PHd3FA",
+      "requirements": "Up to 3 work samples",
+      "resultsDate": "September 2026",
+      "slug": "new-work-2027-we-come-in-pieces-prospect-art",
+      "orgInTitle": false,
+      "summary": "$1,500 commission from artist-run Prospect Art for a new work on the theme 'We Come in Pieces'. $10 fee, waived on request.",
+      "dateAdded": "2026-08-15T07:20:54Z"
+    },
+    {
+      "title": "Heysen Prize for Landscape 2026",
+      "org": "Hahndorf Academy",
+      "deadline": "2026-08-21",
+      "fee": "AU$55",
+      "category": "exhibition",
+      "description": "A biennial contemporary art prize established in 1997 to commemorate Sir Hans Heysen, run by the Hahndorf Academy in the Adelaide Hills. The 2026 edition asks artists to express their connection with — or concern for — protecting the Australian environment, taking Heysen's own record as an early environmental activist as its starting point. 'Landscape' is defined broadly to include every aspect of the natural, rural and urban landscape, and the prize is open to 2D, 3D and moving-image work; photographers have been regular finalists, and past selections include Che Chorley and Mark Kimber. The main prize of $15,000 is acquisitive; a non-acquisitive People's Choice Prize of $1,000 is also awarded. Finalists are notified on 31 August 2026 and deliver work to Hahndorf between 7 and 23 September; the finalist exhibition runs 10 October to 6 December 2026, opening with a launch on 10 October at which the winners are announced.",
+      "url": "https://hahndorfacademy.org.au/heysen-prize",
+      "location": "Hahndorf, SA, Australia",
+      "prize": "AU$15,000 acquisitive",
+      "eligibility": [],
+      "submitVia": "Google Form",
+      "submitUrl": "https://forms.gle/WwtsmivPihRXjiiS9",
+      "resultsDate": "August 31, 2026",
+      "slug": "heysen-prize-for-landscape-2026",
+      "orgInTitle": false,
+      "summary": "Biennial Adelaide Hills landscape prize, AU$15,000 acquisitive, open to 2D, 3D and moving image. AU$55 entry.",
+      "dateAdded": "2026-08-15T07:20:54Z"
+    },
+    {
+      "title": "Windgate Artist in Residence — Fall 2027 & Spring 2028",
+      "org": "UA Little Rock School of Art and Design",
+      "deadline": "2026-08-23",
+      "fee": "Free",
+      "category": "residency",
+      "description": "A semester-long funded residency at the University of Arkansas at Little Rock, supported by the Windgate Foundation and open to artists, designers and craftspeople in any medium. The selected artist receives a $30,000 stipend for the semester, housing, a $2,000 materials and travel budget, and 24-hour access to a private studio plus the Windgate Center's specialist facilities — a photography studio, printmaking studio, woodshop with CNC and laser cutter, ceramics, jewellery and metalsmithing studios, and a smithy and foundry. Residents are not required to teach courses; the commitments are weekly open studio hours, two public artist talks (one at the Windgate Center, one at the Arkansas Museum of Fine Arts), one two-day student workshop, BFA critiques and up to two guest class sessions, plus donating one work to the university's permanent collection. Two terms are open: Fall 2027 (15 August to 15 December) and Spring 2028 (15 January to 15 May), each with its own application. Applicants need an active practice, evidence of exhibiting nationally or internationally, experience working with students, and a degree, certificate or equivalent experience; international artists must already hold visa authorisation covering the residency, as the university cannot sponsor visas. Applications go through Workday with a cover letter, CV, three references and a portfolio of up to 20 images.",
+      "url": "https://ualr.edu/art/artist-in-residence/",
+      "location": "Little Rock, AR, USA",
+      "prize": "$30,000 stipend + housing",
+      "eligibility": [
+        "professional"
+      ],
+      "submitVia": "Workday",
+      "submitUrl": "https://uasys.wd5.myworkdayjobs.com/en-US/UASYS/job/Little-Rock/Adjunct-Lecturer---Fall-2027-Artist-in-Residence_R0088035",
+      "requirements": "Up to 20 images",
+      "slug": "windgate-artist-in-residence-fall-2027-spring-2028",
+      "orgInTitle": false,
+      "summary": "Semester residency at UA Little Rock: $30,000 stipend, housing, materials budget and a photography studio. Free to apply.",
+      "dateAdded": "2026-08-15T07:20:54Z"
     }
   ]
 }
