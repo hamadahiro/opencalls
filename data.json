@@ -42594,7 +42594,9 @@
       "slug": "hornsby-art-prize-2026",
       "orgInTitle": false,
       "summary": "Sydney council art prize with its own AU$1,500 Photography Award and an AU$10,000 major prize. AU$40 per entry.",
-      "dateAdded": "2026-08-15T07:20:54Z"
+      "dateAdded": "2026-08-15T07:20:54Z",
+      "instagram": "@hornsbycouncil",
+      "verifyNote": "2026-08-15 10:00 verify: INSTAGRAM GAP CLOSED at @hornsbycouncil, from the org site's own footer social link (<li class=\"footer-link-instagram\"><a href=\"http://instagram.com/hornsbycouncil\">). ACCESS NOTE THAT RETIRES THE ADD-PASS RULING: hornsby.nsw.gov.au was logged on 2026-08-15 08:00 as \"403s to curl+UA AND WebFetch, Chrome only\". It is not Chrome-only - it is the PLAIN-CURL INVERSION: a UA-curl returns a 459-byte 403 while a bare `curl -sL` with no -A returns the full 128 KB page. Try both directions before reaching for Chrome. Every field re-read on that page: \"Entries close: 5pm (AEST), 20 August\", \"Finalists announced: 1 September\" (and the FAQ repeats \"Finalists will be announced by 5pm on 1 September, 2026\"), the prize ladder \"Hornsby Art Prize $10,000 / Hornsby Shire Local Artist Award $5,000 / Sculpture Award $1,500 / Painting Award $1,500 / Drawing Award $1,500 / Printmaking Award $1,500 / Photography Award $1,500 / People's Choice Award $500\" - photography is a NAMED award category, not an also-ran medium - \"Limit two (2) entries per person\" (= requirements) and \"open to all permanent Australian residents aged 18 years and over\" (= the stored australia + 18-plus). No AI policy anywhere on the page."
     },
     {
       "title": "Kangaroo Valley Art Prize 2026",
@@ -42619,7 +42621,9 @@
       "slug": "kangaroo-valley-art-prize-2026",
       "orgInTitle": false,
       "summary": "AU$10,000 prize at the Visual Arts in the Valley festival; photographic and digital art expressly eligible. AU$30 per work.",
-      "dateAdded": "2026-08-15T07:20:54Z"
+      "dateAdded": "2026-08-15T07:20:54Z",
+      "instagram": "@artsinthevalley",
+      "verifyNote": "2026-08-15 10:00 verify: INSTAGRAM GAP CLOSED at @artsinthevalley, taken from the org page's own Social Bar link (aria-label=\"Instagram\", href instagram.com/artsinthevalley) - the festival trades as Arts in the Valley, so the handle does not contain \"visual\". Every other field re-read verbatim on artsinthevalley.net.au/visualarts2026: \"Entries close 21 August 2026\", \"Artists may enter up to 3 works. $30 per entry or $80 for three\" (= the stored fee and requirements), and the prize block \"Kangaroo Valley Art Prize $10,000 / Highly Commended $3,000 / Commended $2,000 / Young & Emerging Art Prize $4,000\". JURY TITLES RE-CONFIRMED WORD FOR WORD, including the one that is not near his name: Steven Harvey is headed \"Steven Harvey - Judge\" and his bio ends \"is a senior lecturer in painting at the National Art School\" ~900 characters later, so a proximity read misses it; Olivia Welch is headed \"Olivia Welch - Curator\" and \"is Assistant Director at Ngununggula Regional Gallery Bowral\". Both sit under one \"MEET OUR JUDGE & CURATOR\" heading covering all three prizes, which is why both are stored. AI: the only hit is the Wix \"ai-generation-disabled\" meta tag, the known false positive - not a policy."
     },
     {
       "title": "The Ingram Prize 2026",
@@ -42650,7 +42654,9 @@
       "slug": "the-ingram-prize-2026",
       "orgInTitle": false,
       "summary": "Free UK purchase prize for recent graduates: work acquired for The Ingram Collection, plus a 2027 solo show at Lightbox.",
-      "dateAdded": "2026-08-15T07:20:54Z"
+      "dateAdded": "2026-08-15T07:20:54Z",
+      "instagram": "@ingramcollectionuk",
+      "verifyNote": "2026-08-15 10:00 verify: INSTAGRAM GAP CLOSED at @ingramcollectionuk, from the org site's own header social link (<a href=\"https://www.instagram.com/ingramcollectionuk/\" class=\"instagram\">). Everything else re-read verbatim on ingramcollection.com/2026-ingram-prize/: \"CLOSING DATE: 5 pm on Tuesday 25 August 2026\", \"Eligible artists can submit up to two works in any media, with no restrictions on size, and no entry fee\" (= Free and the 2-work cap), \"open to visual artists who are within five years of graduation from a UK-based art school\" (= the stored united-kingdom + emerging), and \"All winners will be announced at the exhibition opening event on Wednesday, 4 November 2026\" (= the stored resultsDate). Prize re-confirmed as an acquisition plus a show: \"All prizewinning works will be acquired for The Ingram Collection, and one prizewinner will be offered a solo exhibition in 2027 at Lightbox Gallery, Woking\", with the finalists' group show at Unit 1 Gallery | Workshop, London, 5-11 November 2026. No AI policy on the org page. NB the org page names no juror at all - the five-name panel stored here lives ONLY on the ArtOpps entry page, as the 08-15 08:00 editor pass logged, so an org-page-only read reads as though the jury had been pulled."
     },
     {
       "title": "NEW WORK 2027 — We Come in Pieces",
@@ -42675,7 +42681,9 @@
       "slug": "new-work-2027-we-come-in-pieces-prospect-art",
       "orgInTitle": false,
       "summary": "$1,500 commission from artist-run Prospect Art for a new work on the theme 'We Come in Pieces'. $10 fee, waived on request.",
-      "dateAdded": "2026-08-15T07:20:54Z"
+      "dateAdded": "2026-08-15T07:20:54Z",
+      "instagram": "@prospectartproject",
+      "verifyNote": "2026-08-15 10:00 verify: INSTAGRAM GAP CLOSED at @prospectartproject, from the Squarespace socialAccounts block on prospectart.org (profileUrl instagram.com/prospectartproject). Everything else re-read verbatim: \"PROPOSALS DUE : August 16, 2026\" (CLOSES TOMORROW), \"a $1,500 project grant\", \"$10 Admin Fee : - Pay via PayPal\" with the waiver line \"If the fee presents a financial barrier, applicants may request a waiver, no explanation needed\", \"Artists will be notified by the end of September with the results for the NEW WORK grant\" (= the stored September 2026), and Curatorial Fellow Alma Sammel as the theme's author and selector. No AI policy on the page."
     },
     {
       "title": "Heysen Prize for Landscape 2026",
@@ -42694,7 +42702,9 @@
       "slug": "heysen-prize-for-landscape-2026",
       "orgInTitle": false,
       "summary": "Biennial Adelaide Hills landscape prize, AU$15,000 acquisitive, open to 2D, 3D and moving image. AU$55 entry.",
-      "dateAdded": "2026-08-15T07:20:54Z"
+      "dateAdded": "2026-08-15T07:20:54Z",
+      "instagram": "@hahndorfacademy",
+      "verifyNote": "2026-08-15 10:00 verify: INSTAGRAM GAP CLOSED at @hahndorfacademy, sourced from the organiser's OWN markup rather than a search: hahndorfacademy.org.au/heysen-prize carries it TWICE, once in the Squarespace socialAccounts block (profileUrl instagram.com/hahndorfacademy) and once inside the page's JSON-LD \"sameAs\" array beside the org postal address and phone - the strongest form of org assertion, so no status probe was needed. Everything else re-read and unchanged: \"DEADLINE FOR ENTRIES - August 21st, 2026\", \"NOTIFICATION OF FINALISTS - August 31, 2026\", \"HEYSEN PRIZE FOR LANDSCAPE -ACQUISITIVE $15,000\" (plus a separate non-acquisitive $1,000 People's Choice, which is why the chip carries only the main prize), and \"The prize is open for 2D and 3D and moving image works\". FEE RE-CONFIRMED AT THE SHOPIFY PRODUCT, WHICH IS THE ONLY SURFACE THAT CARRIES IT: the page prints \"PAY THE ENTRY FEE\" with no amount and its only shop href is hahndorf-academy.myshopify.com/products/heysen-prize-for-landscape-entry-fee; appending .json to that returns title \"HEYSEN PRIZE FOR LANDSCAPE ENTRY FEE\" with a single variant priced \"55.00\" (= the stored AU$55). THE JURY GAP IS STRUCTURAL, NOT A MISS: the page has a \"THE JUDGES:\" heading followed by three images and nothing else - their alt text is the raw filenames (\"ash new.jpg\", \"20.jpg\", \"21.jpg\") and there are no figcaptions, so no name is extractable. Only PAST editions name their judges (2024 Maria Zagala & Andrew Purvis, 2022 Erin Davidson & Sera Waters) - do not lift those, they are last cycle's. No eligibility, image-count or AI text anywhere on the page."
     },
     {
       "title": "Windgate Artist in Residence — Fall 2027 & Spring 2028",
