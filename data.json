@@ -42850,6 +42850,136 @@
       ],
       "ai": null,
       "verifyNote": "2026-08-15 sweep: foundwork.art/artist-prize (prize amounts, the five 2026 jurors with bios, \"artists working in any media\") and foundwork.art/faq (deadline, cost, eligibility) are the sources. THE FEE IS NOT AN ENTRY FEE AND MUST NOT BE FLATTENED TO \"Free\": \"There is no separate application fee … However, to be eligible, you will need to maintain an active Foundwork membership throughout the 2026 selection period\" at \"$6 monthly subscription which starts with a 30-day free trial for new members\", i.e. roughly $18-24 across the Sep 25 - Dec 31 window. The EntryThingy row prices it as a flat $18 fee. THE FAQ IS A CLIENT-RENDERED ACCORDION — a raw fetch of /faq returns the question headings only and every answer greps ZERO; the answers appear only after clicking the headings in Chrome. Deadline is \"5:00 pm PT, September 25, 2026\", the start of the selection period, not its end. resultsDate \"December 2026\" is from the org's own \"if you do not receive a notice by the end of the selection period, you were not selected\" against a period ending 31 Dec 2026; no exact announcement date is published. Photography eligibility rests on \"any media\" plus the org's own 2025 honoree (Antonia Kuo, photochemical work on silver gelatin paper) and 2023 Short List (Clifford Prince King). No AI policy (grep 0). 2026-08-15 14:00 verify: TWO FIXES. (1) requirements \"6 artworks + artist statement\" -> \"6 artworks\": the statement is a separate application component, not an image count, and this field drives the /requirements/ facet - bucket 6-10-images is unchanged. (2) submitUrl was an ABSENT KEY (= never checked) and is now foundwork.art/signup, taken from the prize page's OWN call to action: the /artist-prize block ends \"Register Here\" linking https://foundwork.art/signup, the only actionable link in the call block, and an active membership is the stated precondition for eligibility. SOURCES THIS RUN: foundwork.art/artist-prize is a JS shell to plain curl (12.6 KB, title only) but renders fully through r.jina.ai, which re-confirms \"an unrestricted $10,000 grant, studio visits with each of our five jurors, and an interview for our Dialogues program\" and \"Three artists will be named to the 2026 Short List, and each will receive a $1,000 micro-grant in support of their practice\" (= the stored prize chip). THE FAQ ACCORDION IS STILL UNREADABLE OFF-CHROME, CONFIRMING THE ADD-PASS NOTE: r.jina.ai on foundwork.art/faq returns 3.9 KB consisting ONLY of the question headings (\"Is there an application fee?\", \"What are the important dates and selection process?\") with every ANSWER absent, and foundwork.art is outside Chrome's permitted-domain set this run. So the Sep 25 deadline and the membership wording could not be re-read today and carry forward from the 08-15 sweep's Chrome read. Do NOT flatten the fee to \"Free\" on the strength of the unreadable FAQ, and do NOT take the EntryThingy row's flat \"$18\" - both were settled at add time."
+    },
+    {
+      "title": "16th Annual International Juried Exhibition",
+      "org": "Gallery 110",
+      "deadline": "2026-10-31",
+      "fee": "$40 (3 images) + $10 each addl, up to 10",
+      "category": "exhibition",
+      "description": "Gallery 110's annual juried exhibition, running since 2011, invites emerging and established artists worldwide to submit original work in any two- or three-dimensional medium — photography included — for a show in the gallery's Pioneer Square space from 4 to 27 February 2027. The 2026 juror is Ryan Hardesty, Executive Director of the Jordan Schnitzer Museum of Art at Washington State University, who spent twelve years at the Northwest Museum of Arts & Culture in Spokane and has held positions at the Institute of Contemporary Art in Boston, the Rose Art Museum at Brandeis and the Fogg Art Museum at Harvard. Hardesty has chosen an open call with no set theme. He awards first, second and third prizes of $1,000, $500 and $300, and there is a $200 People's Choice award. Gallery 110 is an artist-run 501(c)(3) non-profit supported by 4Culture and the City of Seattle Office of Arts & Culture; accepted artists get professional reviews and inclusion in the monthly First Thursday Art Walk, which draws over a thousand visitors. Applications are accepted from 21 July to 31 October 2026. Finalists are notified by email and phone in December 2026 and are responsible for delivery and prepaid return shipping. Open to artists 18 and over.",
+      "url": "https://gallery110.com/news/16th-juried-show-open-call-for-entry",
+      "location": "Seattle, WA, USA",
+      "prize": "$1,000 / $500 / $300 + $200 People's Choice",
+      "eligibility": [
+        "18-plus"
+      ],
+      "submitVia": "Artwork Archive",
+      "submitUrl": "https://www.artworkarchive.com/call-for-entry/16th-annual-international-juried-exhibition-at-gallery-110-2026",
+      "requirements": "3-10 images",
+      "resultsDate": "December 16, 2026",
+      "slug": "16th-annual-international-juried-exhibition-gallery-110",
+      "orgInTitle": false,
+      "summary": "Seattle non-profit gallery's open-call juried show, juried by Ryan Hardesty, with $2,000 in prizes and a February 2027 exhibition.",
+      "dateAdded": "2026-08-15T15:24:33Z",
+      "instagram": "@gallery110seattle",
+      "jury": [
+        "Ryan Hardesty"
+      ],
+      "ai": null,
+      "verifyNote": "2026-08-15 editor: verified field by field on BOTH surfaces. gallery110.com/news/16th-juried-show-open-call-for-entry carries \"APPLICATIONS ACCEPTED: July 21 - October 31, 2026\", the $40/3-images + $10 per additional image up to 10 images total fee, the $1000/$500/$300 + $200 People's Choice awards, the Feb 4-27 2027 exhibition dates, \"open to artists 18 years of age and older\", and the Hardesty bio verbatim (JSMA at WSU since 2014, twelve years at the Northwest Museum of Arts & Culture, ICA Boston, Rose Art Museum, Fogg). Its footer supplies \"4Culture/King County Lodging Tax and the City of Seattle Office of Arts & Culture\" and \"501(c)(3) non-profit. EIN 27-1283473\". ONE FIX: resultsDate \"December 2026\" -> \"December 16, 2026\". The org page says only \"notified by email and phone in December 2026\"; the Artwork Archive call page's IMPORTANT DATES list adds \"December 16, 2026: Final notifications emailed to all artists\". That is ADDITION, not contradiction, and resultsDate takes Month D, YYYY. MEDIUM: \"original artwork in any two or three dimensional media\" is an all-media affirmative; grep for \"no photography\"/\"except photography\" returns 0 on both surfaces. \"Since 2011\" is the AA page's own wording, not an inference from \"16th\". AI policy: grep 0 on both surfaces -> ai null (verified absent, not unchecked). NOT STORED, deliberately: Artwork Archive advertises code EARLYBIRD20 for 20% off through August 31, 2026 - a temporary discount, so the fee field holds the standing price. gallery110.com plain-curls with a browser UA (948 KB); the artworkarchive.com call page 403s to curl and was read through r.jina.ai."
+    },
+    {
+      "title": "Call for Entries 2027",
+      "org": "ROY G BIV Gallery",
+      "deadline": "2026-09-25",
+      "fee": "$25 membership",
+      "category": "exhibition",
+      "description": "ROY G BIV Gallery for Emerging Artists in Columbus, Ohio runs its exhibition programme from one annual call for entries, and this is the round for the 2027 season. Selected artists are given a month-long small group exhibition during the 2027 calendar year, curated by the gallery director. Submissions come from artists local and global and are reviewed and voted on by a panel of jurors from the contemporary arts community; the 2027 jurors are filmmaker and visual artist Yusef Ferguson, a 2025 Greater Columbus Arts Council Visual Arts Fellow currently exhibiting at the Columbus Museum of Art, and sculptor Dana Lynn Harper, who holds an MFA from Penn State and makes ritual votive works about racial identity and cultural heritage. ROY defines emerging artists as those early in their careers, not represented by a gallery, and not yet substantially celebrated by the media, funding circles or the public; artists who have shown at ROY before are ineligible apart from ImageOHIO and the annual small works member show. Entry requires a ROY G BIV membership costing $25 for the calendar year. Submissions go by email with up to 10 images (JPG or PNG, under 1.5 MB each) or up to 5 video URLs, plus an artist statement, CV and list of works. Two-dimensional work must arrive ready to hang, and artists are responsible for transport and installation.",
+      "url": "https://www.roygbivgallery.com/call-for-entries-2027",
+      "location": "Columbus, OH, USA",
+      "eligibility": [
+        "emerging",
+        "membership-required"
+      ],
+      "submitVia": "Email",
+      "requirements": "Up to 10 images",
+      "slug": "call-for-entries-2027-roy-g-biv-gallery",
+      "orgInTitle": false,
+      "summary": "Month-long group show at a Columbus non-profit dedicated to emerging artists, juried by Yusef Ferguson and Dana Lynn Harper.",
+      "dateAdded": "2026-08-15T15:24:33Z",
+      "instagram": "@roygbivgallery",
+      "jury": [
+        "Yusef Ferguson",
+        "Dana Lynn Harper"
+      ],
+      "ai": null,
+      "verifyNote": "2026-08-15 editor: verified field by field at roygbivgallery.com/call-for-entries-2027 (plain curl, browser UA). \"Deadline: Sept 25, 2026 by 11:59 PM\"; \"To enter, become a member of ROY G BIV Gallery, or renew your membership at our website for a fee of $25. Your membership is valid for one calendar year\"; email to info@roygbivgallery.org with subject \"CFE 2027\" plus artist statement, resume/CV and list of works; no more than 10 images, JPG or PNG, no larger than 1.5 MB each; no more than 5 video URLs; the five-bullet emerging definition; and the jurors' full bios (Yusef Ferguson, 2025 GCAC Visual Arts Fellow showing at the Columbus Museum of Art through September 2026; Dana Lynn Harper, MFA Sculpture, Penn State). FEE IS JOIN-TO-ENTER, NOT A PRIOR-MEMBERSHIP GATE - any artist may enter by paying the $25, so this is listable and tagged membership-required, not a members-only skip. MEDIUM: the call enumerates NO media at all, so the org's own photography programme was tested and it PASSES three ways - alumnus Jason Schwab holds a BFA in photography and had the solo exhibition \"Remove/Approve\" AT ROYGBIV; the 2025 CFE juror was Julie Rae Powers, MFA in Photography and a photobook publisher; and ROY's own exhibition calendar gives Oct 9 - Nov 6 2026 to \"Image OHIO / FOTO Focus 2026\" (it also hosted ImageOHIO + FotoFocus in 2024). AI policy: grep 0 -> ai null (verified absent). No prize key: the call promises a month-long small group exhibition, no cash."
+    },
+    {
+      "title": "RAA&M National Juried Show 2026",
+      "org": "Rockport Art Association & Museum",
+      "deadline": "2026-09-07",
+      "fee": "$50 first entry ($40 members) + $10 each addl",
+      "category": "exhibition",
+      "description": "The Rockport Art Association & Museum's annual national juried exhibition hangs in the Aldro T. Hibbard and Maddocks galleries on Cape Ann from 14 November to 31 December 2026, with a gala and awards reception on 13 November. Photography is one of the named media categories, alongside painting, drawing, mixed media, collage, original printmaking and sculpture. Over $25,000 in cash and merchandise awards is on offer, including a $5,000 Grand Prize. Garin Baker is juror of selection and of awards. Artists may submit up to four works but only one will be selected if accepted; the maximum size is 36 inches on the longest side plus a reasonable frame. Membership is not required to enter. The museum takes a 40% commission on sales from the exhibition. Work made in an instructional setting, including workshops and classes, is not eligible, and accepted work must stay hanging until the show closes unless sold. The AI policy is unusually specific for a photography entrant: no artificial intelligence may be used in the conception or development of the work, images must originate with the artist through a light capture process, and no synthetic images, stock imagery, replacement skies or generative fill are permitted. Editing is allowed as long as every component belongs to the artist. Results appear in the OnlineJuriedShows artist profile on 25 September 2026.",
+      "url": "https://www.rockportartassn.org/raam-national",
+      "location": "Rockport, MA, USA",
+      "prize": "$25,000+ in awards ($5,000 Grand Prize)",
+      "eligibility": [],
+      "submitVia": "OnlineJuriedShows",
+      "submitUrl": "https://www.onlinejuriedshows.com/Default.aspx?OJSID=59013",
+      "requirements": "Up to 4 artworks",
+      "resultsDate": "September 25, 2026",
+      "slug": "raam-national-juried-show-2026-rockport-art-association-museum",
+      "orgInTitle": false,
+      "summary": "Over $25,000 in awards and a $5,000 Grand Prize at Cape Ann's century-old art museum; photography explicitly eligible.",
+      "dateAdded": "2026-08-15T15:24:33Z",
+      "instagram": "@rockport_art_association",
+      "jury": [
+        "Garin Baker"
+      ],
+      "ai": "Not accepted",
+      "verifyNote": "2026-08-15 editor: verified on BOTH surfaces - rockportartassn.org/raam-national and the full prospectus at onlinejuriedshows.com/Default.aspx?OJSID=59013 (plain curl, no login) - and they agree line for line: deadline Monday, September 7, 2026; \"Up to four entries: $40 for RAA&M members and $50 for non-members for the first entry, plus $10 for each additional entry\"; \"Over $25,000 in Cash and Merchandise Awards! $5,000 Grand Prize\" (the Christopher A. Hamilos Memorial Award for Best in Show in Any Medium, with $3,000 and $2,000 any-medium awards behind it); \"Juror of Selection and Awards: Garin Baker\"; exhibition Nov 14 - Dec 31 2026 in the Aldro T. Hibbard and Maddocks galleries; gala and awards reception Nov 13; 40% commission; instructional-setting work barred; \"Artists do not need to be members of RAA&M to enter\" (hence eligibility []). Photography is a NAMED media category. The AI clause is quoted almost verbatim in the description and is unusually specific for photographers (light capture required; no synthetic images, stock, replacement skies or generative fill; ordinary editing allowed) -> ai \"Not accepted\". resultsDate September 25, 2026 = \"Acceptance Announcement ... available in your OnlineJuriedShows artist profile\". ONE FIX: submitVia \"Smarter Entry\" -> \"OnlineJuriedShows\". Those are two different platforms and the submitUrl is an onlinejuriedshows.com deep link; the site's stored convention for that host is \"OnlineJuriedShows\" (Coastal Arts League, Connecticut Women Artists), while \"Smarter Entry\" always pairs with client.smarterentry.com. Both names sit in submitViaIsPlatform(), so the build's submitUrl gate passes either way and would NOT have caught this."
+    },
+    {
+      "title": "DeHaan Artist of Distinction Award 2026 — Round 2",
+      "org": "Indy Arts Council",
+      "deadline": "2026-10-18",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Funded entirely by a legacy gift from the Christel DeHaan Family Foundation and administered by the Indy Arts Council, the DeHaan Artist of Distinction Award honours up to five contemporary visual artists a year with project grants of up to $10,000 each. Photography is named in the list of eligible art forms alongside painting, drawing, printmaking, sculpture, ceramics, textiles and digital or new media. The programme is built for risk: it funds aspirational, innovative projects that push an artist's practice in new directions, and applicants are asked to make the case that their work brings something new to the field. Applicants must have lived or worked in Indiana for at least three consecutive years at the date of application, must remain in the state for a year after the award activities conclude, must show five years of documented experience through solo exhibitions, national exposure, critical reviews, residencies, fellowships or juried shows, and must have generated consistent income from their work in visual art. Projects must conclude within twelve months of the signed agreement, and awardees take part in a professionally curated group exhibition at Gallery 924 at the Indy Arts Council and submit a final report documenting the project's impact. There are two rounds a year; Round 1 closed on 3 May 2026 and Round 2 closes on 18 October 2026. Applications are free and go through the council's grant platform, and alternative formats such as dictated or video responses can be arranged.",
+      "url": "https://indyarts.org/grants/dehaan-artist-of-distinction-award/",
+      "location": "Indianapolis, IN, USA",
+      "prize": "Up to 5 × $10,000",
+      "eligibility": [
+        "professional",
+        "indiana"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://indyarts.grantplatform.com/",
+      "requirements": "2+ work samples",
+      "slug": "dehaan-artist-of-distinction-award-2026-round-2-indy-arts-council",
+      "orgInTitle": false,
+      "summary": "Up to five $10,000 project grants for Indiana visual artists taking real risks; photography named as eligible, free to apply.",
+      "dateAdded": "2026-08-15T15:24:33Z",
+      "instagram": "@artscouncilindy",
+      "ai": null,
+      "verifyNote": "2026-08-15 editor: indyarts.org 403s to plain curl and was read through r.jina.ai; the enforceable text is the 2026 Application Guidelines PDF (indyartsmedia.s3.amazonaws.com/.../2026-DADA-Guildelines.pdf), which confirms every stored value: \"Round 1: May 3, 2026 / Round 2: October 18, 2026\", \"will honor up to five contemporary artists each year with grants of $10,000\" and \"grants are up to a maximum of $10,000, and up to five awards will be presented annually\"; artist eligibility 1-7 (photography NAMED among the eligible art forms; three consecutive years lived and/or worked in Indiana at the date of application; must reside and/or work in Indiana for at least one year following the conclusion of the award activities; five years documented experience; consistent income; no DeHaan award within 12 months); project eligibility (conclude within 12 months of the signed agreement, final report, \"professionally curated group exhibition at Gallery 924\"). \"Funded entirely by a legacy gift from the Christel DeHaan Family Foundation\" is the PDF's own wording, verbatim. FEE: grep 0 for any application fee on both the page and the guidelines -> \"Free\" stands. THREE FIXES. (1) submitUrl www.indyarts.grantplatform.com -> indyarts.grantplatform.com: THE WWW HOST HAS NO VALID CERTIFICATE (curl: SSL: no alternative certificate subject name matches target host name), so the stored link would have thrown a browser security warning; the bare host is what both the page's Apply button and the PDF print. (2) description said the awards were \"unrestricted-scope\" - they are not; these are project grants with a 12-month completion deadline, a final report and a mandatory exhibition, so the phrase is now \"project grants of up to $10,000 each\" (the prize chip \"Up to 5 x $10,000\" was already right). (3) requirements \"2 work samples\" -> \"2+ work samples\": the guidelines say \"Must submit at least two work samples\", a floor, not a cap. AI policy: grep 0 on page and PDF -> ai null. instagram @artscouncilindy confirmed in indyarts.org's own markup. Photography is not just listed but funded: 2025 DeHaan artist Eli Craven works with found photographic images."
+    },
+    {
+      "title": "16th Annual National Juried Exhibition",
+      "org": "Marshall University Art Galleries",
+      "deadline": "2026-10-23",
+      "fee": "$30 (up to 3 entries; $15 Marshall students)",
+      "category": "exhibition",
+      "description": "Marshall University's School of Art & Design invites artists to its 16th Annual National Juried Exhibition, shown in the Charles W. and Norma C. Carroll Gallery in the Visual Arts Center in Huntington, West Virginia from 18 January to 25 February 2027, with an awards reception on 18 February. Artists may submit up to three works in any medium, so photography and lens-based work are eligible. The juror is Rachel Rearick, Executive Director of Contemporary Craft and an adjunct faculty member at Carnegie Mellon University teaching museum operations and public art; she is an artist member of the Associated Artists of Pittsburgh and the Pittsburgh Print Group. Entrants must be 18 or over and hold permanent residence in the United States, with exceptions for students and military personnel holding US resident status; work previously shown in a Marshall University gallery will not be considered. Entry is $30 for up to three works, or $15 for current Marshall students with ID, and everything is handled through the entry form on the gallery's own site. Jurying runs 3 to 14 November 2026 with email notifications on 18 November, and accepted work must reach the gallery between 7 and 11 December. All accepted pieces must arrive display-ready, and artists cover delivery and insurance in transit.",
+      "url": "https://www.marshall.edu/art-galleries/16th-annual-national-juried-exhibition",
+      "location": "Huntington, WV, USA",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://www.marshall.edu/art-galleries/16th-annual-national-juried-exhibition",
+      "requirements": "Up to 3 artworks",
+      "resultsDate": "November 18, 2026",
+      "slug": "16th-annual-national-juried-exhibition-marshall-university-art-galleries",
+      "orgInTitle": false,
+      "summary": "University gallery's national open-medium juried show, juried by Rachel Rearick, with a six-week 2027 exhibition.",
+      "dateAdded": "2026-08-15T15:24:33Z",
+      "ai": null,
+      "verifyNote": "2026-08-15 editor: the landing page carries only the blurb, the deadline, the fee and the entry form; every other stored field was checked against the linked PROSPECTUS PDF at marshall.edu/art-galleries/files/2026/07/16-ANJE-Prospectus-1-1.pdf, which is the enforceable document and confirms all of it: \"artists must be 18 years of age or older and must maintain a permanent residence in the U.S. Exceptions are made for students and military personnel with U.S. resident status\"; \"Artwork previously displayed in Marshall University's art galleries will not be considered\"; \"Artists may submit up to three artworks in any medium\" (the all-media affirmative that carries photography); \"General Public: $30, up to three entries | Marshall University students: $15\"; all accepted works display-ready; artist covers delivery and insurance in transit. KEY DATES block: submissions Aug 3 - Oct 23 2026 11:59 p.m. EST, jury Nov 3-14, email notifications Nov 18 2026 (= resultsDate), delivery Dec 7-11, exhibition Jan 18 - Feb 25 2027, awards reception Feb 18 2027. NO PRIZE KEY ON PURPOSE: an Awards Reception is scheduled but neither surface publishes award categories or amounts, so there is nothing to store - this is a verified absence, not an unchecked field. AI policy: grep 0 on page and PDF -> ai null. instagram deliberately absent: the only handle in the page markup is @marshallu, the university's, not the galleries'."
     }
   ]
 }
