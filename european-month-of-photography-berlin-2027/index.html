@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">Open call for the 2027 edition of EMOP Berlin, one of Europe's largest photography festivals, organised by Kulturprojekte Berlin and staged across the city from 4 March to 4 April 2027. Museums, galleries, archives, libraries, cultural institutes, universities, and individual photographers or collectives may propose a photography or lens-based exhibition; individual artists must have or secure a Berlin exhibition space, and organisations based outside Berlin must partner with a Berlin venue. Selected projects join the official festival programme and receive promotion across the festival's website, social media, and printed guide. Participation is free with no fee, but EMOP does not fund project costs — applicants arrange their own venue and funding. Proposals may respond to the 2027 leitmotif 'Common Ground. Letters from Europe,' though this is optional. Applications are submitted through an online form and reviewed confidentially by a jury including the festival's Artistic Director, with decisions announced in September 2026.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 16, 2026">August 16, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">September 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/germany/" title="Berlin, Germany">Berlin, Germany</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/proposal/" title="Exhibition proposal">Exhibition proposal</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://kulturprojekteberlin.typeform.com/to/hiZdsuQ6" target="_blank" rel="nofollow noopener" title="Typeform">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 16, 2026">August 16, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">September 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/germany/" title="Berlin, Germany">Berlin, Germany</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/proposal/" title="Exhibition proposal">Exhibition proposal</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Akinbode Akinbiyi, Artist · Kathrin Kohle, Exhibition Manager, Ostkreuz · Sara-Lena Maierhofer, Artist &amp; Photography Professor · Maren Lübbke-Tidow, Artistic Director · Anna Voswinckel, Curator, Krakow Photomonth 2026</p>
@@ -124,8 +124,7 @@
         <p class="call-detail-description">Organized by <a href="/european-month-of-photography-berlin/">European Month of Photography Berlin</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://emop-berlin.eu/en/open-call/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on August 15, 2026</span></div>
     </section>
@@ -143,23 +142,7 @@
   <script>
     const CURRENT_SLUG = 'european-month-of-photography-berlin-2027';
     const CURRENT_CALL = {"title":"European Month of Photography Berlin 2027","category":"exhibition","org":"European Month of Photography Berlin","location":"Berlin, Germany","fee":"Free","deadline":"2026-08-16","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-08-16'.replace(/-/g, '');
-      var nd = new Date('2026-08-16T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'European Month of Photography Berlin 2027';
-      var u = 'https://emop-berlin.eu/en/open-call/';
-      var o = 'European Month of Photography Berlin';
-      var dl = new Date('2026-08-16T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
