@@ -107,6 +107,7 @@ const eligibilityLabel = {
   '10-18': 'Ages 10–18', '13-25': 'Ages 13–25', 'singapore': 'Singapore only', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'hong-kong-macau': 'Hong Kong & Macau only',
   'hawaii-island': 'Hawaiʻi Island only',
+  'pacific-northwest': 'Pacific Northwest only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists', 'ontario': 'Ontario only',
   'indiana': 'Indiana only', 'ohio': 'Ohio only', 'alabama': 'Alabama only', '18-26': 'Ages 18–26',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'israel': 'Israel only',
