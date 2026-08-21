@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Kinhouse Gallery - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Kinhouse Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <link rel="canonical" href="https://opencalls.monographica.com/kinhouse-gallery/">
+  <title>The Kennedy Center - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from The Kennedy Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <link rel="canonical" href="https://opencalls.monographica.com/the-kennedy-center/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Kinhouse Gallery - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Kinhouse Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="The Kennedy Center - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from The Kennedy Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/kinhouse-gallery/">
+  <meta property="og:url" content="https://opencalls.monographica.com/the-kennedy-center/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Kinhouse Gallery - Open Calls",
-  "description": "Open calls and submission opportunities from Kinhouse Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/kinhouse-gallery/",
+  "name": "The Kennedy Center - Open Calls",
+  "description": "Open calls and submission opportunities from The Kennedy Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/the-kennedy-center/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -55,8 +55,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Kinhouse Gallery",
-      "item": "https://opencalls.monographica.com/kinhouse-gallery/"
+      "name": "The Kennedy Center",
+      "item": "https://opencalls.monographica.com/the-kennedy-center/"
     }
   ]
 }
@@ -101,14 +101,11 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Kinhouse Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Kinhouse Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 3 calls, 2 open.</h2>
+      <h1>The Kennedy Center</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from The Kennedy Center. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/patchwork-kinhouse-gallery/">Patchwork &middot; Kinhouse Gallery</a></h3><p class="call-description">Quilt-inspired juried show at Fort Wayne's Kinhouse Gallery — any medium engaging pattern and piecing. Exhibition + catalog.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/open-door-2027-exhibition-residency-kinhouse-gallery/">Open Door: 2027 Exhibition &amp; Residency &middot; Kinhouse Gallery</a></h3><p class="call-description">A funded six-night Indiana residency paired with your own show at an artist-run Fort Wayne gallery. All media, $34.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/kinhouse-exploring-kinship-and-the-spaces-we-inhabit/">Kinhouse: Exploring Kinship and the Spaces We Inhabit</a></h3><p class="call-description">Juried show on kinship, caregiving and place at Fort Wayne's Kinhouse Gallery. Catalog publication; juror Braydee Euliss.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive &middot; The Kennedy Center</a></h3><p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p></div>
 
     </section>
 
@@ -126,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Kinhouse Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'The Kennedy Center').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
