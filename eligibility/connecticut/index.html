@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Open Calls by Entry Fee 2026 - Monographica</title>
-  <meta name="description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
-  <link rel="canonical" href="https://opencalls.monographica.com/fees/">
+  <title>Connecticut Open Calls 2026 - Monographica</title>
+  <meta name="description" content="Open calls restricted to photographers and artists based in Connecticut.">
+  <link rel="canonical" href="https://opencalls.monographica.com/eligibility/connecticut/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Open Calls by Entry Fee 2026 - Monographica">
-  <meta property="og:description" content="Browse open calls by entry fee. Find free open calls with no submission fee, or paid competitions for photographers and visual artists.">
+  <meta property="og:title" content="Connecticut Open Calls 2026 - Monographica">
+  <meta property="og:description" content="Open calls restricted to photographers and artists based in Connecticut.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/fees/">
+  <meta property="og:url" content="https://opencalls.monographica.com/eligibility/connecticut/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,14 +25,40 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Open Calls by Entry Fee 2026",
-  "description": "Browse open calls by entry fee.",
-  "url": "https://opencalls.monographica.com/fees/",
+  "name": "Connecticut Open Calls 2026",
+  "description": "Open calls restricted to photographers and artists based in Connecticut.",
+  "url": "https://opencalls.monographica.com/eligibility/connecticut/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
     "url": "https://monographica.com"
   }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://opencalls.monographica.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Eligibility",
+      "item": "https://opencalls.monographica.com/eligibility/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Connecticut Open Calls",
+      "item": "https://opencalls.monographica.com/eligibility/connecticut/"
+    }
+  ]
 }
   </script>
   <link rel="preload" href="/data.json" as="fetch" crossorigin>
@@ -74,16 +100,15 @@
 
   <main>
     <section class="hero">
-      <h1>Fees</h1>
-      <h2 class="subtitle">Browse open calls by entry fee. Find free submissions or paid competitions.</h2>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/eligibility/">Eligibility</a></nav>
+      <h1>Connecticut Open Calls</h1>
+      <h2 class="subtitle">Open calls restricted to photographers and artists based in Connecticut. 1 call, 1 open.</h2>
     </section>
 
-    <section class="index-list" id="indexList">
-      <a href="/fees/entry-fee/" class="index-item"><span class="index-item-name">Entry Fee</span><span class="dots"></span><span class="index-item-count">938</span></a>
-      <a href="/fees/free/" class="index-item"><span class="index-item-name">Free to Enter</span><span class="dots"></span><span class="index-item-count">630</span></a>
-    </section>
+    <section class="calls-list" id="callsList">
+      <div class="call-card"><h3 class="call-title"><a href="/78th-annual-juried-exhibition-sale-guilford-art-league/">78th Annual Juried Exhibition &amp; Sale &middot; Guilford Art League</a></h3><p class="call-description">Connecticut's Guilford Art League opens its 78th annual juried show; photography named among eligible media, juror Nancy Whitcher.</p></div>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -94,6 +119,18 @@
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
   <script src="/search.js?v=20260608k"></script>
+  <script>
+    async function loadFiltered() {
+      try {
+      const res = await fetch('/data.json');
+      const data = await res.json();
+      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('connecticut')).map(processCall);
+      document.getElementById('callsList').innerHTML = '';
+      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
+    } catch (e) {}
+    }
+    loadFiltered();
+  </script>
 
 </body>
 </html>
