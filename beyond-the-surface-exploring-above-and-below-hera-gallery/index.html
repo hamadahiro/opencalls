@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">Hera Gallery — an artist-run cooperative in Wakefield, Rhode Island, founded in 1974 — invites work that makes the invisible visible, navigating the space between inner and outer worlds, the terrestrial and the cosmic. Seen from space, earth is a small blue dot where boundaries dissolve; the call asks where each artist's work sits within that spectrum, whether through a personal, public, spiritual or cosmic lens. All media welcome, 2D, 3D and video. Juror Lydia Jasper is Assistant Curator at MASS MoCA. Submission fees run on a sliding scale, honour system; the gallery takes no commission, so 100% of sales go to the artist. Exhibition runs October 17 – November 14, 2026.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 22, 2026">August 22, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">September 13, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (sliding scale)">$35 (sliding scale)</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/rhode-island/" title="Wakefield, RI">Wakefield, RI</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 10 images">Up to 10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://opportunities.wearecreativewest.org/opportunity/17768/CAFE" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 22, 2026">August 22, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">September 13, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (sliding scale)">$35 (sliding scale)</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/rhode-island/" title="Wakefield, RI">Wakefield, RI</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 10 images">Up to 10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Lydia Jasper, Assistant Curator, MASS MoCA</p>
@@ -124,8 +124,7 @@
         <p class="call-detail-description">Organized by <a href="/hera-gallery/">Hera Gallery</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.heragallery.org/call-for-art" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on August 21, 2026</span></div>
     </section>
@@ -143,23 +142,7 @@
   <script>
     const CURRENT_SLUG = 'beyond-the-surface-exploring-above-and-below-hera-gallery';
     const CURRENT_CALL = {"title":"Beyond The Surface: Exploring Above and Below","category":"exhibition","org":"Hera Gallery","location":"Wakefield, RI, USA","fee":"$35 (sliding scale)","deadline":"2026-08-22","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-08-22'.replace(/-/g, '');
-      var nd = new Date('2026-08-22T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Beyond The Surface: Exploring Above and Below';
-      var u = 'https://www.heragallery.org/call-for-art';
-      var o = 'Hera Gallery';
-      var dl = new Date('2026-08-22T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$35 (sliding scale)');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
