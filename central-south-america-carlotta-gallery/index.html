@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,14 +114,13 @@
 
       <p class="call-detail-description">Carlotta Gallery's themed virtual exhibition inviting photographers to respond to the Central and South American region through brief, specific observations rather than a comprehensive overview — building a layered archive where meaning emerges from the accumulation of individual perspectives on diverse environments, cultures and conditions. Free to apply, pay only if selected; selected work is shown in a virtual exhibition for 6–12 months with catalogue, permanent Collections-page listing, and certificate.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 25, 2026">August 25, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (£20–£35 if accepted)"><span class="tag-front">Free (£20–£35 if</span> <span class="tag-back">accepted)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 images">Up to 3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="mailto:photography.carlotta@gmail.com" rel="nofollow noopener">Email</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 25, 2026">August 25, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (£20–£35 if accepted)"><span class="tag-front">Free (£20–£35 if</span> <span class="tag-back">accepted)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 images">Up to 3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Email</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/carlotta-gallery/">Carlotta Gallery</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.carlottagallery.co.uk/opencalls" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on August 21, 2026</span></div>
     </section>
@@ -139,23 +138,7 @@
   <script>
     const CURRENT_SLUG = 'central-south-america-carlotta-gallery';
     const CURRENT_CALL = {"title":"Central & South America — Carlotta Gallery","category":"exhibition","org":"Carlotta Gallery","location":"Online","fee":"Free (£20–£35 if accepted)","deadline":"2026-08-25","eligibility":["18-plus"]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-08-25'.replace(/-/g, '');
-      var nd = new Date('2026-08-25T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Central & South America — Carlotta Gallery';
-      var u = 'https://www.carlottagallery.co.uk/opencalls';
-      var o = 'Carlotta Gallery';
-      var dl = new Date('2026-08-25T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Online exhibition') + '\\nEntry fee: ' + icsE('Free (£20–£35 if accepted)');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
