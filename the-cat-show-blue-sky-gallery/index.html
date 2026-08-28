@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">The twelfth and final show in Blue Sky's year of 50th-anniversary online exhibitions, and a direct answer to the gallery's 1976 group show The Dog Show. Exhibitions Director C. Meier — a self-described cat enthusiast — juries the call, looking for the most clever, curious and chaotic feline companions: humorous snapshots and thoughtful fine art are equally welcome, and every photographic approach is in scope. The pitch is that photographers and cats have at least one thing in common, a love of light, whether that means a favourite sun spot or an iconic pose. Entry is free and Blue Sky membership is not required. Artists may submit up to three images as JPGs no larger than 1500 pixels on the longest side, named lastname_firstname_title.jpg and accompanied by title and year; submissions are accepted only through the gallery's Google Form. Accepted work is shown online only and is not for sale. Images that violate Blue Sky's anti-discrimination policy or are otherwise deemed offensive will be disqualified, as will submissions that ignore the file requirements. Accepted artists are notified by email; because of the volume of entries, unsuccessful submissions do not receive a reply. The deadline is Friday 28 August 2026 at 11:59pm Pacific, and the exhibition launches Friday 25 September 2026.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 28, 2026">August 28, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 images">Up to 3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdfgINV0ZmwZb__jVTt_bCS6kMRmR9WJ6YVakwvmMdvwBaKcg/viewform?usp=dialog" target="_blank" rel="nofollow noopener" title="Google Form">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 28, 2026">August 28, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 images">Up to 3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: C. Meier, Exhibitions Director, Blue Sky Gallery</p>
@@ -124,8 +124,7 @@
         <p class="call-detail-description">Organized by <a href="/blue-sky-gallery/">Blue Sky Gallery</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.blueskygallery.org/news/the-cat-show-open-call" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on August 20, 2026</span></div>
     </section>
@@ -143,23 +142,7 @@
   <script>
     const CURRENT_SLUG = 'the-cat-show-blue-sky-gallery';
     const CURRENT_CALL = {"title":"The Cat Show","category":"exhibition","org":"Blue Sky Gallery","location":"Online","fee":"Free","deadline":"2026-08-28","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-08-28'.replace(/-/g, '');
-      var nd = new Date('2026-08-28T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'The Cat Show';
-      var u = 'https://www.blueskygallery.org/news/the-cat-show-open-call';
-      var o = 'Blue Sky Gallery';
-      var dl = new Date('2026-08-28T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Online exhibition') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
