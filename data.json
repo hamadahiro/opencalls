@@ -48385,6 +48385,89 @@
       "ai": null,
       "verifyNote": "Deadline 2026-11-06 is corroborated on two surfaces of the org-authored CaFE record: applicationDeadline 2026-11-07T06:59:59Z (= Nov 6, 11:59:59pm MST, Denver) and the requirement prose \"Work will be accepted on CaFE until Sunday, November 6rd, 2026, or when the call for entry is full.\" The prose DAY-NAME is wrong - Nov 6 2026 is a Friday - but the DATE agrees with the structured field, so do not shift the deadline to a Sunday. www.lakewoodco.gov returns HTTP 403 to this egress and r.jina.ai 404s on the guessed Cultural Center gallery paths; the stored url is the org's own Exhibitions and Public Art page, resolved from the lakewoodco.gov homepage nav via jina, and the organiser is confirmed by the CaFE record's providerWebsite lakewoodco.gov plus a @lakewoodco.gov staff contact. The call itself is NOT reproduced on that page. Photography eligibility is AFFIRMATIVE, not inferred: eligibilityDescription reads \"Eligible artworks include (but are not limited to) original paintings, drawings, prints, mixed media, and photographs.\" No AI clause appears in any of the five CaFE text fields, so ai is a verified null. No resultsDate is published on any surface.\n\n2026-08-29 18:00 verify: DEADLINE CORRECTED 2026-11-06 -> 2026-10-22 AND resultsDate FILLED (October 23, 2026), on the organiser's own prose inside CaFE record 18114, which the prior pass did not weigh. The record's `description` field prints an Acceptance block verbatim: \"Work will be accepted on CaFE until Thursday, October 22nd, 2026, or when the call to entry is full. NOTIFICATION OF ACCEPTANCE WILL BE MADE NO LATER THAN THE END OF THE DAY, FRIDAY, OCTOBER 23rd.\", followed by \"All work must be delivered to the Lakewood Cultural Center during the week of October 26th between 9 am-5 pm.\" THE RECORD CONTRADICTS ITSELF: `requirementDescription` still says \"Work will be accepted on CaFE until Sunday, November 6rd, 2026\" and the structured applicationDeadline is 2026-11-07T06:59:59Z (= Nov 6 local, Denver). THREE REASONS THE OCTOBER 22 READING WINS. (1) SCHEDULE IMPOSSIBILITY: November 6 is the exhibition's OPENING day (\"Lakewood Annual Winter Salon / November 6, 2026 - January 2, 2027\") and hand-delivery is the week of Oct 26, so entries cannot still be open on Nov 6 - the Nov 6 in the deadline slot is the show's start date leaking into it, the same failure class as an org labelling a reception date \"Deadline\". (2) WEEKDAY CHECK: Thursday Oct 22 2026, Friday Oct 23 2026 and Monday Oct 26 2026 all resolve correctly, so the description block is a genuine 2026 document; \"Sunday, November 6rd\" resolves to no weekday in 2026 (Nov 6 2026 is a Friday) and carries a mangled ordinal, the signature of recycled text. (3) ASYMMETRIC HARM: the earlier date is the safe error - a too-late stored date sends an entrant to a jury that has already met and a delivery window that has already closed, costing them the $30 fee; a too-early one only hides the row for two weeks. REVISIT: if Oct 22 passes and CaFE 18114 is still OPEN, the structured field was the live surface and the deadline should move back to 2026-11-06. The record OPENED 2026-08-28 (openDate 2026-08-28T06:00:00Z), so this is a one-day-old record, not an extension. Everything else re-confirmed from the CaFE API this run: status OPEN, fees [APPLICATION 30.00], imagesMin 1 / imagesMax 3 (= the stored up-to-3-works), \"This salon will be juried by the City of Lakewood Arts Programming Curator, Laine Godsey\", \"Open to all artists, but all work must be delivered to the Lakewood Cultural Center\", \"Eligible artworks include (but are not limited to) original paintings, drawings, prints, mixed media, and photographs\", the $500 price ceiling and the 15% commission. No AI clause in any of the five text fields, so ai stays a verified null. www.lakewoodco.gov still 403s this egress; r.jina.ai rendered it and the Arts-and-Culture page still carries no call text of its own.",
       "resultsDate": "October 23, 2026"
+    },
+    {
+      "title": "2026 Small Works Exhibition",
+      "org": "Charles H. Taylor Visual Arts Center",
+      "deadline": "2026-10-25",
+      "fee": "$40 (members $35)",
+      "category": "exhibition",
+      "description": "Small-works show at Hampton Arts' Charles H. Taylor Visual Arts Center, open to all Hampton regional and Virginia artists aged 18 and over. The call is open to all media; two-dimensional work must be no larger than 8 x 10 inches including the frame and three-dimensional work no larger than 8 inches on any side, with 2D pieces under 20 square inches and 3D pieces under 5 inches cubed judged separately as Miniatures. Work must be original, made within the past two years and not previously shown at the center, and accepted pieces must arrive dry and ready to hang (no sawtooth hangers). One entry per artist covers up to six artworks for $40, or $35 for current Hampton Arts League members. Awards go to First ($200), Second ($150) and Third ($100) Place plus three Awards of Merit across the two categories, and a new $100 Mighty Miniature award for the strongest miniature as chosen by the judge. Notification is by email the week after the deadline; accepted work is delivered to the center November 10-14 and the exhibition runs December 5, 2026 to January 16, 2027, with an artist reception and awards on Saturday, December 5 from 3 to 5 pm. Because the show runs through the holidays, work that sells may be removed at the time of purchase.",
+      "url": "https://www.hamptonarts.org/the-charles-h-taylor-visual-arts-center/callforentries",
+      "location": "Hampton, VA, USA",
+      "prize": "$200 First Prize + Cash awards + Exhibition",
+      "eligibility": [
+        "virginia",
+        "18-plus"
+      ],
+      "jury": [],
+      "submitVia": "EntryThingy",
+      "submitUrl": "https://app.entrythingy.com/hamptonarts/small-works-2026/",
+      "requirements": "Up to 6 works",
+      "slug": "2026-small-works-exhibition-hampton-arts",
+      "orgInTitle": false,
+      "summary": "Small-works show at Hampton's Charles H. Taylor Visual Arts Center, open to Virginia artists in all media. $40 for up to six works.",
+      "dateAdded": "2026-08-29T19:23:07Z",
+      "instagram": "@ctvisualarts",
+      "resultsDate": null,
+      "ai": null,
+      "verifyNote": "2026-08-29 20:00 add: every stored value comes from hamptonarts.org's own Call for Entries page and its linked prospectus PDF (assets/doc/Small-Works-2026-Call-for-Entries-2a085eac74.pdf), which give the deadline verbatim as \"Sunday, October 25 at 11:59pm\", \"Open to all media\", \"The entry fee is $40 ($35 for HAL) for up to six artworks\", the Virginia/18+ eligibility sentence and the full award list. Weekday check passes on every date in the PDF calendar (Oct 25 Sunday, Nov 10 Tuesday, Nov 14 Saturday, Dec 5 Saturday, Jan 16 Saturday), so the document is current-cycle. EDITOR 2026-08-29 20:33: the EntryThingy disagreement is REAL, not merely a rendering artefact - do not re-flip on it. app.entrythingy.com/hamptonarts/small-works-2026/ prints a flat \"Deadline October 26, 2026\" in its Key Details block, again under Important Dates, and \"Deadline: October 27, 2026\" in its meta description, while only the header chip \"Oct 27, 2026 - 6:59 AM\" is a timezone rendering (= Oct 26 11:59pm at UTC-7). So EntryThingy's STRUCTURED field is Oct 26. Oct 25 is stored because THREE org-authored prose surfaces agree on it verbatim - the hamptonarts.org page, the org's prospectus PDF, and the org's own prospectus text reproduced inside that same EntryThingy page (\"The submission deadline is Sunday, October 25th at 11:59pm\") - the weekday check passes (Oct 25 2026 IS a Sunday; Oct 26 is a Monday), and the earlier date is the safe error. The portal will likely still accept entries on Oct 26; that is a one-day grace, not grounds to move the stored deadline. ONE INTERNAL CONFLICT, not stored: the prospectus PDF says \"The deadline for shipped work is November 6th\" while the org-authored EntryThingy prospectus says November 14th; the delivery window Nov 10-14 is identical on both, so only the shipping cut-off is in doubt and it is left out of the description. jury [] and resultsDate null are verified absent: the prospectus names only \"the judge\" and says notification comes \"the week following deadline\" with no date. No AI policy on any surface, so ai stays null."
+    },
+    {
+      "title": "Bodies & Faces: Art of Figure and Portrait",
+      "org": "Art League of New Britain",
+      "deadline": "2026-09-18",
+      "fee": "$25 first entry, $15 additional (members $15/$10)",
+      "category": "exhibition",
+      "description": "Juried exhibition of figure and portrait work at the Art League of New Britain, on view October 9 to November 1, 2026 with an opening reception on Friday, October 9 from 6 to 8 pm. The league accepts all original media - it runs its own annual photography juried exhibition - and the binding eligibility clause is about how the work was made rather than the medium: \"Works must have been started from life or have included a live model in the process\", so a portrait or figure photograph shot from a live subject qualifies. Open to artists 18 and over; work must be original, completed in the past three years and not previously exhibited at ALNB, with combined framed width per artwork up to 72 inches. Jurying is hybrid - juror Susan Strauss, a portrait artist of more than thirty years and a professor at Tunxis Community College, selects from unsigned images online for anonymous review, then picks the prize winners in person after drop-off. Four cash awards total $375: $200 first, $100 second, $50 third and a $25 honourable mention. Up to five entries at $25 for the first and $15 for each additional ($15/$10 for ALNB members). Accepted work stays up for the whole run, including anything that sells, and pick-up is November 1-3; labels must be attached and an artist contract signed at drop-off, so the show is in practice for artists who can deliver to New Britain.",
+      "url": "https://alnb.org/calls/bodies-faces-art-of-figure-and-portrait",
+      "location": "New Britain, CT, USA",
+      "prize": "$375 in cash awards + Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Susan Strauss"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://alnb.org/calls/bodies-faces-art-of-figure-and-portrait",
+      "requirements": "Up to 5 works",
+      "slug": "bodies-faces-art-of-figure-and-portrait-art-league-of-new-britain",
+      "orgInTitle": false,
+      "summary": "Juried figure and portrait show in New Britain, CT; all media, work must be made from a live model. $375 in cash awards.",
+      "dateAdded": "2026-08-29T19:23:07Z",
+      "instagram": "@artleagueofnewbritain",
+      "resultsDate": "September 25, 2026",
+      "ai": "AI editing OK, fully generated not accepted",
+      "verifyNote": "2026-08-29 20:00 add: alnb.org is the league's own site (its call portal); every value comes from the org-authored record its public API serves at alnb.org/api/calls/public, which is the same text the call page renders. That record gives \"Submission Deadline: September 18th, 2026 at 11:59PM\", \"Entry Notification: Friday, September 25th, 2026\", exhibition dates Oct 9 - Nov 1, the reception time, callType \"juried\", jurorName \"Susan Strauss\" with her bio, the pricingConfig ladder (member 15/10, non-member 25/15) and prizeConfig ($200/$100/$50/$25 = $375). Weekday check passes: Sep 18, Sep 25 and Oct 9 2026 are all Fridays as stated. MEDIA TEST: the call says \"All original media accepted\" (affirmative) and names no exclusion; the same org ran a \"2026 Photography Juried Exhibition\" in January 2026, so photography is demonstrably part of its programme. The real gate is the from-life clause, quoted in the description. AI: \"AI-generated imagery is NOT ACCEPTABLE. AI-assisted artwork must be clearly disclosed at submission.\" membersOnly is false in the record - the member rate is a discount, not a gate. No geographic eligibility is stated, but drop-off, labelling and a signed contract in person make it regional in practice."
+    },
+    {
+      "title": "Musa International Award for Female Photographers 2026",
+      "org": "Musa Fotografia",
+      "deadline": "2026-11-21",
+      "fee": "€25 (1 project) / €45 (2) / €65 (3)",
+      "category": "photography",
+      "description": "Eighth edition of the Musa Award, run by the Lecco photography school Musa Fotografia and going international for the first time in 2026. It is a portfolio prize: each entrant may submit up to three projects of 8 to 25 images, in colour or black and white, mixed technique or other media, assembled as a PDF with a project statement and biography. The theme is \"Reclaiming the Frame\" - repossessing the power to decide what is worth framing and narrating - and the organisers are explicit that the subjects need not be women, since the point is to see the whole world through women's eyes; every genre is welcome, from architecture and reportage to abstraction and nature. Open to female photographers over 18, amateur or professional, resident in a published list of European countries that includes the EU member states plus the UK, Ukraine, Switzerland, Norway, the Balkans and the microstates. The winner's package is substantial: twenty fine-art exhibition prints produced and donated by Fotofabbrica, an exhibition at the Colorno Photo Life Festival, a screening at the Biennale di Fotografia Femminile in Mantova, a half-hour portfolio review with its artistic director Alessia Locatelli, an editorial meeting with Grazia Dell'Oro of the publisher EMUSE, a filmed interview with curator Loredana De Pace, and €200 towards expenses; reportage projects also exhibit at the Festival Off della Fotografia Etica, and Italian entrants compete for a further show at the Festival della Fotografia Italiana. Entry is €25 for one project, €45 for two and €65 for three, paid at registration with the PDF emailed at the same time. Winners are announced in December 2026.",
+      "url": "https://www.musaaward.eu/musaawardenglish.html",
+      "location": "Lecco, Italy",
+      "prize": "Exhibition + €200 expenses + Portfolio review",
+      "eligibility": [
+        "women",
+        "18-plus",
+        "europe"
+      ],
+      "jury": [],
+      "submitVia": "Google Form",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfj8hZEeYJ8C0ZMe8KxoJknWm_DfxuSpldL4O3U1dQNEnDLNQ/viewform",
+      "requirements": "Portfolio of 8-25 images",
+      "slug": "musa-international-award-for-female-photographers-2026",
+      "orgInTitle": true,
+      "summary": "Eighth Musa Award for women photographers: portfolio prize with Italian festival exhibitions, a curator review and €200.",
+      "dateAdded": "2026-08-29T19:23:07Z",
+      "instagram": "@fotografiamusa",
+      "resultsDate": "December 2026",
+      "ai": "Accepted (must disclose)",
+      "verifyNote": "2026-08-29 20:00 add: every value comes from the organiser's own English page at musaaward.eu/musaawardenglish.html - \"DEADLINE FOR SUBMITTING WORKS: 11:59 pm on 21 November 2026\", \"DATE OF ANNOUNCEMENT OF WINNERS TO THE PUBLIC: December 2026\", the fee line \"€25 for one work submitted, €45 for two works submitted, €65 for three works submitted\", the 8-25 image band, the country list and the numbered prize block. Org confirmed on its own second domain musafotografia.it (Scuola di Fotografia a Lecco), which shares the info@musafotografia.it contact; the Google Form's own title reads \"Musa International Award for female photographers\". AI: \"Musa Award accepts photos generated by artificial intelligence provided that the participant declares that the production was carried out using AI creation methods\" - non-disclosure is automatic elimination. INTERNAL CONFLICT RESOLVED: the general Terms and Conditions preamble says the competition \"is open to professional and amateur photographers of any age\", while the Who can participate section that binds the entrant says \"All female photographers over the age of 18 residing in the following countries\"; the specific eligibility clause is stored. jury [] is verified absent, not unchecked: the page's jury section is four photographs whose alt text is the generic \"Musa Award 2026 jury member\" and no name appears anywhere in the markup. The €200 is described by the organiser as \"a one-off payment of €200 in total as reimbursement for expenses\", not a cash prize."
     }
   ]
 }
