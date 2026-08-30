@@ -48995,6 +48995,58 @@
       "summary": "Two-month solo show in a Long Island library gallery, chosen by its Art Advisory Council. Free, tri-state artists.",
       "description": "The Karen and Ed Adler Gallery at Port Washington Public Library gives one artist at a time a two-month solo exhibition in a dedicated gallery space, and there is an opening in the schedule for January-February 2027. Submissions are read by the library's Art Advisory Council: a preview committee makes the first cut and the full council then votes on whether to extend an invitation, with preview meetings held three times a year. During the run the artist is offered a two-hour public reception to talk about the work. Entry is free. Applicants fill in the library's own request form with a current resume and ten high-quality images of individual works, each labelled by title in the filename, tightly cropped so only the artwork shows, with no borders or backgrounds, and photographed straight on rather than at an angle; an image list giving title, medium and dimensions for each work is asked for, and a bio or promotional material can be attached as optional additional information. The library asks for a cohesive selection that reads as a curated exhibit rather than a survey. Only artists currently living in the tri-state area - New York, New Jersey and Connecticut - will be considered. Photography is part of the gallery's programme: past Adler Gallery shows include Steve Lampasona's The Light and Textures of New York City, a Holocaust survivor photography exhibit mounted around International Holocaust Remembrance Day, and Alan Richards's Let Me Show You Something, which built on archival and vintage photographs enhanced with drawing and digital painting. The exhibition runs 29 December 2026 to 28 February 2027.",
       "verifyNote": "2026-08-30 20:00 add sweep: THE ELIGIBILITY GATE IS TIGHTER ON THE ORGANISER'S OWN FORM THAN ON THE LISTING. The org-authored EntryThingy row (app.entrythingy.com/pwpl/exhibition-january-february-2027/) says \"We prefer that artists are local to the New York metropolitan area and Long Island\", but the library's own Wufoo request form - the actual application channel, linked from pwpl.org/adler-gallery/ - states in caps \"ONLY ARTISTS CURRENTLY LIVING IN THE TRI-STATE AREA WILL BE CONSIDERED FOR EXHIBIT\". The binding form wins, hence eligibility tri-state rather than a soft preference. Image count differs the same way: ET's structured field says 6-10 while the form has TEN required file slots and asks for \"high-quality images of 10 works\" - stored as 10. Fee is free on both surfaces and the form has no payment step. MEDIUM TEST: ET's Accepted Media tags are Painting / Mixed Media / Drawing / Collage and omit photography, but that is a tag block, not a clause - the form imposes no medium restriction at all (it asks only for \"title, medium and dimensions\") and the gallery's own past-exhibitions page (pwpl.org/exhibitions/past-exhibitions/) carries photography shows: Steve Lampasona \"The Light and Textures of New York City\", a Holocaust survivor photography exhibit, and Alan Richards \"Let Me Show You Something\". The programme roster is the affirmative, per the standing rule that silence is not one - do not re-reject this on the ET tag list. NO NOTIFICATION DATE IS PUBLISHED: \"You will be contacted once a decision has been made\" and preview meetings are held three times a year, so resultsDate is a VERIFIED ABSENCE. 2026-08-30 20:42 EDITOR: stored as null (verified absent), NOT as a missing key - an absent key reads as \"never checked\" and would invite a future pass to re-derive it from the 29 December opening. ACCESS: pwpl.org/gallery/ and /past-exhibitions/ both 404; the live paths are /adler-gallery/, /exhibitions/ and /exhibitions/past-exhibitions/. Instagram @pwplhappenings taken from the library's own site navigation. Org contact email deliberately kept out of data.json (it is on the library site)."
+    },
+    {
+      "title": "Portrait 2026 — Atlanta Photography Group",
+      "org": "Atlanta Photography Group",
+      "deadline": "2026-09-23",
+      "fee": "$30–$95 (members) / $30–$70 (students)",
+      "category": "exhibition",
+      "description": "A juried exhibition celebrating portraiture and the stories carried in the human face and body, open to photographers worldwide. Juror Alan K. Avery, president and owner of Alan Avery Art Company, Atlanta's longest-running gallery, selects up to 24 works. Themes include identity and self-expression, emotion and psychology, cultural diversity and narrative portraiture. Selected prints (24 inches maximum on the longest side, white or black frames and mats) hang at the APG Gallery in Atlanta from November 3 to December 4, 2026.",
+      "url": "https://atlantaphotographygroup.org/events/call-for-entry-portrait-2026/",
+      "instagram": "@atlantaphotographygroup",
+      "location": "Atlanta, GA, USA",
+      "eligibility": [
+        "membership-required"
+      ],
+      "jury": [
+        "Alan K. Avery, President and Owner, Alan Avery Art Company"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://atlantaphotographygroup.org/shop/call-for-entry-portrait-2026/",
+      "resultsDate": "On or about September 30, 2026",
+      "requirements": "2–8 images",
+      "slug": "portrait-2026-atlanta-photography-group",
+      "orgInTitle": true,
+      "summary": "APG's juried portraiture show, juried by Atlanta gallerist Alan K. Avery. Up to 24 works exhibited in Atlanta this November.",
+      "dateAdded": "2026-08-30T23:18:35Z",
+      "verifyNote": "2026-08-31 00:00 add sweep: sourced ONLY from the org's own calls index - atlantaphotographygroup.org/events/ posted this and its sibling Storytelling 2026 on 2026-08-30 (the page's own timestamp read '15 hours ago' at fetch), and NEITHER appears on PhMuseum, Lenscratch, All About Photo, Booooooom, Colossal, Picter, CaFE or EntryThingy. An org whose calls page updates faster than every board is worth re-reading on every rotation. DEADLINE: 'All submissions must be made by September 23, 2026, Midnight' (ET) and 'Deadline For Entries: September 23, 2026, Midnight' - the 23rd is also the last day of the late-fee window (Sep 21-23), so midnight = END of Sep 23, not its start. NO PRIZE FIELD ON PURPOSE: the strings 'APG / HIGH MUSEUM PURCHASE AWARD' and 'APG / MUSEUM OF FINE ARTS, HOUSTON PURCHASE AWARD' on this page are SITE NAVIGATION items for two separate APG programmes, not awards attached to this call - the call body states no cash award at all. Do not mine the nav for a prize. FEE read past the first tier: early Aug 30-Sep 7 $30/2, $45/4, $55/6, $70/8; regular Sep 8-20 $40-$85; late Sep 21-23 $50-$95; students $30-$70 flat. ELIGIBILITY: 'In order to submit your work you must be a current APG member' -> membership-required; the call is otherwise open to 'photographers from around the world', so NO geographic tag - this differs from APG's own Focus 2026, which was Georgia-only, so do not carry a sibling's eligibility across. Work cap also differs per call: 24 in longest side here, 32 in on Storytelling. NO AI POLICY is stated anywhere on the page -> ai key absent, not null-by-guess. Instagram @atlantaphotographygroup taken from the page's own instagram.com link; note our two older APG entries disagree (@apgatl vs @atlantaphotographygroup) - the site links the long form. Org contact email appears on the page and is deliberately kept out of data.json."
+    },
+    {
+      "title": "Storytelling 2026: Documentary and Street Photography",
+      "org": "Atlanta Photography Group",
+      "deadline": "2026-09-23",
+      "fee": "$30–$95 (members) / $30–$70 (students)",
+      "category": "exhibition",
+      "description": "A juried exhibition of street and documentary photography with a strong narrative pull — candid everyday life, city shadows, an abandoned country road, quiet moments of joy, humour, love or anxiety, in the lineage of Arbus, Frank, Koudelka, Levitt, DeCarava, Mary Ellen Mark and Gordon Parks. Juror Karen Marshall chairs the Documentary Practice and Visual Journalism Program at the International Center of Photography. Selected prints (32 inches maximum on the longest side, white or black frames and mats) hang at the APG Gallery in Atlanta from November 3 to December 4, 2026.",
+      "url": "https://atlantaphotographygroup.org/events/call-for-entry-storytelling-2026/",
+      "instagram": "@atlantaphotographygroup",
+      "location": "Atlanta, GA, USA",
+      "eligibility": [
+        "membership-required"
+      ],
+      "jury": [
+        "Karen Marshall, Chair, Documentary Practice and Visual Journalism Program, International Center of Photography"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://atlantaphotographygroup.org/shop/call-for-entry-storytelling-2026/",
+      "resultsDate": "On or about September 30, 2026",
+      "requirements": "2–8 images",
+      "slug": "storytelling-2026-atlanta-photography-group",
+      "orgInTitle": false,
+      "summary": "APG's juried street and documentary show, juried by ICP's Karen Marshall. Atlanta gallery exhibition November 3 – December 4.",
+      "dateAdded": "2026-08-30T23:18:35Z",
+      "verifyNote": "2026-08-31 00:00 add sweep: sourced ONLY from atlantaphotographygroup.org/events/, posted 2026-08-30 alongside Portrait 2026; absent from every aggregator and platform checked this run. DEADLINE September 23, 2026 midnight ET, stated twice on the page; the 23rd is the last late-fee day so midnight = end of day. NO PRIZE: the two 'PURCHASE AWARD' strings on the page are nav links to separate APG programmes (High Museum, MFA Houston), not awards for this call - prize key deliberately absent. FEE ladder in full: early Aug 30-Sep 7 $30/2, $45/4, $55/6, $70/8; regular Sep 8-20 $40-$85; late Sep 21-23 $50-$95; students $30-$70. ELIGIBILITY: membership-required ('you must be a current APG member'); NO geographic clause anywhere on the page - the only 'Georgia' occurrences are in the funder credit line (Georgia Council for the Arts / Georgia General Assembly), which is NOT an eligibility statement. APG's Focus 2026 IS Georgia-only, so the sibling is not a guide. Also excluded: work shown in APG's Main or Maloof galleries in the last 3 years (Push Pin and Airport shows do not count). Work cap 32 in longest side (Portrait 2026's is 24 in). NO AI POLICY stated -> ai key absent. Instagram @atlantaphotographygroup from the page's own link. Org contact email kept out of data.json."
     }
   ]
 }
