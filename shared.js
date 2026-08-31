@@ -119,7 +119,7 @@ const eligibilityLabel = {
   'new-york-city': 'NYC only', 'new-york-state': 'NY State only', 'central-new-york': 'Central NY only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'japan': 'Japan only', 'southeast-us': 'Southeast US only',
-  'north-east-england': 'North East England only',
+  'north-east-england': 'North East England only', 'wales': 'Wales only',
   'california': 'California only', 'colorado': 'Colorado only', 'texas': 'Texas only', 'washington': 'Washington only',
   'arkansas': 'Arkansas only', 'maryland': 'Maryland only', 'baltimore-region': 'Baltimore region only', 'frederick-county-md': 'Frederick County, MD only', 'st-joseph-region': 'St. Joseph region only', 'st-louis-region': 'St. Louis region only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'arizona': 'Arizona only', 'utah': 'Utah only', 'native-american': 'Native American artists',
