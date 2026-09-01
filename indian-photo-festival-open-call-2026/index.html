@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@
 
       <p class="call-detail-description">The Indian Photo Festival invites photographers, visual storytellers, artists, curators, collectives, archives, galleries and organisations worldwide to submit work for the exhibitions of its 12th edition, held in Hyderabad from 26 November 2026 to 3 January 2027. The theme is open: the festival welcomes cohesive bodies of work from all genres of photography and lens-based storytelling, including documentary, conceptual, fine art, portraiture, landscape, street, experimental practices, archival projects and mixed media, and states that submissions are judged on artistic merit, originality, coherence, visual quality, storytelling and conceptual strength rather than genre. Alongside the exhibition call, the festival is also inviting published, self-published, independently produced and dummy photobooks, as well as zines, for the Indian Photo Festival Photobook Exhibition; photobooks are submitted as a single PDF of all pages and spreads, and selected titles are invited to send one physical copy for display. Selected exhibition projects are professionally produced and exhibited by the festival at no cost to the participant, which bears the production costs of exhibition prints and display materials. There is no entry fee. Submissions require a minimum of 15 and a maximum of 30 images, plus an artist statement and biography of up to 500 words each. Only shortlisted applicants are contacted.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 31, 2026">August 31, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/india/" title="Hyderabad, India">Hyderabad, India</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/21-plus-images/" title="15-30 images">15-30 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.indianphotofest.com/oc2026" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 31, 2026">August 31, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/india/" title="Hyderabad, India">Hyderabad, India</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/21-plus-images/" title="15-30 images">15-30 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Indira Williams Babic, Sr. Photo Editor &amp; Curator, National Geographic · Avi Gupta, Photographer, Picture Editor &amp; Educator · Miriam Chandy Menacherry, Documentary Film Maker · Gopal MS, Photographer, Writer &amp; Visual Storyteller · Julie Hau, Photo Editor, National Geographic</p>
@@ -124,8 +124,7 @@
         <p class="call-detail-description">Organized by <a href="/indian-photo-festival/">Indian Photo Festival</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.indianphotofest.com/opencall" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on August 30, 2026</span></div>
     </section>
@@ -143,23 +142,7 @@
   <script>
     const CURRENT_SLUG = 'indian-photo-festival-open-call-2026';
     const CURRENT_CALL = {"title":"Indian Photo Festival Open Call 2026","category":"exhibition","org":"Indian Photo Festival","location":"Hyderabad, India","fee":"Free","deadline":"2026-08-31","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-08-31'.replace(/-/g, '');
-      var nd = new Date('2026-08-31T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Indian Photo Festival Open Call 2026';
-      var u = 'https://www.indianphotofest.com/opencall';
-      var o = 'Indian Photo Festival';
-      var dl = new Date('2026-08-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
