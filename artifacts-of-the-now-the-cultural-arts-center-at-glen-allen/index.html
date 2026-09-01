@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,14 +114,13 @@
 
       <p class="call-detail-description">An open call from The Cultural Arts Center at Glen Allen exploring the current moment — physical, geographical and cultural — in all mediums. What objects place one in the current moment? What imagery is reflective of the time, something that could be a touchstone for future generations? What says “this is so 2026”? All artists working in 2D and 3D are invited to apply, and the theme will be interpreted by a range of differing artists in one of the Center's on-site gallery spaces. Galleries are kept family friendly, so work with explicit violence, language or nudity is refused, as is anything the Center reads as inflammatory toward a religious or cultural group. Housed in the old Glen Allen School, the 50,300 square foot multi-use facility opened in 1999 and is home to four galleries — the Gumenick Family, Slantwall, Midway and Glass Door — showing regional and international talent alongside concerts, theatre, dance and arts education. Admission to the Center is free. Entries are taken through the Center's ArtCall portal, where questions go to the gallery team, co-curators Rosalind Koons and Kitty Tillman. Work need not be for sale, but anything sold during the run is split 70/30 in the artist's favour, and CACGA insures work in the gallery at 65% of its stated retail value. The ArtCall listing marks this call regional to Virginia while the call text itself states no residency requirement, so artists outside the state should check with the Center before paying.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 1, 2026">September 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$10 per work">$10 per work</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/virginia/" title="Glen Allen, VA">Glen Allen, VA</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artifactsnow.artcall.org/" target="_blank" rel="nofollow noopener" title="ArtCall">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 1, 2026">September 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$10 per work">$10 per work</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/virginia/" title="Glen Allen, VA">Glen Allen, VA</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/the-cultural-arts-center-at-glen-allen/">The Cultural Arts Center at Glen Allen</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://artsglenallen.com/call-for-entries" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on September 1, 2026</span></div>
     </section>
@@ -139,23 +138,7 @@
   <script>
     const CURRENT_SLUG = 'artifacts-of-the-now-the-cultural-arts-center-at-glen-allen';
     const CURRENT_CALL = {"title":"Artifacts of the “Now”","category":"exhibition","org":"The Cultural Arts Center at Glen Allen","location":"Glen Allen, VA, USA","fee":"$10 per work","deadline":"2026-09-01","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-09-01'.replace(/-/g, '');
-      var nd = new Date('2026-09-01T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Artifacts of the “Now”';
-      var u = 'https://artsglenallen.com/call-for-entries';
-      var o = 'The Cultural Arts Center at Glen Allen';
-      var dl = new Date('2026-09-01T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('$10 per work');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
