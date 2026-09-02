@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """Dup check against data.json. ABSOLUTE path + known-negative canary.
 
+The path stays absolute at runtime (so CWD never matters) but is derived
+from this file's own location rather than written out, so moving the repo
+needs no edit here.
+
 Usage: python3 tools/dupcheck.py <token> [<token> ...]
 Each token is matched independently (never a multi-word phrase) against
 title, org, url, submitUrl, slug — diacritic-folded, curly-quote-normalised,
 host-squashed. ALL hits print. Never truncated.
 """
 import json, sys, unicodedata, re
+from pathlib import Path
 
-DATA = "/Users/machina/Documents/Projects/Monographica/opencalls/data.json"
+DATA = str(Path(__file__).resolve().parent.parent / "data.json")
 CANARY = "zzqqxx-known-negative-canary"
 
 

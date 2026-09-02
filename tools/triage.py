@@ -4,8 +4,9 @@ Reads JSON lines on stdin: {"title":..,"org":..,"deadline":..,"url":..}
 Prints NEW / MATCH per row. Fold-matches on title tokens AND org.
 """
 import json, sys, unicodedata, re
+from pathlib import Path
 
-DATA = "/Users/machina/Documents/Projects/Monographica/opencalls/data.json"
+DATA = str(Path(__file__).resolve().parent.parent / "data.json")
 
 
 def fold(s):
