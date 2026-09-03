@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -114,14 +114,13 @@
 
       <p class="call-detail-description">Annual juried photography show at the Coastal Arts League's public gallery on Main Street in Half Moon Bay, a volunteer-run nonprofit that has served the Coastside for over forty years. This year's theme is America the Bountiful; prints on any surface are welcome, up to three entries per artist. Open to Bay Area artists 18 and over, with work hand-delivered September 28 and collected November 2. The League's own OnlineJuriedShows prospectus says &quot;Enter by September 3, 2026&quot;, while its gallery-schedule page still reads &quot;Enter by September 1&quot; — enter by September 1 to be safe. Three merit awards of $150, $100 and $50 are given. All exhibited work must be for sale and must not have been shown recently at the gallery; the League retains a 30% commission. The show runs October 1 – November 2, 2026 with a reception on October 3.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 3, 2026">September 3, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$55 ($45 members), $5 each additional"><span class="tag-front">$55 ($45 members), $5</span> <span class="tag-back">each additional</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/bay-area/" title="Bay Area only">Bay Area only</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="Half Moon Bay, CA">Half Moon Bay, CA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="1–3 images">1–3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.onlinejuriedshows.com/Default.aspx?OJSID=58938" target="_blank" rel="nofollow noopener" title="OnlineJuriedShows">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 3, 2026">September 3, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$55 ($45 members), $5 each additional"><span class="tag-front">$55 ($45 members), $5</span> <span class="tag-back">each additional</span></a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/bay-area/" title="Bay Area only">Bay Area only</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="Half Moon Bay, CA">Half Moon Bay, CA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="1–3 images">1–3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/coastal-arts-league/">Coastal Arts League</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.coastside-artists.com/" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on September 3, 2026</span></div>
     </section>
@@ -139,23 +138,7 @@
   <script>
     const CURRENT_SLUG = 'america-the-bountiful-coastal-arts-league';
     const CURRENT_CALL = {"title":"America the Bountiful — Photography Show 2026","category":"exhibition","org":"Coastal Arts League","location":"Half Moon Bay, CA, USA","fee":"$55 ($45 members), $5 each additional","deadline":"2026-09-03","eligibility":["bay-area","18-plus"]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-09-03'.replace(/-/g, '');
-      var nd = new Date('2026-09-03T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'America the Bountiful — Photography Show 2026';
-      var u = 'https://www.coastside-artists.com/';
-      var o = 'Coastal Arts League';
-      var dl = new Date('2026-09-03T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$150 / $100 / $50') + '\\nEntry fee: ' + icsE('$55 ($45 members), $5 each additional');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
