@@ -1986,7 +1986,7 @@ const submitHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'Submit a call', 'Paste a link — add details if you have them.')}
+    ${buildHero('', 'Submit a call', 'Search the site first — most calls sent in are ones we already list. If not, paste a link and add details if you have them.')}
 
     <section class="submit-form">
       <form id="submitForm">
