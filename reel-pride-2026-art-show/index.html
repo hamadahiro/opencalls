@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -39,7 +39,7 @@
     "name": "Reel Pride"
   },
   "datePublished": "2026-08-02",
-  "dateModified": "2026-09-03"
+  "dateModified": "2026-09-04"
 }
   </script>
   <script type="application/ld+json">
@@ -114,16 +114,15 @@
 
       <p class="call-detail-description">The Reel Pride Art Show is the gallery arm of Winnipeg's Reel Pride International Film Festival — a space for 2SLGBTQI+ artists to show work alongside the festival at The Gas Station Arts Centre. The organisers welcome work in all forms and mediums and are open about what they are after: personal expression, a statement, or a celebration, and the many ways queer and Two-Spirit people experience and build community. There is no entry fee. If work sells the artist keeps the full sale price — the festival takes no commission — and artists retain full copyright, with images used only to promote Reel Pride and its events. Submissions run entirely through the call site, and accepted work is dropped off in Winnipeg during the week of 7–11 September. The show runs 15 September to 2 November 2026 alongside the festival.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 4, 2026">September 4, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/lgbtq/" title="LGBTQ+">LGBTQ+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/canada/" title="Winnipeg, MB, Canada">Winnipeg, MB, Canada</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://reelpride2026artshowcallforentry.artcall.org" target="_blank" rel="nofollow noopener" title="ArtCall">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 4, 2026">September 4, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/lgbtq/" title="LGBTQ+">LGBTQ+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/canada/" title="Winnipeg, MB, Canada">Winnipeg, MB, Canada</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/reel-pride/">Reel Pride</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.reelpride.ca/art-show" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
-      <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on September 3, 2026</span></div>
+      <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on September 4, 2026</span></div>
     </section>
 
     <section class="related-calls">
@@ -139,23 +138,7 @@
   <script>
     const CURRENT_SLUG = 'reel-pride-2026-art-show';
     const CURRENT_CALL = {"title":"Reel Pride 2026 Art Show","category":"exhibition","org":"Reel Pride","location":"Winnipeg, MB, Canada","fee":"Free","deadline":"2026-09-04","eligibility":["lgbtq"]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-09-04'.replace(/-/g, '');
-      var nd = new Date('2026-09-04T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Reel Pride 2026 Art Show';
-      var u = 'https://www.reelpride.ca/art-show';
-      var o = 'Reel Pride';
-      var dl = new Date('2026-09-04T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('Free');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20260608k"></script>
   <script src="/cards.js?v=20260608k"></script>
