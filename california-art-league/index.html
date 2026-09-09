@@ -7,16 +7,16 @@
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
-  <title>Site:Brooklyn Gallery - Open Calls - Monographica</title>
-  <meta name="description" content="Open calls and submission opportunities from Site:Brooklyn Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
-  <link rel="canonical" href="https://opencalls.monographica.com/site-brooklyn-gallery/">
+  <title>California Art League - Open Calls - Monographica</title>
+  <meta name="description" content="Open calls and submission opportunities from California Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <link rel="canonical" href="https://opencalls.monographica.com/california-art-league/">
   <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Site:Brooklyn Gallery - Open Calls - Monographica">
-  <meta property="og:description" content="Open calls and submission opportunities from Site:Brooklyn Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
+  <meta property="og:title" content="California Art League - Open Calls - Monographica">
+  <meta property="og:description" content="Open calls and submission opportunities from California Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.">
   <meta property="og:image" content="https://opencalls.monographica.com/og-image.png">
-  <meta property="og:url" content="https://opencalls.monographica.com/site-brooklyn-gallery/">
+  <meta property="og:url" content="https://opencalls.monographica.com/california-art-league/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
@@ -25,9 +25,9 @@
   {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Site:Brooklyn Gallery - Open Calls",
-  "description": "Open calls and submission opportunities from Site:Brooklyn Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
-  "url": "https://opencalls.monographica.com/site-brooklyn-gallery/",
+  "name": "California Art League - Open Calls",
+  "description": "Open calls and submission opportunities from California Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists.",
+  "url": "https://opencalls.monographica.com/california-art-league/",
   "publisher": {
     "@type": "Organization",
     "name": "Monographica",
@@ -55,8 +55,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Site:Brooklyn Gallery",
-      "item": "https://opencalls.monographica.com/site-brooklyn-gallery/"
+      "name": "California Art League",
+      "item": "https://opencalls.monographica.com/california-art-league/"
     }
   ]
 }
@@ -101,14 +101,11 @@
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/organizations/">Organizations</a></nav>
-      <h1>Site:Brooklyn Gallery</h1>
-      <h2 class="subtitle">Open calls and submission opportunities from Site:Brooklyn Gallery. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 2 calls, 0 open.</h2>
+      <h1>California Art League</h1>
+      <h2 class="subtitle">Open calls and submission opportunities from California Art League. Browse exhibitions, grants, residencies, and more for photographers and visual artists. 1 call, 1 open.</h2>
     </section>
     <section class="calls-list" id="callsList">
-      <p class="empty-state">No open calls right now — past calls below.</p>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/the-modern-portrait-site-brooklyn-gallery/">The Modern Portrait &middot; Site:Brooklyn Gallery</a></h3><p class="call-description">Site:Brooklyn online show on the contemporary portrait, juried by critic Theadora Walsh. International, 3–12 images.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/series-one-thing-after-another-site-brooklyn-gallery/">Series: One Thing After Another &middot; Site:Brooklyn Gallery</a></h3><p class="call-description">Site:Brooklyn online juried show on seriality and sequence, juried by Hyperallergic contributor Matt Stromberg. 3–12 images.</p></div>
+      <div class="call-card"><h3 class="call-title"><a href="/light-california-art-league/">LIGHT &middot; California Art League</a></h3><p class="call-description">Juried show at bG Gallery, Bergamot Station, on the theme of Light. Cash awards to $800 and a dedicated photography prize.</p></div>
 
     </section>
 
@@ -126,7 +123,7 @@
       try {
       const res = await fetch('/data.json');
       const data = await res.json();
-      const calls = data.calls.filter(c => c.org === 'Site:Brooklyn Gallery').map(processCall);
+      const calls = data.calls.filter(c => c.org === 'California Art League').map(processCall);
       document.getElementById('callsList').innerHTML = '';
       renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
     } catch (e) {}
