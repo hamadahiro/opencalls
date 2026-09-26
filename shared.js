@@ -94,7 +94,7 @@ Object.keys(usStateNames).forEach(abbr => { stateNameToAbbr[usStateNames[abbr]] 
 
 const eligibilityLabel = {
   'women': 'Women', 'non-binary': 'Non-binary', 'united-states': 'US only', 'europe': 'Europe only', 'italy': 'Italy only',
-  'emerging': 'Emerging artists', 'under-25': 'Under 25', 'under-30': 'Under 30', 'under-35': 'Under 35', 'under-40': 'Under 40',
+  'emerging': 'Emerging artists', 'under-25': 'Under 25', 'under-30': 'Under 30', 'under-35': 'Under 35', 'under-40': 'Under 40', 'under-45': 'Under 45',
   'lgbtq': 'LGBTQ+', 'analog-photography': 'Analog only', 'alternative-process': 'Alternative process',
   'professional': 'Professional only', 'membership-required': 'Membership required',
   'puerto-rico': 'Puerto Rico focus', 'latin-america': 'Latin America', 'asian-american': 'Asian American focus',
@@ -110,7 +110,7 @@ const eligibilityLabel = {
   'pacific-northwest': 'Pacific Northwest only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists', 'ontario': 'Ontario only',
   'indiana': 'Indiana only', 'ohio': 'Ohio only', 'alabama': 'Alabama only', '18-26': 'Ages 18–26',
-  'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'israel': 'Israel only',
+  'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'south-africa': 'South Africa only', 'israel': 'Israel only',
   '16-plus': '16+', '18-plus': '18+', '19-plus': '19+', '21-plus': '21+', '25-plus': '25+', '40-plus': '40+', '45-plus': '45+', '60-plus': '60+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'belarus': 'Belarus only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
   'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only', 'north-africa': 'North Africa only', 'central-west-africa': 'Central & West Africa only',
