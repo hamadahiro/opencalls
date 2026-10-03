@@ -5,3 +5,5 @@ scripts/
 data.json.pre-update
 *.pre-update
 *.pre-verify
+*.raw
+logs/
