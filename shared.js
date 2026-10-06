@@ -101,6 +101,7 @@ const eligibilityLabel = {
   'south-asian': 'South Asian focus', 'african-diaspora': 'African diaspora focus', 'black': 'Black artists',
   'neurodivergent-disabled': 'Neurodivergent & disabled', 'immigrant': 'Immigrant artists', 'jewish': 'Jewish community focus', 'portugal': 'Portugal only', 'portugal-lusophone-africa': 'Portugal & Lusophone Africa only', 'taiwan': 'Taiwan only',
   'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only',
+  'australia-new-zealand': 'Australia & NZ only',
   'canada': 'Canada only', 'us-canada': 'US & Canada only', 'north-america': 'US, Canada & Mexico only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only', 'netherlands': 'Netherlands only', 'belgium': 'Belgium only',
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'germany': 'Germany only', 'sweden': 'Sweden only', 'malta': 'Malta only', 'bulgaria': 'Bulgaria only',
   'baltics-finland': 'Baltics & Finland', 'commonwealth': 'Commonwealth only', 'qatar': 'Qatar only',
