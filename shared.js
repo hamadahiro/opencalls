@@ -134,7 +134,7 @@ const eligibilityLabel = {
   'berkshires': 'Berkshires area only',
   'northeast-us': 'Northeast US only',
   'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only',
-  'wisconsin': 'Wisconsin only', 'vermont': 'Vermont only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only',
+  'wisconsin': 'Wisconsin only', 'vermont': 'Vermont only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only', 'ks-ne-mo-ok-co': 'KS/NE/MO/OK/CO only',
   'michigan': 'Michigan only', 'florida': 'Florida only', 'ark-la-tex': 'AR/LA/OK/TX only',
   'south-central-us': 'AR/LA/NM/OK/TX only',
   'curators': 'Curators & academics', 'art-educators': 'Art educators', 'scientists': 'Scientists', 'military-community': 'Military community'
