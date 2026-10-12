@@ -111,7 +111,7 @@ const eligibilityLabel = {
   'hawaii-island': 'Hawaiʻi Island only',
   'pacific-northwest': 'Pacific Northwest only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists', 'ontario': 'Ontario only',
-  'indiana': 'Indiana only', 'ohio': 'Ohio only', 'alabama': 'Alabama only', '18-26': 'Ages 18–26', '14-29': 'Ages 14–29',
+  'indiana': 'Indiana only', 'ohio': 'Ohio only', 'kentucky': 'Kentucky only', 'alabama': 'Alabama only', '18-26': 'Ages 18–26', '14-29': 'Ages 14–29',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'south-africa': 'South Africa only', 'israel': 'Israel only',
   '16-plus': '16+', '18-plus': '18+', '19-plus': '19+', '21-plus': '21+', '25-plus': '25+', '40-plus': '40+', '45-plus': '45+', '60-plus': '60+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'belarus': 'Belarus only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
