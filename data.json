@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T00:33:00Z",
+  "lastUpdated": "2026-10-15T04:31:00Z",
   "calls": [
     {
       "title": "The Rfotofolio Call 2026",
@@ -62527,6 +62527,140 @@
       "jury": [],
       "resultsDate": null,
       "verifyNote": "2026-10-15 02:00 verify: THREE HOUSE KEYS WERE ABSENT, NOT NULL — jury, resultsDate and instagram were missing from the row entirely, which no value check can see; all three are now written explicitly. instagram is a FILL, not a null: the org page's own raw bytes (wintervillecenter.com/gallery, browser-UA curl --compressed, HTTP 200, 1,047,836 B raw) carry exactly one instagram.com link and it is the organisation's own, instagram.com/wintervillecenter (stored '@wintervillecenter'); no other handle appears on the page. jury [] is a measured absence on that same body: 'juror', 'jury' and 'judge' return ZERO prose hits in the raw bytes (the 54 'panel' hits are Wix editor JS, not a selection panel). resultsDate null follows from the rolling window — the page names no notification date and the call has no deadline to count from. Deadline 'Continuous', fee Free and the exhibition prize re-read and unchanged. || 2026-10-15 00:42 editor pass — the org page re-fetched with browser-UA curl --compressed (HTTP 200, 203,603 B transferred, 1,047,712 B raw) and the form read in Chrome. THE ADD NOTE SAID CHROME WAS THE ONLY ORACLE FOR FINDING THE ANCHOR; THAT IS WRONG AND THE CORRECTION MATTERS FOR THIS HOST. The Wix page renders to only 1,244 characters of text, but the anchor is in the RAW bytes and attribution is settled by raw offset: at offset 283,851 the <img alt=\"CALL FOR ART.png\"> is immediately followed by the link text \"Artist Proposal Form\" wrapping form id 1FAIpQLSf8WSmTBG6wALPdVu80qV…, the stored submitUrl; the same id reappears at offset 494,211 as the footer's \"Artist Proposals\". TWO OTHER FORMS SIT ON THE SAME PAGE AND NEITHER IS THIS CALL — Google form 1FAIpQLSc3nmwJ4133va72JmW7wP… at offset 495,488 is \"Volunteer Opportunities\" and jotform 232706115864153 at offset 491,593 is \"Become a Member\". Chrome WAS required for the form itself, and the ladder is recorded: curl -A \"curl/8.4.0\" 401s at 9,248 B, a desktop UA 401s at 3,414 B, FB_PUBLIC_LOAD_DATA_ greps 0 in both, and /closedform 302s to accounts.google.com ServiceLogin — the file-upload-form signature, so /closedform is NOT an oracle for this form's state and Chrome is. IN CHROME the form renders live: title \"Artist Proposal Form (2027/28 consideration)\", first line verbatim \"PLEASE NOTE: Currently all proposals submitted are being considered for 2027 and 2028.\", a live Submit button, no closed notice and no dated cutoff anywhere — which is why the deadline is Continuous (35 such rows). No fee field and no payment step: Free. Fields confirmed one by one: Name, Email, Address, Phone number, Website, \"Title of your proposed exhibition\", \"Artist Biography\", \"Artist statement about proposed exhibition\", \"Number of pieces you can provide (approximate size and quantity)\", \"Is your work 3D? If so how does it need to be displayed?\", \"Is this a solo request or is there another artist(s) you would like to exhibit with?\", and the willingness checklist (artist talk, volunteer at the gallery desk, art demonstration). THE FORM PRINTS ITS FILE LIMIT TWICE AND THE TWO COPIES DISAGREE: the question text says \"Limit file size to no more than 2MB\" while the uploader directly beneath says \"Upload up to 10 supported files: PDF, drawing, image, or video. Max 1 MB per file.\" The uploader is what enforces, so 1 MB is the operative cap and the description now states both — the row as added stated only 1 MB, which was right but unsourced. MEDIUM IS AN AFFIRMATIVE BORROWED FROM THE GALLERY'S OWN PROGRAMME, NOT FROM THIS DOCUMENT, AND IT IS FLAGGED AS SUCH: the proposal form enumerates no media at all, so silence here proves nothing; the affirmative is the gallery's own Small Works prospectus, whose \"Accepted Media\" list names photography outright (measured 2026-08-14 and recorded on small-works-2026-winterville-cultural-center-gallery). Nothing on either surface excludes photographers, so the skip test — no photographer can enter — is not met. AI IS A MEASURED TWO-SURFACE SILENCE, NOW STORED AS null: neither the gallery page nor the form says anything about AI. The Small Works prospectus's \"AI-generated artwork is not eligible\" is scoped to THAT document and does NOT transfer to this one. PRIOR PASSES DECLINED THIS CALL TWICE ON A GROUND THAT DOES NOT HOLD: 2026-09-04 and 2026-09-27 both logged it as \"rolling Artist Proposal Form, no date\" and 2026-10-09 listed the org as nothing-open. Continuous is a supported deadline value carried by 35 stored rows, including an exhibition-proposals row, so \"no deadline\" was never a reason to reject. Two gallery addresses are on the page; both went to the gitignored contacts store, never here."
+    },
+    {
+      "title": "Exploring Darkness and Shadows",
+      "org": "L7 Gallery",
+      "deadline": "2026-11-15",
+      "fee": "$30 (1–3 images)",
+      "category": "exhibition",
+      "description": "L7 Gallery, a Bellingham, Washington space that shows neo-figurative, neo-expressionist, spiritual-abstraction and outsider work, invites international artists to its next online exhibition on the many meanings of darkness and shadow. The call sets the theme against the usual readings of fear, chaos and death: the night sky, fertile soil and the maternal womb are all dark places necessary for life. It leans on Jun’ichirō Tanizaki’s In Praise of Shadows — Eastern cultures preferring jade’s pensive luster to a shallow brilliance, tarnished silver over polish, aged grain over new wood — and on Romeo seeing Juliet hang upon the night like a jewel in an Ethiope’s ear, and it ranges its references from da Vinci, Vermeer and Goya to Vija Celmins, Astro Boy and Kara Walker. The gallery supplies definitions of skiagraphia, tenebrism, chiaroscuro and sfumato as starting points. Photography is named among the accepted media, alongside painting, drawing, watercolour, sculpture, digital art, printmaking and fabric art. The juror is Jesse Firestone, Associate Curator of the RAY Triennial of Photographic Arts in Frankfurt and Curator of Exhibitions at The Interchurch Center in New York, who has organised more than 60 exhibitions and works on artist agency and experimental approaches to exhibition-making. First place takes a $300 award and two further artists receive honourable mentions. The call’s own timeline opens applications on 15 October 2026, closes them on 15 November, juries 16–19 November, notifies artists on 20 November and runs the online exhibition from 20 November to 31 December 2026. Entry is $30 for one to three images, all work must be original and artists must be 18 or over. Every piece must be for sale for the run of the show at a price fixed at application and cannot be withdrawn early; the artist keeps 60% of any sale, and submitting grants the gallery promotional use of the images.",
+      "url": "https://www.l7gallery.com/submissions-darkness-and-shadows-dec2026",
+      "instagram": "@l7_gallery",
+      "location": "Online",
+      "prize": "$300 + Exhibition",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [
+        "Jesse Firestone, Associate Curator, RAY Triennial of Photographic Arts, Frankfurt"
+      ],
+      "ai": null,
+      "orgInTitle": false,
+      "summary": "Bellingham gallery’s online show on darkness and shadow, juried by RAY Triennial curator Jesse Firestone. $30, $300 award.",
+      "slug": "exploring-darkness-and-shadows-l7-gallery",
+      "dateAdded": "2026-10-15T03:12:13Z",
+      "requirements": "1–3 images",
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18349/CAFE",
+      "resultsDate": "November 20, 2026"
+    },
+    {
+      "title": "2027 Mid-Atlantic Juried Show",
+      "org": "McGuffey Art Center",
+      "deadline": "2027-01-15",
+      "fee": "$35 (up to 3 entries; $25 members) + $10 handling if accepted",
+      "category": "exhibition",
+      "description": "The third annual Mid-Atlantic Juried Show at McGuffey Art Center, one of the oldest artist-run cooperative art centres in the United States, housed in a historic elementary school building in downtown Charlottesville, Virginia. The show runs April 2 to May 1, 2027, with a First Friday opening reception on April 2 from 5:30 to 7:30 pm and a panel discussion on the closing day. Any artist aged 18 or over resident in Virginia, West Virginia, Maryland, Washington DC or North Carolina may enter; photography is one of the seven named categories, alongside painting, drawing, printmaking, fibre, sculpture and mixed media. Work must be original and made within the last three years, and AI-enhanced or AI-generated art and photography is prohibited from entry, as is work copied from other artists or from published material. Two-dimensional entries may not exceed eight feet in any direction and nothing requiring the artist to be present for moving or assembly is accepted. Entry is $35 for up to three submissions, reduced to $25 for McGuffey Art Center Association members via a coupon code from the front office, and only one piece per artist is taken into the exhibition. Accepted artists pay a $10 handling fee and arrange delivery themselves — hand-delivered March 25–27 or shipped prepaid March 22–26, in reusable containers with a return label — and the centre states it does not insure work in transit or on exhibit. Work is for sale unless marked otherwise, with the artist keeping 65% and McGuffey 35%. The 2027 juror is Jack Rasmussen, Director and Curator of the American University Museum at the Katzen Arts Center in Washington DC since it opened in 2005, previously Executive Director of Maryland Art Place and of di Rosa, and a past president of the Maryland State Arts Council; he judges on artistic voice and vision and on technical execution, and his decisions are final. Artists are notified on February 15, 2027.",
+      "url": "https://www.mcguffeyartcenter.com/mid-atlanticshow-1",
+      "instagram": "@mcguffeyartcenter",
+      "location": "Charlottesville, VA, USA",
+      "prize": "Exhibition",
+      "eligibility": [
+        "mid-atlantic-us",
+        "18-plus"
+      ],
+      "jury": [
+        "Jack Rasmussen, Director and Curator, American University Museum at the Katzen Arts Center"
+      ],
+      "ai": "Not accepted",
+      "orgInTitle": false,
+      "summary": "Third annual regional juried show at a historic artist-run co-op in Charlottesville. Photography named; juror Jack Rasmussen.",
+      "slug": "2027-mid-atlantic-juried-show-mcguffey-art-center",
+      "dateAdded": "2026-10-15T03:15:58Z",
+      "requirements": "1–3 images",
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18331/CAFE",
+      "resultsDate": "February 15, 2027"
+    },
+    {
+      "title": "What Would You Do With $1000",
+      "org": "No More Starving Artists Foundation",
+      "deadline": "2026-12-15",
+      "fee": "$10",
+      "category": "grant",
+      "description": "A microgrant from the No More Starving Artists Foundation, a Palm Beach County 501(c)(3) whose stated mission is to help artists build a sustainable practice and a lasting legacy. The $1,000 award is deliberately open-ended: it is meant to fund the creation of new work, the completion of a project already under way, professional development, or a new experimental concept that pushes the artist’s work forward. It is open to professional artists over 18 who live in Palm Beach County only, at emerging, mid-career or established stage, and across every discipline the foundation lists — visual artists, musicians, vocalists, literary artists, designers, dancers, culinary artists, poets, writers and filmmakers — so photographers apply as visual artists. Applicants must not be currently enrolled in an active educational programme, and may only apply as a solo artist: no collaborations and no teams. All submitted works, concepts and accompanying materials must be original and, in the foundation’s words, conceived and executed solely by human hands, minds or voices — generative AI is explicitly barred. The application asks for an artist statement (not a bio or résumé), a detailed written description of the specific idea the artist wants to realise and why the funding matters for it, a short 30-to-60-second proposal video to accompany that narrative, and three work samples. The entry fee is $10 and non-refundable; the number of awards is not fixed and jurors are to be announced. Recipients also receive a one-year NMSAF membership. The award is not an unconditional grant: the foundation's legal agreement binds every recipient to a Pay It Forward commitment to volunteer in the community within 12 months and to file documented proof of it — a signed letter from the organisation served, or five photographs, or a video — and states that if the proof is not provided, “the entire grant will revert to a loan and must be repaid to NMSAF”, with a 1.5% monthly finance charge on any delinquent balance. Recipients also file a W-9.",
+      "url": "https://www.nmsaf.org/artist_call/what-would-you-do-with-1000/",
+      "instagram": "@nmsafpbc",
+      "location": "Palm Beach County, FL, USA",
+      "prize": "$1,000 (repayable if volunteer proof not filed in 12 months) + one-year NMSAF membership",
+      "eligibility": [
+        "palm-beach-county",
+        "18-plus"
+      ],
+      "jury": [],
+      "ai": "Not accepted",
+      "orgInTitle": false,
+      "summary": "$1,000 open-purpose microgrant for Palm Beach County artists of any discipline. $10 to apply, AI barred, solo artists only.",
+      "slug": "what-would-you-do-with-1000-no-more-starving-artists-foundation",
+      "dateAdded": "2026-10-15T03:22:40Z",
+      "requirements": "3 images + proposal video",
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18236/CAFE",
+      "resultsDate": null
+    },
+    {
+      "title": "Artist Accelerator Program Spring 2027",
+      "org": "Sebastopol Center for the Arts",
+      "deadline": "2027-01-15",
+      "fee": "Free",
+      "category": "education",
+      "description": "SebArts’ Artist Accelerator is a free, three-month professional development cohort for Sonoma County artists, built to move a practice toward being sustainable as well as creative: artistic development, financial management, marketing and sales, social media, curatorial guidance in the art market, collector relationships, critiques and exhibition opportunities. New for this cycle, accepted artists also receive a $500 stipend. The Spring 2027 cohort runs April 1 to June 30, 2027, takes six to eight artists, and meets for a minimum of four hours a week — typically Tuesdays noon to 2pm and Thursdays 10am to noon, with additional events and some evening sessions — at the centre’s building on South High Street in Sebastopol, California. Applicants must be 18 or over, live in Sonoma County, and be available for the full term; artists at any career stage are encouraged, professional and non-professional alike, and all creative disciplines are welcome, so photographers are eligible. The application is free and asks for a short narrative on the artist’s background and focus, two to ten work samples, a résumé, and a signed letter of support or testimonial from someone familiar with the applicant’s work who can speak to its practice, relevance and community impact, including their name, title and contact details. The programme is sponsored by Creative Sonoma and the County of Sonoma; its workshop series is also offered free to the public by RSVP.",
+      "url": "https://www.sebarts.org/accelerator",
+      "instagram": "@sebastopolarts",
+      "location": "Sebastopol, CA, USA",
+      "prize": "$500 stipend + professional development programme",
+      "eligibility": [
+        "northern-california",
+        "18-plus"
+      ],
+      "jury": [
+        "Peer review panels convened by SebArts"
+      ],
+      "ai": null,
+      "orgInTitle": false,
+      "summary": "Free three-month development cohort for Sonoma County artists, now with a $500 stipend. Six to eight places.",
+      "slug": "artist-accelerator-program-spring-2027-sebastopol-center-for-the-arts",
+      "dateAdded": "2026-10-15T03:22:40Z",
+      "requirements": "2–10 images",
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18334/CAFE",
+      "resultsDate": null
+    },
+    {
+      "title": "Deck the Walls 2026",
+      "org": "Arts Foundation of Cape Cod",
+      "deadline": "2026-11-06",
+      "fee": "Free",
+      "category": "exhibition",
+      "description": "The Arts Foundation of Cape Cod’s annual holiday art auction returns, with bidding online and in person and a buy-now option, and the foundation makes a point of opening it to artists near and far rather than keeping it regional. Photography is named among the welcome media, alongside acrylic, oil, watermedia, pastel, drawing, printmaking, mixed media, sculpture, fibre, wood, metal, glass, ceramics and jewellery; work must be original and ready to hang. Unusually for a holiday show, there is no maximum size — the foundation says outright that this is not a typical small-works holiday show and pieces of any size are welcome — and its experience is that work priced between $300 and $2,000 sells well here. Submission is free and an artist may put forward up to three pieces, though in most cases only one is chosen; space is limited and the foundation’s committee retains full discretion over selection. Each artwork is submitted with up to three JPEGs, a main shot plus up to two details, at least 2000 pixels on the longest side and under 5 MB, since the images are used for the online sale. Selected artists are notified by email on November 13; work is dropped off on November 16 at the Sketch Pad on Pearl Street in Hyannis or shipped to arrive by November 23 at the artist’s expense with a prepaid return label. The public preview goes online November 20, the buy-now event runs November 27 to December 11, and an open house is held at the Sketch Pad on Saturday, December 5. The money terms are not on the call page — they sit in the Submittable guidelines, and they matter: the foundation asks artists to donate 100% of the sale proceeds, and states that “the option for the artist to receive 25% or 50% of the sale value is also available”, chosen on the submission form, so the most an artist can keep is half. Bidding opens at 60% of the value the artist states, with an optional reserve price below which the work will not sell — the foundation’s own worked example is a $1,000 artwork opening at $600, where an $800 sale on the 50% option returns $400 to the artist. Sales are confirmed by December 16 with cheques mailed within 30 days; unsold work is returned or donated to the foundation according to the artist’s stated preference, and the rest of the proceeds support its work across the region’s arts and cultural community.",
+      "url": "https://www.artsfoundation.org/call-for-art",
+      "instagram": "@artsfoundationofcc",
+      "location": "Hyannis, MA, USA",
+      "prize": "Exhibition + up to 50% of sale price",
+      "eligibility": [],
+      "jury": [
+        "Arts Foundation Committee"
+      ],
+      "ai": null,
+      "orgInTitle": false,
+      "summary": "Free call for the Arts Foundation of Cape Cod’s holiday art auction. Photography named, any size, open to artists anywhere.",
+      "slug": "deck-the-walls-2026-arts-foundation-of-cape-cod",
+      "dateAdded": "2026-10-15T03:25:46Z",
+      "requirements": "Up to 3 works, up to 3 images each",
+      "submitVia": "Submittable",
+      "submitUrl": "https://artsfoundationofcapecod.submittable.com/submit/367548/2026-deck-the-walls-call-for-art",
+      "resultsDate": "November 13, 2026"
     }
   ]
 }
