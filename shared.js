@@ -123,7 +123,7 @@ const eligibilityLabel = {
   'new-york-city': 'NYC only', 'new-york-state': 'NY State only', 'central-new-york': 'Central NY only', 'western-new-york': 'Western NY only', 'san-ramon': 'San Ramon only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'japan': 'Japan only', 'southeast-us': 'Southeast US only',
-  'north-east-england': 'North East England only', 'wales': 'Wales only',
+  'north-east-england': 'North East England only', 'wales': 'Wales only', 'london': 'London only',
   'lower-austria': 'Lower Austria only',
   'maritimes': 'Maritimes only',
   'california': 'California only', 'colorado': 'Colorado only', 'montana': 'Montana only', 'texas': 'Texas only', 'washington': 'Washington only', 'oklahoma': 'Oklahoma only', 'south-dakota': 'South Dakota only',
