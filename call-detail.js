@@ -11,49 +11,5 @@
   if (dp && !dp.innerHTML.trim() && CURRENT_CALL.prize) dp.innerHTML = buildPrizeBlock(CURRENT_CALL, esc);
 })();
 
-async function loadSimilar() {
-  try {
-  const res = await fetch('/data.json');
-  const data = await res.json();
-
-  const candidates = data.calls
-    .filter(c => (c.slug || slugify(c.title)) !== CURRENT_SLUG)
-    .filter(c => isCallOpen(c.deadline));
-
-  const scored = candidates.map(c => ({
-    call: c,
-    score: scoreSimilarity(CURRENT_CALL, c)
-  }));
-
-  scored.sort((a, b) => b.score - a.score);
-
-  const curElig = CURRENT_CALL.eligibility || [];
-  const hasEligibility = curElig.length > 0;
-
-  // Filter: min score 5, and if current has eligibility tags, require conceptual match
-  const top = scored.filter(s => {
-    if (s.score < 5) return false;
-    if (hasEligibility) {
-      const othElig = s.call.eligibility || [];
-      const sharedElig = curElig.some(t => othElig.includes(t));
-      const sameCategory = s.call.category === CURRENT_CALL.category;
-      if (!sharedElig && !sameCategory) return false;
-    }
-    return true;
-  }).slice(0, 6);
-
-  const container = document.getElementById('similarCalls');
-  if (top.length < 2) {
-    container.innerHTML = '';
-    return;
-  }
-
-  let html = '<h2 class="section-header">More like this</h2>';
-  top.forEach(s => {
-    html += renderCard(processCall(s.call), 'h3');
-  });
-  container.innerHTML = html;
-} catch (e) {}
-}
-
-loadSimilar();
+// "More like this" is rendered into the page at build time
+// (buildStaticSimilarCalls in generate-pages.js); nothing to fetch here.

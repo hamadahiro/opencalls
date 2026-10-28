@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -67,7 +67,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -78,8 +77,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -90,8 +89,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -102,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -112,34 +111,57 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/next-generation-university-art-competition-2026-honeywell-arts-entertainment/">Next Generation: University Art Competition 2026 &middot; Honeywell Arts &amp; Entertainment</a></h3><p class="call-description">Free statewide juried show for Indiana college students in a high-traffic Wabash gallery; photographic prints accepted.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/midwest-regional-2027-artlink-contemporary-gallery/">Midwest Regional 2027 &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">Artlink's annual juried show for artists across twelve Midwest states — any medium, $12 an entry, three cash awards.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/lay-of-the-land-a-focus-in-nature-artlink-contemporary-gallery/">Lay of the Land: A Focus on Nature &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">Artlink's all-media juried show on the natural world — photography named, $12 an entry, open across the US.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fixed-focus-fellowship-2027-aurora-photocenter/">Fixed Focus Fellowship 2027 &middot; Aurora PhotoCenter</a></h3><p class="call-description">Year-long fellowship for 10 Indiana photographers aged 18–26. Free membership, darkroom access, $1,000 credit and mentoring.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/power-plant-grant-2026-big-car-collaborative/">Power Plant Grant 2026 &middot; Big Car Collaborative</a></h3><p class="call-description">Five $12,000 project grants for Indiana visual artists from Big Car Collaborative, Warhol Foundation funded. Free.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/project-grants-art-activities-in-public-spaces-2027-2028-indy-arts-council/">Project Grants: Art Activities in Public Spaces 2027–2028 &middot; Indy Arts Council</a></h3><p class="call-description">$2,000–$10,000 for arts activities in Marion County public spaces; open to individual artists 18+, free to apply, due 10 January 2027.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/call-for-exhibition-proposals-artlink-contemporary-gallery/">Call for Exhibition Proposals &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">Artlink reviews solo, group and curated exhibition proposals once a year after March 1 for its Fort Wayne gallery schedule. $25.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-shape-of-memory-indiana-university-kokomo/">The Shape of Memory &middot; Indiana University Kokomo</a></h3><p class="call-description">IU Kokomo's juried show on memory, identity and distortion - 2D, 3D and video, catalog for all selected; AI work barred.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/exhibition-proposals-aurora-photocenter/">Exhibition Proposals &middot; Aurora PhotoCenter</a></h3><p class="call-description">Rolling call for exhibition proposals at Indianapolis's artist-run photography centre. Free to submit, reviewed as received.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/light-of-a-clear-blue-morning-kinhouse-gallery/">Light of a Clear Blue Morning &middot; Kinhouse Gallery</a></h3><p class="call-description">Winter solstice group show in Fort Wayne — photography named, $15 for three works, $20 shipping stipend back.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/smallart-2026-27-arts-illiana/">smallART 2026/27 &middot; Arts Illiana</a></h3><p class="call-description">Free 12-inch-square show at Arts Illiana's Terre Haute gallery, Nov-Feb. Photography named; regional artists only.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/seeing-red-annual-color-theme-show-harrison-center/">Seeing Red — Annual Color Theme Show &middot; Harrison Center</a></h3><p class="call-description">Free all-media December group show on the colour red at Indianapolis's Harrison Center, with $5,000 Best in Show.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/dehaan-artist-of-distinction-award-2026-round-2-indy-arts-council/">DeHaan Artist of Distinction Award 2026 — Round 2 &middot; Indy Arts Council</a></h3><p class="call-description">Round 2 of up to five $10,000 project grants for Indiana visual artists taking real risks; photography named as eligible, free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/open-door-2027-exhibition-residency-kinhouse-gallery/">Open Door: 2027 Exhibition &amp; Residency &middot; Kinhouse Gallery</a></h3><p class="call-description">A funded six-night Indiana residency paired with your own show at an artist-run Fort Wayne gallery. All media, $34.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/48th-annual-whitewater-valley-art-competition-indiana-university-east/">48th Annual Whitewater Valley Art Competition &middot; Indiana University East</a></h3><p class="call-description">IU East's 48th annual juried competition; photographs named among eligible media. $35 for 3 entries; over $2,000 in awards and a five-month show.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/open-space-art-about-the-land-2026-minnetrista-museum-gardens/">Open Space: Art About the Land 2026 &middot; Minnetrista Museum &amp; Gardens</a></h3><p class="call-description">Two Indiana museums' annual juried show on the land, for present or former Indiana residents: $35 for 3 works, $1,500 in awards. Sep 28.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/compact-small-works-artlink-contemporary-gallery/">COMPACT: Small Works &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">Artlink's small-works show — intimate scale, all media, $12 an entry at a nonprofit Fort Wayne gallery.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/wavelength-yellow-artlink-contemporary-gallery/">Wavelength: Yellow &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">One colour, one show: Artlink's spectrum series turns to yellow. Photography named, $12 an entry, juried by Ellen Mensch.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/128th-annual-exhibition-by-indiana-and-ohio-artists-richmond-art-museum/">128th Annual Exhibition by Indiana and Ohio Artists &middot; Richmond Art Museum</a></h3><p class="call-description">Richmond Art Museum's 128th juried annual for Indiana and Ohio artists; photography named, ~$30,000 in awards.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/aurora-2026-members-juried-exhibition/">Aurora 2026 Members Juried Exhibition</a></h3><p class="call-description">Aurora's members show in Indianapolis, juried by the Cleveland Museum of Art's Barbara Tannenbaum. Free to enter, Aurora prints and frames.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/patchwork-kinhouse-gallery/">Patchwork &middot; Kinhouse Gallery</a></h3><p class="call-description">Quilt-inspired juried show at Fort Wayne's Kinhouse Gallery — any medium engaging pattern and piecing. Exhibition + catalog.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/night-vision-artlink/">Night Vision &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">Night-themed juried show at Fort Wayne's Artlink — all media incl. photography, drawn to the colors of the dark. US artists, $12 entry.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2026-honeywell-photography-competition-honeywell-arts-entertainment/">2026 Honeywell Photography Competition &middot; Honeywell Arts &amp; Entertainment</a></h3><p class="call-description">Honeywell Center's juried photo competition in Wabash, Indiana. US residents, all ages. Cash prizes + gallery exhibition.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/82nd-wabash-valley-exhibition-swope-art-museum/">82nd Wabash Valley Exhibition &middot; Swope Art Museum</a></h3><p class="call-description">Swope Art Museum's 82-year-old juried annual for six-state region artists; $10,000+ in awards, juror Mark Pascale.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/kinhouse-exploring-kinship-and-the-spaces-we-inhabit/">Kinhouse: Exploring Kinship and the Spaces We Inhabit</a></h3><p class="call-description">Juried show on kinship, caregiving and place at Fort Wayne's Kinhouse Gallery. Catalog publication; juror Braydee Euliss.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/lucent-the-art-of-light-artlink/">Lucent: The Art of Light &middot; Artlink Contemporary Gallery</a></h3><p class="call-description">Light-themed juried show at Fort Wayne's Artlink — work that depicts or emits light, all media, $12 entry.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/residency-program-2026-aurora-photocenter/">Residency Program 2026 &middot; Aurora PhotoCenter</a></h3><p class="call-description">Two-week residency for photo-based media at Herron School of Art + Design. $1,000 stipend. Darkroom facilities included.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/next-generation-university-art-competition-2026-honeywell-arts-entertainment/">Next Generation: University Art Competition 2026 · Honeywell Arts &amp; Entertainment</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">7 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$175 / $150 / $100 / $85</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Wabash, IN</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link eligibility-tag">Students</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link eligibility-tag">Indiana only</a></div>
+        <p class="call-description">Free statewide juried show for Indiana college students in a high-traffic Wabash gallery; photographic prints accepted.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/midwest-regional-2027-artlink-contemporary-gallery/">Midwest Regional 2027 · Artlink Contemporary Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">12 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>3 cash awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$12 per entry">$12+ fee</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Fort Wayne, IN</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a> <a href="/eligibility/midwest-us/" class="meta-tag meta-tag-link eligibility-tag">Midwest US only</a></div>
+        <p class="call-description">Artlink's annual juried show for artists across twelve Midwest states — any medium, $12 an entry, three cash awards.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/lay-of-the-land-a-focus-in-nature-artlink-contemporary-gallery/">Lay of the Land: A Focus on Nature · Artlink Contemporary Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">12 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$12 per entry">$12+ fee</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Fort Wayne, IN</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">Artlink's all-media juried show on the natural world — photography named, $12 an entry, open across the US.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/fixed-focus-fellowship-2027-aurora-photocenter/">Fixed Focus Fellowship 2027 · Aurora PhotoCenter</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">18 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$1,000 credit</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Group exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Indianapolis, IN</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link eligibility-tag">Indiana only</a> <a href="/eligibility/18-26/" class="meta-tag meta-tag-link eligibility-tag">Ages 18–26</a></div>
+        <p class="call-description">Year-long fellowship for 10 Indiana photographers aged 18–26. Free membership, darkroom access, $1,000 credit and mentoring.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/power-plant-grant-2026-big-car-collaborative/">Power Plant Grant 2026 · Big Car Collaborative</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">23 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$12,000 ×5</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Indianapolis, IN</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link eligibility-tag">Indiana only</a> <a href="/eligibility/21-plus/" class="meta-tag meta-tag-link eligibility-tag">21+</a></div>
+        <p class="call-description">Five $12,000 project grants for Indiana visual artists from Big Car Collaborative, Warhol Foundation funded. Free.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/project-grants-art-activities-in-public-spaces-2027-2028-indy-arts-council/">Project Grants: Art Activities in Public Spaces 2027–2028 · Indy Arts Council</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 10, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$2,000–$10,000</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Indianapolis, IN</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link eligibility-tag">Indiana only</a></div>
+        <p class="call-description">$2,000–$10,000 for arts activities in Marion County public spaces; open to individual artists 18+, free to apply, due 10 January 2027.</p>
+      </div>
+      <h3 class="section-header">March 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/call-for-exhibition-proposals-artlink-contemporary-gallery/">Call for Exhibition Proposals · Artlink Contemporary Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/march-2027/" class="call-deadline normal">Mar 1, 2027</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$25 fee</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Fort Wayne, IN</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Artlink reviews solo, group and curated exhibition proposals once a year after March 1 for its Fort Wayne gallery schedule. $25.</p>
+      </div>
+      <h3 class="section-header">April 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/the-shape-of-memory-indiana-university-kokomo/">The Shape of Memory · Indiana University Kokomo</a></h4>
+        <div class="call-meta"><a href="/deadlines/april-2027/" class="call-deadline normal">Apr 2, 2027</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 (invoiced by email after entry)">$25+ fee</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Kokomo, IN</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">IU Kokomo's juried show on memory, identity and distortion - 2D, 3D and video, catalog for all selected; AI work barred.</p>
+      </div>
+      <h3 class="section-header">Continuous</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/exhibition-proposals-aurora-photocenter/">Exhibition Proposals · Aurora PhotoCenter</a></h4>
+        <div class="call-meta"><span class="call-deadline rolling">Continuous</span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Gallery exhibition</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Stipend</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/indiana/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Indianapolis, IN</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Rolling call for exhibition proposals at Indianapolis's artist-run photography centre. Free to submit, reviewed as received.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/united-states/indiana/past/">Past calls (18) &rarr;</a></p>
 
     </section>
 
@@ -149,21 +171,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', IN,') || c.location.includes(', Indiana,'))).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

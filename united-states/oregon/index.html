@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -67,7 +67,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -78,8 +77,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -90,8 +89,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -102,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -112,40 +111,51 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/petite-creations-gresham-area-league-for-the-arts/">Petite Creations &middot; Gresham Area League for the Arts</a></h3><p class="call-description">Small-format winter show in Gresham, Oregon. Photography named; $30 for three works, 9-inch maximum, local delivery required.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/solace-in-silence-lightbox-photographic-gallery/">Solace in Silence &middot; LightBox Photographic Gallery</a></h3><p class="call-description">LightBox's winter members exhibit, Astoria, Oregon: no entry fee, every member who submits is hung; $25/month membership required.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/open-theme-2026-black-box-gallery/">Open Theme: 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Open-themed juried photo show at Black Box Gallery, Portland. Juror Todd Johnson; free printing, matting and framing for selected work.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/illuminated-gallery-114/">Illuminated &middot; Gallery 114</a></h3><p class="call-description">Portland co-op gallery's juried show for the Winter Light Festival: work using light as concept or material. All 2D and 3D media.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/marni-jenkins-visual-art-prize-2026-calyx-press/">Marni Jenkins Visual Art Prize 2026 &middot; CALYX Press</a></h3><p class="call-description">First edition of CALYX Press's blind-judged art prize for women and nonbinary artists: $400 and publication in CALYX Journal.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2027-student-showcase-gresham-area-league-for-the-arts/">2027 Student Showcase &middot; Gresham Area League for the Arts</a></h3><p class="call-description">Grades 6-12 around Gresham, Oregon show in a real gallery: photography named, award ceremony, 20% commission, no fee stated.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2027-pacific-northwest-drawers-blue-sky-gallery/">2027 Pacific Northwest Drawers &middot; Blue Sky Gallery</a></h3><p class="call-description">Blue Sky's juried flat-file archive: ten prints handled by visitors for a year. Free, Pacific Northwest residents.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/main-gallery-exhibition-submissions-blue-sky-gallery/">Main Gallery Exhibition Submissions &middot; Blue Sky Gallery</a></h3><p class="call-description">Portland photography non-profit reads main-gallery proposals year-round for late 2027 and beyond. 15–30 images, free to submit.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/the-book-project-landscape-2026-black-box-gallery/">The Book Project: Landscape 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Hardbound landscape photobook from Black Box Gallery. Ten photographers selected, five photographs each.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2026-annual-members-exhibit-umpqua-valley-arts/">2026 Annual Members' Exhibit &middot; Umpqua Valley Arts</a></h3><p class="call-description">Non-juried, no theme, any medium: every UVA member hangs one piece. Free with a $65 membership, Roseburg gallery show through December.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/framed-shadow-and-light-black-box-gallery/">Framed: Shadow and Light &middot; Black Box Gallery</a></h3><p class="call-description">Portland juried show on shadow and light. Gallery printing, matting and framing free; 76 photographs in the catalogue.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/embodied-existence-chronic-pain-project/">Embodied Existence &middot; Chronic Pain Project</a></h3><p class="call-description">Free Portland show for artists living with chronic pain and their caregivers, at Lewis &amp; Clark's Watzek Library.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/mayors-art-show-2027-city-of-eugene/">Mayor's Art Show 2027 &middot; City of Eugene Cultural Services</a></h3><p class="call-description">Free-to-enter Eugene exhibition at the Hult Center with eight $500 awards, open to artists living or working in the city.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/printmaking-now-10-years-later-umpqua-valley-arts/">Printmaking NOW! (10 Years Later) &middot; Umpqua Valley Arts</a></h3><p class="call-description">Umpqua Valley Arts' national juried printmaking survey — photographic print processes fit its open-ended bounds. $30, $300 top award.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/pile-press-literary-art-journal-issue-13/">Pile Press Literary + Art Journal, Issue 13</a></h3><p class="call-description">Portland indie press's bi-annual journal for women and non-binary creatives. Photography welcome, up to three pieces, $4.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/precipice-fund-round-15-portland-institute-for-contemporary-art/">Precipice Fund Round 15 &middot; Portland Institute for Contemporary Art</a></h3><p class="call-description">Warhol-backed $500–$5,000 grants for collaborative, artist-led visual art projects in Portland, Oregon. Free.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/queer-spirit-blackfish-gallery/">Queer Spirit &middot; Blackfish Gallery</a></h3><p class="call-description">Free group show at Portland's artist-run Blackfish Gallery celebrating queer identity, community and imagination. Jan 2027.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/glean-2026-27/">GLEAN 2026/27</a></h3><p class="call-description">Five Portland artists get five months of access to the dump, a $3,000 stipend and a group show. Free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2026-members-show-blue-sky-gallery/">2026 Members Show &middot; Blue Sky Gallery</a></h3><p class="call-description">Blue Sky's annual members show returns in person; top 50 works on the Community Walls in Portland. Free to enter with membership.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/black-and-white-2026-black-box-gallery/">Black and White: 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Juried black &amp; white photography show at Black Box Gallery, Portland. Juror Todd Johnson; free printing &amp; framing for selected works.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/natural-harmony-lightbox-photographic-gallery/">Natural Harmony &middot; LightBox Photographic Gallery</a></h3><p class="call-description">Landscape as persistence — juried show at LightBox in Astoria, Oregon, with live performance responding to the work.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/color-space-contemporary-photography-2026-black-box-gallery/">Color Space: Contemporary Photography 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Black Box Gallery Portland juried show of contemporary color photography. 26 prints exhibited + 50 online + Blurb catalog.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/lens-work-trees-and-water-black-box-gallery/">Lens Work: Trees and Water &middot; Black Box Gallery</a></h3><p class="call-description">Black Box Gallery juried exhibition exploring trees and water. Free printing/framing. Portland, OR. Juror: Todd Johnson.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/critical-mass-2026-photolucida/">Critical Mass 2026 &middot; Photolucida</a></h3><p class="call-description">Photolucida's annual review by 200 photography pros. Top 50 designation, book awards, exhibition opportunities. AI not accepted.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/pine-meadow-ranch-2027-artist-residency/">Pine Meadow Ranch 2027 Artist Residency</a></h3><p class="call-description">Funded 2–4 week multidisciplinary residency on a high-desert Oregon ranch. Photography eligible. $200/week stipend, no fee.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-analog-forever-exhibit-2026-lightbox-photographic-gallery/">The Analog Forever Exhibit 2026 &middot; LightBox Photographic Gallery</a></h3><p class="call-description">Analog-process show with Analog Forever Magazine at LightBox in Astoria, Oregon. Any style worldwide — one analog element required.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/playa-art-sci-awarded-residency-2027/">PLAYA Art/Sci Awarded Residency 2027</a></h3><p class="call-description">Jury-selected residency on high desert in Oregon. Free cabin housing, studio access, weekly group meal. Open globally.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/photo-shoot-2026-black-box-gallery/">Photo Shoot 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Black Box Gallery Portland open theme show. 26 prints exhibited + 50 online + Blurb catalog. Free framing.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/put-a-pinhole-in-it-blue-moon-camera/">Put a Pin(hole) In It &middot; Blue Moon Camera &amp; Machine</a></h3><p class="call-description">Free pinhole photography group show at Blue Moon Camera &amp; Machine, Portland OR. Up to 5 images; opens August 1, 2026.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-book-project-street-photography-black-box-gallery/">The Book Project - Street Photography &middot; Black Box Gallery</a></h3><p class="call-description">Hardbound books each featuring 10 photographers. Sixth call focusing on street photography. Portland, OR.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/camera-work-shadow-and-light-2026-black-box-gallery/">Camera Work: Shadow and Light 2026 &middot; Black Box Gallery</a></h3><p class="call-description">Portland gallery juried photography show exploring shadow and light. Free printing, matting, and framing for the 26 accepted works.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/camera-work-shadow-and-light-black-box-gallery/">Camera Work: Shadow and Light &middot; Black Box Gallery</a></h3><p class="call-description">Juried group show exploring shadow and light. 26 prints exhibited in Portland, OR, 50 more online. Free framing.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/framed-black-and-white-black-box-gallery/">Framed: Black and White &middot; Black Box Gallery</a></h3><p class="call-description">Juried black and white group show. Classic, nostalgic, and dynamic monochrome with diverse contemporary voices. Portland, OR.</p></div>
+      <h3 class="section-header">Ending Today</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/petite-creations-gresham-area-league-for-the-arts/">Petite Creations · Gresham Area League for the Arts</a></h4>
+        <div class="call-meta"><a href="/deadlines/october-2026/" class="call-deadline ending">Ending today</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 (3 works)">$30+ fee</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Gresham, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/portland-area/" class="meta-tag meta-tag-link eligibility-tag">Portland Area only</a></div>
+        <p class="call-description">Small-format winter show in Gresham, Oregon. Photography named; $30 for three works, 9-inch maximum, local delivery required.</p>
+      </div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/solace-in-silence-lightbox-photographic-gallery/">Solace in Silence · LightBox Photographic Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">10 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link" title="Free (LightBox Associate membership required, $25/month)">Free*</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Astoria, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link eligibility-tag">Membership required</a></div>
+        <p class="call-description">LightBox's winter members exhibit, Astoria, Oregon: no entry fee, every member who submits is hung; $25/month membership required.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/open-theme-2026-black-box-gallery/">Open Theme: 2026 · Black Box Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">16 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Catalog</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 (up to 5 photos)">$40+ fee</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Portland, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Open-themed juried photo show at Black Box Gallery, Portland. Juror Todd Johnson; free printing, matting and framing for selected work.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/illuminated-gallery-114/">Illuminated · Gallery 114</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline normal">Nov 29, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Juror's Award for Best of Show</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 submissions ($5 per additional, maximum 6)">$35+ fee</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Portland, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/pacific-northwest/" class="meta-tag meta-tag-link eligibility-tag">Pacific Northwest only</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Portland co-op gallery's juried show for the Winter Light Festival: work using light as concept or material. All 2D and 3D media.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/marni-jenkins-visual-art-prize-2026-calyx-press/">Marni Jenkins Visual Art Prize 2026 · CALYX Press</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline normal">Nov 30, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$400</a> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Publication</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$15 fee</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Corvallis, OR</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a></div>
+        <p class="call-description">First edition of CALYX Press's blind-judged art prize for women and nonbinary artists: $400 and publication in CALYX Journal.</p>
+      </div>
+      <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2027-student-showcase-gresham-area-league-for-the-arts/">2027 Student Showcase · Gresham Area League for the Arts</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 16, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Gresham, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link eligibility-tag">Students</a> <a href="/eligibility/portland-area/" class="meta-tag meta-tag-link eligibility-tag">Portland Area only</a></div>
+        <p class="call-description">Grades 6-12 around Gresham, Oregon show in a real gallery: photography named, award ceremony, 20% commission, no fee stated.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2027-pacific-northwest-drawers-blue-sky-gallery/">2027 Pacific Northwest Drawers · Blue Sky Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 18, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Year-long flat-file exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Portland, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/pacific-northwest/" class="meta-tag meta-tag-link eligibility-tag">Pacific Northwest only</a></div>
+        <p class="call-description">Blue Sky's juried flat-file archive: ten prints handled by visitors for a year. Free, Pacific Northwest residents.</p>
+      </div>
+      <h3 class="section-header">Continuous</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/main-gallery-exhibition-submissions-blue-sky-gallery/">Main Gallery Exhibition Submissions · Blue Sky Gallery</a></h4>
+        <div class="call-meta"><span class="call-deadline rolling">Continuous</span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Gallery exhibition in Portland</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Portland, OR</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Portland photography non-profit reads main-gallery proposals year-round for late 2027 and beyond. 15–30 images, free to submit.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/united-states/oregon/past/">Past calls (25) &rarr;</a></p>
 
     </section>
 
@@ -155,21 +165,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', OR,') || c.location.includes(', Oregon,'))).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

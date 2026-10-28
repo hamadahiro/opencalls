@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -67,7 +67,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -78,8 +77,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -90,8 +89,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -102,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -112,37 +111,72 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/art-x-newlab-creative-residency-2027-michigan-central/">Art x Newlab Creative Residency 2027 &middot; Michigan Central</a></h3><p class="call-description">A 12-week Detroit fellowship with a $30,000 prize and Newlab fabrication access. Free; photography is listed.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/artist-in-residence-2027-glen-arbor-arts-center/">Artist in Residence 2027 &middot; Glen Arbor Arts Center</a></h3><p class="call-description">Two-week Michigan residency by the Sleeping Bear Dunes, housing and studio free. Photography named; $35 to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/anything-but-plastic-riverside-arts-center/">Anything but…Plastic &middot; Riverside Arts Center</a></h3><p class="call-description">A show with one rule: no plastics. Alt-process and fibre-based photography fit; RC prints do not. Free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/i-would-like-it-to-be-grosse-pointe-artists-association/">I would like it to be &middot; Grosse Pointe Artists Association</a></h3><p class="call-description">Detroit-area juried show on the world as you would like it to be, juried by Kresge Fellow Sabrina Nelson; first prize is a 2027 solo show.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/call-for-solo-or-group-exhibits-2027-huron-valley-arts/">Call for Solo or Group Exhibits 2027 &middot; Huron Valley Arts</a></h3><p class="call-description">One-to-two-month solo or group shows in Michigan's historic Steeple Hall Gallery, with reception and advertising. $30, waivers available.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/space-exterus-spatium-crooked-tree-arts-center/">SPACE: Exterus Spatium &middot; Crooked Tree Arts Center</a></h3><p class="call-description">Outer-space themed juried show at Crooked Tree Arts Center, Traverse City - photography and telescopic images eligible.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/prairie-ronde-artist-residency-spring-2027/">Prairie Ronde Artist Residency — Spring 2027</a></h3><p class="call-description">5–6 week Michigan residency at a historic paper mill. All media incl. photography. $2,000 + $500 travel + housing + gallery show.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/ray-and-nancy-loeschner-art-competition-2026-frederik-meijer-gardens/">Ray and Nancy Loeschner Art Competition 2026 &middot; Frederik Meijer Gardens &amp; Sculpture Park</a></h3><p class="call-description">Free competition with a dedicated $5,000 photography purchase award; winners enter Meijer Gardens' permanent collection.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/6th-annual-listen-to-women-exhibition-grosse-pointe-artists-association/">6th Annual Listen to Women Exhibition &middot; Grosse Pointe Artists Association</a></h3><p class="call-description">Free juried show for metro-Detroit artists aged 14–18 on issues affecting women. $200 Best of Show, entry fee covered.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/5th-annual-black-artists-exhibit-riverside-arts-center/">5th Annual Black Artists Exhibit &middot; Riverside Arts Center</a></h3><p class="call-description">Fifth annual Black Artists Exhibit in Ypsilanti — free to enter, all media, open nationally with priority to SE Michigan.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/41st-annual-west-michigan-art-competition-lowell-arts/">41st Annual West Michigan Art Competition &middot; Lowell Arts</a></h3><p class="call-description">Lowell Arts' 41st juried competition for lower West Michigan artists; $4,000 in cash awards, photography eligible.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/rolling-submissions-solo-exhibitions-ninety-seven-modern/">Rolling Submissions: Solo Exhibitions &middot; Ninety-Seven Modern</a></h3><p class="call-description">Rolling proposals for an online solo show at a Detroit-rooted virtual gallery for emerging artists. $25, up to 15 works.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/villa-barr-art-park-residency-2027/">Villa Barr Art Park Artist in Residency 2027 &middot; City of Novi</a></h3><p class="call-description">Three-month live-in residency at a Michigan art park with house, studios, and $500 stipends. Open internationally.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/flourish-fund-2026-27-culturesource/">Flourish Fund 2026–27 &middot; CultureSource</a></h3><p class="call-description">Six $10,000 Warhol-backed grants for artist-organised public projects across the seven counties of Southeast Michigan. Free.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/my-michigan-our-rivers-our-lakes-grosse-pointe-artists-association/">MY MICHIGAN: Our Rivers, Our Lakes &middot; Grosse Pointe Artists Association</a></h3><p class="call-description">Michigan's rivers and lakes, juried by artist and park ranger Alex Gilford. Two-month hang at the GPAA gallery on the War Memorial campus.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/full-circle-parc-art-gallery/">FULL CIRCLE &middot; PARC Art Gallery</a></h3><p class="call-description">Juried show at Plymouth's nonprofit PARC Art Gallery on cycles, connection and return. Fine-art photography eligible.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/photography-exhibition-2026-gutman-gallery/">Photography Exhibition 2026 &middot; Gutman Gallery</a></h3><p class="call-description">Gutman Gallery's only single-medium show of the year, in Ann Arbor. All formats and subjects, one fee covers three works.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/new-now-pondering-change-south-haven-center-for-the-arts/">New/Now: Pondering Change &middot; South Haven Center for the Arts</a></h3><p class="call-description">US-wide juried show on change as the one constant. $500/$250 awards, six-week run at a Lake Michigan arts centre.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/small-works-2026-northville-art-house/">Small Works 2026 &middot; Northville Art House</a></h3><p class="call-description">National juried holiday show of works 16 inches or under. Photography named, over $700 in awards, up to 4 entries for $40.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/time-11th-annual-juried-art-exhibit-art-in-the-loft/">TIME: 11th Annual Juried Art Exhibit &middot; Art in the Loft</a></h3><p class="call-description">Alpena nonprofit gallery's 11th annual all-media juried show on the theme of time. $600 cash and a photographer juror.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/chew-on-this-ludington-area-center-for-the-arts/">Chew on This &middot; Ludington Area Center for the Arts</a></h3><p class="call-description">Food-themed juried show at the Ludington Area Center for the Arts, MI. All media welcome, $30 for 2 works, on view Oct 2–31.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-in-between-ninety-seven-modern/">The In Between &middot; Ninety-Seven Modern</a></h3><p class="call-description">Black-and-white work on dual realities and the space between them. $5 entry, up to 3 works, emerging artists, all mediums.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/envision-the-michigan-artist-initiative-2027-stamps-gallery/">Envision: The Michigan Artist Initiative 2027 &middot; Stamps Gallery, University of Michigan</a></h3><p class="call-description">Michigan artists compete for a Stamps Gallery show with $2,000 finalist stipends and a $5,000 top prize. Free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/americana-crooked-tree-arts-center/">Americana &middot; Crooked Tree Arts Center</a></h3><p class="call-description">Great Lakes juried show at Crooked Tree Arts Center on the many meanings of Americana — photography welcome.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/nancy-ingersoll-foster-artist-residency-2026-oliver-art-center/">Nancy Ingersoll Foster Artist Residency 2026 &middot; Oliver Art Center</a></h3><p class="call-description">Two-week endowment-funded September retreat at a nonprofit art center on Lake Michigan; any visual media, free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/echoes-revisiting-memory-crooked-tree-arts-center/">Echoes: Revisiting Memory &middot; Crooked Tree Arts Center</a></h3><p class="call-description">Great Lakes regional juried show at Crooked Tree Arts Center, juried by photography professor Paige Young. $1,000 in cash awards.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2026-great-northern-art-explosion/">2026 Great Northern Art Explosion &middot; AuSable Artisan Village</a></h3><p class="call-description">$8,000 in awards with a $2,500 grand prize at Grayling, Michigan's annual juried competition — photography among accepted media.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/97th-michigan-contemporary-art-exhibition-muskegon-museum-of-art/">97th Michigan Contemporary Art Exhibition &middot; Muskegon Museum of Art</a></h3><p class="call-description">Muskegon Museum of Art's statewide juried show for Michigan artists, juried by photographer Lauren Semivan. $1,500 top prize.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/prairie-ronde-artist-residency-fall-2026/">Prairie Ronde Artist Residency — Fall 2026</a></h3><p class="call-description">5–6 week residency at a historic paper mill in Vicksburg, MI. All media incl. photography. $2,000 + travel + housing + gallery show.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/nova24-2026-project-open-call/">NOVA24 2026 Project Open Call</a></h3><p class="call-description">Indie photo + film festival in Detroit. Projections, gallery shows, screenings. Experimental and innovative work. June–July 2026.</p></div>
+      <h3 class="section-header">October 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/art-x-newlab-creative-residency-2027-michigan-central/">Art x Newlab Creative Residency 2027 · Michigan Central</a></h4>
+        <div class="call-meta"><a href="/deadlines/october-2026/" class="call-deadline urgent">2 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$30,000</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Residency</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Detroit, MI</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a> <a href="/eligibility/25-plus/" class="meta-tag meta-tag-link eligibility-tag">25+</a></div>
+        <p class="call-description">A 12-week Detroit fellowship with a $30,000 prize and Newlab fabrication access. Free; photography is listed.</p>
+      </div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/artist-in-residence-2027-glen-arbor-arts-center/">Artist in Residence 2027 · Glen Arbor Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">8 days left</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>2-week residency</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$35 fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Glen Arbor, MI</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a></div>
+        <p class="call-description">Two-week Michigan residency by the Sleeping Bear Dunes, housing and studio free. Photography named; $35 to apply.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/anything-but-plastic-riverside-arts-center/">Anything but…Plastic · Riverside Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">12 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Ypsilanti, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">A show with one rule: no plastics. Alt-process and fibre-based photography fit; RC prints do not. Free to enter.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/i-would-like-it-to-be-grosse-pointe-artists-association/">I would like it to be · Grosse Pointe Artists Association</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">19 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Solo exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 for 2 works ($30 members), $10 per extra work, +$3 transaction fee">$40+ fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Grosse Pointe Farms, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Detroit-area juried show on the world as you would like it to be, juried by Kresge Fellow Sabrina Nelson; first prize is a 2027 solo show.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/call-for-solo-or-group-exhibits-2027-huron-valley-arts/">Call for Solo or Group Exhibits 2027 · Huron Valley Arts</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline normal">Nov 30, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Solo or group exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 (waivers available)">$30+ fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Highland, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">One-to-two-month solo or group shows in Michigan's historic Steeple Hall Gallery, with reception and advertising. $30, waivers available.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/space-exterus-spatium-crooked-tree-arts-center/">SPACE: Exterus Spatium · Crooked Tree Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline normal">Nov 30, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 ($20 members)">$30+ fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Traverse City, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Outer-space themed juried show at Crooked Tree Arts Center, Traverse City - photography and telescopic images eligible.</p>
+      </div>
+      <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/prairie-ronde-artist-residency-spring-2027/">Prairie Ronde Artist Residency — Spring 2027</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 1, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$2,000 stipend</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$500 travel grant</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$25 fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Vicksburg, MI</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">5–6 week Michigan residency at a historic paper mill. All media incl. photography. $2,000 + $500 travel + housing + gallery show.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/ray-and-nancy-loeschner-art-competition-2026-frederik-meijer-gardens/">Ray and Nancy Loeschner Art Competition 2026 · Frederik Meijer Gardens &amp; Sculpture Park</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 1, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>2 × $5,000 purchase awards</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Grand Rapids, MI</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Free competition with a dedicated $5,000 photography purchase award; winners enter Meijer Gardens' permanent collection.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/6th-annual-listen-to-women-exhibition-grosse-pointe-artists-association/">6th Annual Listen to Women Exhibition · Grosse Pointe Artists Association</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 1, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$200 Best of Show; $150 second; $100 third</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Grosse Pointe Farms, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/under-25/" class="meta-tag meta-tag-link eligibility-tag">Under 25</a> <a href="/eligibility/michigan/" class="meta-tag meta-tag-link eligibility-tag">Michigan only</a></div>
+        <p class="call-description">Free juried show for metro-Detroit artists aged 14–18 on issues affecting women. $200 Best of Show, entry fee covered.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/5th-annual-black-artists-exhibit-riverside-arts-center/">5th Annual Black Artists Exhibit · Riverside Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 11, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Ypsilanti, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/black/" class="meta-tag meta-tag-link eligibility-tag">Black artists</a></div>
+        <p class="call-description">Fifth annual Black Artists Exhibit in Ypsilanti — free to enter, all media, open nationally with priority to SE Michigan.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/41st-annual-west-michigan-art-competition-lowell-arts/">41st Annual West Michigan Art Competition · Lowell Arts</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 5, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$4,000 in cash awards</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 ($30 members / students)">$40+ fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Lowell, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/michigan/" class="meta-tag meta-tag-link eligibility-tag">Michigan only</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Lowell Arts' 41st juried competition for lower West Michigan artists; $4,000 in cash awards, photography eligible.</p>
+      </div>
+      <h3 class="section-header">Continuous</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/rolling-submissions-solo-exhibitions-ninety-seven-modern/">Rolling Submissions: Solo Exhibitions · Ninety-Seven Modern</a></h4>
+        <div class="call-meta"><span class="call-deadline rolling">Continuous</span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Solo exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$25 fee</a> <a href="/united-states/michigan/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Detroit, MI</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link eligibility-tag">Emerging artists</a></div>
+        <p class="call-description">Rolling proposals for an online solo show at a Detroit-rooted virtual gallery for emerging artists. $25, up to 15 works.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/united-states/michigan/past/">Past calls (18) &rarr;</a></p>
 
     </section>
 
@@ -152,21 +186,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', MI,') || c.location.includes(', Michigan,'))).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

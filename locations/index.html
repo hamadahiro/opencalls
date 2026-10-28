@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <script src="/analytics.js"></script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f5f2ed">
@@ -20,7 +19,7 @@
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex, follow">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
@@ -30,8 +29,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -42,8 +41,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -54,7 +53,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -63,70 +62,43 @@
     </section>
 
     <section class="index-list" id="indexList"><!-- STATIC-INDEX-START -->
-      <a href="/united-states/" class="index-item"><span class="index-item-name">United States</span><span class="dots"></span><span class="index-item-count">1167</span></a>
-      <a href="/online/" class="index-item"><span class="index-item-name">Online</span><span class="dots"></span><span class="index-item-count">484</span></a>
-      <a href="/united-kingdom/" class="index-item"><span class="index-item-name">United Kingdom</span><span class="dots"></span><span class="index-item-count">141</span></a>
-      <a href="/france/" class="index-item"><span class="index-item-name">France</span><span class="dots"></span><span class="index-item-count">53</span></a>
-      <a href="/italy/" class="index-item"><span class="index-item-name">Italy</span><span class="dots"></span><span class="index-item-count">51</span></a>
-      <a href="/germany/" class="index-item"><span class="index-item-name">Germany</span><span class="dots"></span><span class="index-item-count">46</span></a>
-      <a href="/spain/" class="index-item"><span class="index-item-name">Spain</span><span class="dots"></span><span class="index-item-count">44</span></a>
-      <a href="/canada/" class="index-item"><span class="index-item-name">Canada</span><span class="dots"></span><span class="index-item-count">27</span></a>
-      <a href="/greece/" class="index-item"><span class="index-item-name">Greece</span><span class="dots"></span><span class="index-item-count">27</span></a>
-      <a href="/australia/" class="index-item"><span class="index-item-name">Australia</span><span class="dots"></span><span class="index-item-count">22</span></a>
-      <a href="/austria/" class="index-item"><span class="index-item-name">Austria</span><span class="dots"></span><span class="index-item-count">18</span></a>
-      <a href="/japan/" class="index-item"><span class="index-item-name">Japan</span><span class="dots"></span><span class="index-item-count">18</span></a>
-      <a href="/netherlands/" class="index-item"><span class="index-item-name">Netherlands</span><span class="dots"></span><span class="index-item-count">18</span></a>
-      <a href="/portugal/" class="index-item"><span class="index-item-name">Portugal</span><span class="dots"></span><span class="index-item-count">15</span></a>
-      <a href="/sweden/" class="index-item"><span class="index-item-name">Sweden</span><span class="dots"></span><span class="index-item-count">12</span></a>
-      <a href="/switzerland/" class="index-item"><span class="index-item-name">Switzerland</span><span class="dots"></span><span class="index-item-count">12</span></a>
-      <a href="/ireland/" class="index-item"><span class="index-item-name">Ireland</span><span class="dots"></span><span class="index-item-count">9</span></a>
-      <a href="/argentina/" class="index-item"><span class="index-item-name">Argentina</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/india/" class="index-item"><span class="index-item-name">India</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/singapore/" class="index-item"><span class="index-item-name">Singapore</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/denmark/" class="index-item"><span class="index-item-name">Denmark</span><span class="dots"></span><span class="index-item-count">5</span></a>
-      <a href="/poland/" class="index-item"><span class="index-item-name">Poland</span><span class="dots"></span><span class="index-item-count">5</span></a>
-      <a href="/norway/" class="index-item"><span class="index-item-name">Norway</span><span class="dots"></span><span class="index-item-count">4</span></a>
-      <a href="/belgium/" class="index-item"><span class="index-item-name">Belgium</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/china/" class="index-item"><span class="index-item-name">China</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/estonia/" class="index-item"><span class="index-item-name">Estonia</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/finland/" class="index-item"><span class="index-item-name">Finland</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/hong-kong/" class="index-item"><span class="index-item-name">Hong Kong</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/lithuania/" class="index-item"><span class="index-item-name">Lithuania</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/malaysia/" class="index-item"><span class="index-item-name">Malaysia</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/iceland/" class="index-item"><span class="index-item-name">Iceland</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/argentina/" class="index-item"><span class="index-item-name">Argentina</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/australia/" class="index-item"><span class="index-item-name">Australia</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/austria/" class="index-item"><span class="index-item-name">Austria</span><span class="dots"></span><span class="index-item-count">7</span></a>
+      <a href="/belgium/" class="index-item"><span class="index-item-name">Belgium</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/canada/" class="index-item"><span class="index-item-name">Canada</span><span class="dots"></span><span class="index-item-count">9</span></a>
+      <a href="/china/" class="index-item"><span class="index-item-name">China</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/cyprus/" class="index-item"><span class="index-item-name">Cyprus</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/denmark/" class="index-item"><span class="index-item-name">Denmark</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/estonia/" class="index-item"><span class="index-item-name">Estonia</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/finland/" class="index-item"><span class="index-item-name">Finland</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/france/" class="index-item"><span class="index-item-name">France</span><span class="dots"></span><span class="index-item-count">7</span></a>
+      <a href="/germany/" class="index-item"><span class="index-item-name">Germany</span><span class="dots"></span><span class="index-item-count">8</span></a>
+      <a href="/greece/" class="index-item"><span class="index-item-name">Greece</span><span class="dots"></span><span class="index-item-count">7</span></a>
+      <a href="/hong-kong/" class="index-item"><span class="index-item-name">Hong Kong</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/iceland/" class="index-item"><span class="index-item-name">Iceland</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/india/" class="index-item"><span class="index-item-name">India</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/ireland/" class="index-item"><span class="index-item-name">Ireland</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/italy/" class="index-item"><span class="index-item-name">Italy</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/japan/" class="index-item"><span class="index-item-name">Japan</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/latvia/" class="index-item"><span class="index-item-name">Latvia</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/lithuania/" class="index-item"><span class="index-item-name">Lithuania</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/malaysia/" class="index-item"><span class="index-item-name">Malaysia</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/monaco/" class="index-item"><span class="index-item-name">Monaco</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/nepal/" class="index-item"><span class="index-item-name">Nepal</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/netherlands/" class="index-item"><span class="index-item-name">Netherlands</span><span class="dots"></span><span class="index-item-count">9</span></a>
       <a href="/new-zealand/" class="index-item"><span class="index-item-name">New Zealand</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/norway/" class="index-item"><span class="index-item-name">Norway</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/online/" class="index-item"><span class="index-item-name">Online</span><span class="dots"></span><span class="index-item-count">112</span></a>
+      <a href="/poland/" class="index-item"><span class="index-item-name">Poland</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/portugal/" class="index-item"><span class="index-item-name">Portugal</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/serbia/" class="index-item"><span class="index-item-name">Serbia</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <h3 class="section-header">No open calls</h3>
-      <a href="/united-arab-emirates/" class="index-item"><span class="index-item-name">United Arab Emirates</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/brazil/" class="index-item"><span class="index-item-name">Brazil</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/hungary/" class="index-item"><span class="index-item-name">Hungary</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/south-korea/" class="index-item"><span class="index-item-name">South Korea</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/czech-republic/" class="index-item"><span class="index-item-name">Czech Republic</span><span class="dots"></span><span class="index-item-count">5</span></a>
-      <a href="/croatia/" class="index-item"><span class="index-item-name">Croatia</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/israel/" class="index-item"><span class="index-item-name">Israel</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/morocco/" class="index-item"><span class="index-item-name">Morocco</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/northern-ireland/" class="index-item"><span class="index-item-name">Northern Ireland</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/qatar/" class="index-item"><span class="index-item-name">Qatar</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/ukraine/" class="index-item"><span class="index-item-name">Ukraine</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/north-macedonia/" class="index-item"><span class="index-item-name">North Macedonia</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/romania/" class="index-item"><span class="index-item-name">Romania</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/slovakia/" class="index-item"><span class="index-item-name">Slovakia</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/south-africa/" class="index-item"><span class="index-item-name">South Africa</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/albania/" class="index-item"><span class="index-item-name">Albania</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/belarus/" class="index-item"><span class="index-item-name">Belarus</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/bosnia-and-herzegovina/" class="index-item"><span class="index-item-name">Bosnia and Herzegovina</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/bulgaria/" class="index-item"><span class="index-item-name">Bulgaria</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/malta/" class="index-item"><span class="index-item-name">Malta</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/mexico/" class="index-item"><span class="index-item-name">Mexico</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/philippines/" class="index-item"><span class="index-item-name">Philippines</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/russia/" class="index-item"><span class="index-item-name">Russia</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/taiwan/" class="index-item"><span class="index-item-name">Taiwan</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/tunisia/" class="index-item"><span class="index-item-name">Tunisia</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/turkey/" class="index-item"><span class="index-item-name">Turkey</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/singapore/" class="index-item"><span class="index-item-name">Singapore</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/spain/" class="index-item"><span class="index-item-name">Spain</span><span class="dots"></span><span class="index-item-count">9</span></a>
+      <a href="/sweden/" class="index-item"><span class="index-item-name">Sweden</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/switzerland/" class="index-item"><span class="index-item-name">Switzerland</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/united-kingdom/" class="index-item"><span class="index-item-name">United Kingdom</span><span class="dots"></span><span class="index-item-count">24</span></a>
+      <a href="/united-states/" class="index-item"><span class="index-item-name">United States</span><span class="dots"></span><span class="index-item-count">318</span></a>
       <!-- STATIC-INDEX-END --></section>
 
     <p class="browse-more"><a href="/browse/">Browse by category, eligibility, organization &rarr;</a></p>
@@ -137,64 +109,11 @@
     </footer>
   </main>
 
-  <script>
-    const countryNames = { 'USA': 'United States', 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates', 'Netherlands': 'Netherlands' };
-    const countrySlugs = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
-
-    function slugify(title) {
-      return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-    }
-
-    function esc(str) {
-      if (!str) return '';
-      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-
-    function getCountry(loc) {
-      if (!loc) return '';
-      const parts = loc.split(',');
-      return parts[parts.length - 1].trim();
-    }
-
-    async function load() {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const container = document.getElementById('indexList');
-      const _n = new Date(); const today = _n.getFullYear() + '-' + String(_n.getMonth()+1).padStart(2,'0') + '-' + String(_n.getDate()).padStart(2,'0');
-      const open = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= today);
-      const counts = {};
-      open.forEach(c => {
-        const country = getCountry(c.location);
-        if (!country) return;
-        counts[country] = (counts[country] || 0) + 1;
-      });
-
-      const sorted = Object.entries(counts).sort((a, b) => {
-        const nameA = (countryNames[a[0]] || a[0]).toLowerCase();
-        const nameB = (countryNames[b[0]] || b[0]).toLowerCase();
-        return nameA.localeCompare(nameB);
-      });
-
-      let html = '';
-      sorted.forEach(([country, count]) => {
-        const fullName = countryNames[country] || country;
-        const slug = countrySlugs[country] || slugify(country);
-        html += `<a href="/${slug}/" class="index-item">
-          <span class="index-item-name">${esc(fullName)}</span>
-          <span class="dots"></span>
-          <span class="index-item-count">${count}</span>
-        </a>`;
-      });
-
-      container.innerHTML = html;
-    }
-    load();
-  </script>
 
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

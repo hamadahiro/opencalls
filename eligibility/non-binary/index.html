@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -61,7 +61,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -72,8 +71,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -84,8 +83,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -96,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -106,19 +105,40 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/women-street-photographers-annual-exhibition-2027/">Women Street Photographers Annual Exhibition 2027</a></h3><p class="call-description">Women and non-binary street photographers worldwide. 70 finalists shown in New York, four $1,000 Leica grants, printing covered.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/marni-jenkins-visual-art-prize-2026-calyx-press/">Marni Jenkins Visual Art Prize 2026 &middot; CALYX Press</a></h3><p class="call-description">First edition of CALYX Press's blind-judged art prize for women and nonbinary artists: $400 and publication in CALYX Journal.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/28th-international-open-woman-made-gallery/">28th International Open &middot; Woman Made Gallery</a></h3><p class="call-description">Chicago's Woman Made Gallery opens its 28th International Open to women and non-binary artists worldwide, all media.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/adhesive-resistance-woman-made-gallery/">Adhesive Resistance &middot; Woman Made Gallery</a></h3><p class="call-description">Chicago's Woman Made Gallery calls for stickers, zines, pins and printed matter — a virtual DIY-publishing show, $20.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/man-or-bear-no-safe-choice-woman-made-gallery/">Man or Bear: No Safe Choice &middot; Woman Made Gallery</a></h3><p class="call-description">WMG turns the viral man-or-bear question into a feminist show on online misogyny — women and non-binary artists, any medium, $30.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/prototyping-futures-of-making-women-eco-artists-dialog/">Prototyping Futures of Making: Water, Data, and Living Systems &middot; Women Eco Artists Dialog</a></h3><p class="call-description">Free entry for a members' ecoart show on water, data and living systems — online and at The 109 Gallery, with catalog.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/phmuseum-2026-women-photographers-grant/">PhMuseum 2026 Women Photographers Grant</a></h3><p class="call-description">10th-edition grant for women and non-binary photographers: $11,000 cash, MPB vouchers, solo show at PhMuseum Lab. Entry fee $45; deadline extended to 22 October.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/art-noise-womens-caucus-for-art-greater-washington-dc/">Art &amp; Noise &middot; Women's Caucus for Art of Greater Washington, DC</a></h3><p class="call-description">Sound and silence in visual art. Women and non-binary artists in DC, MD and VA; juried show at Harmony Hall Arts Center.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/pile-press-literary-art-journal-issue-13/">Pile Press Literary + Art Journal, Issue 13</a></h3><p class="call-description">Portland indie press's bi-annual journal for women and non-binary creatives. Photography welcome, up to three pieces, $4.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/in-full-view-woman-made-gallery/">In Full View — Woman Made Gallery</a></h3><p class="call-description">Woman Made Gallery (Chicago) open call for women/nonbinary artists 65+. Juried by Jerri Zbiral. All media including photography.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/under-my-skin-issue-2-euphoria/">Under My Skin Issue #2 — Euphoria &middot; California Aggregation for Gender Diversity</a></h3><p class="call-description">TGIN+ artists on how they experience euphoria. Print and digital magazine from a trans-led nonprofit; pseudonyms welcome.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/women-street-photographers-exhibition-call-2026/">Women Street Photographers Exhibition Call 2026</a></h3><p class="call-description">34 women &amp; non-binary photographers selected for a Barcelona exhibition, Nov 5–Dec 11. Printing covered; global WSP feature.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/women-street-photographers-annual-exhibition-2027/">Women Street Photographers Annual Exhibition 2027</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">19 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>4 × $1,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15/photo">$15+ fee</a> <a href="/united-states/new-york/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>New York, NY</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a></div>
+        <p class="call-description">Women and non-binary street photographers worldwide. 70 finalists shown in New York, four $1,000 Leica grants, printing covered.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/marni-jenkins-visual-art-prize-2026-calyx-press/">Marni Jenkins Visual Art Prize 2026 · CALYX Press</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline normal">Nov 30, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$400</a> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Publication</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$15 fee</a> <a href="/united-states/oregon/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Corvallis, OR</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a></div>
+        <p class="call-description">First edition of CALYX Press's blind-judged art prize for women and nonbinary artists: $400 and publication in CALYX Journal.</p>
+      </div>
+      <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/28th-international-open-woman-made-gallery/">28th International Open · Woman Made Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 18, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Group exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$30 fee</a> <a href="/united-states/illinois/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Chicago, IL</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a></div>
+        <p class="call-description">Chicago's Woman Made Gallery opens its 28th International Open to women and non-binary artists worldwide, all media.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/adhesive-resistance-woman-made-gallery/">Adhesive Resistance · Woman Made Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 31, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Virtual exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$20 fee</a> <a href="/united-states/illinois/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Online + Chicago, IL</a> <a href="/zines/" class="meta-tag meta-tag-link">Zines &amp; Books</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a></div>
+        <p class="call-description">Chicago's Woman Made Gallery calls for stickers, zines, pins and printed matter — a virtual DIY-publishing show, $20.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/man-or-bear-no-safe-choice-woman-made-gallery/">Man or Bear: No Safe Choice · Woman Made Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 23, 2027</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Group exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 (waivers available)">$30+ fee</a> <a href="/united-states/illinois/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Chicago, IL</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a></div>
+        <p class="call-description">WMG turns the viral man-or-bear question into a feminist show on online misogyny — women and non-binary artists, any medium, $30.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/prototyping-futures-of-making-women-eco-artists-dialog/">Prototyping Futures of Making: Water, Data, and Living Systems · Women Eco Artists Dialog</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 31, 2027</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Catalogue</a> <a href="/prize/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Awards</a> <a href="/fees/free/" class="meta-tag meta-tag-link" title="Free to enter; WEAD membership required ($45/year, $20 youth/student/low-income)">Free*</a> <a href="/united-states/georgia/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Online + Chickamauga, GA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link eligibility-tag">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link eligibility-tag">Non-binary</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link eligibility-tag">Membership required</a></div>
+        <p class="call-description">Free entry for a members' ecoart show on water, data and living systems — online and at The 109 Gallery, with catalog.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/eligibility/non-binary/past/">Past calls (6) &rarr;</a></p>
 
     </section>
 
@@ -128,21 +148,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('non-binary')).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

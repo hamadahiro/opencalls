@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -67,7 +67,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -78,8 +77,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -90,8 +89,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -102,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -112,34 +111,47 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/16th-annual-international-juried-exhibition-gallery-110/">16th Annual International Juried Exhibition &middot; Gallery 110</a></h3><p class="call-description">Seattle non-profit gallery's open-call juried show, juried by Ryan Hardesty, with a $1,000 top award and a February 2027 exhibition.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2027-cvg-show-collective-visions-gallery/">2027 CVG Show &middot; Collective Visions Gallery</a></h3><p class="call-description">20th annual WA/OR juried show with a Photography/Digital category. Up to $10,000; juror from Tacoma Art Museum.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/showcase-2027-northwind-art/">Showcase 2027 &middot; Northwind Art</a></h3><p class="call-description">Four months on the walls of a Port Townsend gallery, in cohorts of a dozen artists. Fee waived for BIPOC and LGBTQIA+ applicants.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/daisy-lane-print-and-book-artist-residency-2027-bainbridge-island-museum-of-art/">Daisy Lane: Print &amp; Book Artist Residency 2027 &middot; Bainbridge Island Museum of Art</a></h3><p class="call-description">Free-to-apply museum residency for book and print artists, two to four weeks in a new letterpress and Riso studio, $350 a week plus housing.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2027-artist-residencies-alchemy-art-center/">2027 Artist Residencies at Alchemy Art Center &middot; Alchemy Art Center</a></h3><p class="call-description">Darkroom photography is one of four named mediums at this San Juan Island residency — $100/week stipend, cabin, 15hrs/week work exchange.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-food-we-share-schack-art-center/">The Food We Share &middot; Schack Art Center</a></h3><p class="call-description">Food as culture, ritual, labour and power. $5 entry, photography named, Main Gallery show at an Everett art center.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/3rd-gonzaga-triennial-inland-northwest-juried-landscape-art-exhibition/">3rd Gonzaga Triennial: Inland Northwest Juried Landscape Art Exhibition &middot; Jundt Art Museum at Gonzaga University</a></h3><p class="call-description">University museum's triennial landscape show, any media. $1,000 first prize. Eastern Washington and northern Idaho residents only.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/spokane-falls-artist-in-residence-round-3/">sƛ̓x̣etkʷ Artist-in-Residence Program — Round 3 &middot; Spokane Falls Community College</a></h3><p class="call-description">Funded 3-month residency at Spokane Falls CC for emerging Native American artists: $3,000 a month, housing, studios.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/24th-national-fine-art-show-peninsula-art-league/">24th National Fine Art Show &middot; Peninsula Art League</a></h3><p class="call-description">National juried show in a vintage aircraft hangar. Photography judged alongside 2D and 3D, over $8,000 in cash, two museum curators jurying.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/sip-stroll-artists-exhibition-2026-woodinville-arts-alliance/">Sip &amp; Stroll Artists' Exhibition 2026 &middot; Woodinville Arts Alliance</a></h3><p class="call-description">Juried members' show at a Woodinville winery with photography as a named category. Cash awards; membership required to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2027-creative-arts-grant-city-of-bothell-arts-commission/">2027 Creative Arts Grant &middot; City of Bothell Arts Commission</a></h3><p class="call-description">City of Bothell funds arts projects from $500 to $10,000. Free to apply; the project must culminate in a public event in Bothell.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/currents-photographic-center-northwest/">CURRENTS &middot; Photographic Center Northwest</a></h3><p class="call-description">Analog photography group show at PCNW Seattle — film, darkroom, pinhole, alt-process. Open theme, $3 fee with waivers.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/saga-grants-2026-round-3-spokane-arts/">SAGA Grants 2026 — Round 3 &middot; Spokane Arts</a></h3><p class="call-description">Free grants of up to $10,000 for artists and arts projects in the Spokane region — Round 3 of the 2026 cycle.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/artist-project-support-grant-2027-city-of-auburn/">Artist Project Support Grant 2027</a></h3><p class="call-description">$500–$1,000 city grants for free public arts projects in Auburn, WA during 2027. Open to Pacific Northwest artists, no fee.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/postmark-arts-cultural-programming-grant-2027-city-of-auburn/">Postmark Arts &amp; Cultural Programming Grant 2027 &middot; City of Auburn Parks, Arts &amp; Recreation</a></h3><p class="call-description">$500-$2,000 city grants for free arts programming at Auburn's Postmark Center for the Arts during 2027.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/small-expressions-2026-northwind-art/">Small Expressions 2026 &middot; Northwind Art</a></h3><p class="call-description">Sixteen-inch works in all media at Northwind Art, Port Townsend. Photography named first; $35 fee waived for BIPOC and LGBTQIA+ artists.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/annual-show-of-small-works-2026-parklane-gallery/">Annual Show of Small Works 2026 &middot; Parklane Gallery</a></h3><p class="call-description">Kirkland WA co-op gallery's winter small-works show, hung and online. $500 top award; pieces up to 13 inches.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/small-art-big-impact-blaine-arts-council/">Small Art, Big Impact &middot; Blaine Arts Council</a></h3><p class="call-description">A small-works national juried show at a Washington border-town gallery. Photography named, 16in max, $35.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/chase-gallery-2027-season-spokane-arts/">Chase Gallery 2027 Season &middot; Spokane Arts</a></h3><p class="call-description">Free open call for the 2027 season of Spokane City Hall's Chase Gallery. All media, PNW artists, solo shows possible, no AI.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/2027-galleries-in-city-of-auburn/">2027 Galleries in City of Auburn</a></h3><p class="call-description">Free call for 8-week shows in Auburn's city galleries in 2027; photography explicitly invited. Work delivered in person.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/bipoc-deaf-arts-grant-2026/">BIPOC Deaf Arts Grant 2026 &middot; Deaf Spotlight</a></h3><p class="call-description">Unrestricted $1,000 grants for BIPOC Deaf, DeafBlind, DeafDisabled and Hard of Hearing artists. Photography eligible; free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/arts-of-the-terrace-2026-mountlake-terrace/">46th Arts of the Terrace Juried Art Show &middot; Mountlake Terrace Friends of the Arts</a></h3><p class="call-description">46th annual juried show near Seattle with a dedicated photography category; $6,000+ in awards. On view Sep 2026.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/betty-bowen-award-2026-seattle-art-museum/">Betty Bowen Award 2026 &middot; Seattle Art Museum</a></h3><p class="call-description">Seattle Art Museum's annual award for WA/OR/ID artists: $20,000 plus a solo show at SAM, with five further cash awards. $10 entry.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/images-of-the-shrub-steppe-2026-boxx-gallery/">Images of the Shrub-Steppe 2026 &middot; Boxx Gallery</a></h3><p class="call-description">Any-medium juried show on Central Washington's shrub-steppe at Boxx Gallery, Tieton. Juror Nancy Floyd; on view Sep 2026.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/best-in-show-kirkland-arts-center/">Best in Show &middot; Kirkland Arts Center</a></h3><p class="call-description">First annual juried show at a 1962 Washington arts centre, themed on dogs. Any medium, all ages, $500 prizes in 2D and 3D.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/kenmore-art-show-2026-togetherness/">Kenmore Art Show 2026: Togetherness</a></h3><p class="call-description">Community juried show near Seattle with a dedicated photography category, $300 Best in Show and per-category cash awards.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/america-250-gallery-one/">America 250 — Photography Exhibition</a></h3><p class="call-description">National juried photography show on US 250th anniversary. $800 in awards. Gallery One in Ellensburg, WA.</p></div>
+      <h3 class="section-header">October 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/16th-annual-international-juried-exhibition-gallery-110/">16th Annual International Juried Exhibition · Gallery 110</a></h4>
+        <div class="call-meta"><a href="/deadlines/october-2026/" class="call-deadline urgent">3 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$1,000 / $500 / $300</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$200 People's Choice</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 (3 images) + $10 each addl, up to 10">$40+ fee</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Seattle, WA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Seattle non-profit gallery's open-call juried show, juried by Ryan Hardesty, with a $1,000 top award and a February 2027 exhibition.</p>
+      </div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2027-cvg-show-collective-visions-gallery/">2027 CVG Show · Collective Visions Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">10 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Up to $10,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 (2 works) + $10 each additional">$45+ fee</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Bremerton, WA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a> <a href="/eligibility/washington/" class="meta-tag meta-tag-link eligibility-tag">Washington only</a> <a href="/eligibility/oregon/" class="meta-tag meta-tag-link eligibility-tag">Oregon only</a></div>
+        <p class="call-description">20th annual WA/OR juried show with a Photography/Digital category. Up to $10,000; juror from Tacoma Art Museum.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/showcase-2027-northwind-art/">Showcase 2027 · Northwind Art</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">15 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Gallery exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 (free for BIPOC and LGBTQIA+ artists)">$35+ fee</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Port Townsend, WA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Four months on the walls of a Port Townsend gallery, in cohorts of a dozen artists. Fee waived for BIPOC and LGBTQIA+ applicants.</p>
+      </div>
+      <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/daisy-lane-print-and-book-artist-residency-2027-bainbridge-island-museum-of-art/">Daisy Lane: Print &amp; Book Artist Residency 2027 · Bainbridge Island Museum of Art</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 1, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$350/week stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Residency (2–4 weeks)</a> <a href="/fees/free/" class="meta-tag meta-tag-link" title="Free (optional $25 support fee)">Free*</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Bainbridge Island, WA</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">Free-to-apply museum residency for book and print artists, two to four weeks in a new letterpress and Riso studio, $350 a week plus housing.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2027-artist-residencies-alchemy-art-center/">2027 Artist Residencies at Alchemy Art Center · Alchemy Art Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 7, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$100/week stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Accommodation</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$15 fee</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Friday Harbor, WA</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a> <a href="/eligibility/21-plus/" class="meta-tag meta-tag-link eligibility-tag">21+</a></div>
+        <p class="call-description">Darkroom photography is one of four named mediums at this San Juan Island residency — $100/week stipend, cabin, 15hrs/week work exchange.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/the-food-we-share-schack-art-center/">The Food We Share · Schack Art Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 24, 2027</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$5 per artist">$5+ fee</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Everett, WA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/pacific-northwest/" class="meta-tag meta-tag-link eligibility-tag">Pacific Northwest only</a></div>
+        <p class="call-description">Food as culture, ritual, labour and power. $5 entry, photography named, Main Gallery show at an Everett art center.</p>
+      </div>
+      <h3 class="section-header">February 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/3rd-gonzaga-triennial-inland-northwest-juried-landscape-art-exhibition/">3rd Gonzaga Triennial: Inland Northwest Juried Landscape Art Exhibition · Jundt Art Museum at Gonzaga University</a></h4>
+        <div class="call-meta"><a href="/deadlines/february-2027/" class="call-deadline normal">Feb 1, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$1,000 / $500 / $250</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">$25 fee</a> <a href="/united-states/washington/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Spokane, WA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/pacific-northwest/" class="meta-tag meta-tag-link eligibility-tag">Pacific Northwest only</a></div>
+        <p class="call-description">University museum's triennial landscape show, any media. $1,000 first prize. Eastern Washington and northern Idaho residents only.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/united-states/washington/past/">Past calls (20) &rarr;</a></p>
 
     </section>
 
@@ -149,21 +161,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', WA,') || c.location.includes(', Washington,'))).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -61,7 +61,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -72,8 +71,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -84,8 +83,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -96,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -106,29 +105,44 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/rotterdam-photo-2027-projects/">Rotterdam Photo 2027 — Projects</a></h3><p class="call-description">Dedicated exhibition space in Rotterdam Photo's container village during Art Week 2027. No commission on sales.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/rotterdam-photo-2027-single-image/">Rotterdam Photo 2027 — Single Image</a></h3><p class="call-description">One image becomes a 2.5 m PVC print on a festival container in central Rotterdam, production paid for.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/tomorrow-imagined-17th-annual-patricia-sitar-juried-exhibition/">Tomorrow, Imagined: 17th Annual Patricia Sitar Juried Exhibition &middot; Sitar Arts Center</a></h3><p class="call-description">DC arts centre's 17th annual juried show on imagined futures; photography named, free for 16–21s, $450 top award.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive &middot; The Kennedy Center</a></h3><p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/this-is-home-ohanlon-center-for-the-arts/">This is HOME &middot; O'Hanlon Center for the Arts</a></h3><p class="call-description">Mill Valley asks what and where home is — juried in-person show, hand-delivered work, two pieces each.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/autoportrait-2026-play-kuala-lumpur-photo-awards/">AUTOPORTRAIT 2026: PLAY &middot; Kuala Lumpur Photo Awards</a></h3><p class="call-description">KLPA self-portrait prize on FORMAT's theme PLAY: €1,000/€500/€300, top 35 screened at FORMAT27 Derby. €12-€65, opens Sep 25. Nov 25.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/open-summer-exhibition-2027-plas-glyn-y-weddw/">Open Summer Exhibition 2027 &middot; Plas Glyn-y-Weddw</a></h3><p class="call-description">Wales open show, photography named: £15 for 3 works, £1,500 Judges' Choice plus a future solo show. 43% commission.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/pov-usa-250-the-dime-art-maker-studios/">POV USA 250 &middot; The Dime Art &amp; Maker Studios</a></h3><p class="call-description">Juried show on America at 250 in Burlington, NJ, with cash prizes. Up to three works; in-person drop-off Oct 30–31.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/22nd-annual-wabi-sabi-ohanlon-center-for-the-arts/">22nd Annual Wabi-Sabi &middot; O'Hanlon Center for the Arts</a></h3><p class="call-description">Mill Valley's 22nd wabi-sabi show: beauty in the weathered and imperfect. Hand-delivered work, two jurors.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/convergence-of-creativity-2026-city-of-san-ramon/">Convergence of Creativity 2026 — Unexpected: Look Again! &middot; City of San Ramon</a></h3><p class="call-description">Photography is one of six categories in San Ramon's third annual juried show. $15 an entry, blind jury, gift-certificate awards.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/wings-of-hope-bird-photography-contest-knowing-hope/">Wings of Hope Bird Photography Contest &middot; Knowing Hope</a></h3><p class="call-description">A children's-medical charity's first bird photography contest: four categories, novice and advanced divisions, gear prizes, from $15.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/artifacts-6-bridges-gallery/">Artifacts &middot; 6 Bridges Gallery</a></h3><p class="call-description">Juried show on relics, traces and hidden histories at a Maynard, MA gallery. All media but video and AI, juried by curator Claudia Fiks.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/eyes-and-hands-celebrating-fredericks-deaf-heart-artspiration-frederick/">Eyes &amp; Hands: Celebrating Frederick's Deaf heART and Beyond! &middot; Artspiration Frederick</a></h3><p class="call-description">Juried show for Deaf, Hard of Hearing and CODA artists at Frederick's community art centre, marking Deaf Awareness Month.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/art-hop-2026-hill-country-arts-focus/">Art Hop 2026 &middot; Hill Country Arts Focus</a></h3><p class="call-description">Statewide Texas juried show across downtown Georgetown for October. Photography is its own category; $1,000 Best in Show.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/art-at-emerson-hall-an-emerging-artist-community-showcase/">Art at Emerson Hall: An Emerging Artist Community Showcase</a></h3><p class="call-description">A free three-day showcase in an 1870 Gothic hall for 8-10 Stamford-area emerging artists with little or no exhibition history.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/arts-of-the-terrace-2026-mountlake-terrace/">46th Arts of the Terrace Juried Art Show &middot; Mountlake Terrace Friends of the Arts</a></h3><p class="call-description">46th annual juried show near Seattle with a dedicated photography category; $6,000+ in awards. On view Sep 2026.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/womens-work-women-artists-making-their-mark-2026-ohanlon-center-for-the-arts/">Women's Work: Women Artists Making Their Mark 2026 &middot; O'Hanlon Center for the Arts</a></h3><p class="call-description">18th year of O'Hanlon's online show for women artists. Two jurors select independently; every pick is included.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/afc-nature-photography-contest-2026/">AFC Nature Photography Contest 2026</a></h3><p class="call-description">Free Southern California nature contest from a Pasadena land trust — 7 categories, winners printed and shown at a public awards event.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/rotlicht-festival-2026-anthropocene-hybrid-realities/">Rotlicht Festival 2026 — Anthropocene: Hybrid Realities</a></h3><p class="call-description">Open call for analog photography festival in Vienna. Theme: Anthropocene. 20 winners exhibited; €250 honorarium + €150 travel.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fotodoc-photo-contest-2026/">FotoDoc Photo Contest 2026</a></h3><p class="call-description">International documentary contest. Three categories. 25 winners exhibited at FotoDoc Festival, São Paulo.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/impressum-photo-award-2026-appennino-foto-festival/">Impressum Photo Award 2026 &middot; Appennino Foto Festival</a></h3><p class="call-description">7 open-theme sections and 2 themed projects (Rigenerare). Free entry ages 16-20. Finalists exhibited one month.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/sarajevo-photography-festival-2026/">Sarajevo Photography Festival 2026</a></h3><p class="call-description">Opening week June 1-7. Grand Prix: €2,000. Canon-sponsored professional awards. Eight competition categories.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/rotterdam-photo-2027-projects/">Rotterdam Photo 2027 — Projects</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">7 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€35 per entry">€35+ fee</a> <a href="/netherlands/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Rotterdam, Netherlands</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a></div>
+        <p class="call-description">Dedicated exhibition space in Rotterdam Photo's container village during Art Week 2027. No commission on sales.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/rotterdam-photo-2027-single-image/">Rotterdam Photo 2027 — Single Image</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">7 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€19 per image">€19+ fee</a> <a href="/netherlands/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Rotterdam, Netherlands</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a></div>
+        <p class="call-description">One image becomes a 2.5 m PVC print on a festival container in central Rotterdam, production paid for.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/tomorrow-imagined-17th-annual-patricia-sitar-juried-exhibition/">Tomorrow, Imagined: 17th Annual Patricia Sitar Juried Exhibition · Sitar Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">18 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$450 / $250 / $250 / $150 / $100</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15 for up to 3 works, $5 each additional (free for ages 16–21)">$15+ fee</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">DC arts centre's 17th annual juried show on imagined futures; photography named, free for 16–21s, $450 top award.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive · The Kennedy Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">22 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>15 × $3,000 stipend</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a> <a href="/eligibility/under-25/" class="meta-tag meta-tag-link eligibility-tag">Under 25</a> <a href="/eligibility/neurodivergent-disabled/" class="meta-tag meta-tag-link eligibility-tag">Neurodivergent &amp; disabled</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/this-is-home-ohanlon-center-for-the-arts/">This is HOME · O'Hanlon Center for the Arts</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">24 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 ($30 members)">$40+ fee</a> <a href="/united-states/california/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Mill Valley, CA</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a></div>
+        <p class="call-description">Mill Valley asks what and where home is — juried in-person show, hand-delivered work, two pieces each.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/autoportrait-2026-play-kuala-lumpur-photo-awards/">AUTOPORTRAIT 2026: PLAY · Kuala Lumpur Photo Awards</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">28 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€1,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€300</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€12 (1 image), €24 (2), €45 (3–6), €65 (7–10); students under 25 free for 1 image">€12+ fee</a> <a href="/malaysia/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Kuala Lumpur, Malaysia</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a></div>
+        <p class="call-description">KLPA self-portrait prize on FORMAT's theme PLAY: €1,000/€500/€300, top 35 screened at FORMAT27 Derby. €12-€65, opens Sep 25. Nov 25.</p>
+      </div>
+      <h3 class="section-header">March 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/open-summer-exhibition-2027-plas-glyn-y-weddw/">Open Summer Exhibition 2027 · Plas Glyn-y-Weddw</a></h4>
+        <div class="call-meta"><a href="/deadlines/march-2027/" class="call-deadline normal">Mar 1, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>£1,500 / £500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Solo exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£15 for up to 3 works, £5 each additional">£15+ fee</a> <a href="/united-kingdom/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Llanbedrog, UK</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a></div>
+        <p class="call-description">Wales open show, photography named: £15 for 3 works, £1,500 Judges' Choice plus a future solo show. 43% commission.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/eligibility/16-plus/past/">Past calls (15) &rarr;</a></p>
 
     </section>
 
@@ -138,21 +152,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('16-plus')).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>
