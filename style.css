@@ -1169,8 +1169,23 @@ a.pagination-step:hover {
 
 @media (max-width: 640px) {
   .pagination {
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 4px;
+  }
+
+  .pagination-pages {
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+
+  .pagination-page,
+  .pagination-step {
+    min-width: 36px;
+    padding: 8px 0;
+  }
+
+  .pagination-step-label {
+    display: none;
   }
 
   .pagination-far {
@@ -1180,10 +1195,21 @@ a.pagination-step:hover {
   .pagination-gap-narrow {
     display: inline;
   }
+}
 
+@media (max-width: 380px) {
+  .pagination,
   .pagination-pages {
-    order: -1;
-    width: 100%;
+    gap: 2px;
+  }
+
+  .pagination-page,
+  .pagination-step {
+    min-width: 32px;
+  }
+
+  .pagination-gap {
+    padding: 8px 0;
   }
 }
 

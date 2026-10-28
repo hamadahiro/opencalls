@@ -642,12 +642,14 @@ function paginationNav(root, current, count) {
       : `<a href="${pageUrl(root, p)}" class="pagination-page${far ? ' pagination-far' : ''}">${p}</a>`;
     if (far && p > current && !gapAfter) pages += narrowGap;
   });
+  // One row at every width: on a phone the step labels are hidden and the
+  // arrows sit either side of the numbers.
   const prev = current > 1
-    ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev">&larr; Previous</a>`
-    : '<span class="pagination-step disabled">&larr; Previous</span>';
+    ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev" aria-label="Previous page">&larr;<span class="pagination-step-label"> Previous</span></a>`
+    : '<span class="pagination-step disabled" aria-hidden="true">&larr;<span class="pagination-step-label"> Previous</span></span>';
   const next = current < count
-    ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next">Next &rarr;</a>`
-    : '<span class="pagination-step disabled">Next &rarr;</span>';
+    ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next" aria-label="Next page"><span class="pagination-step-label">Next </span>&rarr;</a>`
+    : '<span class="pagination-step disabled" aria-hidden="true"><span class="pagination-step-label">Next </span>&rarr;</span>';
   return `      <nav class="pagination" aria-label="Pages">${prev}<span class="pagination-pages">${pages}</span>${next}</nav>\n`;
 }
 
