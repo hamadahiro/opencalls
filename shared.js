@@ -128,7 +128,7 @@ const eligibilityLabel = {
   'lower-austria': 'Lower Austria only',
   'maritimes': 'Maritimes only',
   'california': 'California only', 'colorado': 'Colorado only', 'montana': 'Montana only', 'texas': 'Texas only', 'washington': 'Washington only', 'oklahoma': 'Oklahoma only', 'south-dakota': 'South Dakota only',
-  'arkansas': 'Arkansas only', 'baltimore-region': 'Baltimore region only', 'frederick-county-md': 'Frederick County, MD only', 'palm-beach-county': 'Palm Beach County, FL only', 'prince-georges-county-md': "Prince George's County, MD only", 'st-joseph-region': 'St. Joseph region only', 'st-louis-region': 'St. Louis region only', 'southwest-us': 'Southwest US only',
+  'arkansas': 'Arkansas only', 'baltimore-region': 'Baltimore region only', 'dc-maryland-virginia': 'DC, Maryland & Virginia only', 'frederick-county-md': 'Frederick County, MD only', 'palm-beach-county': 'Palm Beach County, FL only', 'prince-georges-county-md': "Prince George's County, MD only", 'st-joseph-region': 'St. Joseph region only', 'st-louis-region': 'St. Louis region only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'roanoke-area': 'Roanoke area only', 'richmond-area': 'Richmond area only', 'arizona': 'Arizona only', 'utah': 'Utah only', 'georgia': 'Georgia only', 'native-american': 'Native American artists',
   'northern-california': 'Northern California only', 'southern-california': 'Southern California only', 'tampa-bay': 'Tampa Bay only',
   'new-mexico': 'New Mexico only', 'massachusetts-rhode-island': 'MA & RI only', 'new-england': 'New England only',
