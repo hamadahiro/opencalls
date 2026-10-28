@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -67,7 +67,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -78,8 +77,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -90,8 +89,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -102,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -112,16 +111,34 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/2027-regional-juried-exhibition-hill-center-galleries/">2027 Regional Juried Exhibition &middot; Hill Center Galleries</a></h3><p class="call-description">DC, Maryland and Virginia artists: any 2D medium, a winter-to-spring juried show on Capitol Hill. $1,000 first prize, juror Lenny Campello.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/tomorrow-imagined-17th-annual-patricia-sitar-juried-exhibition/">Tomorrow, Imagined: 17th Annual Patricia Sitar Juried Exhibition &middot; Sitar Arts Center</a></h3><p class="call-description">DC arts centre's 17th annual juried show on imagined futures; photography named, free for 16–21s, $450 top award.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive &middot; The Kennedy Center</a></h3><p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/art-in-transit-open-call-for-artwork-wmata/">Art in Transit Open Call for Artwork &middot; WMATA Art in Transit</a></h3><p class="call-description">Washington Metro's rolling, free open call for a public-art roster. Photography named; artist fee paid if a project follows.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/exhibition-proposals-main-and-nano-galleries-dc-arts-center/">Exhibition Proposals: Main and Nano Galleries &middot; DC Arts Center</a></h3><p class="call-description">Year-round proposals for DCAC's two Washington galleries. $25, waived for members; accepted artists join a curator-reviewed roster.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/solo-artist-exhibition-fall-2027-hill-center-galleries/">Solo Artist Exhibition Fall 2027 &middot; Hill Center Galleries</a></h3><p class="call-description">Propose a solo show at Hill Center on Capitol Hill — six concurrent solo exhibitions, any 2D medium. DC, MD and VA artists.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/we-are-the-ones-willow-street-gallery/">We Are the Ones &middot; Willow Street Gallery</a></h3><p class="call-description">DC-area juried show on community and mutual care. Photography named, $25 for two entries, $200 best in show, Takoma gallery.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/peggy-doole-national-small-works-2026-washington-print-foundation/">Peggy Doole National Small Works 2026 &middot; Washington Print Foundation</a></h3><p class="call-description">National small-works competition in DC accepting fine art photographs — $1,000 Grand Prize, gallery show Jul 30-Aug 30.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/texture-of-light-pro-photo-dc/">Texture of Light &middot; Pro Photo DC</a></h3><p class="call-description">Exploring light as a tactile, physical medium — surface tension, atmospheric mass, architecture of shadow. Washington, DC.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2027-regional-juried-exhibition-hill-center-galleries/">2027 Regional Juried Exhibition · Hill Center Galleries</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">8 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$1,000 / $750 / $500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Solo exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for up to 5 pieces ($10 each additional)">$45+ fee</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/mid-atlantic-us/" class="meta-tag meta-tag-link eligibility-tag">Mid-Atlantic US</a></div>
+        <p class="call-description">DC, Maryland and Virginia artists: any 2D medium, a winter-to-spring juried show on Capitol Hill. $1,000 first prize, juror Lenny Campello.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/tomorrow-imagined-17th-annual-patricia-sitar-juried-exhibition/">Tomorrow, Imagined: 17th Annual Patricia Sitar Juried Exhibition · Sitar Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">18 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$450 / $250 / $250 / $150 / $100</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15 for up to 3 works, $5 each additional (free for ages 16–21)">$15+ fee</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">DC arts centre's 17th annual juried show on imagined futures; photography named, free for 16–21s, $450 top award.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive · The Kennedy Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">22 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>15 × $3,000 stipend</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a> <a href="/eligibility/under-25/" class="meta-tag meta-tag-link eligibility-tag">Under 25</a> <a href="/eligibility/neurodivergent-disabled/" class="meta-tag meta-tag-link eligibility-tag">Neurodivergent &amp; disabled</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p>
+      </div>
+      <h3 class="section-header">Continuous</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/art-in-transit-open-call-for-artwork-wmata/">Art in Transit Open Call for Artwork · WMATA Art in Transit</a></h4>
+        <div class="call-meta"><span class="call-deadline rolling">Continuous</span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Artist fee from a project budget</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Temporary exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/mid-atlantic-us/" class="meta-tag meta-tag-link eligibility-tag">Mid-Atlantic US</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Washington Metro's rolling, free open call for a public-art roster. Photography named; artist fee paid if a project follows.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/exhibition-proposals-main-and-nano-galleries-dc-arts-center/">Exhibition Proposals: Main and Nano Galleries · DC Arts Center</a></h4>
+        <div class="call-meta"><span class="call-deadline rolling">Continuous</span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Gallery exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>60–70% of sales</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 (free for DCAC Artist Members)">$25+ fee</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Year-round proposals for DCAC's two Washington galleries. $25, waived for members; accepted artists join a curator-reviewed roster.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/united-states/washington-dc/past/">Past calls (4) &rarr;</a></p>
 
     </section>
 
@@ -131,21 +148,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.location && (c.location.includes(', DC,') || c.location.includes(', Washington DC,'))).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

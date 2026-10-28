@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -61,7 +61,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -72,8 +71,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -84,8 +83,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -96,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -106,34 +105,24 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/devotion-fall-2026-analog-forever-magazine/">Devotion — Fall 2026 Online Exhibition &middot; Analog Forever Magazine</a></h3><p class="call-description">Online exhibition on devotion — film and analog photographers. Guest-curated by Laura Barth. Launches November 30.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/x-roid-cologne-2027-the-stage-gallery/">X ROID Cologne 2027 &middot; The Stage Gallery</a></h3><p class="call-description">Three-day international instant-art expo in Cologne for original Polaroid and Instax works — framing included, 0% sales commission.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/pretty-ugly-student-photography-competition-2026-27-ilford-photo/">Pretty Ugly — Student Photography Competition 2026/27 &middot; ILFORD Photo</a></h3><p class="call-description">Free worldwide student darkroom competition on beauty in the overlooked. ILFORD/Kentmere film and paper, prints posted in; £200 and £150 in products.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/local-lens-analog-photography-showcase-kimbell-art-museum/">Local Lens: Analog Photography Showcase &middot; Kimbell Art Museum</a></h3><p class="call-description">Six analog photographers show work and process at the Kimbell for a Second Saturday open house; $150 honorarium.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/roots-fototeka/">ROOTS &middot; Fototeka</a></h3><p class="call-description">Film-only open call for Fototeka's second collective printed volume on origin, belonging and memory. ~€10.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/photographer-in-residence-2027-worthless-studios/">Photographer in Residence 2027 &middot; Worthless Studios</a></h3><p class="call-description">One-month analog residency in an Airstream darkroom across NYC. $1,500 stipend, free film and chemistry. No fee.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/into-the-light-third-annual-darkroom-members-exhibition-the-halide-project/">Into the Light: Third Annual Darkroom Members Exhibition &middot; The Halide Project</a></h3><p class="call-description">Free annual show of Halide Project darkroom members' analog and historic-process prints, with a printed catalogue.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/instant-open-call-200-years-almost-now-zrno-festival/">Instant Open Call — 200 Years: Almost Now &middot; ZRNO Festival</a></h3><p class="call-description">Instant photography selected for a group show touring Skopje, Vienna, Timișoara and Novi Sad, with a printed catalogue.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/brooklyn-darkroom-artist-in-residence-2027/">Brooklyn Darkroom Artist in Residence 2027</a></h3><p class="call-description">Analog photographers get a month in a fully equipped camper van, a $4,000 stipend and Brooklyn darkroom access.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/living-image-2026-2027-the-halide-project/">Living Image 2026/2027 &middot; The Halide Project</a></h3><p class="call-description">Philadelphia darkroom's annual juried show of historic and alt processes, juried by A Smith Gallery's Amanda Smith.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/mythos-negra-shadowboxx-gallery/">Mythos Negra — Dark Myths &middot; ShadowBoxX Gallery</a></h3><p class="call-description">Chicago-area gallery show on dark myth and folklore — analog media only; film and darkroom photography welcome, no digital or AI.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/standing-where-others-stood-summer-2026-analog-forever-magazine/">Standing Where Others Stood — Summer 2026 Online Exhibition &middot; Analog Forever Magazine</a></h3><p class="call-description">Online exhibition on time spent outdoors — film/analog photographers. Guest-curated by Float Photo Magazine. Launches August 28.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/analog-forever-magazine-calls-for-entry/">Analog Forever Magazine — Calls for Entry</a></h3><p class="call-description">Film/analog photography magazine. Free call 'Standing Where Others Stood', guest-curated by Float Photo Magazine — online group exhibition.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/analog-sparks-international-film-photography-awards-2026/">Analog Sparks — International Film Photography Awards 2026</a></h3><p class="call-description">Discovering and promoting analog photographers. Exhibited at House of Lucie in Athens and Ostuni.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/camera-clara-photo-award-2026/">Camera Clara Photo Award 2026</a></h3><p class="call-description">Exclusively for large-format camera photographers. Unpublished series of 10 images. Prize money + exhibition.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-analog-forever-exhibit-2026-lightbox-photographic-gallery/">The Analog Forever Exhibit 2026 &middot; LightBox Photographic Gallery</a></h3><p class="call-description">Analog-process show with Analog Forever Magazine at LightBox in Astoria, Oregon. Any style worldwide — one analog element required.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/rotlicht-festival-2026-anthropocene-hybrid-realities/">Rotlicht Festival 2026 — Anthropocene: Hybrid Realities</a></h3><p class="call-description">Open call for analog photography festival in Vienna. Theme: Anthropocene. 20 winners exhibited; €250 honorarium + €150 travel.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/transforming-landscapes-20-20-photo-festival-2026/">Transforming Landscapes — 20/20 Photo Festival 2026</a></h3><p class="call-description">Analog-only juried festival exhibition exploring 250 years of American landscapes. Cherry Street Pier, Philadelphia. Juror: Andrew Piccone.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/pamplemousse-magazine-issue-13/">Pamplemousse Magazine Issue 13</a></h3><p class="call-description">Film photography print magazine. Issue 13 invites work responding to curated vernacular photos. Analog only, no AI.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/remnants-spring-2026-analog-forever-magazine/">Remnants — Spring 2026 Online Exhibition &middot; Analog Forever Magazine</a></h3><p class="call-description">Online exhibition on loss and absence — film/analog photographers. Curated by Michael Behlen. Exhibition launches May 29.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/zrno-festival-2026-open-call/">ZRNO Festival 2026 — Open Call</a></h3><p class="call-description">International festival of alternative photography. Analog and noble processes. Theme: Unfocus to see.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/wider-skies-magazine-issue-1/">Wider Skies Magazine — Issue 1</a></h3><p class="call-description">New magazine exploring speculative futurism through film photography. Free Kodak film available for those who need it.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/x-roid-bonn-2026-the-stage-gallery/">X ROID Bonn 2026 &middot; The Stage Gallery</a></h3><p class="call-description">7th edition of the international instant art expo for Polaroid and Fuji Instax. Three-day exhibition in Bonn.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fast-forward-analog-photography-as-a-third-space-los-angeles-center-for-photography/">Fast Forward: Analog Photography as a Third Space &middot; Los Angeles Center for Photography</a></h3><p class="call-description">Analog-only submissions exploring how photography creates space for camaraderie and interaction.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/incandescent-zine-color-film-photography/">Incandescent Zine — Color Film Photography</a></h3><p class="call-description">Bi-annual zine exclusively for color film photography. No digital. Published by Pine Island Press, Portland, Oregon.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fotofilmic-open-2026/">FOTOFILMIC OPEN 2026</a></h3><p class="call-description">Exhibition featuring contemporary film-based photography. Exhibition May 2–31, 2026 at FOTOFILMIC, Bowen Island, BC.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/helsinki-analog-festival-2026-analog-practice-exhibition/">Helsinki Analog Festival 2026 - Analog Practice Exhibition</a></h3><p class="call-description">International open call for artists using analog processes. Celebrating materiality and craftsmanship.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/devotion-fall-2026-analog-forever-magazine/">Devotion — Fall 2026 Online Exhibition · Analog Forever Magazine</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">4 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Online exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/online/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Online</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/analog-photography/" class="meta-tag meta-tag-link eligibility-tag">Analog only</a></div>
+        <p class="call-description">Online exhibition on devotion — film and analog photographers. Guest-curated by Laura Barth. Launches November 30.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/x-roid-cologne-2027-the-stage-gallery/">X ROID Cologne 2027 · The Stage Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline normal">Nov 30, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€220 per exhibition space">€220+ fee</a> <a href="/germany/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Cologne, Germany</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/analog-photography/" class="meta-tag meta-tag-link eligibility-tag">Analog only</a></div>
+        <p class="call-description">Three-day international instant-art expo in Cologne for original Polaroid and Instax works — framing included, 0% sales commission.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/pretty-ugly-student-photography-competition-2026-27-ilford-photo/">Pretty Ugly — Student Photography Competition 2026/27 · ILFORD Photo</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 31, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>£200 / £150 in ILFORD products</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>35mm film camera</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-kingdom/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Mobberley, UK</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link eligibility-tag">Students</a> <a href="/eligibility/analog-photography/" class="meta-tag meta-tag-link eligibility-tag">Analog only</a></div>
+        <p class="call-description">Free worldwide student darkroom competition on beauty in the overlooked. ILFORD/Kentmere film and paper, prints posted in; £200 and £150 in products.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/eligibility/analog-photography/past/">Past calls (24) &rarr;</a></p>
 
     </section>
 
@@ -143,21 +132,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('analog-photography')).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -61,7 +61,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -72,8 +71,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -84,8 +83,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -96,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -106,17 +105,24 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/portfolio-reviews-equity-scholarships-2027-colorado-photographic-arts-center/">Portfolio Reviews Equity Scholarships 2027 &middot; Colorado Photographic Arts Center</a></h3><p class="call-description">CPAC funds BIPOC, LGBTQIA2S+ and disabled photographers through MOP Denver's March 2027 reviews: 8 sessions, hotel and travel.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive &middot; The Kennedy Center</a></h3><p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/non-verbal-co-learning-engagement-spring-2027-grunt-gallery/">Non-Verbal Co-Learning Engagement — Spring 2027 &middot; grunt gallery</a></h3><p class="call-description">Six-week paid engagement at grunt gallery for Metro Vancouver artists with a silent or non-verbal practice. Two spots, $2,000 CAD, free.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/embodied-existence-chronic-pain-project/">Embodied Existence &middot; Chronic Pain Project</a></h3><p class="call-description">Free Portland show for artists living with chronic pain and their caregivers, at Lewis &amp; Clark's Watzek Library.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/the-space-between-storms-emotions-matter/">The Space Between Storms &middot; Emotions Matter</a></h3><p class="call-description">Fifth BPD Art Show, open worldwide to anyone with lived experience of borderline personality disorder. Fee waivers.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/bipoc-deaf-arts-grant-2026/">BIPOC Deaf Arts Grant 2026 &middot; Deaf Spotlight</a></h3><p class="call-description">Unrestricted $1,000 grants for BIPOC Deaf, DeafBlind, DeafDisabled and Hard of Hearing artists. Photography eligible; free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/art-for-the-view-2026-sunnyview/">Art for the View 2026 &middot; Sunnyview Rehabilitation Hospital Foundation</a></h3><p class="call-description">Free 25th-anniversary exhibition of work by artists with disabilities at Proctors' Fenimore Gallery in Schenectady; all media, for sale.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/eyes-and-hands-celebrating-fredericks-deaf-heart-artspiration-frederick/">Eyes &amp; Hands: Celebrating Frederick's Deaf heART and Beyond! &middot; Artspiration Frederick</a></h3><p class="call-description">Juried show for Deaf, Hard of Hearing and CODA artists at Frederick's community art centre, marking Deaf Awareness Month.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/global-ability-photography-challenge-2026-not-just-art/">Global Ability Photography Challenge 2026 &middot; Not Just Art</a></h3><p class="call-description">Free photography competition exclusively for persons with disabilities — ~$20K in prizes, top 20 exhibited in Ahmedabad.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/hndl-magazine-pride-issue/">HNDL Magazine — PRIDE Issue</a></h3><p class="call-description">Indie publication by and for neurodivergent, disabled, and chronically ill creatives. Accepting photography and more.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/portfolio-reviews-equity-scholarships-2027-colorado-photographic-arts-center/">Portfolio Reviews Equity Scholarships 2027 · Colorado Photographic Arts Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">6 days left</a> <a href="/prize/fellowship/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Portfolio review fellowship</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/colorado/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Denver, CO</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a> <a href="/eligibility/bipoc/" class="meta-tag meta-tag-link eligibility-tag">BIPOC artists</a> <a href="/eligibility/lgbtq/" class="meta-tag meta-tag-link eligibility-tag">LGBTQ+</a> <a href="/eligibility/neurodivergent-disabled/" class="meta-tag meta-tag-link eligibility-tag">Neurodivergent &amp; disabled</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">CPAC funds BIPOC, LGBTQIA2S+ and disabled photographers through MOP Denver's March 2027 reviews: 8 sessions, hotel and travel.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/access-vsa-emerging-young-artists-2027-thrive-kennedy-center/">Access/VSA Emerging Young Artists Program 2027: Thrive · The Kennedy Center</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">22 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>15 × $3,000 stipend</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/united-states/washington-dc/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Washington, DC</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/16-plus/" class="meta-tag meta-tag-link eligibility-tag">16+</a> <a href="/eligibility/under-25/" class="meta-tag meta-tag-link eligibility-tag">Under 25</a> <a href="/eligibility/neurodivergent-disabled/" class="meta-tag meta-tag-link eligibility-tag">Neurodivergent &amp; disabled</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link eligibility-tag">US only</a></div>
+        <p class="call-description">Fifteen disabled US artists aged 16–25 each win $3,000 and a Washington, D.C. exhibition. Free to enter.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/non-verbal-co-learning-engagement-spring-2027-grunt-gallery/">Non-Verbal Co-Learning Engagement — Spring 2027 · grunt gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 8, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$2,000 CAD</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/canada/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Vancouver, BC, Canada</a> <a href="/education/" class="meta-tag meta-tag-link">Education</a> <a href="/eligibility/canada/" class="meta-tag meta-tag-link eligibility-tag">Canada only</a> <a href="/eligibility/neurodivergent-disabled/" class="meta-tag meta-tag-link eligibility-tag">Neurodivergent &amp; disabled</a></div>
+        <p class="call-description">Six-week paid engagement at grunt gallery for Metro Vancouver artists with a silent or non-verbal practice. Two spots, $2,000 CAD, free.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/eligibility/neurodivergent-disabled/past/">Past calls (7) &rarr;</a></p>
 
     </section>
 
@@ -126,21 +132,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.eligibility && c.eligibility.includes('neurodivergent-disabled')).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>

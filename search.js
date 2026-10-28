@@ -1,5 +1,5 @@
 // Global search for non-home pages
-// Loads data.json, shows suggestion dropdown, navigates to /?q= on search
+// Loads the search index on first use, shows suggestion dropdown, navigates to /?q= on search
 (function() {
   var searchWrap = document.getElementById('globalSearchWrap');
   if (!searchWrap) return;
@@ -43,10 +43,10 @@
 
   function loadData(cb) {
     if (allCalls) return cb();
-    fetch('/data.json').then(function(r) { return r.json(); }).then(function(data) {
-      allCalls = data.calls;
+    loadSearchIndex(function(calls) {
+      allCalls = calls;
       cb();
-    }).catch(function() {});
+    });
   }
 
   function buildSuggestions(query) {

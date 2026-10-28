@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -61,7 +61,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -72,8 +71,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -84,8 +83,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -96,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -106,16 +105,18 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/artist-studios-2027-international-centre-for-the-image/">Artist Studios 2027 &middot; International Centre for the Image</a></h3><p class="call-description">Four free year-long Dublin studios for Ireland-based photographers, with a €1,000 materials bursary and paid talks.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/photoireland-futures-talents-2027/">PhotoIreland FUTURES Talents 2027</a></h3><p class="call-description">Ireland and UK lens-based artists join the European FUTURES platform: €500 fee, Vienna annual event covered, Magnum workshops.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/halftone-print-fair-2026-photoireland/">HALFTONE Print Fair 2026 &middot; PhotoIreland</a></h3><p class="call-description">PhotoIreland's 12th annual print fair at The Library Project, Dublin. Up to 10 works, sold salon-style; artists keep 60%.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/young-photographer-awards-2026-photo-museum-ireland/">Young Photographer Awards 2026 &middot; Photo Museum Ireland</a></h3><p class="call-description">Ireland's national youth photography awards — ages 8–18, free, up to 10 images, outdoor exhibition in Dublin.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/dublin-art-book-fair-2026-artist-book-open-call-temple-bar-gallery-studios/">Dublin Art Book Fair 2026 — Artist Book Open Call &middot; Temple Bar Gallery + Studios</a></h3><p class="call-description">Free open call for artist books and photobooks at Dublin Art Book Fair, curated by Nathan O'Donnell; Ireland and NI residents. Closes 12pm (noon) on 5 October.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/photography-commission-national-folklore-collection-ucd-library/">Photography Commission: National Folklore Collection &middot; UCD Library</a></h3><p class="call-description">€20,000 UCD Library commission to photograph Ireland's National Folklore Collection as it moves to a new home.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/hunt-museum-open-submission-exhibition-2026/">Hunt Museum Open Submission Exhibition 2026</a></h3><p class="call-description">Second annual juried open submission at The Hunt Museum, Limerick. Photography eligible; €15/artwork. Show Dec 2026 – Feb 2027.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/visual-carlow-2027-exhibition-open-call/">VISUAL Carlow 2027 Exhibition Open Call</a></h3><p class="call-description">Major new commission for 2027 exhibition at VISUAL Carlow. Any medium. Artist fee + significant production budget.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/women-in-nature-artists-commission-photo-museum-ireland/">Women in Nature — Artist's Commission &middot; Photo Museum Ireland</a></h3><p class="call-description">€15,000 commission for 12 portraits of women in nature restoration across Ireland. Exhibition + publication.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/artist-studios-2027-international-centre-for-the-image/">Artist Studios 2027 · International Centre for the Image</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">18 days left</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Studio space</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Up to €1,000 bursary</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/ireland/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Dublin, Ireland</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a> <a href="/eligibility/ireland/" class="meta-tag meta-tag-link eligibility-tag">Ireland only</a></div>
+        <p class="call-description">Four free year-long Dublin studios for Ireland-based photographers, with a €1,000 materials bursary and paid talks.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/photoireland-futures-talents-2027/">PhotoIreland FUTURES Talents 2027</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">30 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€500</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/ireland/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Dublin, Ireland</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/ireland/" class="meta-tag meta-tag-link eligibility-tag">Ireland only</a> <a href="/eligibility/united-kingdom/" class="meta-tag meta-tag-link eligibility-tag">UK only</a></div>
+        <p class="call-description">Ireland and UK lens-based artists join the European FUTURES platform: €500 fee, Vienna annual event covered, Magnum workshops.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/ireland/past/">Past calls (7) &rarr;</a></p>
 
     </section>
 
@@ -125,21 +126,10 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Ireland').map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
+
 
 </body>
 </html>

@@ -256,7 +256,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'archive', 'new', 'page', 'past', 'search-index'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -296,8 +296,12 @@ function setRobotsMeta(html, directive) {
 const THEME_LIGHT = '#f5f2ed';
 const THEME_DARK = '#151515';
 const GA_SNIPPET = `<script defer src="/analytics.js"></script>`;
-const PRELOAD = `<link rel="preload" href="/data.json" as="fetch" crossorigin>
-  <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
+// No page preloads or fetches data.json: it carries every audit note (~36 MB)
+// and is for the build and the scheduled jobs only. Listing pages are complete
+// static HTML; search loads the slim /search-index.js on first use.
+const DATA_JSON_PRELOAD_RE = /\s*<link rel="preload" href="\/data\.json"[^>]*>/g;
+const DATA_JSON_FETCH_SCRIPT_RE = /\n  <script>(?:(?!<\/script>)[\s\S])*?fetch\('\/data\.json'\)[\s\S]*?<\/script>\n/g;
+const PRELOAD = `<link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">`;
 const ICONS = `<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
@@ -352,6 +356,10 @@ function HEAD(opts) {
   ${GA_SNIPPET}`;
 }
 
+// Marks the current section in the header. /page/N/ is still "Open", and
+// /archive/… and /new/… keep "Closed" and "New" on every page of the list.
+const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
+
 // Shared header and footer
 function buildHeader() {
   return `<header>
@@ -359,8 +367,8 @@ function buildHeader() {
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -371,8 +379,8 @@ function buildHeader() {
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -383,7 +391,7 @@ function buildHeader() {
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
+  ${NAV_STATE_SCRIPT}`;
 }
 const HEADER = buildHeader();
 
@@ -411,42 +419,22 @@ function collectionPageLd(name, description, url) {
   return JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": name, "description": description, "url": url, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2);
 }
 
-// Client-side hydration for a listing page: fetch data.json, filter to this
-// facet's calls, and re-render the list. filterExpr is the arrow passed to
-// Array.filter (e.g. `c => c.category === 'photography'`).
-// Used by the simple facet pages (category/fees/eligibility/requirements/
-// submit-via/locations/state). Pages that need extra steps (prize's comment,
-// country's USA state index, deadlines' sort) keep their own inline script.
-//
-// The filter is the FACET ONLY — never an open/closed filter. Splitting open
-// from past is renderCallList's job (see LISTING RULE below), so the JS list
-// and the pre-rendered HTML can't diverge the way they used to.
-function facetListScript(filterExpr) {
-  return `<script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(${filterExpr}).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>`;
-}
-
 // === LISTING RULE (one rule, every listing page) ===
-// 1. A listing page shows EVERY call it covers — open ones first (soonest
-//    deadline first), then the rest under a "Past" header.
-// 2. The number shown next to that page in ANY index is calls.length — the
-//    same calls the page lists. List and page can never disagree.
+// 1. A listing covers every call in its facet, split across pages — open calls
+//    on /x/ (soonest deadline first), past calls on /x/past/ (see PAGED LISTS).
+// 2. The hero says "N calls, M open." for the whole facet. The number shown
+//    next to the page in ANY index is what its first page lists: the open
+//    calls, or, when nothing is open, the past ones — listedCount().
 // 3. Robots/sitemap decisions still use the OPEN count only (a page of dead
 //    calls is not a search landing page). Content ≠ indexability.
-// listStats() is the single place those three numbers come from.
+// listStats() is the single place those numbers come from.
 function listStats(calls) {
   const open = calls.filter(isOpen).length;
   return { total: calls.length, open, past: calls.length - open };
+}
+
+function listedCount({ total, open }) {
+  return open > 0 ? open : total;
 }
 
 // The one-line count that every listing page prints under its title, so a
@@ -465,42 +453,51 @@ function listSubtitle(desc, stats) {
 }
 
 // === INDEX RULE (one rule, every index page) ===
-// Entries whose page still has an open call are listed first; entries with
-// nothing open drop into a labelled archive section at the bottom. Nothing is
-// hidden and nothing is deleted — a page with only past calls is still
-// reachable, it just can't sit in the live list pretending otherwise.
-// The count is always entry.total: exactly what that page lists.
+// Entries whose page still has an open call are listed first, with their open
+// count; entries with nothing open drop into a labelled archive section at the
+// bottom, with their past count. Either way the count is listedCount(): exactly
+// what the first page of that listing shows. `hideArchived` leaves the archive
+// section out (the organizations and locations hubs) — those pages stay live
+// and are still linked from every call that names them.
 const ARCHIVE_HEADING = 'No open calls';
 
 function indexItem(href, labelHtml, count) {
   return `      <a href="${href}" class="index-item"><span class="index-item-name">${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
 }
 
-// entries: [{ href, label, total, open }] — `total` is what the page lists,
-// `open` only decides which section the entry lands in.
+// entries: [{ href, label, total, open }] — `open` decides which section the
+// entry lands in, and listedCount() is the number printed.
 function buildIndexItems(entries, opts = {}) {
   const fmt = opts.labelHtml || (l => escapeHtml(l));
-  const byCount = (a, b) => b.total - a.total || a.label.localeCompare(b.label);
+  const byCount = (a, b) => listedCount(b) - listedCount(a) || a.label.localeCompare(b.label);
   const byLabel = (a, b) => a.label.localeCompare(b.label);
   const sort = opts.sort === 'label' ? byLabel : byCount;
   const live = entries.filter(e => e.open > 0).sort(sort);
   const archived = entries.filter(e => !e.open).sort(sort);
   let html = '';
-  live.forEach(e => { html += indexItem(e.href, fmt(e.label), e.total); });
-  if (archived.length) {
+  live.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e)); });
+  if (archived.length && !opts.hideArchived) {
     html += `      <h3 class="section-header">${ARCHIVE_HEADING}</h3>\n`;
-    archived.forEach(e => { html += indexItem(e.href, fmt(e.label), e.total); });
+    archived.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e)); });
   }
   return html;
 }
 
 // Track generated files for cleanup at the end
 const generatedFiles = new Set();
-function writeGenerated(filepath, content) {
+function writeFileTracked(filepath, content) {
   const dir = path.dirname(filepath);
   if (dir !== '.' && !fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(filepath, content);
   generatedFiles.add(filepath);
+}
+
+// A listing page's HTML carries a PAGED-LIST placeholder (from
+// buildStaticCallList); it is written as its whole set of pages.
+function writeGenerated(filepath, content) {
+  const m = content.match(PAGED_LIST_RE);
+  if (m) return writePagedListing(filepath, content, pagedLists[Number(m[1])]);
+  writeFileTracked(filepath, content);
 }
 
 function escapeHtml(str) {
@@ -527,52 +524,36 @@ function metaDescription(call) {
   return escapeHtml(trimmed + ' ' + deadline);
 }
 
-// Pre-render static call list for SEO (Google sees content without JS).
-// Follows the LISTING RULE: open first (soonest deadline first, Continuous
-// last), then every past call under a "Past" header, newest-closed first.
-// Same split, same order, same notice as renderCallList() in cards.js — so the
-// pre-hydration paint and the hydrated list show the same calls.
-function buildStaticCallList(calls) {
-  if (!calls.length) return '';
-  const open = calls.filter(isOpen).sort((a, b) => {
-    if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-    if (a.deadline === 'Continuous') return 1;
-    if (b.deadline === 'Continuous') return -1;
-    return a.deadline.localeCompare(b.deadline);
-  });
-  const past = calls.filter(c => !isOpen(c)).sort((a, b) => b.deadline.localeCompare(a.deadline));
+// === PAGED LISTS (one rule, every listing page) ===
+// No list shows everything it ever covered on one page:
+//   • /x/, /x/page/2/, … — the OPEN calls, PAGE_SIZE per page, soonest deadline
+//     first, under the Ending Today / Ending Tomorrow / month headers.
+//   • /x/past/, /x/past/page/2/, … — the closed ones, newest-closed first.
+//     Every open page links to them.
+//   • A listing with nothing open lists its past calls on /x/ itself, after the
+//     "no open calls" notice; it has no separate /past/.
+// Every page is complete static HTML with the full card (tags included), so no
+// listing page needs call data in the browser.
+//
+// Generators keep writing one HTML string per listing: buildStaticCallList()
+// registers the calls and returns a placeholder, and writeGenerated() expands
+// it into the pages. pagedListings records which files make up each listing,
+// for the count gate.
+const PAGE_SIZE = 30;
+const PAGED_LIST_RE = /<!-- PAGED-LIST:(\w+) -->/;
+const pagedLists = [];
+const pagedListings = new Map(); // '/x/' -> { total, open, files }
 
-  // Use the real card classes (.call-card / .call-title / .call-description) so
-  // the first paint is fully styled by the design system. cards.js later swaps
-  // in the interactive cards (with meta pills + sections); this keeps the
-  // pre-hydration list looking like a proper card list instead of unstyled
-  // default text. Mirrors renderCard() in cards.js (sans the meta-pill row).
-  const card = c => {
-    const slug = c.slug || slugify(c.title);
-    const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
-    const desc = escapeHtml(c.summary || c.description);
-    return `      <div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>\n`;
-  };
-
-  let html = '';
-  if (!open.length && past.length) html += `      <p class="empty-state">${escapeHtml(NO_OPEN_CALLS_NOTICE)}</p>\n`;
-  open.forEach(c => { html += card(c); });
-  if (past.length) {
-    html += `      <h3 class="section-header">Past</h3>\n`;
-    past.forEach(c => { html += card(c); });
-  }
-  return html;
+function buildStaticCallList(calls, opts = {}) {
+  pagedLists.push({ calls, opts });
+  return `<!-- PAGED-LIST:${pagedLists.length - 1} -->`;
 }
 
-// === Server-side mirror of cards.js's card + tag + section rendering ===
-// The homepage ships ONE list: this produces byte-equivalent markup to what
-// cards.js renderCallList() builds for the default (open) view, so the browser
-// can keep the server-rendered list instead of rebuilding it on load. Keep in
-// sync with renderTags()/renderCard()/renderCallList() in cards.js.
 const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 // computeUrgency() lives in shared.js (one contract for server + client).
 
+// Same markup as renderCard() in cards.js, which renders search results.
 function renderStaticCard(call, u) {
   const slug = call.slug || slugify(call.title);
   const title = escapeHtml(call.title) + (!call.orgInTitle ? ' · ' + escapeHtml(call.org) : '');
@@ -583,31 +564,150 @@ function renderStaticCard(call, u) {
       </div>\n`;
 }
 
-function buildStaticHomeList(callsList) {
-  const now = new Date();
-  const processed = callsList
-    .filter(c => isCallOpen(c.deadline))
-    .map(c => ({ call: c, u: computeUrgency(c, now) }))
-    .filter(x => x.u.urgencyClass !== 'closed');
-  processed.sort((a, b) => {
-    if (a.call.deadline === 'Continuous' && b.call.deadline === 'Continuous') return 0;
-    if (a.call.deadline === 'Continuous') return 1;
-    if (b.call.deadline === 'Continuous') return -1;
-    return a.u.deadlineDate - b.u.deadlineDate;
+// Soonest deadline first, Continuous last.
+function sortOpenCalls(calls) {
+  return calls.filter(isOpen).sort((a, b) => {
+    if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
+    if (a.deadline === 'Continuous') return 1;
+    if (b.deadline === 'Continuous') return -1;
+    return a.deadline.localeCompare(b.deadline);
   });
+}
+
+// Newest-closed first.
+function sortPastCalls(calls) {
+  return calls.filter(c => !isOpen(c)).sort((a, b) => b.deadline.localeCompare(a.deadline));
+}
+
+// Cards for one page, with a header wherever the section changes. A page that
+// starts mid-section repeats that section's header at its top.
+function renderSectionedCards(calls, sectionOf) {
+  const now = new Date();
   let html = '';
-  const used = new Set();
-  const today = processed.filter(x => x.u.daysLeft === 0);
-  if (today.length) { html += '      <h3 class="section-header">Ending Today</h3>\n'; today.forEach(x => { html += renderStaticCard(x.call, x.u); used.add(x); }); }
-  const tomorrow = processed.filter(x => x.u.daysLeft === 1);
-  if (tomorrow.length) { html += '      <h3 class="section-header">Ending Tomorrow</h3>\n'; tomorrow.forEach(x => { html += renderStaticCard(x.call, x.u); used.add(x); }); }
-  let currentSection = '';
-  processed.filter(x => !used.has(x)).forEach(x => {
-    const section = x.call.deadline === 'Continuous' ? 'Continuous' : MONTHS_CAP[x.u.deadlineDate.getMonth()] + ' ' + x.u.deadlineDate.getFullYear();
-    if (section !== currentSection) { currentSection = section; html += '      <h3 class="section-header">' + section + '</h3>\n'; }
-    html += renderStaticCard(x.call, x.u);
+  let current = '';
+  calls.forEach(c => {
+    const u = computeUrgency(c, now);
+    const section = sectionOf ? sectionOf(c, u) : '';
+    if (section && section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
+    html += renderStaticCard(c, u);
   });
   return html;
+}
+
+function monthSection(u) {
+  return MONTHS_CAP[u.deadlineDate.getMonth()] + ' ' + u.deadlineDate.getFullYear();
+}
+
+function openSection(c, u) {
+  if (c.deadline === 'Continuous') return 'Continuous';
+  if (u.daysLeft === 0) return 'Ending Today';
+  if (u.daysLeft === 1) return 'Ending Tomorrow';
+  return monthSection(u);
+}
+
+function pastSection(c, u) {
+  return u.daysLeft === -1 ? 'Ended Yesterday' : monthSection(u);
+}
+
+function chunkCalls(calls) {
+  const chunks = [];
+  for (let i = 0; i < calls.length; i += PAGE_SIZE) chunks.push(calls.slice(i, i + PAGE_SIZE));
+  return chunks.length ? chunks : [[]];
+}
+
+// Page k of a list rooted at `root` ('/x/' or '/x/past/').
+function pageUrl(root, k) {
+  return k > 1 ? `${root}page/${k}/` : root;
+}
+
+// Previous / numbered pages / Next. Shows the first and last page and two on
+// either side of the current one, with gaps elided. On a phone the pages two
+// away are hidden (.pagination-far) so the numbers fit one line; a gap that
+// only shows there (.pagination-gap-narrow) stands in where one is needed.
+function paginationNav(root, current, count) {
+  if (count < 2) return '';
+  const shownSet = new Set([1, count]);
+  for (let p = current - 2; p <= current + 2; p++) if (p >= 1 && p <= count) shownSet.add(p);
+  const shown = [...shownSet].sort((a, b) => a - b);
+  const narrowGap = '<span class="pagination-gap pagination-gap-narrow">&hellip;</span>';
+  let pages = '';
+  shown.forEach((p, i) => {
+    const gapBefore = i > 0 && p - shown[i - 1] > 1;
+    const gapAfter = i < shown.length - 1 && shown[i + 1] - p > 1;
+    const far = Math.abs(p - current) === 2 && p !== 1 && p !== count;
+    if (gapBefore) pages += '<span class="pagination-gap">&hellip;</span>';
+    if (far && p < current && !gapBefore) pages += narrowGap;
+    pages += p === current
+      ? `<span class="pagination-page current" aria-current="page">${p}</span>`
+      : `<a href="${pageUrl(root, p)}" class="pagination-page${far ? ' pagination-far' : ''}">${p}</a>`;
+    if (far && p > current && !gapAfter) pages += narrowGap;
+  });
+  const prev = current > 1
+    ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev">&larr; Previous</a>`
+    : '<span class="pagination-step disabled">&larr; Previous</span>';
+  const next = current < count
+    ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next">Next &rarr;</a>`
+    : '<span class="pagination-step disabled">Next &rarr;</span>';
+  return `      <nav class="pagination" aria-label="Pages">${prev}<span class="pagination-pages">${pages}</span>${next}</nav>\n`;
+}
+
+// One page of a listing: the list in place of the placeholder, and the head
+// pointed at this page. `label` names the page in its title ("Page 2",
+// "Past calls", …); `robots` overrides the listing's directive.
+function listingPageHtml(html, listHtml, { url, label, robots }) {
+  let out = html.replace(PAGED_LIST_RE, () => listHtml);
+  if (label) {
+    const abs = SITE + url;
+    out = out.replace(/(<link rel="canonical" href=")[^"]*(")/, (m, a, b) => a + abs + b);
+    out = out.replace(/(<meta property="og:url" content=")[^"]*(")/, (m, a, b) => a + abs + b);
+    const retitle = (m, a, t, b) => `${a}${t} — ${label}${TITLE_SUFFIX}${b}`;
+    out = out.replace(/(<title>)([\s\S]*?) - Monographica(<\/title>)/, retitle);
+    out = out.replace(/(<meta property="og:title" content=")([^"]*?) - Monographica(")/, retitle);
+  }
+  if (robots) out = setRobotsMeta(out, robots);
+  return out;
+}
+
+// Writes a list as pages under `root`: renderPage(chunk, k, count) returns the
+// list HTML for page k. Returns the files written.
+function writeListPages(html, root, calls, renderPage, { labelFor, robots }) {
+  const chunks = chunkCalls(calls);
+  return chunks.map((chunk, i) => {
+    const k = i + 1;
+    const url = pageUrl(root, k);
+    const file = url.slice(1) + 'index.html';
+    writeFileTracked(file, listingPageHtml(html, renderPage(chunk, k, chunks.length), { url, label: labelFor(k), robots }));
+    return file;
+  });
+}
+
+function writePagedListing(filepath, html, { calls, opts }) {
+  const base = '/' + path.dirname(filepath) + '/';
+  const pastRoot = base + 'past/';
+  const sections = !opts.skipSections;
+  const open = sortOpenCalls(calls);
+  const past = sortPastCalls(calls);
+  const files = [];
+  const pastLink = `      <p class="browse-more list-switch"><a href="${pastRoot}">Past calls (${past.length}) &rarr;</a></p>\n`;
+
+  if (open.length) {
+    files.push(...writeListPages(html, base, open, (chunk, k, count) =>
+      renderSectionedCards(chunk, sections && openSection) + paginationNav(base, k, count) + (past.length ? pastLink : ''),
+      { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+    if (past.length) {
+      files.push(...writeListPages(html, pastRoot, past, (chunk, k, count) =>
+        `      <h2 class="list-heading">Past calls</h2>\n` +
+        `      <p class="browse-more list-switch"><a href="${base}">&larr; Open calls (${open.length})</a></p>\n` +
+        renderSectionedCards(chunk, sections && pastSection) + paginationNav(pastRoot, k, count),
+        { labelFor: k => k > 1 ? `Past calls, page ${k}` : 'Past calls', robots: 'noindex, follow' }));
+    }
+  } else {
+    files.push(...writeListPages(html, base, past, (chunk, k, count) =>
+      (k === 1 && past.length ? `      <p class="empty-state">${escapeHtml(NO_OPEN_CALLS_NOTICE)}</p>\n` : '') +
+      renderSectionedCards(chunk, sections && pastSection) + paginationNav(base, k, count),
+      { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+  }
+  pagedListings.set(base, { total: calls.length, open: open.length, files });
 }
 
 // === Helpers ported from cards.js / call-detail.js so detail pages can pre-render
@@ -931,7 +1031,6 @@ ${buildStaticCallList(catCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.category === '${cat}'`)}
 
 </body>
 </html>`;
@@ -993,7 +1092,6 @@ ${buildStaticCallList(fpCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => ${fp.filterJs}`)}
 
 </body>
 </html>`;
@@ -1276,7 +1374,6 @@ ${buildStaticCallList(tagCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.eligibility && c.eligibility.includes('${tag}')`)}
 
 </body>
 </html>`;
@@ -1307,12 +1404,13 @@ Object.keys(eligibilityTags).forEach(tag => {
 function buildEligibilityIndexItems() {
   // INDEX RULE, group-aware version: a tag with an open call stays in its
   // heading group; a tag whose calls have all closed collects into one archive
-  // section at the bottom. Counts are total calls — what each page lists.
+  // section at the bottom. Counts are listedCount() — what each page lists first.
   let html = '';
   const archived = [];
-  const byCount = (a, b) => (eligibilityTags[b] || 0) - (eligibilityTags[a] || 0) ||
+  const countOf = tag => listedCount({ total: eligibilityTags[tag] || 0, open: openEligibilityTags[tag] || 0 });
+  const byCount = (a, b) => countOf(b) - countOf(a) ||
     eligibilityGroups[a].short.localeCompare(eligibilityGroups[b].short);
-  const item = tag => indexItem(`/eligibility/${tag}/`, escapeHtml(eligibilityGroups[tag].short), eligibilityTags[tag] || 0);
+  const item = tag => indexItem(`/eligibility/${tag}/`, escapeHtml(eligibilityGroups[tag].short), countOf(tag));
 
   eligibilityOrder.forEach(group => {
     const present = group.tags.filter(t => eligibilityTags[t]);
@@ -1413,20 +1511,6 @@ ${buildStaticCallList(tagCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    // derivePrizeCategories comes from cards.js (loaded above) — the single
-    // source of truth injected at build time. No local copy (it used to drift).
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => derivePrizeCategories(c.prize).includes('${tag}')).map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
 
 </body>
 </html>`;
@@ -1530,7 +1614,6 @@ ${buildStaticCallList(tagCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => deriveRequirementBucket(c.requirements) === '${tag}'`)}
 
 </body>
 </html>`;
@@ -1638,7 +1721,6 @@ ${buildStaticCallList(methodCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => submitViaLabel(c.submitVia) === ${JSON.stringify(info.label)}`)}
 
 </body>
 </html>`;
@@ -1763,7 +1845,7 @@ ${country === 'USA' ? usStateIndexItems : buildStaticCallList(countryCalls)}
   ${CARDS_SCRIPT(cssVersion)}
 ${country === 'USA' ? `  <!-- /united-states/ lists STATES, not calls. The list is build-time data,
        so it ships fully rendered and needs no hydration — nothing to drift. -->`
-    : `  ${facetListScript(`c => getCountry(c.location) === '${country.replace(/'/g, "\\'")}'`)}`}
+    : ''}
 
 </body>
 </html>`;
@@ -1810,7 +1892,6 @@ ${buildStaticCallList(stateCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.location && (c.location.includes(', ${state},') || c.location.includes(', ${fullStateName},'))`)}
 
 </body>
 </html>`;
@@ -1863,7 +1944,6 @@ ${buildStaticCallList(orgCalls)}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  ${facetListScript(`c => c.org === '${org.replace(/'/g, "\\'")}'`)}
 
 </body>
 </html>`;
@@ -1917,26 +1997,13 @@ sortedMonths.forEach(key => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, listSubtitle(`Deadlines in ${label}.`, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(g.calls)}
+${buildStaticCallList(g.calls, { skipSections: true })}
     </section>
 
     ${FOOTER}
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => c.deadline !== 'Continuous' && c.deadline.startsWith('${g.year}-${String(g.month + 1).padStart(2, '0')}')).map(processCall);
-      calls.sort((a, b) => a.deadlineDate - b.deadlineDate);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { skipSections: true, noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
 
 </body>
 </html>`;
@@ -1960,11 +2027,11 @@ const pastMonths = sortedMonths.filter(k => {
   return (g.year < currentYear) || (g.year === currentYear && g.month < currentMonth);
 }).reverse();
 
-// INDEX RULE: the count is the number of calls the month page lists. Months are
-// already grouped by Upcoming / Past below, so no extra archive section here.
+// INDEX RULE: the count is what the month page lists first (listedCount). Months
+// are already grouped by Upcoming / Past below, so no extra archive section here.
 function deadlineItem(key) {
   const g = monthGroups[key];
-  return indexItem(`/deadlines/${key}/`, `${MONTH_LABELS[g.month]} ${g.year}`, g.calls.length).trimEnd();
+  return indexItem(`/deadlines/${key}/`, `${MONTH_LABELS[g.month]} ${g.year}`, listedCount(listStats(g.calls))).trimEnd();
 }
 
 const deadlinesIndexItems = [
@@ -2177,15 +2244,15 @@ function midTruncateHtml(str, minLen) {
 // /browse/ is the shortcut hub, not an exhaustive index: it lists only
 // destinations that have something open right now (the full lists, archive
 // sections included, live on /organizations/, /locations/, /eligibility/…).
-// The count is still the page's total, so it matches the page you land on.
+// The count is the open count — what the page you land on lists first.
 function buildBrowseSection(heading, items, headingLink) {
   const live = items.filter(i => i.open > 0);
   if (!live.length) return '';
   const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
   let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
   const sorted = [...live].sort((a, b) => b.open - a.open || a.label.localeCompare(b.label));
-  sorted.forEach(({ label, href, total }) => {
-    html += indexItem(href, midTruncateHtml(label), total);
+  sorted.forEach(item => {
+    html += indexItem(item.href, midTruncateHtml(item.label), listedCount(item));
   });
   return html;
 }
@@ -2281,6 +2348,21 @@ Object.keys(stateCounts).forEach(state => {
   statePageMap[state] = 'united-states/' + slugify(fullName);
 });
 
+// === Search index ===
+// What search needs and nothing more: the fields the suggestion counts, the
+// free-text match and the result cards read. ~1 MB against data.json's ~36 MB,
+// and a .js file because Cloudflare caches scripts but not JSON. Loaded by
+// loadSearchIndex() in cards.js the first time someone searches.
+const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'prize', 'eligibility', 'summary', 'description'];
+const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(data.calls.map(c => {
+  const row = {};
+  SEARCH_FIELDS.forEach(k => { if (c[k] !== undefined && c[k] !== null) row[k] = c[k]; });
+  return row;
+})) + ';\n';
+fs.writeFileSync('search-index.js', searchIndexJs);
+const searchIndexVersion = require('crypto').createHash('sha1').update(searchIndexJs).digest('hex').slice(0, 10);
+console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length} bytes`);
+
 // Update page lists in cards.js (between markers) — only include actually created pages
 // Only build-DERIVED data (which pages actually got generated) is injected.
 // All shared LOGIC + static maps live in shared.js, loaded before cards.js.
@@ -2288,6 +2370,7 @@ const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ${JSON.stringify(linkedCountrySlugs)};
 const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
+const SEARCH_INDEX_VERSION = '${searchIndexVersion}';
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
 cardsJs = cardsJs.replace(
@@ -2480,6 +2563,10 @@ indexPages.forEach(({ src, fallback }) => {
   const readFrom = fs.existsSync(src) ? src : (fs.existsSync(fallback) ? fallback : null);
   if (readFrom) {
     let html = fs.readFileSync(readFrom, 'utf8');
+    // The hub lists are injected at build time (STATIC-INDEX) and complete, so
+    // drop the old client re-render that downloaded all of data.json to redo them.
+    html = html.replace(DATA_JSON_PRELOAD_RE, '');
+    html = html.replace(DATA_JSON_FETCH_SCRIPT_RE, '\n');
     // Sync CSS and JS versions
     html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
     html = html.replace(/src="\/shared\.js\?v=[^"]+"/g, `src="/shared.js?v=${cssVersion}"`);
@@ -2528,6 +2615,7 @@ indexPages.forEach(({ src, fallback }) => {
 const manualFiles = ['index.html', '404.html'];
 manualFiles.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
+  html = html.replace(DATA_JSON_PRELOAD_RE, '');
   // Sync CSS and JS versions
   html = html.replace(/href="[^"]*style\.css\?v=[^"]+"/g, `href="/style.css?v=${cssVersion}"`);
   html = html.replace(/src="\/shared\.js\?v=[^"]+"/g, `src="/shared.js?v=${cssVersion}"`);
@@ -2565,16 +2653,85 @@ manualFiles.forEach(file => {
 
 // === Inject static content into manual hub pages (SEO: Google must see content without JS) ===
 
-// 1. HOME PAGE — inject full call list
+// 1. HOME PAGE — the open calls under the PAGED LISTS rule: / then /page/2/, …
+//    Past calls are on /archive/ and the latest additions on /new/, both written
+//    here from the same pieces. The home pages are copies of index.html with
+//    the list between the STATIC-CALLS markers, so the next build can refill it.
+const homeFiles = [];
 {
-  let html = fs.readFileSync('index.html', 'utf8');
-  const staticCalls = buildStaticHomeList(openCalls);
-  html = html.replace(
+  const template = fs.readFileSync('index.html', 'utf8').replace(
     /<!-- STATIC-CALLS-START -->[\s\S]*?<!-- STATIC-CALLS-END -->/,
-    `<!-- STATIC-CALLS-START -->\n${staticCalls}      <!-- STATIC-CALLS-END -->`
+    '<!-- STATIC-CALLS-START -->\n<!-- PAGED-LIST:home -->      <!-- STATIC-CALLS-END -->'
   );
-  fs.writeFileSync('index.html', html);
-  console.log(`  Home page: injected ${openCalls.length} static call cards`);
+  const open = sortOpenCalls(data.calls);
+  const pastCount = data.calls.length - open.length;
+  const archiveLink = `      <p class="browse-more list-switch"><a href="/archive/">Past calls (${pastCount}) &rarr;</a></p>\n`;
+  homeFiles.push(...writeListPages(template, '/', open, (chunk, k, count) =>
+    renderSectionedCards(chunk, openSection) + paginationNav('/', k, count) + archiveLink,
+    { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+  console.log(`  Home page: ${open.length} open calls on ${homeFiles.length} page(s)`);
+}
+
+// A plain list page for /archive/ and /new/: the site chrome, a hero without a
+// count line (these are not facet listings), and the list placeholder.
+function plainListHtml({ title, h1, desc, canonicalPath }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', escapeHtml(h1), '')}
+
+    <section class="calls-list" id="callsList">
+<!-- PAGED-LIST:plain -->
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+}
+
+// /archive/ — every past call, newest-closed first (the header's "Closed").
+const archiveFiles = [];
+{
+  const past = sortPastCalls(data.calls);
+  const html = plainListHtml({ title: 'Past Open Calls', h1: 'Archive of past open calls and closed submissions.', desc: 'Past open calls and closed submissions for photographers and visual artists, newest first.', canonicalPath: '/archive/' });
+  archiveFiles.push(...writeListPages(html, '/archive/', past, (chunk, k, count) =>
+    renderSectionedCards(chunk, pastSection) + paginationNav('/archive/', k, count),
+    { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+  console.log(`  Archive: ${past.length} past calls on ${archiveFiles.length} page(s)`);
+}
+
+// /new/ — open calls, most recently added first (the header's "New"). Sections
+// are relative to the build's local date, like the deadline sections.
+const newFiles = [];
+{
+  const localDay = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  const daysAgo = n => { const d = new Date(); d.setDate(d.getDate() - n); return localDay(d); };
+  const today = daysAgo(0), yesterday = daysAgo(1), weekAgo = daysAgo(7), twoWeeksAgo = daysAgo(14);
+  const addedSection = c => {
+    const added = (c.dateAdded || '').slice(0, 10);
+    if (added >= today) return 'Added today';
+    if (added >= yesterday) return 'Added yesterday';
+    if (added >= weekAgo) return 'Added this week';
+    if (added >= twoWeeksAgo) return 'Added recently';
+    return 'Added earlier';
+  };
+  const recent = data.calls.filter(isOpen).sort((a, b) => (b.dateAdded || '').localeCompare(a.dateAdded || ''));
+  const html = plainListHtml({ title: 'Recently Added Open Calls', h1: 'Recently added open calls and submission opportunities for photographers and visual artists.', desc: 'The newest open calls for photographers and visual artists, most recently added first.', canonicalPath: '/new/' });
+  newFiles.push(...writeListPages(html, '/new/', recent, (chunk, k, count) =>
+    renderSectionedCards(chunk, addedSection) + paginationNav('/new/', k, count),
+    { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+  console.log(`  New: ${recent.length} open calls on ${newFiles.length} page(s)`);
 }
 
 // 2. CATEGORIES INDEX — inject category links with open-call counts
@@ -2603,7 +2760,7 @@ manualFiles.forEach(file => {
     label: countryDisplayNames[country] || country,
     total,
     open: openCountryCounts[country] || 0
-  })));
+  })), { hideArchived: true, sort: 'label' });
   let html = fs.readFileSync('locations/index.html', 'utf8');
   html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
@@ -2623,7 +2780,7 @@ manualFiles.forEach(file => {
       label: org,
       total,
       open: openOrgCounts[org] || 0
-    })));
+    })), { hideArchived: true, sort: 'label' });
   let html = fs.readFileSync('organizations/index.html', 'utf8');
   html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
@@ -2651,6 +2808,23 @@ const REDIRECTS = {
   'kuenstlerdorf-schoeppingen-residency-fellowships-2027': 'kuenstlerdorf-schoeppingen-fellowship-2027',
   'playful-arc-studios-gallery': 'playful-arc-gallery-studios'
 };
+function redirectStubHtml(dest, message) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="${SITE}${dest}">
+  <meta http-equiv="refresh" content="0; url=${dest}">
+  <title>Redirecting&hellip;${TITLE_SUFFIX}</title>
+  <script>location.replace('${dest}' + location.search + location.hash);</script>
+</head>
+<body>
+  <p>${message} <a href="${dest}">${dest}</a>.</p>
+</body>
+</html>`;
+}
+
 Object.entries(REDIRECTS).forEach(([from, to]) => {
   if (slugMap[from]) { console.error(`ERROR: redirect source "${from}" collides with a live page — remove it from REDIRECTS.`); process.exit(1); }
   if (!slugMap[to]) { console.error(`ERROR: redirect target "${to}" does not exist — fix the REDIRECTS entry for "${from}".`); process.exit(1); }
@@ -2691,6 +2865,26 @@ function findStale(dir) {
   });
 }
 findStale('.');
+
+// A list that got shorter leaves its last pages (…/page/N/, …/past/) behind.
+// They hold nothing current, so each becomes a redirect to the first page of
+// its list — never a stale list, never a 404 for a bookmarked page.
+// scripts/ is gitignored local tooling (its HTML is not the site): never touched.
+const isSitePage = f => !f.startsWith('scripts' + path.sep) && !f.startsWith('scripts/');
+const isPagedVariant = f => isSitePage(f) && /(^|\/)(page\/\d+|past)\/index\.html$/.test(f) && !MANUAL_FILES.includes(f);
+let pagedRedirects = 0;
+for (let i = staleFiles.length - 1; i >= 0; i--) {
+  const f = staleFiles[i];
+  if (!isPagedVariant(f)) continue;
+  let root = f.replace(/page\/\d+\/index\.html$/, '').replace(/index\.html$/, '');
+  if (root.endsWith('past/') && !generatedFiles.has(root + 'index.html')) root = root.slice(0, -'past/'.length);
+  const dest = '/' + root;
+  fs.writeFileSync(f, redirectStubHtml(dest, 'This list now starts at'));
+  staleFiles.splice(i, 1);
+  pagedRedirects++;
+}
+if (pagedRedirects) console.log(`  ${pagedRedirects} page(s) past the end of a list now redirect to its first page`);
+
 let fixedMeta = 0;
 staleFiles.forEach(f => {
   let html = fs.readFileSync(f, 'utf8');
@@ -2707,6 +2901,13 @@ staleFiles.forEach(f => {
     changed = true;
   }
 
+  // Old site pages still load the whole data.json (preload, or a list
+  // re-render); nothing on them needs it.
+  if (isSitePage(f)) {
+    const lean = html.replace(DATA_JSON_PRELOAD_RE, '').replace(DATA_JSON_FETCH_SCRIPT_RE, '\n');
+    if (lean !== html) { html = lean; changed = true; }
+  }
+
   if (changed) {
     fs.writeFileSync(f, html);
     fixedMeta++;
@@ -2721,34 +2922,63 @@ if (staleFiles.length) {
   console.warn('');
 }
 
-// === HARD GATE: every count must equal what the page it points to lists ===
+// === HARD GATE: every count must equal what the pages it points to list ===
 // The invariant the whole listing/index system exists to keep:
-//   index row count  ==  target page's hero total  ==  cards rendered on it
+//   hero "N calls, M open."  ==  the distinct calls across all of the listing's
+//                                pages, M of them on its open pages
+//   index row count          ==  what the listing's first page lists (listedCount)
 // Checked against the HTML actually written to disk, so no code path can quietly
 // go back to counting one set of calls and listing another.
 {
   const errs = [];
-  const listings = new Map(); // '/slug/' -> total calls the page covers
-
-  // Pass 1 — every listing page: hero total vs cards actually on the page.
-  for (const file of generatedFiles) {
-    if (!file.endsWith('index.html')) continue;
-    const html = fs.readFileSync(file, 'utf8');
+  const listings = new Map(); // '/slug/' -> { total, open }
+  const cardSlugs = html => [...html.matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="([^"]+)"/g)].map(m => m[1]);
+  const heroStat = html => {
     const hero = html.match(/class="subtitle">([\s\S]*?)<\/h2>/);
-    if (!hero) continue;
-    const stat = hero[1].trim().match(/(\d+) calls?, (\d+) open\.$/);
+    const stat = hero && hero[1].trim().match(/(\d+) calls?, (\d+) open\.$/);
+    return stat ? { total: Number(stat[1]), open: Number(stat[2]) } : null;
+  };
+  const pagedFiles = new Set();
+  const coverage = (label, files, expect) => {
+    const seen = new Set();
+    files.forEach(f => cardSlugs(fs.readFileSync(f, 'utf8')).forEach(h => seen.add(h)));
+    if (seen.size !== expect) errs.push(`${label} should list ${expect} calls but its ${files.length} page(s) list ${seen.size}`);
+  };
+
+  // Pass 1a — every paged listing: its pages together list each call once, and
+  // its open pages hold exactly the open ones.
+  for (const [url, info] of pagedListings) {
+    info.files.forEach(f => pagedFiles.add(f));
+    const stat = heroStat(fs.readFileSync(info.files[0], 'utf8'));
+    if (!stat) { errs.push(`${url} has no "N calls, M open." line`); continue; }
+    if (stat.total !== info.total || stat.open !== info.open) errs.push(`${url} says "${stat.total} calls, ${stat.open} open" but covers ${info.total}, ${info.open} open`);
+    listings.set(url, stat);
+    coverage(url, info.files, info.total);
+    if (info.open) coverage(`${url} (open pages)`, info.files.filter(f => !f.startsWith(url.slice(1) + 'past/')), info.open);
+  }
+
+  // Pass 1b — any other page with a count line: hero total vs its own cards.
+  for (const file of generatedFiles) {
+    if (!file.endsWith('index.html') || pagedFiles.has(file)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    const stat = heroStat(html);
     if (!stat) continue; // not a listing page (detail pages carry prose subtitles)
     const url = '/' + file.replace(/index\.html$/, '');
-    const total = Number(stat[1]);
-    listings.set(url, total);
+    listings.set(url, stat);
     // /united-states/ lists STATES, not cards — its own rows are checked below.
     if (/<section class="calls-list" id="callsList">/.test(html)) {
       const cards = (html.match(/class="call-card"/g) || []).length;
-      if (cards !== total) errs.push(`${url} says "${total} calls" but renders ${cards} cards`);
+      if (cards !== stat.total) errs.push(`${url} says "${stat.total} calls" but renders ${cards} cards`);
     }
   }
 
-  // Pass 2 — every index row: printed count vs the target page's own total.
+  // Pass 1c — home, archive and new cover every open / past / open call.
+  const openTotal = data.calls.filter(isOpen).length;
+  coverage('home (/, /page/N/)', homeFiles, openTotal);
+  coverage('/archive/', archiveFiles, data.calls.length - openTotal);
+  coverage('/new/', newFiles, openTotal);
+
+  // Pass 2 — every index row: printed count vs what the target lists first.
   let rowsChecked = 0;
   for (const file of generatedFiles) {
     if (!file.endsWith('index.html')) continue;
@@ -2757,9 +2987,9 @@ if (staleFiles.length) {
     for (const [, href, printed] of rows) {
       if (!listings.has(href)) continue; // link to a hub page, not a listing
       rowsChecked++;
-      const total = listings.get(href);
-      if (Number(printed) !== total) {
-        errs.push(`/${file.replace(/index\.html$/, '')} shows ${printed} for ${href}, but that page lists ${total}`);
+      const expected = listedCount(listings.get(href));
+      if (Number(printed) !== expected) {
+        errs.push(`/${file.replace(/index\.html$/, '')} shows ${printed} for ${href}, but that page lists ${expected} first`);
       }
     }
   }
@@ -2770,7 +3000,7 @@ if (staleFiles.length) {
     if (errs.length > 20) console.error(`  …and ${errs.length - 20} more`);
     process.exit(1);
   }
-  console.log(`  Count gate: ${listings.size} listing pages, ${rowsChecked} index rows — all counts match`);
+  console.log(`  Count gate: ${listings.size} listings (${pagedFiles.size} paged files), ${rowsChecked} index rows — all counts match`);
 }
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);

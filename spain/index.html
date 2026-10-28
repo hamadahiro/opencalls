@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -61,7 +61,6 @@
   ]
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -72,8 +71,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -84,8 +83,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -96,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -106,51 +105,55 @@
     </section>
 
     <section class="calls-list" id="callsList">
-      <div class="call-card"><h3 class="call-title"><a href="/2027-getxophoto-open-call/">2027 Getxophoto Open Call</a></h3><p class="call-description">Basque festival's 21st edition, theme &quot;Tide&quot;. Three winners get a produced exhibition, a €500 fee, travel and two nights' accommodation.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/experimental-photo-festival-2027-exhibition-open-call/">Experimental Photo Festival 2027 — Exhibition Open Call</a></h3><p class="call-description">Barcelona's experimental photography festival picks 12 solo shows for July 2027: €150 artist fee, €200 production, €20 entry.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/experimental-photo-festival-2027-artists-open-call/">Experimental Photo Festival 2027 — Artists Open Call</a></h3><p class="call-description">Barcelona's experimental photography festival pays artists to lead two workshops and a talk: €500 or €200 plus lodging. Free to apply.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/international-residency-of-experimentation-2027-experimental-photo-festival/">International Residency of Experimentation 2027 &middot; Experimental Photo Festival</a></h3><p class="call-description">Six artists, eight days in Barcelona, each teaching the others an experimental process. Free to apply; €500 if selected.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/silence-ph21-gallery/">Silence &middot; PH21 Gallery</a></h3><p class="call-description">Curated Barcelona group show on silence — emptiness, contemplation, dark and dazzling light. Student and low-income rates.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/beca-joana-biarnes-2026-fundacion-photographic-social-vision/">Beca Joana Biarnés 2026 &middot; Fundación Photographic Social Vision</a></h3><p class="call-description">€8,000, nine months of mentoring and loaned gear for a photojournalistic investigation in Spain. Ages 18-35, free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/37-memorial-maria-luisa/">37 Memorial María Luisa</a></h3><p class="call-description">Asturian mountain, nature and adventure contest in its 37th year. €5,000 overall, €300 a category, and a new disability section.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/upside-down-ph21-gallery/">Upside down &middot; PH21 Gallery</a></h3><p class="call-description">Barcelona group show that hangs every photograph inverted — form over subject. Student and low-income rates. Dec 7.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/eurostars-madrid-tower-photography-award-2026/">13th Eurostars Madrid Tower Photography Award — Madrid's Facades</a></h3><p class="call-description">€5,000 for photographs of Madrid's facades — free entry, up to 3 photos, from the Eurostars hotel group's award series.</p></div>
-      <h3 class="section-header">Past</h3>
-      <div class="call-card"><h3 class="call-title"><a href="/xxiv-eurostars-grand-marina-photography-award-josep-juanpere-2026/">XXIV Eurostars Grand Marina Photography Award — Josep Juanpere 2026</a></h3><p class="call-description">24th edition. Theme: Barcelona, World Capital of Architecture. €5,000 first prize. Submit photographic triptychs.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/vi-premio-editorial-de-fotografia-documental-galega-ffoco-festival/">VI Premio Editorial de Fotografía Documental Galega &middot; FFoco Festival</a></h3><p class="call-description">Galician documentary photobook prize: publication by Alauda Negra, all costs covered, plus €1,000. Free to enter.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/street-photography-barcelona-contest-2026-2nd-edition/">Street Photography Barcelona Contest 2026 — 2nd Edition</a></h3><p class="call-description">25 finalists exhibited at Galerie Art Nomade with production covered. €1,000 in cash prizes; screenings at Ibizacinefest 2027.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/scapes-ph21-gallery/">–scapes &middot; PH21 Gallery</a></h3><p class="call-description">Curated Barcelona group show of landscape, cityscape and seascape photography. Student and low-income rates.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/luis-valtuena-international-humanitarian-photography-award-2026-medicos-del-mundo/">Luis Valtueña International Humanitarian Photography Award 2026 &middot; Médicos del Mundo</a></h3><p class="call-description">Médicos del Mundo's 30th humanitarian photography award — free to enter, €12,000 in prizes and a touring exhibition.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/xiv-galicia-award-of-contemporary-photography/">XIV «Galicia» Award of Contemporary Photography &middot; Outono Fotográfico</a></h3><p class="call-description">Galicia's contemporary photography prize, 14th edition. Winning project tours Galicia and Portugal for two years and is published as a book.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/vi-barcelona-human-rights-international-photo-festival/">VI Barcelona Human Rights International Photo Festival</a></h3><p class="call-description">Más Retina's 6th Barcelona festival on human-rights &amp; justice photography. 15-image projects; €3,000 prize plus outdoor street exhibitions.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/nature-and-humans-photo-competition-2026-desea-foundation/">Nature and Humans Photo Competition 2026 &middot; DESEA Foundation</a></h3><p class="call-description">Spanish foundation's international nature &amp; conservation photo competition — 15 categories, €17,000 in prizes. €25 entry, open worldwide.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/eurostars-valladolid-photography-award-2026/">Eurostars Valladolid Photography Award — Valladolid Unveiled</a></h3><p class="call-description">€1,500 for images that unveil the city of Valladolid — free entry, up to 3 photos, from the Eurostars hotel group's award series.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/19th-forum-fotografic-can-baste/">19th Fòrum Fotogràfic Can Basté</a></h3><p class="call-description">Barcelona's Can Basté forum: free grants — 3 × €2,000 exhibition production plus a €3,000 photobook. For Spain-based emerging artists.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/monochrome-ph21-gallery/">Monochrome &middot; PH21 Gallery</a></h3><p class="call-description">Curated Barcelona group show of black-and-white, sepia and single-colour photography. Student and low-income rates.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/revelat-portfolio-review-2026/">Revela'T Portfolio Review 2026</a></h3><p class="call-description">18 photographers get 3 hours of one-to-ones with 10 reviewers plus a festival pass; one wins an exhibition at Revela’T 2027.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/dodho-magazine-38/">Dodho Magazine #38</a></h3><p class="call-description">Print edition open call. Portfolio or cover consideration, distributed to galleries, festivals and curators worldwide.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/nature-in-gaudi-angeles-omedas-millan-prize-2026/">Nature in Gaudí — Ángeles Omedas Millán Prize 2026 &middot; Antonio Gaudí Foundation</a></h3><p class="call-description">Antonio Gaudí Foundation's centenary contest on nature in Gaudí's architecture. €5,000 top prize, free, open to all.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/solo-exhibition-in-barcelona-autumn-2026-ph21-gallery/">Solo Exhibition in Barcelona — Autumn 2026 &middot; PH21 Gallery</a></h3><p class="call-description">Solo show at PH21 Gallery Barcelona — printing/install covered, €4,500 package. Jurors Bátori &amp; Jász. Portfolio of 15–35 images.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/ix-international-mini-print-cantabria-2026/">IX International Mini Print Cantabria 2026</a></h3><p class="call-description">Theme: Open Sea. All printmaking disciplines including digital. Max 20x20 cm. Cantabria, Spain.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/vision-expression-the-art-of-photography-ph21-gallery/">Vision &amp; Expression: The Art of Photography &middot; PH21 Gallery</a></h3><p class="call-description">Curated Barcelona group show on photography as expressive fine art. Jurors Bátori &amp; Jász. Student rates. AI accepted if labelled.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/incadaques-photo-festival-open-call-2026/">InCadaqués Photo Festival Open Call 2026</a></h3><p class="call-description">20 projects exhibited at the festival's 10th edition. €1,000 grand prize plus Women Photography and New Realities awards.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/women-street-photographers-exhibition-call-2026/">Women Street Photographers Exhibition Call 2026</a></h3><p class="call-description">34 women &amp; non-binary photographers selected for a Barcelona exhibition, Nov 5–Dec 11. Printing covered; global WSP feature.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fineart-igualada-2027-open-call/">FineArt Igualada 2027 — Open Call</a></h3><p class="call-description">Propose an exhibition project for the 15th FineArt Igualada photography festival (Feb–Mar 2027, Catalonia).</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/visual-mixed-media-artist-residency-o-castro-art-village/">Visual / Mixed-Media Artist Residency &middot; O Castro Art Village</a></h3><p class="call-description">Funded 30-day October residency in Galicia's Ribeira Sacra for European residents outside Spain, welcoming photography. Domes, travel allowance, €30/day stipend and mentorship.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/personality-the-face-and-its-absence-ph21-gallery/">Personality: The Face and Its Absence &middot; PH21 Gallery</a></h3><p class="call-description">Curated group show on personality and portraiture beyond the face. Exhibition in Barcelona's Gothic Quarter, Aug–Sep. Student rates.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/dodho-magazine-37/">Dodho Magazine #37</a></h3><p class="call-description">Print edition #37. 20 full pages per selected photographer. Distributed to galleries, festivals, and institutions worldwide.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/open-panoramic-2026-burning-with-desire/">Open Panoràmic 2026 — Burning with Desire &middot; Festival Panoràmic</a></h3><p class="call-description">Free open call from Festival Panoràmic (10th anniv.). 3 categories: still image, audiovisual essay, installation. Theme: Burning with Desire.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/stories-narrative-photography-ph21-gallery/">Stories: Narrative Photography &middot; PH21 Gallery</a></h3><p class="call-description">Curated group show on narrative and storytelling. Physical exhibition in Barcelona's Gothic Quarter, July–August. Student rates available.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/scan-full-contact-2026/">SCAN Full Contact 2026</a></h3><p class="call-description">Free SCAN Tarragona portfolio-review meeting for 12 EU/UK photographers. Winner gets a 2027 solo show + €900.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/scan-tarragona-full-contact-award-2026/">SCAN Tarragona — Full Contact Award 2026 &middot; SCAN International Photography Festival</a></h3><p class="call-description">Free open call from SCAN Tarragona. 12 projects to Full Contact meeting; winner gets 2027 solo show + €900.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/fundacion-botin-art-grants-2026-2027/">Fundación Botín Art Grants 2026/2027</a></h3><p class="call-description">Six €23,000 nine-month research grants for international visual artists, photography included. Postal application postmarked by May 8.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/xii-premio-internacional-de-fotograf-a-jal-n-ngel/">XII Premio Internacional de Fotografía Jalón Ángel</a></h3><p class="call-description">Three categories: Portrait, Travel, Migration &amp; Borders. One photo per category. No AI. Zaragoza, Spain.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/motion-ph21-gallery/">Motion &middot; PH21 Gallery</a></h3><p class="call-description">Curated group show on motion in photography. Physical exhibition in Barcelona's Gothic Quarter. Student rates available.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/street-photography-barcelona-contest-2026/">Street Photography Barcelona Contest 2026</a></h3><p class="call-description">Authentic images of urban life. Three categories: Local, National, International. Exhibited at Galerie Art Nomade.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/portrait-awards-2026-dodho-magazine/">Portrait Awards 2026 &middot; Dodho Magazine</a></h3><p class="call-description">Fourth edition celebrating portrait as a space of presence and authorship amidst visual saturation. Barcelona.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/xvi-concurso-internacional-de-fotograf-a-sobre-humanizaci-n-asistencial-hospital-san-juan-de-dios-de-le-n/">XVI Concurso Internacional de Fotografía sobre Humanización Asistencial &middot; Hospital San Juan de Dios de León</a></h3><p class="call-description">Photography reflecting humanization, solidarity, and care in healthcare and everyday life. Prizes: €600/€400/€200.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/xix-premio-de-fotograf-a-fundaci-n-enaire-2026/">XIX Premio de Fotografía Fundación ENAIRE 2026</a></h3><p class="call-description">Prestigious prize since 2005. Open theme. Winning works join the ENAIRE Contemporary Art Collection.</p></div>
-      <div class="call-card"><h3 class="call-title"><a href="/scan-tarragona-talent-latent-2026/">SCAN Tarragona — Talent Latent 2026</a></h3><p class="call-description">International festival open call. Theme: Metamorphosis. €500 fee for selected projects. Exhibition Oct-Nov 2026.</p></div>
+      <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2027-getxophoto-open-call/">2027 Getxophoto Open Call</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">6 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€22 per project">€22+ fee</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Getxo, Spain</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Basque festival's 21st edition, theme &quot;Tide&quot;. Three winners get a produced exhibition, a €500 fee, travel and two nights' accommodation.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/experimental-photo-festival-2027-exhibition-open-call/">Experimental Photo Festival 2027 — Exhibition Open Call</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">10 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€150 artist fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Solo exhibition (Barcelona)</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€20 per project">€20+ fee</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Barcelona, Spain</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description">Barcelona's experimental photography festival picks 12 solo shows for July 2027: €150 artist fee, €200 production, €20 entry.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/experimental-photo-festival-2027-artists-open-call/">Experimental Photo Festival 2027 — Artists Open Call</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">10 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€200–€500</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Barcelona, Spain</a> <a href="/education/" class="meta-tag meta-tag-link">Education</a></div>
+        <p class="call-description">Barcelona's experimental photography festival pays artists to lead two workshops and a talk: €500 or €200 plus lodging. Free to apply.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/international-residency-of-experimentation-2027-experimental-photo-festival/">International Residency of Experimentation 2027 · Experimental Photo Festival</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">10 days left</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>8-day residency</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/free/" class="meta-tag meta-tag-link" title="Free to apply (€500 if selected)">Free*</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Barcelona, Spain</a> <a href="/residencies/" class="meta-tag meta-tag-link">Residency</a></div>
+        <p class="call-description">Six artists, eight days in Barcelona, each teaching the others an experimental process. Free to apply; €500 if selected.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/silence-ph21-gallery/">Silence · PH21 Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline urgent">12 days left</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">€25–€50 fee</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Barcelona, Spain</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Curated Barcelona group show on silence — emptiness, contemplation, dark and dazzling light. Student and low-income rates.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/beca-joana-biarnes-2026-fundacion-photographic-social-vision/">Beca Joana Biarnés 2026 · Fundación Photographic Social Vision</a></h4>
+        <div class="call-meta"><a href="/deadlines/november-2026/" class="call-deadline soon">19 days left</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€8,000</a> <a href="/prize/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>9-month mentoring</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Equipment loan</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Barcelona, Spain</a> <a href="/grants/" class="meta-tag meta-tag-link">Grant</a> <a href="/eligibility/18-35/" class="meta-tag meta-tag-link eligibility-tag">Ages 18–35</a> <a href="/eligibility/spain/" class="meta-tag meta-tag-link eligibility-tag">Spain only</a></div>
+        <p class="call-description">€8,000, nine months of mentoring and loaned gear for a photojournalistic investigation in Spain. Ages 18-35, free to enter.</p>
+      </div>
+      <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/37-memorial-maria-luisa/">37 Memorial María Luisa</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 1, 2026</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€5,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€300 per category</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="First photo free, then €22 for everything else; free for entrants under 19 and for photographers with disabilities">€22+ fee</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Infiesto, Spain</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a></div>
+        <p class="call-description">Asturian mountain, nature and adventure contest in its 37th year. €5,000 overall, €300 a category, and a new disability section.</p>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/upside-down-ph21-gallery/">Upside down · PH21 Gallery</a></h4>
+        <div class="call-meta"><a href="/deadlines/december-2026/" class="call-deadline normal">Dec 7, 2026</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/fees/entry-fee/" class="meta-tag meta-tag-link">€25–€50 fee</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Barcelona, Spain</a> <a href="/exhibitions/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">Barcelona group show that hangs every photograph inverted — form over subject. Student and low-income rates. Dec 7.</p>
+      </div>
+      <h3 class="section-header">January 2027</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/eurostars-madrid-tower-photography-award-2026/">13th Eurostars Madrid Tower Photography Award — Madrid's Facades</a></h4>
+        <div class="call-meta"><a href="/deadlines/january-2027/" class="call-deadline normal">Jan 25, 2027</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€5,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€3,000 runner-up</a> <a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/spain/" class="meta-tag meta-tag-link"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Madrid, Spain</a> <a href="/photography/" class="meta-tag meta-tag-link">Photography</a> <a href="/eligibility/18-plus/" class="meta-tag meta-tag-link eligibility-tag">18+</a></div>
+        <p class="call-description">€5,000 for photographs of Madrid's facades — free entry, up to 3 photos, from the Eurostars hotel group's award series.</p>
+      </div>
+      <p class="browse-more list-switch"><a href="/spain/past/">Past calls (35) &rarr;</a></p>
 
     </section>
 
@@ -160,21 +163,10 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
-  <script>
-    async function loadFiltered() {
-      try {
-      const res = await fetch('/data.json');
-      const data = await res.json();
-      const calls = data.calls.filter(c => getCountry(c.location) === 'Spain').map(processCall);
-      document.getElementById('callsList').innerHTML = '';
-      renderCallList(calls, document.getElementById('callsList'), { noOpenNotice: true });
-    } catch (e) {}
-    }
-    loadFiltered();
-  </script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
+
 
 </body>
 </html>

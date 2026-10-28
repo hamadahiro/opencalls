@@ -202,7 +202,27 @@ function chipToUrl(type, value) {
 const countryPages = ["online","qatar","united-states","italy","poland","united-kingdom","bulgaria","spain","france","germany","japan","northern-ireland","canada","greece","singapore","sweden","netherlands","norway","czech-republic","portugal","hungary","ukraine","argentina","morocco","austria","switzerland","south-africa","lithuania","denmark","india","brazil","ireland","australia","north-macedonia","iceland","croatia","estonia","romania","malaysia","russia","bosnia-and-herzegovina","finland","belgium","israel","united-arab-emirates","slovakia","mexico","albania","malta","south-korea","cyprus","china","turkey","hong-kong","belarus","philippines","taiwan","serbia","tunisia","monaco","new-zealand","nepal","latvia"];
 const orgPages = [];
 const statePages = {"CA":"united-states/california","VA":"united-states/virginia","CO":"united-states/colorado","NY":"united-states/new-york","CT":"united-states/connecticut","VT":"united-states/vermont","AZ":"united-states/arizona","MN":"united-states/minnesota","GA":"united-states/georgia","MD":"united-states/maryland","MI":"united-states/michigan","NJ":"united-states/new-jersey","NC":"united-states/north-carolina","OR":"united-states/oregon","TX":"united-states/texas","MA":"united-states/massachusetts","SC":"united-states/south-carolina","FL":"united-states/florida","NH":"united-states/new-hampshire","IN":"united-states/indiana","PA":"united-states/pennsylvania","LA":"united-states/louisiana","WI":"united-states/wisconsin","RI":"united-states/rhode-island","IL":"united-states/illinois","AL":"united-states/alabama","OH":"united-states/ohio","MO":"united-states/missouri","TN":"united-states/tennessee","NM":"united-states/new-mexico","UT":"united-states/utah","WY":"united-states/wyoming","KS":"united-states/kansas","DC":"united-states/washington-dc","AK":"united-states/alaska","OK":"united-states/oklahoma","SD":"united-states/south-dakota","ME":"united-states/maine","WA":"united-states/washington","DE":"united-states/delaware","AR":"united-states/arkansas","HI":"united-states/hawaii","IA":"united-states/iowa","KY":"united-states/kentucky","WV":"united-states/west-virginia","MT":"united-states/montana","ID":"united-states/idaho","NE":"united-states/nebraska","NV":"united-states/nevada"};
+const SEARCH_INDEX_VERSION = '0c03e8e1c0';
 // ==AUTO-GENERATED-END==
+
+// Search data, loaded once on first use: /search-index.js sets
+// window.SEARCH_CALLS (the fields search needs, built by generate-pages.js).
+// No page loads data.json. Callbacks queue while the script is in flight.
+var searchIndexWaiters = null;
+function loadSearchIndex(cb) {
+  if (window.SEARCH_CALLS) { cb(window.SEARCH_CALLS); return; }
+  if (searchIndexWaiters) { searchIndexWaiters.push(cb); return; }
+  searchIndexWaiters = [cb];
+  var s = document.createElement('script');
+  s.src = '/search-index.js?v=' + SEARCH_INDEX_VERSION;
+  s.onload = function() {
+    var waiting = searchIndexWaiters;
+    searchIndexWaiters = null;
+    waiting.forEach(function(f) { f(window.SEARCH_CALLS || []); });
+  };
+  s.onerror = function() { searchIndexWaiters = null; };
+  document.head.appendChild(s);
+}
 
 function esc(str) {
   if (!str) return '';

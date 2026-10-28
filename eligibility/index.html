@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20260608k">
+  <link rel="stylesheet" href="/style.css?v=20261028a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -35,7 +35,6 @@
   }
 }
   </script>
-  <link rel="preload" href="/data.json" as="fetch" crossorigin>
   <link rel="alternate" type="application/rss+xml" title="Open Calls for Artists — Monographica" href="/feed.xml">
   <script defer src="/analytics.js"></script>
 </head>
@@ -46,8 +45,8 @@
       <a href="/" class="logo">Monographica</a>
       <nav>
         <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/?view=past" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/?view=recent" class="nav-link" data-nav="recent">New</a>
+        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
+        <a href="/new/" class="nav-link" data-nav="recent">New</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -58,8 +57,8 @@
     </div>
     <div class="mobile-nav">
       <a href="/" data-nav="open">Open</a>
-      <a href="/?view=past" data-nav="closed">Closed</a>
-      <a href="/?view=recent" data-nav="recent">New</a>
+      <a href="/archive/" data-nav="closed">Closed</a>
+      <a href="/new/" data-nav="recent">New</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -70,7 +69,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,s=location.search,n=p==='/'&&s.indexOf('view=past')!==-1?'closed':p==='/'?'open':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -80,101 +79,101 @@
 
     <section class="index-list" id="indexList">
       <h3 class="section-header">Who Can Apply</h3>
-      <a href="/eligibility/18-plus/" class="index-item"><span class="index-item-name">18+</span><span class="dots"></span><span class="index-item-count">672</span></a>
-      <a href="/eligibility/emerging/" class="index-item"><span class="index-item-name">Emerging Artists</span><span class="dots"></span><span class="index-item-count">105</span></a>
-      <a href="/eligibility/professional/" class="index-item"><span class="index-item-name">Professional</span><span class="dots"></span><span class="index-item-count">55</span></a>
-      <a href="/eligibility/women/" class="index-item"><span class="index-item-name">Women</span><span class="dots"></span><span class="index-item-count">55</span></a>
-      <a href="/eligibility/student/" class="index-item"><span class="index-item-name">Students</span><span class="dots"></span><span class="index-item-count">31</span></a>
-      <a href="/eligibility/21-plus/" class="index-item"><span class="index-item-name">21+</span><span class="dots"></span><span class="index-item-count">25</span></a>
-      <a href="/eligibility/16-plus/" class="index-item"><span class="index-item-name">16+</span><span class="dots"></span><span class="index-item-count">22</span></a>
-      <a href="/eligibility/lgbtq/" class="index-item"><span class="index-item-name">LGBTQ+</span><span class="dots"></span><span class="index-item-count">20</span></a>
-      <a href="/eligibility/mid-career/" class="index-item"><span class="index-item-name">Mid-Career</span><span class="dots"></span><span class="index-item-count">15</span></a>
-      <a href="/eligibility/black/" class="index-item"><span class="index-item-name">Black Artists</span><span class="dots"></span><span class="index-item-count">13</span></a>
-      <a href="/eligibility/non-binary/" class="index-item"><span class="index-item-name">Non-binary</span><span class="dots"></span><span class="index-item-count">12</span></a>
-      <a href="/eligibility/neurodivergent-disabled/" class="index-item"><span class="index-item-name">Neurodivergent &amp; Disabled</span><span class="dots"></span><span class="index-item-count">10</span></a>
-      <a href="/eligibility/25-plus/" class="index-item"><span class="index-item-name">25+</span><span class="dots"></span><span class="index-item-count">9</span></a>
-      <a href="/eligibility/under-30/" class="index-item"><span class="index-item-name">Under 30</span><span class="dots"></span><span class="index-item-count">8</span></a>
-      <a href="/eligibility/under-25/" class="index-item"><span class="index-item-name">Under 25</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/eligibility/under-35/" class="index-item"><span class="index-item-name">Under 35</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/eligibility/curators/" class="index-item"><span class="index-item-name">Curators &amp; Academics</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/native-american/" class="index-item"><span class="index-item-name">Native American</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/flinta/" class="index-item"><span class="index-item-name">FLINTA</span><span class="dots"></span><span class="index-item-count">4</span></a>
-      <a href="/eligibility/bipoc/" class="index-item"><span class="index-item-name">BIPOC Artists</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/immigrant/" class="index-item"><span class="index-item-name">Immigrant Artists</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/60-plus/" class="index-item"><span class="index-item-name">60+</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/eligibility/65-plus/" class="index-item"><span class="index-item-name">65+</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/18-plus/" class="index-item"><span class="index-item-name">18+</span><span class="dots"></span><span class="index-item-count">175</span></a>
+      <a href="/eligibility/emerging/" class="index-item"><span class="index-item-name">Emerging Artists</span><span class="dots"></span><span class="index-item-count">25</span></a>
+      <a href="/eligibility/student/" class="index-item"><span class="index-item-name">Students</span><span class="dots"></span><span class="index-item-count">13</span></a>
+      <a href="/eligibility/women/" class="index-item"><span class="index-item-name">Women</span><span class="dots"></span><span class="index-item-count">12</span></a>
+      <a href="/eligibility/professional/" class="index-item"><span class="index-item-name">Professional</span><span class="dots"></span><span class="index-item-count">8</span></a>
+      <a href="/eligibility/16-plus/" class="index-item"><span class="index-item-name">16+</span><span class="dots"></span><span class="index-item-count">7</span></a>
+      <a href="/eligibility/black/" class="index-item"><span class="index-item-name">Black Artists</span><span class="dots"></span><span class="index-item-count">7</span></a>
+      <a href="/eligibility/non-binary/" class="index-item"><span class="index-item-name">Non-binary</span><span class="dots"></span><span class="index-item-count">6</span></a>
+      <a href="/eligibility/21-plus/" class="index-item"><span class="index-item-name">21+</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/eligibility/under-25/" class="index-item"><span class="index-item-name">Under 25</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/eligibility/mid-career/" class="index-item"><span class="index-item-name">Mid-Career</span><span class="dots"></span><span class="index-item-count">4</span></a>
+      <a href="/eligibility/25-plus/" class="index-item"><span class="index-item-name">25+</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/lgbtq/" class="index-item"><span class="index-item-name">LGBTQ+</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/native-american/" class="index-item"><span class="index-item-name">Native American</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/neurodivergent-disabled/" class="index-item"><span class="index-item-name">Neurodivergent &amp; Disabled</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/curators/" class="index-item"><span class="index-item-name">Curators &amp; Academics</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/eligibility/30-plus/" class="index-item"><span class="index-item-name">30+</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/60-plus/" class="index-item"><span class="index-item-name">60+</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/65-plus/" class="index-item"><span class="index-item-name">65+</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/14-29/" class="index-item"><span class="index-item-name">Ages 14–29</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/18-26/" class="index-item"><span class="index-item-name">Ages 18–26</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/18-35/" class="index-item"><span class="index-item-name">Ages 18–35</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/bipoc/" class="index-item"><span class="index-item-name">BIPOC Artists</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/flinta/" class="index-item"><span class="index-item-name">FLINTA</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/immigrant/" class="index-item"><span class="index-item-name">Immigrant Artists</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/under-30/" class="index-item"><span class="index-item-name">Under 30</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/under-35/" class="index-item"><span class="index-item-name">Under 35</span><span class="dots"></span><span class="index-item-count">1</span></a>
 <h3 class="section-header">Where</h3>
-      <a href="/eligibility/united-states/" class="index-item"><span class="index-item-name">United States</span><span class="dots"></span><span class="index-item-count">216</span></a>
-      <a href="/eligibility/united-kingdom/" class="index-item"><span class="index-item-name">United Kingdom</span><span class="dots"></span><span class="index-item-count">22</span></a>
-      <a href="/eligibility/bay-area/" class="index-item"><span class="index-item-name">Bay Area</span><span class="dots"></span><span class="index-item-count">18</span></a>
-      <a href="/eligibility/mid-atlantic-us/" class="index-item"><span class="index-item-name">Mid-Atlantic US</span><span class="dots"></span><span class="index-item-count">18</span></a>
-      <a href="/eligibility/australia/" class="index-item"><span class="index-item-name">Australia</span><span class="dots"></span><span class="index-item-count">15</span></a>
-      <a href="/eligibility/europe/" class="index-item"><span class="index-item-name">Europe</span><span class="dots"></span><span class="index-item-count">12</span></a>
-      <a href="/eligibility/texas/" class="index-item"><span class="index-item-name">Texas</span><span class="dots"></span><span class="index-item-count">11</span></a>
-      <a href="/eligibility/new-england/" class="index-item"><span class="index-item-name">New England</span><span class="dots"></span><span class="index-item-count">10</span></a>
-      <a href="/eligibility/new-york-city/" class="index-item"><span class="index-item-name">New York City</span><span class="dots"></span><span class="index-item-count">10</span></a>
-      <a href="/eligibility/indiana/" class="index-item"><span class="index-item-name">Indiana</span><span class="dots"></span><span class="index-item-count">9</span></a>
-      <a href="/eligibility/midwest-us/" class="index-item"><span class="index-item-name">Midwest US</span><span class="dots"></span><span class="index-item-count">9</span></a>
-      <a href="/eligibility/ireland/" class="index-item"><span class="index-item-name">Ireland</span><span class="dots"></span><span class="index-item-count">8</span></a>
-      <a href="/eligibility/virginia/" class="index-item"><span class="index-item-name">Virginia</span><span class="dots"></span><span class="index-item-count">8</span></a>
-      <a href="/eligibility/florida/" class="index-item"><span class="index-item-name">Florida</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/eligibility/minnesota/" class="index-item"><span class="index-item-name">Minnesota</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/eligibility/northern-california/" class="index-item"><span class="index-item-name">Northern California</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/eligibility/north-america/" class="index-item"><span class="index-item-name">US, Canada &amp; Mexico</span><span class="dots"></span><span class="index-item-count">7</span></a>
-      <a href="/eligibility/atlanta-area/" class="index-item"><span class="index-item-name">Atlanta Area</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/michigan/" class="index-item"><span class="index-item-name">Michigan</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/portland-area/" class="index-item"><span class="index-item-name">Portland Area</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/southern-california/" class="index-item"><span class="index-item-name">Southern California</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/washington/" class="index-item"><span class="index-item-name">Washington</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/canada/" class="index-item"><span class="index-item-name">Canada</span><span class="dots"></span><span class="index-item-count">5</span></a>
-      <a href="/eligibility/pacific-northwest/" class="index-item"><span class="index-item-name">Pacific Northwest</span><span class="dots"></span><span class="index-item-count">5</span></a>
-      <a href="/eligibility/chicago-area/" class="index-item"><span class="index-item-name">Chicago Area</span><span class="dots"></span><span class="index-item-count">4</span></a>
-      <a href="/eligibility/los-angeles/" class="index-item"><span class="index-item-name">Los Angeles</span><span class="dots"></span><span class="index-item-count">4</span></a>
+      <a href="/eligibility/united-states/" class="index-item"><span class="index-item-name">United States</span><span class="dots"></span><span class="index-item-count">67</span></a>
+      <a href="/eligibility/indiana/" class="index-item"><span class="index-item-name">Indiana</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/eligibility/mid-atlantic-us/" class="index-item"><span class="index-item-name">Mid-Atlantic US</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/eligibility/new-england/" class="index-item"><span class="index-item-name">New England</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/eligibility/new-york-city/" class="index-item"><span class="index-item-name">New York City</span><span class="dots"></span><span class="index-item-count">5</span></a>
+      <a href="/eligibility/united-kingdom/" class="index-item"><span class="index-item-name">United Kingdom</span><span class="dots"></span><span class="index-item-count">5</span></a>
       <a href="/eligibility/lower-austria/" class="index-item"><span class="index-item-name">Lower Austria</span><span class="dots"></span><span class="index-item-count">4</span></a>
-      <a href="/eligibility/oregon/" class="index-item"><span class="index-item-name">Oregon</span><span class="dots"></span><span class="index-item-count">4</span></a>
-      <a href="/eligibility/southeast-us/" class="index-item"><span class="index-item-name">Southeast US</span><span class="dots"></span><span class="index-item-count">4</span></a>
-      <a href="/eligibility/alaska/" class="index-item"><span class="index-item-name">Alaska</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/netherlands/" class="index-item"><span class="index-item-name">Netherlands</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/nordic/" class="index-item"><span class="index-item-name">Nordic</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/ohio/" class="index-item"><span class="index-item-name">Ohio</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/palm-beach-county/" class="index-item"><span class="index-item-name">Palm Beach County, FL</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/spain/" class="index-item"><span class="index-item-name">Spain</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/switzerland/" class="index-item"><span class="index-item-name">Switzerland</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/western-us/" class="index-item"><span class="index-item-name">Western US</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/eligibility/wisconsin/" class="index-item"><span class="index-item-name">Wisconsin</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/pacific-northwest/" class="index-item"><span class="index-item-name">Pacific Northwest</span><span class="dots"></span><span class="index-item-count">4</span></a>
+      <a href="/eligibility/australia/" class="index-item"><span class="index-item-name">Australia</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/bay-area/" class="index-item"><span class="index-item-name">Bay Area</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/ireland/" class="index-item"><span class="index-item-name">Ireland</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/midwest-us/" class="index-item"><span class="index-item-name">Midwest US</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/minnesota/" class="index-item"><span class="index-item-name">Minnesota</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/northern-california/" class="index-item"><span class="index-item-name">Northern California</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/north-america/" class="index-item"><span class="index-item-name">US, Canada &amp; Mexico</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/virginia/" class="index-item"><span class="index-item-name">Virginia</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/atlanta-area/" class="index-item"><span class="index-item-name">Atlanta Area</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/eligibility/baltics-finland/" class="index-item"><span class="index-item-name">Baltics &amp; Finland</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/canada/" class="index-item"><span class="index-item-name">Canada</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/europe/" class="index-item"><span class="index-item-name">Europe</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/eligibility/houston-area/" class="index-item"><span class="index-item-name">Houston Area</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/eligibility/massachusetts-rhode-island/" class="index-item"><span class="index-item-name">Massachusetts &amp; Rhode Island</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/eligibility/southeast-asia/" class="index-item"><span class="index-item-name">Southeast Asia</span><span class="dots"></span><span class="index-item-count">2</span></a>
-      <a href="/eligibility/sweden/" class="index-item"><span class="index-item-name">Sweden</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/michigan/" class="index-item"><span class="index-item-name">Michigan</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/nordic/" class="index-item"><span class="index-item-name">Nordic</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/palm-beach-county/" class="index-item"><span class="index-item-name">Palm Beach County, FL</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/portland-area/" class="index-item"><span class="index-item-name">Portland Area</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/southern-california/" class="index-item"><span class="index-item-name">Southern California</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/texas/" class="index-item"><span class="index-item-name">Texas</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/western-us/" class="index-item"><span class="index-item-name">Western US</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/alaska/" class="index-item"><span class="index-item-name">Alaska</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/australia-new-zealand/" class="index-item"><span class="index-item-name">Australia &amp; NZ</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/chicago-area/" class="index-item"><span class="index-item-name">Chicago Area</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/europe-mediterranean/" class="index-item"><span class="index-item-name">Europe &amp; Mediterranean</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/florida/" class="index-item"><span class="index-item-name">Florida</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/frederick-county-md/" class="index-item"><span class="index-item-name">Frederick County, MD</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/georgia/" class="index-item"><span class="index-item-name">Georgia</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/germany-austria-switzerland/" class="index-item"><span class="index-item-name">Germany, Austria &amp; Switzerland</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/greece/" class="index-item"><span class="index-item-name">Greece</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/kentucky/" class="index-item"><span class="index-item-name">Kentucky</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/london/" class="index-item"><span class="index-item-name">London</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/los-angeles/" class="index-item"><span class="index-item-name">Los Angeles</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/maritimes/" class="index-item"><span class="index-item-name">Maritimes</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/massachusetts-rhode-island/" class="index-item"><span class="index-item-name">Massachusetts &amp; Rhode Island</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/netherlands/" class="index-item"><span class="index-item-name">Netherlands</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/ohio/" class="index-item"><span class="index-item-name">Ohio</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/oregon/" class="index-item"><span class="index-item-name">Oregon</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/philadelphia/" class="index-item"><span class="index-item-name">Philadelphia</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/richmond-area/" class="index-item"><span class="index-item-name">Richmond Area</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/roanoke-area/" class="index-item"><span class="index-item-name">Roanoke Area</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/san-ramon/" class="index-item"><span class="index-item-name">San Ramon</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/sioux-falls-area/" class="index-item"><span class="index-item-name">Sioux Falls Area</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/south-dakota/" class="index-item"><span class="index-item-name">South Dakota</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/southeast-asia/" class="index-item"><span class="index-item-name">Southeast Asia</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/southeast-us/" class="index-item"><span class="index-item-name">Southeast US</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/spain/" class="index-item"><span class="index-item-name">Spain</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/sweden/" class="index-item"><span class="index-item-name">Sweden</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/switzerland/" class="index-item"><span class="index-item-name">Switzerland</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/eligibility/vermont/" class="index-item"><span class="index-item-name">Vermont</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/washington/" class="index-item"><span class="index-item-name">Washington</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/eligibility/wisconsin/" class="index-item"><span class="index-item-name">Wisconsin</span><span class="dots"></span><span class="index-item-count">1</span></a>
 <h3 class="section-header">Medium</h3>
-      <a href="/eligibility/analog-photography/" class="index-item"><span class="index-item-name">Analog &amp; Film</span><span class="dots"></span><span class="index-item-count">27</span></a>
-      <a href="/eligibility/alternative-process/" class="index-item"><span class="index-item-name">Alternative Process</span><span class="dots"></span><span class="index-item-count">15</span></a>
+      <a href="/eligibility/analog-photography/" class="index-item"><span class="index-item-name">Analog &amp; Film</span><span class="dots"></span><span class="index-item-count">3</span></a>
+      <a href="/eligibility/alternative-process/" class="index-item"><span class="index-item-name">Alternative Process</span><span class="dots"></span><span class="index-item-count">2</span></a>
 <h3 class="section-header">Focus</h3>
-      <a href="/eligibility/latin-america/" class="index-item"><span class="index-item-name">Latin America</span><span class="dots"></span><span class="index-item-count">6</span></a>
-      <a href="/eligibility/african-diaspora/" class="index-item"><span class="index-item-name">African Diaspora</span><span class="dots"></span><span class="index-item-count">4</span></a>
+      <a href="/eligibility/african-diaspora/" class="index-item"><span class="index-item-name">African Diaspora</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/eligibility/latin-america/" class="index-item"><span class="index-item-name">Latin America</span><span class="dots"></span><span class="index-item-count">1</span></a>
 <h3 class="section-header">Other</h3>
-      <a href="/eligibility/membership-required/" class="index-item"><span class="index-item-name">Membership Required</span><span class="dots"></span><span class="index-item-count">86</span></a>
+      <a href="/eligibility/membership-required/" class="index-item"><span class="index-item-name">Membership Required</span><span class="dots"></span><span class="index-item-count">25</span></a>
 <h3 class="section-header">No open calls</h3>
       <a href="/eligibility/colorado/" class="index-item"><span class="index-item-name">Colorado</span><span class="dots"></span><span class="index-item-count">6</span></a>
       <a href="/eligibility/california/" class="index-item"><span class="index-item-name">California</span><span class="dots"></span><span class="index-item-count">5</span></a>
@@ -272,9 +271,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20260608k"></script>
-  <script src="/cards.js?v=20260608k"></script>
-  <script src="/search.js?v=20260608k"></script>
+  <script src="/shared.js?v=20261028a"></script>
+  <script src="/cards.js?v=20261028a"></script>
+  <script src="/search.js?v=20261028a"></script>
 
 </body>
 </html>
