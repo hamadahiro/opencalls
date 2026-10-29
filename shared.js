@@ -114,7 +114,7 @@ const eligibilityLabel = {
   'indiana': 'Indiana only', 'ohio': 'Ohio only', 'kentucky': 'Kentucky only', 'alabama': 'Alabama only', '18-26': 'Ages 18–26', '14-24': 'Ages 14–24', '16-25': 'Ages 16–25', '14-29': 'Ages 14–29',
   '18-35': 'Ages 18–35', 'germany-austria-switzerland': 'Germany, Austria & Switzerland only',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'south-africa': 'South Africa only', 'nigeria': 'Nigeria only', 'israel': 'Israel only',
-  '16-plus': '16+', '18-plus': '18+', '19-plus': '19+', '21-plus': '21+', '23-plus': '23+', '25-plus': '25+', '30-plus': '30+', '40-plus': '40+', '45-plus': '45+', '60-plus': '60+', '65-plus': '65+',
+  '14-plus': '14+', '16-plus': '16+', '18-plus': '18+', '19-plus': '19+', '21-plus': '21+', '23-plus': '23+', '25-plus': '25+', '30-plus': '30+', '40-plus': '40+', '45-plus': '45+', '60-plus': '60+', '65-plus': '65+',
   'student': 'Students', 'ukraine': 'Ukraine only', 'belarus': 'Belarus only', 'flinta': 'FLINTA', 'global-south': 'Global South', 'france': 'France only',
   'tri-state': 'NY/NJ/CT only', 'wana': 'WANA region only', 'southeast-asia': 'Southeast Asia only', 'north-africa': 'North Africa only', 'central-west-africa': 'Central & West Africa only',
   'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'cincinnati-area': 'Cincinnati Area only', 'los-angeles': 'LA only', 'portland-area': 'Portland Area only',
