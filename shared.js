@@ -111,7 +111,7 @@ const eligibilityLabel = {
   'hawaii-island': 'Hawaiʻi Island only',
   'pacific-northwest': 'Pacific Northwest only',
   'minnesota': 'Minnesota only', 'bipoc': 'BIPOC artists', 'ontario': 'Ontario only',
-  'indiana': 'Indiana only', 'ohio': 'Ohio only', 'kentucky': 'Kentucky only', 'alabama': 'Alabama only', '18-26': 'Ages 18–26', '14-24': 'Ages 14–24', '16-25': 'Ages 16–25', '14-29': 'Ages 14–29',
+  'indiana': 'Indiana only', 'ohio': 'Ohio only', 'kentucky': 'Kentucky only', 'alabama': 'Alabama only', '14-18': 'Ages 14–18', '18-26': 'Ages 18–26', '14-24': 'Ages 14–24', '16-25': 'Ages 16–25', '14-29': 'Ages 14–29',
   '18-35': 'Ages 18–35', 'germany-austria-switzerland': 'Germany, Austria & Switzerland only',
   'gulf-coast': 'Gulf Coast only', 'spain': 'Spain only', 'india': 'India only', 'south-africa': 'South Africa only', 'nigeria': 'Nigeria only', 'israel': 'Israel only',
   '14-plus': '14+', '16-plus': '16+', '18-plus': '18+', '19-plus': '19+', '21-plus': '21+', '23-plus': '23+', '25-plus': '25+', '30-plus': '30+', '40-plus': '40+', '45-plus': '45+', '60-plus': '60+', '65-plus': '65+',
@@ -127,6 +127,7 @@ const eligibilityLabel = {
   'oxfordshire': 'Oxfordshire only',
   'lower-austria': 'Lower Austria only',
   'maritimes': 'Maritimes only',
+  'metro-vancouver': 'Metro Vancouver only',
   'california': 'California only', 'colorado': 'Colorado only', 'montana': 'Montana only', 'texas': 'Texas only', 'washington': 'Washington only', 'oklahoma': 'Oklahoma only', 'south-dakota': 'South Dakota only',
   'arkansas': 'Arkansas only', 'baltimore-region': 'Baltimore region only', 'dc-maryland-virginia': 'DC, Maryland & Virginia only', 'frederick-county-md': 'Frederick County, MD only', 'palm-beach-county': 'Palm Beach County, FL only', 'prince-georges-county-md': "Prince George's County, MD only", 'st-joseph-region': 'St. Joseph region only', 'st-louis-region': 'St. Louis region only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'roanoke-area': 'Roanoke area only', 'richmond-area': 'Richmond area only', 'arizona': 'Arizona only', 'utah': 'Utah only', 'georgia': 'Georgia only', 'native-american': 'Native American artists',
@@ -137,7 +138,7 @@ const eligibilityLabel = {
   'northeast-us': 'Northeast US only',
   'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only',
   'wisconsin': 'Wisconsin only', 'vermont': 'Vermont only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only', 'ks-ne-mo-ok-co': 'KS/NE/MO/OK/CO only', 'mn-ia-wi': 'MN/IA/WI only', 'wi-ia-mn-il-mi': 'WI/IA/MN/IL/MI only',
-  'michigan': 'Michigan only', 'florida': 'Florida only', 'ark-la-tex': 'AR/LA/OK/TX only',
+  'michigan': 'Michigan only', 'florida': 'Florida only', 'ark-la-tex': 'AR/LA/OK/TX only', 'detroit-area': 'Metro Detroit only',
   'south-central-us': 'AR/LA/NM/OK/TX only',
   'curators': 'Curators & academics', 'art-educators': 'Art educators', 'scientists': 'Scientists', 'military-community': 'Military community'
 };
