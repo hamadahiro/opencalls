@@ -100,7 +100,7 @@ const eligibilityLabel = {
   'puerto-rico': 'Puerto Rico focus', 'latin-america': 'Latin America', 'asian-american': 'Asian American focus',
   'south-asian': 'South Asian focus', 'african-diaspora': 'African diaspora focus', 'nigerian-diaspora': 'Nigerian diaspora only', 'black': 'Black artists',
   'neurodivergent-disabled': 'Neurodivergent & disabled', 'immigrant': 'Immigrant artists', 'jewish': 'Jewish community focus', 'portugal': 'Portugal only', 'portugal-lusophone-africa': 'Portugal & Lusophone Africa only', 'taiwan': 'Taiwan only',
-  'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only', 'south-australia': 'South Australia only',
+  'morocco': 'Morocco only', 'non-european': 'Non-European only', 'australia': 'Australia only', 'south-australia': 'South Australia only', 'nsw-act': 'NSW & ACT only',
   'australia-new-zealand': 'Australia & NZ only',
   'europe-mediterranean': 'Europe & Mediterranean only',
   'canada': 'Canada only', 'us-canada': 'US & Canada only', 'north-america': 'US, Canada & Mexico only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only', 'netherlands': 'Netherlands only', 'belgium': 'Belgium only',
@@ -137,7 +137,7 @@ const eligibilityLabel = {
   'berkshires': 'Berkshires area only',
   'northeast-us': 'Northeast US only',
   'oregon': 'Oregon only', 'idaho': 'Idaho only', 'great-lakes': 'Great Lakes only',
-  'wisconsin': 'Wisconsin only', 'vermont': 'Vermont only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only', 'ks-ne-mo-ok-co': 'KS/NE/MO/OK/CO only', 'mn-ia-wi': 'MN/IA/WI only', 'wi-ia-mn-il-mi': 'WI/IA/MN/IL/MI only',
+  'wisconsin': 'Wisconsin only', 'vermont': 'Vermont only', 'new-hampshire-vermont': 'NH & VT only', 'central-us': 'MO/KS/IA/NE/AR/OK/TX only', 'ks-ne-mo-ok-co': 'KS/NE/MO/OK/CO only', 'mn-ia-wi': 'MN/IA/WI only', 'wi-ia-mn-il-mi': 'WI/IA/MN/IL/MI only', 'in-oh-il-mi-ky-mo-ia-wi-ks-ne': 'IN/OH/IL/MI/KY/MO/IA/WI/KS/NE only', 'continental-us': 'Continental US only',
   'michigan': 'Michigan only', 'florida': 'Florida only', 'ark-la-tex': 'AR/LA/OK/TX only', 'de-pa-md-nj-va-dc': 'DE/PA/MD/NJ/VA/DC only', 'detroit-area': 'Metro Detroit only',
   'south-central-us': 'AR/LA/NM/OK/TX only',
   'curators': 'Curators & academics', 'art-educators': 'Art educators', 'scientists': 'Scientists', 'military-community': 'Military community'
