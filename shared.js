@@ -131,7 +131,7 @@ const eligibilityLabel = {
   'california': 'California only', 'colorado': 'Colorado only', 'montana': 'Montana only', 'texas': 'Texas only', 'washington': 'Washington only', 'oklahoma': 'Oklahoma only', 'south-dakota': 'South Dakota only',
   'arkansas': 'Arkansas only', 'baltimore-region': 'Baltimore region only', 'dc-maryland-virginia': 'DC, Maryland & Virginia only', 'frederick-county-md': 'Frederick County, MD only', 'palm-beach-county': 'Palm Beach County, FL only', 'ventura-county': 'Ventura County, CA only', 'prince-georges-county-md': "Prince George's County, MD only", 'st-joseph-region': 'St. Joseph region only', 'st-louis-region': 'St. Louis region only', 'southern-illinois': 'Southern Illinois only', 'southwest-us': 'Southwest US only',
   'virginia': 'Virginia only', 'roanoke-area': 'Roanoke area only', 'richmond-area': 'Richmond area only', 'arizona': 'Arizona only', 'utah': 'Utah only', 'georgia': 'Georgia only', 'native-american': 'Native American artists',
-  'northern-california': 'Northern California only', 'southern-california': 'Southern California only', 'tampa-bay': 'Tampa Bay only',
+  'sonoma-county': 'Sonoma County only', 'northern-california': 'Northern California only', 'southern-california': 'Southern California only', 'tampa-bay': 'Tampa Bay only',
   'new-mexico': 'New Mexico only', 'massachusetts-rhode-island': 'MA & RI only', 'cape-cod-and-islands': 'Cape Cod & Islands only', 'new-england': 'New England only',
   'connecticut': 'Connecticut only',
   'berkshires': 'Berkshires area only',
