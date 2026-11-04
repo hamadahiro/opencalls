@@ -40,20 +40,53 @@
     return false;
   })();
 
+  // Human gate (owner 2026-11-04: "i'd rather like 0 bots"). From Oct 7 to
+  // Nov 3 2026, 3,195 GA "users" were Singapore at 1280x1200 with 6 engaged
+  // sessions between them, and Direct was 7,524 of 9,044 sessions at 9.74%
+  // engagement. Those browsers pass both guards above: no webdriver flag, and
+  // the soft tag is not registered as a GA dimension. They load the page and
+  // leave without input. So nothing is sent to GA (no page_view, no event,
+  // no _ga cookie) until the page gets its first real input from a person:
+  // pointer or mouse movement, a press, a touch, a wheel or a key.
+  // 'scroll' is NOT a signal: script can scroll a page (the July fleet fired
+  // 860 programmatic scroll_depth events). Synthetic dispatchEvent() input is
+  // ignored via isTrusted. The cost: a person who opens a page and never
+  // touches it is not counted. GA already marks such visits as unengaged.
+  // gtag.js is fetched on load so the first hit is not lost when a person's
+  // first action is a tap on a link; without a 'config' command it sends
+  // nothing.
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PGN8M3LZMZ';
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function send(){dataLayer.push(arguments);}
+  var started = false;
+  var pending = [];
+  // Every tracker below calls gtag(); before the gate opens the call is held
+  // here and replayed, in order, right after 'config'.
+  function gtag(){ if (started) send.apply(null, arguments); else pending.push(arguments); }
   window.gtag = gtag;
-  gtag('js', new Date());
-  // Set before config so the very first page_view already carries it. Strings,
-  // not booleans — GA4 user properties are string-typed in reports.
-  gtag('set', 'user_properties', {
-    automation_suspected: automationSuspected ? 'true' : 'false'
+  var HUMAN_EVENTS = ['pointerdown', 'pointermove', 'mousemove', 'touchstart', 'keydown', 'wheel'];
+  function start(e) {
+    if (started || (e && e.isTrusted === false)) return;
+    started = true;
+    HUMAN_EVENTS.forEach(function(t) { window.removeEventListener(t, start, true); });
+    send('js', new Date());
+    // Set before config so the very first page_view already carries it. Strings,
+    // not booleans — GA4 user properties are string-typed in reports.
+    send('set', 'user_properties', {
+      automation_suspected: automationSuspected ? 'true' : 'false'
+    });
+    send('config', 'G-PGN8M3LZMZ');
+    for (var i = 0; i < pending.length; i++) send.apply(null, pending[i]);
+    pending = [];
+  }
+  // Capture phase on window, so the gate opens before the click/mousedown
+  // trackers below handle the same input.
+  HUMAN_EVENTS.forEach(function(t) {
+    window.addEventListener(t, start, { capture: true, passive: true });
   });
-  gtag('config', 'G-PGN8M3LZMZ');
 
   // Helper: detect page type from URL
   function getPageType() {
