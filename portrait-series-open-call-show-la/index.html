@@ -20,7 +20,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, follow">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -113,7 +113,7 @@
 
       <p class="call-detail-description">SHOW LA — the Los Angeles photography fair that runs 10–13 December 2026 at The Reef, 1933 S. Broadway — has partnered with LensCulture and Polaroid on an open call for portrait photography. Photographers of all categories and levels may submit a portrait series of up to ten images, which should sit within the same body of work or series; entries opened 6 October and the deadline has been extended to 6 November. The grand prize winner takes a $1,000 cash prize, a feature on SHOW LA's Instagram account and an exhibition at SHOW LA this December; three finalists are exhibited at the fair alongside the winner, and the winner and all three finalists each receive a Polaroid camera with film. The call is open internationally and is judged by three jurors — Paris Chong, gallery director of the Leica Store &amp; Gallery Los Angeles, Ann M. Jastrab, executive director of the Center for Photographic Art, and Matthew Martin, director of the Peter Fetterman Gallery. Entry is $45 and submissions are handled on LensCulture, whose entry route requires a signed-in account.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 6, 2026">November 6, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$45">$45</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="Online + Los Angeles, CA"><span class="tag-front">Online + Los</span> <span class="tag-back">Angeles, CA</span></a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 10 images">Up to 10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.lensculture.com/enter/submissions/848470-sksymo/photos" target="_blank" rel="nofollow noopener" title="LensCulture">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 6, 2026">November 6, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$45">$45</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="Online + Los Angeles, CA"><span class="tag-front">Online + Los</span> <span class="tag-back">Angeles, CA</span></a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 10 images">Up to 10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value">Website</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Jury: Paris Chong, Gallery Director, Leica Store &amp; Gallery Los Angeles · Ann M. Jastrab, Executive Director, Center for Photographic Art · Matthew Martin, Director, Peter Fetterman Gallery</p>
@@ -123,8 +123,7 @@
         <p class="call-detail-description">Organized by <a href="/show-la/">SHOW LA</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-        <a href="https://www.show-la.com/opencall" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
-        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>
+        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>
       </div>
       <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on November 6, 2026</span></div>
     </section>
@@ -142,23 +141,7 @@
   <script>
     const CURRENT_SLUG = 'portrait-series-open-call-show-la';
     const CURRENT_CALL = {"title":"Portrait Series Open Call","category":"photography","org":"SHOW LA","location":"Online + Los Angeles, CA, USA","fee":"$45","deadline":"2026-11-06","eligibility":[]};
-    function downloadICS(e) {
-      e.preventDefault();
-      function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
-      var d = '2026-11-06'.replace(/-/g, '');
-      var nd = new Date('2026-11-06T00:00:00'); nd.setDate(nd.getDate() + 1); var de = String(nd.getFullYear()) + String(nd.getMonth()+1).padStart(2,'0') + String(nd.getDate()).padStart(2,'0');
-      var t = 'Portrait Series Open Call';
-      var u = 'https://www.show-la.com/opencall';
-      var o = 'SHOW LA';
-      var dl = new Date('2026-11-06T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('$1,000 + exhibition at SHOW LA') + '\\nEntry fee: ' + icsE('$45');
-      var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
-      var blob = new Blob([ics], {type: 'text/calendar'});
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = CURRENT_SLUG + '.ics';
-      a.click();
-    }
+
   </script>
   <script src="/shared.js?v=20261028b"></script>
   <script src="/cards.js?v=20261028b"></script>
