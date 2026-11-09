@@ -124,7 +124,7 @@ const eligibilityLabel = {
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'japan': 'Japan only', 'southeast-us': 'Southeast US only',
   'north-east-england': 'North East England only', 'wales': 'Wales only', 'london': 'London only',
-  'oxfordshire': 'Oxfordshire only',
+  'oxfordshire': 'Oxfordshire only', 'south-west-england': 'South West England only',
   'lower-austria': 'Lower Austria only',
   'maritimes': 'Maritimes only',
   'metro-vancouver': 'Metro Vancouver only',
