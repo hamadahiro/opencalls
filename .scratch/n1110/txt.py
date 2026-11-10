@@ -1,0 +1,11 @@
+import sys, re, html
+raw = sys.stdin.read()
+raw = re.sub(r'(?is)<(script|style|noscript|svg)[^>]*>.*?</\1>', ' ', raw)
+raw = re.sub(r'(?is)<!--.*?-->', ' ', raw)
+raw = re.sub(r'(?i)<br\s*/?>', '\n', raw)
+raw = re.sub(r'(?i)</(p|div|li|tr|h1|h2|h3|h4|section)>', '\n', raw)
+t = re.sub(r'(?s)<[^>]+>', ' ', raw)
+t = html.unescape(t)
+t = re.sub(r'[ \t\xa0]+', ' ', t)
+t = re.sub(r'\n\s*\n+', '\n', t)
+print(t.strip())
