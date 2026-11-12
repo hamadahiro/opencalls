@@ -105,7 +105,7 @@ const eligibilityLabel = {
   'europe-mediterranean': 'Europe & Mediterranean only',
   'canada': 'Canada only', 'us-canada': 'US & Canada only', 'north-america': 'US, Canada & Mexico only', 'ireland': 'Ireland only', 'switzerland': 'Switzerland only', 'netherlands': 'Netherlands only', 'belgium': 'Belgium only',
   'caribbean': 'Caribbean focus', 'nordic': 'Nordic only', 'copenhagen': 'Copenhagen only', 'germany': 'Germany only', 'sweden': 'Sweden only', 'malta': 'Malta only', 'bulgaria': 'Bulgaria only',
-  'baltics-finland': 'Baltics & Finland', 'commonwealth': 'Commonwealth only', 'qatar': 'Qatar only', 'greece': 'Greece only',
+  'baltics-finland': 'Baltics & Finland', 'baltic-states': 'Baltic states only', 'argentina': 'Argentina only', 'commonwealth': 'Commonwealth only', 'qatar': 'Qatar only', 'greece': 'Greece only',
   '8-18': 'Ages 8–18', '8-22': 'Ages 8–22', '10-18': 'Ages 10–18', '12-25': 'Ages 12–25', '13-25': 'Ages 13–25', 'singapore': 'Singapore only', 'philippines': 'Philippines only', 'mid-atlantic-us': 'Mid-Atlantic US', 'alaska': 'Alaska only',
   'hong-kong-macau': 'Hong Kong & Macau only',
   'hawaii-island': 'Hawaiʻi Island only',
