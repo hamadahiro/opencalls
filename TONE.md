@@ -35,7 +35,7 @@ The owner: "what started as 2-3 sentences now is 2-3 screens full of text". The 
 is what made descriptions grow; it is withdrawn.
 
 - **description**: 2–3 sentences, one paragraph, 40–60 words. The build refuses more than 3 sentences or 75 words
-  on any open call or any call added from 2026-11-16.
+  on any call added from 2026-11-16 (existing calls keep their text).
 - **summary**: one sentence, at most 25 words and 140 characters.
 - Keep, in this order: what is actually offered; who can apply when restricted; the one catch (a fee charged on
   selection, rights, AI rule, membership). The tags already show deadline, fee, prize and location — don't repeat them.
