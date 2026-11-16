@@ -143,6 +143,69 @@ const eligibilityLabel = {
   'curators': 'Curators & academics', 'art-educators': 'Art educators', 'scientists': 'Scientists', 'military-community': 'Military community'
 };
 
+// ---- TAG LIMITS — owner 2026-11-16: "tags is for 1 or sometimes 2 words not whole sentences".
+// Every chip in a card's tag row goes through cardTagTexts() below, and the build refuses
+// any call whose chips break these limits (generate-pages.js). Do not loosen them without
+// the owner's own words. A money amount ("$1,000", "CHF 750") counts as one word; "&" is
+// not a word. A place may use 3 words ("San Diego, CA").
+const TAG_MAX_WORDS = 2;
+const TAG_MAX_CHARS = 20;
+const TAG_MONEY = /(?:[$€£¥]|\b(?:CHF|SEK|NOK|DKK|AUD|CAD|NZD|USD|EUR|GBP|ISK|HKD|SGD|JPY|TWD|ZAR|AED|RMB|CNY|PLN|CZK|HUF|INR|KRW|MXN|BRL|R)\s?)\d[\d.,]*\s?[kKmM]?\b/g;
+function tagWords(s) {
+  return String(s || '').replace(TAG_MONEY, 'X').split(/\s+/).filter(w => w && w !== '&').length;
+}
+function tagFits(s, maxWords) {
+  s = String(s || '');
+  return s.length > 0 && tagWords(s) <= (maxWords || TAG_MAX_WORDS) && s.length <= TAG_MAX_CHARS;
+}
+// Chip labels for eligibility values whose full label (kept on facet pages and the
+// detail page) is too long for a tag.
+const eligibilityTagOverride = {
+  'neurodivergent-disabled': 'ND & disabled',
+  'portugal-lusophone-africa': 'Lusophone',
+  'europe-mediterranean': 'Euro-Med',
+  'north-america': 'North America',
+  'hong-kong-macau': 'HK & Macau',
+  'germany-austria-switzerland': 'DE/AT/CH',
+  'central-west-africa': 'Central/West Africa',
+  'va-wv-md-dc-nc': 'VA/WV/MD/DC/NC',
+  'twin-cities-area': 'Twin Cities',
+  'sioux-falls-area': 'Sioux Falls',
+  'north-east-england': 'NE England',
+  'south-west-england': 'SW England',
+  'dc-maryland-virginia': 'DC/MD/VA',
+  'frederick-county-md': 'Frederick, MD',
+  'palm-beach-county': 'Palm Beach',
+  'ventura-county': 'Ventura County',
+  'prince-georges-county-md': 'PG County',
+  'st-joseph-region': 'St. Joseph',
+  'st-louis-region': 'St. Louis',
+  'native-american': 'Native American',
+  'cape-cod-and-islands': 'Cape Cod',
+  'in-oh-il-mi-ky-mo-ia-wi-ks-ne': 'Midwest US'
+};
+function eligibilityTag(e) {
+  const full = eligibilityLabel[e] || e;
+  if (tagFits(full)) return full;
+  if (eligibilityTagOverride[e]) return eligibilityTagOverride[e];
+  return full.replace(/\s+(only|focus|area|region|artists)$/i, '');
+}
+// A prize part longer than a tag shows its category label instead (closed rows written
+// before 2026-11-16); open and new rows must carry short prize text themselves (build gate).
+function prizeTag(part) {
+  if (tagFits(part)) return part;
+  return prizeCategoryLabel[derivePrizeCategory(part)] || 'Prize';
+}
+// Location chip: first place + country/state; anything longer falls back to the last part.
+// The detail page keeps the fuller shortenLocation() text.
+function tagLocation(loc) {
+  const s = shortenLocation(loc);
+  if (!s) return s;
+  const parts = s.split(',').map(x => x.trim()).filter(Boolean);
+  const pair = parts.length > 2 ? parts[0] + ', ' + parts[parts.length - 1] : parts.join(', ');
+  return tagFits(pair, 3) ? pair : parts[parts.length - 1];
+}
+
 // ---- Pure functions ----
 function isCallOpen(deadline) {
   if (deadline === 'Continuous') return true;
@@ -333,6 +396,18 @@ function tagHtml(str, minLen, esc) {
   return `<span class="tag-front">${esc(front)}</span> <span class="tag-back">${esc(back)}</span>`;
 }
 
+// The text of every content chip renderTags() shows (deadline and fee chips are built
+// from fixed short formats). The build checks each against the TAG LIMITS.
+function cardTagTexts(call) {
+  const out = [];
+  if (call.prize) splitPrizeParts(call.prize).forEach(p => out.push({ kind: 'prize', text: prizeTag(p), raw: p }));
+  if (call.fee) out.push({ kind: 'fee', text: shortenFee(call.fee) });
+  if (call.location) out.push({ kind: 'location', text: tagLocation(call.location) });
+  out.push({ kind: 'category', text: categoryLabel[call.category] || call.category || '' });
+  (call.eligibility || []).forEach(e => out.push({ kind: 'eligibility', text: eligibilityTag(e) }));
+  return out;
+}
+
 // Meta-tag row for a card. opts = { esc, urgency, locationLink }
 //   urgency = { deadlineSlug, urgencyClass, urgencyText }
 //   locationLink = (location, country) => href|null  (env-specific page lookup:
@@ -345,19 +420,19 @@ function renderTags(call, opts) {
   if (call.prize) splitPrizeParts(call.prize).forEach(part => {
     const cat = derivePrizeCategory(part);
     const href = cat ? '/prize/' + cat + '/' : '/prize/';
-    tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${esc(part)}</a>`);
+    tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize"${prizeTag(part) !== part ? ` title="${esc(part)}"` : ''}>${PRIZE_SVG}${esc(prizeTag(part))}</a>`);
   });
   if (call.fee) tags.push(feeChip(call.fee, esc));
   if (call.location) {
     const country = getCountry(call.location);
     const locLink = locationLink ? locationLink(call.location, country) : null;
-    const locDisplay = shortenLocation(call.location);
+    const locDisplay = tagLocation(call.location);
     if (locLink) tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${PIN_SVG}${esc(locDisplay)}</a>`);
     else tags.push(`<span class="meta-tag">${PIN_SVG}${esc(locDisplay)}</span>`);
   }
   tags.push(`<a href="/${categorySlug[call.category]}/" class="meta-tag meta-tag-link">${esc(categoryLabel[call.category] || call.category)}</a>`);
   if (call.eligibility && call.eligibility.length) call.eligibility.forEach(e => {
-    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag">${esc(eligibilityLabel[e] || e)}</a>`);
+    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag"${eligibilityTag(e) !== (eligibilityLabel[e] || e) ? ` title="${esc(eligibilityLabel[e] || e)}"` : ''}>${esc(eligibilityTag(e))}</a>`);
   });
   return tags.join(' ');
 }
@@ -370,7 +445,7 @@ function buildPrizeBlock(call, esc) {
   const tags = parts.map(part => {
     const cat = derivePrizeCategory(part);
     const href = cat ? '/prize/' + cat + '/' : '/prize/';
-    return `<a href="${href}" class="meta-tag meta-tag-link call-prize">${PRIZE_SVG}${esc(part)}</a>`;
+    return `<a href="${href}" class="meta-tag meta-tag-link call-prize"${prizeTag(part) !== part ? ` title="${esc(part)}"` : ''}>${PRIZE_SVG}${esc(prizeTag(part))}</a>`;
   }).join(' ');
   return `<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">${label}</a></span> ${tags}</div>`;
 }
@@ -510,6 +585,7 @@ if (typeof module !== 'undefined' && module.exports) {
     deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
     isFree, getState, scoreSimilarity,
-    isValidEmail, isValidHttpUrl, submitViaIsPlatform
+    isValidEmail, isValidHttpUrl, submitViaIsPlatform,
+    TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts
   };
 }

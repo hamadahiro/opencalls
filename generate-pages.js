@@ -13,7 +13,8 @@ const {
   getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
-  NO_OPEN_CALLS_NOTICE
+  NO_OPEN_CALLS_NOTICE,
+  TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
 } = shared;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -233,6 +234,34 @@ data.calls.forEach((c, i) => {
     if (pCats.length === 0) {
       err(`"${label}" has prize "${c.prize}" that matches no prize category. Update derivePrizeCategories().`);
     }
+  }
+
+  // ── TAGS AND LENGTH — owner 2026-11-16: "tags is for 1 or sometimes 2 words not whole
+  // sentences" and descriptions "started as 2-3 sentences now is 2-3 screens full of text".
+  // These limits are the owner's, not a style preference: do not loosen them, and do not
+  // get round them (no " + " tricks, no moving text into another chip). Put detail into
+  // the description, within its own limit.
+  // Applies to every open call and every call added from 2026-11-16 on; older closed calls
+  // are shown through the chip fallbacks in shared.js until they are rewritten.
+  const strictRow = isCallOpen(c.deadline) || (c.dateAdded || '') >= '2026-11-16';
+  if (strictRow) {
+    if (c.prize) {
+      const pparts = splitPrizeParts(c.prize);
+      if (pparts.length > 3) err(`"${label}" prize has ${pparts.length} tags — at most 3 (split on " + ")`);
+      pparts.forEach(p => {
+        if (!tagFits(p) || /[()–;:]/.test(p)) err(`"${label}" prize tag "${p}" is too long — a tag is 1-2 words and at most ${TAG_MAX_CHARS} characters (an amount like "$1,000" counts as one word), with no brackets, dashes or colons. Put the detail in the description.`);
+      });
+    }
+    cardTagTexts(c).forEach(t => {
+      const maxW = t.kind === 'location' ? 3 : TAG_MAX_WORDS;
+      if (t.kind !== 'prize' && t.kind !== 'fee' && !tagFits(t.text, maxW)) err(`"${label}" ${t.kind} tag "${t.text}" is too long — tags are 1-2 words (a place 3), at most ${TAG_MAX_CHARS} characters.`);
+    });
+    const dWords = (c.description || '').trim().split(/\s+/).filter(Boolean).length;
+    const dSent = (c.description || '').replace(/\b(e\.g|i\.e|etc|St|Dr|Mr|Mrs|Ms|No|vs|approx|incl|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|U\.S|U\.K|Inc|Ltd|Co|Ave|Mt|ca)\./g, '$1').trim().split(/(?<=[.!?])\s+(?=[A-Z0-9"“(])/).filter(Boolean).length;
+    if (dWords > 75 || dSent > 3) err(`"${label}" description is ${dWords} words / ${dSent} sentences — at most 3 sentences and 75 words (aim for 2-3 sentences, 40-60 words). Keep what is offered, who can apply, and the one catch; the tags already show deadline, fee and prize.`);
+    if (/\n/.test(c.description || '')) err(`"${label}" description has a line break — one short paragraph only`);
+    const sWords = (c.summary || '').trim().split(/\s+/).filter(Boolean).length;
+    if (sWords > 25 || (c.summary || '').length > 140) err(`"${label}" summary is ${sWords} words / ${(c.summary || '').length} chars — at most 25 words and 140 characters, one sentence`);
   }
 });
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
