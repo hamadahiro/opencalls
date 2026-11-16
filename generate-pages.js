@@ -241,9 +241,10 @@ data.calls.forEach((c, i) => {
   // These limits are the owner's, not a style preference: do not loosen them, and do not
   // get round them (no " + " tricks, no moving text into another chip). Put detail into
   // the description, within its own limit.
-  // Applies to every open call and every call added from 2026-11-16 on; older closed calls
-  // are shown through the chip fallbacks in shared.js until they are rewritten.
-  const strictRow = isCallOpen(c.deadline) || (c.dateAdded || '') >= '2026-11-16';
+  // Applies to every call added from 2026-11-16 on (owner: change the rule, don't rewrite
+  // the existing ones). Older calls keep their text; their long tags are shortened on
+  // display by the chip fallbacks in shared.js.
+  const strictRow = (c.dateAdded || '') >= '2026-11-16';
   if (strictRow) {
     if (c.prize) {
       const pparts = splitPrizeParts(c.prize);
