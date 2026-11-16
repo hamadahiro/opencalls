@@ -150,7 +150,7 @@ const eligibilityLabel = {
 // not a word. A place may use 3 words ("San Diego, CA").
 const TAG_MAX_WORDS = 2;
 const TAG_MAX_CHARS = 20;
-const TAG_MONEY = /(?:[$€£¥]|\b(?:CHF|SEK|NOK|DKK|AUD|CAD|NZD|USD|EUR|GBP|ISK|HKD|SGD|JPY|TWD|ZAR|AED|RMB|CNY|PLN|CZK|HUF|INR|KRW|MXN|BRL|R)\s?)\d[\d.,]*\s?[kKmM]?\b/g;
+const TAG_MONEY = /(?:[$€£¥]|\b(?:CHF|SEK|NOK|DKK|AUD|CAD|NZD|USD|EUR|GBP|ISK|HKD|SGD|JPY|TWD|ZAR|AED|RMB|CNY|PLN|CZK|HUF|INR|KRW|MXN|BRL|R)\s?)\d[\d.,]*(?:\s?[kKmM]\b)?/g;
 function tagWords(s) {
   return String(s || '').replace(TAG_MONEY, 'X').split(/\s+/).filter(w => w && w !== '&').length;
 }
