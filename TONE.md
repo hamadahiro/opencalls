@@ -29,11 +29,28 @@ In rough priority order — only include if the source material supports it:
 - Speculation about prestige, importance, or visibility unless we have a source.
 - Anything we couldn't defend if the organizer read the page.
 
-## Length
+## Length — enforced by the build (owner, 2026-11-16)
 
-Aim for 200–350 words. Acceptable down to ~150 if the content is dense with facts (especially for indie zines and small magazines, which don't always have 200 words of public source material). Below ~140 we skip — fewer paragraphs of fact beat any amount of padding.
+The owner: "what started as 2-3 sentences now is 2-3 screens full of text". The old target here (200–350 words)
+is what made descriptions grow; it is withdrawn.
 
-Better 100 pages with rich prose than 500 with thin filler.
+- **description**: 2–3 sentences, one paragraph, 40–60 words. The build refuses more than 3 sentences or 75 words
+  on any open call or any call added from 2026-11-16.
+- **summary**: one sentence, at most 25 words and 140 characters.
+- Keep, in this order: what is actually offered; who can apply when restricted; the one catch (a fee charged on
+  selection, rights, AI rule, membership). The tags already show deadline, fee, prize and location — don't repeat them.
+
+## Tags — enforced by the build (owner, 2026-11-16)
+
+"tags is for 1 or sometimes 2 words not whole sentences". `prize` is split on " + " into tags:
+
+- at most 3 tags; each at most 2 words and 20 characters; an amount counts as one word ("$1,000", "CHF 750");
+- no dates, venues, brackets, dashes, colons or negations in a tag — details go in the description;
+- good tags: Exhibition, Solo exhibition, Publication, Catalogue, Photobook, Residency, Fellowship, $500,
+  $1,000 grant, CHF 750, Stipend, $350 honorarium, Artist fee, Purchase.
+
+Location and eligibility chips are shortened by code (shared.js `tagLocation`, `eligibilityTag`); the full text
+stays on the detail page.
 
 ## Sourcing
 
