@@ -72447,6 +72447,84 @@
       "summary": "One month in Budapest in June 2027 for a Grand Est-linked artist or curator; €1,000 grant, studio-apartment and travel paid.",
       "dateAdded": "2026-11-17T04:36:44Z",
       "verifyNote": "ADD 2026-11-17 04:00 run, found on IG #opencall (img.alt route, 25 alts: 'Photo by CEAAC - Centre europeen d'actions artistiques contemporaines on October 01, 2026') and measured on the organiser's own page plus its own downloadable prospectus. ROUTE AND A CERT TRAP: `www.ceaac.org` fails with **curl (60) 'SSL: no alternative certificate subject name matches target host name'** - the WWW host's certificate does not cover it - while the APEX `ceaac.org` answers 200 and redirects to `/fr/` (74,412 B). The call page is https://ceaac.org/fr/appel-a-candidatures-fr-hu/ (HTTP 200, 81,633 B, fetched 04:36 WET). ITS OWN LINES: 'Appel a candidatures FR <> HU'; 'Residence de recherche et creation Budapest Gallery <> CEAAC'; 'Duree : 1 mois'; 'Periode de residence : Juin 2027'; 'Date limite de depot : 13 decembre 2026'; and the eligibility sentence verbatim - 'L'appel s'adresse aux artistes-auteur.ices-chercheur.euses du champ des arts visuels, tous mediums confondus, en debut/milieu de carriere, sans critere d'age ni de nationalite pouvant justifier d'un lien avec la region Grand Est. Cet appel est egalement ouvert aux curateur.ices.' THE PROSPECTUS PDF IS MISNAMED AND I CHECKED RATHER THAN ASSUMED: the page's 'Consulter l'appel a candidatures (PDF)' link is `ceaac.org/wp-content/uploads/2026/10/Appel26-27_Prague.pdf` - a PRAGUE filename on a BUDAPEST call page (and a second copy of the same filename sits under /2026/09/). Fetched (200 / 298,590 B) and zlib-inflated stream by stream (no pdftotext on this Mac): its first page is unambiguously THIS call - 'APPEL A CANDIDATURES RESIDENCE DE RECHERCHE ET CREATION a la Budapest Gallery (Budapest, HU) Juin 2027 / STRASBOURG <> BUDAPEST'. So the filename is a leftover, not a wrong document. FROM THE PDF: 'Date limite de depot: 13.12.2026' with '23H00 (GMT +1)' and 'aucun dossier ne sera accepte apres cette date'; 'Mise a disposition d'un atelier-logement au Klauzal square 2, 1072 Budapest'; 'Prise en charge par le CEAAC du voyage aller et retour'; 'les honoraires seront verses a l'entite administrative et ne peuvent pas etre multiplies par le nombre de personnes qui la composent' (duo applications allowed, the fee is not doubled); 'Les modes de deplacement respectueux de l'environnement sont encourages'; and an ACCESSIBILITY DISCLOSURE the organiser volunteers - 'Nous regrettons que les ateliers et logements proposes ne repondent pas aujourd'hui aux normes actuelles d'accessibilite'. THE ADD WROTE 'NO HONORARIUM FIGURE IS STORED BECAUSE NONE WAS READ' AND THE EDITOR READ IT OUT OF THE SAME PDF: a second stream-by-stream zlib inflation of the identical file (298,590 B, refetched 2026-11-17 04:43; 22 streams, 7,185 characters of text operators) returns the hosting block in full, including 'Bourse de residence de 1000 EUR versee par la Budapest Gallery'. prize now carries that grant alongside the residency and the paid return travel. The programme is funded by 'la Drac Grand Est, la Region Grand Est, la Collectivite europeenne d'Alsace et la Ville de Strasbourg' and CEAAC is 'membre des reseaux Arts en residence'; it has run 'depuis 2007' with named past laureates (Balazs Varju Toth 2023, Dominka Trapp 2024, duo Pfliegerfoegle 2024, Heloise Farago 2025, Marie Biaudet 2026) and the centre itself dates from 1987 ('Il fetera donc ses 40 ans en 2027'). submitVia: the PDF gives a Google Form (`forms.gle/YGPnYCAsT9QsDmZUA`) and the page a 'Deposer une candidature' button - stored as 'Official website' with the org's own call page as url, per the own-domain rule. fee 'Free': no entry fee appears on the page or in the PDF's first page. eligibility ['france','emerging','mid-career']: the Grand Est link is the real gate and both career bands are named ('en debut/milieu de carriere'); there is explicitly no age or nationality criterion. ai null: the AI alternation returns 0 over the page bytes. jury []: no selector is named on either surface. DUP PROBE over title+org+slug+url+submitUrl+instagram+location: /ceaac/ 0 rows, /grand est/ 0 rows, /budapest/ 6 unrelated rows (Eidolon Grant, three Golden Duck shows and two more), /strasbourg/ 1 unrelated row (Archifoto 2026). SKIP LIST: grep -inE 'ceaac|budapest gallery' returns 0 lines. MEMORY DIR: grep -rilE 'ceaac' returns 0 files. EDITOR 2026-11-17 04:38 PASS. SIX CHANGES, ALL FROM THE ORGANISER'S OWN TWO SURFACES. (1) prize GAINED THE EUR 1,000 RESIDENCY GRANT (see the correction above). The PDF's hosting list in full: 'Mise a disposition d'un atelier-logement au Klauzal square 2, 1072 Budapest ; Prise en charge par le CEAAC du voyage aller et retour en classe economique ; Bourse de residence de 1000EUR versee par la Budapest Gallery ; Presentation du travail par le biais d'une exposition, d'un open studio ou d'un talk (a definir, non systematique) ; Accompagnement humain et technique sur mesure ; Mise en reseau locale.' (2) jury WAS [] AND THE PDF NAMES THE PANEL'S COMPOSITION: 'Le jury est compose de representant.es du CEAAC et de la Budapest Gallery. Il etudiera individuellement les dossiers de candidature' - descriptor form, and the calendar adds 'Janvier 2027 : Selection sur dossier par un jury de professionnel.les anglophones'. (3) resultsDate ADDED: 'Fin janvier 2027 : Transmission des resultats', with 'Les candidat.es non-retenu.es pourront faire une demande de precision concernant les motifs de rejet de leur dossier'. (4) DESCRIPTION GAINED THE ELIGIBILITY GATE THAT ACTUALLY DECIDES WHO CAN APPLY, verbatim from the PDF's 'Criteres d'eligibilite': 'Avoir etudie, etre ne.e, travailler en region Grand Est ou argumenter d'un lien avec la region Grand Est ; Etre assujetti.e ou affilie.e au regime des artistes-auteur.ices en France ; S'engager a sejourner et etre present.e pendant la duree de la residence dans la ville d'accueil ; Les artistes ayant beneficie d'une residence du CEAAC au cours des deux dernieres annees ne seront pas eligibles.' The stored prose named only the Grand Est link; the French artist-author registration is the harder bar and is now in the description. (5) instagram ADDED as @ceaac: the page's social anchors are icon-only and carry no text node, so no extractor sees them - 'instagram.com/ceaac' was grepped off the raw 81,633 bytes (2 hits; the other two handles on the page, kiddy_plouf and _omnika_, are tagged artists). (6) submitVia 'Official website' -> 'Google Form', AND THE TWO APPLY ROUTES ARE NOT THE SAME FORM - THIS IS THE FINDING OF THE PASS. The PDF prints 'Formulaire de candidature : forms.gle/YGPnYCAsT9QsDmZUA'; opened in Chrome that short link lands on docs.google.com/forms/d/e/1FAIpQLSdN7IXhkPTa6vr5_EBNAt1IMs7CLpojmiVc_0cfiQ2A8Z1_Zw/closedform, titled 'APPEL A CANDIDATURES - Residence de recherche et creation a MeetFactory avec l'Institut francais de Prague (CZ)', which answers 'The form ... is no longer accepting responses.' So the Appel26-27_Prague.pdf filename is not merely a leftover: the form URL inside the document belongs to the CLOSED Prague cycle. The live route is the call page's own 'Deposer une candidature' button, docs.google.com/forms/d/e/1FAIpQLSe_f7fguAev6A4qotble9Xd4HsH4py_Rx5y0Dtmkloux2ATXw/viewform, which renders the full questionnaire under the title 'APPEL A CANDIDATURES - Residence de recherche et creation a la Budapest Gallery (Budapest, HU)' and is accepting responses - that form is the stored submitUrl and this row's liveness proof. (It answers 401 to curl with a desktop UA, which is a claim about the UA, not about the form.) DEADLINE RE-READ ON BOTH SURFACES: the page's 'Date limite de depot : 13 decembre 2026' and the PDF's 'Date limite de depot: 13.12.2026' with '23H00 (GMT +1)' and 'aucun dossier ne sera accepte apres cette date'. The PDF's first page is unambiguously this call ('a la Budapest Gallery (Budapest, HU) Juin 2027 / STRASBOURG <> BUDAPEST'), it dates the programme to 2007, and the opening date is stated: '1er novembre 2026 : Ouverture de l'appel a candidatures'."
+    },
+    {
+      "title": "Trenton Arts Fellowship 2027-28",
+      "org": "Mercer County Community College",
+      "deadline": "2026-11-30",
+      "fee": "Free",
+      "category": "grant",
+      "description": "Mercer County Community College and Princeton University's Lewis Center for the Arts name one Trenton Arts Fellow for a 10-month fellowship, September to June, with studio space on the college's Trenton campus, mentorship and a $10,000 stipend and research fund. It is open to visual artists who live and work in the city of Trenton. Applicants must not be enrolled in a programme of study during the fellowship.",
+      "url": "https://www.mccc.edu/trentonartsfellowship",
+      "instagram": null,
+      "location": "Trenton, NJ, USA",
+      "prize": "Fellowship + $10,000 + Studio space",
+      "eligibility": [
+        "united-states"
+      ],
+      "jury": [
+        "MCCC and Lewis Center faculty and staff"
+      ],
+      "submitVia": "Website form",
+      "submitUrl": "https://app.smartsheet.com/b/form/01a08c756f9e74adae2a803ff49b111f",
+      "requirements": "Resume, proposal + work samples",
+      "resultsDate": "March 2027",
+      "ai": null,
+      "slug": "trenton-arts-fellowship-2027-28-mercer-county-community-college",
+      "orgInTitle": false,
+      "summary": "One Trenton visual artist gets a 10-month fellowship with a campus studio and $10,000, from Mercer County Community College and Princeton.",
+      "dateAdded": "2026-11-17T05:45:00Z",
+      "verifyNote": "2026-11-17 05:45 editor add, from the NJ State Council on the Arts 'Opportunities for the Field' newsletter of 29 October 2026 (linked in their reply to our outreach). Measured 05:3x on mccc.edu/trentonartsfellowship (HTTP 200, 34,163 B): 'one Trenton artist will be named the Trenton Arts Fellow for 2027-28', 'A $10,000 stipend/research fund is provided for this 10-month fellowship (September-June)', 'visual artists of exceptional promise', 'must be living and working in the city of Trenton', 'Applicants must not be enrolled in an institutional program of study, during the fellowship period', 'please submit via the online form here by November 30, 2026 at 11:59 p.m. (EDT)', timeline 'March 2027 2027-28 Trenton Arts Fellow announced', reviewed 'by a committee of faculty and staff of Mercer County Community College and Lewis Center the Arts/Princeton University'. The page also carries 'The 2027-28 application cycle has closed' but that block sits inside an HTML comment and does not render. No fee anywhere on the page. Eligibility stored as united-states: the corpus has no Trenton or New Jersey facet key; the city limit is in the description."
+    },
+    {
+      "title": "Bluefield Arts Online Festival 2027",
+      "org": "Bluefield Arts Festival",
+      "deadline": "2027-01-24",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "The ninth Bluefield Arts Online Festival shows one work per artist in its online gallery from 21 to 28 February 2027, keeps it up for up to eight months and takes no commission on sales. Awards are honorary and non-monetary, and the form names no jury. Entering grants the festival use of your images for publicity, the gallery and education in perpetuity.",
+      "url": "https://www.bluefieldartsfestival.com/",
+      "instagram": "@bluefield_arts",
+      "location": "Online",
+      "prize": "Online exhibition + Honorary awards",
+      "eligibility": [
+        "18-plus"
+      ],
+      "jury": [],
+      "submitVia": "Google Forms",
+      "submitUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfXpI9sPfyksNXCCwBw6mekQCcnHnNMOkVJNxgiy-V899xpLA/viewform",
+      "requirements": "1 work",
+      "resultsDate": "February 21, 2027",
+      "ai": null,
+      "slug": "bluefield-arts-online-festival-2027-bluefield-arts-festival",
+      "orgInTitle": true,
+      "summary": "One work in a week-long online arts festival, 21–28 February 2027, with honorary awards; $25, open to artists 18 and over.",
+      "dateAdded": "2026-11-17T05:45:00Z",
+      "verifyNote": "2026-11-17 05:45 editor add, from the NJ State Council on the Arts 'Opportunities for the Field' newsletter of 29 October 2026. Organiser site bluefieldartsfestival.com (HTTP 200): 'Bluefield Arts Online Festival February 21 - 28, 2027', menu 'Artist Application 2027' linking the Google Form; About names photography among the media. The form answers 401 to curl and was read in Chrome 05:4x: 'DEADLINE: JANUARY 24, 2027', 'ELIGIBILITY: Open to all artists, all mediums, age 18 and over', 'PAY $25 ARTIST FEE', optional '$10 fee for the Website Homepage Feature', 'Each participating artist may submit ONE artwork', 'Awards are honorary and non-monetary. Award announcements are debuted at the Online Art Reception' (Sunday, February 21, 2027), 'Artwork will remain displayed in the festival's virtual gallery for up to 8 months', 'There is no sales commission', 'artists grant Bluefield Arts Festival permission to use their artwork and images for publicity, the online gallery, and educational purposes in perpetuity'. No jury and no AI clause stated. Kept under the paid-call rule: 24 open online rows with a fee and no cash prize are already listed."
+    },
+    {
+      "title": "Experimental Visual Art for Hardcover Book Editions",
+      "org": "Point Pleasant Publishing",
+      "deadline": "Continuous",
+      "fee": "Free ($35+ donation if selected)",
+      "category": "zine",
+      "description": "Point Pleasant Publishing, an art publisher on the New Jersey Shore, gives each selected artist a six-page spread with a curatorial review essay in its linen-wrapped hardcover catalogue, also published online. It takes experimental and alternative work, photography and moving image included, but no AI. Applying is free, but selected artists must donate at least $35 or buy a paperback, with tiers up to $500 for a solo monograph.",
+      "url": "https://www.pointpleasantpublishing.net/info-callforartists",
+      "instagram": null,
+      "location": "Online",
+      "prize": "Catalogue essay + Online feature",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Email",
+      "submitUrl": "https://www.pointpleasantpublishing.net/info-callforartists",
+      "requirements": "CV + 3 images",
+      "resultsDate": null,
+      "ai": "Not accepted",
+      "slug": "experimental-visual-art-hardcover-book-editions-point-pleasant-publishing",
+      "orgInTitle": false,
+      "summary": "A six-page essay feature in a hardcover art catalogue for experimental work, photography included; free to apply, $35+ if selected.",
+      "dateAdded": "2026-11-17T05:45:00Z",
+      "verifyNote": "2026-11-17 05:45 editor add, from the NJ State Council on the Arts 'Opportunities for the Field' newsletter of 29 October 2026 (its link is wrapped in urldefense; unwrapped to the organiser page). Measured 05:3x on pointpleasantpublishing.net/info-callforartists (HTTP 200, 201,782 B): 'Selected artists are featured with detailed curatorial review essays in the catalogue. Each featured artist has a generous six-page spread', 'accepts alternative and experimental forms of visual art including photography, performance, moving-image', 'analogue digital (no AI)', 'does not accept Instagram links as portfolios or works made with artificial intelligence', 'There is no application fee', 'Option # 1: Selected artists need to make a $35 donation ... or purchase of any one current paperback edition', options up to 'Option # 5: (Monograph - Solo Art Book) ... This requires a donation of $500', 'Email your CV, 3 image samples, and artist website or online portfolio'. No deadline printed: stored Continuous. Paid-if-selected, disclosed under the owner's 2026-10-24 rule. Same publisher's 'Crowns of Princeton' exhibition (newsletter link /exhibit-in-princeton-open-call) redirects to a 404 and is absent from the site's pages sitemap, so it was not added."
     }
   ]
 }
