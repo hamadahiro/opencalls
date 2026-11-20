@@ -120,7 +120,7 @@ const eligibilityLabel = {
   'bay-area': 'Bay Area only', 'chicago-area': 'Chicago Area only', 'cincinnati-area': 'Cincinnati Area only', 'dayton-area': 'Dayton Area only', 'los-angeles': 'LA only', 'portland-area': 'Portland Area only',
   'atlanta-area': 'Atlanta Area only', 'charlotte-area': 'Charlotte Area only', 'houston-area': 'Houston Area only', 'stamford-area': 'Stamford Area only', 'providence-area': 'Providence Area only', 'va-wv-md-dc-nc': 'VA, WV, MD, DC & NC only',
   'boston-area': 'Boston Area only', 'twin-cities-area': 'Twin Cities Area only', 'waco-area': 'Waco Area only', 'abilene-area': 'Abilene Area only', 'west-michigan': 'West Michigan only', 'sioux-falls-area': 'Sioux Falls Area only', 'chippewa-valley': 'Chippewa Valley only', 'hudson-valley': 'Hudson Valley only', 'inland-empire': 'Inland Empire only', 'inland-northwest': 'Inland Northwest only', 'kansas-region': 'Kansas region only', 'philadelphia': 'Philadelphia only',
-  'new-york-city': 'NYC only', 'new-york-state': 'NY State only', 'central-new-york': 'Central NY only', 'western-new-york': 'Western NY only', 'san-ramon': 'San Ramon only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
+  'new-york-city': 'NYC only', 'new-york-state': 'NY State only', 'central-new-york': 'Central NY only', 'western-new-york': 'Western NY only', 'san-ramon': 'San Ramon only', 'greensboro': 'Greensboro only', 'kazakhstan': 'Kazakhstan only', 'mid-career': 'Mid-career',
   'united-kingdom': 'UK only', 'midwest-us': 'Midwest US only', 'western-us': 'Western US only',
   'japan': 'Japan only', 'southeast-us': 'Southeast US only',
   'north-east-england': 'North East England only', 'wales': 'Wales only', 'london': 'London only',
