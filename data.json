@@ -73378,6 +73378,30 @@
       "summary": "Open-theme annual survey of contemporary photography in Chicago, juried by MoMA curator Caitlin Ryan; $500 juror's award.",
       "dateAdded": "2026-11-20T16:19:42Z",
       "verifyNote": "ADD 2026-11-20 16:19 WET. FOUND VIA INSTAGRAM, VERIFIED ON THE ORG'S OWN SITE ONLY: @photocallsforentry's 2026-11-20 post (read in Chrome off the profile grid's img.alt, 16:26 local) tags @filterphoto and @caitlin.e.ryan; the aggregator post supplied NOTHING but the lead. filterphoto.org (HTTP 200, 984,120 B, desktop-UA curl) prints 'CALL FOR ENTRY: CONTEXT 2027 / SUBMISSIONS DUE JANUARY 6TH' on its homepage and links the call's own page, which is the stored url: www.filterphoto.org/upcoming-exhibitions/context-2027 (200, 957,299 B) - 'Filter Photo is pleased to announce Context 2027, our thirteenth annual spring open call for photography-based work', 'juried by Caitlin Ryan, the Assistant Curator of Photography at The Museum of Modern Art', 'All types of photographic work will be considered'. DEADLINE FROM THE ORGANISER'S OWN 'Important Dates' BLOCK: 'January 6th, 11:59 PM CT: Call Closes' = stored 2027-01-06; the same block gives 'End of January: Accepted Artists Notified' (stored resultsDate), 'February 26th: Work Due to Filter Space' and 'March 5th: Opening Reception', with the show running March 5 - April 24 2027 at Filter Space, 1821 W Hubbard St, Chicago. PRIZE IS THE CALL PAGE'S OWN SENTENCE: 'A juror's choice award and an honorable mention will be awarded. The juror's choice award includes a $500 cash prize.' FEE AND REQUIREMENTS ARE NOT ON THE CALL PAGE AND COME FROM THE ORGANISER'S OWN SUBMITTABLE FORM (filterphoto.submittable.com/submit/2e961ace-076a-4176-b212-a940c62f2533/context-2027, 200, 21,011 B): 'The cost to submit to Context 2027 is $35.00 for up to five entries' and 'You may submit up to a total of five images. Videos will not be accepted.' (JPEG, 1000 px on the longest side) - the same host and platform the three stored Filter Photo rows already use. That form also states accepted artists pay shipping to Filter Space, which is why no shipping claim is made in the description. AI: ABSENT - `\\b[Aa][Ii]\\b` = 0 and `artificial intelligen` = 0 on the raw bytes of the call page, so ai stays null. ELIGIBILITY [] IS MEASURED, NOT ASSUMED: the page states no residency, age or career bar and the sibling row that DOES carry one (field-notes-from-the-middle, eligibility ['midwest-us']) names its region explicitly; this one says only 'All types of photographic work'. DUP GATE RUN UNTRUNCATED: 'Filter Photo' = 3 rows PRINTED IN FULL (on-the-shelf-2026, filter-space-2026-27-call-for-exhibition-proposals, field-notes-from-the-middle - deadlines 2026-07-15 / 2026-06-17 / 2026-09-30, all past, none this call), 'filterphoto' = the same 3, 'filterphoto.submittable' = the same 3, 'Context' = 0 rows, 'Caitlin' = 0 rows. Memory-dir grep on 'context 2027|filter photo|filterphoto' = 8 files, opened: the only Filter Photo verdict in them is a DISCHARGED owed-queue line about Field Notes' extended deadline (fixed 2026-10-03); no reject, no skip-list entry for this org or this call."
+    },
+    {
+      "title": "Sydney Artist Showcase — September 2027",
+      "org": "Arrival Gallery",
+      "deadline": "2027-08-26",
+      "fee": "Free (£65+ digital, £165+ physical if selected)",
+      "category": "exhibition",
+      "description": "Arrival Gallery's three-day Sydney group show runs 10–12 September 2027 at M2 Gallery, Surry Hills, for painters, photographers, digital and other visual artists. Applying is free; selected artists pay from £65 for a digital place or £165 for a physical one, and the full fee is sent only after selection. AI-assisted work is accepted.",
+      "url": "https://www.arrivalgallery.com/sydney",
+      "instagram": "@arrivalgalleryofficial",
+      "location": "Sydney, Australia",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "Website form",
+      "submitUrl": "https://arrivalgallery.myflodesk.com/sydney-september-2027",
+      "requirements": "Images",
+      "resultsDate": null,
+      "ai": "Accepted",
+      "slug": "sydney-artist-showcase-september-2027-arrival-gallery",
+      "orgInTitle": false,
+      "summary": "Three-day Sydney group show at M2 Gallery, Surry Hills, 10–12 September 2027; free to apply, selected artists pay from £65.",
+      "dateAdded": "2026-11-20T17:02:54Z",
+      "verifyNote": "ADD 2026-11-20 17:02Z by the editor from a Formspree submission (20 Nov 2026 16:32). NO OUTREACH: submitted through the form, no email stored. Measured 2026-11-20 17:0x WET: https://www.arrivalgallery.com/sydney HTTP 200, 210,581 B (Squarespace), prints 'M2 Gallery, Surry Hills, Sydney, NSW 2010, Australia', 'Exhibition Dates 10th to 12th September, 2027', 'Application Deadline 26th August 2027', 'Digital Showcase From £65' (40 available, current batch), 'Physical Showcase From £165' (40 available), 'Featured Artist Limited' (5 available, no price); FAQ: 'If selected, you'll receive the full details, including the format, fee and preparation requirements'. 'AI-assisted work' is in its Accepted mediums list. Submit button -> https://arrivalgallery.myflodesk.com/sydney-september-2027 (200, 5,760 B, JS-rendered Flodesk form). The submission's UTM parameters were stripped from url. The submission's 'Artists keep full copyright' is NOT on the page (0 hits for 'copyright') and is not stored. Same template and fee convention as the 10 other Arrival city rows (feedback: paid-if-selected is disclosed, not skipped)."
     }
   ]
 }
