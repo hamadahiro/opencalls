@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-20T16:19:42Z",
+  "lastUpdated": "2026-11-21T04:17:24Z",
   "calls": [
     {
       "title": "Counter-Memory — January 2027 Open Call",
@@ -73592,6 +73592,68 @@
       "summary": "Photography show at Core Art Space in Lakewood ahead of Denver's Month of Photography, juror Armando Martinez.",
       "dateAdded": "2026-11-21T00:20:04Z",
       "verifyNote": "VERIFY 2026-11-21 02:00 batch (95 rows, 276 gap items, 1 warning), measured on bytes fetched 02:00-02:25 WET this run. SURFACES: main URL HTTP 200 / 176,953 B (effective https://www.coreartspace.com/call-for-entries), rendered main 3,900 chars; 3 contact/terms/faq subpage(s) fetched for this row. DEADLINE 2027-01-19 NOT reproduced by the curl-fetched text of this row - see the surface note below. MONEY/COUNT: every figure in fee '$35 for up to 3 entries', prize 'Exhibition' and requirements 'Up to 3 images' reproduced on the fetched bytes (separator-blind, rendered AND raw). CLOSURE sweep over raw+rendered: 0 hits. AI-token sweep (bare \\bAI\\b + artificial intelligence + generative): 0 hit(s), so ai None is an absence on this surface, not a guess. coreartspace.com/call-for-entries renders the PREVIOUS cycle (Application Deadline October 20, 2026) above this one, so the dates were taken from the call's own CaFE record 18546: OPEN, 2027-01-20T06:59:59Z + MST = 2027-01-19 23:59 (stored deadline confirmed), fees [{APPLICATION 35.00}] (fee \"$35 for up to 3 entries\"), imagesMin/Max 1-3. ai: 0 tokens on either surface. Email [address] written to the private store. KEY-PRESENCE AUDIT RUN BEFORE THE FIRST FETCH: all 276 gap items are keys already on the row holding a checked null/[] (ai 63, email 95, jury 37, eligibility 37, resultsDate 30, instagram 9, requirements 3, submitUrl 2) - 0 were positive values miscalled gaps. The 95 \"email\" items are UNFILLABLE IN data.json BY DESIGN: generate-pages.js line 282 strips every email key on write and re-hydrates from the gitignored scripts/outreach/contacts.json, so emails measured this run were written THERE (86 of the 95 batch rows now carry one). FETCH LADDER: 95 main URLs in one parallel desktop-UA pass (84 at HTTP 200), then a Safari-UA rung (4 more), r.jina.ai (3 more), 187 contact/terms/faq subpages (177 at 200), 13 platform/submit surfaces, 9 CaFE GraphQL records and Chrome for the 7 that stayed JS-only. CLOSURE SWEEP over raw+rendered on every surface: 0 closures. On the 7 opportunities.wearecreativewest.org rows the closure regex hits only the shipped i18n table (\"deadline_passed\":\"Deadline passed\"), the known platform artefact."
+    },
+    {
+      "title": "Facade",
+      "org": "NKollectiv",
+      "deadline": "2027-02-01",
+      "fee": "$25",
+      "category": "exhibition",
+      "description": "NKollectiv's Englewood gallery invites Colorado photographers to show work for Month of Photography Denver 2027, on the theme of what surfaces reveal and conceal. Any photographic process qualifies, as long as photography stays the primary medium. Accepted prints arrive framed or mounted, no wider than 36 inches, with a 35% gallery commission on sales.",
+      "url": "https://opportunities.wearecreativewest.org/opportunity/18495/CAFE",
+      "instagram": "@nkollectiv",
+      "location": "Englewood, CO, USA",
+      "prize": "Exhibition + Juror award",
+      "eligibility": [
+        "colorado",
+        "18-plus"
+      ],
+      "jury": [
+        "Amy Norton"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18495/CAFE",
+      "requirements": "1-3 images",
+      "resultsDate": "February 12, 2027",
+      "ai": null,
+      "slug": "facade-nkollectiv",
+      "orgInTitle": false,
+      "summary": "Colorado-only photography show in Englewood for Month of Photography Denver 2027; juror Amy Norton, $25 for up to three works.",
+      "dateAdded": "2026-11-21T04:11:03Z",
+      "verifyNote": "2026-11-21 04:00 add: found on the CaFE/Creative West GraphQL board (searchOpportunities sweep, id 18495, unstored by id AND by title+org probe; sibling SHIFT 17733 is the org's only stored row). getOpportunity(18495) MEASURED: status OPEN/OPEN, openDate 2026-11-20T07:00:00Z, applicationDeadline 2027-02-02T06:59:59Z, fees[APPLICATION $25.00 'Entry Fee'] = lowestFee 25, imagesMin/Max 1/3, providerName NKollectiv, providerWebsite nkollectiv.com, eventStart 2027-03-11. The prospectus TIMELINE prints the local cutoff in words - 'SUBMISSION DEADLINE: Monday, February 1, 2027' (and requirementDescription repeats 'Submit applications by Monday, February 1, 2027'), so the stored deadline is 2027-02-01, not the UTC 02-02; 'Artist notification by February 12' gives resultsDate. eligibilityDescription: 'Submissions are open to Colorado artists 18 years or older, working in any photographic process' = the colorado + 18-plus facets. requirementDescription: 'photography must remain the primary medium', 'All works must be printed, framed or mounted, and ready to hang. No sawtooth hangers. Max width with frame: 36\"'. Juror Amy Norton (Art Institute of Colorado photography degree, 25 years in the Denver art community) and 'Commission: 65% Artist, 35% Gallery' are in the description, as is the Month of Photography Denver March 1-31 2027 framing. The org's OWN call page (nkollectiv.com/call-for-entry, 200/315,390 B, title 'Call for Entry - Copy') still carries only the previous SHIFT text and publishes NO deadline, fee or juror - same organiser artefact the SHIFT row's notes record, so a zero grep there is not a contradiction; url stays on the org domain per house rule and CaFE is the only source for those three. AI: \\b[Aa][Ii]\\b, 'artificial intelligence', 'AI-gener', 'machine-generated', 'midjourney' all 0 over the four CaFE prose fields AND over the raw org page, so ai is an explicit null. instagram @nkollectiv re-read from the org page's own instagram.com/nkollectiv href. | EDITOR 2026-11-21 04:35: url REPOINTED off the org domain. MEASURED this pass: nkollectiv.com/call-for-entry HTTP 200 / 315,294 B, title 'Call for Entry - Copy', renders 1,862 chars of the PREVIOUS cycle only - SHIFT, 'Exhibition dates: October 1 through November 1, 2026', an all-media 2D/3D call that closed 2026-09-02 and is stored as shift-nkollectiv at this same url; 'facade' greps 0, '2027' greps 0, 'Amy Norton' greps 0 on that page, and nkollectiv.com/sitemap.xml (200 / 117,449 B) lists exactly ONE call route, /call-for-entry. So the org domain has no surface for this call and the stored url was selling a finished exhibition. Repointed to the Creative West portal, which IS the call's surface: opportunity/18495/CAFE HTTP 200 / 82,169 B, title 'Opportunities Portal - Facade', 'Facade' x30, 'NKollectiv' x12, 'Amy Norton' x4, 'February 1, 2027' x4, 2 'Apply on CaF' anchors (the open-record tell). 45 stored rows already carry a wearecreativewest url and 151 carry url == submitUrl. Re-measured on the GraphQL record in the same pass: status OPEN / originalStatus OPEN, openDate 2026-11-20T07:00:00Z (past), applicationDeadline 2027-02-02T06:59:59Z + originalTimezone MST = 2027-02-01 23:59 local, matching the prose 'SUBMISSION DEADLINE: Monday, February 1, 2027' (Feb 1 2027 IS a Monday); fees [APPLICATION 25.00 USD 'Entry Fee']; imagesMin/Max 1/3; 'Commission: 65% Artist, 35% Gallery'; 'Max width with frame: 36”'; 'Artist notification by February 12'; eligibility 'Colorado artists 18 years or older, working in any photographic process'; 'photography must remain the primary medium'. instagram @nkollectiv re-confirmed: instagram.com/nkollectiv appears 4x in the org page raw. Owed: repoint url to the org domain if NKollectiv ever publishes this call there."
+    },
+    {
+      "title": "2027 ZEKE Awards",
+      "org": "Social Documentary Network",
+      "deadline": "2027-01-15",
+      "fee": "$30 through December 31, then $35",
+      "category": "grant",
+      "description": "Social Documentary Network's annual awards for documentary photography and for visual stories about systemic change. Two first-place photographers each receive $2,500, a feature in ZEKE Magazine and in The Guardian US; honourable mentions are published too. Entries are projects of six to thirty photographs, open to amateurs and professionals worldwide.",
+      "url": "https://www.socialdocumentary.net/cms/2027-zeke-award-details",
+      "instagram": "@socialdocumentarynet",
+      "location": "Online",
+      "prize": "$2,500 cash + ZEKE Magazine + Guardian US",
+      "eligibility": [],
+      "jury": [
+        "Barbara Ayotte, Communications Director, Social Documentary Network and Senior Editor, ZEKE Magazine",
+        "Alice Elizabeth Currey, Digital Communications Manager, Social Documentary Network",
+        "Greig Cranna, founder and director, BRIDGE gallery, Cambridge, Massachusetts",
+        "Gail Fletcher, Photo Editor, The Guardian US",
+        "Sarah Leen, former Director of Photography, National Geographic Magazine",
+        "Cameron Peters, Photo Editor, National Geographic",
+        "Glenn Ruga, Founder and Director, Social Documentary Network",
+        "Maggie Soladay, Senior Photography Editor, Open Society Foundations"
+      ],
+      "submitVia": "Official website",
+      "submitUrl": "https://socialdocumentary.net/competition.php",
+      "requirements": "6-30 images",
+      "resultsDate": "February 21, 2027",
+      "ai": "Not accepted",
+      "slug": "2027-zeke-awards-social-documentary-network",
+      "orgInTitle": false,
+      "summary": "Two $2,500 awards for documentary and systemic-change photo stories, with features in ZEKE Magazine and The Guardian US.",
+      "dateAdded": "2026-11-21T04:17:24Z",
+      "verifyNote": "2026-11-21 04:00 add: discovered on the All About Photo professional-contests board, verified ONLY on the organiser's own site. socialdocumentary.net returns Cloudflare 403 to curl (5,694 B challenge page) on every route, so the read was taken through r.jina.ai: www.socialdocumentary.net/cms/2027-zeke-award-details (200, 12,619 B) MEASURED, verbatim: 'Begin accepting entries online: October 22, 2026', 'Deadline for submissions: January 15, 2027', 'Entry Fee: $30 through December 31, $35 through deadline for entries', 'Two awards ... ZEKE Award for Documentary Photography / ZEKE Award for Systemic Change. Each awardee will receive $2,500', and the winners list 'Featured in ZEKE Magazine', 'Featured in The Guardian US online'. Exhibition is NOT stored as a prize tag because the page says 'Exhibitions to be determined ... We hope to do the same for 2027 but it is not yet confirmed.' Entry requirement: 'All entries must have between 6 and 30 photographs related to a specific theme' = requirements 6-30 images. Eligibility verbatim: 'open to professional and amateur US and international photographers' (SDN staff, board, advisory committee, judges, their families, and first-place winners of the past five years excluded) = an empty eligibility facet list. Important Dates: judging Jan 22 - Feb 5 2027, 'First Place Winners announced: By February 21, 2027' = resultsDate. AI MEASURED AND EXPLICIT under Technical Requirements: 'No synthetic or artificially-generated images are allowed, and no use of artificially generative fill is allowed' plus 'All photos ... must be from a single capture from a lens-based camera' and a RAW-file check for finalists, so ai = Not accepted. Eight jurors named with their roles on the same page. Scholarships are offered for photographers without credit-card access or for whom the fee is prohibitive (email scholarships@socialdocumentary.net five days before the deadline). Entry runs through SDN's own site (socialdocumentary.net/competition.php), so submitVia is Official website. Dup gate run before the write over slug+title+org+url+submitUrl: 'zeke' 0, 'socialdocumentary' 0, 'social documentary' 0; memory-dir grep in the same pass: 'zeke' 0 files, 'social documentary network' 2 files - both record the REJECT of the separate 'Join SDN' membership/portfolio-hosting signup (Sep 5 and Nov 6 add runs), not this dated award."
     }
   ]
 }
