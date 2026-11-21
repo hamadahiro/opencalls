@@ -117,7 +117,11 @@ The application form charges £100 including VAT as its last, required step, and
 
 The deadline is 31 January 2027, 23:59 GMT.</p>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 31, 2027">January 31, 2027</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£100 (£160 per slot on gallery page)"><span class="tag-front">£100 (£160 per slot on</span> <span class="tag-back">gallery page)</span></a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/new-york/" title="New York, NY">New York, NY</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/1-image/" title="1 image (1:1)">1 image (1:1)</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://form.typeform.com/to/UiYhdvK8" target="_blank" rel="nofollow noopener" title="Typeform">Website</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 31, 2027">January 31, 2027</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£100">£100</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/new-york/" title="New York, NY">New York, NY</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/1-image/" title="1 image (1:1)">1 image (1:1)</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://form.typeform.com/to/UiYhdvK8" target="_blank" rel="nofollow noopener" title="Typeform">Website</a></span></div></div>
+
+      <div class="call-detail-jury">
+        <p class="call-detail-description">Jury: Arrival Gallery review team</p>
+      </div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/arrival-gallery/">Arrival Gallery</a></p>
@@ -141,7 +145,7 @@ The deadline is 31 January 2027, 23:59 GMT.</p>
 
   <script>
     const CURRENT_SLUG = 'times-square-collective-showcase-february-2027-arrival-gallery';
-    const CURRENT_CALL = {"title":"Times Square Collective Showcase — February 2027","category":"exhibition","org":"Arrival Gallery","location":"New York, NY, USA","fee":"£100 (£160 per slot on gallery page)","deadline":"2027-01-31","eligibility":[]};
+    const CURRENT_CALL = {"title":"Times Square Collective Showcase — February 2027","category":"exhibition","org":"Arrival Gallery","location":"New York, NY, USA","fee":"£100","deadline":"2027-01-31","eligibility":[]};
     function downloadICS(e) {
       e.preventDefault();
       function icsE(s){return s.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
@@ -151,7 +155,7 @@ The deadline is 31 January 2027, 23:59 GMT.</p>
       var u = 'https://www.arrivalgallery.com/digital-showcases';
       var o = 'Arrival Gallery';
       var dl = new Date('2027-01-31T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('£100 (£160 per slot on gallery page)');
+      var desc = 'Open call by ' + icsE(o) + '\\n\\nDeadline: ' + icsE(dl) + '\\nPrize: ' + icsE('Exhibition') + '\\nEntry fee: ' + icsE('£100');
       var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Monographica//Open Calls//EN\r\nBEGIN:VEVENT\r\nDTSTART;VALUE=DATE:' + d + '\r\nDTEND;VALUE=DATE:' + de + '\r\nSUMMARY:' + icsE(t) + ' - Deadline\r\nDESCRIPTION:' + desc + '\r\nURL:' + u + '\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
