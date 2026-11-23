@@ -1,5 +1,5 @@
 const EMPTY_MESSAGES = ['Nothing here, for now.','No calls match this search.','Nothing came up this time.','No results, it seems.','No calls found for this.','Nothing fits this search.','No matches at the moment.','Nothing to show here.','No calls in this range.','Nothing here yet.'];
-function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)] + '<a href="/browse/">Browse all calls &rarr;</a></p>'; }
+function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)] + '<a href="/browse/">Browse all calls</a></p>'; }
 
 // NOTE: `eligibilityLabel` is the single source of truth defined in
 // generate-pages.js (ELIGIBILITY_LABEL) and injected into the
@@ -127,11 +127,11 @@ function buildSearchSuggestions(allCalls, query, opts) {
 
 // Browse-all links appended under each suggestion group.
 var SEARCH_BROWSE_LINKS = {
-  'Eligibility': { href: '/eligibility/', text: 'All eligibility options' },
-  'Locations': { href: '/locations/', text: 'All locations' },
-  'Prize / Fee': { href: '/prize/', text: 'All fees and prizes' },
-  'Categories': { href: '/categories/', text: 'All categories' },
-  'Organizations': { href: '/organizations/', text: 'All organizations' }
+  'Eligibility': { href: '/eligibility/', text: 'See all eligibility options' },
+  'Locations': { href: '/locations/', text: 'See all locations' },
+  'Prize / Fee': { href: '/prize/', text: 'See all fees and prizes' },
+  'Categories': { href: '/categories/', text: 'See all categories' },
+  'Organizations': { href: '/organizations/', text: 'See all organizations' }
 };
 
 // Shared search-dropdown renderer — single source of truth for the suggestion
@@ -156,7 +156,7 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
     });
     if (SEARCH_BROWSE_LINKS[groupName]) {
       var link = SEARCH_BROWSE_LINKS[groupName];
-      html += '<a href="' + link.href + '" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); text-decoration:none; letter-spacing:0.3px;">' + link.text + ' &rarr;</a>';
+      html += '<a href="' + link.href + '" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); text-decoration:none; letter-spacing:0.3px;">' + link.text + '</a>';
     }
   });
   dropdownEl.innerHTML = html;

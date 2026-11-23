@@ -672,14 +672,15 @@ function paginationNav(root, current, count) {
       : `<a href="${pageUrl(root, p)}" class="pagination-page${far ? ' pagination-far' : ''}">${p}</a>`;
     if (far && p > current && !gapAfter) pages += narrowGap;
   });
-  // One row at every width: on a phone the step labels are hidden and the
-  // arrows sit either side of the numbers.
+  // Words only, no arrows, always one row (owner, 2026-11-23). Below 440px the
+  // words do not fit beside the numbers, so style.css hides Previous and Next
+  // there; the numbers already include the pages either side.
   const prev = current > 1
-    ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev" aria-label="Previous page">&larr;<span class="pagination-step-label"> Previous</span></a>`
-    : '<span class="pagination-step disabled" aria-hidden="true">&larr;<span class="pagination-step-label"> Previous</span></span>';
+    ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev">Previous</a>`
+    : '<span class="pagination-step disabled" aria-hidden="true">Previous</span>';
   const next = current < count
-    ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next" aria-label="Next page"><span class="pagination-step-label">Next </span>&rarr;</a>`
-    : '<span class="pagination-step disabled" aria-hidden="true"><span class="pagination-step-label">Next </span>&rarr;</span>';
+    ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next">Next</a>`
+    : '<span class="pagination-step disabled" aria-hidden="true">Next</span>';
   return `      <nav class="pagination" aria-label="Pages">${prev}<span class="pagination-pages">${pages}</span>${next}</nav>\n`;
 }
 
@@ -720,7 +721,7 @@ function writePagedListing(filepath, html, { calls, opts }) {
   const open = sortOpenCalls(calls);
   const past = sortPastCalls(calls);
   const files = [];
-  const pastLink = `      <p class="browse-more list-switch"><a href="${pastRoot}">Past calls (${past.length}) &rarr;</a></p>\n`;
+  const pastLink = `      <p class="browse-more list-switch"><a href="${pastRoot}">See all past calls</a></p>\n`;
 
   if (open.length) {
     files.push(...writeListPages(html, base, open, (chunk, k, count) =>
@@ -729,7 +730,7 @@ function writePagedListing(filepath, html, { calls, opts }) {
     if (past.length) {
       files.push(...writeListPages(html, pastRoot, past, (chunk, k, count) =>
         `      <h2 class="list-heading">Past calls</h2>\n` +
-        `      <p class="browse-more list-switch"><a href="${base}">&larr; Open calls (${open.length})</a></p>\n` +
+        `      <p class="browse-more list-switch"><a href="${base}">See all open calls</a></p>\n` +
         renderSectionedCards(chunk, sections && pastSection) + paginationNav(pastRoot, k, count),
         { labelFor: k => k > 1 ? `Past calls, page ${k}` : 'Past calls', robots: 'noindex, follow' }));
     }
@@ -906,7 +907,7 @@ ${call.jury && call.jury.length ? `
         <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
       <div class="call-detail-actions" id="detailActions">
-${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission &rarr;</a>
+${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
 ${(() => { const v = getVerifiedAt(slug); return v ? `      <div class="call-detail-jury"><span class="breadcrumbs">Verified by Monographica on ${formatVerifiedDate(v)}</span></div>` : ''; })()}
@@ -1154,7 +1155,7 @@ const feesIndexHtml = `<!DOCTYPE html>
     <section class="index-list" id="indexList">
 ${feeIndexItems}    </section>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
 
     ${FOOTER}
   </main>
@@ -1526,7 +1527,7 @@ if (eligibilityPageSlugs.length) {
       ${buildEligibilityIndexItems()}
     </section>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
 
     ${FOOTER}
   </main>
@@ -1629,7 +1630,7 @@ if (prizeCatPageSlugs.length) {
       ${buildPrizeIndexItems()}
     </section>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
 
     ${FOOTER}
   </main>
@@ -1730,7 +1731,7 @@ if (requirementPageSlugs.length) {
       ${buildRequirementIndexItems()}
     </section>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
 
     ${FOOTER}
   </main>
@@ -1838,7 +1839,7 @@ if (submitViaPageSlugs.length) {
       ${buildSubmitViaIndexItems()}
     </section>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
 
     ${FOOTER}
   </main>
@@ -2138,7 +2139,7 @@ const deadlinesIndexHtml = `<!DOCTYPE html>
 ${deadlinesIndexItems}
     </section>
 
-    <p class="browse-more"><a href="/browse/">Browse by category, location, organization &rarr;</a></p>
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
 
     ${FOOTER}
   </main>
@@ -2153,6 +2154,13 @@ sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
 
 // === Submit page ===
+// The site-wide search bar sits under the "Search the site first" sentence here,
+// not above the title (owner, 2026-11-23). Same element and ids, so search.js
+// and the phone's full-screen search work unchanged.
+const GLOBAL_SEARCH_RE = /\s*<div class="global-search" id="globalSearchWrap">[\s\S]*?<div id="globalSearchDropdown"[^>]*><\/div>\s*<\/div>/;
+const SUBMIT_HEADER_FULL = buildHeader();
+const SUBMIT_SEARCH = SUBMIT_HEADER_FULL.match(GLOBAL_SEARCH_RE)[0].trim().replace('class="global-search"', 'class="global-search in-hero"');
+const SUBMIT_HEADER = SUBMIT_HEADER_FULL.replace(GLOBAL_SEARCH_RE, '');
 const submitHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2160,10 +2168,14 @@ const submitHtml = `<!DOCTYPE html>
 </head>
 <body>
 
-  ${buildHeader()}
+  ${SUBMIT_HEADER}
 
   <main>
-    ${buildHero('', 'Submit a call', 'Search the site first — most calls sent in are ones we already list. If not, paste a link and add details if you have them.')}
+    <section class="hero">
+      <h1>Submit a call</h1>
+      <h2 class="subtitle">Search the site first — most calls sent in are ones we already list. If not, paste a link and add details if you have them.</h2>
+      ${SUBMIT_SEARCH}
+    </section>
 
     <section class="submit-form">
       <form id="submitForm">
@@ -2295,9 +2307,6 @@ const aboutHtml = `<!DOCTYPE html>
 
       <h2 class="section-header">Corrections</h2>
       <p class="call-detail-description">If a listing is wrong, outdated, duplicated, or missing important context, send the official source through the <a href="/submit/">submit form</a>. Corrections are handled from the official call information rather than from secondary summaries.</p>
-
-      <h2 class="section-header">Who curates it</h2>
-      <p class="call-detail-description">Open Calls is curated by <a href="https://hh.sh">hh</a>, a photographer who also works with chemigrams, drawings and books. Monographica began as hh's portfolio; the work now lives at <a href="https://hh.sh">hh.sh</a>.</p>
     </section>
 
     ${FOOTER}
@@ -2748,7 +2757,7 @@ const homeFiles = [];
   );
   const open = sortOpenCalls(data.calls);
   const pastCount = data.calls.length - open.length;
-  const archiveLink = `      <p class="browse-more list-switch"><a href="/archive/">Past calls (${pastCount}) &rarr;</a></p>\n`;
+  const archiveLink = `      <p class="browse-more list-switch"><a href="/archive/">See all past calls</a></p>\n`;
   homeFiles.push(...writeListPages(template, '/', open, (chunk, k, count) =>
     renderSectionedCards(chunk, openSection) + paginationNav('/', k, count) + archiveLink,
     { labelFor: k => k > 1 ? `Page ${k}` : '' }));

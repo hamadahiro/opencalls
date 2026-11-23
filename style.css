@@ -1169,7 +1169,6 @@ a.pagination-step:hover {
 
 @media (max-width: 640px) {
   .pagination {
-    justify-content: center;
     gap: 4px;
   }
 
@@ -1178,14 +1177,13 @@ a.pagination-step:hover {
     flex-wrap: nowrap;
   }
 
-  .pagination-page,
-  .pagination-step {
+  .pagination-page {
     min-width: 36px;
     padding: 8px 0;
   }
 
-  .pagination-step-label {
-    display: none;
+  .pagination-step {
+    padding: 8px 12px;
   }
 
   .pagination-far {
@@ -1197,14 +1195,25 @@ a.pagination-step:hover {
   }
 }
 
+/* Below 440px the words do not fit beside the numbers in one row (measured
+   2026-11-23: a middle page needs 386px of row + 32px side padding = 418px).
+   The numbers already include the pages either side, so the steps go. */
+@media (max-width: 440px) {
+  .pagination {
+    justify-content: center;
+  }
+
+  .pagination-step {
+    display: none;
+  }
+}
+
 @media (max-width: 380px) {
-  .pagination,
   .pagination-pages {
     gap: 2px;
   }
 
-  .pagination-page,
-  .pagination-step {
+  .pagination-page {
     min-width: 32px;
   }
 
@@ -1263,6 +1272,13 @@ a.pagination-step:hover {
   width: 100%;
 }
 
+/* Submit page: the bar sits in the hero, under its sentence */
+.global-search.in-hero {
+  max-width: none;
+  margin: 0;
+  padding: 24px 0 0;
+}
+
 .global-search .search-back {
   display: none;
 }
@@ -1298,6 +1314,10 @@ a.pagination-step:hover {
   /* Global search: mobile — hide bar, show icon */
   .global-search {
     display: none;
+  }
+
+  .global-search.in-hero {
+    display: block;
   }
 
   .search-toggle {
