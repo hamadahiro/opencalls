@@ -510,6 +510,17 @@ a.call-deadline.closed:hover { opacity: 0.5; }
   margin-bottom: 10px;
 }
 
+/* One pill height for every tag and pagination button (owner, 2026-11-23:
+   "always same size as tags"). Icon tags were 34px, plain ones 32px. */
+:root {
+  --pill-h: 34px;
+}
+
+.meta-tag,
+.call-deadline {
+  height: var(--pill-h);
+}
+
 .meta-tag {
   display: inline-flex;
   align-items: center;
@@ -1099,9 +1110,12 @@ a.filter-btn {
 /* Same shape as the tags (.meta-tag): 14px text, 8px 12px padding, 1px border. */
 .pagination-page,
 .pagination-step {
-  display: inline-block;
-  min-width: 32px;
-  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--pill-h);
+  min-width: var(--pill-h);
+  padding: 0 12px;
   font-size: var(--fs-tag);
   line-height: 1;
   border: 1px solid transparent;
@@ -1114,7 +1128,7 @@ a.filter-btn {
 }
 
 .pagination-page {
-  padding: 8px 4px; /* numbers: 32x32 circles; the 12px side padding is for the words */
+  padding: 0 4px; /* numbers: circles; the 12px side padding is for the words */
 }
 
 a.pagination-page:hover,
@@ -1188,12 +1202,12 @@ a.pagination-step:hover {
   }
 
   .pagination-page {
-    min-width: 32px;
-    padding: 8px 0;
+    min-width: var(--pill-h);
+    padding: 0;
   }
 
   .pagination-step {
-    padding: 8px 12px;
+    padding: 0 12px;
   }
 
   .pagination-far {
@@ -1224,7 +1238,7 @@ a.pagination-step:hover {
   }
 
   .pagination-page {
-    min-width: 32px;
+    min-width: var(--pill-h);
   }
 
   .pagination-gap {
