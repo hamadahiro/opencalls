@@ -1095,11 +1095,15 @@ a.filter-btn {
   gap: 6px;
 }
 
+/* Same shape as the tags (.meta-tag): 14px text, 8px 12px padding, 1px border. */
 .pagination-page,
 .pagination-step {
   display: inline-block;
-  min-width: 40px;
-  padding: 8px 14px;
+  min-width: 32px;
+  padding: 8px 12px;
+  font-size: var(--fs-tag);
+  line-height: 1;
+  border: 1px solid transparent;
   border-radius: 999px;
   background: var(--surface);
   color: var(--text);
@@ -1178,7 +1182,7 @@ a.pagination-step:hover {
   }
 
   .pagination-page {
-    min-width: 36px;
+    min-width: 32px;
     padding: 8px 0;
   }
 
