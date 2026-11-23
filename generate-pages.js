@@ -427,7 +427,7 @@ const HEADER = buildHeader();
 
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p style="display:flex;gap:24px"><span>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></span><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
+      <p style="display:flex;flex-wrap:wrap;gap:8px 24px"><span>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></span><span>Curated by <a href="https://hh.sh">hh</a></span><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
     </footer>`;
 function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
@@ -2295,6 +2295,9 @@ const aboutHtml = `<!DOCTYPE html>
 
       <h2 class="section-header">Corrections</h2>
       <p class="call-detail-description">If a listing is wrong, outdated, duplicated, or missing important context, send the official source through the <a href="/submit/">submit form</a>. Corrections are handled from the official call information rather than from secondary summaries.</p>
+
+      <h2 class="section-header">Who curates it</h2>
+      <p class="call-detail-description">Open Calls is curated by <a href="https://hh.sh">hh</a>, a photographer who also works with chemigrams, drawings and books. Monographica began as hh's portfolio; the work now lives at <a href="https://hh.sh">hh.sh</a>.</p>
     </section>
 
     ${FOOTER}
