@@ -262,6 +262,15 @@ data.calls.forEach((c, i) => {
     if (dWords > 75 || dSent > 3) err(`"${label}" description is ${dWords} words / ${dSent} sentences — at most 3 sentences and 75 words (aim for 2-3 sentences, 40-60 words). Keep what is offered, who can apply, and the one catch; the tags already show deadline, fee and prize.`);
     if (/\n/.test(c.description || '')) err(`"${label}" description has a line break — one short paragraph only`);
     const sWords = (c.summary || '').trim().split(/\s+/).filter(Boolean).length;
+    // Details list (owner, 2026-11-23): every value fits on one line on a desktop screen.
+    // The text column stops growing at a 1440 px window (rows 1352 px, a value gets 75%,
+    // about 98 characters); 90 keeps 1280 px laptops on one line too. New calls only,
+    // from 2026-11-23 19:00 UTC: older calls keep their text.
+    if ((c.dateAdded || '') >= '2026-11-23T19') {
+      for (const [field, v] of [['fee', c.fee], ['requirements', c.requirements], ['ai', c.ai], ['resultsDate', c.resultsDate], ['location', c.location]]) {
+        if (v && v.length > 90) err(`"${label}" ${field} is ${v.length} characters — a details value is at most 90 (one line on a desktop screen). Keep the core fact (for a fee: the basic entry price) and put the rest in the description.`);
+      }
+    }
     if (sWords > 25 || (c.summary || '').length > 140) err(`"${label}" summary is ${sWords} words / ${(c.summary || '').length} chars — at most 25 words and 140 characters, one sentence`);
   }
 });

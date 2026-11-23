@@ -475,7 +475,8 @@ function renderInfoGrid(call, opts) {
   }
   // Full text, wrapping. Not tagHtml(): its two nowrap halves ran past the row's
   // edge on phones and were clipped (owner, 2026-11-23, a long entry fee).
-  function infoVal(str) { return esc(str || ''); }
+  // <wbr> after a slash: "IN/OH/IL/MI/KY/MO/IA/WI/KS/NE" breaks between codes, not inside one.
+  function infoVal(str) { return esc(str || '').replace(/\//g, '/<wbr>'); }
   function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${esc(str)}">${infoVal(str)}</a>`; }
 
   const rows = [];
