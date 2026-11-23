@@ -427,7 +427,7 @@ const HEADER = buildHeader();
 
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p style="display:flex;flex-wrap:wrap;gap:8px 24px"><span>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></span><span>Curated by <a href="https://hh.sh">hh</a></span><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
+      <p style="display:flex;gap:24px"><span>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></span><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
     </footer>`;
 function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
