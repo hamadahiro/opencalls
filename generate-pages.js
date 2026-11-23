@@ -9,7 +9,7 @@ const {
   usStateNames, stateNameToAbbr, validCountries,
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-  deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
+  deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
@@ -286,7 +286,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'archive', 'new', 'page', 'past', 'search-index'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -1854,6 +1854,94 @@ if (submitViaPageSlugs.length) {
   console.log(`  Submit-via index page (${submitViaPageSlugs.length} methods)`);
 }
 
+// === AI policy pages ===
+// The "AI policy" row on every detail page links here (owner, 2026-11-23). The
+// stored wording stays as written on the call page; aiPolicyBucket() (shared.js)
+// files it under one of three groups. Wordings it can't file stay unlinked.
+const aiPolicyGroups = {
+  'accepted':     { short: 'AI accepted',     title: 'Open Calls That Accept AI Work',        desc: 'Open calls that accept AI-generated or AI-assisted work — some ask you to disclose it, some keep a separate category for it.' },
+  'editing-only': { short: 'AI editing only', title: 'Open Calls That Allow AI Editing Only', desc: 'Open calls that allow AI editing or assistance but not AI-generated work. Read each call’s rules for exactly what it allows.' },
+  'not-accepted': { short: 'No AI',           title: 'Open Calls That Do Not Accept AI',      desc: 'Open calls whose rules say AI is not accepted in the work you submit.' }
+};
+const aiPolicyOrder = ['accepted', 'editing-only', 'not-accepted'];
+
+const aiPolicyTags = {};
+const openAiPolicyTags = {};
+data.calls.forEach(c => {
+  const b = aiPolicyBucket(c.ai);
+  if (!b) return;
+  aiPolicyTags[b] = (aiPolicyTags[b] || 0) + 1;
+  if (isCallOpen(c.deadline)) openAiPolicyTags[b] = (openAiPolicyTags[b] || 0) + 1;
+});
+
+const aiPolicyPageSlugs = [];
+aiPolicyOrder.filter(tag => aiPolicyTags[tag]).forEach(tag => {
+  const info = aiPolicyGroups[tag];
+  const tagCalls = data.calls.filter(c => aiPolicyBucket(c.ai) === tag);
+  const stats = listStats(tagCalls);
+  const slug = `ai-policy/${tag}`;
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `${escapeHtml(info.title)} ${YEAR}`, description: escapeHtml(info.desc), canonical: `${SITE}/${slug}`, jsonLd: collectionPageLd(`${info.title} ${YEAR}`, info.desc, `${SITE}/${slug}/`), breadcrumbs: [{ name: 'AI policy', url: `${SITE}/ai-policy/` }, { name: info.title, url: `${SITE}/${slug}/` }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/ai-policy/">AI policy</a></nav>', escapeHtml(info.title), listSubtitle(info.desc, stats))}
+
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(tagCalls)}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+
+  aiPolicyPageSlugs.push(tag);
+  writeGenerated(`${slug}/index.html`, html);
+  console.log(`  AI policy page: ${tag} (${stats.total} calls, ${stats.open} open)`);
+});
+
+if (aiPolicyPageSlugs.length) {
+  const aiPolicyDesc = 'Browse open calls by what their rules say about AI — calls that accept AI work, calls that allow AI editing only, and calls that do not accept AI.';
+  const aiPolicyIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Calls by AI Policy ${YEAR}`, description: aiPolicyDesc, canonical: `${SITE}/ai-policy`, jsonLd: collectionPageLd(`Open Calls by AI Policy ${YEAR}`, aiPolicyDesc, `${SITE}/ai-policy/`), cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'AI policy', aiPolicyDesc)}
+
+    <section class="index-list" id="indexList">
+      ${buildIndexItems(aiPolicyPageSlugs.map(tag => ({ href: `/ai-policy/${tag}/`, label: aiPolicyGroups[tag].short, total: aiPolicyTags[tag] || 0, open: openAiPolicyTags[tag] || 0 })))}
+    </section>
+
+    <p class="browse-more"><a href="/browse/">Browse by category, location, organization</a></p>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+
+  writeGenerated('ai-policy/index.html', aiPolicyIndexHtml);
+  console.log(`  AI policy index page (${aiPolicyPageSlugs.length} groups)`);
+}
+
 // === US state tallies ===
 // usStateNames + stateNameToAbbr come from shared.js (single source of truth).
 // Counted before the country pages because /united-states/ lists STATES rather
@@ -2095,6 +2183,40 @@ ${buildStaticCallList(g.calls, { skipSections: true })}
   console.log(`  Deadline page: ${label} (${count} calls, ${openCount} open)`);
 });
 
+// === Continuous (rolling) deadline page ===
+// The "Continuous" deadline on a detail page links here (owner, 2026-11-23).
+const continuousCalls = data.calls.filter(c => c.deadline === 'Continuous');
+if (continuousCalls.length) {
+  const stats = listStats(continuousCalls);
+  const desc = 'Open calls with no fixed deadline — they take submissions on a rolling basis.';
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Open Calls With Rolling Deadlines', description: `${stats.open} open calls for artists with no fixed deadline. Photography competitions, exhibitions, publications, and residencies that take submissions on a rolling basis.`, canonical: `${SITE}/deadlines/continuous`, jsonLd: collectionPageLd('Open Calls With Rolling Deadlines', desc, `${SITE}/deadlines/continuous/`), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: 'Continuous', url: `${SITE}/deadlines/continuous/` }], cssVersion, robots: stats.open > 0 ? 'index, follow' : 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', 'Continuous', listSubtitle(desc, stats))}
+
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(continuousCalls)}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated('deadlines/continuous/index.html', html);
+  if (stats.open > 0) sitemapEntries.push(`${SITE}/deadlines/continuous`);
+  console.log(`  Deadline page: Continuous (${stats.total} calls, ${stats.open} open)`);
+}
+
 // === Deadlines index page ===
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
@@ -2117,6 +2239,7 @@ function deadlineItem(key) {
 }
 
 const deadlinesIndexItems = [
+  ...(continuousCalls.length ? [indexItem('/deadlines/continuous/', 'Continuous', listedCount(listStats(continuousCalls))).trimEnd()] : []),
   ...currentMonths.map(k => deadlineItem(k)),
   ...(futureMonths.length ? [`      <h3 class="section-header">Upcoming</h3>`] : []),
   ...futureMonths.map(k => deadlineItem(k)),
@@ -2413,7 +2536,8 @@ ${buildBrowseSection('Requirements', browseRequirements, '/requirements/')}
 ${buildBrowseSection('Locations', browseCountries, '/locations/')}
 ${buildBrowseSection('US States', browseStates, '/united-states/')}
 ${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/')}
-${buildBrowseSection('Deadlines', sortedMonths.map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}/`, ...listStats(g.calls) }; }), '/deadlines/')}
+${buildBrowseSection('AI policy', aiPolicyPageSlugs.map(tag => ({ label: aiPolicyGroups[tag].short, href: `/ai-policy/${tag}/`, total: aiPolicyTags[tag] || 0, open: openAiPolicyTags[tag] || 0 })), '/ai-policy/')}
+${buildBrowseSection('Deadlines', [...(continuousCalls.length ? [{ label: 'Continuous', href: '/deadlines/continuous/', ...listStats(continuousCalls) }] : []), ...sortedMonths.map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}/`, ...listStats(g.calls) }; })], '/deadlines/')}
 ${buildBrowseSection('Organizations', browseOrgs, '/organizations/')}
     </section>
 
@@ -2492,7 +2616,7 @@ fs.writeFileSync('cards.js', cardsJs);
   // scripts/ is gitignored local tooling — guard so the build works without it.
   const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
   const updateStateSrc = fs.existsSync('scripts/update-verify-state.js') ? fs.readFileSync('scripts/update-verify-state.js', 'utf8') : '';
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
     for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc], ['scripts/update-verify-state.js', updateStateSrc]]) {

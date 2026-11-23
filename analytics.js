@@ -101,6 +101,7 @@
     if (p.startsWith('/eligibility/')) return p === '/eligibility/' ? 'eligibility_index' : 'eligibility';
     if (p.startsWith('/prize/')) return p === '/prize/' ? 'prize_index' : 'prize';
     if (p.startsWith('/fees/')) return p === '/fees/' ? 'fees_index' : 'fee';
+    if (p.startsWith('/ai-policy/')) return p === '/ai-policy/' ? 'ai_policy_index' : 'ai_policy';
     if (p.startsWith('/deadlines/')) return p === '/deadlines/' ? 'deadlines_index' : 'deadline';
     if (p.startsWith('/united-states/') && p !== '/united-states/') return 'state';
     // Individual call detail pages have CURRENT_CALL defined

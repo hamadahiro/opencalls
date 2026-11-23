@@ -275,6 +275,21 @@ function derivePrizeCategories(prize) {
 }
 
 // Maps a free-text requirements string to a single browse bucket slug.
+// AI policy group for /ai-policy/<group>/ from the stored wording (33 wordings,
+// 2026-11-23). null = no group (silent, unclear, or about written text only).
+//   not-accepted  'Not accepted'
+//   accepted      AI work accepted, with or without disclosure or its own category
+//   editing-only  AI editing or assistance yes, AI-generated work no
+function aiPolicyBucket(ai) {
+  const s = (ai || '').toLowerCase().trim();
+  if (!s || s === 'not specified' || s === 'not mentioned') return null;
+  if (s === 'not accepted') return 'not-accepted';
+  if (/categor/.test(s)) return 'accepted';
+  if (/generat|substantial|only|not as primary|hybrid|real photograph|modified|mockup/.test(s)) return 'editing-only';
+  if (/accepted|must disclose|discouraged/.test(s)) return 'accepted';
+  return null;
+}
+
 function deriveRequirementBucket(r) {
   if (!r) return null;
   const s = r.toLowerCase();
@@ -370,7 +385,7 @@ function submitViaLink(call, esc) {
   else if (call.url) href = call.url;
   else if (call.email) href = 'mailto:' + call.email;
 
-  if (!isCallOpen(call.deadline) || !href) return esc(label);
+  if (!isCallOpen(call.deadline) || !href) return `<a href="/submit-via/${slugify(label)}/">${esc(label)}</a>`;
   const isMail = href.slice(0, 7) === 'mailto:';
   const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
   return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
@@ -458,7 +473,9 @@ function renderInfoGrid(call, opts) {
   function infoRow(label, value) {
     return `<div class="info-row"><span class="info-label">${label}</span><span class="dots"></span><span class="info-value">${value}</span></div>`;
   }
-  function infoVal(str) { return tagHtml(str, 20, esc); }
+  // Full text, wrapping. Not tagHtml(): its two nowrap halves ran past the row's
+  // edge on phones and were clipped (owner, 2026-11-23, a long entry fee).
+  function infoVal(str) { return esc(str || ''); }
   function infoLink(href, str) { const h = href.endsWith('/') ? href : href + '/'; return `<a href="${h}" title="${esc(str)}">${infoVal(str)}</a>`; }
 
   const rows = [];
@@ -470,7 +487,7 @@ function renderInfoGrid(call, opts) {
     const d = new Date(call.deadline + 'T00:00:00');
     dlSlug = ['january','february','march','april','may','june','july','august','september','october','november','december'][d.getMonth()] + '-' + d.getFullYear();
   }
-  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', dlSlug ? infoLink('/deadlines/' + dlSlug, deadlineText) : infoVal(deadlineText)));
+  rows.push(infoRow('<a href="/deadlines/">Deadline</a>', infoLink('/deadlines/' + (dlSlug || 'continuous'), deadlineText)));
 
   if (call.resultsDate) {
     const resultsPast = (function(s) {
@@ -512,7 +529,10 @@ function renderInfoGrid(call, opts) {
     rows.push(infoRow('<a href="/requirements/">Requirements</a>', reqBucket ? infoLink('/requirements/' + reqBucket, call.requirements) : infoVal(call.requirements)));
   }
 
-  if (call.ai && call.ai !== 'Not specified') rows.push(infoRow('AI policy', infoVal(call.ai)));
+  if (call.ai && call.ai !== 'Not specified') {
+    const aiBucket = aiPolicyBucket(call.ai);
+    rows.push(infoRow('<a href="/ai-policy/">AI policy</a>', aiBucket ? infoLink('/ai-policy/' + aiBucket, call.ai) : infoVal(call.ai)));
+  }
 
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
@@ -584,7 +604,7 @@ if (typeof module !== 'undefined' && module.exports) {
     usStateNames, stateNameToAbbr, validCountries,
     PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
     isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-    deriveRequirementBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
+    deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform,

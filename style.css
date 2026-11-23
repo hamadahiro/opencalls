@@ -1020,8 +1020,9 @@ a.meta-tag-link.call-prize:hover {
   font-family: 'Source Serif 4', serif;
   color: var(--text);
   text-align: right;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   max-width: 75%;
+  min-width: 0;
   flex-shrink: 1;
 }
 
