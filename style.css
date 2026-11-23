@@ -1092,6 +1092,7 @@ a.filter-btn {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center; /* no stretching to the "…" height: circles stay round */
   gap: 6px;
 }
 
@@ -1112,6 +1113,10 @@ a.filter-btn {
   white-space: nowrap;
 }
 
+.pagination-page {
+  padding: 8px 4px; /* numbers: 32x32 circles; the 12px side padding is for the words */
+}
+
 a.pagination-page:hover,
 a.pagination-step:hover {
   background: var(--surface-hover);
@@ -1130,6 +1135,7 @@ a.pagination-step:hover {
 }
 
 .pagination-gap {
+  line-height: 1;
   padding: 8px 2px;
   color: var(--text-muted);
 }
