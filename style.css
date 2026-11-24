@@ -275,6 +275,10 @@ main {
   margin-bottom: 32px;
 }
 
+/* Phones: the call description is cut to 6 lines with a "Read more" line under it
+   (the inline script after #detailText adds the classes; without it all text shows). */
+.read-more { display: none; }
+
 /* === Filters === */
 .filters {
   display: flex;
@@ -809,6 +813,31 @@ a.meta-tag-link.call-prize:hover {
   .call-description,
   .call-detail-description {
     line-height: 28px;
+  }
+
+  .call-detail-text.is-collapsed .call-detail-description:first-child {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    overflow: hidden;
+  }
+  .call-detail-text.is-collapsed .call-detail-description + .call-detail-description { display: none; }
+  .call-detail-text.has-more .call-detail-description:last-child,
+  .call-detail-text.is-collapsed .call-detail-description:first-child { margin-bottom: 0; }
+
+  .read-more {
+    display: block;
+    padding: 8px 0 0;
+    margin-bottom: 32px;
+    font-size: var(--fs-body);
+    font-family: 'Source Serif 4', serif;
+    line-height: 28px;
+    color: var(--link);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
   }
 
   .call-detail-actions {

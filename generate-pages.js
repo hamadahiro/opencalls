@@ -883,6 +883,34 @@ function buildJsonLd(call) {
   return JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
 }
 
+// Phones only: the call's description shows 6 lines and a "Read more" line. The whole
+// text stays in the HTML (search engines and no-JS readers get all of it); this only
+// adds the class the CSS clamps on. It runs inline, right after the text, so the page
+// never paints the long version first and jumps. Short texts get no button; the check
+// runs again once the web font has loaded, since line breaks change with it.
+const DESCRIPTION_COLLAPSE_SCRIPT = `(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var ps = box.children, first = ps[0];
+  if (!first) return;
+  function fits() { return ps.length < 2 && first.scrollHeight <= first.clientHeight + 2; }
+  box.classList.add('is-collapsed');
+  if (fits()) { box.classList.remove('is-collapsed'); return; }
+  box.classList.add('has-more');
+  var btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  box.after(btn);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
+    if (box.classList.contains('is-collapsed') && fits()) { box.classList.remove('is-collapsed', 'has-more'); btn.remove(); }
+  });
+})();`;
+
 function generatePage(call, cssVersion) {
   const slug = call.slug || slugify(call.title);
   const desc = metaDescription(call);
@@ -911,9 +939,12 @@ function generatePage(call, cssVersion) {
 
       <div id="detailPrize">${buildPrizeBlock(call, escapeHtml)}</div>
 
+      <div class="call-detail-text" id="detailText">
 ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.length
   ? call.prose.map(p => `      <p class="call-detail-description">${linkifyProse(p, call, state)}</p>`).join('\n')
   : `      <p class="call-detail-description">${linkifyProse(call.description, call, state)}</p>`; })()}
+      </div>
+      <script>${DESCRIPTION_COLLAPSE_SCRIPT}</script>
 ${call.winners && call.winners.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
