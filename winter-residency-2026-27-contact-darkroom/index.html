@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Darkroom residency</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">CONTACT Darkroom is a not-for-profit art centre and photographic darkroom in Totnes, Devon, housed in a repurposed abattoir and specialising in black-and-white and colour hand printing. Its winter residency is resource-based: the organisation's own page describes 24-hour-a-day access to fully equipped colour and black-and-white darkrooms, a dedicated workshop room, workspace and an open gallery, for stays of one week to one month between 1 November 2026 and 31 March 2027, with an ideal Friday start. Facilities include a 20-inch RA4 colour processor, three 5x4 black-and-white enlargers, two 5x4 colour enlargers, a large sink, black-and-white film development and an outside suntrap. The residency is designed for emerging and established photographers working on new or existing projects, testing out processes, or making work that responds to the surrounding landscape — the River Dart running from the Dartmoor moorlands to the Atlantic coast. At the end of a residency artists are invited, but not expected, to share work in a small exhibition, talk or workshop; darkroom inductions, guided walks, excursions and local gallery visits can be arranged on request. Applications are open internationally to artists working across photography, film and lens-based practices, and to those making interdisciplinary work engaging image-making, print and alternative processes. There is no application fee, and no closing date is published: complete the form on the residency page with your preferred dates and an outline of your intentions, and the darkroom will arrange a video call. Applications are considered on a rolling basis for stays inside that November–March window. The residency itself is self-funded at £500 per week for one week, £450 per week for two and £400 per week for three weeks or more; inductions to colour and black-and-white printing are charged separately, and private lodging within walking distance is around £50 per night.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/continuous/" title="Continuous">Continuous</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free to apply (£400–£500 per week, self-funded)">Free to apply (£400–£500 per week, self-funded)</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="Totnes, UK">Totnes, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://contactdarkroom.co.uk/residency" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
 
@@ -139,10 +165,10 @@
     const CURRENT_CALL = {"title":"Winter Residency 2026–27","category":"residency","org":"Contact Darkroom","location":"Totnes, United Kingdom","fee":"Free to apply (£400–£500 per week, self-funded)","deadline":"Continuous","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

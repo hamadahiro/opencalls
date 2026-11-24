@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,10 +109,36 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="€5,000 grant × 12 collectives"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">E·CO is a joint program from VIST Foundation, AECID (the Spanish Agency for International Development Cooperation), and NEWF (Nature, Environment &amp; Wildlife Filmmakers, South Africa). The 2026 edition is themed About Time, asking collectives to work on the relationship between past, present, and future — ancestral knowledge, memory, territorial connections, and future imaginaries.</p>
       <p class="call-detail-description">Twelve collectives are selected: six from Latin America and six from Africa. Each receives a €5,000 production grant. Eligibility is restricted by geography — applicants must be based in Latin America or Africa — but is structurally collective: groups of three or more people, either pre-existing or formed for this call. International groups spanning multiple countries are accepted.</p>
       <p class="call-detail-description">Format is open: visual, audiovisual, and transmedia. Selected groups enter a guided production process with virtual mentorship from program specialists. Finished works are presented through travelling exhibitions and the digital platforms of VIST Foundation, NEWF, AECID, and the Spanish Cultural Center network across both regions.</p>
       <p class="call-detail-description">A collective meeting brings the twelve groups together in November 2026 in South Africa, hosted by NEWF. Submission is by Google Form to [address]. The application is free; deadline is May 10, 2026.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2026/" title="May 10, 2026">May 10, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/global-south/" title="Global South">Global South</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/brazil/" title="São Paulo, Brazil">São Paulo, Brazil</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/11-20-images/" title="10–20 reference images">10–20 reference images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -141,10 +167,10 @@
     const CURRENT_CALL = {"title":"E·CO/26 — About Time","category":"grant","org":"VIST Foundation","location":"São Paulo, Brazil","fee":"Free","deadline":"2026-05-10","eligibility":["global-south"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="Over $10,000 in awards"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Arts North International is the annual juried exhibition of the Friends of the Hopkins Center for the Arts, a 501(c)(3) in Hopkins, Minnesota. It is in its 32nd year, which makes it one of the longer-running open international juried shows in the upper Midwest, and it is a physical show in a real gallery rather than an online one — the virtual tour is a supplement to the walls, not a substitute for them.</p>
       <p class="call-detail-description">Photography is named explicitly in the accepted-media list, which also covers painting in acrylic, oil and encaustic, ceramics, drawing, textiles and fiber, glass, mixed media, pastel, printmaking, sculpture, digital drawing, painting and sculpture (video excluded), and watercolour and watermedia including gouache, tempera and casein.</p>
       <p class="call-detail-description">The award pool is over $10,000: Best of Show $3,000, two Awards of Excellence at $1,000, two Awards of Merit at $500, first, second and third places in each medium category, and sponsor-selected special awards from $100 up. Jurors are not named on the call page.</p>
       <p class="call-detail-description">Entry is $39 for three images or entries, $6 for each additional, up to ten images — and three is a floor as well as the starting bundle, so even a single artwork has to be uploaded as three views. A maximum of three artworks can be selected for the show. Work must be original, made since January 1, 2024, and not previously shown at Arts North. Wall work is capped at 60 inches wide including the frame and needs a hanging wire (no sawtooth hangers); gallery wrap is acceptable if no staples show.</p>
       <p class="call-detail-description">Applications close November 30, 2026 at 10:59pm Central and results go out by December 11. Accepted work is delivered free in person on January 9, 2027 or shipped between December 14 and January 8 with a prepaid return label; early in-person drop-off costs $25 by appointment. The show runs January 16 to February 27, 2027, with a reception on January 16 from 4 to 6pm, and the centre takes a 30% commission on sales.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 30, 2026">November 30, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">December 11, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$39 (3 entries) + $6 each additional">$39 (3 entries) + $6 each additional</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/minnesota/" title="Hopkins, MN">Hopkins, MN</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="3–10 images">3–10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artist.callforentry.org/festivals_unique_info.php?ID=18268" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

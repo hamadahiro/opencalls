@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="$500 in prizes ($250 overall winner)"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Earth.Org, the Hong Kong-based environmental news organisation, is running its 2026 photo-story competition under the theme “One Place. One Change.” — a brief that asks for a place you know well and one specific thing that could make it better. Entries opened on 6 November 2026 and close on 28 February 2027 at 23:59 Hong Kong time (UTC+8). It is free to enter, one entry per person, and the organisers say plainly that no payment, donation or membership is required to enter or to win, and that entering will not subscribe you to anything.
 
 A submission is one photo story: between one and three related photographs, a caption and date for each, the town or area and country, and a 100–200 word story written in your own words explaining what is shown, your connection to the place, and one change that would help. All photographs must have been taken by you between 1 January and 31 December 2026 — work from outside that year is not eligible, which is why the entry window runs on into February. There are three categories and you pick one: Wildlife in Peril, Human Impacts on the Environment, or Climate Action. The organisers are explicit that a wildlife portrait or an attractive landscape on its own is not enough; every entry has to reveal a specific environmental threat, human impact or meaningful response. Phone photography is welcome.
@@ -116,6 +117,31 @@ A submission is one photo story: between one and three related photographs, a ca
 The prize fund is US$500: US$250 to the overall winner, who also holds their category title, US$100 to each of the other two category winners, and a US$50 Youth Entrant Award for an outstanding entry from a photographer under 18 on the closing date. The overall winner also receives an Official Earth.Org Photographer of the Year 2026 digital badge for a year. A judging panel assesses environmental relevance, photography, local insight, storytelling and the possibility for change; the organisers state that likes, public votes and follower counts do not decide the result. The panel and the announcement date are still to be published on the competition page — the organisers said the judges would be announced before entries opened on 6 November, and the page names none.
 
 AI is barred outright: AI-generated photographs, stories and captions, generative fill, AI additions or removals, fabricated scenes and misleading captions are all ineligible, while your own manual exposure, colour, contrast and cropping edits are welcome where they preserve the truth of the scene. Entrants keep copyright and grant Earth.Org non-exclusive permission, with credit and without an additional fee, to display and publish the submitted photographs, captions and story for judging, showcasing and reporting on the competition; any other use needs separate permission. The entry form sits on the competition page itself — there is no separate portal — and entrants under 18 need permission from a parent or guardian.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/february-2027/" title="February 28, 2027">February 28, 2027</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="1–3 photographs">1–3 photographs</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/not-accepted/" title="Not accepted">Not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://earth.org/photography-competition/" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
 
@@ -161,10 +187,10 @@ AI is barred outright: AI-generated photographs, stories and captions, generativ
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

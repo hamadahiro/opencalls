@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,12 +109,38 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Residency</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The Helene Wurlitzer Foundation of New Mexico is a private 501(c)(3) non-profit in Taos, founded in 1954, and says it manages one of the oldest artist residency programs in the USA. Its own pages put it at 72 years of charitable assistance to thousands of artists from all over the world, and name Agnes Martin among past grantees.</p>
       <p class="call-detail-description">What the grant provides is time and housing rather than money: 10 to 12 weeks rent-free with utilities paid, in one of eleven fully furnished adobe casitas on the Foundation's fifteen-acre campus in the centre of Taos. Three of the casitas are set up for visual artists with studio lighting and easels. Artists in residence have no imposed expectations, quotas or requirements during the stay, and the Foundation lends bicycles; residents pay for their own food and travel, and WiFi in the casita is the artist's own arrangement.</p>
       <p class="call-detail-description">Photography is explicitly in scope. The eligible visual arts disciplines are painters, illustrators, photographers, sculptors, filmmakers and ceramicists, alongside separate literary and music-composition tracks, and the Foundation says it grants residencies to artists from all over the world regardless of age, experience, nationality, ethnicity, gender or sexual preference.</p>
       <p class="call-detail-description">Selection is blind and discipline-specific: applications go to a selection committee of professionals in the applicant's own field, with separate committees for visual arts, music composers, writers, poets, playwrights and filmmakers. Jurors are told nothing about the artist's demographics and score in five categories purely on the merit of the creative work samples, and work samples that carry the applicant's name or contact details in the files, filenames or descriptions are eliminated. Applicants also give three references, which are contacted only if someone reaches the semi-finalist stage.</p>
       <p class="call-detail-description">Applying takes five work-sample images and a $30 fee, online or printed and mailed; the Foundation warns its online form does not autosave and the session expires after four hours, and says there are no fee waivers. Its application form carries an AI disclosure checkbox — declaring AI tools in the work samples is collected for transparency only and does not affect eligibility. The deadline is 18 January 2027 at 11:59 PM Mountain Time, decisions are notified in or before June 2027, and successful applicants are placed in one of three 2028 sessions: January to April or September to December, twelve weeks each, or June to August, ten weeks.</p>
       <p class="call-detail-description">Two costs sit on the far side of selection rather than on applying: a $300 deposit, half retained for maintaining the casita and half held as a refundable damage deposit, and the no-work policy, which prohibits paid employment in Taos for the length of the residency. Travel and stipends are generally not provided, though the Foundation may help with grocery expenses when its stipend fund allows.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 18, 2027">January 18, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">By June 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$30">$30</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/new-mexico/" title="Taos, NM">Taos, NM</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="5 images">5 images</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/accepted/" title="Accepted (must disclose)">Accepted (must disclose)</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://wurlitzerfoundation.org/apply" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
 
@@ -164,10 +190,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

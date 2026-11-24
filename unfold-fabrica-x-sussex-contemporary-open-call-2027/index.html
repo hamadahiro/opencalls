@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize" title="Exhibition at Fabrica"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Sussex Contemporary, an independent arts organisation that stages curated exhibitions and artist opportunities across South East England, and Fabrica, the contemporary art gallery in a Grade II-listed former church in Brighton's Lanes, follow their first partnership exhibition Resonance (2026) with Unfold, a UK-wide judged open call whose selected works are shown at Fabrica from 16 April to 9 May 2027. The theme - to reveal, develop or become; an idea taking shape, a landscape changing, a practice growing over time - is offered as a starting point rather than a constraint, and the organisers say they are as interested in process as in outcome and in the stories behind the work. Original work in any discipline is welcome, with photography named alongside drawing, painting, printmaking, sculpture, ceramics, jewellery, illustration, mixed media, installation, moving image, sound and performance (giclée and other reproduction prints are refused as printmaking entries). Entry is open to amateur and professional artists with a UK connection - born, educated, living or working in the UK, or another clear link. Each work costs £20 to enter, up to three per artist, bought through the Sussex Contemporary shop, after which a closed artist page links the submission form; selection is by an independent five-person panel, announced through the call, of which the first named is Fabrica co-director Liz Whitehead, and is anonymous wherever possible. Two prizes follow selection without a separate application: the WeAreBrighton Prize (a year of the monthly WeAreBrighton talks plus mentoring with Sussex Contemporary founder Jo Myles) and Unfold in the Window, a further showing in Fabrica's Duke Street window gallery between May and September 2027. All selected work is for sale with a commission to Sussex Contemporary; there is no hanging fee, but delivery and collection are the artist's cost. The call opened in August 2026 and closes at 11:59pm on 21 February 2027, with artists notified in the week of 8 March and drop-off on 12 April.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/february-2027/" title="February 21, 2027">February 21, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Week of March 8, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£20 per work (up to 3)">£20 per work (up to 3)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-kingdom/" title="UK only">UK only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="Brighton, UK">Brighton, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.thesussexcontemporary.co.uk/unfold-open-call-2027" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

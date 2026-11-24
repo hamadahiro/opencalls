@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Publication</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Stone Canoe is an annual print journal of arts, literature and ideas from Upstate New York, founded at Syracuse University in 2007 and now published by the Downtown Writers Center at the Arts Branch of the YMCA of Central New York. It appears each February and carries fiction, creative nonfiction, poetry, short plays and a substantial visual art section. Photography is explicitly among the work it publishes: the guidelines say any type of visual art is considered and list sculpture, ceramic, photography, drawing, quilts, jewellery, installation views and video stills among the types that have appeared, and note that dimensions are not required for photographs where the print size is variable. Visual art submissions are free and limited to five images, each uploaded separately so that titles and details stay matched to the right picture, with a caption for each in the form artist name, title, medium and materials, dimensions and year completed - the caption appears in the printed book exactly as submitted. A biographical note documenting your Upstate New York residency must accompany every image. The one hard eligibility rule is that Stone Canoe publishes only writers and artists who live or have lived in Upstate New York, defined as the state outside New York City and Long Island; qualifying connections are read generously and include being born in the region even if you left, studying at an upstate institution, or having worked there at any point, and the work itself can be about anything at all and need not involve New York State. Previously published work, including in online journals, is not accepted, and simultaneous submissions must be withdrawn if placed elsewhere. The reading period runs from 1 April, and visual art closes on 15 September for the issue published the following spring. Editors aim to respond by mid-November. Stone Canoe also offers sponsor-funded cash prizes to emerging artists and writers with no entry fee or separate application, among them the Hedy and Michael Fawcett Prize for Visual Art; the journal cautions that its prizes depend on sponsors and may be altered or cancelled, and its published record shows the visual art prize last awarded for issue #12.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/september-2026/" title="September 15, 2026">September 15, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Mid-November 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/new-york-state/" title="NY State only">NY State only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/new-york/" title="Syracuse, NY">Syracuse, NY</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 5 images">Up to 5 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -138,10 +164,10 @@
     const CURRENT_CALL = {"title":"Stone Canoe Visual Art Submissions","category":"photography","org":"Stone Canoe","location":"Syracuse, NY, USA","fee":"Free","deadline":"2026-09-15","eligibility":["new-york-state"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Online exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Publication</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Source's annual graduate showcase, running since 2007, opens its 2027 BA cycle. Open to any BA photography course in the UK or the Republic of Ireland; a year group books a place together (minimum five students) and a lead student uploads everyone's material and makes one payment. Each participating student gets their own permanent page on the Source website carrying up to eight images, a 120-word artist statement and a link to their own site — the magazine's point being that the work stays visible long after degree-show week, in front of a readership it describes as curators, picture editors and publishers. Three selectors then review everything submitted and pick favourites, which are published on the site and in the printed Graduate Photography Online supplement. The 2027 BA selectors are Jess Baxter, Assistant Curator of International Art at Tate Modern; Jean-Christophe Godet, founder and artistic director of the Guernsey Photography Festival; and Isaac Huxtable, Assistant Curator of Photography at the V&amp;A. Submission is eight jpegs at 72 DPI, 1024px on the longest edge, sRGB — fewer than eight is allowed, moving image is not accepted, and each student picks one of six categories (Documentary/Photojournalism, Commercial/Fashion, Landscape, Portraiture, Staged/Constructed, Urban/Suburban Landscape). If the work is made for a gallery, Source recommends one of the eight be an installation shot. The £33 (UK) / €38 (Ireland) per-student fee includes a free one-year digital subscription to Source, which the magazine values at £44.99. The MA/MFA phase of the same programme has a separate, later deadline of 7 August 2027.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/may-2027/" title="May 11, 2027">May 11, 2027</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£33 / €38">£33 /<wbr> €38</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/emerging/" title="Emerging artists">Emerging artists</a>, <a href="/eligibility/student/" title="Students">Students</a>, <a href="/eligibility/united-kingdom/" title="UK only">UK only</a>, <a href="/eligibility/ireland/" title="Ireland only">Ireland only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/northern-ireland/" title="Belfast, Northern Ireland">Belfast, Northern Ireland</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 8 images">Up to 8 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://www.source.ie/graduate/submission/organise.php" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€1,500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The VADON Association in Sfântu Gheorghe, Transylvania, opens the thirteenth edition of its international nature photography contest, a competition built to argue for nature conservation through photographs rather than to sell wall space. Entries close on 20 November 2026, judging runs 21–30 November, and the results are announced with the exhibition opening on 22 January 2027 at the Hunting and Natural Sciences Museum on Gróf Mikó Imre Street in Sfântu Gheorghe. The first three photographs are free to enter; beyond that the fee is €5 per image, non-refundable once paid.
 
 There are two categories and the brief in each is strict about method as well as subject. Category A, Wildlife, wants wild animals in their natural habitats — portraits, action, or everyday behaviour — and the rules require that the photograph was made without disturbing the animal or its environment; captive animals are not eligible at all. Category B, Nature and Landscapes, covers everything in nature except animals: landscapes, forests, water, plants and natural phenomena. The competition is open to amateurs and professionals anywhere in the world, excluding jury members and the organisers.
@@ -116,6 +117,31 @@ There are two categories and the brief in each is strict about method as well as
 Files are JPEGs in RGB, at least 3,000 pixels on the long side and good enough to enlarge to 60 cm, with no text, watermark or signature. Major alterations to key visual elements are not allowed; the permitted edits are global corrections only — levels, curves, colour balance, hue/saturation, brightness/contrast and shadow/highlight. Any aspect ratio is accepted, though the organisers recommend 1:1, 3:2, 4:3 or 16:9 for exhibition quality, and they reserve the right to ask for the original-resolution file, with disqualification if it is not supplied.
 
 Seven prizes are awarded, €5,500 in total: the TransNatura Grand Prize of €1,500, and €1,000, €600 and €400 for first, second and third place in each of the two categories. The jury is named — Milán Radisics and Imre Potyó (nature photographers, Hungary), Ovi D. Pop (photographer, Romania), István Magdó (Transylvanian Vice President of the Hungarian Photographic Artists' World Association) and János Demeter (executive director of the VADON Association). Results go to every entrant by email, the exhibition catalogue is published digitally after the opening, and submitting means agreeing that the organisers may use the entered images freely for the purposes of the competition. Entries are made through the International Association of Art Photographers platform, which the organiser's own 2026 contest page links as “Visit the Contest Page”.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 20, 2026">November 20, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">January 22, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (3 images); €5 each extra">Free (3 images); €5 each extra</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/romania/" title="Sfântu Gheorghe, Romania">Sfântu Gheorghe, Romania</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/unlimited/" title="Unlimited images">Unlimited images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -148,10 +174,10 @@ Seven prizes are awarded, €5,500 in total: the TransNatura Grand Prize of €1
     const CURRENT_CALL = {"title":"XIII TransNatura International Nature Photography Contest 2026","category":"photography","org":"VADON Association","location":"Sfântu Gheorghe, Romania","fee":"Free (3 images); €5 each extra","deadline":"2026-11-20","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>22 prizes</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Snow Much to See is an international photography contest devoted to snow, ice and cold, now in its second edition. It is run by the photographer Giandra De Castro and is part of the programme of Images &amp; Neige, a festival founded in Cluses, in the Haute-Savoie Alps, by the photographer Frédéric Boiteux, which describes itself as the only photography festival in Europe entirely devoted to that theme. The festival's 17th edition runs from 22 to 24 January 2027. Every photograph must have an identifiable link with snow, ice or cold.
 
 Entries compete in 11 categories, each open to single images and to series of 3 to 20 photographs: snowy or icy landscapes; scenes of winter life; urban environments shaped by cold or snow; winter sports and leisure; wildlife and plants in cold environments; the human, social or environmental consequences of cold; poetry and reverie; minimalism, graphics and abstraction; macro and close-up; smartphone; and drone. The last three are defined by technique and accept any subject. An entrant may submit up to 60 single images and several series, and the same photograph can be entered both ways, in which case it is judged and charged twice.
@@ -120,6 +121,31 @@ Free photographs exist in only two categories, Sport and Urban. In each, the fir
 Files are JPEGs of at least 2,000 pixels on the long side, with no watermark, signature or frame, and judging is anonymous. Usual editing is allowed, including panoramas, exposure blending and focus stacking from the entrant's own shots. Photomontages and images generated or altered by artificial intelligence are not accepted, and the original file may be requested. The jury is Giandra De Castro (president), Frédéric Boiteux, Benoit Roux, vice-president of the Chamonix Photo Festival, and three people from the City of Cluses, which hosts the exhibition: Françoise Guillen, Priyam Nursimhulu and Manon Canale. Entrants keep their copyright. For selected photographs only, the organisers and the City of Cluses receive a free, non-exclusive five-year permission covering the results, the exhibition, the catalogue and promotion.
 
 The contest is open to amateur, semi-professional and professional photographers of any nationality aged 18 or over. Entries close on 30 November 2026 at 23:59 Paris time, and results are announced on 21 December 2026.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 30, 2026">November 30, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">December 21, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (2 photos); €5 / €10 / €15 for 3 / 10 / 20 paid photos, +€2 each after">Free (2 photos); €5 /<wbr> €10 /<wbr> €15 for 3 /<wbr> 10 /<wbr> 20 paid photos, +€2 each after</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/france/" title="Cluses, France">Cluses, France</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/portfolio/" title="Up to 60 single images and/or series of 3–20">Up to 60 single images and/<wbr>or series of 3–20</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/not-accepted/" title="Not accepted">Not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://imagora.org/en/contests/snow-much-to-see" target="_blank" rel="nofollow noopener" title="Imagora">Website</a></span></div></div>
 
@@ -169,10 +195,10 @@ The contest is open to amateur, semi-professional and professional photographers
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

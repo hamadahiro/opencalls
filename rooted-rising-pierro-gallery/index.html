@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">A free, no-commission municipal gallery show for Black artists, with photography named in the gallery's own accepted media. The Pierro Gallery of South Orange describes Rooted + Rising as bringing “together local and regional Black artists whose work reflects the many ways history, culture, creativity, pride, resilience, and activism continue to shape contemporary expression. These artists carry stories and traditions forward while making something entirely their own, reminding us that culture is not static—it grows, changes, and finds new ways to speak.” Eligibility is stated in one line on the call: “Emerging and established local and regional artists are welcome to apply” — the gallery sets no county or state boundary anywhere on the call or in its guidelines, and its standing exhibitions policy reads that artists are “featured with special sensitivity to regional artists but without precluding consideration of work by any visual artist”, so the geography is a preference rather than a published bar. Up to three works may be submitted with title, medium, dimensions, year and price; a short artist statement and bio are asked for only from artists who are selected, who are also sent a Release of Liability form to sign. Images should be kept under 10 MB, and the gallery states it “cannot respond to inquiries or provide feedback on individual pieces” because of submission volume. Photography is explicitly welcome — the gallery's FAQ lists “paintings, sculptures, photography and mixed media” — and work needing glass or Plexiglass must meet standard framing guidelines (flat wood or metal, white, black or natural preferred, no more than 1″ wide from the front, no decorative frames unless part of the artwork), with unconventionally presented works on paper accepted if the presentation is professional. There is no submission fee: “We do not charge a submission fee. We believe in providing artists with an opportunity to showcase their work without financial barriers.” Sales are allowed and the gallery takes nothing from them — it “operates on a non-commission basis” and asks only for a voluntary donation. Founded in 1994 and named for the late artist and arts advocate Lennie Pierro, the gallery is run by South Orange's Department of Recreation and Cultural Affairs at the Baird Community Center. Artists are notified the week of 14 December 2026, drop-off is mid-January, and the exhibition runs 4 February to 4 April 2027.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/december-2026/" title="December 1, 2026">December 1, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Week of December 14, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/black/" title="Black artists">Black artists</a>, <a href="/eligibility/tri-state/" title="NY/NJ/CT only">NY/<wbr>NJ/<wbr>CT only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/new-jersey/" title="South Orange, NJ">South Orange, NJ</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://pierrogallery-rooted-rising.artcall.org/" target="_blank" rel="nofollow noopener" title="ArtCall">Website</a></span></div></div>
 
@@ -155,10 +181,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

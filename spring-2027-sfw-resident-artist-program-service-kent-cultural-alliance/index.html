@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$7,500 stipend</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The Kent Cultural Alliance launched its SFW Resident Artist Program in 2024 as a live-in, work-in residency at the historic Mansfield/Eliasson House in Chestertown, Maryland, now the Vincent &amp; Leslie Prince Raimond Cultural Center. The building is a 1799 structure that the National Park Service has selected as an escape site on its National Underground Railroad Network to Freedom — the wording on the 2027 application form; the website's own older text still says 'nominated' in one place and 'under consideration' in another: on December 26, 1846, Isaac Mason escaped this house and ran to freedom, and he is memorialised in the Center's lobby with a portrait by a 2018 resident artist.</p>
       <p class="call-detail-description">Each session runs under an assigned theme that determines its community partners and sets the parameters for the work. Previous sessions were LAND, RIVERS, FOOD, CLIMATE and HOME; Spring 2027 is SERVICE — work intended, in KCA's words, to creatively serve the needs of the communities for which it is made. Three artists are selected by a review of applications conducted by KCA staff, board members, artists and community partners. The session runs March 14 to April 24, 2027, in partnership with For All Seasons, the Kent County Food Pantry and Sumner Hall in Chestertown.</p>
       <p class="call-detail-description">Community engagement is the cornerstone rather than an add-on. Residents are embedded with a local community organisation during the first week to learn its mission and challenges, then have five weeks to create finished or significantly finished work. Along the way: one or two workshops in partnership with a social-service agency or school in Kent County — past ones have run in public schools, care facilities and senior centres — one open studio Saturday after the first three weeks, and two or three evening events presenting past or present work to regional supporters and arts leaders.</p>
@@ -117,6 +118,31 @@
       <p class="call-detail-description">On medium: photography is nowhere named as a category, and the residency page and three past-resident pages return zero occurrences of the word. The past residents whose practices are described work in painting, sculpture, installation, drawing, printmaking, writing, performance and social practice. What makes this open rather than closed is the application form's own sentence — 'all disciplines of artistry are encouraged including visual art, creative writing, music, fashion, dance, etc.' — a non-exhaustive list that plainly admits photographers. A documentary or community-engaged photographer is a natural fit for the brief; an applicant working in a narrower fine-art photographic practice may want to ask first.</p>
       <p class="call-detail-description">Eligibility is post-degree career artists based in the United States. International artists may apply only if they hold a current visa allowing them to work legally in the USA — tourist visas do not qualify. No current degree candidates may apply.</p>
       <p class="call-detail-description">There is no fee to apply. Applications go through KCA's own JotForm, and every field on it is required: contact details, the session (Spring 2027: SERVICE), two narrative statements of 500 words or less — one on the connection between your past and current work and community engagement, one on your connection to the theme of SERVICE — and the portfolio itself, as up to 4 images of current work uploaded to the form and/or links to your website and social media. Budget for the writing, not just the upload. One trap on the website: its Application Process block still ends with the previous cycle's instruction to email the application 'no later than December 8, 2024' to a staff address. That route is dead — the live one is the JotForm behind the APPLY NOW button. The deadline is Tuesday, December 1, 2026 at 5:00 pm EST — a 5 pm cutoff, not end of day. KCA has said there will be a second open call for the Fall 2027 session.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/december-2026/" title="December 1, 2026">December 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-states/" title="US only">US only</a>, <a href="/eligibility/professional/" title="Professional only">Professional only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/maryland/" title="Chestertown, MD">Chestertown, MD</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 4 images">Up to 4 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://form.jotform.com/252384139180053" target="_blank" rel="nofollow noopener" title="JotForm">Website</a></span></div></div>
 
@@ -166,10 +192,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

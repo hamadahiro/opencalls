@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$100</a> <a href="/prize/publication/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Publication</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Hispanic Culture Review is George Mason University's bilingual literary and arts journal, and its 2026–2027 contest has a photography and visual arts category of its own, judged and awarded separately from the writing categories. The theme is &quot;Lo que nos une&quot; / &quot;What Unites Us&quot;, and the editors frame it against the present moment: &quot;In a world that often emphasizes what separates us, this edition seeks to celebrate the bridges that connect us through empathy and creativity.&quot; They quote Eduardo Galeano — &quot;I hope that we can have the courage to be alone and the bravery to take the risk of being together&quot; — and ask applicants three questions: what unity means to them, what shared experiences and values bring people closer, and how we can celebrate difference while building what unites us. Entry is free. A photographer may send up to six works, each submitted separately, as JPEGs at 300 PPI, and the work must be unpublished — not previously published and not under consideration anywhere else, literary blogs included. One work is awarded in each of the three categories (photography and visual arts; poetry; narrative, essay and academic research): the winner receives $100 and a certificate of recognition, and selected works are published in both the print and the digital (Issuu) editions of the magazine. Submissions are accepted in English or Spanish. There are no age or nationality restrictions, with one stated exception — the journal cannot accept entrants whose fiscal residence is in a country under United States sanctions, because it could not deliver the prize money. The general deadline is Sunday 31 January 2027; George Mason students have their own form with an extension to Sunday 14 February 2027. Prizes are issued in spring 2027. CAUTION on the route, not the call: the journal's own site is the organiser's only domain but it does not carry this contest — its newest post is an “Under Construction/Bajo construcción” notice dated 21 November 2024 that still points readers at the 2025–2026 edition, and its “Latest Issue” panel still reads “2020-2021 Edition.” The live 2026–2027 call is on the journal's Submittable, which its own “Submit Here” link goes to; use the submission link on this page rather than hunting for the call on the website.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 31, 2027">January 31, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Spring 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/virginia/" title="Fairfax, VA">Fairfax, VA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 6 images">Up to 6 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://hispanicculturereview.submittable.com/submit/370813/artes-visuales-visual-arts-2026-2027" target="_blank" rel="nofollow noopener" title="Submittable">Website</a></span></div></div>
 
@@ -155,10 +181,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

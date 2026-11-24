@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Second issue of Under My Skin, the magazine published by the California Aggregation for Gender Diversity, a nonprofit building community, resources and public education around Transgender, Genderqueer, Intersex and Nonbinary (TGIN+) history and art. The issue asks Transgender, Genderqueer, Intersex and Nonbinary artists how they experience euphoria — a counterpoint to the clinical framing of gender dysphoria, and an attempt to imagine what affirming care for gender euphoria might look like. Photography and all other forms of visual art are welcome alongside poems, essays and articles; music and film can be promoted even though they cannot be printed on paper. Submissions are especially encouraged from artists who are multiply marginalised, chronically ill, disabled, trans, intersex, undocumented, incarcerated or formerly incarcerated, low-income and otherwise systemically excluded, and contributors may use a pseudonym. Contributors receive a digital copy of the published issue, credit lines and artwork descriptions alongside their images, and promotion through the organisation's website and social channels.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/august-2026/" title="August 1, 2026">August 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/lgbtq/" title="LGBTQ+">LGBTQ+</a>, <a href="/eligibility/non-binary/" title="Non-binary">Non-binary</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -138,10 +164,10 @@
     const CURRENT_CALL = {"title":"Under My Skin Issue #2 — Euphoria","category":"zine","org":"California Aggregation for Gender Diversity","location":"Online","fee":"Free","deadline":"2026-08-01","eligibility":["lgbtq","non-binary"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

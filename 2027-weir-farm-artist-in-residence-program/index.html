@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$500 stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize" title="Residency (1 month)"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Residency</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">A one-month residency on the 68-acre Weir Farm National Historical Park in Wilton, Connecticut, continuing &quot;the creative legacy of Julian Alden Weir by supporting contemporary artists whose work advances artistic dialogue and innovation.&quot; Over 250 artists have taken part; the park's enabling legislation &quot;underscores the importance of maintaining an active artistic presence,&quot; and the programme is framed as fostering &quot;contemporary visual art practices that engage with and interpret the world in creative, experimental, and thought-provoking ways.&quot; One artist is in residence at a time, for four weeks between May and October 2027.
 
 Photography is named explicitly: applicants &quot;may apply in any of the following visual art media: Painting, Photography, Printmaking, Sculpture, Fiber Art, Mixed Media,&quot; and the park &quot;encourages applications from artists representing a wide range of perspectives and media.&quot; Housing and studio space are provided — a fully furnished historic residence in the middle of the park, and the AIR Studio a few steps away, built in 2010 on the footprint of the former garage and awarded the NPS Certificate of Honor. Artists receive a $500 stipend, $250 at the start and $250 after the residency on completion of the requirements. Artists supply their own food, personal items and art supplies and provide their own transportation to and from the park, and the park warns the site &quot;is very quiet and dark at night.&quot;
@@ -118,6 +119,31 @@ On accessibility: the programme &quot;welcomes artists of all physical capabilit
 Open to US citizens and permanent residents aged 25 or over who are graduate students, emerging or professional artists, applying as individuals — couples and collectives are not considered. Anyone who held a residency between 2017 and 2026 is ineligible for the 2027 cohort. Residents must commit to the full four weeks, attend a welcome event, present a public Open Studio on the last Saturday of the residency, send 3–5 images mid-residency for social media, and take part in a recorded Zoom interview. Outdoor installations, open flame, kilns, toxic or hazardous materials, collecting natural materials on federal land and selling work on site are all prohibited.
 
 A three-member jury drawn from academia, museums, galleries, professional artists and former residents weighs artistic merit, a well-defined and realistic project proposal, the answer to the &quot;Why Weir Farm&quot; question, and the artist's ability to commit. All applicants are notified by mid-March 2027. The programme is supported by the Friends of Weir Farm NHP, with a 2027 grant from the Connecticut company Tauck.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 31, 2027">January 31, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Mid-March 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35">$35</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-states/" title="US only">US only</a>, <a href="/eligibility/25-plus/" title="25+">25+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/connecticut/" title="Wilton, CT">Wilton, CT</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="5–10 images">5–10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artist.callforentry.org/festivals_unique_info.php?ID=18393" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -167,10 +193,10 @@ A three-member jury drawn from academia, museums, galleries, professional artist
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

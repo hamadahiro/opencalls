@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Full Circle in Ixelles, Brussels, is building the art show for its 2026 Ideas Festival around a single word — Connection — and the call is free and aimed squarely at artists who have not yet had much chance to show.</p>
       <p class="call-detail-description">The brief is generous about what connection can mean: intimacy and relationship, community and belonging, technology and its paradox of closeness and distance, ancestry and heritage, the body's relation to its environment, or the quiet internal connection between self and identity. Marina Abramović's silence and shared vulnerability, Félix González-Torres's work on loss and intimacy, Judy Chicago's symbolic table reaching across generations, Andy Goldsworthy's patient joining of natural materials and Do Ho Suh's architectures of a home left behind are all offered as reference points. Literal, abstract, personal or political readings are equally welcome.</p>
       <p class="call-detail-description">One caution before you spend time on it: the call invites &quot;artists working in various media&quot; and stops there. Neither the call page nor the seven-page terms document enumerates media, and photography is not named on either. Nothing excludes it — and the terms' requirement of a model release for any identifiable person, plus a parental release for anyone under 18, is a lens-based provision — but the affirmative a photographer would want is not printed.</p>
@@ -116,6 +117,31 @@
       <p class="call-detail-description">Judging happens from digital files — physical works are submitted as photographs of themselves — and each work needs a title, a size, a description of its medium and an account of how it relates to the theme, plus an artist statement covering the work, who you are and your wider practice. AI work is accepted, but it has to be identified as such.</p>
       <p class="call-detail-description">There is no entry fee. Selected work may be offered for sale at a price you set, with Full Circle taking a 30% commission. The trade-offs are the usual ones for a free show: you carry the risk of damage or loss and are advised to insure, your work has to be transportable by you and physically able to enter the building, and you grant Full Circle a licence to reproduce exhibited works for marketing, promotion, discussion and education tied to the exhibition.</p>
       <p class="call-detail-description">Submissions close at midnight CET on Sunday 25 October 2026, through an online form or, alternatively, by email — worth knowing that the form is a Google Form behind a sign-in wall, so the email route is there if you would rather not use a Google account. Every candidate hears the jury's decision by email on 5 November 2026 (the terms call that a Friday; it falls on a Thursday). The exhibition runs 20–30 November 2026, with works on view on selected dates beyond that.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/october-2026/" title="October 25, 2026">October 25, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">November 5, 2026 (announced)</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/emerging/" title="Emerging artists">Emerging artists</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/belgium/" title="Brussels, Belgium">Brussels, Belgium</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/unlimited/" title="Unlimited entries">Unlimited entries</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/accepted/" title="Must disclose">Must disclose</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -144,10 +170,10 @@
     const CURRENT_CALL = {"title":"CONNECTION","category":"exhibition","org":"Full Circle","location":"Brussels, Belgium","fee":"Free","deadline":"2026-10-25","eligibility":["emerging","18-plus"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

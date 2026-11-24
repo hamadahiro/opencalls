@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Catalyst is a new artist development programme run jointly by Photoworks and Pompey Darkroom, bringing together eight photographers for five months of masterclasses, peer learning and one-to-one mentoring between November 2026 and March 2027. It is part of Photography Champions, the national initiative Photoworks leads with public funding through Arts Council England's National Portfolio.
 
 The masterclass line-up is named on the call page: Jermaine Francis on presenting work and expanded photography, Amak Mahmoodian on research and approaches to making, Gordon MacDonald on bookmaking, Danit Ariel on curating, and Alejandra Carles-Tolra on facilitation as practice. Alongside the sessions, each participant gets individual mentoring shaped around their own practice, and the group is given a dedicated budget to decide together how to present the work made during the programme — an exhibition, a public event or a photobook.
 
 The call is open to UK-based emerging photographers, with applications particularly welcomed from photographers in Portsmouth and the wider South. Sessions mix online and in-person meetings, including weekday evenings and weekends. Applying is free, and the whole application goes as one PDF — a CV, a maximum 400-word statement on why you are applying and how the programme would help, links to your website and social media, and a selection of your images — to the darkroom's submissions@ inbox with 'Catalyst' as the subject line. Taking part is not free — the programme fee is £200, payable in full or in two instalments (November and February), and two fully-funded bursary places are available for Portsmouth-based photographers who cannot afford it; applicants ask to be considered for one in the application itself. Applications close on 30 October 2026 and the first session is on 2 November.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/october-2026/" title="October 30, 2026">October 30, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (£200 programme fee if selected)">Free (£200 programme fee if selected)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-kingdom/" title="UK only">UK only</a>, <a href="/eligibility/emerging/" title="Emerging artists">Emerging artists</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="Portsmouth, UK">Portsmouth, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/portfolio/" title="PDF portfolio">PDF portfolio</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/email/">Email</a></span></div></div>
 
@@ -142,10 +168,10 @@ The call is open to UK-based emerging photographers, with applications particula
     const CURRENT_CALL = {"title":"Catalyst Artist Development Programme","category":"education","org":"Photoworks (with Pompey Darkroom)","location":"Portsmouth, United Kingdom","fee":"Free (£200 programme fee if selected)","deadline":"2026-10-30","eligibility":["united-kingdom","emerging"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

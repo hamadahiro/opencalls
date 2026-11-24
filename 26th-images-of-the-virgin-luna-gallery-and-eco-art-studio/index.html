@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Luna Gallery and Eco Art Studio in San Juan Bautista continues an exhibition with a real lineage: the annual Images of the Virgin show that Galeria Tonantzin ran from 1992 to 2012. This is the 26th edition of that exhibition, counting the whole lineage rather than Luna's own run of it. The call asks for work exploring the many manifestations of the virgin, mother and goddess in her visual forms — traditional and provocative, across cultures, including the Virgen de Guadalupe. Photographers are named in the hanging rules alongside painters and printmakers: painting, prints, photos and multimedia must be wired ready to hang with a maximum width of 48 inches, and sculpture must fit a 12 by 12 inch pedestal or stand free. Up to three pieces for a $35 entry fee, or $30 if you are a gallery affiliate member, and one entry per artist. The juror is Maya C. Ramirez, a PhD student in the History of Visual Arts and Cultures at UC Santa Cruz whose research covers religious mythology, gender and mysticism, and queer theological perspectives; her essay on Fabián Cháirez and queer Catholic symbology appeared in Tufts University's journal Ekphrasis. Entry is by email to the gallery with one to three digital images plus title, media, price and contact details — payment instructions come back by reply — or through the gallery's EntryThingy page. Selected work ships to the gallery's PO box by November 20 or is hand delivered on November 21 or 22 between noon and 4pm, in reusable packaging with return postage; shipping and insurance are the artist's cost and the gallery takes 40% on sales. The exhibition runs November 28, 2026 to January 10, 2027, with the reception and conference on December 12 and pick-up on January 10. Luna Gallery is a non-profit running a gallery and an eco-art teaching studio, and no cash award is attached to this show.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/october-2026/" title="October 25, 2026">October 25, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 for up to 3 works ($30 gallery affiliate members)">$35 for up to 3 works ($30 gallery affiliate members)</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="San Juan Bautista, CA">San Juan Bautista, CA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/email/">Email</a></span></div></div>
 
@@ -142,10 +168,10 @@
     const CURRENT_CALL = {"title":"26th Images of the Virgin","category":"exhibition","org":"Luna Gallery and Eco Art Studio","location":"San Juan Bautista, CA, USA","fee":"$35 for up to 3 works ($30 gallery affiliate members)","deadline":"2026-10-25","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

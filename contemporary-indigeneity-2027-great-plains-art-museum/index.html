@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Museum exhibition</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="Purchase awards (cash)"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The sixth iteration of the Great Plains Art Museum's juried exhibition for Native American artists, at the Center for Great Plains Studies on the University of Nebraska–Lincoln campus. The museum is looking for work addressing any theme relevant to the contemporary Indigenous experience on the Great Plains — a region the Center defines loosely as stretching westward from the Missouri River at Omaha and Kansas City to the Rocky Mountains, and northward from the Texas Panhandle into the Canadian Prairie Provinces. There are no limitations on artwork media, so photographic work is eligible on the museum's own terms; the practical constraints are physical, with two-dimensional work capped at 70 inches on its longest side including the frame and three-dimensional work at 135 inches of length and girth combined and 100 pounds. A panel of Native American art professionals reviews the submissions and selects on aesthetic merit and contribution to the field of contemporary art; the 2024 edition's panel was Mary V. Bordeaux (Sicangu Oglala Lakota) of Racing Magpie, Dr Chelsea M. Herr (Choctaw Nation of Oklahoma) of the Gilcrease Museum, and Tarah Hogue (Métis) of Remai Modern, which gives a sense of the level. It is free to apply. Each artist may submit up to three works, though not all submitted works will necessarily be shown. Work must be original, created during or after 2025, never previously exhibited at the museum, and available for the whole run. Applicants must be Native American artists and will be asked in the application for proof of tribal enrollment or descendancy documentation, and must be 18 or over at the time of submission. A limited number of works are purchased from the exhibition for the museum's permanent collection, chosen by museum staff on the jurors' recommendations, with purchase-award notifications between September 30 and October 31, 2027; work is not listed for sale while on view, but staff will connect an interested buyer with the artist. The museum pays all incoming and outgoing shipping — the artist pays only for presentation (matting, framing). Acceptances are announced April 1, 2027, work is delivered between July 15 and August 16, and the exhibition runs September 3 to December 18, 2027. The museum and the Center describe the show as central to a standing commitment to increase the representation of Native artists in their collections, exhibitions and educational programs.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/february-2027/" title="February 5, 2027">February 5, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">April 1, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a>, <a href="/eligibility/native-american/" title="Native American artists">Native American artists</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/nebraska/" title="Lincoln, NE">Lincoln, NE</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artist.callforentry.org/festivals_unique_info.php?ID=17821" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

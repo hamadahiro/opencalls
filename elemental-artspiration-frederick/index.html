@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">&quot;Earth. Water. Air. Fire.&quot; A juried exhibition at Artspiration Frederick &quot;where artists explore these powerful forces of nature and the ways they intersect with materiality, imagination, and the human experience.&quot; Artists are encouraged to interpret the elements &quot;literally, symbolically, or abstractly, exploring themes of transformation, resilience, movement, balance, and change&quot;, and — working across all mediums — to consider &quot;not only the elements themselves, but also the physical properties of their materials and the processes through which their work takes shape.&quot; The gallery says it welcomes &quot;innovative and thought-provoking interpretations that reveal the extraordinary possibilities found within nature's most fundamental forces.&quot;
 
 All media are accepted and photography is named among them. Up to three exhibition-ready works may be submitted and up to three may be selected, each needing a 300 dpi image for jurying; 2D work must be framed with a wire for hanging (no sawtooth hangers). Open to visual artists 18 and over residing in the continental US. The show runs 2–25 April 2027 at 915 Toll House Ave in Frederick, with an opening reception on 10 April, free and open to the public. Accepted work is dropped off 28–30 March or shipped to arrive by 30 March at the artist's cost, with a return label included, and retrieved by 10 May.
@@ -116,6 +117,31 @@ All media are accepted and photography is named among them. Up to three exhibiti
 All work must be for sale and the gallery retains 40% of the sale price, the artist 60%. Prices are locked at entry — the gallery will not accept price changes once a piece has been submitted.
 
 The juror is Lisa Sheirer, who has a BFA in painting and printmaking from West Virginia University and an MFA in sculpture from Notre Dame, works in &quot;pixels, clay, ink, paint, wood, and sound&quot;, and is an artist in residence at the Ausherman Y Arts Center in downtown Frederick. Her public work includes a ceramic mural at Baltimore-Washington International Airport for the Maryland Department of Transportation and a glass mural at UPMC Western Maryland Hospital; she self-published the artist book &quot;WaterShed&quot; in 2023 with an NEA/Frederick Arts Council grant and holds the Jean Royer Kohr Memorial Lectureship. One term to read before shipping: the artist must retrieve all work no later than 10 May 2027, and work not collected within fourteen calendar days of the agreed pick-up date &quot;shall incur a storage fee of Fifty Dollars ($50.00) until removed&quot;, with the gallery free to relocate it at the artist’s expense and risk. The cutoff has a time, in a sentence the organiser left unfinished: &quot;All entries must be completed online by 11:59 EST on through CaFE&quot; - the time is published, the date in that sentence is not, and the entry deadline elsewhere on the page is 12 March 2027.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/march-2027/" title="March 12, 2027">March 12, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">March 18, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 ($25 members)">$35 ($25 members)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/continental-us/" title="Continental US only">Continental US only</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/maryland/" title="Frederick, MD">Frederick, MD</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artist.callforentry.org/festivals_unique_info.php?ID=18356" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -165,10 +191,10 @@ The juror is Lisa Sheirer, who has a BFA in painting and printmaking from West V
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

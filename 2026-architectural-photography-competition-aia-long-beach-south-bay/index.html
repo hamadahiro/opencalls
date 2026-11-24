@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The biennial architectural photography competition of the American Institute of Architects' Long Beach/South Bay chapter, open to photographers as well as architects and designers — the chapter's own announcement invites &quot;photographers, architects, designers, and lovers of the built environment&quot;. Entries are accepted 31 August to 15 November 2026 — the chapter extended the original 31 October deadline in three categories: Exterior (form, materials, context, light, landscape and the relationship between a building and its surroundings), Interior (composition, materiality, light, scale, detail and the experience of being within a space) and, new for 2026, Regional Focus, for architecture inside the chapter's own Long Beach/South Bay boundaries. All entries automatically qualify for a People's Choice award. Enter one category per image; multiple entries are welcome. The chapter states plainly that judging focuses on the photographic image rather than the architecture itself. No cash prize is published: winners are announced in early December 2026 and asked for a print-quality high-resolution file, and Regional Focus selections may additionally be redrawn as sketches for the 2027 Color Your City architecture coloring book with the photographer credited. In the 2024 edition the chapter published each winning photograph alongside written comments from all three jurors — Nirav Solanki, Janna Ireland and Paul Turang — plus an online gallery of every submission. The 2026 jury is now named on the entry page: Ray Barbee, described by the chapter as a skateboarder, musician and photographer; Carlos Hernandez, architect and photographer; and Paul Turang, returning from the 2024 panel and described as an award-winning and internationally published photographer.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 15, 2026">November 15, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Early December 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 non-members / $25 AIA members / $10 students">$35 non-members /<wbr> $25 AIA members /<wbr> $10 students</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/online/" title="Online">Online</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/unlimited/" title="Unlimited entries, 1 image each">Unlimited entries, 1 image each</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -142,10 +168,10 @@
     const CURRENT_CALL = {"title":"2026 Architectural Photography Competition (APC26)","category":"photography","org":"AIA Long Beach/South Bay","location":"Online","fee":"$35 non-members / $25 AIA members / $10 students","deadline":"2026-11-15","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

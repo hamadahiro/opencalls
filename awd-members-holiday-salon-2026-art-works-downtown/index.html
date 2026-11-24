@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Art Works Downtown's salon-style member showcase fills the Founders' Gallery, Donors' Gallery and Artist's Wall of its San Rafael art center from November 27 through January 18, opening in time for holiday gift-buying and staying up through San Francisco Art Week. There is no application or review process — AWD's own directions tell members to &quot;select the work that inspires you&quot; — so any current member whose piece meets the size rules is in the show, which makes this an unusually low-friction way for a Bay Area photographer to get work on a gallery wall. Entry is free; what gates it is membership, $100 a year, open to working artists living within 100 miles of San Rafael. One original work per artist, and not a piece shown here in a previous year: 2D wall work must be 24 inches or smaller in any direction including frame and all materials, delivered dry, wired, framed and labelled on the back with the artist's name, hand-delivered to 1337 Fourth Street on November 14, 18, 19 or 20 and collected January 20–23 (unretrieved work is charged $5 a day in storage and becomes AWD property after 30 days). Two receptions run alongside the 2nd Friday Art Walk, on December 11 and January 8, and the exhibition is the centrepiece of Marin Art Day on Sunday, January 17, 2027, when 35+ open studios, artist talks and programming bring collectors and Bay Area audiences through the building. Work is for sale: AWD processes the transaction, reports the sales tax and passes the net to the artist, who is then responsible for donating 40% of that net back to the organisation; patrons may take a piece away before the show closes for gift-giving. Applying permits AWD to use images of accepted work in its promotion, and the organisation disclaims responsibility for loss or damage.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 6, 2026">November 6, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (AWD membership required, $100/year)">Free (AWD membership required, $100/<wbr>year)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/membership-required/" title="Membership required">Membership required</a>, <a href="/eligibility/bay-area/" title="Bay Area only">Bay Area only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="San Rafael, CA">San Rafael, CA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/1-image/" title="1 original work, 1 image">1 original work, 1 image</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -138,10 +164,10 @@
     const CURRENT_CALL = {"title":"AWD Members' Holiday Salon 2026","category":"exhibition","org":"Art Works Downtown","location":"San Rafael, CA, USA","fee":"Free (AWD membership required, $100/year)","deadline":"2026-11-06","eligibility":["membership-required","bay-area"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

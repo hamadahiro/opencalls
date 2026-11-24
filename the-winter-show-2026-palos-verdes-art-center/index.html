@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Palos Verdes Art Center's members-only winter group show, juried for its Main Gallery on the Palos Verdes peninsula and hanging 4 December 2026 to 9 January 2027. It is an all-media call with no theme, and photography is squarely in scope — the organiser's own submission instructions ask artists to &quot;identify your media and substrate; for instance, oil on canvas, digital print on paper, etc.&quot; The juror is Carrie Burckle, a Los Angeles artist, educator and curator, founding member and Executive Director of Textile Arts LA and for twenty-plus years adjunct faculty in the Fiber program at CSULB, with work shown at the Craft and Folk Art Museum and Craft in America Center in Los Angeles, Visions Art Museum and Mingei Museum in San Diego, and the Collins Gallery in Glasgow. Up to three pieces for a $35 entry, one image per artwork, JPEGs at 1,200 pixels or more on the longest side, nothing previously exhibited at PVAC, maximum size 50 by 60 inches including the frame. Two things are required beyond the fee: entrants must be a current PVAC member in good standing (individual membership is $50 a year, family $60), and selected work must be hand-delivered to the Main Gallery on Friday 20 November between 9 and 11am — &quot;No early deliveries. All work must be delivered on November 20, 2026&quot; — with pick-up on 11 January. There is no cash award of any kind; the opportunity is the show itself, plus a selling wall at a 25% commission. PVAC insures work for the duration of the exhibition only and carries no earthquake insurance. Submissions opened 16 October and close 2 November 2026; the juror's selections are announced through CaFE in November — the prospectus gives two dates for that, &quot;Tuesday, November 10, 2026&quot; in its calendar and &quot;by November 5&quot; in its selection block. PVAC's own website carries no page for this edition: its exhibitions index lists The Winter Show 2025 as the newest, and its Winter Show call route still shows the 2023–24 edition with a different juror, so the CaFE listing is the only current surface.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 2, 2026">November 2, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">November 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (PVAC membership required, $50/year individual)">$35 (PVAC membership required, $50/<wbr>year individual)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/membership-required/" title="Membership required">Membership required</a>, <a href="/eligibility/los-angeles/" title="LA only">LA only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="Rancho Palos Verdes, CA">Rancho Palos Verdes, CA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 3 works">Up to 3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -142,10 +168,10 @@
     const CURRENT_CALL = {"title":"The Winter Show 2026","category":"exhibition","org":"Palos Verdes Art Center","location":"Rancho Palos Verdes, CA, USA","fee":"$35 (PVAC membership required, $50/year individual)","deadline":"2026-11-02","eligibility":["membership-required","los-angeles"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

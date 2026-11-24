@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="Residency (€5,000 grant)"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Metamorfosi is an artist residency open call launched by the Italian Cultural Institute (IIC) in Prague in collaboration with MUNAF — the National Museum of Photography, Italy's first public national museum dedicated entirely to photography and technological imagery (known as MUFOCO until October 2025).</p>
       <p class="call-detail-description">The residency invites one Italian artist to develop a visual arts project around the theme of Metamorphosis — a reflection on change and transformation, in both artistic practice and the cultural contexts artists work within. The scope is deliberately open in theme and medium, though a connection with the promoting institutions and the host territory is encouraged.</p>
       <p class="call-detail-description">The residency runs at the IIC Prague guest house during a window agreed between autumn 2026 and spring 2027, lasting between three and four weeks. It is structured in two parts: a planning phase of meetings, site visits, and focus-setting, followed by a production phase, closing with a public presentation of the research.</p>
       <p class="call-detail-description">The total grant is €5,000 net and covers the artist's fee, all travel to and from the residency (and any research travel), meals and accommodation at the guest house for the full stay, production costs for the delivered artwork including shipping, and any other activities the artist takes part in during the residency.</p>
       <p class="call-detail-description">The call is open to Italian artists with no age restriction. Applications are submitted by email and must include the application form, a valid ID or passport, a signed CV and portfolio, a detailed presentation of one completed project, a motivation letter (which may outline the proposed residency project), and the data-processing consent form. The deadline is June 30, 2026 at 12:00 PM.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/june-2026/" title="June 30, 2026">June 30, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">By September 30, 2026 (announced)</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/italy/" title="Italy only">Italy only</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/czech-republic/" title="Prague, Czechia">Prague, Czechia</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/portfolio/" title="Portfolio (max 10 pages)">Portfolio (max 10 pages)</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/email/">Email</a></span></div></div>
 
@@ -142,10 +168,10 @@
     const CURRENT_CALL = {"title":"Metamorfosi Residency 2026","category":"residency","org":"Italian Cultural Institute Prague","location":"Prague, Czech Republic","fee":"Free","deadline":"2026-06-30","eligibility":["italy","18-plus"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

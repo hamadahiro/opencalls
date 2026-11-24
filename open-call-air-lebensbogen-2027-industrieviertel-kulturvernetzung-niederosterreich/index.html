@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,10 +109,36 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize" title="Free 3–12 week residency"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Residency</a> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize" title="Accommodation and board"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Residency</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">This is the quiet kind of residency that rarely travels beyond its own region. Lebensbogen is in Grünbach am Schneeberg, an old mining village under the Schneeberg in the Industrieviertel of Lower Austria, and the programme is run jointly with Kulturvernetzung Niederösterreich, the provincial networking body that also runs the M-ZONE and Come In! calls. The brief is about the place and the people in it: projects that engage Grünbach, its history, its nature, or the lived realities of the people there, built on encounters as equals with residents and with the staff of the institution. Participatory and inclusive formats are expressly welcome, and those are the ones that may carry a fee.</p>
       <p class="call-detail-description">The economics are honest and worth reading twice. Accommodation and board are free, work and event rooms are available where they exist, and the programme offers introductions to the regional arts and culture scene plus the possibility of a closing presentation. There is no stipend as such — remuneration is listed only as a possibility, and only for participatory or inclusive formats. Travel both ways and every working material are the artist's own cost, stated outright. The quarters are a fully equipped living container beside the workshop hall or a unit in the new residents’ centre, and the site is reachable by train — about 33 minutes from Wiener Neustadt Hauptbahnhof. For a documentary or long-form photographer who wants three to twelve weeks of lodged time in one small Austrian village between April and October 2027, that trade is good; for anyone needing a fee to cover lost income, it is not a funded residency and should not be read as one.</p>
       <p class="call-detail-description">Two gates close this to most readers and both are stated on the call. The artist needs a connection to Lower Austria, and membership of Kulturvernetzung Niederösterreich is a precondition for submitting at all — not a benefit of selection. That gate is cheap and open rather than juried: the association's annual membership is €25 for an individual artist (€50 for a group or institution), applied for through a form on its own site, effective once the fee is paid and cancellable in writing each year — and it carries other things a Lower Austrian artist can use, including free exhibition slots in the pop-up galleries at Bad Fischau-Brunn and Horn, free first legal advice and a cheap liability-and-accident insurance package. €25 to apply for twelve weeks of lodged time is not a barrier; needing to join an Austrian cultural association at all may be. Applications are one PDF of no more than 8 MB — CV with a portrait photograph, portfolio, a short description of the project, and the preferred window and length of stay — emailed to the Industrieviertel office. Selection includes a Begegnungstag, a meeting day on site, and every resident leaves a work or a documentation behind. Deadline Tuesday 1 December 2026.</p>
       <p class="call-detail-description">Read what the place is before deciding, because the linked detail sheet says it plainly and the call block does not: the Lebensbogen is a residential and working community for people with disabilities and mental illness, built around self-determined living and mutual respect, on an eight-hectare former mining site with hangars and a large workshop hall that a project may use. 2027 is the pilot year of the programme and applications are open to individuals or to collectives. Participatory and inclusive work with residents is welcome and can be paid on top of the free board and lodging — but it is expressly not therapeutic work, and prior experience of making art with people who have mental or physical impairments is listed as an advantage rather than a requirement. The stay is open-ended in outcome; what the programme asks is that something stays behind, and that the encounters show up in the practice. Selection runs through a meeting day on site, and attending it is the precondition for reaching the final round. No notification date is published.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/december-2026/" title="December 1, 2026">December 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free (Kulturvernetzung NÖ membership required, €25/year individual)">Free (Kulturvernetzung NÖ membership required, €25/<wbr>year individual)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/lower-austria/" title="Lower Austria only">Lower Austria only</a>, <a href="/eligibility/membership-required/" title="Membership required">Membership required</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/austria/" title="Grünbach am Schneeberg, Austria">Grünbach am Schneeberg, Austria</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/portfolio/" title="1 PDF portfolio">1 PDF portfolio</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="mailto:[address]" rel="nofollow noopener">Email</a></span></div></div>
 
@@ -158,10 +184,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

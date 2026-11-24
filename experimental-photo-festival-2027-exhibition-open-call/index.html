@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="€150 artist fee"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize" title="Solo exhibition (Barcelona)"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">There is no theme and no single definition of experimental photography here: the jury weighs artistic strength, experimental approach, originality and conceptual clarity, the project's potential to become an engaging exhibition, and the artist's openness to dialogue and adaptation. The festival is explicit that a proposal does not need to arrive resolved — scale, materials, installation and the relationship to the assigned venue are developed afterwards with the curatorial and production teams.</p>
       <p class="call-detail-description">One €20 application is considered for all three routes at once, so there is nothing to submit twice: twelve solo exhibitions, a Group Exhibition Mention with its own €600 shared production budget and a run that lasts until December 2027, and an online feature for twenty artists in Analog Forever Magazine. The magazine selection carries no fee, production budget, diploma or festival access.</p>
       <p class="call-detail-description">Read the money in both directions before applying. The €150 artist fee is real cash but needs a valid invoice; the €200 production budget is administered by the festival, is never handed over as cash and covers only pre-approved expenses; the €999 Ágora Diploma is an in-kind education benefit that cannot be exchanged for money. Against that, selected artists must travel to Barcelona for installation, the opening, the festival and dismantling, must install and dismantle their own exhibition with the team's help, and pay their own accommodation — the Col·legi Major Penyafort-Montserrat booking is priority access, not a free room.</p>
       <p class="call-detail-description">The licence is broad and worth reading: submitting grants the Association a worldwide, irrevocable, perpetual, non-exclusive licence to use the submitted images, texts and materials for promotional, exhibition, educational and commercial purposes connected with the festival, IPFA and Ágora, with credit where reasonably possible and no further payment. Artists keep copyright and ownership, and work shown in the festival is not offered for sale during the event.</p>
       <p class="call-detail-description">Neither the festival's own call page nor its Picter prospectus and terms state any policy on AI-generated or AI-assisted work.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 23, 2026">November 23, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">January 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="€20 per project">€20 per project</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/spain/" title="Barcelona, Spain">Barcelona, Spain</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 10 images">Up to 10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -146,10 +172,10 @@
     const CURRENT_CALL = {"title":"Experimental Photo Festival 2027 — Exhibition Open Call","category":"exhibition","org":"Experimental Photo Festival","location":"Barcelona, Spain","fee":"€20 per project","deadline":"2026-11-23","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

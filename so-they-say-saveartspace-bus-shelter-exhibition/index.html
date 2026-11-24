@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize" title="Bus shelter exhibition in Miami"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">A public art exhibition on bus shelter ad space in Miami, opening 30 December 2026 and curated by Katelyn Kopenhaver. The brief turns the medium on itself: &quot;Advertising follows us everywhere. From our phones to the streets, it appears on screens floating in the ocean or hovering above our heads. We are constantly being sold something: a product, a belief, an emotion, or an idea of who we should aspire to be. These messages seep into our subconscious, shaping our perceptions and sense of identity, often without question or consent.&quot;
 
 SaveArtSpace asks for work &quot;specifically conceived for the bus shelter, rather than treating it as an alternative gallery wall&quot; — &quot;operating within the very infrastructure it seeks to examine&quot;. Through humour and/or critical inquiry, artists are encouraged to engage with the mechanics of advertising, &quot;playing with expectations and turning a space designed to persuade us into one that questions what we're being told.&quot;
@@ -116,6 +117,31 @@ SaveArtSpace asks for work &quot;specifically conceived for the bus shelter, rat
 Open to &quot;artists of all ages and talents&quot;. Up to 10 JPEGs, each a maximum of 2 MB; selected artists are asked for high-resolution files afterwards. Selected artists are announced after 7 December 2026 and the work goes up on Miami bus shelter ad space from 30 December for at least one month. Fees are framed as tax-deductible donations that buy the ad space itself. The organiser’s FAQ adds that anyone who cannot afford the donation may submit their work by email instead, with the name of the open call as the subject.
 
 The curator, Katelyn Kopenhaver (b. 1992), took a BFA in Photography from the School of Visual Arts and works across public intervention, performance, text and lens-based media; she is a studio resident at Bakehouse Art Complex in Miami, a NYSCA/NYFA Artist Fellow (2021) and a Miami Individual Artist Grant recipient (2024 and 2026), and appeared in Der Greif Issue 18 curated by Hank Willis Thomas.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 23, 2026">November 23, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">After December 7, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (1–3 images) + $10 each additional ($36.92–$108.45 at checkout)">$35 (1–3 images) + $10 each additional ($36.92–$108.45 at checkout)</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/florida/" title="Miami, FL">Miami, FL</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="1–10 images">1–10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -148,10 +174,10 @@ The curator, Katelyn Kopenhaver (b. 1992), took a BFA in Photography from the Sc
     const CURRENT_CALL = {"title":"SO THEY SAY — SaveArtSpace Bus Shelter Exhibition","category":"exhibition","org":"SaveArtSpace","location":"Miami, FL, USA","fee":"$35 (1–3 images) + $10 each additional ($36.92–$108.45 at checkout)","deadline":"2026-11-23","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

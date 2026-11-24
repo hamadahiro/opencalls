@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Arts Benicia, the nonprofit visual arts centre that has run exhibitions and classes in Benicia, California for more than 39 years, is jurying Paper Route: Contemporary Works on Paper for its gallery in the Commanding Officer's Quarters. The call treats paper not as a support but as a collaborator: the organiser's own text describes work &quot;from the fluid immediacy of watercolor and the stark precision of ink, to the layered textures of mixed media and printmaking&quot;, unified by a single material constraint that &quot;reveal[s] how the unique tooth, fiber, and weight of the paper substrate dictate the behavior of different mediums&quot;. All 2D and 3D media are accepted, work may be of any subject or abstract, and photographers are specifically provided for: the entry terms bar giclée prints &quot;except for photos&quot;, so an inkjet photographic print is eligible where an inkjet reproduction of a painting is not. Two-dimensional work may not exceed 36 inches wide or 72 inches high including the frame, 3D work is capped at a 36 by 36 inch footprint, hanging work is limited to 35 pounds, wall works must be wired and sawtooth hangers are not accepted. Work previously shown at Arts Benicia is not eligible. One application covers up to six artworks. Entry is $45 for the first work, or $35 for current Arts Benicia members, plus $5 for each additional work up to six - five works cost a non-member $65. The member rate is checked: &quot;Only use the member entry price if you are a current member, otherwise your entry will not be juried.&quot; National and international artists are invited to apply. Entries close 12 January 2027 at 11:59pm Pacific, jurying runs 14-24 January and artists are notified on 27 January 2027. The juror is Margot Yale, assistant curator of prints and drawings at the Achenbach Foundation for Graphic Arts, who joined the Achenbach from the Metropolitan Museum of Art, where she was an Andrew W. Mellon Fellow in Modern and Contemporary Art. Hand delivery and shipped work are both due by 11 March 2027, with an artists' preview on Thursday 1 April, 6-7pm and a public opening reception on Saturday 3 April, 4-6pm; the exhibition runs 3 April to 16 May 2027 and work is picked up on 18 May. Work must be available for sale and Arts Benicia retains 40% of any sale, paying the artist 60% within 30 days of closing. Artists who ship must include a prepaid return label. There is no cash award: selection into the gallery exhibition is the outcome.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 12, 2027">January 12, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">January 27, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$45 ($35 members) + $5/additional entry">$45 ($35 members) + $5/<wbr>additional entry</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/california/" title="Benicia, CA">Benicia, CA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 6 works">Up to 6 works</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://opportunities.wearecreativewest.org/opportunity/18410/CAFE" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

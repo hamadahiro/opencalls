@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/residency/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>8-day residency</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Six artists from different parts of the world come to Barcelona for eight intensive days of experimentation, shared learning and hands-on work in the week before Experimental Photo Festival 2027. The structure is horizontal rather than taught: each resident shares an experimental process with the group through one theoretical and practical session — two hours of theory, four of practice — and takes part in the sessions proposed by the other five, so knowledge moves from one artist to another, one cultural perspective to another and one process to the next. The residency is conducted in English so that all six can work in a common language, and it is aimed at artists willing to share what they know and curious about other people's practices. Residents stay at the Col·legi Major Penyafort-Montserrat and work across the residency spaces and the Centre Cívic Pati Llimona. During the festival itself, a collective exhibition presenting the process developed in the residency opens at Pati Llimona alongside a Residency Conference where the residents discuss what they worked on. APPLYING IS FREE, BUT A SELECTED PARTICIPANT PAYS €500, and the festival publishes the breakdown: accommodation €330, materials €30, bank and platform fees €30, and 21% tax €110, with payment possible in monthly instalments; the Association says it pays the residency director's salary from a public grant. That €500 covers the eight nights with breakfast, the materials for the workshops and collective experimentation, access to Experimental Photo Festival 2027, participation in the residency talk and exhibition, official festival merchandise, and a free place on the Diploma in Experimental Photography at Ágora, School of Experimentation, which the festival values at €999. It does not cover accommodation during the festival days, meals other than breakfast, travel or personal expenses. Continuing through the festival is optional and encouraged: a resident who adapts their residency workshop into a four-hour festival format can attend two workshops of their choice free, has their workshop materials provided, and gets meals on the days they work as a festival artist. Applications are reviewed by the Experimentalphotofestival Association together with residency coordinator Célica Véliz — a visual artist and photographer trained in photography, visual arts and ceramics, professor of Photochemical Processes I and II in the University Photography Programme at the National University of La Plata, and director of this residency since 2023 — and consider each artist's proposed practice and process and their ability to share it. An application is a biography of 250 to 500 words, a PDF portfolio, ten JPGs, a portrait, and a workshop proposal form listing materials costed for six people and the space the session needs.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 23, 2026">November 23, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free to apply (€500 if selected)">Free to apply (€500 if selected)</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/spain/" title="Barcelona, Spain">Barcelona, Spain</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="10 images">10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -142,10 +168,10 @@
     const CURRENT_CALL = {"title":"International Residency of Experimentation 2027","category":"residency","org":"Experimental Photo Festival","location":"Barcelona, Spain","fee":"Free to apply (€500 if selected)","deadline":"2026-11-23","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

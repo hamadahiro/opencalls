@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,6 +109,7 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>€2,290–€2,700 fee</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">MUU Helsinki Contemporary Art Centre, run by the Artists' Association MUU — a national interdisciplinary organisation founded in 1987 that represents and promotes new media art in Finland — invites professional artists, artist groups and curators to propose an exhibition or a multi-artistic event for its 2028 programme. The centre occupies 160 square metres at the Cable Factory in Helsinki's Ruoholahti, one of the largest cultural centres in the country, and its audiences run daily from families with children to senior citizens. Exhibition periods in 2028 generally last four to five weeks, and the MUU selection committee informs every applicant of the result.
 
 The theme for 2028 is Metamorphosis — to change form, to become something different. MUU frames it as a change that can be sudden and visible or so gradual it goes unnoticed, in nature, geology, myth and story alike, and asks what actually changes when something takes a new form: what shifts within us and around us, what emerges, disappears or remains. The call is explicitly open to unforeseeable alteration and to the slow emergence of the new rather than to a single reading of the word.
@@ -116,6 +117,31 @@ The theme for 2028 is Metamorphosis — to change form, to become something diff
 MUU pays the artists and groups who exhibit there. The fee depends on the number of participating artists, the duration of the event and the size of the space used, and the 2028 levels will be confirmed by early 2028; for comparison, in 2026 a four- to five-week solo exhibition paid between €2,290 and €2,700 per artist. Exhibitors have full use of the centre's presentation technology, and a floor plan and technical specification are published alongside the call. Artists remain responsible for the production costs of their works and for transport, insurance, travel, accommodation and similar expenses.
 
 Applications go through MUU's online form by 18 November 2026 at 18:00 (UTC+02:00) and ask for a one-page CV, a 500–1,000 character biography of the artist or group, a project plan of up to 2,000 characters, and a single image file of no more than 5 MB in PNG, JPG or PDF (multiple images must be combined into one file). Applicants also describe in up to 2,000 characters how they intend to use the exhibition space, with a floor plan recommended, explain in up to 1,000 characters each how the proposal relates to the theme and to the other activities at the Cable Factory, and state whether the exhibition is a premiere or where and when it has been shown before. Links to video or audio works, with any passwords, may be added.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 18, 2026">November 18, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/finland/" title="Helsinki, Finland">Helsinki, Finland</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/1-image/" title="1 image file">1 image file</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -148,10 +174,10 @@ Applications go through MUU's online form by 18 November 2026 at 18:00 (UTC+02:0
     const CURRENT_CALL = {"title":"Open Call: Exhibitions 2028 — Metamorphosis","category":"exhibition","org":"MUU Helsinki Contemporary Art Centre","location":"Helsinki, Finland","fee":"Free","deadline":"2026-11-18","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

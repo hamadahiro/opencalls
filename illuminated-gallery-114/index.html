@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,12 +109,38 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link call-prize" title="Juror's Award for Best of Show"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Prize</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Gallery 114 sits in Portland's Pearl District and is one of the oldest artist collectives on the West Coast - member-owned, cooperatively managed and independent since 1990. Illuminated is its community juried exhibition for the depth of winter, and it is tied to something bigger than the gallery: the show is an official programme of the Portland Winter Light Festival, which runs February 5-13, 2027, and picks up promotion and other benefits from that event.</p>
       <p class="call-detail-description">The theme is light itself, treated either conceptually or physically. The call lists chiaroscuro, luminescent environments, atmospheric or diffused lighting, references to spiritual or sacred spaces, and elements within the piece that are lit or illuminated - then says &quot;No limitations--just show us your interpretation of Illuminated.&quot; All 2- and 3-dimensional media are welcome, so photography enters on the gallery's own enumeration rather than by inference.</p>
       <p class="call-detail-description">Eligibility is regional and practical rather than credential-based: any artist in the NW Oregon and SW Washington area, 18 or over, who can deliver and collect work in person. The gallery is blunt about this - all artworks must be hand delivered, and no work will be accepted if it arrives by any mailing service. Drop-off is Friday January 29, 2-6pm, or Saturday January 30, 10am-2pm, 2027; pickup is Saturday February 27, 4:30-6:30pm, or Sunday February 28, 10am-noon, after which the gallery stops insuring the work.</p>
       <p class="call-detail-description">Entry is $35 for three submissions with $5 per additional image to a maximum of six, paid through CaFÉ. Each work needs title, size, media, price, a short description of how it ties to the theme, and installation detail; files need to be at least 200 dpi and 1200 px on the longest side and named first-initial-lastname-title-medium-price. All work must be for sale.</p>
       <p class="call-detail-description">Physical limits matter here. 2D work caps at 48x48 inches and must arrive with secure, professional hanging hardware or it will not be accepted. 3D limits depend on mounting: 24x36 inches wall-mounted, 36x36x72 inches free-standing, 12x12x24 inches on a pedestal. Any lighting apparatus has to be safely and professionally incorporated, and battery power is encouraged over plug-in because the gallery has very few outlets.</p>
       <p class="call-detail-description">The exhibition runs in the North Gallery, opening on First Thursday, February 4, 2027, 5-8pm and closing Saturday, February 27 at 4pm, with a Guest Artist Meet and Greet on Saturday February 20, 1-3pm. A Juror's Award for Best of Show is presented at the opening. Submissions close November 29, 2026.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 29, 2026">November 29, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">December 14, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 for 3 submissions ($5 per additional, maximum 6)">$35 for 3 submissions ($5 per additional, maximum 6)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/portland-area/" title="Portland Area only">Portland Area only</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/oregon/" title="Portland, OR">Portland, OR</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="3–6 images">3–6 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://opportunities.wearecreativewest.org/opportunity/18276/CAFE" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -160,10 +186,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

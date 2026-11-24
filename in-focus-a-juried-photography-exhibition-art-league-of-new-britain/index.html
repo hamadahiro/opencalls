@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$400 awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Juried photography exhibition in the Art League of New Britain's Low Gallery, New Britain, Connecticut, 5 March - 18 April 2027, with an opening reception on Friday 5 March, 6-8 PM. The League presents it as &quot;the return of a dedicated photography exhibition&quot; to its historic gallery, and describes In Focus as examining &quot;photography as both an artistic medium and a way of seeing&quot; - bringing together work made through film, digital and experimental processes, and exploring the ways photographers use light, composition, perspective and subject matter to shape meaning. The brief is deliberately broad: documentary and portraiture, landscape, abstraction, conceptual work and experimental image-making are all named as welcome, and the organisers say the selected works should reflect &quot;the diversity of contemporary photographic practice and the individual viewpoints that define it&quot;. Eligibility is explicit that &quot;works must be photographs&quot; - this is not a mixed-media show with a photography slot. The juror is Florin Ion Firimită, a Romanian-born visual artist, photographer and writer who was introduced to photography as a child through his father's darkroom and later fled communist Romania; his work has appeared in more than 400 exhibitions across four continents, including Paris, Milan, Venice and New York, is held in collections including the Rodin Museum in Paris, and his photographic series The Library has had international recognition. Jurying is hybrid and anonymous: work is selected online from unsigned photographs, then prize winners are chosen in person after drop-off, so the physical print decides the awards. Awards total $400 - $200 first prize, $100 second, $50 third, plus a $25 Honorable Mention and a $25 Juror's Pick. Each artist may enter up to five works, completed in the past three years, original and not previously exhibited in any ALNB show; framed work may not exceed 42 inches in width or height. Entry is $25 for a first work and $15 for each subsequent work, or $15 and $10 for ALNB members, and fees are non-refundable. Registration runs 5 November 2026 to 21 January 2027, with the submission deadline at 11:59 PM on 21 January and notifications on Saturday 30 January 2027. 2D work must arrive ready to hang with wire, D-rings or screw eyes - no sawtooth hangers and no easel-back frames, with prints on metal with a keyhole hanger the exception - and image files must be JPEGs under 4 MB in sRGB, ideally at least 1920 pixels on the longest side. AI-generated imagery is not acceptable; AI-assisted work must be clearly disclosed at submission and must include meaningful creative input, editing or direction by the artist, and failure to disclose may mean disqualification from awards or prizes. Open to all artists aged 18 and over.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 21, 2027">January 21, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">January 30, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$25 first entry, $15 after (members $15/$10)">$25 first entry, $15 after (members $15/<wbr>$10)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/connecticut/" title="New Britain, CT">New Britain, CT</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 5 works">Up to 5 works</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/editing-only/" title="AI-assisted OK (must disclose), fully generated not accepted">AI-assisted OK (must disclose), fully generated not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://alnb.org/calls/in-focus" target="_blank" rel="nofollow noopener" title="Official website">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

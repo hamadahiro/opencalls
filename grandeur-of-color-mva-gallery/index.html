@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>NYC exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">MVA Gallery, a commercial gallery in historic Bethlehem, Pennsylvania, runs a rolling programme of themed national group shows, and this one takes colour as its subject. The gallery's framing is that colour is everywhere and exerts a powerful influence on perception, emotion and behaviour, and that an artist's use of it is personal — intellectual or intuitive, purposeful or accidental, traditional or experimental. Some artists depict the perceived relationship between colours and objects faithfully; others inhabit a subjective universe where colour is relative, transferring shapes and transforming objects to reconstruct reality. Work may be realistic or imaginary, representational or abstract, with no restrictions on subject matter or style. The show occupies both of the gallery's exhibition rooms, 5–30 May 2027, with accepted work due at the gallery by 30 April 2027.
 
 The gallery accepts painting, watercolour, printmaking, mixed media, digital, pastel, encaustic, ink, sculpture, fibre, drawing and photography, and states that all photographic processes are welcome. Photographs should be framed for a traditional presentation, with black or white frames preferred and white or off-white mats where used, though other mounting is considered and exceptions are made. There is no cut-off date for when the work was made. Work must not exceed 48 inches framed on the longest side or 50 lbs, must carry a stretched wire for hanging, and must not have been shown at MVA before. Entry is $35 for three different images and $5 for each additional file up to a maximum of nine; submission runs through CaFE only. Images must be JPEG, under 5 MB and at least 1,200 pixels on the longest side. Work may be offered for sale, with 70 per cent of any sale price going to the artist and 30 per cent to the gallery, and artists pay shipping and insurance both ways and must enclose a prepaid UPS or FedEx return label. A small rotating committee of artists, gallerists, art reviewers, publishers, curators and academics reviews the work, and its decisions are final.
 
 Three awards are in play. An Art of Distinction award selects one artist, photographer or sculptor for a featured show in the gallery's Exhibition Room Two at a future date. The Director's Choice Award is $200, granted at the executive director's discretion. The annual Grand Prize goes to one artist chosen from everyone exhibited at MVA across the calendar year, who is offered an exhibition opportunity in New York City. Artists in a further category are granted free submission to a future MVA exhibition. Notification is by email on or about 4 March 2027, with separate messages for invited and not-invited entries and no acknowledgement of applications before then. The call is national: artists must be 18 or older and current residents of the United States.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 29, 2026">November 29, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">March 4, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 (3 images) + $5 each additional">$35 (3 images) + $5 each additional</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-states/" title="US only">US only</a>, <a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/pennsylvania/" title="Bethlehem, PA">Bethlehem, PA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="3-9 images">3-9 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artist.callforentry.org/festivals_unique_info.php?ID=18481" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -163,10 +189,10 @@ Three awards are in play. An Art of Distinction award selects one artist, photog
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

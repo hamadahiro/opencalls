@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>£410 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>£620 budget</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Autograph — the London gallery and charity that has championed photography about race, identity, representation and social justice since 1988 — is looking for one emerging creative to develop and deliver a paid, in-person event at its Rivington Place gallery in Hackney between 1 and 13 March 2027. The brief asks for proposals that &quot;creatively respond to Autograph's mission&quot; while thinking about how digital technologies reshape rights such as freedom of expression, privacy and access to information: &quot;Who benefits? Who is excluded? How can technology be explored as a critical tool toward more liberatory futures?&quot; Suggested starting points include algorithmic bias and representation in digital spaces, community-building, dissent and digital activism, digital inclusion and accessibility, migration and digital borders, and digital tools for creative practice, and related subjects beyond that list are welcome. This is explicitly not an exhibition opportunity — the pack's FAQ answers &quot;Can I apply to put on an exhibition of works at Autograph?&quot; with &quot;No, this is a not an exhibition opportunity.&quot;
 
 The event must suit a general audience, run no longer than three hours and work inside Autograph's Education Studio, which seats 20 (standing capacity 50); mixed-format, participatory proposals are encouraged. The successful applicant receives a £410 programming fee — a rate Autograph says &quot;coincide[s] with the Artists Union England rates for a 'new graduate artist' in 2026&quot; — plus a budget of up to £620 to cover AV, materials and contributor fees, and is asked to commit around 15 hours of working time between January and March 2027, broken down in the pack as five hours of meetings with Autograph staff, five hours of administrative time and five hours of on-the-day delivery. Autograph's own example budget splits the £620 as £160 per collaborator for two collaborators plus £300 of materials, and any access costs are funded outside both the programming fee and the event budget. Autograph's team works alongside the selected creative throughout — developing the idea, writing the event copy, promoting it through the gallery's channels, and reflecting on the experience afterwards. The programme has run since 2018.
 
 Eligibility is narrow on two axes. Applicants must be London-based — the pack's FAQ asks &quot;Do I need to be based in London to apply?&quot; and answers &quot;Yes&quot; — and must be emerging, which Autograph defines as &quot;less than 3 years of experience working in creative industries or events programming, which includes those who have not developed an event of any kind before&quot;; applicants can be of any age. An interest in issue-led arts and cultural activity is also asked for. There is no entry fee. Applications go through a Microsoft Forms application form — a CV sent instead of the form will not be considered — and close at 10am (GMT) on Monday 16 November 2026, a mid-morning cutoff rather than end of day; late applications are not accepted. Shortlisted applicants are notified on Friday 27 November 2026 and invited to an informal video call during the week beginning 30 November 2026, when the successful applicant is chosen. Autograph does not give individual feedback to applicants who are not shortlisted, though it may share general reflections across the applications received.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 16, 2026">November 16, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">Week of November 30, 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/emerging/" title="Emerging artists">Emerging artists</a>, <a href="/eligibility/london/" title="London only">London only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="London, UK">London, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/proposal/" title="Event proposal">Event proposal</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -142,10 +168,10 @@ Eligibility is narrow on two axes. Applicants must be London-based — the pack'
     const CURRENT_CALL = {"title":"Open Call for Events: Digital Rights and Liberatory Futures","category":"education","org":"Autograph","location":"London, United Kingdom","fee":"Free","deadline":"2026-11-16","eligibility":["emerging","london"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

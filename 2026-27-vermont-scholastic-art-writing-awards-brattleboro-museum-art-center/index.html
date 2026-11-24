@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,11 +109,37 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="Up to $12,500 portfolio scholarships"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">This is a regional round of a national programme, and the two halves live on different surfaces. The Brattleboro Museum &amp; Art Center's own post carries the Vermont facts: it is &quot;the Vermont affiliate for the Scholastic Art &amp; Writing Awards&quot;, students in grades 7-12 (ages 13 and up) may enter in 27 categories, &quot;The submission portal opens on October 1. The deadline for submissions is December 15, 2026&quot;, and &quot;Gold Key, Silver Key, and Honorable Mention regional awards will be exhibited at the Brattleboro Museum &amp; Art Center February 19 - March 6, 2027.&quot; The Alliance for Young Artists &amp; Writers' own pages carry the fees, the category rules and the AI policy.</p>
       <p class="call-detail-description">VERMONT-ONLY IS A REAL BAR AND IT NOW HAS ITS OWN FACET. The Alliance's regions index lists &quot;Vermont Art Region - Brattleboro Museum &amp; Art Center&quot; and &quot;Vermont Writing Region - Brattleboro Museum &amp; Art Center&quot;, i.e. the whole state is one region run from Brattleboro, and a teen outside Vermont is judged somewhere else entirely. The add pass stored eligibility as student alone because no vermont slug existed and the nearest one, new-hampshire-vermont, is labelled &quot;NH &amp; VT only&quot; and would have been a wrong label. This editor pass minted the vermont facet instead, alongside the twenty-odd single-state facets the site already carries (minnesota, indiana, ohio, connecticut, wisconsin, michigan, california and the rest), so the state bar is now a chip a reader can see before they pay $15 rather than a sentence buried in a description.</p>
       <p class="call-detail-description">PHOTOGRAPHY'S WORK CAP IS 16, and it is one of only two capped categories. The Alliance FAQ: there is no limit on the number of works you may enter &quot;with the exception of Photography and Portfolio&quot;, and &quot;Each participant is allowed to enter 16 works in the Photography category&quot;. That sentence is also the photography affirmative for this call - BMAC's own page says &quot;27 categories&quot; and never enumerates them.</p>
       <p class="call-detail-description">THE MONEY IS PUBLISHED, JUST NOT BY THE MUSEUM. BMAC's own page says only that &quot;students can win college scholarships and other prizes&quot;. The Alliance FAQ names the figures: a scholarship committee &quot;awards sixteen $12,500 Gold Medal Portfolio scholarships (eight writing and eight art)&quot; and &quot;Additional $2,000 scholarships are given to students earning Silver Medal Portfolios&quot;. Read the gate before the number: portfolios are open to grade 12 only, a portfolio entry costs $40 rather than $15, and the scholarships are awarded nationally after a regional Gold Key, not by BMAC. The eight art portfolio scholarships are the pot a senior photographer competes for; a grade-7-to-11 entrant is competing for the regional award and the February exhibition.</p>
       <p class="call-detail-description">NO NOTIFICATION DATE IS PUBLISHED. BMAC gives the exhibition run (February 19 - March 6, 2027) but no date on which entrants hear, so resultsDate is an explicit null rather than the exhibition opening read as a notification.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/december-2026/" title="December 15, 2026">December 15, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$15/entry, $40/portfolio (fee waivers available)">$15/<wbr>entry, $40/<wbr>portfolio (fee waivers available)</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/vermont/" title="Vermont only">Vermont only</a>, <a href="/eligibility/student/" title="Students">Students</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/vermont/" title="Brattleboro, VT">Brattleboro, VT</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/11-20-images/" title="Up to 16 photographs">Up to 16 photographs</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/editing-only/" title="AI-assisted OK (must disclose), fully generated not accepted">AI-assisted OK (must disclose), fully generated not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://portal.artandwriting.org/" target="_blank" rel="nofollow noopener" title="Scholastic Awards portal">Website</a></span></div></div>
 
@@ -163,10 +189,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

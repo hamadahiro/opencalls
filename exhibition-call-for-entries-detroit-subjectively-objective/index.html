@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The photobook publisher Subjectively Objective is opening &quot;a new series of exhibitions at our soon to be expanded Detroit area gallery space&quot; and taking submissions of up to ten images. There is no theme: &quot;This is an open call with no specific theme, as this will allow us the greatest ability to create a variety of interesting exhibitions. Our primary focus is on contemporary landscape and documentary photography, but even if your work falls outside of that, please don't hold back from submitting.&quot; Work not placed in one of these shows is still considered for the publisher's other channels — &quot;our Substack Features, Instagram Features, and Mini and Monthly Monograph Magazines&quot; — and returning contributors are explicitly invited back. READ THE COST STRUCTURE BEFORE YOU APPLY: the $10 submission fee is only the entry, and &quot;if selected, the artist will be responsible for an exhibition fee that covers the cost of producing their exhibition print(s), the opening, and promoting the physical exhibition.&quot; You pick the largest print size you want to be considered for — you remain eligible for smaller ones — and that choice sets the bill if you are taken: $30 per image for a small print (about 15x12 inches), $45 medium, $65 large (25x20), $90 XL (30x24), $150 XXL (40x32), $300 for a full eight-foot wall, $350–600 for a wall of larger prints, and $600+ for multiple walls, the last being &quot;for those open to the possibility of participation in a small group show or even a solo exhibition&quot;. Printing is done in house by founder Noah Waldeck, who &quot;will be using the same expert techniques he uses to make museum quality prints for his custom lab clients&quot;, and after the show he will send your print on if you cover shipping. The submission fee itself is waivable: &quot;If you can't afford the submission fee, please contact me and we'll figure something out.&quot; Instructions arrive as a downloadable PDF once the fee is paid.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 15, 2026">November 15, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$10 + $30–$600+ exhibition fee if selected">$10 + $30–$600+ exhibition fee if selected</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/michigan/" title="Detroit, MI">Detroit, MI</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 10 images">Up to 10 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -138,10 +164,10 @@
     const CURRENT_CALL = {"title":"Exhibition Call for Entries — Detroit","category":"exhibition","org":"Subjectively Objective","location":"Detroit, MI, USA","fee":"$10 + $30–$600+ exhibition fee if selected","deadline":"2026-11-15","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

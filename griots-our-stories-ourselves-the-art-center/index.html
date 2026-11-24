@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,12 +109,38 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize" title="$500 First Place"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Griots: Our Stories, Ourselves opens with an African proverb — &quot;Until the lion learns to write, every story will glorify the hunter&quot; — and builds the whole call around who holds the pen. The Art Center at Johns Creek takes the West African griot, the storyteller, historian, musician and keeper of cultural memory who carried histories across generations through spoken word, music, poetry and performance, and argues that the role continues in countless forms today, artists among them.</p>
       <p class="call-detail-description">The curators ask what stories you carry, what stories shaped you, and whose stories deserve to be remembered. They welcome work on personal narratives, family histories, cultural traditions, identity, place, migration, heritage, memory, community, social experience or imagined futures, and they are explicit that a work may tell its story directly or communicate through symbolism, metaphor, abstraction, materials or visual language. Mardi Gras Indian traditions, Gullah culture, the African American church, African American folklore and Afrofuturism are offered as examples, not limitations.</p>
       <p class="call-detail-description">Eligible media are enumerated and photography is named among them, alongside mixed media, ceramics, drawing, fibre art, printmaking, painting, collage, digital art and sculpture — and the list is &quot;not limited to&quot; those, with the curator reachable for questions about a particular medium. The entry form's Accepted Media menu, by contrast, lists painting, drawing, printmaking, fibre art, mixed media, ceramics, sculpture, digital art, metalwork, woodworking and Other, with no Photography option — the menu is open at the end, so a photograph goes in under Other. AI work will not be considered. Files are JPG or PNG up to 50 MB.</p>
       <p class="call-detail-description">Each submitted artwork must be accompanied by a short paragraph explaining how it relates to the theme. The organisers say that statement is an important part of the jurying and will also help audiences engage with the work in the gallery, so it is not an afterthought.</p>
       <p class="call-detail-description">Entry is $30, non-refundable, for a single application carrying up to five works. First Place is a $500 cash award; additional cash awards and recognitions are promised, with the total depending on how many entries arrive and how much sponsorship comes in. The Art Center is a nonprofit and states that the lion's share of entry fees is used to support the exhibition and its participating artists.</p>
       <p class="call-detail-description">The deadline is January 9, 2027, with the jury decision on January 16 and the exhibition running February 3 – March 6, 2027 at the gallery in Johns Creek, Georgia.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/january-2027/" title="January 9, 2027">January 9, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">January 16, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$30">$30</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/georgia/" title="Johns Creek, GA">Johns Creek, GA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="Up to 5 works">Up to 5 works</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/not-accepted/" title="Not accepted">Not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://app.entrythingy.com/johnscreekarts/griots-our-stories-ourselves/" target="_blank" rel="nofollow noopener" title="EntryThingy">Website</a></span></div></div>
 
@@ -160,10 +186,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

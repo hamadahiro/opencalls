@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize" title="Monthly solo exhibition slot, no sales commission"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Rolling, free call for the Fresh Eyes series at ViewPoint Gallery, a photographer-run fine-art photography gallery founded in 2000 on the Bedford Highway in Halifax Regional Municipality, Nova Scotia. FRESH EYES IS A MONTHLY SLOT, NOT A GROUP SHOW: &quot;Fresh Eyes is a monthly exhibition series at ViewPoint Gallery designed to showcase the work of Maritime photographers&quot;, and the space is a defined 5' × 5' wall — &quot;You get to decide how you would like to make use of it.&quot; That is small, and it is the whole point: one photographer at a time, with the layout left to them. NO FEE AND NO COMMISSION, which is unusual enough to state plainly: &quot;There is no fee to exhibit and, in the event of sales, the Gallery does not charge commission&quot; — the only deduction is a 10% handling charge on credit or debit sales. WHAT THE GALLERY DOES: &quot;We'll take care of printing your wall cards and artist statement/bio&quot;, and &quot;Your show will be highlighted on our website and social media&quot;. WHAT THE ARTIST DOES: &quot;All works should be printed and prepared for hanging by the artist.&quot; WHO CAN APPLY: &quot;All artists must be from Nova Scotia, Prince Edward Island, or New Brunswick&quot; — the three Maritime provinces, and nowhere else. WHAT TO SEND, by email with &quot;Exhibition Chair&quot; in the subject line: an artist statement about you as a photographer, a statement of exhibition intent saying what you intend to exhibit and why, a very brief bio, and 2–3 digital images. All images must meet the gallery's published content guidelines, which sit on their own page. THERE IS NO DEADLINE AND NO ANNOUNCED CYCLE — the call is open-ended, which is why it is listed as continuous; the gallery's separate guest-exhibition route asks for submissions at least three months ahead of an opening, so planning that far out is the gallery's habit. ONE THING TO SEPARATE THIS FROM THE GALLERY'S OTHER DOOR: ViewPoint's solo guest exhibitions in the main gallery carry a $150 non-refundable exhibition fee plus shipping and catering at the artist's expense. Fresh Eyes does not. Note also that the gallery states it cannot insure work on display.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/continuous/" title="Continuous">Continuous</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/free/" title="Free">Free</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/maritimes/" title="Maritimes only">Maritimes only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/canada/" title="Bedford, NS, Canada">Bedford, NS, Canada</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="2–3 images">2–3 images</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/accepted/" title="Must disclose">Must disclose</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="mailto:[address]" rel="nofollow noopener">Email</a></span></div></div>
 
@@ -143,10 +169,10 @@
     const CURRENT_CALL = {"title":"Fresh Eyes Gallery — Call for Submissions","category":"exhibition","org":"ViewPoint Gallery","location":"Bedford, NS, Canada","fee":"Free","deadline":"Continuous","eligibility":["maritimes"]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,9 +109,35 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize" title="Solo exhibition in 2028"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">A solo show in a gallery this size, two years out, is worth the paperwork. The Art League's gallery sits in the Torpedo Factory Art Center on the Alexandria waterfront, calls itself one of Washington's largest, and runs its solo programme on a two-year lead: this round is juried in November 2026 for 2028 slots. The brief is about coherence rather than theme — a strong, cohesive body of work expressing an aesthetic concept — and the gallery is explicit that experimental and traditional work are equally welcome as long as the execution holds up. For a photographer with a finished project and no solo exhibition history in the DC area, this is a real door.</p>
       <p class="call-detail-description">Photography is named, not implied, which is the thing to check before paying. The gallery's media policy admits unique photographed images, encourages but does not require photographers to print their own work, and draws the line only at reproductions — you cannot photograph a painting and call it an original. Digital art made by manipulation in or into the computer is admitted on the same page. AI-generated artwork is not: &quot;AI generated artwork is not accepted at this time.&quot; The gallery publishes its evaluation criteria in full — on its own jurying page rather than on the application, and that page still carries the 2027 cycle, so treat the criteria as standing policy and the dates on it as last year’s. They reward the proposal as much as the pictures: concept and motivation, a statement that explains why the work exists, a proposal with real detail, a body of work that actually matches the proposal, technical skill, professional framing and presentation, and the formal elements.</p>
       <p class="call-detail-description">Count the money before applying. The application is $50 through Submittable for a current Exhibiting Artist member and $65 on the separate non-member form, whose own qualifications say a non-member need only join by 30 December 2026 if accepted — membership is a condition of exhibiting, not of applying — $115 for a new member, $105 on renewal, and $0 for artists aged 23 and under on the Emerging Artist tier. The $182 all-inclusive membership explicitly excludes solo exhibits, so it does not absorb the $50. Two further bars: no solo exhibit at The Art League in the previous five years, and if selected, no more than a third of the final show may have appeared in a juried solo exhibition within 50 miles of the gallery. The process is three-stage — five images, proposal, statement and résumé online, then a finalist round where the same five physical works are dropped off and juried in person without the artists in the room. The 2028 jury panel is TBA. Deadline Sunday 1 November 2026.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/november-2026/" title="November 1, 2026">November 1, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$50 members, $65 non-members">$50 members, $65 non-members</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/virginia/" title="Alexandria, VA">Alexandria, VA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="5 works">5 works</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/not-accepted/" title="Not accepted">Not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div></div>
 
@@ -140,10 +166,10 @@
     const CURRENT_CALL = {"title":"2028 Solo Artist Application","category":"exhibition","org":"The Art League","location":"Alexandria, VA, USA","fee":"$50 members, $65 non-members","deadline":"2026-11-01","eligibility":[]};
 
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

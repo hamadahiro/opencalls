@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prizes</a></span> <a href="/prize/cash/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>$1,000 cash</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">The Marblehead Arts Association, a 501(c)(3) non-profit housed in the historic 1728 mansion at 8 Hooper Street in Marblehead, Massachusetts, invites &quot;artists, both MAA members and non-members, from across the country&quot; to its national juried exhibit Variations 2027, an eight-week show running 24 April to 19 June 2027. Work is juried in three categories and judged for prizes in each of them, and photography is one: the organiser's category list reads &quot;Photography - Film, Digital (the artist must make the image)&quot;, alongside Fine Art (painting, drawing, printmaking, 2-D mixed media, digital art) and 3D (sculpture, crafts, jewelry, fabric, paper). Cash prizes of $1,000, $250 and $100 are awarded in each category, so a photographer competes against photographers for the $1,000, and the awards are presented at the opening reception on Sunday 25 April 2027. All three judges are named on the call page: the painter, sculptor and printmaker Jennifer Day (MFA, University of Pennsylvania, under Neil Welliver) judges Fine Art; Jim Fitts - a photographer, teacher and curator of more than 45 years, former Executive Director of the Photographic Resource Center at Boston University, curator of photography exhibitions for the PRC/MIT Gallery and a reviewer for Photolucida, FotoFest and the New England Portfolio Reviews - judges Photography; and Paula Bradstreet Richter, a curator specialising in fashion, textiles and New England decorative arts, judges 3D. The organiser states that acceptance and prize decisions are the judges' alone and that no one associated with the association takes part in either process. Entry is through CaFE at $35 for a first entry plus $10 for each additional work, up to three works, with a $10 discount for current MAA members on their first entry at checkout and no refunds after payment. Submission images must be JPEGs cropped to remove backgrounds, under 5 MB, at least 100 dpi, with the longest side no more than 1,400 pixels. The photography rules bar synthetic imagery: &quot;Composite images are acceptable. All parts of the image must be created photographically by the artist. Computer-generated or AI subject is not allowed.&quot; Submissions opened on 14 November 2026 and close on 22 February 2027; the jury's decisions are emailed on 15 March 2027 and accepted work must arrive - hand-delivered or shipped to the gallery in Marblehead - by 11 April 2027, with local pick-up from 20 June and a packing and shipping week of 21 to 25 June. Artists under 18 need an adult sponsor; no residency or nationality bar is published. Accepted work must remain hanging until the exhibit closes unless it sells, and accepted 2-D work has to arrive framed and wired for the gallery's Walker rod system. The association keeps 40 per cent of any sale and pays the artist 60 per cent, on sales during the show and for 30 days after it closes, and it takes no responsibility for work lost or damaged in transit, asking artists to insure and track their shipments and to enclose a pre-paid return label. Work accepted or exhibited in the 2023, 2024, 2025 or 2026 Variations shows cannot be entered again. The MAA has exhibited work from across New England in the seven galleries of its mansion for over a century.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/february-2027/" title="February 22, 2027">February 22, 2027</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">March 15, 2027</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="$35 first entry, $10 each additional work; $10 MAA member discount">$35 first entry, $10 each additional work; $10 MAA member discount</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/united-states/" title="US only">US only</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-states/massachusetts/" title="Marblehead, MA">Marblehead, MA</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/2-5-images/" title="1–3 works">1–3 works</a></span></div><div class="info-row"><span class="info-label"><a href="/ai-policy/">AI policy</a></span><span class="dots"></span><span class="info-value"><a href="/ai-policy/not-accepted/" title="Not accepted">Not accepted</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="https://artist.callforentry.org/festivals_unique_info.php?ID=18496" target="_blank" rel="nofollow noopener" title="CaFE">Website</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>

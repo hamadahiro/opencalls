@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261124b">
+  <link rel="stylesheet" href="/style.css?v=20261124c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -109,7 +109,33 @@
 
       <div id="detailPrize"><div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">Prize</a></span> <a href="/prize/exhibition/" class="meta-tag meta-tag-link call-prize"><svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>Exhibition</a></div></div>
 
+      <div class="call-detail-text" id="detailText">
       <p class="call-detail-description">Curated international group photography exhibition built on a single experimental hanging decision: the photographs are shown turned upside down. PH21's premise is that inverting an image strips it of its representative function — the depicted scene and objects become difficult, if not impossible, to recognise — while the formal and compositional aspects become more pronounced, directing attention away from scene and object recognition. Any photograph is eligible if the artist is willing to present it this way. Abstract photographs may be the most obvious candidates, but the call argues that depictive works can be appreciated in novel ways when inverted, and names landscapes, bodyscapes, symmetrical compositions, architectural and street photography as excellent candidates, with other genres also considered. The theme is broadly interpreted and independent of generic or stylistic constraints. Curated by Zsolt Bátori (PhD in Philosophy, Rutgers; founder, director and curator of PH21 Gallery, a Photolucida Critical Mass juror since 2023 and invited to Photolucida's Board of Directors in 2026) and Borbála Jász (art historian and philosopher of art, PH21 vice-director, a Critical Mass juror since 2025 and also invited to the board in 2026). One curator's choice and up to three honourable mentions are announced; the juror's choice receives three free entries to any upcoming PH21 themed group call, each covering up to 15 images. Entrants may submit 3, 5, 7, 10 or 15 images — individual works, or including a series of at most five photographs — by email after paying the fee. THE STANDARD FEE IS PRICED BY IMAGE COUNT AND RISES AFTER THE EARLY BIRD DEADLINE: until November 30 it is €25 for the first 3 images, €30 for 5, €35 for 7, €40 for 10 and €45 for 15; after November 30 every rung goes up €5, to €30 / €35 / €40 / €45 / €50, so the stored €25 floor is only available up to the early bird date and only for three images. A reduced rate of €15 (early bird) or €20 after it covers up to five images for students, unwaged persons and applicants from low-income economies — the gallery asks for no proof of eligibility and says it trusts the applicant's judgement. Early bird deadline November 30, final deadline December 7; all entrants are notified 10–15 days after the final deadline. The exhibition runs February 6 – March 2, 2027 at PH21's venue in Barcelona's Gothic Quarter. Selected photographers pay a print and installation fee, from €45 for a matted print up to 40cm / 15.75in on the longest side, or may ship their own exhibit-ready prints; entering grants the gallery a non-exclusive promotional and exhibition licence with no royalties, copyright and ownership stay with the photographer, submitted work need not be for sale, and the gallery commission on any sale is 25%.</p>
+      </div>
+      <script>(function () {
+  var box = document.getElementById('detailText');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
+  btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+  btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  btn.onclick = function () {
+    touched = true;
+    var c = box.classList.toggle('is-collapsed');
+    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
+    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+  };
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
+})();</script>
 
       <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/december-2026/" title="December 7, 2026">December 7, 2026</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">December 2026</span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="€25–€45 early bird, then €30–€50; €15–€20 concession">€25–€45 early bird, then €30–€50; €15–€20 concession</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/spain/" title="Barcelona, Spain">Barcelona, Spain</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/11-20-images/" title="3–15 images">3–15 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="mailto:[address]" rel="nofollow noopener">Email</a></span></div></div>
 
@@ -159,10 +185,10 @@
       a.click();
     }
   </script>
-  <script src="/shared.js?v=20261124b"></script>
-  <script src="/cards.js?v=20261124b"></script>
-  <script src="/search.js?v=20261124b"></script>
-  <script src="/call-detail.js?v=20261124b"></script>
+  <script src="/shared.js?v=20261124c"></script>
+  <script src="/cards.js?v=20261124c"></script>
+  <script src="/search.js?v=20261124c"></script>
+  <script src="/call-detail.js?v=20261124c"></script>
 
 </body>
 </html>
