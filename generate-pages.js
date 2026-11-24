@@ -2331,19 +2331,19 @@ const submitHtml = `<!DOCTYPE html>
           <summary>Add details <span style="color:var(--text-muted)">(optional)</span></summary>
 
           <label for="deadline">Deadline</label>
-          <input class="search-bar" type="text" name="deadline" id="deadline" placeholder="April 15, 2026">
+          <input class="search-bar" type="text" name="deadline" id="deadline" placeholder="e.g. March 15, 2027">
 
           <label for="fee">Entry fee</label>
-          <input class="search-bar" type="text" name="fee" id="fee" placeholder="Free, $25, €10">
+          <input class="search-bar" type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
 
           <label for="prize">Prize</label>
-          <input class="search-bar" type="text" name="prize" id="prize" placeholder="$5,000, Exhibition, Publication">
+          <input class="search-bar" type="text" name="prize" id="prize" placeholder="e.g. $5,000, exhibition, publication">
 
           <label for="location">Location</label>
-          <input class="search-bar" type="text" name="location" id="location" placeholder="Berlin, Germany or Online">
+          <input class="search-bar" type="text" name="location" id="location" placeholder="e.g. Berlin, Germany or Online">
 
           <label for="eligibility">Eligibility</label>
-          <input class="search-bar" type="text" name="eligibility" id="eligibility" placeholder="International, 18+">
+          <input class="search-bar" type="text" name="eligibility" id="eligibility" placeholder="e.g. International, 18+">
 
           <label for="org">Organization</label>
           <input class="search-bar" type="text" name="org" id="org" placeholder="Organization name">

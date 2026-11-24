@@ -644,6 +644,13 @@ a.meta-tag-link.call-prize:hover {
   box-sizing: border-box;
 }
 
+/* Form examples sit lighter than typed text, so a filled field and an empty one
+   never look alike (owner, 2026-11-24). The site search keeps .search-bar's colour. */
+.submit-form .search-bar::placeholder {
+  color: #9b9b9b;
+  font-weight: 400;
+}
+
 .submit-form textarea {
   resize: vertical;
   border-radius: 24px;
