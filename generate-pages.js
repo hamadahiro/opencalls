@@ -886,29 +886,32 @@ function buildJsonLd(call) {
 // Phones only: the call's description shows 6 lines and a "Read more" line. The whole
 // text stays in the HTML (search engines and no-JS readers get all of it); this only
 // adds the class the CSS clamps on. It runs inline, right after the text, so the page
-// never paints the long version first and jumps. Short texts get no button; the check
-// runs again once the web font has loaded, since line breaks change with it.
+// never paints the long version first and jumps. It cuts only when that hides 3 lines
+// or more (one or two hidden lines are not worth a "Read more" line), and decides again
+// once the web font has loaded, since line breaks change with it.
 const DESCRIPTION_COLLAPSE_SCRIPT = `(function () {
   var box = document.getElementById('detailText');
-  if (!box || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
-  var ps = box.children, first = ps[0];
-  if (!first) return;
-  function fits() { return ps.length < 2 && first.scrollHeight <= first.clientHeight + 2; }
-  box.classList.add('is-collapsed');
-  if (fits()) { box.classList.remove('is-collapsed'); return; }
-  box.classList.add('has-more');
-  var btn = document.createElement('button');
+  if (!box || !box.firstElementChild || !window.matchMedia || !matchMedia('(max-width: 640px)').matches) return;
+  var btn = document.createElement('button'), touched = false;
   btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
   btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
   btn.onclick = function () {
+    touched = true;
     var c = box.classList.toggle('is-collapsed');
     btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
     if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
   };
-  box.after(btn);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
-    if (box.classList.contains('is-collapsed') && fits()) { box.classList.remove('is-collapsed', 'has-more'); btn.remove(); }
-  });
+  function decide() {
+    if (touched) return;
+    box.classList.remove('is-collapsed', 'has-more');
+    var full = box.offsetHeight;
+    box.classList.add('is-collapsed');
+    var line = parseFloat(getComputedStyle(box.firstElementChild).lineHeight) || 28;
+    if (full - box.offsetHeight >= 3 * line) { box.classList.add('has-more'); if (!btn.parentNode) box.after(btn); }
+    else { box.classList.remove('is-collapsed'); if (btn.parentNode) btn.remove(); }
+  }
+  decide();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
 })();`;
 
 function generatePage(call, cssVersion) {
