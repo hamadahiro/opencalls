@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261123e">
+  <link rel="stylesheet" href="/style.css?v=20261124a">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -31,9 +31,8 @@
     <div class="header-inner">
       <a href="/" class="logo">Monographica</a>
       <nav>
-        <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/new/" class="nav-link" data-nav="recent">New</a>
+        <a href="/" class="nav-link" data-nav="open">Open Calls</a>
+        <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -43,9 +42,8 @@
       </div>
     </div>
     <div class="mobile-nav">
-      <a href="/" data-nav="open">Open</a>
-      <a href="/archive/" data-nav="closed">Closed</a>
-      <a href="/new/" data-nav="recent">New</a>
+      <a href="/" data-nav="open">Open Calls</a>
+      <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -84,19 +82,19 @@
           <summary>Add details <span style="color:var(--text-muted)">(optional)</span></summary>
 
           <label for="deadline">Deadline</label>
-          <input class="search-bar" type="text" name="deadline" id="deadline" placeholder="April 15, 2026">
+          <input class="search-bar" type="text" name="deadline" id="deadline" placeholder="e.g. March 15, 2027">
 
           <label for="fee">Entry fee</label>
-          <input class="search-bar" type="text" name="fee" id="fee" placeholder="Free, $25, €10">
+          <input class="search-bar" type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
 
           <label for="prize">Prize</label>
-          <input class="search-bar" type="text" name="prize" id="prize" placeholder="$5,000, Exhibition, Publication">
+          <input class="search-bar" type="text" name="prize" id="prize" placeholder="e.g. $5,000, exhibition, publication">
 
           <label for="location">Location</label>
-          <input class="search-bar" type="text" name="location" id="location" placeholder="Berlin, Germany or Online">
+          <input class="search-bar" type="text" name="location" id="location" placeholder="e.g. Berlin, Germany or Online">
 
           <label for="eligibility">Eligibility</label>
-          <input class="search-bar" type="text" name="eligibility" id="eligibility" placeholder="International, 18+">
+          <input class="search-bar" type="text" name="eligibility" id="eligibility" placeholder="e.g. International, 18+">
 
           <label for="org">Organization</label>
           <input class="search-bar" type="text" name="org" id="org" placeholder="Organization name">
@@ -114,6 +112,18 @@
       <div id="submitThanks" style="display:none">
         <a href="/submit/" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Submit another</a>
       </div>
+      <div class="submit-rules" id="what-gets-listed">
+        <h2 class="section-header">What gets listed</h2>
+        <p class="call-detail-description submit-rules-lead">I add a call when:</p>
+        <ul class="call-detail-description">
+          <li>photographers can apply to it themselves, not only through a nomination or an organization;</li>
+          <li>the organizer’s own website has a public page with the deadline, the fee and how to apply;</li>
+          <li>the deadline hasn’t passed;</li>
+          <li>selected artists get something real: an exhibition, a publication, a residency, a grant or prize money (a certificate or a social media feature alone isn’t enough);</li>
+          <li>every fee is stated up front, including fees charged only to selected artists.</li>
+        </ul>
+        <p class="call-detail-description">If a call you sent isn’t on the site, one of these was missing when I checked. Once the organizer’s page has it, send the call again.</p>
+      </div>
       <script>
         document.getElementById('submitForm').addEventListener('submit', function(e) {
           e.preventDefault();
@@ -129,7 +139,7 @@
               document.getElementById('submitForm').style.display = 'none';
               document.getElementById('submitThanks').style.display = '';
               document.querySelector('.hero h1').textContent = 'Thanks for submitting';
-              document.querySelector('.hero .subtitle').textContent = "I'll take a look and add it if it fits.";
+              document.querySelector('.hero .subtitle').innerHTML = 'I’ll check it against <a href="#what-gets-listed">what gets listed</a> and add it if it fits.';
             } else {
               btn.textContent = 'Something went wrong, try again';
               btn.style.opacity = '1';
@@ -144,13 +154,14 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p style="display:flex;gap:24px"><span>&copy; 2026 <a href="https://monographica.com">Monographica</a></span><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
+      <p class="footer-links"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
+      <p>&copy; 2026 <a href="https://monographica.com">Monographica</a></p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261123e"></script>
-  <script src="/cards.js?v=20261123e"></script>
-  <script src="/search.js?v=20261123e"></script>
+  <script src="/shared.js?v=20261124a"></script>
+  <script src="/cards.js?v=20261124a"></script>
+  <script src="/search.js?v=20261124a"></script>
 
 </body>
 </html>
