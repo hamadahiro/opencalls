@@ -1124,10 +1124,15 @@ a.meta-tag-link.call-prize:hover {
    strong --link color, so they read as links against the dimmed body text.
    Hover underline comes from the global a:hover rule. */
 
-/* Deadline on a call page: a band behind the lower half of the date, in the
-   deadline pill's hue (owner, 2026-11-24, "sample 4"). Lightness is set per mode
-   so the date reads at about 7:1 on every band: 6.8-6.9:1 light, 7.1:1 dark;
-   every band stands 2.2-2.3:1 off the page. call-detail.js adds the class. */
+/* Deadline on a call page: a marker stroke drawn by hand under the date, in the
+   deadline pill's hue (owner, 2026-11-24). Lightness is set per mode so the date
+   reads at about 7:1 on every colour: 6.8-6.9:1 light, 7.1:1 dark; every stroke
+   stands 2.2-2.3:1 off the page. call-detail.js adds the class.
+   The stroke is 0.42em thick and its top sits 0.08em above the baseline, so it
+   touches the bottom of the letters and never crosses their middle (a band set
+   higher read as a strikethrough, red most of all). It is a shape (an SVG mask
+   filled with the colour), not text-decoration, so Safari and Chrome put it at
+   the same height. Its box is 0.58em tall because the stroke fills ~73% of it. */
 :root {
   --dl-ending: #9B95D1;
   --dl-urgent: #F97167;
@@ -1144,11 +1149,23 @@ a.meta-tag-link.call-prize:hover {
 }
 .info-value a.dl-band,
 .info-value a.dl-band:hover {
-  text-decoration-line: underline;
-  text-decoration-color: var(--dl-c);
-  text-decoration-thickness: 0.42em;
-  text-underline-offset: -0.3em;
-  text-decoration-skip-ink: none;
+  text-decoration: none;
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+}
+.info-value a.dl-band::before {
+  content: '';
+  position: absolute;
+  left: -0.14em;
+  right: -0.1em;
+  bottom: -0.06em;
+  height: 0.58em;
+  z-index: -1;
+  background: var(--dl-c);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20240%2024'%20preserveAspectRatio%3D'none'%3E%3Cpath%20d%3D'M6%209.5C46%206.2%2088%209%20128%205.2S204%203.4%20236.4%20.8C239.8%205%20240%2013%20236.8%2018.6C229%2019.4%20222%2017.6%20213%2019.8C172%2021.2%20130%2019.4%2090%2022.2C56%2024%2030%2021.8%203.6%2023.8C.4%2019%200%2014%206%209.5Z'%2F%3E%3C%2Fsvg%3E") 0 0 / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20240%2024'%20preserveAspectRatio%3D'none'%3E%3Cpath%20d%3D'M6%209.5C46%206.2%2088%209%20128%205.2S204%203.4%20236.4%20.8C239.8%205%20240%2013%20236.8%2018.6C229%2019.4%20222%2017.6%20213%2019.8C172%2021.2%20130%2019.4%2090%2022.2C56%2024%2030%2021.8%203.6%2023.8C.4%2019%200%2014%206%209.5Z'%2F%3E%3C%2Fsvg%3E") 0 0 / 100% 100% no-repeat;
+  pointer-events: none;
 }
 .dl-band.dl-ending { --dl-c: var(--dl-ending); }
 .dl-band.dl-urgent { --dl-c: var(--dl-urgent); }
