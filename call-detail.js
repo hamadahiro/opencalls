@@ -9,6 +9,13 @@
   if (info && !info.innerHTML.trim()) info.innerHTML = renderInfoGrid(CURRENT_CALL, { esc: esc, locationLink: getLocationLink });
   var dp = document.getElementById('detailPrize');
   if (dp && !dp.innerHTML.trim() && CURRENT_CALL.prize) dp.innerHTML = buildPrizeBlock(CURRENT_CALL, esc);
+  // Deadline band: colour by urgency as of now, the same rule as the deadline pills
+  // (computeUrgency in shared.js). Closed calls get no band.
+  var dlLink = info && info.querySelector('.info-value a[href^="/deadlines/"]');
+  if (dlLink && CURRENT_CALL.deadline && typeof computeUrgency === 'function') {
+    var u = computeUrgency(CURRENT_CALL, new Date()).urgencyClass;
+    if (u && u !== 'closed') dlLink.classList.add('dl-band', 'dl-' + u);
+  }
 })();
 
 // "More like this" is rendered into the page at build time

@@ -1089,6 +1089,38 @@ a.meta-tag-link.call-prize:hover {
    strong --link color, so they read as links against the dimmed body text.
    Hover underline comes from the global a:hover rule. */
 
+/* Deadline on a call page: a band behind the lower half of the date, in the
+   deadline pill's hue (owner, 2026-11-24, "sample 4"). Lightness is set per mode
+   so the date reads at about 7:1 on every band: 6.8-6.9:1 light, 7.1:1 dark;
+   every band stands 2.2-2.3:1 off the page. call-detail.js adds the class. */
+:root {
+  --dl-ending: #9B95D1;
+  --dl-urgent: #F97167;
+  --dl-normal: #B79854;
+  --dl-rolling: #889FAA;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dl-ending: #51497F;
+    --dl-urgent: #9E181A;
+    --dl-normal: #664C06;
+    --dl-rolling: #3E535D;
+  }
+}
+.info-value a.dl-band,
+.info-value a.dl-band:hover {
+  text-decoration-line: underline;
+  text-decoration-color: var(--dl-c);
+  text-decoration-thickness: 0.42em;
+  text-underline-offset: -0.3em;
+  text-decoration-skip-ink: none;
+}
+.dl-band.dl-ending { --dl-c: var(--dl-ending); }
+.dl-band.dl-urgent { --dl-c: var(--dl-urgent); }
+.dl-band.dl-soon,
+.dl-band.dl-normal { --dl-c: var(--dl-normal); }
+.dl-band.dl-rolling { --dl-c: var(--dl-rolling); }
+
 /* === Index Pages === */
 .index-list {
   display: flex;
