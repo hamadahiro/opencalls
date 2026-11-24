@@ -499,8 +499,14 @@ function listSubtitle(desc, stats) {
 // and are still linked from every call that names them.
 const ARCHIVE_HEADING = 'No open calls';
 
-function indexItem(href, labelHtml, count) {
-  return `      <a href="${href}" class="index-item"><span class="index-item-name">${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+function indexItem(href, labelHtml, count, id) {
+  return `      <a href="${href}" class="index-item"><span class="index-item-name"${id ? ` id="${id}"` : ''}>${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+}
+
+// The letter an index files a name under: A–Z without accents, "0-9" for the rest.
+function indexLetter(label) {
+  const c = label.normalize('NFD')[0].toUpperCase();
+  return c >= 'A' && c <= 'Z' ? c : '0-9';
 }
 
 // entries: [{ href, label, total, open }] — `open` decides which section the
@@ -513,7 +519,15 @@ function buildIndexItems(entries, opts = {}) {
   const live = entries.filter(e => e.open > 0).sort(sort);
   const archived = entries.filter(e => !e.open).sort(sort);
   let html = '';
-  live.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e)); });
+  // `letterIds`: the first row of each letter carries its id (the letters on /browse/ link to it).
+  const seen = new Set();
+  const letterId = e => {
+    const l = indexLetter(e.label);
+    if (!opts.letterIds || seen.has(l)) return '';
+    seen.add(l);
+    return l.toLowerCase();
+  };
+  live.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e), letterId(e)); });
   if (archived.length && !opts.hideArchived) {
     html += `      <h3 class="section-header">${ARCHIVE_HEADING}</h3>\n`;
     archived.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e)); });
@@ -2478,20 +2492,36 @@ function midTruncateHtml(str, minLen) {
   return `<span class="tag-front">${escapeHtml(front)}</span><span class="tag-back">${escapeHtml(back)}</span>`;
 }
 
-// /browse/ is the shortcut hub, not an exhaustive index: it lists only
-// destinations that have something open right now (the full lists, archive
-// sections included, live on /organizations/, /locations/, /eligibility/…).
-// The count is the open count — what the page you land on lists first.
-function buildBrowseSection(heading, items, headingLink) {
+// /browse/ is the short index: a section with few rows is printed whole, a long
+// one prints its first rows and a "See all" line to its own index page, which
+// carries the rest. It lists only destinations that have something open right
+// now; the count is the open count — what the page you land on lists first.
+//   limit:     print only this many rows
+//   keepOrder: the items come in their natural order (dates, image counts)
+//   see:       [[href, text], …] — the lines under the rows
+//   rowsHtml:  printed instead of rows (the organizations' letters)
+function buildBrowseSection(heading, items, headingLink, opts = {}) {
   const live = items.filter(i => i.open > 0);
   if (!live.length) return '';
-  const headingHtml = headingLink ? `<a href="${headingLink}">${escapeHtml(heading)}</a>` : escapeHtml(heading);
-  let html = `<h3 class="section-header">${headingHtml}</h3>\n`;
-  const sorted = [...live].sort((a, b) => b.open - a.open || a.label.localeCompare(b.label));
-  sorted.forEach(item => {
-    html += indexItem(item.href, midTruncateHtml(item.label), listedCount(item));
-  });
-  return html;
+  const sorted = opts.keepOrder ? live : [...live].sort((a, b) => b.open - a.open || a.label.localeCompare(b.label));
+  const rows = opts.rowsHtml || sorted.slice(0, opts.limit || sorted.length)
+    .map(item => indexItem(item.href, midTruncateHtml(item.label), listedCount(item))).join('');
+  const see = (opts.see || []).map(([href, text]) => `        <a href="${href}">${text}</a>\n`).join('');
+  return `      <div class="browse-group" id="${slugify(heading)}">
+      <h3 class="section-header"><a href="${headingLink}">${escapeHtml(heading)}</a></h3>
+      <div class="browse-rows">
+${rows}      </div>
+${see ? `      <p class="browse-see">\n${see}      </p>\n` : ''}      </div>
+`;
+}
+
+// A letter per initial that has an organization, each to the first row under
+// it on /organizations/ (the id is written there by buildIndexItems).
+function browseLetters(items) {
+  const letters = [...new Set(items.filter(i => i.open > 0).map(i => indexLetter(i.label)))]
+    .sort((a, b) => (a === '0-9') - (b === '0-9') || a.localeCompare(b));
+  return `        <p class="browse-letters">${letters.map(l =>
+    `<a href="/organizations/#${l.toLowerCase()}">${l.replace('-', '–')}</a>`).join('')}</p>\n`;
 }
 
 const browseCategoryLabels = {
@@ -2521,10 +2551,12 @@ const browseCountries = Object.entries(countryCounts).map(([country, total]) => 
   return { label, href: `/${countrySlug}/`, total, open: openCountryCounts[country] || 0 };
 });
 
-const browseStates = Object.entries(stateCounts).map(([state, total]) => {
-  const fullName = usStateNames[state] || state;
-  return { label: fullName, href: `/united-states/${slugify(fullName)}/`, total, open: openStateCounts[state] || 0 };
-});
+// By date: the next five months that have an open call, then the calls without a date.
+const browseDeadlines = [
+  ...sortedMonths.map(k => ({ label: `${MONTH_LABELS[monthGroups[k].month]} ${monthGroups[k].year}`, href: `/deadlines/${k}/`, ...listStats(monthGroups[k].calls) }))
+    .filter(m => m.open > 0).slice(0, 5),
+  { label: 'Continuous', href: '/deadlines/continuous/', ...listStats(continuousCalls) }
+];
 
 const browseEligibility = [];
 eligibilityOrder.forEach(group => {
@@ -2547,19 +2579,18 @@ const browseHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'Browse All Open Calls', 'Explore open calls by category, location, eligibility, and organization.')}
+    ${buildHero('', 'Browse All Open Calls', `${openCalls.length} open calls, by <a href="#deadlines">deadline</a>, <a href="#fees">fee</a>, <a href="#categories">category</a>, <a href="#locations">location</a>, <a href="#eligibility">eligibility</a>, <a href="#prizes">prize</a>, <a href="#requirements">requirements</a>, <a href="#ai-policy">AI policy</a> or <a href="#organizations">organization</a>.`)}
 
-    <section class="index-list">
+    <section class="index-list browse-list">
+${buildBrowseSection('Deadlines', browseDeadlines, '/deadlines/', { keepOrder: true, see: [['/deadlines/', 'See all deadlines']] })}
+${buildBrowseSection('Fees', browseFees, '/fees/', { keepOrder: true })}
 ${buildBrowseSection('Categories', browseCategories, '/categories/')}
-${buildBrowseSection('Fees', browseFees, '/fees/')}
+${buildBrowseSection('Locations', browseCountries, '/locations/', { limit: 6, see: [['/locations/', 'See all locations'], ['/united-states/', 'See all US states']] })}
+${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/', { limit: 6, see: [['/eligibility/', 'See all eligibility rules']] })}
 ${buildBrowseSection('Prizes', browsePrizes, '/prize/')}
-${buildBrowseSection('Requirements', browseRequirements, '/requirements/')}
-${buildBrowseSection('Locations', browseCountries, '/locations/')}
-${buildBrowseSection('US States', browseStates, '/united-states/')}
-${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/')}
+${buildBrowseSection('Requirements', browseRequirements, '/requirements/', { keepOrder: true })}
 ${buildBrowseSection('AI policy', aiPolicyPageSlugs.map(tag => ({ label: aiPolicyGroups[tag].short, href: `/ai-policy/${tag}/`, total: aiPolicyTags[tag] || 0, open: openAiPolicyTags[tag] || 0 })), '/ai-policy/')}
-${buildBrowseSection('Deadlines', [...(continuousCalls.length ? [{ label: 'Continuous', href: '/deadlines/continuous/', ...listStats(continuousCalls) }] : []), ...sortedMonths.map(k => { const g = monthGroups[k]; return { label: `${MONTH_LABELS[g.month]} ${g.year}`, href: `/deadlines/${k}/`, ...listStats(g.calls) }; })], '/deadlines/')}
-${buildBrowseSection('Organizations', browseOrgs, '/organizations/')}
+${buildBrowseSection('Organizations', browseOrgs, '/organizations/', { rowsHtml: browseLetters(browseOrgs), see: [['/organizations/', 'See all organizations']] })}
     </section>
 
     ${FOOTER}
@@ -3018,7 +3049,7 @@ const newFiles = [];
       label: org,
       total,
       open: openOrgCounts[org] || 0
-    })), { hideArchived: true, sort: 'label' });
+    })), { hideArchived: true, sort: 'label', letterIds: true });
   let html = fs.readFileSync('organizations/index.html', 'utf8');
   html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(

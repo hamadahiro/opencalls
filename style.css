@@ -1174,6 +1174,75 @@ a.meta-tag-link.call-prize:hover {
   text-decoration: underline;
 }
 
+/* === Browse: the short index (owner chose option 2, 2026-11-24) === */
+.browse-group:first-child .section-header {
+  padding-top: 0;
+}
+
+.browse-see,
+.browse-letters {
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+}
+
+.browse-see a {
+  display: block;
+  padding: 10px 0;        /* a row's height, so it is tapped like one */
+}
+
+.browse-letters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+}
+
+.browse-letters a {
+  padding: 10px 0;
+}
+
+@media (min-width: 641px) {
+  .browse-rows,
+  .browse-see {
+    columns: 2 280px;     /* two columns where both fit; "Membership Required . . 19" needs 265px */
+    column-gap: 64px;
+  }
+
+  .browse-rows .index-item {
+    break-inside: avoid;
+  }
+
+  .browse-letters {
+    column-span: all;
+  }
+}
+
+/* Room for the headings to hang in their own column. */
+@media (min-width: 1000px) {
+  .browse-group {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    column-gap: 64px;
+    padding-top: 60px;
+  }
+
+  .browse-group:first-child {
+    padding-top: 0;
+  }
+
+  .index-list .browse-group .section-header {
+    padding: 0;
+    line-height: 42px;    /* the heading and the first row share a baseline */
+  }
+
+  .browse-see {
+    grid-column: 2;
+  }
+}
+
+/* On /organizations/: a letter's first row is not pressed against the top edge. */
+.index-item-name[id] {
+  scroll-margin-top: 24px;
+}
+
 /* === Paged lists: /x/, /x/page/N/, /x/past/ === */
 a.filter-btn {
   text-decoration: none;
@@ -1420,9 +1489,11 @@ a.pagination-step:hover {
     padding: 36px 0 24px;
   }
 
+  /* Whole names on phones: a long name takes two lines instead of being cut
+     mid-letter (53 of 463 organization names were cut at 390 px, 2026-11-24). */
   .index-item-name {
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: normal;
+    overflow: visible;
     max-width: 80%;
     display: inline-flex;
   }
