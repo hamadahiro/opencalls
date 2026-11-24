@@ -74723,6 +74723,57 @@
       "summary": "Juried spring show in Savannah on the natural world for ARTS Southeast Supporters; up to four works, no commission on sales.",
       "dateAdded": "2026-11-24T17:28:35Z",
       "verifyNote": "ADD 2026-11-24 17:28Z by the editor from an email ARTS Southeast sent the site (press release, 24 Nov 2026 17:22 WET; discovery only). NO OUTREACH; no email address stored. Measured 2026-11-24 17:27 WET: https://artssoutheast.org/turn-the-soil HTTP 200, 116,077 B prints 'Deadline to submit: Saturday, January 9, 2027, by 11:59 PM', 'open to all current ARTS Southeast Supporters', 'up to four wall-hanging works ... no larger than 4 x 4 feet and 3 inches deep', 'Submissions will be juried', 'Artists notified: Mon, Jan 11, 2027', 'On display: Jan 21 - May 15, 2027', no commission (artists receive 100%; a 30% donation suggested). APPLY HERE -> https://tally.so/r/GevYoQ (200, 106,456 B, \"isClosed\":false). Supporter tiers read in Chrome at /supporter-program 17:3x: Student $25, Artist $50 (image table). Same shape and fee wording as off-the-wall-2026-arts-southeast. | VERIFY 2026-11-24 18:12 WET. SIZE CAP CONFLICT ON THE ORGANISER'S OWN SURFACES: the Tally form (tally.so/r/GevYoQ) carries BOTH 'may submit up to 4 wall-hanging works no larger than 4 x 4 ft and 3 inches deep' AND 'Work must be 30 inches or less in every direction'; artssoutheast.org/turn-the-soil carries 'up to 4 works' + the same 30-inch bullet. 30 inches is the stricter and the only limit both surfaces state, so the description now reads '30 inches in every direction' instead of the add's '4 x 4 feet', and requirements drops the size to the count alone. Deadline 'Saturday, January 9, 2027, by 11:59 PM' and 'Artists notified: Mon, Jan 11, 2027' both re-measured verbatim; membership tiers $25 student / $50 artist and '100% of the sale price' confirmed."
+    },
+    {
+      "title": "Windows on the World",
+      "org": "Schelfhaudt Gallery, University of Bridgeport",
+      "deadline": "2026-12-31",
+      "fee": "$10 for the first image, $10 per additional image",
+      "category": "exhibition",
+      "description": "The Schelfhaudt Gallery at the University of Bridgeport wants photographs of people outside the United States in their everyday environment, not travel highlights but the struggles, joys and celebrations of ordinary life. Up to 20 images may be entered for the January to March 2027 show; framed work is preferred, artists pay shipping both ways, and the gallery takes 50% of any sale.",
+      "url": "https://www.bridgeport.edu/schelfhaudt-gallery/",
+      "location": "Bridgeport, CT, USA",
+      "prize": "Exhibition",
+      "eligibility": [],
+      "jury": [],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18574/CAFE",
+      "requirements": "Up to 20 images",
+      "ai": null,
+      "slug": "windows-on-the-world-schelfhaudt-gallery",
+      "orgInTitle": false,
+      "summary": "International call for photographs of people outside the US in everyday life, for a winter show at the University of Bridgeport's gallery.",
+      "dateAdded": "2026-11-24T20:12:19Z",
+      "verifyNote": "ADD 2026-11-24 20:1xZ. Discovered on the CaFE open board (searchOpportunities, 279 OPEN rows); organiser confirmed on its OWN domain in Chrome 20:1x WET: https://www.bridgeport.edu/schelfhaudt-gallery/ renders 'Schelfhaudt Gallery ... Located in the Arnold Bernhard Center for the Arts and Humanities', '3,200-square-foot gallery', address '505 University Avenue, Bridgeport, CT 06604', hours 'Fri/Sat/Sun 12-4 p.m.', reopened Oct 2025, past shows incl. Motherwell/Nevelson/Neel. The org page lists only the current show (Attracted to the Flame, Nov 7-Dec 20) and does NOT carry this call, so every call fact comes from the org-authored CaFE prospectus 18574 (getOpportunity input:{id,source}, fetched 20:1x WET): name 'Windows on the World Photography Exhibit', providerName 'University of Bridgeport', status OPEN, applicationDeadline 2027-01-01T07:59:59Z with originalTimezone PST = 2026-12-31 23:59:59 PST, and the prose states 'Entry Deadline: December 31, 2026' and 'Applications are due by December 31, 2026' — two organiser-side statements agreeing with the decoded timestamp. fees [{Entry Fee APPLICATION 10.00 USD},{Additional Media MEDIA 10.00 USD}], lowestFee=highestFee=10. imagesMin 1 / imagesMax 20 / totalMaxEntries 20; deriveRequirementBucket('Up to 20 images') = 11-20-images (an honest cap, not a minimum). eligibilityRegion INTERNATIONAL, eligibilityApplicantType ARTIST, no residency or age bar in eligibilityDescription, so eligibility []. Content rule (not eligibility): 'The content must include people outside the United States in their natural environment. Please identify the country in which the photograph was shot.' legalAgreement: artist pays shipping both ways, Artist Exhibition Agreement required, 'The University will receive a 50% commission on all artwork sold', accepted work due at the gallery by 2027-01-15. Show dates 2027-01-21 to 2027-03-14 (eventStart/eventEnd 2027-01-21 to 2027-03-15 in the record). No juror named (juryType/juryDescription null) -> jury []. No cash award anywhere in the record -> prize 'Exhibition'. AI: grep of the whole record for 'ai |artificial|a.i.' = 0 hits -> ai null. No Instagram on the record. NO OUTREACH performed; providerEmail not stored. Dup gates run before the write: data.json 'bridgeport' 0 rows, 'schelfhaudt' 0 rows, 'windows on the world' 1 row = windows-on-the-world-click-photography-festival (Click Photography Festival, dl 2026-08-24, a different organiser); CaFE id 18574 absent from the 454 CaFE ids already in submitUrl/url. Skip gates: grep -inE 'bridgeport|schelfhaudt' over reference_standing_skip_list.md, reference_skip_and_which_call_digest.md and reference_owed_queue.md = 0. Fossil gate: git ls-files | grep -iE 'bridgeport|schelfhaudt|windows-on-the-world' = only the Click festival page dir."
+    },
+    {
+      "title": "We Represent",
+      "org": "Studio Montclair",
+      "deadline": "2026-12-23",
+      "fee": "Free for members; $42 non-members",
+      "category": "exhibition",
+      "description": "Studio Montclair's winter show at its Leach Gallery looks for work on heritage, identity, resilience and community, the pull between historical memory and lived experience, in any medium including video and installation. Up to three works, free for members and $42 otherwise, with cash awards; the non-profit keeps 30% of sales and local artists owe a two-hour gallery sit or a $40 fee.",
+      "url": "https://studiomontclair.org/artist-opportunities/",
+      "location": "Montclair, NJ, USA",
+      "prize": "Cash awards + Exhibition",
+      "eligibility": [
+        "18-plus",
+        "united-states"
+      ],
+      "jury": [
+        "Nette Forné Thomas, artist and educator",
+        "Onnie Strother, artist and curator"
+      ],
+      "submitVia": "CaFE",
+      "submitUrl": "https://opportunities.wearecreativewest.org/opportunity/18549/CAFE",
+      "requirements": "Up to 3 images",
+      "resultsDate": "Week of January 4, 2027",
+      "ai": null,
+      "slug": "we-represent-studio-montclair",
+      "orgInTitle": false,
+      "summary": "All-media juried show in Montclair, New Jersey on heritage and identity; up to three works, free for members, cash awards.",
+      "dateAdded": "2026-11-24T20:21:00Z",
+      "verifyNote": "ADD 2026-11-24 20:2xZ. Discovered on the CaFE open board (searchOpportunities input:{q,source,status,pagination}, 279 OPEN rows, id 18549). Organiser confirmed on its OWN domain, measured 20:19 WET in Chrome: https://studiomontclair.org/artist-opportunities/ renders 'Studio Montclair is an inclusive, nationwide non-profit organization of exhibiting, professional and emerging artists', LEACH GALLERY 641 Bloomfield Ave Montclair NJ and ACADEMY SQUARE GALLERY 33 Plymouth Street, and names New Jersey State Council on the Arts / NEA / Essex County support. That page's event list renders only 'Loading...' (JS widget) and carries no call text, so the call facts come from the org-authored CaFE prospectus 18549 (getOpportunity, fetched 20:18 WET); the SAME url is what the stored sibling we-the-people-studio-montclair uses, so the org-domain rule is satisfied the same way. DEADLINE DECODE, both surfaces agreeing: applicationDeadline 2026-12-24T04:59:59Z with originalTimezone EST = 2026-12-23 23:59:59 EST, and the prospectus's own IMPORTANT DATES block prints 'Entry Deadline: December 23, 2026' -> stored 2026-12-23, not the raw UTC date. Fee: fees [{Entry Fee - Non member APPLICATION 42.00 USD},{Entry Fee - Member APPLICATION 0.00 USD}] and eligibilityDescription 'Studio Montclair Members: no charge ; Non-members: $42'. PRIZE: eligibilityDescription says 'CASH AWARDS will be presented' with NO amounts published anywhere in the record, so the tag stays 'Cash awards + Exhibition' and no figure is invented. Medium: requirementDescription 'All mediums accepted including videos and installations' (photography is not excluded, unlike three siblings checked on the same board this run - Au Naturel 18011 'photography is not eligible', SAGE 18320 'except photography', Rice Gallery 18414 'No photography will be allowed'), plus 'No giclee reproductions of original art accepted'. imagesMin 0 / imagesMax 3 / 'Artists may submit a maximum of 3 JPEG images' -> requirements 'Up to 3 images'. Eligibility: 'OPEN CALL to all artists ages 18 and above' + eligibilityRegion NATIONAL + the org's own 'nationwide' self-description -> ['18-plus','united-states']. Jurors named in description: Nette Forne Thomas (Newark Public Schools art educator 36 years, Dodge Fellowship) and Onnie Strother (visual artist, lecturer, curator, NEH and Dodge grants). Exhibition 2027-01-29 to 2027-02-26 at Leach Gallery (eventStart/eventEnd 2027-01-29 to 2027-02-27); notification 'week starting January 4, 2027' -> resultsDate 'Week of January 4, 2027' (74 corpus rows already use a week form). CATCHES stored in the description: '30% donation will be retained by SMI on all sales' and 'Exhibiting artists residing within 25 miles of Leach Gallery are required to gallery sit for a minimum of two (2) hours ... Alternatively ... they may pay a $40 fee'. Size caps 2D 60in/30lb, 3D wall 48in, sculpture 36in, video up to 500Mb; no insurance provided. AI: grep of the whole record for 'artificial|A.I.' = 0 -> ai null. instagramUrl null. NO OUTREACH; [address] not stored. Dup gates: 'studio montclair' = 2 rows (we-the-people 2026-07-31, roadblocks 2026-09-18), 'we represent' 0 rows, CaFE id 18549 absent from the 454 ids already in url/submitUrl; skip gates over reference_standing_skip_list.md 0."
     }
   ]
 }
