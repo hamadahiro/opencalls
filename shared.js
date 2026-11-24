@@ -454,20 +454,7 @@ function renderTags(call, opts) {
   return tags.join(' ');
 }
 
-// The "Prize / Prizes" block under a detail-page title. Takes the env escaper.
-function buildPrizeBlock(call, esc) {
-  if (!call.prize) return '';
-  const parts = splitPrizeParts(call.prize);
-  const label = parts.length > 1 ? 'Prizes' : 'Prize';
-  const tags = parts.map(part => {
-    const cat = derivePrizeCategory(part);
-    const href = cat ? '/prize/' + cat + '/' : '/prize/';
-    return `<a href="${href}" class="meta-tag meta-tag-link call-prize"${prizeTag(part) !== part ? ` title="${esc(part)}"` : ''}>${PRIZE_SVG}${esc(prizeTag(part))}</a>`;
-  }).join(' ');
-  return `<div class="call-detail-prize"><span class="call-detail-prize-label"><a href="/prize/">${label}</a></span> ${tags}</div>`;
-}
-
-// Detail-page info grid (deadline/fee/prize/location/etc.). opts = { esc, locationLink }
+// Detail-page info grid (deadline/prize/fee/location/etc.). opts = { esc, locationLink }
 function renderInfoGrid(call, opts) {
   const esc = opts.esc, locationLink = opts.locationLink;
   function infoRow(label, value) {
@@ -490,20 +477,15 @@ function renderInfoGrid(call, opts) {
   }
   rows.push(infoRow('<a href="/deadlines/">Deadline</a>', infoLink('/deadlines/' + (dlSlug || 'continuous'), deadlineText)));
 
-  if (call.resultsDate) {
-    const resultsPast = (function(s) {
-      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11,jan:0,feb:1,mar:2,apr:3,jun:5,jul:6,aug:7,sep:8,sept:8,oct:9,nov:10,dec:11};
-      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
-      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
-      if (!my) return false;
-      const mi = months[my[1].toLowerCase()];
-      if (mi === undefined) return false;
-      const yr = parseInt(my[2]);
-      const dm = clean.match(/(\d{1,2})[,\s-]/);
-      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
-      return new Date(yr, mi, day, 23, 59) < new Date();
-    })(call.resultsDate);
-    rows.push(infoRow('Results', esc(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
+  // Every part in full (the pills on the cards show the short tag), in the order of the data,
+  // with the Eligibility row's ", " between them. A part never breaks across lines if it fits the column.
+  if (call.prize) {
+    const parts = splitPrizeParts(call.prize);
+    const prizeHtml = parts.map((p, i) => {
+      const cat = derivePrizeCategory(p);
+      return `<span class="info-part">${infoLink(cat ? '/prize/' + cat : '/prize', p)}${i < parts.length - 1 ? ',' : ''}</span>`;
+    }).join(' ');
+    rows.push(infoRow(`<a href="/prize/">${parts.length > 1 ? 'Prizes' : 'Prize'}</a>`, prizeHtml));
   }
 
   if (call.fee) {
@@ -536,6 +518,23 @@ function renderInfoGrid(call, opts) {
   }
 
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
+
+  // Results last: it says when you hear back, after everything about entering (owner, 2026-11-24).
+  if (call.resultsDate) {
+    const resultsPast = (function(s) {
+      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11,jan:0,feb:1,mar:2,apr:3,jun:5,jul:6,aug:7,sep:8,sept:8,oct:9,nov:10,dec:11};
+      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
+      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
+      if (!my) return false;
+      const mi = months[my[1].toLowerCase()];
+      if (mi === undefined) return false;
+      const yr = parseInt(my[2]);
+      const dm = clean.match(/(\d{1,2})[,\s-]/);
+      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
+      return new Date(yr, mi, day, 23, 59) < new Date();
+    })(call.resultsDate);
+    rows.push(infoRow('Results', esc(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
+  }
 
   return rows.join('');
 }
@@ -606,7 +605,7 @@ if (typeof module !== 'undefined' && module.exports) {
     PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
     isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
-    getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
+    getCountry, tagHtml, renderTags, renderInfoGrid,
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts

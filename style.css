@@ -982,6 +982,8 @@ a.meta-tag-link.call-prize:hover {
   margin-bottom: 24px;
 }
 
+/* The prize line of pills under the title. Since 2026-11-24 the prize is a grid row; these two
+   rules stay only for orphan pages (calls no longer in data.json), which the build does not regenerate. */
 .call-detail-prize {
   display: flex;
   flex-wrap: wrap;
@@ -989,7 +991,6 @@ a.meta-tag-link.call-prize:hover {
   gap: 12px;
   margin-bottom: 24px;
 }
-
 
 .call-detail-prize-label {
   font-size: var(--fs-body);
@@ -1091,6 +1092,11 @@ a.meta-tag-link.call-prize:hover {
   flex-shrink: 1;
 }
 
+/* One part of a prize stays on one line; a part wider than the column wraps inside itself. */
+.info-part {
+  display: inline-block;
+}
+
 /* Phones: two columns, no dots (owner, 2026-11-23: option 1 of the designer's three,
    phones only; desktop keeps the dotted leader). Labels stand in a 7em column, values
    start on one shared left edge and wrap under themselves. Below ~345 px the value
@@ -1114,7 +1120,7 @@ a.meta-tag-link.call-prize:hover {
   }
 }
 
-/* Inline links in prose, the Prize label and the info grid inherit the global
+/* Inline links in prose and the info grid inherit the global
    strong --link color, so they read as links against the dimmed body text.
    Hover underline comes from the global a:hover rule. */
 

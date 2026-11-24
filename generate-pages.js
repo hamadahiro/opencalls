@@ -10,7 +10,7 @@ const {
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
-  getCountry, tagHtml, renderTags, renderInfoGrid, buildPrizeBlock,
+  getCountry, tagHtml, renderTags, renderInfoGrid,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
   NO_OPEN_CALLS_NOTICE,
@@ -786,7 +786,6 @@ function getStaticLocationLink(location, country) {
   return null;
 }
 
-// Mirrors the prize block call-detail.js writes into #detailPrize
 // Maps a free-text requirements string to a single browse bucket slug.
 // Keep in sync with deriveRequirementBucket() in cards.js.
 // Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
@@ -939,8 +938,6 @@ function generatePage(call, cssVersion) {
     <section class="call-detail">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
-
-      <div id="detailPrize">${buildPrizeBlock(call, escapeHtml)}</div>
 
       <div class="call-detail-text" id="detailText">
 ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.length
@@ -2702,7 +2699,7 @@ fs.writeFileSync('cards.js', cardsJs);
   // scripts/ is gitignored local tooling — guard so the build works without it.
   const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
   const updateStateSrc = fs.existsSync('scripts/update-verify-state.js') ? fs.readFileSync('scripts/update-verify-state.js', 'utf8') : '';
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function buildPrizeBlock(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
+  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
     for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc], ['scripts/update-verify-state.js', updateStateSrc]]) {
