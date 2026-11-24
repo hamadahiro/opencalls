@@ -724,6 +724,15 @@ a.meta-tag-link.call-prize:hover {
   margin-bottom: 16px;
 }
 
+/* Footer: links on one line, copyright on its own line under them, so the row
+   never splits on a 320 px phone (owner, 2026-11-24). */
+.about-section .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 12px;
+}
+
 /* === Responsive === */
 @media (max-width: 640px) {
   html, body {

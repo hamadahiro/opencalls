@@ -405,9 +405,8 @@ function buildHeader() {
     <div class="header-inner">
       <a href="/" class="logo">Monographica</a>
       <nav>
-        <a href="/" class="nav-link" data-nav="open">Open</a>
-        <a href="/archive/" class="nav-link" data-nav="closed">Closed</a>
-        <a href="/new/" class="nav-link" data-nav="recent">New</a>
+        <a href="/" class="nav-link" data-nav="open">Open Calls</a>
+        <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
@@ -417,9 +416,8 @@ function buildHeader() {
       </div>
     </div>
     <div class="mobile-nav">
-      <a href="/" data-nav="open">Open</a>
-      <a href="/archive/" data-nav="closed">Closed</a>
-      <a href="/new/" data-nav="recent">New</a>
+      <a href="/" data-nav="open">Open Calls</a>
+      <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
@@ -436,7 +434,8 @@ const HEADER = buildHeader();
 
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p style="display:flex;gap:24px"><span>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></span><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
+      <p class="footer-links"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a></p>
+      <p>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></p>
     </footer>`;
 function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
