@@ -2361,6 +2361,18 @@ const submitHtml = `<!DOCTYPE html>
       <div id="submitThanks" style="display:none">
         <a href="/submit/" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Submit another</a>
       </div>
+      <div class="submit-rules" id="what-gets-listed">
+        <h2 class="section-header">What gets listed</h2>
+        <p class="call-detail-description submit-rules-lead">I add a call when:</p>
+        <ul class="call-detail-description">
+          <li>photographers can apply to it themselves, not only through a nomination or an organization;</li>
+          <li>the organizer’s own website has a public page with the deadline, the fee and how to apply;</li>
+          <li>the deadline hasn’t passed;</li>
+          <li>selected artists get something real: an exhibition, a publication, a residency, a grant or prize money (a certificate or a social media feature alone isn’t enough);</li>
+          <li>every fee is stated up front, including fees charged only to selected artists.</li>
+        </ul>
+        <p class="call-detail-description">If a call you sent isn’t on the site, one of these was missing when I checked. Once the organizer’s page has it, send the call again.</p>
+      </div>
       <script>
         document.getElementById('submitForm').addEventListener('submit', function(e) {
           e.preventDefault();
@@ -2376,7 +2388,7 @@ const submitHtml = `<!DOCTYPE html>
               document.getElementById('submitForm').style.display = 'none';
               document.getElementById('submitThanks').style.display = '';
               document.querySelector('.hero h1').textContent = 'Thanks for submitting';
-              document.querySelector('.hero .subtitle').textContent = "I'll take a look and add it if it fits.";
+              document.querySelector('.hero .subtitle').innerHTML = 'I’ll check it against <a href="#what-gets-listed">what gets listed</a> and add it if it fits.';
             } else {
               btn.textContent = 'Something went wrong, try again';
               btn.style.opacity = '1';

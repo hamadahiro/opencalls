@@ -679,6 +679,26 @@ a.meta-tag-link.call-prize:hover {
   cursor: pointer;
 }
 
+/* "What gets listed" under the form. The reset strips list padding, so the
+   bullets get room back here; text styles come from .call-detail-description. */
+.submit-rules .submit-rules-lead {
+  margin-bottom: 8px;
+}
+
+.submit-rules ul {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin-bottom: 24px;
+}
+
+.submit-rules li {
+  margin-bottom: 8px;
+}
+
+.submit-rules li::marker {
+  color: var(--text-muted);
+}
+
 /* === Footer === */
 .about-section {
   padding: 60px 0;
