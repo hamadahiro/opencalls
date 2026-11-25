@@ -737,6 +737,26 @@ a.call-date:not(.dl-band):hover {
   margin-bottom: 12px;
 }
 
+/* Desktop: one row under the disclaimer, the copyright on the left and the links on the right (owner, 2026-11-25). */
+@media (min-width: 641px) {
+  #footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    column-gap: 24px;
+  }
+
+  #footer .disclaimer {
+    flex: 0 0 100%;
+  }
+
+  #footer .footer-links {
+    order: 2;
+    margin-bottom: 0;
+  }
+}
+
 /* === Responsive === */
 @media (max-width: 640px) {
   html, body {
