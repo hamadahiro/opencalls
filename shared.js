@@ -532,6 +532,18 @@ function resultsWhen(call) {
   if ((x = l.match(re('(?:by|before|no later than|not later than) ' + M + ' (\\d{1,2})(?:st|nd|rd|th)?,? (\\d{4})'))))
     return out('by', +x[3], MON[x[1]], +x[2], 'Results by ' + SHORT[MON[x[1]] - 1] + ' ' + +x[2]);
   if ((x = l.match(re('(?:by|before|no later than) ' + M + ',? (\\d{4})')))) return out('by', +x[2], MON[x[1]], null, 'Results by ' + NAME(MON[x[1]]));
+  // "Week of December 14, 2026": listed until that week ends.
+  if ((x = l.match(re('week of ' + M + ' (\\d{1,2}),? (\\d{4})')))) {
+    const e = new Date(Date.UTC(+x[3], MON[x[1]] - 1, +x[2] + 6));
+    return { kind: 'week', month: x[3] + '-' + pad(MON[x[1]]), day: e.getUTCFullYear() + '-' + pad(e.getUTCMonth() + 1) + '-' + pad(e.getUTCDate()), label: 'Results week of ' + SHORT[MON[x[1]] - 1] + ' ' + +x[2] };
+  }
+  // "First week of December 2026", "Last week of July 2026"
+  if ((x = l.match(re('(first|second|third|fourth|last) week of ' + M + ',? (\\d{4})')))) return out('part', +x[3], MON[x[2]], null, 'Results ' + x[1] + ' week of ' + NAME(MON[x[2]]));
+  // "Early to mid-December 2026", "Early–mid September 2026", "Late October–early November 2026", "Likely end of November 2026"
+  if ((x = l.match(re('(early|mid|late)(?: to |–|-)(early|mid|late)-? ?' + M + ',? (\\d{4})')))) return out('part', +x[4], MON[x[3]], null, 'Results ' + x[1] + ' to ' + (x[2] === 'mid' ? 'mid-' : x[2] + ' ') + NAME(MON[x[3]]));
+  if ((x = l.match(re('(early|mid|late)-? ?' + M + '\\s?[–-]\\s?(early|mid|late)-? ?' + M + ',? (\\d{4})')))) return out('part', +x[5], MON[x[4]], null, 'Results ' + x[1] + ' ' + NAME(MON[x[2]]) + '–' + x[3] + ' ' + NAME(MON[x[4]]));
+  if ((x = l.match(re('likely (?:the )?end of ' + M + ',? (\\d{4})')))) return out('part', +x[2], MON[x[1]], null, 'Results end of ' + NAME(MON[x[1]]));
+  if ((x = l.match(/^by the end of (\d{4})$/))) return out('by', +x[1], 12, 31, 'Results by end of ' + x[1]);
   const N = { one: 1, two: 2, three: 3, four: 4, six: 6 };
   const UNIT = u => /week/.test(u) ? 7 : /month/.test(u) ? 30 : /working|business/.test(u) ? 1.4 : 1;
   const plus = (d, n, u) => {   // working or business days skip Saturdays and Sundays
@@ -539,12 +551,20 @@ function resultsWhen(call) {
     if (/working|business/.test(u)) { let k = n; while (k > 0) { r.setUTCDate(r.getUTCDate() + 1); if (r.getUTCDay() % 6) k--; } return r; }
     r.setUTCDate(r.getUTCDate() + Math.round(n * UNIT(u))); return r;
   };
+  const byDate = (d) => out('relative', d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate(), 'Results by ' + SHORT[d.getUTCMonth()] + ' ' + d.getUTCDate());
   const fromDate = (kind, d) => out(kind, d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate(), 'Results about ' + SHORT[d.getUTCMonth()] + ' ' + d.getUTCDate());
-  if ((x = l.match(/^within (\d+|one|two|three|four|six) (days?|weeks?|working days?|business days|months?) (?:of|after) (?:the )?(?:deadline|close|closing|submission deadline)$/))
+  // "Within 2 weeks of the deadline", "Within 2–3 weeks of deadline" (the later end), "Within a week of the deadline"
+  if ((x = l.match(/^within (?:(\d+|one|two|three|four|six)\s?[–-]\s?)?(\d+|a|one|two|three|four|six) (days?|weeks?|working days?|business days|months?) (?:of|after) (?:the )?(?:deadline|close|closing|submission deadline)$/))
       && /^\d{4}-\d{2}-\d{2}$/.test(call.deadline || ''))
-    return fromDate('relative', plus(new Date(call.deadline + 'T00:00:00Z'), N[x[1]] || +x[1], x[2]));
+    return byDate(plus(new Date(call.deadline + 'T00:00:00Z'), x[2] === 'a' ? 1 : (N[x[2]] || +x[2]), x[3]));
+  // "Five weeks after the November 18 deadline"
+  const WORD = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
+  if ((x = l.match(re('(\\d+|one|two|three|four|five|six|seven|eight|nine|ten) (days?|weeks?) after the ' + M + ' (\\d{1,2}),? (?:(\\d{4}) )?deadline')))) {
+    const y = x[5] ? +x[5] : +(call.deadline || '').slice(0, 4);
+    if (y) return fromDate('relative', plus(new Date(Date.UTC(y, MON[x[3]] - 1, +x[4])), WORD[x[1]] || +x[1], x[2]));
+  }
   if ((x = l.match(re('within (\\d+) (days?|weeks?|working days?|business days) (?:of|after) ' + M + ' (\\d{1,2}),? (\\d{4})'))))
-    return fromDate('relative', plus(new Date(Date.UTC(+x[5], MON[x[3]] - 1, +x[4])), +x[1], x[2]));
+    return byDate(plus(new Date(Date.UTC(+x[5], MON[x[3]] - 1, +x[4])), +x[1], x[2]));
   return null;
 }
 function resultsMonthSlug(month) { return RESULTS_MONTHS[+month.slice(5, 7) - 1] + '-' + month.slice(0, 4); }
