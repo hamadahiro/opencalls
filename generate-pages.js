@@ -2616,7 +2616,7 @@ const browseHtml = `<!DOCTYPE html>
 ${buildBrowseSection('Deadlines', browseDeadlines, '/deadlines/', { keepOrder: true, see: [['/deadlines/', 'See all deadlines']] })}
 ${buildBrowseSection('Fees', browseFees, '/fees/', { keepOrder: true })}
 ${buildBrowseSection('Categories', browseCategories, '/categories/')}
-${buildBrowseSection('Locations', browseCountries, '/locations/', { limit: 6, see: [['/locations/', 'See all locations'], ['/united-states/', 'See all US states']] })}
+${buildBrowseSection('Locations', browseCountries, '/locations/', { limit: 6, see: [['/locations/', 'See all locations']] })}
 ${buildBrowseSection('Eligibility', browseEligibility, '/eligibility/', { limit: 6, see: [['/eligibility/', 'See all eligibility rules']] })}
 ${buildBrowseSection('Prizes', browsePrizes, '/prize/')}
 ${buildBrowseSection('Requirements', browseRequirements, '/requirements/', { keepOrder: true })}
