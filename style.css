@@ -742,6 +742,11 @@ a.call-date:not(.dl-band):hover {
   gap: 12px 24px;
   margin-bottom: 12px;
 }
+/* Five links (Results added 2026-11-25) need 215 px + 4 gaps: 24 px gaps fit from 360 px; under 360 px the gaps are 16 px
+   (279 px in a 288 px row), so the row still never splits on a 320 px phone. */
+@media (max-width: 359px) {
+  .about-section .footer-links { column-gap: 16px; }
+}
 
 /* Desktop: one row under the disclaimer, the copyright on the left and the links on the right (owner, 2026-11-25). */
 @media (min-width: 641px) {
