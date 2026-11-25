@@ -432,10 +432,16 @@ function buildHeader() {
 }
 const HEADER = buildHeader();
 
+// The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
+// you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
+// It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <p class="footer-links"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></p>
-      <p>&copy; ${YEAR} <a href="https://monographica.com">Monographica</a></p>
+      ${FOOTER_LINKS}
+      ${FOOTER_STATE_SCRIPT}
+      <p class="footer-copy">&copy; ${YEAR} Monographica</p>
     </footer>`;
 function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 

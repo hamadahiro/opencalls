@@ -219,6 +219,7 @@ nav a.active:hover {
 
 .mobile-nav a {
   font-size: var(--fs-tag);
+  letter-spacing: 0.3px;    /* as the desktop menu and the footer links (2026-11-25) */
   padding: 10px 0;
   text-decoration: none;
 }
@@ -728,7 +729,7 @@ a.call-date:not(.dl-band):hover {
   margin-bottom: 16px;
 }
 
-/* Footer: links on one line, copyright on its own line under them, so the row
+/* Footer: links on one line (a <nav>, so the header menu's rules style them too), copyright on its own line under them, so the row
    never splits on a 320 px phone (owner, 2026-11-24). */
 .about-section .footer-links {
   display: flex;
