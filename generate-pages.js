@@ -2481,22 +2481,28 @@ const aboutHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'About Open Calls', '')}
+    <section class="hero">
+      <h1>About Open Calls</h1>
+      <p class="subtitle about-intro">Monographica Open Calls is an editorial directory of submission opportunities for photographers and visual artists. The site focuses on exhibitions, grants, residencies, awards, publications, portfolio reviews, and education programs with clear deadlines or rolling application windows.</p>
+    </section>
 
-    <section class="call-detail">
-      <p class="call-detail-description">Monographica Open Calls is an editorial directory of submission opportunities for photographers and visual artists. The site focuses on exhibitions, grants, residencies, awards, publications, portfolio reviews, and education programs with clear deadlines or rolling application windows.</p>
-
+    <section class="index-list about-list about-columns">
+      <div class="about-block">
       <h2 class="section-header">How calls are selected</h2>
       <p class="call-detail-description">Calls are gathered from official organization pages, organizer announcements, newsletters, public listings, and reader submissions. Listings are prioritized when they include enough practical information for artists to decide whether an opportunity is relevant: deadline, fee, prize or outcome, location, eligibility, submission requirements, organizer, and application link.</p>
-
+      </div>
+      <div class="about-block">
       <h2 class="section-header">Verification</h2>
       <p class="call-detail-description">Before publication, details are checked against the official call page where possible. Many detail pages show a "Verified by Monographica" date; that date records the most recent editorial check in the local verification log. Because organizers can change deadlines, fees, juries, or eligibility after publication, each listing links to the official source and asks readers to confirm details before applying.</p>
-
+      </div>
+      <div class="about-block">
       <h2 class="section-header">Updates and archives</h2>
       <p class="call-detail-description">The directory is updated regularly as new calls are found and existing calls are checked. Open calls are shown first across the homepage and browse pages. Closed calls may remain accessible for reference, but expired listings are not promoted as current opportunities.</p>
-
+      </div>
+      <div class="about-block">
       <h2 class="section-header">Corrections</h2>
       <p class="call-detail-description">If a listing is wrong, outdated, duplicated, or missing important context, send the official source through the <a href="/submit/">submit form</a>. Corrections are handled from the official call information rather than from secondary summaries.</p>
+      </div>
     </section>
 
     ${FOOTER}

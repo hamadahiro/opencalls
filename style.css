@@ -1608,3 +1608,34 @@ a.pagination-step:hover {
   /* The dropdown's mobile fullscreen cosmetics come from the shared
      .search-active .search-dropdown rules in the home media block above. */
 }
+
+/* About: the intro stands under the title; the four sections are whole blocks in two columns, two rows of two. */
+.about-intro,
+.about-columns .call-detail-description {
+  max-width: 34em;          /* 680 px: about 70 characters a line */
+  text-wrap: pretty;        /* no lone last word where the browser supports it */
+}
+
+.about-columns .call-detail-description {
+  margin-bottom: 0;
+}
+
+.about-columns .about-block:first-child .section-header {
+  padding-top: 0;
+}
+
+@media (min-width: 1000px) {
+  .about-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+  }
+
+  .about-columns .about-block:nth-child(2) .section-header {
+    padding-top: 0;         /* the second column starts level with the first */
+  }
+
+  .about-intro {
+    max-width: calc(50% - 32px);    /* the width of the first column */
+  }
+}
