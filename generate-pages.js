@@ -2700,7 +2700,7 @@ const browseHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'Browse All Open Calls', `${openCalls.length} open calls, by <a href="#deadlines">deadline</a>, <a href="#fees">fee</a>, <a href="#categories">category</a>, <a href="#locations">location</a>, <a href="#eligibility">eligibility</a>, <a href="#prizes">prize</a>, <a href="#requirements">requirements</a>, <a href="#ai-policy">AI policy</a> or <a href="#organizations">organization</a>.`)}
+    ${buildHero('', 'Browse All Open Calls', 'Open calls grouped by when they close, what they cost, what they are, where, who can apply and what they offer. Each list shows open calls first, then past ones.')}
 
     <section class="index-list browse-list">
 ${buildBrowseSection('Deadlines', browseDeadlines, '/deadlines/', { keepOrder: true, see: [['/deadlines/', 'See all deadlines']] })}
