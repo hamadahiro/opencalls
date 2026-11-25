@@ -671,37 +671,68 @@ function pageUrl(root, k) {
   return k > 1 ? `${root}page/${k}/` : root;
 }
 
-// Previous / numbered pages / Next. Shows the first and last page and two on
-// either side of the current one, with gaps elided. On a phone the pages two
-// away are hidden (.pagination-far) so the numbers fit one line; a gap that
-// only shows there (.pagination-gap-narrow) stands in where one is needed.
+// Previous / numbered pages / Next as plain text (owner, 2026-11-25): no Previous on the first page, no Next on the last,
+// and as many numbers as fit one row. The build works out which pages fit at six width bands (widths measured in
+// Source Serif 4: every digit 0.53em, "…" 0.83em, "Previous" 4.17em, "Next" 2.22em; items 1em apart, 14px at 390-429px, 12px under 390px),
+// keeping 3% spare. Each number and gap carries the bands it is shown in; style.css shows only those.
+const PAGINATION_BANDS = [ // [class, row width in em at the band's narrowest screen (measured), gap in em]
+  ['pg-a', 288 / 18, 12 / 18], // up to 359px (320px screen, 18px text)
+  ['pg-b', 328 / 18, 12 / 18], // 360-389px
+  ['pg-c', 358 / 18, 14 / 18], // 390-429px (14px apart, so 1 … 9 10 11 … 20 fits)
+  ['pg-d', 398 / 18, 1],       // 430-640px
+  ['pg-e', 593 / 20, 1],       // 641-999px (20px text)
+  ['pg-f', 952 / 20, 1],       // 1000px and wider
+];
+const PAGINATION_MAX = 10; // at most ten page numbers in a row, at any width (owner, 2026-11-25)
 function paginationNav(root, current, count) {
   if (count < 2) return '';
-  const shownSet = new Set([1, count]);
-  for (let p = current - 2; p <= current + 2; p++) if (p >= 1 && p <= count) shownSet.add(p);
-  const shown = [...shownSet].sort((a, b) => a - b);
-  const narrowGap = '<span class="pagination-gap pagination-gap-narrow">&hellip;</span>';
-  let pages = '';
-  shown.forEach((p, i) => {
-    const gapBefore = i > 0 && p - shown[i - 1] > 1;
-    const gapAfter = i < shown.length - 1 && shown[i + 1] - p > 1;
-    const far = Math.abs(p - current) === 2 && p !== 1 && p !== count;
-    if (gapBefore) pages += '<span class="pagination-gap">&hellip;</span>';
-    if (far && p < current && !gapBefore) pages += narrowGap;
-    pages += p === current
-      ? `<span class="pagination-page current" aria-current="page">${p}</span>`
-      : `<a href="${pageUrl(root, p)}" class="pagination-page${far ? ' pagination-far' : ''}">${p}</a>`;
-    if (far && p > current && !gapAfter) pages += narrowGap;
+  const EM = { digit: 0.53, gap: 0.83, prev: 4.17, next: 2.22 };
+  const rowWidth = (set, gapEm) => {
+    const s = [...set].sort((a, b) => a - b);
+    let items = 0, w = 0;
+    s.forEach((p, i) => { if (i && p - s[i - 1] > 1) { w += EM.gap; items++; } w += String(p).length * EM.digit; items++; });
+    if (current > 1) { w += EM.prev; items++; }
+    if (current < count) { w += EM.next; items++; }
+    return w + (items - 1) * gapEm;
+  };
+  // Per band: start from the first, the current and the last page, then add neighbours while the row fits — in pairs,
+  // one either side, so the current page stays in the middle ("… 9 10 11 …", never "… 9 10 …"; owner, 2026-11-25).
+  // Once one side reaches the first or last page, the other side fills alone.
+  const sets = PAGINATION_BANDS.map(([, row, gapEm]) => {
+    const budget = row * 0.97;
+    let set = new Set([1, current, count]), lo = current, hi = current;
+    // Never one number alone between two gaps (owner, 2026-11-25): a page in the middle shows both its neighbours;
+    // where they do not fit beside the first and the last page, the first and the last go ("Previous 9 10 11 Next").
+    if (current - 1 > 1 && current + 1 < count) {
+      const withEnds = new Set([1, current - 1, current, current + 1, count]);
+      if (rowWidth(withEnds, gapEm) <= budget) { set = withEnds; lo = current - 1; hi = current + 1; }
+      else return [current - 1, current, current + 1];
+    }
+    for (;;) {
+      const add = [];
+      if (lo - 1 >= 1) add.push(lo - 1);
+      if (hi + 1 <= count) add.push(hi + 1);
+      if (!add.length) break;
+      const trial = new Set(set); add.forEach(p => trial.add(p));
+      if (trial.size > PAGINATION_MAX || rowWidth(trial, gapEm) > budget) break;
+      add.forEach(p => set.add(p));
+      lo = Math.min(lo, ...add); hi = Math.max(hi, ...add);
+    }
+    return [...set].sort((a, b) => a - b);
   });
-  // Words only, no arrows, always one row (owner, 2026-11-23). Below 440px the
-  // words do not fit beside the numbers, so style.css hides Previous and Next
-  // there; the numbers already include the pages either side.
-  const prev = current > 1
-    ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev">Previous</a>`
-    : '<span class="pagination-step disabled" aria-hidden="true">Previous</span>';
-  const next = current < count
-    ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next">Next</a>`
-    : '<span class="pagination-step disabled" aria-hidden="true">Next</span>';
+  const union = [...new Set(sets.flat())].sort((a, b) => a - b);
+  const bandsWith = test => PAGINATION_BANDS.filter((_, i) => test(sets[i])).map(b => b[0]).join(' ');
+  let pages = '';
+  union.forEach(p => {
+    const cls = bandsWith(s => s.includes(p));
+    pages += p === current
+      ? `<span class="pagination-page current ${cls}" aria-current="page">${p}</span>`
+      : `<a href="${pageUrl(root, p)}" class="pagination-page ${cls}">${p}</a>`;
+    const gap = bandsWith(s => { const k = s.indexOf(p); return k >= 0 && k < s.length - 1 && s[k + 1] - p > 1; });
+    if (gap) pages += `<span class="pagination-gap ${gap}">&hellip;</span>`;
+  });
+  const prev = current > 1 ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev">Previous</a>` : '';
+  const next = current < count ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next">Next</a>` : '';
   return `      <nav class="pagination" aria-label="Pages">${prev}<span class="pagination-pages">${pages}</span>${next}</nav>\n`;
 }
 
@@ -742,11 +773,10 @@ function writePagedListing(filepath, html, { calls, opts }) {
   const open = sortOpenCalls(calls);
   const past = sortPastCalls(calls);
   const files = [];
-  const pastLink = `      <p class="browse-more list-switch"><a href="${pastRoot}">See all past calls</a></p>\n`;
 
   if (open.length) {
     files.push(...writeListPages(html, base, open, (chunk, k, count) =>
-      renderSectionedCards(chunk, sections && openSection) + paginationNav(base, k, count) + (past.length ? pastLink : ''),
+      renderSectionedCards(chunk, sections && openSection) + paginationNav(base, k, count),
       { labelFor: k => k > 1 ? `Page ${k}` : '' }));
     if (past.length) {
       files.push(...writeListPages(html, pastRoot, past, (chunk, k, count) =>
@@ -2971,9 +3001,8 @@ const homeFiles = [];
   );
   const open = sortOpenCalls(data.calls);
   const pastCount = data.calls.length - open.length;
-  const archiveLink = `      <p class="browse-more list-switch"><a href="/archive/">See all past calls</a></p>\n`;
   homeFiles.push(...writeListPages(template, '/', open, (chunk, k, count) =>
-    renderSectionedCards(chunk, openSection) + paginationNav('/', k, count) + archiveLink,
+    renderSectionedCards(chunk, openSection) + paginationNav('/', k, count),
     { labelFor: k => k > 1 ? `Page ${k}` : '' }));
   console.log(`  Home page: ${open.length} open calls on ${homeFiles.length} page(s)`);
 }
