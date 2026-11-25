@@ -280,7 +280,20 @@ data.calls.forEach((c, i) => {
     if (c.fee && /^free/i.test(c.fee.trim()) && /(?:[£$€¥]|\b(?:CAD|AUD|NZD|USD|GBP|EUR|CHF|SEK|DKK|NOK|ISK|PLN|CZK|JPY|INR|ZAR|MXN|BRL)\b|\b[A-Z]{1,3}\$)\s?\d/.test(c.fee) && !/optional|voluntary|non-compulsory|suggested/i.test(c.fee))
       err(`"${label}" fee "${c.fee}" says Free but carries an amount — a cost goes in additionalFees (or the entry is not free)`);
     if (c.additionalFees !== undefined && (typeof c.additionalFees !== 'string' || !c.additionalFees.trim() || /^free\b/i.test(c.additionalFees.trim())))
-      err(`"${label}" additionalFees must name a cost ("$150 if selected", "Membership required, $45/year"); leave the field out when there is none`);
+      err(`"${label}" additionalFees must name a cost ("$150 hanging fee if selected", "$45/year WEAD membership"); leave the field out when there is none`);
+    // ONE FORMAT (owner, 2026-11-25: "whatever format you have you must stick to that one"; TONE.md "Fees"):
+    // amount first, then what it is, then when ("if selected"); items joined by "; "; never "required".
+    const FEE_AMT = /^(?:[£$€¥₹]|R(?=\d)|[A-Z]{1,3}\$|(?:CHF|SEK|DKK|NOK|ISK|PLN|CZK|HUF|RON|JPY|INR|ZAR|MXN|BRL|ARS|TWD|MYR|KRW|THB|PHP|IDR|TRY|ILS|AED) )\d/;
+    if (c.fee && !/^(?:Free\b|Pay what you can\b|Fee \(amount not stated\)|Not stated$)/.test(c.fee) && !FEE_AMT.test(c.fee))
+      err(`"${label}" fee "${c.fee}" must start with Free, the amount ("$30", "CA$65", "DKK 100"), "Pay what you can" or "Fee (amount not stated)"`);
+    if (c.fee && /\baddl\b|\bper (?:extra|additional)\b|\beach extra\b|\/\s?\d+ ?(?:images|works|photos)|^PWYC|^From |\+\s?[£$€][\d.,]+ each/i.test(c.fee))
+      err(`"${label}" fee "${c.fee}" — write "$35 for 5 images, $5 each additional" (not addl, per extra, /5 images, + $5 each, PWYC, From)`);
+    if (c.additionalFees) for (const item of c.additionalFees.split('; ')) {
+      if (!FEE_AMT.test(item) && !/^[A-Z][^;]*\((?:[^)]*, )?(?:amount not stated|pay what you can)\)$/.test(item))
+        err(`"${label}" additional fee "${item}" must start with the amount ("$150 hanging fee if selected", "$45/year WEAD membership") or end "(amount not stated)"`);
+      if (/\brequired\b|\bif accepted\b|\bon acceptance\b|\bnot published\b/i.test(item))
+        err(`"${label}" additional fee "${item}" — no "required" (every additional fee must be paid), "if selected" not "if accepted", "(amount not stated)"`);
+    }
     if (c.additionalFees && c.additionalFees.length > 90)
       err(`"${label}" additionalFees is ${c.additionalFees.length} characters — a details value is at most 90 (one line on a desktop screen)`);
     if (sWords > 25 || (c.summary || '').length > 140) err(`"${label}" summary is ${sWords} words / ${(c.summary || '').length} chars — at most 25 words and 140 characters, one sentence`);
@@ -2810,7 +2823,8 @@ fs.writeFileSync('cards.js', cardsJs);
     if (!c.fee || seenFee.has(c.fee)) return;
     seenFee.add(c.fee);
     const out = shortenFee(c.fee);
-    if (out && out.length > MAX_FEE_CHIP) offenders.push(`${out.length} chars: "${out}"  <=  "${c.fee}"`);
+    if (out && out.length > MAX_FEE_CHIP && !['Pay what you can', 'Paid entry'].includes(out)) offenders.push(   // fixed words, not a shortened price
+      `${out.length} chars: "${out}"  <=  "${c.fee}"`);
   });
   if (offenders.length) {
     console.error(`FATAL: ${offenders.length} fee chip(s) exceed ${MAX_FEE_CHIP} chars — extend shortenFee() to handle them:`);

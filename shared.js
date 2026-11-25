@@ -321,13 +321,19 @@ function shortenFee(fee) {
   // a comma or full stop written straight after the amount is punctuation, not part of it ("$40, $7.50 each" -> "$40+")
   var strip = function(n) { return n.replace(/[.,]+$/, '').replace(/\.0+$/, ''); };
   if (/^free/i.test(s)) return 'Free';
+  if (/^Fee \(amount not stated\)/i.test(s)) return 'Paid entry';     // a fee is charged, its amount is not stated
   var DOLLAR = { CAD: 'CA$', AUD: 'A$', NZD: 'NZ$', HKD: 'HK$', SGD: 'S$', USD: '$' };
-  var cur = null, num = null, m;
-  if ((m = s.match(/^([A-Z]{1,3})\$\s?(\d[\d.,]*)/))) { cur = m[1] + '$'; num = m[2]; }
+  var CODES = 'CHF|SEK|DKK|NOK|ISK|PLN|CZK|HUF|RON|JPY|INR|ZAR|MXN|BRL|ARS|TWD|MYR|KRW|THB|PHP|IDR|TRY|ILS|AED';
+  var cur = null, num = null, to = null, m;
+  if ((m = s.match(/^([A-Z]{1,3})\$\s?(\d[\d.,]*)(?:\s*[–-]\s*(?:[A-Z]{1,3}\$)?\s?(\d[\d.,]*))?/))) { cur = m[1] + '$'; num = m[2]; to = m[3]; }
   else if ((m = s.match(/^(CAD|AUD|NZD|HKD|SGD|USD)\s?\$?\s?(\d[\d.,]*)/))) { cur = DOLLAR[m[1]]; num = m[2]; }
   else if ((m = s.match(/^\$\s?(\d[\d.,]*)\s?(CAD|AUD|NZD|HKD|SGD|USD)\b/))) { cur = DOLLAR[m[2]]; num = m[1]; }
-  else if ((m = s.match(/^(CHF|SEK|DKK|NOK|ISK|PLN|CZK|JPY|INR|ZAR|MXN|BRL)\s?(\d[\d.,]*)/i))) { cur = m[1].toUpperCase() + ' '; num = m[2]; }
-  if (cur) return cur + strip(num) + (m[0].length >= s.replace(/\s+fee$/i, '').length ? '' : '+');
+  else if ((m = s.match(new RegExp('^(' + CODES + ')\\s?(\\d[\\d.,]*)(?:\\s*[–-]\\s*(\\d[\\d.,]*))?', 'i')))) { cur = m[1].toUpperCase() + ' '; num = m[2]; to = m[3]; }
+  if (cur) {
+    var whole = m[0].length >= s.replace(/\s+fee$/i, '').length;
+    if (to) return cur + strip(num) + '–' + (cur.slice(-1) === '$' ? cur : '') + strip(to) + (whole ? '' : '+');
+    return cur + strip(num) + (whole ? '' : '+');
+  }
   var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
   if (range) return range[1] + strip(range[2]) + '–' + (range[3] || range[1]) + strip(range[4]);
   // R is a currency (Rand) ONLY before a digit — otherwise a capital-R word
@@ -347,7 +353,7 @@ function shortenFee(fee) {
 //   'entry'       — `fee` is an amount (with or without `additionalFees`).
 // The one reader of the fee: chips, fee pages, search filters, call pages and the build gate all use it.
 function feeKind(call) {
-  if (!call || !call.fee) return null;
+  if (!call || !call.fee || /^Not stated$/i.test(String(call.fee).trim())) return null;   // unknown: no chip, on no fee page
   if (/^free/i.test(String(call.fee).trim())) return call.additionalFees ? 'free-entry' : 'free';
   return 'entry';
 }
@@ -362,7 +368,7 @@ function feeChipText(call) {
   if (kind === 'free-entry') return 'Free entry*';
   const s = shortenFee(call.fee);
   // " fee" only after a money amount: a symbol, a letter currency ("A$", "CA$", "DKK ") or the Rand before a digit.
-  const body = /^(?:[£$€¥]|R(?=\d)|[A-Z]{1,3}\$|[A-Z]{3} )\d/.test(s) ? s + ' fee' : s;
+  const body = /^(?:[£$€¥₹]|R(?=\d)|[A-Z]{1,3}\$|[A-Z]{3} )\d/.test(s) ? s + ' fee' : s;
   return body + (call.additionalFees ? '*' : '');
 }
 
@@ -438,7 +444,7 @@ function tagHtml(str, minLen, esc) {
 function cardTagTexts(call) {
   const out = [];
   if (call.prize) splitPrizeParts(call.prize).forEach(p => out.push({ kind: 'prize', text: prizeTag(p), raw: p }));
-  if (call.fee) out.push({ kind: 'fee', text: feeChipText(call) });
+  if (feeKind(call)) out.push({ kind: 'fee', text: feeChipText(call) });
   if (call.location) out.push({ kind: 'location', text: tagLocation(call.location) });
   out.push({ kind: 'category', text: categoryLabel[call.category] || call.category || '' });
   (call.eligibility || []).forEach(e => out.push({ kind: 'eligibility', text: eligibilityTag(e) }));
@@ -466,7 +472,7 @@ function renderCardBody(call, opts) {
 function renderTags(call, opts) {
   const esc = opts.esc;
   const tags = [];
-  if (call.fee) tags.push(feeChip(call, esc));
+  if (feeKind(call)) tags.push(feeChip(call, esc));   // no chip when the fee is not stated
   splitPrizeParts(call.prize).filter((p, i, a) => a.findIndex(q => prizeTag(q) === prizeTag(p)) === i).forEach(part => {
     const cat = derivePrizeCategory(part);
     const href = cat ? '/prize/' + cat + '/' : '/prize/';
@@ -514,12 +520,16 @@ function renderInfoGrid(call, opts) {
 
   // Two rows (owner, 2026-11-25): what it costs to enter, and every other payment — if selected, a membership, more images.
   if (call.fee) {
-    rows.push(infoRow('<a href="/fees/">Entry fee</a>', infoLink(feePage[feeKind(call)], call.fee)));
-    if (call.additionalFees) rows.push(infoRow('<a href="/fees/">Additional fees</a>', infoLink(feePage[feeKind(call)], call.additionalFees)));
+    const page = feePage[feeKind(call)];   // none when the fee is "Not stated"
+    rows.push(infoRow('<a href="/fees/">Entry fee</a>', page ? infoLink(page, call.fee) : infoVal(call.fee)));
+    if (call.additionalFees) rows.push(infoRow('<a href="/fees/">Additional fees</a>', page ? infoLink(page, call.additionalFees) : infoVal(call.additionalFees)));
   }
 
-  if (call.eligibility && call.eligibility.length) {
-    const eligHtml = call.eligibility.map(e => infoLink('/eligibility/' + e, eligibilityLabel[e] || e)).join(', ');
+  // A membership is said once on a call page: in Additional fees, with its price (owner, 2026-11-25). The tag stays on
+  // the card and on /eligibility/membership-required/.
+  const elig = (call.eligibility || []).filter(e => !(e === 'membership-required' && /\b(?:membership|subscription)\b/i.test(call.additionalFees || '')));
+  if (elig.length) {
+    const eligHtml = elig.map(e => infoLink('/eligibility/' + e, eligibilityLabel[e] || e)).join(', ');
     rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));
   }
 

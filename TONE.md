@@ -40,23 +40,41 @@ is what made descriptions grow; it is withdrawn.
 - Keep, in this order: what is actually offered; who can apply when restricted; the one catch (a fee charged on
   selection, rights, AI rule, membership). The tags already show deadline, fee, prize and location — don't repeat them.
 
-## Fees — enforced by the build (owner, 2026-11-25)
+## Fees — one format, enforced by the build (owner, 2026-11-25)
 
-"if something is paid at the end its not free... its like paying in a restaurant before or after the meal". Two fields:
+"if something is paid at the end its not free... its like paying in a restaurant before or after the meal", and
+"whatever format you have you must stick to that one not mix it every time". Two fields, one way of writing each.
 
-- **fee** — what it costs to enter: `Free`, or the price (`$30`, `$35 (up to 3 entries; $25 members)`,
-  `Free (1 image)`). An optional donation may stay: `Free (voluntary €5 donation)`.
-- **additionalFees** — every other payment the artist must make, saying what it is and when it is paid:
-  `$150 hanging fee if selected`, `£65+ digital, £165+ physical if selected`, `WEAD membership required: $45/year`,
-  `£8 per additional image`, `$100 refundable deposit if accepted`, `€900/month if selected` (self-funded residency).
-  Leave the field out when there is none. At most 90 characters.
-- Not fees: sales commission, the artist's own shipping, travel, materials or framing, optional add-ons. Money the
-  organiser PAYS the artist ("a €500 participation fee for selected artists") is a prize, not a fee — read which way
-  it goes.
-- A membership needed to enter is an additional fee, even when entry itself is free. A member discount is not.
-- Cards show `Free` (nothing to pay at any stage), `Free entry*` (free to enter, additional fees), `$30 fee` or
-  `$30 fee*`; the call page shows both rows. The build refuses a cost written into `fee` ("if selected",
-  "membership required") and an amount after `Free` that is not optional.
+**Amounts.** The currency before the number: `$30` (US dollars), `£30`, `€30`, `¥5,000`, `₹100`; other dollars
+with their letters: `CA$65`, `A$20`, `NZ$30`, `S$120`; every other currency as its code and a space: `DKK 100`,
+`SEK 500`, `CHF 65`, `ISK 50,000`. Ranges with an en dash, the symbol on both ends (`€15–€35`; a code once:
+`SEK 250–500`). "And up" is `$10+`. A period after a slash: `$45/year`, `€900/month`, `$325/week`.
+
+**fee** — what it costs to enter. It starts with `Free`, the amount, `Pay what you can` or `Fee (amount not stated)`
+(`Not stated` when nobody knows). The shapes:
+- `Free`, `Free (1 image)`, `Free (voluntary €5 donation)`
+- `$30`, `$30 per image`, `$35 for 5 images`, `$35 for up to 3 works`, `$35 for 5 images, $5 each additional`,
+  `$40 for 5 images, $45 for 10`, `$35 ($25 members)` — "each additional", "for 5 images", members in brackets;
+  never addl, per extra, /5 images, + $5 each, PWYC, From.
+
+**additionalFees** — every other payment the artist must make; left out when there is none; at most 90 characters.
+Each item: the amount, then what it is (lowercase), then when; items joined by `; `; notes in brackets at the end, with
+commas inside (never a semicolon):
+- `$150 hanging fee if selected`, `£20–£35 fee if selected`, `€900/month residency fee if selected (€1,000 in summer)`
+- `$45/year WEAD membership ($20 students)`, `€15 Freelens membership`, `$75/year Aperture print subscription`
+- `£8 each additional image`, `$100 deposit if selected (refundable)`
+- unknown amount: the noun first, then `(amount not stated)`: `Participation fee if selected (amount not stated)`,
+  `HCP membership (amount not stated)`
+- "if selected" is the one word for when (not if accepted, on acceptance); never "required" — everything in this
+  field must be paid. A membership or subscription needed to apply has no "when".
+
+What is not a fee: sales commission, the artist's own shipping, travel, materials or framing, optional add-ons, money
+the organiser PAYS the artist (a "participation fee" paid to selected artists is a prize). A member discount is not an
+additional fee; a membership needed to enter is.
+
+Cards show `Free` (nothing to pay at any stage), `Free entry*` (free to enter, additional fees), `$30 fee`,
+`$30 fee*` (additional fees), `Paid entry` (amount not stated). The call page shows "Entry fee" and "Additional fees";
+a membership named there is not repeated under Eligibility.
 
 ## Tags — enforced by the build (owner, 2026-11-16)
 
