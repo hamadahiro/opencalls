@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261125l">
+  <link rel="stylesheet" href="/style.css?v=20261125m">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -249,8 +249,8 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261125l"></script>
-  <script src="/cards.js?v=20261125l"></script>
+  <script src="/shared.js?v=20261125m"></script>
+  <script src="/cards.js?v=20261125m"></script>
   <script>
     // The list on this page is server-rendered: one page of open calls with its
     // page links. Searching (typing, a suggestion, or arriving with ?q= or
@@ -525,12 +525,12 @@
         if (e.key === 'ArrowDown') {
           e.preventDefault();
           selectedSuggestion = Math.min(selectedSuggestion + 1, items.length - 1);
-          items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--card-bg-hover)' : ''; });
+          items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--sel-bg)' : ''; });
           if (selectedSuggestion >= 0) items[selectedSuggestion].scrollIntoView({ block: 'nearest' });
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
           selectedSuggestion = Math.max(selectedSuggestion - 1, -1);
-          items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--card-bg-hover)' : ''; });
+          items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--sel-bg)' : ''; });
           if (selectedSuggestion >= 0) items[selectedSuggestion].scrollIntoView({ block: 'nearest' });
         } else if (e.key === 'Enter' && selectedSuggestion >= 0) {
           e.preventDefault();
