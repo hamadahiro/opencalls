@@ -310,26 +310,24 @@ function deriveRequirementBucket(r) {
   return 'portfolio';
 }
 
-// Compact fee for chips. Full fee is kept on the detail page + chip tooltip.
-//   Free… -> "Free"/"Free*"; clean "X–Y" range kept; else first amount + "+"
-//   (entry floor, never understated); bare fee shown as-is; unknown currency as-is.
+// Compact ENTRY fee for chips (the `fee` field; feeChipText adds the kind and the asterisk). Full fee on the call page
+// and in the chip's tooltip.
+//   Free… -> "Free"; clean "X–Y" range kept; else first amount + "+" (entry floor, never understated); bare fee as-is.
+//   A currency written with letters keeps them: "A$50", "CA$65+", "CA$20+" (from "$20 CAD"), "DKK 100", "CHF 65+" —
+//   a lone "$" would read as US dollars (2026-11-25: "A$50" showed as "$50 fee").
 function shortenFee(fee) {
   if (!fee) return fee;
   var s = String(fee).trim();
   // a comma or full stop written straight after the amount is punctuation, not part of it ("$40, $7.50 each" -> "$40+")
   var strip = function(n) { return n.replace(/[.,]+$/, '').replace(/\.0+$/, ''); };
-  if (/^free/i.test(s)) {
-    var rest = s.replace(/^free/i, '');
-    return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';
-  }
-  // CHF (Swiss franc) is a multi-letter currency code, not in the symbol class
-  // below; condense it explicitly so "CHF 65 (…discounts…)" → "CHF 65+".
-  var chf = s.match(/^CHF\s?(\d[\d.,]*)/i);
-  if (chf) {
-    var chfAmount = 'CHF ' + strip(chf[1]);
-    var chfBare = /^CHF\s?\d[\d.,]*( fee)?$/i.test(s);
-    return chfBare ? chfAmount : chfAmount + '+';
-  }
+  if (/^free/i.test(s)) return 'Free';
+  var DOLLAR = { CAD: 'CA$', AUD: 'A$', NZD: 'NZ$', HKD: 'HK$', SGD: 'S$', USD: '$' };
+  var cur = null, num = null, m;
+  if ((m = s.match(/^([A-Z]{1,3})\$\s?(\d[\d.,]*)/))) { cur = m[1] + '$'; num = m[2]; }
+  else if ((m = s.match(/^(CAD|AUD|NZD|HKD|SGD|USD)\s?\$?\s?(\d[\d.,]*)/))) { cur = DOLLAR[m[1]]; num = m[2]; }
+  else if ((m = s.match(/^\$\s?(\d[\d.,]*)\s?(CAD|AUD|NZD|HKD|SGD|USD)\b/))) { cur = DOLLAR[m[2]]; num = m[1]; }
+  else if ((m = s.match(/^(CHF|SEK|DKK|NOK|ISK|PLN|CZK|JPY|INR|ZAR|MXN|BRL)\s?(\d[\d.,]*)/i))) { cur = m[1].toUpperCase() + ' '; num = m[2]; }
+  if (cur) return cur + strip(num) + (m[0].length >= s.replace(/\s+fee$/i, '').length ? '' : '+');
   var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
   if (range) return range[1] + strip(range[2]) + '–' + (range[3] || range[1]) + strip(range[4]);
   // R is a currency (Rand) ONLY before a digit — otherwise a capital-R word
@@ -343,16 +341,37 @@ function shortenFee(fee) {
   return isBare ? amount : amount + '+';
 }
 
-// Fee chip (compact) — full fee kept in a title tooltip when shortened. Takes
-// the environment's HTML escaper as `esc`.
-function feeChip(fee, esc) {
-  const feeShort = shortenFee(fee);
-  const href = fee.toLowerCase().startsWith('free') ? '/fees/free/' : '/fees/entry-fee/';
-  // Append " fee" only to a money amount (currency symbol + digit). Must include
-  // R (Rand) to match shortenFee's currency class — otherwise "R250+" loses " fee".
-  const body = /^[£$€¥R]\d/.test(feeShort) ? feeShort + ' fee' : feeShort;
-  const title = feeShort !== fee ? ` title="${esc(fee)}"` : '';
-  return `<a href="${href}" class="meta-tag meta-tag-link"${title}>${esc(body)}</a>`;
+// The kind of fee, read from the two fields (owner, 2026-11-25: "if something is paid at the end its not free"):
+//   'free'        — `fee` is Free and there is no `additionalFees`: nothing to pay at any stage;
+//   'free-entry'  — `fee` is Free, but `additionalFees` lists a cost (if selected, a membership, more images);
+//   'entry'       — `fee` is an amount (with or without `additionalFees`).
+// The one reader of the fee: chips, fee pages, search filters, call pages and the build gate all use it.
+function feeKind(call) {
+  if (!call || !call.fee) return null;
+  if (/^free/i.test(String(call.fee).trim())) return call.additionalFees ? 'free-entry' : 'free';
+  return 'entry';
+}
+const feePage = { 'free': '/fees/free/', 'free-entry': '/fees/free-entry/', 'entry': '/fees/entry-fee/' };
+
+// The fee chip's words: "Free", "Free entry*", "$30 fee", "$30+ fee", "$30 fee*". The asterisk always means the same:
+// there are additional fees, listed on the call page.
+function feeChipText(call) {
+  const kind = feeKind(call);
+  if (!kind) return '';
+  if (kind === 'free') return 'Free';
+  if (kind === 'free-entry') return 'Free entry*';
+  const s = shortenFee(call.fee);
+  // " fee" only after a money amount: a symbol, a letter currency ("A$", "CA$", "DKK ") or the Rand before a digit.
+  const body = /^(?:[£$€¥]|R(?=\d)|[A-Z]{1,3}\$|[A-Z]{3} )\d/.test(s) ? s + ' fee' : s;
+  return body + (call.additionalFees ? '*' : '');
+}
+
+// Fee chip — the full fees are kept in a title tooltip (desktop) and on the call page. Takes the HTML escaper as `esc`.
+function feeChip(call, esc) {
+  const text = feeChipText(call);
+  const full = call.fee + (call.additionalFees ? '. Additional fees: ' + call.additionalFees : '');
+  const title = text !== call.fee ? ` title="${esc(full)}"` : '';
+  return `<a href="${feePage[feeKind(call)]}" class="meta-tag meta-tag-link"${title}>${esc(text)}</a>`;
 }
 
 // "Submit via" row: collapse 77 raw values to honest methods + link the real
@@ -419,7 +438,7 @@ function tagHtml(str, minLen, esc) {
 function cardTagTexts(call) {
   const out = [];
   if (call.prize) splitPrizeParts(call.prize).forEach(p => out.push({ kind: 'prize', text: prizeTag(p), raw: p }));
-  if (call.fee) out.push({ kind: 'fee', text: shortenFee(call.fee) });
+  if (call.fee) out.push({ kind: 'fee', text: feeChipText(call) });
   if (call.location) out.push({ kind: 'location', text: tagLocation(call.location) });
   out.push({ kind: 'category', text: categoryLabel[call.category] || call.category || '' });
   (call.eligibility || []).forEach(e => out.push({ kind: 'eligibility', text: eligibilityTag(e) }));
@@ -447,7 +466,7 @@ function renderCardBody(call, opts) {
 function renderTags(call, opts) {
   const esc = opts.esc;
   const tags = [];
-  if (call.fee) tags.push(feeChip(call.fee, esc));
+  if (call.fee) tags.push(feeChip(call, esc));
   splitPrizeParts(call.prize).filter((p, i, a) => a.findIndex(q => prizeTag(q) === prizeTag(p)) === i).forEach(part => {
     const cat = derivePrizeCategory(part);
     const href = cat ? '/prize/' + cat + '/' : '/prize/';
@@ -493,11 +512,10 @@ function renderInfoGrid(call, opts) {
     rows.push(infoRow(`<a href="/prize/">${parts.length > 1 ? 'Prizes' : 'Prize'}</a>`, prizeHtml));
   }
 
+  // Two rows (owner, 2026-11-25): what it costs to enter, and every other payment — if selected, a membership, more images.
   if (call.fee) {
-    const feeHtml = call.fee.toLowerCase().startsWith('free')
-      ? infoLink('/fees/free', call.fee)
-      : infoLink('/fees/entry-fee', call.fee);
-    rows.push(infoRow('<a href="/fees/">Entry fee</a>', feeHtml));
+    rows.push(infoRow('<a href="/fees/">Entry fee</a>', infoLink(feePage[feeKind(call)], call.fee)));
+    if (call.additionalFees) rows.push(infoRow('Additional fees', infoVal(call.additionalFees)));
   }
 
   if (call.eligibility && call.eligibility.length) {
@@ -544,7 +562,7 @@ function renderInfoGrid(call, opts) {
   return rows.join('');
 }
 
-function isFree(fee) { return fee && fee.toLowerCase().startsWith('free'); }
+function isFree(call) { return feeKind(call) === 'free'; }
 
 // US state from "City, ST, USA" (empty otherwise).
 function getState(location) {
@@ -571,10 +589,7 @@ function scoreSimilarity(current, other) {
   } else if (curCountry && curCountry === othCountry) {
     score += 2;
   }
-  const curFree = isFree(current.fee);
-  const othFree = isFree(other.fee);
-  if (curFree && othFree) score += 1;
-  if (!curFree && !othFree) score += 1;
+  if (feeKind(current) === feeKind(other)) score += 1;   // the same kind of fee
   if (current.deadline !== 'Continuous' && other.deadline !== 'Continuous' && current.deadline && other.deadline) {
     const diff = Math.abs(new Date(current.deadline + 'T00:00:00') - new Date(other.deadline + 'T00:00:00')) / (1000 * 60 * 60 * 24);
     if (diff <= 30) score += 1;
@@ -609,7 +624,7 @@ if (typeof module !== 'undefined' && module.exports) {
     usStateNames, stateNameToAbbr, validCountries,
     PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
     isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-    deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
+    deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform,

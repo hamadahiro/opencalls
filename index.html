@@ -283,7 +283,7 @@
           else if (chipType === 'eligibility' && eligibilityLabel[chipValue]) chipLabel = eligibilityLabel[chipValue];
           else if (chipType === 'prize' && prizeCategoryLabel[chipValue]) chipLabel = prizeCategoryLabel[chipValue];
           else if (chipType === 'country' && countryExpand[chipValue]) chipLabel = countryExpand[chipValue];
-          else if (chipType === 'fee') chipLabel = chipValue === 'free' ? 'Free' : 'Paid';
+          else if (chipType === 'fee') chipLabel = chipValue === 'free' ? 'Free' : chipValue === 'free-entry' ? 'Free entry*' : 'Paid';
           withIndex(function() { addChip({ type: chipType, value: chipValue, label: chipLabel }); });
         }
       } else if (qParam) {
@@ -391,8 +391,9 @@
         } else if (chip.type === 'prize') {
           list = list.filter(function(c) { return c.prize && derivePrizeCategories(c.prize).includes(chip.value); });
         } else if (chip.type === 'fee') {
-          if (chip.value === 'free') list = list.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); });
-          else if (chip.value === 'paid') list = list.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); });
+          if (chip.value === 'free') list = list.filter(function(c) { return feeKind(c) === 'free'; });
+          else if (chip.value === 'free-entry') list = list.filter(function(c) { return feeKind(c) === 'free-entry'; });
+          else if (chip.value === 'paid') list = list.filter(function(c) { return feeKind(c) === 'entry'; });
         } else if (chip.type === 'org') {
           list = list.filter(function(c) { return c.org === chip.value; });
         }
@@ -404,7 +405,7 @@
         var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
         var tokens = currentSearch.split(/\s+/).filter(Boolean);
         list = list.filter(function(c) {
-          var parts = [c.title, c.org, c.description, c.location, c.fee, c.prize, c.category];
+          var parts = [c.title, c.org, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category];
           if (c.location) {
             c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
               if (stateMap[lp]) parts.push(stateMap[lp]);

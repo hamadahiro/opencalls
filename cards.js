@@ -83,10 +83,13 @@ function buildSearchSuggestions(allCalls, query, opts) {
   if (prizeItems.length) groups['Prizes'] = prizeItems.slice(0, 5);
 
   // Fees
-  var freeCount = relevant.filter(function(c) { return c.fee && c.fee.toLowerCase().startsWith('free'); }).length;
-  var paidCount = relevant.filter(function(c) { return c.fee && !c.fee.toLowerCase().startsWith('free'); }).length;
+  // The three fee kinds, read by feeKind() in shared.js (the fee pages and chips read the same).
+  var freeCount = relevant.filter(function(c) { return feeKind(c) === 'free'; }).length;
+  var freeEntryCount = relevant.filter(function(c) { return feeKind(c) === 'free-entry'; }).length;
+  var paidCount = relevant.filter(function(c) { return feeKind(c) === 'entry'; }).length;
   var feeItems = [
     { type: 'fee', value: 'free', label: 'Free', count: freeCount },
+    { type: 'fee', value: 'free-entry', label: 'Free entry*', count: freeEntryCount },
     { type: 'fee', value: 'paid', label: 'Paid', count: paidCount }
   ].filter(function(item) {
     return item.count > 0 && (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
@@ -189,7 +192,7 @@ function chipToUrl(type, value) {
   if (type === 'category' && categorySlug[value]) return '/' + categorySlug[value] + '/';
   if (type === 'eligibility') return '/eligibility/' + value + '/';
   if (type === 'prize') return '/prize/' + value + '/';
-  if (type === 'fee') return value === 'free' ? '/fees/free/' : '/fees/entry-fee/';
+  if (type === 'fee') return value === 'free' ? '/fees/free/' : value === 'free-entry' ? '/fees/free-entry/' : '/fees/entry-fee/';
   if (type === 'country') {
     var expand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
     var slug = (expand[value] || value).toLowerCase().replace(/\s+/g, '-');

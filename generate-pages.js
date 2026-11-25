@@ -9,7 +9,7 @@ const {
   usStateNames, stateNameToAbbr, validCountries,
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
-  deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
+  deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
@@ -271,6 +271,18 @@ data.calls.forEach((c, i) => {
         if (v && v.length > 90) err(`"${label}" ${field} is ${v.length} characters — a details value is at most 90 (one line on a desktop screen). Keep the core fact (for a fee: the basic entry price) and put the rest in the description.`);
       }
     }
+    // FEES (owner, 2026-11-25: "if something is paid at the end its not free"): `fee` is what it costs to enter; every
+    // other payment the artist must make — if selected or accepted, a membership or subscription needed to enter, more
+    // images beyond free ones, a deposit — goes in `additionalFees`, saying what it is and when it is paid. Not fees:
+    // sales commission, the artist's own shipping, travel, materials or framing, optional donations. Every call.
+    if (c.fee && /\bif (?:selected|accepted|chosen|shortlisted)\b|\bon (?:acceptance|selection)\b|\bper (?:accepted|selected)\b|\b(?:membership|subscription) (?:is )?required\b/i.test(c.fee))
+      err(`"${label}" fee "${c.fee}" carries a cost that is not the entry fee — move it to additionalFees, saying what it is and when it is paid`);
+    if (c.fee && /^free/i.test(c.fee.trim()) && /(?:[£$€¥]|\b(?:CAD|AUD|NZD|USD|GBP|EUR|CHF|SEK|DKK|NOK|ISK|PLN|CZK|JPY|INR|ZAR|MXN|BRL)\b|\b[A-Z]{1,3}\$)\s?\d/.test(c.fee) && !/optional|voluntary|non-compulsory|suggested/i.test(c.fee))
+      err(`"${label}" fee "${c.fee}" says Free but carries an amount — a cost goes in additionalFees (or the entry is not free)`);
+    if (c.additionalFees !== undefined && (typeof c.additionalFees !== 'string' || !c.additionalFees.trim() || /^free\b/i.test(c.additionalFees.trim())))
+      err(`"${label}" additionalFees must name a cost ("$150 if selected", "Membership required, $45/year"); leave the field out when there is none`);
+    if (c.additionalFees && c.additionalFees.length > 90)
+      err(`"${label}" additionalFees is ${c.additionalFees.length} characters — a details value is at most 90 (one line on a desktop screen)`);
     if (sWords > 25 || (c.summary || '').length > 140) err(`"${label}" summary is ${sWords} words / ${(c.summary || '').length} chars — at most 25 words and 140 characters, one sentence`);
   }
 });
@@ -1028,7 +1040,7 @@ ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function do
       var u = '${safeJsStr(call.url)}';
       var o = '${safeJsStr(call.org)}';
       var dl = new Date('${call.deadline}T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
-      var desc = 'Open call by ' + icsE(o) + '\\\\n\\\\nDeadline: ' + icsE(dl)${call.prize ? ` + '\\\\nPrize: ' + icsE('${safeJsStr(call.prize)}')` : ''}${call.fee ? ` + '\\\\nEntry fee: ' + icsE('${safeJsStr(call.fee)}')` : ''};
+      var desc = 'Open call by ' + icsE(o) + '\\\\n\\\\nDeadline: ' + icsE(dl)${call.prize ? ` + '\\\\nPrize: ' + icsE('${safeJsStr(call.prize)}')` : ''}${call.fee ? ` + '\\\\nEntry fee: ' + icsE('${safeJsStr(call.fee)}')` : ''}${call.additionalFees ? ` + '\\\\nAdditional fees: ' + icsE('${safeJsStr(call.additionalFees)}')` : ''};
       var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nPRODID:-//Monographica//Open Calls//EN\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + de + '\\r\\nSUMMARY:' + icsE(t) + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
@@ -1175,23 +1187,27 @@ const filterPages = [
     slug: 'fees/free',
     feeKey: 'free',
     title: 'Free Open Calls for Artists',
-    desc: 'Open calls with no entry fee. Free exhibitions, grants, residencies, and submissions for photographers and visual artists.',
-    
-    filterJs: `c.fee && c.fee.toLowerCase().startsWith('free')`
+    desc: 'Open calls that cost nothing at any stage: no entry fee, no fee if selected, no paid membership. Exhibitions, grants, residencies and publications for photographers and visual artists.'
+  },
+  {
+    slug: 'fees/free-entry',
+    feeKey: 'free-entry',
+    title: 'Free Entry, Additional Fees',
+    desc: 'Open calls that are free to enter but have other costs: a fee if selected, a membership needed to enter, or a charge for more images. Each call page lists them.'
   },
   {
     slug: 'fees/entry-fee',
     feeKey: 'entry-fee',
     title: 'Open Calls with Entry Fees',
-    desc: 'Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists.',
-    
-    filterJs: `c.fee && !c.fee.toLowerCase().startsWith('free')`
+    desc: 'Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists. A fee marked * has additional fees, listed on the call page.'
   }
 ];
 
+// The three fee pages, read by feeKind() (shared.js), so a page and a chip can never disagree.
 const feeFilters = {
-  'free': c => c.fee && c.fee.toLowerCase().startsWith('free'),
-  'entry-fee': c => c.fee && !c.fee.toLowerCase().startsWith('free')
+  'free': c => feeKind(c) === 'free',
+  'free-entry': c => feeKind(c) === 'free-entry',
+  'entry-fee': c => feeKind(c) === 'entry'
 };
 
 filterPages.forEach(fp => {
@@ -1233,7 +1249,8 @@ ${buildStaticCallList(fpCalls)}
 // === Fees index page ===
 // INDEX RULE: the count is what the page lists (all calls), not just the open ones.
 const feeIndexItems = buildIndexItems([
-  { href: '/fees/free/', label: 'Free to Enter', ...listStats(data.calls.filter(feeFilters['free'])) },
+  { href: '/fees/free/', label: 'Free', ...listStats(data.calls.filter(feeFilters['free'])) },
+  { href: '/fees/free-entry/', label: 'Free Entry, Additional Fees', ...listStats(data.calls.filter(feeFilters['free-entry'])) },
   { href: '/fees/entry-fee/', label: 'Entry Fee', ...listStats(data.calls.filter(feeFilters['entry-fee'])) }
 ]);
 const feesIndexHtml = `<!DOCTYPE html>
@@ -2423,6 +2440,9 @@ const submitHtml = `<!DOCTYPE html>
           <label for="fee">Entry fee</label>
           <input class="search-bar" type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
 
+          <label for="additionalFees">Additional fees</label>
+          <input class="search-bar" type="text" name="additionalFees" id="additionalFees" placeholder="e.g. $150 if selected, membership $45/year">
+
           <label for="prize">Prize</label>
           <input class="search-bar" type="text" name="prize" id="prize" placeholder="e.g. $5,000, exhibition, publication">
 
@@ -2614,7 +2634,8 @@ const browseCategories = Object.entries(categories).map(([cat]) => {
 });
 
 const browseFees = [
-  { label: 'Free to Enter', href: '/fees/free/', ...listStats(data.calls.filter(feeFilters['free'])) },
+  { label: 'Free', href: '/fees/free/', ...listStats(data.calls.filter(feeFilters['free'])) },
+  { label: 'Free Entry, Additional Fees', href: '/fees/free-entry/', ...listStats(data.calls.filter(feeFilters['free-entry'])) },
   { label: 'Entry Fee', href: '/fees/entry-fee/', ...listStats(data.calls.filter(feeFilters['entry-fee'])) }
 ];
 const browsePrizes = prizeOrder.filter(t => prizeCatTags[t]).map(tag => ({
@@ -2702,7 +2723,7 @@ Object.keys(stateCounts).forEach(state => {
 // free-text match and the result cards read. ~1 MB against data.json's ~36 MB,
 // and a .js file because Cloudflare caches scripts but not JSON. Loaded by
 // loadSearchIndex() in cards.js the first time someone searches.
-const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'prize', 'eligibility', 'summary', 'description'];
+const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description'];
 const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(data.calls.map(c => {
   const row = {};
   SEARCH_FIELDS.forEach(k => { if (c[k] !== undefined && c[k] !== null) row[k] = c[k]; });
@@ -2748,7 +2769,7 @@ fs.writeFileSync('cards.js', cardsJs);
   // scripts/ is gitignored local tooling — guard so the build works without it.
   const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
   const updateStateSrc = fs.existsSync('scripts/update-verify-state.js') ? fs.readFileSync('scripts/update-verify-state.js', 'utf8') : '';
-  for (const fn of ['function shortenFee(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
+  for (const fn of ['function shortenFee(', 'function feeKind(', 'function feeChipText(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
     for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc], ['scripts/update-verify-state.js', updateStateSrc]]) {
@@ -2875,7 +2896,7 @@ const rssItems = rssCalls.map(call => {
   const slug = call.slug || slugify(call.title);
   const deadlineText = call.deadline === 'Continuous' ? 'Continuous' :
     new Date(call.deadline + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  const desc = `${escapeHtml(call.description)} — Deadline: ${deadlineText}. Fee: ${escapeHtml(call.fee || 'See website')}. Prize: ${escapeHtml(call.prize || 'None listed')}.`;
+  const desc = `${escapeHtml(call.description)} — Deadline: ${deadlineText}. Entry fee: ${escapeHtml(call.fee || 'See website')}.${call.additionalFees ? ` Additional fees: ${escapeHtml(call.additionalFees)}.` : ''} Prize: ${escapeHtml(call.prize || 'None listed')}.`;
   return `  <item>
     <title>${call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org)}</title>
     <link>${SITE}/${slug}/</link>
