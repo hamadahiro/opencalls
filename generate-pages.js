@@ -10,7 +10,7 @@ const {
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-  getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
+  getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
   NO_OPEN_CALLS_NOTICE,
@@ -258,6 +258,11 @@ data.calls.forEach((c, i) => {
     }
     if (sWords > 25 || (c.summary || '').length > 140) err(`"${label}" summary is ${sWords} words / ${(c.summary || '').length} chars — at most 25 words and 140 characters, one sentence`);
   }
+  // RESULTS (owner, 2026-11-25, the Results due pages): a new call's results date is one the Results pages can place —
+  // "December 23, 2026", "Around December 9, 2026", "December 11–13, 2026", "By December 1, 2026", "December 2026",
+  // "Late December 2026", "Within 2 weeks of the deadline" — or a season ("Spring 2027"). Calls added from 2026-11-26.
+  if ((c.dateAdded || '') >= '2026-11-26' && c.resultsDate && !resultsWhen(c) && !/^(?:(?:early|mid-?|late) )?(?:spring|summer|fall|autumn|winter) \d{4}$/i.test(c.resultsDate.trim()))
+    err(`"${label}" resultsDate "${c.resultsDate}" cannot be placed in a month — write "December 23, 2026", "Late December 2026", "By December 1, 2026", "Within 2 weeks of the deadline" or a season ("Spring 2027")`);
   // FEES AND MEMBERSHIP: every call, open or closed (owner, 2026-11-25: "every call must be accurate").
   // FEES (owner, 2026-11-25: "if something is paid at the end its not free"): `fee` is what it costs to enter; every
   // other payment the artist must make — if selected or accepted, a membership or subscription needed to enter, more
@@ -326,7 +331,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -466,8 +471,8 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
-const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       ${FOOTER_LINKS}
@@ -2409,6 +2414,79 @@ ${deadlinesIndexItems}
 writeGenerated('deadlines/index.html', deadlinesIndexHtml);
 sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
+
+// === RESULTS DUE (owner, 2026-11-25: "it would be good to have results due page") ===
+// Closed calls whose organisers say results come this month or later, by that month: /results/ and /results/<month-year>/.
+// shared.js resultsWhen() reads the stored results text; resultsListed() decides who is listed (a date until it passes, a
+// month until it ends). The card's date reads the results date. Nothing here says whether results came out.
+const resultsGroups = {};
+data.calls.forEach(c => { const w = resultsListed(c); if (w) (resultsGroups[w.month] = resultsGroups[w.month] || []).push(c); });
+const resultsMonthKeys = Object.keys(resultsGroups).sort();
+const resultsKey = c => { const w = resultsWhen(c); return w.day || w.month + '-32'; };   // a month without a day sorts at its end
+const resultsLabel = m => `${MONTH_LABELS[+m.slice(5, 7) - 1]} ${m.slice(0, 4)}`;
+const resultsPlaceholder = '<!-- PAGED-LIST:results -->';
+resultsMonthKeys.forEach(m => {
+  const calls = resultsGroups[m].sort((a, b) => resultsKey(a).localeCompare(resultsKey(b)) || a.title.localeCompare(b.title));
+  const label = resultsLabel(m), key = resultsMonthSlug(m), root = `/results/${key}/`;
+  const desc = `Closed calls whose organisers say results come in ${label}.`;
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Results due — ${label}`, description: desc, canonical: `${SITE}${root.slice(0, -1)}`, jsonLd: collectionPageLd(`Results due — ${label}`, desc, `${SITE}${root}`), breadcrumbs: [{ name: 'Results due', url: `${SITE}/results/` }, { name: label, url: `${SITE}${root}` }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/results/">Results due</a></nav>', label, `${escapeHtml(desc)} ${calls.length} call${calls.length !== 1 ? 's' : ''}.`)}
+
+    <section class="calls-list" id="callsList">
+${resultsPlaceholder}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeListPages(html.replace(resultsPlaceholder, '<!-- PAGED-LIST:0 -->'), root, calls, (chunk, k, count) =>
+    chunk.map(c => `      <div class="call-card">
+        <h4 class="call-title"><a href="/${c.slug || slugify(c.title)}/">${escapeHtml(c.title) + (!c.orgInTitle ? ' · ' + escapeHtml(c.org) : '')}</a></h4>
+        ${renderCardBody(c, { esc: escapeHtml, results: true })}
+      </div>\n`).join('') + paginationNav(root, k, count),
+    { labelFor: k => k > 1 ? `Page ${k}` : '', robots: 'noindex, follow' });
+  console.log(`  Results page: ${label} (${calls.length} calls)`);
+});
+const resultsIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Results due', description: 'Closed calls, by the month their organisers say results come.', canonical: `${SITE}/results`, jsonLd: collectionPageLd('Results due', 'Closed calls, by the month their organisers say results come.', `${SITE}/results/`), cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'Results due', 'Closed calls, by the month their organisers say results come.')}
+
+    <section class="index-list" id="indexList">
+${resultsMonthKeys.map(m => indexItem(`/results/${resultsMonthSlug(m)}/`, resultsLabel(m), resultsGroups[m].length).trimEnd()).join('\n')}
+    </section>
+
+    <p class="browse-more"><a href="/deadlines/">Browse open calls by deadline</a></p>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+writeFileTracked('results/index.html', resultsIndexHtml);
+console.log(`  Results index page (${resultsMonthKeys.length} months, ${resultsMonthKeys.reduce((n, m) => n + resultsGroups[m].length, 0)} calls)`);
 
 // === Submit page ===
 // The search bar sits under the menu as on every other page (owner, 2026-11-25; it stood in the hero from 2026-11-23).
