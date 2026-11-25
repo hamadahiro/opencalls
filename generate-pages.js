@@ -10,7 +10,7 @@ const {
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
-  getCountry, tagHtml, renderTags, renderInfoGrid,
+  getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
   NO_OPEN_CALLS_NOTICE,
@@ -611,8 +611,7 @@ function renderStaticCard(call, u) {
   const title = escapeHtml(call.title) + (!call.orgInTitle ? ' · ' + escapeHtml(call.org) : '');
   return `      <div class="call-card">
         <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
-        <div class="call-meta">${renderTags(call, { esc: escapeHtml, urgency: u, locationLink: getStaticLocationLink })}</div>
-        <p class="call-description">${escapeHtml(call.summary || call.description)}</p>
+        ${renderCardBody(call, { esc: escapeHtml, urgency: u })}
       </div>\n`;
 }
 

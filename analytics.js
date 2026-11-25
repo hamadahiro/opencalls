@@ -157,7 +157,7 @@
     }
 
     // Deadline badge clicks
-    if (link.classList.contains('call-deadline')) {
+    if (link.classList.contains('call-date')) {
       gtag('event', 'deadline_click', {
         deadline_text: link.textContent.trim(),
         deadline_url: href,

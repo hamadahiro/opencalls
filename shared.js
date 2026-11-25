@@ -425,31 +425,35 @@ function cardTagTexts(call) {
   return out;
 }
 
-// Meta-tag row for a card. opts = { esc, urgency, locationLink }
-//   urgency = { deadlineSlug, urgencyClass, urgencyText }
-//   locationLink = (location, country) => href|null  (env-specific page lookup:
-//     client uses injected countryPages/statePages; build uses PRECOMPUTED sets)
+// The deadline on a card: the call page's hand-drawn stroke under the words, in the urgency's colour. Closed calls get no stroke.
+function cardDate(call, u, esc) {
+  const slug = u.deadlineSlug || (call.deadline === 'Continuous' ? 'continuous' : '');
+  const cls = 'call-date' + (u.urgencyClass && u.urgencyClass !== 'closed' ? ' dl-band dl-' + u.urgencyClass : '');
+  return `<a href="/deadlines/${slug}/" class="${cls}">${esc(u.urgencyText).replace(/ /g, '&nbsp;')}</a>`;
+}
+
+// A card under its title: the date opens the description, the other facts (renderTags) stand under it.
+// opts = { esc, urgency }
+function renderCardBody(call, opts) {
+  const tags = renderTags(call, opts);
+  return `<p class="call-description">${cardDate(call, opts.urgency || {}, opts.esc)} – ${opts.esc(call.summary || call.description)}</p>`
+    + (tags ? `<div class="call-meta">${tags}</div>` : '');
+}
+
+// The facts of a card as outline chips, all alike: fee, prize (one a part), and who may enter when that is more than an age.
+// Category and place are left out: the title or the description says the category on 9 cards of 10, the place on 8.
+// opts = { esc }
 function renderTags(call, opts) {
-  const esc = opts.esc, u = opts.urgency || {}, locationLink = opts.locationLink;
+  const esc = opts.esc;
   const tags = [];
-  if (u.deadlineSlug) tags.push(`<a href="/deadlines/${u.deadlineSlug}/" class="call-deadline ${u.urgencyClass}">${esc(u.urgencyText)}</a>`);
-  else tags.push(`<span class="call-deadline ${u.urgencyClass}">${esc(u.urgencyText)}</span>`);
-  if (call.prize) splitPrizeParts(call.prize).forEach(part => {
+  if (call.fee) tags.push(feeChip(call.fee, esc));
+  splitPrizeParts(call.prize).filter((p, i, a) => a.findIndex(q => prizeTag(q) === prizeTag(p)) === i).forEach(part => {
     const cat = derivePrizeCategory(part);
     const href = cat ? '/prize/' + cat + '/' : '/prize/';
-    tags.push(`<a href="${href}" class="meta-tag meta-tag-link call-prize"${prizeTag(part) !== part ? ` title="${esc(part)}"` : ''}>${PRIZE_SVG}${esc(prizeTag(part))}</a>`);
+    tags.push(`<a href="${href}" class="meta-tag meta-tag-link"${prizeTag(part) !== part ? ` title="${esc(part)}"` : ''}>${esc(prizeTag(part))}</a>`);
   });
-  if (call.fee) tags.push(feeChip(call.fee, esc));
-  if (call.location) {
-    const country = getCountry(call.location);
-    const locLink = locationLink ? locationLink(call.location, country) : null;
-    const locDisplay = tagLocation(call.location);
-    if (locLink) tags.push(`<a href="${locLink}" class="meta-tag meta-tag-link">${PIN_SVG}${esc(locDisplay)}</a>`);
-    else tags.push(`<span class="meta-tag">${PIN_SVG}${esc(locDisplay)}</span>`);
-  }
-  tags.push(`<a href="/${categorySlug[call.category]}/" class="meta-tag meta-tag-link">${esc(categoryLabel[call.category] || call.category)}</a>`);
-  if (call.eligibility && call.eligibility.length) call.eligibility.forEach(e => {
-    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link eligibility-tag"${eligibilityTag(e) !== (eligibilityLabel[e] || e) ? ` title="${esc(eligibilityLabel[e] || e)}"` : ''}>${esc(eligibilityTag(e))}</a>`);
+  (call.eligibility || []).filter(e => !/^\d+-plus$/.test(e)).forEach(e => {
+    tags.push(`<a href="/eligibility/${e}/" class="meta-tag meta-tag-link"${eligibilityTag(e) !== (eligibilityLabel[e] || e) ? ` title="${esc(eligibilityLabel[e] || e)}"` : ''}>${esc(eligibilityTag(e))}</a>`);
   });
   return tags.join(' ');
 }
@@ -605,7 +609,7 @@ if (typeof module !== 'undefined' && module.exports) {
     PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
     isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, aiPolicyBucket, shortenFee, feeChip, submitViaLink, submitViaLabel,
-    getCountry, tagHtml, renderTags, renderInfoGrid,
+    getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts
