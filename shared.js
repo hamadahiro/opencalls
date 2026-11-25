@@ -316,7 +316,8 @@ function deriveRequirementBucket(r) {
 function shortenFee(fee) {
   if (!fee) return fee;
   var s = String(fee).trim();
-  var strip = function(n) { return n.replace(/\.0+$/, ''); };
+  // a comma or full stop written straight after the amount is punctuation, not part of it ("$40, $7.50 each" -> "$40+")
+  var strip = function(n) { return n.replace(/[.,]+$/, '').replace(/\.0+$/, ''); };
   if (/^free/i.test(s)) {
     var rest = s.replace(/^free/i, '');
     return /[£$€¥R]\s?\d|\bif\b|select|accept|finalist|shortlist/i.test(rest) ? 'Free*' : 'Free';

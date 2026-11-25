@@ -106,6 +106,7 @@ body {
   line-height: 1.5;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;   /* a word longer than the screen breaks instead of pushing the page sideways (2026-11-25) */
 }
 
 /* Every link, set once. Per-element rules below no longer repeat a color —

@@ -820,6 +820,13 @@ function getStaticLocationLink(location, country) {
 // Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
 // Mirrors scoreSimilarity() + loadSimilar() in call-detail.js — pre-renders the
 // "More like this" block so internal links are visible to Google.
+// Titles that join words with / : | ("diptych/triptych/multiples/collage", "periscope:project:space") are one word to a
+// browser and pushed call pages sideways on phones (6 pages, 2026-11-24). A break opportunity after each join lets them wrap
+// there; style.css's overflow-wrap on body catches any other word too long for the screen.
+function breakAfterJoins(html) {
+  return html.replace(/([\/:|])(?=\S)/g, '$1<wbr>');
+}
+
 function buildStaticSimilarCalls(call, allCalls) {
   const currentSlug = call.slug || slugify(call.title);
   const candidates = allCalls
@@ -967,7 +974,7 @@ function generatePage(call, cssVersion) {
   <main>
     <section class="call-detail">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
-      <h1 class="call-detail-title">${escapeHtml(call.title)}</h1>
+      <h1 class="call-detail-title">${breakAfterJoins(escapeHtml(call.title))}</h1>
 
       <div class="call-detail-text" id="detailText">
 ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.length
