@@ -8,3 +8,14 @@ data.json.pre-update
 *.raw
 logs/
 .scratch/
+
+# Private and working files: never in the public repo (owner, 2026-11-25)
+.wrangler/
+.scratch/
+et.html
+et2.html
+instagram-follow-tracker.md
+harvest-worklist.json
+.editor-added.json
+opencalls-export.csv
+.DS_Store

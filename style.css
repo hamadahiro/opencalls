@@ -1476,11 +1476,32 @@ a.filter-btn {
   width: 100%;
 }
 
-/* Submit page: the bar sits in the hero, under its sentence */
-.global-search.in-hero {
-  max-width: none;
-  margin: 0;
-  padding: 24px 0 0;
+/* The first field under "Where to apply" starts where a line of text starts under a heading: the gap from the heading's
+   letters to the field's edge was 17.3 px, to the first letters under "What gets listed" 26.0 px (owner, 2026-11-25). */
+#submitForm > .section-header + .search-bar {
+  margin-top: 8px;
+}
+
+/* Submit page on desktop: the About page's two columns under a full-width top (owner, 2026-11-25) — the form on the
+   left, "What gets listed" on the right, both headings level. Phones and tablets: one column, as before. */
+@media (min-width: 1000px) {
+  .submit-form {
+    max-width: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: start;
+  }
+
+  .submit-form > form,
+  .submit-form > #submitThanks {
+    grid-column: 1;
+  }
+
+  .submit-form > .submit-rules {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
 }
 
 .global-search .search-back {
@@ -1520,10 +1541,6 @@ a.filter-btn {
   /* Global search: mobile — hide bar, show icon */
   .global-search {
     display: none;
-  }
-
-  .global-search.in-hero {
-    display: block;
   }
 
   .search-toggle {
@@ -1644,10 +1661,6 @@ a.filter-btn {
   padding-right: var(--gs-pad);
 }
 
-.global-search.in-hero {
-  --gs-pad: 0px;                            /* submit page: the bar fills its box */
-}
-
 /* The suggestions open exactly under the bar and the clear button sits 12 px in from its end, as on the home page
    (the list was 24 px narrower than the bar on the submit page, and 5 px after the hang above; owner, 2026-11-25).
    runs/opencalls/bubble-hang-2026-11-25/dropdown.mjs measures both on every search. */
@@ -1658,11 +1671,6 @@ a.filter-btn {
 
 .global-search .search-clear {
   right: calc(var(--gs-pad) + 12px);
-}
-
-body:not(.search-active) .global-search.in-hero {
-  margin-left: calc(-1 * var(--hang));
-  margin-right: calc(-1 * var(--hang));
 }
 
 .submit-form .search-bar {

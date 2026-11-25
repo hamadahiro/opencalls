@@ -19,24 +19,9 @@ const {
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
-// Organizer emails are kept OUT of the public data.json (it's served as a
-// downloadable file). They live in the PRIVATE, gitignored contacts store.
-// Hydrate call.email here in memory so the on-page "Submit via" mailto: links
-// still render for submit-by-email calls. If the store is absent (e.g. a fresh
-// public checkout), mailto simply falls back to the call's website — no crash.
-try {
-  const contacts = JSON.parse(fs.readFileSync('scripts/outreach/contacts.json', 'utf8'));
-  let hydrated = 0;
-  for (const c of data.calls) {
-    if (!c.email && c.slug && contacts[c.slug] && contacts[c.slug].email) {
-      c.email = contacts[c.slug].email;
-      hydrated++;
-    }
-  }
-  console.log(`  Hydrated ${hydrated} email(s) from private contacts store (for mailto links)`);
-} catch (e) {
-  console.warn('  contacts.json not found — mailto links will fall back to website');
-}
+// PRIVACY (owner, 2026-11-25): the private contact store (scripts/outreach/) is never read to build pages. Organizers'
+// contact addresses are for outreach only and are never published; an application address artists need is written in
+// the call's description, copied from the organizer's own page. "Submit via: Email" opens the organizer's page.
 
 // Per-call verification timestamps written by scripts/verify-batch.js.
 // Used to render "Verified by Monographica on [date]" on every detail page
@@ -2412,13 +2397,8 @@ sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
 
 // === Submit page ===
-// The site-wide search bar sits under the "Search the site first" sentence here,
-// not above the title (owner, 2026-11-23). Same element and ids, so search.js
-// and the phone's full-screen search work unchanged.
-const GLOBAL_SEARCH_RE = /\s*<div class="global-search" id="globalSearchWrap">[\s\S]*?<div id="globalSearchDropdown"[^>]*><\/div>\s*<\/div>/;
-const SUBMIT_HEADER_FULL = buildHeader();
-const SUBMIT_SEARCH = SUBMIT_HEADER_FULL.match(GLOBAL_SEARCH_RE)[0].trim().replace('class="global-search"', 'class="global-search in-hero"');
-const SUBMIT_HEADER = SUBMIT_HEADER_FULL.replace(GLOBAL_SEARCH_RE, '');
+// The search bar sits under the menu as on every other page (owner, 2026-11-25; it stood in the hero from 2026-11-23).
+const SUBMIT_HEADER = buildHeader();
 const submitHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2432,7 +2412,6 @@ const submitHtml = `<!DOCTYPE html>
     <section class="hero">
       <h1>Submit a call</h1>
       <h2 class="subtitle">Search the site first — most calls sent in are ones we already list. If not, paste a link and add details if you have them.</h2>
-      ${SUBMIT_SEARCH}
     </section>
 
     <section class="submit-form">
@@ -2461,7 +2440,7 @@ const submitHtml = `<!DOCTYPE html>
           <input class="search-bar" type="text" name="fee" id="fee" placeholder="e.g. Free, $25, €10">
 
           <label for="additionalFees">Additional fees</label>
-          <input class="search-bar" type="text" name="additionalFees" id="additionalFees" placeholder="e.g. $150 if selected, membership $45/year">
+          <input class="search-bar" type="text" name="additionalFees" id="additionalFees" placeholder="e.g. $150 hanging fee if selected, $45/year membership">
 
           <label for="prize">Prize</label>
           <input class="search-bar" type="text" name="prize" id="prize" placeholder="e.g. $5,000, exhibition, publication">
@@ -2700,7 +2679,7 @@ const browseHtml = `<!DOCTYPE html>
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'Browse All Open Calls', 'Open calls grouped by when they close, what they cost, what they are, where, who can apply and what they offer. Each list shows open calls first, then past ones.')}
+    ${buildHero('', 'Browse All Open Calls', 'Open calls grouped by when they close, what they cost, what they are, where they are, who can apply, what they offer, what to send, their AI policy and who runs them.')}
 
     <section class="index-list browse-list">
 ${buildBrowseSection('Deadlines', browseDeadlines, '/deadlines/', { keepOrder: true, see: [['/deadlines/', 'See all deadlines']] })}
@@ -3392,5 +3371,41 @@ if (staleFiles.length) {
   }
   console.log(`  Count gate: ${listings.size} listings (${pagedFiles.size} paged files), ${rowsChecked} index rows — all counts match`);
 }
+
+// === PRIVACY GATE (owner, 2026-11-25: "none private info is public... that the rule") ===
+// Runs on every build, every call, after every file is written:
+//  1. no email address in any job note (verifyNote) — they are internal and data.json is public;
+//  2. no address from the private store (scripts/outreach/contacts.json, outreach-log.json) in any file the site
+//     publishes, unless the organizer publishes it for artists in that call's description or prose.
+(() => {
+  const EM = /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/g;
+  const bad = [];
+  for (const c of data.calls) if (c.verifyNote && String(c.verifyNote).match(EM)) bad.push(`${c.slug}: verifyNote holds an email address — write [address]`);
+  const priv = new Set();
+  for (const f of ['scripts/outreach/contacts.json', 'scripts/outreach/outreach-log.json']) {
+    if (fs.existsSync(f)) for (const m of fs.readFileSync(f, 'utf8').matchAll(EM)) priv.add(m[0].toLowerCase());
+  }
+  const published = new Set();
+  for (const c of data.calls) for (const t of [c.description, ...(Array.isArray(c.prose) ? c.prose : [])]) {
+    if (t) for (const m of String(t).matchAll(EM)) published.add(m[0].toLowerCase());
+  }
+  const skip = new Set(['.git', 'scripts', 'node_modules', '.scratch', '.wrangler', '.claude']);
+  const walk = d => { for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    if (skip.has(e.name)) continue;
+    const p = d === '.' ? e.name : d + '/' + e.name;
+    if (e.isDirectory()) walk(p);
+    else if (/\.(html|js|json|xml|txt|md|csv)$/.test(e.name)) {
+      const s = fs.readFileSync(p, 'utf8');
+      if (s.includes('@')) for (const m of s.matchAll(EM)) { const a = m[0].toLowerCase(); if (priv.has(a) && !published.has(a)) { bad.push(`${p}: a private contact address`); break; } }
+    }
+  } };
+  if (priv.size) walk('.');
+  if (bad.length) {
+    console.error(`FATAL: PRIVACY — ${bad.length} place(s) would publish private information (addresses not printed):`);
+    bad.slice(0, 30).forEach(b => console.error('  - ' + b));
+    process.exit(1);
+  }
+  console.log(`  Privacy gate: no address in job notes; 0 private addresses in published files (${priv.size} private, ${published.size} published by organizers)`);
+})();
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);

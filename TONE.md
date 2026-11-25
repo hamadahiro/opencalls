@@ -40,6 +40,14 @@ is what made descriptions grow; it is withdrawn.
 - Keep, in this order: what is actually offered; who can apply when restricted; the one catch (a fee charged on
   selection, rights, AI rule, membership). The tags already show deadline, fee, prize and location — don't repeat them.
 
+## Privacy — enforced by the build (owner, 2026-11-25)
+
+"none private info is public... that the rule". data.json, every page and this repository are public. No email
+address in any job note (write `[address]`); organizers' contact addresses (the private outreach store) are never in
+data.json or a page. The only address a page may show is the application address artists need, written in the
+description, copied from the organizer's own page. No private, scratch or fetched files in the repository: they live
+under `scripts/` (ignored). The build refuses an address in a note and any private address in a published file.
+
 ## Fees — one format, enforced by the build (owner, 2026-11-25)
 
 "if something is paid at the end its not free... its like paying in a restaurant before or after the meal", and
