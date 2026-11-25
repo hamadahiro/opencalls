@@ -14474,6 +14474,7 @@
       "org": "AlternativePhotography.com",
       "deadline": "2026-03-31",
       "fee": "Free",
+      "additionalFees": "AlternativePhotography.com membership (amount not stated)",
       "category": "photography",
       "description": "Annual event inviting artists to introduce colour into monochrome alternative processes — cyanotype, chemigram, anthotype, and more.",
       "url": "https://www.alternativephotography.com/calendar-event/",
@@ -31749,7 +31750,9 @@
       "instagram": "@association_freelens",
       "location": "Online",
       "prize": "€1,000 + Publication",
-      "eligibility": [],
+      "eligibility": [
+        "membership-required"
+      ],
       "submitVia": "Google Form",
       "submitUrl": "https://forms.gle/1B2VDFNRpvts1kkv8",
       "requirements": "1 photo film",
@@ -35843,6 +35846,7 @@
       "org": "Royal Birmingham Society of Artists",
       "deadline": "2026-09-08",
       "fee": "Free",
+      "additionalFees": "RBSA membership (elected, amount not stated)",
       "category": "exhibition",
       "description": "Free members' exhibition taking RBSA work out of the gallery and into Winterbourne House, the Edwardian house and botanic garden in Birmingham, for a four-and-a-half month run from October 10, 2026 to February 28, 2027. Open only to RBSA Members, Associates and Honorary Members; work may have been shown at the RBSA Gallery before, and pieces from the recent Members and Associates Small Works Exhibition are especially welcome. All styles and media are eligible including photography and digital work, where digital technology is an essential part of the artistic process — but not giclee or other reproductions of handmade originals, and not AI-generated images. Every print, digital ones included, must be editioned with the edition size clearly stated. Artists may submit up to four works, with at least two each expected to hang and the Winterbourne House curatorial team selecting if the show is oversubscribed. All work must be under 65cm in every dimension including the frame, made in the past three years, priced at no more than £695 and for sale for the full run. There are no entry fees and no display fees.",
       "url": "https://rbsa.org.uk/call-for-entries/rbsa-on-tour-winterbourne-2026/",
@@ -43173,9 +43177,7 @@
       "instagram": "@greenwichartsociety",
       "location": "Greenwich, CT, USA",
       "prize": "$2,000+ in cash and other awards",
-      "eligibility": [
-        "membership-required"
-      ],
+      "eligibility": [],
       "jury": [
         "Antonia Pocock, Curatorial Assistant, Whitney Museum of American Art"
       ],
@@ -43654,7 +43656,8 @@
       "eligibility": [
         "18-plus",
         "emerging",
-        "mid-career"
+        "mid-career",
+        "membership-required"
       ],
       "submitVia": "Official website",
       "submitUrl": "https://foundwork.art/signup",
@@ -56407,6 +56410,7 @@
       "org": "Maryland Federation of Art",
       "deadline": "2026-11-11",
       "fee": "$45 for 2 works ($30 members), $6.75 each additional",
+      "additionalFees": "$70/year MFA membership (not needed for Anne Arundel County residents)",
       "category": "exhibition",
       "description": "Maryland Federation of Art has been invited to hang a show in the Lowe House of Delegates Office Building at 6 Bladen Street in Annapolis, the working office building for the Maryland State Delegates, and this call fills it for a three-month run from 13 January to 12 April 2027 — a General Assembly session's worth of daily foot traffic from legislators, staff and visitors. Entry is open to MFA members OR to artists residing in Anne Arundel County — the two limbs are an either/or, so a photographer outside the county must join MFA to enter, while a county resident may enter without a membership at the non-member fee. Original two-dimensional work in any medium is eligible, with no dimension exceeding 30 inches in height or 24 inches in width including frame. Photographic prints must have been analogue or digitally processed by the artist, who must have controlled cropping, colour balance, contrast and the final printing, and any limited-edition photographic print must be signed and numbered; work made with image-generative AI is not accepted and no reproductions are. All MFA exhibitions are blind juried, with names and identifying information hidden from the juror. This edition is selected by Teddy Johnson, Academic Chair of Visual Arts and Associate Professor of Visual Arts at Anne Arundel Community College, where he was also Cade Gallery Director from 2017 to 2023; he holds a BFA from MICA and an MFA from the Lamar Dodd School of Art at the University of Georgia, has shown solo at the American Poetry Museum, the Bromo Seltzer Arts Tower and the Museum of the Shenandoah Valley, and has held residencies at La Macina di San Cresci in Chianti in each of the past four years. Awards designated by the juror total $500, presented at a virtual ceremony on Zoom on 20 January 2027. Entry is open to MFA members or to artists residing in Anne Arundel County, Maryland — everyone else needs a membership, currently $70 a year. The entry fee is $45 for one or two works, $30 for members, plus $6.75 each for up to four more ($4.50 for members), and up to six original works made in the past three years may be entered. Work previously exhibited at the Lowe House Office Building is not eligible for re-entry. Artists are notified at 5 PM on 10 December and keep 70 per cent of sales, 75 per cent for members. Founded in 1963, MFA is a non-profit whose Circle Gallery is Maryland's oldest operating artist gallery. MFA retains a 30 percent commission on any work sold through it (25 percent for MFA members), so artists keep 70 or 75 percent of a sale.",
       "url": "https://mdfedart.com/portfolio/lh/",
@@ -63282,7 +63286,7 @@
       "org": "Sedona Arts Center",
       "deadline": "2027-02-05",
       "fee": "$40",
-      "additionalFees": "$70+ Sedona Arts Center Friend-level donation",
+      "additionalFees": "$70+ Sedona Arts Center Friend membership (donor level)",
       "category": "exhibition",
       "description": "Sedona Arts Center's Juried Friends Show and Sale reaches its 46th year in 2027, hanging at the centre's gallery at 15 Art Barn Road in Uptown Sedona from March 5 to April 18, 2027, with an opening reception on March 5, 4–6pm. The theme this year is The Face of Friendship. It is open to artists of all levels working in all mediums — the centre's own exhibition listing names painting, sculpture, photography and digital media — but it is gated by support rather than by residency: every applicant must be a current Sedona Arts Center donor at the Friend level, which starts at $70, at the time of applying. On top of that the entry fee is $40 for one submission of up to three JPEGs at a minimum 300 DPI, cropped to the artwork without mat or frame, with title, dimensions, medium and price listed on the entry form. Artists must be 18 or older, the work must have been made within the last three years, and it cannot have been shown in any previous Sedona Arts Center exhibition. Awards are First Place/Best of Show $500, Second $250 and Third $150, with honourable mentions at the jurors' discretion and a People's Choice award announced at the end of the run. Notifications go out by February 12, 2027 and accepted work must reach Sedona, shipped or hand-delivered, by March 3. Everything in the show must be for sale at a price the artist sets, and the centre retains 40% commission, paying out in the month following a sale. Shipping runs at the artist's expense in both directions: artists pay to get work to Sedona and must supply a USPS, FedEx or UPS prepaid label for the return of unsold work. One eligibility caveat to settle before paying the $40 and the $70 donation: the CaFE record for this call states only '18 years and older', while the centre's own Call to Artists page states eligibility for its juried exhibitions as 'U.S. artists, 18+' — the two surfaces disagree and the broader one is the call's own application document, so non-US photographers should confirm with the centre first. Selected artists are asked to help promote the exhibition; the centre states plainly that it cannot guarantee any particular level of visibility despite its own press, mailing and social-media promotion. Sedona Arts Center has been a creative home in Sedona since 1958 — more than 68 years, by its own count — and its gallery, in its own words, 'represents over 100 professional local and regional artists'; its 2026–27 programme that also includes the Vision and Sound African American experience exhibit, the First Peoples Exhibit and the Big Gay Art Show.",
       "url": "https://opportunities.wearecreativewest.org/opportunity/18352/CAFE",
