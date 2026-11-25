@@ -256,39 +256,53 @@ data.calls.forEach((c, i) => {
         if (v && v.length > 90) err(`"${label}" ${field} is ${v.length} characters — a details value is at most 90 (one line on a desktop screen). Keep the core fact (for a fee: the basic entry price) and put the rest in the description.`);
       }
     }
-    // FEES (owner, 2026-11-25: "if something is paid at the end its not free"): `fee` is what it costs to enter; every
-    // other payment the artist must make — if selected or accepted, a membership or subscription needed to enter, more
-    // images beyond free ones, a deposit — goes in `additionalFees`, saying what it is and when it is paid. Not fees:
-    // sales commission, the artist's own shipping, travel, materials or framing, optional donations. Every call.
-    if (c.fee && /\bif (?:selected|accepted|chosen|shortlisted)\b|\bon (?:acceptance|selection)\b|\bper (?:accepted|selected)\b|\b(?:membership|subscription) (?:is )?required\b/i.test(c.fee))
-      err(`"${label}" fee "${c.fee}" carries a cost that is not the entry fee — move it to additionalFees, saying what it is and when it is paid`);
-    if (c.fee && /^free/i.test(c.fee.trim()) && /(?:[£$€¥]|\b(?:CAD|AUD|NZD|USD|GBP|EUR|CHF|SEK|DKK|NOK|ISK|PLN|CZK|JPY|INR|ZAR|MXN|BRL)\b|\b[A-Z]{1,3}\$)\s?\d/.test(c.fee) && !/optional|voluntary|non-compulsory|suggested/i.test(c.fee))
-      err(`"${label}" fee "${c.fee}" says Free but carries an amount — a cost goes in additionalFees (or the entry is not free)`);
-    if (c.additionalFees !== undefined && (typeof c.additionalFees !== 'string' || !c.additionalFees.trim() || /^free\b/i.test(c.additionalFees.trim())))
-      err(`"${label}" additionalFees must name a cost ("$150 hanging fee if selected", "$45/year WEAD membership"); leave the field out when there is none`);
-    // ONE FORMAT (owner, 2026-11-25: "whatever format you have you must stick to that one"; TONE.md "Fees"):
-    // amount first, then what it is, then when ("if selected"); items joined by "; "; never "required".
-    const FEE_AMT = /^(?:[£$€¥₹]|R(?=\d)|[A-Z]{1,3}\$|(?:CHF|SEK|DKK|NOK|ISK|PLN|CZK|HUF|RON|JPY|INR|ZAR|MXN|BRL|ARS|TWD|MYR|KRW|THB|PHP|IDR|TRY|ILS|AED) )\d/;
-    if (c.fee && !/^(?:Free\b|Pay what you can\b|Fee \(amount not stated\)|Not stated$)/.test(c.fee) && !FEE_AMT.test(c.fee))
-      err(`"${label}" fee "${c.fee}" must start with Free, the amount ("$30", "CA$65", "DKK 100"), "Pay what you can" or "Fee (amount not stated)"`);
-    if (c.fee && /\baddl\b|\bper (?:extra|additional)\b|\beach extra\b|\/\s?\d+ ?(?:images|works|photos)|^PWYC|^From |\+\s?[£$€][\d.,]+ each/i.test(c.fee))
-      err(`"${label}" fee "${c.fee}" — write "$35 for 5 images, $5 each additional" (not addl, per extra, /5 images, + $5 each, PWYC, From)`);
-    // MEMBERSHIP, both or neither: the tag membership-required (who can apply) and a fee item naming the membership or
-    // subscription needed to apply (no "if selected") always come together. The call page shows it once, under
-    // Additional fees; the card shows the tag.
-    const memberTag = (c.eligibility || []).includes('membership-required');
-    const memberFee = (c.additionalFees || '').split('; ').some(i => /\b(?:membership|subscription)\b/i.test(i) && !/\bif (?:selected|shortlisted)\b/i.test(i));
-    if (memberTag && !memberFee) err(`"${label}" is tagged membership-required but additionalFees names no membership ("$45/year WEAD membership", or "HCP membership (amount not stated)")`);
-    if (memberFee && !memberTag) err(`"${label}" additionalFees names a membership needed to apply ("${c.additionalFees}") — add the eligibility tag membership-required (a member DISCOUNT is not a fee)`);
-    if (c.additionalFees) for (const item of c.additionalFees.split('; ')) {
-      if (!FEE_AMT.test(item) && !/^[A-Z][^;]*\((?:[^)]*, )?(?:amount not stated|pay what you can)\)$/.test(item))
-        err(`"${label}" additional fee "${item}" must start with the amount ("$150 hanging fee if selected", "$45/year WEAD membership") or end "(amount not stated)"`);
-      if (/\brequired\b|\bif accepted\b|\bon acceptance\b|\bnot published\b/i.test(item))
-        err(`"${label}" additional fee "${item}" — no "required" (every additional fee must be paid), "if selected" not "if accepted", "(amount not stated)"`);
-    }
-    if (c.additionalFees && c.additionalFees.length > 90)
-      err(`"${label}" additionalFees is ${c.additionalFees.length} characters — a details value is at most 90 (one line on a desktop screen)`);
     if (sWords > 25 || (c.summary || '').length > 140) err(`"${label}" summary is ${sWords} words / ${(c.summary || '').length} chars — at most 25 words and 140 characters, one sentence`);
+  }
+  // FEES AND MEMBERSHIP: every call, open or closed (owner, 2026-11-25: "every call must be accurate").
+  // FEES (owner, 2026-11-25: "if something is paid at the end its not free"): `fee` is what it costs to enter; every
+  // other payment the artist must make — if selected or accepted, a membership or subscription needed to enter, more
+  // images beyond free ones, a deposit — goes in `additionalFees`, saying what it is and when it is paid. Not fees:
+  // sales commission, the artist's own shipping, travel, materials or framing, optional donations. Every call.
+  if (c.fee && /\bif (?:selected|accepted|chosen|shortlisted)\b|\bon (?:acceptance|selection)\b|\bper (?:accepted|selected)\b|\b(?:membership|subscription) (?:is )?required\b/i.test(c.fee))
+    err(`"${label}" fee "${c.fee}" carries a cost that is not the entry fee — move it to additionalFees, saying what it is and when it is paid`);
+  if (c.fee && /^free/i.test(c.fee.trim()) && /(?:[£$€¥]|\b(?:CAD|AUD|NZD|USD|GBP|EUR|CHF|SEK|DKK|NOK|ISK|PLN|CZK|JPY|INR|ZAR|MXN|BRL)\b|\b[A-Z]{1,3}\$)\s?\d/.test(c.fee) && !/optional|voluntary|non-compulsory|suggested/i.test(c.fee))
+    err(`"${label}" fee "${c.fee}" says Free but carries an amount — a cost goes in additionalFees (or the entry is not free)`);
+  if (c.additionalFees !== undefined && (typeof c.additionalFees !== 'string' || !c.additionalFees.trim() || /^free\b/i.test(c.additionalFees.trim())))
+    err(`"${label}" additionalFees must name a cost ("$150 hanging fee if selected", "$45/year WEAD membership"); leave the field out when there is none`);
+  // ONE FORMAT (owner, 2026-11-25: "whatever format you have you must stick to that one"; TONE.md "Fees"):
+  // amount first, then what it is, then when ("if selected"); items joined by "; "; never "required".
+  const FEE_AMT = /^(?:[£$€¥₹]|R(?=\d)|[A-Z]{1,3}\$|(?:CHF|SEK|DKK|NOK|ISK|PLN|CZK|HUF|RON|JPY|INR|ZAR|MXN|BRL|ARS|TWD|MYR|KRW|THB|PHP|IDR|TRY|ILS|AED) )\d/;
+  if (c.fee && !/^(?:Free\b|Pay what you can\b|Fee \(amount not stated\)|Not stated$)/.test(c.fee) && !FEE_AMT.test(c.fee))
+    err(`"${label}" fee "${c.fee}" must start with Free, the amount ("$30", "CA$65", "DKK 100"), "Pay what you can" or "Fee (amount not stated)"`);
+  if (c.fee && /\baddl\b|\bper (?:extra|additional)\b|\beach extra\b|\/\s?\d+ ?(?:images|works|photos)|^PWYC|^From |\+\s?[£$€][\d.,]+ each/i.test(c.fee))
+    err(`"${label}" fee "${c.fee}" — write "$35 for 5 images, $5 each additional" (not addl, per extra, /5 images, + $5 each, PWYC, From)`);
+  // MEMBERSHIP, both or neither: the tag membership-required (who can apply) and a fee item naming the membership or
+  // subscription needed to apply (no "if selected") always come together. The call page shows it once, under
+  // Additional fees; the card shows the tag.
+  const memberTag = (c.eligibility || []).includes('membership-required');
+  const memberFee = (c.additionalFees || '').split('; ').some(i => /\b(?:membership|subscription)\b/i.test(i) && !/\bif (?:selected|shortlisted)\b/i.test(i));
+  if (memberTag && !memberFee) err(`"${label}" is tagged membership-required but additionalFees names no membership ("$45/year WEAD membership", or "HCP membership (amount not stated)")`);
+  if (memberFee && !memberTag) err(`"${label}" additionalFees names a membership needed to apply ("${c.additionalFees}") — add the eligibility tag membership-required (a member DISCOUNT is not a fee)`);
+  if (c.additionalFees) for (const item of c.additionalFees.split('; ')) {
+    if (!FEE_AMT.test(item) && !/^[A-Z][^;]*\((?:[^)]*, )?(?:amount not stated|pay what you can)\)$/.test(item))
+      err(`"${label}" additional fee "${item}" must start with the amount ("$150 hanging fee if selected", "$45/year WEAD membership") or end "(amount not stated)"`);
+    if (/\brequired\b|\bif accepted\b|\bon acceptance\b|\bnot published\b/i.test(item))
+      err(`"${label}" additional fee "${item}" — no "required" (every additional fee must be paid), "if selected" not "if accepted", "(amount not stated)"`);
+  }
+  if (c.additionalFees && c.additionalFees.length > 90)
+    err(`"${label}" additionalFees is ${c.additionalFees.length} characters — a details value is at most 90 (one line on a desktop screen)`);
+  // ONE FORMAT, every call (owner, 2026-11-25: "whatever format you have you must stick to that one"; TONE.md "Fees").
+  // The whole fee is read, not only how it starts: amount, then "per …" or "for N …", then ", $5 each additional" /
+  // ", $45 for 10" / ", $80 per series", then one bracket note (commas inside). Ranges with an en dash; CA$ not "$20 CAD".
+  // A range: the symbol on both ends ("€15–€35"); a currency code once ("SEK 250–500").
+  const SYM = String.raw`(?:(?:CA|A|NZ|S|HK)?\$|£|€|¥|₹|R(?=\d))\d[\d,]*(?:\.\d\d?)?`, NUM = String.raw`\d[\d,]*(?:\.\d\d?)?`;
+  const AR = String.raw`(?:${SYM}(?:–${SYM})?|[A-Z]{3} ${NUM}(?:–${NUM})?)\+?`, U = String.raw`[a-z][a-z\- ]*`, N = String.raw`\d+(?:–\d+)?`;
+  const FEE_SHAPE = new RegExp(String.raw`^(?:Not stated|Pay what you can|Fee \(amount not stated\)|Free(?: \((?:\d+|one) [a-z ]+\)| \(voluntary(?: ${AR})? donation\))?|${AR}(?: per ${U}| for (?:up to )?${N}(?: ${U})?)?(?:, ${AR} (?:each additional(?: ${U})?|per ${U}|for (?:up to )?${N}(?: ${U})?))*(?: \([^();]*\))?)$`);
+  if (c.fee && !FEE_SHAPE.test(c.fee))
+    err(`"${label}" fee "${c.fee}" is not in the one format (TONE.md "Fees"): "$30", "$30 per image", "$35 for 5 images, $5 each additional", "$40 for 5 images, $45 for 10", "$35 ($25 members, $45 after Dec 1)", "Free (1 image)", "Free (voluntary €10 donation)" — one bracket note at the end, commas inside`);
+  for (const [field, v] of [['fee', c.fee], ['additionalFees', c.additionalFees]]) {
+    if (v && /\d\s?-\s?(?:[£$€¥₹]|[A-Z]{1,3}\$)?\d/.test(v)) err(`"${label}" ${field} "${v}" — a range takes an en dash with the symbol on both ends ("$35–$55")`);
+    if (v && /\d\s?(?:CAD|AUD|USD|NZD|SGD|HKD)\b|\b(?:CAD|AUD|USD|NZD)\s?\$/.test(v)) err(`"${label}" ${field} "${v}" — write CA$20, A$35, $95 (not "$20 CAD", "AUD$35", "$95 USD")`);
   }
 });
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }

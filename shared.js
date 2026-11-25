@@ -329,10 +329,20 @@ function shortenFee(fee) {
   else if ((m = s.match(/^(CAD|AUD|NZD|HKD|SGD|USD)\s?\$?\s?(\d[\d.,]*)/))) { cur = DOLLAR[m[1]]; num = m[2]; }
   else if ((m = s.match(/^\$\s?(\d[\d.,]*)\s?(CAD|AUD|NZD|HKD|SGD|USD)\b/))) { cur = DOLLAR[m[2]]; num = m[1]; }
   else if ((m = s.match(new RegExp('^(' + CODES + ')\\s?(\\d[\\d.,]*)(?:\\s*[–-]\\s*(\\d[\\d.,]*))?', 'i')))) { cur = m[1].toUpperCase() + ' '; num = m[2]; to = m[3]; }
+  // "+" means the price can rise above the amount shown (owner, 2026-11-25, Bora F19: "$30+ fee" was shown for one fixed
+  // price): a price per item, "each additional", or a later amount in the same currency that is higher. A lower members'
+  // or students' price, a waiver or a free subscriber entry is no "+".
+  var rises = function(base, symRe) {
+    if (/\bper\b|\badditional\b|\bmore\b/i.test(s)) return true;
+    var n0 = parseFloat(strip(base).replace(/,/g, '')), re = new RegExp(symRe + '\\s?(\\d[\\d,]*(?:\\.\\d+)?)', 'g'), a;
+    while ((a = re.exec(s))) if (parseFloat(strip(a[1]).replace(/,/g, '')) > n0) return true;
+    return false;
+  };
   if (cur) {
     var whole = m[0].length >= s.replace(/\s+fee$/i, '').length;
-    if (to) return cur + strip(num) + '–' + (cur.slice(-1) === '$' ? cur : '') + strip(to) + (whole ? '' : '+');
-    return cur + strip(num) + (whole ? '' : '+');
+    var curRe = cur.replace(/\$/, '\\$').replace(/ $/, '');
+    if (to) return cur + strip(num) + '–' + (cur.slice(-1) === '$' ? cur : '') + strip(to) + (whole || !rises(to, curRe) ? '' : '+');
+    return cur + strip(num) + (whole || !rises(num, curRe) ? '' : '+');
   }
   var range = s.match(/^([£$€¥R])\s?(\d[\d.,]*)\s*[–-]\s*([£$€¥R])?\s?(\d[\d.,]*)$/);
   if (range) return range[1] + strip(range[2]) + '–' + (range[3] || range[1]) + strip(range[4]);
@@ -344,7 +354,7 @@ function shortenFee(fee) {
   if (!first) return s;
   var amount = sym + strip(first[1]);
   var isBare = new RegExp('^\\' + sym + '\\s?\\d[\\d.,]*( fee)?$', 'i').test(s);
-  return isBare ? amount : amount + '+';
+  return isBare || !rises(first[1], sym === 'R' ? 'R' : '\\' + sym) ? amount : amount + '+';
 }
 
 // The kind of fee, read from the two fields (owner, 2026-11-25: "if something is paid at the end its not free"):
@@ -554,21 +564,9 @@ function renderInfoGrid(call, opts) {
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
   // Results last: it says when you hear back, after everything about entering (owner, 2026-11-24).
-  if (call.resultsDate) {
-    const resultsPast = (function(s) {
-      const months = {january:0,february:1,march:2,april:3,may:4,june:5,july:6,august:7,september:8,october:9,november:10,december:11,jan:0,feb:1,mar:2,apr:3,jun:5,jul:6,aug:7,sep:8,sept:8,oct:9,nov:10,dec:11};
-      const clean = s.replace(/^[~≈]/, '').replace(/^(After|Early|Mid-?|Late|End of)\s*/i, '');
-      const my = clean.match(/([A-Za-z]+)[\s\d,]+(\d{4})/);
-      if (!my) return false;
-      const mi = months[my[1].toLowerCase()];
-      if (mi === undefined) return false;
-      const yr = parseInt(my[2]);
-      const dm = clean.match(/(\d{1,2})[,\s-]/);
-      const day = dm ? parseInt(dm[1]) : new Date(yr, mi + 1, 0).getDate();
-      return new Date(yr, mi, day, 23, 59) < new Date();
-    })(call.resultsDate);
-    rows.push(infoRow('Results', esc(call.resultsDate) + (resultsPast ? ' (announced)' : '')));
-  }
+  // The date as the organiser states it, and nothing more. "(announced)" was printed once the date had passed, read from
+  // the date alone; nobody checks whether results came out (audit 2026-11-25, C01: false on /format27-photobook-market/).
+  if (call.resultsDate) rows.push(infoRow('Results', esc(call.resultsDate)));
 
   return rows.join('');
 }

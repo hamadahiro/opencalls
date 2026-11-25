@@ -62,8 +62,12 @@ with their letters: `CA$65`, `A$20`, `NZ$30`, `S$120`; every other currency as i
 (`Not stated` when nobody knows). The shapes:
 - `Free`, `Free (1 image)`, `Free (voluntary €5 donation)`
 - `$30`, `$30 per image`, `$35 for 5 images`, `$35 for up to 3 works`, `$35 for 5 images, $5 each additional`,
-  `$40 for 5 images, $45 for 10`, `$35 ($25 members)` — "each additional", "for 5 images", members in brackets;
-  never addl, per extra, /5 images, + $5 each, PWYC, From.
+  `$40 for 5 images, $45 for 10`, `$40 per image, $80 per series`, `$35 ($25 members)` — "each additional",
+  "for 5 images", members in brackets; never addl, per extra, /5 images, + $5 each, PWYC, From.
+- One bracket note at the end carries everything else, commas inside: `$35 ($25 members, $45 after Dec 1)`,
+  `$15 for up to 3 images (fee waivers available)`, `€25–€45 for 3–15 images (€30–€50 after Nov 30)`.
+- `Free (voluntary donation)` when the amount is left to the artist.
+The build reads the WHOLE fee against these shapes, on every call, open or closed (generate-pages.js, "ONE FORMAT").
 
 **additionalFees** — every other payment the artist must make; left out when there is none; at most 90 characters.
 Each item: the amount, then what it is (lowercase), then when; items joined by `; `; notes in brackets at the end, with
@@ -83,7 +87,8 @@ and an additionalFees item naming it, or neither (the build refuses one alone). 
 says "Membership required" (who can apply) and Additional fees says the price, "$45/year WEAD membership" (what it costs).
 
 Cards show `Free` (nothing to pay at any stage), `Free entry*` (free to enter, additional fees), `$30 fee`,
-`$30 fee*` (additional fees), `Paid entry` (amount not stated). The call page shows "Entry fee" and "Additional fees".
+`$30+ fee` (the price rises: per image, each additional, or a later higher amount — never for a lower members' price
+or a waiver), `$30 fee*` (additional fees), `Paid entry` (amount not stated). The call page shows "Entry fee" and "Additional fees".
 
 ## Tags — enforced by the build (owner, 2026-11-16)
 
