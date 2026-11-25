@@ -288,6 +288,7 @@ main {
   gap: 8px;
   padding: 16px 0;
   margin-bottom: 8px;
+  margin-left: calc(var(--search-pad-x) - var(--hang) - var(--filter-pad-x));   /* "All" starts where the search text starts (owner, 2026-11-25) */
   scrollbar-width: none;
 }
 
@@ -299,7 +300,7 @@ main {
 .filter-btn {
   background: none;
   border: none;
-  padding: 8px 14px;
+  padding: 8px var(--filter-pad-x);
   font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
@@ -342,7 +343,7 @@ main {
   background: #fff;
   border: none;
   border-radius: 999px;
-  padding: 14px 20px;
+  padding: 14px var(--search-pad-x);
   padding-right: 44px;
   font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
@@ -774,7 +775,7 @@ a.call-date:not(.dl-band):hover {
 
   .search-bar {
     font-size: 16px;
-    padding: 12px 44px 12px 16px;
+    padding: 12px 44px 12px var(--search-pad-x);
   }
 
   .header-inner {
@@ -852,7 +853,7 @@ a.call-date:not(.dl-band):hover {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     gap: 0;
-    padding: 12px 20px;     /* 20 + the word's 10: the first word lines up with the search placeholder */
+    padding: 12px 20px 12px calc(16px + var(--search-pad-x) - var(--hang) - var(--filter-pad-x));   /* 16 undoes the margin below; then "All" starts where the search text starts */
     margin-left: -16px;
     margin-right: -16px;
     margin-bottom: 4px;
@@ -861,7 +862,7 @@ a.call-date:not(.dl-band):hover {
 
   .filter-btn {
     flex: 0 0 auto;
-    padding: 8px 10px;      /* words 20 px apart on phones (owner, 2026-11-25) */
+    padding: 8px var(--filter-pad-x);      /* words 20 px apart on phones (owner, 2026-11-25) */
   }
 
   .call-card {
@@ -1576,5 +1577,68 @@ a.filter-btn {
 
   .about-intro {
     max-width: calc(50% - 32px);    /* the width of the first column */
+  }
+}
+
+/* === Bubbles hang past the text edge (owner, 2026-11-25) ===
+   A rounded box whose edge sits on the text edge looks set in: its round end curves away from the line.
+   So every bubble that lines up with text starts --hang to the left of it, and a full-width one hangs as
+   much on the right; the text itself never moves. Bubbles: the chips, the search bar, the submit form's
+   fields, the call page and submit buttons. A new bubble that lines up with text belongs in this list;
+   runs/opencalls/bubble-hang-2026-11-25/check-hang.mjs fails on any bubble that sits on the text edge.
+   The filter words under the home search are text, and start where the search text starts (.filters). */
+:root {
+  --hang: 5px;
+  --search-pad-x: 20px;     /* the search text's distance from the bar's edge */
+  --filter-pad-x: 14px;     /* half the space between two filter words */
+}
+
+@media (max-width: 640px) {
+  :root {
+    --search-pad-x: 16px;
+    --filter-pad-x: 10px;
+  }
+}
+
+.call-meta,
+.calls-list .call-meta,
+#similarCalls .call-meta {
+  margin-left: calc(-1 * var(--hang));      /* the whole row, so a second line of chips hangs too */
+}
+
+.search-wrap {
+  margin-left: calc(-1 * var(--hang));
+  margin-right: calc(-1 * var(--hang));
+}
+
+.global-search {
+  padding-left: calc(24px - var(--hang));
+  padding-right: calc(24px - var(--hang));
+}
+
+body:not(.search-active) .global-search.in-hero {
+  margin-left: calc(-1 * var(--hang));
+  margin-right: calc(-1 * var(--hang));
+}
+
+.submit-form .search-bar {
+  margin-left: calc(-1 * var(--hang));
+  width: calc(100% + 2 * var(--hang));
+}
+
+.call-detail-actions,
+.submit-form button,
+#submitThanks .call-detail-btn {
+  margin-left: calc(-1 * var(--hang));
+}
+
+@media (max-width: 640px) {
+  .call-detail-actions {
+    margin-right: calc(-1 * var(--hang));   /* the buttons are full width on phones */
+  }
+
+  .submit-form button,
+  #submitThanks .call-detail-btn {
+    width: calc(100% + 2 * var(--hang));
   }
 }
