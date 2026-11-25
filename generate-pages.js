@@ -288,6 +288,13 @@ data.calls.forEach((c, i) => {
       err(`"${label}" fee "${c.fee}" must start with Free, the amount ("$30", "CA$65", "DKK 100"), "Pay what you can" or "Fee (amount not stated)"`);
     if (c.fee && /\baddl\b|\bper (?:extra|additional)\b|\beach extra\b|\/\s?\d+ ?(?:images|works|photos)|^PWYC|^From |\+\s?[£$€][\d.,]+ each/i.test(c.fee))
       err(`"${label}" fee "${c.fee}" — write "$35 for 5 images, $5 each additional" (not addl, per extra, /5 images, + $5 each, PWYC, From)`);
+    // MEMBERSHIP, both or neither: the tag membership-required (who can apply) and a fee item naming the membership or
+    // subscription needed to apply (no "if selected") always come together. The call page shows it once, under
+    // Additional fees; the card shows the tag.
+    const memberTag = (c.eligibility || []).includes('membership-required');
+    const memberFee = (c.additionalFees || '').split('; ').some(i => /\b(?:membership|subscription)\b/i.test(i) && !/\bif (?:selected|shortlisted)\b/i.test(i));
+    if (memberTag && !memberFee) err(`"${label}" is tagged membership-required but additionalFees names no membership ("$45/year WEAD membership", or "HCP membership (amount not stated)")`);
+    if (memberFee && !memberTag) err(`"${label}" additionalFees names a membership needed to apply ("${c.additionalFees}") — add the eligibility tag membership-required (a member DISCOUNT is not a fee)`);
     if (c.additionalFees) for (const item of c.additionalFees.split('; ')) {
       if (!FEE_AMT.test(item) && !/^[A-Z][^;]*\((?:[^)]*, )?(?:amount not stated|pay what you can)\)$/.test(item))
         err(`"${label}" additional fee "${item}" must start with the amount ("$150 hanging fee if selected", "$45/year WEAD membership") or end "(amount not stated)"`);

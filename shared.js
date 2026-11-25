@@ -525,9 +525,10 @@ function renderInfoGrid(call, opts) {
     if (call.additionalFees) rows.push(infoRow('<a href="/fees/">Additional fees</a>', page ? infoLink(page, call.additionalFees) : infoVal(call.additionalFees)));
   }
 
-  // A membership is said once on a call page: in Additional fees, with its price (owner, 2026-11-25). The tag stays on
-  // the card and on /eligibility/membership-required/.
-  const elig = (call.eligibility || []).filter(e => !(e === 'membership-required' && /\b(?:membership|subscription)\b/i.test(call.additionalFees || '')));
+  // A membership needed to apply is said once on a call page, always in the same row: Additional fees, with its price
+  // (owner, 2026-11-25). Never under Eligibility, on any call page. The build keeps the tag and the fee item together
+  // (both or neither), so this needs no exception. The tag stays on the card and on /eligibility/membership-required/.
+  const elig = (call.eligibility || []).filter(e => e !== 'membership-required');
   if (elig.length) {
     const eligHtml = elig.map(e => infoLink('/eligibility/' + e, eligibilityLabel[e] || e)).join(', ');
     rows.push(infoRow('<a href="/eligibility/">Eligibility</a>', eligHtml));

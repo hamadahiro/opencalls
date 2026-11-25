@@ -70,7 +70,9 @@ commas inside (never a semicolon):
 
 What is not a fee: sales commission, the artist's own shipping, travel, materials or framing, optional add-ons, money
 the organiser PAYS the artist (a "participation fee" paid to selected artists is a prize). A member discount is not an
-additional fee; a membership needed to enter is.
+additional fee; a membership needed to enter is — and then it is ALWAYS both the eligibility tag `membership-required`
+and an additionalFees item naming it, or neither (the build refuses one alone). The call page shows it once, under
+Additional fees, on every call; the card shows the tag.
 
 Cards show `Free` (nothing to pay at any stage), `Free entry*` (free to enter, additional fees), `$30 fee`,
 `$30 fee*` (additional fees), `Paid entry` (amount not stated). The call page shows "Entry fee" and "Additional fees";
