@@ -121,12 +121,12 @@
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       selectedSuggestion = Math.min(selectedSuggestion + 1, items.length - 1);
-      items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--card-bg-hover)' : ''; });
+      items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--sel-bg)' : ''; });
       if (selectedSuggestion >= 0) items[selectedSuggestion].scrollIntoView({ block: 'nearest' });
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       selectedSuggestion = Math.max(selectedSuggestion - 1, -1);
-      items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--card-bg-hover)' : ''; });
+      items.forEach(function(el, i) { el.style.background = i === selectedSuggestion ? 'var(--sel-bg)' : ''; });
       if (selectedSuggestion >= 0) items[selectedSuggestion].scrollIntoView({ block: 'nearest' });
     } else if (e.key === 'Enter') {
       e.preventDefault();

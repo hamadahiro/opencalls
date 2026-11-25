@@ -31,6 +31,8 @@
   --card-bg-hover: #ddd9d3;
   --surface: #fff;
   --surface-hover: rgba(255, 255, 255, 0.9);
+  --search-bg: #fff;          /* the search bar, its suggestions and the submit form's fields */
+  --search-hover: #f0f0f0;    /* a suggestion under the pointer or picked with the arrow keys */
   --border: #ddd;
   --btn-bg: #111;
   --btn-text: #fff;
@@ -62,6 +64,8 @@
     --card-bg-hover: #3a3a3a;
     --surface: #2a2a2a;
     --surface-hover: #333;
+    --search-bg: #e1e1e1;        /* #fff was too bright on the dark page (owner, 2026-11-25) */
+    --search-hover: #d2d2d2;
     --border: #333;
     --btn-bg: #cdcdcd;
     --btn-text: #151515;
@@ -341,7 +345,7 @@ main {
 .search-bar {
   display: block;
   width: 100%;
-  background: #fff;
+  background: var(--search-bg);
   border: none;
   border-radius: 999px;
   padding: 14px var(--search-pad-x);
@@ -392,7 +396,8 @@ main {
   right: 0;
   top: 100%;
   z-index: 100;
-  background: #fff;
+  background: var(--search-bg);
+  --sel-bg: var(--search-hover);   /* search.js paints the arrow-key pick with this */
   color: #151515;
   box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.12);
   max-height: 320px;
@@ -410,7 +415,7 @@ main {
 }
 
 .search-dropdown .search-suggestion:hover {
-  background: #f0f0f0 !important;
+  background: var(--search-hover) !important;
 }
 
 .search-dropdown a[style] {
@@ -420,7 +425,7 @@ main {
 }
 
 .search-dropdown a[style]:hover {
-  background: #f0f0f0;
+  background: var(--search-hover);
 }
 
 .search-clear {
@@ -936,6 +941,7 @@ a.call-date:not(.dl-band):hover {
   }
 
   .search-active .search-dropdown {
+    --sel-bg: var(--card-bg-hover);   /* the phone overlay is page-coloured, so its pick is a card colour */
     position: static !important;
     width: 100%;
     max-height: none !important;
