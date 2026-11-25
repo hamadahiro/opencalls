@@ -577,8 +577,7 @@ a.call-date:not(.dl-band):hover {
 }
 
 .calls-list .call-description {
-  max-width: 46em;          /* 920 px: the line stays readable on a wide screen */
-  text-wrap: pretty;        /* no lone last word where the browser supports it */
+  text-wrap: pretty;        /* no lone last word where the browser supports it; full width as before (owner, 2026-11-25) */
 }
 
 .calls-list .call-meta {
