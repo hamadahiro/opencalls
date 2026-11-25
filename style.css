@@ -294,29 +294,28 @@ main {
   display: none;
 }
 
+/* Plain words, no bubbles (owner, 2026-11-25): dim text, the current one strong and bold, like every link. */
 .filter-btn {
-  background: var(--surface);
+  background: none;
   border: none;
-  border-radius: 999px;
   padding: 8px 14px;
   font-size: var(--fs-btn);
   font-family: helvetica, sans-serif;
   letter-spacing: 0.3px;
   cursor: pointer;
   color: var(--text);
-  transition: all 0.15s ease;
-  flex: 1;
+  transition: color 0.15s ease;
+  flex: 0 0 auto;
   white-space: nowrap;
 }
 
 .filter-btn:hover {
-  background: var(--surface-hover);
+  color: var(--link);
 }
 
 .filter-btn.active {
   font-weight: 700;
-  background: var(--btn-bg);
-  color: var(--btn-text);
+  color: var(--link);
 }
 
 /* === Search === */
