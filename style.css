@@ -572,15 +572,18 @@ a.call-date:not(.dl-band):hover {
   text-decoration: underline;
 }
 
-.calls-list .call-title {
+.calls-list .call-title,
+#similarCalls .call-title {
   margin-bottom: 8px;
 }
 
-.calls-list .call-description {
+.calls-list .call-description,
+#similarCalls .call-description {
   text-wrap: pretty;        /* no lone last word where the browser supports it; full width as before (owner, 2026-11-25) */
 }
 
-.calls-list .call-meta {
+.calls-list .call-meta,
+#similarCalls .call-meta {
   margin: 12px 0 0;         /* the chips' own gap */
 }
 

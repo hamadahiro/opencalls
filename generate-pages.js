@@ -811,13 +811,14 @@ function buildStaticSimilarCalls(call, allCalls) {
   }).slice(0, 6);
   if (top.length < 2) return '';
 
+  // The same card as the lists (owner, 2026-11-25): the date opens the description, fee / prize / who may enter under it.
+  const now = new Date();
   let html = '<h2 class="section-header">More like this</h2>';
   top.forEach(s => {
     const c = s.call;
     const slug = c.slug || slugify(c.title);
     const title = c.orgInTitle ? escapeHtml(c.title) : escapeHtml(c.title) + ' &middot; ' + escapeHtml(c.org);
-    const desc = escapeHtml(c.summary || c.description || '');
-    html += `<div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3><p class="call-description">${desc}</p></div>`;
+    html += `<div class="call-card"><h3 class="call-title"><a href="/${slug}/">${title}</a></h3>${renderCardBody(c, { esc: escapeHtml, urgency: computeUrgency(c, now) })}</div>`;
   });
   return html;
 }
