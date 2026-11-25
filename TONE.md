@@ -40,6 +40,24 @@ is what made descriptions grow; it is withdrawn.
 - Keep, in this order: what is actually offered; who can apply when restricted; the one catch (a fee charged on
   selection, rights, AI rule, membership). The tags already show deadline, fee, prize and location — don't repeat them.
 
+## Fees — enforced by the build (owner, 2026-11-25)
+
+"if something is paid at the end its not free... its like paying in a restaurant before or after the meal". Two fields:
+
+- **fee** — what it costs to enter: `Free`, or the price (`$30`, `$35 (up to 3 entries; $25 members)`,
+  `Free (1 image)`). An optional donation may stay: `Free (voluntary €5 donation)`.
+- **additionalFees** — every other payment the artist must make, saying what it is and when it is paid:
+  `$150 hanging fee if selected`, `£65+ digital, £165+ physical if selected`, `WEAD membership required: $45/year`,
+  `£8 per additional image`, `$100 refundable deposit if accepted`, `€900/month if selected` (self-funded residency).
+  Leave the field out when there is none. At most 90 characters.
+- Not fees: sales commission, the artist's own shipping, travel, materials or framing, optional add-ons. Money the
+  organiser PAYS the artist ("a €500 participation fee for selected artists") is a prize, not a fee — read which way
+  it goes.
+- A membership needed to enter is an additional fee, even when entry itself is free. A member discount is not.
+- Cards show `Free` (nothing to pay at any stage), `Free entry*` (free to enter, additional fees), `$30 fee` or
+  `$30 fee*`; the call page shows both rows. The build refuses a cost written into `fee` ("if selected",
+  "membership required") and an amount after `Free` that is not optional.
+
 ## Tags — enforced by the build (owner, 2026-11-16)
 
 "tags is for 1 or sometimes 2 words not whole sentences". `prize` is split on " + " into tags:

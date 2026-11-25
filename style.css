@@ -1132,7 +1132,7 @@ a.call-date:not(.dl-band):hover {
     display: none;
   }
   .info-label {
-    flex: 0 0 7em;          /* "Requirements" measures 120.6 px at 18 px; 7em = 126 px */
+    flex: 0 0 7.25em;       /* "Additional fees", the widest label, measures 128.9 px at 18 px; 7.25em = 130.5 px (was 7em for "Requirements", 120.6 px) */
   }
   .info-value {
     flex: 1 1 9.25em;       /* 166.5 px: "September 30, 2026" measures 163.6 px, so a date never breaks */

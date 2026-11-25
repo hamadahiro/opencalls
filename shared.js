@@ -515,7 +515,7 @@ function renderInfoGrid(call, opts) {
   // Two rows (owner, 2026-11-25): what it costs to enter, and every other payment — if selected, a membership, more images.
   if (call.fee) {
     rows.push(infoRow('<a href="/fees/">Entry fee</a>', infoLink(feePage[feeKind(call)], call.fee)));
-    if (call.additionalFees) rows.push(infoRow('Additional fees', infoVal(call.additionalFees)));
+    if (call.additionalFees) rows.push(infoRow('<a href="/fees/">Additional fees</a>', infoLink(feePage[feeKind(call)], call.additionalFees)));
   }
 
   if (call.eligibility && call.eligibility.length) {

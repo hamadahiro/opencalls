@@ -533,9 +533,9 @@ function buildIndexItems(entries, opts = {}) {
   const fmt = opts.labelHtml || (l => escapeHtml(l));
   const byCount = (a, b) => listedCount(b) - listedCount(a) || a.label.localeCompare(b.label);
   const byLabel = (a, b) => a.label.localeCompare(b.label);
-  const sort = opts.sort === 'label' ? byLabel : byCount;
-  const live = entries.filter(e => e.open > 0).sort(sort);
-  const archived = entries.filter(e => !e.open).sort(sort);
+  const sort = opts.sort === 'label' ? byLabel : opts.sort === 'given' ? null : byCount;   // 'given': keep the order passed in
+  const live = entries.filter(e => e.open > 0); if (sort) live.sort(sort);
+  const archived = entries.filter(e => !e.open); if (sort) archived.sort(sort);
   let html = '';
   // `letterIds`: the first row of each letter carries its id (the letters on /browse/ link to it).
   const seen = new Set();
@@ -1252,7 +1252,7 @@ const feeIndexItems = buildIndexItems([
   { href: '/fees/free/', label: 'Free', ...listStats(data.calls.filter(feeFilters['free'])) },
   { href: '/fees/free-entry/', label: 'Free Entry, Additional Fees', ...listStats(data.calls.filter(feeFilters['free-entry'])) },
   { href: '/fees/entry-fee/', label: 'Entry Fee', ...listStats(data.calls.filter(feeFilters['entry-fee'])) }
-]);
+], { sort: 'given' });   // Free, Free entry, Entry fee: from nothing to pay to paying (owner, 2026-11-25)
 const feesIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
