@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126d">
+  <link rel="stylesheet" href="/style.css?v=20261126e">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -120,11 +122,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/lowe-house-2027-maryland-federation-of-art/">Lowe House 2027 · Maryland Federation of Art</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;14&nbsp;days</a> – Three months in the Maryland State Delegates' office building, juried by an AACC visual arts chair. $500 in awards; MFA members or Anne Arundel County residents.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 2 works, $6.75 each additional ($30 members). Additional fees: $70/year MFA membership (not needed for Anne Arundel County residents)">$45+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;14&nbsp;days</a> – Three months in the Maryland State Delegates' office building, juried by an AACC visual arts chair. $500 in awards; MFA members or Anne Arundel County residents.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 2 works, $6.75 each additional ($30 members). Additional fees: $70/year MFA membership (not needed for Anne Arundel County residents)">$45+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/rbsa-friends-exhibition-2027-royal-birmingham-society-of-artists/">RBSA Friends Exhibition 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;8&nbsp;days</a> – RBSA Gallery's annual Friends show in Birmingham — photography named, free entry for subscribers, up to three 2D works.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: £47/year RBSA Friends membership; £15–£23 display fee per work if selected (half if ≤35)">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;8&nbsp;days</a> – RBSA Gallery's annual Friends show in Birmingham — photography named, free entry for subscribers, up to three 2D works.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: £47/year RBSA Friends membership; £15–£23 display fee per work if selected (half if ≤35)">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/members-only-2026-k-space-contemporary/">Members Only 2026 · K Space Contemporary</a></h4>
@@ -140,7 +142,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/home-fires-37th-annual-members-show-tulsa-artists-coalition/">Home Fires: 37th Annual Members' Show · Tulsa Artists' Coalition</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;9&nbsp;days</a> – TAC Gallery's 37th members' show, all media, free with a $35 membership buyable at entry; Grand Prize + 3 juror cash awards, January 2027.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: $35+ TAC membership ($15 students)">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;9&nbsp;days</a> – TAC Gallery's 37th members' show, all media, free with a $35 membership buyable at entry; Grand Prize + 3 juror cash awards, January 2027.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: $35+ TAC membership ($15 students)">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/solace-in-silence-lightbox-photographic-gallery/">Solace in Silence · LightBox Photographic Gallery</a></h4>
@@ -156,7 +158,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/winter-member-show-2027-maryland-federation-of-art/">Winter Member Show 2027 · Maryland Federation of Art</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;7&nbsp;days</a> – MFA's winter members' show at Circle Gallery, Annapolis. Members only, $70 a year. $700 in cash awards; blind juried, any 2D or 3D work.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 for 2 works, $4.50 each additional. Additional fees: $70/year MFA membership">$30+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$700</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/north-america/" class="meta-tag meta-tag-link" title="US, Canada &amp; Mexico only">North America</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;7&nbsp;days</a> – MFA's winter members' show at Circle Gallery, Annapolis. Members only, $70 a year. $700 in cash awards; blind juried, any 2D or 3D work.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 for 2 works, $4.50 each additional. Additional fees: $70/year MFA membership">$30+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$700</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/north-america/" class="meta-tag meta-tag-link" title="US, Canada &amp; Mexico only">North America</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-winter-show-2026-palos-verdes-art-center/">The Winter Show 2026 · Palos Verdes Art Center</a></h4>
@@ -233,15 +235,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126d"></script>
-  <script src="/cards.js?v=20261126d"></script>
-  <script src="/search.js?v=20261126d"></script>
+  <script src="/shared.js?v=20261126e"></script>
+  <script src="/cards.js?v=20261126e"></script>
+  <script src="/search.js?v=20261126e"></script>
 
 </body>
 </html>

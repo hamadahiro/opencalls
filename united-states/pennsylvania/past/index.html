@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126d">
+  <link rel="stylesheet" href="/style.css?v=20261126e">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -79,6 +79,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -90,6 +91,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -99,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -114,7 +116,7 @@
       <h3 class="section-header">November 2026</h3>
       <div class="call-card">
         <h4 class="call-title"><a href="/2026-automat-open-call-automat-collective/">2026 AUTOMAT Open Call</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;2&nbsp;days</a> – Members-curated group show at Philadelphia's AUTOMAT co-op gallery, any medium, $25 with a $10 hardship tier.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 ($10 reduced tier)">$25 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/philadelphia/" class="meta-tag meta-tag-link">Philadelphia only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a> <a href="/eligibility/mid-career/" class="meta-tag meta-tag-link">Mid-career</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;2&nbsp;days</a> – Members-curated group show at Philadelphia's AUTOMAT co-op gallery, any medium, $25 with a $10 hardship tier.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 ($10 reduced tier)">$25 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/philadelphia/" class="meta-tag meta-tag-link">Philadelphia only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a> <a href="/eligibility/mid-career/" class="meta-tag meta-tag-link">Mid-career</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2026-velocity-fund-project-grants-the-velocity-fund/">2026 Velocity Fund Project Grants</a></h4>
@@ -126,16 +128,16 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/going-green-mva-gallery/">GOING GREEN · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;on&nbsp;Feb&nbsp;11,&nbsp;2027</a> – MVA Gallery's national call built on one colour. All photographic processes welcome, $200 and a New York show in play.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Feb&nbsp;11,&nbsp;2027</a> – MVA Gallery's national call built on one colour. All photographic processes welcome, $200 and a New York show in play.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-landscape-serene-and-savage-mva-gallery/">The Landscape: Serene and Savage · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;on&nbsp;Jan&nbsp;26,&nbsp;2027</a> – MVA Gallery's national landscape show in Bethlehem, PA — serene or savage, photography welcome. $200 award and an NYC exhibition prize.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="NYC exhibition opportunity">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Jan&nbsp;26,&nbsp;2027</a> – MVA Gallery's national landscape show in Bethlehem, PA — serene or savage, photography welcome. $200 award and an NYC exhibition prize.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="NYC exhibition opportunity">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <h3 class="section-header">October 2026</h3>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-weird-and-wild-mva-gallery/">ART WEIRD AND WILD · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Results&nbsp;on&nbsp;Feb&nbsp;23,&nbsp;2027</a> – MVA Gallery's national call for the strange and unconventional. All photographic processes welcome, $200 and a New York show in play.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Feb&nbsp;23,&nbsp;2027</a> – MVA Gallery's national call for the strange and unconventional. All photographic processes welcome, $200 and a New York show in play.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/winter-2027-vintage-issue-penn-journal-of-arts-and-sciences/">Winter 2027 'Vintage' Issue · Penn Journal of Arts and Sciences</a></h4>
@@ -159,7 +161,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-power-of-blue-mva-gallery/">The Power of Blue · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Results&nbsp;on&nbsp;Jan&nbsp;12,&nbsp;2027</a> – A colour-themed national show at MVA Gallery, Bethlehem PA. All photographic processes welcome; $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Jan&nbsp;12,&nbsp;2027</a> – A colour-themed national show at MVA Gallery, Bethlehem PA. All photographic processes welcome; $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/annual-members-art-exhibition-2026-philadelphia-sketch-club/">Annual Members Art Exhibition 2026 · Philadelphia Sketch Club</a></h4>
@@ -172,11 +174,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/creating-collages-mva-gallery/">Creating Collages · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Results&nbsp;in&nbsp;14&nbsp;days</a> – Photomontage and digital collage named in a national show at MVA Gallery, Bethlehem PA. $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;14&nbsp;days</a> – Photomontage and digital collage named in a national show at MVA Gallery, Bethlehem PA. $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/celebrating-realism-mva-gallery/">Celebrating Realism · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Results&nbsp;on&nbsp;Jan&nbsp;20,&nbsp;2027</a> – Realism in all its forms at MVA Gallery, Bethlehem PA. All photographic processes welcome; $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Jan&nbsp;20,&nbsp;2027</a> – Realism in all its forms at MVA Gallery, Bethlehem PA. All photographic processes welcome; $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2026-betsy-meyer-memorial-exhibition-main-line-art-center/">2026 Betsy Meyer Memorial Exhibition &amp; Meyer Family Award · Main Line Art Center</a></h4>
@@ -241,15 +243,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126d"></script>
-  <script src="/cards.js?v=20261126d"></script>
-  <script src="/search.js?v=20261126d"></script>
+  <script src="/shared.js?v=20261126e"></script>
+  <script src="/cards.js?v=20261126e"></script>
+  <script src="/search.js?v=20261126e"></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126d">
+  <link rel="stylesheet" href="/style.css?v=20261126e">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -105,7 +107,7 @@
     <section class="calls-list" id="callsList">
       <div class="call-card">
         <h4 class="call-title"><a href="/w-eugene-smith-grant-for-student-photographers-2026/">W. Eugene Smith Grant for Student Photographers 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Results&nbsp;in&nbsp;19&nbsp;days</a> – The Smith Fund's grant for student photographers — two $5,000 grants for humanistic, concerned projects. Up to 40 images; AI not accepted.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$10 (waivers available)">$10 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Two $5,000 grants">Cash prize</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link">Students</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;19&nbsp;days</a> – The Smith Fund's grant for student photographers — two $5,000 grants for humanistic, concerned projects. Up to 40 images; AI not accepted.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$10 (waivers available)">$10 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Two $5,000 grants">Cash prize</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link">Students</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/home-states-of-belonging-arvada-center/">HOME: States of Belonging · Arvada Center for the Arts and Humanities</a></h4>
@@ -117,7 +119,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/howard-chapnick-grant-2026/">Howard Chapnick Grant 2026 · W. Eugene Smith Memorial Fund</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Results&nbsp;in&nbsp;19&nbsp;days</a> – $7,500 from the Smith Fund for programs advancing documentary photography through education. Free to apply, by email, worldwide.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link" title="Free (voluntary $25 donation)">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$7,500</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;19&nbsp;days</a> – $7,500 from the Smith Fund for programs advancing documentary photography through education. Free to apply, by email, worldwide.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link" title="Free (voluntary $25 donation)">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$7,500</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/presentations-of-authorial-projects-16th-lisbon-photobook-fair/">Presentations of Authorial Projects — 16th Lisbon Photobook Fair</a></h4>
@@ -145,7 +147,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/luis-valtuena-international-humanitarian-photography-award-2026-medicos-del-mundo/">Luis Valtueña International Humanitarian Photography Award 2026 · Médicos del Mundo</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Results&nbsp;in&nbsp;4&nbsp;days</a> – Médicos del Mundo's 30th humanitarian photography award — free to enter, €12,000 in prizes and a touring exhibition.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€12,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 special prize">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Touring exhibition</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;4&nbsp;days</a> – Médicos del Mundo's 30th humanitarian photography award — free to enter, €12,000 in prizes and a touring exhibition.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€12,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 special prize">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Touring exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/printed-matter-publisher-work-grant-2026/">Printed Matter Publisher Work Grant 2026</a></h4>
@@ -229,15 +231,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126d"></script>
-  <script src="/cards.js?v=20261126d"></script>
-  <script src="/search.js?v=20261126d"></script>
+  <script src="/shared.js?v=20261126e"></script>
+  <script src="/cards.js?v=20261126e"></script>
+  <script src="/search.js?v=20261126e"></script>
 
 </body>
 </html>

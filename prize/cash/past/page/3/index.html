@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126d">
+  <link rel="stylesheet" href="/style.css?v=20261126e">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,7 +95,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -124,11 +126,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/premier-prix-photographique-du-musee-postal/">Premier Prix photographique du Musée Postal</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;on&nbsp;Jan&nbsp;6,&nbsp;2027</a> – Musée de La Poste's first photography prize: a €15,000 grant to produce a new project on the contemporary postal world. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€15,000 production grant">Cash prize</a> <a href="/eligibility/france/" class="meta-tag meta-tag-link">France only</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Jan&nbsp;6,&nbsp;2027</a> – Musée de La Poste's first photography prize: a €15,000 grant to produce a new project on the contemporary postal world. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€15,000 production grant">Cash prize</a> <a href="/eligibility/france/" class="meta-tag meta-tag-link">France only</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-natural-world-arizona-photography-alliance/">Juried Theme Gallery: The Natural World · Arizona Photography Alliance</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;4&nbsp;days</a> – Arizona Photography Alliance's third 2026 theme gallery, juried by Richard Laugharn. $100 award, every entrant exhibited.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$50 ($25 members)">$50 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;4&nbsp;days</a> – Arizona Photography Alliance's third 2026 theme gallery, juried by Richard Laugharn. $100 award, every entrant exhibited.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$50 ($25 members)">$50 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/documentary-film-fellowships-2026-27-doing-undoing/">Documentary Film Fellowships 2026–27 — Doing/Undoing · Mrinalini Mukherjee Foundation</a></h4>
@@ -136,19 +138,19 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/46th-annual-western-spirit-juried-art-show-and-sale-cfd-old-west-museum/">46th Annual Western Spirit Juried Art Show &amp; Sale · Cheyenne Frontier Days Old West Museum</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;15&nbsp;days</a> – Wyoming museum show of work interpreting the American West; photography is a full category. $20 a work, $1,000 top award.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20 per entry ($10 members)">$20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 Best of Show">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$250 student</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100 miniature</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;15&nbsp;days</a> – Wyoming museum show of work interpreting the American West; photography is a full category. $20 a work, $1,000 top award.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20 per entry ($10 members)">$20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 Best of Show">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$250 student</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100 miniature</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-landscape-serene-and-savage-mva-gallery/">The Landscape: Serene and Savage · MVA Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;on&nbsp;Jan&nbsp;26,&nbsp;2027</a> – MVA Gallery's national landscape show in Bethlehem, PA — serene or savage, photography welcome. $200 award and an NYC exhibition prize.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="NYC exhibition opportunity">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Jan&nbsp;26,&nbsp;2027</a> – MVA Gallery's national landscape show in Bethlehem, PA — serene or savage, photography welcome. $200 award and an NYC exhibition prize.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="NYC exhibition opportunity">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/anderson-center-salzburg-exchange-artist-residency-2027/">Anderson Center Salzburg Exchange Artist Residency 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;on&nbsp;Jan&nbsp;5,&nbsp;2027</a> – One month in a live-in studio at the Künstlerhaus, Salzburg, for a Minnesota visual artist. €600 food stipend; free, closes noon CST 13 Nov.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€600 stipend</a> <a href="/eligibility/minnesota/" class="meta-tag meta-tag-link">Minnesota only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;on&nbsp;Jan&nbsp;5,&nbsp;2027</a> – One month in a live-in studio at the Künstlerhaus, Salzburg, for a Minnesota visual artist. €600 food stipend; free, closes noon CST 13 Nov.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€600 stipend</a> <a href="/eligibility/minnesota/" class="meta-tag meta-tag-link">Minnesota only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/42nd-annual-international-exhibition-university-of-texas-at-tyler/">42nd Annual International Exhibition · University of Texas at Tyler</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;18&nbsp;days</a> – UT Tyler's 42nd juried international show — photography named, $35 for 3 works, purchase awards into the permanent collection.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for up to 3 works">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Purchase awards (cash)">Cash prize</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;18&nbsp;days</a> – UT Tyler's 42nd juried international show — photography named, $35 for 3 works, purchase awards into the permanent collection.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for up to 3 works">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Purchase awards (cash)">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/photonola-photobook-prize-2026-new-orleans-photo-alliance/">PhotoNOLA PhotoBOOK Prize 2026 · New Orleans Photo Alliance</a></h4>
@@ -156,7 +158,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/lowe-house-2027-maryland-federation-of-art/">Lowe House 2027 · Maryland Federation of Art</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;14&nbsp;days</a> – Three months in the Maryland State Delegates' office building, juried by an AACC visual arts chair. $500 in awards; MFA members or Anne Arundel County residents.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 2 works, $6.75 each additional ($30 members). Additional fees: $70/year MFA membership (not needed for Anne Arundel County residents)">$45+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;14&nbsp;days</a> – Three months in the Maryland State Delegates' office building, juried by an AACC visual arts chair. $500 in awards; MFA members or Anne Arundel County residents.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 2 works, $6.75 each additional ($30 members). Additional fees: $70/year MFA membership (not needed for Anne Arundel County residents)">$45+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2027-fellowships-and-grants-asian-cultural-council/">2027 Fellowships and Grants · Asian Cultural Council</a></h4>
@@ -184,7 +186,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-that-matters-to-the-planet-dark-skies-roger-tory-peterson-institute/">Art That Matters to the Planet: Dark Skies · Roger Tory Peterson Institute</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;15&nbsp;days</a> – Night-sky nature art juried by Voyager Golden Record designer Jon Lomberg at RTPI, Jamestown NY. $1,000 top prize; show Jan–May 2027.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20 for 1 work, $10 each additional">$20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 / $500 / $250">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;15&nbsp;days</a> – Night-sky nature art juried by Voyager Golden Record designer Jon Lomberg at RTPI, Jamestown NY. $1,000 top prize; show Jan–May 2027.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20 for 1 work, $10 each additional">$20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 / $500 / $250">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2027-cvg-show-collective-visions-gallery/">2027 CVG Show · Collective Visions Gallery</a></h4>
@@ -192,7 +194,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/home-fires-37th-annual-members-show-tulsa-artists-coalition/">Home Fires: 37th Annual Members' Show · Tulsa Artists' Coalition</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;9&nbsp;days</a> – TAC Gallery's 37th members' show, all media, free with a $35 membership buyable at entry; Grand Prize + 3 juror cash awards, January 2027.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: $35+ TAC membership ($15 students)">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;9&nbsp;days</a> – TAC Gallery's 37th members' show, all media, free with a $35 membership buyable at entry; Grand Prize + 3 juror cash awards, January 2027.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: $35+ TAC membership ($15 students)">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/surreal-salon-19-baton-rouge-gallery/">Surreal Salon 19 · Baton Rouge Gallery</a></h4>
@@ -200,7 +202,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/crocker-kingsley-2027-blue-line-arts/">Crocker Kingsley 2027 · Blue Line Arts</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;tomorrow</a> – National juried competition at Blue Line Arts, juried by Naz Cuguoğlu. All media incl. photography; $2,000 top + travel to the Crocker Art Museum.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 1 image, $5 each additional">$45+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,000 / $1,500 / $1,000 / $750 / $250">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;tomorrow</a> – National juried competition at Blue Line Arts, juried by Naz Cuguoğlu. All media incl. photography; $2,000 top + travel to the Crocker Art Museum.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 1 image, $5 each additional">$45+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,000 / $1,500 / $1,000 / $750 / $250">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/vmfa-visual-arts-fellowship-2027-28/">VMFA Visual Arts Fellowship 2027–28</a></h4>
@@ -212,7 +214,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/west-coast-biennial-2027-turtle-bay-exploration-park/">West Coast Biennial 2027 · Turtle Bay Exploration Park</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;in&nbsp;22&nbsp;days</a> – Turtle Bay's ninth juried biennial in Redding, CA. Photography included; $3,000 Best of Show. CA, OR, WA and AK artists.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40">$40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$3,000/$1,750/$900/$650/2×$325">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/california/" class="meta-tag meta-tag-link">California only</a> <a href="/eligibility/oregon/" class="meta-tag meta-tag-link">Oregon only</a> <a href="/eligibility/washington/" class="meta-tag meta-tag-link">Washington only</a> <a href="/eligibility/alaska/" class="meta-tag meta-tag-link">Alaska only</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;in&nbsp;22&nbsp;days</a> – Turtle Bay's ninth juried biennial in Redding, CA. Photography included; $3,000 Best of Show. CA, OR, WA and AK artists.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40">$40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$3,000/$1,750/$900/$650/2×$325">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/california/" class="meta-tag meta-tag-link">California only</a> <a href="/eligibility/oregon/" class="meta-tag meta-tag-link">Oregon only</a> <a href="/eligibility/washington/" class="meta-tag meta-tag-link">Washington only</a> <a href="/eligibility/alaska/" class="meta-tag meta-tag-link">Alaska only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2027-grants-for-artists-arts-foundation-of-cape-cod/">2027 Grants for Artists · Arts Foundation of Cape Cod</a></h4>
@@ -220,7 +222,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-maker-issue-6-open-call-cover-prize/">ART MAKER Issue 6 — Open Call + Cover Prize</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Results&nbsp;tomorrow</a> – Artist-run contemporary art magazine's sixth issue — open theme, juried by Kurt Stimmeder. Entry form still unpublished as of 5 Nov.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$16 for up to 4 images, $24 for up to 10">$16+ fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$150 gift card (cover artist)">Cash prize</a></div>
+        <p class="call-description"><a href="/results/" class="call-date dl-band dl-results">Results&nbsp;tomorrow</a> – Artist-run contemporary art magazine's sixth issue — open theme, juried by Kurt Stimmeder. Entry form still unpublished as of 5 Nov.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$16 for up to 4 images, $24 for up to 10">$16+ fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$150 gift card (cover artist)">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/carolyn-harder-scholarship-2027/">Carolyn Harder Scholarship 2027 · Griffin Museum of Photography</a></h4>
@@ -232,15 +234,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126d"></script>
-  <script src="/cards.js?v=20261126d"></script>
-  <script src="/search.js?v=20261126d"></script>
+  <script src="/shared.js?v=20261126e"></script>
+  <script src="/cards.js?v=20261126e"></script>
+  <script src="/search.js?v=20261126e"></script>
 
 </body>
 </html>
