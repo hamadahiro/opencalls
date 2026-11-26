@@ -3224,7 +3224,21 @@ const REDIRECTS = {
   'elemental-earth-air-fire-water-the-chateau-gallery': 'elemental-earth-air-fire-water-tcg-gallery',
   'memory-what-remains-the-chateau-gallery': 'memory-what-remains-tcg-gallery',
   'kuenstlerdorf-schoeppingen-residency-fellowships-2027': 'kuenstlerdorf-schoeppingen-fellowship-2027',
-  'playful-arc-studios-gallery': 'playful-arc-gallery-studios'
+  'playful-arc-studios-gallery': 'playful-arc-gallery-studios',
+  'analog-forever-magazine-calls-for-entry': 'standing-where-others-stood-summer-2026-analog-forever-magazine',
+  'camera-work-shadow-and-light-2026-black-box-gallery': 'camera-work-shadow-and-light-black-box-gallery',
+  'a-celebration-of-contemporary-photography-photoplace-gallery': 'celebration-of-contemporary-photography-photoplace-gallery',
+  'doug-pensinger-photography-fund-2026': 'dppf-2026-sports-photography-grants',
+  'fmopa-2026-international-photography-competition': 'fmopa-international-photography-competition-2026-florida-museum-of-photographic-arts',
+  'home-decode-gallery': 'home-photography-exhibit-decode-gallery',
+  'home-photography-4-humanity': 'fotografiska-home-global-open-call',
+  'marilyn-stafford-fotoreportage-award-2026-fotodocument': 'marilyn-stafford-fotoreportage-award-2026',
+  'grenze-arsenali-fotografici-2026-open-call': 'nachleben-2026',
+  'portal-at-the-edge-of-becoming-decagon-gallery': 'portal-decagon-gallery',
+  'red-photography-exhibit-dusk-gallery': 'red-photography-exhibit-dusk-photo-gallery',
+  'red-dusk-gallery': 'red-photography-exhibit-dusk-photo-gallery',
+  'scan-full-contact-2026': 'scan-tarragona-full-contact-award-2026',
+  'slowexposures-2026-photography-rural-south': 'slow-exposures-2026-main-exhibition'
 };
 function redirectStubHtml(dest, message) {
   return `<!DOCTYPE html>
@@ -3440,16 +3454,26 @@ if (staleFiles.length) {
     if (t) for (const m of String(t).matchAll(EM)) published.add(m[0].toLowerCase());
   }
   const skip = new Set(['.git', 'scripts', 'node_modules', '.scratch', '.wrangler', '.claude']);
+  const PUB = /\.(html|js|json|xml|txt|md|csv)$/;
+  const scan = p => {
+    const s = fs.readFileSync(p, 'utf8');
+    if (s.includes('@')) for (const m of s.matchAll(EM)) { const a = m[0].toLowerCase(); if (priv.has(a) && !published.has(a)) { bad.push(`${p}: a private contact address`); break; } }
+  };
   const walk = d => { for (const e of fs.readdirSync(d, { withFileTypes: true })) {
     if (skip.has(e.name)) continue;
     const p = d === '.' ? e.name : d + '/' + e.name;
     if (e.isDirectory()) walk(p);
-    else if (/\.(html|js|json|xml|txt|md|csv)$/.test(e.name)) {
-      const s = fs.readFileSync(p, 'utf8');
-      if (s.includes('@')) for (const m of s.matchAll(EM)) { const a = m[0].toLowerCase(); if (priv.has(a) && !published.has(a)) { bad.push(`${p}: a private contact address`); break; } }
-    }
+    else if (PUB.test(e.name)) scan(p);
   } };
-  if (priv.size) walk('.');
+  // What can be published = what git would commit: tracked files plus new files .gitignore does not exclude. Git-ignored
+  // local files (logs/, scripts/, …) never leave this machine, so they are not scanned (2026-11-26: logs/ of old job runs
+  // stopped a build although nothing in them can reach the public repo). Without git, every file is scanned as before.
+  let files = null;
+  try { files = require('child_process').execFileSync('git', ['ls-files', '-co', '--exclude-standard', '-z'], { encoding: 'utf8', maxBuffer: 1 << 28 }).split('\0').filter(Boolean); } catch (e) { files = null; }
+  if (priv.size) {
+    if (files) files.filter(p => PUB.test(p) && !skip.has(p.split('/')[0]) && fs.existsSync(p)).forEach(scan);
+    else walk('.');
+  }
   if (bad.length) {
     console.error(`FATAL: PRIVACY — ${bad.length} place(s) would publish private information (addresses not printed):`);
     bad.slice(0, 30).forEach(b => console.error('  - ' + b));
