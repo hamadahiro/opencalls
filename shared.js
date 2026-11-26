@@ -240,6 +240,38 @@ function slugify(title) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
+// JURY (2026-11-26). A juror's URL keeps the letters of their name: accents are folded first
+// ("Awa Konaté" → awa-konate), where slugify() would drop them (awa-konat). Calls and organisers keep slugify().
+// A person's slug is stored in jury.json, so changing this function never moves a page.
+function personSlug(name) {
+  const folded = String(name).replace(/ø/g, 'o').replace(/Ø/g, 'O').replace(/ł/g, 'l').replace(/Ł/g, 'L').replace(/ß/g, 'ss')
+    .replace(/æ/g, 'ae').replace(/Æ/g, 'AE').replace(/đ/g, 'd').replace(/Đ/g, 'D')
+    .normalize('NFKD').replace(/[̀-ͯ]/g, '');
+  return folded.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+// The part of a jury entry that is the person's name: the first place one of their `names` occurs (longest name
+// first) where only a short title may come before it ("Dr. ", "Councillor ") and the name ends the entry or is
+// followed by a comma, a bracket or a dash. Returns { start, end } or null. The call page links exactly this span;
+// the build refuses a linked entry where it is null.
+function juryNameSpan(entry, names) {
+  const list = [...new Set(names || [])].filter(Boolean).sort((a, b) => b.length - a.length);
+  for (const n of list) {
+    let from = 0;
+    for (;;) {
+      const i = entry.indexOf(n, from);
+      if (i < 0) break;
+      const before = entry.slice(0, i), after = entry.slice(i + n.length);
+      const okBefore = i === 0 || (/ $/.test(before) && !/[,(;:|·]/.test(before) && before.trim().split(/\s+/).length <= 3);
+      // Post-nominal letters may follow the name: "Sally Varah MBE DL", "Simon Hill HonFRPS, President".
+      const okAfter = /^(?: (?=[A-Za-z]*[A-Z][A-Za-z]*[A-Z])[A-Za-z]{2,8})*(?:$|,|;| \(| [–—-] | \||:)/.test(after);
+      if (okBefore && okAfter) return { start: i, end: i + n.length };
+      from = i + 1;
+    }
+  }
+  return null;
+}
+
 function shortenLocation(loc) {
   if (!loc) return loc;
   let s = loc.replace(/,\s*USA$/, '');
@@ -756,7 +788,7 @@ if (typeof module !== 'undefined' && module.exports) {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
     usStateNames, stateNameToAbbr, validCountries,
     PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
-    isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
+    isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
     isFree, getState, scoreSimilarity,

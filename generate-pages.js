@@ -8,7 +8,7 @@ const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
   usStateNames, stateNameToAbbr, validCountries,
   PIN_SVG, PRIZE_SVG,
-  isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
+  isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, closedResultsText,
   isFree, getState, scoreSimilarity,
@@ -18,6 +18,31 @@ const {
 } = shared;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+
+// === JURY (2026-11-26, preview) ===
+// jury.json is public and holds only what the pages show: id, slug, name, the spellings the calls print (names), the
+// organiser that tells two people of one name apart (distinguish) and old slugs (formerSlugs). Each call's juryPeople
+// says, entry by entry, which person a jury entry is (an id) or why it stays plain text (JURY_PLAIN). Research and its
+// evidence stay outside the repo, in scripts/jury/ (ignored; it may be a link to the work disk).
+// A juror page's subtitle says where the person judged and under what title, never counts (owner 2026-11-26 20:47:
+// "with natural language list where they juried and under what title than how many calls and how many open"): a
+// written `summary` for a person on 2+ calls while `summaryCalls` matches their linked calls, else jurySentence().
+// The owner's switches, each a one-word change:
+const JURY = {
+  formerSlugRedirects: true, // an old slug of a renamed person redirects to the new page; false: the old URL is gone (404)
+};
+// /jury/ lists every person under A, B, C headings, in the form of /organizations/ (owner 2026-11-26 20:45: "then better
+// put jury but group them by ABC"); no Jury group on Browse (owner 20:46: "we dont need jury in browse page"). A juror
+// is also found by search, or from a call's Jury line.
+const JURY_PLAIN = ['not-person', 'unresolved', 'unconfirmed', 'conflict', 'wrong', 'no-page'];   // wrong: the entry is not this call's juror (a data error for the owner)
+const JURY_PRIVATE_DIR = 'scripts/jury';
+const juryData = fs.existsSync('jury.json') ? JSON.parse(fs.readFileSync('jury.json', 'utf8')) : { people: [] };
+const juryById = new Map(juryData.people.map(p => [p.id, p]));
+// The calls each person judged, in data order (one call once: the gate below refuses an id twice in one call).
+const juryCalls = new Map(juryData.people.map(p => [p.id, []]));
+data.calls.forEach(c => (c.juryPeople || []).forEach(v => { if (juryCalls.has(v)) juryCalls.get(v).push(c); }));
+// What a reader reads as the person's name wherever one name could mean two people: "Anna Planas · Aperture".
+function juryLabel(p) { return p.distinguish ? `${p.name} · ${p.distinguish}` : p.name; }
 
 // PRIVACY (owner, 2026-11-25): the private contact store (scripts/outreach/) is never read to build pages. Organizers'
 // contact addresses are for outreach only and are never published; an application address artists need is written in
@@ -331,12 +356,112 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
 const openCalls = data.calls.filter(c => c.deadline === 'Continuous' || c.deadline >= TODAY);
 function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; }
+
+// === JURY GATE (data) — a wrong link shows a person as juror of a call they did not judge; the build refuses every
+// state that could print one. Every call, every person, every build. Gate numbers are the SPEC's (D-build/SPEC.md §5).
+{
+  const errs = [];
+  const fold = s => personSlug(s);
+  const linkedCalls = new Map(juryData.people.map(p => [p.id, []]));
+  // What a job does about it (the update and verify jobs read these lines): jury and juryPeople change together.
+  const TOGETHER = `jury and juryPeople change together, one value per entry at the same place: a person id (node scripts/jury-match.js 'Name', then scripts/jury-add.js or scripts/jury-link.js) or ${JURY_PLAIN.slice(0, 3).join(' / ')} (TONE.md 'Jury')`;
+  // G1 shape, G2 ids, G3 the name is in the entry
+  data.calls.forEach(c => {
+    const at = `${c.slug}`;
+    if (c.jury !== undefined && !(Array.isArray(c.jury) && c.jury.every(j => typeof j === 'string' && j.trim()))) errs.push(`G1 ${at}: jury must be a list of non-empty texts, or absent`);
+    const n = Array.isArray(c.jury) ? c.jury.length : 0;
+    if (!n) { if (c.juryPeople !== undefined) errs.push(`G1 ${at}: juryPeople without a jury`); return; }
+    if (!Array.isArray(c.juryPeople)) { errs.push(`G1 ${at}: jury has ${n} entries but no juryPeople — ${TOGETHER}`); return; }
+    if (c.juryPeople.length !== n) {
+      errs.push(`G1 ${at}: jury has ${n} entries, juryPeople ${c.juryPeople.length} — ${TOGETHER}`);
+      c.juryPeople.forEach(v => { if (linkedCalls.has(v)) linkedCalls.get(v).push(c); });   // not also "no call names them" (G5)
+      return;
+    }
+    const seen = new Set();
+    c.juryPeople.forEach((v, i) => {
+      if (JURY_PLAIN.includes(v)) return;
+      const p = juryById.get(v);
+      if (!p) { errs.push(`G2 ${at}#${i}: "${v}" is neither a person in jury.json nor one of ${JURY_PLAIN.join(' / ')}`); return; }
+      if (seen.has(v)) errs.push(`G2 ${at}#${i}: ${v} (${p.name}) is linked twice in one jury`);
+      seen.add(v);
+      if (!juryNameSpan(c.jury[i], p.names)) errs.push(`G3 ${at}#${i}: "${c.jury[i]}" does not name ${v} (${p.names.join(' / ')}) — a shifted juryPeople (an entry edited, added or removed without its value), or the same person spelt anew (add the spelling: node scripts/jury-link.js); ${TOGETHER}`);
+      linkedCalls.get(v).push(c);
+    });
+  });
+  // G4 the register itself
+  const KEYS = new Set(['id', 'slug', 'name', 'names', 'distinguish', 'formerSlugs', 'summary', 'summaryCalls']);
+  const ids = new Set(), slugs = new Map();
+  let retired = new Set();
+  try { retired = new Set(fs.readFileSync(`${JURY_PRIVATE_DIR}/retired-slugs.txt`, 'utf8').split('\n').map(s => s.trim()).filter(Boolean)); } catch (e) {}
+  const claim = (slug, who) => { if (slugs.has(slug)) errs.push(`G4 slug "${slug}" is used by ${slugs.get(slug)} and ${who}`); else slugs.set(slug, who); };
+  juryData.people.forEach(p => {
+    const who = `${p.id} (${p.name})`;
+    // G9 only what a page shows: no other key, no address, link or phone number in any value
+    Object.keys(p).forEach(k => { if (!KEYS.has(k)) errs.push(`G9 ${who}: key "${k}" — jury.json holds only ${[...KEYS].join(', ')}; research stays in ${JURY_PRIVATE_DIR}/`); });
+    const vals = [p.name, p.distinguish, ...(p.names || [])].filter(v => v !== undefined);
+    vals.forEach(v => { if (typeof v !== 'string' || /@|https?:|www\.|\d[\d ()+.-]{6,}\d/.test(v)) errs.push(`G9 ${who}: "${v}" is not a plain name`); });
+    // the written summary: page text only — no address, link or number; summaryCalls: the calls it was written for
+    if (p.summary !== undefined && (typeof p.summary !== 'string' || !p.summary.trim() || /@|https?:|www\.|\d[\d ()+.-]{6,}\d/.test(p.summary))) errs.push(`G9 ${who}: summary must be plain page text`);
+    // a slug that is no call any more (a call removed) makes the summary STALE, not an error: the page falls back
+    if (p.summary !== undefined && !(Array.isArray(p.summaryCalls) && p.summaryCalls.length && p.summaryCalls.every(sl => typeof sl === 'string' && /^[a-z0-9-]+$/.test(sl)))) errs.push(`G9 ${who}: summary needs summaryCalls, the list of the slugs of the calls it was written for`);
+    if (p.summaryCalls !== undefined && p.summary === undefined) errs.push(`G9 ${who}: summaryCalls without a summary`);
+    if (!/^p\d{5}$/.test(p.id || '')) errs.push(`G4 ${who}: id must be p + 5 digits`);
+    if (ids.has(p.id)) errs.push(`G4 ${who}: id used twice`);
+    ids.add(p.id);
+    if (!Array.isArray(p.names) || !p.names.length || !p.names.includes(p.name)) errs.push(`G4 ${who}: names must list every spelling the calls print, the name included`);
+    const base = personSlug(p.name || '');
+    if (!(p.slug === base || new RegExp(`^${base}-[2-9]\\d*$`).test(p.slug || ''))) errs.push(`G4 ${who}: slug "${p.slug}" must be "${base}" (or "${base}-2", "-3" for a second person of this name)`);
+    if (['page', 'past'].includes(p.slug)) errs.push(`G4 ${who}: slug "${p.slug}" is a list path`);
+    claim(p.slug, who);
+    (p.formerSlugs || []).forEach(f => { if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(f)) errs.push(`G4 ${who}: former slug "${f}" is not a slug`); claim(f, `${who} (former)`); });
+    [p.slug, ...(p.formerSlugs || [])].forEach(sl => { if (retired.has(sl)) errs.push(`G4 ${who}: slug "${sl}" was retired (a removed person's page) and is never given again`); });
+    // G5 no person without a call
+    if (!linkedCalls.get(p.id).length) errs.push(`G5 ${who}: no jury entry links to this person — run node scripts/jury-prune.js (removes the record; a published person's slug is retired in ${JURY_PRIVATE_DIR}/retired-slugs.txt)`);
+  });
+  // G6 one name, two people: each carries the organiser that tells them apart, from our own data
+  const byName = new Map();
+  juryData.people.forEach(p => { const k = fold(p.name || ''); if (!byName.has(k)) byName.set(k, []); byName.get(k).push(p); });
+  byName.forEach(group => {
+    if (group.length < 2) return;
+    const labels = new Set();
+    group.forEach(p => {
+      const orgs = new Set(linkedCalls.get(p.id).map(c => c.org));
+      if (!p.distinguish) errs.push(`G6 ${p.id} (${p.name}): ${group.length} people share this name — each needs distinguish, an organiser of their own calls`);
+      else if (!orgs.has(p.distinguish)) errs.push(`G6 ${p.id} (${p.name}): distinguish "${p.distinguish}" is not an organiser of this person's calls (${[...orgs].join(', ')})`);
+      if (labels.has(juryLabel(p))) errs.push(`G6 ${p.id}: "${juryLabel(p)}" does not tell this person apart`);
+      labels.add(juryLabel(p));
+    });
+  });
+  // G10 evidence (private): every link has a source row; a person on 2+ calls has an identity row. Skipped, and said
+  // so, where the private store is not there (a checkout without scripts/jury/).
+  const evPath = `${JURY_PRIVATE_DIR}/evidence.tsv`;
+  if (fs.existsSync(evPath)) {
+    const rows = fs.readFileSync(evPath, 'utf8').split('\n').slice(1).filter(Boolean).map(l => l.split('\t'));
+    const has = new Map(rows.map(r => [`${r[0]}\t${r[1]}`, (r[3] || '').trim()]));
+    juryData.people.forEach(p => {
+      const calls = linkedCalls.get(p.id);
+      calls.forEach(c => { if (!has.get(`${c.slug}\t${p.id}`)) errs.push(`G10 ${c.slug} → ${p.id} (${p.name}): no evidence row with a URL in ${evPath}`); });
+      if (calls.length > 1 && !has.get(`*\t${p.id}`)) errs.push(`G10 ${p.id} (${p.name}) is on ${calls.length} calls: no identity row ('*') with a URL that links them beyond the name`);
+    });
+    console.log(`  Jury evidence gate: ${rows.length} rows checked`);
+  } else console.log(`  Jury evidence gate: SKIPPED — ${evPath} not found (private store not linked into this checkout)`);
+  // G11 the URL space
+  ['jury', 'legal'].forEach(r => { if (!RESERVED.includes(r)) errs.push(`G11 "${r}" must be in RESERVED`); });
+  if (errs.length) {
+    console.error(`\nFATAL: JURY — ${errs.length} problem(s); nothing was written:`);
+    errs.slice(0, 40).forEach(e => console.error('  - ' + e));
+    if (errs.length > 40) console.error(`  …and ${errs.length - 40} more`);
+    process.exit(1);
+  }
+  const linked = [...linkedCalls.values()].reduce((n, l) => n + l.length, 0);
+  console.log(`  Jury gate: ${juryData.people.length} people, ${linked} linked entries, every jury lined up`);
+}
 
 // Product-reset index policy: keep user browsing pages live, but only ask
 // Google to index strong, current pages instead of every generated facet.
@@ -475,7 +600,7 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/legal/">Legal</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
 const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -545,35 +670,46 @@ function listSubtitle(desc, stats) {
 // and are still linked from every call that names them.
 const ARCHIVE_HEADING = 'No open calls';
 
-function indexItem(href, labelHtml, count, id) {
-  return `      <a href="${href}" class="index-item"><span class="index-item-name"${id ? ` id="${id}"` : ''}>${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
+function indexItem(href, labelHtml, count) {
+  return `      <a href="${href}" class="index-item"><span class="index-item-name">${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
 }
 
-// The letter an index files a name under: A–Z without accents, "0-9" for the rest.
+// The letter an index files a name under: A–Z without accents ("Łukasz", "Øster" under L, O), "0-9" for the rest.
+const INDEX_LETTER_BASE = { 'Ł': 'L', 'Ø': 'O', 'Æ': 'A', 'Œ': 'O', 'Đ': 'D' };   // letters NFD does not take apart
 function indexLetter(label) {
   const c = label.normalize('NFD')[0].toUpperCase();
-  return c >= 'A' && c <= 'Z' ? c : '0-9';
+  const l = INDEX_LETTER_BASE[c] || c;
+  return l >= 'A' && l <= 'Z' ? l : '0-9';
 }
+// A letter as a reader sees it, on /browse/ and in the headings: "0–9" with an en dash.
+const letterText = l => l.replace('-', '–');
 
 // entries: [{ href, label, total, open }] — `open` decides which section the
 // entry lands in, and listedCount() is the number printed.
+//   letters:  A, B, C as headings (owner 2026-11-26 20:45: "group them by ABC" / "A, B, C as headings"): the site's
+//             section heading before each letter's first row, "0–9" first, then A–Z, the sort kept inside a letter;
+//             the heading carries the letter's id, so /browse/'s letters (/organizations/#a) land on it.
+//   allCalls: one list, no archive section, each row counting all the calls of its page — for pages that list every
+//             call on one list, open first (juror pages, writePagedListing allCalls): the number is what the page lists.
 function buildIndexItems(entries, opts = {}) {
   const fmt = opts.labelHtml || (l => escapeHtml(l));
+  const count = e => opts.allCalls ? e.total : listedCount(e);
   const byCount = (a, b) => listedCount(b) - listedCount(a) || a.label.localeCompare(b.label);
   const byLabel = (a, b) => a.label.localeCompare(b.label);
   const sort = opts.sort === 'label' ? byLabel : opts.sort === 'given' ? null : byCount;   // 'given': keep the order passed in
-  const live = entries.filter(e => e.open > 0); if (sort) live.sort(sort);
-  const archived = entries.filter(e => !e.open); if (sort) archived.sort(sort);
+  const live = opts.allCalls ? [...entries] : entries.filter(e => e.open > 0); if (sort) live.sort(sort);
+  const archived = opts.allCalls ? [] : entries.filter(e => !e.open); if (sort) archived.sort(sort);
   let html = '';
-  // `letterIds`: the first row of each letter carries its id (the letters on /browse/ link to it).
-  const seen = new Set();
-  const letterId = e => {
-    const l = indexLetter(e.label);
-    if (!opts.letterIds || seen.has(l)) return '';
-    seen.add(l);
-    return l.toLowerCase();
-  };
-  live.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e), letterId(e)); });
+  if (opts.letters) {
+    const rank = l => l === '0-9' ? 0 : l.charCodeAt(0);
+    live.sort((a, b) => rank(indexLetter(a.label)) - rank(indexLetter(b.label)));   // stable: the order above holds inside a letter
+    let current = null;
+    live.forEach(e => {
+      const l = indexLetter(e.label);
+      if (l !== current) { current = l; html += `      <h3 class="section-header" id="${l.toLowerCase()}">${letterText(l)}</h3>\n`; }
+      html += indexItem(e.href, fmt(e.label), count(e));
+    });
+  } else live.forEach(e => { html += indexItem(e.href, fmt(e.label), count(e)); });
   if (archived.length && !opts.hideArchived) {
     html += `      <h3 class="section-header">${ARCHIVE_HEADING}</h3>\n`;
     archived.forEach(e => { html += indexItem(e.href, fmt(e.label), listedCount(e)); });
@@ -686,6 +822,23 @@ function renderSectionedCards(calls, sectionOf) {
     const u = computeUrgency(c, now);
     const section = sectionOf ? sectionOf(c, u) : '';
     if (section && section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
+    html += renderStaticCard(c, u);
+  });
+  return html;
+}
+
+// One page of an open-then-past list. "Past calls" heads the first past card, and a page that starts among the past
+// calls starts with it; with nothing open, page 1 starts with the site's notice instead (as every listing does).
+function renderOpenThenPast(chunk, anyOpen, k) {
+  const now = new Date();
+  let html = !anyOpen && k === 1 && chunk.length ? `      <p class="empty-state">${escapeHtml(NO_OPEN_CALLS_NOTICE)}</p>\n` : '';
+  let current = '', inPast = false;
+  chunk.forEach(c => {
+    const u = computeUrgency(c, now);
+    const past = !isOpen(c);
+    if (past && !inPast) { inPast = true; current = ''; if (anyOpen) html += `      <h2 class="list-heading">Past calls</h2>\n`; }
+    const section = past ? pastSection(c, u) : openSection(c, u);
+    if (section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
     html += renderStaticCard(c, u);
   });
   return html;
@@ -820,6 +973,16 @@ function writePagedListing(filepath, html, { calls, opts }) {
   const past = sortPastCalls(calls);
   const files = [];
 
+  if (opts.allCalls) {
+    // Juror pages (Lara, 2026-11-26): every call the person judged on one list — the open ones first (soonest first,
+    // under the usual headers), then "Past calls" (newest first). Paged like every list.
+    const anyOpen = open.length > 0;
+    files.push(...writeListPages(html, base, [...open, ...past], (chunk, k, count) =>
+      renderOpenThenPast(chunk, anyOpen, k) + paginationNav(base, k, count),
+      { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+    pagedListings.set(base, { total: calls.length, open: open.length, files, allCalls: true, noHeroCounts: !!opts.noHeroCounts });
+    return;
+  }
   if (open.length) {
     files.push(...writeListPages(html, base, open, (chunk, k, count) =>
       renderSectionedCards(chunk, sections && openSection) + paginationNav(base, k, count),
@@ -996,6 +1159,19 @@ const DESCRIPTION_COLLAPSE_SCRIPT = `(function () {
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
 })();`;
 
+// The call page's Jury line: the same text as before, with each linked person's name (only the name, as this call
+// prints it) a link to their page. Entries that are not a linked person stay plain. Where two people share a name, the
+// link's title says which ("Anna Planas · Aperture").
+function renderJuryLine(call) {
+  return call.jury.map((text, i) => {
+    const p = juryById.get((call.juryPeople || [])[i]);
+    const span = p && juryNameSpan(text, p.names);
+    if (!span) return escapeHtml(text);
+    const title = p.distinguish ? ` title="${escapeHtml(juryLabel(p))}"` : '';
+    return escapeHtml(text.slice(0, span.start)) + `<a href="/jury/${p.slug}/"${title}>${escapeHtml(text.slice(span.start, span.end))}</a>` + escapeHtml(text.slice(span.end));
+  }).join(' · ');
+}
+
 function generatePage(call, cssVersion) {
   const slug = call.slug || slugify(call.title);
   const desc = metaDescription(call);
@@ -1035,7 +1211,7 @@ ${call.winners && call.winners.length ? `
       <div class="call-detail-info" id="detailInfo">${renderInfoGrid(call, { esc: escapeHtml, locationLink: getStaticLocationLink })}</div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: ${call.jury.map(j => escapeHtml(j)).join(' · ')}</p>
+        <p class="call-detail-description">Jury: ${renderJuryLine(call)}</p>
       </div>
 ` : ''}
       <div class="call-detail-jury">
@@ -2267,6 +2443,138 @@ ${buildStaticCallList(orgCalls)}
 
 if (hasErrors) { console.error('\nFix errors above before generating.'); process.exit(1); }
 
+// === Juror pages (/jury/<slug>/) ===
+// The organiser page, reused: hero (name, where they judged and under what title), the site's cards and pagination. Differences, each decided for
+// jurors: every call the person judged on one list, open first (writePagedListing allCalls); the role stays on each
+// call's own page; the breadcrumb "All open calls / Jury", as organiser pages lead back to /organizations/;
+// a footnote on where the list comes from (Y2's words, without "linked in each row", which a juror page is not) that
+// links the Legal page's section on people; noindex and out of the sitemap, like organisers.
+// The subtitle (and meta description): where the person judged and under what title, from their linked entries only.
+// An entry's role: what follows the name as published, without the separator ("Name (Role)" loses the brackets).
+function juryRole(entry, span) {
+  const after = entry.slice(span.end);
+  if (/^\s*\(/.test(after) && /\)\s*$/.test(after)) return after.trim().slice(1, -1).trim();
+  return after.replace(/^\s*[,;:|–—-]\s*/, '').trim();
+}
+// The person's linked entries, newest call first (Continuous counts as newest): organiser, role, the deadline's year.
+function juryEntries(p) {
+  const key = c => c.deadline === 'Continuous' ? '9999' : String(c.deadline || '');
+  return juryCalls.get(p.id).map(c => {
+    const t = c.jury[c.juryPeople.indexOf(p.id)];
+    return { call: c, org: c.org, entry: t, role: juryRole(t, juryNameSpan(t, p.names)), year: /^\d{4}/.test(String(c.deadline)) ? c.deadline.slice(0, 4) : '' };
+  }).sort((a, b) => key(b.call).localeCompare(key(a.call)));
+}
+// A one-call entry's role prints as a title only when it holds a job word (Lara 2026-11-26 21:11): "UK", "Newsweek
+// Japan", "National Geographic" are a place or an organisation, not a title. Whole words, any case, plural allowed.
+// Lara added painter … mentor at 21:13.
+const JURY_JOB_WORDS = ['director', 'curator', 'editor', 'founder', 'photographer', 'artist', 'president', 'head', 'manager',
+  'professor', 'chair', 'owner', 'publisher', 'producer', 'writer', 'critic', 'member', 'co-founder', 'lecturer', 'coordinator',
+  'officer', 'judge', 'ceo', 'partner', 'consultant', 'designer', 'educator', 'researcher', 'historian', 'journalist',
+  'teacher', 'associate', 'fellow', 'winner', 'ambassador', 'photojournalist', 'author', 'specialist', 'advisor', 'adviser',
+  'collector', 'gallerist', 'filmmaker', 'dean', 'painter', 'sculptor', 'printmaker', 'illustrator', 'architect', 'instructor',
+  'chairman', 'chairwoman', 'chairperson', 'storyteller', 'mentor'];   // 'juror' is not a title (Lara 21:13)
+const JURY_JOB_RE = new RegExp(`\\b(?:${JURY_JOB_WORDS.join('|')})s?\\b`, 'i');
+const andList = xs => xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`;
+// Generated (owner's brief AC): "Juror for A, B and C." — distinct organisers as the site prints them, newest first, more
+// than 4 → the newest 3 and "N other organisers"; "Listed as T (2026), and as U (2025)." — each distinct title as
+// published with the year of its newest call, newest first, more than 3 → the newest 3 and "N other titles"; no title,
+// no second sentence; on one call, a role with no job word (JURY_JOB_RE) is no title. "Listed as", never "is": a title is
+// what that call printed, not a current job.
+function jurySentence(p) {
+  const es = juryEntries(p);
+  const orgs = [...new Set(es.map(e => e.org))];
+  const s1 = `Juror for ${andList(orgs.length > 4 ? [...orgs.slice(0, 3), `${orgs.length - 3} other organisers`] : orgs)}.`;
+  const titles = [];
+  es.forEach(e => { if (e.role && (es.length > 1 || JURY_JOB_RE.test(e.role)) && !titles.some(t => t.role === e.role)) titles.push(e); });
+  if (!titles.length) return s1;
+  const items = titles.slice(0, 3).map(t => `as ${t.role}${t.year ? ` (${t.year})` : ''}`);
+  if (titles.length > 3) items.push(`${titles.length - 3} other title${titles.length - 3 > 1 ? 's' : ''}`);
+  return `${s1} Listed ${items.length === 1 ? items[0] : `${items.slice(0, -1).join(', ')}, and ${items[items.length - 1]}`}.`;
+}
+// A written summary holds while it was written for exactly the person's linked calls; otherwise it is STALE: the page
+// prints the generated sentence and the build says so (the update and verify jobs rewrite it, SPEC §6). A person on 2+
+// calls with no summary is STALE too: the job writes one.
+const juryStale = [];
+function juryDescription(p) {
+  const calls = juryCalls.get(p.id);
+  const fresh = typeof p.summary === 'string' && Array.isArray(p.summaryCalls) && p.summaryCalls.length === calls.length && calls.every(c => p.summaryCalls.includes(c.slug));
+  if (!fresh && (p.summary !== undefined || calls.length > 1)) juryStale.push(p.id);
+  return fresh ? p.summary : jurySentence(p);
+}
+
+const JURY_NOTICE = `Listed from the jury each organiser published on its own call page. This site has no connection to the person. A wrong entry? Send the organiser’s page through the <a href="/submit/">submit form</a>. <a href="/legal/#people">People named on this site</a>.`;
+const jurySlugsWritten = new Set();
+const juryNamesakes = new Map();
+juryData.people.forEach(p => { const k = personSlug(p.name); if (!juryNamesakes.has(k)) juryNamesakes.set(k, []); juryNamesakes.get(k).push(p); });
+juryData.people.forEach(p => {
+  const calls = juryCalls.get(p.id);
+  const label = juryLabel(p);
+  const url = `${SITE}/jury/${p.slug}/`;
+  const desc = juryDescription(p);
+  const others = juryNamesakes.get(personSlug(p.name)).filter(q => q !== p);
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: escapeHtml(`${label} - Jury`), description: escapeHtml(desc), canonical: url, jsonLd: collectionPageLd(`${label} - Jury`, desc, url), breadcrumbs: [{ name: 'Jury', url: `${SITE}/jury/` }, { name: label, url }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero(buildBreadcrumbs('Jury', '/jury'), escapeHtml(p.name), escapeHtml(desc))}
+    <section class="calls-list" id="callsList">
+${others.map(q => `      <p class="browse-more list-switch">Another person with this name: <a href="/jury/${q.slug}/">${escapeHtml(juryLabel(q))}</a></p>\n`).join('')}${buildStaticCallList(calls, { allCalls: true, noHeroCounts: true })}
+      <div class="call-detail-jury"><span class="breadcrumbs">${JURY_NOTICE}</span></div>
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated(`jury/${p.slug}/index.html`, html);
+  jurySlugsWritten.add(p.slug);
+  // A renamed person's old address: a redirect to the new one (switch), never another person's page (G4).
+  if (JURY.formerSlugRedirects) (p.formerSlugs || []).forEach(f => {
+    writeFileTracked(`jury/${f}/index.html`, redirectStubHtml(`/jury/${p.slug}/`, 'This page has moved to'));
+    jurySlugsWritten.add(f);
+  });
+});
+// The /jury/ index: every person, in the form of /organizations/ (hero, the index rows with their dotted leader, A, B, C
+// headings), noindex and out of the sitemap like it. A row counts the calls on the person's page (allCalls).
+const juryIndexEntries = juryData.people.map(p => ({ href: `/jury/${p.slug}/`, label: juryLabel(p), ...listStats(juryCalls.get(p.id)) }));
+{
+  const desc = 'People named on the juries of open calls for photographers and visual artists.';
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Jury', description: escapeHtml(desc), canonical: `${SITE}/jury`, jsonLd: collectionPageLd('Jury', desc, `${SITE}/jury/`), breadcrumbs: [{ name: 'Jury', url: `${SITE}/jury/` }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'Jury', escapeHtml(desc))}
+
+    <section class="index-list" id="indexList">
+${buildIndexItems(juryIndexEntries, { allCalls: true, sort: 'label', letters: true })}    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated('jury/index.html', html);
+}
+console.log(`  Jury: ${juryData.people.length} juror pages, /jury/ index (everyone, A–Z)`);
+juryStale.forEach(id => console.log(`JURY SUMMARY STALE: ${id}`));
+
 // === Deadline month pages ===
 const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
 const MONTH_LABELS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -2601,6 +2909,60 @@ const aboutHtml = `<!DOCTYPE html>
 </html>`;
 
 writeGenerated('about/index.html', aboutHtml);
+
+// === Legal page (/legal/) — owner 2026-11-26 16:02: one page "Legal" for privacy, the people named on the site and
+// anything legal later. About's form (Y4): h1, a subtitle, two columns of short blocks, paragraphs with no gap between
+// them. Text: Y3-privacy/TEXT.md adapted to today's site (Cloudflare Web Analytics, cookie-free, since Google Analytics
+// was removed 2026-11-26 18:45), Y2's "People named on this site". A slot the facts cannot fill stays visible as
+// [[OWNER: …]] so it is never published by accident; the build lists the slots it printed.
+{
+  const P = t => `      <p class="call-detail-description">${t}</p>`;
+  // Owner 2026-11-26 20:16: "describing normal things that every website does... keep this short... this could be 3-4x
+  // shorter". Four blocks: what the site does, the form, the people named, contact.
+  const blocks = [
+    ['privacy', 'Privacy', [
+      'Monographica runs this site. It sets no cookies and stores nothing in your browser. Cloudflare counts visits without cookies and without identifying anyone. As with any website, Cloudflare and GitHub, which deliver the pages, see your IP address when you visit.']],
+    ['submit-form', 'The submit form', [
+      'It sends what you type to Formspree, which passes it on to us. It asks for no name or email.']],
+    ['people', 'People named on this site', [
+      'Jurors are named as organisers name them on their own call pages, with the role as published. A juror also has a page listing the calls they judged. Nothing else is published about them. If something is wrong, send the organiser’s page through the <a href="/submit/">submit form</a>.']],
+    ['contact', 'Contact', [
+      'Use the <a href="/submit/">submit form</a>, and write where to reach you if you want a reply.']],
+  ];
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Legal', description: 'Privacy, and the people named on Monographica Open Calls.', canonical: `${SITE}/legal`, breadcrumbs: [{ name: 'Legal', url: `${SITE}/legal/` }], cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    <section class="hero">
+      <h1>Legal</h1>
+      <p class="subtitle about-intro">Privacy, and the people named on this site.</p>
+    </section>
+
+    <section class="index-list about-list about-columns">
+${blocks.map(([id, head, paras]) => `      <div class="about-block" id="${id}">
+      <h2 class="section-header">${head}</h2>
+${paras.map(P).join('\n')}
+      </div>`).join('\n')}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated('legal/index.html', html);
+  sitemapEntries.push(`${SITE}/legal`);
+  const slots = html.match(/\[\[[^\]]*\]\]/g) || [];
+  console.log(`  Legal page: ${blocks.length} blocks${slots.length ? `; ${slots.length} slot(s) for the owner still open: ${slots.join(' ')}` : ''}`);
+}
 sitemapEntries.push(`${SITE}/about`);
 console.log('  About page');
 
@@ -2639,13 +3001,13 @@ ${see ? `      <p class="browse-see">\n${see}      </p>\n` : ''}      </div>
 `;
 }
 
-// A letter per initial that has an organization, each to the first row under
-// it on /organizations/ (the id is written there by buildIndexItems).
-function browseLetters(items) {
+// A letter per initial that has an organization, each to that letter's heading
+// on /organizations/ (the id is written there by buildIndexItems, letters).
+function browseLetters(items, base = '/organizations/') {
   const letters = [...new Set(items.filter(i => i.open > 0).map(i => indexLetter(i.label)))]
     .sort((a, b) => (a === '0-9') - (b === '0-9') || a.localeCompare(b));
   return `        <p class="browse-letters">${letters.map(l =>
-    `<a href="/organizations/#${l.toLowerCase()}">${l.replace('-', '–')}</a>`).join('')}</p>\n`;
+    `<a href="${base}#${l.toLowerCase()}">${letterText(l)}</a>`).join('')}</p>\n`;
 }
 
 const browseCategoryLabels = {
@@ -2748,12 +3110,16 @@ Object.keys(stateCounts).forEach(state => {
 // and a .js file because Cloudflare caches scripts but not JSON. Loaded by
 // loadSearchIndex() in cards.js the first time someone searches.
 // resultsDate: a closed card in search says when results come (shared.js renderCardBody, owner 2026-11-26).
-const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate'];
+// jury: the Jury line as printed, so a name finds the calls that print it (linked or not).
+const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate', 'jury'];
+// SEARCH_JURY: the people with a juror page, for the dropdown's Jury group (Y4): [label, slug, other spellings?].
+// No call list and no count: the row only opens the page.
+const searchJuryRows = juryData.people.map(p => { const other = (p.names || []).filter(n => n !== p.name); return other.length ? [juryLabel(p), p.slug, other] : [juryLabel(p), p.slug]; });
 const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(data.calls.map(c => {
   const row = {};
   SEARCH_FIELDS.forEach(k => { if (c[k] !== undefined && c[k] !== null) row[k] = c[k]; });
   return row;
-})) + ';\n';
+})) + ';\nwindow.SEARCH_JURY = ' + JSON.stringify(searchJuryRows) + ';\n';
 fs.writeFileSync('search-index.js', searchIndexJs);
 const searchIndexVersion = require('crypto').createHash('sha1').update(searchIndexJs).digest('hex').slice(0, 10);
 console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length} bytes`);
@@ -2794,7 +3160,7 @@ fs.writeFileSync('cards.js', cardsJs);
   // scripts/ is gitignored local tooling — guard so the build works without it.
   const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
   const updateStateSrc = fs.existsSync('scripts/update-verify-state.js') ? fs.readFileSync('scripts/update-verify-state.js', 'utf8') : '';
-  for (const fn of ['function shortenFee(', 'function feeKind(', 'function feeChipText(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(']) {
+  for (const fn of ['function shortenFee(', 'function feeKind(', 'function feeChipText(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(', 'function personSlug(', 'function juryNameSpan(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
     for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc], ['scripts/update-verify-state.js', updateStateSrc]]) {
@@ -2853,6 +3219,7 @@ const allUrlsRaw = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u :
 
 const STRUCTURAL_EXACT = new Set([
   `${SITE}/`,
+  `${SITE}/legal/`,
   `${SITE}/about/`,
   `${SITE}/browse/`,
   `${SITE}/categories/`,
@@ -3199,7 +3566,7 @@ const newFiles = [];
       label: org,
       total,
       open: openOrgCounts[org] || 0
-    })), { hideArchived: true, sort: 'label', letterIds: true });
+    })), { hideArchived: true, sort: 'label', letters: true });
   let html = fs.readFileSync('organizations/index.html', 'utf8');
   html = setRobotsMeta(html, 'noindex, follow');
   html = html.replace(
@@ -3297,6 +3664,19 @@ function findStale(dir) {
     }
   });
 }
+// A juror page whose person is gone (all their calls removed, a removal request, a wrong merge split) is DELETED, not
+// kept as a stale page: it would go on showing a name with calls that no longer link to it. Its URL becomes the 404.
+// (Every other stale page is kept, below.)
+{
+  let removed = 0;
+  const walkJury = d => { if (!fs.existsSync(d)) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    const fp = path.join(d, e.name);
+    if (e.isDirectory()) { walkJury(fp); if (!fs.readdirSync(fp).length) fs.rmdirSync(fp); }
+    else if (!generatedFiles.has(fp)) { fs.unlinkSync(fp); removed++; }
+  } };
+  walkJury('jury');
+  if (removed) console.log(`  Jury: ${removed} file(s) of pages with no person removed`);
+}
 findStale('.');
 
 // A list that got shorter leaves its last pages (…/page/N/, …/past/) behind.
@@ -3339,6 +3719,9 @@ staleFiles.forEach(f => {
   if (isSitePage(f)) {
     const lean = html.replace(DATA_JSON_PRELOAD_RE, '').replace(DATA_JSON_FETCH_SCRIPT_RE, '\n');
     if (lean !== html) { html = lean; changed = true; }
+    // A kept old page still has the footer of its day; it gets today's (the footer gate below checks every page).
+    const footed = html.replace(/<nav class="footer-links"[\s\S]*?<\/nav>/g, FOOTER_LINKS);
+    if (footed !== html) { html = footed; changed = true; }
   }
 
   if (changed) {
@@ -3382,12 +3765,21 @@ if (staleFiles.length) {
   // its open pages hold exactly the open ones.
   for (const [url, info] of pagedListings) {
     info.files.forEach(f => pagedFiles.add(f));
-    const stat = heroStat(fs.readFileSync(info.files[0], 'utf8'));
+    let stat = heroStat(fs.readFileSync(info.files[0], 'utf8'));
+    if (!stat && info.noHeroCounts) stat = { total: info.total, open: info.open };   // juror pages with counts switched off
     if (!stat) { errs.push(`${url} has no "N calls, M open." line`); continue; }
+    if (info.noHeroCounts && heroStat(fs.readFileSync(info.files[0], 'utf8'))) errs.push(`${url} prints a count line with counts switched off`);
     if (stat.total !== info.total || stat.open !== info.open) errs.push(`${url} says "${stat.total} calls, ${stat.open} open" but covers ${info.total}, ${info.open} open`);
-    listings.set(url, stat);
+    listings.set(url, info.allCalls ? { ...stat, allCalls: true } : stat);
     coverage(url, info.files, info.total);
-    if (info.open) coverage(`${url} (open pages)`, info.files.filter(f => !f.startsWith(url.slice(1) + 'past/')), info.open);
+    if (info.allCalls) {
+      // One list, open calls first: the first `open` cards are exactly the open calls, the rest exactly the past ones.
+      const order = info.files.flatMap(f => cardSlugs(fs.readFileSync(f, 'utf8')));
+      const openHrefs = new Set(data.calls.filter(isOpen).map(c => `/${c.slug}/`));
+      const firstPast = order.findIndex(h => !openHrefs.has(h));
+      const head = firstPast < 0 ? order.length : firstPast;
+      if (head !== info.open || order.slice(head).some(h => openHrefs.has(h))) errs.push(`${url} should list its ${info.open} open calls first, then the past ones`);
+    } else if (info.open) coverage(`${url} (open pages)`, info.files.filter(f => !f.startsWith(url.slice(1) + 'past/')), info.open);
   }
 
   // Pass 1b — any other page with a count line: hero total vs its own cards.
@@ -3412,7 +3804,8 @@ if (staleFiles.length) {
   coverage('/results/', resultsFiles, resultsCalls.length);
   coverage('/new/', newFiles, openTotal);
 
-  // Pass 2 — every index row: printed count vs what the target lists first.
+  // Pass 2 — every index row: printed count vs what the target lists first (a page that lists every call on one list,
+  // open first — a juror page — lists them all: its total).
   let rowsChecked = 0;
   for (const file of generatedFiles) {
     if (!file.endsWith('index.html')) continue;
@@ -3421,7 +3814,8 @@ if (staleFiles.length) {
     for (const [, href, printed] of rows) {
       if (!listings.has(href)) continue; // link to a hub page, not a listing
       rowsChecked++;
-      const expected = listedCount(listings.get(href));
+      const l = listings.get(href);
+      const expected = l.allCalls ? l.total : listedCount(l);
       if (Number(printed) !== expected) {
         errs.push(`/${file.replace(/index\.html$/, '')} shows ${printed} for ${href}, but that page lists ${expected} first`);
       }
@@ -3435,6 +3829,173 @@ if (staleFiles.length) {
     process.exit(1);
   }
   console.log(`  Count gate: ${listings.size} listings (${pagedFiles.size} paged files), ${rowsChecked} index rows — all counts match`);
+}
+
+// === JURY GATE (as a reader sees it) — read back from the HTML on disk, every call page and every juror page ===
+{
+  const errs = [];
+  const decode = h => h.replace(/<[^>]+>/g, '').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&middot;/g, '·').replace(/&amp;/g, '&');
+  const unesc = h => h.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+  const cardHrefs = html => [...html.matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="([^"]+)"/g)].map(m => m[1]);
+  let lines = 0, links = 0;
+  for (const c of data.calls) {
+    const f = `${c.slug}/index.html`;
+    if (!generatedFiles.has(f)) continue;
+    const html = fs.readFileSync(f, 'utf8');
+    const m = html.match(/<p class="call-detail-description">Jury: ([\s\S]*?)<\/p>/);
+    const want = Array.isArray(c.jury) && c.jury.length;
+    if (!want) { if (m) errs.push(`G7a ${c.slug}: prints a Jury line but has no jury`); continue; }
+    if (!m) { errs.push(`G7a ${c.slug}: Jury line missing`); continue; }
+    lines++;
+    // G7a: the words a reader reads are exactly the jury as written, as before this feature
+    if (decode(m[1]) !== c.jury.join(' · ')) errs.push(`G7a ${c.slug}: the Jury line reads "${decode(m[1]).slice(0, 80)}" — not the jury as written`);
+    // G7b: the links are exactly the linked people, in order, each on the name the call prints, to that person's page
+    const got = [...m[1].matchAll(/<a href="([^"]+)"(?: title="([^"]*)")?>([^<]*)<\/a>/g)].map(x => `${x[1]}|${unesc(x[2] || '')}|${unesc(x[3])}`);
+    const exp = [];
+    c.jury.forEach((t, i) => { const p = juryById.get((c.juryPeople || [])[i]); if (!p) return; const sp = juryNameSpan(t, p.names); exp.push(`/jury/${p.slug}/|${p.distinguish ? juryLabel(p) : ''}|${t.slice(sp.start, sp.end)}`); });
+    links += got.length;
+    if (got.join('\n') !== exp.join('\n')) errs.push(`G7b ${c.slug}: links ${JSON.stringify(got)} but the jury links ${JSON.stringify(exp)}`);
+  }
+  // G7c: a juror page lists exactly the calls that link to the person — the same set, not only the same number
+  const titles = new Map();
+  for (const p of juryData.people) {
+    const info = pagedListings.get(`/jury/${p.slug}/`);
+    if (!info) { errs.push(`G7c /jury/${p.slug}/ was not written`); continue; }
+    const listed = new Set(info.files.flatMap(f => cardHrefs(fs.readFileSync(f, 'utf8'))));
+    const linking = new Set(juryCalls.get(p.id).map(c => `/${c.slug}/`));
+    const extra = [...listed].filter(h => !linking.has(h)), missing = [...linking].filter(h => !listed.has(h));
+    if (extra.length || missing.length) errs.push(`G7c /jury/${p.slug}/ lists ${extra.length} call(s) that do not name ${p.id} (${extra.slice(0, 3).join(' ')}) and misses ${missing.length} (${missing.slice(0, 3).join(' ')})`);
+    // G6: no two juror pages carry one title
+    const t = (fs.readFileSync(info.files[0], 'utf8').match(/<title>([^<]*)<\/title>/) || [])[1];
+    if (titles.has(t)) errs.push(`G6 /jury/${p.slug}/ and ${titles.get(t)} share the title "${t}"`);
+    titles.set(t, `/jury/${p.slug}/`);
+  }
+  // G7d: nothing under /jury/ but the index, the people's pages and (switch) their old addresses
+  if (fs.existsSync('jury')) for (const d of fs.readdirSync('jury')) {
+    if (d === 'index.html' && generatedFiles.has('jury/index.html')) continue;
+    if (!jurySlugsWritten.has(d)) errs.push(`G7d jury/${d} is no person's page`);
+  }
+  // G7e: the /jury/ index lists every person once, each row to that person's page (old addresses are not listed)
+  {
+    const idx = generatedFiles.has('jury/index.html') ? fs.readFileSync('jury/index.html', 'utf8') : '';   // this build's, not a file left on disk
+    const rows = [...idx.matchAll(/<a href="(\/jury\/[^"]+\/)" class="index-item">/g)].map(m => m[1]);
+    const want = new Set(juryData.people.map(p => `/jury/${p.slug}/`));
+    const seen = new Set(), twice = rows.filter(h => seen.has(h) || !seen.add(h));
+    const extra = [...seen].filter(h => !want.has(h)), missing = [...want].filter(h => !seen.has(h));
+    if (!idx) errs.push('G7e /jury/ index was not written');
+    else if (twice.length || extra.length || missing.length) errs.push(`G7e /jury/ lists ${rows.length} rows for ${want.size} people: ${missing.length} missing (${missing.slice(0, 3).join(' ')}), ${extra.length} not a person (${extra.slice(0, 3).join(' ')}), ${twice.length} twice (${twice.slice(0, 3).join(' ')})`);
+  }
+  // G12 the subtitle (brief AC): every organiser and title it names comes from the person's own linked entries. Read back
+  // from each juror page, with the meta description carrying the same words. A generated sentence holds nothing but the
+  // person's organisers, titles, their years and the joining words; a written summary names no organiser in "Juror for …"
+  // but the person's own, and no other organiser of the site that the person's entries do not name; neither says "is".
+  const reEsc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const siteOrgs = [...new Set(data.calls.map(c => c.org).filter(o => o && o.length >= 4))].map(o => [o, new RegExp(`(?:^|[^\\p{L}\\p{N}])${reEsc(o)}(?:$|[^\\p{L}\\p{N}])`, 'u')]);
+  const strip = (t, pieces) => [...new Set(pieces.filter(Boolean))].sort((a, b) => b.length - a.length).reduce((r, x) => r.split(x).join(' '), t);
+  let written = 0, generated = 0;
+  for (const p of juryData.people) {
+    const info = pagedListings.get(`/jury/${p.slug}/`);
+    if (!info) continue;
+    const html = fs.readFileSync(info.files[0], 'utf8');
+    const sub = decode((html.match(/<h2 class="subtitle">([\s\S]*?)<\/h2>/) || [])[1] || '');
+    const meta = unesc((html.match(/<meta name="description" content="([^"]*)">/) || [])[1] || '');
+    const at = `G12 /jury/${p.slug}/`;
+    if (sub !== meta) errs.push(`${at}: the meta description "${meta.slice(0, 60)}" is not the subtitle "${sub.slice(0, 60)}"`);
+    if (!sub.startsWith('Juror for ')) { errs.push(`${at}: the subtitle "${sub.slice(0, 60)}" does not start "Juror for "`); continue; }
+    if (/\b(?:is|works as)\b/.test(sub)) errs.push(`${at}: "${sub.slice(0, 80)}" says what the person is — a title is "listed as", for that call`);
+    const es = juryEntries(p), orgs = [...new Set(es.map(e => e.org))];
+    if (typeof p.summary === 'string' && sub === p.summary) {
+      written++;
+      if (juryStale.includes(p.id)) errs.push(`${at}: shows a STALE summary (written for other calls than the person's)`);
+      const cut = sub.search(/, listed as |\. Listed as |\.$/);
+      const left = strip(sub.slice(10, cut < 0 ? undefined : cut), orgs).replace(/\b(?:two|three|four|five|six|seven|eight|nine|ten|\d+) other organisers\b/g, ' ').replace(/\bthe\b|\band\b|,/g, ' ').trim();
+      if (left) errs.push(`${at}: the summary names "${left}" among the organisers — not one of ${p.id}'s (${orgs.join(', ')})`);
+      const held = es.map(e => e.entry).join(' | ');
+      siteOrgs.forEach(([o, re]) => { if (!orgs.includes(o) && re.test(sub) && !held.includes(o)) errs.push(`${at}: the summary names the organiser "${o}" — not one of ${p.id}'s, and not in their entries`); });
+    } else {
+      generated++;
+      const years = new Set(es.map(e => e.year).filter(Boolean));
+      const left = strip(sub.slice(10), [...orgs, ...es.map(e => e.role)])
+        .replace(/\((\d{4})\)/g, (m, y) => years.has(y) ? ' ' : m)
+        .replace(/\b\d+ other (?:organisers|titles?)\b/g, ' ').replace(/\bListed\b|\bas\b|\band\b|[,.]/g, ' ').trim();
+      if (left) errs.push(`${at}: "${left.slice(0, 60)}" in the subtitle is no organiser, title or year of ${p.id}'s linked entries`);
+      if (es.length === 1 && / Listed as /.test(sub) && !JURY_JOB_RE.test(es[0].role)) errs.push(`${at}: "Listed as ${es[0].role}" — on one call, a role with no job word is no title`);
+    }
+  }
+  // G9: the private store never shows on a page
+  for (const f of generatedFiles) if (f.startsWith('jury/') || f.startsWith('legal/')) { const h = fs.readFileSync(f, 'utf8'); if (/\/Volumes\/|evidence\.tsv|scripts\/jury/.test(h)) errs.push(`G9 ${f} shows the private store`); }
+  if (errs.length) {
+    console.error(`\nFATAL: JURY (pages) — ${errs.length} problem(s):`);
+    errs.slice(0, 30).forEach(e => console.error('  - ' + e));
+    if (errs.length > 30) console.error(`  …and ${errs.length - 30} more`);
+    process.exit(1);
+  }
+  console.log(`  Jury pages gate: ${lines} Jury lines read back exactly, ${links} links each to the right person, ${juryData.people.length} juror pages list exactly their calls; subtitles from their own entries: ${written} written, ${generated} generated (${juryStale.length} STALE)`);
+}
+
+// === LETTERS GATE — the A, B, C headings as a reader sees them on /organizations/ and /jury/: one heading per letter,
+// "0–9" first then A–Z, every row under its own letter's heading; and every letter on /browse/ lands on an id on its page.
+{
+  const errs = [];
+  const unesc = h => h.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+  const rank = l => l === '0-9' ? 0 : l.charCodeAt(0);
+  let heads = 0, rows = 0, links = 0;
+  for (const f of ['organizations/index.html', 'jury/index.html']) {
+    const html = fs.readFileSync(f, 'utf8');
+    let cur = null;
+    for (const m of html.matchAll(/<h3 class="section-header" id="([^"]*)">([^<]*)<\/h3>|<span class="index-item-name">([^<]*)<\/span>/g)) {
+      if (m[1] !== undefined) {
+        const l = m[1] === '0-9' ? '0-9' : m[1].toUpperCase();
+        if (m[2] !== letterText(l)) errs.push(`${f}: heading id="${m[1]}" reads "${m[2]}"`);
+        if (cur !== null && rank(l) <= rank(cur)) errs.push(`${f}: heading ${m[2]} after ${letterText(cur)}`);
+        cur = l; heads++;
+      } else {
+        rows++;
+        const l = indexLetter(unesc(m[3]));
+        if (l !== cur) errs.push(`${f}: "${unesc(m[3])}" is under ${cur === null ? 'no heading' : letterText(cur)}, not ${letterText(l)}`);
+      }
+    }
+  }
+  const browse = fs.readFileSync('browse/index.html', 'utf8');
+  for (const p of browse.match(/<p class="browse-letters">[\s\S]*?<\/p>/g) || []) {
+    for (const [, page, id] of p.matchAll(/<a href="(\/[^"#]*)#([^"]+)">/g)) {
+      links++;
+      const f = page.slice(1) + 'index.html';
+      if (!fs.existsSync(f) || !fs.readFileSync(f, 'utf8').includes(` id="${id}"`)) errs.push(`/browse/ letter ${page}#${id} lands on no id`);
+    }
+  }
+  if (errs.length) {
+    console.error(`\nFATAL: LETTERS — ${errs.length} problem(s):`);
+    errs.slice(0, 20).forEach(e => console.error('  - ' + e));
+    process.exit(1);
+  }
+  console.log(`  Letters gate: ${heads} letter headings over ${rows} rows on /organizations/ and /jury/, ${links} Browse letters land on their ids`);
+}
+
+// === FOOTER GATE — every page with a footer, built or hand-made (index.html, 404.html, organizations/index.html),
+// carries the one footer: Archive · About · Legal · RSS · Submit (owner 2026-11-26 16:02). Redirect stubs have none.
+{
+  const bad = [];
+  let withFooter = 0;
+  const walk = d => { for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    if (e.name.startsWith('.') || (d === '.' && ['scripts', 'node_modules'].includes(e.name))) continue;
+    const fp = d === '.' ? e.name : path.join(d, e.name);
+    if (e.isDirectory()) walk(fp);
+    else if (e.name.endsWith('.html')) {
+      const h = fs.readFileSync(fp, 'utf8');
+      if (!h.includes('class="footer-links"')) continue;
+      withFooter++;
+      const navs = h.match(/<nav class="footer-links"[\s\S]*?<\/nav>/g) || [];
+      if (navs.length !== 1 || navs[0] !== FOOTER_LINKS) bad.push(fp);
+    }
+  } };
+  walk('.');
+  if (bad.length) {
+    console.error(`\nFATAL: FOOTER — ${bad.length} page(s) do not carry the site footer (${FOOTER_LINKS.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}):`);
+    bad.slice(0, 20).forEach(f => console.error('  - ' + f));
+    process.exit(1);
+  }
+  console.log(`  Footer gate: ${withFooter} pages, one footer`);
 }
 
 // === PRIVACY GATE (owner, 2026-11-25: "none private info is public... that the rule") ===

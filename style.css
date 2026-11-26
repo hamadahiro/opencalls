@@ -1332,10 +1332,10 @@ a.dl-band:hover {
   }
 }
 
-/* On /organizations/: a letter's first row is not pressed against the top edge. */
-.index-item-name[id] {
-  scroll-margin-top: 24px;
-}
+/* A, B, C headings on /organizations/ and /jury/: a letter link lands with the heading not pressed against the top
+   edge; the first heading sits under the title with no gap, as the first heading on /results/ and /browse/. */
+.index-list > .section-header[id] { scroll-margin-top: 24px; }
+.index-list > .section-header[id]:first-child { padding-top: 0; }
 
 /* === Paged lists: /x/, /x/page/N/, /x/past/ === */
 a.filter-btn {

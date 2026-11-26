@@ -116,6 +116,20 @@ function buildSearchSuggestions(allCalls, query, opts) {
   delete groups['Prizes'];
   if (pf.length) groups['Prize / Fee'] = pf.slice(0, 5);
 
+  // Jury — only while typing, and last: the people who have a juror page (window.SEARCH_JURY: label, slug, other
+  // spellings). Same match as Organizations: the name, or another spelling of it, contains the typed text. The rows
+  // carry no count: the page they open says "N calls, M open." for the calls that name the person, while the list
+  // under the search box counts every call whose text holds the typed words; two numbers for one name would differ.
+  if (q && window.SEARCH_JURY) {
+    var juryItems = window.SEARCH_JURY.filter(function(p) {
+      return p[0].toLowerCase().includes(q) || (p[2] || []).some(function(n) { return n.toLowerCase().includes(q); });
+    }).map(function(p) {
+      return { type: 'jury', value: p[1], label: p[0], starts: p[0].toLowerCase().indexOf(q) === 0 };
+    }).filter(function(item) { return notExcluded(item.type, item.value); })
+      .sort(function(a, b) { return (b.starts - a.starts) || a.label.localeCompare(b.label); });
+    if (juryItems.length) groups['Jury'] = juryItems.slice(0, 5);
+  }
+
   // Home page strips Categories on focus (empty query) because category
   // buttons already sit above the search bar.
   if (!q && skipCategoriesOnFocus) {
@@ -134,7 +148,9 @@ var SEARCH_BROWSE_LINKS = {
   'Locations': { href: '/locations/', text: 'See all locations' },
   'Prize / Fee': { href: '/prize/', text: 'See all fees and prizes' },
   'Categories': { href: '/categories/', text: 'See all categories' },
-  'Organizations': { href: '/organizations/', text: 'See all organizations' }
+  'Organizations': { href: '/organizations/', text: 'See all organizations' },
+  // No index page to see them all: the same muted line, as a label, tells these rows are people, not organizations.
+  'Jury': { text: 'Jury members' }
 };
 
 // Shared search-dropdown renderer — single source of truth for the suggestion
@@ -154,12 +170,13 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
     groups[groupName].forEach(function(item) {
       html += '<div class="search-suggestion" style="padding:10px 20px; cursor:pointer; font-size:var(--fs-tag); color:var(--text); display:flex; justify-content:space-between; align-items:center;" data-type="' + item.type + '" data-value="' + esc(item.value) + '" data-label="' + esc(item.label) + '">';
       html += '<span>' + esc(item.label) + '</span>';
-      html += '<span style="color:var(--text-muted);">' + item.count + '</span>';
+      if (item.count !== undefined) html += '<span style="color:var(--text-muted);">' + item.count + '</span>';
       html += '</div>';
     });
     if (SEARCH_BROWSE_LINKS[groupName]) {
       var link = SEARCH_BROWSE_LINKS[groupName];
-      html += '<a href="' + link.href + '" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); text-decoration:none; letter-spacing:0.3px;">' + link.text + '</a>';
+      if (link.href) html += '<a href="' + link.href + '" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); text-decoration:none; letter-spacing:0.3px;">' + link.text + '</a>';
+      else html += '<div class="search-group-label" style="display:block; padding:10px 20px; font-size:var(--fs-tag); color:var(--text-muted); letter-spacing:0.3px;">' + link.text + '</div>';
     }
   });
   dropdownEl.innerHTML = html;
@@ -191,6 +208,7 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
 function chipToUrl(type, value) {
   if (type === 'category' && categorySlug[value]) return '/' + categorySlug[value] + '/';
   if (type === 'eligibility') return '/eligibility/' + value + '/';
+  if (type === 'jury') return '/jury/' + value + '/';
   if (type === 'prize') return '/prize/' + value + '/';
   if (type === 'fee') return value === 'free' ? '/fees/free/' : value === 'free-entry' ? '/fees/free-entry/' : '/fees/entry-fee/';
   if (type === 'country') {
@@ -205,7 +223,7 @@ function chipToUrl(type, value) {
 const countryPages = ["online","united-states","united-kingdom","qatar","italy","poland","bulgaria","spain","france","germany","japan","northern-ireland","canada","greece","singapore","sweden","netherlands","norway","czech-republic","portugal","hungary","ukraine","argentina","morocco","austria","switzerland","south-africa","lithuania","denmark","india","brazil","ireland","australia","north-macedonia","iceland","croatia","estonia","romania","malaysia","russia","bosnia-and-herzegovina","finland","belgium","israel","united-arab-emirates","slovakia","mexico","albania","malta","south-korea","cyprus","china","turkey","hong-kong","belarus","philippines","taiwan","serbia","tunisia","monaco","new-zealand","nepal","latvia","nigeria","slovenia","indonesia","luxembourg"];
 const orgPages = [];
 const statePages = {"MI":"united-states/michigan","NY":"united-states/new-york","CA":"united-states/california","VA":"united-states/virginia","CO":"united-states/colorado","CT":"united-states/connecticut","VT":"united-states/vermont","AZ":"united-states/arizona","MN":"united-states/minnesota","GA":"united-states/georgia","MD":"united-states/maryland","NJ":"united-states/new-jersey","NC":"united-states/north-carolina","OR":"united-states/oregon","TX":"united-states/texas","MA":"united-states/massachusetts","SC":"united-states/south-carolina","FL":"united-states/florida","NH":"united-states/new-hampshire","IN":"united-states/indiana","PA":"united-states/pennsylvania","LA":"united-states/louisiana","WI":"united-states/wisconsin","RI":"united-states/rhode-island","IL":"united-states/illinois","AL":"united-states/alabama","OH":"united-states/ohio","MO":"united-states/missouri","TN":"united-states/tennessee","NM":"united-states/new-mexico","UT":"united-states/utah","WY":"united-states/wyoming","KS":"united-states/kansas","DC":"united-states/washington-dc","AK":"united-states/alaska","OK":"united-states/oklahoma","SD":"united-states/south-dakota","ME":"united-states/maine","WA":"united-states/washington","DE":"united-states/delaware","AR":"united-states/arkansas","HI":"united-states/hawaii","IA":"united-states/iowa","KY":"united-states/kentucky","WV":"united-states/west-virginia","MT":"united-states/montana","ID":"united-states/idaho","NE":"united-states/nebraska","NV":"united-states/nevada"};
-const SEARCH_INDEX_VERSION = '940e7d7e3e';
+const SEARCH_INDEX_VERSION = 'e062f56f33';
 // ==AUTO-GENERATED-END==
 
 // Search data, loaded once on first use: /search-index.js sets

@@ -90,6 +90,40 @@ Cards show `Free` (nothing to pay at any stage), `Free entry*` (free to enter, a
 `$30+ fee` (the price rises: per image, each additional, or a later higher amount — never for a lower members' price
 or a waiver), `$30 fee*` (additional fees), `Paid entry` (amount not stated). The call page shows "Entry fee" and "Additional fees".
 
+## Jury — enforced by the build (owner, 2026-11-26)
+
+"this is about people... it must be accurate". A wrong entry shows a person as juror of a call they did not judge.
+
+**jury** — the people the organizer's own page names as selecting for THIS call, this edition, one entry each:
+`Name, Role, Organisation`, the role as that page states it for this call.
+- A name goes in only when the page shows the person selecting for this edition. A jury of an earlier edition, "to be
+  announced", "will be revealed soon": leave jury empty.
+- A curator, reviewer, editor or partner is not jury unless the page says they select, judge or choose the work.
+- A group stays as written (`Panel of three curators`). No jury named: no jury field.
+
+**juryPeople** — one value per jury entry, same order, same length. `jury` and `juryPeople` always change together, in
+the same write: add, remove, reorder or edit an entry and its value moves with it. The build refuses any other shape.
+A value is a person id from jury.json, or one word:
+- `not-person`: a group, committee, organisation, team, a role without a name, a placeholder;
+- `unresolved`: a person not yet decided;
+- `unconfirmed`: a name the organizer's page does not show selecting for this call.
+
+**Who is who.** Never on the name alone. The same person only when a public page ties the two beyond the name: the same
+organisation or role on both calls, or a bio, CV, staff page or the organizer's juror bio naming the other role. A page
+showing someone else of that name (another country, field or profession): a new person. Anything else: `unresolved`.
+A new person only when the entry was checked on the organizer's page; otherwise `unconfirmed`. Every link and every
+"same person" decision has a source page, kept outside the repository.
+
+**Juror pages** say where the person judged and under what title, from their own entries only: "Juror for A, B and C,
+listed as …". "Listed as", never "is" or "works as": a title is what that call printed, not the person's job today. A
+person on two or more calls has a written `summary` and the calls it was written for (`summaryCalls`); when the build
+prints `JURY SUMMARY STALE: <id>`, rewrite both in the same run: organisers as the site prints them, newest call first
+(more than four: the newest three and "N other organisers"); wordings of one job merged; an entry that is only an
+organisation or a place left out; nothing the entries do not hold. A person back on one call: delete both fields.
+
+**Privacy.** A name, and the role the organizer published for the call. Never an email, phone, address, photo, birth
+date, family or anything personal. Research and evidence stay outside the repository.
+
 ## Tags — enforced by the build (owner, 2026-11-16)
 
 "tags is for 1 or sometimes 2 words not whole sentences". `prize` is split on " + " into tags:
