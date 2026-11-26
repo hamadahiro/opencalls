@@ -465,11 +465,28 @@ function cardTagTexts(call) {
 function cardDate(call, u, esc) {
   const slug = u.deadlineSlug || (call.deadline === 'Continuous' ? 'continuous' : '');
   const cls = 'call-date' + (u.urgencyClass && u.urgencyClass !== 'closed' ? ' dl-band dl-' + u.urgencyClass : '');
-  return `<a href="/deadlines/${slug}/" class="${cls}">${esc(u.urgencyText).replace(/ /g, '&nbsp;')}</a>`;
+  const text = (u.urgencyClass === 'closed' && closedResultsText(call)) || u.urgencyText;
+  return `<a href="/deadlines/${slug}/" class="${cls}">${esc(text).replace(/ /g, '&nbsp;')}</a>`;
+}
+
+// A closed call whose results come on a day the organiser named says when, in place of "Closed", in the deadline's form
+// (computeUrgency: relative up to 30 days, the date beyond): "Results today", "Results tomorrow", "Results in 6 days",
+// "Results on Feb 5, 2027" (owner, 2026-11-26: "same absolute/relative date format as for deadlines"). Any other results
+// text (a month, a range, "by", "around", a date passed, announced) keeps "Closed".
+function closedResultsText(call, now) {
+  now = now || new Date();
+  const w = resultsListed(call, now);
+  if (!w || w.kind !== 'day' || / about /.test(w.label)) return null;
+  const d = new Date(w.day + 'T00:00:00');
+  const n = Math.ceil((d - now) / (1000 * 60 * 60 * 24));
+  if (n <= 0) return 'Results today';
+  if (n === 1) return 'Results tomorrow';
+  if (n <= 30) return 'Results in ' + n + ' days';
+  return 'Results on ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
 // A card under its title: the date opens the description, the other facts (renderTags) stand under it.
-// A closed call whose results are still to come says when they come ("Results Dec 1") in place of "Closed" (owner, 2026-11-26).
+// A closed call whose results come on a named day says when (closedResultsText) in place of "Closed".
 // opts = { esc, urgency }
 function renderCardBody(call, opts) {
   const tags = renderTags(call, opts);
@@ -735,6 +752,6 @@ if (typeof module !== 'undefined' && module.exports) {
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts,
-    resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, resultsCardDate, resultsHref
+    resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, resultsCardDate, resultsHref, closedResultsText
   };
 }
