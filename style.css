@@ -1165,6 +1165,7 @@ a.call-date:not(.dl-band):hover {
   --dl-urgent: #F97167;
   --dl-normal: #B79854;
   --dl-rolling: #889FAA;
+  --dl-results: #67AA83;   /* closed call, results to come (owner, 2026-11-26: "underline them in green") */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -1172,6 +1173,7 @@ a.call-date:not(.dl-band):hover {
     --dl-urgent: #9E181A;
     --dl-normal: #664C06;
     --dl-rolling: #3E535D;
+    --dl-results: #325842;
   }
 }
 .dl-band,
@@ -1199,6 +1201,7 @@ a.dl-band:hover {
 .dl-band.dl-soon,
 .dl-band.dl-normal { --dl-c: var(--dl-normal); }
 .dl-band.dl-rolling { --dl-c: var(--dl-rolling); }
+.dl-band.dl-results { --dl-c: var(--dl-results); }
 
 /* === Index Pages === */
 .index-list {

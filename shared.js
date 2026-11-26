@@ -464,9 +464,10 @@ function cardTagTexts(call) {
 // The deadline on a card: the call page's hand-drawn stroke under the words, in the urgency's colour. Closed calls get no stroke.
 function cardDate(call, u, esc) {
   const slug = u.deadlineSlug || (call.deadline === 'Continuous' ? 'continuous' : '');
-  const cls = 'call-date' + (u.urgencyClass && u.urgencyClass !== 'closed' ? ' dl-band dl-' + u.urgencyClass : '');
-  const text = (u.urgencyClass === 'closed' && closedResultsText(call)) || u.urgencyText;
-  return `<a href="/deadlines/${slug}/" class="${cls}">${esc(text).replace(/ /g, '&nbsp;')}</a>`;
+  const results = u.urgencyClass === 'closed' && closedResultsText(call);
+  // "Results …" carries the deadline's stroke in green (owner, 2026-11-26: "just underline them in green"); "Closed" none.
+  const cls = 'call-date' + (results ? ' dl-band dl-results' : u.urgencyClass && u.urgencyClass !== 'closed' ? ' dl-band dl-' + u.urgencyClass : '');
+  return `<a href="/deadlines/${slug}/" class="${cls}">${esc(results || u.urgencyText).replace(/ /g, '&nbsp;')}</a>`;
 }
 
 // A closed call whose results come on a day the organiser named says when, in place of "Closed", in the deadline's form
