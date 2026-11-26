@@ -261,8 +261,8 @@ data.calls.forEach((c, i) => {
   // RESULTS (owner, 2026-11-25, the Results due pages): a new call's results date is one the Results pages can place —
   // "December 23, 2026", "Around December 9, 2026", "December 11–13, 2026", "By December 1, 2026", "December 2026",
   // "Late December 2026", "Within 2 weeks of the deadline" — or a season ("Spring 2027"). Calls added from 2026-11-26.
-  if ((c.dateAdded || '') >= '2026-11-26' && c.resultsDate && !resultsWhen(c) && !/^(?:(?:early|mid-?|late) )?(?:spring|summer|fall|autumn|winter) \d{4}$/i.test(c.resultsDate.trim()))
-    err(`"${label}" resultsDate "${c.resultsDate}" cannot be placed in a month — write "December 23, 2026", "Late December 2026", "By December 1, 2026", "Within 2 weeks of the deadline" or a season ("Spring 2027")`);
+  if ((c.dateAdded || '') >= '2026-11-26' && c.resultsDate && !resultsWhen(c) && !/^(?:(?:early|mid-?|late) )?(?:spring|summer|fall|autumn|winter) \d{4}$|^Announced(?: [A-Z][a-z]+ \d{1,2}, \d{4})?$|^Cancelled$|^To be announced$/i.test(c.resultsDate.trim()))
+    err(`"${label}" resultsDate "${c.resultsDate}" cannot be placed in a month — write "December 23, 2026", "Late December 2026", "By December 1, 2026", "Within 2 weeks of the deadline" or a season ("Spring 2027"); once out, "Announced" or "Announced October 30, 2026"; "Cancelled"; "To be announced"`);
   // FEES AND MEMBERSHIP: every call, open or closed (owner, 2026-11-25: "every call must be accurate").
   // FEES (owner, 2026-11-25: "if something is paid at the end its not free"): `fee` is what it costs to enter; every
   // other payment the artist must make — if selected or accepted, a membership or subscription needed to enter, more
@@ -433,7 +433,7 @@ function HEAD(opts) {
 
 // Marks the current section in the header. /page/N/ is still "Open", and
 // /archive/… and /new/… keep "Closed" and "New" on every page of the list.
-const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
+const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
 
 // Shared header and footer
 function buildHeader() {
@@ -444,6 +444,7 @@ function buildHeader() {
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -455,6 +456,7 @@ function buildHeader() {
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
