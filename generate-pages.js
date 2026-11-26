@@ -473,8 +473,8 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
-const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       ${FOOTER_LINKS}
@@ -3122,7 +3122,7 @@ const resultsCalls = [];
     const d = new Date(day(c) + 'T00:00:00');
     return MONTHS_CAP[d.getMonth()] + ' ' + d.getFullYear();
   };
-  const html = plainListHtml({ title: 'Results Due', h1: 'Results due from closed open calls, soonest first.', desc: 'Closed open calls for photographers and visual artists whose results are still to come, soonest first.', canonicalPath: '/results/' });
+  const html = plainListHtml({ title: 'Upcoming Open Call Results', h1: 'Upcoming results announcements from past open calls and closed submissions.', desc: 'Upcoming results announcements from past open calls and closed submissions for photographers and visual artists, soonest first.', canonicalPath: '/results/' });
   resultsFiles.push(...writeListPages(html, '/results/', resultsCalls, (chunk, k, count) =>
     renderSectionedCards(chunk, resultsSection) + paginationNav('/results/', k, count),
     { labelFor: k => k > 1 ? `Page ${k}` : '' }));
