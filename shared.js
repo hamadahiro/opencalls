@@ -661,16 +661,13 @@ function renderInfoGrid(call, opts) {
 
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
-  // Results last: it says when you hear back, after everything about entering (owner, 2026-11-24).
-  // The date as the organiser states it, and nothing more. "(announced)" was printed once the date had passed, read from
-  // the date alone; nobody checks whether results came out (audit 2026-11-25, C01: false on /format27-photobook-market/).
-  // A closed call whose results are still to come: the row stands second, under Deadline, because it is the one date still
-  // ahead, and carries the deadline's hand-drawn stroke; it links to its month on the Results page (owner, 2026-11-26).
+  // Results: one place and one look on every call (owner, 2026-11-26: "to many variations and position changes on the
+  // call page"). It stands under Deadline — the call's two dates together — open or closed, plain like the other rows,
+  // and links to the Results page only while the call is listed there, as Prize or Location link to their lists.
+  // The date as the organiser states it; nothing is added ("(announced)" was printed from the date alone, audit C01).
   if (call.resultsDate) {
     const listed = resultsListed(call);
-    if (!listed) rows.push(infoRow('<a href="/results/">Results</a>', infoVal(call.resultsDate)));
-    else rows.splice(1, 0, infoRow('<a href="/results/">Results</a>',
-      `<a href="${resultsHref(listed)}" title="${esc(call.resultsDate)}" class="dl-band dl-normal">${infoVal(call.resultsDate)}</a>`));
+    rows.splice(1, 0, infoRow('<a href="/results/">Results</a>', listed ? `<a href="${resultsHref(listed)}" title="${esc(call.resultsDate)}">${infoVal(call.resultsDate)}</a>` : infoVal(call.resultsDate)));
   }
 
   return rows.join('');

@@ -1165,7 +1165,6 @@ a.call-date:not(.dl-band):hover {
   --dl-urgent: #F97167;
   --dl-normal: #B79854;
   --dl-rolling: #889FAA;
-  --dl-normal-stroke: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20240%2024'%20preserveAspectRatio%3D'none'%3E%3Cpath%20fill%3D'%23B79854'%20d%3D'M6%209.5C46%206.2%2088%209%20128%205.2S204%203.4%20236.4%20.8C239.8%205%20240%2013%20236.8%2018.6C229%2019.4%20222%2017.6%20213%2019.8C172%2021.2%20130%2019.4%2090%2022.2C56%2024%2030%2021.8%203.6%2023.8C.4%2019%200%2014%206%209.5Z'%2F%3E%3C%2Fsvg%3E");   /* the shape in --dl-normal, as a background (the Results stroke) */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -1173,7 +1172,6 @@ a.call-date:not(.dl-band):hover {
     --dl-urgent: #9E181A;
     --dl-normal: #664C06;
     --dl-rolling: #3E535D;
-    --dl-normal-stroke: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20240%2024'%20preserveAspectRatio%3D'none'%3E%3Cpath%20fill%3D'%23664C06'%20d%3D'M6%209.5C46%206.2%2088%209%20128%205.2S204%203.4%20236.4%20.8C239.8%205%20240%2013%20236.8%2018.6C229%2019.4%20222%2017.6%20213%2019.8C172%2021.2%20130%2019.4%2090%2022.2C56%2024%2030%2021.8%203.6%2023.8C.4%2019%200%2014%206%209.5Z'%2F%3E%3C%2Fsvg%3E");
   }
 }
 .dl-band,
@@ -1251,23 +1249,6 @@ a.dl-band:hover {
   .results-list .index-item-count { max-width: 40%; }
   .results-list .index-item-name { overflow-wrap: anywhere; }   /* a word wider than the row leaves ("KYOTOGRAPHIE") breaks */
 }
-/* A closed call's Results date carries the deadline's stroke (shared.js renderInfoGrid). The organiser's words can be
-   longer than a date ("Within 2–3 weeks of deadline"), so they wrap rather than run out of the row. On one line the stroke
-   is the deadline's ::before, untouched. When the words wrap, that one box spans the whole link and sat under its last
-   line only ("deadline", owner 2026-11-26): call-detail.js then gives the link .dl-lines, and the same shape is drawn as
-   the link's background, cloned onto each line (box-decoration-break). The padding stretches the background over the box
-   the ::before had (0.14em left, 0.1em right, 0.06em below the letters); the negative margins give that room back, so the
-   words stand where they stood and wrap the same way. (A background is snapped to whole pixels and the ::before box is
-   not: on one line it would draw the shape up to a device pixel shorter, so one-line Results keep the ::before.) */
-.info-value a.dl-band[href^="/results/"] { white-space: normal; }
-.info-value a.dl-band.dl-lines {
-  padding: 0 0.1em 0.06em 0.14em;
-  margin: 0 -0.1em 0 -0.14em;
-  background: var(--dl-normal-stroke) left bottom / 100% 0.58em no-repeat;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-.info-value a.dl-band.dl-lines::before { content: none; }
 
 /* === Browse More === */
 .browse-more {
