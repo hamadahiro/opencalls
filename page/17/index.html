@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261126b">
+  <link rel="stylesheet" href="/style.css?v=20261126c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -66,7 +66,6 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
-        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
@@ -77,11 +76,10 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
-      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p==='/browse/'||p==='/browse'?'browse':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -240,14 +238,14 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126b"></script>
-  <script src="/cards.js?v=20261126b"></script>
+  <script src="/shared.js?v=20261126c"></script>
+  <script src="/cards.js?v=20261126c"></script>
   <script>
     // The list on this page is server-rendered: one page of open calls with its
     // page links. Searching (typing, a suggestion, or arriving with ?q= or

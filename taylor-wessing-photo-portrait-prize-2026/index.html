@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126b">
+  <link rel="stylesheet" href="/style.css?v=20261126c">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -80,7 +80,6 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
-        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -92,7 +91,6 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
-      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -102,7 +100,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="call-detail">
@@ -140,7 +138,7 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(decide);
 })();</script>
 
-      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 21, 2026">April 21, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/prize/">Prize</a></span><span class="dots"></span><span class="info-value"><span class="info-part"><a href="/prize/cash/" title="£15,000">£15,000</a></span></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£22 per image">£22 per image</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="London, UK">London, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 6 images">Up to 6 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div><div class="info-row"><span class="info-label"><a href="/results/">Results</a></span><span class="dots"></span><span class="info-value"><a href="/results/#november-2026" title="November 2026">November 2026</a></span></div></div>
+      <div class="call-detail-info" id="detailInfo"><div class="info-row"><span class="info-label"><a href="/deadlines/">Deadline</a></span><span class="dots"></span><span class="info-value"><a href="/deadlines/april-2026/" title="April 21, 2026">April 21, 2026</a></span></div><div class="info-row"><span class="info-label"><a href="/prize/">Prize</a></span><span class="dots"></span><span class="info-value"><span class="info-part"><a href="/prize/cash/" title="£15,000">£15,000</a></span></span></div><div class="info-row"><span class="info-label"><a href="/fees/">Entry fee</a></span><span class="dots"></span><span class="info-value"><a href="/fees/entry-fee/" title="£22 per image">£22 per image</a></span></div><div class="info-row"><span class="info-label"><a href="/eligibility/">Eligibility</a></span><span class="dots"></span><span class="info-value"><a href="/eligibility/18-plus/" title="18+">18+</a></span></div><div class="info-row"><span class="info-label"><a href="/locations/">Location</a></span><span class="dots"></span><span class="info-value"><a href="/united-kingdom/" title="London, UK">London, UK</a></span></div><div class="info-row"><span class="info-label"><a href="/requirements/">Requirements</a></span><span class="dots"></span><span class="info-value"><a href="/requirements/6-10-images/" title="Up to 6 images">Up to 6 images</a></span></div><div class="info-row"><span class="info-label"><a href="/submit-via/">Submit via</a></span><span class="dots"></span><span class="info-value"><a href="/submit-via/website/">Website</a></span></div><div class="info-row"><span class="info-label">Results</span><span class="dots"></span><span class="info-value">November 2026</span></div></div>
 
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/national-portrait-gallery/">National Portrait Gallery</a></p>
@@ -157,8 +155,8 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
@@ -168,10 +166,10 @@
     const CURRENT_CALL = {"title":"Taylor Wessing Photo Portrait Prize 2026","category":"photography","org":"National Portrait Gallery","location":"London, United Kingdom","fee":"£22 per image","deadline":"2026-04-21","eligibility":["18-plus"]};
 
   </script>
-  <script src="/shared.js?v=20261126b"></script>
-  <script src="/cards.js?v=20261126b"></script>
-  <script src="/search.js?v=20261126b"></script>
-  <script src="/call-detail.js?v=20261126b"></script>
+  <script src="/shared.js?v=20261126c"></script>
+  <script src="/cards.js?v=20261126c"></script>
+  <script src="/search.js?v=20261126c"></script>
+  <script src="/call-detail.js?v=20261126c"></script>
 
 </body>
 </html>
