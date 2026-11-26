@@ -663,11 +663,11 @@ function renderInfoGrid(call, opts) {
 
   // Results: last, on every call, open or closed (owner, 2026-11-24: "after everything about entering"; 2026-11-26: "i dont
   // like changing position in the grid"). Plain like the other rows; it links to the Results page only while the call is
-  // listed there, as Prize or Location link to their lists.
+  // listed there (its month), otherwise to the page itself (owner, 2026-11-26: "dont add anything just link results date").
   // The date as the organiser states it; nothing is added ("(announced)" was printed from the date alone, audit C01).
   if (call.resultsDate) {
     const listed = resultsListed(call);
-    rows.push(infoRow('<a href="/results/">Results</a>', listed ? `<a href="${resultsHref(listed)}" title="${esc(call.resultsDate)}">${infoVal(call.resultsDate)}</a>` : infoVal(call.resultsDate)));
+    rows.push(infoRow('<a href="/results/">Results</a>', `<a href="${listed ? resultsHref(listed) : '/results/'}" title="${esc(call.resultsDate)}">${infoVal(call.resultsDate)}</a>`));
   }
 
   return rows.join('');
