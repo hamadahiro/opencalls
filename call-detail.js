@@ -14,6 +14,18 @@
     var u = computeUrgency(CURRENT_CALL, new Date()).urgencyClass;
     if (u && u !== 'closed') dlLink.classList.add('dl-band', 'dl-' + u);
   }
+  // Results stroke on a closed call (shared.js renderInfoGrid): when its words take more than one line, every line gets the
+  // stroke (.dl-lines, style.css); on one line it stays the deadline's ::before. Checked again whenever the value's box
+  // changes size: the web font arriving after this ran (it moves where words break), a turned phone, a resized window.
+  // The class changes no width, so it cannot change the line count it is set from.
+  var resLink = info && info.querySelector('.info-value a.dl-band[href^="/results/"]');
+  if (resLink) {
+    var lines = function () { resLink.classList.toggle('dl-lines', resLink.getClientRects().length > 1); };
+    lines();
+    if (window.ResizeObserver) new ResizeObserver(lines).observe(resLink.parentNode);
+    else window.addEventListener('resize', lines);
+    if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', lines);
+  }
 })();
 
 // "More like this" is rendered into the page at build time

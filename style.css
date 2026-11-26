@@ -1252,20 +1252,22 @@ a.dl-band:hover {
   .results-list .index-item-name { overflow-wrap: anywhere; }   /* a word wider than the row leaves ("KYOTOGRAPHIE") breaks */
 }
 /* A closed call's Results date carries the deadline's stroke (shared.js renderInfoGrid). The organiser's words can be
-   longer than a date ("Within 2–3 weeks of deadline"), so they wrap rather than run out of the row, and every line carries
-   its own stroke: the same shape drawn as the link's background and cloned onto each line (box-decoration-break), in place
-   of the one ::before box, which spans the whole link and sat under its last line only ("deadline", owner 2026-11-26).
-   The padding stretches the background over the box the ::before had (0.14em left, 0.1em right, 0.06em below the
-   letters); the negative margins give that room back, so the words stand where they stood. */
-.info-value a.dl-band[href^="/results/"] {
-  white-space: normal;
+   longer than a date ("Within 2–3 weeks of deadline"), so they wrap rather than run out of the row. On one line the stroke
+   is the deadline's ::before, untouched. When the words wrap, that one box spans the whole link and sat under its last
+   line only ("deadline", owner 2026-11-26): call-detail.js then gives the link .dl-lines, and the same shape is drawn as
+   the link's background, cloned onto each line (box-decoration-break). The padding stretches the background over the box
+   the ::before had (0.14em left, 0.1em right, 0.06em below the letters); the negative margins give that room back, so the
+   words stand where they stood and wrap the same way. (A background is snapped to whole pixels and the ::before box is
+   not: on one line it would draw the shape up to a device pixel shorter, so one-line Results keep the ::before.) */
+.info-value a.dl-band[href^="/results/"] { white-space: normal; }
+.info-value a.dl-band.dl-lines {
   padding: 0 0.1em 0.06em 0.14em;
   margin: 0 -0.1em 0 -0.14em;
   background: var(--dl-normal-stroke) left bottom / 100% 0.58em no-repeat;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.info-value a.dl-band[href^="/results/"]::before { content: none; }
+.info-value a.dl-band.dl-lines::before { content: none; }
 
 /* === Browse More === */
 .browse-more {
