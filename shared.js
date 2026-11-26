@@ -469,10 +469,11 @@ function cardDate(call, u, esc) {
 }
 
 // A card under its title: the date opens the description, the other facts (renderTags) stand under it.
+// A closed call whose results are still to come says when they come ("Results Dec 1") in place of "Closed" (owner, 2026-11-26).
 // opts = { esc, urgency }
 function renderCardBody(call, opts) {
   const tags = renderTags(call, opts);
-  const date = opts.results ? resultsCardDate(call, opts.esc) : cardDate(call, opts.urgency || {}, opts.esc);
+  const date = resultsListed(call) ? resultsCardDate(call, opts.esc) : cardDate(call, opts.urgency || {}, opts.esc);
   return `<p class="call-description">${date} – ${opts.esc(call.summary || call.description)}</p>`
     + (tags ? `<div class="call-meta">${tags}</div>` : '');
 }
@@ -497,8 +498,9 @@ function renderTags(call, opts) {
 
 // RESULTS — when the organiser says results come, read from the stored text (owner, 2026-11-25: a "Results due" page).
 // One reader for the Results pages, the call page's Results link and the build gate.
-// Returns { kind, month: 'YYYY-MM', day: 'YYYY-MM-DD' or null, label } or null when the text names no month (a season,
-// "Rolling"). kind: day, range, month, part (early/mid/late/end of), by, relative (computed from the deadline or a date).
+// Returns { kind, month: 'YYYY-MM', day: 'YYYY-MM-DD' or null, label, last: 'YYYY-MM-DD' } or null when the text names no
+// month (a season, "Rolling"). last: the last day the words allow — the date itself (a range, a week, "by": its end);
+// early: the 10th; mid: the 20th; first to fourth week: the 7th, 14th, 21st, 28th; a month, late, end of: its last day. kind: day, range, month, part (early/mid/late/end of), by, relative (computed from the deadline or a date).
 // label: the card's words — "Results Dec 15", "Results Dec 11–13", "Results by Dec 1", "Results in December",
 // "Results late December", "Results about Dec 9".
 const RESULTS_MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
@@ -510,7 +512,9 @@ function resultsWhen(call) {
   const pad = n => String(n).padStart(2, '0');
   const SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const NAME = m => RESULTS_MONTHS[m - 1][0].toUpperCase() + RESULTS_MONTHS[m - 1].slice(1);
-  const out = (kind, y, m, d, label) => ({ kind, month: y + '-' + pad(m), day: d ? y + '-' + pad(m) + '-' + pad(d) : null, label });
+  const UPTO = { early: 10, mid: 20, first: 7, second: 14, third: 21, fourth: 28 };   // the last day of a part of a month; others: its end
+  const out = (kind, y, m, d, label, upTo) => ({ kind, month: y + '-' + pad(m), day: d ? y + '-' + pad(m) + '-' + pad(d) : null, label,
+    last: y + '-' + pad(m) + '-' + pad(d || upTo || new Date(Date.UTC(y, m, 0)).getUTCDate()) });
   const l = String(t).trim().replace(/–/g, '–').toLowerCase().replace(/^[~≈]\s*/, '');
   const re = s => new RegExp('^' + s + '$');
   let x;
@@ -526,7 +530,7 @@ function resultsWhen(call) {
   if ((x = l.match(re('(?:on or about |around |approximately )?' + M + ',? (\\d{4})')))) return out('month', +x[2], MON[x[1]], null, 'Results in ' + NAME(MON[x[1]]));
   if ((x = l.match(re('(early|mid|mid-|late|end of|the end of|by the end of|by end of|beginning of|start of) ?' + M + ',? (\\d{4})')))) {
     const part = /^mid/.test(x[1]) ? 'mid-' : /end/.test(x[1]) ? 'end of ' : /early|beginning|start/.test(x[1]) ? 'early ' : 'late ';
-    return out('part', +x[3], MON[x[2]], null, 'Results ' + part + NAME(MON[x[2]]));
+    return out('part', +x[3], MON[x[2]], null, 'Results ' + part + NAME(MON[x[2]]), UPTO[part.replace(/\W.*$/, '')]);
   }
   if ((x = l.match(re(M + '\\s?[–-]\\s?' + M + ',? (\\d{4})')))) return out('range', +x[3], MON[x[2]], null, 'Results ' + NAME(MON[x[1]]) + '–' + NAME(MON[x[2]]));
   if ((x = l.match(re('(?:by|before|no later than|not later than) ' + M + ' (\\d{1,2})(?:st|nd|rd|th)?,? (\\d{4})'))))
@@ -535,13 +539,14 @@ function resultsWhen(call) {
   // "Week of December 14, 2026": listed until that week ends.
   if ((x = l.match(re('week of ' + M + ' (\\d{1,2}),? (\\d{4})')))) {
     const e = new Date(Date.UTC(+x[3], MON[x[1]] - 1, +x[2] + 6));
-    return { kind: 'week', month: x[3] + '-' + pad(MON[x[1]]), day: e.getUTCFullYear() + '-' + pad(e.getUTCMonth() + 1) + '-' + pad(e.getUTCDate()), label: 'Results week of ' + SHORT[MON[x[1]] - 1] + ' ' + +x[2] };
+    const day = e.getUTCFullYear() + '-' + pad(e.getUTCMonth() + 1) + '-' + pad(e.getUTCDate());
+    return { kind: 'week', month: x[3] + '-' + pad(MON[x[1]]), day, label: 'Results week of ' + SHORT[MON[x[1]] - 1] + ' ' + +x[2], last: day };
   }
   // "First week of December 2026", "Last week of July 2026"
-  if ((x = l.match(re('(first|second|third|fourth|last) week of ' + M + ',? (\\d{4})')))) return out('part', +x[3], MON[x[2]], null, 'Results ' + x[1] + ' week of ' + NAME(MON[x[2]]));
+  if ((x = l.match(re('(first|second|third|fourth|last) week of ' + M + ',? (\\d{4})')))) return out('part', +x[3], MON[x[2]], null, 'Results ' + x[1] + ' week of ' + NAME(MON[x[2]]), UPTO[x[1]]);
   // "Early to mid-December 2026", "Early–mid September 2026", "Late October–early November 2026", "Likely end of November 2026"
-  if ((x = l.match(re('(early|mid|late)(?: to |–|-)(early|mid|late)-? ?' + M + ',? (\\d{4})')))) return out('part', +x[4], MON[x[3]], null, 'Results ' + x[1] + ' to ' + (x[2] === 'mid' ? 'mid-' : x[2] + ' ') + NAME(MON[x[3]]));
-  if ((x = l.match(re('(early|mid|late)-? ?' + M + '\\s?[–-]\\s?(early|mid|late)-? ?' + M + ',? (\\d{4})')))) return out('part', +x[5], MON[x[4]], null, 'Results ' + x[1] + ' ' + NAME(MON[x[2]]) + '–' + x[3] + ' ' + NAME(MON[x[4]]));
+  if ((x = l.match(re('(early|mid|late)(?: to |–|-)(early|mid|late)-? ?' + M + ',? (\\d{4})')))) return out('part', +x[4], MON[x[3]], null, 'Results ' + x[1] + ' to ' + (x[2] === 'mid' ? 'mid-' : x[2] + ' ') + NAME(MON[x[3]]), UPTO[x[2]]);
+  if ((x = l.match(re('(early|mid|late)-? ?' + M + '\\s?[–-]\\s?(early|mid|late)-? ?' + M + ',? (\\d{4})')))) return out('part', +x[5], MON[x[4]], null, 'Results ' + x[1] + ' ' + NAME(MON[x[2]]) + '–' + x[3] + ' ' + NAME(MON[x[4]]), UPTO[x[3]]);
   if ((x = l.match(re('likely (?:the )?end of ' + M + ',? (\\d{4})')))) return out('part', +x[2], MON[x[1]], null, 'Results end of ' + NAME(MON[x[1]]));
   if ((x = l.match(/^by the end of (\d{4})$/))) return out('by', +x[1], 12, 31, 'Results by end of ' + x[1]);
   const N = { one: 1, two: 2, three: 3, four: 4, six: 6 };
@@ -568,8 +573,8 @@ function resultsWhen(call) {
   return null;
 }
 function resultsMonthSlug(month) { return RESULTS_MONTHS[+month.slice(5, 7) - 1] + '-' + month.slice(0, 4); }
-// A call is on the Results pages when it has closed and its results are still to come: a date until it passes, a month
-// ("December 2026", "Late December 2026") until the month ends. The pages and the call page's link use this one rule.
+// A call is on the Results page when it has closed and its results are still to come: until the last day the organiser's
+// words allow has passed ("Early November": until Nov 10). The page, the cards and the call page use this one rule.
 function resultsListed(call, now) {
   now = now || new Date();
   if (!call || isCallOpen(call.deadline)) return null;
@@ -577,12 +582,14 @@ function resultsListed(call, now) {
   if (!w) return null;
   const pad = n => String(n).padStart(2, '0');
   const today = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
-  return (w.day ? w.day >= today : w.month >= today.slice(0, 7)) ? w : null;
+  return w.last >= today ? w : null;
 }
-// The card's date on a Results page: when results come, linking to that month.
+// The month a call stands under on the Results page (by its last day) and its anchor there: /results/#december-2026.
+function resultsHref(w) { return '/results/#' + resultsMonthSlug(w.last.slice(0, 7)); }
+// The card's date for a closed call whose results are still to come, linking to its month on the Results page.
 function resultsCardDate(call, esc) {
   const w = resultsWhen(call);
-  return `<a href="/results/${resultsMonthSlug(w.month)}/" class="call-date">${esc(w.label).replace(/ /g, '&nbsp;')}</a>`;
+  return `<a href="${resultsHref(w)}" class="call-date">${esc(w.label).replace(/ /g, '&nbsp;')}</a>`;
 }
 
 // Detail-page info grid (deadline/prize/fee/location/etc.). opts = { esc, locationLink }
@@ -657,10 +664,13 @@ function renderInfoGrid(call, opts) {
   // Results last: it says when you hear back, after everything about entering (owner, 2026-11-24).
   // The date as the organiser states it, and nothing more. "(announced)" was printed once the date had passed, read from
   // the date alone; nobody checks whether results came out (audit 2026-11-25, C01: false on /format27-photobook-market/).
-  // A closed call whose results are still to come links to its month on the Results pages, as Deadline links to its month.
+  // A closed call whose results are still to come: the row stands second, under Deadline, because it is the one date still
+  // ahead, and carries the deadline's hand-drawn stroke; it links to its month on the Results page (owner, 2026-11-26).
   if (call.resultsDate) {
     const listed = resultsListed(call);
-    rows.push(infoRow('<a href="/results/">Results</a>', listed ? infoLink('/results/' + resultsMonthSlug(listed.month), call.resultsDate) : infoVal(call.resultsDate)));
+    if (!listed) rows.push(infoRow('<a href="/results/">Results</a>', infoVal(call.resultsDate)));
+    else rows.splice(1, 0, infoRow('<a href="/results/">Results</a>',
+      `<a href="${resultsHref(listed)}" title="${esc(call.resultsDate)}" class="dl-band dl-normal">${infoVal(call.resultsDate)}</a>`));
   }
 
   return rows.join('');
@@ -733,6 +743,6 @@ if (typeof module !== 'undefined' && module.exports) {
     isFree, getState, scoreSimilarity,
     isValidEmail, isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts,
-    resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, resultsCardDate
+    resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, resultsCardDate, resultsHref
   };
 }

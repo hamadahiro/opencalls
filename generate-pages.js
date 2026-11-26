@@ -2415,66 +2415,47 @@ writeGenerated('deadlines/index.html', deadlinesIndexHtml);
 sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
 
-// === RESULTS DUE (owner, 2026-11-25: "it would be good to have results due page") ===
-// Closed calls whose organisers say results come this month or later, by that month: /results/ and /results/<month-year>/.
-// shared.js resultsWhen() reads the stored results text; resultsListed() decides who is listed (a date until it passes, a
-// month until it ends). The card's date reads the results date. Nothing here says whether results came out.
-const resultsGroups = {};
-data.calls.forEach(c => { const w = resultsListed(c); if (w) (resultsGroups[w.month] = resultsGroups[w.month] || []).push(c); });
-const resultsMonthKeys = Object.keys(resultsGroups).sort();
-const resultsKey = c => { const w = resultsWhen(c); return w.day || w.month + '-32'; };   // a month without a day sorts at its end
-const resultsLabel = m => `${MONTH_LABELS[+m.slice(5, 7) - 1]} ${m.slice(0, 4)}`;
-const resultsPlaceholder = '<!-- PAGED-LIST:results -->';
-resultsMonthKeys.forEach(m => {
-  const calls = resultsGroups[m].sort((a, b) => resultsKey(a).localeCompare(resultsKey(b)) || a.title.localeCompare(b.title));
-  const label = resultsLabel(m), key = resultsMonthSlug(m), root = `/results/${key}/`;
-  const desc = `Closed calls whose organisers say results come in ${label}.`;
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  ${HEAD({ title: `Results due — ${label}`, description: desc, canonical: `${SITE}${root.slice(0, -1)}`, jsonLd: collectionPageLd(`Results due — ${label}`, desc, `${SITE}${root}`), breadcrumbs: [{ name: 'Results due', url: `${SITE}/results/` }, { name: label, url: `${SITE}${root}` }], cssVersion, robots: 'noindex, follow' })}
-</head>
-<body>
-
-  ${buildHeader()}
-
-  <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/results/">Results due</a></nav>', label, `${escapeHtml(desc)} ${calls.length} call${calls.length !== 1 ? 's' : ''}.`)}
-
-    <section class="calls-list" id="callsList">
-${resultsPlaceholder}
-    </section>
-
-    ${FOOTER}
-  </main>
-
-  ${CARDS_SCRIPT(cssVersion)}
-
-</body>
-</html>`;
-  writeListPages(html.replace(resultsPlaceholder, '<!-- PAGED-LIST:0 -->'), root, calls, (chunk, k, count) =>
-    chunk.map(c => `      <div class="call-card">
-        <h4 class="call-title"><a href="/${c.slug || slugify(c.title)}/">${escapeHtml(c.title) + (!c.orgInTitle ? ' · ' + escapeHtml(c.org) : '')}</a></h4>
-        ${renderCardBody(c, { esc: escapeHtml, results: true })}
-      </div>\n`).join('') + paginationNav(root, k, count),
-    { labelFor: k => k > 1 ? `Page ${k}` : '', robots: 'noindex, follow' });
-  console.log(`  Results page: ${label} (${calls.length} calls)`);
-});
+// === RESULTS DUE (owner, 2026-11-25: "it would be good to have results due page"; 2026-11-26: the designer's version 3) ===
+// One page, /results/: closed calls whose results are still to come, one line a call — title · organiser, dotted leader,
+// when — soonest first by the last day the organiser's words allow (shared.js resultsWhen().last). resultsListed() is the
+// one rule for this page, the closed cards ("Results Dec 1" in place of "Closed") and the call page's Results row.
+// Headers: Today, Tomorrow, then months, each month with its anchor (/results/#december-2026), where the call page's
+// Results link and the closed card's date point. A month-only date shows the organiser's words ("In November") under
+// its month; no day is made up. Nothing here says whether results came out.
+const resultsNow = new Date();
+const resultsYmd = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+const resultsToday = resultsYmd(resultsNow);
+const resultsTomorrow = resultsYmd(new Date(resultsNow.getFullYear(), resultsNow.getMonth(), resultsNow.getDate() + 1));
+const resultsRank = w => w.kind === 'day' ? 0 : w.day ? 1 : 2;   // on one last day: dates, then "by"/weeks/ranges, then months
+const resultsRows = data.calls.map(c => ({ c, w: resultsListed(c, resultsNow) })).filter(x => x.w)
+  .sort((a, b) => a.w.last.localeCompare(b.w.last) || resultsRank(a.w) - resultsRank(b.w) || a.c.title.localeCompare(b.c.title));
+const resultsSection = w => w.last === resultsToday ? ['today', 'Today'] : w.last === resultsTomorrow ? ['tomorrow', 'Tomorrow']
+  : [resultsMonthSlug(w.last.slice(0, 7)), MONTH_LABELS[+w.last.slice(5, 7) - 1] + ' ' + w.last.slice(0, 4)];
+// The row's words: the card's, without "Results" — "Dec 1", "By Dec 5", "In November", "Late December". A date never splits.
+const resultsWords = w => { const v = w.label.replace(/^Results /, ''); return escapeHtml(v[0].toUpperCase() + v.slice(1)).replace(/([A-Z][a-z]{2}) (\d)/g, '$1&nbsp;$2'); };
+let resultsAt = '';
+const resultsListHtml = resultsRows.map(({ c, w }) => {
+  const [id, heading] = resultsSection(w);
+  const head = id !== resultsAt ? `      <h3 class="section-header" id="${id}">${heading}</h3>\n` : '';
+  resultsAt = id;
+  const name = (escapeHtml(c.title) + (!c.orgInTitle ? ' · ' + escapeHtml(c.org) : '')).replace(/\//g, '/<wbr>');   // a break after a slash, as on the call page
+  return head + `      <a href="/${c.slug || slugify(c.title)}/" class="index-item"><span class="index-item-name">${name}</span><span class="dots"></span><span class="index-item-count">${resultsWords(w)}</span></a>\n`;
+}).join('');
+const resultsDesc = 'Closed calls whose results are still to come, soonest first.';
 const resultsIndexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: 'Results due', description: 'Closed calls, by the month their organisers say results come.', canonical: `${SITE}/results`, jsonLd: collectionPageLd('Results due', 'Closed calls, by the month their organisers say results come.', `${SITE}/results/`), cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title: 'Results due', description: resultsDesc, canonical: `${SITE}/results`, jsonLd: collectionPageLd('Results due', resultsDesc, `${SITE}/results/`), cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
   ${buildHeader()}
 
   <main>
-    ${buildHero('', 'Results due', 'Closed calls, by the month their organisers say results come.')}
+    ${buildHero('', 'Results due', resultsDesc)}
 
-    <section class="index-list" id="indexList">
-${resultsMonthKeys.map(m => indexItem(`/results/${resultsMonthSlug(m)}/`, resultsLabel(m), resultsGroups[m].length).trimEnd()).join('\n')}
-    </section>
+    <section class="index-list results-list" id="indexList">
+${resultsListHtml || '      <p class="empty-state">No closed call has results still to come.</p>\n'}    </section>
 
     <p class="browse-more"><a href="/deadlines/">Browse open calls by deadline</a></p>
 
@@ -2486,7 +2467,7 @@ ${resultsMonthKeys.map(m => indexItem(`/results/${resultsMonthSlug(m)}/`, result
 </body>
 </html>`;
 writeFileTracked('results/index.html', resultsIndexHtml);
-console.log(`  Results index page (${resultsMonthKeys.length} months, ${resultsMonthKeys.reduce((n, m) => n + resultsGroups[m].length, 0)} calls)`);
+console.log(`  Results page (${resultsRows.length} calls)`);
 
 // === Submit page ===
 // The search bar sits under the menu as on every other page (owner, 2026-11-25; it stood in the hero from 2026-11-23).
@@ -2814,7 +2795,8 @@ Object.keys(stateCounts).forEach(state => {
 // free-text match and the result cards read. ~1 MB against data.json's ~36 MB,
 // and a .js file because Cloudflare caches scripts but not JSON. Loaded by
 // loadSearchIndex() in cards.js the first time someone searches.
-const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description'];
+// resultsDate: a closed card in search says when results come (shared.js renderCardBody, owner 2026-11-26).
+const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate'];
 const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(data.calls.map(c => {
   const row = {};
   SEARCH_FIELDS.forEach(k => { if (c[k] !== undefined && c[k] !== null) row[k] = c[k]; });

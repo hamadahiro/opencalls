@@ -1238,6 +1238,21 @@ a.dl-band:hover {
   white-space: nowrap;
 }
 
+/* === Results due: one list (owner chose the designer's version 3, 2026-11-26) ===
+   The site's index row — name, dotted leader, value — the value being when results come. */
+.results-list .section-header { scroll-margin-top: 24px; }
+.results-list .section-header:first-child { padding-top: 0; }   /* as the Browse page's first group: no gap under the title */
+/* The words keep their whole width up to 45% of the row (40% under 360 px), so "In November" stays on one line beside a long
+   name; longer words ("Early to mid-December") wrap inside it. A date never splits: its space is &nbsp;. */
+.results-list .index-item-count { flex-shrink: 0; max-width: 45%; white-space: normal; text-align: right; }
+@media (max-width: 359px) {
+  .results-list .index-item-count { max-width: 40%; }
+  .results-list .index-item-name { overflow-wrap: anywhere; }   /* a word wider than the row leaves ("KYOTOGRAPHIE") breaks */
+}
+/* A closed call's Results date carries the deadline's stroke (shared.js renderInfoGrid). The organiser's words can be
+   longer than a date ("Within 2–3 weeks of deadline"), so they wrap rather than run out of the row. */
+.info-value a.dl-band[href^="/results/"] { white-space: normal; }
+
 /* === Browse More === */
 .browse-more {
   font-size: var(--fs-body);
