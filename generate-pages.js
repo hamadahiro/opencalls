@@ -963,7 +963,7 @@ function buildJsonLd(call) {
   return JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
 }
 
-// Phones only: the call's description shows 6 lines and a "Read more" line. The whole
+// Phones only: the call's description shows 6 lines and a "Read more" line, which opens the text and goes. The whole
 // text stays in the HTML (search engines and no-JS readers get all of it); this only
 // adds the class the CSS clamps on. It runs inline, right after the text, so the page
 // never paints the long version first and jumps. It cuts only when that hides 3 lines
@@ -975,11 +975,12 @@ const DESCRIPTION_COLLAPSE_SCRIPT = `(function () {
   var btn = document.createElement('button'), touched = false;
   btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
   btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
+  // One way only: the text opens and the line goes; no "Show less" (owner, 2026-11-26: "it should disappear... to get
+  // less, you refresh the page"). The page then reads as a call whose text was short to begin with.
   btn.onclick = function () {
     touched = true;
-    var c = box.classList.toggle('is-collapsed');
-    btn.textContent = c ? 'Read more' : 'Show less'; btn.setAttribute('aria-expanded', String(!c));
-    if (c && box.getBoundingClientRect().top < 0) box.scrollIntoView();
+    box.classList.remove('is-collapsed', 'has-more');
+    btn.remove();
   };
   function decide() {
     if (touched) return;
