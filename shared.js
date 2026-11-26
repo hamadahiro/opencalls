@@ -661,13 +661,13 @@ function renderInfoGrid(call, opts) {
 
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
-  // Results: one place and one look on every call (owner, 2026-11-26: "to many variations and position changes on the
-  // call page"). It stands under Deadline — the call's two dates together — open or closed, plain like the other rows,
-  // and links to the Results page only while the call is listed there, as Prize or Location link to their lists.
+  // Results: last, on every call, open or closed (owner, 2026-11-24: "after everything about entering"; 2026-11-26: "i dont
+  // like changing position in the grid"). Plain like the other rows; it links to the Results page only while the call is
+  // listed there, as Prize or Location link to their lists.
   // The date as the organiser states it; nothing is added ("(announced)" was printed from the date alone, audit C01).
   if (call.resultsDate) {
     const listed = resultsListed(call);
-    rows.splice(1, 0, infoRow('<a href="/results/">Results</a>', listed ? `<a href="${resultsHref(listed)}" title="${esc(call.resultsDate)}">${infoVal(call.resultsDate)}</a>` : infoVal(call.resultsDate)));
+    rows.push(infoRow('<a href="/results/">Results</a>', listed ? `<a href="${resultsHref(listed)}" title="${esc(call.resultsDate)}">${infoVal(call.resultsDate)}</a>` : infoVal(call.resultsDate)));
   }
 
   return rows.join('');
