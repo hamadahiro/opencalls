@@ -10,7 +10,7 @@ const {
   PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-  getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed,
+  getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, closedResultsText,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
   NO_OPEN_CALLS_NOTICE,
@@ -433,7 +433,7 @@ function HEAD(opts) {
 
 // Marks the current section in the header. /page/N/ is still "Open", and
 // /archive/… and /new/… keep "Closed" and "New" on every page of the list.
-const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
+const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
 
 // Shared header and footer
 function buildHeader() {
@@ -444,6 +444,7 @@ function buildHeader() {
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -455,6 +456,7 @@ function buildHeader() {
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -471,8 +473,8 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
-const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       ${FOOTER_LINKS}
@@ -3103,6 +3105,30 @@ const archiveFiles = [];
   console.log(`  Archive: ${past.length} past calls on ${archiveFiles.length} page(s)`);
 }
 
+// /results/ — the closed calls whose cards say "Results …" (shared.js closedResultsText: results on a day the organiser
+// named, still to come), soonest first, under Results Today, Results Tomorrow and then the month, as the home page groups
+// deadlines (owner, 2026-11-26: "just filter out ones with result dates and group them like on home page").
+const resultsFiles = [];
+const resultsCalls = [];
+{
+  const now = new Date();
+  const day = c => resultsWhen(c).day;
+  resultsCalls.push(...data.calls.filter(c => !isOpen(c) && closedResultsText(c, now))
+    .sort((a, b) => day(a).localeCompare(day(b)) || b.deadline.localeCompare(a.deadline) || a.title.localeCompare(b.title)));
+  const resultsSection = c => {
+    const text = closedResultsText(c, now);
+    if (text === 'Results today') return 'Results Today';
+    if (text === 'Results tomorrow') return 'Results Tomorrow';
+    const d = new Date(day(c) + 'T00:00:00');
+    return MONTHS_CAP[d.getMonth()] + ' ' + d.getFullYear();
+  };
+  const html = plainListHtml({ title: 'Results Due', h1: 'Results due from closed open calls, soonest first.', desc: 'Closed open calls for photographers and visual artists whose results are still to come, soonest first.', canonicalPath: '/results/' });
+  resultsFiles.push(...writeListPages(html, '/results/', resultsCalls, (chunk, k, count) =>
+    renderSectionedCards(chunk, resultsSection) + paginationNav('/results/', k, count),
+    { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+  console.log(`  Results: ${resultsCalls.length} calls on ${resultsFiles.length} page(s)`);
+}
+
 // /new/ — open calls, most recently added first (the header's "New"). Sections
 // are relative to the build's local date, like the deadline sections.
 const newFiles = [];
@@ -3368,6 +3394,7 @@ if (staleFiles.length) {
   const openTotal = data.calls.filter(isOpen).length;
   coverage('home (/, /page/N/)', homeFiles, openTotal);
   coverage('/archive/', archiveFiles, data.calls.length - openTotal);
+  coverage('/results/', resultsFiles, resultsCalls.length);
   coverage('/new/', newFiles, openTotal);
 
   // Pass 2 — every index row: printed count vs what the target lists first.
