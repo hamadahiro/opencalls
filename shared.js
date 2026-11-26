@@ -680,8 +680,17 @@ function renderInfoGrid(call, opts) {
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
   // Results last, on every call: the date as the organiser states it, nothing added (owner, 2026-11-24; "(announced)" was
-  // printed from the date alone, audit C01). No link while the Results page is off the site (2026-11-26).
-  if (call.resultsDate) rows.push(infoRow('Results', infoVal(call.resultsDate)));
+  // printed from the date alone, audit C01). The label links to the Results page like every label; while the call is on
+  // that page (its card says "Results …") the date links there too, written as the Deadline row writes a date, with the
+  // cards' green stroke (owner, 2026-11-26: "link results word with results page and match date format and color. dont
+  // move the position").
+  if (call.resultsDate) {
+    const listed = closedResultsText(call) ? resultsWhen(call) : null;
+    const val = listed
+      ? `<a href="/results/" class="dl-band dl-results" title="${esc(call.resultsDate)}">${new Date(listed.day + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</a>`
+      : infoVal(call.resultsDate);
+    rows.push(infoRow('<a href="/results/">Results</a>', val));
+  }
 
   return rows.join('');
 }
