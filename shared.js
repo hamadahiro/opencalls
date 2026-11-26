@@ -473,7 +473,7 @@ function cardDate(call, u, esc) {
 // opts = { esc, urgency }
 function renderCardBody(call, opts) {
   const tags = renderTags(call, opts);
-  const date = resultsListed(call) ? resultsCardDate(call, opts.esc) : cardDate(call, opts.urgency || {}, opts.esc);
+  const date = cardDate(call, opts.urgency || {}, opts.esc);
   return `<p class="call-description">${date} – ${opts.esc(call.summary || call.description)}</p>`
     + (tags ? `<div class="call-meta">${tags}</div>` : '');
 }
@@ -661,14 +661,9 @@ function renderInfoGrid(call, opts) {
 
   if (call.submitVia) rows.push(infoRow('<a href="/submit-via/">Submit via</a>', submitViaLink(call, esc)));
 
-  // Results: last, on every call, open or closed (owner, 2026-11-24: "after everything about entering"; 2026-11-26: "i dont
-  // like changing position in the grid"). Plain like the other rows; it links to the Results page only while the call is
-  // listed there (its month), otherwise to the page itself (owner, 2026-11-26: "dont add anything just link results date").
-  // The date as the organiser states it; nothing is added ("(announced)" was printed from the date alone, audit C01).
-  if (call.resultsDate) {
-    const listed = resultsListed(call);
-    rows.push(infoRow('<a href="/results/">Results</a>', `<a href="${listed ? resultsHref(listed) : '/results/'}" title="${esc(call.resultsDate)}">${infoVal(call.resultsDate)}</a>`));
-  }
+  // Results last, on every call: the date as the organiser states it, nothing added (owner, 2026-11-24; "(announced)" was
+  // printed from the date alone, audit C01). No link while the Results page is off the site (2026-11-26).
+  if (call.resultsDate) rows.push(infoRow('Results', infoVal(call.resultsDate)));
 
   return rows.join('');
 }

@@ -433,7 +433,7 @@ function HEAD(opts) {
 
 // Marks the current section in the header. /page/N/ is still "Open", and
 // /archive/… and /new/… keep "Closed" and "New" on every page of the list.
-const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
+const NAV_STATE_SCRIPT = `<script>(function(){var p=location.pathname,n=p==='/'||/^\\/page\\/\\d+\\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>`;
 
 // Shared header and footer
 function buildHeader() {
@@ -444,7 +444,6 @@ function buildHeader() {
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
-        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -456,7 +455,6 @@ function buildHeader() {
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
-      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -473,8 +471,8 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
-const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
       ${FOOTER_LINKS}
@@ -2417,59 +2415,8 @@ writeGenerated('deadlines/index.html', deadlinesIndexHtml);
 sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
 
-// === RESULTS DUE (owner, 2026-11-25: "it would be good to have results due page"; 2026-11-26: the designer's version 3) ===
-// One page, /results/: closed calls whose results are still to come, one line a call — title · organiser, dotted leader,
-// when — soonest first by the last day the organiser's words allow (shared.js resultsWhen().last). resultsListed() is the
-// one rule for this page, the closed cards ("Results Dec 1" in place of "Closed") and the call page's Results row.
-// Headers: Today, Tomorrow, then months, each month with its anchor (/results/#december-2026), where the call page's
-// Results link and the closed card's date point. A month-only date shows the organiser's words ("In November") under
-// its month; no day is made up. Nothing here says whether results came out.
-const resultsNow = new Date();
-const resultsYmd = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-const resultsToday = resultsYmd(resultsNow);
-const resultsTomorrow = resultsYmd(new Date(resultsNow.getFullYear(), resultsNow.getMonth(), resultsNow.getDate() + 1));
-const resultsRank = w => w.kind === 'day' ? 0 : w.day ? 1 : 2;   // on one last day: dates, then "by"/weeks/ranges, then months
-const resultsRows = data.calls.map(c => ({ c, w: resultsListed(c, resultsNow) })).filter(x => x.w)
-  .sort((a, b) => a.w.last.localeCompare(b.w.last) || resultsRank(a.w) - resultsRank(b.w) || a.c.title.localeCompare(b.c.title));
-const resultsSection = w => w.last === resultsToday ? ['today', 'Today'] : w.last === resultsTomorrow ? ['tomorrow', 'Tomorrow']
-  : [resultsMonthSlug(w.last.slice(0, 7)), MONTH_LABELS[+w.last.slice(5, 7) - 1] + ' ' + w.last.slice(0, 4)];
-// The row's words: the card's, without "Results" — "Dec 1", "By Dec 5", "In November", "Late December". A date never splits.
-const resultsWords = w => { const v = w.label.replace(/^Results /, ''); return escapeHtml(v[0].toUpperCase() + v.slice(1)).replace(/([A-Z][a-z]{2}) (\d)/g, '$1&nbsp;$2'); };
-let resultsAt = '';
-const resultsListHtml = resultsRows.map(({ c, w }) => {
-  const [id, heading] = resultsSection(w);
-  const head = id !== resultsAt ? `      <h3 class="section-header" id="${id}">${heading}</h3>\n` : '';
-  resultsAt = id;
-  const name = (escapeHtml(c.title) + (!c.orgInTitle ? ' · ' + escapeHtml(c.org) : '')).replace(/\//g, '/<wbr>');   // a break after a slash, as on the call page
-  return head + `      <a href="/${c.slug || slugify(c.title)}/" class="index-item"><span class="index-item-name">${name}</span><span class="dots"></span><span class="index-item-count">${resultsWords(w)}</span></a>\n`;
-}).join('');
-const resultsDesc = 'Closed calls whose results are still to come, soonest first.';
-const resultsIndexHtml = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  ${HEAD({ title: 'Results due', description: resultsDesc, canonical: `${SITE}/results`, jsonLd: collectionPageLd('Results due', resultsDesc, `${SITE}/results/`), cssVersion, robots: 'noindex, follow' })}
-</head>
-<body>
-
-  ${buildHeader()}
-
-  <main>
-    ${buildHero('', 'Results due', resultsDesc)}
-
-    <section class="index-list results-list" id="indexList">
-${resultsListHtml || '      <p class="empty-state">No closed call has results still to come.</p>\n'}    </section>
-
-    <p class="browse-more"><a href="/deadlines/">Browse open calls by deadline</a></p>
-
-    ${FOOTER}
-  </main>
-
-  ${CARDS_SCRIPT(cssVersion)}
-
-</body>
-</html>`;
-writeFileTracked('results/index.html', resultsIndexHtml);
-console.log(`  Results page (${resultsRows.length} calls)`);
+// RESULTS DUE: taken off the site on 2026-11-26 (owner: "remove the page from the website until we figure this out"); the
+// work is on branch results-due. shared.js resultsWhen() still reads results dates for the build gate.
 
 // === Submit page ===
 // The search bar sits under the menu as on every other page (owner, 2026-11-25; it stood in the hero from 2026-11-23).
