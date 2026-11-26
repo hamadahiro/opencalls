@@ -124,8 +124,6 @@ The juror is Lisa Sheirer, who has a BFA in painting and printmaking from West V
   var btn = document.createElement('button'), touched = false;
   btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
   btn.setAttribute('aria-controls', 'detailText'); btn.setAttribute('aria-expanded', 'false');
-  // One way only: the text opens and the line goes; no "Show less" (owner, 2026-11-26: "it should disappear... to get
-  // less, you refresh the page"). The page then reads as a call whose text was short to begin with.
   btn.onclick = function () {
     touched = true;
     box.classList.remove('is-collapsed', 'has-more');
