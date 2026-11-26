@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,13 +95,13 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/locations/">Locations</a></nav>
       <h1>Online Open Calls for Artists</h1>
-      <h2 class="subtitle">Online open calls, competitions, and submissions for photographers and visual artists. No travel required — apply from anywhere. 557 calls, 131 open.</h2>
+      <h2 class="subtitle">Online open calls, competitions, and submissions for photographers and visual artists. No travel required — apply from anywhere. 557 calls, 132 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -107,20 +109,16 @@
       <p class="browse-more list-switch"><a href="/online/">See all open calls</a></p>
       <h3 class="section-header">November 2026</h3>
       <div class="call-card">
-        <h4 class="call-title"><a href="/under-my-skin-issue-3-with-us/">Under My Skin Issue #3 — With Us (ARE YOU?) · California Aggregation for Gender Diversity</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Issue 3 of a trans-led magazine asks who is truly With Us. All visual art and writing; free, pseudonyms welcome.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
-      </div>
-      <div class="call-card">
         <h4 class="call-title"><a href="/city-series-london-shutter-hub-editions-publication/">The City Series: London — Shutter Hub Editions Publication</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Shutter Hub Editions photobook responding to London as an idea — experienced, observed, imagined. Pay-what-you-can, worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£15+">£15 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link" title="Publication in printed photobook">Publication</a></div>
+        <p class="call-description"><a href="/results/#february-2027" class="call-date">Results&nbsp;by&nbsp;Feb&nbsp;4</a> – Shutter Hub Editions photobook responding to London as an idea — experienced, observed, imagined. Pay-what-you-can, worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£15+">£15 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link" title="Publication in printed photobook">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/f-stop-magazine-issue-140-portfolio-2026/">F-Stop Magazine Issue #140 — Portfolio 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Portfolio issue of the long-running online photo magazine — a single body of work, 12–20 images. Free; publishes Dec 1.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;1</a> – Portfolio issue of the long-running online photo magazine — a single body of work, 12–20 images. Free; publishes Dec 1.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/aap-magazine-62-travels-all-about-photo/">AAP Magazine #62 Travels · All About Photo</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Travel-themed 62nd issue of AAP Magazine. $500/$300/$200 cash prizes plus publication; up to 40 images, 18+.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500/$300/$200</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;about&nbsp;Dec&nbsp;15</a> – Travel-themed 62nd issue of AAP Magazine. $500/$300/$200 cash prizes plus publication; up to 40 images, 18+.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500/$300/$200</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/5x7-photobook-vol-3-artsin-square/">5X7 Photobook Vol. 3 · Artsin Square</a></h4>
@@ -128,7 +126,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-maker-issue-6-open-call-cover-prize/">ART MAKER Issue 6 — Open Call + Cover Prize</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Artist-run contemporary art magazine's sixth issue — open theme, juried by Kurt Stimmeder. Entry form still unpublished as of 5 Nov.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$16 for up to 4 images, $24 for up to 10">$16+ fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$150 gift card (cover artist)">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;Nov&nbsp;27</a> – Artist-run contemporary art magazine's sixth issue — open theme, juried by Kurt Stimmeder. Entry form still unpublished as of 5 Nov.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$16 for up to 4 images, $24 for up to 10">$16+ fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$150 gift card (cover artist)">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/haus-a-rest-issue-76-labour-repetition-print/">Haus-a-rest — Issue 76: Labour, Repetition and Print</a></h4>
@@ -136,7 +134,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/artistic-production-grant-spring-2027-cycle-via-art-fund/">Artistic Production Grant — Spring 2027 Cycle · VIA Art Fund</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – $25,000–$100,000 for new public-realm visual-art commissions. Letter of inquiry due 5 Nov; venue must already be confirmed.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$25,000–$100,000</a></div>
+        <p class="call-description"><a href="/results/#april-2027" class="call-date">Results&nbsp;in&nbsp;April</a> – $25,000–$100,000 for new public-realm visual-art commissions. Letter of inquiry due 5 Nov; venue must already be confirmed.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$25,000–$100,000</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/portfolio-review-ii-fotografiska-emerging/">Portfolio Review II · Fotografiska Emerging</a></h4>
@@ -144,15 +142,15 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/dot-art-award-2026/">.ART Award 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Domain-registry award for .ART's 10th year: $15,000 Grand Prize, residencies in France, Spain and Georgia, museum and art-market jury. Needs a .ART domain.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: Registration of a .ART domain (amount not stated)">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$15,000</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;4</a> – Domain-registry award for .ART's 10th year: $15,000 Grand Prize, residencies in France, Spain and Georgia, museum and art-market jury. Needs a .ART domain.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: Registration of a .ART domain (amount not stated)">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$15,000</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/sublime-photo-awards-2026/">Sublime Photo Awards 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Independent international award across five categories. $500/$300/$200 grand prizes; one free photo per category, paid entries from $18.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$18–$36 for 2–5 photos (1 photo free)">$18+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$500 / $300 / $200">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;3</a> – Independent international award across five categories. $500/$300/$200 grand prizes; one free photo per category, paid entries from $18.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$18–$36 for 2–5 photos (1 photo free)">$18+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$500 / $300 / $200">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/world-shootout-2025-2026-underwater-photo-grand-prix/">World ShootOut 2025–2026 — Underwater Photo Grand Prix</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – 20 years of the underwater photo grand prix — nine categories, €2,000 top cash prize and a Papua New Guinea dive trip.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€15–€55 per category">€15+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€2,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="2 × €1,000">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;30</a> – 20 years of the underwater photo grand prix — nine categories, €2,000 top cash prize and a Papua New Guinea dive trip.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€15–€55 per category">€15+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€2,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="2 × €1,000">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/flatland-feature-issue-3-midwest-center-for-photography/">Flatland Feature — Issue 3 · Midwest Center for Photography</a></h4>
@@ -164,7 +162,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/devotion-fall-2026-analog-forever-magazine/">Devotion — Fall 2026 Online Exhibition · Analog Forever Magazine</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Online exhibition on devotion — film and analog photographers. Guest-curated by Laura Barth. Launches November 30.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a> <a href="/eligibility/analog-photography/" class="meta-tag meta-tag-link">Analog only</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;Nov&nbsp;30</a> – Online exhibition on devotion — film and analog photographers. Guest-curated by Laura Barth. Launches November 30.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a> <a href="/eligibility/analog-photography/" class="meta-tag meta-tag-link">Analog only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/in-character-l-a-photo-curator/">In Character · L.A. Photo Curator</a></h4>
@@ -185,7 +183,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/outdoor-photography-magazine-woodland-macro/">Outdoor Photography Magazine — Woodland Macro</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Shoot woodland macro for Outdoor Photography's OP 334 reader competition. Free entry; winner takes a £139 Lowepro backpack.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Lowepro backpack (£139)">Cash prize</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;by&nbsp;Jan&nbsp;9</a> – Shoot woodland macro for Outdoor Photography's OP 334 reader competition. Free entry; winner takes a £139 Lowepro backpack.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Lowepro backpack (£139)">Cash prize</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/olio-e-zine-truth-aesthetic-revolt-art/">olio e-zine — Truth · Aesthetic Revolt Art</a></h4>
@@ -197,7 +195,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/suboart-magazine-november-december-2026-issues/">Suboart Magazine — November &amp; December 2026 Issues</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Independent print magazine seeking emerging visual artists for features, Q&amp;As and interviews in two print issues.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: €30 fee if selected">Free entry*</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;end&nbsp;of&nbsp;November</a> – Independent print magazine seeking emerging visual artists for features, Q&amp;As and interviews in two print issues.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: €30 fee if selected">Free entry*</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/the-autumn-book-woofermagazine/">The Autumn Book · Woofermagazine</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Woofermagazine’s next collective photobook. Autumn read as feeling, not season. €16 for five photos, 18+, worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€16">€16 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link" title="Publication in a collective photobook">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/guest-room-sofia-krysiak-jack-latham-der-greif/">Guest Room: Sofia Krysiak &amp; Jack Latham · Der Greif</a></h4>
@@ -205,7 +207,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/aesthetic-dynamics-loosenart/">Aesthetic Dynamics · LoosenArt</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Free worldwide call for a new Issue Collective publication — photographic, video and digital work; an Italian group show may follow.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;by&nbsp;Nov&nbsp;26</a> – Free worldwide call for a new Issue Collective publication — photographic, video and digital work; an Italian group show may follow.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/handmade-site-brooklyn-gallery/">Handmade · Site:Brooklyn Gallery</a></h4>
@@ -221,7 +223,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/chromatic-photography-awards-2026/">Chromatic Photography Awards 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – International color competition across 20 categories. Separate Professional and Amateur divisions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$22–$27">$22–$27 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,000 (Pro)</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 (Amateur)</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;20</a> – International color competition across 20 categories. Separate Professional and Amateur divisions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$22–$27">$22–$27 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,000 (Pro)</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 (Amateur)</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/pearl-press-solo-issue-open-call/">Pearl Press — Solo Issue Open Call</a></h4>
@@ -233,15 +235,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 
 </body>

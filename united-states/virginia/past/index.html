@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -79,6 +79,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -90,6 +91,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -99,7 +101,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -114,11 +116,11 @@
       <h3 class="section-header">November 2026</h3>
       <div class="call-card">
         <h4 class="call-title"><a href="/bingo-february-2027-candela-photographic-arts/">BINGO February 2027 — Cheek to Cheek · Candela Photographic Arts</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Free themed small-print call and randomised print swap at Candela in Richmond: 14 photographs on love, touch and the nude.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;1</a> – Free themed small-print call and randomised print swap at Candela in Richmond: 14 photographs on love, touch and the nude.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/inside-outside-second-street-gallery/">INSIDE / OUTSIDE · Second Street Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Virginia-only juried show at Charlottesville's oldest nonprofit art space. $300 plus a 2028 solo in the Dové Gallery.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 ($20 members)">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$300 / $200 / $100">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a> <a href="/eligibility/virginia/" class="meta-tag meta-tag-link">Virginia only</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;15</a> – Virginia-only juried show at Charlottesville's oldest nonprofit art space. $300 plus a 2028 solo in the Dové Gallery.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 ($20 members)">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$300 / $200 / $100">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a> <a href="/eligibility/virginia/" class="meta-tag meta-tag-link">Virginia only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/portrayed-5-dart-center/">Portrayed 5: A Juried National Exhibition of Portraits · d'Art Center</a></h4>
@@ -133,8 +135,12 @@
         <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Free juried show of 8×8-inch works in Orange, Virginia. Three framed works, all sold at $100 with a 50/50 split.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
+        <h4 class="call-title"><a href="/2028-solo-artist-application-the-art-league/">2028 Solo Artist Application · The Art League</a></h4>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;in&nbsp;November</a> – Apply for a 2028 solo show at The Art League's Alexandria gallery - photography named in the media policy; $50 members, $65 non-members.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$65 ($50 members). Additional fees: $115 Exhibiting Artist membership if selected ($105 renewal, free 23 and under)">$65 fee*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo exhibition in 2028">Exhibition</a></div>
+      </div>
+      <div class="call-card">
         <h4 class="call-title"><a href="/vmfa-visual-arts-fellowship-2027-28/">VMFA Visual Arts Fellowship 2027–28</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – VMFA's fellowship for Virginia visual artists and students — photography an explicit discipline. Up to $8,000, no fee. Virginia residents only.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,000–$8,000 Fellowship">Cash prize</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a> <a href="/eligibility/virginia/" class="meta-tag meta-tag-link">Virginia only</a></div>
+        <p class="call-description"><a href="/results/#february-2027" class="call-date">Results&nbsp;third&nbsp;week&nbsp;of&nbsp;February</a> – VMFA's fellowship for Virginia visual artists and students — photography an explicit discipline. Up to $8,000, no fee. Virginia residents only.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,000–$8,000 Fellowship">Cash prize</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a> <a href="/eligibility/virginia/" class="meta-tag meta-tag-link">Virginia only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2027-black-artist-showcase-jamestown-settlement/">2027 Black Artist Showcase · Jamestown Settlement</a></h4>
@@ -142,11 +148,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/artist-in-residence-january-june-2027-riverviews-artspace/">Artist-in-Residence — January–June 2027 · Riverviews Artspace</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Free six-month shared studio in downtown Lynchburg with mentorship and a final show — workspace only, no housing or stipend.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="6-month studio residency">Residency</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a> <a href="/eligibility/mid-career/" class="meta-tag meta-tag-link">Mid-career</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/2028-solo-artist-application-the-art-league/">2028 Solo Artist Application · The Art League</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Apply for a 2028 solo show at The Art League's Alexandria gallery - photography named in the media policy; $50 members, $65 non-members.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$65 ($50 members). Additional fees: $115 Exhibiting Artist membership if selected ($105 renewal, free 23 and under)">$65 fee*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo exhibition in 2028">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;15</a> – Free six-month shared studio in downtown Lynchburg with mentorship and a final show — workspace only, no housing or stipend.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="6-month studio residency">Residency</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a> <a href="/eligibility/mid-career/" class="meta-tag meta-tag-link">Mid-career</a></div>
       </div>
       <h3 class="section-header">October 2026</h3>
       <div class="call-card">
@@ -200,7 +202,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/vcca-phillip-and-edith-leonian-foundation-fellowship-in-photography/">VCCA Phillip and Edith Leonian Foundation Fellowship in Photography</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Two-week fully-funded photography residency at Mt. San Angelo, Virginia. Private studio + darkroom. Meals and housing included.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30">$30 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="2-week funded residency">Residency</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;31</a> – Two-week fully-funded photography residency at Mt. San Angelo, Virginia. Private studio + darkroom. Meals and housing included.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30">$30 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="2-week funded residency">Residency</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/18th-annual-juried-show-riverviews-artspace/">18th Annual Juried Show — Riverviews Artspace</a></h4>
@@ -241,15 +243,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

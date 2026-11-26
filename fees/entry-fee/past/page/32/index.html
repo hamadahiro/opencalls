@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,39 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees/">Fees</a></nav>
       <h1>Open Calls with Entry Fees</h1>
-      <h2 class="subtitle">Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists. A fee marked * has additional fees, listed on the call page. 1490 calls, 316 open.</h2>
+      <h2 class="subtitle">Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists. A fee marked * has additional fees, listed on the call page. 1490 calls, 321 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/fees/entry-fee/">See all open calls</a></p>
       <h3 class="section-header">June 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/prairie-ronde-artist-residency-fall-2026/">Prairie Ronde Artist Residency — Fall 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – 5–6 week residency at a historic paper mill in Vicksburg, MI. All media incl. photography. $2,000 + travel + housing + gallery show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,000 stipend</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Gallery exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/photoed-magazine-home-vs-away-issue-77/">photoED Magazine — Home VS Away (Issue #77)</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Fine art projects investigating home, being away, or the tension between. Published in print edition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="CA$20 (free for subscribers)">CA$20 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/black-and-white-photo-awards-2026/">Black and White Photo Awards 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – International B&amp;W competition — 6 categories incl. Architecture, Street, Landscape. €1,500 absolute winner + €200 per category.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€15 per category">€15+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,500 absolute</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€200 per category">Cash prize</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/color-2026-grid-photo-gallery/">Color 2026 · Grid Photo Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Grid Photo Gallery's call exploring color as structure, signal, or atmosphere. Online exhibition. €7 per image, unlimited submissions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€7">€7 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/vision-250-america-in-harmony-wham-art-association/">Vision 250: America in Harmony · WHAM Art Association</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Themed show for America's 250th at WHAM Art Center, AZ — imagining a unified, harmonious America. $40 for 5 entries, Jul 2–30.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40">$40 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/pop-art-exhibition-sparks-gallery/">Pop Art Exhibition · Sparks Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Pop-culture-inspired works at Sparks Gallery, San Diego. US artists, original work for sale, from $20. Deadline June 15.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20+">$20 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
@@ -212,7 +194,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/british-wildlife-photography-awards-2026/">British Wildlife Photography Awards 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – UK wildlife photography awards — 12 categories. Winners in Collection 14 book + UK touring exhibition. Youth entry free.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£35–£40">£35–£40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£3,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="~£10,000 total fund">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#march-2027" class="call-date">Results&nbsp;in&nbsp;March</a> – UK wildlife photography awards — 12 categories. Winners in Collection 14 book + UK touring exhibition. Youth entry free.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£35–£40">£35–£40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£3,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="~£10,000 total fund">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/circulation-s-festival-2027-17th-edition/">Circulation(s) Festival 2027 — 17th Edition Open Call</a></h4>
@@ -226,21 +208,41 @@
         <h4 class="call-title"><a href="/focus-2026-atlanta-photography-group/">Focus 2026 — Atlanta Photography Group</a></h4>
         <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – APG's open-themed juried show. $1,000 MOCA GA purchase award + permanent collection. Members-only, Georgia artists.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35–$95 ($30–$70 students). Additional fees: $55/year APG membership ($25 students)">$35+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
-      <nav class="pagination" aria-label="Pages"><a href="/fees/entry-fee/past/page/31/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/fees/entry-fee/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/fees/entry-fee/past/page/29/" class="pagination-page pg-f">29</a><a href="/fees/entry-fee/past/page/30/" class="pagination-page pg-e pg-f">30</a><a href="/fees/entry-fee/past/page/31/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">31</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">32</span><a href="/fees/entry-fee/past/page/33/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">33</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/fees/entry-fee/past/page/34/" class="pagination-page pg-e pg-f">34</a><span class="pagination-gap pg-e">&hellip;</span><a href="/fees/entry-fee/past/page/35/" class="pagination-page pg-f">35</a><span class="pagination-gap pg-f">&hellip;</span><a href="/fees/entry-fee/past/page/40/" class="pagination-page pg-c pg-d pg-e pg-f">40</a></span><a href="/fees/entry-fee/past/page/33/" class="pagination-step" rel="next">Next</a></nav>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/just-add-water-art-fluent/">JUST ADD WATER · Art Fluent</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Exploring water — oceans, rain, rivers, puddles. Online exhibition. Boston, MA.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$750</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/portal-decagon-gallery/">PORTAL · Decagon Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Transition &amp; becoming — figures, spaces, suspended moments. Juried by Douglas Stockdale (PhotoBook Journal founder).</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 for 8 images">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/portal-at-the-edge-of-becoming-decagon-gallery/">Portal: At the Edge of Becoming · Decagon Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Online photography exhibition on tension and threshold. Juror Douglas Stockdale. $1,000 total + solo webpage.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 total</a> <a href="/prize/" class="meta-tag meta-tag-link">Solo webpage</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/aap-magazine-58-black-and-white-all-about-photo/">AAP Magazine #58 Black &amp; White · All About Photo</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – B&amp;W themed issue of AAP Magazine. $1,000 cash + publication. Up to 40 images, min 3 as a cohesive series.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/minimalist-photography-awards-2026/">Minimalist Photography Awards 2026</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – International award for minimalist photography. €2,000 grand prize, book publication, and exhibition. 12 categories.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€20–€35">€20–€35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€2,000</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Book</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <nav class="pagination" aria-label="Pages"><a href="/fees/entry-fee/past/page/31/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/fees/entry-fee/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/fees/entry-fee/past/page/29/" class="pagination-page pg-f">29</a><a href="/fees/entry-fee/past/page/30/" class="pagination-page pg-e pg-f">30</a><a href="/fees/entry-fee/past/page/31/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">31</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">32</span><a href="/fees/entry-fee/past/page/33/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">33</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/fees/entry-fee/past/page/34/" class="pagination-page pg-e pg-f">34</a><span class="pagination-gap pg-e">&hellip;</span><a href="/fees/entry-fee/past/page/35/" class="pagination-page pg-f">35</a><span class="pagination-gap pg-f">&hellip;</span><a href="/fees/entry-fee/past/page/39/" class="pagination-page pg-c pg-d pg-e pg-f">39</a></span><a href="/fees/entry-fee/past/page/33/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

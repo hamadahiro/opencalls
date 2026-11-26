@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,31 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Exhibition Open Calls</h1>
-      <h2 class="subtitle">Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists. 1422 calls, 312 open.</h2>
+      <h2 class="subtitle">Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists. 1422 calls, 315 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/exhibitions/">See all open calls</a></p>
       <h3 class="section-header">August 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/ccan-2026-10th-annual-national-juried-art-competition-center-for-contemporary-arts/">CCAN 2026 — 10th Annual National Juried Art Competition · Center for Contemporary Arts</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Abilene's 10th national juried competition: $500 first prizes in 11 categories including 2D photography.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1 image, $20 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$7,000 in cash awards">Cash prize</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/zari-art-prize-2026-zari-gallery/">Zari Art Prize 2026 · Zari Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – London West End gallery prize with a dedicated photography category — £550 plus £350 runner-up from a £4,000 pool, and a Fitzrovia show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£20 for 1 entry, £87.50 for 10 (sliding scale)">£20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£1,000 Best in Show">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/seasons-of-change-mountain-artists-guild/">Seasons of Change · Mountain Artists Guild</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Arizona guild show on transformation with photography as its own judged category. Members and non-members, in-person delivery.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for up to 3 works ($30 members)">$45 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/anthology-3-ephemere/">ANTHOLOGY 3 · Ephemere</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Nine photographers curated into a group show and photobook at Ephemere Photo Fest, Tokyo. Free to apply; Tokyo attendance required.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: $275 fee if selected">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
@@ -226,21 +216,33 @@
         <h4 class="call-title"><a href="/for-the-love-of-art-2026-artcentre-of-plano/">For the Love of Art 2026 · ArtCentre of Plano</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Juried show at the ArtCentre of Plano's historic Saigling House. Photography is an eligible medium; open to Texas artists 18+.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1 work, $45 for 3">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$250 Best in Show">Cash prize</a> <a href="/eligibility/texas/" class="meta-tag meta-tag-link">Texas only</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/beauty-that-remains-kingdom-bound-ministries/">Beauty That Remains · Kingdom Bound Ministries</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Faith, restoration and community in Buffalo. Photography named; one-day show and fundraiser for a neighbourhood life centre.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/78th-regional-exhibition-arnot-art-museum/">78th Regional Exhibition · Arnot Art Museum</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Elmira museum's 78th Regional, open to Northeast US and Ontario artists. Photography named, $10,000 in awards, museum show through December.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30–$50">$30–$50 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$10,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/northeast-us/" class="meta-tag meta-tag-link" title="Northeast US only">Northeast US</a> <a href="/eligibility/mid-atlantic-us/" class="meta-tag meta-tag-link">Mid-Atlantic US</a> <a href="/eligibility/ontario/" class="meta-tag meta-tag-link">Ontario only</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/34th-tewksbury-juried-art-show-tewksbury-historical-society/">34th Tewksbury Juried Art Show · Tewksbury Historical Society</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – A 34th-edition New Jersey juried show, photography a named medium. One $35 fee covers juried, small works and portfolio entries.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$400 Best in Show">Cash prize</a> <a href="/prize/" class="meta-tag meta-tag-link">Category awards</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/exhibitions/past/page/21/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/exhibitions/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/exhibitions/past/page/19/" class="pagination-page pg-f">19</a><a href="/exhibitions/past/page/20/" class="pagination-page pg-e pg-f">20</a><a href="/exhibitions/past/page/21/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">21</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">22</span><a href="/exhibitions/past/page/23/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">23</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/exhibitions/past/page/24/" class="pagination-page pg-e pg-f">24</a><span class="pagination-gap pg-e">&hellip;</span><a href="/exhibitions/past/page/25/" class="pagination-page pg-f">25</a><span class="pagination-gap pg-f">&hellip;</span><a href="/exhibitions/past/page/37/" class="pagination-page pg-c pg-d pg-e pg-f">37</a></span><a href="/exhibitions/past/page/23/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

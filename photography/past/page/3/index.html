@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,23 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Photography Open Calls</h1>
-      <h2 class="subtitle">Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews. 390 calls, 89 open.</h2>
+      <h2 class="subtitle">Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews. 390 calls, 90 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/photography/">See all open calls</a></p>
       <h3 class="section-header">October 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/sirmione-photo-marathon-2026-comune-di-sirmione/">Sirmione Photo Marathon 2026 · Comune di Sirmione</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Eight hours, four themes, 250 photographers on Lake Garda — €1,500 top prize, €12 entry, register by October 4.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€12">€12 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 / €500 / €250 per theme">Cash prize</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/world-cyanotype-day-alternativephotography-com/">World Cyanotype Day · AlternativePhotography.com</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Annual international celebration of the cyanotype process. 2026 theme: Global Blueprint — People, Place, and Environment.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/alternative-process/" class="meta-tag meta-tag-link">Alternative process</a></div>
@@ -124,7 +122,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/nature-and-humans-photo-competition-2026-desea-foundation/">Nature and Humans Photo Competition 2026 · DESEA Foundation</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Spanish foundation's international nature &amp; conservation photo competition — 15 categories, €17,000 in prizes. €25 entry, open worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€25 (€15 FONAMAD members, free under-18)">€25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€17,000 prize pool">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;in&nbsp;November</a> – Spanish foundation's international nature &amp; conservation photo competition — 15 categories, €17,000 in prizes. €25 entry, open worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€25 (€15 FONAMAD members, free under-18)">€25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€17,000 prize pool">Cash prize</a></div>
       </div>
       <h3 class="section-header">September 2026</h3>
       <div class="call-card">
@@ -141,7 +139,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-keller-prize-2026/">The Keller Prize 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – International all-media prize juried by Aspen gallerist Mia Valley — $9,000 in cash awards, photography welcome. $55 for 5 images.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$55 for 5 images, $7 each additional">$55+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$5,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,500</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;in&nbsp;November</a> – International all-media prize juried by Aspen gallerist Mia Valley — $9,000 in cash awards, photography welcome. $55 for 5 images.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$55 for 5 images, $7 each additional">$55+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$5,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,500</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/premio-narrativa-fujifilm-2026/">Prémio NARRATIVA – FUJIFILM 2026</a></h4>
@@ -205,11 +203,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/prix-lnp-2026-les-nuits-photo/">Prix LNP 2026 — Les Nuits Photo</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Les Nuits Photo's photographic-film prize — €1,000 Grand Prix via SAIF, Fisheye/9 Lives diffusion; free, open to all, awarded in Paris.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: €15 Freelens membership">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,000</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;Nov&nbsp;29</a> – Les Nuits Photo's photographic-film prize — €1,000 Grand Prix via SAIF, Fisheye/9 Lives diffusion; free, open to all, awarded in Paris.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: €15 Freelens membership">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,000</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/women-united-art-prize-2026-photography-printmaking/">Women United ART PRIZE 2026 — Photography &amp; Printmaking · Women United Art Movement</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – International prize for women artists with a dedicated photography category. $500 cash, magazine interview and virtual solo show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€27–€45">€27–€45 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link">Women</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;5</a> – International prize for women artists with a dedicated photography category. $500 cash, magazine interview and virtual solo show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€27–€45">€27–€45 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link">Women</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/stone-canoe-visual-art-submissions-2026/">Stone Canoe Visual Art Submissions</a></h4>
@@ -221,27 +219,31 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/capturing-ecology-2026-british-ecological-society/">Capturing Ecology 2026 · British Ecological Society</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Learned society's ecology photo prize: eight categories, £750 overall, £120 each, free for members and Global South entrants.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£12 (BES members &amp; Global South free)">£12 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£750</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£120 per category">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;in&nbsp;January</a> – Learned society's ecology photo prize: eight categories, £750 overall, £120 each, free for members and Global South entrants.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£12 (BES members &amp; Global South free)">£12 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£750</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£120 per category">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/not-food-porn-from-feed-to-culture-der-greif/">(Not) Food Porn — From Feed to Culture · Der Greif</a></h4>
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Der Greif call on food imagery, desire and waste, timed to the UN food-loss day. Online exhibition on Pulse plus a peer critique.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€10 (waivers available)">€10 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
       </div>
-      <nav class="pagination" aria-label="Pages"><a href="/photography/past/page/2/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/photography/past/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><a href="/photography/past/page/2/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">2</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">3</span><a href="/photography/past/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><span class="pagination-gap pg-a">&hellip;</span><a href="/photography/past/page/5/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">5</a><a href="/photography/past/page/6/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/photography/past/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/photography/past/page/8/" class="pagination-page pg-e pg-f">8</a><a href="/photography/past/page/9/" class="pagination-page pg-e pg-f">9</a><span class="pagination-gap pg-e pg-f">&hellip;</span><a href="/photography/past/page/11/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">11</a></span><a href="/photography/past/page/4/" class="pagination-step" rel="next">Next</a></nav>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/myph-photography-prize-2026/">MYPH Photography Prize 2026</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Free third-edition prize for Ukrainian photographers under five years' practice: Fujifilm gear, tuition and a Kyiv show.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Fujifilm camera</a> <a href="/prize/" class="meta-tag meta-tag-link" title="50,000 UAH tuition">Prize</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a> <a href="/eligibility/ukraine/" class="meta-tag meta-tag-link">Ukraine only</a></div>
+      </div>
+      <nav class="pagination" aria-label="Pages"><a href="/photography/past/page/2/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/photography/past/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><a href="/photography/past/page/2/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">2</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">3</span><a href="/photography/past/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><span class="pagination-gap pg-a">&hellip;</span><a href="/photography/past/page/5/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">5</a><a href="/photography/past/page/6/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/photography/past/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/photography/past/page/8/" class="pagination-page pg-e pg-f">8</a><a href="/photography/past/page/9/" class="pagination-page pg-e pg-f">9</a><a href="/photography/past/page/10/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">10</a></span><a href="/photography/past/page/4/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

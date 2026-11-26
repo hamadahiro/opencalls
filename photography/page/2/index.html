@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,17 +95,21 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Photography Open Calls</h1>
-      <h2 class="subtitle">Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews. 390 calls, 89 open.</h2>
+      <h2 class="subtitle">Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews. 390 calls, 90 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/1839-awards-art-of-photography-contest/">1839 Awards Art of Photography Contest</a></h4>
+        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-soon">22&nbsp;days&nbsp;left</a> – Open-genre art photography award from the 1839 Awards - $1,500 top prize, $3,999 in all; entries run to 18 December.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15–$30 per image, $30–$50 per series (student, non-pro and pro rates)">$15+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,500 1st prize">Cash prize</a> <a href="/prize/" class="meta-tag meta-tag-link" title="1839 Magazine interview">Prize</a></div>
+      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/7th-aoyf-human-rights-photography-prize/">7th AOYF Human Rights Photography Prize</a></h4>
         <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-soon">24&nbsp;days&nbsp;left</a> – Geneva human rights photography prize, now open worldwide: CHF 10,000, five finalists exhibited at the CPG. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">CHF 10,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">CHF 1,000 ×4</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
@@ -221,25 +227,21 @@
         <h4 class="call-title"><a href="/human-impact-awards-2026-wex-photo-video/">Human Impact Awards 2026 · Wex Photo Video</a></h4>
         <p class="call-description"><a href="/deadlines/january-2027/" class="call-date dl-band dl-normal">Jan&nbsp;31,&nbsp;2027</a> – Free-to-enter UK documentary award with Sony — 5–10 image series on human impact, £5,000 top prize plus a student category.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£5,000 / £3,000 / £1,000">Cash prize</a> <a href="/eligibility/united-kingdom/" class="meta-tag meta-tag-link">UK only</a></div>
       </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/life-framer-animal-kingdom/">Life Framer — Animal Kingdom</a></h4>
-        <p class="call-description"><a href="/deadlines/january-2027/" class="call-date dl-band dl-normal">Jan&nbsp;31,&nbsp;2027</a> – Life Framer's January theme on animal life — wild, domestic or commodified. $2,000 monthly prize plus international shows.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20–$100">$20–$100 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,000</a></div>
-      </div>
       <nav class="pagination" aria-label="Pages"><a href="/photography/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/photography/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">2</span><a href="/photography/page/3/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">3</a></span><a href="/photography/page/3/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

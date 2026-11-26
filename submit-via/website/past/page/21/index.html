@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,31 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit Online</h1>
-      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 495 open.</h2>
+      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 499 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/submit-via/website/">See all open calls</a></p>
       <h3 class="section-header">September 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/printmaking-now-10-years-later-umpqua-valley-arts/">Printmaking NOW! (10 Years Later) · Umpqua Valley Arts</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Umpqua Valley Arts' national juried printmaking survey — photographic print processes fit its open-ended bounds. $30, $300 top award.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 for up to 3 works">$30 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$300 / $200 / $100">Cash prize</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/pile-press-literary-art-journal-issue-13/">Pile Press Literary + Art Journal, Issue 13</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Portland indie press's bi-annual journal for women and non-binary creatives. Photography welcome, up to three pieces, $4.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$4">$4 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link">Women</a> <a href="/eligibility/non-binary/" class="meta-tag meta-tag-link">Non-binary</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/photodarium-2028/">Photodarium 2028 · Slanted Publishers</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Slanted's daily tear-off Polaroid calendar. Free, instant film only, up to five images, one per chosen day.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication (print)</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/homage-the-americans-griffin-museum-of-photography/">Homage | The Americans · Griffin Museum of Photography</a></h4>
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Griffin Museum online show in homage to Robert Frank's The Americans. New work, your vision of America. Free, global.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
@@ -152,7 +142,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/artistic-innovations-grants-for-individual-artists-fy2027-mid-america-arts-alliance/">Artistic Innovations Grants for Individual Artists FY2027 · Mid-America Arts Alliance</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Up to $15,000 for new work by artists in AR, KS, MO, NE, OK or TX. No match required. Free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to $15,000">Cash prize</a> <a href="/eligibility/central-us/" class="meta-tag meta-tag-link" title="MO/KS/IA/NE/AR/OK/TX only">MO/KS/IA/NE/AR/OK/TX</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;8</a> – Up to $15,000 for new work by artists in AR, KS, MO, NE, OK or TX. No match required. Free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to $15,000">Cash prize</a> <a href="/eligibility/central-us/" class="meta-tag meta-tag-link" title="MO/KS/IA/NE/AR/OK/TX only">MO/KS/IA/NE/AR/OK/TX</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/southern-gothic-not-real-art/">Southern Gothic: Artists Working Below the Mason-Dixon · NOT REAL ART</a></h4>
@@ -176,7 +166,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/lightning-fund-2027-los-angeles-contemporary-exhibitions/">Lightning Fund 2027 · Los Angeles Contemporary Exhibitions</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – LACE's Warhol-backed fund gives ten $6,000 grants to LA County artist projects, plus a $10,000 Jacki Apple Award. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$6,000</a> <a href="/eligibility/los-angeles/" class="meta-tag meta-tag-link">LA only</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;end&nbsp;of&nbsp;January</a> – LACE's Warhol-backed fund gives ten $6,000 grants to LA County artist projects, plus a $10,000 Jacki Apple Award. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$6,000</a> <a href="/eligibility/los-angeles/" class="meta-tag meta-tag-link">LA only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/eurostars-valladolid-photography-award-2026/">Eurostars Valladolid Photography Award — Valladolid Unveiled</a></h4>
@@ -204,7 +194,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/19th-forum-fotografic-can-baste/">19th Fòrum Fotogràfic Can Basté</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Barcelona's Can Basté forum: free grants — 3 × €2,000 exhibition production plus a €3,000 photobook. For Spain-based emerging artists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="3 × €2,000">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€3,000 photobook</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/spain/" class="meta-tag meta-tag-link">Spain only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;Nov&nbsp;28</a> – Barcelona's Can Basté forum: free grants — 3 × €2,000 exhibition production plus a €3,000 photobook. For Spain-based emerging artists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="3 × €2,000">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€3,000 photobook</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/spain/" class="meta-tag meta-tag-link">Spain only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/photo-of-the-season-you-cant-be-serious-the-image-flow/">Photo of the Season — You Can't Be Serious · The Image Flow</a></h4>
@@ -226,21 +216,33 @@
         <h4 class="call-title"><a href="/2026-bay-area-open-gearbox-gallery/">2026 Bay Area Open · GearBox Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Oakland artist-run gallery's open call for a two-person featured show; nine-county Bay Area, any medium, $35.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35">$35 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Two-person featured exhibition">Exhibition</a> <a href="/eligibility/bay-area/" class="meta-tag meta-tag-link" title="Bay Area only">Bay Area</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/after-love-broken-hearts-and-broken-bodies-ovada/">After Love: Broken Hearts &amp; Broken Bodies · OVADA</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Radically inclusive Oxford show on romantic heartbreak - no jury, all eligible works hung. Photography welcome. From £10.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£10 for 1 work, £15 for 2 works, £20 for 3 works">£10+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-kingdom/" class="meta-tag meta-tag-link">UK only</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/elemental-earth-air-fire-water-tcg-gallery/">Elemental: Earth, Air, Fire, Water · TCG Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Juried online show on the four elements — earth, air, fire, water — at TCG Gallery. All photographic media; AI not accepted.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15 for up to 3 images (fee waivers available)">$15 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/strands-of-silver-midwest-nice-art/">strands of silver · midwest nice art</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – All-media juried online exhibition on time, aging, and memory. Photography welcome. From midwest nice art, Sioux Falls.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$5">$5 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/submit-via/website/past/page/20/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/submit-via/website/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/submit-via/website/past/page/18/" class="pagination-page pg-f">18</a><a href="/submit-via/website/past/page/19/" class="pagination-page pg-e pg-f">19</a><a href="/submit-via/website/past/page/20/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">20</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">21</span><a href="/submit-via/website/past/page/22/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">22</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/submit-via/website/past/page/23/" class="pagination-page pg-e pg-f">23</a><span class="pagination-gap pg-e">&hellip;</span><a href="/submit-via/website/past/page/24/" class="pagination-page pg-f">24</a><span class="pagination-gap pg-f">&hellip;</span><a href="/submit-via/website/past/page/59/" class="pagination-page pg-c pg-d pg-e pg-f">59</a></span><a href="/submit-via/website/past/page/22/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

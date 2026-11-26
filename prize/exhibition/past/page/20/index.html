@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,35 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>
       <h1>Open Calls with Exhibition Prizes</h1>
-      <h2 class="subtitle">Open calls where the prize includes an exhibition — solo shows, group exhibitions, and gallery opportunities for photographers and visual artists worldwide. 1489 calls, 361 open.</h2>
+      <h2 class="subtitle">Open calls where the prize includes an exhibition — solo shows, group exhibitions, and gallery opportunities for photographers and visual artists worldwide. 1489 calls, 365 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/prize/exhibition/">See all open calls</a></p>
       <h3 class="section-header">August 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/altered-horizons-saveartspace-billboard-exhibition/">Altered Horizons — SaveArtSpace Billboard Exhibition</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – NYC billboard show on alternative realities and mind-expanding wonder. Open to all mediums and all ages, on view from Oct 9.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1–3 images, $10 each additional">$35+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Billboard exhibition in NYC">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/saturation-projectart/">SATURATION · projectART</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Free open call on colour, excess and sensory overload for a three-month show at a Central Texas nonprofit gallery.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/echoes-of-fall-2026-medford-arts-center/">Echoes of Fall 2026 · Medford Arts Center</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Fall-inspired all-media show at a New Jersey arts centre, juried by Michael Schweigart. Cash awards; online plus optional gallery hang.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30 for 1 work, $10 each additional ($20 members)">$30+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/on-rose-looking-glass-photographic-outfitters/">On Rose · Looking Glass Photographic Outfitters</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Berkeley's Looking Glass invites photographers to interpret 'rose'. Selected work exhibits at Abrams Claghorn Gallery in October.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$5–$50 (sliding scale)">$5+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Exhibition at Abrams Claghorn Gallery">Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link">Trophy</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/the-artists-vision-mva-gallery/">The Artist's Vision · MVA Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – No-theme national open call at MVA Gallery, Bethlehem PA — all photographic processes welcome. $200 and an NYC exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
@@ -143,10 +129,6 @@
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Free University of Arizona gallery show on family archives as material and metaphor — any medium, no size limit, 3-month run.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Group exhibition</a></div>
       </div>
       <div class="call-card">
-        <h4 class="call-title"><a href="/open-theme-2026-the-lab-on-santa-fe/">Open Theme 2027 · The Lab on Santa Fe</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – No theme, all mediums, photographers named — a February 2027 show at a Denver Art District gallery. $34, 1–2 works.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$34">$34 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
-      <div class="call-card">
         <h4 class="call-title"><a href="/time-11th-annual-juried-art-exhibit-art-in-the-loft/">TIME: 11th Annual Juried Art Exhibit · Art in the Loft</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Alpena nonprofit gallery's 11th annual all-media juried show on the theme of time. $600 cash and a photographer juror.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1 entry, $10 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$300 / $200 / $100">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Free exhibition space">Exhibition</a></div>
       </div>
@@ -156,7 +138,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2027-28-call-for-exhibitions-the-gallery-at-penn-college/">2027-28 Call for Exhibitions · The Gallery at Penn College</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – A Pennsylvania college gallery's free annual call for its 2027-28 season, with housing, meals, an honorarium and a travel stipend.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo or group exhibition">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;in&nbsp;January</a> – A Pennsylvania college gallery's free annual call for its 2027-28 season, with housing, meals, an honorarium and a travel stipend.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo or group exhibition">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/solo-group-show-2027-gallery-40/">Solo/Group Show 2027 · Gallery 40</a></h4>
@@ -226,21 +208,41 @@
         <h4 class="call-title"><a href="/celebrating-color-edgewater-gallery/">Celebrating Color · Edgewater Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – National juried show on colour at a Mendocino Coast artist-owned gallery. Photography welcome, no AI, four artist jurors.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35, $5 each additional work">$35+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Group exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/new-works-2026-floyd-center-for-the-arts/">New Works 2026 · Floyd Center for the Arts</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Blue Ridge regional juried show for work made in the last two years. All visual media, $500 in awards, Hayloft Gallery.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$500 in awards">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/virginia/" class="meta-tag meta-tag-link">Virginia only</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/the-cat-show-blue-sky-gallery/">The Cat Show · Blue Sky Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Free feline open call closing Blue Sky's 50th-anniversary series — a 2026 answer to the gallery's 1976 Dog Show.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/fall-into-art-2026-san-marcos-art-league/">Fall into Art 2026 · San Marcos Art League</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – All-media autumn open show at the San Marcos Art Center; photography named explicitly. Hand delivery, one work, $10 for members.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20 ($10 members)">$20 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/reflections-180-years-of-manchester-nh-mosaic-art-collective/">Reflections 180 Years of Manchester NH · Mosaic Art Collective</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Manchester's 180th, read through its mills, neighbourhoods and present. Documentary work welcome; $10 covers four pieces.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$10">$10 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/full-circle-new-beginnings-2026-mosaic-art-collective/">Full Circle — New Beginnings 2026 · Mosaic Art Collective</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Manchester collective's 4th-anniversary show on cycles, renewal and return. All media, $10 per piece, 75/25 split for artists.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$10–$40">$10–$40 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/prize/exhibition/past/page/19/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/prize/exhibition/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/prize/exhibition/past/page/17/" class="pagination-page pg-f">17</a><a href="/prize/exhibition/past/page/18/" class="pagination-page pg-e pg-f">18</a><a href="/prize/exhibition/past/page/19/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">19</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">20</span><a href="/prize/exhibition/past/page/21/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">21</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/prize/exhibition/past/page/22/" class="pagination-page pg-e pg-f">22</a><span class="pagination-gap pg-e">&hellip;</span><a href="/prize/exhibition/past/page/23/" class="pagination-page pg-f">23</a><span class="pagination-gap pg-f">&hellip;</span><a href="/prize/exhibition/past/page/38/" class="pagination-page pg-c pg-d pg-e pg-f">38</a></span><a href="/prize/exhibition/past/page/21/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

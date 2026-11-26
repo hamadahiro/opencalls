@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,23 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Photography Open Calls</h1>
-      <h2 class="subtitle">Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews. 390 calls, 89 open.</h2>
+      <h2 class="subtitle">Competitions, awards, and call for entries for photographers worldwide. Submit your work to juried exhibitions, contests, and portfolio reviews. 390 calls, 90 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/photography/">See all open calls</a></p>
       <h3 class="section-header">October 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/2026-open-call-award-the-independent-photographer/">2026 Open Call Award · The Independent Photographer</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Open-theme October round of TIP's monthly award. $3,000 pool, London group show, 995k+ Instagram. Judge: Maggie Steber.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15–$45">$15–$45 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$3,000 pool</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/guest-room-sofia-krysiak-jack-latham-der-greif/">Guest Room: Sofia Krysiak &amp; Jack Latham · Der Greif</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Der Greif's guest-curated call for photographs that open difficult conversations. Free, with curator feedback.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link" title="Free (voluntary €5–€10 donation)">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/" class="meta-tag meta-tag-link">Portfolio feedback</a></div>
@@ -124,7 +122,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/chromatic-photography-awards-2026/">Chromatic Photography Awards 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – International color competition across 20 categories. Separate Professional and Amateur divisions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$22–$27">$22–$27 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,000 (Pro)</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 (Amateur)</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;20</a> – International color competition across 20 categories. Separate Professional and Amateur divisions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$22–$27">$22–$27 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$2,000 (Pro)</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 (Amateur)</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/wellcome-photography-prize-2027/">Wellcome Photography Prize 2027</a></h4>
@@ -160,7 +158,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/auto-photo-awards-2026-shutter-hub/">AUTO PHOTO Awards 2026 · Shutter Hub</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Shutter Hub's automotive photography awards — Top 100 printed in the annual photobook, eight judges' awards. Pay what you can from £25.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£25+">£25 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link" title="Publication in printed photobook">Publication</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;end&nbsp;of&nbsp;November</a> – Shutter Hub's automotive photography awards — Top 100 printed in the annual photobook, eight judges' awards. Pay what you can from £25.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£25+">£25 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link" title="Publication in printed photobook">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/santu-mofokeng-foundation-photography-prize-2026/">Santu Mofokeng Foundation Photography Prize 2026</a></h4>
@@ -168,7 +166,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/travel-around-the-world-2026-grid-photo-gallery/">TRAVEL: Around the World 2026 · Grid Photo Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Grid Photo Gallery's travel call - sense of place over destinations. Online exhibition; €7 per image, unlimited entries.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€7">€7 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;1</a> – Grid Photo Gallery's travel call - sense of place over destinations. Online exhibition; €7 per image, unlimited entries.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€7">€7 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/water-our-shared-story-hipa/">Water: Our Shared Story · Hamdan Bin Mohammed Bin Rashid Al Maktoum</a></h4>
@@ -188,11 +186,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/travel-photographer-of-the-year-2026/">Travel Photographer of the Year 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Established international travel photography award. Four-image portfolios or One Shot single frames; cash prizes + free youth categories.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£14–£59">£14–£59 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;17</a> – Established international travel photography award. Four-image portfolios or One Shot single frames; cash prizes + free youth categories.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£14–£59">£14–£59 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Cash awards</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/luis-valtuena-international-humanitarian-photography-award-2026-medicos-del-mundo/">Luis Valtueña International Humanitarian Photography Award 2026 · Médicos del Mundo</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Médicos del Mundo's 30th humanitarian photography award — free to enter, €12,000 in prizes and a touring exhibition.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€12,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 special prize">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Touring exhibition</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;Nov&nbsp;30</a> – Médicos del Mundo's 30th humanitarian photography award — free to enter, €12,000 in prizes and a touring exhibition.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€12,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 special prize">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Touring exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/xiv-galicia-award-of-contemporary-photography/">XIV «Galicia» Award of Contemporary Photography · Outono Fotográfico</a></h4>
@@ -204,7 +202,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/citiestobe-photo-award-2026/">CitiesToBe Photo Award 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Free urban-photography award by Anteverti on the theme 'Third Places'. Series of 10–20 images; €1,500 winner plus five €500 finalists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="5 finalists €500 each">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;in&nbsp;December</a> – Free urban-photography award by Anteverti on the theme 'Third Places'. Series of 10–20 images; €1,500 winner plus five €500 finalists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="5 finalists €500 each">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/world-street-photo-awards-2026/">World Street Photo Awards 2026</a></h4>
@@ -212,7 +210,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/vi-barcelona-human-rights-international-photo-festival/">VI Barcelona Human Rights International Photo Festival</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Más Retina's 6th Barcelona festival on human-rights &amp; justice photography. 15-image projects; €3,000 prize plus outdoor street exhibitions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€5">€5 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€3,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="3 × €400">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Catalogue</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;10</a> – Más Retina's 6th Barcelona festival on human-rights &amp; justice photography. 15-image projects; €3,000 prize plus outdoor street exhibitions.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€5">€5 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€3,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="3 × €400">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Catalogue</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-science-competition-2026-states-of-change-lenscratch/">Art + Science Competition 2026: States of Change · Lenscratch</a></h4>
@@ -226,21 +224,25 @@
         <h4 class="call-title"><a href="/braiding-indigeneity-der-greif/">Braiding Indigeneity · Der Greif</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Der Greif call on images, indigeneity and relational memory - online exhibition plus a hybrid Paris workshop on 14 November.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link" title="Free (voluntary €15 donation)">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
       </div>
-      <nav class="pagination" aria-label="Pages"><a href="/photography/past/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/photography/past/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">2</span><a href="/photography/past/page/3/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">3</a><a href="/photography/past/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><span class="pagination-gap pg-a">&hellip;</span><a href="/photography/past/page/5/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">5</a><a href="/photography/past/page/6/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/photography/past/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/photography/past/page/8/" class="pagination-page pg-e pg-f">8</a><a href="/photography/past/page/9/" class="pagination-page pg-e pg-f">9</a><span class="pagination-gap pg-e pg-f">&hellip;</span><a href="/photography/past/page/11/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">11</a></span><a href="/photography/past/page/3/" class="pagination-step" rel="next">Next</a></nav>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/sirmione-photo-marathon-2026-comune-di-sirmione/">Sirmione Photo Marathon 2026 · Comune di Sirmione</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Eight hours, four themes, 250 photographers on Lake Garda — €1,500 top prize, €12 entry, register by October 4.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€12">€12 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 / €500 / €250 per theme">Cash prize</a></div>
+      </div>
+      <nav class="pagination" aria-label="Pages"><a href="/photography/past/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/photography/past/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">2</span><a href="/photography/past/page/3/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">3</a><a href="/photography/past/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><span class="pagination-gap pg-a">&hellip;</span><a href="/photography/past/page/5/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">5</a><a href="/photography/past/page/6/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/photography/past/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/photography/past/page/8/" class="pagination-page pg-e pg-f">8</a><a href="/photography/past/page/9/" class="pagination-page pg-e pg-f">9</a><a href="/photography/past/page/10/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">10</a></span><a href="/photography/past/page/3/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

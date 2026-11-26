@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,13 +95,13 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit by Email</h1>
-      <h2 class="subtitle">Open calls you enter by emailing your work directly to the organiser. 350 calls, 79 open.</h2>
+      <h2 class="subtitle">Open calls you enter by emailing your work directly to the organiser. 350 calls, 80 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -120,11 +122,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/artoteka-open-call-2027-municipal-library-of-prague/">Artotéka Open Call 2027 · Municipal Library of Prague</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Free call for 6–8 week shows in the Prague city library's Artotéka space, with transport, install and curatorial support.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;by&nbsp;end&nbsp;of&nbsp;2026</a> – Free call for 6–8 week shows in the Prague city library's Artotéka space, with transport, install and curatorial support.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/on-absence-33rd-international-studio-program-acc-galerie-weimar/">On Absence — 33rd International Studio Program · ACC Galerie Weimar</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Three four-month Weimar residencies on the theme of absence; €1,100 a month, rent-free apartment and studio, free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,100 stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Studio</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;end&nbsp;of&nbsp;November</a> – Three four-month Weimar residencies on the theme of absence; €1,100 a month, rent-free apartment and studio, free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,100 stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Studio</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/solstice-magazine-issue-74-editorial-submissions/">Solstice Magazine Issue 74 - Editorial Submissions</a></h4>
@@ -140,7 +142,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/dek-unu-magazine-january-2027-issue/">Dek Unu Magazine — January 2027 Issue</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Not-for-profit journal publishing one artist per issue in print and online. January issue window November 1–20. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;about&nbsp;Dec&nbsp;1</a> – Not-for-profit journal publishing one artist per issue in print and online. January issue window November 1–20. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/boundaries-2027-glasgow-gallery-of-photography/">Boundaries 2027 · Glasgow Gallery of Photography</a></h4>
@@ -160,15 +162,15 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/artist-grant-november-2026-cycle/">Artist Grant — November 2026 Cycle</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Unrestricted $1,200 grant for one visual artist, awarded three times a year. No proposal — just images and a bio.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30">$30 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,200</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;by&nbsp;Jan&nbsp;10</a> – Unrestricted $1,200 grant for one visual artist, awarded three times a year. No proposal — just images and a bio.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30">$30 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,200</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/fixed-focus-fellowship-2027-aurora-photocenter/">Fixed Focus Fellowship 2027 · Aurora PhotoCenter</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Year-long fellowship for 10 Indiana photographers aged 18–26. Free membership, darkroom access, $1,000 credit and mentoring.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 credit</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Group exhibition</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link">Indiana only</a> <a href="/eligibility/18-26/" class="meta-tag meta-tag-link">Ages 18–26</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;by&nbsp;Jan&nbsp;1</a> – Year-long fellowship for 10 Indiana photographers aged 18–26. Free membership, darkroom access, $1,000 credit and mentoring.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 credit</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Group exhibition</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link">Indiana only</a> <a href="/eligibility/18-26/" class="meta-tag meta-tag-link">Ages 18–26</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/sixi-international-artist-in-residence-project-2027/">Sixi International Artist-in-Residence Project 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Fully funded three-month residency in Nanjing — flights, visa, apartment or loft studio and a material allowance. Free, by email.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="Funded 3-month residency">Residency</a></div>
+        <p class="call-description"><a href="/results/#february-2027" class="call-date">Results&nbsp;mid-February</a> – Fully funded three-month residency in Nanjing — flights, visa, apartment or loft studio and a material allowance. Free, by email.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="Funded 3-month residency">Residency</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/annual-holiday-gift-show-gallery-seven/">Annual Holiday Gift Show · Gallery Seven</a></h4>
@@ -176,7 +178,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/premier-prix-photographique-du-musee-postal/">Premier Prix photographique du Musée Postal</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Musée de La Poste's first photography prize: a €15,000 grant to produce a new project on the contemporary postal world. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€15,000 production grant">Cash prize</a> <a href="/eligibility/france/" class="meta-tag meta-tag-link">France only</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;6</a> – Musée de La Poste's first photography prize: a €15,000 grant to produce a new project on the contemporary postal world. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€15,000 production grant">Cash prize</a> <a href="/eligibility/france/" class="meta-tag meta-tag-link">France only</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/open-theme-2026-black-box-gallery/">Open Theme: 2026 · Black Box Gallery</a></h4>
@@ -196,7 +198,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/f-stop-magazine-issue-140-portfolio-2026/">F-Stop Magazine Issue #140 — Portfolio 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Portfolio issue of the long-running online photo magazine — a single body of work, 12–20 images. Free; publishes Dec 1.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;1</a> – Portfolio issue of the long-running online photo magazine — a single body of work, 12–20 images. Free; publishes Dec 1.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/silence-ph21-gallery/">Silence · PH21 Gallery</a></h4>
@@ -212,7 +214,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/open-call-m-zone-2027-weinviertel-kulturvernetzung-niederosterreich/">Open Call M-ZONE 2027 — Weinviertel · Kulturvernetzung Niederösterreich</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Free call for two curated shows in a 150 m² hall between the nitsch museum and MAMUZ — €3,000 per project, Lower Austria ties.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€3,000 project budget">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Four-week exhibition</a> <a href="/eligibility/lower-austria/" class="meta-tag meta-tag-link" title="Lower Austria only">Lower Austria</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;in&nbsp;January</a> – Free call for two curated shows in a 150 m² hall between the nitsch museum and MAMUZ — €3,000 per project, Lower Austria ties.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€3,000 project budget">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Four-week exhibition</a> <a href="/eligibility/lower-austria/" class="meta-tag meta-tag-link" title="Lower Austria only">Lower Austria</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/river-margin-issue-1/">River Margin — Issue 1</a></h4>
@@ -224,23 +226,23 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/open-call-2026-teatergalleriet/">Open Call 2026 · Teatergalleriet</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Free email open call for solo and group shows at an artist-run Kalmar gallery running since 1984; remuneration applied for.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#february-2027" class="call-date">Results&nbsp;in&nbsp;February</a> – Free email open call for solo and group shows at an artist-run Kalmar gallery running since 1984; remuneration applied for.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
-      <nav class="pagination" aria-label="Pages"><span class="pagination-pages"><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">1</span><a href="/submit-via/email/past/page/2/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">2</a><a href="/submit-via/email/past/page/3/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">3</a><a href="/submit-via/email/past/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><a href="/submit-via/email/past/page/5/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">5</a><a href="/submit-via/email/past/page/6/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">6</a><a href="/submit-via/email/past/page/7/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">7</a><a href="/submit-via/email/past/page/8/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">8</a><a href="/submit-via/email/past/page/9/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">9</a><a href="/submit-via/email/past/page/10/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">10</a></span><a href="/submit-via/email/past/page/2/" class="pagination-step" rel="next">Next</a></nav>
+      <nav class="pagination" aria-label="Pages"><span class="pagination-pages"><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">1</span><a href="/submit-via/email/past/page/2/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">2</a><a href="/submit-via/email/past/page/3/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">3</a><a href="/submit-via/email/past/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><a href="/submit-via/email/past/page/5/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">5</a><a href="/submit-via/email/past/page/6/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">6</a><a href="/submit-via/email/past/page/7/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">7</a><a href="/submit-via/email/past/page/8/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">8</a><a href="/submit-via/email/past/page/9/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">9</a></span><a href="/submit-via/email/past/page/2/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

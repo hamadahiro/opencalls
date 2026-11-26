@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,35 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit Online</h1>
-      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 495 open.</h2>
+      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 499 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/submit-via/website/">See all open calls</a></p>
       <h3 class="section-header">June 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/focus-2026-atlanta-photography-group/">Focus 2026 — Atlanta Photography Group</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – APG's open-themed juried show. $1,000 MOCA GA purchase award + permanent collection. Members-only, Georgia artists.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35–$95 ($30–$70 students). Additional fees: $55/year APG membership ($25 students)">$35+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/just-add-water-art-fluent/">JUST ADD WATER · Art Fluent</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Exploring water — oceans, rain, rivers, puddles. Online exhibition. Boston, MA.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$750</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/rak-art-festival-2027-lost-in-translation/">RAK Art Festival 2027 — Lost in Translation</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – 14th edition Ras Al Khaimah Art Festival in UAE. Free entry. AED 12,000 Grand Jury Prize + AED 4,000–6,000 photography category prizes.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="AED 12,000 grand prize">Cash prize</a> <a href="/prize/" class="meta-tag meta-tag-link">Category awards</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/portal-decagon-gallery/">PORTAL · Decagon Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Transition &amp; becoming — figures, spaces, suspended moments. Juried by Douglas Stockdale (PhotoBook Journal founder).</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 for 8 images">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/portal-at-the-edge-of-becoming-decagon-gallery/">Portal: At the Edge of Becoming · Decagon Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Online photography exhibition on tension and threshold. Juror Douglas Stockdale. $1,000 total + solo webpage.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000 total</a> <a href="/prize/" class="meta-tag meta-tag-link">Solo webpage</a></div>
@@ -152,7 +138,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/headlands-center-for-the-arts-air-2027/">Headlands Center for the Arts AIR 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Fully sponsored 4–10 week residency in Sausalito, CA. Studio, meals, housing, travel covered. Photography eligible; ~60 artists/year.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 ($35 until May 4)">$45 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="Fully sponsored residency">Residency</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;11</a> – Fully sponsored 4–10 week residency in Sausalito, CA. Studio, meals, housing, travel covered. Photography eligible; ~60 artists/year.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 ($35 until May 4)">$45 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="Fully sponsored residency">Residency</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/marilyn-stafford-fotoreportage-award-2026/">Marilyn Stafford FotoReportage Award 2026 · FotoDocument</a></h4>
@@ -227,21 +213,37 @@
         <h4 class="call-title"><a href="/photometria-awards-2026-coming-of-age/">Photometria Awards 2026 — Coming of Age · Photometria International Photography Festival</a></h4>
         <p class="call-description"><a href="/deadlines/may-2026/" class="call-date">Closed</a> – 18th Photometria Festival open call. Theme: Coming of Age. Sole judge Alec Soth. Solo exhibition + signed Alec Soth album for top three.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free (1 photo). Additional fees: €5 for 3 photos">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/10th-singapore-international-photography-festival-2026-open-call/">10th Singapore International Photography Festival 2026 Open Call</a></h4>
+        <p class="call-description"><a href="/deadlines/may-2026/" class="call-date">Closed</a> – 10th biennial SIPF Open Call. Portfolio + photobook categories. 3× SGD $2,000 prizes. Showcase in Singapore Oct–Nov 2026.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30–$45">$30–$45 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="3× SGD $2,000">Cash prize</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/outdoor-photography-magazine-local-landscapes/">Outdoor Photography Magazine — Local Landscapes</a></h4>
+        <p class="call-description"><a href="/deadlines/may-2026/" class="call-date">Closed</a> – Submit local landscape images for Outdoor Photography Magazine (UK). Winner receives Sunski sunglasses.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/lisbon-street-photo-fest-open-call-2026/">Lisbon Street Photo Fest: Open Call 2026</a></h4>
+        <p class="call-description"><a href="/deadlines/may-2026/" class="call-date">Closed</a> – 2nd edition. Street photography Singles &amp; Series. €4,000 in prizes. Exhibition in Lisbon, Sept 25–27.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€10 per image, €40 per series">€10+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€4,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/the-photo-review-41st-annual-international-photography-competition/">The Photo Review 41st Annual International Photography Competition</a></h4>
+        <p class="call-description"><a href="/deadlines/may-2026/" class="call-date">Closed</a> – 41st edition. Juried by Dr. Sarah Kennel (VMFA). Exhibition at Woodmere Art Museum, Philadelphia. $1,000 purchase prize.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40">$40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 purchase prize">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/submit-via/website/past/page/47/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/submit-via/website/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/submit-via/website/past/page/45/" class="pagination-page pg-f">45</a><a href="/submit-via/website/past/page/46/" class="pagination-page pg-e pg-f">46</a><a href="/submit-via/website/past/page/47/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">47</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">48</span><a href="/submit-via/website/past/page/49/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">49</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/submit-via/website/past/page/50/" class="pagination-page pg-e pg-f">50</a><span class="pagination-gap pg-e">&hellip;</span><a href="/submit-via/website/past/page/51/" class="pagination-page pg-f">51</a><span class="pagination-gap pg-f">&hellip;</span><a href="/submit-via/website/past/page/59/" class="pagination-page pg-c pg-d pg-e pg-f">59</a></span><a href="/submit-via/website/past/page/49/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

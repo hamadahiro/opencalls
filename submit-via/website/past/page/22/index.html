@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,31 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit Online</h1>
-      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 495 open.</h2>
+      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 499 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/submit-via/website/">See all open calls</a></p>
       <h3 class="section-header">September 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/after-love-broken-hearts-and-broken-bodies-ovada/">After Love: Broken Hearts &amp; Broken Bodies · OVADA</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Radically inclusive Oxford show on romantic heartbreak - no jury, all eligible works hung. Photography welcome. From £10.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£10 for 1 work, £15 for 2 works, £20 for 3 works">£10+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-kingdom/" class="meta-tag meta-tag-link">UK only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/elemental-earth-air-fire-water-tcg-gallery/">Elemental: Earth, Air, Fire, Water · TCG Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Juried online show on the four elements — earth, air, fire, water — at TCG Gallery. All photographic media; AI not accepted.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15 for up to 3 images (fee waivers available)">$15 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/strands-of-silver-midwest-nice-art/">strands of silver · midwest nice art</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – All-media juried online exhibition on time, aging, and memory. Photography welcome. From midwest nice art, Sioux Falls.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$5">$5 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/nd-awards-2026/">ND Awards 2026</a></h4>
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – International competition across Architecture, Editorial, Fine Art, Nature, People, and Special categories.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$24–$34">$24–$34 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$3,500</a></div>
@@ -159,16 +149,12 @@
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Guest-edited issue of a Glasgow art magazine on art across cultures. Photography named, free to enter, AI barred.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
-        <h4 class="call-title"><a href="/revoke-exhibition-open-call-revoke-collective/">Revoke Exhibition Open Call</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Melbourne group show on the theme REVOKE - resistance, rupture, reinvention. Curated by Linda Zhengova; up to 15 images.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="A$40 for 1 image, A$125 for 15">A$40+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
         <h4 class="call-title"><a href="/xposure-international-photography-awards-2026-27/">Xposure International Photography Awards 2026/27</a></h4>
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Free Sharjah awards across nine photography categories - $6,000 overall, $3,000 a category, travel and a festival show.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$6,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$3,000 per category">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/provision-fund-2026-real-art-ways/">Provision Fund 2026 · Real Art Ways</a></h4>
-        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Six $10,000 Warhol-backed grants for Connecticut artists' public-facing visual art projects. Free; inaugural year.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$10,000</a> <a href="/eligibility/connecticut/" class="meta-tag meta-tag-link">Connecticut only</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;in&nbsp;November</a> – Six $10,000 Warhol-backed grants for Connecticut artists' public-facing visual art projects. Free; inaugural year.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$10,000</a> <a href="/eligibility/connecticut/" class="meta-tag meta-tag-link">Connecticut only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/precipice-fund-round-15-portland-institute-for-contemporary-art/">Precipice Fund Round 15 · Portland Institute for Contemporary Art</a></h4>
@@ -226,21 +212,37 @@
         <h4 class="call-title"><a href="/roadblocks-studio-montclair/">Roadblocks · Studio Montclair</a></h4>
         <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Studio Montclair's juried show on barriers physical and psychological — all media, free for members, $42 otherwise.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$42 (free for members)">$42 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Group exhibition</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/first-encounter-kora-art-collective/">First Encounter · Kora Art Collective</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Free two-part show for artists of African descent during Austin Studio Tour; photography named, curator-led.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="Exhibition at Austin Studio Tour">Residency</a> <a href="/eligibility/african-diaspora/" class="meta-tag meta-tag-link" title="African diaspora focus">African diaspora</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a> <a href="/eligibility/mid-career/" class="meta-tag meta-tag-link">Mid-career</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/queensland-regional-art-awards-2026/">Queensland Regional Art Awards 2026 · Flying Arts Alliance</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Australia's largest regional art awards: A$25,000 top prize plus a solo show and residency, for regional Queensland artists.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="A$40 (A$35 members, A$25 ages 15–25)">A$40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">A$25,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/eligibility/australia/" class="meta-tag meta-tag-link">Australia only</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/bodies-faces-art-of-figure-and-portrait-art-league-of-new-britain/">Bodies &amp; Faces: Art of Figure and Portrait · Art League of New Britain</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – Juried figure and portrait show in New Britain, CT; all media, work must be made from a live model. $375 in cash awards.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 for 1 entry, $15 each additional ($15 and $10 members)">$25+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$375 in cash awards">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/tshow-photo-1-tyler-art-lift/">TSHOW PHOTO.1 · Tyler Art Lift</a></h4>
+        <p class="call-description"><a href="/deadlines/september-2026/" class="call-date">Closed</a> – First photography edition of Tyler Art Lift's international TSHOW, juried by Kristine Madjare. $1,000 Best in Show at Gallery Main Street.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45, $5 each additional">$45+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 / $500 / $500">Cash prize</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/submit-via/website/past/page/21/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/submit-via/website/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/submit-via/website/past/page/19/" class="pagination-page pg-f">19</a><a href="/submit-via/website/past/page/20/" class="pagination-page pg-e pg-f">20</a><a href="/submit-via/website/past/page/21/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">21</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">22</span><a href="/submit-via/website/past/page/23/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">23</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/submit-via/website/past/page/24/" class="pagination-page pg-e pg-f">24</a><span class="pagination-gap pg-e">&hellip;</span><a href="/submit-via/website/past/page/25/" class="pagination-page pg-f">25</a><span class="pagination-gap pg-f">&hellip;</span><a href="/submit-via/website/past/page/59/" class="pagination-page pg-c pg-d pg-e pg-f">59</a></span><a href="/submit-via/website/past/page/23/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

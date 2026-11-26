@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,35 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/submit-via/">Submit via</a></nav>
       <h1>Open Calls You Submit Online</h1>
-      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 495 open.</h2>
+      <h2 class="subtitle">Open calls you enter through the organiser’s website, an online entry form, or a submission platform. 2250 calls, 499 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/submit-via/website/">See all open calls</a></p>
       <h3 class="section-header">August 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/analog-forever-magazine-calls-for-entry/">Analog Forever Magazine — Calls for Entry</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Film/analog photography magazine. Free call 'Standing Where Others Stood', guest-curated by Float Photo Magazine — online group exhibition.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/eligibility/analog-photography/" class="meta-tag meta-tag-link">Analog only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/photography-of-place-robert-a-peck-gallery/">Photography of Place · Robert A. Peck Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Free juried show at CWC's Robert A. Peck Gallery — images shot in Wyoming, the Dakotas, or Montana. $10,000 in awards, no entry fee or commission.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$10,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/betty-bowen-award-2026-seattle-art-museum/">Betty Bowen Award 2026 · Seattle Art Museum</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Seattle Art Museum's annual award for WA/OR/ID artists: $20,000 plus a solo show at SAM, with five further cash awards. $10 entry.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$10">$10 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$20,000</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo exhibition at SAM">Exhibition</a> <a href="/eligibility/washington/" class="meta-tag meta-tag-link">Washington only</a> <a href="/eligibility/oregon/" class="meta-tag meta-tag-link">Oregon only</a> <a href="/eligibility/idaho/" class="meta-tag meta-tag-link">Idaho only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/group-show-ii-hypam-editions/">Group Show II — Guest Curator Jesse Lenz · Hypam Editions</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Open-theme group show in Louisville curated by Jesse Lenz (Charcoal Press). Up to 10 images; opens October 17.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20">$20 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/iii-artist-fund-grant-2026/">III Artist Fund Grant 2026</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Artist-run $1,000 unrestricted grant for a US-based recent MFA graduate with a research-based practice. Free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a></div>
@@ -227,21 +213,37 @@
         <h4 class="call-title"><a href="/the-space-between-is-what-remains-rolo-gallery/">The Space Between Is What Remains · Rolo Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/july-2026/" class="call-date">Closed</a> – National juried show at a new Denver gallery on Santa Fe Drive — abstract or figurative, all media including photography.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 for 3 works, $10 each additional">$25+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/americana-crooked-tree-arts-center/">Americana · Crooked Tree Arts Center</a></h4>
+        <p class="call-description"><a href="/deadlines/july-2026/" class="call-date">Closed</a> – Great Lakes juried show at Crooked Tree Arts Center on the many meanings of Americana — photography welcome.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$30">$30 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/great-lakes/" class="meta-tag meta-tag-link" title="Great Lakes only">Great Lakes</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/wild-photo-artfolio/">Wild · Photo Artfolio</a></h4>
+        <p class="call-description"><a href="/deadlines/july-2026/" class="call-date">Closed</a> – Photo Artfolio's nature cycle — wildlife to experimental. $1,000 in cash prizes across three awards; online exhibit; no AI.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20 for 1 image, $5 each additional">$20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$350</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$150</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/liberty-art-award-2026/">Liberty Art Award 2026 · Liberty Specialty Markets</a></h4>
+        <p class="call-description"><a href="/deadlines/july-2026/" class="call-date">Closed</a> – Free two-year programme for 2025–26 UK graduates: £1,000 fee, mentoring and a two-year London exhibition. £7,500 in prizes.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£7,500 in prizes">Cash prize</a> <a href="/eligibility/united-kingdom/" class="meta-tag meta-tag-link">UK only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/night-vision-artlink/">Night Vision · Artlink Contemporary Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/july-2026/" class="call-date">Closed</a> – Night-themed juried show at Fort Wayne's Artlink — all media incl. photography, drawn to the colors of the dark. US artists, $12 entry.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$12 for 1 work, $12 each additional (up to 10)">$12+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/submit-via/website/past/page/37/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/submit-via/website/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/submit-via/website/past/page/35/" class="pagination-page pg-f">35</a><a href="/submit-via/website/past/page/36/" class="pagination-page pg-e pg-f">36</a><a href="/submit-via/website/past/page/37/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">37</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">38</span><a href="/submit-via/website/past/page/39/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">39</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/submit-via/website/past/page/40/" class="pagination-page pg-e pg-f">40</a><span class="pagination-gap pg-e">&hellip;</span><a href="/submit-via/website/past/page/41/" class="pagination-page pg-f">41</a><span class="pagination-gap pg-f">&hellip;</span><a href="/submit-via/website/past/page/59/" class="pagination-page pg-c pg-d pg-e pg-f">59</a></span><a href="/submit-via/website/past/page/39/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

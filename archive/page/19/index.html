@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -34,6 +34,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -45,6 +46,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -54,7 +56,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -63,18 +65,6 @@
 
     <section class="calls-list" id="callsList">
       <h3 class="section-header">October 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/convergence-of-creativity-2026-city-of-san-ramon/">Convergence of Creativity 2026 — Unexpected: Look Again! · City of San Ramon</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Photography is one of six categories in San Ramon's third annual juried show. $15 an entry, blind jury, gift-certificate awards.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15 per entry ($5 for students)">$15+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$150 / $100 / $75 / $50 gift certificates">Cash prize</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/humorous-the-art-of-laughter-armory-art-center/">HUMOROUS: The Art of Laughter · Armory Art Center</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Florida-wide juried show on humour in art; photography named. Awards, eight-week run in West Palm Beach.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$43 for up to 2 works">$43 fee</a> <a href="/prize/" class="meta-tag meta-tag-link">Awards</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/florida/" class="meta-tag meta-tag-link">Florida only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/the-curated-fridge-autumn-2026-show/">The Curated Fridge — Autumn 2026 Show</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Free, no-theme photo show on the iconic Somerville fridge, travelling to Ishibashi Gallery. Jurors Johnson and Menjivar.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link">Online feature</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/delfina-foundation-portugal-lusophone-africa-residency-2027/">Delfina Foundation — Portugal &amp; Lusophone Africa Residency 2027</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Fully funded 12-week London residency for artists from Portugal and Lusophone Africa, with the Calouste Gulbenkian Foundation.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Funded residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£1,200 materials budget">Cash prize</a> <a href="/eligibility/portugal-lusophone-africa/" class="meta-tag meta-tag-link" title="Portugal &amp; Lusophone Africa only">Lusophone</a></div>
@@ -85,7 +75,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/visual-artist-airspace-residency-2027-2028-abrons-arts-center/">Visual Artist AIRspace Residency 2027–2028 · Abrons Arts Center</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Free 20-month NYC residency for three early-career visual artists: studio, $7,000/year, $5,000 materials, mentor, group show.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$7,000/year</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$5,000 materials</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/new-york-city/" class="meta-tag meta-tag-link">NYC only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;in&nbsp;December</a> – Free 20-month NYC residency for three early-career visual artists: studio, $7,000/year, $5,000 materials, mentor, group show.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$7,000/year</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$5,000 materials</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/new-york-city/" class="meta-tag meta-tag-link">NYC only</a> <a href="/eligibility/emerging/" class="meta-tag meta-tag-link">Emerging artists</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/draw-the-line-museum-of-northern-california-art/">Draw the Line · Museum of Northern California Art</a></h4>
@@ -164,10 +154,6 @@
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – PhotoVogue's 2026 global open call. $12,000 in three grants, festival exhibition, Vogue publication. Free; deadline 1 October 2026.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$12,000 in 3 grants">Cash prize</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Vogue publication</a></div>
       </div>
       <div class="call-card">
-        <h4 class="call-title"><a href="/white-absence-of-color-midwest-center-for-photography/">White: Absence of Color · Midwest Center for Photography</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – International achromatic photography exhibition at MWCP, Wichita. Explores the lightest end of the spectrum with minimal color.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$50 for 5 images, $10 each additional. Additional fees: $30 frame rental per print if selected">$50+ fee*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
         <h4 class="call-title"><a href="/atlas-of-ruins-vol-3-call-for-photos-reuse-italy/">Atlas of Ruins Vol.3 — Call for Photos · Reuse Italy</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Photographs of architectural ruins from anywhere in the world for a printed book. €16 for one photo or €30 for up to ten, prizes up to €1,200.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€16–€30">€16–€30 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,200 / €500 / €300">Cash prize</a></div>
       </div>
@@ -177,11 +163,27 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/nature-and-humans-photo-competition-2026-desea-foundation/">Nature and Humans Photo Competition 2026 · DESEA Foundation</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Spanish foundation's international nature &amp; conservation photo competition — 15 categories, €17,000 in prizes. €25 entry, open worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€25 (€15 FONAMAD members, free under-18)">€25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€17,000 prize pool">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#november-2026" class="call-date">Results&nbsp;in&nbsp;November</a> – Spanish foundation's international nature &amp; conservation photo competition — 15 categories, €17,000 in prizes. €25 entry, open worldwide.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€25 (€15 FONAMAD members, free under-18)">€25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€17,000 prize pool">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/james-balog-earth-vision-awards-denver-art-museum/">James Balog Earth Vision Awards · Denver Art Museum</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – $40,000 biennial award from the Denver Art Museum for photographers responding to environmental issues. Opens September 1.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$40,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$25,000 finalist</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;in&nbsp;January</a> – $40,000 biennial award from the Denver Art Museum for photographers responding to environmental issues. Opens September 1.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25">$25 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$40,000</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$25,000 finalist</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/arty-rat-magazine-open-call-september-2026/">Arty Rat Magazine Open Call — October 2026</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Vienna indie art journal's autumn call. Free to enter, two cover features and one free place in a Vienna group show.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: €35–€100 fee if selected">Free entry*</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2026-southwest-artists-series-purchase-initiative-new-mexico-arts/">2026 Southwest Artists Series Purchase Initiative · New Mexico Arts</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – New Mexico's public art programme buys work outright for state buildings, $5,000–$50,000. Free; Southwest US artists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$5,000–$50,000 purchase">Cash prize</a> <a href="/eligibility/southwest-us/" class="meta-tag meta-tag-link" title="Southwest US only">Southwest US</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/anemone-vol-1-no-2/">Anemone Vol. 1, No. 2</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Print-only Montana magazine open to photography for its second issue. No fee, contributors paid, and firmly anti-AI.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Payment</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/rawhead-bloody-bones-halloween-special-issue/">Rawhead &amp; Bloody Bones — Halloween Special Issue</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Rawhead's annual Halloween special issue reads photography on ghosts, folklore, grief and transformation. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <nav class="pagination" aria-label="Pages"><a href="/archive/page/18/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/archive/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/archive/page/16/" class="pagination-page pg-f">16</a><a href="/archive/page/17/" class="pagination-page pg-e pg-f">17</a><a href="/archive/page/18/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">18</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">19</span><a href="/archive/page/20/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">20</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/archive/page/21/" class="pagination-page pg-e pg-f">21</a><span class="pagination-gap pg-e">&hellip;</span><a href="/archive/page/22/" class="pagination-page pg-f">22</a><span class="pagination-gap pg-f">&hellip;</span><a href="/archive/page/68/" class="pagination-page pg-c pg-d pg-e pg-f">68</a></span><a href="/archive/page/20/" class="pagination-step" rel="next">Next</a></nav>
 
@@ -189,15 +191,15 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

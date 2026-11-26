@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,17 +95,29 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Exhibition Open Calls</h1>
-      <h2 class="subtitle">Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists. 1422 calls, 312 open.</h2>
+      <h2 class="subtitle">Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists. 1422 calls, 315 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h3 class="section-header">December 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/bba-artist-prize-2027/">BBA Artist Prize 2027</a></h4>
+        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">11&nbsp;days&nbsp;left</a> – BBA Gallery Berlin's all-media prize, photography eligible. €1,000 and a solo show to the winner; 20 shortlisted artists exhibit.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€49 for 5 works, €9 each additional">€49+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,000 / €700 / €500 / €300">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/solastalgia-16th-annual-international-juried-exhibition-ad-gallery-uncp/">Solastalgia — 16th Annual International Juried Exhibition · A.D. Gallery, University of North Carolina at Pembroke</a></h4>
+        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">11&nbsp;days&nbsp;left</a> – UNC Pembroke's 16th international juried show on environmental grief — $400/$200/$100 prizes, all media, juror Carla Rokes.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for up to 3 works">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$400 first prize">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200 second</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100 third</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/ephemeral-beauty-2027-kahilu-theatre/">Ephemeral Beauty — 2027 Juried Art Exhibition · Kahilu Theatre</a></h4>
+        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">11&nbsp;days&nbsp;left</a> – Flowers, juried by Andrzej Kramarz, at Kahilu Theatre's galleries on Hawaiʻi Island. $25 + $5 each additional, 18+, international.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25, $5 each additional">$25+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/upside-down-ph21-gallery/">Upside down · PH21 Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">11&nbsp;days&nbsp;left</a> – Barcelona group show that hangs every photograph inverted — form over subject. Student and low-income rates. Dec 7.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€25–€45 for 3–15 images (€30–€50 after Nov 30, €15–€20 concession). Additional fees: €45–€125 print and installation fee if selected">€25+ fee*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
@@ -212,33 +226,21 @@
         <h4 class="call-title"><a href="/come-in-galerie-waidhofen-ybbs-open-call-2027-kulturvernetzung-niederosterreich/">Come In! Galerie Waidhofen/Ybbs — Open Call 2027 · Kulturvernetzung Niederösterreich</a></h4>
         <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-soon">18&nbsp;days&nbsp;left</a> – Paid first-show call for artists 14–29 with Lower Austria ties — €500 fee, €500 materials, six dated 2027 slots in a youth gallery.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to €500 materials">Cash prize</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/eligibility/14-29/" class="meta-tag meta-tag-link">Ages 14–29</a> <a href="/eligibility/lower-austria/" class="meta-tag meta-tag-link" title="Lower Austria only">Lower Austria</a></div>
       </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/exhibition-proposals-2027-2028-alexander-brest-gallery/">Exhibition Proposals 2027–2028 · Alexander Brest Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-soon">18&nbsp;days&nbsp;left</a> – A university gallery in Jacksonville programmes its 2027–28 season from an open call: free, 2,300 sq ft, solo or group.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo or group exhibition">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/story-a-smith-gallery/">story · A Smith Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-soon">18&nbsp;days&nbsp;left</a> – A Smith Gallery's juried online show on narrative, juror Kevin Tully. $40/5 images, unlimited entries, $100 and a solo show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 for 5 images, $5 each additional">$40+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/made-you-look-saveartspace-bus-shelter-exhibition/">Made You Look — SaveArtSpace Bus Shelter Exhibition</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-soon">18&nbsp;days&nbsp;left</a> – Miami bus shelter show on visual saturation and advertising, curated by Pangea Kali Virga; open to artists of all ages.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1–3 images, $10 each additional ($36.92–$108.45 at checkout)">$35+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Public exhibition</a></div>
-      </div>
       <nav class="pagination" aria-label="Pages"><a href="/exhibitions/page/2/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/exhibitions/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><a href="/exhibitions/page/2/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">2</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">3</span><a href="/exhibitions/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><span class="pagination-gap pg-a">&hellip;</span><a href="/exhibitions/page/5/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">5</a><a href="/exhibitions/page/6/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/exhibitions/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/exhibitions/page/8/" class="pagination-page pg-e pg-f">8</a><a href="/exhibitions/page/9/" class="pagination-page pg-e pg-f">9</a><span class="pagination-gap pg-e pg-f">&hellip;</span><a href="/exhibitions/page/11/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">11</a></span><a href="/exhibitions/page/4/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

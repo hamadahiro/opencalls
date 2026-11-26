@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,17 +95,33 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/fees/">Fees</a></nav>
       <h1>Open Calls with Entry Fees</h1>
-      <h2 class="subtitle">Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists. A fee marked * has additional fees, listed on the call page. 1490 calls, 316 open.</h2>
+      <h2 class="subtitle">Open calls with entry fees. Competitions, exhibitions, and submissions for photographers and visual artists. A fee marked * has additional fees, listed on the call page. 1490 calls, 321 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h3 class="section-header">November 2026</h3>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/cupoty-challenge-2026-close-to-home/">CUPOTY CHALLENGE 2026: Close to Home</a></h4>
+        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date dl-band dl-urgent">4&nbsp;days&nbsp;left</a> – CUPOTY's themed challenge: close-up, macro and micro pictures made at home, in the garden or on the doorstep. £500 in prizes.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£11 for 1 picture, £16 for 3">£11+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£300 / £125 / £75">Cash prize</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/exhibition-call-for-entries-detroit-subjectively-objective/">Exhibition Call for Entries — Detroit · Subjectively Objective</a></h4>
+        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date dl-band dl-urgent">4&nbsp;days&nbsp;left</a> – No-theme open call for a new Detroit exhibition series from the photobook publisher — $10 to enter, print costs due if selected.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$10. Additional fees: $30–$600+ exhibition fee if selected">$10 fee*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/2026-landscape-award-the-independent-photographer/">2026 Landscape Award · The Independent Photographer</a></h4>
+        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date dl-band dl-urgent">4&nbsp;days&nbsp;left</a> – November round of TIP's monthly award: landscape. $3,000 pool, London group show. Judge: Isabella Tabacchi.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15–$45">$15–$45 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$3,000 pool</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/open-call-for-exhibition-proposals-2026-3rd-edition-elliott-gallery/">Open Call for Exhibition Proposals 2026 (3rd Edition) · Elliott Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date dl-band dl-urgent">4&nbsp;days&nbsp;left</a> – Three photographers get a six-week show at Elliott Gallery, Amsterdam — two in the main room, one solo in the Green Room.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€35">€35 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-of-the-still-life-mva-gallery/">ART OF THE STILL LIFE · MVA Gallery</a></h4>
         <p class="call-description"><a href="/deadlines/november-2026/" class="call-date dl-band dl-urgent">4&nbsp;days&nbsp;left</a> – MVA Gallery's national still-life call, from a vase of flowers to a toaster. All photographic processes welcome; $200 and a NYC show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 3 images, $5 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">NYC exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
@@ -128,6 +146,10 @@
       <div class="call-card">
         <h4 class="call-title"><a href="/midwest-center-for-photography-juried-exhibition-2027/">Midwest Center for Photography Juried Exhibition 2027</a></h4>
         <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">5&nbsp;days&nbsp;left</a> – MWCP annual juried show in five categories: architecture, close-up, landscape, portrait, street. Cash awards + Wichita gallery exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$50 for 5 images, $10 each additional. Additional fees: $30 frame rental per print if selected">$50+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="5 × $100 Director's Choice">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/white-absence-of-color-midwest-center-for-photography/">White: Absence of Color · Midwest Center for Photography</a></h4>
+        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">5&nbsp;days&nbsp;left</a> – International achromatic photography exhibition at MWCP, Wichita. Explores the lightest end of the spectrum with minimal color.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$50 for 5 images, $10 each additional. Additional fees: $30 frame rental per print if selected">$50+ fee*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/freedoms-journey-new-england-black-artists-collective/">What's the Word?: By Us and About Us · New England Black Artists Collective</a></h4>
@@ -205,41 +227,21 @@
         <h4 class="call-title"><a href="/exhibition-proposals-q4-2026-holter-museum-of-art/">Exhibition Proposals — Q4 2026 · Holter Museum of Art</a></h4>
         <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">10&nbsp;days&nbsp;left</a> – A Montana museum's rolling proposal pipeline for its 20-25 shows a year: 10-20 images, $20, open worldwide. Final 2026 round: Dec 6.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20">$20 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Solo or group exhibition">Exhibition</a></div>
       </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/art-is-south-dakota-juried-exhibition-south-dakota-art-museum/">&quot;Art Is: South Dakota&quot; Juried Exhibition · South Dakota Art Museum</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">10&nbsp;days&nbsp;left</a> – Juried show touring five South Dakota venues to 2028; photography eligible; SD residents plus tribal citizens anywhere.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 for up to 3 works (fee waivers available)">$25 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Five-venue touring exhibition">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Catalogue</a> <a href="/eligibility/south-dakota/" class="meta-tag meta-tag-link" title="South Dakota only">South Dakota</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/secrets-falkirk-cultural-center/">Secrets · Falkirk Cultural Center</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">10&nbsp;days&nbsp;left</a> – Falkirk Cultural Center's winter juried show on what is hidden and revealed, open to the nine Bay Area counties.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40, $7.50 each additional">$40+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$100 / $75 / $50">Cash prize</a> <a href="/eligibility/bay-area/" class="meta-tag meta-tag-link" title="Bay Area only">Bay Area</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/open-call-south-x-southeast-photo-gallery/">Open Call · South x Southeast Photo Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">10&nbsp;days&nbsp;left</a> – South x Southeast's themeless open call, curated by collector Celso González-Falla, for an online show in January and February 2027.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 for 4 images, $10 each additional">$40+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Online exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/bba-artist-prize-2027/">BBA Artist Prize 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">11&nbsp;days&nbsp;left</a> – BBA Gallery Berlin's all-media prize, photography eligible. €1,000 and a solo show to the winner; 20 shortlisted artists exhibit.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€49 for 5 works, €9 each additional">€49+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,000 / €700 / €500 / €300">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Solo exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/solastalgia-16th-annual-international-juried-exhibition-ad-gallery-uncp/">Solastalgia — 16th Annual International Juried Exhibition · A.D. Gallery, University of North Carolina at Pembroke</a></h4>
-        <p class="call-description"><a href="/deadlines/december-2026/" class="call-date dl-band dl-urgent">11&nbsp;days&nbsp;left</a> – UNC Pembroke's 16th international juried show on environmental grief — $400/$200/$100 prizes, all media, juror Carla Rokes.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for up to 3 works">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$400 first prize">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$200 second</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$100 third</a></div>
-      </div>
       <nav class="pagination" aria-label="Pages"><a href="/fees/entry-fee/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/fees/entry-fee/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">1</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">2</span><a href="/fees/entry-fee/page/3/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">3</a><a href="/fees/entry-fee/page/4/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">4</a><span class="pagination-gap pg-a">&hellip;</span><a href="/fees/entry-fee/page/5/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">5</a><a href="/fees/entry-fee/page/6/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/fees/entry-fee/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/fees/entry-fee/page/8/" class="pagination-page pg-e pg-f">8</a><a href="/fees/entry-fee/page/9/" class="pagination-page pg-e pg-f">9</a><span class="pagination-gap pg-e pg-f">&hellip;</span><a href="/fees/entry-fee/page/11/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">11</a></span><a href="/fees/entry-fee/page/3/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

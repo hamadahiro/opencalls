@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Monographica">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="noindex, follow">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
@@ -31,6 +31,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -42,6 +43,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -51,7 +53,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -271,7 +273,7 @@
       <a href="/internationale-photoszene-k-ln/" class="index-item"><span class="index-item-name">Internationale Photoszene Köln</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/iontas-magazine/" class="index-item"><span class="index-item-name">IONTAS Magazine</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/issp/" class="index-item"><span class="index-item-name">ISSP</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/itravelpoetry/" class="index-item"><span class="index-item-name">iTravelPoetry</span><span class="dots"></span><span class="index-item-count">2</span></a>
+      <a href="/itravelpoetry/" class="index-item"><span class="index-item-name">iTravelPoetry</span><span class="dots"></span><span class="index-item-count">3</span></a>
       <a href="/jan-van-eyck-academie/" class="index-item"><span class="index-item-name" id="j">Jan van Eyck Academie</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/jentel-artist-residency/" class="index-item"><span class="index-item-name">Jentel Artist Residency</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/jervis-bay-maritime-museum/" class="index-item"><span class="index-item-name">Jervis Bay Maritime Museum</span><span class="dots"></span><span class="index-item-count">1</span></a>
@@ -329,8 +331,8 @@
       <a href="/memorial-mar-a-luisa/" class="index-item"><span class="index-item-name">Memorial María Luisa</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/memory-version/" class="index-item"><span class="index-item-name">Memory Version</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/mercer-county-community-college/" class="index-item"><span class="index-item-name">Mercer County Community College</span><span class="dots"></span><span class="index-item-count">1</span></a>
-      <a href="/midwest-center-for-photography/" class="index-item"><span class="index-item-name">Midwest Center for Photography</span><span class="dots"></span><span class="index-item-count">3</span></a>
-      <a href="/midwest-nice-art/" class="index-item"><span class="index-item-name">midwest nice art</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/midwest-center-for-photography/" class="index-item"><span class="index-item-name">Midwest Center for Photography</span><span class="dots"></span><span class="index-item-count">4</span></a>
+      <a href="/midwest-nice-art/" class="index-item"><span class="index-item-name">midwest nice art</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/mobile-photography-awards/" class="index-item"><span class="index-item-name">Mobile Photography Awards</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/mono-orbit-awards/" class="index-item"><span class="index-item-name">Mono Orbit Awards</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/monovisions-magazine/" class="index-item"><span class="index-item-name">MonoVisions Magazine</span><span class="dots"></span><span class="index-item-count">1</span></a>
@@ -369,6 +371,7 @@
       <a href="/pajaro-valley-arts/" class="index-item"><span class="index-item-name">Pajaro Valley Arts</span><span class="dots"></span><span class="index-item-count">2</span></a>
       <a href="/palermo-galerie/" class="index-item"><span class="index-item-name">Palermo Galerie</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/panopticon-gallery/" class="index-item"><span class="index-item-name">Panopticon Gallery</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/paris-international-street-photo-awards/" class="index-item"><span class="index-item-name">Paris International Street Photo Awards</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/paul-nigra-center-for-creative-arts/" class="index-item"><span class="index-item-name">Paul Nigra Center for Creative Arts</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/pence-gallery/" class="index-item"><span class="index-item-name">Pence Gallery</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/perspective-gallery/" class="index-item"><span class="index-item-name">Perspective Gallery</span><span class="dots"></span><span class="index-item-count">1</span></a>
@@ -448,6 +451,7 @@
       <a href="/street-macadam/" class="index-item"><span class="index-item-name">Street Macadam</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/studio-channel-islands/" class="index-item"><span class="index-item-name">Studio Channel Islands</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/studio-montclair/" class="index-item"><span class="index-item-name">Studio Montclair</span><span class="dots"></span><span class="index-item-count">1</span></a>
+      <a href="/subjectively-objective/" class="index-item"><span class="index-item-name">Subjectively Objective</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/surel-s-place/" class="index-item"><span class="index-item-name">Surel's Place</span><span class="dots"></span><span class="index-item-count">1</span></a>
       <a href="/sussex-contemporary/" class="index-item"><span class="index-item-name">Sussex Contemporary</span><span class="dots"></span><span class="index-item-count">3</span></a>
       <a href="/sustainable-eiber/" class="index-item"><span class="index-item-name">Sustainable Eiber</span><span class="dots"></span><span class="index-item-count">1</span></a>
@@ -530,17 +534,17 @@
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
 
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

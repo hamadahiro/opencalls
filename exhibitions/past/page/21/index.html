@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,35 +95,19 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/categories/">Categories</a></nav>
       <h1>Exhibition Open Calls</h1>
-      <h2 class="subtitle">Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists. 1422 calls, 312 open.</h2>
+      <h2 class="subtitle">Call for entries for group and solo exhibitions worldwide. Gallery shows, curated exhibitions, and art fair opportunities for visual artists. 1422 calls, 315 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
       <h2 class="list-heading">Past calls</h2>
       <p class="browse-more list-switch"><a href="/exhibitions/">See all open calls</a></p>
       <h3 class="section-header">August 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/in-between-2026-glasgow-gallery-of-photography/">In Between 2026 · Glasgow Gallery of Photography</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Photography exhibition on fleeting moments at the edge of change. Glasgow show Dec 2026, online gallery and catalogue.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: £38 fee if selected">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/legacy-lives-here-ii-project-row-houses/">Legacy Lives Here II · Project Row Houses</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Project Row Houses' Community Gallery show for artists 60+, on personal history and cultural memory. Free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/34th-annual-open-juried-show-guild-of-creative-art/">34th Annual Open Juried Show · Guild of Creative Art</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – New Jersey guild's all-media October show with photography as a full category and six photography cash awards.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 for 1 work ($20 members)">$40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,300 in cash awards">Cash prize</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/bingo-2026-candela-photographic-arts/">BINGO 2026 · Candela Photographic Arts</a></h4>
-        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Free “give two, get one” print show and swap at Candela in Richmond. Fifteen small photographs, no theme, no entry fee.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link">Print swap</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/art-for-the-view-2026-sunnyview/">Art for the View 2026 · Sunnyview Rehabilitation Hospital Foundation</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Free 25th-anniversary exhibition of work by artists with disabilities at Proctors' Fenimore Gallery in Schenectady; all media, for sale.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$500 Best in Show">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/neurodivergent-disabled/" class="meta-tag meta-tag-link" title="Neurodivergent &amp; disabled">ND &amp; disabled</a></div>
@@ -207,6 +193,10 @@
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Praxis Gallery (Minneapolis) on the nude — figure studies to conceptual bodywork. Physical show Sep–Oct 2026; printed catalog.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 5 images, $5 each additional">$35+ fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Catalog</a></div>
       </div>
       <div class="call-card">
+        <h4 class="call-title"><a href="/newhaven-open-26-photo-fringe/">Newhaven Open 26 · Photo Fringe</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Ten solo or group shows on the theme Feedback Loop at a Newhaven waterfront studio space, free to enter, with a mentorship award.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: £125 solo or £150 group registration if selected; £100 exhibition contribution if selected">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link">Mentorship</a></div>
+      </div>
+      <div class="call-card">
         <h4 class="call-title"><a href="/where-i-sleep-forum-301/">Where I Sleep · Forum 301</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Chicago gallery seeks photographic work on the idea of home. Prints, projections, sculptural and book forms all invited.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$20">$20 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
@@ -226,21 +216,33 @@
         <h4 class="call-title"><a href="/fire-a-photographer-s-place/">Fire · A Photographer's Place</a></h4>
         <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Raleigh gallery show on fire as metaphor and condition, not subject. Juror Robbie Bailey. September exhibition in Gallery X.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for up to 5 images">$35 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/ccan-2026-10th-annual-national-juried-art-competition-center-for-contemporary-arts/">CCAN 2026 — 10th Annual National Juried Art Competition · Center for Contemporary Arts</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Abilene's 10th national juried competition: $500 first prizes in 11 categories including 2D photography.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1 image, $20 each additional">$35+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$7,000 in cash awards">Cash prize</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/zari-art-prize-2026-zari-gallery/">Zari Art Prize 2026 · Zari Gallery</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – London West End gallery prize with a dedicated photography category — £550 plus £350 runner-up from a £4,000 pool, and a Fitzrovia show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£20 for 1 entry, £87.50 for 10 (sliding scale)">£20+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="£1,000 Best in Show">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/seasons-of-change-mountain-artists-guild/">Seasons of Change · Mountain Artists Guild</a></h4>
+        <p class="call-description"><a href="/deadlines/august-2026/" class="call-date">Closed</a> – Arizona guild show on transformation with photography as its own judged category. Members and non-members, in-person delivery.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for up to 3 works ($30 members)">$45 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/exhibitions/past/page/20/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/exhibitions/past/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/exhibitions/past/page/18/" class="pagination-page pg-f">18</a><a href="/exhibitions/past/page/19/" class="pagination-page pg-e pg-f">19</a><a href="/exhibitions/past/page/20/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">20</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">21</span><a href="/exhibitions/past/page/22/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">22</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/exhibitions/past/page/23/" class="pagination-page pg-e pg-f">23</a><span class="pagination-gap pg-e">&hellip;</span><a href="/exhibitions/past/page/24/" class="pagination-page pg-f">24</a><span class="pagination-gap pg-f">&hellip;</span><a href="/exhibitions/past/page/37/" class="pagination-page pg-c pg-d pg-e pg-f">37</a></span><a href="/exhibitions/past/page/22/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

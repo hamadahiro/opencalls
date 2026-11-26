@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -34,6 +34,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -45,6 +46,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -54,7 +56,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -63,26 +65,6 @@
 
     <section class="calls-list" id="callsList">
       <h3 class="section-header">June 2026</h3>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/flora-shutter-hub-editions-publication/">FLORA — Shutter Hub Editions Publication</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Printed photobook celebrating plant life and natural growth. Pay-what-you-can entry, £15 minimum.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£15+">£15 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/women-united-art-magazine-issue-xiv/">Women United Art Magazine — Issue XIV</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – International juried magazine for women artists across all media incl. photography. Sliding-scale fee with waivers.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€10–€35">€10–€35 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link">Women</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/rarefied-light-2026-alaska-photographic-center/">Rarefied Light 2026 · Alaska Photographic Center</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Statewide juried exhibition with Nevada Wier (Nat Geo). Travels to four Alaska galleries from October 2026.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15–$30">$15–$30 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$300</a> <a href="/eligibility/alaska/" class="meta-tag meta-tag-link">Alaska only</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/queer-nature-photography-awards-2026-narwhal-rainbow-alliance/">Queer Nature Photography Awards 2026 · Narwhal Rainbow Alliance</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Free-entry award celebrating LGBTQ+ diversity through nature photography. Prizes include exhibitions.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€1,500</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/2nd-street-photo-festival-athens-2026/">2nd Street Photo Festival 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Street photography call for Athens festival exhibition Dec 12–20. Free entry; €400/€300/€200 prizes; €50 if selected.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: €50 fee if selected">Free entry*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€400</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€300</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€200</a></div>
-      </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/verzasca-foto-festival-2027-open-call/">Verzasca Foto Festival 2027 — Exhibition Open Call</a></h4>
         <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Free call for Verzasca Foto's 2027 biennial in Ticino. Photography of peripheral and rural places. Fee + production covered for selected.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
@@ -113,7 +95,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/british-wildlife-photography-awards-2026/">British Wildlife Photography Awards 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – UK wildlife photography awards — 12 categories. Winners in Collection 14 book + UK touring exhibition. Youth entry free.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£35–£40">£35–£40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£3,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="~£10,000 total fund">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#march-2027" class="call-date">Results&nbsp;in&nbsp;March</a> – UK wildlife photography awards — 12 categories. Winners in Collection 14 book + UK touring exhibition. Youth entry free.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="£35–£40">£35–£40 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£3,500</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="~£10,000 total fund">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/circulation-s-festival-2027-17th-edition/">Circulation(s) Festival 2027 — 17th Edition Open Call</a></h4>
@@ -183,21 +165,41 @@
         <h4 class="call-title"><a href="/the-paula-riff-award-2026/">The Paula Riff Award 2026 · Center for Photographic Art</a></h4>
         <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Award for alternative/experimental photography — lensless, historical processes, physical intervention. $1,000 + Lenscratch feature.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$1,000</a> <a href="/prize/" class="meta-tag meta-tag-link" title="Featured on Lenscratch &amp; CPA">Prize</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/cci-fellowships-2026-perez-art-museum-miami/">CCI Fellowships 2026 · Pérez Art Museum Miami</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – Three CCI fellowships at Pérez Art Museum Miami. WOPHA photography track for women &amp; nonbinary Caribbean photographers.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Stipend</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$4,000 production</a> <a href="/eligibility/caribbean/" class="meta-tag meta-tag-link">Caribbean focus</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/shots-magazine-172-the-human-figure/">SHOTS Magazine #172 — The Human Figure</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – B&amp;W photography quarterly since 1986. Issue #172 themed The Human Figure. Up to 8 grayscale images. Free for subscribers.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 (free for subscribers)">$25 fee</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/headlands-center-for-the-arts-air-2027/">Headlands Center for the Arts AIR 2027</a></h4>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;11</a> – Fully sponsored 4–10 week residency in Sausalito, CA. Studio, meals, housing, travel covered. Photography eligible; ~60 artists/year.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 ($35 until May 4)">$45 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="Fully sponsored residency">Residency</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/blm-canyon-country-district-artist-in-residence-2026/">BLM Canyon Country District Artist in Residence 2026</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – 2–4 week residency in Moab, UT, hosted by the BLM. Photography eligible. Free; $125/week stipend + campsite.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link" title="2–4 week residency">Residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$125/week stipend</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+      </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/marilyn-stafford-fotoreportage-award-2026/">Marilyn Stafford FotoReportage Award 2026 · FotoDocument</a></h4>
+        <p class="call-description"><a href="/deadlines/june-2026/" class="call-date">Closed</a> – £4,000 grant for female documentary photographers. 10th edition, supported by Nikon. Free entry. Exhibition at POST Brighton.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">£4,000</a> <a href="/eligibility/women/" class="meta-tag meta-tag-link">Women</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/archive/page/53/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/archive/" class="pagination-page pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-c pg-d pg-e pg-f">&hellip;</span><a href="/archive/page/51/" class="pagination-page pg-f">51</a><a href="/archive/page/52/" class="pagination-page pg-e pg-f">52</a><a href="/archive/page/53/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">53</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">54</span><a href="/archive/page/55/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">55</a><span class="pagination-gap pg-c pg-d">&hellip;</span><a href="/archive/page/56/" class="pagination-page pg-e pg-f">56</a><span class="pagination-gap pg-e">&hellip;</span><a href="/archive/page/57/" class="pagination-page pg-f">57</a><span class="pagination-gap pg-f">&hellip;</span><a href="/archive/page/68/" class="pagination-page pg-c pg-d pg-e pg-f">68</a></span><a href="/archive/page/55/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

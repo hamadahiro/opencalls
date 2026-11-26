@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -34,6 +34,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -45,6 +46,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -54,7 +56,7 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
@@ -77,7 +79,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/nikon-fotobus-grant-2026/">Nikon Fotobus Grant 2026</a></h4>
-        <p class="call-description"><a href="/deadlines/november-2026/" class="call-date">Closed</a> – Nikon-funded grant for students and under-30s in Germany, Austria or Switzerland: three awards of €5,000/€3,000/€2,000 plus a camera. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€5,000 / €3,000 / €2,000">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Nikon camera</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link">Students</a> <a href="/eligibility/under-30/" class="meta-tag meta-tag-link">Under 30</a> <a href="/eligibility/germany-austria-switzerland/" class="meta-tag meta-tag-link" title="Germany, Austria &amp; Switzerland only">DE/AT/CH</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;15</a> – Nikon-funded grant for students and under-30s in Germany, Austria or Switzerland: three awards of €5,000/€3,000/€2,000 plus a camera. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€5,000 / €3,000 / €2,000">Cash prize</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Nikon camera</a> <a href="/eligibility/student/" class="meta-tag meta-tag-link">Students</a> <a href="/eligibility/under-30/" class="meta-tag meta-tag-link">Under 30</a> <a href="/eligibility/germany-austria-switzerland/" class="meta-tag meta-tag-link" title="Germany, Austria &amp; Switzerland only">DE/AT/CH</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/a-land-remembered-elliott-museum-call-for-artists-historical-society-of-martin-county/">A Land Remembered — Elliott Museum Call for Artists · Historical Society of Martin County</a></h4>
@@ -95,10 +97,6 @@
       <div class="call-card">
         <h4 class="call-title"><a href="/lake-garda-photo-challenge-comune-di-sirmione/">Lake Garda Photo Challenge · Comune di Sirmione</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Photograph Sirmione and Lake Garda — €1,500 top prizes per theme plus hospitality awards. €10 flat fee, open until October 31.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€10">€10 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€1,500 / €500 per main theme">Cash prize</a></div>
-      </div>
-      <div class="call-card">
-        <h4 class="call-title"><a href="/form-photo-award-x-unseen/">Form Photo Award x UNSEEN</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Open-theme award from Paris-based Form. Selected photographers present their projects at the UNSEEN 2027 photography fair.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="€35">€35 fee</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="Exhibition at UNSEEN 2027">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/world-anthotype-day-alternativephotography-com/">World Anthotype Day · AlternativePhotography.com</a></h4>
@@ -126,19 +124,19 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/16th-annual-international-juried-exhibition-gallery-110/">16th Annual International Juried Exhibition · Gallery 110</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Seattle non-profit gallery's open-call juried show, juried by Ryan Hardesty, with a $1,000 top award and a February 2027 exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 for 3 images, $10 each additional (up to 10)">$40+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 / $500 / $300">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;16</a> – Seattle non-profit gallery's open-call juried show, juried by Ryan Hardesty, with a $1,000 top award and a February 2027 exhibition.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$40 for 3 images, $10 each additional (up to 10)">$40+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 / $500 / $300">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/international-photography-open-call-edition-3-chennai-photo-biennale/">International Photography Open Call — Edition 3 · Chennai Photo Biennale Foundation</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Chennai Photo Biennale's third international open call: any subject, any country, exhibited in public spaces across the city.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="₹100–₹1,660+">₹100–₹1,660+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Camera gear</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;late&nbsp;December</a> – Chennai Photo Biennale's third international open call: any subject, any country, exhibited in public spaces across the city.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="₹100–₹1,660+">₹100–₹1,660+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">Camera gear</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2027-artist-residency-at-mccc/">2027 Artist Residency at MCCC · Mercer County Community College</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Four three-week gallery residencies at Mercer County Community College, Spring 2027. $350 stipend; photography named in the media list.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$350 stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Gallery residency</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;1</a> – Four three-week gallery residencies at Mercer County Community College, Spring 2027. $350 stipend; photography named in the media list.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35">$35 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$350 stipend</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Gallery residency</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/pride-photo-2027/">Pride Photo 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Free Amsterdam open call for LGBTQIA+ photography. €500 per selected work plus a touring exhibition, jury of five.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€500 per selected work">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
+        <p class="call-description"><a href="/results/#june-2027" class="call-date">Results&nbsp;in&nbsp;June</a> – Free Amsterdam open call for LGBTQIA+ photography. €500 per selected work plus a touring exhibition, jury of five.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="€500 per selected work">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/fridge-art-fair-miami-2026-open-call-for-artists/">Fridge Art Fair Miami 2026: Open Call for Artists</a></h4>
@@ -146,7 +144,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/outdoor-photography-magazine-woodland-macro/">Outdoor Photography Magazine — Woodland Macro</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Shoot woodland macro for Outdoor Photography's OP 334 reader competition. Free entry; winner takes a £139 Lowepro backpack.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Lowepro backpack (£139)">Cash prize</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;by&nbsp;Jan&nbsp;9</a> – Shoot woodland macro for Outdoor Photography's OP 334 reader competition. Free entry; winner takes a £139 Lowepro backpack.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Lowepro backpack (£139)">Cash prize</a> <a href="/prize/publication/" class="meta-tag meta-tag-link">Publication</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/ploch-art-gallery-2027-2028-season-sharon-lynne-wilson-center/">Ploch Art Gallery 2027–2028 Season · Sharon Lynne Wilson Center for the Arts</a></h4>
@@ -166,7 +164,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/tallgrass-artist-residency-2027/">Tallgrass Artist Residency 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Free ten-night prairie residency in Matfield Green, Kansas, $650 stipend — prioritised for artists living in a prairie ecoregion.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">2-week residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$650 stipend</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;31</a> – Free ten-night prairie residency in Matfield Green, Kansas, $650 stipend — prioritised for artists living in a prairie ecoregion.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">2-week residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$650 stipend</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/2026-open-call-award-the-independent-photographer/">2026 Open Call Award · The Independent Photographer</a></h4>
@@ -184,21 +182,25 @@
         <h4 class="call-title"><a href="/winter-solstice-2026-griffin-museum-of-photography/">Winter Solstice 2026 — Annual Members Exhibition · Griffin Museum of Photography</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Griffin Museum's annual members' salon — one unframed print each, 300+ hung wall to wall in the Main Gallery, priced to sell at up to $250.</p><div class="call-meta"><a href="/fees/free-entry/" class="meta-tag meta-tag-link" title="Free. Additional fees: $70/year Griffin membership ($50 outside New England, $35 students)">Free entry*</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/prize/" class="meta-tag meta-tag-link">Print sales</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/nyc-open-call-2027-28-apexart/">NYC Open Call 2027–28 · apexart</a></h4>
+        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – apexart funds idea-led group shows at its Church Street space: $10,000 per exhibition, free, judged by a 600-juror crowd vote.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$10,000 exhibition budget">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link" title="NYC group exhibition">Exhibition</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/archive/page/8/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/archive/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-b pg-c pg-d pg-e pg-f">&hellip;</span><a href="/archive/page/6/" class="pagination-page pg-e pg-f">6</a><a href="/archive/page/7/" class="pagination-page pg-e pg-f">7</a><a href="/archive/page/8/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">8</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">9</span><a href="/archive/page/10/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">10</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/archive/page/11/" class="pagination-page pg-e pg-f">11</a><a href="/archive/page/12/" class="pagination-page pg-e pg-f">12</a><span class="pagination-gap pg-e pg-f">&hellip;</span><a href="/archive/page/68/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">68</a></span><a href="/archive/page/10/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>

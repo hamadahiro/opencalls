@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="/style.css?v=20261126a">
+  <link rel="stylesheet" href="/style.css?v=20261126b">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -73,6 +73,7 @@
         <a href="/" class="nav-link" data-nav="open">Open Calls</a>
         <a href="/new/" class="nav-link" data-nav="recent">Just Added</a>
         <a href="/browse/" class="nav-link nav-desktop" data-nav="browse">Browse</a>
+        <a href="/results/" class="nav-link nav-desktop" data-nav="results">Results</a>
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
@@ -84,6 +85,7 @@
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>
+      <a href="/results/" data-nav="results">Results</a>
       <a href="/submit/" data-nav="submit">Submit</a>
     </div>
   </header>
@@ -93,13 +95,13 @@
     <button class="search-clear" id="globalSearchClear" type="button" aria-label="Clear search">&times;</button>
     <div id="globalSearchDropdown" class="global-search-dropdown search-dropdown"></div>
   </div>
-  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
+  <script>(function(){var p=location.pathname,n=p==='/'||/^\/page\/\d+\/?$/.test(p)?'open':p.indexOf('/archive/')===0?'closed':p.indexOf('/new/')===0?'recent':p==='/browse/'||p==='/browse'?'browse':p.indexOf('/results/')===0?'results':p==='/submit/'||p==='/submit'?'submit':'';document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===n)});})()</script>
 
   <main>
     <section class="hero">
       <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/prize/">Prizes</a></nav>
       <h1>Open Calls with Cash Prizes</h1>
-      <h2 class="subtitle">Open calls offering cash awards, grants, and monetary prizes for photographers and visual artists. Browse competitions with cash prizes and apply today. 1285 calls, 295 open.</h2>
+      <h2 class="subtitle">Open calls offering cash awards, grants, and monetary prizes for photographers and visual artists. Browse competitions with cash prizes and apply today. 1285 calls, 296 open.</h2>
     </section>
 
     <section class="calls-list" id="callsList">
@@ -112,11 +114,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/fotosalongen-2027-hasselblad-foundation/">Fotosalongen 2027 · Hasselblad Foundation</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Sweden's largest photo salon, themeless and free to enter. Hasselblad Center exhibition, catalogue and SEK 3,200 compensation.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">SEK 3,200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/sweden/" class="meta-tag meta-tag-link">Sweden only</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;in&nbsp;January</a> – Sweden's largest photo salon, themeless and free to enter. Hasselblad Center exhibition, catalogue and SEK 3,200 compensation.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">SEK 3,200</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/sweden/" class="meta-tag meta-tag-link">Sweden only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/dehaan-artist-of-distinction-award-2026-round-2-indy-arts-council/">DeHaan Artist of Distinction Award 2026 — Round 2 · Indy Arts Council</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Round 2 of up to five $10,000 project grants for Indiana visual artists taking real risks; photography named as eligible, free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to $10,000">Cash prize</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link">Indiana only</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;in&nbsp;December</a> – Round 2 of up to five $10,000 project grants for Indiana visual artists taking real risks; photography named as eligible, free to apply.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to $10,000">Cash prize</a> <a href="/eligibility/professional/" class="meta-tag meta-tag-link">Professional only</a> <a href="/eligibility/indiana/" class="meta-tag meta-tag-link">Indiana only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/november-2026-all-media-show-crossroads-art-center/">November 2026 All Media Show · Crossroads Art Center</a></h4>
@@ -163,10 +165,6 @@
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Five-inch works in any medium at a Louisiana arts centre, juried by Tyler Barnes. $15 for three entries, $500 Best in Show.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$15 for up to 3 works">$15 fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$500 / $100 / $100 / $100">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
-        <h4 class="call-title"><a href="/armature-manifest-gallery/">ARMATURE · Manifest Gallery</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Manifest Gallery calls for work about structure, from blueprints to social systems. $50 honorarium plus a $1,000 Grand Jury Award.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$45 for 3 works, $5 each additional">$45+ fee</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">$50 honorarium</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$1,000 Grand Jury">Cash prize</a></div>
-      </div>
-      <div class="call-card">
         <h4 class="call-title"><a href="/sip-stroll-artists-exhibition-2026-woodinville-arts-alliance/">Sip &amp; Stroll Artists' Exhibition 2026 · Woodinville Arts Alliance</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Juried members' show at a Woodinville winery with photography as a named category. Cash awards; membership required to enter.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$35 for 1 work, $40 for 2, $45 for 3. Additional fees: $44/year Woodinville Arts Alliance membership">$35+ fee*</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$250 / $150 / $100">Cash prize</a> <a href="/eligibility/membership-required/" class="meta-tag meta-tag-link">Membership required</a></div>
       </div>
@@ -204,11 +202,11 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/alaska-air-artist-in-residence-2027-2028-bunnell-street-arts-center/">Alaska AIR Artist in Residence 2027–2028 · Bunnell Street Arts Center</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – One-month funded Alaska residency: $2,000 stipend, travel, lodging and an on-site darkroom. Applications open 1 September.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 (needs-based waivers available)">$25 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,000 stipend, travel &amp; materials">Cash prize</a></div>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;31</a> – One-month funded Alaska residency: $2,000 stipend, travel, lodging and an on-site darkroom. Applications open 1 September.</p><div class="call-meta"><a href="/fees/entry-fee/" class="meta-tag meta-tag-link" title="$25 (needs-based waivers available)">$25 fee</a> <a href="/prize/residency/" class="meta-tag meta-tag-link">Residency</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="$2,000 stipend, travel &amp; materials">Cash prize</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/creative-catalyst-fellowship-2027-aapi-civic-engagement-fund/">Creative Catalyst Fellowship 2027 · AAPI Civic Engagement Fund</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – $30,000 fellowships for up to eight artists making public-facing work on Belonging in AAPI communities. Photography named eligible.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to 8 × $30,000">Cash prize</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;Jan&nbsp;14</a> – $30,000 fellowships for up to eight artists making public-facing work on Belonging in AAPI communities. Photography named eligible.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="Up to 8 × $30,000">Cash prize</a> <a href="/eligibility/united-states/" class="meta-tag meta-tag-link">US only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/dora-maar-house-fellowship-2027/">Dora Maar House Fellowship 2027</a></h4>
@@ -216,7 +214,7 @@
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/tarzeer-grant-for-photography-2027/">TARZEER Grant for Photography 2027</a></h4>
-        <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – First edition of a Manila photography grant. Free to enter; PHP 300,000 to produce and exhibit a new project. Filipino artists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="PHP 300,000 cash grant">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/philippines/" class="meta-tag meta-tag-link">Philippines only</a></div>
+        <p class="call-description"><a href="/results/#january-2027" class="call-date">Results&nbsp;in&nbsp;January</a> – First edition of a Manila photography grant. Free to enter; PHP 300,000 to produce and exhibit a new project. Filipino artists.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="PHP 300,000 cash grant">Cash prize</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a> <a href="/eligibility/philippines/" class="meta-tag meta-tag-link">Philippines only</a></div>
       </div>
       <div class="call-card">
         <h4 class="call-title"><a href="/old-new-borrowed-blue-l7-gallery/">Old, New, Borrowed, Blue · L7 Gallery</a></h4>
@@ -226,21 +224,25 @@
         <h4 class="call-title"><a href="/emerging-global-fotografiska-emerging/">Emerging Global · Fotografiska Emerging</a></h4>
         <p class="call-description"><a href="/deadlines/october-2026/" class="call-date">Closed</a> – Fotografiska's first Emerging Global group show, Berlin Feb 2027 - free entry, €500 artist fee, production covered.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link">€500</a> <a href="/prize/exhibition/" class="meta-tag meta-tag-link">Exhibition</a></div>
       </div>
+      <div class="call-card">
+        <h4 class="call-title"><a href="/ursa-major-fund-bunnell-street-arts-center/">Ursa Major Fund · Bunnell Street Arts Center</a></h4>
+        <p class="call-description"><a href="/results/#december-2026" class="call-date">Results&nbsp;Dec&nbsp;31</a> – Ten $6,000 Warhol-backed grants for artist-led public projects anywhere in Alaska, administered by Bunnell Street Arts Center. Free.</p><div class="call-meta"><a href="/fees/free/" class="meta-tag meta-tag-link">Free</a> <a href="/prize/cash/" class="meta-tag meta-tag-link" title="10 × $6,000">Cash prize</a> <a href="/eligibility/alaska/" class="meta-tag meta-tag-link">Alaska only</a></div>
+      </div>
       <nav class="pagination" aria-label="Pages"><a href="/prize/cash/past/page/6/" class="pagination-step" rel="prev">Previous</a><span class="pagination-pages"><a href="/prize/cash/past/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">1</a><span class="pagination-gap pg-b pg-c pg-d pg-e pg-f">&hellip;</span><a href="/prize/cash/past/page/4/" class="pagination-page pg-e pg-f">4</a><a href="/prize/cash/past/page/5/" class="pagination-page pg-e pg-f">5</a><a href="/prize/cash/past/page/6/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">6</a><span class="pagination-page current pg-a pg-b pg-c pg-d pg-e pg-f" aria-current="page">7</span><a href="/prize/cash/past/page/8/" class="pagination-page pg-a pg-b pg-c pg-d pg-e pg-f">8</a><span class="pagination-gap pg-b pg-c pg-d">&hellip;</span><a href="/prize/cash/past/page/9/" class="pagination-page pg-e pg-f">9</a><a href="/prize/cash/past/page/10/" class="pagination-page pg-e pg-f">10</a><span class="pagination-gap pg-e pg-f">&hellip;</span><a href="/prize/cash/past/page/33/" class="pagination-page pg-b pg-c pg-d pg-e pg-f">33</a></span><a href="/prize/cash/past/page/8/" class="pagination-step" rel="next">Next</a></nav>
 
     </section>
 
     <footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
-      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
-      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
+      <nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/results/">Results</a><a href="/about/">About</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>
+      <script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';if(h.indexOf('/results/')===0)h='/results/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>
       <p class="footer-copy">&copy; 2026 Monographica</p>
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126a"></script>
-  <script src="/cards.js?v=20261126a"></script>
-  <script src="/search.js?v=20261126a"></script>
+  <script src="/shared.js?v=20261126b"></script>
+  <script src="/cards.js?v=20261126b"></script>
+  <script src="/search.js?v=20261126b"></script>
 
 </body>
 </html>
