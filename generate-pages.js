@@ -1209,7 +1209,7 @@ ${call.winners && call.winners.length ? `
       <div class="call-detail-info" id="detailInfo">${renderInfoGrid(call, { esc: escapeHtml, locationLink: getStaticLocationLink })}</div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
-        <p class="call-detail-description">Jury: ${renderJuryLine(call)}</p>
+        <p class="call-detail-description"><a href="/jury/">Jury</a>: ${renderJuryLine(call)}</p>
       </div>
 ` : ''}
       <div class="call-detail-jury">
@@ -3840,7 +3840,8 @@ if (staleFiles.length) {
     const f = `${c.slug}/index.html`;
     if (!generatedFiles.has(f)) continue;
     const html = fs.readFileSync(f, 'utf8');
-    const m = html.match(/<p class="call-detail-description">Jury: ([\s\S]*?)<\/p>/);
+    // The label "Jury" links to /jury/ (owner 2026-11-26, as the juror pages' breadcrumb does); the names follow ": ".
+    const m = html.match(/<p class="call-detail-description"><a href="\/jury\/">Jury<\/a>: ([\s\S]*?)<\/p>/);
     const want = Array.isArray(c.jury) && c.jury.length;
     if (!want) { if (m) errs.push(`G7a ${c.slug}: prints a Jury line but has no jury`); continue; }
     if (!m) { errs.push(`G7a ${c.slug}: Jury line missing`); continue; }
