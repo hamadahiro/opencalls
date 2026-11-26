@@ -306,9 +306,6 @@ function renderCallList(calls, container, opts) {
   // Deadline month pages: no Today/Tomorrow/month grouping (every call shares
   // the same month), but the open/past split still applies — see LISTING RULE.
   if (opts.skipSections) {
-    if (opts.noOpenNotice && !open.length && closed.length) {
-      html += '<p class="empty-state">' + NO_OPEN_CALLS_NOTICE + '</p>';
-    }
     open.forEach(call => { html += renderCard(call, 'h4'); });
     if (closed.length) {
       closed.sort((a, b) => b.deadlineDate - a.deadlineDate);
@@ -348,13 +345,6 @@ function renderCallList(calls, container, opts) {
     }
     html += renderCard(call, 'h4');
   });
-
-  // Listing pages pass noOpenNotice so a page whose calls have ALL closed says
-  // so, instead of letting the Past section read as live listings. (The home
-  // page's own "Closed" view doesn't pass it — there the archive IS the point.)
-  if (opts.noOpenNotice && !open.length && closed.length) {
-    html += '<p class="empty-state">' + NO_OPEN_CALLS_NOTICE + '</p>';
-  }
 
   // Past sections (newest first)
   if (closed.length) {

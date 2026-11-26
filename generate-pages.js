@@ -13,7 +13,6 @@ const {
   getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, closedResultsText,
   isFree, getState, scoreSimilarity,
   isValidEmail, isValidHttpUrl, submitViaIsPlatform,
-  NO_OPEN_CALLS_NOTICE,
   TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
 } = shared;
 
@@ -828,10 +827,10 @@ function renderSectionedCards(calls, sectionOf) {
 }
 
 // One page of an open-then-past list. "Past calls" heads the first past card, and a page that starts among the past
-// calls starts with it; with nothing open, page 1 starts with the site's notice instead (as every listing does).
+// calls starts with it; with nothing open, page 1 starts straight with the past calls.
 function renderOpenThenPast(chunk, anyOpen, k) {
   const now = new Date();
-  let html = !anyOpen && k === 1 && chunk.length ? `      <p class="empty-state">${escapeHtml(NO_OPEN_CALLS_NOTICE)}</p>\n` : '';
+  let html = '';
   let current = '', inPast = false;
   chunk.forEach(c => {
     const u = computeUrgency(c, now);
@@ -996,7 +995,6 @@ function writePagedListing(filepath, html, { calls, opts }) {
     }
   } else {
     files.push(...writeListPages(html, base, past, (chunk, k, count) =>
-      (k === 1 && past.length ? `      <p class="empty-state">${escapeHtml(NO_OPEN_CALLS_NOTICE)}</p>\n` : '') +
       renderSectionedCards(chunk, sections && pastSection) + paginationNav(base, k, count),
       { labelFor: k => k > 1 ? `Page ${k}` : '' }));
   }

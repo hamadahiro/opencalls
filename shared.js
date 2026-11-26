@@ -768,9 +768,8 @@ function scoreSimilarity(current, other) {
 // requirements, submit-via, deadline month) shows EVERY call it covers: the
 // open ones first, then the rest under a "Past" header. That way the number
 // printed next to a page in any index equals the number of calls on the page —
-// they can never disagree. When a page has nothing open, this notice sits above
-// the Past section so the archive can't be mistaken for live listings.
-const NO_OPEN_CALLS_NOTICE = 'No open calls right now — past calls below.';
+// they can never disagree. A page with nothing open simply starts with its past
+// calls (owner 2026-11-26: no "No open calls right now" sentence anywhere).
 
 // ---- Data validators (shared by the build's hard gates AND verify-batch.js, so
 //      the verifier flags exactly what the build would reject — no drift) ----
@@ -787,7 +786,7 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
     usStateNames, stateNameToAbbr, validCountries,
-    PIN_SVG, PRIZE_SVG, NO_OPEN_CALLS_NOTICE,
+    PIN_SVG, PRIZE_SVG,
     isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
