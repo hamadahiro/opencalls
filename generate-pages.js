@@ -370,7 +370,9 @@ function setRobotsMeta(html, directive) {
 // Shared head snippets — change once, applies everywhere
 const THEME_LIGHT = '#f5f2ed';
 const THEME_DARK = '#151515';
-const GA_SNIPPET = `<script defer src="/analytics.js"></script>`;
+// Analytics: Cloudflare Web Analytics, added at Cloudflare's edge (owner, 2026-11-26: "ok, CF" — cookie-free, no consent
+// banner). Google Analytics and /analytics.js are gone; the site itself loads no analytics script.
+const GA_SNIPPET = '';
 // No page preloads or fetches data.json: it carries every audit note (~36 MB)
 // and is for the build and the scheduled jobs only. Listing pages are complete
 // static HTML; search loads the slim /search-index.js on first use.
@@ -1003,8 +1005,7 @@ function generatePage(call, cssVersion) {
   const robotsDirective = isCallOpen(call.deadline) ? 'index, follow' : 'noindex, follow';
   // The info grid + prize block are pre-rendered server-side below, so call-detail.js
   // no longer re-renders them on the client — it only reads CURRENT_CALL to score
-  // "More like this" (scoreSimilarity/loadSimilar), and analytics.js reads .title for
-  // the GA call_title dimension. Ship only those fields; do NOT trim further.
+  // "More like this" (scoreSimilarity/loadSimilar). Ship only those fields; do NOT trim further.
   const currentCallJson = JSON.stringify({ title: call.title, category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, eligibility: call.eligibility || [] }).replace(/</g, '\\u003c');
   return `<!DOCTYPE html>
 <html lang="en">
