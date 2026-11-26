@@ -2500,7 +2500,6 @@ function juryDescription(p) {
   return fresh ? p.summary : jurySentence(p);
 }
 
-const JURY_NOTICE = `Listed from the jury each organiser published on its own call page. This site has no connection to the person. A wrong entry? Send the organiser’s page through the <a href="/submit/">submit form</a>. <a href="/legal/#people">People named on this site</a>.`;
 const jurySlugsWritten = new Set();
 const juryNamesakes = new Map();
 juryData.people.forEach(p => { const k = personSlug(p.name); if (!juryNamesakes.has(k)) juryNamesakes.set(k, []); juryNamesakes.get(k).push(p); });
@@ -2523,7 +2522,6 @@ juryData.people.forEach(p => {
     ${buildHero(buildBreadcrumbs('Jury', '/jury'), escapeHtml(p.name), escapeHtml(desc))}
     <section class="calls-list" id="callsList">
 ${others.map(q => `      <p class="browse-more list-switch">Another person with this name: <a href="/jury/${q.slug}/">${escapeHtml(juryLabel(q))}</a></p>\n`).join('')}${buildStaticCallList(calls, { allCalls: true, noHeroCounts: true })}
-      <div class="call-detail-jury"><span class="breadcrumbs">${JURY_NOTICE}</span></div>
     </section>
 
     ${FOOTER}
