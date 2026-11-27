@@ -221,9 +221,15 @@ function isCallOpen(deadline) {
 // pre-render (generate-pages.js) both consume it, so the buckets/labels Google
 // sees in the static HTML can never drift from what the browser re-renders.
 const URGENCY_MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+// Whole calendar days from the date of `from` to the date of `to`, both read on the local clock. Counted on the dates
+// (Date.UTC of each), not in milliseconds: a day with a clock change is 23 or 25 hours long, and dividing hours by 24 gave
+// "3 days left" for 2 at 00:30 on 2027-10-31 in Lisbon, and "Closed" an hour before the deadline day ended.
+function calendarDaysBetween(from, to) {
+  return Math.round((Date.UTC(to.getFullYear(), to.getMonth(), to.getDate()) - Date.UTC(from.getFullYear(), from.getMonth(), from.getDate())) / 864e5);
+}
 function computeUrgency(call, now) {
   const deadlineDate = call.deadline === 'Continuous' ? null : new Date(call.deadline + 'T00:00:00');
-  const daysLeft = deadlineDate ? Math.ceil((deadlineDate - now) / (1000 * 60 * 60 * 24)) : null;
+  const daysLeft = deadlineDate ? calendarDaysBetween(now, deadlineDate) : null;
   let urgencyClass = '', urgencyText = '';
   if (call.deadline === 'Continuous') { urgencyText = 'Continuous'; urgencyClass = 'rolling'; }
   else if (daysLeft < 0) { urgencyText = 'Closed'; urgencyClass = 'closed'; }
@@ -491,7 +497,7 @@ function closedResultsText(call, now) {
   const w = resultsListed(call, now);
   if (!w || w.kind !== 'day' || / about /.test(w.label)) return null;
   const d = new Date(w.day + 'T00:00:00');
-  const n = Math.ceil((d - now) / (1000 * 60 * 60 * 24));
+  const n = calendarDaysBetween(now, d);
   if (n <= 0) return 'Results today';
   if (n === 1) return 'Results tomorrow';
   if (n <= 30) return 'Results in ' + n + ' days';
