@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261127v">
+  <link rel="stylesheet" href="/style.css?v=20261127w">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -245,8 +245,8 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261127v"></script>
-  <script src="/cards.js?v=20261127v"></script>
+  <script src="/shared.js?v=20261127w"></script>
+  <script src="/cards.js?v=20261127w"></script>
   <script>
     // The list on this page is server-rendered: one page of open calls with its
     // page links. Typed words go to /search/ (Enter, or the dropdown's first row); an organiser or a country without
@@ -427,7 +427,6 @@
       });
       closed.sort(function(a, b) { return b.deadlineDate - a.deadlineDate; });
       results = open.concat(closed);
-      results.openCount = open.length;
       resultsShown = 0;
       if (!results.length) { listEl.innerHTML = emptyState(); return; }
       listEl.innerHTML = '';
@@ -439,15 +438,8 @@
       if (more) more.parentNode.removeChild(more);
       var end = Math.min(results.length, resultsShown + RESULTS_STEP);
       var html = '';
-      for (var i = resultsShown; i < end; i++) {
-        var isClosed = i >= results.openCount;
-        if (i === 0 && !isClosed) html += '<h3 class="section-header">Accepting submissions (' + results.openCount + ')</h3>';
-        if (i === results.openCount) {
-          if (i === 0) html += '<p class="empty-state">None accepting submissions.<a href="/browse/">Browse all calls</a></p>';
-          html += '<h3 class="section-header">Closed (' + (results.length - results.openCount) + ')</h3>';
-        }
-        html += renderCard(results[i], 'h4');
-      }
+      // No headings, as on /search/: the calls accepting submissions first, the closed after; each card's date says which.
+      for (var i = resultsShown; i < end; i++) html += renderCard(results[i], 'h4');
       resultsShown = end;
       if (resultsShown < results.length) {
         html += '<p class="list-more" id="moreResults"><button type="button" class="more-results">Show more results (' + (results.length - resultsShown) + ' left)</button></p>';
