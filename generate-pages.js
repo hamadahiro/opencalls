@@ -370,7 +370,7 @@ function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; 
   const fold = s => personSlug(s);
   const linkedCalls = new Map(juryData.people.map(p => [p.id, []]));
   // What a job does about it (the update and verify jobs read these lines): jury and juryPeople change together.
-  const TOGETHER = `jury and juryPeople change together, one value per entry at the same place: a person id (node scripts/jury-match.js 'Name', then scripts/jury-add.js or scripts/jury-link.js) or not-person for a group; a person not shown selecting for this edition leaves the jury (TONE.md 'Jury')`;
+  const TOGETHER = `jury and juryPeople change together, one value per entry at the same place: a person id (node scripts/jury-match.js 'Name', then scripts/jury-add.js or scripts/jury-link.js) or not-person for a group; every person entry is linked (TONE.md 'Jury')`;
   // G1 shape, G2 ids, G3 the name is in the entry
   data.calls.forEach(c => {
     const at = `${c.slug}`;

@@ -104,8 +104,9 @@ or a waiver), `$30 fee*` (additional fees), `Paid entry` (amount not stated). Th
 **juryPeople** — one value per jury entry, same order, same length. `jury` and `juryPeople` always change together, in
 the same write: add, remove, reorder or edit an entry and its value moves with it. The build refuses any other shape.
 A value is a person id from jury.json, or `not-person`: a group, committee, organisation, team, a role without a name,
-a placeholder. **A name on a call is linked, or it is not on the call** (owner 2026-11-27): a person the organizer's
-page does not show selecting for this edition is left out of jury. There is no plain-text name; the build refuses one.
+a placeholder. **A name on a call is linked** (owner 2026-11-27: "A name on a call is linked, or it is not on the
+call"; on the names already listed: "dont remove", "keep and link"). Every person entry has a person id; there is no
+plain-text name, and the build refuses one.
 
 **Who is who.** Never on the name alone. The same person only when a public page ties the two beyond the name: the same
 organisation or role on both calls, or a bio, CV, staff page or the organizer's juror bio naming the other role.
