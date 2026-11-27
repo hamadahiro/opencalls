@@ -2917,7 +2917,7 @@ console.log('  Submit page');
         <textarea class="search-bar" name="message" id="message" rows="8" required aria-label="Message"></textarea>
 
         <label for="email">Your email <span style="color:var(--text-muted)">(only if you want a reply)</span></label>
-        <input class="search-bar" type="email" name="email" id="email" autocomplete="email">
+        <input class="search-bar" type="email" name="email" id="email" autocomplete="email" placeholder="e.g. name@example.com">
 
         <input type="hidden" name="_subject" value="Contact message">
         <input class="form-trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
