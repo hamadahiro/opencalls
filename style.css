@@ -1641,9 +1641,11 @@ a.filter-btn {
 }
 
 
-/* On phones the search box is the page itself: always shown under the header, no search icon. */
+/* On phones the search box is the page itself: always shown under the header, no search icon. Only while it is not
+   open full screen: open (.search-active), the phone overlay's own rules lay out the back arrow, the words and the ×
+   in one row (this rule's display: block stacked them, owner 2026-11-27). */
 @media (max-width: 640px) {
-  .page-search .global-search {
+  .page-search:not(.search-active) .global-search {
     display: block;
     padding-top: 8px;
   }
@@ -1653,7 +1655,7 @@ a.filter-btn {
   }
 
   /* The × sits on the bar's middle: half of this page's 8 px top padding (the rule above takes half of 16 px). */
-  .page-search .global-search .search-clear {
+  .page-search:not(.search-active) .global-search .search-clear {
     margin-top: 4px;
   }
 }
