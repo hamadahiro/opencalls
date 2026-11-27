@@ -3909,7 +3909,9 @@ if (staleFiles.length) {
       const left = strip(sub.slice(10, cut < 0 ? undefined : cut), orgs).replace(/\b(?:two|three|four|five|six|seven|eight|nine|ten|\d+) other organisers\b/g, ' ').replace(/\bthe\b|\band\b|,/g, ' ').trim();
       if (left) errs.push(`${at}: the summary names "${left}" among the organisers — not one of ${p.id}'s (${orgs.join(', ')})`);
       const held = es.map(e => e.entry).join(' | ');
-      siteOrgs.forEach(([o, re]) => { if (!orgs.includes(o) && re.test(sub) && !held.includes(o)) errs.push(`${at}: the summary names the organiser "${o}" — not one of ${p.id}'s, and not in their entries`); });
+      // another organiser's name inside one of the person's own ("The Image Flow" in "The Image Flow / Praxis Gallery") is not another organiser
+      const own = strip(sub, orgs);
+      siteOrgs.forEach(([o, re]) => { if (!orgs.includes(o) && re.test(own) && !held.includes(o)) errs.push(`${at}: the summary names the organiser "${o}" — not one of ${p.id}'s, and not in their entries`); });
     } else {
       generated++;
       const years = new Set(es.map(e => e.year).filter(Boolean));
