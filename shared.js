@@ -314,7 +314,6 @@ function derivePrizeCategories(prize) {
   });
 }
 
-// Maps a free-text requirements string to a single browse bucket slug.
 // AI policy group for /ai-policy/<group>/ from the stored wording (33 wordings,
 // 2026-11-23). null = no group (silent, unclear, or about written text only).
 //   not-accepted  'Not accepted'
@@ -330,6 +329,7 @@ function aiPolicyBucket(ai) {
   return null;
 }
 
+// Maps a free-text requirements string to a single browse bucket slug.
 function deriveRequirementBucket(r) {
   if (!r) return null;
   const s = r.toLowerCase();

@@ -1,9 +1,8 @@
 const EMPTY_MESSAGES = ['Nothing here, for now.','No calls match this search.','Nothing came up this time.','No results, it seems.','No calls found for this.','Nothing fits this search.','No matches at the moment.','Nothing to show here.','No calls in this range.','Nothing here yet.'];
 function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.floor(Math.random() * EMPTY_MESSAGES.length)] + '<a href="/browse/">Browse all calls</a></p>'; }
 
-// NOTE: `eligibilityLabel` is the single source of truth defined in
-// generate-pages.js (ELIGIBILITY_LABEL) and injected into the
-// ==AUTO-GENERATED== block below at build time. Do not redeclare it here.
+// NOTE: `eligibilityLabel` is defined once in shared.js, which every page loads
+// before this file. Do not redeclare it here.
 
 // === Shared search suggestion logic ===
 // Both the home page's inline search and search.js (used on every other page)
@@ -193,14 +192,9 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
   });
 }
 
-// NOTE: derivePrizeCategory + derivePrizeCategories are the single source of
-// truth in generate-pages.js, injected into the ==AUTO-GENERATED== block below
-// at build time. Do not redeclare them here (they used to drift out of sync).
+// NOTE: derivePrizeCategory + derivePrizeCategories are defined once in shared.js.
+// Do not redeclare them here (they used to drift out of sync).
 
-// `prize` is split on " + " into one chip per part (renderer appends " prize").
-// Use " + " ONLY to separate DISTINCT prizes. Never put a literal + inside one
-// prize (e.g. "(1+ month)") or it breaks into garbage chips. Keep parts short
-// (~<=30 chars) for mobile; drop dates/cities/parentheticals.
 // Map chip selections to dedicated page URLs (avoids duplicate content with homepage)
 function chipToUrl(type, value) {
   if (type === 'category' && categorySlug[value]) return '/' + categorySlug[value] + '/';
@@ -252,8 +246,6 @@ function processCall(call, now) {
   return { ...call, ...computeUrgency(call, now || new Date()) };
 }
 
-// Maps a free-text requirements string to a single browse bucket slug.
-// Keep in sync with deriveRequirementBucket() in generate-pages.js.
 function renderCard(call, titleTag) {
   titleTag = titleTag || 'h4';
   return `
