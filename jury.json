@@ -2793,9 +2793,10 @@
       "names": [
         "Pauline Vermare"
       ],
-      "summary": "Juror for Fujifilm and Source Photographic Review, listed as Curator of Photography at the Brooklyn Museum.",
+      "summary": "Juror for the World Photography Organisation, Fujifilm and Source Photographic Review, listed as Curator of Photography at the Brooklyn Museum.",
       "summaryCalls": [
         "fujifilm-gfx-challenge-grant-program-2026",
+        "sony-world-photography-awards-2027",
         "source-graduate-photography-online-2026-ma-mfa"
       ]
     },
@@ -17625,11 +17626,12 @@
       "names": [
         "Maja Dyrehauge Gregersen"
       ],
-      "summary": "Juror for the Copenhagen Photo Festival, listed as its Managing Director.",
+      "summary": "Juror for the World Photography Organisation and the Copenhagen Photo Festival, listed as the festival's Managing Director.",
       "summaryCalls": [
         "copenhagen-photo-festival-call-for-solo-artists-2027",
         "futures-nordic-talents-2027-copenhagen-photo-festival",
-        "kobenhavn-noir-din-by-i-sort-hvid-copenhagen-photo-festival"
+        "kobenhavn-noir-din-by-i-sort-hvid-copenhagen-photo-festival",
+        "sony-world-photography-awards-2027"
       ]
     },
     {
@@ -18679,6 +18681,11 @@
       "name": "Santiago Escobar-Jaramillo",
       "names": [
         "Santiago Escobar-Jaramillo"
+      ],
+      "summary": "Juror for the World Photography Organisation and the URBAN Photo Awards, listed as a photographer and editor at Raya Editorial.",
+      "summaryCalls": [
+        "sony-world-photography-awards-2027",
+        "urban-photo-awards-2026"
       ]
     },
     {
@@ -20963,10 +20970,11 @@
       "names": [
         "Monica Allende"
       ],
-      "summary": "Juror for Getxophoto and the Singapore International Photography Festival, listed as an independent curator, creative director and educator.",
+      "summary": "Juror for the World Photography Organisation, Getxophoto and the Singapore International Photography Festival, listed as an independent curator, creative director and consultant.",
       "summaryCalls": [
         "10th-singapore-international-photography-festival-2026-open-call",
-        "2027-getxophoto-open-call"
+        "2027-getxophoto-open-call",
+        "sony-world-photography-awards-2027"
       ]
     },
     {
@@ -24830,6 +24838,38 @@
       "name": "Sergio Stignani",
       "names": [
         "Sergio Stignani"
+      ]
+    },
+    {
+      "id": "p03680",
+      "slug": "candice-jansen",
+      "name": "Candice Jansen",
+      "names": [
+        "Candice Jansen"
+      ]
+    },
+    {
+      "id": "p03681",
+      "slug": "amanda-renshaw",
+      "name": "Amanda Renshaw",
+      "names": [
+        "Amanda Renshaw"
+      ]
+    },
+    {
+      "id": "p03682",
+      "slug": "peipei-han",
+      "name": "Peipei Han",
+      "names": [
+        "Peipei Han"
+      ]
+    },
+    {
+      "id": "p03683",
+      "slug": "menno-liauw",
+      "name": "Menno Liauw",
+      "names": [
+        "Menno Liauw"
       ]
     }
   ]
