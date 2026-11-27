@@ -25,6 +25,8 @@ function buildSearchSuggestions(allCalls, query, opts) {
   var relevant = getOpenCallsFromArray(allCalls);
   var q = (query || '').toLowerCase().trim();
   var groups = {};
+  // First row: search every call for the words as typed (/search/), as on any site's search box.
+  if (q) groups['Search'] = [{ type: 'q', value: query.trim(), label: 'Search for “' + query.trim() + '”' }];
   function notExcluded(type, value) {
     return !excludeChips.some(function(ch) { return ch.type === type && ch.value === value; });
   }
@@ -197,6 +199,7 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
 
 // Map chip selections to dedicated page URLs (avoids duplicate content with homepage)
 function chipToUrl(type, value) {
+  if (type === 'q') return '/search/?q=' + encodeURIComponent(value);
   if (type === 'category' && categorySlug[value]) return '/' + categorySlug[value] + '/';
   if (type === 'eligibility') return '/eligibility/' + value + '/';
   if (type === 'jury') return '/jury/' + value + '/';

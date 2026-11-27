@@ -1613,6 +1613,30 @@ a.filter-btn {
      .search-active .search-dropdown rules in the home media block above. */
 }
 
+/* === /search/ ===
+   The words a search found, in a result's title and quoted sentence: the page's strong text (the link colour) in
+   semibold, not a colour of their own (the site has no coloured text). */
+.search-hit {
+  color: var(--link);
+  font-weight: 600;
+}
+
+.search-results .section-header:first-child {
+  padding-top: 32px;
+}
+
+/* On phones the search box is the page itself: always shown under the header, no search icon. */
+@media (max-width: 640px) {
+  .page-search .global-search {
+    display: block;
+    padding-top: 8px;
+  }
+
+  .page-search .search-toggle {
+    display: none;
+  }
+}
+
 /* About: the intro stands under the title; the four sections are whole blocks in two columns, two rows of two. */
 .about-intro,
 .about-columns .call-detail-description {

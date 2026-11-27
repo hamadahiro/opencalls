@@ -353,7 +353,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal', 'search', 'search-core', 'search-page'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -2999,6 +2999,36 @@ ${paras.map(P).join('\n')}
 sitemapEntries.push(`${SITE}/about`);
 console.log('  About page');
 
+// === /search/ — the results page (owner, 2026-11-27: "make search as it should work on any normal website") ===
+// The search box on top with the query in it, the results under it, nothing else. The page is one shell; search-page.js
+// fills it from search-index.js with search-core.js, both written or kept by this build, so the jobs never touch search.
+// noindex (a results page is not a landing page) and not in the sitemap.
+{
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Search', description: 'Search every open call on Monographica by any word in it.', canonical: `${SITE}/search`, cssVersion, robots: 'noindex, follow' })}
+</head>
+<body class="page-search">
+
+  ${buildHeader()}
+
+  <main>
+    <section class="calls-list search-results" id="searchResults" aria-live="polite"></section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+  <script src="/search-core.js?v=${cssVersion}"></script>
+  <script src="/search-page.js?v=${cssVersion}"></script>
+
+</body>
+</html>`;
+  writeGenerated('search/index.html', html);
+  console.log('  Search page');
+}
+
 // === Browse directory page (auto-generated hub linking all sections) ===
 function midTruncateHtml(str, minLen) {
   minLen = minLen || 25;
@@ -3136,7 +3166,8 @@ sitemapEntries.push(`${SITE}/categories`);
 // loadSearchIndex() in cards.js the first time someone searches.
 // resultsDate: a closed card in search says when results come (shared.js renderCardBody, owner 2026-11-26).
 // jury: the Jury line as printed, so a name finds the calls that print it (linked or not).
-const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate', 'jury'];
+// requirements, prose: the rest of the call page's text, so /search/ finds and quotes a word wherever the page has it.
+const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate', 'jury', 'requirements', 'prose'];
 // SEARCH_JURY: the people with a juror page, for the dropdown's Jury group (Y4): [label, slug, other spellings?].
 // No call list and no count: the row only opens the page.
 const searchJuryRows = juryData.people.map(p => { const other = (p.names || []).filter(n => n !== p.name); return other.length ? [juryLabel(p), p.slug, other] : [juryLabel(p), p.slug]; });

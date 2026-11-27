@@ -1,8 +1,9 @@
 // Global search for non-home pages
-// Loads the search index on first use, shows suggestion dropdown, navigates to /?q= on search
+// Loads the search index on first use, shows suggestion dropdown, navigates to /search/?q= on search
 (function() {
   var searchWrap = document.getElementById('globalSearchWrap');
-  if (!searchWrap) return;
+  // /search/ runs its own box (search-page.js): results under it as you type, no suggestions over them.
+  if (!searchWrap || document.body.classList.contains('page-search')) return;
 
   var searchInput = document.getElementById('globalSearchInput');
   var searchClear = document.getElementById('globalSearchClear');
@@ -78,7 +79,7 @@
 
   function navigateToFreeText() {
     var q = searchInput.value.trim();
-    if (q) window.location.href = '/?q=' + encodeURIComponent(q);
+    if (q) window.location.href = '/search/?q=' + encodeURIComponent(q);
   }
 
   searchInput.addEventListener('focus', function() {
