@@ -12,7 +12,7 @@ const {
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
   getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, closedResultsText,
   isFree, getState, scoreSimilarity,
-  isValidEmail, isValidHttpUrl, submitViaIsPlatform,
+  isValidHttpUrl, submitViaIsPlatform,
   TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
 } = shared;
 
@@ -214,11 +214,9 @@ data.calls.forEach((c, i) => {
     err(`"${label}" has invalid instagram: "${c.instagram}" — must start with @`);
   }
 
-  // Submit-via link targets must be valid, or the "Submit via" link is broken.
-  // email -> mailto (must be a real address); submitUrl -> link (must be http(s)).
-  if (c.email && !isValidEmail(c.email)) {
-    err(`"${label}" has invalid email: "${c.email}" — would produce a broken mailto: link`);
-  }
+  // The call's link and the Submit-via link must be http(s): a "javascript:" value copied from a page would become a
+  // clickable link (escaping does not stop a URL scheme).
+  if (c.url && !isValidHttpUrl(c.url)) err(`"${label}" has invalid url: "${c.url}" — must be an http(s) URL`);
   if (c.submitUrl && !isValidHttpUrl(c.submitUrl)) {
     err(`"${label}" has invalid submitUrl: "${c.submitUrl}" — must be an http(s) URL`);
   }
@@ -344,11 +342,9 @@ data.calls.forEach(c => {
   if (!c.dateAdded) { c.dateAdded = dateAddedToday; dateAddedCount++; }
 });
 if (dateAddedCount > 0) {
-  // PRIVACY: organizer emails are hydrated onto data.calls in memory (above) for
-  // mailto links, but must NEVER be persisted to the PUBLIC data.json. The
-  // replacer strips every `email` key from the serialized output WITHOUT mutating
-  // the in-memory objects, so later page rendering still has the address. This is
-  // the on-disk guarantee; the pre-commit harvester is now just a backstop.
+  // PRIVACY: no organiser address belongs on a call row (contacts stay in the private scripts/outreach store and are
+  // never read to build pages). The replacer is a guard: any `email` key a job wrote is dropped from the PUBLIC
+  // data.json.
   fs.writeFileSync('data.json', JSON.stringify(data, (k, v) => k === 'email' ? undefined : v, 2) + '\n');
   console.log(`  Auto-filled dateAdded="${dateAddedToday}" on ${dateAddedCount} entries`);
 }
@@ -521,7 +517,8 @@ function buildBreadcrumbJsonLd(items) {
       "item": item.url
     }))
   };
-  return JSON.stringify(ld, null, 2);
+  // "<" escaped: a scraped name holding "</script>" must not end the JSON-LD block early (as buildJsonLd does).
+  return JSON.stringify(ld, null, 2).replace(/</g, '\\u003c');
 }
 
 function HEAD(opts) {
@@ -625,7 +622,7 @@ function buildHero(breadcrumbs, title, subtitle) {
 // prize, requirements, submit-via, locations, deadlines, browse, org). Same shape
 // everywhere — only name/description/url differ.
 function collectionPageLd(name, description, url) {
-  return JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": name, "description": description, "url": url, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2);
+  return JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", "name": name, "description": description, "url": url, "publisher": { "@type": "Organization", "name": "Monographica", "url": "https://monographica.com" } }, null, 2).replace(/</g, '\\u003c');
 }
 
 // === LISTING RULE (one rule, every listing page) ===

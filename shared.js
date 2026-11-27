@@ -446,17 +446,13 @@ function submitViaLink(call, esc) {
   if (!s) return '';
   const label = submitViaLabel(call.submitVia);
 
-  const emailIntent = /email|wetransfer|swisstransfer/.test(s);
-  let href = null;
-  if (call.submitUrl) href = call.submitUrl;
-  else if (emailIntent && call.email) href = 'mailto:' + call.email;
-  else if (call.url) href = call.url;
-  else if (call.email) href = 'mailto:' + call.email;
+  // The submission link, else the call's page. No organiser address is ever on a call row (contacts stay private), so
+  // there is no mailto: link.
+  const href = call.submitUrl || call.url || null;
 
   if (!isCallOpen(call.deadline) || !href) return `<a href="/submit-via/${slugify(label)}/">${esc(label)}</a>`;
-  const isMail = href.slice(0, 7) === 'mailto:';
   const title = call.submitVia && call.submitVia !== label ? ` title="${esc(call.submitVia)}"` : '';
-  return `<a href="${esc(href)}"${isMail ? '' : ' target="_blank"'} rel="nofollow noopener"${title}>${esc(label)}</a>`;
+  return `<a href="${esc(href)}" target="_blank" rel="nofollow noopener"${title}>${esc(label)}</a>`;
 }
 
 // ---- Shared SVG glyphs ----
@@ -773,7 +769,6 @@ function scoreSimilarity(current, other) {
 
 // ---- Data validators (shared by the build's hard gates AND verify-batch.js, so
 //      the verifier flags exactly what the build would reject — no drift) ----
-function isValidEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s || '').trim()); }
 function isValidHttpUrl(s) { return /^https?:\/\/.+/i.test(String(s || '').trim()); }
 // submitVia values that name a SaaS submission platform and therefore REQUIRE a
 // submitUrl (the link can't fall back to email/website and still be the platform).
@@ -791,7 +786,7 @@ if (typeof module !== 'undefined' && module.exports) {
     deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
     getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
     isFree, getState, scoreSimilarity,
-    isValidEmail, isValidHttpUrl, submitViaIsPlatform,
+    isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts,
     resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, resultsCardDate, resultsHref, closedResultsText
   };
