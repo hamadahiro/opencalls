@@ -8,9 +8,10 @@
   const info = document.getElementById('detailInfo');
   if (info && !info.innerHTML.trim()) info.innerHTML = renderInfoGrid(CURRENT_CALL, { esc: esc, locationLink: getLocationLink });
   // Deadline band: colour by urgency as of now, the same rule as the deadline pills
-  // (computeUrgency in shared.js). Closed calls get no band.
+  // (computeUrgency in shared.js). Closed calls get no band, nor does a page built closed
+  // (no #applyBtn: it says "Submissions closed"), whatever the visitor's clock says.
   var dlLink = info && info.querySelector('.info-value a[href^="/deadlines/"]');
-  if (dlLink && CURRENT_CALL.deadline && typeof computeUrgency === 'function') {
+  if (dlLink && CURRENT_CALL.deadline && typeof computeUrgency === 'function' && document.getElementById('applyBtn')) {
     var u = computeUrgency(CURRENT_CALL, new Date()).urgencyClass;
     if (u && u !== 'closed') dlLink.classList.add('dl-band', 'dl-' + u);
   }
