@@ -3627,7 +3627,23 @@ const REDIRECTS = {
   'red-photography-exhibit-dusk-gallery': 'red-photography-exhibit-dusk-photo-gallery',
   'red-dusk-gallery': 'red-photography-exhibit-dusk-photo-gallery',
   'scan-full-contact-2026': 'scan-tarragona-full-contact-award-2026',
-  'slowexposures-2026-photography-rural-south': 'slow-exposures-2026-main-exhibition'
+  'slowexposures-2026-photography-rural-south': 'slow-exposures-2026-main-exhibition',
+  // 2026-11-27 review (R1/R2/R3): old pages of renamed calls, organisers and one location, still served with old
+  // details (and 5 of them with search broken: they predate shared.js).
+  '2026-lucie-photo-book-prize': 'lucie-foundation-photo-book-prize-2026',
+  'experimental-photo-festival-2027-exhibitions-open-call': 'experimental-photo-festival-2027-exhibition-open-call',
+  'international-residency-of-experimentation-2027': 'international-residency-of-experimentation-2027-experimental-photo-festival',
+  'paris-photo-aperture-photobook-awards-2026': '2026-paris-photo-aperture-photobook-awards',
+  'rc50-a-city-in-focus': 'rc50-a-city-in-focus-city-of-rancho-cucamonga',
+  'monochrome-photography-awards-2026': 'monochrome-awards-2026',
+  'deloitte': 'fondazione-deloitte',
+  'hellerau-european-centre-for-the-arts': 'portraits-hellerau',
+  'perspective-group-and-photography-gallery': 'perspective-gallery',
+  'siyu': 'siyu-award',
+  'arc-studios-gallery': 'arc-gallery-studios',
+  'dusk-photo-gallery': 'dusk-gallery',
+  'slow-exposures': 'slowexposures',
+  'ny': 'united-states/new-york'
 };
 function redirectStubHtml(dest, message) {
   return `<!DOCTYPE html>
@@ -3710,9 +3726,18 @@ findStale('.');
 // scripts/ is gitignored local tooling (its HTML is not the site): never touched.
 const isSitePage = f => !f.startsWith('scripts' + path.sep) && !f.startsWith('scripts/');
 const isPagedVariant = f => isSitePage(f) && /(^|\/)(page\/\d+|past)\/index\.html$/.test(f) && !MANUAL_FILES.includes(f);
+// A deadline month whose calls all moved to other months (2026-11-27: /deadlines/december-2027/ still listed one call,
+// now due 2026-12-07, with the old count line) goes to the deadlines index, as its page/N and past/ do.
+const isEmptiedMonth = f => /^deadlines\/[a-z]+-\d{4}\/index\.html$/.test(f);
 let pagedRedirects = 0;
 for (let i = staleFiles.length - 1; i >= 0; i--) {
   const f = staleFiles[i];
+  if (isEmptiedMonth(f)) {
+    fs.writeFileSync(f, redirectStubHtml('/deadlines/', 'This page has moved to'));
+    staleFiles.splice(i, 1);
+    pagedRedirects++;
+    continue;
+  }
   if (!isPagedVariant(f)) continue;
   let root = f.replace(/page\/\d+\/index\.html$/, '').replace(/index\.html$/, '');
   if (root.endsWith('past/') && !generatedFiles.has(root + 'index.html')) root = root.slice(0, -'past/'.length);
@@ -4068,6 +4093,18 @@ if (staleFiles.length) {
   const EM = /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/g;
   const bad = [];
   for (const c of data.calls) if (c.verifyNote && String(c.verifyNote).match(EM)) bad.push(`${c.slug}: verifyNote holds an email address — write [address]`);
+  // The job machine's own address in a note (2026-11-27: "naming our egress IP 146.70…" in 13 public notes) — write [ip].
+  // An organiser's server address ("neslist.is resolves to …") is public and allowed.
+  const OUR_IP = /(egress|our (?:own )?(?:IP|address)|this machine|the job machine|my IP|from this Mac)[^\n]{0,80}?\b(?:\d{1,3}\.){3}\d{1,3}\b|\b(?:\d{1,3}\.){3}\d{1,3}\b[^\n]{0,40}?(?:egress|our IP)/i;
+  for (const c of data.calls) if (c.verifyNote && OUR_IP.test(String(c.verifyNote))) bad.push(`${c.slug}: verifyNote names the job machine's IP address — write [ip]`);
+  // Public text never names a private file or carries a redaction placeholder (2026-11-27: a description read "by email
+  // to [email in contacts.json]"): the artist loses the address and the page names the private store.
+  const PRIVATE_REF = /\[(?:email|address|ip)\b[^\]]*\]|contacts\.json|outreach-log|evidence\.tsv|verify-state\.json|scripts\//i;
+  const PUBLIC_FIELDS = ['title', 'org', 'summary', 'description', 'requirements', 'prize', 'location', 'fee', 'additionalFees', 'ai', 'submitVia'];
+  for (const c of data.calls) {
+    const texts = [...PUBLIC_FIELDS.map(f => c[f]), ...(Array.isArray(c.prose) ? c.prose : []), ...(Array.isArray(c.jury) ? c.jury : [])];
+    if (texts.some(t => typeof t === 'string' && PRIVATE_REF.test(t))) bad.push(`${c.slug}: a public field names a private file or holds a placeholder ([email…], contacts.json, scripts/…) — write the organiser's published words`);
+  }
   const priv = new Set();
   for (const f of ['scripts/outreach/contacts.json', 'scripts/outreach/outreach-log.json']) {
     if (fs.existsSync(f)) for (const m of fs.readFileSync(f, 'utf8').matchAll(EM)) priv.add(m[0].toLowerCase());
