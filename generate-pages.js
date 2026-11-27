@@ -7,10 +7,9 @@ const shared = require('./shared.js');
 const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
   usStateNames, stateNameToAbbr, validCountries,
-  PIN_SVG, PRIZE_SVG,
   isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-  getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid, resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, closedResultsText,
+  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText,
   isFree, getState, scoreSimilarity,
   isValidHttpUrl, submitViaIsPlatform,
   TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
@@ -82,8 +81,8 @@ function linkifyProse(paragraph, call, state) {
     const orgSlug = slugify(call.org);
     // Use \b-style boundary via lookarounds so "Carlotta Gallery" matches inside
     // "Carlotta Gallery's" without consuming the apostrophe-s.
-    const re = new RegExp('(^|[^a-z0-9])(' + orgEsc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![a-z0-9])', 'i');
-    if (re.test(html) && PRECOMPUTED_ORG_PAGES.has(orgSlug)) {
+    const re = PRECOMPUTED_ORG_PAGES.has(orgSlug) && new RegExp('(^|[^a-z0-9])(' + orgEsc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![a-z0-9])', 'i');
+    if (re && re.test(html)) {
       html = html.replace(re, '$1<a href="/' + orgSlug + '/">$2</a>');
       state.orgLinked = true;
     }
@@ -120,6 +119,8 @@ data.calls.forEach((c, i) => {
   if (!c.org) err(`"${label}" is missing org`);
   if (!c.deadline) err(`"${label}" is missing deadline`);
   if (!c.url) err(`"${label}" is missing url`);
+  // A slug is a path and is printed into a script string: lower-case letters, digits and hyphens only.
+  if (c.slug !== undefined && !/^[a-z0-9-]+$/.test(c.slug)) err(`"${label}" has slug "${c.slug}" — only a-z, 0-9 and hyphens`);
   if (!c.description) err(`"${label}" is missing description`);
   if (!c.location && c.location !== '') err(`"${label}" is missing location`);
   if (c.fee === undefined || c.fee === null) err(`"${label}" is missing fee`);
@@ -773,8 +774,8 @@ function metaDescription(call) {
 //     first, under the Ending Today / Ending Tomorrow / month headers.
 //   • /x/past/, /x/past/page/2/, … — the closed ones, newest-closed first.
 //     Every open page links to them.
-//   • A listing with nothing open lists its past calls on /x/ itself, after the
-//     "no open calls" notice; it has no separate /past/.
+//   • A listing with nothing open lists its past calls on /x/ itself; it has no
+//     separate /past/.
 // Every page is complete static HTML with the full card (tags included), so no
 // listing page needs call data in the browser.
 //
@@ -951,6 +952,14 @@ function listingPageHtml(html, listHtml, { url, label, robots }) {
   let out = html.replace(PAGED_LIST_RE, () => listHtml);
   if (label) {
     const abs = SITE + url;
+    // The page's JSON-LD names the page itself, as its canonical does (2026-11-27, R1: 1,046 pages named page 1);
+    // the breadcrumbs ("item") still lead to the list.
+    const first = (out.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];
+    if (first && first !== abs) out = out.split(`"url": "${first}"`).join(`"url": "${abs}"`);
+    // Its description says which page it is, as its title does (pages 2… repeated page 1's word for word).
+    const redesc = (m, a, d, b) => `${a}${d.replace(/\.?$/, '.')} ${label}.${b}`;
+    out = out.replace(/(<meta name="description" content=")([^"]*)(")/, redesc);
+    out = out.replace(/(<meta property="og:description" content=")([^"]*)(")/, redesc);
     out = out.replace(/(<link rel="canonical" href=")[^"]*(")/, (m, a, b) => a + abs + b);
     out = out.replace(/(<meta property="og:url" content=")[^"]*(")/, (m, a, b) => a + abs + b);
     const retitle = (m, a, t, b) => `${a}${t} — ${label}${TITLE_SUFFIX}${b}`;
@@ -1011,9 +1020,8 @@ function writePagedListing(filepath, html, { calls, opts }) {
   pagedListings.set(base, { total: calls.length, open: open.length, files });
 }
 
-// === Helpers ported from cards.js / call-detail.js so detail pages can pre-render
-// the same content into static HTML (Google reads without JS). The browser JS
-// later replaces this with identical content — no visual change for users. ===
+// === Helpers that pre-render detail pages into complete static HTML (Google reads without JS); the browser does
+// not re-render them. Shared card/grid logic lives in shared.js. ===
 
 
 // These get filled in once detail-page data is precomputed at the top of the script
@@ -1032,11 +1040,7 @@ function getStaticLocationLink(location, country) {
   return null;
 }
 
-// Maps a free-text requirements string to a single browse bucket slug.
-// Keep in sync with deriveRequirementBucket() in cards.js.
-// Mirrors renderInfoGrid() in cards.js — produces the deadline/fee/prize/location/etc. table
-// Mirrors scoreSimilarity() + loadSimilar() in call-detail.js — pre-renders the
-// "More like this" block so internal links are visible to Google.
+// Pre-renders the "More like this" block (scoreSimilarity() from shared.js) so its internal links are visible to Google.
 // Titles that join words with / : | ("diptych/triptych/multiples/collage", "periscope:project:space") are one word to a
 // browser and pushed call pages sideways on phones (6 pages, 2026-11-24). A break opportunity after each join lets them wrap
 // there; style.css's overflow-wrap on body catches any other word too long for the screen.
@@ -1044,11 +1048,13 @@ function breakAfterJoins(html) {
   return html.replace(/([\/:|])(?=\S)/g, '$1<wbr>');
 }
 
+// The open calls, filtered once per list (2026-11-27, R3: testing all 2,622 calls again for each call page was 44% of
+// the build); same calls, same order.
+const similarOpenPool = new WeakMap();
 function buildStaticSimilarCalls(call, allCalls) {
   const currentSlug = call.slug || slugify(call.title);
-  const candidates = allCalls
-    .filter(c => (c.slug || slugify(c.title)) !== currentSlug)
-    .filter(c => isCallOpen(c.deadline));
+  if (!similarOpenPool.has(allCalls)) similarOpenPool.set(allCalls, allCalls.filter(c => isCallOpen(c.deadline)));
+  const candidates = similarOpenPool.get(allCalls).filter(c => (c.slug || slugify(c.title)) !== currentSlug);
   const scored = candidates.map(c => ({ call: c, score: scoreSimilarity(call, c) }));
   scored.sort((a, b) => b.score - a.score);
   const curElig = call.eligibility || [];
@@ -1187,9 +1193,8 @@ function generatePage(call, cssVersion) {
   const metaTitle = call.orgInTitle ? escapeHtml(call.title) : escapeHtml(call.title) + ' · ' + escapeHtml(call.org);
 
   const robotsDirective = isCallOpen(call.deadline) ? 'index, follow' : 'noindex, follow';
-  // The info grid + prize block are pre-rendered server-side below, so call-detail.js
-  // no longer re-renders them on the client — it only reads CURRENT_CALL to score
-  // "More like this" (scoreSimilarity/loadSimilar). Ship only those fields; do NOT trim further.
+  // The info grid, prize block and "More like this" are pre-rendered below; call-detail.js reads CURRENT_CALL only for
+  // the deadline stroke. Ship only these fields; do NOT trim further.
   const currentCallJson = JSON.stringify({ title: call.title, category: call.category, org: call.org, location: call.location || '', fee: call.fee || '', deadline: call.deadline, eligibility: call.eligibility || [] }).replace(/</g, '\\u003c');
   return `<!DOCTYPE html>
 <html lang="en">
@@ -1275,7 +1280,6 @@ const cssVersion = cssVersionMatch ? cssVersionMatch[1] : '20260317b';
 // Track slugs to detect collisions
 const slugMap = {};
 const sitemapEntries = [];
-const createdCountrySlugs = [];
 const createdOrgSlugs = [];
 const linkedCountrySlugs = [];
 let generated = 0;
@@ -1287,16 +1291,6 @@ let skipped = 0;
 {
   // usStateNames + stateNameToAbbr come from shared.js (single source of truth).
   const countrySlugFor = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
-  const openStateCountsForLinks = {};
-
-  data.calls.forEach(c => {
-    if (!isCallOpen(c.deadline) || !c.location || !c.location.endsWith('USA')) return;
-    const parts = c.location.split(',');
-    let st = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-    if (st && stateNameToAbbr[st]) st = stateNameToAbbr[st];
-    if (st) openStateCountsForLinks[st] = (openStateCountsForLinks[st] || 0) + 1;
-  });
-
   data.calls.forEach(c => {
     // Link to every location page that actually gets generated (one per country/
     // state that appears in any call), independent of the SEO index threshold —
@@ -1753,7 +1747,10 @@ Object.keys(eligibilityTags).forEach(tag => {
 if (hasErrors) { console.error('Fix errors above before generating.'); process.exit(1); }
 
 const eligibilityPageSlugs = [];
-Object.entries(eligibilityGroups).forEach(([tag, info]) => {
+// Only tags some call carries, as the prize, requirements, submit-via and AI-policy facets do (and as the eligibility
+// index and Browse list them): a configured tag with no call would be an empty page with no count line, which the
+// Count gate refuses — so removing the last such tag from a call stopped every build (2026-11-27, R3).
+Object.entries(eligibilityGroups).filter(([tag]) => eligibilityTags[tag]).forEach(([tag, info]) => {
   const tagCalls = data.calls.filter(c => c.eligibility && c.eligibility.includes(tag));
   const stats = listStats(tagCalls);
   const slug = `eligibility/${tag}`;
@@ -2273,11 +2270,17 @@ if (aiPolicyPageSlugs.length) {
 // than calls, and that index has to follow the same INDEX RULE as every other.
 const stateCounts = {};
 const openStateCounts = {};
-data.calls.filter(c => c.location && c.location.endsWith('USA')).forEach(c => {
+// The state of a US call: the part before "USA" in its location, a full state name folded to its code (one page per
+// state). The state counts and the state pages use this one rule (2026-11-27, R3: the pages matched ", WA," anywhere,
+// so "Perth, WA, Australia" would have been listed under Washington).
+function usStateOf(c) {
+  if (!c.location || !c.location.endsWith('USA')) return '';
   const parts = c.location.split(',');
-  let state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-  // Normalize full state names to abbreviations to prevent duplicate pages
-  if (state && stateNameToAbbr[state]) state = stateNameToAbbr[state];
+  const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
+  return state && stateNameToAbbr[state] ? stateNameToAbbr[state] : state;
+}
+data.calls.forEach(c => {
+  const state = usStateOf(c);
   if (state) {
     stateCounts[state] = (stateCounts[state] || 0) + 1;
     if (isCallOpen(c.deadline)) {
@@ -2307,6 +2310,12 @@ Object.entries(countryCounts)
     const fullName = countryNames[country] || country;
     const countrySlug = countrySlugs[country] || slugify(country);
     const slug = countrySlug;
+    // A call already has this address (a call slugged "japan" or "online"): writing the country page would replace it.
+    if (slugMap[slug]) {
+      console.error(`  ERROR: Country page "${slug}" collides with call "${slugMap[slug]}". Rename the call's slug.`);
+      hasErrors = true;
+      return;
+    }
     const isOnline = country === 'Online';
     const countryCalls = data.calls.filter(c => getCountry(c.location) === country);
     const stats = listStats(countryCalls);
@@ -2346,7 +2355,6 @@ ${country === 'USA' ? `  <!-- /united-states/ lists STATES, not calls. The list 
 </html>`;
 
     slugMap[slug] = `country: ${fullName}`;
-    createdCountrySlugs.push(slug);
     // Every generated country page is linkable (noindex pages included); the
     // `indexable` flag only controls SEO robots + sitemap, not internal links.
     linkedCountrySlugs.push(slug);
@@ -2360,7 +2368,7 @@ Object.entries(stateCounts).forEach(([state]) => {
   const fullStateName = usStateNames[state] || state;
   const stateSlug = slugify(fullStateName);
   const slug = `united-states/${stateSlug}`;
-  const stateCalls = data.calls.filter(c => c.location && (c.location.includes(', ' + state + ',') || c.location.includes(', ' + fullStateName + ',')));
+  const stateCalls = data.calls.filter(c => usStateOf(c) === state);
   const stats = listStats(stateCalls);
   const indexable = shouldIndexStatePage(stats.open);
   const robotsDirective = robotsFor(indexable);
@@ -2749,8 +2757,6 @@ writeGenerated('deadlines/index.html', deadlinesIndexHtml);
 sitemapEntries.push(`${SITE}/deadlines`);
 console.log(`  Deadlines index page (${sortedMonths.length} months)`);
 
-// RESULTS DUE: taken off the site on 2026-11-26 (owner: "remove the page from the website until we figure this out"); the
-// work is on branch results-due. shared.js resultsWhen() still reads results dates for the build gate.
 
 // === Submit page ===
 // The search bar sits under the menu as on every other page (owner, 2026-11-25; it stood in the hero from 2026-11-23).
@@ -3152,7 +3158,6 @@ console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length}
 // All shared LOGIC + static maps live in shared.js, loaded before cards.js.
 const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ${JSON.stringify(linkedCountrySlugs)};
-const orgPages = [];
 const statePages = ${JSON.stringify(statePageMap)};
 const SEARCH_INDEX_VERSION = '${searchIndexVersion}';
 // ==AUTO-GENERATED-END==`;
@@ -3183,7 +3188,7 @@ fs.writeFileSync('cards.js', cardsJs);
   // scripts/ is gitignored local tooling — guard so the build works without it.
   const verifyBatchSrc = fs.existsSync('scripts/verify-batch.js') ? fs.readFileSync('scripts/verify-batch.js', 'utf8') : '';
   const updateStateSrc = fs.existsSync('scripts/update-verify-state.js') ? fs.readFileSync('scripts/update-verify-state.js', 'utf8') : '';
-  for (const fn of ['function shortenFee(', 'function feeKind(', 'function feeChipText(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function tagHtml(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(', 'function personSlug(', 'function juryNameSpan(']) {
+  for (const fn of ['function shortenFee(', 'function feeKind(', 'function feeChipText(', 'function feeChip(', 'function submitViaLink(', 'function derivePrizeCategory(', 'function derivePrizeCategories(', 'function isCallOpen(', 'function computeUrgency(', 'function slugify(', 'function splitPrizeParts(', 'function shortenLocation(', 'function deriveRequirementBucket(', 'function aiPolicyBucket(', 'function renderTags(', 'function renderInfoGrid(', 'function getCountry(', 'function scoreSimilarity(', 'function getState(', 'function isFree(', 'function personSlug(', 'function juryNameSpan(']) {
     const inShared = sharedSrc.split(fn).length - 1;
     if (inShared !== 1) gateErrs.push(`${fn} must be defined exactly once in shared.js (found ${inShared})`);
     for (const [consumer, csrc] of [['cards.js', written], ['call-detail.js', callDetailSrc], ['scripts/verify-batch.js', verifyBatchSrc], ['scripts/update-verify-state.js', updateStateSrc]]) {
@@ -3237,7 +3242,6 @@ fs.writeFileSync('cards.js', cardsJs);
 // Generate sitemap.xml with a restrained, high-value canonical set.
 // Keep expired/noindex archives out, but submit active call detail pages:
 // those are the pages users need while deadlines are still relevant.
-const today = new Date().toISOString().split('T')[0];
 const allUrlsRaw = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u : u + '/')];
 
 const STRUCTURAL_EXACT = new Set([
@@ -3253,7 +3257,11 @@ const STRUCTURAL_EXACT = new Set([
   `${SITE}/grants/`,
   `${SITE}/residencies/`,
   `${SITE}/zines/`,
+  `${SITE}/education/`,
   `${SITE}/fees/free/`,
+  // Both added only when their own generator found them indexable (2026-11-27, R1/R3: they were dropped here although
+  // index, follow): education like the other categories, continuous when it has open calls.
+  `${SITE}/deadlines/continuous/`,
 ]);
 // Top country pages: include any country page that's a single-segment path
 // directly under root (e.g. /united-states/, /germany/, /united-kingdom/).
@@ -3294,7 +3302,6 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls.map(url => `  <url>
     <loc>${url}</loc>
-    <lastmod>${today}</lastmod>
   </url>`).join('\n')}
 </urlset>`;
 
@@ -3339,16 +3346,10 @@ ${rssItems}
 fs.writeFileSync('feed.xml', rssXml);
 
 // Generate index pages for categories, countries, organizations
-const indexPages = [
-  { src: 'categories/index.html', fallback: 'categories.html' },
-  { src: 'locations/index.html', fallback: 'locations.html' },
-  { src: 'organizations/index.html', fallback: 'organizations.html' }
-];
-indexPages.forEach(({ src, fallback }) => {
-  // Read from new location if exists, else from old location
-  const readFrom = fs.existsSync(src) ? src : (fs.existsSync(fallback) ? fallback : null);
-  if (readFrom) {
-    let html = fs.readFileSync(readFrom, 'utf8');
+const indexPages = ['categories/index.html', 'locations/index.html', 'organizations/index.html'];
+indexPages.forEach(src => {
+  if (fs.existsSync(src)) {
+    let html = fs.readFileSync(src, 'utf8');
     // The hub lists are injected at build time (STATIC-INDEX) and complete, so
     // drop the old client re-render that downloaded all of data.json to redo them.
     html = html.replace(DATA_JSON_PRELOAD_RE, '');
@@ -3366,10 +3367,7 @@ indexPages.forEach(({ src, fallback }) => {
     if (!html.includes('og:site_name')) {
       html = html.replace(/<meta name="twitter:card"/, '<meta property="og:site_name" content="Monographica">\n  <meta name="twitter:card"');
     }
-    html = html.replace(/og-image\.jpg/g, 'og-image.png');
     html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
-    html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
-    html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
     html = html.replace(/(<title>[^<]+?)(\s*[-\u2014\u2013]\s*Monographica)?(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
       const clean = content.replace(/\s*[-\u2014\u2013]\s*Monographica$/, '');
       return `${clean}${TITLE_SUFFIX}</title>`;
@@ -3398,8 +3396,7 @@ indexPages.forEach(({ src, fallback }) => {
 });
 
 // Update manual HTML files: CSS version, year, and title suffix
-const manualFiles = ['index.html', '404.html'];
-manualFiles.forEach(file => {
+MANUAL_FILES.forEach(file => {
   let html = fs.readFileSync(file, 'utf8');
   html = html.replace(DATA_JSON_PRELOAD_RE, '');
   // Sync CSS and JS versions
@@ -3413,8 +3410,6 @@ manualFiles.forEach(file => {
   }
   // Update year everywhere (titles, keywords, footer)
   html = html.replace(/Open Calls for Artists \d{4}/g, `Open Calls for Artists ${YEAR}`);
-  html = html.replace(/photography grants \d{4}/g, `photography grants ${YEAR}`);
-  html = html.replace(/&copy; \d{4} HH/g, `&copy; ${YEAR} HH`);
   // Ensure title suffix — remove any existing then re-add (handle both hyphen and em dash)
   html = html.replace(/(<title>[^<]+?)(\s*[-\u2014\u2013]\s*Monographica)?(\s*-\s*Monographica)?<\/title>/g, (m, content) => {
     const clean = content.replace(/\s*[-\u2014\u2013]\s*Monographica$/, '');
@@ -3528,7 +3523,10 @@ const newFiles = [];
   const daysAgo = n => { const d = new Date(); d.setDate(d.getDate() - n); return localDay(d); };
   const today = daysAgo(0), yesterday = daysAgo(1), weekAgo = daysAgo(7), twoWeeksAgo = daysAgo(14);
   const addedSection = c => {
-    const added = (c.dateAdded || '').slice(0, 10);
+    // dateAdded is a UTC time ("2026-11-27T23:10:00Z"): its local day, like the sections' (a call added at 00:10
+    // Lisbon summer time was filed under yesterday). A bare date stays as it is.
+    const v = c.dateAdded || '';
+    const added = /T/.test(v) && !isNaN(new Date(v)) ? localDay(new Date(v)) : v.slice(0, 10);
     if (added >= today) return 'Added today';
     if (added >= yesterday) return 'Added yesterday';
     if (added >= weekAgo) return 'Added this week';
@@ -3673,11 +3671,15 @@ Object.entries(REDIRECTS).forEach(([from, to]) => {
 // Warn about stale HTML files (never auto-delete — pages may be indexed/bookmarked)
 // Fix noindex on stale pages — Google flags these as "Excluded by noindex tag"
 const staleFiles = [];
+// What .gitignore names (plain names: scripts/, et.html, …) is not the site: the private run files in scripts/ (13,000
+// saved organiser pages) were walked, listed as "stale" and rewritten on every build (2026-11-27, R1).
+const GIT_IGNORED_NAMES = new Set((fs.existsSync('.gitignore') ? fs.readFileSync('.gitignore', 'utf8') : '').split('\n')
+  .map(s => s.trim().replace(/\/$/, '')).filter(s => s && !s.startsWith('#') && !/[*?\[\]\/!\\ ]/.test(s)));
 function findStale(dir) {
   if (!fs.existsSync(dir)) return;
   const ignoredDirs = new Set(['.git', 'node_modules', '.wrangler']);
   fs.readdirSync(dir).forEach(item => {
-    if (item.startsWith('.')) return;
+    if (item.startsWith('.') || GIT_IGNORED_NAMES.has(item)) return;
     const fp = path.join(dir, item);
     if (fs.statSync(fp).isDirectory()) {
       if (ignoredDirs.has(item)) return;
@@ -3733,7 +3735,10 @@ staleFiles.forEach(f => {
   const alreadyCorrect = robotsTags.length === 1 && /content="noindex">/.test(robotsTags[0]);
   if (!alreadyCorrect) {
     html = html.replace(/\s*<meta name="robots" content="[^"]*">/g, '');
-    html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n  <meta name="robots" content="noindex">');
+    // After the charset tag whatever its spelling, else right after <head>: a page must never end up with no tag.
+    const tag = m => `${m}\n  <meta name="robots" content="noindex">`;
+    const withTag = html.replace(/<meta charset="[^"]*">/i, tag);
+    html = withTag !== html ? withTag : html.replace(/<head[^>]*>/i, tag);
     changed = true;
   }
 
@@ -3794,8 +3799,8 @@ if (staleFiles.length) {
 
 // === HARD GATE: every count must equal what the pages it points to list ===
 // The invariant the whole listing/index system exists to keep:
-//   hero "N calls, M open."  ==  the distinct calls across all of the listing's
-//                                pages, M of them on its open pages
+//   hero "M accepting submissions, K closed."  ==  the distinct calls across all of
+//                                the listing's pages, M of them on its open pages
 //   index row count          ==  what the listing's first page lists (listedCount)
 // Checked against the HTML actually written to disk, so no code path can quietly
 // go back to counting one set of calls and listing another.
@@ -3967,7 +3972,7 @@ if (staleFiles.length) {
       const held = es.map(e => e.entry).join(' | ');
       // another organiser's name inside one of the person's own ("The Image Flow" in "The Image Flow / Praxis Gallery") is not another organiser
       const own = strip(sub, orgs);
-      siteOrgs.forEach(([o, re]) => { if (!orgs.includes(o) && re.test(own) && !held.includes(o)) errs.push(`${at}: the summary names the organiser "${o}" — not one of ${p.id}'s, and not in their entries`); });
+      siteOrgs.forEach(([o, re]) => { if (!orgs.includes(o) && own.includes(o) && re.test(own) && !held.includes(o)) errs.push(`${at}: the summary names the organiser "${o}" — not one of ${p.id}'s, and not in their entries`); });
     } else {
       generated++;
       const years = new Set(es.map(e => e.year).filter(Boolean));
@@ -4071,8 +4076,10 @@ if (staleFiles.length) {
   for (const c of data.calls) for (const t of [c.description, ...(Array.isArray(c.prose) ? c.prose : [])]) {
     if (t) for (const m of String(t).matchAll(EM)) published.add(m[0].toLowerCase());
   }
-  const skip = new Set(['.git', 'scripts', 'node_modules', '.scratch', '.wrangler', '.claude']);
-  const PUB = /\.(html|js|json|xml|txt|md|csv)$/;
+  const skip = new Set(['.git', 'scripts', 'node_modules', '.scratch', '.wrangler']);
+  // Every file git would commit, except binaries (2026-11-27, R4: .claude/ and any .tsv, .py or .log was never read).
+  const BINARY = /\.(png|jpe?g|gif|webp|ico|svgz|woff2?|ttf|otf|pdf|zip|gz|mp4|mov|webm)$/i;
+  const PUB = { test: p => !BINARY.test(p) };
   const scan = p => {
     const s = fs.readFileSync(p, 'utf8');
     if (s.includes('@')) for (const m of s.matchAll(EM)) { const a = m[0].toLowerCase(); if (priv.has(a) && !published.has(a)) { bad.push(`${p}: a private contact address`); break; } }
@@ -4097,7 +4104,9 @@ if (staleFiles.length) {
     bad.slice(0, 30).forEach(b => console.error('  - ' + b));
     process.exit(1);
   }
-  console.log(`  Privacy gate: no address in job notes; 0 private addresses in published files (${priv.size} private, ${published.size} published by organizers)`);
+  console.log(priv.size
+    ? `  Privacy gate: no address in job notes; 0 private addresses in published files (${priv.size} private, ${published.size} published by organizers)`
+    : `  Privacy gate: no address in job notes; private-address check SKIPPED (no scripts/outreach store on this machine)`);
 })();
 
 console.log(`Generated ${generated} pages, skipped ${skipped}, sitemap has ${allUrls.length} URLs`);

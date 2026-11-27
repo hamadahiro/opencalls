@@ -1,10 +1,11 @@
 # robots.txt is ADVISORY. Well-behaved crawlers honour it; the headless fleet
 # that hit this site on 29-30 Jul 2026 never requested this file. Blocking a
-# scraper requires something in front of the origin — see docs/anti-scraping.md.
+# scraper requires something in front of the origin.
 
 User-agent: *
 Allow: /
 Disallow: /generate-pages.js
+Disallow: /data.json
 
 # --- Bulk AI training crawlers ---
 # These harvest for model training and send no traffic back. Nothing to gain by
@@ -34,8 +35,9 @@ Disallow: /
 # acquisition channel — blocking them would cost visitors to stop a crawl that
 # costs nothing. Revisit only if they start hammering.
 #
-# /data.json is also NOT listed. It is already preloaded from every page, so
-# listing it hides nothing and merely advertises the endpoint to anyone reading
-# this file. The Disallow: / above already covers it for every compliant crawler.
+# /data.json (the build's data with its job notes, ~45 MB) is disallowed above for
+# every crawler: no page loads it, so search engines have no use for it
+# (2026-11-27: the old note here said every page preloaded it, which stopped
+# being true when the preload was removed).
 
 Sitemap: https://opencalls.monographica.com/sitemap.xml

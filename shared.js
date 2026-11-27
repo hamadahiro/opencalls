@@ -455,26 +455,10 @@ function submitViaLink(call, esc) {
   return `<a href="${esc(href)}" target="_blank" rel="nofollow noopener"${title}>${esc(label)}</a>`;
 }
 
-// ---- Shared SVG glyphs ----
-const PIN_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>';
-const PRIZE_SVG = '<svg class="pin-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>';
-
 function getCountry(location) {
   if (!location) return '';
   const parts = location.split(',');
   return parts[parts.length - 1].trim();
-}
-
-// Wrap a long value onto two lines for the info grid. Takes the env escaper.
-function tagHtml(str, minLen, esc) {
-  minLen = minLen || 25;
-  if (!str || str.length <= minLen) return esc(str || '');
-  const words = str.split(' ');
-  if (words.length <= 2) return esc(str);
-  const splitAt = Math.ceil(words.length * 0.6);
-  const front = words.slice(0, splitAt).join(' ');
-  const back = words.slice(splitAt).join(' ');
-  return `<span class="tag-front">${esc(front)}</span> <span class="tag-back">${esc(back)}</span>`;
 }
 
 // The text of every content chip renderTags() shows (deadline and fee chips are built
@@ -618,7 +602,6 @@ function resultsWhen(call) {
     return byDate(plus(new Date(Date.UTC(+x[5], MON[x[3]] - 1, +x[4])), +x[1], x[2]));
   return null;
 }
-function resultsMonthSlug(month) { return RESULTS_MONTHS[+month.slice(5, 7) - 1] + '-' + month.slice(0, 4); }
 // A call is on the Results page when it has closed and its results are still to come: until the last day the organiser's
 // words allow has passed ("Early November": until Nov 10). The page, the cards and the call page use this one rule.
 function resultsListed(call, now) {
@@ -630,13 +613,6 @@ function resultsListed(call, now) {
   const today = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
   return w.last >= today ? w : null;
 }
-// The month a call stands under on the Results page (by its last day) and its anchor there: /results/#december-2026.
-function resultsHref(w) { return '/results/#' + resultsMonthSlug(w.last.slice(0, 7)); }
-// The card's date for a closed call whose results are still to come, linking to its month on the Results page.
-function resultsCardDate(call, esc) {
-  const w = resultsWhen(call);
-  return `<a href="${resultsHref(w)}" class="call-date">${esc(w.label).replace(/ /g, '&nbsp;')}</a>`;
-}
 
 // Detail-page info grid (deadline/prize/fee/location/etc.). opts = { esc, locationLink }
 function renderInfoGrid(call, opts) {
@@ -644,7 +620,7 @@ function renderInfoGrid(call, opts) {
   function infoRow(label, value) {
     return `<div class="info-row"><span class="info-label">${label}</span><span class="dots"></span><span class="info-value">${value}</span></div>`;
   }
-  // Full text, wrapping. Not tagHtml(): its two nowrap halves ran past the row's
+  // Full text, wrapping. Not a split into two nowrap halves: they ran past the row's
   // edge on phones and were clipped (owner, 2026-11-23, a long entry fee).
   // <wbr> after a slash: "IN/OH/IL/MI/KY/MO/IA/WI/KS/NE" breaks between codes, not inside one.
   function infoVal(str) { return esc(str || '').replace(/\//g, '/<wbr>'); }
@@ -781,13 +757,12 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
     usStateNames, stateNameToAbbr, validCountries,
-    PIN_SVG, PRIZE_SVG,
     isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
     deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-    getCountry, tagHtml, renderTags, renderCardBody, renderInfoGrid,
+    getCountry, renderTags, renderCardBody, renderInfoGrid,
     isFree, getState, scoreSimilarity,
     isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts,
-    resultsWhen, resultsMonthSlug, RESULTS_MONTHS, resultsListed, resultsCardDate, resultsHref, closedResultsText
+    resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText
   };
 }

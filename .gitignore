@@ -19,3 +19,6 @@ harvest-worklist.json
 .editor-added.json
 opencalls-export.csv
 .DS_Store
+
+# Claude Code local settings (permissions, home paths): never in the public repo (2026-11-27)
+.claude/settings.local.json
