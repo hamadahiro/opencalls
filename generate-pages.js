@@ -2890,8 +2890,9 @@ console.log('  Submit page');
 // should say that if they want to submit a call use submit form") ===
 // As quiet as possible (owner: "it should be there if someone really needs to get in touch but as little as possible"):
 // linked only from the Legal page's Contact section, not in the footer or the sitemap, noindex.
-// No address anywhere on the site: the form posts to the same Formspree form as /submit/ from this page's script (no
-// action attribute for bots to find), and Formspree mails it to the owner's Hide My Email address. `email` becomes the
+// No address anywhere on the site: the form posts to its own Formspree form ("Contact", made by the owner 2026-11-27;
+// /submit/ has another) from this page's script (no action attribute for bots to find), and Formspree mails it to the
+// owner's Hide My Email address. `email` becomes the
 // reply address; `_subject` names it a contact message; `_gotcha` is Formspree's trap field — hidden from people, a bot
 // that fills it is dropped.
 {
@@ -2940,7 +2941,7 @@ console.log('  Submit page');
           var btn = document.getElementById('contactBtn');
           btn.textContent = 'Sending...';
           btn.style.opacity = '0.5';
-          fetch('https://formspree.io/f/xkoqaveq', {
+          fetch('https://formspree.io/f/xyewakkl', {
             method: 'POST',
             body: new FormData(this),
             headers: { 'Accept': 'application/json' }
