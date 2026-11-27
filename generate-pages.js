@@ -1212,7 +1212,7 @@ function generatePage(call, cssVersion) {
 
   <main>
     <section class="call-detail">
-      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${{'photography':'photography','exhibition':'exhibitions','grant':'grants','zine':'zines','residency':'residencies','education':'education'}[call.category] || call.category}/">${escapeHtml({'photography':'Photography','exhibition':'Exhibition','grant':'Grant','zine':'Zines & Books','residency':'Residency','education':'Education'}[call.category] || call.category)} open call</a></nav>
+      <nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/${categorySlug[call.category] || call.category}/">${escapeHtml(categoryLabel[call.category] || call.category)} open call</a></nav>
       <h1 class="call-detail-title">${breakAfterJoins(escapeHtml(call.title))}</h1>
 
       <div class="call-detail-text" id="detailText">
@@ -1295,14 +1295,13 @@ let skipped = 0;
 //     Org pages remain live for users but are noindex and not prose-linked.
 {
   // usStateNames + stateNameToAbbr come from shared.js (single source of truth).
-  const countrySlugFor = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
   data.calls.forEach(c => {
     // Link to every location page that actually gets generated (one per country/
     // state that appears in any call), independent of the SEO index threshold —
     // a noindex page is still live and should never have its chip link dropped.
     const country = getCountry(c.location);
     if (country) {
-      PRECOMPUTED_COUNTRY_PAGES.add(countrySlugFor[country] || slugify(country));
+      PRECOMPUTED_COUNTRY_PAGES.add(countrySlugs[country] || slugify(country));
     }
     if (c.location && c.location.endsWith('USA')) {
       const parts = c.location.split(',');
@@ -1353,7 +1352,7 @@ const categories = {
 };
 
 Object.entries(categories).forEach(([cat, info]) => {
-  const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
+  const catSlug = categorySlug[cat] || cat;
   const slug = catSlug;
   // LISTING RULE: every call in this category — open first, past below.
   const catCalls = data.calls.filter(c => c.category === cat);
@@ -3049,7 +3048,7 @@ const browseCategoryLabels = {
   'residency': 'Residencies', 'zine': 'Zines & Books', 'education': 'Education'
 };
 const browseCategories = Object.entries(categories).map(([cat]) => {
-  const catSlug = cat === 'zine' ? 'zines' : cat === 'exhibition' ? 'exhibitions' : cat === 'residency' ? 'residencies' : cat === 'grant' ? 'grants' : cat;
+  const catSlug = categorySlug[cat] || cat;
   return { label: browseCategoryLabels[cat] || cat, href: `/${catSlug}/`, ...listStats(data.calls.filter(c => c.category === cat)) };
 });
 
@@ -3539,7 +3538,7 @@ const newFiles = [];
 
 // 2. CATEGORIES INDEX — inject category links with open-call counts
 {
-  const catSlugs = { photography: 'photography', exhibition: 'exhibitions', grant: 'grants', zine: 'zines', residency: 'residencies', education: 'education' };
+  const catSlugs = categorySlug;   // shared.js
   const catLabels = { photography: 'Photography', exhibition: 'Exhibitions', grant: 'Grants', zine: 'Zines & Books', residency: 'Residencies', education: 'Education' };
   const items = buildIndexItems(Object.entries(catSlugs).map(([cat, slug]) => ({
     href: `/${slug}/`, label: catLabels[cat], ...listStats(data.calls.filter(c => c.category === cat))
@@ -3556,10 +3555,9 @@ const newFiles = [];
 
 // 3. LOCATIONS INDEX — inject country links with open-call counts
 {
-  const countrySlugMap = { 'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates' };
   const countryDisplayNames = { 'USA': 'United States', 'UK': 'United Kingdom', 'UAE': 'United Arab Emirates' };
   const items = buildIndexItems(Object.entries(countryCounts).map(([country, total]) => ({
-    href: `/${countrySlugMap[country] || slugify(country)}/`,
+    href: `/${countrySlugs[country] || slugify(country)}/`,
     label: countryDisplayNames[country] || country,
     total,
     open: openCountryCounts[country] || 0
