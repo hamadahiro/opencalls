@@ -407,7 +407,7 @@
         var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
         var tokens = currentSearch.split(/\s+/).filter(Boolean);
         list = list.filter(function(c) {
-          var parts = [c.title, c.org, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
+          var parts = [c.title, c.org, c.summary, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
           if (c.location) {
             c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
               if (stateMap[lp]) parts.push(stateMap[lp]);
