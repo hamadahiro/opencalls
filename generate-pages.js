@@ -21,7 +21,7 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 // === JURY (2026-11-26, preview) ===
 // jury.json is public and holds only what the pages show: id, slug, name, the spellings the calls print (names), the
 // organiser that tells two people of one name apart (distinguish) and old slugs (formerSlugs). Each call's juryPeople
-// says, entry by entry, which person a jury entry is (an id) or why it stays plain text (JURY_PLAIN). Research and its
+// says, entry by entry, which person a jury entry is (an id) or that it is a group (not-person). Research and its
 // evidence stay outside the repo, in scripts/jury/ (ignored; it may be a link to the work disk).
 // A juror page's subtitle says where the person judged and under what title, never counts (owner 2026-11-26 20:47:
 // "with natural language list where they juried and under what title than how many calls and how many open"): a
@@ -33,7 +33,8 @@ const JURY = {
 // /jury/ lists every person under A, B, C headings, in the form of /organizations/ (owner 2026-11-26 20:45: "then better
 // put jury but group them by ABC"); no Jury group on Browse (owner 20:46: "we dont need jury in browse page"). A juror
 // is also found by search, or from a call's Jury line.
-const JURY_PLAIN = ['not-person', 'unresolved', 'unconfirmed', 'conflict', 'wrong', 'no-page'];   // wrong: the entry is not this call's juror (a data error for the owner)
+// A name on a call is linked, or it is not on the call (owner 2026-11-27): the one plain value is a group, never a person.
+const JURY_PLAIN = ['not-person'];
 const JURY_PRIVATE_DIR = 'scripts/jury';
 const juryData = fs.existsSync('jury.json') ? JSON.parse(fs.readFileSync('jury.json', 'utf8')) : { people: [] };
 const juryById = new Map(juryData.people.map(p => [p.id, p]));
@@ -369,7 +370,7 @@ function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; 
   const fold = s => personSlug(s);
   const linkedCalls = new Map(juryData.people.map(p => [p.id, []]));
   // What a job does about it (the update and verify jobs read these lines): jury and juryPeople change together.
-  const TOGETHER = `jury and juryPeople change together, one value per entry at the same place: a person id (node scripts/jury-match.js 'Name', then scripts/jury-add.js or scripts/jury-link.js) or ${JURY_PLAIN.slice(0, 3).join(' / ')} (TONE.md 'Jury')`;
+  const TOGETHER = `jury and juryPeople change together, one value per entry at the same place: a person id (node scripts/jury-match.js 'Name', then scripts/jury-add.js or scripts/jury-link.js) or not-person for a group; a person not shown selecting for this edition leaves the jury (TONE.md 'Jury')`;
   // G1 shape, G2 ids, G3 the name is in the entry
   data.calls.forEach(c => {
     const at = `${c.slug}`;
@@ -386,7 +387,7 @@ function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; 
     c.juryPeople.forEach((v, i) => {
       if (JURY_PLAIN.includes(v)) return;
       const p = juryById.get(v);
-      if (!p) { errs.push(`G2 ${at}#${i}: "${v}" is neither a person in jury.json nor one of ${JURY_PLAIN.join(' / ')}`); return; }
+      if (!p) { errs.push(`G2 ${at}#${i}: "${v}" is neither a person in jury.json nor not-person — a name on a call is linked, or it is not on the call; ${TOGETHER}`); return; }
       if (seen.has(v)) errs.push(`G2 ${at}#${i}: ${v} (${p.name}) is linked twice in one jury`);
       seen.add(v);
       if (!juryNameSpan(c.jury[i], p.names)) errs.push(`G3 ${at}#${i}: "${c.jury[i]}" does not name ${v} (${p.names.join(' / ')}) — a shifted juryPeople (an entry edited, added or removed without its value), or the same person spelt anew (add the spelling: node scripts/jury-link.js); ${TOGETHER}`);

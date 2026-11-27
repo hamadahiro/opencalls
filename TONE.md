@@ -103,16 +103,15 @@ or a waiver), `$30 fee*` (additional fees), `Paid entry` (amount not stated). Th
 
 **juryPeople** — one value per jury entry, same order, same length. `jury` and `juryPeople` always change together, in
 the same write: add, remove, reorder or edit an entry and its value moves with it. The build refuses any other shape.
-A value is a person id from jury.json, or one word:
-- `not-person`: a group, committee, organisation, team, a role without a name, a placeholder;
-- `unresolved`: a person not yet decided;
-- `unconfirmed`: a name the organizer's page does not show selecting for this call.
+A value is a person id from jury.json, or `not-person`: a group, committee, organisation, team, a role without a name,
+a placeholder. **A name on a call is linked, or it is not on the call** (owner 2026-11-27): a person the organizer's
+page does not show selecting for this edition is left out of jury. There is no plain-text name; the build refuses one.
 
 **Who is who.** Never on the name alone. The same person only when a public page ties the two beyond the name: the same
-organisation or role on both calls, or a bio, CV, staff page or the organizer's juror bio naming the other role. A page
-showing someone else of that name (another country, field or profession): a new person. Anything else: `unresolved`.
-A new person only when the entry was checked on the organizer's page; otherwise `unconfirmed`. Every link and every
-"same person" decision has a source page, kept outside the repository.
+organisation or role on both calls, or a bio, CV, staff page or the organizer's juror bio naming the other role.
+Anything else is a person of their own (scripts/jury-add.js), a namesake told apart by an organiser of their own calls.
+A person goes in only when the entry was checked on the organizer's page. Every link and every "same person" decision
+has a source page, kept outside the repository.
 
 **Juror pages** say where the person judged and under what title, from their own entries only: "Juror for A, B and C,
 listed as …". "Listed as", never "is" or "works as": a title is what that call printed, not the person's job today. A
