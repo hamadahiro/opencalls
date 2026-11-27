@@ -353,7 +353,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal', 'search', 'search-core', 'search-page'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal', 'search', 'search-core', 'search-page', 'contact'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -601,7 +601,7 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/legal/">Legal</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/legal/">Legal</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
 const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -2886,6 +2886,83 @@ writeGenerated('submit/index.html', submitHtml);
 sitemapEntries.push(`${SITE}/submit`);
 console.log('  Submit page');
 
+// === Contact page (owner, 2026-11-27: "a new page, similar format to submit form page, but just for contacts, and it
+// should say that if they want to submit a call use submit form") ===
+// No address anywhere on the site: the form posts to the same Formspree form as /submit/ from this page's script (no
+// action attribute for bots to find), and Formspree mails it to the owner's Hide My Email address. `email` becomes the
+// reply address; `_subject` names it a contact message; `_gotcha` is Formspree's trap field — hidden from people, a bot
+// that fills it is dropped.
+{
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Contact', description: 'Send a message to Monographica Open Calls. To send an open call, use the submit form.', canonical: `${SITE}/contact`, cssVersion })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    <section class="hero">
+      <h1>Contact</h1>
+      <h2 class="subtitle">To send an open call, use the <a href="/submit/">submit form</a>.</h2>
+    </section>
+
+    <section class="submit-form">
+      <form id="contactForm">
+        <h3 class="section-header">Message</h3>
+        <textarea class="search-bar" name="message" id="message" rows="8" required aria-label="Message"></textarea>
+
+        <label for="email">Your email <span style="color:var(--text-muted)">(only if you want a reply)</span></label>
+        <input class="search-bar" type="email" name="email" id="email" autocomplete="email">
+
+        <input type="hidden" name="_subject" value="Contact message">
+        <input class="form-trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button type="submit" class="call-detail-btn call-detail-apply" id="contactBtn">Send</button>
+      </form>
+      <div id="contactThanks" style="display:none">
+        <a href="/contact/" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Send another</a>
+      </div>
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('contactBtn');
+          btn.textContent = 'Sending...';
+          btn.style.opacity = '0.5';
+          fetch('https://formspree.io/f/xkoqaveq', {
+            method: 'POST',
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+          }).then(function(r) {
+            if (r.ok) {
+              document.getElementById('contactForm').style.display = 'none';
+              document.getElementById('contactThanks').style.display = '';
+              document.querySelector('.hero h1').textContent = 'Thanks for your message';
+            } else {
+              btn.textContent = 'Something went wrong, try again';
+              btn.style.opacity = '1';
+            }
+          }).catch(function() {
+            btn.textContent = 'Something went wrong, try again';
+            btn.style.opacity = '1';
+          });
+        });
+      </script>
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated('contact/index.html', html);
+  sitemapEntries.push(`${SITE}/contact`);
+  console.log('  Contact page');
+}
+
 // === About / editorial process page ===
 const aboutJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -2961,7 +3038,7 @@ writeGenerated('about/index.html', aboutHtml);
     ['people', 'People named on this site', [
       'Jurors are named as organisers name them on their own call pages, with the role as published. A juror also has a page listing the calls they judged. Nothing else is published about them. If something is wrong, send the organiser’s page through the <a href="/submit/">submit form</a>.']],
     ['contact', 'Contact', [
-      'Use the <a href="/submit/">submit form</a>, and write where to reach you if you want a reply.']],
+      'The <a href="/contact/">contact form</a> sends your message, and your email address if you give one, to Formspree, which passes it on to us.']],
   ];
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -3300,6 +3377,7 @@ const allUrlsRaw = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u :
 const STRUCTURAL_EXACT = new Set([
   `${SITE}/`,
   `${SITE}/legal/`,
+  `${SITE}/contact/`,
   `${SITE}/about/`,
   `${SITE}/browse/`,
   `${SITE}/categories/`,

@@ -1619,6 +1619,15 @@ a.filter-btn {
      .search-active .search-dropdown rules in the home media block above. */
 }
 
+/* The contact form's trap field (Formspree's _gotcha): off screen for people, filled only by bots. */
+.form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 /* === /search/ ===
    The words a search found, in a result's title and quoted sentence: the page's strong text (the link colour) in
    semibold, not a colour of their own (the site has no coloured text). */
