@@ -272,9 +272,10 @@
       var qParam = params.get('q');
       var chipParam = params.get('chip');
       if (chipParam) {
-        var parts = chipParam.split(':');
-        if (parts.length === 2) {
-          var chipType = parts[0], chipValue = parts[1];
+        // Split at the first colon only: an organiser's name may hold one ("Site:Brooklyn Gallery").
+        var colon = chipParam.indexOf(':');
+        if (colon !== -1) {
+          var chipType = chipParam.slice(0, colon), chipValue = chipParam.slice(colon + 1);
           // Redirect to dedicated page if one exists
           var chipUrl = chipToUrl(chipType, chipValue);
           if (chipUrl) { window.location.href = chipUrl; return; }
