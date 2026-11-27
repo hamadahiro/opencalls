@@ -3204,7 +3204,7 @@ fs.writeFileSync('cards.js', cardsJs);
     if (written.split(decl).length - 1 !== 0) gateErrs.push(`${decl} is re-declared in cards.js — it must live ONLY in shared.js`);
   }
   // Hand-written core cards.js functions must not be duplicated.
-  for (const fn of ['function renderCallList', 'function renderCard', 'function esc', 'function processCall']) {
+  for (const fn of ['function renderCard', 'function esc', 'function processCall']) {
     const n = written.split(fn).length - 1;
     if (n !== 1) gateErrs.push(`${fn} must appear exactly once in cards.js (found ${n})`);
   }

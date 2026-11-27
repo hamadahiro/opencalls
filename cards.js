@@ -245,19 +245,6 @@ function esc(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function getLocationLink(location, country) {
-  // For USA locations, link to state page if available
-  if (country === 'USA' && typeof statePages !== 'undefined') {
-    const parts = location.split(',');
-    const state = parts.length >= 3 ? parts[parts.length - 2].trim() : '';
-    if (state && statePages[state]) return '/' + statePages[state] + '/';
-  }
-  // Map abbreviated country names to their URL slugs
-  const countrySlug = countrySlugs[country] || slugify(country);
-  if (countryPages.includes(countrySlug)) return '/' + countrySlug + '/';
-  return null;
-}
-
 // Central timezone logic — a call is open until the end of its deadline day
 // (local time). Urgency class/label/slug come from the shared computeUrgency()
 // in shared.js (the single contract the server static render also uses).
@@ -274,97 +261,4 @@ function renderCard(call, titleTag) {
       <${titleTag} class="call-title"><a href="/${call.slug || slugify(call.title)}/">${esc(call.title)}${!call.orgInTitle ? ' · ' + esc(call.org) : ''}</a></${titleTag}>
       ${renderCardBody(call, { esc: esc, urgency: call })}
     </div>`;
-}
-
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-function renderCallList(calls, container, opts) {
-  opts = opts || {};
-  const open = calls.filter(c => c.urgencyClass !== 'closed');
-  const closed = calls.filter(c => c.urgencyClass === 'closed');
-
-  // Sort open ascending
-  open.sort((a, b) => {
-    if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-    if (a.deadline === 'Continuous') return 1;
-    if (b.deadline === 'Continuous') return -1;
-    return a.deadlineDate - b.deadlineDate;
-  });
-
-  // Build one big HTML string and assign to innerHTML once at the end.
-  // Calling insertAdjacentHTML in a loop forces the browser to re-parse and
-  // mutate the DOM N times, which on mobile turns a 600-card render into
-  // ~1 second of main-thread block (visible as keystroke lag during search).
-  // One innerHTML assignment is typically 5-10x faster.
-  let html = '';
-
-  // Deadline month pages: no Today/Tomorrow/month grouping (every call shares
-  // the same month), but the open/past split still applies — see LISTING RULE.
-  if (opts.skipSections) {
-    open.forEach(call => { html += renderCard(call, 'h4'); });
-    if (closed.length) {
-      closed.sort((a, b) => b.deadlineDate - a.deadlineDate);
-      html += '<h3 class="section-header">Past</h3>';
-      closed.forEach(call => { html += renderCard(call, 'h4'); });
-    }
-    container.innerHTML = html || emptyState();
-    return;
-  }
-
-  // Ending Today / Ending Tomorrow sections
-  const specialSlugs = new Set();
-  const endingToday = open.filter(c => c.daysLeft !== null && c.daysLeft === 0);
-  if (endingToday.length >= 1) {
-    html += '<h3 class="section-header">Ending Today</h3>';
-    endingToday.forEach(call => {
-      html += renderCard(call, 'h4');
-      specialSlugs.add(call.slug || slugify(call.title));
-    });
-  }
-  const endingTomorrow = open.filter(c => c.daysLeft !== null && c.daysLeft === 1);
-  if (endingTomorrow.length >= 1) {
-    html += '<h3 class="section-header">Ending Tomorrow</h3>';
-    endingTomorrow.forEach(call => {
-      html += renderCard(call, 'h4');
-      specialSlugs.add(call.slug || slugify(call.title));
-    });
-  }
-
-  // Open month sections (skip Today/Tomorrow items)
-  let currentSection = '';
-  open.filter(c => !specialSlugs.has(c.slug || slugify(c.title))).forEach(call => {
-    const section = call.deadline === 'Continuous' ? 'Continuous' : monthNames[call.deadlineDate.getMonth()] + ' ' + call.deadlineDate.getFullYear();
-    if (section !== currentSection) {
-      currentSection = section;
-      html += '<h3 class="section-header">' + section + '</h3>';
-    }
-    html += renderCard(call, 'h4');
-  });
-
-  // Past sections (newest first)
-  if (closed.length) {
-    closed.sort((a, b) => b.deadlineDate - a.deadlineDate);
-    const pastSlugs = new Set();
-
-    // Yesterday section
-    const yesterday = closed.filter(c => c.daysLeft !== null && c.daysLeft === -1);
-    if (yesterday.length >= 1) {
-      html += '<h3 class="section-header">Ended Yesterday</h3>';
-      yesterday.forEach(call => {
-        html += renderCard(call, 'h4');
-        pastSlugs.add(call.slug || slugify(call.title));
-      });
-    }
-
-    // Remaining past calls
-    const rest = closed.filter(c => !pastSlugs.has(c.slug || slugify(c.title)));
-    if (rest.length) {
-      html += '<h3 class="section-header">Past</h3>';
-      rest.forEach(call => {
-        html += renderCard(call, 'h4');
-      });
-    }
-  }
-
-  container.innerHTML = html || emptyState();
 }

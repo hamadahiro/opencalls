@@ -1,12 +1,8 @@
-// Detail pages are pre-rendered server-side (generate-pages.js) for SEO, so the
-// info grid already exists in the static HTML. Only fill them
-// client-side as a FALLBACK for legacy pages that shipped an empty container —
-// never overwrite the canonical server render, which is built from the full call
-// (including the call URL that the trimmed inlined CURRENT_CALL omits).
+// Detail pages are pre-rendered server-side (generate-pages.js), info grid included; this
+// script only colours the deadline link.
 (function() {
   if (typeof CURRENT_CALL === 'undefined') return;
   const info = document.getElementById('detailInfo');
-  if (info && !info.innerHTML.trim()) info.innerHTML = renderInfoGrid(CURRENT_CALL, { esc: esc, locationLink: getLocationLink });
   // Deadline band: colour by urgency as of now, the same rule as the deadline pills
   // (computeUrgency in shared.js). Closed calls get no band, nor does a page built closed
   // (no #applyBtn: it says "Submissions closed"), whatever the visitor's clock says.
