@@ -2958,7 +2958,7 @@ writeGenerated('about/index.html', aboutHtml);
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: 'Legal', description: 'Privacy, and the people named on Monographica Open Calls.', canonical: `${SITE}/legal`, breadcrumbs: [{ name: 'Legal', url: `${SITE}/legal/` }], cssVersion })}
+  ${HEAD({ title: 'Legal', description: 'Your privacy on Monographica Open Calls, what the submit form sends, and how jurors are named.', canonical: `${SITE}/legal`, breadcrumbs: [{ name: 'Legal', url: `${SITE}/legal/` }], cssVersion })}
 </head>
 <body>
 
@@ -2967,7 +2967,7 @@ writeGenerated('about/index.html', aboutHtml);
   <main>
     <section class="hero">
       <h1>Legal</h1>
-      <p class="subtitle about-intro">Privacy, and the people named on this site.</p>
+      <p class="subtitle about-intro">Your privacy here, what the submit form sends, and how jurors are named.</p>
     </section>
 
     <section class="index-list about-list about-columns">
