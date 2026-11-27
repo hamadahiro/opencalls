@@ -443,8 +443,8 @@
         var isClosed = i >= results.openCount;
         if (i === 0 && !isClosed) html += '<h3 class="section-header">Accepting submissions (' + results.openCount + ')</h3>';
         if (i === results.openCount) {
-          if (i === 0) html += '<p class="empty-state">No open calls found for this.<a href="/browse/">Browse all calls</a></p>';
-          html += '<h3 class="section-header">Past calls (' + (results.length - results.openCount) + ')</h3>';
+          if (i === 0) html += '<p class="empty-state">None accepting submissions.<a href="/browse/">Browse all calls</a></p>';
+          html += '<h3 class="section-header">Closed (' + (results.length - results.openCount) + ')</h3>';
         }
         html += renderCard(results[i], 'h4');
       }

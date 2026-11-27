@@ -681,7 +681,7 @@ function listSubtitle(desc, stats) {
 // what the first page of that listing shows. `hideArchived` leaves the archive
 // section out (the organizations and locations hubs) — those pages stay live
 // and are still linked from every call that names them.
-const ARCHIVE_HEADING = 'No open calls';
+const ARCHIVE_HEADING = 'Closed';   // the status pair is "accepting submissions" / "closed" (owner, 2026-11-27)
 
 function indexItem(href, labelHtml, count) {
   return `      <a href="${href}" class="index-item"><span class="index-item-name">${labelHtml}</span><span class="dots"></span><span class="index-item-count">${count}</span></a>\n`;
@@ -840,8 +840,9 @@ function renderSectionedCards(calls, sectionOf) {
   return html;
 }
 
-// One page of an open-then-past list. "Past calls" heads the first past card, and a page that starts among the past
-// calls starts with it; with nothing open, page 1 starts straight with the past calls.
+// One page of an open-then-past list. "Closed" heads the first closed card, and a page that starts among the closed
+// calls starts with it; with nothing open, page 1 starts straight with the closed calls. The site's status words are one
+// pair everywhere, the count line's: "accepting submissions" and "closed" (owner, 2026-11-27: "we mix terms").
 function renderOpenThenPast(chunk, anyOpen, k) {
   const now = new Date();
   let html = '';
@@ -849,7 +850,7 @@ function renderOpenThenPast(chunk, anyOpen, k) {
   chunk.forEach(c => {
     const u = computeUrgency(c, now);
     const past = !isOpen(c);
-    if (past && !inPast) { inPast = true; current = ''; if (anyOpen) html += `      <h2 class="list-heading">Past calls</h2>\n`; }
+    if (past && !inPast) { inPast = true; current = ''; if (anyOpen) html += `      <h2 class="list-heading">Closed</h2>\n`; }
     const section = past ? pastSection(c, u) : openSection(c, u);
     if (section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
     html += renderStaticCard(c, u);
@@ -950,7 +951,7 @@ function paginationNav(root, current, count) {
 
 // One page of a listing: the list in place of the placeholder, and the head
 // pointed at this page. `label` names the page in its title ("Page 2",
-// "Past calls", …); `robots` overrides the listing's directive.
+// "Closed", …); `robots` overrides the listing's directive.
 function listingPageHtml(html, listHtml, { url, label, robots }) {
   let out = html.replace(PAGED_LIST_RE, () => listHtml);
   if (label) {
@@ -998,7 +999,7 @@ function writePagedListing(filepath, html, { calls, opts }) {
 
   if (opts.allCalls) {
     // Juror pages (Lara, 2026-11-26): every call the person judged on one list — the open ones first (soonest first,
-    // under the usual headers), then "Past calls" (newest first). Paged like every list.
+    // under the usual headers), then "Closed" (newest first). Paged like every list.
     const anyOpen = open.length > 0;
     files.push(...writeListPages(html, base, [...open, ...past], (chunk, k, count) =>
       renderOpenThenPast(chunk, anyOpen, k) + paginationNav(base, k, count),
@@ -1012,10 +1013,10 @@ function writePagedListing(filepath, html, { calls, opts }) {
       { labelFor: k => k > 1 ? `Page ${k}` : '' }));
     if (past.length) {
       files.push(...writeListPages(html, pastRoot, past, (chunk, k, count) =>
-        `      <h2 class="list-heading">Past calls</h2>\n` +
-        `      <p class="browse-more list-switch"><a href="${base}">See all open calls</a></p>\n` +
+        `      <h2 class="list-heading">Closed</h2>\n` +
+        `      <p class="browse-more list-switch"><a href="${base}">See the calls accepting submissions</a></p>\n` +
         renderSectionedCards(chunk, sections && pastSection) + paginationNav(pastRoot, k, count),
-        { labelFor: k => k > 1 ? `Past calls, page ${k}` : 'Past calls', robots: 'noindex, follow' }));
+        { labelFor: k => k > 1 ? `Closed, page ${k}` : 'Closed', robots: 'noindex, follow' }));
     }
   } else {
     files.push(...writeListPages(html, base, past, (chunk, k, count) =>
@@ -3488,7 +3489,7 @@ MANUAL_FILES.forEach(file => {
 // === Inject static content into manual hub pages (SEO: Google must see content without JS) ===
 
 // 1. HOME PAGE — the open calls under the PAGED LISTS rule: / then /page/2/, …
-//    Past calls are on /archive/ and the latest additions on /new/, both written
+//    Closed calls are on /archive/ and the latest additions on /new/, both written
 //    here from the same pieces. The home pages are copies of index.html with
 //    the list between the STATIC-CALLS markers, so the next build can refill it.
 const homeFiles = [];
@@ -3537,11 +3538,11 @@ function plainListHtml({ title, h1, desc, canonicalPath }) {
 const archiveFiles = [];
 {
   const past = sortPastCalls(data.calls);
-  const html = plainListHtml({ title: 'Past Open Calls', h1: 'Archive of past open calls and closed submissions.', desc: 'Past open calls and closed submissions for photographers and visual artists, newest first.', canonicalPath: '/archive/' });
+  const html = plainListHtml({ title: 'Closed Calls', h1: 'Archive of closed calls.', desc: 'Closed calls for photographers and visual artists, newest first.', canonicalPath: '/archive/' });
   archiveFiles.push(...writeListPages(html, '/archive/', past, (chunk, k, count) =>
     renderSectionedCards(chunk, pastSection) + paginationNav('/archive/', k, count),
     { labelFor: k => k > 1 ? `Page ${k}` : '' }));
-  console.log(`  Archive: ${past.length} past calls on ${archiveFiles.length} page(s)`);
+  console.log(`  Archive: ${past.length} closed calls on ${archiveFiles.length} page(s)`);
 }
 
 // /results/ — the closed calls whose cards say "Results …" (shared.js closedResultsText: results on a day the organiser
@@ -3561,7 +3562,7 @@ const resultsCalls = [];
     const d = new Date(day(c) + 'T00:00:00');
     return MONTHS_CAP[d.getMonth()] + ' ' + d.getFullYear();
   };
-  const html = plainListHtml({ title: 'Upcoming Open Call Results', h1: 'Upcoming results announcements from past open calls and closed submissions.', desc: 'Upcoming results announcements from past open calls and closed submissions for photographers and visual artists, soonest first.', canonicalPath: '/results/' });
+  const html = plainListHtml({ title: 'Upcoming Open Call Results', h1: 'Upcoming results announcements from closed calls.', desc: 'Upcoming results announcements from closed calls for photographers and visual artists, soonest first.', canonicalPath: '/results/' });
   resultsFiles.push(...writeListPages(html, '/results/', resultsCalls, (chunk, k, count) =>
     renderSectionedCards(chunk, resultsSection) + paginationNav('/results/', k, count),
     { labelFor: k => k > 1 ? `Page ${k}` : '' }));
@@ -3630,7 +3631,7 @@ const newFiles = [];
   console.log(`  Locations page: injected ${Object.keys(countryCounts).length} country links`);
 }
 
-// 4. ORGANIZATIONS INDEX — orgs with open calls first, the rest under "No open calls"
+// 4. ORGANIZATIONS INDEX — orgs with calls accepting submissions first, the rest under "Closed"
 {
   const items = buildIndexItems(Object.entries(orgCounts)
     .filter(([org]) => createdOrgSlugs.includes(slugify(org)))

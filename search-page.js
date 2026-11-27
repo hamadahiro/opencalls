@@ -30,7 +30,7 @@
       if (i === 0 && openCount) html += '<h2 class="section-header">Accepting submissions (' + openCount + ')</h2>';
       if (i === openCount) {
         if (i === 0) html += '<h2 class="section-header">Accepting submissions (0)</h2>';
-        html += '<h2 class="section-header">Past calls (' + (results.length - openCount) + ')</h2>';
+        html += '<h2 class="section-header">Closed (' + (results.length - openCount) + ')</h2>';
       }
       html += card(results[i]);
     }
@@ -43,8 +43,8 @@
     if (btn) btn.addEventListener('click', showMore);
   }
 
-  // Open calls first, then past ones; within each, the best match first (search-core's score), then the soonest
-  // deadline for open calls and the latest for past ones.
+  // Calls accepting submissions first, then closed ones; within each, the best match first (search-core's score), then
+  // the soonest deadline for the first and the latest for the closed.
   function run(q) {
     q = q.trim();
     if (q === lastQuery) return;
