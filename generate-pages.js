@@ -3662,20 +3662,8 @@ Object.entries(REDIRECTS).forEach(([from, to]) => {
   if (slugMap[from]) { console.error(`ERROR: redirect source "${from}" collides with a live page — remove it from REDIRECTS.`); process.exit(1); }
   if (!slugMap[to]) { console.error(`ERROR: redirect target "${to}" does not exist — fix the REDIRECTS entry for "${from}".`); process.exit(1); }
   const dest = `/${to}/`;
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="${SITE}${dest}">
-  <meta http-equiv="refresh" content="0; url=${dest}">
-  <title>Redirecting&hellip;${TITLE_SUFFIX}</title>
-  <script>location.replace('${dest}' + location.search + location.hash);</script>
-</head>
-<body>
-  <p>This open call has moved to <a href="${dest}">${dest}</a>.</p>
-</body>
-</html>`;
+  // One stub for every redirect; "page", since organisers and places are redirected here too, not only calls.
+  const html = redirectStubHtml(dest, 'This page has moved to');
   writeGenerated(`${from}/index.html`, html);
   console.log(`  Redirect: ${from} -> ${to}`);
 });
