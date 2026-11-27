@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261127k">
+  <link rel="stylesheet" href="/style.css?v=20261127s">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -244,17 +244,16 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261127k"></script>
-  <script src="/cards.js?v=20261127k"></script>
+  <script src="/shared.js?v=20261127s"></script>
+  <script src="/cards.js?v=20261127s"></script>
   <script>
     // The list on this page is server-rendered: one page of open calls with its
-    // page links. Searching (typing, a suggestion, or arriving with ?q= or
-    // ?chip=) swaps in results from the search index, RESULTS_STEP at a time;
-    // clearing the search puts this page's list back.
+    // page links. Typed words go to /search/ (Enter, or the dropdown's first row); an organiser or a country without
+    // a page of its own (a suggestion, or arriving with ?chip=) swaps in results from the search index, RESULTS_STEP
+    // at a time; removing the chip puts this page's list back.
     var allCalls = null;
     var listEl = document.getElementById('callsList');
     var pageListHtml = listEl.innerHTML;
-    var currentSearch = '';
     var activeChips = [];
     var selectedSuggestion = -1;
     var RESULTS_STEP = 30;
@@ -287,10 +286,8 @@
           withIndex(function() { addChip({ type: chipType, value: chipValue, label: chipLabel }); });
         }
       } else if (qParam) {
-        document.getElementById('searchInput').value = qParam;
-        currentSearch = qParam.toLowerCase().trim();
-        document.getElementById('searchClear').classList.add('visible');
-        withIndex(renderResults);
+        // Searches have their own page now; an old /?q= link lands there.
+        window.location.replace('/search/?q=' + encodeURIComponent(qParam));
       }
     }
 
@@ -345,7 +342,6 @@
       if (activeChips.some(function(c) { return c.type === chip.type && c.value === chip.value; })) return;
       activeChips.push(chip);
       document.getElementById('searchInput').value = '';
-      currentSearch = '';
       document.getElementById('searchClear').classList.remove('visible');
       renderChips();
       hideDropdown();
@@ -399,44 +395,22 @@
         }
       });
 
-      // Free-text search: every typed word is in the call's text (searchText), commas, full stops and apostrophes aside.
-      if (currentSearch) {
-        var tokens = currentSearch.split(/\s+/).filter(Boolean).map(function(token) { return token.replace(/[,.']/g, ''); });
-        list = list.filter(function(c) {
-          return tokens.every(function(token) { return c._text.includes(token); });
-        });
-      }
 
       return list;
     }
 
-    // The text a call is found by, lowercased, without commas, full stops and apostrophes: its fields, plus the full
-    // names of a US state or a country written short in its location. (A word found in the text with them is also found
-    // in it without them, so matching here alone finds exactly what matching both ways found.)
-    function searchText(c) {
-      var parts = [c.title, c.org, c.summary, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
-      if (c.location) {
-        c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
-          if (usStateNames[lp]) parts.push(usStateNames[lp]);
-          if (countryLongNames[lp]) parts.push(countryLongNames[lp]);
-        });
-      }
-      return parts.join(' ').toLowerCase().replace(/[,.']/g, '');
-    }
-
-    // The calls with their deadline state (processCall) and search text, made once after the index loads, not on every
-    // keystroke. The deadline state counts calendar days, so it is remade only when the date turns (a tab left open
-    // past midnight).
+    // The calls with their deadline state (processCall), made once after the index loads, not on every change.
+    // The deadline state counts calendar days, so it is remade only when the date turns (a tab left open past midnight).
     var preparedCalls = null, preparedDay = '';
     function prepared() {
       var now = new Date(), day = now.toDateString();
-      if (!preparedCalls) preparedCalls = allCalls.map(function(c) { var p = processCall(c, now); p._text = searchText(c); return p; });
+      if (!preparedCalls) preparedCalls = allCalls.map(function(c) { return processCall(c, now); });
       else if (day !== preparedDay) preparedCalls.forEach(function(p) { Object.assign(p, computeUrgency(p, now)); });
       preparedDay = day;
       return preparedCalls;
     }
 
-    function isSearching() { return !!currentSearch || activeChips.length > 0; }
+    function isSearching() { return activeChips.length > 0; }
 
     // Open matches first (soonest deadline), then closed ones (newest first).
     function renderResults() {
@@ -468,8 +442,8 @@
         var isClosed = i >= results.openCount;
         if (i === 0 && !isClosed) html += '<h3 class="section-header">Accepting submissions (' + results.openCount + ')</h3>';
         if (i === results.openCount) {
-          if (i === 0) html += '<p class="empty-state">No open calls found for this.<a href="/browse/">Browse all calls</a></p>';
-          html += '<h3 class="section-header">Past calls (' + (results.length - results.openCount) + ')</h3>';
+          if (i === 0) html += '<p class="empty-state">None accepting submissions.<a href="/browse/">Browse all calls</a></p>';
+          html += '<h3 class="section-header">Closed (' + (results.length - results.openCount) + ')</h3>';
         }
         html += renderCard(results[i], 'h4');
       }
@@ -500,19 +474,15 @@
         });
       });
 
-      // Debounce search work so mobile typing isn't blocked: cheap UI updates
-      // happen on every keystroke, suggestions and results after 150ms idle.
+      // Debounce the suggestions so mobile typing isn't blocked: the clear button follows every keystroke, the
+      // suggestions come 150ms after typing stops.
       var searchInputTimer = null;
       searchInput.addEventListener('input', function(e) {
         var val = e.target.value;
         searchClear.classList.toggle('visible', val.length > 0);
         if (searchInputTimer) clearTimeout(searchInputTimer);
         searchInputTimer = setTimeout(function() {
-          withIndex(function() {
-            currentSearch = val.toLowerCase().trim();
-            showDropdown(buildSuggestions(val));
-            renderResults();
-          });
+          withIndex(function() { showDropdown(buildSuggestions(val)); });
         }, 150);
       });
 
@@ -527,6 +497,12 @@
           return;
         }
         var dd = document.getElementById('searchDropdown');
+        if (e.key === 'Enter' && (dd.style.display === 'none' || selectedSuggestion < 0)) {
+          // Enter on the typed words searches every call for them (/search/).
+          var typed = searchInput.value.trim();
+          if (typed) { e.preventDefault(); window.location.href = '/search/?q=' + encodeURIComponent(typed); }
+          return;
+        }
         if (dd.style.display === 'none') return;
         var items = dd.querySelectorAll('.search-suggestion');
         if (!items.length) return;
@@ -549,10 +525,8 @@
 
       searchClear.addEventListener('click', function() {
         searchInput.value = '';
-        currentSearch = '';
         searchClear.classList.remove('visible');
         hideDropdown();
-        renderResults();
       });
 
       // Close dropdown on outside click
