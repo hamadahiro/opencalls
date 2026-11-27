@@ -211,7 +211,7 @@ function chipToUrl(type, value) {
 
 // ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ["online","united-states","united-kingdom","qatar","italy","poland","bulgaria","spain","france","germany","japan","northern-ireland","canada","greece","singapore","sweden","netherlands","norway","czech-republic","portugal","hungary","ukraine","argentina","morocco","austria","switzerland","south-africa","lithuania","denmark","india","brazil","ireland","australia","north-macedonia","iceland","croatia","estonia","romania","malaysia","russia","bosnia-and-herzegovina","finland","belgium","israel","united-arab-emirates","slovakia","mexico","albania","malta","south-korea","cyprus","china","turkey","hong-kong","belarus","philippines","taiwan","serbia","tunisia","monaco","new-zealand","nepal","latvia","nigeria","slovenia","indonesia","luxembourg"];
-const SEARCH_INDEX_VERSION = 'cf8a56c6d7';
+const SEARCH_INDEX_VERSION = '65093a5570';
 // ==AUTO-GENERATED-END==
 
 // Search data, loaded once on first use: /search-index.js sets
