@@ -601,7 +601,7 @@ const HEADER = buildHeader();
 // The footer links are a <nav> like the header menu, so the same rules style both: size, colour, hover, and bold on the page
 // you are on (owner, 2026-11-25). The header's state script runs before the footer exists, so the footer marks its own link.
 // It must not start "(function(){var p=location": the build strips scripts that do (duplicate header scripts).
-const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/legal/">Legal</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
+const FOOTER_LINKS = `<nav class="footer-links" aria-label="Footer"><a href="/archive/">Archive</a><a href="/about/">About</a><a href="/legal/">Legal</a><a href="/feed.xml">RSS</a><a href="/submit/">Submit</a></nav>`;
 const FOOTER_STATE_SCRIPT = `<script>(function(){var h=location.pathname;if(h.slice(-1)!=='/')h+='/';if(h.indexOf('/archive/')===0)h='/archive/';[].forEach.call(document.querySelectorAll('.footer-links a'),function(a){a.classList.toggle('active',a.getAttribute('href')===h)})})()</script>`;
 const FOOTER = `<footer class="about-section" id="footer">
       <p class="disclaimer">Information is provided for convenience. Details may change. Always verify them on the official call website.</p>
@@ -2888,6 +2888,8 @@ console.log('  Submit page');
 
 // === Contact page (owner, 2026-11-27: "a new page, similar format to submit form page, but just for contacts, and it
 // should say that if they want to submit a call use submit form") ===
+// As quiet as possible (owner: "it should be there if someone really needs to get in touch but as little as possible"):
+// linked only from the Legal page's Contact section, not in the footer or the sitemap, noindex.
 // No address anywhere on the site: the form posts to the same Formspree form as /submit/ from this page's script (no
 // action attribute for bots to find), and Formspree mails it to the owner's Hide My Email address. `email` becomes the
 // reply address; `_subject` names it a contact message; `_gotcha` is Formspree's trap field — hidden from people, a bot
@@ -2896,7 +2898,7 @@ console.log('  Submit page');
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: 'Contact', description: 'Send a message to Monographica Open Calls. To send an open call, use the submit form.', canonical: `${SITE}/contact`, cssVersion })}
+  ${HEAD({ title: 'Contact', description: 'Send a message to Monographica Open Calls. To send an open call, use the submit form.', canonical: `${SITE}/contact`, cssVersion, robots: 'noindex, follow' })}
 </head>
 <body>
 
@@ -2959,7 +2961,6 @@ console.log('  Submit page');
 </body>
 </html>`;
   writeGenerated('contact/index.html', html);
-  sitemapEntries.push(`${SITE}/contact`);
   console.log('  Contact page');
 }
 
@@ -3377,7 +3378,6 @@ const allUrlsRaw = [`${SITE}/`, ...sitemapEntries.map(u => u.endsWith('/') ? u :
 const STRUCTURAL_EXACT = new Set([
   `${SITE}/`,
   `${SITE}/legal/`,
-  `${SITE}/contact/`,
   `${SITE}/about/`,
   `${SITE}/browse/`,
   `${SITE}/categories/`,
