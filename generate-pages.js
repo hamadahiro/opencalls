@@ -3171,14 +3171,41 @@ const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'catego
 // SEARCH_JURY: the people with a juror page, for the dropdown's Jury group (Y4): [label, slug, other spellings?].
 // No call list and no count: the row only opens the page.
 const searchJuryRows = juryData.people.map(p => { const other = (p.names || []).filter(n => n !== p.name); return other.length ? [juryLabel(p), p.slug, other] : [juryLabel(p), p.slug]; });
-const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(data.calls.map(c => {
+const searchRows = data.calls.map(c => {
   const row = {};
   SEARCH_FIELDS.forEach(k => { if (c[k] !== undefined && c[k] !== null) row[k] = c[k]; });
   return row;
-})) + ';\nwindow.SEARCH_JURY = ' + JSON.stringify(searchJuryRows) + ';\n';
+});
+const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(searchRows) + ';\nwindow.SEARCH_JURY = ' + JSON.stringify(searchJuryRows) + ';\n';
 fs.writeFileSync('search-index.js', searchIndexJs);
 const searchIndexVersion = require('crypto').createHash('sha1').update(searchIndexJs).digest('hex').slice(0, 10);
 console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length} bytes`);
+
+// SEARCH GATE — /search/ runs search-core.js over these same rows, so what passes here is what readers get. Every 40th
+// call (all of them take 47 s; measured 2026-11-27: 0 misses in 2,624): it is in the first 10 results for its own title
+// and organiser, and a word of its description that few calls use finds it with that word marked in the quoted sentence.
+{
+  const SearchCore = require('./search-core.js');
+  const engine = SearchCore.create(searchRows, shared);
+  const df = {};
+  engine.docs.forEach(d => new Set(d.n.description.trim().split(' ')).forEach(w => { df[w] = (df[w] || 0) + 1; }));
+  const bad = [];
+  let checked = 0;
+  engine.docs.forEach((d, i) => {
+    if (i % 40) return;
+    checked++;
+    const r = d.row;
+    const byTitle = engine.search(r.title + (r.orgInTitle ? '' : ' ' + (r.org || ''))).results.sort((a, b) => b.score - a.score).slice(0, 10);
+    if (!byTitle.some(x => x.row === r)) bad.push(`${r.slug}: not in the first 10 results for its own title`);
+    const w = d.n.description.trim().split(' ').find(x => x.length > 5 && /^[a-z]+$/.test(x) && df[x] <= 3);
+    if (!w) return;
+    const out = engine.search(w), hit = out.results.find(x => x.row === r);
+    if (!hit) bad.push(`${r.slug}: "${w}" from its description does not find it`);
+    else if (!/class="search-hit"/.test(SearchCore.snippet(hit, out.groups))) bad.push(`${r.slug}: "${w}" is not marked in its quoted sentence`);
+  });
+  if (bad.length) { console.error(`\n❌ SEARCH GATE: ${bad.length} failure(s) in ${checked} calls:\n  ` + bad.slice(0, 10).join('\n  ')); process.exit(1); }
+  console.log(`  Search gate: ${checked} calls found by their title, and by a word of their description, marked where it is quoted`);
+}
 
 // Update page lists in cards.js (between markers) — only include actually created pages
 // Only build-DERIVED data (which pages actually got generated) is injected.

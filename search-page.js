@@ -71,7 +71,7 @@
     results = open.concat(past);
     openCount = open.length;
     if (!results.length) {
-      var fix = out.suggestion ? ' Did you mean <a href="/search/?q=' + encodeURIComponent(out.suggestion) + '">' + esc(out.suggestion) + '</a>?' : '';
+      var fix = out.suggestion ? '<a href="/search/?q=' + encodeURIComponent(out.suggestion) + '">Did you mean “' + esc(out.suggestion) + '”?</a>' : '';
       list.innerHTML = '<p class="empty-state">No calls match “' + esc(q) + '”.' + fix + '<a href="/browse/">Browse all calls</a></p>';
       return;
     }
