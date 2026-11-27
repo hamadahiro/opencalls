@@ -1625,6 +1625,19 @@ a.filter-btn {
   padding-top: 32px;
 }
 
+/* "Did you mean residency?" over the results of the corrected words: a line of the page's serif text, the word a link. */
+.search-correction {
+  font-size: var(--fs-body);
+  font-family: 'Source Serif 4', serif;
+  line-height: 32px;
+  color: var(--text-body);
+  padding-top: 32px;
+}
+
+.search-correction + .section-header {
+  padding-top: 24px;
+}
+
 /* On phones the search box is the page itself: always shown under the header, no search icon. */
 @media (max-width: 640px) {
   .page-search .global-search {

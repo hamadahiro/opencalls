@@ -52,7 +52,13 @@
     list.innerHTML = '';
     results = []; openCount = 0; shown = 0;
     if (!q) return;
-    var out = engine.search(q), t = now();
+    // A misspelt word (no call has every word, and a correction finds them all): the results of the corrected words,
+    // under "Did you mean …?", as search engines do (owner, 2026-11-27). Otherwise the typed words' own results.
+    var out = engine.search(q), t = now(), corrected = null;
+    if ((out.partial || !out.results.length) && out.suggestion) {
+      var alt = engine.search(out.suggestion);
+      if (alt.results.length && !alt.partial) { corrected = out.suggestion; out = alt; }
+    }
     groups = out.groups;
     var open = [], past = [];
     out.results.forEach(function (r) {
@@ -69,6 +75,7 @@
     past.sort(function (a, b) { return b.score - a.score || b.call.deadlineDate - a.call.deadlineDate; });
     results = open.concat(past);
     openCount = open.length;
+    if (corrected) list.innerHTML = '<p class="search-correction">Did you mean <a href="/search/?q=' + encodeURIComponent(corrected) + '">' + esc(corrected) + '</a>?</p>';
     if (!results.length) {
       var fix = out.suggestion ? '<a href="/search/?q=' + encodeURIComponent(out.suggestion) + '">Did you mean “' + esc(out.suggestion) + '”?</a>' : '';
       list.innerHTML = '<p class="empty-state">No calls match “' + esc(q) + '”.' + fix + '<a href="/browse/">Browse all calls</a></p>';

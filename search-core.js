@@ -142,31 +142,35 @@
       return vocab;
     }
 
-    // Edit distance, stopping early once it passes max.
+    // Edit distance: a letter added, dropped, changed, or two neighbours swapped ("grnat" → "grant") count one each.
+    // Stops early once every way is past max (a row's smallest value never falls in the rows after it).
     function distance(a, b, max) {
       if (Math.abs(a.length - b.length) > max) return max + 1;
-      var prev = [], cur = [], i, j;
+      var pp = null, prev = [], cur, i, j;
       for (j = 0; j <= b.length; j++) prev[j] = j;
       for (i = 1; i <= a.length; i++) {
         cur = [i]; var lo = i;
         for (j = 1; j <= b.length; j++) {
-          cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-          lo = Math.min(lo, cur[j]);
+          var v = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+          if (pp && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, pp[j - 2] + 1);
+          cur[j] = v;
+          if (v < lo) lo = v;
         }
         if (lo > max) return max + 1;
-        prev = cur;
+        pp = prev; prev = cur;
       }
       return prev[b.length];
     }
-    // The word most calls use within one or two letters of a word that found nothing ("residancy" → "residency").
+    // The calls' word nearest to a word that found nothing, one letter off (two in words of 8 letters or more); among
+    // equally near words, the one most calls use ("residancy" → "residency").
     function correct(w) {
       if (w.length < 4) return null;
-      var max = w.length >= 8 ? 2 : 1, v = vocabulary(), best = null, bestN = 0;
+      var max = w.length >= 8 ? 2 : 1, v = vocabulary(), best = null, bestD = max + 1, bestN = 0;
       for (var k in v) {
-        if (v[k] <= bestN) continue;
-        if (distance(w, k, max) <= max) { best = k; bestN = v[k]; }
+        var d = distance(w, k, max);
+        if (d < bestD || (d === bestD && d <= max && v[k] > bestN)) { best = k; bestD = d; bestN = v[k]; }
       }
-      return best;
+      return bestD <= max ? best : null;
     }
 
     // Finds the calls for a query. Every group must be found (all the words); when no call has them all, the calls with
