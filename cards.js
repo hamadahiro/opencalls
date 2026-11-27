@@ -261,8 +261,8 @@ function getLocationLink(location, country) {
 // Central timezone logic — a call is open until the end of its deadline day
 // (local time). Urgency class/label/slug come from the shared computeUrgency()
 // in shared.js (the single contract the server static render also uses).
-function processCall(call) {
-  return { ...call, ...computeUrgency(call, new Date()) };
+function processCall(call, now) {
+  return { ...call, ...computeUrgency(call, now || new Date()) };
 }
 
 // Maps a free-text requirements string to a single browse bucket slug.

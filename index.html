@@ -400,27 +400,41 @@
         }
       });
 
-      // Free-text search
+      // Free-text search: every typed word is in the call's text (searchText), commas, full stops and apostrophes aside.
       if (currentSearch) {
-        var tokens = currentSearch.split(/\s+/).filter(Boolean);
+        var tokens = currentSearch.split(/\s+/).filter(Boolean).map(function(token) { return token.replace(/[,.']/g, ''); });
         list = list.filter(function(c) {
-          var parts = [c.title, c.org, c.summary, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
-          if (c.location) {
-            c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
-              if (usStateNames[lp]) parts.push(usStateNames[lp]);
-              if (countryLongNames[lp]) parts.push(countryLongNames[lp]);
-            });
-          }
-          var text = parts.join(' ').toLowerCase();
-          var textNorm = text.replace(/[,.']/g, '');
-          return tokens.every(function(token) {
-            if (text.includes(token)) return true;
-            return textNorm.includes(token.replace(/[,.']/g, ''));
-          });
+          return tokens.every(function(token) { return c._text.includes(token); });
         });
       }
 
       return list;
+    }
+
+    // The text a call is found by, lowercased, without commas, full stops and apostrophes: its fields, plus the full
+    // names of a US state or a country written short in its location. (A word found in the text with them is also found
+    // in it without them, so matching here alone finds exactly what matching both ways found.)
+    function searchText(c) {
+      var parts = [c.title, c.org, c.summary, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
+      if (c.location) {
+        c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
+          if (usStateNames[lp]) parts.push(usStateNames[lp]);
+          if (countryLongNames[lp]) parts.push(countryLongNames[lp]);
+        });
+      }
+      return parts.join(' ').toLowerCase().replace(/[,.']/g, '');
+    }
+
+    // The calls with their deadline state (processCall) and search text, made once after the index loads, not on every
+    // keystroke. The deadline state counts calendar days, so it is remade only when the date turns (a tab left open
+    // past midnight).
+    var preparedCalls = null, preparedDay = '';
+    function prepared() {
+      var now = new Date(), day = now.toDateString();
+      if (!preparedCalls) preparedCalls = allCalls.map(function(c) { var p = processCall(c, now); p._text = searchText(c); return p; });
+      else if (day !== preparedDay) preparedCalls.forEach(function(p) { Object.assign(p, computeUrgency(p, now)); });
+      preparedDay = day;
+      return preparedCalls;
     }
 
     function isSearching() { return !!currentSearch || activeChips.length > 0; }
@@ -428,7 +442,7 @@
     // Open matches first (soonest deadline), then closed ones (newest first).
     function renderResults() {
       if (!isSearching()) { listEl.innerHTML = pageListHtml; return; }
-      var processed = allCalls.map(processCall);
+      var processed = prepared();
       var open = applySearchAndFilters(processed.filter(function(c) { return c.urgencyClass !== 'closed'; }));
       var closed = applySearchAndFilters(processed.filter(function(c) { return c.urgencyClass === 'closed'; }));
       open.sort(function(a, b) {
