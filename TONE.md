@@ -97,7 +97,10 @@ or a waiver), `$30 fee*` (additional fees), `Paid entry` (amount not stated). Th
 **jury** — the people the organizer's own page names as selecting for THIS call, this edition, one entry each:
 `Name, Role, Organisation`, the role as that page states it for this call.
 - A name goes in only when the page shows the person selecting for this edition. A jury of an earlier edition, "to be
-  announced", "will be revealed soon": leave jury empty.
+  announced", "will be revealed soon": leave jury empty. The organizer's own jury page read while the call is open
+  ("Current jury", "Our judges") is this edition's jury unless it names another edition (owner 2026-11-27).
+- A name already on a call is never removed for lack of a year or an undated jury page (owner 2026-11-27: "dont
+  remove", "keep and link"); it leaves only when the organizer's page for this edition names a different jury.
 - A curator, reviewer, editor or partner is not jury unless the page says they select, judge or choose the work.
 - A group stays as written (`Panel of three curators`). No jury named: no jury field.
 
