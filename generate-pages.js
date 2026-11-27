@@ -3127,18 +3127,10 @@ console.log(`  Browse directory page`);
 // Add index pages to sitemap
 sitemapEntries.push(`${SITE}/categories`);
 
-// Build state pages map for cards.js
-const statePageMap = {};
-Object.keys(stateCounts).forEach(state => {
-  // A state page is generated for every state that appears; link to all of them
-  // (noindex pages included). The index threshold only governs SEO, not links.
-  const fullName = usStateNames[state] || state;
-  statePageMap[state] = 'united-states/' + slugify(fullName);
-});
 
 // === Search index ===
 // What search needs and nothing more: the fields the suggestion counts, the
-// free-text match and the result cards read. ~1 MB against data.json's ~36 MB,
+// free-text match and the result cards read. ~4.5 MB (~1.5 MB compressed) against data.json's ~45 MB,
 // and a .js file because Cloudflare caches scripts but not JSON. Loaded by
 // loadSearchIndex() in cards.js the first time someone searches.
 // resultsDate: a closed card in search says when results come (shared.js renderCardBody, owner 2026-11-26).
@@ -3161,7 +3153,6 @@ console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length}
 // All shared LOGIC + static maps live in shared.js, loaded before cards.js.
 const pageListsBlock = `// ==AUTO-GENERATED-START== (do not edit manually)
 const countryPages = ${JSON.stringify(linkedCountrySlugs)};
-const statePages = ${JSON.stringify(statePageMap)};
 const SEARCH_INDEX_VERSION = '${searchIndexVersion}';
 // ==AUTO-GENERATED-END==`;
 let cardsJs = fs.readFileSync('cards.js', 'utf8');
