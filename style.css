@@ -428,6 +428,9 @@ main {
   background: var(--search-hover);
 }
 
+/* The clear button's × is a drawn 14 px cross, not the "×" character: each browser drew the character in its own
+   button font, and Safari's Helvetica sat it 2.9 px below the bar's middle (owner, 2026-11-27: "x is not perfectly
+   aligned"). Drawn, it is centred the same everywhere; the padding keeps the old 36 px tap height. */
 .search-clear {
   display: none;
   position: absolute;
@@ -436,11 +439,14 @@ main {
   transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: 28px;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 4px 8px;
-  line-height: 1;
+  padding: 11px 8px;
+  line-height: 0;
+}
+
+.search-clear svg {
+  display: block;
 }
 
 .search-clear.visible {
@@ -1647,6 +1653,11 @@ a.filter-btn {
 
   .page-search .search-toggle {
     display: none;
+  }
+
+  /* The × sits on the bar's middle: half of this page's 8 px top padding (the rule above takes half of 16 px). */
+  .page-search .global-search .search-clear {
+    margin-top: 4px;
   }
 }
 
