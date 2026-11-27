@@ -11,6 +11,7 @@
       "summaryCalls": [
         "abandoned-photography-exhibit-dusk-photo-gallery",
         "black-and-white-decode-gallery",
+        "black-and-white-dusk-gallery",
         "blue-photography-exhibit-decode-gallery",
         "botanical-photography-exhibit-dusk-photo-gallery",
         "city-photography-exhibit-dusk-photo-gallery",
@@ -18,10 +19,12 @@
         "color-dusk-gallery",
         "color-photography-exhibit-decode-gallery",
         "creatures-dusk-gallery",
+        "darkness-dusk-gallery",
         "dodho-magazine-37",
         "endless-summer-photography-exhibit-decode-gallery",
         "home-photography-exhibit-decode-gallery",
         "human-dusk-gallery",
+        "red-photography-exhibit-dusk-photo-gallery",
         "self-portrait-photography-exhibit-decode-gallery",
         "southwest-artist-dusk-gallery",
         "southwest-photography-exhibit-decode-gallery",
@@ -255,7 +258,8 @@
       "summary": "Juror for the reFocus Awards, listed as an editor at Rizzoli.",
       "summaryCalls": [
         "refocus-awards-black-and-white-photo-contest",
-        "refocus-awards-color-photography-contest"
+        "refocus-awards-color-photography-contest",
+        "refocus-awards-world-photo-annual-2026"
       ]
     },
     {
@@ -341,7 +345,8 @@
       "summary": "Juror for the reFocus Awards, listed as Creative Director of HTSI Financial Times.",
       "summaryCalls": [
         "refocus-awards-black-and-white-photo-contest",
-        "refocus-awards-color-photography-contest"
+        "refocus-awards-color-photography-contest",
+        "refocus-awards-world-photo-annual-2026"
       ]
     },
     {
@@ -2341,7 +2346,8 @@
       "summary": "Juror for the reFocus Awards.",
       "summaryCalls": [
         "refocus-awards-black-and-white-photo-contest",
-        "refocus-awards-color-photography-contest"
+        "refocus-awards-color-photography-contest",
+        "refocus-awards-world-photo-annual-2026"
       ]
     },
     {
@@ -2384,7 +2390,8 @@
       "summary": "Juror for the reFocus Awards, listed as a photo editor at The New York Times.",
       "summaryCalls": [
         "refocus-awards-black-and-white-photo-contest",
-        "refocus-awards-color-photography-contest"
+        "refocus-awards-color-photography-contest",
+        "refocus-awards-world-photo-annual-2026"
       ]
     },
     {
@@ -2410,7 +2417,8 @@
       "summary": "Juror for the reFocus Awards, listed as Photo Director of Robb Report.",
       "summaryCalls": [
         "refocus-awards-black-and-white-photo-contest",
-        "refocus-awards-color-photography-contest"
+        "refocus-awards-color-photography-contest",
+        "refocus-awards-world-photo-annual-2026"
       ]
     },
     {
@@ -2423,7 +2431,8 @@
       "summary": "Juror for the reFocus Awards.",
       "summaryCalls": [
         "refocus-awards-black-and-white-photo-contest",
-        "refocus-awards-color-photography-contest"
+        "refocus-awards-color-photography-contest",
+        "refocus-awards-world-photo-annual-2026"
       ]
     },
     {
@@ -6097,6 +6106,11 @@
       "name": "Filippo Venturi",
       "names": [
         "Filippo Venturi"
+      ],
+      "summary": "Juror for the Annual Photography Awards and the URBAN Photo Awards, listed as a Sony World Photography Award winner and FIAF Author.",
+      "summaryCalls": [
+        "annual-photography-awards-2026",
+        "urban-photo-awards-2026"
       ]
     },
     {
@@ -6902,6 +6916,11 @@
       "name": "Wesley Verhoeve",
       "names": [
         "Wesley Verhoeve"
+      ],
+      "summary": "Juror for Open Doors Gallery and the URBAN Photo Awards, listed as a photographer, curator and writer.",
+      "summaryCalls": [
+        "od-photo-prize-2026-open-doors-gallery",
+        "urban-photo-awards-2026"
       ]
     },
     {
@@ -10646,6 +10665,11 @@
       "name": "Citlali Medal",
       "names": [
         "Citlali Medal"
+      ],
+      "summary": "Juror for the International Photography Festivals Association and the Paris International Street Photo Awards.",
+      "summaryCalls": [
+        "ipfa-award-2026-international-photography-festivals-association",
+        "paris-international-street-photo-awards-2026"
       ]
     },
     {
@@ -11851,6 +11875,11 @@
       "name": "Siegfried Hansen",
       "names": [
         "Siegfried Hansen"
+      ],
+      "summary": "Juror for the World Street Photo Awards and the URBAN Photo Awards, listed as a street photographer.",
+      "summaryCalls": [
+        "urban-photo-awards-2026",
+        "world-street-photo-awards-2026"
       ]
     },
     {
@@ -13669,6 +13698,11 @@
       "name": "Murat Harmanlikli",
       "names": [
         "Murat Harmanlikli"
+      ],
+      "summary": "Juror for Street Macadam and the URBAN Photo Awards, listed as a street and portrait photographer.",
+      "summaryCalls": [
+        "macadam-b-w-awards-2027-street-macadam",
+        "urban-photo-awards-2026"
       ]
     },
     {
