@@ -49,6 +49,8 @@ const shortCountry = {
 const countrySlugs = {
   'USA': 'united-states', 'UK': 'united-kingdom', 'UAE': 'united-arab-emirates'
 };
+// The country slot's short forms spelled out, for search (cards.js suggestions and chips, the home search).
+const countryLongNames = { USA: 'United States', UK: 'United Kingdom', UAE: 'United Arab Emirates' };
 
 // Canonical set of accepted values for the country slot (the last comma part of
 // a location). The build validates every location's country against this set, so

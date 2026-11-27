@@ -17,9 +17,7 @@ function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.f
 //   Categories group from the result (home page has category buttons above the
 //   search bar so categories there would be redundant).
 function getOpenCallsFromArray(calls) {
-  var now = new Date();
-  var today = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-  return calls.filter(function(c) { return c.deadline === 'Continuous' || c.deadline >= today; });
+  return calls.filter(function(c) { return isCallOpen(c.deadline); });
 }
 function buildSearchSuggestions(allCalls, query, opts) {
   opts = opts || {};
@@ -50,9 +48,8 @@ function buildSearchSuggestions(allCalls, query, opts) {
     var country = parts[parts.length - 1].trim();
     if (country) countryCounts[country] = (countryCounts[country] || 0) + 1;
   });
-  var countryExpand = { USA: 'United States', UK: 'United Kingdom', UAE: 'United Arab Emirates' };
   var countryItems = Object.entries(countryCounts).map(function(e) {
-    var display = countryExpand[e[0]] || e[0];
+    var display = countryLongNames[e[0]] || e[0];
     return { type: 'country', value: e[0], label: display, count: e[1] };
   }).filter(function(item) {
     return (!q || item.label.toLowerCase().includes(q)) && notExcluded(item.type, item.value);
@@ -212,8 +209,7 @@ function chipToUrl(type, value) {
   if (type === 'prize') return '/prize/' + value + '/';
   if (type === 'fee') return value === 'free' ? '/fees/free/' : value === 'free-entry' ? '/fees/free-entry/' : '/fees/entry-fee/';
   if (type === 'country') {
-    var expand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
-    var slug = (expand[value] || value).toLowerCase().replace(/\s+/g, '-');
+    var slug = (countryLongNames[value] || value).toLowerCase().replace(/\s+/g, '-');
     if (typeof countryPages !== 'undefined' && countryPages.includes(slug)) return '/' + slug + '/';
   }
   return null;

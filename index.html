@@ -280,11 +280,10 @@
           var chipUrl = chipToUrl(chipType, chipValue);
           if (chipUrl) { window.location.href = chipUrl; return; }
           var chipLabel = chipValue;
-          var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
           if (chipType === 'category' && categoryLabel[chipValue]) chipLabel = categoryLabel[chipValue];
           else if (chipType === 'eligibility' && eligibilityLabel[chipValue]) chipLabel = eligibilityLabel[chipValue];
           else if (chipType === 'prize' && prizeCategoryLabel[chipValue]) chipLabel = prizeCategoryLabel[chipValue];
-          else if (chipType === 'country' && countryExpand[chipValue]) chipLabel = countryExpand[chipValue];
+          else if (chipType === 'country' && countryLongNames[chipValue]) chipLabel = countryLongNames[chipValue];
           else if (chipType === 'fee') chipLabel = chipValue === 'free' ? 'Free' : chipValue === 'free-entry' ? 'Free entry*' : 'Paid';
           withIndex(function() { addChip({ type: chipType, value: chipValue, label: chipLabel }); });
         }
@@ -403,15 +402,13 @@
 
       // Free-text search
       if (currentSearch) {
-        var stateMap = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
-        var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
         var tokens = currentSearch.split(/\s+/).filter(Boolean);
         list = list.filter(function(c) {
           var parts = [c.title, c.org, c.summary, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
           if (c.location) {
             c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
-              if (stateMap[lp]) parts.push(stateMap[lp]);
-              if (countryExpand[lp]) parts.push(countryExpand[lp]);
+              if (usStateNames[lp]) parts.push(usStateNames[lp]);
+              if (countryLongNames[lp]) parts.push(countryLongNames[lp]);
             });
           }
           var text = parts.join(' ').toLowerCase();
