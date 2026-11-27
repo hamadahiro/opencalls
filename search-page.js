@@ -1,5 +1,6 @@
 // /search/ — the results page. The query lives in the address (/search/?q=…), so a search can be shared, reloaded and
-// returned to with Back. Results follow the box as you type; the address follows too, without adding history steps.
+// returned to with Back. The results are those of the address's query only: typing in the box changes the suggestions
+// (search.js, as on every page), and Enter or a suggestion opens a new results page (owner, 2026-11-27).
 // Finding, ordering and the quoted sentences are search-core.js; the cards are the site's own (shared.js, cards.js).
 (function () {
   var input = document.getElementById('globalSearchInput');
@@ -8,7 +9,7 @@
   if (!input || !list || !window.SearchCore) return;
 
   var STEP = 30;
-  var engine = null, groups = [], results = [], openCount = 0, shown = 0, lastQuery = null;
+  var engine = null, groups = [], results = [], openCount = 0, shown = 0;
   var TITLE = document.title;
 
   function now() { return new Date(); }
@@ -47,8 +48,6 @@
   // the soonest deadline for the first and the latest for the closed.
   function run(q) {
     q = q.trim();
-    if (q === lastQuery) return;
-    lastQuery = q;
     document.title = q ? q + ' – ' + TITLE : TITLE;
     list.innerHTML = '';
     results = []; openCount = 0; shown = 0;
@@ -78,34 +77,12 @@
     showMore();
   }
 
-  function setAddress(q) {
-    var url = q.trim() ? '/search/?q=' + encodeURIComponent(q.trim()) : '/search/';
-    if (location.pathname + location.search !== url) history.replaceState(null, '', url);
-  }
-
-  var timer = null;
-  input.addEventListener('input', function () {
-    clear.classList.toggle('visible', input.value.length > 0);
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(function () { setAddress(input.value); if (engine) run(input.value); }, 120);
-  });
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { e.preventDefault(); setAddress(input.value); if (engine) run(input.value); input.blur(); }
-  });
-  clear.addEventListener('click', function () {
-    input.value = '';
-    clear.classList.remove('visible');
-    setAddress('');
-    if (engine) run('');
-    input.focus();
-  });
-
   var q = new URLSearchParams(location.search).get('q') || '';
   input.value = q;
   clear.classList.toggle('visible', q.length > 0);
   if (!q) input.focus();
   loadSearchIndex(function (rows) {
     engine = SearchCore.create(rows, { usStateNames: usStateNames, countryLongNames: countryLongNames, categoryLabel: categoryLabel, eligibilityLabel: eligibilityLabel });
-    run(input.value);
+    run(q);
   });
 })();

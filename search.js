@@ -2,8 +2,9 @@
 // Loads the search index on first use, shows suggestion dropdown, navigates to /search/?q= on search
 (function() {
   var searchWrap = document.getElementById('globalSearchWrap');
-  // /search/ runs its own box (search-page.js): results under it as you type, no suggestions over them.
-  if (!searchWrap || document.body.classList.contains('page-search')) return;
+  // The same box on /search/: typing changes only the suggestions; Enter or a row opens the new results (owner,
+  // 2026-11-27: results never change while you type, "that's not how any search engine works").
+  if (!searchWrap) return;
 
   var searchInput = document.getElementById('globalSearchInput');
   var searchClear = document.getElementById('globalSearchClear');
