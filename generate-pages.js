@@ -631,7 +631,7 @@ function collectionPageLd(name, description, url) {
 // === LISTING RULE (one rule, every listing page) ===
 // 1. A listing covers every call in its facet, split across pages — open calls
 //    on /x/ (soonest deadline first), past calls on /x/past/ (see PAGED LISTS).
-// 2. The hero says "N calls, M open." for the whole facet. The number shown
+// 2. The hero says "M accepting submissions, K closed." for the whole facet (statLine). The number shown
 //    next to the page in ANY index is what its first page lists: the open
 //    calls, or, when nothing is open, the past ones — listedCount().
 // 3. Robots/sitemap decisions still use the OPEN count only (a page of dead
@@ -649,9 +649,21 @@ function listedCount({ total, open }) {
 // The one-line count that every listing page prints under its title, so a
 // visitor arriving from an index sees the same number they clicked plus the
 // split. Deliberately uniform — no special-casing that could drift.
+// Owner 2026-11-27: "317 calls, 69 open" mixed "open call", what every listing is, with "open", taking entries. The
+// line says how many accept submissions and how many have closed, in the words the call pages use ("Submissions
+// closed"); a count of nought is left out. The Count gate reads it back (STAT_LINE_RE).
 function statLine({ total, open }) {
   if (!total) return '';
-  return `${total} call${total !== 1 ? 's' : ''}, ${open} open.`;
+  const parts = [];
+  if (open) parts.push(`${open} accepting submissions`);
+  if (total - open) parts.push(`${total - open} closed`);
+  return `${parts.join(', ')}.`;
+}
+const STAT_LINE_RE = /(?:^|\. )(?:(\d+) accepting submissions(?:, (\d+) closed)?|(\d+) closed)\.$/;
+function readStatLine(text) {
+  const m = String(text).trim().match(STAT_LINE_RE);
+  if (!m) return null;
+  return m[3] !== undefined ? { total: Number(m[3]), open: 0 } : { total: Number(m[1]) + Number(m[2] || 0), open: Number(m[1]) };
 }
 
 // Hero subtitle for a listing page: the page's prose (also its meta
@@ -2591,9 +2603,26 @@ const sortedMonths = Object.keys(monthGroups).sort((a, b) => {
   return (ga.year - gb.year) || (ga.month - gb.month);
 });
 
+// What a month holds, counted at each build from the calls its pages list (owner 2026-11-27: the old line, "Deadlines in
+// November 2026.", was "very generic"): its kinds of call, most common first, in the site's own categories; its
+// organizers; the countries of its calls (getCountry, as the country pages count them). "with deadlines in" is true of
+// past, current and future months alike. The Month gate below reads it back from the pages.
+const MONTH_KIND_WORDS = { exhibition: 'exhibitions', grant: 'grants', zine: 'publications', photography: 'competitions', residency: 'residencies', education: 'education programs' };
+function monthSentence(calls, label) {
+  const n = {};
+  calls.forEach(c => { const w = MONTH_KIND_WORDS[c.category] || 'open calls'; n[w] = (n[w] || 0) + 1; });
+  const kinds = Object.keys(n).sort((a, b) => (n[b] - n[a]) || a.localeCompare(b));
+  const orgs = new Set(calls.map(c => c.org).filter(Boolean)).size;
+  const countries = new Set(calls.map(c => getCountry(c.location)).filter(Boolean)).size;
+  const list = andList(kinds);
+  return `${list[0].toUpperCase()}${list.slice(1)} with deadlines in ${label}, from ${orgs} organizer${orgs !== 1 ? 's' : ''}` +
+    (countries ? ` across ${countries} countr${countries !== 1 ? 'ies' : 'y'}` : '') + '.';
+}
+
 sortedMonths.forEach(key => {
   const g = monthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
+  const sentence = monthSentence(g.calls, label);
   const stats = listStats(g.calls);
   const count = stats.total;
   const openCount = stats.open;
@@ -2603,14 +2632,14 @@ sortedMonths.forEach(key => {
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title: `Open Calls — ${label}`, description: `${count} open calls for artists with deadlines in ${label}. Photography competitions, exhibitions, grants, and residencies.`, canonical: `${SITE}/deadlines/${key}`, jsonLd: collectionPageLd(`Open Calls — ${label}`, `Open calls with deadlines in ${label}.`, `${SITE}/deadlines/${key}/`), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
+  ${HEAD({ title: `Open Calls — ${label}`, description: escapeHtml(sentence), canonical: `${SITE}/deadlines/${key}`, jsonLd: collectionPageLd(`Open Calls — ${label}`, `Open calls with deadlines in ${label}.`, `${SITE}/deadlines/${key}/`), breadcrumbs: [{ name: 'Deadlines', url: `${SITE}/deadlines/` }, { name: label, url: `${SITE}/deadlines/${key}/` }], cssVersion, robots: robotsDirective })}
 </head>
 <body>
 
   ${buildHeader()}
 
   <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, listSubtitle(`Deadlines in ${label}.`, stats))}
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/deadlines/">Deadlines</a></nav>', label, listSubtitle(sentence, stats))}
 
     <section class="calls-list" id="callsList">
 ${buildStaticCallList(g.calls, { skipSections: true })}
@@ -3735,6 +3764,37 @@ if (staleFiles.length) {
   console.warn('');
 }
 
+// === MONTH GATE: each month page's sentence is counted again from the calls its own pages list ===
+// (owner 2026-11-27: "build it if its gonna be accurate") — the subtitle on every page of the month and the meta
+// description must equal monthSentence() of exactly the calls those pages show, so the kinds, organizers and countries
+// can never say something the list does not.
+{
+  const errs = [];
+  const bySlug = new Map(data.calls.map(c => [c.slug || slugify(c.title), c]));
+  for (const key of sortedMonths) {
+    const g = monthGroups[key], label = `${MONTH_LABELS[g.month]} ${g.year}`;
+    const info = pagedListings.get(`/deadlines/${key}/`);
+    if (!info) { errs.push(`/deadlines/${key}/ was not written`); continue; }
+    const seen = new Set();
+    info.files.forEach(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].forEach(m => seen.add(m[1])));
+    const listed = [...seen].map(s => bySlug.get(s));
+    if (!listed.length || listed.some(c => !c)) { errs.push(`/deadlines/${key}/ lists ${listed.length} cards, ${listed.filter(c => !c).length} of them no call`); continue; }
+    const want = escapeHtml(monthSentence(listed, label));
+    for (const f of info.files) {
+      const sub = (fs.readFileSync(f, 'utf8').match(/<h2 class="subtitle">([\s\S]*?)<\/h2>/) || [])[1] || '';
+      if (!sub.startsWith(want + ' ')) errs.push(`${f}: subtitle "${sub.slice(0, 80)}" is not "${want.slice(0, 80)}", counted from the ${listed.length} calls its pages list`);
+    }
+    const meta = (fs.readFileSync(info.files[0], 'utf8').match(/<meta name="description" content="([^"]*)">/) || [])[1];
+    if (meta !== want) errs.push(`/deadlines/${key}/: meta description "${String(meta).slice(0, 80)}" is not the sentence`);
+  }
+  if (errs.length) {
+    console.error(`\nFATAL: MONTH PAGES — ${errs.length} problem(s):`);
+    errs.slice(0, 20).forEach(e => console.error('  - ' + e));
+    process.exit(1);
+  }
+  console.log(`  Month gate: ${sortedMonths.length} month pages, each sentence counted again from the calls its pages list`);
+}
+
 // === HARD GATE: every count must equal what the pages it points to list ===
 // The invariant the whole listing/index system exists to keep:
 //   hero "N calls, M open."  ==  the distinct calls across all of the listing's
@@ -3748,8 +3808,7 @@ if (staleFiles.length) {
   const cardSlugs = html => [...html.matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="([^"]+)"/g)].map(m => m[1]);
   const heroStat = html => {
     const hero = html.match(/class="subtitle">([\s\S]*?)<\/h2>/);
-    const stat = hero && hero[1].trim().match(/(\d+) calls?, (\d+) open\.$/);
-    return stat ? { total: Number(stat[1]), open: Number(stat[2]) } : null;
+    return hero ? readStatLine(hero[1]) : null;
   };
   const pagedFiles = new Set();
   const coverage = (label, files, expect) => {
@@ -3764,9 +3823,9 @@ if (staleFiles.length) {
     info.files.forEach(f => pagedFiles.add(f));
     let stat = heroStat(fs.readFileSync(info.files[0], 'utf8'));
     if (!stat && info.noHeroCounts) stat = { total: info.total, open: info.open };   // juror pages with counts switched off
-    if (!stat) { errs.push(`${url} has no "N calls, M open." line`); continue; }
+    if (!stat) { errs.push(`${url} has no "M accepting submissions, K closed." line`); continue; }
     if (info.noHeroCounts && heroStat(fs.readFileSync(info.files[0], 'utf8'))) errs.push(`${url} prints a count line with counts switched off`);
-    if (stat.total !== info.total || stat.open !== info.open) errs.push(`${url} says "${stat.total} calls, ${stat.open} open" but covers ${info.total}, ${info.open} open`);
+    if (stat.total !== info.total || stat.open !== info.open) errs.push(`${url} says ${stat.open} accepting submissions, ${stat.total - stat.open} closed, but covers ${info.open} open of ${info.total}`);
     listings.set(url, info.allCalls ? { ...stat, allCalls: true } : stat);
     coverage(url, info.files, info.total);
     if (info.allCalls) {
