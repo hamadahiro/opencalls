@@ -16800,6 +16800,7 @@
       "summary": "Juror for d'Art Center, listed as its Gallery Director.",
       "summaryCalls": [
         "contrive-dart-center",
+        "gilded-dart-center",
         "mythus-dart-center",
         "the-deets-dart-center",
         "tiny-but-mighty-dart-center"
@@ -24765,6 +24766,14 @@
       "name": "Lisa Saint",
       "names": [
         "Lisa Saint"
+      ]
+    },
+    {
+      "id": "p03672",
+      "slug": "aimee-shapiro",
+      "name": "Aimee Shapiro",
+      "names": [
+        "Aimee Shapiro"
       ]
     }
   ]
