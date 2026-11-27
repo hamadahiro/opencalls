@@ -395,7 +395,10 @@ function isOpen(c) { return c.deadline === 'Continuous' || c.deadline >= TODAY; 
   const KEYS = new Set(['id', 'slug', 'name', 'names', 'distinguish', 'formerSlugs', 'summary', 'summaryCalls']);
   const ids = new Set(), slugs = new Map();
   let retired = new Set();
-  try { retired = new Set(fs.readFileSync(`${JURY_PRIVATE_DIR}/retired-slugs.txt`, 'utf8').split('\n').map(s => s.trim()).filter(Boolean)); } catch (e) {}
+  // retired-slugs.txt is written by jury-prune.js on the first retirement: no file with the store present means none yet;
+  // no store at all means the G4 retired-slug check cannot run, and the build says so (as G10 does).
+  try { retired = new Set(fs.readFileSync(`${JURY_PRIVATE_DIR}/retired-slugs.txt`, 'utf8').split('\n').map(s => s.trim()).filter(Boolean)); }
+  catch (e) { if (!fs.existsSync(`${JURY_PRIVATE_DIR}/evidence.tsv`)) console.log(`  Jury retired-slug check: SKIPPED — ${JURY_PRIVATE_DIR}/ not linked into this checkout`); }
   const claim = (slug, who) => { if (slugs.has(slug)) errs.push(`G4 slug "${slug}" is used by ${slugs.get(slug)} and ${who}`); else slugs.set(slug, who); };
   juryData.people.forEach(p => {
     const who = `${p.id} (${p.name})`;
@@ -4100,10 +4103,15 @@ if (staleFiles.length) {
   // Public text never names a private file or carries a redaction placeholder (2026-11-27: a description read "by email
   // to [email in contacts.json]"): the artist loses the address and the page names the private store.
   const PRIVATE_REF = /\[(?:email|address|ip)\b[^\]]*\]|contacts\.json|outreach-log|evidence\.tsv|verify-state\.json|scripts\//i;
+  const JOB_VOICE = /\bre-measured\b|\bconsecutive pass(?:es)?\b|\bfetch rungs?\b|\bHTTP [1-5]\d\d\b|\b(?:resultsDate|submitUrl|verifyNote|juryPeople|orgInTitle|dateAdded)\b/i;
   const PUBLIC_FIELDS = ['title', 'org', 'summary', 'description', 'requirements', 'prize', 'location', 'fee', 'additionalFees', 'ai', 'submitVia'];
   for (const c of data.calls) {
     const texts = [...PUBLIC_FIELDS.map(f => c[f]), ...(Array.isArray(c.prose) ? c.prose : []), ...(Array.isArray(c.jury) ? c.jury : [])];
     if (texts.some(t => typeof t === 'string' && PRIVATE_REF.test(t))) bad.push(`${c.slug}: a public field names a private file or holds a placeholder ([email…], contacts.json, scripts/…) — write the organiser's published words`);
+    // The job's own working notes in public text (2026-11-27: "RE-MEASURED … THE FIFTH CONSECUTIVE PASS", "returns
+    // HTTP 404", "resultsDate is an explicit null"): only terms that are never anything else.
+    const voice = texts.map(t => typeof t === 'string' && t.match(JOB_VOICE)).find(Boolean);
+    if (voice) bad.push(`${c.slug}: public text says "${voice[0]}" — that is the job's own note; write what it means for the artist (TONE.md)`);
   }
   const priv = new Set();
   for (const f of ['scripts/outreach/contacts.json', 'scripts/outreach/outreach-log.json']) {
