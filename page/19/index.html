@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261126f">
+  <link rel="stylesheet" href="/style.css?v=20261127k">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -247,8 +247,8 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261126f"></script>
-  <script src="/cards.js?v=20261126f"></script>
+  <script src="/shared.js?v=20261127k"></script>
+  <script src="/cards.js?v=20261127k"></script>
   <script>
     // The list on this page is server-rendered: one page of open calls with its
     // page links. Searching (typing, a suggestion, or arriving with ?q= or
@@ -274,18 +274,18 @@
       var qParam = params.get('q');
       var chipParam = params.get('chip');
       if (chipParam) {
-        var parts = chipParam.split(':');
-        if (parts.length === 2) {
-          var chipType = parts[0], chipValue = parts[1];
+        // Split at the first colon only: an organiser's name may hold one ("Site:Brooklyn Gallery").
+        var colon = chipParam.indexOf(':');
+        if (colon !== -1) {
+          var chipType = chipParam.slice(0, colon), chipValue = chipParam.slice(colon + 1);
           // Redirect to dedicated page if one exists
           var chipUrl = chipToUrl(chipType, chipValue);
           if (chipUrl) { window.location.href = chipUrl; return; }
           var chipLabel = chipValue;
-          var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
           if (chipType === 'category' && categoryLabel[chipValue]) chipLabel = categoryLabel[chipValue];
           else if (chipType === 'eligibility' && eligibilityLabel[chipValue]) chipLabel = eligibilityLabel[chipValue];
           else if (chipType === 'prize' && prizeCategoryLabel[chipValue]) chipLabel = prizeCategoryLabel[chipValue];
-          else if (chipType === 'country' && countryExpand[chipValue]) chipLabel = countryExpand[chipValue];
+          else if (chipType === 'country' && countryLongNames[chipValue]) chipLabel = countryLongNames[chipValue];
           else if (chipType === 'fee') chipLabel = chipValue === 'free' ? 'Free' : chipValue === 'free-entry' ? 'Free entry*' : 'Paid';
           withIndex(function() { addChip({ type: chipType, value: chipValue, label: chipLabel }); });
         }
@@ -402,29 +402,41 @@
         }
       });
 
-      // Free-text search
+      // Free-text search: every typed word is in the call's text (searchText), commas, full stops and apostrophes aside.
       if (currentSearch) {
-        var stateMap = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
-        var countryExpand = {USA:'United States',UK:'United Kingdom',UAE:'United Arab Emirates'};
-        var tokens = currentSearch.split(/\s+/).filter(Boolean);
+        var tokens = currentSearch.split(/\s+/).filter(Boolean).map(function(token) { return token.replace(/[,.']/g, ''); });
         list = list.filter(function(c) {
-          var parts = [c.title, c.org, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
-          if (c.location) {
-            c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
-              if (stateMap[lp]) parts.push(stateMap[lp]);
-              if (countryExpand[lp]) parts.push(countryExpand[lp]);
-            });
-          }
-          var text = parts.join(' ').toLowerCase();
-          var textNorm = text.replace(/[,.']/g, '');
-          return tokens.every(function(token) {
-            if (text.includes(token)) return true;
-            return textNorm.includes(token.replace(/[,.']/g, ''));
-          });
+          return tokens.every(function(token) { return c._text.includes(token); });
         });
       }
 
       return list;
+    }
+
+    // The text a call is found by, lowercased, without commas, full stops and apostrophes: its fields, plus the full
+    // names of a US state or a country written short in its location. (A word found in the text with them is also found
+    // in it without them, so matching here alone finds exactly what matching both ways found.)
+    function searchText(c) {
+      var parts = [c.title, c.org, c.summary, c.description, c.location, c.fee, c.additionalFees, c.prize, c.category, (c.jury || []).join(' ')];
+      if (c.location) {
+        c.location.split(',').map(function(s) { return s.trim(); }).forEach(function(lp) {
+          if (usStateNames[lp]) parts.push(usStateNames[lp]);
+          if (countryLongNames[lp]) parts.push(countryLongNames[lp]);
+        });
+      }
+      return parts.join(' ').toLowerCase().replace(/[,.']/g, '');
+    }
+
+    // The calls with their deadline state (processCall) and search text, made once after the index loads, not on every
+    // keystroke. The deadline state counts calendar days, so it is remade only when the date turns (a tab left open
+    // past midnight).
+    var preparedCalls = null, preparedDay = '';
+    function prepared() {
+      var now = new Date(), day = now.toDateString();
+      if (!preparedCalls) preparedCalls = allCalls.map(function(c) { var p = processCall(c, now); p._text = searchText(c); return p; });
+      else if (day !== preparedDay) preparedCalls.forEach(function(p) { Object.assign(p, computeUrgency(p, now)); });
+      preparedDay = day;
+      return preparedCalls;
     }
 
     function isSearching() { return !!currentSearch || activeChips.length > 0; }
@@ -432,7 +444,7 @@
     // Open matches first (soonest deadline), then closed ones (newest first).
     function renderResults() {
       if (!isSearching()) { listEl.innerHTML = pageListHtml; return; }
-      var processed = allCalls.map(processCall);
+      var processed = prepared();
       var open = applySearchAndFilters(processed.filter(function(c) { return c.urgencyClass !== 'closed'; }));
       var closed = applySearchAndFilters(processed.filter(function(c) { return c.urgencyClass === 'closed'; }));
       open.sort(function(a, b) {
@@ -457,10 +469,10 @@
       var html = '';
       for (var i = resultsShown; i < end; i++) {
         var isClosed = i >= results.openCount;
-        if (i === 0 && !isClosed) html += '<h3 class="section-header">Open calls (' + results.openCount + ')</h3>';
+        if (i === 0 && !isClosed) html += '<h3 class="section-header">Accepting submissions (' + results.openCount + ')</h3>';
         if (i === results.openCount) {
           if (i === 0) html += '<p class="empty-state">No open calls found for this.<a href="/browse/">Browse all calls</a></p>';
-          html += '<h3 class="section-header">Closed calls (' + (results.length - results.openCount) + ')</h3>';
+          html += '<h3 class="section-header">Past calls (' + (results.length - results.openCount) + ')</h3>';
         }
         html += renderCard(results[i], 'h4');
       }
