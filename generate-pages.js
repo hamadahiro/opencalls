@@ -2926,6 +2926,14 @@ console.log('  Submit page');
       <div id="contactThanks" style="display:none">
         <a href="/contact/" class="call-detail-btn call-detail-apply" onclick="location.reload();return false;">Send another</a>
       </div>
+      <div class="submit-rules" id="before-you-write">
+        <h2 class="section-header">Before you write</h2>
+        <p class="call-detail-description submit-rules-lead">This reaches me, not the organizers.</p>
+        <ul class="call-detail-description">
+          <li>For a call’s fee, deadline, entries or results, ask its organizer: each call page links to their site.</li>
+          <li>To correct a listing, send the organizer’s page through the <a href="/submit/">submit form</a>.</li>
+        </ul>
+      </div>
       <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
           e.preventDefault();

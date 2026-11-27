@@ -1509,7 +1509,8 @@ a.filter-btn {
 }
 
 /* Submit page on desktop: the About page's two columns under a full-width top (owner, 2026-11-25) — the form on the
-   left, "What gets listed" on the right, both headings level. Phones and tablets: one column, as before. */
+   left, "What gets listed" on the right, both headings level. Phones and tablets: one column, as before.
+   The contact page has the same two columns, "Before you write" on the right (owner, 2026-11-27). */
 @media (min-width: 1000px) {
   .submit-form {
     max-width: none;
@@ -1520,7 +1521,8 @@ a.filter-btn {
   }
 
   .submit-form > form,
-  .submit-form > #submitThanks {
+  .submit-form > #submitThanks,
+  .submit-form > #contactThanks {
     grid-column: 1;
   }
 
