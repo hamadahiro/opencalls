@@ -958,7 +958,9 @@ function listingPageHtml(html, listHtml, { url, label, robots }) {
     // The page's JSON-LD names the page itself, as its canonical does (2026-11-27, R1: 1,046 pages named page 1);
     // the breadcrumbs ("item") still lead to the list.
     const first = (out.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];
-    if (first && first !== abs) out = out.split(`"url": "${first}"`).join(`"url": "${abs}"`);
+    // Only in the page's own CollectionPage/WebPage block (its first "@type"); the WebSite block names the site.
+    if (first && first !== abs) out = out.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g, blk =>
+      /^(CollectionPage|WebPage)$/.test((blk.match(/"@type": "([^"]+)"/) || [])[1] || '') ? blk.split(`"url": "${first}"`).join(`"url": "${abs}"`) : blk);
     // Its description says which page it is, as its title does (pages 2… repeated page 1's word for word).
     const redesc = (m, a, d, b) => `${a}${d.replace(/\.?$/, '.')} ${label}.${b}`;
     out = out.replace(/(<meta name="description" content=")([^"]*)(")/, redesc);
@@ -4093,7 +4095,8 @@ if (staleFiles.length) {
   for (const c of data.calls) if (c.verifyNote && OUR_IP.test(String(c.verifyNote))) bad.push(`${c.slug}: verifyNote names the job machine's IP address — write [ip]`);
   // Public text never names a private file or carries a redaction placeholder (2026-11-27: a description read "by email
   // to [email in contacts.json]"): the artist loses the address and the page names the private store.
-  const PRIVATE_REF = /\[(?:email|address|ip)\b[^\]]*\]|contacts\.json|outreach-log|evidence\.tsv|verify-state\.json|scripts\//i;
+  // "scripts/" only bare (our private folder), not inside an organiser's URL ("…/scripts/apply.php", "javascripts/").
+  const PRIVATE_REF = /\[(?:email|address|ip)\b[^\]]*\]|contacts\.json|outreach-log|evidence\.tsv|verify-state\.json|(?<![\w.\/-])scripts\//i;
   const JOB_VOICE = /\bre-measured\b|\bconsecutive pass(?:es)?\b|\bfetch rungs?\b|\bHTTP [1-5]\d\d\b|\b(?:resultsDate|submitUrl|verifyNote|juryPeople|orgInTitle|dateAdded)\b/i;
   const PUBLIC_FIELDS = ['title', 'org', 'summary', 'description', 'requirements', 'prize', 'location', 'fee', 'additionalFees', 'ai', 'submitVia'];
   for (const c of data.calls) {
