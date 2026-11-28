@@ -9,7 +9,7 @@ const {
   usStateNames, stateNameToAbbr, validCountries,
   isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug,
+  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug, resultsText,
   isFree, getState, scoreSimilarity,
   isValidHttpUrl, submitViaIsPlatform,
   TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
@@ -841,7 +841,7 @@ function sortPastCalls(calls) {
 
 // Cards for one page, with a header wherever the section changes. A page that
 // starts mid-section repeats that section's header at its top.
-function renderSectionedCards(calls, sectionOf) {
+function renderSectionedCards(calls, sectionOf, mode) {
   const now = new Date();
   let html = '';
   let current = '';
@@ -849,7 +849,7 @@ function renderSectionedCards(calls, sectionOf) {
     const u = computeUrgency(c, now);
     const section = sectionOf ? sectionOf(c, u) : '';
     if (section && section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
-    html += renderStaticCard(c, u);
+    html += renderStaticCard(c, u, mode);
   });
   return html;
 }
@@ -857,7 +857,7 @@ function renderSectionedCards(calls, sectionOf) {
 // One page of an open-then-past list. "Closed" heads the first closed card, and a page that starts among the closed
 // calls starts with it; with nothing open, page 1 starts straight with the closed calls. The site's status words are one
 // pair everywhere, the count line's: "accepting submissions" and "closed" (owner, 2026-11-27: "we mix terms").
-function renderOpenThenPast(chunk, anyOpen, k, sections = true, mode) {
+function renderOpenThenPast(chunk, anyOpen, k) {
   const now = new Date();
   let html = '';
   let current = '', inPast = false;
@@ -865,9 +865,9 @@ function renderOpenThenPast(chunk, anyOpen, k, sections = true, mode) {
     const u = computeUrgency(c, now);
     const past = !isOpen(c);
     if (past && !inPast) { inPast = true; current = ''; if (anyOpen) html += `      <h2 class="list-heading">Closed</h2>\n`; }
-    const section = !sections ? '' : past ? pastSection(c, u) : openSection(c, u);
-    if (section && section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
-    html += renderStaticCard(c, u, mode);
+    const section = past ? pastSection(c, u) : openSection(c, u);
+    if (section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
+    html += renderStaticCard(c, u);
   });
   return html;
 }
@@ -1007,17 +1007,16 @@ function writePagedListing(filepath, html, { calls, opts }) {
   const base = '/' + path.dirname(filepath) + '/';
   const pastRoot = base + 'past/';
   const sections = !opts.skipSections;
-  const open = opts.openOrder ? calls.filter(isOpen).sort(opts.openOrder) : sortOpenCalls(calls);
-  const past = opts.pastOrder ? calls.filter(c => !isOpen(c)).sort(opts.pastOrder) : sortPastCalls(calls);
+  const open = sortOpenCalls(calls);
+  const past = sortPastCalls(calls);
   const files = [];
 
   if (opts.allCalls) {
     // Juror pages (Lara, 2026-11-26): every call the person judged on one list — the open ones first (soonest first,
-    // under the usual headers), then "Closed" (newest first). Paged like every list. Results month pages use the same
-    // list without the month headers (skipSections) and with the closed in results order (pastOrder).
+    // under the usual headers), then "Closed" (newest first). Paged like every list.
     const anyOpen = open.length > 0;
     files.push(...writeListPages(html, base, [...open, ...past], (chunk, k, count) =>
-      renderOpenThenPast(chunk, anyOpen, k, !opts.skipSections, opts.cardMode) + paginationNav(base, k, count),
+      renderOpenThenPast(chunk, anyOpen, k) + paginationNav(base, k, count),
       { labelFor: k => k > 1 ? `Page ${k}` : '' }));
     pagedListings.set(base, { total: calls.length, open: open.length, files, allCalls: true, noHeroCounts: !!opts.noHeroCounts });
     return;
@@ -2683,13 +2682,14 @@ ${buildStaticCallList(g.calls, { skipSections: true })}
   console.log(`  Deadline page: ${label} (${count} calls, ${openCount} open)`);
 });
 
-// === Results month pages (owner, 2026-11-28: results dates linked as deadlines are) ===
+// === Results month pages (owner, 2026-11-28: results dates linked as deadlines are; "same design like /results/") ===
 // /results/<month>-<year>/: every call whose results date falls in that month (shared.js resultsWhen; resultsMonthSlug
-// is the link every card and call page uses), the deadline month page's form: breadcrumb, the month, the counted
-// sentence with "results", then one list — the calls accepting submissions first, then "Closed" and the closed, each in
-// results order (the last day the words allow), no month headers; every card's date is its results date (cardDate
-// 'results': "Results on Mar 15, 2027", "Results late March 2027"), never its deadline (owner, 2026-11-28). Indexed while any call on it is accepting submissions
-// or still waiting for results. The Results gate below proves each link lands on a page that lists its call.
+// is the link every card and call page uses), drawn exactly as /results/ is: a one-line title, no subtitle, the cards
+// in results order (the last day the words allow) under "Results Today", "Results Tomorrow" and the month, each card's
+// date its results date — relative up to 30 days or absolute, the green stroke while still to come (cardDate
+// 'results'). Calls accepting submissions are on it too (their results date links here); results already out read
+// "Results on Oct 30, 2026" without the stroke. Indexed while any call on it is open or still waiting; the meta
+// description is the month's counted sentence. The Month gate proves the lists, the cards and every results link.
 const resultsMonthGroups = {};
 data.calls.forEach(c => {
   const key = resultsMonthSlug(c);
@@ -2704,37 +2704,26 @@ const sortedResultsMonths = Object.keys(resultsMonthGroups).sort((a, b) => {
 });
 const resultsOrder = (a, b) => resultsWhen(a).last.localeCompare(resultsWhen(b).last) || b.deadline.localeCompare(a.deadline) || a.title.localeCompare(b.title);
 const resultsMonthLive = g => g.calls.some(c => isOpen(c) || resultsListed(c));
+// The headings of a results list (/results/ and its months): Results Today, Results Tomorrow, then the month.
+const resultsSectionNow = new Date();
+const resultsSection = c => {
+  const r = resultsText(c, resultsSectionNow);
+  if (r && r.text === 'Results today') return 'Results Today';
+  if (r && r.text === 'Results tomorrow') return 'Results Tomorrow';
+  const m = resultsWhen(c).month;
+  return MONTHS_CAP[+m.slice(5, 7) - 1] + ' ' + m.slice(0, 4);
+};
+const resultsMonthFiles = {};
 sortedResultsMonths.forEach(key => {
   const g = resultsMonthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
-  const sentence = monthSentence(g.calls, label, 'results');
-  const stats = listStats(g.calls);
-  const robotsDirective = resultsMonthLive(g) ? 'index, follow' : 'noindex, follow';
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  ${HEAD({ title: `Open Call Results — ${label}`, description: escapeHtml(sentence), canonical: `${SITE}/results/${key}`, jsonLd: collectionPageLd(`Open Call Results — ${label}`, `Open calls with results in ${label}.`, `${SITE}/results/${key}/`), breadcrumbs: [{ name: 'Results', url: `${SITE}/results/` }, { name: label, url: `${SITE}/results/${key}/` }], cssVersion, robots: robotsDirective })}
-</head>
-<body>
-
-  ${buildHeader()}
-
-  <main>
-    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/results/">Results</a></nav>', label, listSubtitle(sentence, stats))}
-
-    <section class="calls-list" id="callsList">
-${buildStaticCallList(g.calls, { allCalls: true, skipSections: true, openOrder: resultsOrder, pastOrder: resultsOrder, cardMode: 'results' })}
-    </section>
-
-    ${FOOTER}
-  </main>
-
-  ${CARDS_SCRIPT(cssVersion)}
-
-</body>
-</html>`;
-  writeGenerated(`results/${key}/index.html`, html);
-  if (robotsDirective === 'index, follow') sitemapEntries.push(`${SITE}/results/${key}`);
+  const robots = resultsMonthLive(g) ? 'index, follow' : 'noindex, follow';
+  const html = plainListHtml({ title: `Open Call Results — ${label}`, h1: `Results announcements in ${label}.`, desc: monthSentence(g.calls, label, 'results'), canonicalPath: `/results/${key}/`, robots });
+  const root = `/results/${key}/`;
+  resultsMonthFiles[key] = writeListPages(html, root, [...g.calls].sort(resultsOrder), (chunk, k, count) =>
+    renderSectionedCards(chunk, resultsSection, 'results') + paginationNav(root, k, count),
+    { labelFor: k => k > 1 ? `Page ${k}` : '' });
+  if (robots === 'index, follow') sitemapEntries.push(`${SITE}/results/${key}`);
 });
 console.log(`  Results month pages: ${sortedResultsMonths.length} (${sortedResultsMonths.filter(k => resultsMonthLive(resultsMonthGroups[k])).length} indexed)`);
 
@@ -3668,11 +3657,11 @@ const homeFiles = [];
 
 // A plain list page for /archive/ and /new/: the site chrome, a hero without a
 // count line (these are not facet listings), and the list placeholder.
-function plainListHtml({ title, h1, desc, canonicalPath }) {
+function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow' }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots: 'noindex, follow' })}
+  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots })}
 </head>
 <body>
 
@@ -3714,16 +3703,9 @@ const resultsCalls = [];
 {
   const now = new Date();
   resultsCalls.push(...data.calls.filter(c => !isOpen(c) && closedResultsText(c, now)).sort(resultsOrder));
-  const resultsSection = c => {
-    const text = closedResultsText(c, now);
-    if (text === 'Results today') return 'Results Today';
-    if (text === 'Results tomorrow') return 'Results Tomorrow';
-    const m = resultsWhen(c).month;
-    return MONTHS_CAP[+m.slice(5, 7) - 1] + ' ' + m.slice(0, 4);
-  };
   const html = plainListHtml({ title: 'Upcoming Open Call Results', h1: 'Upcoming results announcements from closed calls.', desc: 'Upcoming results announcements from closed calls for photographers and visual artists, soonest first.', canonicalPath: '/results/' });
   resultsFiles.push(...writeListPages(html, '/results/', resultsCalls, (chunk, k, count) =>
-    renderSectionedCards(chunk, resultsSection) + paginationNav('/results/', k, count),
+    renderSectionedCards(chunk, resultsSection, 'results') + paginationNav('/results/', k, count),
     { labelFor: k => k > 1 ? `Page ${k}` : '' }));
   console.log(`  Results: ${resultsCalls.length} calls on ${resultsFiles.length} page(s)`);
 }
@@ -4019,21 +4001,25 @@ if (staleFiles.length) {
   const resultsListedOn = new Map();   // month key -> Set of call slugs its pages list
   for (const key of sortedResultsMonths) {
     const g = resultsMonthGroups[key], label = `${MONTH_LABELS[g.month]} ${g.year}`;
-    const info = pagedListings.get(`/results/${key}/`);
-    if (!info) { errs.push(`/results/${key}/ was not written`); continue; }
+    const files = resultsMonthFiles[key];
+    if (!files || !files.length) { errs.push(`/results/${key}/ was not written`); continue; }
     const seen = new Set();
-    info.files.forEach(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].forEach(m => seen.add(m[1])));
+    files.forEach(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].forEach(m => seen.add(m[1])));
     resultsListedOn.set(key, seen);
-    for (const f of info.files) for (const m of fs.readFileSync(f, 'utf8').matchAll(/<a href="([^"]*)" class="call-date[^"]*">([^<]*)<\/a>/g))
-      if (m[1] !== `/results/${key}/` || !/^Results(&nbsp;| )/.test(m[2])) errs.push(`${f}: a card says "${m[2].replace(/&nbsp;/g, ' ')}" → ${m[1]}, not its results date → /results/${key}/`);
+    if (seen.size !== g.calls.length) errs.push(`/results/${key}/ should list ${g.calls.length} calls but its ${files.length} page(s) list ${seen.size}`);
+    // Drawn as /results/: every card's date is its results date, linking here, green while still to come; no count line.
+    for (const f of files) {
+      const h = fs.readFileSync(f, 'utf8');
+      if (/<h2 class="subtitle">/.test(h)) errs.push(`${f}: has a subtitle; /results/ has none`);
+      for (const m of h.matchAll(/<a href="([^"]*)" class="(call-date[^"]*)">([^<]*)<\/a>/g)) {
+        const text = m[3].replace(/&nbsp;/g, ' ');
+        if (m[1] !== `/results/${key}/` || !/^Results /.test(text)) errs.push(`${f}: a card says "${text}" → ${m[1]}, not its results date → /results/${key}/`);
+      }
+    }
     const listed = [...seen].map(s => bySlug.get(s));
     if (!listed.length || listed.some(c => !c)) { errs.push(`/results/${key}/ lists ${listed.length} cards, ${listed.filter(c => !c).length} of them no call`); continue; }
     const want = escapeHtml(monthSentence(listed, label, 'results'));
-    for (const f of info.files) {
-      const sub = (fs.readFileSync(f, 'utf8').match(/<h2 class="subtitle">([\s\S]*?)<\/h2>/) || [])[1] || '';
-      if (!sub.startsWith(want + ' ')) errs.push(`${f}: subtitle "${sub.slice(0, 80)}" is not "${want.slice(0, 80)}", counted from the ${listed.length} calls its pages list`);
-    }
-    const meta = (fs.readFileSync(info.files[0], 'utf8').match(/<meta name="description" content="([^"]*)">/) || [])[1];
+    const meta = (fs.readFileSync(files[0], 'utf8').match(/<meta name="description" content="([^"]*)">/) || [])[1];
     if (meta !== want) errs.push(`/results/${key}/: meta description "${String(meta).slice(0, 80)}" is not the sentence`);
   }
   let resultsLinks = 0;

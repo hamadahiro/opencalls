@@ -509,8 +509,9 @@ function closedResultsText(call, now) {
 // The results date in a card's words, for any call, or null when it names no month. coming: results still to come
 // (resultsListed's rule without the closed test) — then a named day reads as a deadline does ("Results in 6 days",
 // "Results on Feb 5, 2027") and any other date in its own words with the year ("Results late December 2026"); passed or
-// announced: the date with the year, no count ("Results Oct 30, 2026", "Results in October 2026"). The cards of a results
-// month page all say this (owner, 2026-11-28: a results page showed "Ending tomorrow").
+// announced: the absolute form, no count ("Results on Oct 30, 2026", "Results in October 2026"). The cards of a results
+// month page all say this, the green stroke while still to come (owner, 2026-11-28: a results page showed "Ending
+// tomorrow"; "same design like /results/ … absolute/relative format, green underline").
 function resultsText(call, now) {
   now = now || new Date();
   const w = resultsWhen(call);
@@ -526,6 +527,9 @@ function resultsText(call, now) {
     if (n <= 30) return { text: 'Results in ' + n + ' days', coming };
     return { text: 'Results on ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }), coming };
   }
+  // A named day already passed (or announced): the absolute form, as a far date reads.
+  if (w.day && (w.kind === 'day' || w.kind === 'announced') && !/ about /.test(w.label))
+    return { text: 'Results on ' + new Date(w.day + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }), coming };
   const y = w.month.slice(0, 4);
   return { text: /\d{4}$/.test(w.label) ? w.label : /\d$/.test(w.label) ? w.label + ', ' + y : w.label + ' ' + y, coming };
 }
