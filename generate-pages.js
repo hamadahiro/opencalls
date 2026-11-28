@@ -41,7 +41,9 @@ const juryById = new Map(juryData.people.map(p => [p.id, p]));
 const juryCalls = new Map(juryData.people.map(p => [p.id, []]));
 data.calls.forEach(c => (c.juryPeople || []).forEach(v => { if (juryCalls.has(v)) juryCalls.get(v).push(c); }));
 // What a reader reads as the person's name wherever one name could mean two people: "Anna Planas · Aperture".
-function juryLabel(p) { return p.distinguish ? `${p.name} · ${p.distinguish}` : p.name; }
+// A juror's name on their page, the /jury/ index and titles: cased as the site prints names (shared.js nameCase, owner
+// 2026-11-28 "format all names"); the call's own Jury line keeps the organiser's text.
+function juryLabel(p) { return p.distinguish ? `${nameCase(p.name)} · ${p.distinguish}` : nameCase(p.name); }
 // An announced artist's page: /artists/<slug>/, the jurors' rule (personSlug); a name with no Latin letters ("李 明") gets
 // a stable short code from the name itself.
 function artistSlug(name) {
@@ -2530,7 +2532,7 @@ juryData.people.forEach(p => {
   ${buildHeader()}
 
   <main>
-    ${buildHero(buildBreadcrumbs('Jury', '/jury'), escapeHtml(p.name), escapeHtml(desc))}
+    ${buildHero(buildBreadcrumbs('Jury', '/jury'), escapeHtml(nameCase(p.name)), escapeHtml(desc))}
     <section class="calls-list" id="callsList">
 ${others.map(q => `      <p class="browse-more list-switch">Another person with this name: <a href="/jury/${q.slug}/">${escapeHtml(juryLabel(q))}</a></p>\n`).join('')}${buildStaticCallList(calls, { allCalls: true, noHeroCounts: true })}
     </section>

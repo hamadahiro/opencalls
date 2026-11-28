@@ -258,13 +258,14 @@ function slugify(title) {
 // word in capitals of three letters or more is written the same way ("CHOU Man-nung" → "Chou Man-nung") and everything
 // else is kept as printed ("Kate Crawford and Vladan Joler", "LaPalombara", "daisy*"). Kept always: initials of one or two
 // letters without a vowel ("KC", "MJ"; "WU" is a name: "Wu"), letters with dots ("F.A.C.E."), Roman numerals ("III"),
-// company words ("LLC"); in a mixed name a capitals word without a vowel ("NHS") too.
+// company words and honours ("LLC", "MBE"); in a mixed name also a capitals word without a vowel ("NHS") and three
+// letters that read as initials ("ASM Rezaur Rahman"; "KIM", "LEO" read as names).
 function nameCase(name) {
   const SMALL = new Set(['van', 'von', 'de', 'der', 'den', 'del', 'della', 'di', 'da', 'das', 'dos', 'du', 'la', 'le', 'ten', 'ter', 'y', 'e', 'bin', 'al', 'el', 'and', 'with', 'of', 'the', 'for', 'from']);
-  const ACRONYM = new Set(['LLC', 'LTD', 'INC', 'GMBH', 'CIC', 'USA', 'NYC', 'UAE', 'BBC', 'MFA']);
+  const ACRONYM = new Set(['LLC', 'LTD', 'INC', 'GMBH', 'CIC', 'USA', 'NYC', 'UAE', 'BBC', 'MFA', 'OAM', 'MBE', 'OBE', 'CBE', 'KBE', 'DBE', 'FRSA', 'FRPS', 'ARPS', 'LRPS', 'EFIAP', 'AFIAP']);
   const s = String(name), hasLower = /\p{Ll}/u.test(s), hasUpper = /\p{Lu}/u.test(s);
   if (hasLower === hasUpper && hasLower) {   // mixed
-    return s.split(' ').map(w => { const l = w.replace(/[^\p{L}]/gu, ''); return l.length >= 3 && l === l.toUpperCase() && /[AEIOUY]/i.test(l) && !ACRONYM.has(l) && !/^(\p{Lu}\.)+$/u.test(w) && !/^(ii|iii|iv|vi|vii|viii|ix)$/i.test(l) ? titleWord(w) : w; }).join(' ');
+    return s.split(' ').map(w => { const l = w.replace(/[^\p{L}]/gu, ''); return l.length >= 3 && l === l.toUpperCase() && /[AEIOUY]/i.test(l) && (l.length > 3 || /^.[AEIOUY]|[AEIOUY]$/i.test(l)) && !ACRONYM.has(l) && !/^(\p{Lu}\.)+$/u.test(w) && !/^(ii|iii|iv|vi|vii|viii|ix)$/i.test(l) ? titleWord(w) : w; }).join(' ');
   }
   if (!hasLower && !hasUpper) return s;      // a script without capitals
   const words = s.split(' ');
@@ -276,7 +277,7 @@ function nameCase(name) {
     return titleWord(w);
   }).join(' ');
   function titleWord(w) {
-    return w.toLowerCase().replace(/(^|[-'’(\[])(\p{Ll})/gu, (m, p, c) => p + c.toUpperCase()).replace(/^(\(?)Mc(\p{Ll})/u, (m, p, c) => p + 'Mc' + c.toUpperCase());
+    return w.toLowerCase().replace(/(^|[-'’(\["“])(\p{Ll})/gu, (m, p, c) => p + c.toUpperCase()).replace(/^(\(?)Mc(\p{Ll})/u, (m, p, c) => p + 'Mc' + c.toUpperCase());
   }
 }
 
