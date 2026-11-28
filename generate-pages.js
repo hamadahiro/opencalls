@@ -4045,7 +4045,9 @@ if (staleFiles.length) {
     if (stat.total !== info.total || stat.open !== info.open) errs.push(`${url} says ${stat.open} accepting submissions, ${stat.total - stat.open} closed, but covers ${info.open} open of ${info.total}`);
     listings.set(url, info.allCalls ? { ...stat, allCalls: true } : stat);
     coverage(url, info.files, info.total);
-    if (info.allCalls && !info.anyOrder) {
+    if (info.allCalls) {
+      // One list in its own order (results months: results order) — every call once, checked by coverage() above.
+      if (info.anyOrder) continue;
       // One list, open calls first: the first `open` cards are exactly the open calls, the rest exactly the past ones.
       const order = info.files.flatMap(f => cardSlugs(fs.readFileSync(f, 'utf8')));
       const openHrefs = new Set(data.calls.filter(isOpen).map(c => `/${c.slug}/`));
