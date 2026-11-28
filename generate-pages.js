@@ -3961,6 +3961,10 @@ function findStale(dir) {
   } };
   walkJury('jury');
   if (removed) console.log(`  Jury: ${removed} file(s) of pages with no person removed`);
+  // An artist page whose name no call announces any more (a spelling corrected, a list replaced): the same rule.
+  const before = removed;
+  walkJury('artists');
+  if (removed > before) console.log(`  Artists: ${removed - before} file(s) of pages with no announced name removed`);
 }
 findStale('.');
 
