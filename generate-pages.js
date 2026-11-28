@@ -2658,7 +2658,7 @@ sortedResultsMonths.forEach(key => {
   const g = resultsMonthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
   const robots = resultsMonthLive(g) ? 'index, follow' : 'noindex, follow';
-  const html = plainListHtml({ title: `Open Call Results — ${label}`, h1: `Results announcements in ${label}.`, desc: monthSentence(g.calls, label, 'results'), canonicalPath: `/results/${key}/`, robots });
+  const html = plainListHtml({ title: `Open Call Results — ${label}`, h1: `Results announcements in ${label}.`, desc: monthSentence(g.calls, label, 'results'), canonicalPath: `/results/${key}/`, robots, crumbs: [{ name: 'Results', url: '/results/' }] });
   const root = `/results/${key}/`;
   resultsMonthFiles[key] = writeListPages(html, root, [...g.calls].sort(resultsOrder), (chunk, k, count) =>
     renderSectionedCards(chunk, resultsSection, 'results') + paginationNav(root, k, count),
@@ -3609,18 +3609,21 @@ const homeFiles = [];
 
 // A plain list page for /archive/ and /new/: the site chrome, a hero without a
 // count line (these are not facet listings), and the list placeholder.
-function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow' }) {
+// crumbs: [{ name, url }] above the title, as the deadline month pages have them ("All open calls / Deadlines"), and as
+// breadcrumb JSON-LD; the trail starts at "All open calls" (the home page) like every breadcrumb on the site.
+function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null }) {
+  const trail = crumbs ? `<nav class="breadcrumbs"><a href="/">All open calls</a>${crumbs.map(c => ` / <a href="${c.url}">${escapeHtml(c.name)}</a>`).join('')}</nav>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots })}
+  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots, ...(crumbs ? { breadcrumbs: [...crumbs.map(c => ({ name: c.name, url: SITE + c.url })), { name: title.replace(/^Open Call Results — /, ''), url: SITE + canonicalPath }] } : {}) })}
 </head>
 <body>
 
   ${buildHeader()}
 
   <main>
-    ${buildHero('', escapeHtml(h1), '')}
+    ${buildHero(trail, escapeHtml(h1), '')}
 
     <section class="calls-list" id="callsList">
 <!-- PAGED-LIST:plain -->
