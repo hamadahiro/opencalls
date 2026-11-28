@@ -540,7 +540,8 @@ function resultsText(call, now) {
 function renderCardBody(call, opts) {
   const tags = renderTags(call, opts);
   const date = cardDate(call, opts.urgency || {}, opts.esc, opts.mode);
-  return `<p class="call-description">${date} – ${opts.esc(call.summary || call.description)}</p>`
+  // textHtml: a page's own text in place of the summary (an artist page: the labels that call gave the artist).
+  return `<p class="call-description">${date} – ${opts.textHtml != null ? opts.textHtml : opts.esc(call.summary || call.description)}</p>`
     + (tags ? `<div class="call-meta">${tags}</div>` : '');
 }
 

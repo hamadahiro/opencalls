@@ -42,6 +42,15 @@ const juryCalls = new Map(juryData.people.map(p => [p.id, []]));
 data.calls.forEach(c => (c.juryPeople || []).forEach(v => { if (juryCalls.has(v)) juryCalls.get(v).push(c); }));
 // What a reader reads as the person's name wherever one name could mean two people: "Anna Planas · Aperture".
 function juryLabel(p) { return p.distinguish ? `${p.name} · ${p.distinguish}` : p.name; }
+// An announced artist's page: /artists/<slug>/, the jurors' rule (personSlug); a name with no Latin letters ("李 明") gets
+// a stable short code from the name itself.
+function artistSlug(name) {
+  const s = personSlug(name);
+  if (s) return s;
+  let h = 2166136261;
+  for (const ch of String(name).normalize('NFC')) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) >>> 0; }
+  return 'a-' + h.toString(36);
+}
 
 // PRIVACY (owner, 2026-11-25): the private contact store (scripts/outreach/) is never read to build pages. Organizers'
 // contact addresses are for outreach only and are never published; an application address artists need is written in
@@ -218,6 +227,26 @@ data.calls.forEach((c, i) => {
   // The call's link and the Submit-via link must be http(s): a "javascript:" value copied from a page would become a
   // clickable link (escaping does not stop a URL scheme).
   if (c.url && !isValidHttpUrl(c.url)) err(`"${label}" has invalid url: "${c.url}" — must be an http(s) URL`);
+  // ANNOUNCED (owner, 2026-11-28): the names the organiser announced once results were out, each group under the label as
+  // printed ("" → the page prints "Announced") with the organiser's page; a name once per group; at most 150 names in all
+  // ("if a contest awards 900 artists that's a garbage contest… one or few winners and mentions": a contest announcing more
+  // is a mass-award contest and records none).
+  if (c.announced !== undefined) {
+    if (!Array.isArray(c.announced) || !c.announced.length) err(`"${label}" announced must be a non-empty list`);
+    else {
+      let total = 0;
+      c.announced.forEach((g, i) => {
+        if (!g || typeof g.label !== 'string') err(`"${label}" announced[${i}] has no label string`);
+        if (!g || !isValidHttpUrl(g.url)) err(`"${label}" announced[${i}] url must be an http(s) URL`);
+        if (!g || !Array.isArray(g.names) || !g.names.length || g.names.some(n => typeof n !== 'string' || !n.trim())) { err(`"${label}" announced[${i}] needs names`); return; }
+        const low = g.names.map(n => n.trim().toLowerCase());
+        if (new Set(low).size !== low.length) err(`"${label}" announced[${i}] repeats a name`);
+        total += g.names.length;
+      });
+      if (total > 150) err(`"${label}" announces ${total} names — more than 150 is a mass-award contest: record none`);
+    }
+  }
+  if (c.winners !== undefined) err(`"${label}" has "winners": the announced names go in "announced"`);
   if (c.submitUrl && !isValidHttpUrl(c.submitUrl)) {
     err(`"${label}" has invalid submitUrl: "${c.submitUrl}" — must be an http(s) URL`);
   }
@@ -353,7 +382,7 @@ if (dateAddedCount > 0) {
 const SITE = 'https://opencalls.monographica.com';
 const YEAR = new Date().getFullYear();
 const TITLE_SUFFIX = ' - Monographica';
-const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal', 'search', 'search-core', 'search-page', 'contact'];
+const RESERVED = ['index', 'style', 'data', 'favicon', 'apple-touch-icon', 'og-image', 'bg', 'call-detail', 'cards', 'generate-pages', 'sitemap', 'CNAME', 'robots', '404', 'photography', 'exhibitions', 'grants', 'residencies', 'zines', 'education', 'categories', 'locations', 'organizations', 'free', 'paid', 'fees', 'prize', 'united-states', 'eligibility', 'browse', 'deadlines', 'submit', 'submit-via', 'about', 'entry-fee', 'requirements', 'ai-policy', 'archive', 'new', 'page', 'past', 'search-index', 'results', 'jury', 'legal', 'search', 'search-core', 'search-page', 'contact', 'artists'];
 const MANUAL_FILES = ['index.html', '404.html'];
 const _now = new Date();
 const TODAY = _now.getFullYear() + '-' + String(_now.getMonth() + 1).padStart(2, '0') + '-' + String(_now.getDate()).padStart(2, '0');
@@ -815,12 +844,12 @@ const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 // computeUrgency() lives in shared.js (one contract for server + client).
 
 // Same markup as renderCard() in cards.js, which renders search results.
-function renderStaticCard(call, u, mode) {
+function renderStaticCard(call, u, mode, textHtml) {
   const slug = call.slug || slugify(call.title);
   const title = escapeHtml(call.title) + (!call.orgInTitle ? ' · ' + escapeHtml(call.org) : '');
   return `      <div class="call-card">
         <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
-        ${renderCardBody(call, { esc: escapeHtml, urgency: u, mode })}
+        ${renderCardBody(call, { esc: escapeHtml, urgency: u, mode, textHtml })}
       </div>\n`;
 }
 
@@ -1176,11 +1205,7 @@ ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.len
   : `      <p class="call-detail-description">${linkifyProse(call.description, call, state)}</p>`; })()}
       </div>
       <script>${DESCRIPTION_COLLAPSE_SCRIPT}</script>
-${call.winners && call.winners.length ? `
-      <div class="call-detail-jury">
-        <p class="call-detail-description">Winners: ${call.winners.map(w => escapeHtml(w)).join(' &middot; ')}</p>
-      </div>
-` : ''}
+
       <div class="call-detail-info" id="detailInfo">${renderInfoGrid(call, { esc: escapeHtml, locationLink: getStaticLocationLink })}</div>
 ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
@@ -1190,7 +1215,10 @@ ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
-      <div class="call-detail-actions" id="detailActions">
+${(call.announced || []).map(g => `      <div class="call-detail-jury">
+        <p class="call-detail-description"><a href="${escapeHtml(g.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(g.label || 'Announced')}</a>: ${g.names.map(n => `<a href="/artists/${artistSlug(n)}/">${escapeHtml(n)}</a>`).join(' &middot; ')}</p>
+      </div>
+`).join('')}      <div class="call-detail-actions" id="detailActions">
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
@@ -2548,6 +2576,78 @@ ${buildIndexItems(juryIndexEntries, { allCalls: true, sort: 'label', letters: tr
 console.log(`  Jury: ${juryData.people.length} juror pages, /jury/ index (everyone, A–Z)`);
 juryStale.forEach(id => console.log(`JURY SUMMARY STALE: ${id}`));
 
+// === Announced artists (owner, 2026-11-28: "promoting artists to orgs") ===
+// Every name an organiser announced (call.announced) has a page, /artists/<artistSlug>/, in the juror pages' form: the
+// name, a generated sentence ("Announced by X. Listed under Juror's Choice (2026)."), then the calls as the site's cards —
+// newest results first under their results month, each card's date its results date and its text the labels that call
+// gave the artist (linked to the organiser's list). One page per address: the spellings that fold to one address are one
+// page, titled with the spelling most calls print (a tie: the newest call's). noindex, as juror pages.
+const artistMap = new Map();
+data.calls.forEach(c => (c.announced || []).forEach(g => g.names.forEach(n => {
+  const s = artistSlug(n);
+  if (!artistMap.has(s)) artistMap.set(s, { slug: s, spellings: new Map(), calls: new Map() });
+  const a = artistMap.get(s);
+  const sp = a.spellings.get(n) || [0, '']; sp[0]++; if ((c.deadline || '') > sp[1]) sp[1] = c.deadline || ''; a.spellings.set(n, sp);
+  if (!a.calls.has(c.slug)) a.calls.set(c.slug, { call: c, groups: [] });
+  a.calls.get(c.slug).groups.push(g);
+})));
+const artistName = a => [...a.spellings].sort((x, y) => (y[1][0] - x[1][0]) || y[1][1].localeCompare(x[1][1]))[0][0];
+const artistResultsKey = c => { const w = resultsWhen(c); return w ? w.last : (c.deadline || ''); };
+const artistEntries = a => [...a.calls.values()].sort((x, y) => artistResultsKey(y.call).localeCompare(artistResultsKey(x.call)) || x.call.title.localeCompare(y.call.title));
+function artistSentence(a) {
+  const es = artistEntries(a);
+  const orgs = [...new Set(es.map(e => e.call.org))];
+  const s1 = `Announced by ${andList(orgs.length > 4 ? [...orgs.slice(0, 3), `${orgs.length - 3} other organisers`] : orgs)}.`;
+  const items = [];
+  es.forEach(e => { const y = String(e.call.deadline || '').slice(0, 4); e.groups.forEach(g => { if (g.label && !items.some(t => t.label === g.label)) items.push({ label: g.label, year: /^\d{4}$/.test(y) ? y : '' }); }); });
+  if (!items.length) return s1;
+  const parts = items.slice(0, 3).map(t => `under ${t.label}${t.year ? ` (${t.year})` : ''}`);
+  if (items.length > 3) parts.push(`${items.length - 3} other label${items.length - 3 > 1 ? 's' : ''}`);
+  return `${s1} Listed ${parts.length === 1 ? parts[0] : `${parts.slice(0, -1).join(', ')}, and ${parts[parts.length - 1]}`}.`;
+}
+const artistFiles = new Map();
+{
+  const now = new Date();
+  const monthOf = c => { const w = resultsWhen(c); const m = w ? w.month : String(c.deadline || '').slice(0, 7); return /^\d{4}-\d{2}$/.test(m) ? MONTHS_CAP[+m.slice(5, 7) - 1] + ' ' + m.slice(0, 4) : ''; };
+  for (const a of artistMap.values()) {
+    const name = artistName(a), sentence = artistSentence(a), root = `/artists/${a.slug}/`, es = artistEntries(a);
+    const html = plainListHtml({ title: `${name} - Artists`, h1: name, desc: sentence, canonicalPath: root, robots: 'noindex, follow', crumbs: [{ name: 'Artists', url: '/artists/' }], crumbName: name, subtitle: escapeHtml(sentence) });
+    const labelsOf = new Map(es.map(e => [e.call.slug, e.groups.map(g => `<a href="${escapeHtml(g.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(g.label || 'Announced')}</a>`).join(', ')]));
+    artistFiles.set(a.slug, writeListPages(html, root, es.map(e => e.call), (chunk, k, count) => {
+      let out = '', current = '';
+      chunk.forEach(c => { const sec = monthOf(c); if (sec && sec !== current) { current = sec; out += `      <h3 class="section-header">${sec}</h3>\n`; } out += renderStaticCard(c, computeUrgency(c, now), 'results', labelsOf.get(c.slug)); });
+      return out + paginationNav(root, k, count);
+    }, { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+  }
+  // /artists/: everyone, A–Z, as /jury/ (noindex, reached from each artist page's breadcrumb).
+  const entries = [...artistMap.values()].map(a => ({ href: `/artists/${a.slug}/`, label: artistName(a), ...listStats([...a.calls.values()].map(e => e.call)) }));
+  const desc = 'People named in the results of open calls for photographers and visual artists.';
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: 'Artists', description: escapeHtml(desc), canonical: `${SITE}/artists`, jsonLd: collectionPageLd('Artists', desc, `${SITE}/artists/`), breadcrumbs: [{ name: 'Artists', url: `${SITE}/artists/` }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('', 'Artists', escapeHtml(desc))}
+
+    <section class="index-list" id="indexList">
+${entries.length ? buildIndexItems(entries, { allCalls: true, sort: 'label', letters: true }) : ''}    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated('artists/index.html', html);
+  console.log(`  Artists: ${artistMap.size} artist pages from ${data.calls.filter(c => c.announced).length} calls, /artists/ index`);
+}
+
 // === Deadline month pages ===
 const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
 const MONTH_LABELS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -3059,7 +3159,7 @@ writeGenerated('about/index.html', aboutHtml);
     ['submit-form', 'The submit form', [
       'It sends what you type to Formspree, which passes it on to us. It asks for no name or email.']],
     ['people', 'People named on this site', [
-      'Jurors are named as organisers name them on their own call pages, with the role as published. A juror also has a page listing the calls they judged. Nothing else is published about them. If something is wrong, send the organiser’s page through the <a href="/submit/">submit form</a>.']],
+      'Jurors are named as organisers name them on their own call pages, with the role as published. A juror also has a page listing the calls they judged. Artists are named as organisers name them in their published results, with the label as published, and each has a page listing the calls they were announced in. Nothing else is published about them. If something is wrong, send the organiser’s page through the <a href="/submit/">submit form</a>.']],
     ['contact', 'Contact', [
       'The <a href="/contact/">contact form</a> sends your message, and your email address if you give one, to Formspree, which passes it on to us.']],
   ];
@@ -3266,7 +3366,7 @@ sitemapEntries.push(`${SITE}/categories`);
 // resultsDate: a closed card in search says when results come (shared.js renderCardBody, owner 2026-11-26).
 // jury: the Jury line as printed, so a name finds the calls that print it (linked or not).
 // requirements, prose: the rest of the call page's text, so /search/ finds and quotes a word wherever the page has it.
-const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate', 'jury', 'requirements', 'prose'];
+const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate', 'jury', 'requirements', 'prose', 'announced'];
 // SEARCH_SUGGEST: the phrases the search box completes to while typing, best first (search-core.js suggestions: the calls'
 // own words, names and places; owner, 2026-11-28 "live search suggestions like google").
 const SearchCore = require('./search-core.js');
@@ -3617,12 +3717,12 @@ const homeFiles = [];
 // count line (these are not facet listings), and the list placeholder.
 // crumbs: [{ name, url }] above the title, as the deadline month pages have them ("All open calls / Deadlines"), and as
 // breadcrumb JSON-LD; the trail starts at "All open calls" (the home page) like every breadcrumb on the site.
-function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null, subtitle = '' }) {
+function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null, subtitle = '', crumbName = null }) {
   const trail = crumbs ? `<nav class="breadcrumbs"><a href="/">All open calls</a>${crumbs.map(c => ` / <a href="${c.url}">${escapeHtml(c.name)}</a>`).join('')}</nav>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots, ...(crumbs ? { breadcrumbs: [...crumbs.map(c => ({ name: c.name, url: SITE + c.url })), { name: title.replace(/^Open Call Results — /, ''), url: SITE + canonicalPath }] } : {}) })}
+  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots, ...(crumbs ? { breadcrumbs: [...crumbs.map(c => ({ name: c.name, url: SITE + c.url })), { name: crumbName || title.replace(/^Open Call Results — /, ''), url: SITE + canonicalPath }] } : {}) })}
 </head>
 <body>
 
@@ -4010,6 +4110,36 @@ if (staleFiles.length) {
     process.exit(1);
   }
   console.log(`  Month gate: ${sortedMonths.length} deadline and ${sortedResultsMonths.length} results month pages, each sentence counted again from the calls its pages list; ${resultsLinks} call pages' results dates and ${resultsCalls.length} "Results …" cards link to a month page that lists them`);
+}
+
+// === ANNOUNCED GATE: a name on a call is linked, and its page lists that call (owner's rule for every name on a call) ===
+// Read from the written HTML: every announced name on a call page links to /artists/<slug>/, that page exists, and its
+// cards are exactly the calls that announce the name.
+{
+  const errs = [];
+  let links = 0;
+  for (const c of data.calls) {
+    if (!c.announced) continue;
+    const page = fs.readFileSync(`${c.slug}/index.html`, 'utf8');
+    for (const g of c.announced) for (const n of g.names) {
+      const href = `/artists/${artistSlug(n)}/`;
+      if (!page.includes(`<a href="${href}">${escapeHtml(n)}</a>`)) errs.push(`/${c.slug}/: "${n}" is not linked to ${href}`);
+      else links++;
+    }
+  }
+  for (const a of artistMap.values()) {
+    const files = artistFiles.get(a.slug) || [];
+    if (!files.length) { errs.push(`/artists/${a.slug}/ was not written`); continue; }
+    const listed = new Set(files.flatMap(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].map(m => m[1])));
+    const want = new Set(a.calls.keys());
+    if (listed.size !== want.size || [...want].some(s => !listed.has(s))) errs.push(`/artists/${a.slug}/ lists ${listed.size} calls, should list ${want.size}`);
+  }
+  if (errs.length) {
+    console.error(`\nFATAL: ANNOUNCED ARTISTS — ${errs.length} problem(s):`);
+    errs.slice(0, 20).forEach(e => console.error('  - ' + e));
+    process.exit(1);
+  }
+  console.log(`  Announced gate: ${links} names on ${data.calls.filter(c => c.announced).length} call pages, each linked to an artist page that lists its call; ${artistMap.size} artist pages`);
 }
 
 // === HARD GATE: every count must equal what the pages it points to list ===

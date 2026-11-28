@@ -105,7 +105,7 @@
   // The fields a call is found by, and how much a match in each counts. Title and organiser count most; the long texts
   // (description, the call page's prose) least, so a call about the thing ranks above one that mentions it once.
   var FIELDS = [
-    ['title', 12], ['org', 8], ['jury', 6], ['place', 5], ['summary', 4], ['category', 3], ['prize', 3], ['eligibility', 3],
+    ['title', 12], ['org', 8], ['jury', 6], ['announced', 6], ['place', 5], ['summary', 4], ['category', 3], ['prize', 3], ['eligibility', 3],
     ['fee', 2], ['requirements', 2], ['description', 1], ['prose', 1]
   ];
 
@@ -120,6 +120,7 @@
       });
       var f = {
         title: c.title, org: c.org, jury: (c.jury || []).join(' · '), place: place, summary: c.summary,
+        announced: (c.announced || []).map(function (g) { return g.names.join(' · '); }).join(' · '),
         category: maps.categoryLabel && maps.categoryLabel[c.category] || c.category,
         prize: c.prize, fee: [c.fee, c.additionalFees].filter(Boolean).join(' '),
         eligibility: (c.eligibility || []).map(function (e) { return maps.eligibilityLabel && maps.eligibilityLabel[e] || e; }).join(' · '),
@@ -261,7 +262,7 @@
   // The words under a result: the call's own summary when it holds the found words (or nothing was found outside the
   // title and organiser); otherwise the sentences of the call's texts where they are, best first, up to two.
   var SNIP_FIELDS = [['summary'], ['description'], ['prose'], ['requirements'], ['prize', 'Prize: '], ['fee', 'Fee: '],
-    ['jury', 'Jury: '], ['eligibility', 'Who can apply: '], ['place', '']];
+    ['jury', 'Jury: '], ['announced', ''], ['eligibility', 'Who can apply: '], ['place', '']];
   function snippet(result, groups, maxLen) {
     maxLen = maxLen || 240;
     var c = result.row, d = result.doc;
@@ -270,10 +271,11 @@
     if (!inText.length) return escHtml(summary);
     var cands = [];
     SNIP_FIELDS.forEach(function (f, fi) {
-      var raw = f[0] === 'jury' ? (c.jury || []).join(', ') : f[0] === 'prose' ? (c.prose || []).join(' ')
+      var raw = f[0] === 'announced' ? (c.announced || []).map(function (g) { return (g.label || 'Announced') + ': ' + g.names.join(' · '); })
+        : f[0] === 'jury' ? (c.jury || []).join(', ') : f[0] === 'prose' ? (c.prose || []).join(' ')
         : f[0] === 'place' ? c.location : f[0] === 'eligibility' ? null : f[0] === 'fee' ? [c.fee, c.additionalFees].filter(Boolean).join('; ') : c[f[0]];
       if (!raw) return;
-      var list = f[0] === 'summary' || f[0] === 'jury' || f[0] === 'prize' || f[0] === 'fee' || f[0] === 'place' ? [raw] : sentences(raw);
+      var list = f[0] === 'announced' ? raw : f[0] === 'summary' || f[0] === 'jury' || f[0] === 'prize' || f[0] === 'fee' || f[0] === 'place' ? [raw] : sentences(raw);
       list.forEach(function (s, si) {
         var n = norm(s), got = inText.filter(function (g) { return g.any.test(n); });
         if (got.length) cands.push({ text: s, prefix: f[1] || '', got: got, fi: fi, si: si });
@@ -343,6 +345,7 @@
       add(maps.categoryLabel && maps.categoryLabel[r.category] || r.category, 2, 3);
       add(r.summary, 1, 1);
       name(r.org); (r.jury || []).forEach(name);
+      (r.announced || []).forEach(function (g) { g.names.forEach(name); });   // announced artists' full names, as jurors'
       for (var k in got) { score[k] = (score[k] || 0) + got[k] * (open ? 2 : 1); uses[k] = (uses[k] || 0) + 1; }
     });
     return Object.keys(score).filter(function (k) { return uses[k] >= 2 || whole[k]; })
