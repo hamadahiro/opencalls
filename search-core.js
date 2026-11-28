@@ -256,7 +256,9 @@
     if (start > 0) { var b = text.indexOf(' ', start); start = b === -1 || b > first ? start : b + 1; }
     var end = Math.min(text.length, start + max);
     if (end < text.length) { var e = text.lastIndexOf(' ', end); if (e > first) end = e; }
-    return (start > 0 ? '…' : '') + text.slice(start, end).replace(/[\s,;:–—-]+$/, '') + (end < text.length ? '…' : '');
+    var cut = text.slice(start, end).replace(/[\s,;:·–—-]+$/, '');
+    if (start > 0) cut = cut.replace(/^[\s,;:·–—-]+/, '');   // a cut never starts or ends on a separator ("…· Richard Hall")
+    return (start > 0 ? '…' : '') + cut + (end < text.length ? '…' : '');
   }
 
   // The words under a result: the call's own summary when it holds the found words (or nothing was found outside the
@@ -271,14 +273,17 @@
     if (!inText.length) return escHtml(summary);
     var cands = [];
     SNIP_FIELDS.forEach(function (f, fi) {
-      var raw = f[0] === 'announced' ? (c.announced || []).map(function (g) { return (g.label || 'Announced') + ': ' + g.names.join(' · '); })
+      // an announced group: its names, quoted under its label as the call page prints it ("Juror's Choice: …")
+      var raw = f[0] === 'announced' ? (c.announced || []).map(function (g) { return { text: g.names.join(' · '), prefix: (g.label || 'Announced') + ': ' }; })
         : f[0] === 'jury' ? (c.jury || []).join(', ') : f[0] === 'prose' ? (c.prose || []).join(' ')
         : f[0] === 'place' ? c.location : f[0] === 'eligibility' ? null : f[0] === 'fee' ? [c.fee, c.additionalFees].filter(Boolean).join('; ') : c[f[0]];
       if (!raw) return;
       var list = f[0] === 'announced' ? raw : f[0] === 'summary' || f[0] === 'jury' || f[0] === 'prize' || f[0] === 'fee' || f[0] === 'place' ? [raw] : sentences(raw);
       list.forEach(function (s, si) {
+        var pre = f[1] || '';
+        if (typeof s === 'object') { pre = s.prefix; s = s.text; }
         var n = norm(s), got = inText.filter(function (g) { return g.any.test(n); });
-        if (got.length) cands.push({ text: s, prefix: f[1] || '', got: got, fi: fi, si: si });
+        if (got.length) cands.push({ text: s, prefix: pre, got: got, fi: fi, si: si });
       });
     });
     if (!cands.length) return escHtml(summary);

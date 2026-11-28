@@ -241,6 +241,7 @@ data.calls.forEach((c, i) => {
         if (!g || !Array.isArray(g.names) || !g.names.length || g.names.some(n => typeof n !== 'string' || !n.trim())) { err(`"${label}" announced[${i}] needs names`); return; }
         const low = g.names.map(n => n.trim().toLowerCase());
         if (new Set(low).size !== low.length) err(`"${label}" announced[${i}] repeats a name`);
+        g.names.forEach(n => { if (/[A-Za-z]/.test(n) && /[\u0370-\u03ff\u0400-\u04ff]/.test(n)) err(`"${label}" announced name "${n}" mixes Latin with Cyrillic or Greek letters`); });
         total += g.names.length;
       });
       if (total > 150) err(`"${label}" announces ${total} names — more than 150 is a mass-award contest: record none`);
