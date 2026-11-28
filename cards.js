@@ -43,8 +43,10 @@ function renderSearchDropdown(dropdownEl, wrapEl, groups, onSelect) {
   dropdownEl.style.pointerEvents = 'none';
   setTimeout(function() { dropdownEl.style.pointerEvents = ''; }, 300);
   dropdownEl.querySelectorAll('.search-suggestion').forEach(function(el) {
-    el.addEventListener('mouseenter', function() { el.style.background = 'var(--card-bg)'; });
-    el.addEventListener('mouseleave', function() { el.style.background = ''; });
+    if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {   // touch screens: no sticky highlight
+      el.addEventListener('mouseenter', function() { el.style.background = 'var(--card-bg)'; });
+      el.addEventListener('mouseleave', function() { el.style.background = ''; });
+    }
     el.addEventListener('mousedown', function(e) {
       e.preventDefault();
       onSelect(el.dataset.type, el.dataset.value, el.dataset.label);

@@ -414,8 +414,12 @@ main {
   color: #151515 !important;
 }
 
-.search-dropdown .search-suggestion:hover {
-  background: var(--search-hover) !important;
+/* The pointer's row is highlighted only where there is a pointer: on a touch screen :hover sticks to the row last
+   touched (owner, 2026-11-28, a phone screenshot). The arrow keys' pick (--sel-bg, cards.js) is unaffected. */
+@media (hover: hover) {
+  .search-dropdown .search-suggestion:hover {
+    background: var(--search-hover) !important;
+  }
 }
 
 .search-dropdown a[style] {
@@ -970,6 +974,7 @@ a.call-date:not(.dl-band):hover {
     flex-basis: 100%;
     left: auto;
     right: auto;
+    border-radius: 0;   /* full screen on phones: no rounded corners to clip a row (owner, 2026-11-28) */
   }
 
   .search-active .search-dropdown .search-suggestion {
@@ -980,8 +985,10 @@ a.call-date:not(.dl-band):hover {
     color: var(--text-muted) !important;
   }
 
-  .search-active .search-dropdown .search-suggestion:hover {
-    background: var(--card-bg) !important;
+  @media (hover: hover) {
+    .search-active .search-dropdown .search-suggestion:hover {
+      background: var(--card-bg) !important;
+    }
   }
 
   .search-active .search-dropdown a[style] {
