@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261128f">
+  <link rel="stylesheet" href="/style.css?v=20261128g">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -93,8 +93,6 @@
       <button class="search-clear" id="searchClear" type="button" aria-label="Clear search"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
       <div id="searchDropdown" class="search-dropdown"></div>
     </div>
-
-    <div id="chipContainer" style="display:none; flex-wrap:wrap; gap:6px; padding:8px 0;"></div>
 
     <section class="filters">
       <a class="filter-btn active" href="/">All</a>
@@ -249,22 +247,16 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261128f"></script>
-  <script src="/search-core.js?v=20261128f"></script>
-  <script src="/cards.js?v=20261128f"></script>
+  <script src="/shared.js?v=20261128g"></script>
+  <script src="/search-core.js?v=20261128g"></script>
+  <script src="/cards.js?v=20261128g"></script>
   <script>
-    // The list on this page is server-rendered: one page of open calls with its
-    // page links. Typed words go to /search/ (Enter, or the dropdown's first row); an organiser or a country without
-    // a page of its own (a suggestion, or arriving with ?chip=) swaps in results from the search index, RESULTS_STEP
-    // at a time; removing the chip puts this page's list back.
+    // The list on this page is server-rendered: one page of open calls with its page links. The box here is the site's
+    // search box: completions while typing (cards.js), and Enter or a completion opens /search/. Old links land where
+    // their search is now: /?q= on /search/, /?chip= on the chip's own page or, for one without (an organiser, a country
+    // with no page), on /search/ for its name.
     var allCalls = null;
-    var listEl = document.getElementById('callsList');
-    var pageListHtml = listEl.innerHTML;
-    var activeChips = [];
     var selectedSuggestion = -1;
-    var RESULTS_STEP = 30;
-    var results = [];
-    var resultsShown = 0;
 
     function withIndex(cb) {
       loadSearchIndex(function(calls) { allCalls = calls; cb(); });
@@ -275,27 +267,17 @@
       var params = new URLSearchParams(window.location.search);
       var qParam = params.get('q');
       var chipParam = params.get('chip');
-      if (chipParam) {
+      if (chipParam && chipParam.indexOf(':') !== -1) {
         // Split at the first colon only: an organiser's name may hold one ("Site:Brooklyn Gallery").
-        var colon = chipParam.indexOf(':');
-        if (colon !== -1) {
-          var chipType = chipParam.slice(0, colon), chipValue = chipParam.slice(colon + 1);
-          // Redirect to dedicated page if one exists
-          var chipUrl = chipToUrl(chipType, chipValue);
-          if (chipUrl) { window.location.href = chipUrl; return; }
-          var chipLabel = chipValue;
-          if (chipType === 'category' && categoryLabel[chipValue]) chipLabel = categoryLabel[chipValue];
-          else if (chipType === 'eligibility' && eligibilityLabel[chipValue]) chipLabel = eligibilityLabel[chipValue];
-          else if (chipType === 'prize' && prizeCategoryLabel[chipValue]) chipLabel = prizeCategoryLabel[chipValue];
-          else if (chipType === 'country' && countryLongNames[chipValue]) chipLabel = countryLongNames[chipValue];
-          else if (chipType === 'fee') chipLabel = chipValue === 'free' ? 'Free' : chipValue === 'free-entry' ? 'Free entry*' : 'Paid';
-          withIndex(function() { addChip({ type: chipType, value: chipValue, label: chipLabel }); });
-        }
+        var colon = chipParam.indexOf(':'), chipType = chipParam.slice(0, colon), chipValue = chipParam.slice(colon + 1);
+        window.location.replace(chipToUrl(chipType, chipValue) || '/search/?q=' + encodeURIComponent(chipValue));
       } else if (qParam) {
-        // Searches have their own page now; an old /?q= link lands there.
         window.location.replace('/search/?q=' + encodeURIComponent(qParam));
       }
     }
+
+    // A completion opens its search.
+    function go(type, value) { window.location.href = chipToUrl(type, value) || '/search/?q=' + encodeURIComponent(value); }
 
     // --- Mobile search ---
     function isMobile() { return window.innerWidth <= 640; }
@@ -312,7 +294,7 @@
       hideDropdown();
     }
 
-    // --- Suggestions + chips ---
+    // --- Suggestions ---
 
     function buildSuggestions(query) {
       // cards.js's buildSearchSuggestions, the same as every other page: nothing while empty, completions while typing.
@@ -321,12 +303,7 @@
 
     function showDropdown(groups) {
       // Shared renderer in cards.js — keeps home and detail-page dropdowns identical.
-      renderSearchDropdown(
-        document.getElementById('searchDropdown'),
-        document.querySelector('.search-wrap'),
-        groups,
-        function(type, value, label) { addChip({ type: type, value: value, label: label }); }
-      );
+      renderSearchDropdown(document.getElementById('searchDropdown'), document.querySelector('.search-wrap'), groups, go);
       selectedSuggestion = -1;
     }
 
@@ -334,120 +311,6 @@
       document.getElementById('searchDropdown').style.display = 'none';
       document.querySelector('.search-wrap').classList.remove('has-suggestions');
       selectedSuggestion = -1;
-    }
-
-    function addChip(chip) {
-      // Categories, fees, prizes, eligibility and most countries have their own
-      // pages; go there. Organizations and countries without a page filter here.
-      var url = chipToUrl(chip.type, chip.value);
-      if (url) { window.location.href = url; return; }
-      if (activeChips.some(function(c) { return c.type === chip.type && c.value === chip.value; })) return;
-      activeChips.push(chip);
-      document.getElementById('searchInput').value = '';
-      document.getElementById('searchClear').classList.remove('visible');
-      renderChips();
-      hideDropdown();
-      closeMobileSearch();
-      renderResults();
-    }
-
-    function removeChip(index) {
-      activeChips.splice(index, 1);
-      renderChips();
-      renderResults();
-    }
-
-    function renderChips() {
-      var container = document.getElementById('chipContainer');
-      if (!activeChips.length) { container.style.display = 'none'; container.innerHTML = ''; return; }
-      container.style.display = 'flex';
-      var html = '';
-      activeChips.forEach(function(chip, i) {
-        html += '<span class="meta-tag" style="cursor:pointer; gap:6px;" onclick="removeChip(' + i + ')">';
-        html += esc(chip.label);
-        html += ' <span style="opacity:0.5; margin-left:2px;">&times;</span>';
-        html += '</span>';
-      });
-      container.innerHTML = html;
-    }
-
-    // --- Results ---
-
-    function applySearchAndFilters(list) {
-      // Chip filters (AND logic)
-      activeChips.forEach(function(chip) {
-        if (chip.type === 'category') {
-          list = list.filter(function(c) { return c.category === chip.value; });
-        } else if (chip.type === 'country') {
-          list = list.filter(function(c) {
-            if (!c.location) return false;
-            if (chip.value === 'Online') return c.location === 'Online';
-            return c.location.split(',').pop().trim() === chip.value;
-          });
-        } else if (chip.type === 'eligibility') {
-          list = list.filter(function(c) { return c.eligibility && c.eligibility.includes(chip.value); });
-        } else if (chip.type === 'prize') {
-          list = list.filter(function(c) { return c.prize && derivePrizeCategories(c.prize).includes(chip.value); });
-        } else if (chip.type === 'fee') {
-          if (chip.value === 'free') list = list.filter(function(c) { return feeKind(c) === 'free'; });
-          else if (chip.value === 'free-entry') list = list.filter(function(c) { return feeKind(c) === 'free-entry'; });
-          else if (chip.value === 'paid') list = list.filter(function(c) { return feeKind(c) === 'entry'; });
-        } else if (chip.type === 'org') {
-          list = list.filter(function(c) { return c.org === chip.value; });
-        }
-      });
-
-
-      return list;
-    }
-
-    // The calls with their deadline state (processCall), made once after the index loads, not on every change.
-    // The deadline state counts calendar days, so it is remade only when the date turns (a tab left open past midnight).
-    var preparedCalls = null, preparedDay = '';
-    function prepared() {
-      var now = new Date(), day = now.toDateString();
-      if (!preparedCalls) preparedCalls = allCalls.map(function(c) { return processCall(c, now); });
-      else if (day !== preparedDay) preparedCalls.forEach(function(p) { Object.assign(p, computeUrgency(p, now)); });
-      preparedDay = day;
-      return preparedCalls;
-    }
-
-    function isSearching() { return activeChips.length > 0; }
-
-    // Open matches first (soonest deadline), then closed ones (newest first).
-    function renderResults() {
-      if (!isSearching()) { listEl.innerHTML = pageListHtml; return; }
-      var processed = prepared();
-      var open = applySearchAndFilters(processed.filter(function(c) { return c.urgencyClass !== 'closed'; }));
-      var closed = applySearchAndFilters(processed.filter(function(c) { return c.urgencyClass === 'closed'; }));
-      open.sort(function(a, b) {
-        if (a.deadline === 'Continuous' && b.deadline === 'Continuous') return 0;
-        if (a.deadline === 'Continuous') return 1;
-        if (b.deadline === 'Continuous') return -1;
-        return a.deadlineDate - b.deadlineDate;
-      });
-      closed.sort(function(a, b) { return b.deadlineDate - a.deadlineDate; });
-      results = open.concat(closed);
-      resultsShown = 0;
-      if (!results.length) { listEl.innerHTML = emptyState(); return; }
-      listEl.innerHTML = '';
-      showMoreResults();
-    }
-
-    function showMoreResults() {
-      var more = document.getElementById('moreResults');
-      if (more) more.parentNode.removeChild(more);
-      var end = Math.min(results.length, resultsShown + RESULTS_STEP);
-      var html = '';
-      // No headings, as on /search/: the calls accepting submissions first, the closed after; each card's date says which.
-      for (var i = resultsShown; i < end; i++) html += renderCard(results[i], 'h4');
-      resultsShown = end;
-      if (resultsShown < results.length) {
-        html += '<p class="list-more" id="moreResults"><button type="button" class="more-results">Show more results (' + (results.length - resultsShown) + ' left)</button></p>';
-      }
-      listEl.insertAdjacentHTML('beforeend', html);
-      var btn = document.querySelector('#moreResults button');
-      if (btn) btn.addEventListener('click', showMoreResults);
     }
 
     // --- Setup ---
@@ -513,7 +376,7 @@
         } else if (e.key === 'Enter' && selectedSuggestion >= 0) {
           e.preventDefault();
           var el = items[selectedSuggestion];
-          addChip({ type: el.dataset.type, value: el.dataset.value, label: el.dataset.label });
+          go(el.dataset.type, el.dataset.value);
         }
       });
 
