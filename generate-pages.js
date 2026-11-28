@@ -1215,8 +1215,10 @@ ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.len
       <script>${DESCRIPTION_COLLAPSE_SCRIPT}</script>
 
       <div class="call-detail-info" id="detailInfo">${renderInfoGrid(call, { esc: escapeHtml, locationLink: getStaticLocationLink })}</div>
-${/* the announced artists right under the Results row they answer (owner 2026-11-28), then Jury, then Organized by */ ''}${(call.announced || []).map(g => `      <div class="call-detail-jury">
-        <p class="call-detail-description"><a href="${escapeHtml(g.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(g.label || 'Announced')}</a>: ${g.names.map(n => `<a href="/artists/${artistSlug(n)}/">${escapeHtml(n)}</a>`).join(' &middot; ')}</p>
+${/* the announced artists right under the Results row they answer (owner 2026-11-28), then Jury, then Organized by. The label is
+   plain text, grey as "Organized by": the organiser's page it came from (g.url, kept in the data) is not linked — organisers'
+   pages go: 63 of 501 calls researched on 2026-11-28 had a page already gone (owner: "these pages will all be 404 soon"). */ ''}${(call.announced || []).map(g => `      <div class="call-detail-jury">
+        <p class="call-detail-description">${escapeHtml(g.label || 'Announced')}: ${g.names.map(n => `<a href="/artists/${artistSlug(n)}/">${escapeHtml(n)}</a>`).join(' &middot; ')}</p>
       </div>
 `).join('')}${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
