@@ -2658,11 +2658,17 @@ sortedResultsMonths.forEach(key => {
   const g = resultsMonthGroups[key];
   const label = `${MONTH_LABELS[g.month]} ${g.year}`;
   const robots = resultsMonthLive(g) ? 'index, follow' : 'noindex, follow';
-  const html = plainListHtml({ title: `Open Call Results — ${label}`, h1: `Results announcements in ${label}.`, desc: monthSentence(g.calls, label, 'results'), canonicalPath: `/results/${key}/`, robots, crumbs: [{ name: 'Results', url: '/results/' }] });
+  // The deadline month page's head (owner, 2026-11-28: breadcrumbs "as /deadlines/november-2026/", and its description
+  // "most suitable for that page … consistent"): the month as the title, the month's counted sentence with "results" and
+  // the count line under it; the cards and their headings as on /results/.
+  const sentence = monthSentence(g.calls, label, 'results'), stats = listStats(g.calls);
+  const html = plainListHtml({ title: `Open Call Results — ${label}`, h1: label, desc: sentence, canonicalPath: `/results/${key}/`, robots, crumbs: [{ name: 'Results', url: '/results/' }], subtitle: listSubtitle(sentence, stats) });
   const root = `/results/${key}/`;
   resultsMonthFiles[key] = writeListPages(html, root, [...g.calls].sort(resultsOrder), (chunk, k, count) =>
     renderSectionedCards(chunk, resultsSection, 'results') + paginationNav(root, k, count),
     { labelFor: k => k > 1 ? `Page ${k}` : '' });
+  // The Count gate reads its count line against every card of all its pages (in results order, not accepting-first).
+  pagedListings.set(root, { total: stats.total, open: stats.open, files: resultsMonthFiles[key], allCalls: true, anyOrder: true });
   if (robots === 'index, follow') sitemapEntries.push(`${SITE}/results/${key}`);
 });
 console.log(`  Results month pages: ${sortedResultsMonths.length} (${sortedResultsMonths.filter(k => resultsMonthLive(resultsMonthGroups[k])).length} indexed)`);
@@ -3611,7 +3617,7 @@ const homeFiles = [];
 // count line (these are not facet listings), and the list placeholder.
 // crumbs: [{ name, url }] above the title, as the deadline month pages have them ("All open calls / Deadlines"), and as
 // breadcrumb JSON-LD; the trail starts at "All open calls" (the home page) like every breadcrumb on the site.
-function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null }) {
+function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null, subtitle = '' }) {
   const trail = crumbs ? `<nav class="breadcrumbs"><a href="/">All open calls</a>${crumbs.map(c => ` / <a href="${c.url}">${escapeHtml(c.name)}</a>`).join('')}</nav>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
@@ -3623,7 +3629,7 @@ function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, foll
   ${buildHeader()}
 
   <main>
-    ${buildHero(trail, escapeHtml(h1), '')}
+    ${buildHero(trail, escapeHtml(h1), subtitle)}
 
     <section class="calls-list" id="callsList">
 <!-- PAGED-LIST:plain -->
@@ -3962,10 +3968,9 @@ if (staleFiles.length) {
     files.forEach(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].forEach(m => seen.add(m[1])));
     resultsListedOn.set(key, seen);
     if (seen.size !== g.calls.length) errs.push(`/results/${key}/ should list ${g.calls.length} calls but its ${files.length} page(s) list ${seen.size}`);
-    // Drawn as /results/: every card's date is its results date, linking here, green while still to come; no count line.
+    // Drawn as /results/: every card's date is its results date, linking here, green while still to come.
     for (const f of files) {
       const h = fs.readFileSync(f, 'utf8');
-      if (/<h2 class="subtitle">/.test(h)) errs.push(`${f}: has a subtitle; /results/ has none`);
       for (const m of h.matchAll(/<a href="([^"]*)" class="(call-date[^"]*)">([^<]*)<\/a>/g)) {
         const text = m[3].replace(/&nbsp;/g, ' ');
         if (m[1] !== `/results/${key}/` || !/^Results /.test(text)) errs.push(`${f}: a card says "${text}" → ${m[1]}, not its results date → /results/${key}/`);
@@ -3974,6 +3979,10 @@ if (staleFiles.length) {
     const listed = [...seen].map(s => bySlug.get(s));
     if (!listed.length || listed.some(c => !c)) { errs.push(`/results/${key}/ lists ${listed.length} cards, ${listed.filter(c => !c).length} of them no call`); continue; }
     const want = escapeHtml(monthSentence(listed, label, 'results'));
+    for (const f of files) {
+      const sub = (fs.readFileSync(f, 'utf8').match(/<h2 class="subtitle">([\s\S]*?)<\/h2>/) || [])[1] || '';
+      if (!sub.startsWith(want + ' ')) errs.push(`${f}: subtitle "${sub.slice(0, 80)}" is not "${want.slice(0, 80)}", counted from the ${listed.length} calls its pages list`);
+    }
     const meta = (fs.readFileSync(files[0], 'utf8').match(/<meta name="description" content="([^"]*)">/) || [])[1];
     if (meta !== want) errs.push(`/results/${key}/: meta description "${String(meta).slice(0, 80)}" is not the sentence`);
   }
@@ -4036,7 +4045,7 @@ if (staleFiles.length) {
     if (stat.total !== info.total || stat.open !== info.open) errs.push(`${url} says ${stat.open} accepting submissions, ${stat.total - stat.open} closed, but covers ${info.open} open of ${info.total}`);
     listings.set(url, info.allCalls ? { ...stat, allCalls: true } : stat);
     coverage(url, info.files, info.total);
-    if (info.allCalls) {
+    if (info.allCalls && !info.anyOrder) {
       // One list, open calls first: the first `open` cards are exactly the open calls, the rest exactly the past ones.
       const order = info.files.flatMap(f => cardSlugs(fs.readFileSync(f, 'utf8')));
       const openHrefs = new Set(data.calls.filter(isOpen).map(c => `/${c.slug}/`));
