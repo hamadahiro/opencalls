@@ -487,23 +487,31 @@ function cardDate(call, u, esc) {
   const results = u.urgencyClass === 'closed' && closedResultsText(call);
   // "Results …" carries the deadline's stroke in green (owner, 2026-11-26: "just underline them in green"); "Closed" none.
   const cls = 'call-date' + (results ? ' dl-band dl-results' : u.urgencyClass && u.urgencyClass !== 'closed' ? ' dl-band dl-' + u.urgencyClass : '');
-  return `<a href="${results ? '/results/' : '/deadlines/' + slug + '/'}" class="${cls}">${esc(results || u.urgencyText).replace(/ /g, '&nbsp;')}</a>`;
+  return `<a href="${results ? '/results/' + resultsMonthSlug(call) + '/' : '/deadlines/' + slug + '/'}" class="${cls}">${esc(results || u.urgencyText).replace(/ /g, '&nbsp;')}</a>`;
 }
 
-// A closed call whose results come on a day the organiser named says when, in place of "Closed", in the deadline's form
-// (computeUrgency: relative up to 30 days, the date beyond): "Results today", "Results tomorrow", "Results in 6 days",
-// "Results on Feb 5, 2027" (owner, 2026-11-26: "same absolute/relative date format as for deadlines"). Any other results
-// text (a month, a range, "by", "around", a date passed, announced) keeps "Closed".
+// A closed call whose results are still to come says when, in place of "Closed". A day the organiser named reads in the
+// deadline's form (computeUrgency: relative up to 30 days, the date beyond): "Results today", "Results tomorrow",
+// "Results in 6 days", "Results on Feb 5, 2027" (owner, 2026-11-26: "same absolute/relative date format as for
+// deadlines"); any other date in its own words with the year: "Results late December 2026", "Results by Dec 5, 2026".
+// Results passed, announced, or with no month: "Closed".
 function closedResultsText(call, now) {
   now = now || new Date();
   const w = resultsListed(call, now);
-  if (!w || w.kind !== 'day' || / about /.test(w.label)) return null;
-  const d = new Date(w.day + 'T00:00:00');
-  const n = calendarDaysBetween(now, d);
-  if (n <= 0) return 'Results today';
-  if (n === 1) return 'Results tomorrow';
-  if (n <= 30) return 'Results in ' + n + ' days';
-  return 'Results on ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  if (!w) return null;
+  if (w.kind === 'day' && !/ about /.test(w.label)) {
+    const d = new Date(w.day + 'T00:00:00');
+    const n = calendarDaysBetween(now, d);
+    if (n <= 0) return 'Results today';
+    if (n === 1) return 'Results tomorrow';
+    if (n <= 30) return 'Results in ' + n + ' days';
+    return 'Results on ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+  // Any other date still to come ("Late December 2026", "By December 5, 2026", "January 2027", "Within 6 weeks of the
+  // deadline"): resultsWhen's words with the year, never a count of days — a count would name a day the organiser did
+  // not (owner, 2026-11-28: every closed call whose results are still to come says when).
+  const y = w.month.slice(0, 4);
+  return /\d{4}$/.test(w.label) ? w.label : /\d$/.test(w.label) ? w.label + ', ' + y : w.label + ' ' + y;
 }
 
 // A card under its title: the date opens the description, the other facts (renderTags) stand under it.
@@ -556,6 +564,12 @@ function resultsWhen(call) {
   const l = String(t).trim().replace(/–/g, '–').toLowerCase().replace(/^[~≈]\s*/, '');
   const re = s => new RegExp('^' + s + '$');
   let x;
+  // "Announced October 30, 2026": results that are out, on the day given — placed in its month (the call page links to
+  // that month's results page); never "Results …" on a card (resultsListed).
+  if ((x = l.match(/^announced (.+)$/))) {
+    const w = resultsWhen({ resultsDate: x[1] });
+    return w && w.day ? { ...w, kind: 'announced' } : null;
+  }
   if ((x = l.match(/^(\d{4})-(\d{2})-(\d{2})$/))) return out('day', +x[1], +x[2], +x[3], 'Results ' + SHORT[+x[2] - 1] + ' ' + +x[3]);
   const approx = /^(?:on or about |around |approximately |approx\\.? )/.test(l) || /^[~≈]/.test(String(t).trim());
   if ((x = l.match(re('(?:on or about |around |approximately |approx\\.? )?' + M + ' (\\d{1,2})(?:st|nd|rd|th)?,? (\\d{4})'))))
@@ -616,10 +630,18 @@ function resultsListed(call, now) {
   now = now || new Date();
   if (!call || isCallOpen(call.deadline)) return null;
   const w = resultsWhen(call);
-  if (!w) return null;
+  if (!w || w.kind === 'announced') return null;
   const pad = n => String(n).padStart(2, '0');
   const today = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
   return w.last >= today ? w : null;
+}
+
+// The results month page a results date belongs to ("December 6–12, 2026", "Late December 2026" → december-2026), or
+// null when the date names no month ("Announced", "Spring 2027"). Cards and the call page link a results date here.
+function resultsMonthSlug(call) {
+  const w = resultsWhen(call);
+  if (!w) return null;
+  return RESULTS_MONTHS[+w.month.slice(5, 7) - 1] + '-' + w.month.slice(0, 4);
 }
 
 // Detail-page info grid (deadline/prize/fee/location/etc.). opts = { esc, locationLink }
@@ -696,11 +718,15 @@ function renderInfoGrid(call, opts) {
   // that page (its card says "Results …") the date links there too, written as the Deadline row writes a date, with the
   // cards' green stroke (owner, 2026-11-26: "link results word with results page and match date format and color. dont
   // move the position").
+  // The date links to its results month page whenever it names a month (owner, 2026-11-28: results dates linked like
+  // deadlines); one with no month ("Announced", "Spring 2027") stays plain, as any value without a page.
   if (call.resultsDate) {
-    const listed = closedResultsText(call) ? resultsWhen(call) : null;
-    const val = listed
-      ? `<a href="/results/" class="dl-band dl-results" title="${esc(call.resultsDate)}">${new Date(listed.day + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</a>`
-      : infoVal(call.resultsDate);
+    const month = resultsMonthSlug(call), w = resultsWhen(call);
+    const listed = !!closedResultsText(call);
+    const oneDay = listed && w.kind === 'day' && !/ about /.test(w.label);
+    const text = oneDay ? new Date(w.day + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : call.resultsDate;
+    const val = !month ? infoVal(call.resultsDate)
+      : `<a href="/results/${month}/"${listed ? ' class="dl-band dl-results"' : ''} title="${esc(call.resultsDate)}">${infoVal(text)}</a>`;
     rows.push(infoRow('<a href="/results/">Results</a>', val));
   }
 
@@ -771,6 +797,6 @@ if (typeof module !== 'undefined' && module.exports) {
     isFree, getState, scoreSimilarity,
     isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts,
-    resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText
+    resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug
   };
 }

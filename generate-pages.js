@@ -9,7 +9,7 @@ const {
   usStateNames, stateNameToAbbr, validCountries,
   isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText,
+  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug,
   isFree, getState, scoreSimilarity,
   isValidHttpUrl, submitViaIsPlatform,
   TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
@@ -791,6 +791,20 @@ const PAGED_LIST_RE = /<!-- PAGED-LIST:(\w+) -->/;
 const pagedLists = [];
 const pagedListings = new Map(); // '/x/' -> { total, open, files }
 
+// The results date as a second event in the call page's "Add to calendar" file (owner, 2026-11-28): an all-day event on the
+// day the organiser named, or on the last day the words allow ("Late December 2026" → Dec 31), titled "<call> - Results",
+// the organiser's words in it. None when the date names no day or month, or falls before the deadline.
+// Returns page JS: '' or " + '<event text>'".
+function resultsIcsEvent(call) {
+  const w = resultsWhen(call);
+  if (!w || w.kind === 'announced') return '';
+  const day = w.kind === 'day' ? w.day : w.last;
+  if (!day || call.deadline === 'Continuous' || day <= call.deadline) return '';
+  const next = new Date(day + 'T00:00:00Z'); next.setUTCDate(next.getUTCDate() + 1);
+  const ymd = s => s.replace(/-/g, '');
+  return ` + 'BEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:${ymd(day)}\\r\\nDTEND;VALUE=DATE:${ymd(next.toISOString().slice(0, 10))}\\r\\nSUMMARY:' + icsE(t) + ' - Results\\r\\nDESCRIPTION:' + icsE('Results: ${safeJsStr(call.resultsDate)}') + '\\r\\nURL:' + u + '\\r\\nEND:VEVENT\\r\\n'`;
+}
+
 function buildStaticCallList(calls, opts = {}) {
   pagedLists.push({ calls, opts });
   return `<!-- PAGED-LIST:${pagedLists.length - 1} -->`;
@@ -843,7 +857,7 @@ function renderSectionedCards(calls, sectionOf) {
 // One page of an open-then-past list. "Closed" heads the first closed card, and a page that starts among the closed
 // calls starts with it; with nothing open, page 1 starts straight with the closed calls. The site's status words are one
 // pair everywhere, the count line's: "accepting submissions" and "closed" (owner, 2026-11-27: "we mix terms").
-function renderOpenThenPast(chunk, anyOpen, k) {
+function renderOpenThenPast(chunk, anyOpen, k, sections = true) {
   const now = new Date();
   let html = '';
   let current = '', inPast = false;
@@ -851,8 +865,8 @@ function renderOpenThenPast(chunk, anyOpen, k) {
     const u = computeUrgency(c, now);
     const past = !isOpen(c);
     if (past && !inPast) { inPast = true; current = ''; if (anyOpen) html += `      <h2 class="list-heading">Closed</h2>\n`; }
-    const section = past ? pastSection(c, u) : openSection(c, u);
-    if (section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
+    const section = !sections ? '' : past ? pastSection(c, u) : openSection(c, u);
+    if (section && section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
     html += renderStaticCard(c, u);
   });
   return html;
@@ -994,15 +1008,16 @@ function writePagedListing(filepath, html, { calls, opts }) {
   const pastRoot = base + 'past/';
   const sections = !opts.skipSections;
   const open = sortOpenCalls(calls);
-  const past = sortPastCalls(calls);
+  const past = opts.pastOrder ? calls.filter(c => !isOpen(c)).sort(opts.pastOrder) : sortPastCalls(calls);
   const files = [];
 
   if (opts.allCalls) {
     // Juror pages (Lara, 2026-11-26): every call the person judged on one list — the open ones first (soonest first,
-    // under the usual headers), then "Closed" (newest first). Paged like every list.
+    // under the usual headers), then "Closed" (newest first). Paged like every list. Results month pages use the same
+    // list without the month headers (skipSections) and with the closed in results order (pastOrder).
     const anyOpen = open.length > 0;
     files.push(...writeListPages(html, base, [...open, ...past], (chunk, k, count) =>
-      renderOpenThenPast(chunk, anyOpen, k) + paginationNav(base, k, count),
+      renderOpenThenPast(chunk, anyOpen, k, !opts.skipSections) + paginationNav(base, k, count),
       { labelFor: k => k > 1 ? `Page ${k}` : '' }));
     pagedListings.set(base, { total: calls.length, open: open.length, files, allCalls: true, noHeroCounts: !!opts.noHeroCounts });
     return;
@@ -1263,7 +1278,7 @@ ${isCallOpen(call.deadline) && call.deadline !== 'Continuous' ? `    function do
       var o = '${safeJsStr(call.org)}';
       var dl = new Date('${call.deadline}T00:00:00').toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
       var desc = 'Open call by ' + icsE(o) + '\\\\n\\\\nDeadline: ' + icsE(dl)${call.prize ? ` + '\\\\nPrize: ' + icsE('${safeJsStr(call.prize)}')` : ''}${call.fee ? ` + '\\\\nEntry fee: ' + icsE('${safeJsStr(call.fee)}')` : ''}${call.additionalFees ? ` + '\\\\nAdditional fees: ' + icsE('${safeJsStr(call.additionalFees)}')` : ''};
-      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nPRODID:-//Monographica//Open Calls//EN\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + de + '\\r\\nSUMMARY:' + icsE(t) + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\nEND:VCALENDAR';
+      var ics = 'BEGIN:VCALENDAR\\r\\nVERSION:2.0\\r\\nPRODID:-//Monographica//Open Calls//EN\\r\\nBEGIN:VEVENT\\r\\nDTSTART;VALUE=DATE:' + d + '\\r\\nDTEND;VALUE=DATE:' + de + '\\r\\nSUMMARY:' + icsE(t) + ' - Deadline\\r\\nDESCRIPTION:' + desc + '\\r\\nURL:' + u + '\\r\\nBEGIN:VALARM\\r\\nTRIGGER:-P1D\\r\\nACTION:DISPLAY\\r\\nDESCRIPTION:Deadline tomorrow: ' + icsE(t) + '\\r\\nEND:VALARM\\r\\nEND:VEVENT\\r\\n'${resultsIcsEvent(call)} + 'END:VCALENDAR';
       var blob = new Blob([ics], {type: 'text/calendar'});
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -2618,14 +2633,14 @@ const sortedMonths = Object.keys(monthGroups).sort((a, b) => {
 // organizers; the countries of its calls (getCountry, as the country pages count them). "with deadlines in" is true of
 // past, current and future months alike. The Month gate below reads it back from the pages.
 const MONTH_KIND_WORDS = { exhibition: 'exhibitions', grant: 'grants', zine: 'publications', photography: 'competitions', residency: 'residencies', education: 'education programs' };
-function monthSentence(calls, label) {
+function monthSentence(calls, label, what = 'deadlines') {
   const n = {};
   calls.forEach(c => { const w = MONTH_KIND_WORDS[c.category] || 'open calls'; n[w] = (n[w] || 0) + 1; });
   const kinds = Object.keys(n).sort((a, b) => (n[b] - n[a]) || a.localeCompare(b));
   const orgs = new Set(calls.map(c => c.org).filter(Boolean)).size;
   const countries = new Set(calls.map(c => getCountry(c.location)).filter(Boolean)).size;
   const list = andList(kinds);
-  return `${list[0].toUpperCase()}${list.slice(1)} with deadlines in ${label}, from ${orgs} organizer${orgs !== 1 ? 's' : ''}` +
+  return `${list[0].toUpperCase()}${list.slice(1)} with ${what} in ${label}, from ${orgs} organizer${orgs !== 1 ? 's' : ''}` +
     (countries ? ` across ${countries} countr${countries !== 1 ? 'ies' : 'y'}` : '') + '.';
 }
 
@@ -2667,6 +2682,60 @@ ${buildStaticCallList(g.calls, { skipSections: true })}
   if (openCount > 0) sitemapEntries.push(`${SITE}/deadlines/${key}`);
   console.log(`  Deadline page: ${label} (${count} calls, ${openCount} open)`);
 });
+
+// === Results month pages (owner, 2026-11-28: results dates linked as deadlines are) ===
+// /results/<month>-<year>/: every call whose results date falls in that month (shared.js resultsWhen; resultsMonthSlug
+// is the link every card and call page uses), the deadline month page's form: breadcrumb, the month, the counted
+// sentence with "results", then one list — the calls accepting submissions first (soonest deadline), then the closed in
+// results order (the last day the words allow), no month headers. Indexed while any call on it is accepting submissions
+// or still waiting for results. The Results gate below proves each link lands on a page that lists its call.
+const resultsMonthGroups = {};
+data.calls.forEach(c => {
+  const key = resultsMonthSlug(c);
+  if (!key) return;
+  const w = resultsWhen(c);
+  if (!resultsMonthGroups[key]) resultsMonthGroups[key] = { month: +w.month.slice(5, 7) - 1, year: +w.month.slice(0, 4), calls: [] };
+  resultsMonthGroups[key].calls.push(c);
+});
+const sortedResultsMonths = Object.keys(resultsMonthGroups).sort((a, b) => {
+  const ga = resultsMonthGroups[a], gb = resultsMonthGroups[b];
+  return (ga.year - gb.year) || (ga.month - gb.month);
+});
+const resultsOrder = (a, b) => resultsWhen(a).last.localeCompare(resultsWhen(b).last) || b.deadline.localeCompare(a.deadline) || a.title.localeCompare(b.title);
+const resultsMonthLive = g => g.calls.some(c => isOpen(c) || resultsListed(c));
+sortedResultsMonths.forEach(key => {
+  const g = resultsMonthGroups[key];
+  const label = `${MONTH_LABELS[g.month]} ${g.year}`;
+  const sentence = monthSentence(g.calls, label, 'results');
+  const stats = listStats(g.calls);
+  const robotsDirective = resultsMonthLive(g) ? 'index, follow' : 'noindex, follow';
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: `Open Call Results — ${label}`, description: escapeHtml(sentence), canonical: `${SITE}/results/${key}`, jsonLd: collectionPageLd(`Open Call Results — ${label}`, `Open calls with results in ${label}.`, `${SITE}/results/${key}/`), breadcrumbs: [{ name: 'Results', url: `${SITE}/results/` }, { name: label, url: `${SITE}/results/${key}/` }], cssVersion, robots: robotsDirective })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/results/">Results</a></nav>', label, listSubtitle(sentence, stats))}
+
+    <section class="calls-list" id="callsList">
+${buildStaticCallList(g.calls, { allCalls: true, skipSections: true, pastOrder: resultsOrder })}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+  writeGenerated(`results/${key}/index.html`, html);
+  if (robotsDirective === 'index, follow') sitemapEntries.push(`${SITE}/results/${key}`);
+});
+console.log(`  Results month pages: ${sortedResultsMonths.length} (${sortedResultsMonths.filter(k => resultsMonthLive(resultsMonthGroups[k])).length} indexed)`);
 
 // === Continuous (rolling) deadline page ===
 // The "Continuous" deadline on a detail page links here (owner, 2026-11-23).
@@ -3424,6 +3493,9 @@ const ACTIVE_DEADLINE_URLS = new Set(
     .filter(([, group]) => group.calls.some(isOpen))
     .map(([key]) => `${SITE}/deadlines/${key}/`)
 );
+const ACTIVE_RESULTS_URLS = new Set(
+  sortedResultsMonths.filter(k => resultsMonthLive(resultsMonthGroups[k])).map(k => `${SITE}/results/${k}/`)
+);
 const INDEXABLE_STATE_URLS = new Set(
   Object.entries(openStateCounts)
     .filter(([, openCount]) => shouldIndexStatePage(openCount || 0))
@@ -3435,7 +3507,8 @@ const allUrls = allUrlsRaw.filter(url =>
   isTopCountryPage(url) ||
   INDEXABLE_STATE_URLS.has(url) ||
   ACTIVE_CALL_URLS.has(url) ||
-  ACTIVE_DEADLINE_URLS.has(url)
+  ACTIVE_DEADLINE_URLS.has(url) ||
+  ACTIVE_RESULTS_URLS.has(url)
 );
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -3631,22 +3704,21 @@ const archiveFiles = [];
   console.log(`  Archive: ${past.length} closed calls on ${archiveFiles.length} page(s)`);
 }
 
-// /results/ — the closed calls whose cards say "Results …" (shared.js closedResultsText: results on a day the organiser
-// named, still to come), soonest first, under Results Today, Results Tomorrow and then the month, as the home page groups
-// deadlines (owner, 2026-11-26: "just filter out ones with result dates and group them like on home page").
+// /results/ — the closed calls whose cards say "Results …" (shared.js closedResultsText: results still to come; since
+// 2026-11-28 every such call, not only a day the organiser named), soonest first by the last day the words allow, under
+// Results Today, Results Tomorrow and then the month, as the home page groups deadlines (owner, 2026-11-26: "just filter
+// out ones with result dates and group them like on home page"). Each card's date links to its results month page.
 const resultsFiles = [];
 const resultsCalls = [];
 {
   const now = new Date();
-  const day = c => resultsWhen(c).day;
-  resultsCalls.push(...data.calls.filter(c => !isOpen(c) && closedResultsText(c, now))
-    .sort((a, b) => day(a).localeCompare(day(b)) || b.deadline.localeCompare(a.deadline) || a.title.localeCompare(b.title)));
+  resultsCalls.push(...data.calls.filter(c => !isOpen(c) && closedResultsText(c, now)).sort(resultsOrder));
   const resultsSection = c => {
     const text = closedResultsText(c, now);
     if (text === 'Results today') return 'Results Today';
     if (text === 'Results tomorrow') return 'Results Tomorrow';
-    const d = new Date(day(c) + 'T00:00:00');
-    return MONTHS_CAP[d.getMonth()] + ' ' + d.getFullYear();
+    const m = resultsWhen(c).month;
+    return MONTHS_CAP[+m.slice(5, 7) - 1] + ' ' + m.slice(0, 4);
   };
   const html = plainListHtml({ title: 'Upcoming Open Call Results', h1: 'Upcoming results announcements from closed calls.', desc: 'Upcoming results announcements from closed calls for photographers and visual artists, soonest first.', canonicalPath: '/results/' });
   resultsFiles.push(...writeListPages(html, '/results/', resultsCalls, (chunk, k, count) =>
@@ -3855,12 +3927,12 @@ const isSitePage = f => !f.startsWith('scripts' + path.sep) && !f.startsWith('sc
 const isPagedVariant = f => isSitePage(f) && /(^|\/)(page\/\d+|past)\/index\.html$/.test(f) && !MANUAL_FILES.includes(f);
 // A deadline month whose calls all moved to other months (2026-11-27: /deadlines/december-2027/ still listed one call,
 // now due 2026-12-07, with the old count line) goes to the deadlines index, as its page/N and past/ do.
-const isEmptiedMonth = f => /^deadlines\/[a-z]+-\d{4}\/index\.html$/.test(f);
+const isEmptiedMonth = f => /^(deadlines|results)\/[a-z]+-\d{4}\/index\.html$/.test(f);
 let pagedRedirects = 0;
 for (let i = staleFiles.length - 1; i >= 0; i--) {
   const f = staleFiles[i];
   if (isEmptiedMonth(f)) {
-    fs.writeFileSync(f, redirectStubHtml('/deadlines/', 'This page has moved to'));
+    fs.writeFileSync(f, redirectStubHtml(f.startsWith('results/') ? '/results/' : '/deadlines/', 'This page has moved to'));
     staleFiles.splice(i, 1);
     pagedRedirects++;
     continue;
@@ -3941,12 +4013,50 @@ if (staleFiles.length) {
     const meta = (fs.readFileSync(info.files[0], 'utf8').match(/<meta name="description" content="([^"]*)">/) || [])[1];
     if (meta !== want) errs.push(`/deadlines/${key}/: meta description "${String(meta).slice(0, 80)}" is not the sentence`);
   }
+  // Results months: the same proof with "results", and every results link lands on a page that lists its call — the
+  // call page's Results date and every "Results …" card (the cards on /results/), read from the written HTML.
+  const resultsListedOn = new Map();   // month key -> Set of call slugs its pages list
+  for (const key of sortedResultsMonths) {
+    const g = resultsMonthGroups[key], label = `${MONTH_LABELS[g.month]} ${g.year}`;
+    const info = pagedListings.get(`/results/${key}/`);
+    if (!info) { errs.push(`/results/${key}/ was not written`); continue; }
+    const seen = new Set();
+    info.files.forEach(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].forEach(m => seen.add(m[1])));
+    resultsListedOn.set(key, seen);
+    const listed = [...seen].map(s => bySlug.get(s));
+    if (!listed.length || listed.some(c => !c)) { errs.push(`/results/${key}/ lists ${listed.length} cards, ${listed.filter(c => !c).length} of them no call`); continue; }
+    const want = escapeHtml(monthSentence(listed, label, 'results'));
+    for (const f of info.files) {
+      const sub = (fs.readFileSync(f, 'utf8').match(/<h2 class="subtitle">([\s\S]*?)<\/h2>/) || [])[1] || '';
+      if (!sub.startsWith(want + ' ')) errs.push(`${f}: subtitle "${sub.slice(0, 80)}" is not "${want.slice(0, 80)}", counted from the ${listed.length} calls its pages list`);
+    }
+    const meta = (fs.readFileSync(info.files[0], 'utf8').match(/<meta name="description" content="([^"]*)">/) || [])[1];
+    if (meta !== want) errs.push(`/results/${key}/: meta description "${String(meta).slice(0, 80)}" is not the sentence`);
+  }
+  let resultsLinks = 0;
+  for (const c of data.calls) {
+    const slug = c.slug || slugify(c.title), key = resultsMonthSlug(c);
+    const page = fs.readFileSync(`${slug}/index.html`, 'utf8');
+    const row = (page.match(/<span class="info-label"><a href="\/results\/">Results<\/a><\/span><span class="dots"><\/span><span class="info-value">([\s\S]*?)<\/span><\/div>/) || [, ''])[1];
+    const href = (row.match(/href="\/results\/([a-z]+-\d{4})\/"/) || [])[1];
+    if (key && href !== key) errs.push(`/${slug}/: its results date should link to /results/${key}/ (links to ${href ? '/results/' + href + '/' : 'nothing'})`);
+    else if (!key && href) errs.push(`/${slug}/: its results date names no month but links to /results/${href}/`);
+    else if (key && !(resultsListedOn.get(key) || new Set()).has(slug)) errs.push(`/${slug}/: links to /results/${key}/, which does not list it`);
+    else if (key) resultsLinks++;
+  }
+  for (const f of resultsFiles) {
+    for (const m of fs.readFileSync(f, 'utf8').matchAll(/<h4 class="call-title"><a href="\/([^"]+)\/">[\s\S]*?<\/h4>\s*<p class="call-description"><a href="([^"]+)" class="call-date/g)) {
+      const slug = m[1], href = m[2];
+      const key = (String(href).match(/^\/results\/([a-z]+-\d{4})\/$/) || [])[1];
+      if (!key || !(resultsListedOn.get(key) || new Set()).has(slug)) errs.push(`${f}: the card of /${slug}/ links to ${href}, which does not list it`);
+    }
+  }
   if (errs.length) {
     console.error(`\nFATAL: MONTH PAGES — ${errs.length} problem(s):`);
     errs.slice(0, 20).forEach(e => console.error('  - ' + e));
     process.exit(1);
   }
-  console.log(`  Month gate: ${sortedMonths.length} month pages, each sentence counted again from the calls its pages list`);
+  console.log(`  Month gate: ${sortedMonths.length} deadline and ${sortedResultsMonths.length} results month pages, each sentence counted again from the calls its pages list; ${resultsLinks} call pages' results dates and ${resultsCalls.length} "Results …" cards link to a month page that lists them`);
 }
 
 // === HARD GATE: every count must equal what the pages it points to list ===
