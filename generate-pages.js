@@ -239,6 +239,7 @@ data.calls.forEach((c, i) => {
       let total = 0;
       c.announced.forEach((g, i) => {
         if (!g || typeof g.label !== 'string') err(`"${label}" announced[${i}] has no label string`);
+        else if (/^\p{Ll}/u.test(g.label)) err(`"${label}" announced[${i}] label "${g.label}" must start with a capital letter (owner 2026-11-28: "the 27" read as a mistake)`);
         else if (/:\s*$/.test(g.label) || g.label.length > 100 || g.label !== g.label.trim()) err(`"${label}" announced[${i}] label "${g.label}" must be the heading as printed: no colon at the end, at most 100 characters`);
         if (!g || !isValidHttpUrl(g.url)) err(`"${label}" announced[${i}] url must be an http(s) URL`);
         if (!g || !Array.isArray(g.names) || !g.names.length || g.names.some(n => typeof n !== 'string' || !n.trim())) { err(`"${label}" announced[${i}] needs names`); return; }
