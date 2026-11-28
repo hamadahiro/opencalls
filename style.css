@@ -34,7 +34,6 @@
   --search-bg: #fff;          /* the search bar, its suggestions and the submit form's fields */
   --search-hover: #f0f0f0;    /* a suggestion under the pointer or picked with the arrow keys */
   --border: #ddd;
-  --menu-bg: #dddddd;         /* the phone menu's layer: one step darker than the page (owner, 2026-11-28) */
   --btn-bg: #111;
   --btn-text: #fff;
   --prize-bg: #111;
@@ -68,7 +67,6 @@
     --search-bg: #e1e1e1;        /* #fff was too bright on the dark page (owner, 2026-11-25) */
     --search-hover: #d2d2d2;
     --border: #333;
-    --menu-bg: #1e1e1e;         /* the phone menu's layer: one step lighter than the page (owner, 2026-11-28) */
     --btn-bg: #cdcdcd;
     --btn-text: #151515;
     --prize-bg: #cdcdcd;
@@ -854,8 +852,9 @@ a.call-date:not(.dl-band):hover {
 
   /* The phone menu is a layer over the page (owner, 2026-11-28, "A2" with the tint): the page under it does not move.
      A page-wide sheet, behind the header row, slides down from under the header and uncovers the five links where they
-     stand (as papersarchive.com, without its spring and blur), its colour fading from the page's to --menu-bg on the same
-     curve; closing reverses it. Links in the site's large type: Source Serif 4 at the section-heading size, the page's
+     stand (as papersarchive.com, without its spring and blur); closing reverses it. The sheet is the page colour: iPhone
+     Safari colours its status bar from the page as loaded and did not follow a tinted sheet, nor a page background
+     changed after loading (owner's phone, 2026-11-28), so a tint left a band under the bar. Links in the site's large type: Source Serif 4 at the section-heading size, the page's
      own link in semibold. shared.js sets --menu-top (the header's bottom) and keeps the header row above the sheet
      until it has closed (.menu-closing). Proposal and frames: runs/opencalls/mobile-menu-2026-11-28/. */
   .mobile-nav {
@@ -874,14 +873,13 @@ a.call-date:not(.dl-band):hover {
     visibility: hidden;
     background: var(--bg);
     clip-path: inset(0 0 calc(100% - var(--menu-top, 82px)) 0);
-    transition: clip-path 280ms cubic-bezier(0.65, 0, 0.35, 1), background-color 280ms cubic-bezier(0.65, 0, 0.35, 1), visibility 0s linear 280ms;
+    transition: clip-path 280ms cubic-bezier(0.65, 0, 0.35, 1), visibility 0s linear 280ms;
   }
 
   .show-responsive-nav .mobile-nav {
     visibility: visible;
-    background: var(--menu-bg);
     clip-path: inset(0);
-    transition: clip-path 420ms cubic-bezier(0.33, 1, 0.68, 1), background-color 420ms cubic-bezier(0.33, 1, 0.68, 1), visibility 0s;
+    transition: clip-path 420ms cubic-bezier(0.33, 1, 0.68, 1), visibility 0s;
   }
 
   .mobile-nav a {

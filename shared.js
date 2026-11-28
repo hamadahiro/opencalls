@@ -941,27 +941,6 @@ if (typeof document !== 'undefined') {
   addEventListener('pageshow', function (e) { if (e.persisted && isOpen()) { pushed = false; close(true); } });
 })();
 
-/* The iPhone's status bar follows the layer: Safari colours it from <meta name="theme-color"> (or, in newer Safari, from
-   the top of the page); while the menu opens or closes, the meta takes the layer's colour on every frame, and its own
-   colour again once the menu is closed. */
-(function () {
-  var metas = [].slice.call(document.querySelectorAll('meta[name="theme-color"]'));
-  var orig = metas.map(function (m) { return m.content; });
-  var nav = document.getElementById('mobileNav');
-  if (!nav || !metas.length) return;
-  var raf = 0, until = 0;
-  function hex(c) { var m = c.match(/\d+(\.\d+)?/g); return m ? '#' + m.slice(0, 3).map(function (x) { return Math.round(+x).toString(16).padStart(2, '0'); }).join('') : c; }
-  function follow() {
-    var open = document.body.classList.contains('show-responsive-nav');
-    if (performance.now() < until) {
-      var c = hex(getComputedStyle(nav).backgroundColor);
-      metas.forEach(function (m) { m.content = c; });
-      raf = requestAnimationFrame(follow);
-    } else if (!open) metas.forEach(function (m, i) { m.content = orig[i]; });
-  }
-  new MutationObserver(function () { until = performance.now() + 500; cancelAnimationFrame(raf); raf = requestAnimationFrame(follow); })
-    .observe(document.body, { attributes: true, attributeFilter: ['class'] });
-})();
 }
 
 if (typeof module !== 'undefined' && module.exports) {
