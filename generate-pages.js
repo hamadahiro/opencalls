@@ -237,6 +237,7 @@ data.calls.forEach((c, i) => {
       let total = 0;
       c.announced.forEach((g, i) => {
         if (!g || typeof g.label !== 'string') err(`"${label}" announced[${i}] has no label string`);
+        else if (/:\s*$/.test(g.label) || g.label.length > 100 || g.label !== g.label.trim()) err(`"${label}" announced[${i}] label "${g.label}" must be the heading as printed: no colon at the end, at most 100 characters`);
         if (!g || !isValidHttpUrl(g.url)) err(`"${label}" announced[${i}] url must be an http(s) URL`);
         if (!g || !Array.isArray(g.names) || !g.names.length || g.names.some(n => typeof n !== 'string' || !n.trim())) { err(`"${label}" announced[${i}] needs names`); return; }
         const low = g.names.map(n => n.trim().toLowerCase());
@@ -845,12 +846,12 @@ const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 // computeUrgency() lives in shared.js (one contract for server + client).
 
 // Same markup as renderCard() in cards.js, which renders search results.
-function renderStaticCard(call, u, mode, textHtml) {
+function renderStaticCard(call, u, mode) {
   const slug = call.slug || slugify(call.title);
   const title = escapeHtml(call.title) + (!call.orgInTitle ? ' · ' + escapeHtml(call.org) : '');
   return `      <div class="call-card">
         <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
-        ${renderCardBody(call, { esc: escapeHtml, urgency: u, mode, textHtml })}
+        ${renderCardBody(call, { esc: escapeHtml, urgency: u, mode })}
       </div>\n`;
 }
 
@@ -2608,17 +2609,34 @@ function artistSentence(a) {
 }
 const artistFiles = new Map();
 {
-  const now = new Date();
-  const monthOf = c => { const w = resultsWhen(c); const m = w ? w.month : String(c.deadline || '').slice(0, 7); return /^\d{4}-\d{2}$/.test(m) ? MONTHS_CAP[+m.slice(5, 7) - 1] + ' ' + m.slice(0, 4) : ''; };
+  // The juror page's own template (owner 2026-11-28: "make this like jury page"): breadcrumb, name, sentence, then the
+  // calls as on every list — open first, then "Closed" — with their usual cards.
   for (const a of artistMap.values()) {
-    const name = artistName(a), sentence = artistSentence(a), root = `/artists/${a.slug}/`, es = artistEntries(a);
-    const html = plainListHtml({ title: `${name} - Artists`, h1: name, desc: sentence, canonicalPath: root, robots: 'noindex, follow', crumbs: [{ name: 'Artists', url: '/artists/' }], crumbName: name, subtitle: escapeHtml(sentence) });
-    const labelsOf = new Map(es.map(e => [e.call.slug, e.groups.map(g => `<a href="${escapeHtml(g.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(g.label || 'Announced')}</a>`).join(', ')]));
-    artistFiles.set(a.slug, writeListPages(html, root, es.map(e => e.call), (chunk, k, count) => {
-      let out = '', current = '';
-      chunk.forEach(c => { const sec = monthOf(c); if (sec && sec !== current) { current = sec; out += `      <h3 class="section-header">${sec}</h3>\n`; } out += renderStaticCard(c, computeUrgency(c, now), 'results', labelsOf.get(c.slug)); });
-      return out + paginationNav(root, k, count);
-    }, { labelFor: k => k > 1 ? `Page ${k}` : '' }));
+    const name = artistName(a), desc = artistSentence(a), url = `${SITE}/artists/${a.slug}/`;
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  ${HEAD({ title: escapeHtml(`${name} - Artists`), description: escapeHtml(desc), canonical: url, jsonLd: collectionPageLd(`${name} - Artists`, desc, url), breadcrumbs: [{ name: 'Artists', url: `${SITE}/artists/` }, { name, url }], cssVersion, robots: 'noindex, follow' })}
+</head>
+<body>
+
+  ${buildHeader()}
+
+  <main>
+    ${buildHero(buildBreadcrumbs('Artists', '/artists'), escapeHtml(name), escapeHtml(desc))}
+    <section class="calls-list" id="callsList">
+${buildStaticCallList([...a.calls.values()].map(e => e.call), { allCalls: true, noHeroCounts: true })}
+    </section>
+
+    ${FOOTER}
+  </main>
+
+  ${CARDS_SCRIPT(cssVersion)}
+
+</body>
+</html>`;
+    writeGenerated(`artists/${a.slug}/index.html`, html);
+    artistFiles.set(a.slug, (pagedListings.get(`/artists/${a.slug}/`) || {}).files || []);
   }
   // /artists/: everyone, A–Z, as /jury/ (noindex, reached from each artist page's breadcrumb).
   const entries = [...artistMap.values()].map(a => ({ href: `/artists/${a.slug}/`, label: artistName(a), ...listStats([...a.calls.values()].map(e => e.call)) }));
@@ -3718,12 +3736,12 @@ const homeFiles = [];
 // count line (these are not facet listings), and the list placeholder.
 // crumbs: [{ name, url }] above the title, as the deadline month pages have them ("All open calls / Deadlines"), and as
 // breadcrumb JSON-LD; the trail starts at "All open calls" (the home page) like every breadcrumb on the site.
-function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null, subtitle = '', crumbName = null }) {
+function plainListHtml({ title, h1, desc, canonicalPath, robots = 'noindex, follow', crumbs = null, subtitle = '' }) {
   const trail = crumbs ? `<nav class="breadcrumbs"><a href="/">All open calls</a>${crumbs.map(c => ` / <a href="${c.url}">${escapeHtml(c.name)}</a>`).join('')}</nav>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots, ...(crumbs ? { breadcrumbs: [...crumbs.map(c => ({ name: c.name, url: SITE + c.url })), { name: crumbName || title.replace(/^Open Call Results — /, ''), url: SITE + canonicalPath }] } : {}) })}
+  ${HEAD({ title, description: escapeHtml(desc), canonical: `${SITE}${canonicalPath}`, cssVersion, robots, ...(crumbs ? { breadcrumbs: [...crumbs.map(c => ({ name: c.name, url: SITE + c.url })), { name: title.replace(/^Open Call Results — /, ''), url: SITE + canonicalPath }] } : {}) })}
 </head>
 <body>
 
