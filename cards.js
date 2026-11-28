@@ -7,14 +7,14 @@ function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.f
 // === Search suggestions while typing (owner, 2026-11-28: "disable it completely but add live search suggestions like
 // google as i type") ===
 // Shared by the home page's search and search.js (every other page). Nothing while the box is empty; while typing, the
-// typed words first, then up to 7 completions (no dropdown when there are none) (search-core.js completer over window.SEARCH_SUGGEST, the calls' own words,
+// typed words first, then up to 6 completions (no dropdown when there are none) (search-core.js completer over window.SEARCH_SUGGEST, the calls' own words,
 // names and places, built with the search index), the completed part strong. Every row opens /search/ for its phrase.
 var searchCompleter = null;
 function buildSearchSuggestions(allCalls, query) {
   var q = (query || '').trim();
   if (!q || !window.SearchCore || !window.SEARCH_SUGGEST) return {};
   if (!searchCompleter) searchCompleter = SearchCore.completer(window.SEARCH_SUGGEST, allCalls, { categoryLabel: categoryLabel });
-  var more = searchCompleter(q, 7);
+  var more = searchCompleter(q, 6);   // 7 rows: what fits the dropdown's height without scrolling
   if (!more.length) return {};   // nothing to add to what is typed: no dropdown (Enter searches it)
   var items = [{ type: 'q', value: q, label: q }];
   more.forEach(function(p) { items.push({ type: 'q', value: p, label: p, html: SearchCore.completionHtml(p, q) }); });
