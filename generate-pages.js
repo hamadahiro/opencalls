@@ -3885,6 +3885,10 @@ const newFiles = [];
 // empty shell with a lightweight client redirect to the call's current URL.
 // Add an entry here whenever a rename leaves a dead old slug behind.
 const REDIRECTS = {
+  // 2026-11-28 (Bora's backfill): one call listed twice — the later listing goes to the first.
+  'the-colour-library-yellow-shutter-hub-editions': 'colour-library-yellow-shutter-hub-editions-publication',
+  'photography-4-humanity-fotografiska-global-prize-2026': 'fotografiska-home-global-open-call',
+  'photography-4-humanity': 'fotografiska',
   '2026-fotograf-magazine-open-call': 'fotograf-magazine-2026-open-call',
   'after-dark-night-sky-and-shadow': 'after-dark-night-sky-and-shadow-photoplace-gallery',
   'fundacion-enaire-photography-prize-2026': 'xix-premio-de-fotograf-a-fundaci-n-enaire-2026',
