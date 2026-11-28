@@ -482,7 +482,12 @@ function cardTagTexts(call) {
 }
 
 // The deadline on a card: the call page's hand-drawn stroke under the words, in the urgency's colour. Closed calls get no stroke.
-function cardDate(call, u, esc) {
+// mode 'results' (the cards of a results month page): the results date for every call, its stroke while still to come.
+function cardDate(call, u, esc, mode) {
+  if (mode === 'results') {
+    const r = resultsText(call);
+    if (r) return `<a href="/results/${resultsMonthSlug(call)}/" class="call-date${r.coming ? ' dl-band dl-results' : ''}">${esc(r.text).replace(/ /g, '&nbsp;')}</a>`;
+  }
   const slug = u.deadlineSlug || (call.deadline === 'Continuous' ? 'continuous' : '');
   const results = u.urgencyClass === 'closed' && closedResultsText(call);
   // "Results …" carries the deadline's stroke in green (owner, 2026-11-26: "just underline them in green"); "Closed" none.
@@ -496,22 +501,33 @@ function cardDate(call, u, esc) {
 // deadlines"); any other date in its own words with the year: "Results late December 2026", "Results by Dec 5, 2026".
 // Results passed, announced, or with no month: "Closed".
 function closedResultsText(call, now) {
+  if (!call || isCallOpen(call.deadline)) return null;
+  const r = resultsText(call, now);
+  return r && r.coming ? r.text : null;
+}
+
+// The results date in a card's words, for any call, or null when it names no month. coming: results still to come
+// (resultsListed's rule without the closed test) — then a named day reads as a deadline does ("Results in 6 days",
+// "Results on Feb 5, 2027") and any other date in its own words with the year ("Results late December 2026"); passed or
+// announced: the date with the year, no count ("Results Oct 30, 2026", "Results in October 2026"). The cards of a results
+// month page all say this (owner, 2026-11-28: a results page showed "Ending tomorrow").
+function resultsText(call, now) {
   now = now || new Date();
-  const w = resultsListed(call, now);
+  const w = resultsWhen(call);
   if (!w) return null;
-  if (w.kind === 'day' && !/ about /.test(w.label)) {
+  const pad = n => String(n).padStart(2, '0');
+  const today = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+  const coming = w.kind !== 'announced' && w.last >= today;
+  if (coming && w.kind === 'day' && !/ about /.test(w.label)) {
     const d = new Date(w.day + 'T00:00:00');
     const n = calendarDaysBetween(now, d);
-    if (n <= 0) return 'Results today';
-    if (n === 1) return 'Results tomorrow';
-    if (n <= 30) return 'Results in ' + n + ' days';
-    return 'Results on ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    if (n <= 0) return { text: 'Results today', coming };
+    if (n === 1) return { text: 'Results tomorrow', coming };
+    if (n <= 30) return { text: 'Results in ' + n + ' days', coming };
+    return { text: 'Results on ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }), coming };
   }
-  // Any other date still to come ("Late December 2026", "By December 5, 2026", "January 2027", "Within 6 weeks of the
-  // deadline"): resultsWhen's words with the year, never a count of days — a count would name a day the organiser did
-  // not (owner, 2026-11-28: every closed call whose results are still to come says when).
   const y = w.month.slice(0, 4);
-  return /\d{4}$/.test(w.label) ? w.label : /\d$/.test(w.label) ? w.label + ', ' + y : w.label + ' ' + y;
+  return { text: /\d{4}$/.test(w.label) ? w.label : /\d$/.test(w.label) ? w.label + ', ' + y : w.label + ' ' + y, coming };
 }
 
 // A card under its title: the date opens the description, the other facts (renderTags) stand under it.
@@ -519,7 +535,7 @@ function closedResultsText(call, now) {
 // opts = { esc, urgency }
 function renderCardBody(call, opts) {
   const tags = renderTags(call, opts);
-  const date = cardDate(call, opts.urgency || {}, opts.esc);
+  const date = cardDate(call, opts.urgency || {}, opts.esc, opts.mode);
   return `<p class="call-description">${date} – ${opts.esc(call.summary || call.description)}</p>`
     + (tags ? `<div class="call-meta">${tags}</div>` : '');
 }
@@ -797,6 +813,6 @@ if (typeof module !== 'undefined' && module.exports) {
     isFree, getState, scoreSimilarity,
     isValidHttpUrl, submitViaIsPlatform,
     TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, eligibilityTag, prizeTag, tagLocation, cardTagTexts,
-    resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug
+    resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug, resultsText
   };
 }

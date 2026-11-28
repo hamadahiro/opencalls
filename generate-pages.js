@@ -815,12 +815,12 @@ const MONTHS_CAP = ['January', 'February', 'March', 'April', 'May', 'June', 'Jul
 // computeUrgency() lives in shared.js (one contract for server + client).
 
 // Same markup as renderCard() in cards.js, which renders search results.
-function renderStaticCard(call, u) {
+function renderStaticCard(call, u, mode) {
   const slug = call.slug || slugify(call.title);
   const title = escapeHtml(call.title) + (!call.orgInTitle ? ' · ' + escapeHtml(call.org) : '');
   return `      <div class="call-card">
         <h4 class="call-title"><a href="/${slug}/">${title}</a></h4>
-        ${renderCardBody(call, { esc: escapeHtml, urgency: u })}
+        ${renderCardBody(call, { esc: escapeHtml, urgency: u, mode })}
       </div>\n`;
 }
 
@@ -857,7 +857,7 @@ function renderSectionedCards(calls, sectionOf) {
 // One page of an open-then-past list. "Closed" heads the first closed card, and a page that starts among the closed
 // calls starts with it; with nothing open, page 1 starts straight with the closed calls. The site's status words are one
 // pair everywhere, the count line's: "accepting submissions" and "closed" (owner, 2026-11-27: "we mix terms").
-function renderOpenThenPast(chunk, anyOpen, k, sections = true) {
+function renderOpenThenPast(chunk, anyOpen, k, sections = true, mode) {
   const now = new Date();
   let html = '';
   let current = '', inPast = false;
@@ -867,7 +867,7 @@ function renderOpenThenPast(chunk, anyOpen, k, sections = true) {
     if (past && !inPast) { inPast = true; current = ''; if (anyOpen) html += `      <h2 class="list-heading">Closed</h2>\n`; }
     const section = !sections ? '' : past ? pastSection(c, u) : openSection(c, u);
     if (section && section !== current) { current = section; html += `      <h3 class="section-header">${section}</h3>\n`; }
-    html += renderStaticCard(c, u);
+    html += renderStaticCard(c, u, mode);
   });
   return html;
 }
@@ -1007,7 +1007,7 @@ function writePagedListing(filepath, html, { calls, opts }) {
   const base = '/' + path.dirname(filepath) + '/';
   const pastRoot = base + 'past/';
   const sections = !opts.skipSections;
-  const open = sortOpenCalls(calls);
+  const open = opts.openOrder ? calls.filter(isOpen).sort(opts.openOrder) : sortOpenCalls(calls);
   const past = opts.pastOrder ? calls.filter(c => !isOpen(c)).sort(opts.pastOrder) : sortPastCalls(calls);
   const files = [];
 
@@ -1017,7 +1017,7 @@ function writePagedListing(filepath, html, { calls, opts }) {
     // list without the month headers (skipSections) and with the closed in results order (pastOrder).
     const anyOpen = open.length > 0;
     files.push(...writeListPages(html, base, [...open, ...past], (chunk, k, count) =>
-      renderOpenThenPast(chunk, anyOpen, k, !opts.skipSections) + paginationNav(base, k, count),
+      renderOpenThenPast(chunk, anyOpen, k, !opts.skipSections, opts.cardMode) + paginationNav(base, k, count),
       { labelFor: k => k > 1 ? `Page ${k}` : '' }));
     pagedListings.set(base, { total: calls.length, open: open.length, files, allCalls: true, noHeroCounts: !!opts.noHeroCounts });
     return;
@@ -2686,8 +2686,9 @@ ${buildStaticCallList(g.calls, { skipSections: true })}
 // === Results month pages (owner, 2026-11-28: results dates linked as deadlines are) ===
 // /results/<month>-<year>/: every call whose results date falls in that month (shared.js resultsWhen; resultsMonthSlug
 // is the link every card and call page uses), the deadline month page's form: breadcrumb, the month, the counted
-// sentence with "results", then one list — the calls accepting submissions first (soonest deadline), then the closed in
-// results order (the last day the words allow), no month headers. Indexed while any call on it is accepting submissions
+// sentence with "results", then one list — the calls accepting submissions first, then "Closed" and the closed, each in
+// results order (the last day the words allow), no month headers; every card's date is its results date (cardDate
+// 'results': "Results on Mar 15, 2027", "Results late March 2027"), never its deadline (owner, 2026-11-28). Indexed while any call on it is accepting submissions
 // or still waiting for results. The Results gate below proves each link lands on a page that lists its call.
 const resultsMonthGroups = {};
 data.calls.forEach(c => {
@@ -2722,7 +2723,7 @@ sortedResultsMonths.forEach(key => {
     ${buildHero('<nav class="breadcrumbs"><a href="/">All open calls</a> / <a href="/results/">Results</a></nav>', label, listSubtitle(sentence, stats))}
 
     <section class="calls-list" id="callsList">
-${buildStaticCallList(g.calls, { allCalls: true, skipSections: true, pastOrder: resultsOrder })}
+${buildStaticCallList(g.calls, { allCalls: true, skipSections: true, openOrder: resultsOrder, pastOrder: resultsOrder, cardMode: 'results' })}
     </section>
 
     ${FOOTER}
@@ -4023,6 +4024,8 @@ if (staleFiles.length) {
     const seen = new Set();
     info.files.forEach(f => [...fs.readFileSync(f, 'utf8').matchAll(/<div class="call-card">\s*<h4 class="call-title"><a href="\/([^"]+)\/"/g)].forEach(m => seen.add(m[1])));
     resultsListedOn.set(key, seen);
+    for (const f of info.files) for (const m of fs.readFileSync(f, 'utf8').matchAll(/<a href="([^"]*)" class="call-date[^"]*">([^<]*)<\/a>/g))
+      if (m[1] !== `/results/${key}/` || !/^Results(&nbsp;| )/.test(m[2])) errs.push(`${f}: a card says "${m[2].replace(/&nbsp;/g, ' ')}" → ${m[1]}, not its results date → /results/${key}/`);
     const listed = [...seen].map(s => bySlug.get(s));
     if (!listed.length || listed.some(c => !c)) { errs.push(`/results/${key}/ lists ${listed.length} cards, ${listed.filter(c => !c).length} of them no call`); continue; }
     const want = escapeHtml(monthSentence(listed, label, 'results'));
