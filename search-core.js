@@ -294,5 +294,118 @@
     }).join(' … ');
   }
 
-  return { create: create, parse: parse, norm: norm, highlight: highlight, snippet: snippet, stem: stem };
+  // --- Suggestions while typing, as search engines show them (owner, 2026-11-28) ---
+
+  // Words that never start or end a suggestion.
+  var SUGGEST_STOP = {};
+  ('a an and the of for in on at to by with or from into is are be your our its this that these those as it & ' +
+    'open call calls opportunity opportunities edition annual').split(' ').forEach(function (w) { SUGGEST_STOP[w] = 1; });
+
+  // The phrases the box completes to, best first: words and runs of two or three words from the calls' titles,
+  // organisers and places, their categories, the jurors' full names and single topic words from the summaries. A call's
+  // use counts 3 from a title, organiser, place, category or name and 1 from a summary, twice while it accepts
+  // submissions. A phrase is kept when two calls use it (a juror's or organiser's full name: one). Each phrase is shown
+  // as the calls write it, lower case, accents and apostrophes kept ("rencontres d'arles"); matched through norm().
+  // generate-pages.js writes the list into search-index.js on every build; nothing is kept by hand.
+  function suggestions(rows, maps, today) {
+    maps = maps || {};
+    var score = {}, uses = {}, shown = {}, whole = {};
+    rows.forEach(function (r) {
+      var open = r.deadline === 'Continuous' || r.deadline >= today, got = {};
+      function tokens(part) {
+        return part.split(/\s+/).map(function (t) { return t === '&' ? t : t.toLowerCase().replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ''); })
+          .filter(function (t) { return t === '&' || /[\p{L}\p{N}]/u.test(t); });
+      }
+      function keep(disp, weight) {
+        var key = norm(disp).trim();
+        if (key.length < 3) return;
+        if (!shown[key]) shown[key] = disp;
+        got[key] = Math.max(got[key] || 0, weight);
+      }
+      function add(text, maxN, weight) {
+        if (!text) return;
+        String(text).split(/[·,;:()\/|–—.!?"“”]+|\s-\s/).forEach(function (part) {
+          var t = tokens(part);
+          for (var n = 1; n <= maxN; n++) for (var i = 0; i + n <= t.length; i++) {
+            var g = t.slice(i, i + n), first = norm(g[0]).trim(), last = norm(g[n - 1]).trim();
+            if (SUGGEST_STOP[first] || SUGGEST_STOP[last]) continue;
+            if (g.some(function (x) { var k = norm(x).trim(); return x !== '&' && (k.length < 2 || (/^\d+$/.test(k) && k.length !== 4)); })) continue;
+            keep(g.join(' '), weight);
+          }
+        });
+      }
+      function name(text) {
+        var t = tokens(String(text || '').split(',')[0]);
+        if (t.length < 2 || t.length > 6 || t.some(function (x) { return SUGGEST_STOP[norm(x).trim()]; })) return;
+        var d = t.join(' '); keep(d, 3); whole[norm(d).trim()] = 1;
+      }
+      add(r.title, 3, 3); add(r.org, 3, 3); add(r.location, 2, 3);
+      add(maps.categoryLabel && maps.categoryLabel[r.category] || r.category, 2, 3);
+      add(r.summary, 1, 1);
+      name(r.org); (r.jury || []).forEach(name);
+      for (var k in got) { score[k] = (score[k] || 0) + got[k] * (open ? 2 : 1); uses[k] = (uses[k] || 0) + 1; }
+    });
+    return Object.keys(score).filter(function (k) { return uses[k] >= 2 || whole[k]; })
+      .sort(function (a, b) { return score[b] - score[a] || (a < b ? -1 : 1); })
+      .map(function (k) { return shown[k]; });
+  }
+
+  // Completes what is typed, as a list of phrases (up to max): every phrase that starts with the whole typed text, best
+  // first; when none does and several words are typed, the last word completed after the others — only those that still
+  // find a call whose title, organiser, place, category, jury or summary holds every word, most calls first. So no
+  // suggestion leads to an empty page.
+  function completer(list, rows, maps) {
+    maps = maps || {};
+    var keys = list.map(function (p) { return norm(p).trim(); }), texts = null;
+    function callTexts() {
+      if (!texts) texts = rows.map(function (r) {
+        return norm([r.title, r.org, r.location, maps.categoryLabel && maps.categoryLabel[r.category], (r.jury || []).join(' '),
+          r.summary].join(' '));
+      });
+      return texts;
+    }
+    return function complete(query, max) {
+      max = max || 7;
+      var nq = norm(query).trim(), out = [], seen = {};
+      if (!nq) return out;
+      seen[nq] = 1;
+      for (var i = 0; i < keys.length && out.length < max; i++)
+        if (keys[i].length > nq.length && keys[i].indexOf(nq) === 0 && !seen[keys[i]]) { seen[keys[i]] = 1; out.push(list[i]); }
+      var ws = nq.split(' ');
+      var typedWords = query.trim().split(/\s+/);
+      if (!out.length && ws.length > 1 && typedWords.length === ws.length) {   // "b&w" is one typed word, three of norm's
+        var prev = ws.slice(0, -1), last = ws[ws.length - 1], T = callTexts(), scored = [];
+        var prevShown = typedWords.slice(0, -1).join(' ');
+        for (var j = 0, tried = 0; j < keys.length && tried < 25; j++) {
+          if (keys[j].indexOf(last) !== 0 || keys[j] === last) continue;
+          tried++;
+          var key = prev.join(' ') + ' ' + keys[j];
+          if (seen[key]) continue;
+          var need = prev.concat(keys[j].split(' ')), n = 0;
+          for (var k = 0; k < T.length; k++) if (need.every(function (w) { return T[k].indexOf(' ' + w + ' ') !== -1; })) n++;
+          if (n) { seen[key] = 1; scored.push([prevShown + ' ' + list[j], n]); }
+        }
+        scored.sort(function (a, b) { return b[1] - a[1]; });
+        for (var s = 0; s < scored.length && out.length < max; s++) out.push(scored[s][0]);
+      }
+      return out;
+    };
+  }
+
+  // A suggestion with the typed part plain and the rest strong, as search engines draw it: the typed letters are matched
+  // through foldChar, so accents, case and punctuation do not move the cut ("sao p" in "são paulo").
+  function completionHtml(phrase, typed) {
+    var want = foldWithMap(String(typed)).text.replace(/[^a-z0-9]/g, '');
+    var got = 0, cut = 0, fm = foldWithMap(phrase);
+    for (var i = 0; i < fm.text.length && got < want.length; i++) {
+      if (!/[a-z0-9]/.test(fm.text[i])) continue;
+      if (fm.text[i] !== want[got]) { got = -1; break; }
+      got++; cut = fm.map[i] + 1;
+    }
+    if (got < want.length) return escHtml(phrase);
+    return escHtml(phrase.slice(0, cut)) + (cut < phrase.length ? '<b>' + escHtml(phrase.slice(cut)) + '</b>' : '');
+  }
+
+  return { create: create, parse: parse, norm: norm, highlight: highlight, snippet: snippet, stem: stem,
+    suggestions: suggestions, completer: completer, completionHtml: completionHtml };
 });

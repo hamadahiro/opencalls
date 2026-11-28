@@ -702,6 +702,12 @@ a.call-date:not(.dl-band):hover {
   cursor: pointer;
 }
 
+/* Until every required field is filled the button is greyed out and does nothing, as "Submissions closed" is drawn. */
+.submit-form button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
 /* "What gets listed" under the form. The reset strips list padding, so the
    bullets get room back here; text styles come from .call-detail-description. */
 .submit-rules .submit-rules-lead {

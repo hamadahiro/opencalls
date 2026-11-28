@@ -609,7 +609,7 @@ const FOOTER = `<footer class="about-section" id="footer">
       ${FOOTER_STATE_SCRIPT}
       <p class="footer-copy">&copy; ${YEAR} Monographica</p>
     </footer>`;
-function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
+function CARDS_SCRIPT(cssVersion) { return `<script src="/shared.js?v=${cssVersion}"></script>\n  <script src="/search-core.js?v=${cssVersion}"></script>\n  <script src="/cards.js?v=${cssVersion}"></script>\n  <script src="/search.js?v=${cssVersion}"></script>`; }
 
 function buildBreadcrumbs(section, sectionUrl) {
   const url = sectionUrl.endsWith('/') ? sectionUrl : sectionUrl + '/';
@@ -2906,6 +2906,10 @@ const submitHtml = `<!DOCTYPE html>
         <p class="call-detail-description">If a call you sent isn’t on the site, one of these was missing when I checked. Once the organizer’s page has it, send the call again.</p>
       </div>
       <script>
+        // The button stays greyed out and disabled until every required field is filled (owner, 2026-11-28).
+        (function() { var f = document.getElementById('submitForm'), b = document.getElementById('submitBtn');
+          function ready() { b.disabled = !f.checkValidity(); }
+          f.addEventListener('input', ready); f.addEventListener('change', ready); ready(); })();
         document.getElementById('submitForm').addEventListener('submit', function(e) {
           e.preventDefault();
           var btn = document.getElementById('submitBtn');
@@ -2923,11 +2927,11 @@ const submitHtml = `<!DOCTYPE html>
               document.querySelector('.hero .subtitle').innerHTML = 'I’ll check it against <a href="#what-gets-listed">what gets listed</a> and add it if it fits.';
             } else {
               btn.textContent = 'Something went wrong, try again';
-              btn.style.opacity = '1';
+              btn.style.opacity = '';
             }
           }).catch(function() {
             btn.textContent = 'Something went wrong, try again';
-            btn.style.opacity = '1';
+            btn.style.opacity = '';
           });
         });
       </script>
@@ -2995,6 +2999,10 @@ console.log('  Submit page');
         </ul>
       </div>
       <script>
+        // The button stays greyed out and disabled until every required field is filled (owner, 2026-11-28).
+        (function() { var f = document.getElementById('contactForm'), b = document.getElementById('contactBtn');
+          function ready() { b.disabled = !f.checkValidity(); }
+          f.addEventListener('input', ready); f.addEventListener('change', ready); ready(); })();
         document.getElementById('contactForm').addEventListener('submit', function(e) {
           e.preventDefault();
           var btn = document.getElementById('contactBtn');
@@ -3011,11 +3019,11 @@ console.log('  Submit page');
               document.querySelector('.hero h1').textContent = 'Thanks for your message';
             } else {
               btn.textContent = 'Something went wrong, try again';
-              btn.style.opacity = '1';
+              btn.style.opacity = '';
             }
           }).catch(function() {
             btn.textContent = 'Something went wrong, try again';
-            btn.style.opacity = '1';
+            btn.style.opacity = '';
           });
         });
       </script>
@@ -3166,7 +3174,6 @@ console.log('  About page');
   </main>
 
   ${CARDS_SCRIPT(cssVersion)}
-  <script src="/search-core.js?v=${cssVersion}"></script>
   <script src="/search-page.js?v=${cssVersion}"></script>
 
 </body>
@@ -3314,24 +3321,25 @@ sitemapEntries.push(`${SITE}/categories`);
 // jury: the Jury line as printed, so a name finds the calls that print it (linked or not).
 // requirements, prose: the rest of the call page's text, so /search/ finds and quotes a word wherever the page has it.
 const SEARCH_FIELDS = ['title', 'org', 'orgInTitle', 'slug', 'deadline', 'category', 'location', 'fee', 'additionalFees', 'prize', 'eligibility', 'summary', 'description', 'resultsDate', 'jury', 'requirements', 'prose'];
-// SEARCH_JURY: the people with a juror page, for the dropdown's Jury group (Y4): [label, slug, other spellings?].
-// No call list and no count: the row only opens the page.
-const searchJuryRows = juryData.people.map(p => { const other = (p.names || []).filter(n => n !== p.name); return other.length ? [juryLabel(p), p.slug, other] : [juryLabel(p), p.slug]; });
+// SEARCH_SUGGEST: the phrases the search box completes to while typing, best first (search-core.js suggestions: the calls'
+// own words, names and places; owner, 2026-11-28 "live search suggestions like google").
+const SearchCore = require('./search-core.js');
+const suggestToday = (d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'))(new Date());
 const searchRows = data.calls.map(c => {
   const row = {};
   SEARCH_FIELDS.forEach(k => { if (c[k] !== undefined && c[k] !== null) row[k] = c[k]; });
   return row;
 });
-const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(searchRows) + ';\nwindow.SEARCH_JURY = ' + JSON.stringify(searchJuryRows) + ';\n';
+const searchSuggest = SearchCore.suggestions(searchRows, shared, suggestToday);
+const searchIndexJs = 'window.SEARCH_CALLS = ' + JSON.stringify(searchRows) + ';\nwindow.SEARCH_SUGGEST = ' + JSON.stringify(searchSuggest) + ';\n';
 fs.writeFileSync('search-index.js', searchIndexJs);
 const searchIndexVersion = require('crypto').createHash('sha1').update(searchIndexJs).digest('hex').slice(0, 10);
-console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length} bytes`);
+console.log(`  Search index: ${data.calls.length} calls, ${searchSuggest.length} suggestions, ${searchIndexJs.length} bytes`);
 
 // SEARCH GATE — /search/ runs search-core.js over these same rows, so what passes here is what readers get. Every 40th
 // call (all of them take 47 s; measured 2026-11-27: 0 misses in 2,624): it is in the first 10 results for its own title
 // and organiser, and a word of its description that few calls use finds it with that word marked in the quoted sentence.
 {
-  const SearchCore = require('./search-core.js');
   const engine = SearchCore.create(searchRows, shared);
   const df = {};
   engine.docs.forEach(d => new Set(d.n.description.trim().split(' ')).forEach(w => { df[w] = (df[w] || 0) + 1; }));
@@ -3349,8 +3357,12 @@ console.log(`  Search index: ${data.calls.length} calls, ${searchIndexJs.length}
     if (!hit) bad.push(`${r.slug}: "${w}" from its description does not find it`);
     else if (!/class="search-hit"/.test(SearchCore.snippet(hit, out.groups))) bad.push(`${r.slug}: "${w}" is not marked in its quoted sentence`);
   });
+  // Every 20th suggestion finds a call (the box never suggests an empty page).
+  let suggestChecked = 0;
+  searchSuggest.forEach((p, i) => { if (i % 20) return; suggestChecked++; if (!engine.search(p).results.length) bad.push(`suggestion "${p}" finds no call`); });
+  if (searchSuggest.length < 1000) bad.push(`only ${searchSuggest.length} suggestions`);
   if (bad.length) { console.error(`\n❌ SEARCH GATE: ${bad.length} failure(s) in ${checked} calls:\n  ` + bad.slice(0, 10).join('\n  ')); process.exit(1); }
-  console.log(`  Search gate: ${checked} calls found by their title, and by a word of their description, marked where it is quoted`);
+  console.log(`  Search gate: ${checked} calls found by their title, and by a word of their description, marked where it is quoted; ${suggestChecked} suggestions each find a call`);
 }
 
 // Update page lists in cards.js (between markers) — only include actually created pages

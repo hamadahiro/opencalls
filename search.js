@@ -52,10 +52,8 @@
   }
 
   function buildSuggestions(query) {
-    // Delegate to the shared logic in cards.js so home and non-home stay in sync.
-    // No chip exclusion on detail pages; same on-focus behavior as home (skip
-    // Categories) for consistency.
-    return buildSearchSuggestions(allCalls, query, { skipCategoriesOnFocus: true });
+    // cards.js's buildSearchSuggestions, the same as the home page: nothing while empty, completions while typing.
+    return buildSearchSuggestions(allCalls, query);
   }
 
   function showDropdown(groups) {

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <script>(function(){var v=new URLSearchParams(location.search).get('view');if(v==='past')location.replace('/archive/');else if(v==='recent')location.replace('/new/');})()</script>
-  <link rel="stylesheet" href="/style.css?v=20261128c">
+  <link rel="stylesheet" href="/style.css?v=20261128d">
   <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
@@ -245,8 +245,9 @@
     </footer>
   </main>
 
-  <script src="/shared.js?v=20261128c"></script>
-  <script src="/cards.js?v=20261128c"></script>
+  <script src="/shared.js?v=20261128d"></script>
+  <script src="/search-core.js?v=20261128d"></script>
+  <script src="/cards.js?v=20261128d"></script>
   <script>
     // The list on this page is server-rendered: one page of open calls with its
     // page links. Typed words go to /search/ (Enter, or the dropdown's first row); an organiser or a country without
@@ -310,12 +311,8 @@
     // --- Suggestions + chips ---
 
     function buildSuggestions(query) {
-      // Delegate to cards.js's buildSearchSuggestions — single source of truth
-      // so home and non-home dropdowns always show matching counts.
-      return buildSearchSuggestions(allCalls, query, {
-        excludeChips: activeChips,
-        skipCategoriesOnFocus: true
-      });
+      // cards.js's buildSearchSuggestions, the same as every other page: nothing while empty, completions while typing.
+      return buildSearchSuggestions(allCalls, query);
     }
 
     function showDropdown(groups) {
