@@ -1693,11 +1693,30 @@ a.filter-btn {
 }
 
 /* === /search/ ===
-   The words a search found, in a result's title and quoted sentence: the page's strong text (the link colour) in
-   semibold, not a colour of their own (the site has no coloured text). */
+   The words a search found, in a result's title and quoted sentence: the text's own colour and weight with a grey
+   marker drawn by hand behind it, full height (owner, 2026-11-28: the link colour made it look like a link — "i tried
+   to click it few times"; "make it irregular with the same intensity we do for underline… just dont make it perfect
+   rectangle"). A shape (an SVG mask, as the deadline stroke), grey in both modes: the site has no coloured text. */
+:root { --hit-c: rgba(0, 0, 0, 0.1); }
+@media (prefers-color-scheme: dark) { :root { --hit-c: rgba(255, 255, 255, 0.11); } }
 .search-hit {
-  color: var(--link);
-  font-weight: 600;
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+  font-weight: inherit;   /* the mark is a <b>: no bold of its own */
+}
+.search-hit::before {
+  content: '';
+  position: absolute;
+  left: -0.16em;
+  right: -0.12em;
+  top: 0.06em;
+  bottom: -0.06em;
+  z-index: -1;
+  background: var(--hit-c);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20240%2024%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M5%204.2C44%202.4%2086%204.6%20128%202.6S204%20.4%20236.6%201C239.8%206.5%20240%2014%20237.2%2020.2C229%2021%20221%2019.6%20212%2021.2C171%2022.6%20130%2021%2090%2023C56%2024%2030%2022.2%203.2%2023.6C.2%2017.5%200%2010%205%204.2Z%27%2F%3E%3C%2Fsvg%3E") 0 0 / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20240%2024%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M5%204.2C44%202.4%2086%204.6%20128%202.6S204%20.4%20236.6%201C239.8%206.5%20240%2014%20237.2%2020.2C229%2021%20221%2019.6%20212%2021.2C171%2022.6%20130%2021%2090%2023C56%2024%2030%2022.2%203.2%2023.6C.2%2017.5%200%2010%205%204.2Z%27%2F%3E%3C%2Fsvg%3E") 0 0 / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 /* The first result starts as far under the search box as content starts under it elsewhere (owner, 2026-11-28:
