@@ -493,7 +493,7 @@ function setRobotsMeta(html, directive) {
 }
 
 // Shared head snippets — change once, applies everywhere
-const THEME_LIGHT = '#f5f2ed';
+const THEME_LIGHT = '#e6e6e6';   // the light page colour (--bg); was #f5f2ed, so iPhone Safari's bar sat lighter than the page
 const THEME_DARK = '#151515';
 // Analytics: Cloudflare Web Analytics, added at Cloudflare's edge (owner, 2026-11-26: "ok, CF" — cookie-free, no consent
 // banner). Google Analytics and /analytics.js are gone; the site itself loads no analytics script.
@@ -576,11 +576,11 @@ function buildHeader() {
         <a href="/submit/" class="nav-link nav-desktop" data-nav="submit">Submit</a>
       </nav>
       <button class="search-toggle" id="searchToggle" type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="11" cy="11" r="8"/><line x1="17" y1="17" x2="21" y2="21"/></svg></button>
-      <div class="hamburger-click-area" onclick="document.body.classList.toggle('show-responsive-nav')">
+      <button class="hamburger-click-area" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
         <div class="hamburger"><i></i><i></i><i></i></div>
-      </div>
+      </button>
     </div>
-    <div class="mobile-nav">
+    <div class="mobile-nav" id="mobileNav" tabindex="-1" aria-label="Menu">
       <a href="/" data-nav="open">Open Calls</a>
       <a href="/new/" data-nav="recent">Just Added</a>
       <a href="/browse/" data-nav="browse">Browse</a>

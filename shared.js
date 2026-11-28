@@ -873,6 +873,97 @@ function submitViaIsPlatform(submitVia) {
 }
 
 // Node export guard (no-op in the browser, where `module` is undefined).
+// === Phone menu (owner, 2026-11-28): a layer over the page; ×, a tap outside the links, Escape and Back close it ===
+// Markup (generate-pages.js buildHeader, index.html, 404.html): <button class="hamburger-click-area" aria-expanded
+// aria-controls="mobileNav"> and <div class="mobile-nav" id="mobileNav" tabindex="-1">. Styles: style.css (.mobile-nav).
+// Pages only: the build loads this file in node too.
+if (typeof document !== 'undefined') {
+(function () {
+  var html = document.documentElement, body = document.body;
+  var btn = document.querySelector('.hamburger-click-area');
+  var nav = document.getElementById('mobileNav');
+  var header = document.querySelector('header');
+  if (!btn || !nav || !header) return;
+  var pushed = false;
+
+  function isOpen() { return body.classList.contains('show-responsive-nav'); }
+  function others() { return [].filter.call(body.children, function (el) { return el !== header && el.tagName !== 'SCRIPT'; }); }
+
+  function open() {
+    nav.style.setProperty('--menu-top', header.getBoundingClientRect().bottom + 'px');  // under the header row, wherever the page is scrolled
+    body.classList.add('show-responsive-nav');
+    html.classList.add('menu-open');
+    btn.setAttribute('aria-expanded', 'true');
+    others().forEach(function (el) { el.inert = true; });   // focus and screen readers stay in the header and the menu
+    history.pushState({ menu: 1 }, '');                      // Back closes the menu instead of leaving the page
+    pushed = true;
+    nav.focus({ preventScroll: true });
+  }
+
+  var closingTimer = null;
+  function close(fromBack, instant) {
+    if (!isOpen()) return;
+    // The header row stays above the closing sheet until the sheet is gone (the longest close is 340 ms).
+    clearTimeout(closingTimer);
+    body.classList.add(instant ? 'menu-instant' : 'menu-closing');
+    closingTimer = setTimeout(function () { body.classList.remove('menu-closing', 'menu-instant'); }, instant ? 50 : 400);
+    body.classList.remove('show-responsive-nav');
+    html.classList.remove('menu-open');
+    btn.setAttribute('aria-expanded', 'false');
+    others().forEach(function (el) { el.inert = false; });
+    btn.focus({ preventScroll: true });
+    if (pushed && !fromBack) { pushed = false; history.back(); }
+  }
+
+  btn.addEventListener('click', function () { isOpen() ? close() : open(); });
+
+  // A tap anywhere but a link or the header row closes it.
+  document.addEventListener('click', function (e) {
+    if (isOpen() && !e.target.closest('.mobile-nav a, .header-inner')) { e.preventDefault(); close(); }
+  }, true);
+
+  // A link replaces the history entry the menu added, so Back from the next page comes straight back here.
+  nav.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a || !pushed || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    location.replace(a.href);
+  });
+
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) close(); });
+  addEventListener('popstate', function () { if (isOpen()) { pushed = false; close(true); } });
+
+  // Search opens over everything: the menu closes first.
+  var search = document.getElementById('searchToggle');
+  if (search) search.addEventListener('click', function () { if (isOpen()) close(false, true); }, true);
+
+  // Coming back to this page from the browser's cache never shows the menu open.
+  addEventListener('pageshow', function (e) { if (e.persisted && isOpen()) { pushed = false; close(true); } });
+})();
+
+/* The iPhone's status bar follows the layer: Safari colours it from <meta name="theme-color"> (or, in newer Safari, from
+   the top of the page); while the menu opens or closes, the meta takes the layer's colour on every frame, and its own
+   colour again once the menu is closed. */
+(function () {
+  var metas = [].slice.call(document.querySelectorAll('meta[name="theme-color"]'));
+  var orig = metas.map(function (m) { return m.content; });
+  var nav = document.getElementById('mobileNav');
+  if (!nav || !metas.length) return;
+  var raf = 0, until = 0;
+  function hex(c) { var m = c.match(/\d+(\.\d+)?/g); return m ? '#' + m.slice(0, 3).map(function (x) { return Math.round(+x).toString(16).padStart(2, '0'); }).join('') : c; }
+  function follow() {
+    var open = document.body.classList.contains('show-responsive-nav');
+    if (performance.now() < until) {
+      var c = hex(getComputedStyle(nav).backgroundColor);
+      metas.forEach(function (m) { m.content = c; });
+      raf = requestAnimationFrame(follow);
+    } else if (!open) metas.forEach(function (m, i) { m.content = orig[i]; });
+  }
+  new MutationObserver(function () { until = performance.now() + 500; cancelAnimationFrame(raf); raf = requestAnimationFrame(follow); })
+    .observe(document.body, { attributes: true, attributeFilter: ['class'] });
+})();
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,

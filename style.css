@@ -34,6 +34,7 @@
   --search-bg: #fff;          /* the search bar, its suggestions and the submit form's fields */
   --search-hover: #f0f0f0;    /* a suggestion under the pointer or picked with the arrow keys */
   --border: #ddd;
+  --menu-bg: #dddddd;         /* the phone menu's layer: one step darker than the page (owner, 2026-11-28) */
   --btn-bg: #111;
   --btn-text: #fff;
   --prize-bg: #111;
@@ -67,6 +68,7 @@
     --search-bg: #e1e1e1;        /* #fff was too bright on the dark page (owner, 2026-11-25) */
     --search-hover: #d2d2d2;
     --border: #333;
+    --menu-bg: #1e1e1e;         /* the phone menu's layer: one step lighter than the page (owner, 2026-11-28) */
     --btn-bg: #cdcdcd;
     --btn-text: #151515;
     --prize-bg: #cdcdcd;
@@ -181,6 +183,10 @@ nav a.active:hover {
   cursor: pointer;
   padding: 8px;
   margin: -8px -8px -8px 4px;
+  background: none;   /* a <button>, so keyboards and screen readers reach it; drawn as the bare bars */
+  border: 0;
+  color: inherit;
+  font: inherit;
 }
 
 .hamburger {
@@ -238,6 +244,14 @@ nav a.active:hover {
 
 .mobile-nav a.active {
   font-weight: 700;
+}
+
+/* Reduced motion: the phone menu opens and closes in one frame. */
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .mobile-nav,
+  .hamburger i {
+    transition: none !important;
+  }
 }
 
 /* === Main === */
@@ -838,9 +852,67 @@ a.call-date:not(.dl-band):hover {
     display: block;
   }
 
-  .show-responsive-nav .mobile-nav {
+  /* The phone menu is a layer over the page (owner, 2026-11-28, "A2" with the tint): the page under it does not move.
+     A page-wide sheet, behind the header row, slides down from under the header and uncovers the five links where they
+     stand (as papersarchive.com, without its spring and blur), its colour fading from the page's to --menu-bg on the same
+     curve; closing reverses it. Links in the site's large type: Source Serif 4 at the section-heading size, the page's
+     own link in semibold. shared.js sets --menu-top (the header's bottom) and keeps the header row above the sheet
+     until it has closed (.menu-closing). Proposal and frames: runs/opencalls/mobile-menu-2026-11-28/. */
+  .mobile-nav {
     display: flex;
-    padding: 16px 16px 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;                         /* over the phone search overlay (1000) */
+    max-width: none;
+    margin: 0;
+    padding: calc(var(--menu-top, 82px) + 29px) 16px calc(24px + env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    visibility: hidden;
+    background: var(--bg);
+    clip-path: inset(0 0 calc(100% - var(--menu-top, 82px)) 0);
+    transition: clip-path 280ms cubic-bezier(0.65, 0, 0.35, 1), background-color 280ms cubic-bezier(0.65, 0, 0.35, 1), visibility 0s linear 280ms;
+  }
+
+  .show-responsive-nav .mobile-nav {
+    visibility: visible;
+    background: var(--menu-bg);
+    clip-path: inset(0);
+    transition: clip-path 420ms cubic-bezier(0.33, 1, 0.68, 1), background-color 420ms cubic-bezier(0.33, 1, 0.68, 1), visibility 0s;
+  }
+
+  .mobile-nav a {
+    font-family: 'Source Serif 4', serif;
+    font-size: var(--fs-h3);               /* 26 px on phones, 24 px at 380 px and under: the section headings' size */
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.3;
+    padding: 7px 0;                        /* 48 px from line to line */
+  }
+
+  .mobile-nav a.active {
+    font-weight: 600;
+  }
+
+  /* The header row (name, search, ×) stays above the sheet, in place, also while the sheet is still closing. */
+  .show-responsive-nav .header-inner,
+  .menu-closing .header-inner {
+    position: relative;
+    z-index: 1002;
+  }
+
+  /* Closing for the search overlay: at once, so nothing of the menu shows over the search. */
+  .menu-instant .mobile-nav,
+  .menu-instant .hamburger i {
+    transition: none !important;
+  }
+
+  /* The page under the menu does not scroll while it is open. */
+  html.menu-open {
+    overflow: hidden;
   }
 
   .hero {
