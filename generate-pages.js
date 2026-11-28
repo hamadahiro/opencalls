@@ -1215,7 +1215,10 @@ ${(() => { const state = makeLinkifyState(); return call.prose && call.prose.len
       <script>${DESCRIPTION_COLLAPSE_SCRIPT}</script>
 
       <div class="call-detail-info" id="detailInfo">${renderInfoGrid(call, { esc: escapeHtml, locationLink: getStaticLocationLink })}</div>
-${call.jury && call.jury.length ? `
+${/* the announced artists right under the Results row they answer (owner 2026-11-28), then Jury, then Organized by */ ''}${(call.announced || []).map(g => `      <div class="call-detail-jury">
+        <p class="call-detail-description"><a href="${escapeHtml(g.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(g.label || 'Announced')}</a>: ${g.names.map(n => `<a href="/artists/${artistSlug(n)}/">${escapeHtml(n)}</a>`).join(' &middot; ')}</p>
+      </div>
+`).join('')}${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description"><a href="/jury/">Jury</a>: ${renderJuryLine(call)}</p>
       </div>
@@ -1223,10 +1226,7 @@ ${call.jury && call.jury.length ? `
       <div class="call-detail-jury">
         <p class="call-detail-description">Organized by <a href="/${slugify(call.org)}/">${escapeHtml(call.org)}</a></p>
       </div>
-${(call.announced || []).map(g => `      <div class="call-detail-jury">
-        <p class="call-detail-description"><a href="${escapeHtml(g.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(g.label || 'Announced')}</a>: ${g.names.map(n => `<a href="/artists/${artistSlug(n)}/">${escapeHtml(n)}</a>`).join(' &middot; ')}</p>
-      </div>
-`).join('')}      <div class="call-detail-actions" id="detailActions">
+      <div class="call-detail-actions" id="detailActions">
 ${isCallOpen(call.deadline) ? `        <a href="${escapeHtml(call.url)}" target="_blank" rel="nofollow noopener" class="call-detail-btn call-detail-apply" id="applyBtn">Go to submission</a>
 ${call.deadline !== 'Continuous' ? `        <a href="#" class="call-detail-btn call-detail-calendar" id="calBtn" onclick="downloadICS(event)">Add to calendar</a>` : ''}` : `        <span class="call-detail-btn call-detail-apply" style="opacity:0.4;pointer-events:none;cursor:default">Submissions closed</span>`}
       </div>
