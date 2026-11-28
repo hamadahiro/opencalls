@@ -6,9 +6,9 @@ function emptyState() { return '<p class="empty-state">' + EMPTY_MESSAGES[Math.f
 
 // === Search suggestions while typing (owner, 2026-11-28: "disable it completely but add live search suggestions like
 // google as i type") ===
-// Shared by the home page's search and search.js (every other page). Nothing while the box is empty; while typing, the
-// up to 7 completions (no dropdown when there are none) (search-core.js completer over window.SEARCH_SUGGEST, the calls' own words,
-// names and places, built with the search index), the completed part strong. Every row opens /search/ for its phrase.
+// Shared by the home page's search and search.js (every other page). Nothing while the box is empty; while typing, up to
+// 7 completions — search-core.js completer over window.SEARCH_SUGGEST, the calls' own words, names and places, built with
+// the search index — the completed part strong, and no dropdown when there are none. Every row opens /search/ for it.
 var searchCompleter = null;
 function buildSearchSuggestions(allCalls, query) {
   var q = (query || '').trim();
