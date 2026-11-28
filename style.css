@@ -1644,7 +1644,7 @@ a.filter-btn {
   font-family: 'Source Serif 4', serif;
   line-height: 32px;
   color: var(--text-body);
-  padding-top: 25px;   /* where a first card's title would start (.call-card padding) */
+  padding-top: 20px;   /* its letters where a first card title's start: 125.5px under the bar, measured */
 }
 
 
@@ -1666,7 +1666,7 @@ a.filter-btn {
   }
 
   .search-correction {
-    padding-top: 24px;
+    padding-top: 16px;   /* phones: its letters 40.6px under the bar, measured */
   }
 
   /* The × sits on the bar's middle: half of this page's 8 px top padding (the rule above takes half of 16 px). */
