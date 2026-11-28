@@ -9,7 +9,7 @@ const {
   usStateNames, stateNameToAbbr, validCountries,
   isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
-  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug, resultsText,
+  getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug, resultsText, paginationHtml,
   isFree, getState, scoreSimilarity,
   isValidHttpUrl, submitViaIsPlatform,
   TAG_MAX_WORDS, TAG_MAX_CHARS, tagWords, tagFits, cardTagTexts
@@ -898,69 +898,9 @@ function pageUrl(root, k) {
   return k > 1 ? `${root}page/${k}/` : root;
 }
 
-// Previous / numbered pages / Next as plain text (owner, 2026-11-25): no Previous on the first page, no Next on the last,
-// and as many numbers as fit one row. The build works out which pages fit at six width bands (widths measured in
-// Source Serif 4: every digit 0.53em, "…" 0.83em, "Previous" 4.17em, "Next" 2.22em; items 1em apart, 14px at 390-429px, 12px under 390px),
-// keeping 3% spare. Each number and gap carries the bands it is shown in; style.css shows only those.
-const PAGINATION_BANDS = [ // [class, row width in em at the band's narrowest screen (measured), gap in em]
-  ['pg-a', 288 / 18, 12 / 18], // up to 359px (320px screen, 18px text)
-  ['pg-b', 328 / 18, 12 / 18], // 360-389px
-  ['pg-c', 358 / 18, 14 / 18], // 390-429px (14px apart, so 1 … 9 10 11 … 20 fits)
-  ['pg-d', 398 / 18, 1],       // 430-640px
-  ['pg-e', 593 / 20, 1],       // 641-999px (20px text)
-  ['pg-f', 952 / 20, 1],       // 1000px and wider
-];
-const PAGINATION_MAX = 10; // at most ten page numbers in a row, at any width (owner, 2026-11-25)
+// The page links of a list: shared.js paginationHtml (one function for the built lists and /search/, owner 2026-11-28).
 function paginationNav(root, current, count) {
-  if (count < 2) return '';
-  const EM = { digit: 0.53, gap: 0.83, prev: 4.17, next: 2.22 };
-  const rowWidth = (set, gapEm) => {
-    const s = [...set].sort((a, b) => a - b);
-    let items = 0, w = 0;
-    s.forEach((p, i) => { if (i && p - s[i - 1] > 1) { w += EM.gap; items++; } w += String(p).length * EM.digit; items++; });
-    if (current > 1) { w += EM.prev; items++; }
-    if (current < count) { w += EM.next; items++; }
-    return w + (items - 1) * gapEm;
-  };
-  // Per band: start from the first, the current and the last page, then add neighbours while the row fits — in pairs,
-  // one either side, so the current page stays in the middle ("… 9 10 11 …", never "… 9 10 …"; owner, 2026-11-25).
-  // Once one side reaches the first or last page, the other side fills alone.
-  const sets = PAGINATION_BANDS.map(([, row, gapEm]) => {
-    const budget = row * 0.97;
-    let set = new Set([1, current, count]), lo = current, hi = current;
-    // Never one number alone between two gaps (owner, 2026-11-25): a page in the middle shows both its neighbours;
-    // where they do not fit beside the first and the last page, the first and the last go ("Previous 9 10 11 Next").
-    if (current - 1 > 1 && current + 1 < count) {
-      const withEnds = new Set([1, current - 1, current, current + 1, count]);
-      if (rowWidth(withEnds, gapEm) <= budget) { set = withEnds; lo = current - 1; hi = current + 1; }
-      else return [current - 1, current, current + 1];
-    }
-    for (;;) {
-      const add = [];
-      if (lo - 1 >= 1) add.push(lo - 1);
-      if (hi + 1 <= count) add.push(hi + 1);
-      if (!add.length) break;
-      const trial = new Set(set); add.forEach(p => trial.add(p));
-      if (trial.size > PAGINATION_MAX || rowWidth(trial, gapEm) > budget) break;
-      add.forEach(p => set.add(p));
-      lo = Math.min(lo, ...add); hi = Math.max(hi, ...add);
-    }
-    return [...set].sort((a, b) => a - b);
-  });
-  const union = [...new Set(sets.flat())].sort((a, b) => a - b);
-  const bandsWith = test => PAGINATION_BANDS.filter((_, i) => test(sets[i])).map(b => b[0]).join(' ');
-  let pages = '';
-  union.forEach(p => {
-    const cls = bandsWith(s => s.includes(p));
-    pages += p === current
-      ? `<span class="pagination-page current ${cls}" aria-current="page">${p}</span>`
-      : `<a href="${pageUrl(root, p)}" class="pagination-page ${cls}">${p}</a>`;
-    const gap = bandsWith(s => { const k = s.indexOf(p); return k >= 0 && k < s.length - 1 && s[k + 1] - p > 1; });
-    if (gap) pages += `<span class="pagination-gap ${gap}">&hellip;</span>`;
-  });
-  const prev = current > 1 ? `<a href="${pageUrl(root, current - 1)}" class="pagination-step" rel="prev">Previous</a>` : '';
-  const next = current < count ? `<a href="${pageUrl(root, current + 1)}" class="pagination-step" rel="next">Next</a>` : '';
-  return `      <nav class="pagination" aria-label="Pages">${prev}<span class="pagination-pages">${pages}</span>${next}</nav>\n`;
+  return paginationHtml(k => pageUrl(root, k), current, count);
 }
 
 // One page of a listing: the list in place of the placeholder, and the head

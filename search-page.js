@@ -9,7 +9,8 @@
   if (!input || !list || !window.SearchCore) return;
 
   var STEP = 30;
-  var engine = null, groups = [], results = [], shown = 0;
+  var engine = null, groups = [], results = [];
+  var page = Math.max(1, parseInt(new URLSearchParams(location.search).get('page'), 10) || 1);
   var TITLE = document.title;
 
   function now() { return new Date(); }
@@ -23,29 +24,25 @@
       + (tags ? '<div class="call-meta">' + tags + '</div>' : '') + '</div>';
   }
 
-  function showMore() {
-    var more = document.getElementById('moreResults');
-    if (more) more.parentNode.removeChild(more);
-    var end = Math.min(results.length, shown + STEP), html = '';
-    // No headings: the calls accepting submissions come first, the closed after them; each card's date says which
-    // (owner, 2026-11-27: the headings "are just confusing").
-    for (var i = shown; i < end; i++) html += card(results[i]);
-    shown = end;
-    if (shown < results.length) {
-      html += '<p class="list-more" id="moreResults"><button type="button" class="more-results">Show more results (' + (results.length - shown) + ' left)</button></p>';
-    }
+  // One page of the results, with the page links every list has (shared.js paginationHtml; owner, 2026-11-28: "everywhere
+  // we have pagination"): 30 cards, pages at /search/?q=…&page=N.
+  function showPage() {
+    var count = Math.max(1, Math.ceil(results.length / STEP));
+    if (page > count) page = count;
+    var html = '';
+    for (var i = (page - 1) * STEP; i < Math.min(results.length, page * STEP); i++) html += card(results[i]);
+    var q = new URLSearchParams(location.search).get('q') || '';
+    html += paginationHtml(function(k) { return '/search/?q=' + encodeURIComponent(q) + (k > 1 ? '&page=' + k : ''); }, page, count);
     list.insertAdjacentHTML('beforeend', html);
-    var btn = document.querySelector('#moreResults button');
-    if (btn) btn.addEventListener('click', showMore);
   }
 
   // Calls accepting submissions first, then closed ones; within each, the best match first (search-core's score), then
   // the soonest deadline for the first and the latest for the closed.
   function run(q) {
     q = q.trim();
-    document.title = q ? q + ' – ' + TITLE : TITLE;
+    document.title = q ? q + (page > 1 ? ' – Page ' + page : '') + ' – ' + TITLE : TITLE;
     list.innerHTML = '';
-    results = []; shown = 0;
+    results = [];
     if (!q) return;
     // A misspelt word (no call has every word, and a correction finds them all): the results of the corrected words,
     // under "Did you mean …?", as search engines do (owner, 2026-11-27). Otherwise the typed words' own results.
@@ -75,7 +72,7 @@
       list.innerHTML = '<p class="empty-state">No calls match “' + esc(q) + '”.' + fix + '<a href="/browse/">Browse all calls</a></p>';
       return;
     }
-    showMore();
+    showPage();
   }
 
   var q = new URLSearchParams(location.search).get('q') || '';
