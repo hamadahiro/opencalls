@@ -251,6 +251,35 @@ function slugify(title) {
 // JURY (2026-11-26). A juror's URL keeps the letters of their name: accents are folded first
 // ("Awa Konaté" → awa-konate), where slugify() would drop them (awa-konat). Calls and organisers keep slugify().
 // A person's slug is stored in jury.json, so changing this function never moves a page.
+// A name as the site prints it (owner 2026-11-28: "format all names… capital first letter"). A name printed all in
+// capitals or all in small letters gets a capital first letter on each word ("MERRILYNE HENDRICKSON", "jim mackey" →
+// "Merrilyne Hendrickson", "Jim Mackey"), also after a hyphen or apostrophe ("O'Brien", "Jean-Luc") and in "Mc"
+// ("McCarthy"); inside the name a particle or joining word stays small ("van", "de", "and"). In a name that mixes both, a
+// word in capitals of three letters or more is written the same way ("CHOU Man-nung" → "Chou Man-nung") and everything
+// else is kept as printed ("Kate Crawford and Vladan Joler", "LaPalombara", "daisy*"). Kept always: initials of one or two
+// letters without a vowel ("KC", "MJ"; "WU" is a name: "Wu"), letters with dots ("F.A.C.E."), Roman numerals ("III"),
+// company words ("LLC"); in a mixed name a capitals word without a vowel ("NHS") too.
+function nameCase(name) {
+  const SMALL = new Set(['van', 'von', 'de', 'der', 'den', 'del', 'della', 'di', 'da', 'das', 'dos', 'du', 'la', 'le', 'ten', 'ter', 'y', 'e', 'bin', 'al', 'el', 'and', 'with', 'of', 'the', 'for', 'from']);
+  const ACRONYM = new Set(['LLC', 'LTD', 'INC', 'GMBH', 'CIC', 'USA', 'NYC', 'UAE', 'BBC', 'MFA']);
+  const s = String(name), hasLower = /\p{Ll}/u.test(s), hasUpper = /\p{Lu}/u.test(s);
+  if (hasLower === hasUpper && hasLower) {   // mixed
+    return s.split(' ').map(w => { const l = w.replace(/[^\p{L}]/gu, ''); return l.length >= 3 && l === l.toUpperCase() && /[AEIOUY]/i.test(l) && !ACRONYM.has(l) && !/^(\p{Lu}\.)+$/u.test(w) && !/^(ii|iii|iv|vi|vii|viii|ix)$/i.test(l) ? titleWord(w) : w; }).join(' ');
+  }
+  if (!hasLower && !hasUpper) return s;      // a script without capitals
+  const words = s.split(' ');
+  return words.map((w, i) => {
+    const l = w.replace(/[^\p{L}]/gu, '');
+    if (!l) return w;
+    if (i > 0 && i < words.length - 1 && SMALL.has(l.toLowerCase())) return w.toLowerCase();
+    if (hasUpper && ((l.length <= 2 && !/[AEIOUY]/i.test(l)) || l.length === 1 || ACRONYM.has(l) || /^(\p{Lu}\.)+$/u.test(w) || (i > 0 && /^(ii|iii|iv|vi|vii|viii|ix)$/i.test(l)))) return w;
+    return titleWord(w);
+  }).join(' ');
+  function titleWord(w) {
+    return w.toLowerCase().replace(/(^|[-'’(\[])(\p{Ll})/gu, (m, p, c) => p + c.toUpperCase()).replace(/^(\(?)Mc(\p{Ll})/u, (m, p, c) => p + 'Mc' + c.toUpperCase());
+  }
+}
+
 function personSlug(name) {
   const folded = String(name).replace(/ø/g, 'o').replace(/Ø/g, 'O').replace(/ł/g, 'l').replace(/Ł/g, 'L').replace(/ß/g, 'ss')
     .replace(/æ/g, 'ae').replace(/Æ/g, 'AE').replace(/đ/g, 'd').replace(/Đ/g, 'D')
@@ -945,6 +974,7 @@ if (typeof document !== 'undefined') {
 
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
+    nameCase,
     categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
     usStateNames, stateNameToAbbr, validCountries,
     isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,

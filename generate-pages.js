@@ -7,7 +7,7 @@ const shared = require('./shared.js');
 const {
   categoryLabel, categorySlug, prizeCategoryLabel, shortCountry, countrySlugs, eligibilityLabel,
   usStateNames, stateNameToAbbr, validCountries,
-  isCallOpen, computeUrgency, slugify, personSlug, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
+  isCallOpen, computeUrgency, slugify, personSlug, nameCase, juryNameSpan, shortenLocation, splitPrizeParts, derivePrizeCategory, derivePrizeCategories,
   deriveRequirementBucket, aiPolicyBucket, shortenFee, feeKind, feePage, feeChipText, feeChip, submitViaLink, submitViaLabel,
   getCountry, renderTags, renderCardBody, renderInfoGrid, resultsWhen, RESULTS_MONTHS, resultsListed, closedResultsText, resultsMonthSlug, resultsText, paginationHtml,
   isFree, getState, scoreSimilarity,
@@ -242,7 +242,11 @@ data.calls.forEach((c, i) => {
         if (!g || !Array.isArray(g.names) || !g.names.length || g.names.some(n => typeof n !== 'string' || !n.trim())) { err(`"${label}" announced[${i}] needs names`); return; }
         const low = g.names.map(n => n.trim().toLowerCase());
         if (new Set(low).size !== low.length) err(`"${label}" announced[${i}] repeats a name`);
-        g.names.forEach(n => { if (/[A-Za-z]/.test(n) && /[\u0370-\u03ff\u0400-\u04ff]/.test(n)) err(`"${label}" announced name "${n}" mixes Latin with Cyrillic or Greek letters`); });
+        g.names.forEach(n => {
+          if (/[A-Za-z]/.test(n) && /[\u0370-\u03ff\u0400-\u04ff]/.test(n)) err(`"${label}" announced name "${n}" mixes Latin with Cyrillic or Greek letters`);
+          if (/https?:|www\.|@/i.test(n)) err(`"${label}" announced name "${n}" holds an address or link`);
+          if (nameCase(n) !== n) err(`"${label}" announced name "${n}" must be written "${nameCase(n)}" (owner: capital first letters)`);
+        });
         total += g.names.length;
       });
       if (total > 150) err(`"${label}" announces ${total} names — more than 150 is a mass-award contest: record none`);
