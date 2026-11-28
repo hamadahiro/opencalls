@@ -1697,13 +1697,17 @@ a.filter-btn {
    marker drawn by hand behind it, full height (owner, 2026-11-28: the link colour made it look like a link — "i tried
    to click it few times"; "make it irregular with the same intensity we do for underline… just dont make it perfect
    rectangle"). A shape (an SVG mask, as the deadline stroke), grey in both modes: the site has no coloured text. */
-:root { --hit-c: rgba(0, 0, 0, 0.1); }
-@media (prefers-color-scheme: dark) { :root { --hit-c: rgba(255, 255, 255, 0.11); } }
+/* The word itself 15% off the text grey towards the link colour (owner 2026-11-28: "just a little bit lighter in dark
+   mode and darker in light mode… not black and white like links, just 10-20%"): light #555 → #484848 (links #111), dark
+   #8f8f8f → #a4a4a4 (links #f0f0f0). */
+:root { --hit-c: rgba(0, 0, 0, 0.1); --hit-text: #484848; }
+@media (prefers-color-scheme: dark) { :root { --hit-c: rgba(255, 255, 255, 0.11); --hit-text: #a4a4a4; } }
 .search-hit {
   position: relative;
   z-index: 0;
   white-space: nowrap;
   font-weight: inherit;   /* the mark is a <b>: no bold of its own */
+  color: var(--hit-text);
 }
 .search-hit::before {
   content: '';
