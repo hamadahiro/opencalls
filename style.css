@@ -1630,10 +1630,10 @@ a.filter-btn {
   font-weight: 600;
 }
 
-/* The first result starts as far under the search box as every other page's first line starts under it (owner,
-   2026-11-28: "content never starts immediately after"): the hero's top padding (120px; phones 36px) less the card's own
-   (25px; phones 24px). Measured to the top of the letters: other pages 125.5px under the bar (phones 40.6px under the
-   header), here 125.1px (phones 40.3px). */
+/* The first result starts as far under the search box as content starts under it elsewhere (owner, 2026-11-28:
+   "content never starts immediately after"), measured to the top of the letters. Desktop: other pages' first line,
+   125.5px under the bar — the hero's top padding (120px) less the card's own (25px); here 125.1px. Phones, where only
+   the home page shows the bar: its list ("Ending Today") 120.9px under the bar; here 120.8px (below). */
 .search-results {
   padding-top: 95px;
 }
@@ -1662,11 +1662,11 @@ a.filter-btn {
   }
 
   .search-results {
-    padding-top: 12px;   /* phones: the hero's 36px less the card's 24px (see .search-results above) */
+    padding-top: 92.5px;   /* phones: the first result's letters 120.8px under the bar, as the home page's list (120.9px) */
   }
 
   .search-correction {
-    padding-top: 16px;   /* phones: its letters 40.6px under the bar, measured */
+    padding-top: 16px;   /* phones: its letters 120.8px under the bar too, measured */
   }
 
   /* The × sits on the bar's middle: half of this page's 8 px top padding (the rule above takes half of 16 px). */
